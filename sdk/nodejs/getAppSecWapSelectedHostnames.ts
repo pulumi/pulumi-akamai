@@ -40,11 +40,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular reports of the protected and evaluated hostnames.
  */
 export function getAppSecWapSelectedHostnames(args: GetAppSecWapSelectedHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecWapSelectedHostnamesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
@@ -82,9 +79,43 @@ export interface GetAppSecWapSelectedHostnamesResult {
     readonly securityPolicyId: string;
     readonly selectedHosts: string[];
 }
-
+/**
+ * **Scopes**: Security policy
+ *
+ * Returns hostnames currently protected or being evaluated by a configuration and security policy.
+ * This resource is available only to organizations running Web Application Protector (WAP).
+ * Note that the WAP selected hostnames feature is currently in beta.
+ * Please contact your Akamai representative for more information.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const wapSelectedHostnames = configuration.then(configuration => akamai.getAppSecWapSelectedHostnames({
+ *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
+ * }));
+ * export const protectedHostnames = wapSelectedHostnames.then(wapSelectedHostnames => wapSelectedHostnames.protectedHosts);
+ * export const evaluatedHostnames = wapSelectedHostnames.then(wapSelectedHostnames => wapSelectedHostnames.evaluatedHosts);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned and how that returned information is formatted:
+ *
+ * - `protectedHostnames`. List of hostnames currently protected under the security configuration and security policy.
+ * - `evaluatedHostnames`. List of hostnames currently being evaluated under the security configuration and security policy.
+ * - `hostnamesJson`. JSON-formatted report of the protected and evaluated hostnames.
+ * - `outputText`. Tabular reports of the protected and evaluated hostnames.
+ */
 export function getAppSecWapSelectedHostnamesOutput(args: GetAppSecWapSelectedHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecWapSelectedHostnamesResult> {
-    return pulumi.output(args).apply(a => getAppSecWapSelectedHostnames(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecWapSelectedHostnames(a, opts))
 }
 
 /**

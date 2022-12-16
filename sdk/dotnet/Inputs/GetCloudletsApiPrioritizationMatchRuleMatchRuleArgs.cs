@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetCloudletsApiPrioritizationMatchRuleMatchRuleInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCloudletsApiPrioritizationMatchRuleMatchRuleInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
@@ -67,5 +67,6 @@ namespace Pulumi.Akamai.Inputs
         public GetCloudletsApiPrioritizationMatchRuleMatchRuleInputArgs()
         {
         }
+        public static new GetCloudletsApiPrioritizationMatchRuleMatchRuleInputArgs Empty => new GetCloudletsApiPrioritizationMatchRuleMatchRuleInputArgs();
     }
 }

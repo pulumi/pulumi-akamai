@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Trafficmanagement.Inputs
 {
 
-    public sealed class GtmPropertyStaticRrSetGetArgs : Pulumi.ResourceArgs
+    public sealed class GtmPropertyStaticRrSetGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("rdatas")]
         private InputList<string>? _rdatas;
@@ -39,5 +39,6 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
         public GtmPropertyStaticRrSetGetArgs()
         {
         }
+        public static new GtmPropertyStaticRrSetGetArgs Empty => new GtmPropertyStaticRrSetGetArgs();
     }
 }

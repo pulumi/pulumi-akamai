@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class CpsDvEnrollmentDnsChallengeGetArgs : Pulumi.ResourceArgs
+    public sealed class CpsDvEnrollmentDnsChallengeGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("domain")]
         public Input<string>? Domain { get; set; }
@@ -24,5 +24,6 @@ namespace Pulumi.Akamai.Inputs
         public CpsDvEnrollmentDnsChallengeGetArgs()
         {
         }
+        public static new CpsDvEnrollmentDnsChallengeGetArgs Empty => new CpsDvEnrollmentDnsChallengeGetArgs();
     }
 }

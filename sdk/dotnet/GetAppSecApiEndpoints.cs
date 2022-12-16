@@ -25,21 +25,19 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var apiEndpoints = Akamai.GetAppSecApiEndpoints.Invoke(new()
         ///     {
-        ///         var apiEndpoints = Output.Create(Akamai.GetAppSecApiEndpoints.InvokeAsync(new Akamai.GetAppSecApiEndpointsArgs
-        ///         {
-        ///             ApiName = "Contracts",
-        ///             ConfigId = 58843,
-        ///         }));
-        ///     }
+        ///         ApiName = "Contracts",
+        ///         ConfigId = 58843,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,7 +50,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the ID and name of the API endpoints.
         /// </summary>
         public static Task<GetAppSecApiEndpointsResult> InvokeAsync(GetAppSecApiEndpointsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecApiEndpointsResult>("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args ?? new GetAppSecApiEndpointsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecApiEndpointsResult>("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args ?? new GetAppSecApiEndpointsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; security policy
@@ -68,21 +66,19 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var apiEndpoints = Akamai.GetAppSecApiEndpoints.Invoke(new()
         ///     {
-        ///         var apiEndpoints = Output.Create(Akamai.GetAppSecApiEndpoints.InvokeAsync(new Akamai.GetAppSecApiEndpointsArgs
-        ///         {
-        ///             ApiName = "Contracts",
-        ///             ConfigId = 58843,
-        ///         }));
-        ///     }
+        ///         ApiName = "Contracts",
+        ///         ConfigId = 58843,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,11 +91,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the ID and name of the API endpoints.
         /// </summary>
         public static Output<GetAppSecApiEndpointsResult> Invoke(GetAppSecApiEndpointsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecApiEndpointsResult>("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args ?? new GetAppSecApiEndpointsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecApiEndpointsResult>("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args ?? new GetAppSecApiEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecApiEndpointsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecApiEndpointsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
@@ -122,9 +118,10 @@ namespace Pulumi.Akamai
         public GetAppSecApiEndpointsArgs()
         {
         }
+        public static new GetAppSecApiEndpointsArgs Empty => new GetAppSecApiEndpointsArgs();
     }
 
-    public sealed class GetAppSecApiEndpointsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecApiEndpointsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
@@ -147,6 +144,7 @@ namespace Pulumi.Akamai
         public GetAppSecApiEndpointsInvokeArgs()
         {
         }
+        public static new GetAppSecApiEndpointsInvokeArgs Empty => new GetAppSecApiEndpointsInvokeArgs();
     }
 
 

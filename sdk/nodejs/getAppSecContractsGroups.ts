@@ -39,11 +39,8 @@ import * as utilities from "./utilities";
  */
 export function getAppSecContractsGroups(args?: GetAppSecContractsGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecContractsGroupsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", {
         "contractid": args.contractid,
         "groupid": args.groupid,
@@ -79,9 +76,41 @@ export interface GetAppSecContractsGroupsResult {
     readonly json: string;
     readonly outputText: string;
 }
-
+/**
+ * **Scopes**: Contract; group
+ *
+ * Returns information about the contracts and groups associated with your account. Among other things, this information is required to create a new security configuration and to return a list of the hostnames available for use in a security policy.
+ *
+ * **Related API Endpoint**: [/appsec/v1/contracts-groups](https://techdocs.akamai.com/application-security/reference/get-contracts-groups)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const contractsGroups = akamai.getAppSecContractsGroups({
+ *     contractid: "5-2WA382",
+ *     groupid: 12198,
+ * });
+ * export const contractsGroupsList = contractsGroups.then(contractsGroups => contractsGroups.outputText);
+ * export const contractsGroupsJson = contractsGroups.then(contractsGroups => contractsGroups.json);
+ * export const contractGroupsDefaultContractid = contractsGroups.then(contractsGroups => contractsGroups.defaultContractid);
+ * export const contractGroupsDefaultGroupid = contractsGroups.then(contractsGroups => contractsGroups.defaultGroupid);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of contract and group information.
+ * - `outputText`. Tabular report of contract and group information.
+ * - `defaultContractid`. Default contract ID for the specified contract and group.
+ * - `defaultGroupid`. Default group ID for the specified contract and group.
+ */
 export function getAppSecContractsGroupsOutput(args?: GetAppSecContractsGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecContractsGroupsResult> {
-    return pulumi.output(args).apply(a => getAppSecContractsGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecContractsGroups(a, opts))
 }
 
 /**

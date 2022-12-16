@@ -42,11 +42,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report showing the pragma header settings.
  */
 export function getAppSecAdvancedSettingsPragmaHeader(args: GetAppSecAdvancedSettingsPragmaHeaderArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecAdvancedSettingsPragmaHeaderResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
@@ -80,9 +77,45 @@ export interface GetAppSecAdvancedSettingsPragmaHeaderResult {
     readonly outputText: string;
     readonly securityPolicyId?: string;
 }
-
+/**
+ * **Scopes**: Security configuration; security policy
+ *
+ * Returns pragma header settings information. This HTTP header provides information about such things as: the edge routers used in a transaction; the Akamai IP addresses involved; information about whether a request was cached or not; and so on. By default, pragma headers are removed from all responses.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-pragma-header)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const pragmaHeader = configuration.then(configuration => akamai.getAppSecAdvancedSettingsPragmaHeader({
+ *     configId: configuration.configId,
+ * }));
+ * export const advancedSettingsPragmaHeaderOutput = pragmaHeader.then(pragmaHeader => pragmaHeader.outputText);
+ * export const advancedSettingsPragmaHeaderJson = pragmaHeader.then(pragmaHeader => pragmaHeader.json);
+ * const policyPragmaHeader = configuration.then(configuration => akamai.getAppSecAdvancedSettingsPragmaHeader({
+ *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
+ * }));
+ * export const advancedSettingsPolicyPragmaHeaderOutput = policyPragmaHeader.then(policyPragmaHeader => policyPragmaHeader.outputText);
+ * export const advancedSettingsPolicyPragmaHeaderJson = policyPragmaHeader.then(policyPragmaHeader => policyPragmaHeader.json);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of information about the pragma header settings.
+ * - `outputText`. Tabular report showing the pragma header settings.
+ */
 export function getAppSecAdvancedSettingsPragmaHeaderOutput(args: GetAppSecAdvancedSettingsPragmaHeaderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAdvancedSettingsPragmaHeaderResult> {
-    return pulumi.output(args).apply(a => getAppSecAdvancedSettingsPragmaHeader(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecAdvancedSettingsPragmaHeader(a, opts))
 }
 
 /**

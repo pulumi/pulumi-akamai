@@ -60,6 +60,9 @@ export class CpsDvValidation extends pulumi.CustomResource {
      * The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
      */
     public readonly sans!: pulumi.Output<string[] | undefined>;
+    /**
+     * Status of validation
+     */
     public /*out*/ readonly status!: pulumi.Output<string>;
 
     /**
@@ -104,6 +107,9 @@ export interface CpsDvValidationState {
      * The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
      */
     sans?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Status of validation
+     */
     status?: pulumi.Input<string>;
 }
 

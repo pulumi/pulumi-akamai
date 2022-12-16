@@ -27,40 +27,37 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var reputationProfileActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileActions.InvokeAsync(new Akamai.GetAppSecReputationProfileActionsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.ReputationProfileActionsText = reputationProfileActions.Apply(reputationProfileActions =&gt; reputationProfileActions.OutputText);
-        ///         this.ReputationProfileActionsJson = reputationProfileActions.Apply(reputationProfileActions =&gt; reputationProfileActions.Json);
-        ///         var reputationProfileActions2AppSecReputationProfileActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileActions.InvokeAsync(new Akamai.GetAppSecReputationProfileActionsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///             ReputationProfileId = 12345,
-        ///         })));
-        ///         this.ReputationProfileActions2 = reputationProfileActions.Apply(reputationProfileActions =&gt; reputationProfileActions.Action);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("reputationProfileActionsText")]
-        ///     public Output&lt;string&gt; ReputationProfileActionsText { get; set; }
-        ///     [Output("reputationProfileActionsJson")]
-        ///     public Output&lt;string&gt; ReputationProfileActionsJson { get; set; }
-        ///     [Output("reputationProfileActions2")]
-        ///     public Output&lt;string&gt; ReputationProfileActions2 { get; set; }
-        /// }
+        ///     var reputationProfileActions = Akamai.GetAppSecReputationProfileActions.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     var reputationProfileActions2AppSecReputationProfileActions = Akamai.GetAppSecReputationProfileActions.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///         ReputationProfileId = 12345,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["reputationProfileActionsText"] = reputationProfileActions.Apply(getAppSecReputationProfileActionsResult =&gt; getAppSecReputationProfileActionsResult.OutputText),
+        ///         ["reputationProfileActionsJson"] = reputationProfileActions.Apply(getAppSecReputationProfileActionsResult =&gt; getAppSecReputationProfileActionsResult.Json),
+        ///         ["reputationProfileActions2"] = reputationProfileActions.Apply(getAppSecReputationProfileActionsResult =&gt; getAppSecReputationProfileActionsResult.Action),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +74,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the reputation profile action information.
         /// </summary>
         public static Task<GetAppSecReputationProfileActionsResult> InvokeAsync(GetAppSecReputationProfileActionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// ## akamai.getAppSecReputationProfileActions
@@ -95,40 +92,37 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var reputationProfileActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileActions.InvokeAsync(new Akamai.GetAppSecReputationProfileActionsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.ReputationProfileActionsText = reputationProfileActions.Apply(reputationProfileActions =&gt; reputationProfileActions.OutputText);
-        ///         this.ReputationProfileActionsJson = reputationProfileActions.Apply(reputationProfileActions =&gt; reputationProfileActions.Json);
-        ///         var reputationProfileActions2AppSecReputationProfileActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileActions.InvokeAsync(new Akamai.GetAppSecReputationProfileActionsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///             ReputationProfileId = 12345,
-        ///         })));
-        ///         this.ReputationProfileActions2 = reputationProfileActions.Apply(reputationProfileActions =&gt; reputationProfileActions.Action);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("reputationProfileActionsText")]
-        ///     public Output&lt;string&gt; ReputationProfileActionsText { get; set; }
-        ///     [Output("reputationProfileActionsJson")]
-        ///     public Output&lt;string&gt; ReputationProfileActionsJson { get; set; }
-        ///     [Output("reputationProfileActions2")]
-        ///     public Output&lt;string&gt; ReputationProfileActions2 { get; set; }
-        /// }
+        ///     var reputationProfileActions = Akamai.GetAppSecReputationProfileActions.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     var reputationProfileActions2AppSecReputationProfileActions = Akamai.GetAppSecReputationProfileActions.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///         ReputationProfileId = 12345,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["reputationProfileActionsText"] = reputationProfileActions.Apply(getAppSecReputationProfileActionsResult =&gt; getAppSecReputationProfileActionsResult.OutputText),
+        ///         ["reputationProfileActionsJson"] = reputationProfileActions.Apply(getAppSecReputationProfileActionsResult =&gt; getAppSecReputationProfileActionsResult.Json),
+        ///         ["reputationProfileActions2"] = reputationProfileActions.Apply(getAppSecReputationProfileActionsResult =&gt; getAppSecReputationProfileActionsResult.Action),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -145,11 +139,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the reputation profile action information.
         /// </summary>
         public static Output<GetAppSecReputationProfileActionsResult> Invoke(GetAppSecReputationProfileActionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecReputationProfileActionsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecReputationProfileActionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation profiles.
@@ -172,9 +166,10 @@ namespace Pulumi.Akamai
         public GetAppSecReputationProfileActionsArgs()
         {
         }
+        public static new GetAppSecReputationProfileActionsArgs Empty => new GetAppSecReputationProfileActionsArgs();
     }
 
-    public sealed class GetAppSecReputationProfileActionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecReputationProfileActionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation profiles.
@@ -197,6 +192,7 @@ namespace Pulumi.Akamai
         public GetAppSecReputationProfileActionsInvokeArgs()
         {
         }
+        public static new GetAppSecReputationProfileActionsInvokeArgs Empty => new GetAppSecReputationProfileActionsInvokeArgs();
     }
 
 

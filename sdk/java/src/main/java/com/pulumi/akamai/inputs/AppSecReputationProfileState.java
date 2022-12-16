@@ -47,14 +47,14 @@ public final class AppSecReputationProfileState extends com.pulumi.resources.Res
     }
 
     /**
-     * Unique identifer of the reputation profile
+     * Unique identifier of the reputation profile
      * 
      */
     @Import(name="reputationProfileId")
     private @Nullable Output<Integer> reputationProfileId;
 
     /**
-     * @return Unique identifer of the reputation profile
+     * @return Unique identifier of the reputation profile
      * 
      */
     public Optional<Output<Integer>> reputationProfileId() {
@@ -130,7 +130,7 @@ public final class AppSecReputationProfileState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param reputationProfileId Unique identifer of the reputation profile
+         * @param reputationProfileId Unique identifier of the reputation profile
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AppSecReputationProfileState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param reputationProfileId Unique identifer of the reputation profile
+         * @param reputationProfileId Unique identifier of the reputation profile
          * 
          * @return builder
          * 

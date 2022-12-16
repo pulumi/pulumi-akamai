@@ -19,21 +19,19 @@ namespace Pulumi.Akamai
         /// This example returns the load balancing configuration details based on the origin ID and optionally, a version:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetCloudletsApplicationLoadBalancer.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsApplicationLoadBalancer.InvokeAsync(new Akamai.GetCloudletsApplicationLoadBalancerArgs
-        ///         {
-        ///             OriginId = "alb_test_1",
-        ///             Version = 1,
-        ///         }));
-        ///     }
+        ///         OriginId = "alb_test_1",
+        ///         Version = 1,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -79,7 +77,7 @@ namespace Pulumi.Akamai
         ///   * `timeout` - The number of seconds the system waits before failing the liveness test.
         /// </summary>
         public static Task<GetCloudletsApplicationLoadBalancerResult> InvokeAsync(GetCloudletsApplicationLoadBalancerArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsApplicationLoadBalancerResult>("akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer", args ?? new GetCloudletsApplicationLoadBalancerArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsApplicationLoadBalancerResult>("akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer", args ?? new GetCloudletsApplicationLoadBalancerArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.CloudletsApplicationLoadBalancer` data source to list details about the Application Load Balancer configuration with a specified policy version, or latest if not specified.
@@ -89,21 +87,19 @@ namespace Pulumi.Akamai
         /// This example returns the load balancing configuration details based on the origin ID and optionally, a version:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetCloudletsApplicationLoadBalancer.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsApplicationLoadBalancer.InvokeAsync(new Akamai.GetCloudletsApplicationLoadBalancerArgs
-        ///         {
-        ///             OriginId = "alb_test_1",
-        ///             Version = 1,
-        ///         }));
-        ///     }
+        ///         OriginId = "alb_test_1",
+        ///         Version = 1,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -149,11 +145,11 @@ namespace Pulumi.Akamai
         ///   * `timeout` - The number of seconds the system waits before failing the liveness test.
         /// </summary>
         public static Output<GetCloudletsApplicationLoadBalancerResult> Invoke(GetCloudletsApplicationLoadBalancerInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudletsApplicationLoadBalancerResult>("akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer", args ?? new GetCloudletsApplicationLoadBalancerInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsApplicationLoadBalancerResult>("akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer", args ?? new GetCloudletsApplicationLoadBalancerInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCloudletsApplicationLoadBalancerArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsApplicationLoadBalancerArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
@@ -170,9 +166,10 @@ namespace Pulumi.Akamai
         public GetCloudletsApplicationLoadBalancerArgs()
         {
         }
+        public static new GetCloudletsApplicationLoadBalancerArgs Empty => new GetCloudletsApplicationLoadBalancerArgs();
     }
 
-    public sealed class GetCloudletsApplicationLoadBalancerInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsApplicationLoadBalancerInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
@@ -189,6 +186,7 @@ namespace Pulumi.Akamai
         public GetCloudletsApplicationLoadBalancerInvokeArgs()
         {
         }
+        public static new GetCloudletsApplicationLoadBalancerInvokeArgs Empty => new GetCloudletsApplicationLoadBalancerInvokeArgs();
     }
 
 

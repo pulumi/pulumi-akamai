@@ -15,34 +15,30 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var ruleUpgrade = new Akamai.AppSecRuleUpgrade("ruleUpgrade", new Akamai.AppSecRuleUpgradeArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///         });
-    ///         this.RuleUpgradeCurrentRuleset = ruleUpgrade.CurrentRuleset;
-    ///         this.RuleUpgradeMode = ruleUpgrade.Mode;
-    ///         this.RuleUpgradeEvalStatus = ruleUpgrade.EvalStatus;
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    ///     [Output("ruleUpgradeCurrentRuleset")]
-    ///     public Output&lt;string&gt; RuleUpgradeCurrentRuleset { get; set; }
-    ///     [Output("ruleUpgradeMode")]
-    ///     public Output&lt;string&gt; RuleUpgradeMode { get; set; }
-    ///     [Output("ruleUpgradeEvalStatus")]
-    ///     public Output&lt;string&gt; RuleUpgradeEvalStatus { get; set; }
-    /// }
+    ///     var ruleUpgrade = new Akamai.AppSecRuleUpgrade("ruleUpgrade", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["ruleUpgradeCurrentRuleset"] = ruleUpgrade.CurrentRuleset,
+    ///         ["ruleUpgradeMode"] = ruleUpgrade.Mode,
+    ///         ["ruleUpgradeEvalStatus"] = ruleUpgrade.EvalStatus,
+    ///     };
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -61,7 +57,7 @@ namespace Pulumi.Akamai
     /// - `eval_status`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecRuleUpgrade:AppSecRuleUpgrade")]
-    public partial class AppSecRuleUpgrade : Pulumi.CustomResource
+    public partial class AppSecRuleUpgrade : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the ruleset being upgraded.
@@ -146,7 +142,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecRuleUpgradeArgs : Pulumi.ResourceArgs
+    public sealed class AppSecRuleUpgradeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the ruleset being upgraded.
@@ -172,9 +168,10 @@ namespace Pulumi.Akamai
         public AppSecRuleUpgradeArgs()
         {
         }
+        public static new AppSecRuleUpgradeArgs Empty => new AppSecRuleUpgradeArgs();
     }
 
-    public sealed class AppSecRuleUpgradeState : Pulumi.ResourceArgs
+    public sealed class AppSecRuleUpgradeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the ruleset being upgraded.
@@ -218,5 +215,6 @@ namespace Pulumi.Akamai
         public AppSecRuleUpgradeState()
         {
         }
+        public static new AppSecRuleUpgradeState Empty => new AppSecRuleUpgradeState();
     }
 }

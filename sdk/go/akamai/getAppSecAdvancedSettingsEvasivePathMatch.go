@@ -25,20 +25,20 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
 //				Name: pulumi.StringRef(_var.Security_configuration),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			evasivePathMatch, err := akamai.LookupAppSecAdvancedSettingsEvasivePathMatch(ctx, &GetAppSecAdvancedSettingsEvasivePathMatchArgs{
+//			evasivePathMatch, err := akamai.LookupAppSecAdvancedSettingsEvasivePathMatch(ctx, &akamai.LookupAppSecAdvancedSettingsEvasivePathMatchArgs{
 //				ConfigId: configuration.ConfigId,
 //			}, nil)
 //			if err != nil {
@@ -46,7 +46,7 @@ import (
 //			}
 //			ctx.Export("advancedSettingsEvasivePathMatchOutput", evasivePathMatch.OutputText)
 //			ctx.Export("advancedSettingsEvasivePathMatchJson", evasivePathMatch.Json)
-//			policyOverride, err := akamai.LookupAppSecAdvancedSettingsEvasivePathMatch(ctx, &GetAppSecAdvancedSettingsEvasivePathMatchArgs{
+//			policyOverride, err := akamai.LookupAppSecAdvancedSettingsEvasivePathMatch(ctx, &akamai.LookupAppSecAdvancedSettingsEvasivePathMatchArgs{
 //				ConfigId:         configuration.ConfigId,
 //				SecurityPolicyId: pulumi.StringRef(_var.Security_policy_id),
 //			}, nil)

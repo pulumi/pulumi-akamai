@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetPropertyRulesTemplateTemplateInputArgs : Pulumi.ResourceArgs
+    public sealed class GetPropertyRulesTemplateTemplateInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The content of the JSON template as a string.
@@ -27,5 +27,6 @@ namespace Pulumi.Akamai.Inputs
         public GetPropertyRulesTemplateTemplateInputArgs()
         {
         }
+        public static new GetPropertyRulesTemplateTemplateInputArgs Empty => new GetPropertyRulesTemplateTemplateInputArgs();
     }
 }

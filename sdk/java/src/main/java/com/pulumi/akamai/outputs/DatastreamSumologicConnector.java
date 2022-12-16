@@ -30,7 +30,23 @@ public final class DatastreamSumologicConnector {
      */
     private String connectorName;
     /**
-     * @return The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://&lt;SumoEndpoint&gt;/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+     * @return Content type to pass in the log file header.
+     * 
+     */
+    private @Nullable String contentType;
+    /**
+     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
+     * 
+     */
+    private @Nullable String customHeaderName;
+    /**
+     * @return The custom header&#39;s contents passed with the request that contains information about the client connection.
+     * 
+     */
+    private @Nullable String customHeaderValue;
+    /**
+     * @return The Elasticsearch bulk endpoint URL in the format: `https://&lt;hostname&gt;.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+     * &lt;br&gt;Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
      * 
      */
     private String endpoint;
@@ -61,7 +77,29 @@ public final class DatastreamSumologicConnector {
         return this.connectorName;
     }
     /**
-     * @return The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://&lt;SumoEndpoint&gt;/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+     * @return Content type to pass in the log file header.
+     * 
+     */
+    public Optional<String> contentType() {
+        return Optional.ofNullable(this.contentType);
+    }
+    /**
+     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
+     * 
+     */
+    public Optional<String> customHeaderName() {
+        return Optional.ofNullable(this.customHeaderName);
+    }
+    /**
+     * @return The custom header&#39;s contents passed with the request that contains information about the client connection.
+     * 
+     */
+    public Optional<String> customHeaderValue() {
+        return Optional.ofNullable(this.customHeaderValue);
+    }
+    /**
+     * @return The Elasticsearch bulk endpoint URL in the format: `https://&lt;hostname&gt;.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+     * &lt;br&gt;Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
      * 
      */
     public String endpoint() {
@@ -81,6 +119,9 @@ public final class DatastreamSumologicConnector {
         private @Nullable Boolean compressLogs;
         private @Nullable Integer connectorId;
         private String connectorName;
+        private @Nullable String contentType;
+        private @Nullable String customHeaderName;
+        private @Nullable String customHeaderValue;
         private String endpoint;
         public Builder() {}
         public Builder(DatastreamSumologicConnector defaults) {
@@ -89,6 +130,9 @@ public final class DatastreamSumologicConnector {
     	      this.compressLogs = defaults.compressLogs;
     	      this.connectorId = defaults.connectorId;
     	      this.connectorName = defaults.connectorName;
+    	      this.contentType = defaults.contentType;
+    	      this.customHeaderName = defaults.customHeaderName;
+    	      this.customHeaderValue = defaults.customHeaderValue;
     	      this.endpoint = defaults.endpoint;
         }
 
@@ -113,6 +157,21 @@ public final class DatastreamSumologicConnector {
             return this;
         }
         @CustomType.Setter
+        public Builder contentType(@Nullable String contentType) {
+            this.contentType = contentType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder customHeaderName(@Nullable String customHeaderName) {
+            this.customHeaderName = customHeaderName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder customHeaderValue(@Nullable String customHeaderValue) {
+            this.customHeaderValue = customHeaderValue;
+            return this;
+        }
+        @CustomType.Setter
         public Builder endpoint(String endpoint) {
             this.endpoint = Objects.requireNonNull(endpoint);
             return this;
@@ -123,6 +182,9 @@ public final class DatastreamSumologicConnector {
             o.compressLogs = compressLogs;
             o.connectorId = connectorId;
             o.connectorName = connectorName;
+            o.contentType = contentType;
+            o.customHeaderName = customHeaderName;
+            o.customHeaderValue = customHeaderValue;
             o.endpoint = endpoint;
             return o;
         }

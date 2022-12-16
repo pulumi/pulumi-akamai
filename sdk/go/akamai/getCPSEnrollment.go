@@ -21,14 +21,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			testEnrollment, err := akamai.GetCPSEnrollment(ctx, &GetCPSEnrollmentArgs{
+//			testEnrollment, err := akamai.GetCPSEnrollment(ctx, &akamai.GetCPSEnrollmentArgs{
 //				EnrollmentId: _var.Enrollment_id,
 //			}, nil)
 //			if err != nil {

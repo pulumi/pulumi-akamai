@@ -24,7 +24,7 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Task<GetCloudletsEdgeRedirectorMatchRuleResult> InvokeAsync(GetCloudletsEdgeRedirectorMatchRuleArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsEdgeRedirectorMatchRuleResult>("akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule", args ?? new GetCloudletsEdgeRedirectorMatchRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsEdgeRedirectorMatchRuleResult>("akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule", args ?? new GetCloudletsEdgeRedirectorMatchRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
@@ -39,11 +39,11 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Output<GetCloudletsEdgeRedirectorMatchRuleResult> Invoke(GetCloudletsEdgeRedirectorMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudletsEdgeRedirectorMatchRuleResult>("akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule", args ?? new GetCloudletsEdgeRedirectorMatchRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsEdgeRedirectorMatchRuleResult>("akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule", args ?? new GetCloudletsEdgeRedirectorMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCloudletsEdgeRedirectorMatchRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsEdgeRedirectorMatchRuleArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private List<Inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs>? _matchRules;
@@ -60,9 +60,10 @@ namespace Pulumi.Akamai
         public GetCloudletsEdgeRedirectorMatchRuleArgs()
         {
         }
+        public static new GetCloudletsEdgeRedirectorMatchRuleArgs Empty => new GetCloudletsEdgeRedirectorMatchRuleArgs();
     }
 
-    public sealed class GetCloudletsEdgeRedirectorMatchRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsEdgeRedirectorMatchRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private InputList<Inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleInputArgs>? _matchRules;
@@ -79,6 +80,7 @@ namespace Pulumi.Akamai
         public GetCloudletsEdgeRedirectorMatchRuleInvokeArgs()
         {
         }
+        public static new GetCloudletsEdgeRedirectorMatchRuleInvokeArgs Empty => new GetCloudletsEdgeRedirectorMatchRuleInvokeArgs();
     }
 
 

@@ -42,11 +42,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report of the custom deny information.
  */
 export function getAppSecCustomDeny(args: GetAppSecCustomDenyArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecCustomDenyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", {
         "configId": args.configId,
         "customDenyId": args.customDenyId,
@@ -80,9 +77,45 @@ export interface GetAppSecCustomDenyResult {
     readonly json: string;
     readonly outputText: string;
 }
-
+/**
+ * **Scopes**: Security configuration; custom deny
+ *
+ * Returns information about custom deny actions. Custom denies allow you to craft your own error messages or redirect pages to use when HTTP requests are denied.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://techdocs.akamai.com/application-security/reference/get-custom-deny-actions)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const customDenyList = configuration.then(configuration => akamai.getAppSecCustomDeny({
+ *     configId: configuration.configId,
+ * }));
+ * export const customDenyListOutput = customDenyList.then(customDenyList => customDenyList.outputText);
+ * export const customDenyListJson = customDenyList.then(customDenyList => customDenyList.json);
+ * const customDeny = configuration.then(configuration => akamai.getAppSecCustomDeny({
+ *     configId: configuration.configId,
+ *     customDenyId: "deny_custom_64386",
+ * }));
+ * export const customDenyJson = customDeny.then(customDeny => customDeny.json);
+ * export const customDenyOutput = customDeny.then(customDeny => customDeny.outputText);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of custom deny information.
+ * - `outputText`. Tabular report of the custom deny information.
+ */
 export function getAppSecCustomDenyOutput(args: GetAppSecCustomDenyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecCustomDenyResult> {
-    return pulumi.output(args).apply(a => getAppSecCustomDeny(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecCustomDeny(a, opts))
 }
 
 /**

@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -31,8 +31,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := akamai.NewCloudletsApplicationLoadBalancer(ctx, "example", &akamai.CloudletsApplicationLoadBalancerArgs{
 //				BalancingType: pulumi.String("WEIGHTED"),
-//				DataCenters: CloudletsApplicationLoadBalancerDataCenterArray{
-//					&CloudletsApplicationLoadBalancerDataCenterArgs{
+//				DataCenters: akamai.CloudletsApplicationLoadBalancerDataCenterArray{
+//					&akamai.CloudletsApplicationLoadBalancerDataCenterArgs{
 //						City:                          pulumi.String("Boston"),
 //						CloudServerHostHeaderOverride: pulumi.Bool(false),
 //						CloudService:                  pulumi.Bool(true),
@@ -50,7 +50,7 @@ import (
 //					},
 //				},
 //				Description: pulumi.String("application_load_balancer description"),
-//				LivenessSettings: &CloudletsApplicationLoadBalancerLivenessSettingsArgs{
+//				LivenessSettings: &akamai.CloudletsApplicationLoadBalancerLivenessSettingsArgs{
 //					AdditionalHeaders: pulumi.StringMap{
 //						"additionalHeaders": pulumi.String("123"),
 //					},

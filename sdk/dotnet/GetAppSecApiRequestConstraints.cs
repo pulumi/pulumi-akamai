@@ -25,43 +25,38 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var apisRequestConstraints = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecApiRequestConstraints.InvokeAsync(new Akamai.GetAppSecApiRequestConstraintsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.ApisConstraintsText = apisRequestConstraints.Apply(apisRequestConstraints =&gt; apisRequestConstraints.OutputText);
-        ///         this.ApisConstraintsJson = apisRequestConstraints.Apply(apisRequestConstraints =&gt; apisRequestConstraints.Json);
-        ///         var apiRequestConstraints = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecApiRequestConstraints.InvokeAsync(new Akamai.GetAppSecApiRequestConstraintsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///             ApiId = 624913,
-        ///         })));
-        ///         this.ApiConstraintsText = apiRequestConstraints.Apply(apiRequestConstraints =&gt; apiRequestConstraints.OutputText);
-        ///         this.ApiConstraintsJson = apiRequestConstraints.Apply(apiRequestConstraints =&gt; apiRequestConstraints.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("apisConstraintsText")]
-        ///     public Output&lt;string&gt; ApisConstraintsText { get; set; }
-        ///     [Output("apisConstraintsJson")]
-        ///     public Output&lt;string&gt; ApisConstraintsJson { get; set; }
-        ///     [Output("apiConstraintsText")]
-        ///     public Output&lt;string&gt; ApiConstraintsText { get; set; }
-        ///     [Output("apiConstraintsJson")]
-        ///     public Output&lt;string&gt; ApiConstraintsJson { get; set; }
-        /// }
+        ///     var apisRequestConstraints = Akamai.GetAppSecApiRequestConstraints.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     var apiRequestConstraints = Akamai.GetAppSecApiRequestConstraints.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///         ApiId = 624913,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["apisConstraintsText"] = apisRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.OutputText),
+        ///         ["apisConstraintsJson"] = apisRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.Json),
+        ///         ["apiConstraintsText"] = apiRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.OutputText),
+        ///         ["apiConstraintsJson"] = apiRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -73,7 +68,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the APIs, their constraints, and their actions.
         /// </summary>
         public static Task<GetAppSecApiRequestConstraintsResult> InvokeAsync(GetAppSecApiRequestConstraintsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecApiRequestConstraintsResult>("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args ?? new GetAppSecApiRequestConstraintsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecApiRequestConstraintsResult>("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args ?? new GetAppSecApiRequestConstraintsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy; API endpoint
@@ -89,43 +84,38 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var apisRequestConstraints = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecApiRequestConstraints.InvokeAsync(new Akamai.GetAppSecApiRequestConstraintsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.ApisConstraintsText = apisRequestConstraints.Apply(apisRequestConstraints =&gt; apisRequestConstraints.OutputText);
-        ///         this.ApisConstraintsJson = apisRequestConstraints.Apply(apisRequestConstraints =&gt; apisRequestConstraints.Json);
-        ///         var apiRequestConstraints = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecApiRequestConstraints.InvokeAsync(new Akamai.GetAppSecApiRequestConstraintsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///             ApiId = 624913,
-        ///         })));
-        ///         this.ApiConstraintsText = apiRequestConstraints.Apply(apiRequestConstraints =&gt; apiRequestConstraints.OutputText);
-        ///         this.ApiConstraintsJson = apiRequestConstraints.Apply(apiRequestConstraints =&gt; apiRequestConstraints.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("apisConstraintsText")]
-        ///     public Output&lt;string&gt; ApisConstraintsText { get; set; }
-        ///     [Output("apisConstraintsJson")]
-        ///     public Output&lt;string&gt; ApisConstraintsJson { get; set; }
-        ///     [Output("apiConstraintsText")]
-        ///     public Output&lt;string&gt; ApiConstraintsText { get; set; }
-        ///     [Output("apiConstraintsJson")]
-        ///     public Output&lt;string&gt; ApiConstraintsJson { get; set; }
-        /// }
+        ///     var apisRequestConstraints = Akamai.GetAppSecApiRequestConstraints.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     var apiRequestConstraints = Akamai.GetAppSecApiRequestConstraints.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///         ApiId = 624913,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["apisConstraintsText"] = apisRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.OutputText),
+        ///         ["apisConstraintsJson"] = apisRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.Json),
+        ///         ["apiConstraintsText"] = apiRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.OutputText),
+        ///         ["apiConstraintsJson"] = apiRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -137,11 +127,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the APIs, their constraints, and their actions.
         /// </summary>
         public static Output<GetAppSecApiRequestConstraintsResult> Invoke(GetAppSecApiRequestConstraintsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecApiRequestConstraintsResult>("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args ?? new GetAppSecApiRequestConstraintsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecApiRequestConstraintsResult>("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args ?? new GetAppSecApiRequestConstraintsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecApiRequestConstraintsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecApiRequestConstraintsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the API endpoint you want to return constraint information for.
@@ -164,9 +154,10 @@ namespace Pulumi.Akamai
         public GetAppSecApiRequestConstraintsArgs()
         {
         }
+        public static new GetAppSecApiRequestConstraintsArgs Empty => new GetAppSecApiRequestConstraintsArgs();
     }
 
-    public sealed class GetAppSecApiRequestConstraintsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecApiRequestConstraintsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the API endpoint you want to return constraint information for.
@@ -189,6 +180,7 @@ namespace Pulumi.Akamai
         public GetAppSecApiRequestConstraintsInvokeArgs()
         {
         }
+        public static new GetAppSecApiRequestConstraintsInvokeArgs Empty => new GetAppSecApiRequestConstraintsInvokeArgs();
     }
 
 

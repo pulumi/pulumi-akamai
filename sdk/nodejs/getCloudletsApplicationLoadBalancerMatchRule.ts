@@ -2,44 +2,14 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
  *
  * Use the `akamai.getCloudletsApplicationLoadBalancerMatchRule` data source to build a match rule JSON object for the Application Load Balancer Cloudlet.
- *
- * ## Basic usage
- *
- * This example returns the JSON-encoded rules for the Application Load Balancer Cloudlet:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = pulumi.output(akamai.getCloudletsApplicationLoadBalancerMatchRule({
- *     matchRules: [{
- *         end: 1645037845,
- *         forwardSettings: [{
- *             originId: "alb_test_1",
- *         }],
- *         matchUrl: "example.com",
- *         matches: [{
- *             caseSensitive: false,
- *             matchOperator: "equals",
- *             matchType: "method",
- *             negate: false,
- *             objectMatchValues: [{
- *                 type: "simple",
- *                 values: ["GET"],
- *             }],
- *         }],
- *         name: "rule",
- *         start: 1644865045,
- *     }],
- * }));
- * ```
  *
  * ## Attributes reference
  *
@@ -50,11 +20,8 @@ import * as utilities from "./utilities";
  */
 export function getCloudletsApplicationLoadBalancerMatchRule(args?: GetCloudletsApplicationLoadBalancerMatchRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsApplicationLoadBalancerMatchRuleResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", {
         "matchRules": args.matchRules,
     }, opts);
@@ -81,9 +48,20 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRule[];
 }
-
+/**
+ * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
+ *
+ * Use the `akamai.getCloudletsApplicationLoadBalancerMatchRule` data source to build a match rule JSON object for the Application Load Balancer Cloudlet.
+ *
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `type` - The type of Cloudlet the rule is for.
+ * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
+ */
 export function getCloudletsApplicationLoadBalancerMatchRuleOutput(args?: GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsApplicationLoadBalancerMatchRuleResult> {
-    return pulumi.output(args).apply(a => getCloudletsApplicationLoadBalancerMatchRule(a, opts))
+    return pulumi.output(args).apply((a: any) => getCloudletsApplicationLoadBalancerMatchRule(a, opts))
 }
 
 /**

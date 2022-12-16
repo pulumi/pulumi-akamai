@@ -21,18 +21,16 @@ namespace Pulumi.Akamai
         /// This example returns products associated with the [EdgeGrid client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) for a given contract:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         this.PropertyMatch = data.Akamai_property_products.My_example;
-        ///     }
-        /// 
-        ///     [Output("propertyMatch")]
-        ///     public Output&lt;string&gt; PropertyMatch { get; set; }
-        /// }
+        ///         ["propertyMatch"] = data.Akamai_property_products.My_example,
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -45,7 +43,7 @@ namespace Pulumi.Akamai
         ///   * `product_name` - A string containing the product name.
         /// </summary>
         public static Task<GetPropertyProductsResult> InvokeAsync(GetPropertyProductsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyProductsResult>("akamai:index/getPropertyProducts:getPropertyProducts", args ?? new GetPropertyProductsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyProductsResult>("akamai:index/getPropertyProducts:getPropertyProducts", args ?? new GetPropertyProductsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getPropertyProducts` data source to list the products included on a contract.
@@ -57,18 +55,16 @@ namespace Pulumi.Akamai
         /// This example returns products associated with the [EdgeGrid client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) for a given contract:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         this.PropertyMatch = data.Akamai_property_products.My_example;
-        ///     }
-        /// 
-        ///     [Output("propertyMatch")]
-        ///     public Output&lt;string&gt; PropertyMatch { get; set; }
-        /// }
+        ///         ["propertyMatch"] = data.Akamai_property_products.My_example,
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,11 +77,11 @@ namespace Pulumi.Akamai
         ///   * `product_name` - A string containing the product name.
         /// </summary>
         public static Output<GetPropertyProductsResult> Invoke(GetPropertyProductsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertyProductsResult>("akamai:index/getPropertyProducts:getPropertyProducts", args ?? new GetPropertyProductsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertyProductsResult>("akamai:index/getPropertyProducts:getPropertyProducts", args ?? new GetPropertyProductsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetPropertyProductsArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertyProductsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) A contract's unique ID, including the `ctr_` prefix.
@@ -96,9 +92,10 @@ namespace Pulumi.Akamai
         public GetPropertyProductsArgs()
         {
         }
+        public static new GetPropertyProductsArgs Empty => new GetPropertyProductsArgs();
     }
 
-    public sealed class GetPropertyProductsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertyProductsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) A contract's unique ID, including the `ctr_` prefix.
@@ -109,6 +106,7 @@ namespace Pulumi.Akamai
         public GetPropertyProductsInvokeArgs()
         {
         }
+        public static new GetPropertyProductsInvokeArgs Empty => new GetPropertyProductsInvokeArgs();
     }
 
 

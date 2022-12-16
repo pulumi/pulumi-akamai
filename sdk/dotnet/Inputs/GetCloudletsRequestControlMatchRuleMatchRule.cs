@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetCloudletsRequestControlMatchRuleMatchRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsRequestControlMatchRuleMatchRuleArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
@@ -69,5 +69,6 @@ namespace Pulumi.Akamai.Inputs
         public GetCloudletsRequestControlMatchRuleMatchRuleArgs()
         {
         }
+        public static new GetCloudletsRequestControlMatchRuleMatchRuleArgs Empty => new GetCloudletsRequestControlMatchRuleMatchRuleArgs();
     }
 }

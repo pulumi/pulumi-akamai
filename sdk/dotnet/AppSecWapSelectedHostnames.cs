@@ -15,37 +15,36 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var appsecwapSelectedhostnames = new Akamai.AppSecWapSelectedHostnames("appsecwapSelectedhostnames", new Akamai.AppSecWapSelectedHostnamesArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             ProtectedHosts = 
-    ///             {
-    ///                 "documentation.akamai.com",
-    ///             },
-    ///             EvaluatedHosts = 
-    ///             {
-    ///                 "training.akamai.com",
-    ///             },
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var appsecwapSelectedhostnames = new Akamai.AppSecWapSelectedHostnames("appsecwapSelectedhostnames", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         ProtectedHosts = new[]
+    ///         {
+    ///             "documentation.akamai.com",
+    ///         },
+    ///         EvaluatedHosts = new[]
+    ///         {
+    ///             "training.akamai.com",
+    ///         },
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames")]
-    public partial class AppSecWapSelectedHostnames : Pulumi.CustomResource
+    public partial class AppSecWapSelectedHostnames : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
@@ -115,7 +114,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecWapSelectedHostnamesArgs : Pulumi.ResourceArgs
+    public sealed class AppSecWapSelectedHostnamesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
@@ -156,9 +155,10 @@ namespace Pulumi.Akamai
         public AppSecWapSelectedHostnamesArgs()
         {
         }
+        public static new AppSecWapSelectedHostnamesArgs Empty => new AppSecWapSelectedHostnamesArgs();
     }
 
-    public sealed class AppSecWapSelectedHostnamesState : Pulumi.ResourceArgs
+    public sealed class AppSecWapSelectedHostnamesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
@@ -199,5 +199,6 @@ namespace Pulumi.Akamai
         public AppSecWapSelectedHostnamesState()
         {
         }
+        public static new AppSecWapSelectedHostnamesState Empty => new AppSecWapSelectedHostnamesState();
     }
 }

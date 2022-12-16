@@ -22,41 +22,33 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var wafMode = new Akamai.AppSecWafMode("wafMode", new Akamai.AppSecWafModeArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             Mode = "KRS",
-    ///         });
-    ///         this.WafModeMode = wafMode.Mode;
-    ///         this.WafModeCurrentRuleset = wafMode.CurrentRuleset;
-    ///         this.WafModeEvalStatus = wafMode.EvalStatus;
-    ///         this.WafModeEvalRuleset = wafMode.EvalRuleset;
-    ///         this.WafModeEvalExpirationDate = wafMode.EvalExpirationDate;
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    ///     [Output("wafModeMode")]
-    ///     public Output&lt;string&gt; WafModeMode { get; set; }
-    ///     [Output("wafModeCurrentRuleset")]
-    ///     public Output&lt;string&gt; WafModeCurrentRuleset { get; set; }
-    ///     [Output("wafModeEvalStatus")]
-    ///     public Output&lt;string&gt; WafModeEvalStatus { get; set; }
-    ///     [Output("wafModeEvalRuleset")]
-    ///     public Output&lt;string&gt; WafModeEvalRuleset { get; set; }
-    ///     [Output("wafModeEvalExpirationDate")]
-    ///     public Output&lt;string&gt; WafModeEvalExpirationDate { get; set; }
-    /// }
+    ///     var wafMode = new Akamai.AppSecWafMode("wafMode", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         Mode = "KRS",
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["wafModeMode"] = wafMode.Mode,
+    ///         ["wafModeCurrentRuleset"] = wafMode.CurrentRuleset,
+    ///         ["wafModeEvalStatus"] = wafMode.EvalStatus,
+    ///         ["wafModeEvalRuleset"] = wafMode.EvalRuleset,
+    ///         ["wafModeEvalExpirationDate"] = wafMode.EvalExpirationDate,
+    ///     };
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -69,7 +61,7 @@ namespace Pulumi.Akamai
     /// - `output_text`. Tabular report showing the current rule set, WAF mode and evaluation status.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecWafMode:AppSecWafMode")]
-    public partial class AppSecWafMode : Pulumi.CustomResource
+    public partial class AppSecWafMode : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the WAF mode settings being modified.
@@ -163,7 +155,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecWafModeArgs : Pulumi.ResourceArgs
+    public sealed class AppSecWafModeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the WAF mode settings being modified.
@@ -186,9 +178,10 @@ namespace Pulumi.Akamai
         public AppSecWafModeArgs()
         {
         }
+        public static new AppSecWafModeArgs Empty => new AppSecWafModeArgs();
     }
 
-    public sealed class AppSecWafModeState : Pulumi.ResourceArgs
+    public sealed class AppSecWafModeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the WAF mode settings being modified.
@@ -241,5 +234,6 @@ namespace Pulumi.Akamai
         public AppSecWafModeState()
         {
         }
+        public static new AppSecWafModeState Empty => new AppSecWafModeState();
     }
 }

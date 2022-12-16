@@ -22,18 +22,16 @@ namespace Pulumi.Akamai
         /// 
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         this.MyPropertyList = data.Akamai_properties_search.Example;
-        ///     }
-        /// 
-        ///     [Output("myPropertyList")]
-        ///     public Output&lt;string&gt; MyPropertyList { get; set; }
-        /// }
+        ///         ["myPropertyList"] = data.Akamai_properties_search.Example,
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -44,7 +42,7 @@ namespace Pulumi.Akamai
         /// * `properties` - A list of property version matching the given criteria.
         /// </summary>
         public static Task<GetPropertiesSearchResult> InvokeAsync(GetPropertiesSearchArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertiesSearchResult>("akamai:index/getPropertiesSearch:getPropertiesSearch", args ?? new GetPropertiesSearchArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertiesSearchResult>("akamai:index/getPropertiesSearch:getPropertiesSearch", args ?? new GetPropertiesSearchArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getPropertiesSearch` data source to retrieve the list of properties matching a specific hostname, edge hostname or property name based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
@@ -57,18 +55,16 @@ namespace Pulumi.Akamai
         /// 
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         this.MyPropertyList = data.Akamai_properties_search.Example;
-        ///     }
-        /// 
-        ///     [Output("myPropertyList")]
-        ///     public Output&lt;string&gt; MyPropertyList { get; set; }
-        /// }
+        ///         ["myPropertyList"] = data.Akamai_properties_search.Example,
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,11 +75,11 @@ namespace Pulumi.Akamai
         /// * `properties` - A list of property version matching the given criteria.
         /// </summary>
         public static Output<GetPropertiesSearchResult> Invoke(GetPropertiesSearchInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertiesSearchResult>("akamai:index/getPropertiesSearch:getPropertiesSearch", args ?? new GetPropertiesSearchInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertiesSearchResult>("akamai:index/getPropertiesSearch:getPropertiesSearch", args ?? new GetPropertiesSearchInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetPropertiesSearchArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertiesSearchArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Key used for search. Valid values are:
@@ -103,9 +99,10 @@ namespace Pulumi.Akamai
         public GetPropertiesSearchArgs()
         {
         }
+        public static new GetPropertiesSearchArgs Empty => new GetPropertiesSearchArgs();
     }
 
-    public sealed class GetPropertiesSearchInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertiesSearchInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Key used for search. Valid values are:
@@ -125,6 +122,7 @@ namespace Pulumi.Akamai
         public GetPropertiesSearchInvokeArgs()
         {
         }
+        public static new GetPropertiesSearchInvokeArgs Empty => new GetPropertiesSearchInvokeArgs();
     }
 
 

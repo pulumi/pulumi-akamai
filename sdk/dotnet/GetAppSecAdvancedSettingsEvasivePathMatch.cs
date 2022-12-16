@@ -25,47 +25,42 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = @var.Security_configuration,
-        ///         }));
-        ///         var evasivePathMatch = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsEvasivePathMatch.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsEvasivePathMatchArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.AdvancedSettingsEvasivePathMatchOutput = evasivePathMatch.Apply(evasivePathMatch =&gt; evasivePathMatch.OutputText);
-        ///         this.AdvancedSettingsEvasivePathMatchJson = evasivePathMatch.Apply(evasivePathMatch =&gt; evasivePathMatch.Json);
-        ///         var policyOverride = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsEvasivePathMatch.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsEvasivePathMatchArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///         })));
-        ///         this.AdvancedSettingsPolicyEvasivePathMatchOutput = policyOverride.Apply(policyOverride =&gt; policyOverride.OutputText);
-        ///         this.AdvancedSettingsPolicyEvasivePathMatchJson = policyOverride.Apply(policyOverride =&gt; policyOverride.Json);
-        ///     }
+        ///         Name = @var.Security_configuration,
+        ///     });
         /// 
-        ///     [Output("advancedSettingsEvasivePathMatchOutput")]
-        ///     public Output&lt;string&gt; AdvancedSettingsEvasivePathMatchOutput { get; set; }
-        ///     [Output("advancedSettingsEvasivePathMatchJson")]
-        ///     public Output&lt;string&gt; AdvancedSettingsEvasivePathMatchJson { get; set; }
-        ///     [Output("advancedSettingsPolicyEvasivePathMatchOutput")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPolicyEvasivePathMatchOutput { get; set; }
-        ///     [Output("advancedSettingsPolicyEvasivePathMatchJson")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPolicyEvasivePathMatchJson { get; set; }
-        /// }
+        ///     var evasivePathMatch = Akamai.GetAppSecAdvancedSettingsEvasivePathMatch.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var policyOverride = Akamai.GetAppSecAdvancedSettingsEvasivePathMatch.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = @var.Security_policy_id,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["advancedSettingsEvasivePathMatchOutput"] = evasivePathMatch.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.OutputText),
+        ///         ["advancedSettingsEvasivePathMatchJson"] = evasivePathMatch.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.Json),
+        ///         ["advancedSettingsPolicyEvasivePathMatchOutput"] = policyOverride.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.OutputText),
+        ///         ["advancedSettingsPolicyEvasivePathMatchJson"] = policyOverride.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAppSecAdvancedSettingsEvasivePathMatchResult> InvokeAsync(GetAppSecAdvancedSettingsEvasivePathMatchArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsEvasivePathMatchResult>("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args ?? new GetAppSecAdvancedSettingsEvasivePathMatchArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsEvasivePathMatchResult>("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args ?? new GetAppSecAdvancedSettingsEvasivePathMatchArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; security policy
@@ -81,51 +76,46 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = @var.Security_configuration,
-        ///         }));
-        ///         var evasivePathMatch = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsEvasivePathMatch.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsEvasivePathMatchArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.AdvancedSettingsEvasivePathMatchOutput = evasivePathMatch.Apply(evasivePathMatch =&gt; evasivePathMatch.OutputText);
-        ///         this.AdvancedSettingsEvasivePathMatchJson = evasivePathMatch.Apply(evasivePathMatch =&gt; evasivePathMatch.Json);
-        ///         var policyOverride = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsEvasivePathMatch.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsEvasivePathMatchArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///         })));
-        ///         this.AdvancedSettingsPolicyEvasivePathMatchOutput = policyOverride.Apply(policyOverride =&gt; policyOverride.OutputText);
-        ///         this.AdvancedSettingsPolicyEvasivePathMatchJson = policyOverride.Apply(policyOverride =&gt; policyOverride.Json);
-        ///     }
+        ///         Name = @var.Security_configuration,
+        ///     });
         /// 
-        ///     [Output("advancedSettingsEvasivePathMatchOutput")]
-        ///     public Output&lt;string&gt; AdvancedSettingsEvasivePathMatchOutput { get; set; }
-        ///     [Output("advancedSettingsEvasivePathMatchJson")]
-        ///     public Output&lt;string&gt; AdvancedSettingsEvasivePathMatchJson { get; set; }
-        ///     [Output("advancedSettingsPolicyEvasivePathMatchOutput")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPolicyEvasivePathMatchOutput { get; set; }
-        ///     [Output("advancedSettingsPolicyEvasivePathMatchJson")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPolicyEvasivePathMatchJson { get; set; }
-        /// }
+        ///     var evasivePathMatch = Akamai.GetAppSecAdvancedSettingsEvasivePathMatch.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var policyOverride = Akamai.GetAppSecAdvancedSettingsEvasivePathMatch.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = @var.Security_policy_id,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["advancedSettingsEvasivePathMatchOutput"] = evasivePathMatch.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.OutputText),
+        ///         ["advancedSettingsEvasivePathMatchJson"] = evasivePathMatch.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.Json),
+        ///         ["advancedSettingsPolicyEvasivePathMatchOutput"] = policyOverride.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.OutputText),
+        ///         ["advancedSettingsPolicyEvasivePathMatchJson"] = policyOverride.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAppSecAdvancedSettingsEvasivePathMatchResult> Invoke(GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsEvasivePathMatchResult>("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args ?? new GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsEvasivePathMatchResult>("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args ?? new GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecAdvancedSettingsEvasivePathMatchArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecAdvancedSettingsEvasivePathMatchArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The configuration ID.
@@ -142,9 +132,10 @@ namespace Pulumi.Akamai
         public GetAppSecAdvancedSettingsEvasivePathMatchArgs()
         {
         }
+        public static new GetAppSecAdvancedSettingsEvasivePathMatchArgs Empty => new GetAppSecAdvancedSettingsEvasivePathMatchArgs();
     }
 
-    public sealed class GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The configuration ID.
@@ -161,6 +152,7 @@ namespace Pulumi.Akamai
         public GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs()
         {
         }
+        public static new GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs Empty => new GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs();
     }
 
 

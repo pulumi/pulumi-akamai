@@ -25,38 +25,32 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var attackGroup = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAttackGroups.InvokeAsync(new Akamai.GetAppSecAttackGroupsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///             AttackGroup = "SQL",
-        ///         })));
-        ///         this.AttackGroupAction = attackGroup.Apply(attackGroup =&gt; attackGroup.AttackGroupAction);
-        ///         this.ConditionException = attackGroup.Apply(attackGroup =&gt; attackGroup.ConditionException);
-        ///         this.Json = attackGroup.Apply(attackGroup =&gt; attackGroup.Json);
-        ///         this.OutputText = attackGroup.Apply(attackGroup =&gt; attackGroup.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("attackGroupAction")]
-        ///     public Output&lt;string&gt; AttackGroupAction { get; set; }
-        ///     [Output("conditionException")]
-        ///     public Output&lt;string&gt; ConditionException { get; set; }
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("outputText")]
-        ///     public Output&lt;string&gt; OutputText { get; set; }
-        /// }
+        ///     var attackGroup = Akamai.GetAppSecAttackGroups.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///         AttackGroup = "SQL",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["attackGroupAction"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.AttackGroupAction),
+        ///         ["conditionException"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.ConditionException),
+        ///         ["json"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.Json),
+        ///         ["outputText"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -74,7 +68,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the attack group's action as well as Boolean values indicating whether conditions and exceptions have been configured for the group.
         /// </summary>
         public static Task<GetAppSecAttackGroupsResult> InvokeAsync(GetAppSecAttackGroupsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy; attack group
@@ -90,38 +84,32 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var attackGroup = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAttackGroups.InvokeAsync(new Akamai.GetAppSecAttackGroupsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///             AttackGroup = "SQL",
-        ///         })));
-        ///         this.AttackGroupAction = attackGroup.Apply(attackGroup =&gt; attackGroup.AttackGroupAction);
-        ///         this.ConditionException = attackGroup.Apply(attackGroup =&gt; attackGroup.ConditionException);
-        ///         this.Json = attackGroup.Apply(attackGroup =&gt; attackGroup.Json);
-        ///         this.OutputText = attackGroup.Apply(attackGroup =&gt; attackGroup.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("attackGroupAction")]
-        ///     public Output&lt;string&gt; AttackGroupAction { get; set; }
-        ///     [Output("conditionException")]
-        ///     public Output&lt;string&gt; ConditionException { get; set; }
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("outputText")]
-        ///     public Output&lt;string&gt; OutputText { get; set; }
-        /// }
+        ///     var attackGroup = Akamai.GetAppSecAttackGroups.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///         AttackGroup = "SQL",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["attackGroupAction"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.AttackGroupAction),
+        ///         ["conditionException"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.ConditionException),
+        ///         ["json"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.Json),
+        ///         ["outputText"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -139,11 +127,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the attack group's action as well as Boolean values indicating whether conditions and exceptions have been configured for the group.
         /// </summary>
         public static Output<GetAppSecAttackGroupsResult> Invoke(GetAppSecAttackGroupsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecAttackGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecAttackGroupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
@@ -166,9 +154,10 @@ namespace Pulumi.Akamai
         public GetAppSecAttackGroupsArgs()
         {
         }
+        public static new GetAppSecAttackGroupsArgs Empty => new GetAppSecAttackGroupsArgs();
     }
 
-    public sealed class GetAppSecAttackGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecAttackGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
@@ -191,6 +180,7 @@ namespace Pulumi.Akamai
         public GetAppSecAttackGroupsInvokeArgs()
         {
         }
+        public static new GetAppSecAttackGroupsInvokeArgs Empty => new GetAppSecAttackGroupsInvokeArgs();
     }
 
 

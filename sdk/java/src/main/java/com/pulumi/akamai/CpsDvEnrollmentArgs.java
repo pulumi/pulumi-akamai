@@ -52,9 +52,17 @@ public final class CpsDvEnrollmentArgs extends com.pulumi.resources.ResourceArgs
         return this.adminContact;
     }
 
+    /**
+     * - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * 
+     */
     @Import(name="allowDuplicateCommonName")
     private @Nullable Output<Boolean> allowDuplicateCommonName;
 
+    /**
+     * @return - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * 
+     */
     public Optional<Output<Boolean>> allowDuplicateCommonName() {
         return Optional.ofNullable(this.allowDuplicateCommonName);
     }
@@ -122,14 +130,22 @@ public final class CpsDvEnrollmentArgs extends com.pulumi.resources.ResourceArgs
     /**
      * Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
      * 
+     * @deprecated
+     * Deprecated, don&#39;t use; always false
+     * 
      */
+    @Deprecated /* Deprecated, don't use; always false */
     @Import(name="enableMultiStackedCertificates")
     private @Nullable Output<Boolean> enableMultiStackedCertificates;
 
     /**
      * @return Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
      * 
+     * @deprecated
+     * Deprecated, don&#39;t use; always false
+     * 
      */
+    @Deprecated /* Deprecated, don't use; always false */
     public Optional<Output<Boolean>> enableMultiStackedCertificates() {
         return Optional.ofNullable(this.enableMultiStackedCertificates);
     }
@@ -319,11 +335,23 @@ public final class CpsDvEnrollmentArgs extends com.pulumi.resources.ResourceArgs
             return adminContact(Output.of(adminContact));
         }
 
+        /**
+         * @param allowDuplicateCommonName - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowDuplicateCommonName(@Nullable Output<Boolean> allowDuplicateCommonName) {
             $.allowDuplicateCommonName = allowDuplicateCommonName;
             return this;
         }
 
+        /**
+         * @param allowDuplicateCommonName - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowDuplicateCommonName(Boolean allowDuplicateCommonName) {
             return allowDuplicateCommonName(Output.of(allowDuplicateCommonName));
         }
@@ -417,7 +445,11 @@ public final class CpsDvEnrollmentArgs extends com.pulumi.resources.ResourceArgs
          * 
          * @return builder
          * 
+         * @deprecated
+         * Deprecated, don&#39;t use; always false
+         * 
          */
+        @Deprecated /* Deprecated, don't use; always false */
         public Builder enableMultiStackedCertificates(@Nullable Output<Boolean> enableMultiStackedCertificates) {
             $.enableMultiStackedCertificates = enableMultiStackedCertificates;
             return this;
@@ -428,7 +460,11 @@ public final class CpsDvEnrollmentArgs extends com.pulumi.resources.ResourceArgs
          * 
          * @return builder
          * 
+         * @deprecated
+         * Deprecated, don&#39;t use; always false
+         * 
          */
+        @Deprecated /* Deprecated, don't use; always false */
         public Builder enableMultiStackedCertificates(Boolean enableMultiStackedCertificates) {
             return enableMultiStackedCertificates(Output.of(enableMultiStackedCertificates));
         }

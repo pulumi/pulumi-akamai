@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     [AkamaiResourceType("akamai:index/dnsRecord:DnsRecord")]
-    public partial class DnsRecord : Pulumi.CustomResource
+    public partial class DnsRecord : global::Pulumi.CustomResource
     {
         [Output("active")]
         public Output<bool?> Active { get; private set; } = null!;
@@ -217,7 +217,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new Pulumi.Alias { Type = "akamai:edgedns/dnsRecord:DnsRecord"},
+                    new global::Pulumi.Alias { Type = "akamai:edgedns/dnsRecord:DnsRecord"},
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -240,7 +240,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class DnsRecordArgs : Pulumi.ResourceArgs
+    public sealed class DnsRecordArgs : global::Pulumi.ResourceArgs
     {
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -418,9 +418,10 @@ namespace Pulumi.Akamai
         public DnsRecordArgs()
         {
         }
+        public static new DnsRecordArgs Empty => new DnsRecordArgs();
     }
 
-    public sealed class DnsRecordState : Pulumi.ResourceArgs
+    public sealed class DnsRecordState : global::Pulumi.ResourceArgs
     {
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -610,5 +611,6 @@ namespace Pulumi.Akamai
         public DnsRecordState()
         {
         }
+        public static new DnsRecordState Empty => new DnsRecordState();
     }
 }

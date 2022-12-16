@@ -17,22 +17,20 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var ew = new Akamai.EdgeWorker("ew", new()
     ///     {
-    ///         var ew = new Akamai.EdgeWorker("ew", new Akamai.EdgeWorkerArgs
-    ///         {
-    ///             GroupId = 72297,
-    ///             ResourceTierId = 100,
-    ///             LocalBundle = @var.Bundle_path,
-    ///         });
-    ///     }
+    ///         GroupId = 72297,
+    ///         ResourceTierId = 100,
+    ///         LocalBundle = @var.Bundle_path,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// ## Attributes reference
     /// 
@@ -42,7 +40,7 @@ namespace Pulumi.Akamai
     /// * `warnings` - List of validation warnings.
     /// </summary>
     [AkamaiResourceType("akamai:index/edgeWorker:EdgeWorker")]
-    public partial class EdgeWorker : Pulumi.CustomResource
+    public partial class EdgeWorker : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The unique identifier of the EdgeWorker
@@ -136,7 +134,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class EdgeWorkerArgs : Pulumi.ResourceArgs
+    public sealed class EdgeWorkerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// - (Required) Identifies a group to assign to the EdgeWorker ID.
@@ -165,9 +163,10 @@ namespace Pulumi.Akamai
         public EdgeWorkerArgs()
         {
         }
+        public static new EdgeWorkerArgs Empty => new EdgeWorkerArgs();
     }
 
-    public sealed class EdgeWorkerState : Pulumi.ResourceArgs
+    public sealed class EdgeWorkerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The unique identifier of the EdgeWorker
@@ -226,5 +225,6 @@ namespace Pulumi.Akamai
         public EdgeWorkerState()
         {
         }
+        public static new EdgeWorkerState Empty => new EdgeWorkerState();
     }
 }

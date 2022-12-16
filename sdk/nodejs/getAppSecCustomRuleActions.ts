@@ -35,11 +35,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report showing the ID, name, and action of the custom rules.
  */
 export function getAppSecCustomRuleActions(args: GetAppSecCustomRuleActionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecCustomRuleActionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions", {
         "configId": args.configId,
         "customRuleId": args.customRuleId,
@@ -78,9 +75,38 @@ export interface GetAppSecCustomRuleActionsResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-
+/**
+ * **Scopes**: Security policy; custom rule
+ *
+ * Retrieve information about the actions defined for your custom rules. Custom rules are rules that you create yourself — these rules aren't part of Akamai's Kona Rule Set.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-custom-rules)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const customRuleActionsAppSecCustomRuleActions = configuration.then(configuration => akamai.getAppSecCustomRuleActions({
+ *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
+ * }));
+ * export const customRuleActions = customRuleActionsAppSecCustomRuleActions.then(customRuleActionsAppSecCustomRuleActions => customRuleActionsAppSecCustomRuleActions.outputText);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the ID, name, and action of the custom rules.
+ */
 export function getAppSecCustomRuleActionsOutput(args: GetAppSecCustomRuleActionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecCustomRuleActionsResult> {
-    return pulumi.output(args).apply(a => getAppSecCustomRuleActions(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecCustomRuleActions(a, opts))
 }
 
 /**

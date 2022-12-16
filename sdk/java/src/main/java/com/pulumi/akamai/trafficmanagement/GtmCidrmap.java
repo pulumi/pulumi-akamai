@@ -98,14 +98,14 @@ public class GtmCidrmap extends com.pulumi.resources.CustomResource {
         return this.defaultDatacenter;
     }
     /**
-     * GTM Domain name for the AS Map.
+     * GTM Domain name for the CIDR Map.
      * 
      */
     @Export(name="domain", type=String.class, parameters={})
     private Output<String> domain;
 
     /**
-     * @return GTM Domain name for the AS Map.
+     * @return GTM Domain name for the CIDR Map.
      * 
      */
     public Output<String> domain() {

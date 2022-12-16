@@ -25,30 +25,28 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var prefetch = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPrefetch.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPrefetchArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.AdvancedSettingsPrefetchOutput = prefetch.Apply(prefetch =&gt; prefetch.OutputText);
-        ///         this.AdvancedSettingsPrefetchJson = prefetch.Apply(prefetch =&gt; prefetch.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("advancedSettingsPrefetchOutput")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPrefetchOutput { get; set; }
-        ///     [Output("advancedSettingsPrefetchJson")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPrefetchJson { get; set; }
-        /// }
+        ///     var prefetch = Akamai.GetAppSecAdvancedSettingsPrefetch.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["advancedSettingsPrefetchOutput"] = prefetch.Apply(getAppSecAdvancedSettingsPrefetchResult =&gt; getAppSecAdvancedSettingsPrefetchResult.OutputText),
+        ///         ["advancedSettingsPrefetchJson"] = prefetch.Apply(getAppSecAdvancedSettingsPrefetchResult =&gt; getAppSecAdvancedSettingsPrefetchResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,7 +58,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the prefetch request settings.
         /// </summary>
         public static Task<GetAppSecAdvancedSettingsPrefetchResult> InvokeAsync(GetAppSecAdvancedSettingsPrefetchArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsPrefetchResult>("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args ?? new GetAppSecAdvancedSettingsPrefetchArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsPrefetchResult>("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args ?? new GetAppSecAdvancedSettingsPrefetchArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration
@@ -76,30 +74,28 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var prefetch = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPrefetch.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPrefetchArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.AdvancedSettingsPrefetchOutput = prefetch.Apply(prefetch =&gt; prefetch.OutputText);
-        ///         this.AdvancedSettingsPrefetchJson = prefetch.Apply(prefetch =&gt; prefetch.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("advancedSettingsPrefetchOutput")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPrefetchOutput { get; set; }
-        ///     [Output("advancedSettingsPrefetchJson")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPrefetchJson { get; set; }
-        /// }
+        ///     var prefetch = Akamai.GetAppSecAdvancedSettingsPrefetch.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["advancedSettingsPrefetchOutput"] = prefetch.Apply(getAppSecAdvancedSettingsPrefetchResult =&gt; getAppSecAdvancedSettingsPrefetchResult.OutputText),
+        ///         ["advancedSettingsPrefetchJson"] = prefetch.Apply(getAppSecAdvancedSettingsPrefetchResult =&gt; getAppSecAdvancedSettingsPrefetchResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -111,11 +107,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the prefetch request settings.
         /// </summary>
         public static Output<GetAppSecAdvancedSettingsPrefetchResult> Invoke(GetAppSecAdvancedSettingsPrefetchInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsPrefetchResult>("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args ?? new GetAppSecAdvancedSettingsPrefetchInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsPrefetchResult>("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args ?? new GetAppSecAdvancedSettingsPrefetchInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecAdvancedSettingsPrefetchArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecAdvancedSettingsPrefetchArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the prefetch settings.
@@ -126,9 +122,10 @@ namespace Pulumi.Akamai
         public GetAppSecAdvancedSettingsPrefetchArgs()
         {
         }
+        public static new GetAppSecAdvancedSettingsPrefetchArgs Empty => new GetAppSecAdvancedSettingsPrefetchArgs();
     }
 
-    public sealed class GetAppSecAdvancedSettingsPrefetchInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecAdvancedSettingsPrefetchInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the prefetch settings.
@@ -139,6 +136,7 @@ namespace Pulumi.Akamai
         public GetAppSecAdvancedSettingsPrefetchInvokeArgs()
         {
         }
+        public static new GetAppSecAdvancedSettingsPrefetchInvokeArgs Empty => new GetAppSecAdvancedSettingsPrefetchInvokeArgs();
     }
 
 

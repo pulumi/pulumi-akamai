@@ -19,41 +19,34 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var export = Output.Tuple(configuration, configuration).Apply(values =&gt;
-        ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecExportConfiguration.InvokeAsync(new Akamai.GetAppSecExportConfigurationArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 Searches = 
-        ///                 {
-        ///                     "securityPolicies",
-        ///                     "selectedHosts",
-        ///                 },
-        ///             }));
-        ///         });
-        ///         this.Json = export.Apply(export =&gt; export.Json);
-        ///         this.Text = export.Apply(export =&gt; export.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("text")]
-        ///     public Output&lt;string&gt; Text { get; set; }
-        /// }
+        ///     var export = Akamai.GetAppSecExportConfiguration.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         Version = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.LatestVersion),
+        ///         Searches = new[]
+        ///         {
+        ///             "securityPolicies",
+        ///             "selectedHosts",
+        ///         },
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["json"] = export.Apply(getAppSecExportConfigurationResult =&gt; getAppSecExportConfigurationResult.Json),
+        ///         ["text"] = export.Apply(getAppSecExportConfigurationResult =&gt; getAppSecExportConfigurationResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -65,7 +58,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
         /// </summary>
         public static Task<GetAppSecExportConfigurationResult> InvokeAsync(GetAppSecExportConfigurationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationArgs(), options.WithDefaults());
 
         /// <summary>
         /// {{% examples %}}
@@ -75,41 +68,34 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var export = Output.Tuple(configuration, configuration).Apply(values =&gt;
-        ///         {
-        ///             var configuration = values.Item1;
-        ///             var configuration1 = values.Item2;
-        ///             return Output.Create(Akamai.GetAppSecExportConfiguration.InvokeAsync(new Akamai.GetAppSecExportConfigurationArgs
-        ///             {
-        ///                 ConfigId = configuration.ConfigId,
-        ///                 Version = configuration1.LatestVersion,
-        ///                 Searches = 
-        ///                 {
-        ///                     "securityPolicies",
-        ///                     "selectedHosts",
-        ///                 },
-        ///             }));
-        ///         });
-        ///         this.Json = export.Apply(export =&gt; export.Json);
-        ///         this.Text = export.Apply(export =&gt; export.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("text")]
-        ///     public Output&lt;string&gt; Text { get; set; }
-        /// }
+        ///     var export = Akamai.GetAppSecExportConfiguration.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         Version = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.LatestVersion),
+        ///         Searches = new[]
+        ///         {
+        ///             "securityPolicies",
+        ///             "selectedHosts",
+        ///         },
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["json"] = export.Apply(getAppSecExportConfigurationResult =&gt; getAppSecExportConfigurationResult.Json),
+        ///         ["text"] = export.Apply(getAppSecExportConfigurationResult =&gt; getAppSecExportConfigurationResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -121,11 +107,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
         /// </summary>
         public static Output<GetAppSecExportConfigurationResult> Invoke(GetAppSecExportConfigurationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecExportConfigurationArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecExportConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration you want to return information for.
@@ -154,9 +140,10 @@ namespace Pulumi.Akamai
         public GetAppSecExportConfigurationArgs()
         {
         }
+        public static new GetAppSecExportConfigurationArgs Empty => new GetAppSecExportConfigurationArgs();
     }
 
-    public sealed class GetAppSecExportConfigurationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecExportConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration you want to return information for.
@@ -185,6 +172,7 @@ namespace Pulumi.Akamai
         public GetAppSecExportConfigurationInvokeArgs()
         {
         }
+        public static new GetAppSecExportConfigurationInvokeArgs Empty => new GetAppSecExportConfigurationInvokeArgs();
     }
 
 

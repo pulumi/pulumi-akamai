@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Edgedns.Inputs
 {
 
-    public sealed class DnsZoneTsigKeyGetArgs : Pulumi.ResourceArgs
+    public sealed class DnsZoneTsigKeyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The hashing algorithm.
@@ -33,5 +33,6 @@ namespace Pulumi.Akamai.Edgedns.Inputs
         public DnsZoneTsigKeyGetArgs()
         {
         }
+        public static new DnsZoneTsigKeyGetArgs Empty => new DnsZoneTsigKeyGetArgs();
     }
 }

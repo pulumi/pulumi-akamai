@@ -2,14 +2,11 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Use the `akamai.CpsDvEnrollment` resource to create an enrollment with all the information about your certificate life cycle, from the time you request it, through removal or automatic renewal. You can treat an enrollment as a core container for all the operations you perform within CPS.
- *
- * You can use this resource with `akamai.DnsRecord` or other third-party DNS provider to create DNS records, and `akamai.CpsDvValidation` to complete the certificate validation.
- *
  * ## Example Usage
  *
  * Basic usage:
@@ -57,12 +54,11 @@ import * as utilities from "./utilities";
  *     certificateChainType: "default",
  *     csr: {
  *         countryCode: "US",
- *         city: "cambridge",
+ *         city: "Cambridge",
  *         organization: "Akamai",
  *         organizationalUnit: "Dev",
  *         state: "MA",
  *     },
- *     enableMultiStackedCertificates: false,
  *     networkConfiguration: {
  *         disallowedTlsVersions: [
  *             "TLSv1",
@@ -71,8 +67,8 @@ import * as utilities from "./utilities";
  *         cloneDnsNames: false,
  *         geography: "core",
  *         ocspStapling: "on",
- *         preferredCiphers: "ak-akamai-2020q1",
- *         mustHaveCiphers: "ak-akamai-2020q1",
+ *         preferredCiphers: "ak-akamai-default",
+ *         mustHaveCiphers: "ak-akamai-default",
  *         quicEnabled: false,
  *     },
  *     signatureAlgorithm: "SHA-256",
@@ -115,7 +111,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * Basic Usagehcl resource "akamai_cps_dv_enrollment" "example" { # (resource arguments) } You can import your Akamai DV enrollment using a comma-delimited string of the enrollment ID and
+ * Basic Usagehcl resource "akamai_cps_dv_enrollment" "example" { (resource arguments) } You can import your Akamai DV enrollment using a comma-delimited string of the enrollment ID and
  *
  *  contract ID, optionally with the `ctr_` prefix. You have to enter the IDs in this order`enrollment_id,contract_id` For example
  *
@@ -159,11 +155,17 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
      * Contact information for the certificate administrator at your company.
      */
     public readonly adminContact!: pulumi.Output<outputs.CpsDvEnrollmentAdminContact>;
+    /**
+     * - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+     */
     public readonly allowDuplicateCommonName!: pulumi.Output<boolean | undefined>;
     /**
      * Certificate trust chain type.
      */
     public readonly certificateChainType!: pulumi.Output<string | undefined>;
+    /**
+     * Certificate type of enrollment
+     */
     public /*out*/ readonly certificateType!: pulumi.Output<string>;
     /**
      * - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
@@ -177,11 +179,19 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
      * When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
      */
     public readonly csr!: pulumi.Output<outputs.CpsDvEnrollmentCsr>;
+    /**
+     * DNS challenge information
+     */
     public /*out*/ readonly dnsChallenges!: pulumi.Output<outputs.CpsDvEnrollmentDnsChallenge[]>;
     /**
      * Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+     *
+     * @deprecated Deprecated, don't use; always false
      */
     public readonly enableMultiStackedCertificates!: pulumi.Output<boolean | undefined>;
+    /**
+     * HTTP challenge information
+     */
     public /*out*/ readonly httpChallenges!: pulumi.Output<outputs.CpsDvEnrollmentHttpChallenge[]>;
     /**
      * The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
@@ -191,6 +201,9 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
      * Your organization information.
      */
     public readonly organization!: pulumi.Output<outputs.CpsDvEnrollmentOrganization>;
+    /**
+     * The registration authority or certificate authority (CA) used to obtain a certificate
+     */
     public /*out*/ readonly registrationAuthority!: pulumi.Output<string>;
     /**
      * Additional common names to create a Subject Alternative Names (SAN) list.
@@ -212,6 +225,9 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
      * The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `adminContact`.
      */
     public readonly techContact!: pulumi.Output<outputs.CpsDvEnrollmentTechContact>;
+    /**
+     * Enrolment validation type
+     */
     public /*out*/ readonly validationType!: pulumi.Output<string>;
 
     /**
@@ -317,11 +333,17 @@ export interface CpsDvEnrollmentState {
      * Contact information for the certificate administrator at your company.
      */
     adminContact?: pulumi.Input<inputs.CpsDvEnrollmentAdminContact>;
+    /**
+     * - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+     */
     allowDuplicateCommonName?: pulumi.Input<boolean>;
     /**
      * Certificate trust chain type.
      */
     certificateChainType?: pulumi.Input<string>;
+    /**
+     * Certificate type of enrollment
+     */
     certificateType?: pulumi.Input<string>;
     /**
      * - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
@@ -335,11 +357,19 @@ export interface CpsDvEnrollmentState {
      * When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
      */
     csr?: pulumi.Input<inputs.CpsDvEnrollmentCsr>;
+    /**
+     * DNS challenge information
+     */
     dnsChallenges?: pulumi.Input<pulumi.Input<inputs.CpsDvEnrollmentDnsChallenge>[]>;
     /**
      * Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+     *
+     * @deprecated Deprecated, don't use; always false
      */
     enableMultiStackedCertificates?: pulumi.Input<boolean>;
+    /**
+     * HTTP challenge information
+     */
     httpChallenges?: pulumi.Input<pulumi.Input<inputs.CpsDvEnrollmentHttpChallenge>[]>;
     /**
      * The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
@@ -349,6 +379,9 @@ export interface CpsDvEnrollmentState {
      * Your organization information.
      */
     organization?: pulumi.Input<inputs.CpsDvEnrollmentOrganization>;
+    /**
+     * The registration authority or certificate authority (CA) used to obtain a certificate
+     */
     registrationAuthority?: pulumi.Input<string>;
     /**
      * Additional common names to create a Subject Alternative Names (SAN) list.
@@ -370,6 +403,9 @@ export interface CpsDvEnrollmentState {
      * The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `adminContact`.
      */
     techContact?: pulumi.Input<inputs.CpsDvEnrollmentTechContact>;
+    /**
+     * Enrolment validation type
+     */
     validationType?: pulumi.Input<string>;
 }
 
@@ -385,6 +421,9 @@ export interface CpsDvEnrollmentArgs {
      * Contact information for the certificate administrator at your company.
      */
     adminContact: pulumi.Input<inputs.CpsDvEnrollmentAdminContact>;
+    /**
+     * - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+     */
     allowDuplicateCommonName?: pulumi.Input<boolean>;
     /**
      * Certificate trust chain type.
@@ -404,6 +443,8 @@ export interface CpsDvEnrollmentArgs {
     csr: pulumi.Input<inputs.CpsDvEnrollmentCsr>;
     /**
      * Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+     *
+     * @deprecated Deprecated, don't use; always false
      */
     enableMultiStackedCertificates?: pulumi.Input<boolean>;
     /**

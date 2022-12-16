@@ -21,14 +21,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := akamai.LookupProperty(ctx, &GetPropertyArgs{
+//			example, err := akamai.LookupProperty(ctx, &akamai.LookupPropertyArgs{
 //				Name:    "terraform-demo",
 //				Version: pulumi.IntRef(1),
 //			}, nil)

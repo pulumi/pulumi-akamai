@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "./utilities";
  *   * `productName` - A string containing the product name.
  */
 export function getPropertyProducts(args: GetPropertyProductsArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyProductsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyProducts:getPropertyProducts", {
         "contractId": args.contractId,
     }, opts);
@@ -57,9 +55,28 @@ export interface GetPropertyProductsResult {
     readonly id: string;
     readonly products: outputs.GetPropertyProductsProduct[];
 }
-
+/**
+ * Use the `akamai.getPropertyProducts` data source to list the products included on a contract.
+ *
+ * ## Example Usage
+ *
+ * This example returns products associated with the [EdgeGrid client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) for a given contract:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ *
+ * export const propertyMatch = data.akamai_property_products["my-example"];
+ * ```
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `products` - A list of supported products for the contract, including:
+ *   * `productId` - The product's unique ID, including the `prd_` prefix.
+ *   * `productName` - A string containing the product name.
+ */
 export function getPropertyProductsOutput(args: GetPropertyProductsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyProductsResult> {
-    return pulumi.output(args).apply(a => getPropertyProducts(a, opts))
+    return pulumi.output(args).apply((a: any) => getPropertyProducts(a, opts))
 }
 
 /**

@@ -25,41 +25,36 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var pragmaHeader = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPragmaHeader.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPragmaHeaderArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.AdvancedSettingsPragmaHeaderOutput = pragmaHeader.Apply(pragmaHeader =&gt; pragmaHeader.OutputText);
-        ///         this.AdvancedSettingsPragmaHeaderJson = pragmaHeader.Apply(pragmaHeader =&gt; pragmaHeader.Json);
-        ///         var policyPragmaHeader = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPragmaHeader.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPragmaHeaderArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.AdvancedSettingsPolicyPragmaHeaderOutput = policyPragmaHeader.Apply(policyPragmaHeader =&gt; policyPragmaHeader.OutputText);
-        ///         this.AdvancedSettingsPolicyPragmaHeaderJson = policyPragmaHeader.Apply(policyPragmaHeader =&gt; policyPragmaHeader.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("advancedSettingsPragmaHeaderOutput")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPragmaHeaderOutput { get; set; }
-        ///     [Output("advancedSettingsPragmaHeaderJson")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPragmaHeaderJson { get; set; }
-        ///     [Output("advancedSettingsPolicyPragmaHeaderOutput")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPolicyPragmaHeaderOutput { get; set; }
-        ///     [Output("advancedSettingsPolicyPragmaHeaderJson")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPolicyPragmaHeaderJson { get; set; }
-        /// }
+        ///     var pragmaHeader = Akamai.GetAppSecAdvancedSettingsPragmaHeader.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var policyPragmaHeader = Akamai.GetAppSecAdvancedSettingsPragmaHeader.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["advancedSettingsPragmaHeaderOutput"] = pragmaHeader.Apply(getAppSecAdvancedSettingsPragmaHeaderResult =&gt; getAppSecAdvancedSettingsPragmaHeaderResult.OutputText),
+        ///         ["advancedSettingsPragmaHeaderJson"] = pragmaHeader.Apply(getAppSecAdvancedSettingsPragmaHeaderResult =&gt; getAppSecAdvancedSettingsPragmaHeaderResult.Json),
+        ///         ["advancedSettingsPolicyPragmaHeaderOutput"] = policyPragmaHeader.Apply(getAppSecAdvancedSettingsPragmaHeaderResult =&gt; getAppSecAdvancedSettingsPragmaHeaderResult.OutputText),
+        ///         ["advancedSettingsPolicyPragmaHeaderJson"] = policyPragmaHeader.Apply(getAppSecAdvancedSettingsPragmaHeaderResult =&gt; getAppSecAdvancedSettingsPragmaHeaderResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -71,7 +66,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the pragma header settings.
         /// </summary>
         public static Task<GetAppSecAdvancedSettingsPragmaHeaderResult> InvokeAsync(GetAppSecAdvancedSettingsPragmaHeaderArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsPragmaHeaderResult>("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args ?? new GetAppSecAdvancedSettingsPragmaHeaderArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsPragmaHeaderResult>("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args ?? new GetAppSecAdvancedSettingsPragmaHeaderArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; security policy
@@ -87,41 +82,36 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var pragmaHeader = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPragmaHeader.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPragmaHeaderArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.AdvancedSettingsPragmaHeaderOutput = pragmaHeader.Apply(pragmaHeader =&gt; pragmaHeader.OutputText);
-        ///         this.AdvancedSettingsPragmaHeaderJson = pragmaHeader.Apply(pragmaHeader =&gt; pragmaHeader.Json);
-        ///         var policyPragmaHeader = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecAdvancedSettingsPragmaHeader.InvokeAsync(new Akamai.GetAppSecAdvancedSettingsPragmaHeaderArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.AdvancedSettingsPolicyPragmaHeaderOutput = policyPragmaHeader.Apply(policyPragmaHeader =&gt; policyPragmaHeader.OutputText);
-        ///         this.AdvancedSettingsPolicyPragmaHeaderJson = policyPragmaHeader.Apply(policyPragmaHeader =&gt; policyPragmaHeader.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("advancedSettingsPragmaHeaderOutput")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPragmaHeaderOutput { get; set; }
-        ///     [Output("advancedSettingsPragmaHeaderJson")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPragmaHeaderJson { get; set; }
-        ///     [Output("advancedSettingsPolicyPragmaHeaderOutput")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPolicyPragmaHeaderOutput { get; set; }
-        ///     [Output("advancedSettingsPolicyPragmaHeaderJson")]
-        ///     public Output&lt;string&gt; AdvancedSettingsPolicyPragmaHeaderJson { get; set; }
-        /// }
+        ///     var pragmaHeader = Akamai.GetAppSecAdvancedSettingsPragmaHeader.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var policyPragmaHeader = Akamai.GetAppSecAdvancedSettingsPragmaHeader.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["advancedSettingsPragmaHeaderOutput"] = pragmaHeader.Apply(getAppSecAdvancedSettingsPragmaHeaderResult =&gt; getAppSecAdvancedSettingsPragmaHeaderResult.OutputText),
+        ///         ["advancedSettingsPragmaHeaderJson"] = pragmaHeader.Apply(getAppSecAdvancedSettingsPragmaHeaderResult =&gt; getAppSecAdvancedSettingsPragmaHeaderResult.Json),
+        ///         ["advancedSettingsPolicyPragmaHeaderOutput"] = policyPragmaHeader.Apply(getAppSecAdvancedSettingsPragmaHeaderResult =&gt; getAppSecAdvancedSettingsPragmaHeaderResult.OutputText),
+        ///         ["advancedSettingsPolicyPragmaHeaderJson"] = policyPragmaHeader.Apply(getAppSecAdvancedSettingsPragmaHeaderResult =&gt; getAppSecAdvancedSettingsPragmaHeaderResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -133,11 +123,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the pragma header settings.
         /// </summary>
         public static Output<GetAppSecAdvancedSettingsPragmaHeaderResult> Invoke(GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsPragmaHeaderResult>("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args ?? new GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsPragmaHeaderResult>("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args ?? new GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecAdvancedSettingsPragmaHeaderArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecAdvancedSettingsPragmaHeaderArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the pragma header settings.
@@ -154,9 +144,10 @@ namespace Pulumi.Akamai
         public GetAppSecAdvancedSettingsPragmaHeaderArgs()
         {
         }
+        public static new GetAppSecAdvancedSettingsPragmaHeaderArgs Empty => new GetAppSecAdvancedSettingsPragmaHeaderArgs();
     }
 
-    public sealed class GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the pragma header settings.
@@ -173,6 +164,7 @@ namespace Pulumi.Akamai
         public GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs()
         {
         }
+        public static new GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs Empty => new GetAppSecAdvancedSettingsPragmaHeaderInvokeArgs();
     }
 
 

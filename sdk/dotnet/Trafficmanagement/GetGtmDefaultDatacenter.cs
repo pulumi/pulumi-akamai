@@ -24,7 +24,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         /// * `nickname` - The default data center nickname.
         /// </summary>
         public static Task<GetGtmDefaultDatacenterResult> InvokeAsync(GetGtmDefaultDatacenterArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetGtmDefaultDatacenterResult>("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetGtmDefaultDatacenterResult>("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
@@ -38,11 +38,11 @@ namespace Pulumi.Akamai.Trafficmanagement
         /// * `nickname` - The default data center nickname.
         /// </summary>
         public static Output<GetGtmDefaultDatacenterResult> Invoke(GetGtmDefaultDatacenterInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetGtmDefaultDatacenterResult>("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetGtmDefaultDatacenterResult>("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args ?? new GetGtmDefaultDatacenterInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetGtmDefaultDatacenterArgs : Pulumi.InvokeArgs
+    public sealed class GetGtmDefaultDatacenterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The default is `5400`.
@@ -56,9 +56,10 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GetGtmDefaultDatacenterArgs()
         {
         }
+        public static new GetGtmDefaultDatacenterArgs Empty => new GetGtmDefaultDatacenterArgs();
     }
 
-    public sealed class GetGtmDefaultDatacenterInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetGtmDefaultDatacenterInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The default is `5400`.
@@ -72,6 +73,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GetGtmDefaultDatacenterInvokeArgs()
         {
         }
+        public static new GetGtmDefaultDatacenterInvokeArgs Empty => new GetGtmDefaultDatacenterInvokeArgs();
     }
 
 

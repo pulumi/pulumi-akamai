@@ -40,11 +40,8 @@ import * as utilities from "./utilities";
  * - `json`. JSON-formatted list of the match target information.
  */
 export function getAppSecMatchTargets(args: GetAppSecMatchTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecMatchTargetsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", {
         "configId": args.configId,
         "matchTargetId": args.matchTargetId,
@@ -78,9 +75,43 @@ export interface GetAppSecMatchTargetsResult {
     readonly matchTargetId?: number;
     readonly outputText: string;
 }
-
+/**
+ * **Scopes**: Security configuration; match target
+ *
+ * Returns information about your match targets. Match targets determine which security policy should apply to an API, hostname, or path.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets{?policyId,includeChildObjectName}](https://techdocs.akamai.com/application-security/reference/get-match-targets)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const matchTargetsAppSecMatchTargets = configuration.then(configuration => akamai.getAppSecMatchTargets({
+ *     configId: configuration.configId,
+ * }));
+ * export const matchTargets = matchTargetsAppSecMatchTargets.then(matchTargetsAppSecMatchTargets => matchTargetsAppSecMatchTargets.outputText);
+ * const matchTarget = configuration.then(configuration => akamai.getAppSecMatchTargets({
+ *     configId: configuration.configId,
+ *     matchTargetId: 2712938,
+ * }));
+ * export const matchTargetOutput = matchTarget.then(matchTarget => matchTarget.outputText);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the ID and security policy ID of your match targets.
+ * - `json`. JSON-formatted list of the match target information.
+ */
 export function getAppSecMatchTargetsOutput(args: GetAppSecMatchTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecMatchTargetsResult> {
-    return pulumi.output(args).apply(a => getAppSecMatchTargets(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecMatchTargets(a, opts))
 }
 
 /**

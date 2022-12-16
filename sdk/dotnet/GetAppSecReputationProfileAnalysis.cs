@@ -28,31 +28,29 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var reputationAnalysis = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileAnalysis.InvokeAsync(new Akamai.GetAppSecReputationProfileAnalysisArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.ReputationAnalysisText = reputationAnalysis.Apply(reputationAnalysis =&gt; reputationAnalysis.OutputText);
-        ///         this.ReputationAnalysisJson = reputationAnalysis.Apply(reputationAnalysis =&gt; reputationAnalysis.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("reputationAnalysisText")]
-        ///     public Output&lt;string&gt; ReputationAnalysisText { get; set; }
-        ///     [Output("reputationAnalysisJson")]
-        ///     public Output&lt;string&gt; ReputationAnalysisJson { get; set; }
-        /// }
+        ///     var reputationAnalysis = Akamai.GetAppSecReputationProfileAnalysis.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["reputationAnalysisText"] = reputationAnalysis.Apply(getAppSecReputationProfileAnalysisResult =&gt; getAppSecReputationProfileAnalysisResult.OutputText),
+        ///         ["reputationAnalysisJson"] = reputationAnalysis.Apply(getAppSecReputationProfileAnalysisResult =&gt; getAppSecReputationProfileAnalysisResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -64,7 +62,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the reputation analysis settings.
         /// </summary>
         public static Task<GetAppSecReputationProfileAnalysisResult> InvokeAsync(GetAppSecReputationProfileAnalysisArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfileAnalysisResult>("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args ?? new GetAppSecReputationProfileAnalysisArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfileAnalysisResult>("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args ?? new GetAppSecReputationProfileAnalysisArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -83,31 +81,29 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var reputationAnalysis = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfileAnalysis.InvokeAsync(new Akamai.GetAppSecReputationProfileAnalysisArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.ReputationAnalysisText = reputationAnalysis.Apply(reputationAnalysis =&gt; reputationAnalysis.OutputText);
-        ///         this.ReputationAnalysisJson = reputationAnalysis.Apply(reputationAnalysis =&gt; reputationAnalysis.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("reputationAnalysisText")]
-        ///     public Output&lt;string&gt; ReputationAnalysisText { get; set; }
-        ///     [Output("reputationAnalysisJson")]
-        ///     public Output&lt;string&gt; ReputationAnalysisJson { get; set; }
-        /// }
+        ///     var reputationAnalysis = Akamai.GetAppSecReputationProfileAnalysis.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["reputationAnalysisText"] = reputationAnalysis.Apply(getAppSecReputationProfileAnalysisResult =&gt; getAppSecReputationProfileAnalysisResult.OutputText),
+        ///         ["reputationAnalysisJson"] = reputationAnalysis.Apply(getAppSecReputationProfileAnalysisResult =&gt; getAppSecReputationProfileAnalysisResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -119,11 +115,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the reputation analysis settings.
         /// </summary>
         public static Output<GetAppSecReputationProfileAnalysisResult> Invoke(GetAppSecReputationProfileAnalysisInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileAnalysisResult>("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args ?? new GetAppSecReputationProfileAnalysisInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileAnalysisResult>("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args ?? new GetAppSecReputationProfileAnalysisInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecReputationProfileAnalysisArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecReputationProfileAnalysisArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation profile analysis settings.
@@ -140,9 +136,10 @@ namespace Pulumi.Akamai
         public GetAppSecReputationProfileAnalysisArgs()
         {
         }
+        public static new GetAppSecReputationProfileAnalysisArgs Empty => new GetAppSecReputationProfileAnalysisArgs();
     }
 
-    public sealed class GetAppSecReputationProfileAnalysisInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecReputationProfileAnalysisInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation profile analysis settings.
@@ -159,6 +156,7 @@ namespace Pulumi.Akamai
         public GetAppSecReputationProfileAnalysisInvokeArgs()
         {
         }
+        public static new GetAppSecReputationProfileAnalysisInvokeArgs Empty => new GetAppSecReputationProfileAnalysisInvokeArgs();
     }
 
 

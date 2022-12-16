@@ -18,16 +18,14 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
     public static final DatastreamDatadogConnectorArgs Empty = new DatastreamDatadogConnectorArgs();
 
     /**
-     * **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-     * * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+     * **Secret**. Your Log API token for your account in New Relic.
      * 
      */
     @Import(name="authToken", required=true)
     private Output<String> authToken;
 
     /**
-     * @return **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-     * * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+     * @return **Secret**. Your Log API token for your account in New Relic.
      * 
      */
     public Output<String> authToken() {
@@ -102,14 +100,14 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+     * The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
      * 
      */
     @Import(name="tags")
     private @Nullable Output<String> tags;
 
     /**
-     * @return The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+     * @return The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
      * 
      */
     public Optional<Output<String>> tags() {
@@ -163,8 +161,7 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param authToken **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-         * * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+         * @param authToken **Secret**. Your Log API token for your account in New Relic.
          * 
          * @return builder
          * 
@@ -175,8 +172,7 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param authToken **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-         * * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+         * @param authToken **Secret**. Your Log API token for your account in New Relic.
          * 
          * @return builder
          * 
@@ -279,7 +275,7 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param tags The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+         * @param tags The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
          * 
          * @return builder
          * 
@@ -290,7 +286,7 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param tags The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+         * @param tags The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
          * 
          * @return builder
          * 

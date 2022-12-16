@@ -15,9 +15,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const example = pulumi.output(akamai.getAuthoritiesSet({
+ * const example = akamai.getAuthoritiesSet({
  *     contract: "ctr_1-AB123",
- * }));
+ * });
  * ```
  * ## Attributes reference
  *
@@ -28,11 +28,8 @@ import * as utilities from "../utilities";
 /** @deprecated akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet */
 export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.InvokeOptions): Promise<GetAuthoritiesSetResult> {
     pulumi.log.warn("getAuthoritiesSet is deprecated: akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet")
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet", {
         "contract": args.contract,
     }, opts);
@@ -59,9 +56,30 @@ export interface GetAuthoritiesSetResult {
      */
     readonly id: string;
 }
-
+/**
+ * Use the `akamai.getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const example = akamai.getAuthoritiesSet({
+ *     contract: "ctr_1-AB123",
+ * });
+ * ```
+ * ## Attributes reference
+ *
+ * This data source supports this attribute:
+ *
+ * * `authorities` - A list of authorities.
+ */
+/** @deprecated akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet */
 export function getAuthoritiesSetOutput(args: GetAuthoritiesSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthoritiesSetResult> {
-    return pulumi.output(args).apply(a => getAuthoritiesSet(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuthoritiesSet(a, opts))
 }
 
 /**

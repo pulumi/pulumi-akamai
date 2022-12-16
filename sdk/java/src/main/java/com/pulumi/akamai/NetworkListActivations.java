@@ -11,6 +11,7 @@ import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Optional;
@@ -29,8 +30,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetNetworkListsArgs;
+ * import com.pulumi.akamai.NetworkList;
+ * import com.pulumi.akamai.NetworkListArgs;
  * import com.pulumi.akamai.NetworkListActivations;
  * import com.pulumi.akamai.NetworkListActivationsArgs;
  * import java.util.List;
@@ -46,13 +47,17 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         final var networkListsFilter = AkamaiFunctions.getNetworkLists(GetNetworkListsArgs.builder()
- *             .name(var_.network_list())
+ *         var networkListIp = new NetworkList(&#34;networkListIp&#34;, NetworkListArgs.builder()        
+ *             .type(&#34;IP&#34;)
+ *             .description(&#34;IP network list&#34;)
+ *             .lists(var_.ip_list())
+ *             .mode(&#34;REPLACE&#34;)
  *             .build());
  * 
  *         var activation = new NetworkListActivations(&#34;activation&#34;, NetworkListActivationsArgs.builder()        
- *             .networkListId(networkListsFilter.applyValue(getNetworkListsResult -&gt; getNetworkListsResult.lists()[0]))
+ *             .networkListId(resource.akamai_networklist_network_list().network_list_ip().network_list_id())
  *             .network(&#34;STAGING&#34;)
+ *             .syncPoint(resource.akamai_networklist_network_list().network_list_ip().sync_point())
  *             .notes(&#34;TEST Notes&#34;)
  *             .notificationEmails(&#34;user@example.com&#34;)
  *             .build());
@@ -151,6 +156,22 @@ public class NetworkListActivations extends com.pulumi.resources.CustomResource 
      */
     public Output<String> status() {
         return this.status;
+    }
+    /**
+     * An integer that identifies the current version of the network list; this value is incremented each time
+     * the list is modified.
+     * 
+     */
+    @Export(name="syncPoint", type=Integer.class, parameters={})
+    private Output<Integer> syncPoint;
+
+    /**
+     * @return An integer that identifies the current version of the network list; this value is incremented each time
+     * the list is modified.
+     * 
+     */
+    public Output<Integer> syncPoint() {
+        return this.syncPoint;
     }
 
     /**

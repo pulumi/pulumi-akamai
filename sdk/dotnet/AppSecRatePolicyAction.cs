@@ -23,38 +23,38 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using System.IO;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var appsecRatePolicy = new Akamai.AppSecRatePolicy("appsecRatePolicy", new Akamai.AppSecRatePolicyArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             RatePolicy = File.ReadAllText($"{path.Module}/rate_policy.json"),
-    ///         });
-    ///         var appsecRatePolicyAction = new Akamai.AppSecRatePolicyAction("appsecRatePolicyAction", new Akamai.AppSecRatePolicyActionArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             RatePolicyId = appsecRatePolicy.RatePolicyId,
-    ///             Ipv4Action = "deny",
-    ///             Ipv6Action = "deny",
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var appsecRatePolicy = new Akamai.AppSecRatePolicy("appsecRatePolicy", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         RatePolicy = File.ReadAllText($"{path.Module}/rate_policy.json"),
+    ///     });
+    /// 
+    ///     var appsecRatePolicyAction = new Akamai.AppSecRatePolicyAction("appsecRatePolicyAction", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         RatePolicyId = appsecRatePolicy.RatePolicyId,
+    ///         Ipv4Action = "deny",
+    ///         Ipv6Action = "deny",
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecRatePolicyAction:AppSecRatePolicyAction")]
-    public partial class AppSecRatePolicyAction : Pulumi.CustomResource
+    public partial class AppSecRatePolicyAction : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rate policy action being modified.
@@ -137,7 +137,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecRatePolicyActionArgs : Pulumi.ResourceArgs
+    public sealed class AppSecRatePolicyActionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rate policy action being modified.
@@ -179,9 +179,10 @@ namespace Pulumi.Akamai
         public AppSecRatePolicyActionArgs()
         {
         }
+        public static new AppSecRatePolicyActionArgs Empty => new AppSecRatePolicyActionArgs();
     }
 
-    public sealed class AppSecRatePolicyActionState : Pulumi.ResourceArgs
+    public sealed class AppSecRatePolicyActionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rate policy action being modified.
@@ -223,5 +224,6 @@ namespace Pulumi.Akamai
         public AppSecRatePolicyActionState()
         {
         }
+        public static new AppSecRatePolicyActionState Empty => new AppSecRatePolicyActionState();
     }
 }

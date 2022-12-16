@@ -25,28 +25,28 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var customRuleActionsAppSecCustomRuleActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomRuleActions.InvokeAsync(new Akamai.GetAppSecCustomRuleActionsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.CustomRuleActions = customRuleActionsAppSecCustomRuleActions.Apply(customRuleActionsAppSecCustomRuleActions =&gt; customRuleActionsAppSecCustomRuleActions.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("customRuleActions")]
-        ///     public Output&lt;string&gt; CustomRuleActions { get; set; }
-        /// }
+        ///     var customRuleActionsAppSecCustomRuleActions = Akamai.GetAppSecCustomRuleActions.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["customRuleActions"] = customRuleActionsAppSecCustomRuleActions.Apply(getAppSecCustomRuleActionsResult =&gt; getAppSecCustomRuleActionsResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,7 +57,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the ID, name, and action of the custom rules.
         /// </summary>
         public static Task<GetAppSecCustomRuleActionsResult> InvokeAsync(GetAppSecCustomRuleActionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecCustomRuleActionsResult>("akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions", args ?? new GetAppSecCustomRuleActionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecCustomRuleActionsResult>("akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions", args ?? new GetAppSecCustomRuleActionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy; custom rule
@@ -73,28 +73,28 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var customRuleActionsAppSecCustomRuleActions = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomRuleActions.InvokeAsync(new Akamai.GetAppSecCustomRuleActionsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.CustomRuleActions = customRuleActionsAppSecCustomRuleActions.Apply(customRuleActionsAppSecCustomRuleActions =&gt; customRuleActionsAppSecCustomRuleActions.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("customRuleActions")]
-        ///     public Output&lt;string&gt; CustomRuleActions { get; set; }
-        /// }
+        ///     var customRuleActionsAppSecCustomRuleActions = Akamai.GetAppSecCustomRuleActions.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["customRuleActions"] = customRuleActionsAppSecCustomRuleActions.Apply(getAppSecCustomRuleActionsResult =&gt; getAppSecCustomRuleActionsResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -105,11 +105,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the ID, name, and action of the custom rules.
         /// </summary>
         public static Output<GetAppSecCustomRuleActionsResult> Invoke(GetAppSecCustomRuleActionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecCustomRuleActionsResult>("akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions", args ?? new GetAppSecCustomRuleActionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecCustomRuleActionsResult>("akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions", args ?? new GetAppSecCustomRuleActionsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecCustomRuleActionsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecCustomRuleActionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom rules.
@@ -132,9 +132,10 @@ namespace Pulumi.Akamai
         public GetAppSecCustomRuleActionsArgs()
         {
         }
+        public static new GetAppSecCustomRuleActionsArgs Empty => new GetAppSecCustomRuleActionsArgs();
     }
 
-    public sealed class GetAppSecCustomRuleActionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecCustomRuleActionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom rules.
@@ -157,6 +158,7 @@ namespace Pulumi.Akamai
         public GetAppSecCustomRuleActionsInvokeArgs()
         {
         }
+        public static new GetAppSecCustomRuleActionsInvokeArgs Empty => new GetAppSecCustomRuleActionsInvokeArgs();
     }
 
 

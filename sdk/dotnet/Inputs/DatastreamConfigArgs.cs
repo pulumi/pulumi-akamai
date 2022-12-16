@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class DatastreamConfigArgs : Pulumi.ResourceArgs
+    public sealed class DatastreamConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
@@ -45,5 +45,6 @@ namespace Pulumi.Akamai.Inputs
         public DatastreamConfigArgs()
         {
         }
+        public static new DatastreamConfigArgs Empty => new DatastreamConfigArgs();
     }
 }

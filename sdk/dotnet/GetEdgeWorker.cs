@@ -21,21 +21,19 @@ namespace Pulumi.Akamai
         /// This example returns the resource tier fields for the selected EdgeWorker ID:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var test = Akamai.GetEdgeWorker.Invoke(new()
         ///     {
-        ///         var test = Output.Create(Akamai.GetEdgeWorker.InvokeAsync(new Akamai.GetEdgeWorkerArgs
-        ///         {
-        ///             EdgeworkerId = 3,
-        ///             LocalBundle = "test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz",
-        ///         }));
-        ///     }
+        ///         EdgeworkerId = 3,
+        ///         LocalBundle = "test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -51,7 +49,7 @@ namespace Pulumi.Akamai
         /// * `warnings` - The list of warnings returned by EdgeWorker validation.
         /// </summary>
         public static Task<GetEdgeWorkerResult> InvokeAsync(GetEdgeWorkerArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEdgeWorkerResult>("akamai:index/getEdgeWorker:getEdgeWorker", args ?? new GetEdgeWorkerArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEdgeWorkerResult>("akamai:index/getEdgeWorker:getEdgeWorker", args ?? new GetEdgeWorkerArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.EdgeWorker` data source to get an EdgeWorker for a given EdgeWorker ID.
@@ -63,21 +61,19 @@ namespace Pulumi.Akamai
         /// This example returns the resource tier fields for the selected EdgeWorker ID:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var test = Akamai.GetEdgeWorker.Invoke(new()
         ///     {
-        ///         var test = Output.Create(Akamai.GetEdgeWorker.InvokeAsync(new Akamai.GetEdgeWorkerArgs
-        ///         {
-        ///             EdgeworkerId = 3,
-        ///             LocalBundle = "test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz",
-        ///         }));
-        ///     }
+        ///         EdgeworkerId = 3,
+        ///         LocalBundle = "test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,11 +89,11 @@ namespace Pulumi.Akamai
         /// * `warnings` - The list of warnings returned by EdgeWorker validation.
         /// </summary>
         public static Output<GetEdgeWorkerResult> Invoke(GetEdgeWorkerInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEdgeWorkerResult>("akamai:index/getEdgeWorker:getEdgeWorker", args ?? new GetEdgeWorkerInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkerResult>("akamai:index/getEdgeWorker:getEdgeWorker", args ?? new GetEdgeWorkerInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetEdgeWorkerArgs : Pulumi.InvokeArgs
+    public sealed class GetEdgeWorkerArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier of the EdgeWorker.
@@ -114,9 +110,10 @@ namespace Pulumi.Akamai
         public GetEdgeWorkerArgs()
         {
         }
+        public static new GetEdgeWorkerArgs Empty => new GetEdgeWorkerArgs();
     }
 
-    public sealed class GetEdgeWorkerInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEdgeWorkerInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier of the EdgeWorker.
@@ -133,6 +130,7 @@ namespace Pulumi.Akamai
         public GetEdgeWorkerInvokeArgs()
         {
         }
+        public static new GetEdgeWorkerInvokeArgs Empty => new GetEdgeWorkerInvokeArgs();
     }
 
 

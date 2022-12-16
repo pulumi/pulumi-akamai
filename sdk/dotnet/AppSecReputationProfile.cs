@@ -23,29 +23,29 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using System.IO;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var reputationProfile = new Akamai.AppSecReputationProfile("reputationProfile", new Akamai.AppSecReputationProfileArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             ReputationProfile = File.ReadAllText($"{path.Module}/reputation_profile.json"),
-    ///         });
-    ///         this.ReputationProfileId = reputationProfile.ReputationProfileId;
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    ///     [Output("reputationProfileId")]
-    ///     public Output&lt;string&gt; ReputationProfileId { get; set; }
-    /// }
+    ///     var reputationProfile = new Akamai.AppSecReputationProfile("reputationProfile", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         ReputationProfile = File.ReadAllText($"{path.Module}/reputation_profile.json"),
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["reputationProfileId"] = reputationProfile.ReputationProfileId,
+    ///     };
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -54,7 +54,7 @@ namespace Pulumi.Akamai
     /// - `reputation_profile_id`. ID of the newly-created or newly-modified reputation profile.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecReputationProfile:AppSecReputationProfile")]
-    public partial class AppSecReputationProfile : Pulumi.CustomResource
+    public partial class AppSecReputationProfile : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation profile being modified.
@@ -69,7 +69,7 @@ namespace Pulumi.Akamai
         public Output<string> ReputationProfile { get; private set; } = null!;
 
         /// <summary>
-        /// Unique identifer of the reputation profile
+        /// Unique identifier of the reputation profile
         /// </summary>
         [Output("reputationProfileId")]
         public Output<int> ReputationProfileId { get; private set; } = null!;
@@ -118,7 +118,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecReputationProfileArgs : Pulumi.ResourceArgs
+    public sealed class AppSecReputationProfileArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation profile being modified.
@@ -135,9 +135,10 @@ namespace Pulumi.Akamai
         public AppSecReputationProfileArgs()
         {
         }
+        public static new AppSecReputationProfileArgs Empty => new AppSecReputationProfileArgs();
     }
 
-    public sealed class AppSecReputationProfileState : Pulumi.ResourceArgs
+    public sealed class AppSecReputationProfileState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation profile being modified.
@@ -152,7 +153,7 @@ namespace Pulumi.Akamai
         public Input<string>? ReputationProfile { get; set; }
 
         /// <summary>
-        /// Unique identifer of the reputation profile
+        /// Unique identifier of the reputation profile
         /// </summary>
         [Input("reputationProfileId")]
         public Input<int>? ReputationProfileId { get; set; }
@@ -160,5 +161,6 @@ namespace Pulumi.Akamai
         public AppSecReputationProfileState()
         {
         }
+        public static new AppSecReputationProfileState Empty => new AppSecReputationProfileState();
     }
 }

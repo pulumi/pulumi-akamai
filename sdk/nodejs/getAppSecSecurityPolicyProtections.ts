@@ -52,11 +52,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report showing the status of the protection settings.
  */
 export function getAppSecSecurityPolicyProtections(args: GetAppSecSecurityPolicyProtectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSecurityPolicyProtectionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
@@ -98,9 +95,55 @@ export interface GetAppSecSecurityPolicyProtectionsResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-
+/**
+ * **Scopes**: Security policy
+ *
+ * Returns information about the protections in effect for the specified security policy.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/get-policy-protections)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const protections = configuration.then(configuration => akamai.getAppSecSecurityPolicyProtections({
+ *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
+ * }));
+ * export const protectionsJson = protections.then(protections => protections.json);
+ * export const protectionsApplyApiConstraints = protections.then(protections => protections.applyApiConstraints);
+ * export const protectionsApplyApplicationLayerControls = protections.then(protections => protections.applyApplicationLayerControls);
+ * export const protectionsApplyBotmanControls = protections.then(protections => protections.applyBotmanControls);
+ * export const protectionsApplyMalwareControls = protections.then(protections => protections.applyMalwareControls);
+ * export const protectionsApplyNetworkLayerControls = protections.then(protections => protections.applyNetworkLayerControls);
+ * export const protectionsApplyRateControls = protections.then(protections => protections.applyRateControls);
+ * export const protectionsApplyReputationControls = protections.then(protections => protections.applyReputationControls);
+ * export const protectionsApplySlowPostControls = protections.then(protections => protections.applySlowPostControls);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned and how that returned information is formatted:
+ *
+ * - `applyApplicationLayerControls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
+ * - `applyApiConstraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
+ * - `applyBotmanControls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
+ * - `applyMalwareControls`. Returns **true** if malware controls are enabled; returns **false** if they are not.
+ * - `applyNetworkLayerControls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
+ * - `applyRateControls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
+ * - `applyReputationControls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
+ * - `applySlowPostControls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
+ * - `json`. JSON-formatted list showing the status of the protection settings.
+ * - `outputText`. Tabular report showing the status of the protection settings.
+ */
 export function getAppSecSecurityPolicyProtectionsOutput(args: GetAppSecSecurityPolicyProtectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSecurityPolicyProtectionsResult> {
-    return pulumi.output(args).apply(a => getAppSecSecurityPolicyProtections(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecSecurityPolicyProtections(a, opts))
 }
 
 /**

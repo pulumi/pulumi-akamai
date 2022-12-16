@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetCloudletsEdgeRedirectorMatchRuleMatchRuleInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCloudletsEdgeRedirectorMatchRuleMatchRuleInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
@@ -87,5 +87,6 @@ namespace Pulumi.Akamai.Inputs
         public GetCloudletsEdgeRedirectorMatchRuleMatchRuleInputArgs()
         {
         }
+        public static new GetCloudletsEdgeRedirectorMatchRuleMatchRuleInputArgs Empty => new GetCloudletsEdgeRedirectorMatchRuleMatchRuleInputArgs();
     }
 }

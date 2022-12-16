@@ -27,7 +27,20 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string ConnectorName;
         /// <summary>
-        /// The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://&lt;SumoEndpoint&gt;/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+        /// Content type to pass in the log file header.
+        /// </summary>
+        public readonly string? ContentType;
+        /// <summary>
+        /// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        /// </summary>
+        public readonly string? CustomHeaderName;
+        /// <summary>
+        /// The custom header's contents passed with the request that contains information about the client connection.
+        /// </summary>
+        public readonly string? CustomHeaderValue;
+        /// <summary>
+        /// The Elasticsearch bulk endpoint URL in the format: `https://&lt;hostname&gt;.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+        /// &lt;br&gt;Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
         /// </summary>
         public readonly string Endpoint;
 
@@ -41,12 +54,21 @@ namespace Pulumi.Akamai.Outputs
 
             string connectorName,
 
+            string? contentType,
+
+            string? customHeaderName,
+
+            string? customHeaderValue,
+
             string endpoint)
         {
             CollectorCode = collectorCode;
             CompressLogs = compressLogs;
             ConnectorId = connectorId;
             ConnectorName = connectorName;
+            ContentType = contentType;
+            CustomHeaderName = customHeaderName;
+            CustomHeaderValue = customHeaderValue;
             Endpoint = endpoint;
         }
     }

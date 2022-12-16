@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs : Pulumi.ResourceArgs
+    public sealed class CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
@@ -33,5 +33,6 @@ namespace Pulumi.Akamai.Inputs
         public CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs()
         {
         }
+        public static new CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs Empty => new CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs();
     }
 }

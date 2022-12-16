@@ -2407,6 +2407,1632 @@ func (o CpsDvEnrollmentTechContactPtrOutput) Title() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type CpsThirdPartyEnrollmentAdminContact struct {
+	// The address of your organization.
+	AddressLineOne string `pulumi:"addressLineOne"`
+	// The address of your organization.
+	AddressLineTwo *string `pulumi:"addressLineTwo"`
+	// The city where your organization resides.
+	City string `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode string `pulumi:"countryCode"`
+	// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+	Email string `pulumi:"email"`
+	// The first name of the technical contact at Akamai.
+	FirstName string `pulumi:"firstName"`
+	// The last name of the technical contact at Akamai.
+	LastName string `pulumi:"lastName"`
+	// Your organization information.
+	Organization string `pulumi:"organization"`
+	// The phone number of the administrator who you want to use as a contact at your company.
+	Phone string `pulumi:"phone"`
+	// The postal code of your organization.
+	PostalCode string `pulumi:"postalCode"`
+	// The region of your organization, typically a state or province.
+	Region string `pulumi:"region"`
+	// The title of the technical contact at Akamai.
+	Title *string `pulumi:"title"`
+}
+
+// CpsThirdPartyEnrollmentAdminContactInput is an input type that accepts CpsThirdPartyEnrollmentAdminContactArgs and CpsThirdPartyEnrollmentAdminContactOutput values.
+// You can construct a concrete instance of `CpsThirdPartyEnrollmentAdminContactInput` via:
+//
+//	CpsThirdPartyEnrollmentAdminContactArgs{...}
+type CpsThirdPartyEnrollmentAdminContactInput interface {
+	pulumi.Input
+
+	ToCpsThirdPartyEnrollmentAdminContactOutput() CpsThirdPartyEnrollmentAdminContactOutput
+	ToCpsThirdPartyEnrollmentAdminContactOutputWithContext(context.Context) CpsThirdPartyEnrollmentAdminContactOutput
+}
+
+type CpsThirdPartyEnrollmentAdminContactArgs struct {
+	// The address of your organization.
+	AddressLineOne pulumi.StringInput `pulumi:"addressLineOne"`
+	// The address of your organization.
+	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
+	// The city where your organization resides.
+	City pulumi.StringInput `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+	Email pulumi.StringInput `pulumi:"email"`
+	// The first name of the technical contact at Akamai.
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// The last name of the technical contact at Akamai.
+	LastName pulumi.StringInput `pulumi:"lastName"`
+	// Your organization information.
+	Organization pulumi.StringInput `pulumi:"organization"`
+	// The phone number of the administrator who you want to use as a contact at your company.
+	Phone pulumi.StringInput `pulumi:"phone"`
+	// The postal code of your organization.
+	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	// The region of your organization, typically a state or province.
+	Region pulumi.StringInput `pulumi:"region"`
+	// The title of the technical contact at Akamai.
+	Title pulumi.StringPtrInput `pulumi:"title"`
+}
+
+func (CpsThirdPartyEnrollmentAdminContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsThirdPartyEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (i CpsThirdPartyEnrollmentAdminContactArgs) ToCpsThirdPartyEnrollmentAdminContactOutput() CpsThirdPartyEnrollmentAdminContactOutput {
+	return i.ToCpsThirdPartyEnrollmentAdminContactOutputWithContext(context.Background())
+}
+
+func (i CpsThirdPartyEnrollmentAdminContactArgs) ToCpsThirdPartyEnrollmentAdminContactOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentAdminContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentAdminContactOutput)
+}
+
+func (i CpsThirdPartyEnrollmentAdminContactArgs) ToCpsThirdPartyEnrollmentAdminContactPtrOutput() CpsThirdPartyEnrollmentAdminContactPtrOutput {
+	return i.ToCpsThirdPartyEnrollmentAdminContactPtrOutputWithContext(context.Background())
+}
+
+func (i CpsThirdPartyEnrollmentAdminContactArgs) ToCpsThirdPartyEnrollmentAdminContactPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentAdminContactPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentAdminContactOutput).ToCpsThirdPartyEnrollmentAdminContactPtrOutputWithContext(ctx)
+}
+
+// CpsThirdPartyEnrollmentAdminContactPtrInput is an input type that accepts CpsThirdPartyEnrollmentAdminContactArgs, CpsThirdPartyEnrollmentAdminContactPtr and CpsThirdPartyEnrollmentAdminContactPtrOutput values.
+// You can construct a concrete instance of `CpsThirdPartyEnrollmentAdminContactPtrInput` via:
+//
+//	        CpsThirdPartyEnrollmentAdminContactArgs{...}
+//
+//	or:
+//
+//	        nil
+type CpsThirdPartyEnrollmentAdminContactPtrInput interface {
+	pulumi.Input
+
+	ToCpsThirdPartyEnrollmentAdminContactPtrOutput() CpsThirdPartyEnrollmentAdminContactPtrOutput
+	ToCpsThirdPartyEnrollmentAdminContactPtrOutputWithContext(context.Context) CpsThirdPartyEnrollmentAdminContactPtrOutput
+}
+
+type cpsThirdPartyEnrollmentAdminContactPtrType CpsThirdPartyEnrollmentAdminContactArgs
+
+func CpsThirdPartyEnrollmentAdminContactPtr(v *CpsThirdPartyEnrollmentAdminContactArgs) CpsThirdPartyEnrollmentAdminContactPtrInput {
+	return (*cpsThirdPartyEnrollmentAdminContactPtrType)(v)
+}
+
+func (*cpsThirdPartyEnrollmentAdminContactPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsThirdPartyEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (i *cpsThirdPartyEnrollmentAdminContactPtrType) ToCpsThirdPartyEnrollmentAdminContactPtrOutput() CpsThirdPartyEnrollmentAdminContactPtrOutput {
+	return i.ToCpsThirdPartyEnrollmentAdminContactPtrOutputWithContext(context.Background())
+}
+
+func (i *cpsThirdPartyEnrollmentAdminContactPtrType) ToCpsThirdPartyEnrollmentAdminContactPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentAdminContactPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentAdminContactPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentAdminContactOutput struct{ *pulumi.OutputState }
+
+func (CpsThirdPartyEnrollmentAdminContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsThirdPartyEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (o CpsThirdPartyEnrollmentAdminContactOutput) ToCpsThirdPartyEnrollmentAdminContactOutput() CpsThirdPartyEnrollmentAdminContactOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentAdminContactOutput) ToCpsThirdPartyEnrollmentAdminContactOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentAdminContactOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentAdminContactOutput) ToCpsThirdPartyEnrollmentAdminContactPtrOutput() CpsThirdPartyEnrollmentAdminContactPtrOutput {
+	return o.ToCpsThirdPartyEnrollmentAdminContactPtrOutputWithContext(context.Background())
+}
+
+func (o CpsThirdPartyEnrollmentAdminContactOutput) ToCpsThirdPartyEnrollmentAdminContactPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentAdminContactPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsThirdPartyEnrollmentAdminContact) *CpsThirdPartyEnrollmentAdminContact {
+		return &v
+	}).(CpsThirdPartyEnrollmentAdminContactPtrOutput)
+}
+
+// The address of your organization.
+func (o CpsThirdPartyEnrollmentAdminContactOutput) AddressLineOne() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentAdminContact) string { return v.AddressLineOne }).(pulumi.StringOutput)
+}
+
+// The address of your organization.
+func (o CpsThirdPartyEnrollmentAdminContactOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentAdminContact) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
+}
+
+// The city where your organization resides.
+func (o CpsThirdPartyEnrollmentAdminContactOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentAdminContact) string { return v.City }).(pulumi.StringOutput)
+}
+
+// The code for the country where your organization resides.
+func (o CpsThirdPartyEnrollmentAdminContactOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentAdminContact) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+func (o CpsThirdPartyEnrollmentAdminContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentAdminContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// The first name of the technical contact at Akamai.
+func (o CpsThirdPartyEnrollmentAdminContactOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentAdminContact) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+// The last name of the technical contact at Akamai.
+func (o CpsThirdPartyEnrollmentAdminContactOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentAdminContact) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+// Your organization information.
+func (o CpsThirdPartyEnrollmentAdminContactOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentAdminContact) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+// The phone number of the administrator who you want to use as a contact at your company.
+func (o CpsThirdPartyEnrollmentAdminContactOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentAdminContact) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+// The postal code of your organization.
+func (o CpsThirdPartyEnrollmentAdminContactOutput) PostalCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentAdminContact) string { return v.PostalCode }).(pulumi.StringOutput)
+}
+
+// The region of your organization, typically a state or province.
+func (o CpsThirdPartyEnrollmentAdminContactOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentAdminContact) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// The title of the technical contact at Akamai.
+func (o CpsThirdPartyEnrollmentAdminContactOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentAdminContact) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentAdminContactPtrOutput struct{ *pulumi.OutputState }
+
+func (CpsThirdPartyEnrollmentAdminContactPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsThirdPartyEnrollmentAdminContact)(nil)).Elem()
+}
+
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) ToCpsThirdPartyEnrollmentAdminContactPtrOutput() CpsThirdPartyEnrollmentAdminContactPtrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) ToCpsThirdPartyEnrollmentAdminContactPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentAdminContactPtrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) Elem() CpsThirdPartyEnrollmentAdminContactOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) CpsThirdPartyEnrollmentAdminContact {
+		if v != nil {
+			return *v
+		}
+		var ret CpsThirdPartyEnrollmentAdminContact
+		return ret
+	}).(CpsThirdPartyEnrollmentAdminContactOutput)
+}
+
+// The address of your organization.
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) AddressLineOne() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AddressLineOne
+	}).(pulumi.StringPtrOutput)
+}
+
+// The address of your organization.
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AddressLineTwo
+	}).(pulumi.StringPtrOutput)
+}
+
+// The city where your organization resides.
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.City
+	}).(pulumi.StringPtrOutput)
+}
+
+// The code for the country where your organization resides.
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CountryCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Email
+	}).(pulumi.StringPtrOutput)
+}
+
+// The first name of the technical contact at Akamai.
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.FirstName
+	}).(pulumi.StringPtrOutput)
+}
+
+// The last name of the technical contact at Akamai.
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LastName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Your organization information.
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Organization
+	}).(pulumi.StringPtrOutput)
+}
+
+// The phone number of the administrator who you want to use as a contact at your company.
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Phone
+	}).(pulumi.StringPtrOutput)
+}
+
+// The postal code of your organization.
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PostalCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The region of your organization, typically a state or province.
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+// The title of the technical contact at Akamai.
+func (o CpsThirdPartyEnrollmentAdminContactPtrOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentAdminContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Title
+	}).(pulumi.StringPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentCsr struct {
+	// The city where your organization resides.
+	City string `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode string `pulumi:"countryCode"`
+	// Your organization information.
+	Organization string `pulumi:"organization"`
+	// Your organizational unit.
+	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	// Your state or province.
+	State string `pulumi:"state"`
+}
+
+// CpsThirdPartyEnrollmentCsrInput is an input type that accepts CpsThirdPartyEnrollmentCsrArgs and CpsThirdPartyEnrollmentCsrOutput values.
+// You can construct a concrete instance of `CpsThirdPartyEnrollmentCsrInput` via:
+//
+//	CpsThirdPartyEnrollmentCsrArgs{...}
+type CpsThirdPartyEnrollmentCsrInput interface {
+	pulumi.Input
+
+	ToCpsThirdPartyEnrollmentCsrOutput() CpsThirdPartyEnrollmentCsrOutput
+	ToCpsThirdPartyEnrollmentCsrOutputWithContext(context.Context) CpsThirdPartyEnrollmentCsrOutput
+}
+
+type CpsThirdPartyEnrollmentCsrArgs struct {
+	// The city where your organization resides.
+	City pulumi.StringInput `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	// Your organization information.
+	Organization pulumi.StringInput `pulumi:"organization"`
+	// Your organizational unit.
+	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	// Your state or province.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (CpsThirdPartyEnrollmentCsrArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsThirdPartyEnrollmentCsr)(nil)).Elem()
+}
+
+func (i CpsThirdPartyEnrollmentCsrArgs) ToCpsThirdPartyEnrollmentCsrOutput() CpsThirdPartyEnrollmentCsrOutput {
+	return i.ToCpsThirdPartyEnrollmentCsrOutputWithContext(context.Background())
+}
+
+func (i CpsThirdPartyEnrollmentCsrArgs) ToCpsThirdPartyEnrollmentCsrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentCsrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentCsrOutput)
+}
+
+func (i CpsThirdPartyEnrollmentCsrArgs) ToCpsThirdPartyEnrollmentCsrPtrOutput() CpsThirdPartyEnrollmentCsrPtrOutput {
+	return i.ToCpsThirdPartyEnrollmentCsrPtrOutputWithContext(context.Background())
+}
+
+func (i CpsThirdPartyEnrollmentCsrArgs) ToCpsThirdPartyEnrollmentCsrPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentCsrPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentCsrOutput).ToCpsThirdPartyEnrollmentCsrPtrOutputWithContext(ctx)
+}
+
+// CpsThirdPartyEnrollmentCsrPtrInput is an input type that accepts CpsThirdPartyEnrollmentCsrArgs, CpsThirdPartyEnrollmentCsrPtr and CpsThirdPartyEnrollmentCsrPtrOutput values.
+// You can construct a concrete instance of `CpsThirdPartyEnrollmentCsrPtrInput` via:
+//
+//	        CpsThirdPartyEnrollmentCsrArgs{...}
+//
+//	or:
+//
+//	        nil
+type CpsThirdPartyEnrollmentCsrPtrInput interface {
+	pulumi.Input
+
+	ToCpsThirdPartyEnrollmentCsrPtrOutput() CpsThirdPartyEnrollmentCsrPtrOutput
+	ToCpsThirdPartyEnrollmentCsrPtrOutputWithContext(context.Context) CpsThirdPartyEnrollmentCsrPtrOutput
+}
+
+type cpsThirdPartyEnrollmentCsrPtrType CpsThirdPartyEnrollmentCsrArgs
+
+func CpsThirdPartyEnrollmentCsrPtr(v *CpsThirdPartyEnrollmentCsrArgs) CpsThirdPartyEnrollmentCsrPtrInput {
+	return (*cpsThirdPartyEnrollmentCsrPtrType)(v)
+}
+
+func (*cpsThirdPartyEnrollmentCsrPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsThirdPartyEnrollmentCsr)(nil)).Elem()
+}
+
+func (i *cpsThirdPartyEnrollmentCsrPtrType) ToCpsThirdPartyEnrollmentCsrPtrOutput() CpsThirdPartyEnrollmentCsrPtrOutput {
+	return i.ToCpsThirdPartyEnrollmentCsrPtrOutputWithContext(context.Background())
+}
+
+func (i *cpsThirdPartyEnrollmentCsrPtrType) ToCpsThirdPartyEnrollmentCsrPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentCsrPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentCsrPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentCsrOutput struct{ *pulumi.OutputState }
+
+func (CpsThirdPartyEnrollmentCsrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsThirdPartyEnrollmentCsr)(nil)).Elem()
+}
+
+func (o CpsThirdPartyEnrollmentCsrOutput) ToCpsThirdPartyEnrollmentCsrOutput() CpsThirdPartyEnrollmentCsrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentCsrOutput) ToCpsThirdPartyEnrollmentCsrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentCsrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentCsrOutput) ToCpsThirdPartyEnrollmentCsrPtrOutput() CpsThirdPartyEnrollmentCsrPtrOutput {
+	return o.ToCpsThirdPartyEnrollmentCsrPtrOutputWithContext(context.Background())
+}
+
+func (o CpsThirdPartyEnrollmentCsrOutput) ToCpsThirdPartyEnrollmentCsrPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentCsrPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsThirdPartyEnrollmentCsr) *CpsThirdPartyEnrollmentCsr {
+		return &v
+	}).(CpsThirdPartyEnrollmentCsrPtrOutput)
+}
+
+// The city where your organization resides.
+func (o CpsThirdPartyEnrollmentCsrOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentCsr) string { return v.City }).(pulumi.StringOutput)
+}
+
+// The code for the country where your organization resides.
+func (o CpsThirdPartyEnrollmentCsrOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentCsr) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+// Your organization information.
+func (o CpsThirdPartyEnrollmentCsrOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentCsr) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+// Your organizational unit.
+func (o CpsThirdPartyEnrollmentCsrOutput) OrganizationalUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentCsr) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+}
+
+// Your state or province.
+func (o CpsThirdPartyEnrollmentCsrOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentCsr) string { return v.State }).(pulumi.StringOutput)
+}
+
+type CpsThirdPartyEnrollmentCsrPtrOutput struct{ *pulumi.OutputState }
+
+func (CpsThirdPartyEnrollmentCsrPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsThirdPartyEnrollmentCsr)(nil)).Elem()
+}
+
+func (o CpsThirdPartyEnrollmentCsrPtrOutput) ToCpsThirdPartyEnrollmentCsrPtrOutput() CpsThirdPartyEnrollmentCsrPtrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentCsrPtrOutput) ToCpsThirdPartyEnrollmentCsrPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentCsrPtrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentCsrPtrOutput) Elem() CpsThirdPartyEnrollmentCsrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentCsr) CpsThirdPartyEnrollmentCsr {
+		if v != nil {
+			return *v
+		}
+		var ret CpsThirdPartyEnrollmentCsr
+		return ret
+	}).(CpsThirdPartyEnrollmentCsrOutput)
+}
+
+// The city where your organization resides.
+func (o CpsThirdPartyEnrollmentCsrPtrOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentCsr) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.City
+	}).(pulumi.StringPtrOutput)
+}
+
+// The code for the country where your organization resides.
+func (o CpsThirdPartyEnrollmentCsrPtrOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentCsr) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CountryCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// Your organization information.
+func (o CpsThirdPartyEnrollmentCsrPtrOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentCsr) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Organization
+	}).(pulumi.StringPtrOutput)
+}
+
+// Your organizational unit.
+func (o CpsThirdPartyEnrollmentCsrPtrOutput) OrganizationalUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentCsr) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.OrganizationalUnit
+	}).(pulumi.StringPtrOutput)
+}
+
+// Your state or province.
+func (o CpsThirdPartyEnrollmentCsrPtrOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentCsr) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.State
+	}).(pulumi.StringPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentNetworkConfiguration struct {
+	// The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+	ClientMutualAuthentication *CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication `pulumi:"clientMutualAuthentication"`
+	// Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+	CloneDnsNames *bool `pulumi:"cloneDnsNames"`
+	// The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+	DisallowedTlsVersions []string `pulumi:"disallowedTlsVersions"`
+	// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+	Geography string `pulumi:"geography"`
+	// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	MustHaveCiphers *string `pulumi:"mustHaveCiphers"`
+	// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+	OcspStapling *string `pulumi:"ocspStapling"`
+	// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	PreferredCiphers *string `pulumi:"preferredCiphers"`
+	// Whether to use the QUIC transport layer network protocol.
+	QuicEnabled *bool `pulumi:"quicEnabled"`
+}
+
+// CpsThirdPartyEnrollmentNetworkConfigurationInput is an input type that accepts CpsThirdPartyEnrollmentNetworkConfigurationArgs and CpsThirdPartyEnrollmentNetworkConfigurationOutput values.
+// You can construct a concrete instance of `CpsThirdPartyEnrollmentNetworkConfigurationInput` via:
+//
+//	CpsThirdPartyEnrollmentNetworkConfigurationArgs{...}
+type CpsThirdPartyEnrollmentNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToCpsThirdPartyEnrollmentNetworkConfigurationOutput() CpsThirdPartyEnrollmentNetworkConfigurationOutput
+	ToCpsThirdPartyEnrollmentNetworkConfigurationOutputWithContext(context.Context) CpsThirdPartyEnrollmentNetworkConfigurationOutput
+}
+
+type CpsThirdPartyEnrollmentNetworkConfigurationArgs struct {
+	// The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+	ClientMutualAuthentication CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput `pulumi:"clientMutualAuthentication"`
+	// Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+	CloneDnsNames pulumi.BoolPtrInput `pulumi:"cloneDnsNames"`
+	// The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+	DisallowedTlsVersions pulumi.StringArrayInput `pulumi:"disallowedTlsVersions"`
+	// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+	Geography pulumi.StringInput `pulumi:"geography"`
+	// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	MustHaveCiphers pulumi.StringPtrInput `pulumi:"mustHaveCiphers"`
+	// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+	OcspStapling pulumi.StringPtrInput `pulumi:"ocspStapling"`
+	// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	PreferredCiphers pulumi.StringPtrInput `pulumi:"preferredCiphers"`
+	// Whether to use the QUIC transport layer network protocol.
+	QuicEnabled pulumi.BoolPtrInput `pulumi:"quicEnabled"`
+}
+
+func (CpsThirdPartyEnrollmentNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsThirdPartyEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (i CpsThirdPartyEnrollmentNetworkConfigurationArgs) ToCpsThirdPartyEnrollmentNetworkConfigurationOutput() CpsThirdPartyEnrollmentNetworkConfigurationOutput {
+	return i.ToCpsThirdPartyEnrollmentNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i CpsThirdPartyEnrollmentNetworkConfigurationArgs) ToCpsThirdPartyEnrollmentNetworkConfigurationOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentNetworkConfigurationOutput)
+}
+
+func (i CpsThirdPartyEnrollmentNetworkConfigurationArgs) ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutput() CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput {
+	return i.ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i CpsThirdPartyEnrollmentNetworkConfigurationArgs) ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentNetworkConfigurationOutput).ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutputWithContext(ctx)
+}
+
+// CpsThirdPartyEnrollmentNetworkConfigurationPtrInput is an input type that accepts CpsThirdPartyEnrollmentNetworkConfigurationArgs, CpsThirdPartyEnrollmentNetworkConfigurationPtr and CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput values.
+// You can construct a concrete instance of `CpsThirdPartyEnrollmentNetworkConfigurationPtrInput` via:
+//
+//	        CpsThirdPartyEnrollmentNetworkConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type CpsThirdPartyEnrollmentNetworkConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutput() CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput
+	ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutputWithContext(context.Context) CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput
+}
+
+type cpsThirdPartyEnrollmentNetworkConfigurationPtrType CpsThirdPartyEnrollmentNetworkConfigurationArgs
+
+func CpsThirdPartyEnrollmentNetworkConfigurationPtr(v *CpsThirdPartyEnrollmentNetworkConfigurationArgs) CpsThirdPartyEnrollmentNetworkConfigurationPtrInput {
+	return (*cpsThirdPartyEnrollmentNetworkConfigurationPtrType)(v)
+}
+
+func (*cpsThirdPartyEnrollmentNetworkConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsThirdPartyEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (i *cpsThirdPartyEnrollmentNetworkConfigurationPtrType) ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutput() CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput {
+	return i.ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *cpsThirdPartyEnrollmentNetworkConfigurationPtrType) ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (CpsThirdPartyEnrollmentNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsThirdPartyEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) ToCpsThirdPartyEnrollmentNetworkConfigurationOutput() CpsThirdPartyEnrollmentNetworkConfigurationOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) ToCpsThirdPartyEnrollmentNetworkConfigurationOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentNetworkConfigurationOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutput() CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput {
+	return o.ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsThirdPartyEnrollmentNetworkConfiguration) *CpsThirdPartyEnrollmentNetworkConfiguration {
+		return &v
+	}).(CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput)
+}
+
+// The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) ClientMutualAuthentication() CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) *CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication {
+		return v.ClientMutualAuthentication
+	}).(CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
+}
+
+// Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) CloneDnsNames() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) *bool { return v.CloneDnsNames }).(pulumi.BoolPtrOutput)
+}
+
+// The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) DisallowedTlsVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) []string { return v.DisallowedTlsVersions }).(pulumi.StringArrayOutput)
+}
+
+// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) Geography() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) string { return v.Geography }).(pulumi.StringOutput)
+}
+
+// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) MustHaveCiphers() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) *string { return v.MustHaveCiphers }).(pulumi.StringPtrOutput)
+}
+
+// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) OcspStapling() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) *string { return v.OcspStapling }).(pulumi.StringPtrOutput)
+}
+
+// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) PreferredCiphers() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) *string { return v.PreferredCiphers }).(pulumi.StringPtrOutput)
+}
+
+// Whether to use the QUIC transport layer network protocol.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) QuicEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) *bool { return v.QuicEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsThirdPartyEnrollmentNetworkConfiguration)(nil)).Elem()
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutput() CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) ToCpsThirdPartyEnrollmentNetworkConfigurationPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) Elem() CpsThirdPartyEnrollmentNetworkConfigurationOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) CpsThirdPartyEnrollmentNetworkConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret CpsThirdPartyEnrollmentNetworkConfiguration
+		return ret
+	}).(CpsThirdPartyEnrollmentNetworkConfigurationOutput)
+}
+
+// The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) ClientMutualAuthentication() CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) *CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication {
+		if v == nil {
+			return nil
+		}
+		return v.ClientMutualAuthentication
+	}).(CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
+}
+
+// Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) CloneDnsNames() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CloneDnsNames
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) DisallowedTlsVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DisallowedTlsVersions
+	}).(pulumi.StringArrayOutput)
+}
+
+// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) Geography() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Geography
+	}).(pulumi.StringPtrOutput)
+}
+
+// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) MustHaveCiphers() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MustHaveCiphers
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) OcspStapling() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OcspStapling
+	}).(pulumi.StringPtrOutput)
+}
+
+// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) PreferredCiphers() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PreferredCiphers
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether to use the QUIC transport layer network protocol.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) QuicEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.QuicEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication struct {
+	// Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+	OcspEnabled *bool `pulumi:"ocspEnabled"`
+	// Whether you want to enable the server to send the certificate authority (CA) list to the client.
+	SendCaListToClient *bool `pulumi:"sendCaListToClient"`
+	// The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
+	SetId *string `pulumi:"setId"`
+}
+
+// CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationInput is an input type that accepts CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs and CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput values.
+// You can construct a concrete instance of `CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationInput` via:
+//
+//	CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{...}
+type CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationInput interface {
+	pulumi.Input
+
+	ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput() CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput
+	ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(context.Context) CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput
+}
+
+type CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs struct {
+	// Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+	OcspEnabled pulumi.BoolPtrInput `pulumi:"ocspEnabled"`
+	// Whether you want to enable the server to send the certificate authority (CA) list to the client.
+	SendCaListToClient pulumi.BoolPtrInput `pulumi:"sendCaListToClient"`
+	// The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
+	SetId pulumi.StringPtrInput `pulumi:"setId"`
+}
+
+func (CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (i CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput() CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return i.ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(context.Background())
+}
+
+func (i CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput)
+}
+
+func (i CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput() CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return i.ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(context.Background())
+}
+
+func (i CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput).ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(ctx)
+}
+
+// CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput is an input type that accepts CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs, CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtr and CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput values.
+// You can construct a concrete instance of `CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput` via:
+//
+//	        CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{...}
+//
+//	or:
+//
+//	        nil
+type CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput interface {
+	pulumi.Input
+
+	ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput() CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput
+	ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(context.Context) CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput
+}
+
+type cpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrType CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs
+
+func CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtr(v *CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs) CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput {
+	return (*cpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrType)(v)
+}
+
+func (*cpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (i *cpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrType) ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput() CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return i.ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(context.Background())
+}
+
+func (i *cpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrType) ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput struct{ *pulumi.OutputState }
+
+func (CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput() CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput() CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return o.ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(context.Background())
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication) *CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication {
+		return &v
+	}).(CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput)
+}
+
+// Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) OcspEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication) *bool {
+		return v.OcspEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you want to enable the server to send the certificate authority (CA) list to the client.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) SendCaListToClient() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication) *bool {
+		return v.SendCaListToClient
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput) SetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication) *string { return v.SetId }).(pulumi.StringPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput struct{ *pulumi.OutputState }
+
+func (CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication)(nil)).Elem()
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput() CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) ToCpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) Elem() CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication) CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication {
+		if v != nil {
+			return *v
+		}
+		var ret CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication
+		return ret
+	}).(CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput)
+}
+
+// Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) OcspEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.OcspEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Whether you want to enable the server to send the certificate authority (CA) list to the client.
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) SendCaListToClient() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SendCaListToClient
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
+func (o CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput) SetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentOrganization struct {
+	// The address of your organization.
+	AddressLineOne string `pulumi:"addressLineOne"`
+	// The address of your organization.
+	AddressLineTwo *string `pulumi:"addressLineTwo"`
+	// The city where your organization resides.
+	City string `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode string `pulumi:"countryCode"`
+	// The name of your organization.
+	Name string `pulumi:"name"`
+	// The phone number of the administrator who you want to use as a contact at your company.
+	Phone string `pulumi:"phone"`
+	// The postal code of your organization.
+	PostalCode string `pulumi:"postalCode"`
+	// The region of your organization, typically a state or province.
+	Region string `pulumi:"region"`
+}
+
+// CpsThirdPartyEnrollmentOrganizationInput is an input type that accepts CpsThirdPartyEnrollmentOrganizationArgs and CpsThirdPartyEnrollmentOrganizationOutput values.
+// You can construct a concrete instance of `CpsThirdPartyEnrollmentOrganizationInput` via:
+//
+//	CpsThirdPartyEnrollmentOrganizationArgs{...}
+type CpsThirdPartyEnrollmentOrganizationInput interface {
+	pulumi.Input
+
+	ToCpsThirdPartyEnrollmentOrganizationOutput() CpsThirdPartyEnrollmentOrganizationOutput
+	ToCpsThirdPartyEnrollmentOrganizationOutputWithContext(context.Context) CpsThirdPartyEnrollmentOrganizationOutput
+}
+
+type CpsThirdPartyEnrollmentOrganizationArgs struct {
+	// The address of your organization.
+	AddressLineOne pulumi.StringInput `pulumi:"addressLineOne"`
+	// The address of your organization.
+	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
+	// The city where your organization resides.
+	City pulumi.StringInput `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	// The name of your organization.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The phone number of the administrator who you want to use as a contact at your company.
+	Phone pulumi.StringInput `pulumi:"phone"`
+	// The postal code of your organization.
+	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	// The region of your organization, typically a state or province.
+	Region pulumi.StringInput `pulumi:"region"`
+}
+
+func (CpsThirdPartyEnrollmentOrganizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsThirdPartyEnrollmentOrganization)(nil)).Elem()
+}
+
+func (i CpsThirdPartyEnrollmentOrganizationArgs) ToCpsThirdPartyEnrollmentOrganizationOutput() CpsThirdPartyEnrollmentOrganizationOutput {
+	return i.ToCpsThirdPartyEnrollmentOrganizationOutputWithContext(context.Background())
+}
+
+func (i CpsThirdPartyEnrollmentOrganizationArgs) ToCpsThirdPartyEnrollmentOrganizationOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentOrganizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentOrganizationOutput)
+}
+
+func (i CpsThirdPartyEnrollmentOrganizationArgs) ToCpsThirdPartyEnrollmentOrganizationPtrOutput() CpsThirdPartyEnrollmentOrganizationPtrOutput {
+	return i.ToCpsThirdPartyEnrollmentOrganizationPtrOutputWithContext(context.Background())
+}
+
+func (i CpsThirdPartyEnrollmentOrganizationArgs) ToCpsThirdPartyEnrollmentOrganizationPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentOrganizationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentOrganizationOutput).ToCpsThirdPartyEnrollmentOrganizationPtrOutputWithContext(ctx)
+}
+
+// CpsThirdPartyEnrollmentOrganizationPtrInput is an input type that accepts CpsThirdPartyEnrollmentOrganizationArgs, CpsThirdPartyEnrollmentOrganizationPtr and CpsThirdPartyEnrollmentOrganizationPtrOutput values.
+// You can construct a concrete instance of `CpsThirdPartyEnrollmentOrganizationPtrInput` via:
+//
+//	        CpsThirdPartyEnrollmentOrganizationArgs{...}
+//
+//	or:
+//
+//	        nil
+type CpsThirdPartyEnrollmentOrganizationPtrInput interface {
+	pulumi.Input
+
+	ToCpsThirdPartyEnrollmentOrganizationPtrOutput() CpsThirdPartyEnrollmentOrganizationPtrOutput
+	ToCpsThirdPartyEnrollmentOrganizationPtrOutputWithContext(context.Context) CpsThirdPartyEnrollmentOrganizationPtrOutput
+}
+
+type cpsThirdPartyEnrollmentOrganizationPtrType CpsThirdPartyEnrollmentOrganizationArgs
+
+func CpsThirdPartyEnrollmentOrganizationPtr(v *CpsThirdPartyEnrollmentOrganizationArgs) CpsThirdPartyEnrollmentOrganizationPtrInput {
+	return (*cpsThirdPartyEnrollmentOrganizationPtrType)(v)
+}
+
+func (*cpsThirdPartyEnrollmentOrganizationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsThirdPartyEnrollmentOrganization)(nil)).Elem()
+}
+
+func (i *cpsThirdPartyEnrollmentOrganizationPtrType) ToCpsThirdPartyEnrollmentOrganizationPtrOutput() CpsThirdPartyEnrollmentOrganizationPtrOutput {
+	return i.ToCpsThirdPartyEnrollmentOrganizationPtrOutputWithContext(context.Background())
+}
+
+func (i *cpsThirdPartyEnrollmentOrganizationPtrType) ToCpsThirdPartyEnrollmentOrganizationPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentOrganizationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentOrganizationPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentOrganizationOutput struct{ *pulumi.OutputState }
+
+func (CpsThirdPartyEnrollmentOrganizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsThirdPartyEnrollmentOrganization)(nil)).Elem()
+}
+
+func (o CpsThirdPartyEnrollmentOrganizationOutput) ToCpsThirdPartyEnrollmentOrganizationOutput() CpsThirdPartyEnrollmentOrganizationOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentOrganizationOutput) ToCpsThirdPartyEnrollmentOrganizationOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentOrganizationOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentOrganizationOutput) ToCpsThirdPartyEnrollmentOrganizationPtrOutput() CpsThirdPartyEnrollmentOrganizationPtrOutput {
+	return o.ToCpsThirdPartyEnrollmentOrganizationPtrOutputWithContext(context.Background())
+}
+
+func (o CpsThirdPartyEnrollmentOrganizationOutput) ToCpsThirdPartyEnrollmentOrganizationPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentOrganizationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsThirdPartyEnrollmentOrganization) *CpsThirdPartyEnrollmentOrganization {
+		return &v
+	}).(CpsThirdPartyEnrollmentOrganizationPtrOutput)
+}
+
+// The address of your organization.
+func (o CpsThirdPartyEnrollmentOrganizationOutput) AddressLineOne() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentOrganization) string { return v.AddressLineOne }).(pulumi.StringOutput)
+}
+
+// The address of your organization.
+func (o CpsThirdPartyEnrollmentOrganizationOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentOrganization) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
+}
+
+// The city where your organization resides.
+func (o CpsThirdPartyEnrollmentOrganizationOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentOrganization) string { return v.City }).(pulumi.StringOutput)
+}
+
+// The code for the country where your organization resides.
+func (o CpsThirdPartyEnrollmentOrganizationOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentOrganization) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+// The name of your organization.
+func (o CpsThirdPartyEnrollmentOrganizationOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentOrganization) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The phone number of the administrator who you want to use as a contact at your company.
+func (o CpsThirdPartyEnrollmentOrganizationOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentOrganization) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+// The postal code of your organization.
+func (o CpsThirdPartyEnrollmentOrganizationOutput) PostalCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentOrganization) string { return v.PostalCode }).(pulumi.StringOutput)
+}
+
+// The region of your organization, typically a state or province.
+func (o CpsThirdPartyEnrollmentOrganizationOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentOrganization) string { return v.Region }).(pulumi.StringOutput)
+}
+
+type CpsThirdPartyEnrollmentOrganizationPtrOutput struct{ *pulumi.OutputState }
+
+func (CpsThirdPartyEnrollmentOrganizationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsThirdPartyEnrollmentOrganization)(nil)).Elem()
+}
+
+func (o CpsThirdPartyEnrollmentOrganizationPtrOutput) ToCpsThirdPartyEnrollmentOrganizationPtrOutput() CpsThirdPartyEnrollmentOrganizationPtrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentOrganizationPtrOutput) ToCpsThirdPartyEnrollmentOrganizationPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentOrganizationPtrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentOrganizationPtrOutput) Elem() CpsThirdPartyEnrollmentOrganizationOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentOrganization) CpsThirdPartyEnrollmentOrganization {
+		if v != nil {
+			return *v
+		}
+		var ret CpsThirdPartyEnrollmentOrganization
+		return ret
+	}).(CpsThirdPartyEnrollmentOrganizationOutput)
+}
+
+// The address of your organization.
+func (o CpsThirdPartyEnrollmentOrganizationPtrOutput) AddressLineOne() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AddressLineOne
+	}).(pulumi.StringPtrOutput)
+}
+
+// The address of your organization.
+func (o CpsThirdPartyEnrollmentOrganizationPtrOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AddressLineTwo
+	}).(pulumi.StringPtrOutput)
+}
+
+// The city where your organization resides.
+func (o CpsThirdPartyEnrollmentOrganizationPtrOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.City
+	}).(pulumi.StringPtrOutput)
+}
+
+// The code for the country where your organization resides.
+func (o CpsThirdPartyEnrollmentOrganizationPtrOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CountryCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The name of your organization.
+func (o CpsThirdPartyEnrollmentOrganizationPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// The phone number of the administrator who you want to use as a contact at your company.
+func (o CpsThirdPartyEnrollmentOrganizationPtrOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Phone
+	}).(pulumi.StringPtrOutput)
+}
+
+// The postal code of your organization.
+func (o CpsThirdPartyEnrollmentOrganizationPtrOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PostalCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The region of your organization, typically a state or province.
+func (o CpsThirdPartyEnrollmentOrganizationPtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentTechContact struct {
+	// The address of your organization.
+	AddressLineOne string `pulumi:"addressLineOne"`
+	// The address of your organization.
+	AddressLineTwo *string `pulumi:"addressLineTwo"`
+	// The city where your organization resides.
+	City string `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode string `pulumi:"countryCode"`
+	// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+	Email string `pulumi:"email"`
+	// The first name of the technical contact at Akamai.
+	FirstName string `pulumi:"firstName"`
+	// The last name of the technical contact at Akamai.
+	LastName string `pulumi:"lastName"`
+	// Your organization information.
+	Organization string `pulumi:"organization"`
+	// The phone number of the administrator who you want to use as a contact at your company.
+	Phone string `pulumi:"phone"`
+	// The postal code of your organization.
+	PostalCode string `pulumi:"postalCode"`
+	// The region of your organization, typically a state or province.
+	Region string `pulumi:"region"`
+	// The title of the technical contact at Akamai.
+	Title *string `pulumi:"title"`
+}
+
+// CpsThirdPartyEnrollmentTechContactInput is an input type that accepts CpsThirdPartyEnrollmentTechContactArgs and CpsThirdPartyEnrollmentTechContactOutput values.
+// You can construct a concrete instance of `CpsThirdPartyEnrollmentTechContactInput` via:
+//
+//	CpsThirdPartyEnrollmentTechContactArgs{...}
+type CpsThirdPartyEnrollmentTechContactInput interface {
+	pulumi.Input
+
+	ToCpsThirdPartyEnrollmentTechContactOutput() CpsThirdPartyEnrollmentTechContactOutput
+	ToCpsThirdPartyEnrollmentTechContactOutputWithContext(context.Context) CpsThirdPartyEnrollmentTechContactOutput
+}
+
+type CpsThirdPartyEnrollmentTechContactArgs struct {
+	// The address of your organization.
+	AddressLineOne pulumi.StringInput `pulumi:"addressLineOne"`
+	// The address of your organization.
+	AddressLineTwo pulumi.StringPtrInput `pulumi:"addressLineTwo"`
+	// The city where your organization resides.
+	City pulumi.StringInput `pulumi:"city"`
+	// The code for the country where your organization resides.
+	CountryCode pulumi.StringInput `pulumi:"countryCode"`
+	// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+	Email pulumi.StringInput `pulumi:"email"`
+	// The first name of the technical contact at Akamai.
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// The last name of the technical contact at Akamai.
+	LastName pulumi.StringInput `pulumi:"lastName"`
+	// Your organization information.
+	Organization pulumi.StringInput `pulumi:"organization"`
+	// The phone number of the administrator who you want to use as a contact at your company.
+	Phone pulumi.StringInput `pulumi:"phone"`
+	// The postal code of your organization.
+	PostalCode pulumi.StringInput `pulumi:"postalCode"`
+	// The region of your organization, typically a state or province.
+	Region pulumi.StringInput `pulumi:"region"`
+	// The title of the technical contact at Akamai.
+	Title pulumi.StringPtrInput `pulumi:"title"`
+}
+
+func (CpsThirdPartyEnrollmentTechContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsThirdPartyEnrollmentTechContact)(nil)).Elem()
+}
+
+func (i CpsThirdPartyEnrollmentTechContactArgs) ToCpsThirdPartyEnrollmentTechContactOutput() CpsThirdPartyEnrollmentTechContactOutput {
+	return i.ToCpsThirdPartyEnrollmentTechContactOutputWithContext(context.Background())
+}
+
+func (i CpsThirdPartyEnrollmentTechContactArgs) ToCpsThirdPartyEnrollmentTechContactOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentTechContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentTechContactOutput)
+}
+
+func (i CpsThirdPartyEnrollmentTechContactArgs) ToCpsThirdPartyEnrollmentTechContactPtrOutput() CpsThirdPartyEnrollmentTechContactPtrOutput {
+	return i.ToCpsThirdPartyEnrollmentTechContactPtrOutputWithContext(context.Background())
+}
+
+func (i CpsThirdPartyEnrollmentTechContactArgs) ToCpsThirdPartyEnrollmentTechContactPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentTechContactPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentTechContactOutput).ToCpsThirdPartyEnrollmentTechContactPtrOutputWithContext(ctx)
+}
+
+// CpsThirdPartyEnrollmentTechContactPtrInput is an input type that accepts CpsThirdPartyEnrollmentTechContactArgs, CpsThirdPartyEnrollmentTechContactPtr and CpsThirdPartyEnrollmentTechContactPtrOutput values.
+// You can construct a concrete instance of `CpsThirdPartyEnrollmentTechContactPtrInput` via:
+//
+//	        CpsThirdPartyEnrollmentTechContactArgs{...}
+//
+//	or:
+//
+//	        nil
+type CpsThirdPartyEnrollmentTechContactPtrInput interface {
+	pulumi.Input
+
+	ToCpsThirdPartyEnrollmentTechContactPtrOutput() CpsThirdPartyEnrollmentTechContactPtrOutput
+	ToCpsThirdPartyEnrollmentTechContactPtrOutputWithContext(context.Context) CpsThirdPartyEnrollmentTechContactPtrOutput
+}
+
+type cpsThirdPartyEnrollmentTechContactPtrType CpsThirdPartyEnrollmentTechContactArgs
+
+func CpsThirdPartyEnrollmentTechContactPtr(v *CpsThirdPartyEnrollmentTechContactArgs) CpsThirdPartyEnrollmentTechContactPtrInput {
+	return (*cpsThirdPartyEnrollmentTechContactPtrType)(v)
+}
+
+func (*cpsThirdPartyEnrollmentTechContactPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsThirdPartyEnrollmentTechContact)(nil)).Elem()
+}
+
+func (i *cpsThirdPartyEnrollmentTechContactPtrType) ToCpsThirdPartyEnrollmentTechContactPtrOutput() CpsThirdPartyEnrollmentTechContactPtrOutput {
+	return i.ToCpsThirdPartyEnrollmentTechContactPtrOutputWithContext(context.Background())
+}
+
+func (i *cpsThirdPartyEnrollmentTechContactPtrType) ToCpsThirdPartyEnrollmentTechContactPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentTechContactPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CpsThirdPartyEnrollmentTechContactPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentTechContactOutput struct{ *pulumi.OutputState }
+
+func (CpsThirdPartyEnrollmentTechContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CpsThirdPartyEnrollmentTechContact)(nil)).Elem()
+}
+
+func (o CpsThirdPartyEnrollmentTechContactOutput) ToCpsThirdPartyEnrollmentTechContactOutput() CpsThirdPartyEnrollmentTechContactOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentTechContactOutput) ToCpsThirdPartyEnrollmentTechContactOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentTechContactOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentTechContactOutput) ToCpsThirdPartyEnrollmentTechContactPtrOutput() CpsThirdPartyEnrollmentTechContactPtrOutput {
+	return o.ToCpsThirdPartyEnrollmentTechContactPtrOutputWithContext(context.Background())
+}
+
+func (o CpsThirdPartyEnrollmentTechContactOutput) ToCpsThirdPartyEnrollmentTechContactPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentTechContactPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CpsThirdPartyEnrollmentTechContact) *CpsThirdPartyEnrollmentTechContact {
+		return &v
+	}).(CpsThirdPartyEnrollmentTechContactPtrOutput)
+}
+
+// The address of your organization.
+func (o CpsThirdPartyEnrollmentTechContactOutput) AddressLineOne() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentTechContact) string { return v.AddressLineOne }).(pulumi.StringOutput)
+}
+
+// The address of your organization.
+func (o CpsThirdPartyEnrollmentTechContactOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentTechContact) *string { return v.AddressLineTwo }).(pulumi.StringPtrOutput)
+}
+
+// The city where your organization resides.
+func (o CpsThirdPartyEnrollmentTechContactOutput) City() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentTechContact) string { return v.City }).(pulumi.StringOutput)
+}
+
+// The code for the country where your organization resides.
+func (o CpsThirdPartyEnrollmentTechContactOutput) CountryCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentTechContact) string { return v.CountryCode }).(pulumi.StringOutput)
+}
+
+// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+func (o CpsThirdPartyEnrollmentTechContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentTechContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// The first name of the technical contact at Akamai.
+func (o CpsThirdPartyEnrollmentTechContactOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentTechContact) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+// The last name of the technical contact at Akamai.
+func (o CpsThirdPartyEnrollmentTechContactOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentTechContact) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+// Your organization information.
+func (o CpsThirdPartyEnrollmentTechContactOutput) Organization() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentTechContact) string { return v.Organization }).(pulumi.StringOutput)
+}
+
+// The phone number of the administrator who you want to use as a contact at your company.
+func (o CpsThirdPartyEnrollmentTechContactOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentTechContact) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+// The postal code of your organization.
+func (o CpsThirdPartyEnrollmentTechContactOutput) PostalCode() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentTechContact) string { return v.PostalCode }).(pulumi.StringOutput)
+}
+
+// The region of your organization, typically a state or province.
+func (o CpsThirdPartyEnrollmentTechContactOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentTechContact) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// The title of the technical contact at Akamai.
+func (o CpsThirdPartyEnrollmentTechContactOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentTechContact) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+type CpsThirdPartyEnrollmentTechContactPtrOutput struct{ *pulumi.OutputState }
+
+func (CpsThirdPartyEnrollmentTechContactPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CpsThirdPartyEnrollmentTechContact)(nil)).Elem()
+}
+
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) ToCpsThirdPartyEnrollmentTechContactPtrOutput() CpsThirdPartyEnrollmentTechContactPtrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) ToCpsThirdPartyEnrollmentTechContactPtrOutputWithContext(ctx context.Context) CpsThirdPartyEnrollmentTechContactPtrOutput {
+	return o
+}
+
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) Elem() CpsThirdPartyEnrollmentTechContactOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) CpsThirdPartyEnrollmentTechContact {
+		if v != nil {
+			return *v
+		}
+		var ret CpsThirdPartyEnrollmentTechContact
+		return ret
+	}).(CpsThirdPartyEnrollmentTechContactOutput)
+}
+
+// The address of your organization.
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) AddressLineOne() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AddressLineOne
+	}).(pulumi.StringPtrOutput)
+}
+
+// The address of your organization.
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) AddressLineTwo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AddressLineTwo
+	}).(pulumi.StringPtrOutput)
+}
+
+// The city where your organization resides.
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) City() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.City
+	}).(pulumi.StringPtrOutput)
+}
+
+// The code for the country where your organization resides.
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) CountryCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CountryCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Email
+	}).(pulumi.StringPtrOutput)
+}
+
+// The first name of the technical contact at Akamai.
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.FirstName
+	}).(pulumi.StringPtrOutput)
+}
+
+// The last name of the technical contact at Akamai.
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LastName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Your organization information.
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) Organization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Organization
+	}).(pulumi.StringPtrOutput)
+}
+
+// The phone number of the administrator who you want to use as a contact at your company.
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Phone
+	}).(pulumi.StringPtrOutput)
+}
+
+// The postal code of your organization.
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) PostalCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PostalCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The region of your organization, typically a state or province.
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+// The title of the technical contact at Akamai.
+func (o CpsThirdPartyEnrollmentTechContactPtrOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentTechContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Title
+	}).(pulumi.StringPtrOutput)
+}
+
 type DatastreamAzureConnector struct {
 	// **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
 	AccessKey string `pulumi:"accessKey"`
@@ -3005,8 +4631,7 @@ func (o DatastreamConfigFrequencyPtrOutput) TimeInSec() pulumi.IntPtrOutput {
 }
 
 type DatastreamDatadogConnector struct {
-	// **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-	// * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+	// **Secret**. Your Log API token for your account in New Relic.
 	AuthToken string `pulumi:"authToken"`
 	// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
 	CompressLogs *bool `pulumi:"compressLogs"`
@@ -3017,7 +4642,7 @@ type DatastreamDatadogConnector struct {
 	Service *string `pulumi:"service"`
 	// The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
 	Source *string `pulumi:"source"`
-	// The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+	// The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
 	Tags *string `pulumi:"tags"`
 	// Enter the secure URL where you want to send and store your logs.
 	Url string `pulumi:"url"`
@@ -3035,8 +4660,7 @@ type DatastreamDatadogConnectorInput interface {
 }
 
 type DatastreamDatadogConnectorArgs struct {
-	// **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-	// * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+	// **Secret**. Your Log API token for your account in New Relic.
 	AuthToken pulumi.StringInput `pulumi:"authToken"`
 	// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
 	CompressLogs pulumi.BoolPtrInput `pulumi:"compressLogs"`
@@ -3047,7 +4671,7 @@ type DatastreamDatadogConnectorArgs struct {
 	Service pulumi.StringPtrInput `pulumi:"service"`
 	// The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
 	Source pulumi.StringPtrInput `pulumi:"source"`
-	// The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+	// The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
 	Tags pulumi.StringPtrInput `pulumi:"tags"`
 	// Enter the secure URL where you want to send and store your logs.
 	Url pulumi.StringInput `pulumi:"url"`
@@ -3130,8 +4754,7 @@ func (o DatastreamDatadogConnectorOutput) ToDatastreamDatadogConnectorPtrOutputW
 	}).(DatastreamDatadogConnectorPtrOutput)
 }
 
-// **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-// * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+// **Secret**. Your Log API token for your account in New Relic.
 func (o DatastreamDatadogConnectorOutput) AuthToken() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamDatadogConnector) string { return v.AuthToken }).(pulumi.StringOutput)
 }
@@ -3160,7 +4783,7 @@ func (o DatastreamDatadogConnectorOutput) Source() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatastreamDatadogConnector) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
-// The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+// The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
 func (o DatastreamDatadogConnectorOutput) Tags() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatastreamDatadogConnector) *string { return v.Tags }).(pulumi.StringPtrOutput)
 }
@@ -3194,8 +4817,7 @@ func (o DatastreamDatadogConnectorPtrOutput) Elem() DatastreamDatadogConnectorOu
 	}).(DatastreamDatadogConnectorOutput)
 }
 
-// **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-// * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+// **Secret**. Your Log API token for your account in New Relic.
 func (o DatastreamDatadogConnectorPtrOutput) AuthToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamDatadogConnector) *string {
 		if v == nil {
@@ -3254,7 +4876,7 @@ func (o DatastreamDatadogConnectorPtrOutput) Source() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+// The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
 func (o DatastreamDatadogConnectorPtrOutput) Tags() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamDatadogConnector) *string {
 		if v == nil {
@@ -3271,6 +4893,371 @@ func (o DatastreamDatadogConnectorPtrOutput) Url() pulumi.StringPtrOutput {
 			return nil
 		}
 		return &v.Url
+	}).(pulumi.StringPtrOutput)
+}
+
+type DatastreamElasticsearchConnector struct {
+	// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+	CaCert *string `pulumi:"caCert"`
+	// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+	ClientCert *string `pulumi:"clientCert"`
+	// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+	ClientKey *string `pulumi:"clientKey"`
+	// The name of the connector.
+	ConnectorName string `pulumi:"connectorName"`
+	// Content type to pass in the log file header.
+	ContentType *string `pulumi:"contentType"`
+	// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+	CustomHeaderName *string `pulumi:"customHeaderName"`
+	// The custom header's contents passed with the request that contains information about the client connection.
+	CustomHeaderValue *string `pulumi:"customHeaderValue"`
+	// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+	// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+	Endpoint string `pulumi:"endpoint"`
+	// **Secret**. The index name of the Elastic cloud where you want to store log files.
+	IndexName string `pulumi:"indexName"`
+	MTls      *bool  `pulumi:"mTls"`
+	// **Secret**. The Elasticsearch basic access authentication password.
+	Password string `pulumi:"password"`
+	// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+	TlsHostname *string `pulumi:"tlsHostname"`
+	// **Secret**. The Elasticsearch basic access authentication username.
+	UserName string `pulumi:"userName"`
+}
+
+// DatastreamElasticsearchConnectorInput is an input type that accepts DatastreamElasticsearchConnectorArgs and DatastreamElasticsearchConnectorOutput values.
+// You can construct a concrete instance of `DatastreamElasticsearchConnectorInput` via:
+//
+//	DatastreamElasticsearchConnectorArgs{...}
+type DatastreamElasticsearchConnectorInput interface {
+	pulumi.Input
+
+	ToDatastreamElasticsearchConnectorOutput() DatastreamElasticsearchConnectorOutput
+	ToDatastreamElasticsearchConnectorOutputWithContext(context.Context) DatastreamElasticsearchConnectorOutput
+}
+
+type DatastreamElasticsearchConnectorArgs struct {
+	// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+	CaCert pulumi.StringPtrInput `pulumi:"caCert"`
+	// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+	ClientCert pulumi.StringPtrInput `pulumi:"clientCert"`
+	// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+	ClientKey pulumi.StringPtrInput `pulumi:"clientKey"`
+	// The name of the connector.
+	ConnectorName pulumi.StringInput `pulumi:"connectorName"`
+	// Content type to pass in the log file header.
+	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
+	// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+	CustomHeaderName pulumi.StringPtrInput `pulumi:"customHeaderName"`
+	// The custom header's contents passed with the request that contains information about the client connection.
+	CustomHeaderValue pulumi.StringPtrInput `pulumi:"customHeaderValue"`
+	// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+	// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+	// **Secret**. The index name of the Elastic cloud where you want to store log files.
+	IndexName pulumi.StringInput  `pulumi:"indexName"`
+	MTls      pulumi.BoolPtrInput `pulumi:"mTls"`
+	// **Secret**. The Elasticsearch basic access authentication password.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+	TlsHostname pulumi.StringPtrInput `pulumi:"tlsHostname"`
+	// **Secret**. The Elasticsearch basic access authentication username.
+	UserName pulumi.StringInput `pulumi:"userName"`
+}
+
+func (DatastreamElasticsearchConnectorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatastreamElasticsearchConnector)(nil)).Elem()
+}
+
+func (i DatastreamElasticsearchConnectorArgs) ToDatastreamElasticsearchConnectorOutput() DatastreamElasticsearchConnectorOutput {
+	return i.ToDatastreamElasticsearchConnectorOutputWithContext(context.Background())
+}
+
+func (i DatastreamElasticsearchConnectorArgs) ToDatastreamElasticsearchConnectorOutputWithContext(ctx context.Context) DatastreamElasticsearchConnectorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastreamElasticsearchConnectorOutput)
+}
+
+func (i DatastreamElasticsearchConnectorArgs) ToDatastreamElasticsearchConnectorPtrOutput() DatastreamElasticsearchConnectorPtrOutput {
+	return i.ToDatastreamElasticsearchConnectorPtrOutputWithContext(context.Background())
+}
+
+func (i DatastreamElasticsearchConnectorArgs) ToDatastreamElasticsearchConnectorPtrOutputWithContext(ctx context.Context) DatastreamElasticsearchConnectorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastreamElasticsearchConnectorOutput).ToDatastreamElasticsearchConnectorPtrOutputWithContext(ctx)
+}
+
+// DatastreamElasticsearchConnectorPtrInput is an input type that accepts DatastreamElasticsearchConnectorArgs, DatastreamElasticsearchConnectorPtr and DatastreamElasticsearchConnectorPtrOutput values.
+// You can construct a concrete instance of `DatastreamElasticsearchConnectorPtrInput` via:
+//
+//	        DatastreamElasticsearchConnectorArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatastreamElasticsearchConnectorPtrInput interface {
+	pulumi.Input
+
+	ToDatastreamElasticsearchConnectorPtrOutput() DatastreamElasticsearchConnectorPtrOutput
+	ToDatastreamElasticsearchConnectorPtrOutputWithContext(context.Context) DatastreamElasticsearchConnectorPtrOutput
+}
+
+type datastreamElasticsearchConnectorPtrType DatastreamElasticsearchConnectorArgs
+
+func DatastreamElasticsearchConnectorPtr(v *DatastreamElasticsearchConnectorArgs) DatastreamElasticsearchConnectorPtrInput {
+	return (*datastreamElasticsearchConnectorPtrType)(v)
+}
+
+func (*datastreamElasticsearchConnectorPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatastreamElasticsearchConnector)(nil)).Elem()
+}
+
+func (i *datastreamElasticsearchConnectorPtrType) ToDatastreamElasticsearchConnectorPtrOutput() DatastreamElasticsearchConnectorPtrOutput {
+	return i.ToDatastreamElasticsearchConnectorPtrOutputWithContext(context.Background())
+}
+
+func (i *datastreamElasticsearchConnectorPtrType) ToDatastreamElasticsearchConnectorPtrOutputWithContext(ctx context.Context) DatastreamElasticsearchConnectorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastreamElasticsearchConnectorPtrOutput)
+}
+
+type DatastreamElasticsearchConnectorOutput struct{ *pulumi.OutputState }
+
+func (DatastreamElasticsearchConnectorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatastreamElasticsearchConnector)(nil)).Elem()
+}
+
+func (o DatastreamElasticsearchConnectorOutput) ToDatastreamElasticsearchConnectorOutput() DatastreamElasticsearchConnectorOutput {
+	return o
+}
+
+func (o DatastreamElasticsearchConnectorOutput) ToDatastreamElasticsearchConnectorOutputWithContext(ctx context.Context) DatastreamElasticsearchConnectorOutput {
+	return o
+}
+
+func (o DatastreamElasticsearchConnectorOutput) ToDatastreamElasticsearchConnectorPtrOutput() DatastreamElasticsearchConnectorPtrOutput {
+	return o.ToDatastreamElasticsearchConnectorPtrOutputWithContext(context.Background())
+}
+
+func (o DatastreamElasticsearchConnectorOutput) ToDatastreamElasticsearchConnectorPtrOutputWithContext(ctx context.Context) DatastreamElasticsearchConnectorPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatastreamElasticsearchConnector) *DatastreamElasticsearchConnector {
+		return &v
+	}).(DatastreamElasticsearchConnectorPtrOutput)
+}
+
+// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+func (o DatastreamElasticsearchConnectorOutput) CaCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) *string { return v.CaCert }).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+func (o DatastreamElasticsearchConnectorOutput) ClientCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) *string { return v.ClientCert }).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+func (o DatastreamElasticsearchConnectorOutput) ClientKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) *string { return v.ClientKey }).(pulumi.StringPtrOutput)
+}
+
+// The name of the connector.
+func (o DatastreamElasticsearchConnectorOutput) ConnectorName() pulumi.StringOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) string { return v.ConnectorName }).(pulumi.StringOutput)
+}
+
+// Content type to pass in the log file header.
+func (o DatastreamElasticsearchConnectorOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) *string { return v.ContentType }).(pulumi.StringPtrOutput)
+}
+
+// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+func (o DatastreamElasticsearchConnectorOutput) CustomHeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) *string { return v.CustomHeaderName }).(pulumi.StringPtrOutput)
+}
+
+// The custom header's contents passed with the request that contains information about the client connection.
+func (o DatastreamElasticsearchConnectorOutput) CustomHeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) *string { return v.CustomHeaderValue }).(pulumi.StringPtrOutput)
+}
+
+// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+func (o DatastreamElasticsearchConnectorOutput) Endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) string { return v.Endpoint }).(pulumi.StringOutput)
+}
+
+// **Secret**. The index name of the Elastic cloud where you want to store log files.
+func (o DatastreamElasticsearchConnectorOutput) IndexName() pulumi.StringOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) string { return v.IndexName }).(pulumi.StringOutput)
+}
+
+func (o DatastreamElasticsearchConnectorOutput) MTls() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) *bool { return v.MTls }).(pulumi.BoolPtrOutput)
+}
+
+// **Secret**. The Elasticsearch basic access authentication password.
+func (o DatastreamElasticsearchConnectorOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+func (o DatastreamElasticsearchConnectorOutput) TlsHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) *string { return v.TlsHostname }).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The Elasticsearch basic access authentication username.
+func (o DatastreamElasticsearchConnectorOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v DatastreamElasticsearchConnector) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+type DatastreamElasticsearchConnectorPtrOutput struct{ *pulumi.OutputState }
+
+func (DatastreamElasticsearchConnectorPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatastreamElasticsearchConnector)(nil)).Elem()
+}
+
+func (o DatastreamElasticsearchConnectorPtrOutput) ToDatastreamElasticsearchConnectorPtrOutput() DatastreamElasticsearchConnectorPtrOutput {
+	return o
+}
+
+func (o DatastreamElasticsearchConnectorPtrOutput) ToDatastreamElasticsearchConnectorPtrOutputWithContext(ctx context.Context) DatastreamElasticsearchConnectorPtrOutput {
+	return o
+}
+
+func (o DatastreamElasticsearchConnectorPtrOutput) Elem() DatastreamElasticsearchConnectorOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) DatastreamElasticsearchConnector {
+		if v != nil {
+			return *v
+		}
+		var ret DatastreamElasticsearchConnector
+		return ret
+	}).(DatastreamElasticsearchConnectorOutput)
+}
+
+// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+func (o DatastreamElasticsearchConnectorPtrOutput) CaCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaCert
+	}).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+func (o DatastreamElasticsearchConnectorPtrOutput) ClientCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientCert
+	}).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+func (o DatastreamElasticsearchConnectorPtrOutput) ClientKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// The name of the connector.
+func (o DatastreamElasticsearchConnectorPtrOutput) ConnectorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ConnectorName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Content type to pass in the log file header.
+func (o DatastreamElasticsearchConnectorPtrOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ContentType
+	}).(pulumi.StringPtrOutput)
+}
+
+// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+func (o DatastreamElasticsearchConnectorPtrOutput) CustomHeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHeaderName
+	}).(pulumi.StringPtrOutput)
+}
+
+// The custom header's contents passed with the request that contains information about the client connection.
+func (o DatastreamElasticsearchConnectorPtrOutput) CustomHeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHeaderValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+func (o DatastreamElasticsearchConnectorPtrOutput) Endpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Endpoint
+	}).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The index name of the Elastic cloud where you want to store log files.
+func (o DatastreamElasticsearchConnectorPtrOutput) IndexName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.IndexName
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o DatastreamElasticsearchConnectorPtrOutput) MTls() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.MTls
+	}).(pulumi.BoolPtrOutput)
+}
+
+// **Secret**. The Elasticsearch basic access authentication password.
+func (o DatastreamElasticsearchConnectorPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+func (o DatastreamElasticsearchConnectorPtrOutput) TlsHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TlsHostname
+	}).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The Elasticsearch basic access authentication username.
+func (o DatastreamElasticsearchConnectorPtrOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamElasticsearchConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.UserName
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -3543,16 +5530,31 @@ func (o DatastreamGcsConnectorPtrOutput) ServiceAccountName() pulumi.StringPtrOu
 type DatastreamHttpsConnector struct {
 	// Either `NONE` for no authentication, or `BASIC`. For basic authentication, provide the `userName` and `password` you set in your custom HTTPS endpoint.
 	AuthenticationType string `pulumi:"authenticationType"`
+	// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+	CaCert *string `pulumi:"caCert"`
+	// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+	ClientCert *string `pulumi:"clientCert"`
+	// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+	ClientKey *string `pulumi:"clientKey"`
 	// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
 	CompressLogs *bool `pulumi:"compressLogs"`
 	ConnectorId  *int  `pulumi:"connectorId"`
 	// The name of the connector.
 	ConnectorName string `pulumi:"connectorName"`
-	// **Secret**. Enter the password you set in your custom HTTPS endpoint for authentication.
+	// Content type to pass in the log file header.
+	ContentType *string `pulumi:"contentType"`
+	// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+	CustomHeaderName *string `pulumi:"customHeaderName"`
+	// The custom header's contents passed with the request that contains information about the client connection.
+	CustomHeaderValue *string `pulumi:"customHeaderValue"`
+	MTls              *bool   `pulumi:"mTls"`
+	// **Secret**. The Elasticsearch basic access authentication password.
 	Password *string `pulumi:"password"`
+	// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+	TlsHostname *string `pulumi:"tlsHostname"`
 	// Enter the secure URL where you want to send and store your logs.
 	Url string `pulumi:"url"`
-	// **Secret**. Enter the valid username you set in your custom HTTPS endpoint for authentication.
+	// **Secret**. The Elasticsearch basic access authentication username.
 	UserName *string `pulumi:"userName"`
 }
 
@@ -3570,16 +5572,31 @@ type DatastreamHttpsConnectorInput interface {
 type DatastreamHttpsConnectorArgs struct {
 	// Either `NONE` for no authentication, or `BASIC`. For basic authentication, provide the `userName` and `password` you set in your custom HTTPS endpoint.
 	AuthenticationType pulumi.StringInput `pulumi:"authenticationType"`
+	// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+	CaCert pulumi.StringPtrInput `pulumi:"caCert"`
+	// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+	ClientCert pulumi.StringPtrInput `pulumi:"clientCert"`
+	// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+	ClientKey pulumi.StringPtrInput `pulumi:"clientKey"`
 	// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
 	CompressLogs pulumi.BoolPtrInput `pulumi:"compressLogs"`
 	ConnectorId  pulumi.IntPtrInput  `pulumi:"connectorId"`
 	// The name of the connector.
 	ConnectorName pulumi.StringInput `pulumi:"connectorName"`
-	// **Secret**. Enter the password you set in your custom HTTPS endpoint for authentication.
+	// Content type to pass in the log file header.
+	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
+	// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+	CustomHeaderName pulumi.StringPtrInput `pulumi:"customHeaderName"`
+	// The custom header's contents passed with the request that contains information about the client connection.
+	CustomHeaderValue pulumi.StringPtrInput `pulumi:"customHeaderValue"`
+	MTls              pulumi.BoolPtrInput   `pulumi:"mTls"`
+	// **Secret**. The Elasticsearch basic access authentication password.
 	Password pulumi.StringPtrInput `pulumi:"password"`
+	// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+	TlsHostname pulumi.StringPtrInput `pulumi:"tlsHostname"`
 	// Enter the secure URL where you want to send and store your logs.
 	Url pulumi.StringInput `pulumi:"url"`
-	// **Secret**. Enter the valid username you set in your custom HTTPS endpoint for authentication.
+	// **Secret**. The Elasticsearch basic access authentication username.
 	UserName pulumi.StringPtrInput `pulumi:"userName"`
 }
 
@@ -3665,6 +5682,21 @@ func (o DatastreamHttpsConnectorOutput) AuthenticationType() pulumi.StringOutput
 	return o.ApplyT(func(v DatastreamHttpsConnector) string { return v.AuthenticationType }).(pulumi.StringOutput)
 }
 
+// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+func (o DatastreamHttpsConnectorOutput) CaCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamHttpsConnector) *string { return v.CaCert }).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+func (o DatastreamHttpsConnectorOutput) ClientCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamHttpsConnector) *string { return v.ClientCert }).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+func (o DatastreamHttpsConnectorOutput) ClientKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamHttpsConnector) *string { return v.ClientKey }).(pulumi.StringPtrOutput)
+}
+
 // Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
 func (o DatastreamHttpsConnectorOutput) CompressLogs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DatastreamHttpsConnector) *bool { return v.CompressLogs }).(pulumi.BoolPtrOutput)
@@ -3679,9 +5711,33 @@ func (o DatastreamHttpsConnectorOutput) ConnectorName() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamHttpsConnector) string { return v.ConnectorName }).(pulumi.StringOutput)
 }
 
-// **Secret**. Enter the password you set in your custom HTTPS endpoint for authentication.
+// Content type to pass in the log file header.
+func (o DatastreamHttpsConnectorOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamHttpsConnector) *string { return v.ContentType }).(pulumi.StringPtrOutput)
+}
+
+// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+func (o DatastreamHttpsConnectorOutput) CustomHeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamHttpsConnector) *string { return v.CustomHeaderName }).(pulumi.StringPtrOutput)
+}
+
+// The custom header's contents passed with the request that contains information about the client connection.
+func (o DatastreamHttpsConnectorOutput) CustomHeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamHttpsConnector) *string { return v.CustomHeaderValue }).(pulumi.StringPtrOutput)
+}
+
+func (o DatastreamHttpsConnectorOutput) MTls() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DatastreamHttpsConnector) *bool { return v.MTls }).(pulumi.BoolPtrOutput)
+}
+
+// **Secret**. The Elasticsearch basic access authentication password.
 func (o DatastreamHttpsConnectorOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatastreamHttpsConnector) *string { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+func (o DatastreamHttpsConnectorOutput) TlsHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamHttpsConnector) *string { return v.TlsHostname }).(pulumi.StringPtrOutput)
 }
 
 // Enter the secure URL where you want to send and store your logs.
@@ -3689,7 +5745,7 @@ func (o DatastreamHttpsConnectorOutput) Url() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamHttpsConnector) string { return v.Url }).(pulumi.StringOutput)
 }
 
-// **Secret**. Enter the valid username you set in your custom HTTPS endpoint for authentication.
+// **Secret**. The Elasticsearch basic access authentication username.
 func (o DatastreamHttpsConnectorOutput) UserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatastreamHttpsConnector) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
@@ -3728,6 +5784,36 @@ func (o DatastreamHttpsConnectorPtrOutput) AuthenticationType() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
+// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+func (o DatastreamHttpsConnectorPtrOutput) CaCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamHttpsConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaCert
+	}).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+func (o DatastreamHttpsConnectorPtrOutput) ClientCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamHttpsConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientCert
+	}).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+func (o DatastreamHttpsConnectorPtrOutput) ClientKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamHttpsConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientKey
+	}).(pulumi.StringPtrOutput)
+}
+
 // Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
 func (o DatastreamHttpsConnectorPtrOutput) CompressLogs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DatastreamHttpsConnector) *bool {
@@ -3757,13 +5843,62 @@ func (o DatastreamHttpsConnectorPtrOutput) ConnectorName() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// **Secret**. Enter the password you set in your custom HTTPS endpoint for authentication.
+// Content type to pass in the log file header.
+func (o DatastreamHttpsConnectorPtrOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamHttpsConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ContentType
+	}).(pulumi.StringPtrOutput)
+}
+
+// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+func (o DatastreamHttpsConnectorPtrOutput) CustomHeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamHttpsConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHeaderName
+	}).(pulumi.StringPtrOutput)
+}
+
+// The custom header's contents passed with the request that contains information about the client connection.
+func (o DatastreamHttpsConnectorPtrOutput) CustomHeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamHttpsConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHeaderValue
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o DatastreamHttpsConnectorPtrOutput) MTls() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DatastreamHttpsConnector) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.MTls
+	}).(pulumi.BoolPtrOutput)
+}
+
+// **Secret**. The Elasticsearch basic access authentication password.
 func (o DatastreamHttpsConnectorPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamHttpsConnector) *string {
 		if v == nil {
 			return nil
 		}
 		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+func (o DatastreamHttpsConnectorPtrOutput) TlsHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamHttpsConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TlsHostname
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -3777,13 +5912,504 @@ func (o DatastreamHttpsConnectorPtrOutput) Url() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// **Secret**. Enter the valid username you set in your custom HTTPS endpoint for authentication.
+// **Secret**. The Elasticsearch basic access authentication username.
 func (o DatastreamHttpsConnectorPtrOutput) UserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamHttpsConnector) *string {
 		if v == nil {
 			return nil
 		}
 		return v.UserName
+	}).(pulumi.StringPtrOutput)
+}
+
+type DatastreamLogglyConnector struct {
+	// **Secret**. Your Log API token for your account in New Relic.
+	AuthToken string `pulumi:"authToken"`
+	// The name of the connector.
+	ConnectorName string `pulumi:"connectorName"`
+	// Content type to pass in the log file header.
+	ContentType *string `pulumi:"contentType"`
+	// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+	CustomHeaderName *string `pulumi:"customHeaderName"`
+	// The custom header's contents passed with the request that contains information about the client connection.
+	CustomHeaderValue *string `pulumi:"customHeaderValue"`
+	// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+	// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+	Endpoint string `pulumi:"endpoint"`
+	// The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
+	Tags *string `pulumi:"tags"`
+}
+
+// DatastreamLogglyConnectorInput is an input type that accepts DatastreamLogglyConnectorArgs and DatastreamLogglyConnectorOutput values.
+// You can construct a concrete instance of `DatastreamLogglyConnectorInput` via:
+//
+//	DatastreamLogglyConnectorArgs{...}
+type DatastreamLogglyConnectorInput interface {
+	pulumi.Input
+
+	ToDatastreamLogglyConnectorOutput() DatastreamLogglyConnectorOutput
+	ToDatastreamLogglyConnectorOutputWithContext(context.Context) DatastreamLogglyConnectorOutput
+}
+
+type DatastreamLogglyConnectorArgs struct {
+	// **Secret**. Your Log API token for your account in New Relic.
+	AuthToken pulumi.StringInput `pulumi:"authToken"`
+	// The name of the connector.
+	ConnectorName pulumi.StringInput `pulumi:"connectorName"`
+	// Content type to pass in the log file header.
+	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
+	// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+	CustomHeaderName pulumi.StringPtrInput `pulumi:"customHeaderName"`
+	// The custom header's contents passed with the request that contains information about the client connection.
+	CustomHeaderValue pulumi.StringPtrInput `pulumi:"customHeaderValue"`
+	// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+	// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+	// The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
+	Tags pulumi.StringPtrInput `pulumi:"tags"`
+}
+
+func (DatastreamLogglyConnectorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatastreamLogglyConnector)(nil)).Elem()
+}
+
+func (i DatastreamLogglyConnectorArgs) ToDatastreamLogglyConnectorOutput() DatastreamLogglyConnectorOutput {
+	return i.ToDatastreamLogglyConnectorOutputWithContext(context.Background())
+}
+
+func (i DatastreamLogglyConnectorArgs) ToDatastreamLogglyConnectorOutputWithContext(ctx context.Context) DatastreamLogglyConnectorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastreamLogglyConnectorOutput)
+}
+
+func (i DatastreamLogglyConnectorArgs) ToDatastreamLogglyConnectorPtrOutput() DatastreamLogglyConnectorPtrOutput {
+	return i.ToDatastreamLogglyConnectorPtrOutputWithContext(context.Background())
+}
+
+func (i DatastreamLogglyConnectorArgs) ToDatastreamLogglyConnectorPtrOutputWithContext(ctx context.Context) DatastreamLogglyConnectorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastreamLogglyConnectorOutput).ToDatastreamLogglyConnectorPtrOutputWithContext(ctx)
+}
+
+// DatastreamLogglyConnectorPtrInput is an input type that accepts DatastreamLogglyConnectorArgs, DatastreamLogglyConnectorPtr and DatastreamLogglyConnectorPtrOutput values.
+// You can construct a concrete instance of `DatastreamLogglyConnectorPtrInput` via:
+//
+//	        DatastreamLogglyConnectorArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatastreamLogglyConnectorPtrInput interface {
+	pulumi.Input
+
+	ToDatastreamLogglyConnectorPtrOutput() DatastreamLogglyConnectorPtrOutput
+	ToDatastreamLogglyConnectorPtrOutputWithContext(context.Context) DatastreamLogglyConnectorPtrOutput
+}
+
+type datastreamLogglyConnectorPtrType DatastreamLogglyConnectorArgs
+
+func DatastreamLogglyConnectorPtr(v *DatastreamLogglyConnectorArgs) DatastreamLogglyConnectorPtrInput {
+	return (*datastreamLogglyConnectorPtrType)(v)
+}
+
+func (*datastreamLogglyConnectorPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatastreamLogglyConnector)(nil)).Elem()
+}
+
+func (i *datastreamLogglyConnectorPtrType) ToDatastreamLogglyConnectorPtrOutput() DatastreamLogglyConnectorPtrOutput {
+	return i.ToDatastreamLogglyConnectorPtrOutputWithContext(context.Background())
+}
+
+func (i *datastreamLogglyConnectorPtrType) ToDatastreamLogglyConnectorPtrOutputWithContext(ctx context.Context) DatastreamLogglyConnectorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastreamLogglyConnectorPtrOutput)
+}
+
+type DatastreamLogglyConnectorOutput struct{ *pulumi.OutputState }
+
+func (DatastreamLogglyConnectorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatastreamLogglyConnector)(nil)).Elem()
+}
+
+func (o DatastreamLogglyConnectorOutput) ToDatastreamLogglyConnectorOutput() DatastreamLogglyConnectorOutput {
+	return o
+}
+
+func (o DatastreamLogglyConnectorOutput) ToDatastreamLogglyConnectorOutputWithContext(ctx context.Context) DatastreamLogglyConnectorOutput {
+	return o
+}
+
+func (o DatastreamLogglyConnectorOutput) ToDatastreamLogglyConnectorPtrOutput() DatastreamLogglyConnectorPtrOutput {
+	return o.ToDatastreamLogglyConnectorPtrOutputWithContext(context.Background())
+}
+
+func (o DatastreamLogglyConnectorOutput) ToDatastreamLogglyConnectorPtrOutputWithContext(ctx context.Context) DatastreamLogglyConnectorPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatastreamLogglyConnector) *DatastreamLogglyConnector {
+		return &v
+	}).(DatastreamLogglyConnectorPtrOutput)
+}
+
+// **Secret**. Your Log API token for your account in New Relic.
+func (o DatastreamLogglyConnectorOutput) AuthToken() pulumi.StringOutput {
+	return o.ApplyT(func(v DatastreamLogglyConnector) string { return v.AuthToken }).(pulumi.StringOutput)
+}
+
+// The name of the connector.
+func (o DatastreamLogglyConnectorOutput) ConnectorName() pulumi.StringOutput {
+	return o.ApplyT(func(v DatastreamLogglyConnector) string { return v.ConnectorName }).(pulumi.StringOutput)
+}
+
+// Content type to pass in the log file header.
+func (o DatastreamLogglyConnectorOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamLogglyConnector) *string { return v.ContentType }).(pulumi.StringPtrOutput)
+}
+
+// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+func (o DatastreamLogglyConnectorOutput) CustomHeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamLogglyConnector) *string { return v.CustomHeaderName }).(pulumi.StringPtrOutput)
+}
+
+// The custom header's contents passed with the request that contains information about the client connection.
+func (o DatastreamLogglyConnectorOutput) CustomHeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamLogglyConnector) *string { return v.CustomHeaderValue }).(pulumi.StringPtrOutput)
+}
+
+// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+func (o DatastreamLogglyConnectorOutput) Endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v DatastreamLogglyConnector) string { return v.Endpoint }).(pulumi.StringOutput)
+}
+
+// The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
+func (o DatastreamLogglyConnectorOutput) Tags() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamLogglyConnector) *string { return v.Tags }).(pulumi.StringPtrOutput)
+}
+
+type DatastreamLogglyConnectorPtrOutput struct{ *pulumi.OutputState }
+
+func (DatastreamLogglyConnectorPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatastreamLogglyConnector)(nil)).Elem()
+}
+
+func (o DatastreamLogglyConnectorPtrOutput) ToDatastreamLogglyConnectorPtrOutput() DatastreamLogglyConnectorPtrOutput {
+	return o
+}
+
+func (o DatastreamLogglyConnectorPtrOutput) ToDatastreamLogglyConnectorPtrOutputWithContext(ctx context.Context) DatastreamLogglyConnectorPtrOutput {
+	return o
+}
+
+func (o DatastreamLogglyConnectorPtrOutput) Elem() DatastreamLogglyConnectorOutput {
+	return o.ApplyT(func(v *DatastreamLogglyConnector) DatastreamLogglyConnector {
+		if v != nil {
+			return *v
+		}
+		var ret DatastreamLogglyConnector
+		return ret
+	}).(DatastreamLogglyConnectorOutput)
+}
+
+// **Secret**. Your Log API token for your account in New Relic.
+func (o DatastreamLogglyConnectorPtrOutput) AuthToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamLogglyConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AuthToken
+	}).(pulumi.StringPtrOutput)
+}
+
+// The name of the connector.
+func (o DatastreamLogglyConnectorPtrOutput) ConnectorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamLogglyConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ConnectorName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Content type to pass in the log file header.
+func (o DatastreamLogglyConnectorPtrOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamLogglyConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ContentType
+	}).(pulumi.StringPtrOutput)
+}
+
+// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+func (o DatastreamLogglyConnectorPtrOutput) CustomHeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamLogglyConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHeaderName
+	}).(pulumi.StringPtrOutput)
+}
+
+// The custom header's contents passed with the request that contains information about the client connection.
+func (o DatastreamLogglyConnectorPtrOutput) CustomHeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamLogglyConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHeaderValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+func (o DatastreamLogglyConnectorPtrOutput) Endpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamLogglyConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Endpoint
+	}).(pulumi.StringPtrOutput)
+}
+
+// The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
+func (o DatastreamLogglyConnectorPtrOutput) Tags() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamLogglyConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(pulumi.StringPtrOutput)
+}
+
+type DatastreamNewRelicConnector struct {
+	// **Secret**. Your Log API token for your account in New Relic.
+	AuthToken string `pulumi:"authToken"`
+	// The name of the connector.
+	ConnectorName string `pulumi:"connectorName"`
+	// Content type to pass in the log file header.
+	ContentType *string `pulumi:"contentType"`
+	// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+	CustomHeaderName *string `pulumi:"customHeaderName"`
+	// The custom header's contents passed with the request that contains information about the client connection.
+	CustomHeaderValue *string `pulumi:"customHeaderValue"`
+	// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+	// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+	Endpoint string `pulumi:"endpoint"`
+}
+
+// DatastreamNewRelicConnectorInput is an input type that accepts DatastreamNewRelicConnectorArgs and DatastreamNewRelicConnectorOutput values.
+// You can construct a concrete instance of `DatastreamNewRelicConnectorInput` via:
+//
+//	DatastreamNewRelicConnectorArgs{...}
+type DatastreamNewRelicConnectorInput interface {
+	pulumi.Input
+
+	ToDatastreamNewRelicConnectorOutput() DatastreamNewRelicConnectorOutput
+	ToDatastreamNewRelicConnectorOutputWithContext(context.Context) DatastreamNewRelicConnectorOutput
+}
+
+type DatastreamNewRelicConnectorArgs struct {
+	// **Secret**. Your Log API token for your account in New Relic.
+	AuthToken pulumi.StringInput `pulumi:"authToken"`
+	// The name of the connector.
+	ConnectorName pulumi.StringInput `pulumi:"connectorName"`
+	// Content type to pass in the log file header.
+	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
+	// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+	CustomHeaderName pulumi.StringPtrInput `pulumi:"customHeaderName"`
+	// The custom header's contents passed with the request that contains information about the client connection.
+	CustomHeaderValue pulumi.StringPtrInput `pulumi:"customHeaderValue"`
+	// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+	// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+}
+
+func (DatastreamNewRelicConnectorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatastreamNewRelicConnector)(nil)).Elem()
+}
+
+func (i DatastreamNewRelicConnectorArgs) ToDatastreamNewRelicConnectorOutput() DatastreamNewRelicConnectorOutput {
+	return i.ToDatastreamNewRelicConnectorOutputWithContext(context.Background())
+}
+
+func (i DatastreamNewRelicConnectorArgs) ToDatastreamNewRelicConnectorOutputWithContext(ctx context.Context) DatastreamNewRelicConnectorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastreamNewRelicConnectorOutput)
+}
+
+func (i DatastreamNewRelicConnectorArgs) ToDatastreamNewRelicConnectorPtrOutput() DatastreamNewRelicConnectorPtrOutput {
+	return i.ToDatastreamNewRelicConnectorPtrOutputWithContext(context.Background())
+}
+
+func (i DatastreamNewRelicConnectorArgs) ToDatastreamNewRelicConnectorPtrOutputWithContext(ctx context.Context) DatastreamNewRelicConnectorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastreamNewRelicConnectorOutput).ToDatastreamNewRelicConnectorPtrOutputWithContext(ctx)
+}
+
+// DatastreamNewRelicConnectorPtrInput is an input type that accepts DatastreamNewRelicConnectorArgs, DatastreamNewRelicConnectorPtr and DatastreamNewRelicConnectorPtrOutput values.
+// You can construct a concrete instance of `DatastreamNewRelicConnectorPtrInput` via:
+//
+//	        DatastreamNewRelicConnectorArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatastreamNewRelicConnectorPtrInput interface {
+	pulumi.Input
+
+	ToDatastreamNewRelicConnectorPtrOutput() DatastreamNewRelicConnectorPtrOutput
+	ToDatastreamNewRelicConnectorPtrOutputWithContext(context.Context) DatastreamNewRelicConnectorPtrOutput
+}
+
+type datastreamNewRelicConnectorPtrType DatastreamNewRelicConnectorArgs
+
+func DatastreamNewRelicConnectorPtr(v *DatastreamNewRelicConnectorArgs) DatastreamNewRelicConnectorPtrInput {
+	return (*datastreamNewRelicConnectorPtrType)(v)
+}
+
+func (*datastreamNewRelicConnectorPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatastreamNewRelicConnector)(nil)).Elem()
+}
+
+func (i *datastreamNewRelicConnectorPtrType) ToDatastreamNewRelicConnectorPtrOutput() DatastreamNewRelicConnectorPtrOutput {
+	return i.ToDatastreamNewRelicConnectorPtrOutputWithContext(context.Background())
+}
+
+func (i *datastreamNewRelicConnectorPtrType) ToDatastreamNewRelicConnectorPtrOutputWithContext(ctx context.Context) DatastreamNewRelicConnectorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatastreamNewRelicConnectorPtrOutput)
+}
+
+type DatastreamNewRelicConnectorOutput struct{ *pulumi.OutputState }
+
+func (DatastreamNewRelicConnectorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatastreamNewRelicConnector)(nil)).Elem()
+}
+
+func (o DatastreamNewRelicConnectorOutput) ToDatastreamNewRelicConnectorOutput() DatastreamNewRelicConnectorOutput {
+	return o
+}
+
+func (o DatastreamNewRelicConnectorOutput) ToDatastreamNewRelicConnectorOutputWithContext(ctx context.Context) DatastreamNewRelicConnectorOutput {
+	return o
+}
+
+func (o DatastreamNewRelicConnectorOutput) ToDatastreamNewRelicConnectorPtrOutput() DatastreamNewRelicConnectorPtrOutput {
+	return o.ToDatastreamNewRelicConnectorPtrOutputWithContext(context.Background())
+}
+
+func (o DatastreamNewRelicConnectorOutput) ToDatastreamNewRelicConnectorPtrOutputWithContext(ctx context.Context) DatastreamNewRelicConnectorPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatastreamNewRelicConnector) *DatastreamNewRelicConnector {
+		return &v
+	}).(DatastreamNewRelicConnectorPtrOutput)
+}
+
+// **Secret**. Your Log API token for your account in New Relic.
+func (o DatastreamNewRelicConnectorOutput) AuthToken() pulumi.StringOutput {
+	return o.ApplyT(func(v DatastreamNewRelicConnector) string { return v.AuthToken }).(pulumi.StringOutput)
+}
+
+// The name of the connector.
+func (o DatastreamNewRelicConnectorOutput) ConnectorName() pulumi.StringOutput {
+	return o.ApplyT(func(v DatastreamNewRelicConnector) string { return v.ConnectorName }).(pulumi.StringOutput)
+}
+
+// Content type to pass in the log file header.
+func (o DatastreamNewRelicConnectorOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamNewRelicConnector) *string { return v.ContentType }).(pulumi.StringPtrOutput)
+}
+
+// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+func (o DatastreamNewRelicConnectorOutput) CustomHeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamNewRelicConnector) *string { return v.CustomHeaderName }).(pulumi.StringPtrOutput)
+}
+
+// The custom header's contents passed with the request that contains information about the client connection.
+func (o DatastreamNewRelicConnectorOutput) CustomHeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamNewRelicConnector) *string { return v.CustomHeaderValue }).(pulumi.StringPtrOutput)
+}
+
+// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+func (o DatastreamNewRelicConnectorOutput) Endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v DatastreamNewRelicConnector) string { return v.Endpoint }).(pulumi.StringOutput)
+}
+
+type DatastreamNewRelicConnectorPtrOutput struct{ *pulumi.OutputState }
+
+func (DatastreamNewRelicConnectorPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatastreamNewRelicConnector)(nil)).Elem()
+}
+
+func (o DatastreamNewRelicConnectorPtrOutput) ToDatastreamNewRelicConnectorPtrOutput() DatastreamNewRelicConnectorPtrOutput {
+	return o
+}
+
+func (o DatastreamNewRelicConnectorPtrOutput) ToDatastreamNewRelicConnectorPtrOutputWithContext(ctx context.Context) DatastreamNewRelicConnectorPtrOutput {
+	return o
+}
+
+func (o DatastreamNewRelicConnectorPtrOutput) Elem() DatastreamNewRelicConnectorOutput {
+	return o.ApplyT(func(v *DatastreamNewRelicConnector) DatastreamNewRelicConnector {
+		if v != nil {
+			return *v
+		}
+		var ret DatastreamNewRelicConnector
+		return ret
+	}).(DatastreamNewRelicConnectorOutput)
+}
+
+// **Secret**. Your Log API token for your account in New Relic.
+func (o DatastreamNewRelicConnectorPtrOutput) AuthToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamNewRelicConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AuthToken
+	}).(pulumi.StringPtrOutput)
+}
+
+// The name of the connector.
+func (o DatastreamNewRelicConnectorPtrOutput) ConnectorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamNewRelicConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ConnectorName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Content type to pass in the log file header.
+func (o DatastreamNewRelicConnectorPtrOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamNewRelicConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ContentType
+	}).(pulumi.StringPtrOutput)
+}
+
+// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+func (o DatastreamNewRelicConnectorPtrOutput) CustomHeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamNewRelicConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHeaderName
+	}).(pulumi.StringPtrOutput)
+}
+
+// The custom header's contents passed with the request that contains information about the client connection.
+func (o DatastreamNewRelicConnectorPtrOutput) CustomHeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamNewRelicConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHeaderValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+func (o DatastreamNewRelicConnectorPtrOutput) Endpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamNewRelicConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Endpoint
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4339,13 +6965,26 @@ func (o DatastreamS3ConnectorPtrOutput) SecretAccessKey() pulumi.StringPtrOutput
 }
 
 type DatastreamSplunkConnector struct {
+	// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+	CaCert *string `pulumi:"caCert"`
+	// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+	ClientCert *string `pulumi:"clientCert"`
+	// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+	ClientKey *string `pulumi:"clientKey"`
 	// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
 	CompressLogs *bool `pulumi:"compressLogs"`
 	ConnectorId  *int  `pulumi:"connectorId"`
 	// The name of the connector.
 	ConnectorName string `pulumi:"connectorName"`
+	// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+	CustomHeaderName *string `pulumi:"customHeaderName"`
+	// The custom header's contents passed with the request that contains information about the client connection.
+	CustomHeaderValue *string `pulumi:"customHeaderValue"`
 	// **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
 	EventCollectorToken string `pulumi:"eventCollectorToken"`
+	MTls                *bool  `pulumi:"mTls"`
+	// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+	TlsHostname *string `pulumi:"tlsHostname"`
 	// Enter the secure URL where you want to send and store your logs.
 	Url string `pulumi:"url"`
 }
@@ -4362,13 +7001,26 @@ type DatastreamSplunkConnectorInput interface {
 }
 
 type DatastreamSplunkConnectorArgs struct {
+	// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+	CaCert pulumi.StringPtrInput `pulumi:"caCert"`
+	// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+	ClientCert pulumi.StringPtrInput `pulumi:"clientCert"`
+	// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+	ClientKey pulumi.StringPtrInput `pulumi:"clientKey"`
 	// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
 	CompressLogs pulumi.BoolPtrInput `pulumi:"compressLogs"`
 	ConnectorId  pulumi.IntPtrInput  `pulumi:"connectorId"`
 	// The name of the connector.
 	ConnectorName pulumi.StringInput `pulumi:"connectorName"`
+	// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+	CustomHeaderName pulumi.StringPtrInput `pulumi:"customHeaderName"`
+	// The custom header's contents passed with the request that contains information about the client connection.
+	CustomHeaderValue pulumi.StringPtrInput `pulumi:"customHeaderValue"`
 	// **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
-	EventCollectorToken pulumi.StringInput `pulumi:"eventCollectorToken"`
+	EventCollectorToken pulumi.StringInput  `pulumi:"eventCollectorToken"`
+	MTls                pulumi.BoolPtrInput `pulumi:"mTls"`
+	// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+	TlsHostname pulumi.StringPtrInput `pulumi:"tlsHostname"`
 	// Enter the secure URL where you want to send and store your logs.
 	Url pulumi.StringInput `pulumi:"url"`
 }
@@ -4450,6 +7102,21 @@ func (o DatastreamSplunkConnectorOutput) ToDatastreamSplunkConnectorPtrOutputWit
 	}).(DatastreamSplunkConnectorPtrOutput)
 }
 
+// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+func (o DatastreamSplunkConnectorOutput) CaCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamSplunkConnector) *string { return v.CaCert }).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+func (o DatastreamSplunkConnectorOutput) ClientCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamSplunkConnector) *string { return v.ClientCert }).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+func (o DatastreamSplunkConnectorOutput) ClientKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamSplunkConnector) *string { return v.ClientKey }).(pulumi.StringPtrOutput)
+}
+
 // Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
 func (o DatastreamSplunkConnectorOutput) CompressLogs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DatastreamSplunkConnector) *bool { return v.CompressLogs }).(pulumi.BoolPtrOutput)
@@ -4464,9 +7131,28 @@ func (o DatastreamSplunkConnectorOutput) ConnectorName() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamSplunkConnector) string { return v.ConnectorName }).(pulumi.StringOutput)
 }
 
+// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+func (o DatastreamSplunkConnectorOutput) CustomHeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamSplunkConnector) *string { return v.CustomHeaderName }).(pulumi.StringPtrOutput)
+}
+
+// The custom header's contents passed with the request that contains information about the client connection.
+func (o DatastreamSplunkConnectorOutput) CustomHeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamSplunkConnector) *string { return v.CustomHeaderValue }).(pulumi.StringPtrOutput)
+}
+
 // **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
 func (o DatastreamSplunkConnectorOutput) EventCollectorToken() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamSplunkConnector) string { return v.EventCollectorToken }).(pulumi.StringOutput)
+}
+
+func (o DatastreamSplunkConnectorOutput) MTls() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DatastreamSplunkConnector) *bool { return v.MTls }).(pulumi.BoolPtrOutput)
+}
+
+// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+func (o DatastreamSplunkConnectorOutput) TlsHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamSplunkConnector) *string { return v.TlsHostname }).(pulumi.StringPtrOutput)
 }
 
 // Enter the secure URL where you want to send and store your logs.
@@ -4498,6 +7184,36 @@ func (o DatastreamSplunkConnectorPtrOutput) Elem() DatastreamSplunkConnectorOutp
 	}).(DatastreamSplunkConnectorOutput)
 }
 
+// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+func (o DatastreamSplunkConnectorPtrOutput) CaCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamSplunkConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CaCert
+	}).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+func (o DatastreamSplunkConnectorPtrOutput) ClientCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamSplunkConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientCert
+	}).(pulumi.StringPtrOutput)
+}
+
+// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+func (o DatastreamSplunkConnectorPtrOutput) ClientKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamSplunkConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientKey
+	}).(pulumi.StringPtrOutput)
+}
+
 // Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
 func (o DatastreamSplunkConnectorPtrOutput) CompressLogs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DatastreamSplunkConnector) *bool {
@@ -4527,6 +7243,26 @@ func (o DatastreamSplunkConnectorPtrOutput) ConnectorName() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
+// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+func (o DatastreamSplunkConnectorPtrOutput) CustomHeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamSplunkConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHeaderName
+	}).(pulumi.StringPtrOutput)
+}
+
+// The custom header's contents passed with the request that contains information about the client connection.
+func (o DatastreamSplunkConnectorPtrOutput) CustomHeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamSplunkConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHeaderValue
+	}).(pulumi.StringPtrOutput)
+}
+
 // **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
 func (o DatastreamSplunkConnectorPtrOutput) EventCollectorToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamSplunkConnector) *string {
@@ -4534,6 +7270,25 @@ func (o DatastreamSplunkConnectorPtrOutput) EventCollectorToken() pulumi.StringP
 			return nil
 		}
 		return &v.EventCollectorToken
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o DatastreamSplunkConnectorPtrOutput) MTls() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DatastreamSplunkConnector) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.MTls
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+func (o DatastreamSplunkConnectorPtrOutput) TlsHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamSplunkConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TlsHostname
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4555,7 +7310,14 @@ type DatastreamSumologicConnector struct {
 	ConnectorId  *int  `pulumi:"connectorId"`
 	// The name of the connector.
 	ConnectorName string `pulumi:"connectorName"`
-	// The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://<SumoEndpoint>/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+	// Content type to pass in the log file header.
+	ContentType *string `pulumi:"contentType"`
+	// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+	CustomHeaderName *string `pulumi:"customHeaderName"`
+	// The custom header's contents passed with the request that contains information about the client connection.
+	CustomHeaderValue *string `pulumi:"customHeaderValue"`
+	// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+	// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
 	Endpoint string `pulumi:"endpoint"`
 }
 
@@ -4578,7 +7340,14 @@ type DatastreamSumologicConnectorArgs struct {
 	ConnectorId  pulumi.IntPtrInput  `pulumi:"connectorId"`
 	// The name of the connector.
 	ConnectorName pulumi.StringInput `pulumi:"connectorName"`
-	// The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://<SumoEndpoint>/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+	// Content type to pass in the log file header.
+	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
+	// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+	CustomHeaderName pulumi.StringPtrInput `pulumi:"customHeaderName"`
+	// The custom header's contents passed with the request that contains information about the client connection.
+	CustomHeaderValue pulumi.StringPtrInput `pulumi:"customHeaderValue"`
+	// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+	// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
 	Endpoint pulumi.StringInput `pulumi:"endpoint"`
 }
 
@@ -4678,7 +7447,23 @@ func (o DatastreamSumologicConnectorOutput) ConnectorName() pulumi.StringOutput 
 	return o.ApplyT(func(v DatastreamSumologicConnector) string { return v.ConnectorName }).(pulumi.StringOutput)
 }
 
-// The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://<SumoEndpoint>/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+// Content type to pass in the log file header.
+func (o DatastreamSumologicConnectorOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamSumologicConnector) *string { return v.ContentType }).(pulumi.StringPtrOutput)
+}
+
+// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+func (o DatastreamSumologicConnectorOutput) CustomHeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamSumologicConnector) *string { return v.CustomHeaderName }).(pulumi.StringPtrOutput)
+}
+
+// The custom header's contents passed with the request that contains information about the client connection.
+func (o DatastreamSumologicConnectorOutput) CustomHeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatastreamSumologicConnector) *string { return v.CustomHeaderValue }).(pulumi.StringPtrOutput)
+}
+
+// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
 func (o DatastreamSumologicConnectorOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v DatastreamSumologicConnector) string { return v.Endpoint }).(pulumi.StringOutput)
 }
@@ -4746,7 +7531,38 @@ func (o DatastreamSumologicConnectorPtrOutput) ConnectorName() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://<SumoEndpoint>/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+// Content type to pass in the log file header.
+func (o DatastreamSumologicConnectorPtrOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamSumologicConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ContentType
+	}).(pulumi.StringPtrOutput)
+}
+
+// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+func (o DatastreamSumologicConnectorPtrOutput) CustomHeaderName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamSumologicConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHeaderName
+	}).(pulumi.StringPtrOutput)
+}
+
+// The custom header's contents passed with the request that contains information about the client connection.
+func (o DatastreamSumologicConnectorPtrOutput) CustomHeaderValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatastreamSumologicConnector) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomHeaderValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+// <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
 func (o DatastreamSumologicConnectorPtrOutput) Endpoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatastreamSumologicConnector) *string {
 		if v == nil {
@@ -7328,6 +10144,214 @@ func (o PropertyHostnameCertStatusArrayOutput) Index(i pulumi.IntInput) Property
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PropertyHostnameCertStatus {
 		return vs[0].([]PropertyHostnameCertStatus)[vs[1].(int)]
 	}).(PropertyHostnameCertStatusOutput)
+}
+
+type PropertyIncludeActivationComplianceRecord struct {
+	CustomerEmail            *string `pulumi:"customerEmail"`
+	NoncomplianceReason      string  `pulumi:"noncomplianceReason"`
+	OtherNoncomplianceReason *string `pulumi:"otherNoncomplianceReason"`
+	PeerReviewedBy           *string `pulumi:"peerReviewedBy"`
+	TicketId                 *string `pulumi:"ticketId"`
+	UnitTested               *bool   `pulumi:"unitTested"`
+}
+
+// PropertyIncludeActivationComplianceRecordInput is an input type that accepts PropertyIncludeActivationComplianceRecordArgs and PropertyIncludeActivationComplianceRecordOutput values.
+// You can construct a concrete instance of `PropertyIncludeActivationComplianceRecordInput` via:
+//
+//	PropertyIncludeActivationComplianceRecordArgs{...}
+type PropertyIncludeActivationComplianceRecordInput interface {
+	pulumi.Input
+
+	ToPropertyIncludeActivationComplianceRecordOutput() PropertyIncludeActivationComplianceRecordOutput
+	ToPropertyIncludeActivationComplianceRecordOutputWithContext(context.Context) PropertyIncludeActivationComplianceRecordOutput
+}
+
+type PropertyIncludeActivationComplianceRecordArgs struct {
+	CustomerEmail            pulumi.StringPtrInput `pulumi:"customerEmail"`
+	NoncomplianceReason      pulumi.StringInput    `pulumi:"noncomplianceReason"`
+	OtherNoncomplianceReason pulumi.StringPtrInput `pulumi:"otherNoncomplianceReason"`
+	PeerReviewedBy           pulumi.StringPtrInput `pulumi:"peerReviewedBy"`
+	TicketId                 pulumi.StringPtrInput `pulumi:"ticketId"`
+	UnitTested               pulumi.BoolPtrInput   `pulumi:"unitTested"`
+}
+
+func (PropertyIncludeActivationComplianceRecordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyIncludeActivationComplianceRecord)(nil)).Elem()
+}
+
+func (i PropertyIncludeActivationComplianceRecordArgs) ToPropertyIncludeActivationComplianceRecordOutput() PropertyIncludeActivationComplianceRecordOutput {
+	return i.ToPropertyIncludeActivationComplianceRecordOutputWithContext(context.Background())
+}
+
+func (i PropertyIncludeActivationComplianceRecordArgs) ToPropertyIncludeActivationComplianceRecordOutputWithContext(ctx context.Context) PropertyIncludeActivationComplianceRecordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyIncludeActivationComplianceRecordOutput)
+}
+
+func (i PropertyIncludeActivationComplianceRecordArgs) ToPropertyIncludeActivationComplianceRecordPtrOutput() PropertyIncludeActivationComplianceRecordPtrOutput {
+	return i.ToPropertyIncludeActivationComplianceRecordPtrOutputWithContext(context.Background())
+}
+
+func (i PropertyIncludeActivationComplianceRecordArgs) ToPropertyIncludeActivationComplianceRecordPtrOutputWithContext(ctx context.Context) PropertyIncludeActivationComplianceRecordPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyIncludeActivationComplianceRecordOutput).ToPropertyIncludeActivationComplianceRecordPtrOutputWithContext(ctx)
+}
+
+// PropertyIncludeActivationComplianceRecordPtrInput is an input type that accepts PropertyIncludeActivationComplianceRecordArgs, PropertyIncludeActivationComplianceRecordPtr and PropertyIncludeActivationComplianceRecordPtrOutput values.
+// You can construct a concrete instance of `PropertyIncludeActivationComplianceRecordPtrInput` via:
+//
+//	        PropertyIncludeActivationComplianceRecordArgs{...}
+//
+//	or:
+//
+//	        nil
+type PropertyIncludeActivationComplianceRecordPtrInput interface {
+	pulumi.Input
+
+	ToPropertyIncludeActivationComplianceRecordPtrOutput() PropertyIncludeActivationComplianceRecordPtrOutput
+	ToPropertyIncludeActivationComplianceRecordPtrOutputWithContext(context.Context) PropertyIncludeActivationComplianceRecordPtrOutput
+}
+
+type propertyIncludeActivationComplianceRecordPtrType PropertyIncludeActivationComplianceRecordArgs
+
+func PropertyIncludeActivationComplianceRecordPtr(v *PropertyIncludeActivationComplianceRecordArgs) PropertyIncludeActivationComplianceRecordPtrInput {
+	return (*propertyIncludeActivationComplianceRecordPtrType)(v)
+}
+
+func (*propertyIncludeActivationComplianceRecordPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyIncludeActivationComplianceRecord)(nil)).Elem()
+}
+
+func (i *propertyIncludeActivationComplianceRecordPtrType) ToPropertyIncludeActivationComplianceRecordPtrOutput() PropertyIncludeActivationComplianceRecordPtrOutput {
+	return i.ToPropertyIncludeActivationComplianceRecordPtrOutputWithContext(context.Background())
+}
+
+func (i *propertyIncludeActivationComplianceRecordPtrType) ToPropertyIncludeActivationComplianceRecordPtrOutputWithContext(ctx context.Context) PropertyIncludeActivationComplianceRecordPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyIncludeActivationComplianceRecordPtrOutput)
+}
+
+type PropertyIncludeActivationComplianceRecordOutput struct{ *pulumi.OutputState }
+
+func (PropertyIncludeActivationComplianceRecordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyIncludeActivationComplianceRecord)(nil)).Elem()
+}
+
+func (o PropertyIncludeActivationComplianceRecordOutput) ToPropertyIncludeActivationComplianceRecordOutput() PropertyIncludeActivationComplianceRecordOutput {
+	return o
+}
+
+func (o PropertyIncludeActivationComplianceRecordOutput) ToPropertyIncludeActivationComplianceRecordOutputWithContext(ctx context.Context) PropertyIncludeActivationComplianceRecordOutput {
+	return o
+}
+
+func (o PropertyIncludeActivationComplianceRecordOutput) ToPropertyIncludeActivationComplianceRecordPtrOutput() PropertyIncludeActivationComplianceRecordPtrOutput {
+	return o.ToPropertyIncludeActivationComplianceRecordPtrOutputWithContext(context.Background())
+}
+
+func (o PropertyIncludeActivationComplianceRecordOutput) ToPropertyIncludeActivationComplianceRecordPtrOutputWithContext(ctx context.Context) PropertyIncludeActivationComplianceRecordPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PropertyIncludeActivationComplianceRecord) *PropertyIncludeActivationComplianceRecord {
+		return &v
+	}).(PropertyIncludeActivationComplianceRecordPtrOutput)
+}
+
+func (o PropertyIncludeActivationComplianceRecordOutput) CustomerEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyIncludeActivationComplianceRecord) *string { return v.CustomerEmail }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyIncludeActivationComplianceRecordOutput) NoncomplianceReason() pulumi.StringOutput {
+	return o.ApplyT(func(v PropertyIncludeActivationComplianceRecord) string { return v.NoncomplianceReason }).(pulumi.StringOutput)
+}
+
+func (o PropertyIncludeActivationComplianceRecordOutput) OtherNoncomplianceReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyIncludeActivationComplianceRecord) *string { return v.OtherNoncomplianceReason }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyIncludeActivationComplianceRecordOutput) PeerReviewedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyIncludeActivationComplianceRecord) *string { return v.PeerReviewedBy }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyIncludeActivationComplianceRecordOutput) TicketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyIncludeActivationComplianceRecord) *string { return v.TicketId }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyIncludeActivationComplianceRecordOutput) UnitTested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v PropertyIncludeActivationComplianceRecord) *bool { return v.UnitTested }).(pulumi.BoolPtrOutput)
+}
+
+type PropertyIncludeActivationComplianceRecordPtrOutput struct{ *pulumi.OutputState }
+
+func (PropertyIncludeActivationComplianceRecordPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyIncludeActivationComplianceRecord)(nil)).Elem()
+}
+
+func (o PropertyIncludeActivationComplianceRecordPtrOutput) ToPropertyIncludeActivationComplianceRecordPtrOutput() PropertyIncludeActivationComplianceRecordPtrOutput {
+	return o
+}
+
+func (o PropertyIncludeActivationComplianceRecordPtrOutput) ToPropertyIncludeActivationComplianceRecordPtrOutputWithContext(ctx context.Context) PropertyIncludeActivationComplianceRecordPtrOutput {
+	return o
+}
+
+func (o PropertyIncludeActivationComplianceRecordPtrOutput) Elem() PropertyIncludeActivationComplianceRecordOutput {
+	return o.ApplyT(func(v *PropertyIncludeActivationComplianceRecord) PropertyIncludeActivationComplianceRecord {
+		if v != nil {
+			return *v
+		}
+		var ret PropertyIncludeActivationComplianceRecord
+		return ret
+	}).(PropertyIncludeActivationComplianceRecordOutput)
+}
+
+func (o PropertyIncludeActivationComplianceRecordPtrOutput) CustomerEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyIncludeActivationComplianceRecord) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomerEmail
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyIncludeActivationComplianceRecordPtrOutput) NoncomplianceReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyIncludeActivationComplianceRecord) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NoncomplianceReason
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyIncludeActivationComplianceRecordPtrOutput) OtherNoncomplianceReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyIncludeActivationComplianceRecord) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OtherNoncomplianceReason
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyIncludeActivationComplianceRecordPtrOutput) PeerReviewedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyIncludeActivationComplianceRecord) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PeerReviewedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyIncludeActivationComplianceRecordPtrOutput) TicketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyIncludeActivationComplianceRecord) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TicketId
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyIncludeActivationComplianceRecordPtrOutput) UnitTested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *PropertyIncludeActivationComplianceRecord) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.UnitTested
+	}).(pulumi.BoolPtrOutput)
 }
 
 type PropertyOrigin struct {
@@ -17686,6 +20710,393 @@ func (o GetDatastreamDatasetFieldsFieldDatasetFieldArrayOutput) Index(i pulumi.I
 	}).(GetDatastreamDatasetFieldsFieldDatasetFieldOutput)
 }
 
+type GetDatastreamsStream struct {
+	ActivationStatus string                      `pulumi:"activationStatus"`
+	Archived         bool                        `pulumi:"archived"`
+	Connectors       string                      `pulumi:"connectors"`
+	ContractId       string                      `pulumi:"contractId"`
+	CreatedBy        string                      `pulumi:"createdBy"`
+	CreatedDate      string                      `pulumi:"createdDate"`
+	CurrentVersionId int                         `pulumi:"currentVersionId"`
+	Errors           []GetDatastreamsStreamError `pulumi:"errors"`
+	// Unique identifier of the group that can access the product.
+	GroupId         int                            `pulumi:"groupId"`
+	GroupName       string                         `pulumi:"groupName"`
+	Properties      []GetDatastreamsStreamProperty `pulumi:"properties"`
+	StreamId        int                            `pulumi:"streamId"`
+	StreamName      string                         `pulumi:"streamName"`
+	StreamTypeName  string                         `pulumi:"streamTypeName"`
+	StreamVersionId int                            `pulumi:"streamVersionId"`
+}
+
+// GetDatastreamsStreamInput is an input type that accepts GetDatastreamsStreamArgs and GetDatastreamsStreamOutput values.
+// You can construct a concrete instance of `GetDatastreamsStreamInput` via:
+//
+//	GetDatastreamsStreamArgs{...}
+type GetDatastreamsStreamInput interface {
+	pulumi.Input
+
+	ToGetDatastreamsStreamOutput() GetDatastreamsStreamOutput
+	ToGetDatastreamsStreamOutputWithContext(context.Context) GetDatastreamsStreamOutput
+}
+
+type GetDatastreamsStreamArgs struct {
+	ActivationStatus pulumi.StringInput                  `pulumi:"activationStatus"`
+	Archived         pulumi.BoolInput                    `pulumi:"archived"`
+	Connectors       pulumi.StringInput                  `pulumi:"connectors"`
+	ContractId       pulumi.StringInput                  `pulumi:"contractId"`
+	CreatedBy        pulumi.StringInput                  `pulumi:"createdBy"`
+	CreatedDate      pulumi.StringInput                  `pulumi:"createdDate"`
+	CurrentVersionId pulumi.IntInput                     `pulumi:"currentVersionId"`
+	Errors           GetDatastreamsStreamErrorArrayInput `pulumi:"errors"`
+	// Unique identifier of the group that can access the product.
+	GroupId         pulumi.IntInput                        `pulumi:"groupId"`
+	GroupName       pulumi.StringInput                     `pulumi:"groupName"`
+	Properties      GetDatastreamsStreamPropertyArrayInput `pulumi:"properties"`
+	StreamId        pulumi.IntInput                        `pulumi:"streamId"`
+	StreamName      pulumi.StringInput                     `pulumi:"streamName"`
+	StreamTypeName  pulumi.StringInput                     `pulumi:"streamTypeName"`
+	StreamVersionId pulumi.IntInput                        `pulumi:"streamVersionId"`
+}
+
+func (GetDatastreamsStreamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastreamsStream)(nil)).Elem()
+}
+
+func (i GetDatastreamsStreamArgs) ToGetDatastreamsStreamOutput() GetDatastreamsStreamOutput {
+	return i.ToGetDatastreamsStreamOutputWithContext(context.Background())
+}
+
+func (i GetDatastreamsStreamArgs) ToGetDatastreamsStreamOutputWithContext(ctx context.Context) GetDatastreamsStreamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastreamsStreamOutput)
+}
+
+// GetDatastreamsStreamArrayInput is an input type that accepts GetDatastreamsStreamArray and GetDatastreamsStreamArrayOutput values.
+// You can construct a concrete instance of `GetDatastreamsStreamArrayInput` via:
+//
+//	GetDatastreamsStreamArray{ GetDatastreamsStreamArgs{...} }
+type GetDatastreamsStreamArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastreamsStreamArrayOutput() GetDatastreamsStreamArrayOutput
+	ToGetDatastreamsStreamArrayOutputWithContext(context.Context) GetDatastreamsStreamArrayOutput
+}
+
+type GetDatastreamsStreamArray []GetDatastreamsStreamInput
+
+func (GetDatastreamsStreamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastreamsStream)(nil)).Elem()
+}
+
+func (i GetDatastreamsStreamArray) ToGetDatastreamsStreamArrayOutput() GetDatastreamsStreamArrayOutput {
+	return i.ToGetDatastreamsStreamArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastreamsStreamArray) ToGetDatastreamsStreamArrayOutputWithContext(ctx context.Context) GetDatastreamsStreamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastreamsStreamArrayOutput)
+}
+
+type GetDatastreamsStreamOutput struct{ *pulumi.OutputState }
+
+func (GetDatastreamsStreamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastreamsStream)(nil)).Elem()
+}
+
+func (o GetDatastreamsStreamOutput) ToGetDatastreamsStreamOutput() GetDatastreamsStreamOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamOutput) ToGetDatastreamsStreamOutputWithContext(ctx context.Context) GetDatastreamsStreamOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamOutput) ActivationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) string { return v.ActivationStatus }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamsStreamOutput) Archived() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) bool { return v.Archived }).(pulumi.BoolOutput)
+}
+
+func (o GetDatastreamsStreamOutput) Connectors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) string { return v.Connectors }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamsStreamOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) string { return v.ContractId }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamsStreamOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamsStreamOutput) CreatedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) string { return v.CreatedDate }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamsStreamOutput) CurrentVersionId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) int { return v.CurrentVersionId }).(pulumi.IntOutput)
+}
+
+func (o GetDatastreamsStreamOutput) Errors() GetDatastreamsStreamErrorArrayOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) []GetDatastreamsStreamError { return v.Errors }).(GetDatastreamsStreamErrorArrayOutput)
+}
+
+// Unique identifier of the group that can access the product.
+func (o GetDatastreamsStreamOutput) GroupId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) int { return v.GroupId }).(pulumi.IntOutput)
+}
+
+func (o GetDatastreamsStreamOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamsStreamOutput) Properties() GetDatastreamsStreamPropertyArrayOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) []GetDatastreamsStreamProperty { return v.Properties }).(GetDatastreamsStreamPropertyArrayOutput)
+}
+
+func (o GetDatastreamsStreamOutput) StreamId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) int { return v.StreamId }).(pulumi.IntOutput)
+}
+
+func (o GetDatastreamsStreamOutput) StreamName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) string { return v.StreamName }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamsStreamOutput) StreamTypeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) string { return v.StreamTypeName }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamsStreamOutput) StreamVersionId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatastreamsStream) int { return v.StreamVersionId }).(pulumi.IntOutput)
+}
+
+type GetDatastreamsStreamArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastreamsStreamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastreamsStream)(nil)).Elem()
+}
+
+func (o GetDatastreamsStreamArrayOutput) ToGetDatastreamsStreamArrayOutput() GetDatastreamsStreamArrayOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamArrayOutput) ToGetDatastreamsStreamArrayOutputWithContext(ctx context.Context) GetDatastreamsStreamArrayOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamArrayOutput) Index(i pulumi.IntInput) GetDatastreamsStreamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastreamsStream {
+		return vs[0].([]GetDatastreamsStream)[vs[1].(int)]
+	}).(GetDatastreamsStreamOutput)
+}
+
+type GetDatastreamsStreamError struct {
+	Detail string `pulumi:"detail"`
+	Title  string `pulumi:"title"`
+	Type   string `pulumi:"type"`
+}
+
+// GetDatastreamsStreamErrorInput is an input type that accepts GetDatastreamsStreamErrorArgs and GetDatastreamsStreamErrorOutput values.
+// You can construct a concrete instance of `GetDatastreamsStreamErrorInput` via:
+//
+//	GetDatastreamsStreamErrorArgs{...}
+type GetDatastreamsStreamErrorInput interface {
+	pulumi.Input
+
+	ToGetDatastreamsStreamErrorOutput() GetDatastreamsStreamErrorOutput
+	ToGetDatastreamsStreamErrorOutputWithContext(context.Context) GetDatastreamsStreamErrorOutput
+}
+
+type GetDatastreamsStreamErrorArgs struct {
+	Detail pulumi.StringInput `pulumi:"detail"`
+	Title  pulumi.StringInput `pulumi:"title"`
+	Type   pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatastreamsStreamErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastreamsStreamError)(nil)).Elem()
+}
+
+func (i GetDatastreamsStreamErrorArgs) ToGetDatastreamsStreamErrorOutput() GetDatastreamsStreamErrorOutput {
+	return i.ToGetDatastreamsStreamErrorOutputWithContext(context.Background())
+}
+
+func (i GetDatastreamsStreamErrorArgs) ToGetDatastreamsStreamErrorOutputWithContext(ctx context.Context) GetDatastreamsStreamErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastreamsStreamErrorOutput)
+}
+
+// GetDatastreamsStreamErrorArrayInput is an input type that accepts GetDatastreamsStreamErrorArray and GetDatastreamsStreamErrorArrayOutput values.
+// You can construct a concrete instance of `GetDatastreamsStreamErrorArrayInput` via:
+//
+//	GetDatastreamsStreamErrorArray{ GetDatastreamsStreamErrorArgs{...} }
+type GetDatastreamsStreamErrorArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastreamsStreamErrorArrayOutput() GetDatastreamsStreamErrorArrayOutput
+	ToGetDatastreamsStreamErrorArrayOutputWithContext(context.Context) GetDatastreamsStreamErrorArrayOutput
+}
+
+type GetDatastreamsStreamErrorArray []GetDatastreamsStreamErrorInput
+
+func (GetDatastreamsStreamErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastreamsStreamError)(nil)).Elem()
+}
+
+func (i GetDatastreamsStreamErrorArray) ToGetDatastreamsStreamErrorArrayOutput() GetDatastreamsStreamErrorArrayOutput {
+	return i.ToGetDatastreamsStreamErrorArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastreamsStreamErrorArray) ToGetDatastreamsStreamErrorArrayOutputWithContext(ctx context.Context) GetDatastreamsStreamErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastreamsStreamErrorArrayOutput)
+}
+
+type GetDatastreamsStreamErrorOutput struct{ *pulumi.OutputState }
+
+func (GetDatastreamsStreamErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastreamsStreamError)(nil)).Elem()
+}
+
+func (o GetDatastreamsStreamErrorOutput) ToGetDatastreamsStreamErrorOutput() GetDatastreamsStreamErrorOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamErrorOutput) ToGetDatastreamsStreamErrorOutputWithContext(ctx context.Context) GetDatastreamsStreamErrorOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamErrorOutput) Detail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStreamError) string { return v.Detail }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamsStreamErrorOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStreamError) string { return v.Title }).(pulumi.StringOutput)
+}
+
+func (o GetDatastreamsStreamErrorOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStreamError) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatastreamsStreamErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastreamsStreamErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastreamsStreamError)(nil)).Elem()
+}
+
+func (o GetDatastreamsStreamErrorArrayOutput) ToGetDatastreamsStreamErrorArrayOutput() GetDatastreamsStreamErrorArrayOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamErrorArrayOutput) ToGetDatastreamsStreamErrorArrayOutputWithContext(ctx context.Context) GetDatastreamsStreamErrorArrayOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamErrorArrayOutput) Index(i pulumi.IntInput) GetDatastreamsStreamErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastreamsStreamError {
+		return vs[0].([]GetDatastreamsStreamError)[vs[1].(int)]
+	}).(GetDatastreamsStreamErrorOutput)
+}
+
+type GetDatastreamsStreamProperty struct {
+	PropertyId   int    `pulumi:"propertyId"`
+	PropertyName string `pulumi:"propertyName"`
+}
+
+// GetDatastreamsStreamPropertyInput is an input type that accepts GetDatastreamsStreamPropertyArgs and GetDatastreamsStreamPropertyOutput values.
+// You can construct a concrete instance of `GetDatastreamsStreamPropertyInput` via:
+//
+//	GetDatastreamsStreamPropertyArgs{...}
+type GetDatastreamsStreamPropertyInput interface {
+	pulumi.Input
+
+	ToGetDatastreamsStreamPropertyOutput() GetDatastreamsStreamPropertyOutput
+	ToGetDatastreamsStreamPropertyOutputWithContext(context.Context) GetDatastreamsStreamPropertyOutput
+}
+
+type GetDatastreamsStreamPropertyArgs struct {
+	PropertyId   pulumi.IntInput    `pulumi:"propertyId"`
+	PropertyName pulumi.StringInput `pulumi:"propertyName"`
+}
+
+func (GetDatastreamsStreamPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastreamsStreamProperty)(nil)).Elem()
+}
+
+func (i GetDatastreamsStreamPropertyArgs) ToGetDatastreamsStreamPropertyOutput() GetDatastreamsStreamPropertyOutput {
+	return i.ToGetDatastreamsStreamPropertyOutputWithContext(context.Background())
+}
+
+func (i GetDatastreamsStreamPropertyArgs) ToGetDatastreamsStreamPropertyOutputWithContext(ctx context.Context) GetDatastreamsStreamPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastreamsStreamPropertyOutput)
+}
+
+// GetDatastreamsStreamPropertyArrayInput is an input type that accepts GetDatastreamsStreamPropertyArray and GetDatastreamsStreamPropertyArrayOutput values.
+// You can construct a concrete instance of `GetDatastreamsStreamPropertyArrayInput` via:
+//
+//	GetDatastreamsStreamPropertyArray{ GetDatastreamsStreamPropertyArgs{...} }
+type GetDatastreamsStreamPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetDatastreamsStreamPropertyArrayOutput() GetDatastreamsStreamPropertyArrayOutput
+	ToGetDatastreamsStreamPropertyArrayOutputWithContext(context.Context) GetDatastreamsStreamPropertyArrayOutput
+}
+
+type GetDatastreamsStreamPropertyArray []GetDatastreamsStreamPropertyInput
+
+func (GetDatastreamsStreamPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastreamsStreamProperty)(nil)).Elem()
+}
+
+func (i GetDatastreamsStreamPropertyArray) ToGetDatastreamsStreamPropertyArrayOutput() GetDatastreamsStreamPropertyArrayOutput {
+	return i.ToGetDatastreamsStreamPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatastreamsStreamPropertyArray) ToGetDatastreamsStreamPropertyArrayOutputWithContext(ctx context.Context) GetDatastreamsStreamPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatastreamsStreamPropertyArrayOutput)
+}
+
+type GetDatastreamsStreamPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetDatastreamsStreamPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatastreamsStreamProperty)(nil)).Elem()
+}
+
+func (o GetDatastreamsStreamPropertyOutput) ToGetDatastreamsStreamPropertyOutput() GetDatastreamsStreamPropertyOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamPropertyOutput) ToGetDatastreamsStreamPropertyOutputWithContext(ctx context.Context) GetDatastreamsStreamPropertyOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamPropertyOutput) PropertyId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatastreamsStreamProperty) int { return v.PropertyId }).(pulumi.IntOutput)
+}
+
+func (o GetDatastreamsStreamPropertyOutput) PropertyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatastreamsStreamProperty) string { return v.PropertyName }).(pulumi.StringOutput)
+}
+
+type GetDatastreamsStreamPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatastreamsStreamPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatastreamsStreamProperty)(nil)).Elem()
+}
+
+func (o GetDatastreamsStreamPropertyArrayOutput) ToGetDatastreamsStreamPropertyArrayOutput() GetDatastreamsStreamPropertyArrayOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamPropertyArrayOutput) ToGetDatastreamsStreamPropertyArrayOutputWithContext(ctx context.Context) GetDatastreamsStreamPropertyArrayOutput {
+	return o
+}
+
+func (o GetDatastreamsStreamPropertyArrayOutput) Index(i pulumi.IntInput) GetDatastreamsStreamPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatastreamsStreamProperty {
+		return vs[0].([]GetDatastreamsStreamProperty)[vs[1].(int)]
+	}).(GetDatastreamsStreamPropertyOutput)
+}
+
 type GetGroupsGroup struct {
 	ContractIds   []string `pulumi:"contractIds"`
 	GroupId       string   `pulumi:"groupId"`
@@ -18708,6 +22119,416 @@ func (o GetPropertyHostnamesHostnameCertStatusArrayOutput) Index(i pulumi.IntInp
 	}).(GetPropertyHostnamesHostnameCertStatusOutput)
 }
 
+type GetPropertyIncludeParentsParent struct {
+	Id                               string `pulumi:"id"`
+	IsIncludeUsedInProductionVersion bool   `pulumi:"isIncludeUsedInProductionVersion"`
+	IsIncludeUsedInStagingVersion    bool   `pulumi:"isIncludeUsedInStagingVersion"`
+	Name                             string `pulumi:"name"`
+	ProductionVersion                string `pulumi:"productionVersion"`
+	StagingVersion                   string `pulumi:"stagingVersion"`
+}
+
+// GetPropertyIncludeParentsParentInput is an input type that accepts GetPropertyIncludeParentsParentArgs and GetPropertyIncludeParentsParentOutput values.
+// You can construct a concrete instance of `GetPropertyIncludeParentsParentInput` via:
+//
+//	GetPropertyIncludeParentsParentArgs{...}
+type GetPropertyIncludeParentsParentInput interface {
+	pulumi.Input
+
+	ToGetPropertyIncludeParentsParentOutput() GetPropertyIncludeParentsParentOutput
+	ToGetPropertyIncludeParentsParentOutputWithContext(context.Context) GetPropertyIncludeParentsParentOutput
+}
+
+type GetPropertyIncludeParentsParentArgs struct {
+	Id                               pulumi.StringInput `pulumi:"id"`
+	IsIncludeUsedInProductionVersion pulumi.BoolInput   `pulumi:"isIncludeUsedInProductionVersion"`
+	IsIncludeUsedInStagingVersion    pulumi.BoolInput   `pulumi:"isIncludeUsedInStagingVersion"`
+	Name                             pulumi.StringInput `pulumi:"name"`
+	ProductionVersion                pulumi.StringInput `pulumi:"productionVersion"`
+	StagingVersion                   pulumi.StringInput `pulumi:"stagingVersion"`
+}
+
+func (GetPropertyIncludeParentsParentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyIncludeParentsParent)(nil)).Elem()
+}
+
+func (i GetPropertyIncludeParentsParentArgs) ToGetPropertyIncludeParentsParentOutput() GetPropertyIncludeParentsParentOutput {
+	return i.ToGetPropertyIncludeParentsParentOutputWithContext(context.Background())
+}
+
+func (i GetPropertyIncludeParentsParentArgs) ToGetPropertyIncludeParentsParentOutputWithContext(ctx context.Context) GetPropertyIncludeParentsParentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyIncludeParentsParentOutput)
+}
+
+// GetPropertyIncludeParentsParentArrayInput is an input type that accepts GetPropertyIncludeParentsParentArray and GetPropertyIncludeParentsParentArrayOutput values.
+// You can construct a concrete instance of `GetPropertyIncludeParentsParentArrayInput` via:
+//
+//	GetPropertyIncludeParentsParentArray{ GetPropertyIncludeParentsParentArgs{...} }
+type GetPropertyIncludeParentsParentArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyIncludeParentsParentArrayOutput() GetPropertyIncludeParentsParentArrayOutput
+	ToGetPropertyIncludeParentsParentArrayOutputWithContext(context.Context) GetPropertyIncludeParentsParentArrayOutput
+}
+
+type GetPropertyIncludeParentsParentArray []GetPropertyIncludeParentsParentInput
+
+func (GetPropertyIncludeParentsParentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyIncludeParentsParent)(nil)).Elem()
+}
+
+func (i GetPropertyIncludeParentsParentArray) ToGetPropertyIncludeParentsParentArrayOutput() GetPropertyIncludeParentsParentArrayOutput {
+	return i.ToGetPropertyIncludeParentsParentArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyIncludeParentsParentArray) ToGetPropertyIncludeParentsParentArrayOutputWithContext(ctx context.Context) GetPropertyIncludeParentsParentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyIncludeParentsParentArrayOutput)
+}
+
+type GetPropertyIncludeParentsParentOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyIncludeParentsParentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyIncludeParentsParent)(nil)).Elem()
+}
+
+func (o GetPropertyIncludeParentsParentOutput) ToGetPropertyIncludeParentsParentOutput() GetPropertyIncludeParentsParentOutput {
+	return o
+}
+
+func (o GetPropertyIncludeParentsParentOutput) ToGetPropertyIncludeParentsParentOutputWithContext(ctx context.Context) GetPropertyIncludeParentsParentOutput {
+	return o
+}
+
+func (o GetPropertyIncludeParentsParentOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyIncludeParentsParent) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyIncludeParentsParentOutput) IsIncludeUsedInProductionVersion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPropertyIncludeParentsParent) bool { return v.IsIncludeUsedInProductionVersion }).(pulumi.BoolOutput)
+}
+
+func (o GetPropertyIncludeParentsParentOutput) IsIncludeUsedInStagingVersion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPropertyIncludeParentsParent) bool { return v.IsIncludeUsedInStagingVersion }).(pulumi.BoolOutput)
+}
+
+func (o GetPropertyIncludeParentsParentOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyIncludeParentsParent) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyIncludeParentsParentOutput) ProductionVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyIncludeParentsParent) string { return v.ProductionVersion }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyIncludeParentsParentOutput) StagingVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyIncludeParentsParent) string { return v.StagingVersion }).(pulumi.StringOutput)
+}
+
+type GetPropertyIncludeParentsParentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyIncludeParentsParentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyIncludeParentsParent)(nil)).Elem()
+}
+
+func (o GetPropertyIncludeParentsParentArrayOutput) ToGetPropertyIncludeParentsParentArrayOutput() GetPropertyIncludeParentsParentArrayOutput {
+	return o
+}
+
+func (o GetPropertyIncludeParentsParentArrayOutput) ToGetPropertyIncludeParentsParentArrayOutputWithContext(ctx context.Context) GetPropertyIncludeParentsParentArrayOutput {
+	return o
+}
+
+func (o GetPropertyIncludeParentsParentArrayOutput) Index(i pulumi.IntInput) GetPropertyIncludeParentsParentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyIncludeParentsParent {
+		return vs[0].([]GetPropertyIncludeParentsParent)[vs[1].(int)]
+	}).(GetPropertyIncludeParentsParentOutput)
+}
+
+type GetPropertyIncludesInclude struct {
+	// - (Required) The property's unique identifier.
+	Id                string `pulumi:"id"`
+	LatestVersion     int    `pulumi:"latestVersion"`
+	Name              string `pulumi:"name"`
+	ProductionVersion string `pulumi:"productionVersion"`
+	StagingVersion    string `pulumi:"stagingVersion"`
+	// - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+	Type string `pulumi:"type"`
+}
+
+// GetPropertyIncludesIncludeInput is an input type that accepts GetPropertyIncludesIncludeArgs and GetPropertyIncludesIncludeOutput values.
+// You can construct a concrete instance of `GetPropertyIncludesIncludeInput` via:
+//
+//	GetPropertyIncludesIncludeArgs{...}
+type GetPropertyIncludesIncludeInput interface {
+	pulumi.Input
+
+	ToGetPropertyIncludesIncludeOutput() GetPropertyIncludesIncludeOutput
+	ToGetPropertyIncludesIncludeOutputWithContext(context.Context) GetPropertyIncludesIncludeOutput
+}
+
+type GetPropertyIncludesIncludeArgs struct {
+	// - (Required) The property's unique identifier.
+	Id                pulumi.StringInput `pulumi:"id"`
+	LatestVersion     pulumi.IntInput    `pulumi:"latestVersion"`
+	Name              pulumi.StringInput `pulumi:"name"`
+	ProductionVersion pulumi.StringInput `pulumi:"productionVersion"`
+	StagingVersion    pulumi.StringInput `pulumi:"stagingVersion"`
+	// - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetPropertyIncludesIncludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyIncludesInclude)(nil)).Elem()
+}
+
+func (i GetPropertyIncludesIncludeArgs) ToGetPropertyIncludesIncludeOutput() GetPropertyIncludesIncludeOutput {
+	return i.ToGetPropertyIncludesIncludeOutputWithContext(context.Background())
+}
+
+func (i GetPropertyIncludesIncludeArgs) ToGetPropertyIncludesIncludeOutputWithContext(ctx context.Context) GetPropertyIncludesIncludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyIncludesIncludeOutput)
+}
+
+// GetPropertyIncludesIncludeArrayInput is an input type that accepts GetPropertyIncludesIncludeArray and GetPropertyIncludesIncludeArrayOutput values.
+// You can construct a concrete instance of `GetPropertyIncludesIncludeArrayInput` via:
+//
+//	GetPropertyIncludesIncludeArray{ GetPropertyIncludesIncludeArgs{...} }
+type GetPropertyIncludesIncludeArrayInput interface {
+	pulumi.Input
+
+	ToGetPropertyIncludesIncludeArrayOutput() GetPropertyIncludesIncludeArrayOutput
+	ToGetPropertyIncludesIncludeArrayOutputWithContext(context.Context) GetPropertyIncludesIncludeArrayOutput
+}
+
+type GetPropertyIncludesIncludeArray []GetPropertyIncludesIncludeInput
+
+func (GetPropertyIncludesIncludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyIncludesInclude)(nil)).Elem()
+}
+
+func (i GetPropertyIncludesIncludeArray) ToGetPropertyIncludesIncludeArrayOutput() GetPropertyIncludesIncludeArrayOutput {
+	return i.ToGetPropertyIncludesIncludeArrayOutputWithContext(context.Background())
+}
+
+func (i GetPropertyIncludesIncludeArray) ToGetPropertyIncludesIncludeArrayOutputWithContext(ctx context.Context) GetPropertyIncludesIncludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyIncludesIncludeArrayOutput)
+}
+
+type GetPropertyIncludesIncludeOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyIncludesIncludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyIncludesInclude)(nil)).Elem()
+}
+
+func (o GetPropertyIncludesIncludeOutput) ToGetPropertyIncludesIncludeOutput() GetPropertyIncludesIncludeOutput {
+	return o
+}
+
+func (o GetPropertyIncludesIncludeOutput) ToGetPropertyIncludesIncludeOutputWithContext(ctx context.Context) GetPropertyIncludesIncludeOutput {
+	return o
+}
+
+// - (Required) The property's unique identifier.
+func (o GetPropertyIncludesIncludeOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyIncludesInclude) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyIncludesIncludeOutput) LatestVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPropertyIncludesInclude) int { return v.LatestVersion }).(pulumi.IntOutput)
+}
+
+func (o GetPropertyIncludesIncludeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyIncludesInclude) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyIncludesIncludeOutput) ProductionVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyIncludesInclude) string { return v.ProductionVersion }).(pulumi.StringOutput)
+}
+
+func (o GetPropertyIncludesIncludeOutput) StagingVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyIncludesInclude) string { return v.StagingVersion }).(pulumi.StringOutput)
+}
+
+// - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+func (o GetPropertyIncludesIncludeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyIncludesInclude) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetPropertyIncludesIncludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyIncludesIncludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPropertyIncludesInclude)(nil)).Elem()
+}
+
+func (o GetPropertyIncludesIncludeArrayOutput) ToGetPropertyIncludesIncludeArrayOutput() GetPropertyIncludesIncludeArrayOutput {
+	return o
+}
+
+func (o GetPropertyIncludesIncludeArrayOutput) ToGetPropertyIncludesIncludeArrayOutputWithContext(ctx context.Context) GetPropertyIncludesIncludeArrayOutput {
+	return o
+}
+
+func (o GetPropertyIncludesIncludeArrayOutput) Index(i pulumi.IntInput) GetPropertyIncludesIncludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPropertyIncludesInclude {
+		return vs[0].([]GetPropertyIncludesInclude)[vs[1].(int)]
+	}).(GetPropertyIncludesIncludeOutput)
+}
+
+type GetPropertyIncludesParentProperty struct {
+	// - (Required) The property's unique identifier.
+	Id string `pulumi:"id"`
+	// - (Required) The version of the activated parent property.
+	Version int `pulumi:"version"`
+}
+
+// GetPropertyIncludesParentPropertyInput is an input type that accepts GetPropertyIncludesParentPropertyArgs and GetPropertyIncludesParentPropertyOutput values.
+// You can construct a concrete instance of `GetPropertyIncludesParentPropertyInput` via:
+//
+//	GetPropertyIncludesParentPropertyArgs{...}
+type GetPropertyIncludesParentPropertyInput interface {
+	pulumi.Input
+
+	ToGetPropertyIncludesParentPropertyOutput() GetPropertyIncludesParentPropertyOutput
+	ToGetPropertyIncludesParentPropertyOutputWithContext(context.Context) GetPropertyIncludesParentPropertyOutput
+}
+
+type GetPropertyIncludesParentPropertyArgs struct {
+	// - (Required) The property's unique identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+	// - (Required) The version of the activated parent property.
+	Version pulumi.IntInput `pulumi:"version"`
+}
+
+func (GetPropertyIncludesParentPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyIncludesParentProperty)(nil)).Elem()
+}
+
+func (i GetPropertyIncludesParentPropertyArgs) ToGetPropertyIncludesParentPropertyOutput() GetPropertyIncludesParentPropertyOutput {
+	return i.ToGetPropertyIncludesParentPropertyOutputWithContext(context.Background())
+}
+
+func (i GetPropertyIncludesParentPropertyArgs) ToGetPropertyIncludesParentPropertyOutputWithContext(ctx context.Context) GetPropertyIncludesParentPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyIncludesParentPropertyOutput)
+}
+
+func (i GetPropertyIncludesParentPropertyArgs) ToGetPropertyIncludesParentPropertyPtrOutput() GetPropertyIncludesParentPropertyPtrOutput {
+	return i.ToGetPropertyIncludesParentPropertyPtrOutputWithContext(context.Background())
+}
+
+func (i GetPropertyIncludesParentPropertyArgs) ToGetPropertyIncludesParentPropertyPtrOutputWithContext(ctx context.Context) GetPropertyIncludesParentPropertyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyIncludesParentPropertyOutput).ToGetPropertyIncludesParentPropertyPtrOutputWithContext(ctx)
+}
+
+// GetPropertyIncludesParentPropertyPtrInput is an input type that accepts GetPropertyIncludesParentPropertyArgs, GetPropertyIncludesParentPropertyPtr and GetPropertyIncludesParentPropertyPtrOutput values.
+// You can construct a concrete instance of `GetPropertyIncludesParentPropertyPtrInput` via:
+//
+//	        GetPropertyIncludesParentPropertyArgs{...}
+//
+//	or:
+//
+//	        nil
+type GetPropertyIncludesParentPropertyPtrInput interface {
+	pulumi.Input
+
+	ToGetPropertyIncludesParentPropertyPtrOutput() GetPropertyIncludesParentPropertyPtrOutput
+	ToGetPropertyIncludesParentPropertyPtrOutputWithContext(context.Context) GetPropertyIncludesParentPropertyPtrOutput
+}
+
+type getPropertyIncludesParentPropertyPtrType GetPropertyIncludesParentPropertyArgs
+
+func GetPropertyIncludesParentPropertyPtr(v *GetPropertyIncludesParentPropertyArgs) GetPropertyIncludesParentPropertyPtrInput {
+	return (*getPropertyIncludesParentPropertyPtrType)(v)
+}
+
+func (*getPropertyIncludesParentPropertyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetPropertyIncludesParentProperty)(nil)).Elem()
+}
+
+func (i *getPropertyIncludesParentPropertyPtrType) ToGetPropertyIncludesParentPropertyPtrOutput() GetPropertyIncludesParentPropertyPtrOutput {
+	return i.ToGetPropertyIncludesParentPropertyPtrOutputWithContext(context.Background())
+}
+
+func (i *getPropertyIncludesParentPropertyPtrType) ToGetPropertyIncludesParentPropertyPtrOutputWithContext(ctx context.Context) GetPropertyIncludesParentPropertyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPropertyIncludesParentPropertyPtrOutput)
+}
+
+type GetPropertyIncludesParentPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyIncludesParentPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyIncludesParentProperty)(nil)).Elem()
+}
+
+func (o GetPropertyIncludesParentPropertyOutput) ToGetPropertyIncludesParentPropertyOutput() GetPropertyIncludesParentPropertyOutput {
+	return o
+}
+
+func (o GetPropertyIncludesParentPropertyOutput) ToGetPropertyIncludesParentPropertyOutputWithContext(ctx context.Context) GetPropertyIncludesParentPropertyOutput {
+	return o
+}
+
+func (o GetPropertyIncludesParentPropertyOutput) ToGetPropertyIncludesParentPropertyPtrOutput() GetPropertyIncludesParentPropertyPtrOutput {
+	return o.ToGetPropertyIncludesParentPropertyPtrOutputWithContext(context.Background())
+}
+
+func (o GetPropertyIncludesParentPropertyOutput) ToGetPropertyIncludesParentPropertyPtrOutputWithContext(ctx context.Context) GetPropertyIncludesParentPropertyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetPropertyIncludesParentProperty) *GetPropertyIncludesParentProperty {
+		return &v
+	}).(GetPropertyIncludesParentPropertyPtrOutput)
+}
+
+// - (Required) The property's unique identifier.
+func (o GetPropertyIncludesParentPropertyOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyIncludesParentProperty) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// - (Required) The version of the activated parent property.
+func (o GetPropertyIncludesParentPropertyOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPropertyIncludesParentProperty) int { return v.Version }).(pulumi.IntOutput)
+}
+
+type GetPropertyIncludesParentPropertyPtrOutput struct{ *pulumi.OutputState }
+
+func (GetPropertyIncludesParentPropertyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GetPropertyIncludesParentProperty)(nil)).Elem()
+}
+
+func (o GetPropertyIncludesParentPropertyPtrOutput) ToGetPropertyIncludesParentPropertyPtrOutput() GetPropertyIncludesParentPropertyPtrOutput {
+	return o
+}
+
+func (o GetPropertyIncludesParentPropertyPtrOutput) ToGetPropertyIncludesParentPropertyPtrOutputWithContext(ctx context.Context) GetPropertyIncludesParentPropertyPtrOutput {
+	return o
+}
+
+func (o GetPropertyIncludesParentPropertyPtrOutput) Elem() GetPropertyIncludesParentPropertyOutput {
+	return o.ApplyT(func(v *GetPropertyIncludesParentProperty) GetPropertyIncludesParentProperty {
+		if v != nil {
+			return *v
+		}
+		var ret GetPropertyIncludesParentProperty
+		return ret
+	}).(GetPropertyIncludesParentPropertyOutput)
+}
+
+// - (Required) The property's unique identifier.
+func (o GetPropertyIncludesParentPropertyPtrOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GetPropertyIncludesParentProperty) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Id
+	}).(pulumi.StringPtrOutput)
+}
+
+// - (Required) The version of the activated parent property.
+func (o GetPropertyIncludesParentPropertyPtrOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GetPropertyIncludesParentProperty) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.Version
+	}).(pulumi.IntPtrOutput)
+}
+
 type GetPropertyProductsProduct struct {
 	ProductId   string `pulumi:"productId"`
 	ProductName string `pulumi:"productName"`
@@ -19050,6 +22871,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentOrganizationPtrInput)(nil)).Elem(), CpsDvEnrollmentOrganizationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentTechContactInput)(nil)).Elem(), CpsDvEnrollmentTechContactArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CpsDvEnrollmentTechContactPtrInput)(nil)).Elem(), CpsDvEnrollmentTechContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsThirdPartyEnrollmentAdminContactInput)(nil)).Elem(), CpsThirdPartyEnrollmentAdminContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsThirdPartyEnrollmentAdminContactPtrInput)(nil)).Elem(), CpsThirdPartyEnrollmentAdminContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsThirdPartyEnrollmentCsrInput)(nil)).Elem(), CpsThirdPartyEnrollmentCsrArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsThirdPartyEnrollmentCsrPtrInput)(nil)).Elem(), CpsThirdPartyEnrollmentCsrArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsThirdPartyEnrollmentNetworkConfigurationInput)(nil)).Elem(), CpsThirdPartyEnrollmentNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsThirdPartyEnrollmentNetworkConfigurationPtrInput)(nil)).Elem(), CpsThirdPartyEnrollmentNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationInput)(nil)).Elem(), CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrInput)(nil)).Elem(), CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsThirdPartyEnrollmentOrganizationInput)(nil)).Elem(), CpsThirdPartyEnrollmentOrganizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsThirdPartyEnrollmentOrganizationPtrInput)(nil)).Elem(), CpsThirdPartyEnrollmentOrganizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsThirdPartyEnrollmentTechContactInput)(nil)).Elem(), CpsThirdPartyEnrollmentTechContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CpsThirdPartyEnrollmentTechContactPtrInput)(nil)).Elem(), CpsThirdPartyEnrollmentTechContactArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamAzureConnectorInput)(nil)).Elem(), DatastreamAzureConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamAzureConnectorPtrInput)(nil)).Elem(), DatastreamAzureConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamConfigInput)(nil)).Elem(), DatastreamConfigArgs{})
@@ -19058,10 +22891,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamConfigFrequencyPtrInput)(nil)).Elem(), DatastreamConfigFrequencyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamDatadogConnectorInput)(nil)).Elem(), DatastreamDatadogConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamDatadogConnectorPtrInput)(nil)).Elem(), DatastreamDatadogConnectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamElasticsearchConnectorInput)(nil)).Elem(), DatastreamElasticsearchConnectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamElasticsearchConnectorPtrInput)(nil)).Elem(), DatastreamElasticsearchConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamGcsConnectorInput)(nil)).Elem(), DatastreamGcsConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamGcsConnectorPtrInput)(nil)).Elem(), DatastreamGcsConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamHttpsConnectorInput)(nil)).Elem(), DatastreamHttpsConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamHttpsConnectorPtrInput)(nil)).Elem(), DatastreamHttpsConnectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamLogglyConnectorInput)(nil)).Elem(), DatastreamLogglyConnectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamLogglyConnectorPtrInput)(nil)).Elem(), DatastreamLogglyConnectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamNewRelicConnectorInput)(nil)).Elem(), DatastreamNewRelicConnectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamNewRelicConnectorPtrInput)(nil)).Elem(), DatastreamNewRelicConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamOracleConnectorInput)(nil)).Elem(), DatastreamOracleConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamOracleConnectorPtrInput)(nil)).Elem(), DatastreamOracleConnectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastreamS3ConnectorInput)(nil)).Elem(), DatastreamS3ConnectorArgs{})
@@ -19106,6 +22945,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameArrayInput)(nil)).Elem(), PropertyHostnameArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusInput)(nil)).Elem(), PropertyHostnameCertStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyHostnameCertStatusArrayInput)(nil)).Elem(), PropertyHostnameCertStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyIncludeActivationComplianceRecordInput)(nil)).Elem(), PropertyIncludeActivationComplianceRecordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyIncludeActivationComplianceRecordPtrInput)(nil)).Elem(), PropertyIncludeActivationComplianceRecordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyOriginInput)(nil)).Elem(), PropertyOriginArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyOriginArrayInput)(nil)).Elem(), PropertyOriginArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleErrorInput)(nil)).Elem(), PropertyRuleErrorArgs{})
@@ -19241,6 +23082,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamDatasetFieldsFieldArrayInput)(nil)).Elem(), GetDatastreamDatasetFieldsFieldArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamDatasetFieldsFieldDatasetFieldInput)(nil)).Elem(), GetDatastreamDatasetFieldsFieldDatasetFieldArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamDatasetFieldsFieldDatasetFieldArrayInput)(nil)).Elem(), GetDatastreamDatasetFieldsFieldDatasetFieldArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamsStreamInput)(nil)).Elem(), GetDatastreamsStreamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamsStreamArrayInput)(nil)).Elem(), GetDatastreamsStreamArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamsStreamErrorInput)(nil)).Elem(), GetDatastreamsStreamErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamsStreamErrorArrayInput)(nil)).Elem(), GetDatastreamsStreamErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamsStreamPropertyInput)(nil)).Elem(), GetDatastreamsStreamPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatastreamsStreamPropertyArrayInput)(nil)).Elem(), GetDatastreamsStreamPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupsGroupInput)(nil)).Elem(), GetGroupsGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupsGroupArrayInput)(nil)).Elem(), GetGroupsGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIamGrantableRolesGrantableRoleInput)(nil)).Elem(), GetIamGrantableRolesGrantableRoleArgs{})
@@ -19257,6 +23104,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyHostnamesHostnameCertStatusArrayInput)(nil)).Elem(), GetPropertyHostnamesHostnameCertStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyIncludeParentsParentInput)(nil)).Elem(), GetPropertyIncludeParentsParentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyIncludeParentsParentArrayInput)(nil)).Elem(), GetPropertyIncludeParentsParentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyIncludesIncludeInput)(nil)).Elem(), GetPropertyIncludesIncludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyIncludesIncludeArrayInput)(nil)).Elem(), GetPropertyIncludesIncludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyIncludesParentPropertyInput)(nil)).Elem(), GetPropertyIncludesParentPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyIncludesParentPropertyPtrInput)(nil)).Elem(), GetPropertyIncludesParentPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyProductsProductInput)(nil)).Elem(), GetPropertyProductsProductArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyProductsProductArrayInput)(nil)).Elem(), GetPropertyProductsProductArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPropertyRulesTemplateTemplateInput)(nil)).Elem(), GetPropertyRulesTemplateTemplateArgs{})
@@ -19283,6 +23136,18 @@ func init() {
 	pulumi.RegisterOutputType(CpsDvEnrollmentOrganizationPtrOutput{})
 	pulumi.RegisterOutputType(CpsDvEnrollmentTechContactOutput{})
 	pulumi.RegisterOutputType(CpsDvEnrollmentTechContactPtrOutput{})
+	pulumi.RegisterOutputType(CpsThirdPartyEnrollmentAdminContactOutput{})
+	pulumi.RegisterOutputType(CpsThirdPartyEnrollmentAdminContactPtrOutput{})
+	pulumi.RegisterOutputType(CpsThirdPartyEnrollmentCsrOutput{})
+	pulumi.RegisterOutputType(CpsThirdPartyEnrollmentCsrPtrOutput{})
+	pulumi.RegisterOutputType(CpsThirdPartyEnrollmentNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationOutput{})
+	pulumi.RegisterOutputType(CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationPtrOutput{})
+	pulumi.RegisterOutputType(CpsThirdPartyEnrollmentOrganizationOutput{})
+	pulumi.RegisterOutputType(CpsThirdPartyEnrollmentOrganizationPtrOutput{})
+	pulumi.RegisterOutputType(CpsThirdPartyEnrollmentTechContactOutput{})
+	pulumi.RegisterOutputType(CpsThirdPartyEnrollmentTechContactPtrOutput{})
 	pulumi.RegisterOutputType(DatastreamAzureConnectorOutput{})
 	pulumi.RegisterOutputType(DatastreamAzureConnectorPtrOutput{})
 	pulumi.RegisterOutputType(DatastreamConfigOutput{})
@@ -19291,10 +23156,16 @@ func init() {
 	pulumi.RegisterOutputType(DatastreamConfigFrequencyPtrOutput{})
 	pulumi.RegisterOutputType(DatastreamDatadogConnectorOutput{})
 	pulumi.RegisterOutputType(DatastreamDatadogConnectorPtrOutput{})
+	pulumi.RegisterOutputType(DatastreamElasticsearchConnectorOutput{})
+	pulumi.RegisterOutputType(DatastreamElasticsearchConnectorPtrOutput{})
 	pulumi.RegisterOutputType(DatastreamGcsConnectorOutput{})
 	pulumi.RegisterOutputType(DatastreamGcsConnectorPtrOutput{})
 	pulumi.RegisterOutputType(DatastreamHttpsConnectorOutput{})
 	pulumi.RegisterOutputType(DatastreamHttpsConnectorPtrOutput{})
+	pulumi.RegisterOutputType(DatastreamLogglyConnectorOutput{})
+	pulumi.RegisterOutputType(DatastreamLogglyConnectorPtrOutput{})
+	pulumi.RegisterOutputType(DatastreamNewRelicConnectorOutput{})
+	pulumi.RegisterOutputType(DatastreamNewRelicConnectorPtrOutput{})
 	pulumi.RegisterOutputType(DatastreamOracleConnectorOutput{})
 	pulumi.RegisterOutputType(DatastreamOracleConnectorPtrOutput{})
 	pulumi.RegisterOutputType(DatastreamS3ConnectorOutput{})
@@ -19339,6 +23210,8 @@ func init() {
 	pulumi.RegisterOutputType(PropertyHostnameArrayOutput{})
 	pulumi.RegisterOutputType(PropertyHostnameCertStatusOutput{})
 	pulumi.RegisterOutputType(PropertyHostnameCertStatusArrayOutput{})
+	pulumi.RegisterOutputType(PropertyIncludeActivationComplianceRecordOutput{})
+	pulumi.RegisterOutputType(PropertyIncludeActivationComplianceRecordPtrOutput{})
 	pulumi.RegisterOutputType(PropertyOriginOutput{})
 	pulumi.RegisterOutputType(PropertyOriginArrayOutput{})
 	pulumi.RegisterOutputType(PropertyRuleErrorOutput{})
@@ -19474,6 +23347,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDatastreamDatasetFieldsFieldArrayOutput{})
 	pulumi.RegisterOutputType(GetDatastreamDatasetFieldsFieldDatasetFieldOutput{})
 	pulumi.RegisterOutputType(GetDatastreamDatasetFieldsFieldDatasetFieldArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastreamsStreamOutput{})
+	pulumi.RegisterOutputType(GetDatastreamsStreamArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastreamsStreamErrorOutput{})
+	pulumi.RegisterOutputType(GetDatastreamsStreamErrorArrayOutput{})
+	pulumi.RegisterOutputType(GetDatastreamsStreamPropertyOutput{})
+	pulumi.RegisterOutputType(GetDatastreamsStreamPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetGroupsGroupOutput{})
 	pulumi.RegisterOutputType(GetGroupsGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetIamGrantableRolesGrantableRoleOutput{})
@@ -19490,6 +23369,12 @@ func init() {
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusOutput{})
 	pulumi.RegisterOutputType(GetPropertyHostnamesHostnameCertStatusArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyIncludeParentsParentOutput{})
+	pulumi.RegisterOutputType(GetPropertyIncludeParentsParentArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyIncludesIncludeOutput{})
+	pulumi.RegisterOutputType(GetPropertyIncludesIncludeArrayOutput{})
+	pulumi.RegisterOutputType(GetPropertyIncludesParentPropertyOutput{})
+	pulumi.RegisterOutputType(GetPropertyIncludesParentPropertyPtrOutput{})
 	pulumi.RegisterOutputType(GetPropertyProductsProductOutput{})
 	pulumi.RegisterOutputType(GetPropertyProductsProductArrayOutput{})
 	pulumi.RegisterOutputType(GetPropertyRulesTemplateTemplateOutput{})

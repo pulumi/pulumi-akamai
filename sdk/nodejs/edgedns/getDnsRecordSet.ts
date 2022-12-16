@@ -7,11 +7,8 @@ import * as utilities from "../utilities";
 /** @deprecated akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet */
 export function getDnsRecordSet(args: GetDnsRecordSetArgs, opts?: pulumi.InvokeOptions): Promise<GetDnsRecordSetResult> {
     pulumi.log.warn("getDnsRecordSet is deprecated: akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet")
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", {
         "host": args.host,
         "recordType": args.recordType,
@@ -41,9 +38,9 @@ export interface GetDnsRecordSetResult {
     readonly recordType: string;
     readonly zone: string;
 }
-
+/** @deprecated akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet */
 export function getDnsRecordSetOutput(args: GetDnsRecordSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDnsRecordSetResult> {
-    return pulumi.output(args).apply(a => getDnsRecordSet(a, opts))
+    return pulumi.output(args).apply((a: any) => getDnsRecordSet(a, opts))
 }
 
 /**

@@ -14,8 +14,7 @@ namespace Pulumi.Akamai.Outputs
     public sealed class DatastreamDatadogConnector
     {
         /// <summary>
-        /// **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-        /// * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+        /// **Secret**. Your Log API token for your account in New Relic.
         /// </summary>
         public readonly string AuthToken;
         /// <summary>
@@ -36,7 +35,7 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string? Source;
         /// <summary>
-        /// The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+        /// The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
         /// </summary>
         public readonly string? Tags;
         /// <summary>

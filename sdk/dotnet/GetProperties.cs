@@ -23,18 +23,16 @@ namespace Pulumi.Akamai
         /// 
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         this.MyPropertyList = data.Akamai_properties.Example;
-        ///     }
-        /// 
-        ///     [Output("myPropertyList")]
-        ///     public Output&lt;string&gt; MyPropertyList { get; set; }
-        /// }
+        ///         ["myPropertyList"] = data.Akamai_properties.Example,
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -45,7 +43,7 @@ namespace Pulumi.Akamai
         /// * `properties` - A list of properties available for the contract and group IDs provided.
         /// </summary>
         public static Task<GetPropertiesResult> InvokeAsync(GetPropertiesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertiesResult>("akamai:index/getProperties:getProperties", args ?? new GetPropertiesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertiesResult>("akamai:index/getProperties:getProperties", args ?? new GetPropertiesArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getProperties` data source to query and retrieve the list of properties for a group and contract
@@ -59,18 +57,16 @@ namespace Pulumi.Akamai
         /// 
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         this.MyPropertyList = data.Akamai_properties.Example;
-        ///     }
-        /// 
-        ///     [Output("myPropertyList")]
-        ///     public Output&lt;string&gt; MyPropertyList { get; set; }
-        /// }
+        ///         ["myPropertyList"] = data.Akamai_properties.Example,
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,11 +77,11 @@ namespace Pulumi.Akamai
         /// * `properties` - A list of properties available for the contract and group IDs provided.
         /// </summary>
         public static Output<GetPropertiesResult> Invoke(GetPropertiesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertiesResult>("akamai:index/getProperties:getProperties", args ?? new GetPropertiesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertiesResult>("akamai:index/getProperties:getProperties", args ?? new GetPropertiesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetPropertiesArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertiesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) A contract's unique ID, including the `ctr_` prefix.
@@ -102,9 +98,10 @@ namespace Pulumi.Akamai
         public GetPropertiesArgs()
         {
         }
+        public static new GetPropertiesArgs Empty => new GetPropertiesArgs();
     }
 
-    public sealed class GetPropertiesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertiesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) A contract's unique ID, including the `ctr_` prefix.
@@ -121,6 +118,7 @@ namespace Pulumi.Akamai
         public GetPropertiesInvokeArgs()
         {
         }
+        public static new GetPropertiesInvokeArgs Empty => new GetPropertiesInvokeArgs();
     }
 
 

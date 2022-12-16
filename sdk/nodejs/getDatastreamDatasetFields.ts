@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -16,7 +17,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const fields = pulumi.output(akamai.getDatastreamDatasetFields());
+ * const fields = akamai.getDatastreamDatasetFields({});
  * ```
  * ## Attributes reference
  *
@@ -33,11 +34,8 @@ import * as utilities from "./utilities";
  */
 export function getDatastreamDatasetFields(args?: GetDatastreamDatasetFieldsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatastreamDatasetFieldsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", {
         "templateName": args.templateName,
     }, opts);
@@ -64,9 +62,34 @@ export interface GetDatastreamDatasetFieldsResult {
     readonly id: string;
     readonly templateName?: string;
 }
-
+/**
+ * Use the `akamai.getDatastreamDatasetFields` data source to list groups of data set fields available in the template.
+ *
+ * ## Example Usage
+ *
+ * This example returns data set fields for a default template:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const fields = akamai.getDatastreamDatasetFields({});
+ * ```
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `fields` - A group of data set fields available in a template, including:
+ *   * `datasetGroupName` - The name of the data set group.
+ *   * `datasetGroupDescription` - Additional information about the data set group.
+ *   * `datasetFields` - A list of data set fields available within the data set group, including:
+ *       * `datasetFieldDescription` - Additional information about the data set field.
+ *       * `datasetFieldId` - Unique identifier for the field.
+ *       * `datasetFieldJsonKey` - The JSON key for the field in a log line.
+ *       * `datasetFieldName` - The name of the data set field.
+ */
 export function getDatastreamDatasetFieldsOutput(args?: GetDatastreamDatasetFieldsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatastreamDatasetFieldsResult> {
-    return pulumi.output(args).apply(a => getDatastreamDatasetFields(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatastreamDatasetFields(a, opts))
 }
 
 /**

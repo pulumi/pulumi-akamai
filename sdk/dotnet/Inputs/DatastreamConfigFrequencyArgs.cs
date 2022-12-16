@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class DatastreamConfigFrequencyArgs : Pulumi.ResourceArgs
+    public sealed class DatastreamConfigFrequencyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
@@ -21,5 +21,6 @@ namespace Pulumi.Akamai.Inputs
         public DatastreamConfigFrequencyArgs()
         {
         }
+        public static new DatastreamConfigFrequencyArgs Empty => new DatastreamConfigFrequencyArgs();
     }
 }

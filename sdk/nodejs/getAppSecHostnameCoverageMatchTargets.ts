@@ -35,11 +35,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report of the coverage information.
  */
 export function getAppSecHostnameCoverageMatchTargets(args: GetAppSecHostnameCoverageMatchTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecHostnameCoverageMatchTargetsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", {
         "configId": args.configId,
         "hostname": args.hostname,
@@ -70,9 +67,38 @@ export interface GetAppSecHostnameCoverageMatchTargetsResult {
     readonly json: string;
     readonly outputText: string;
 }
-
+/**
+ * **Scopes**: Hostname
+ *
+ * Returns information about the API and website match targets used to protect a hostname.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/match-targets](https://techdocs.akamai.com/application-security/reference/get-coverage-match-targets)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const matchTargets = configuration.then(configuration => akamai.getAppSecHostnameCoverageMatchTargets({
+ *     configId: configuration.configId,
+ *     hostname: "documentation.akamai.com",
+ * }));
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of the coverage information.
+ * - `outputText`. Tabular report of the coverage information.
+ */
 export function getAppSecHostnameCoverageMatchTargetsOutput(args: GetAppSecHostnameCoverageMatchTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecHostnameCoverageMatchTargetsResult> {
-    return pulumi.output(args).apply(a => getAppSecHostnameCoverageMatchTargets(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecHostnameCoverageMatchTargets(a, opts))
 }
 
 /**

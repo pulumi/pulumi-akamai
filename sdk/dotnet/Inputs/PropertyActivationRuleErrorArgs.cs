@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class PropertyActivationRuleErrorArgs : Pulumi.ResourceArgs
+    public sealed class PropertyActivationRuleErrorArgs : global::Pulumi.ResourceArgs
     {
         [Input("behaviorName")]
         public Input<string>? BehaviorName { get; set; }
@@ -36,5 +36,6 @@ namespace Pulumi.Akamai.Inputs
         public PropertyActivationRuleErrorArgs()
         {
         }
+        public static new PropertyActivationRuleErrorArgs Empty => new PropertyActivationRuleErrorArgs();
     }
 }

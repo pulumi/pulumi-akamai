@@ -21,30 +21,29 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var threatIntel = new Akamai.AppSecThreatIntel("threatIntel", new Akamai.AppSecThreatIntelArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             ThreatIntel = "on",
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var threatIntel = new Akamai.AppSecThreatIntel("threatIntel", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         ThreatIntel = "on",
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecThreatIntel:AppSecThreatIntel")]
-    public partial class AppSecThreatIntel : Pulumi.CustomResource
+    public partial class AppSecThreatIntel : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
@@ -108,7 +107,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecThreatIntelArgs : Pulumi.ResourceArgs
+    public sealed class AppSecThreatIntelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
@@ -131,9 +130,10 @@ namespace Pulumi.Akamai
         public AppSecThreatIntelArgs()
         {
         }
+        public static new AppSecThreatIntelArgs Empty => new AppSecThreatIntelArgs();
     }
 
-    public sealed class AppSecThreatIntelState : Pulumi.ResourceArgs
+    public sealed class AppSecThreatIntelState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
@@ -156,5 +156,6 @@ namespace Pulumi.Akamai
         public AppSecThreatIntelState()
         {
         }
+        public static new AppSecThreatIntelState Empty => new AppSecThreatIntelState();
     }
 }

@@ -21,14 +21,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			states, err := akamai.GetIamStates(ctx, &GetIamStatesArgs{
+//			states, err := akamai.GetIamStates(ctx, &akamai.GetIamStatesArgs{
 //				Country: "canada",
 //			}, nil)
 //			if err != nil {

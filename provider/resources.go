@@ -19,18 +19,18 @@ import (
 	"path/filepath"
 	"unicode"
 
-	"github.com/akamai/terraform-provider-akamai/v2/pkg/akamai"
-	appSecProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/appsec"
-	cloudletsProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/cloudlets"
-	cpsProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/cps"
-	datastreamProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/datastream"
-	dnsProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/dns"
-	edgeworksProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/edgeworkers"
-	gtmProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/gtm"
-	iamProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/iam"
-	networkListsProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/networklists"
-	propertyProvider "github.com/akamai/terraform-provider-akamai/v2/pkg/providers/property"
-	"github.com/pulumi/pulumi-akamai/provider/v3/pkg/version"
+	"github.com/akamai/terraform-provider-akamai/v3/pkg/akamai"
+	appSecProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/appsec"
+	cloudletsProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/cloudlets"
+	cpsProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/cps"
+	datastreamProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/datastream"
+	dnsProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/dns"
+	edgeworksProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/edgeworkers"
+	gtmProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/gtm"
+	iamProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/iam"
+	networkListsProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/networklists"
+	propertyProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/property"
+	"github.com/pulumi/pulumi-akamai/provider/v4/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
@@ -102,7 +102,7 @@ func Provider() tfbridge.ProviderInfo {
 		Homepage:                "https://pulumi.io",
 		Repository:              "https://github.com/pulumi/pulumi-akamai",
 		GitHubOrg:               "akamai",
-		TFProviderModuleVersion: "v2",
+		TFProviderModuleVersion: "v3",
 		Config: map[string]*tfbridge.SchemaInfo{
 			"config": {
 				CSharpName: "ConfigDetails",
@@ -170,8 +170,10 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_wap_selected_hostnames":               {Tok: makeResource(mainMod, "AppSecWapSelectedHostnames")},
 			"akamai_appsec_advanced_settings_evasive_path_match": {Tok: makeResource(mainMod, "AppSecAdvancedSettingsEvasivePathMatch")},
 
-			"akamai_cps_dv_enrollment": {Tok: makeResource(mainMod, "CpsDvEnrollment")},
-			"akamai_cps_dv_validation": {Tok: makeResource(mainMod, "CpsDvValidation")},
+			"akamai_cps_dv_enrollment":          {Tok: makeResource(mainMod, "CpsDvEnrollment")},
+			"akamai_cps_dv_validation":          {Tok: makeResource(mainMod, "CpsDvValidation")},
+			"akamai_cps_third_party_enrollment": {Tok: makeResource(mainMod, "CpsThirdPartyEnrollment")},
+			"akamai_cps_upload_certificate":     {Tok: makeResource(mainMod, "CpsUploadCertificate")},
 
 			"akamai_cloudlets_application_load_balancer":            {Tok: makeResource(mainMod, "CloudletsApplicationLoadBalancer")},
 			"akamai_cloudlets_application_load_balancer_activation": {Tok: makeResource(mainMod, "CloudletsApplicationLoadBalancerActivation")},
@@ -203,6 +205,9 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_iam_group":                   {Tok: makeResource(mainMod, "IamGroup")},
 			"akamai_iam_role":                    {Tok: makeResource(mainMod, "IamRole")},
 			"akamai_iam_user":                    {Tok: makeResource(mainMod, "IamUser")},
+
+			"akamai_property_include":            {Tok: makeResource(mainMod, "PropertyInclude")},
+			"akamai_property_include_activation": {Tok: makeResource(mainMod, "PropertyIncludeActivation")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			"akamai_contract":  {Tok: makeDataSource(mainMod, "getContract")},
@@ -263,6 +268,9 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_appsec_tuning_recommendations":               {Tok: makeDataSource(mainMod, "getAppSecTuningRecommendations")},
 			"akamai_cps_enrollment":                              {Tok: makeDataSource(mainMod, "getCPSEnrollment")},
 			"akamai_cps_enrollments":                             {Tok: makeDataSource(mainMod, "getCPSEnrollments")},
+			"akamai_cps_csr":                                     {Tok: makeDataSource(mainMod, "getCpsCsr")},
+			"akamai_cps_deployments":                             {Tok: makeDataSource(mainMod, "getCpsDeployments")},
+			"akamai_cps_warnings":                                {Tok: makeDataSource(mainMod, "getCpsWarnings")},
 
 			"akamai_cloudlets_api_prioritization_match_rule":        {Tok: makeDataSource(mainMod, "getCloudletsApiPrioritizationMatchRule")},
 			"akamai_cloudlets_application_load_balancer":            {Tok: makeDataSource(mainMod, "getCloudletsApplicationLoadBalancer")},
@@ -276,17 +284,28 @@ func Provider() tfbridge.ProviderInfo {
 
 			"akamai_datastream_activation_history": {Tok: makeDataSource(mainMod, "getDatastreamActivationHistory")},
 			"akamai_datastream_dataset_fields":     {Tok: makeDataSource(mainMod, "getDatastreamDatasetFields")},
+			"akamai_datastreams":                   {Tok: makeDataSource(mainMod, "getDatastreams")},
 
-			"akamai_edgeworker":                 {Tok: makeDataSource(mainMod, "getEdgeWorker")},
-			"akamai_edgeworker_activation":      {Tok: makeDataSource(mainMod, "getEdgeWorkerActivation")},
+			"akamai_edgeworker": {Tok: makeDataSource(mainMod, "getEdgeWorker")},
+			"akamai_edgeworker_activation": {
+				Tok: makeDataSource(mainMod, "getEdgeWorkerActivation"),
+				Docs: &tfbridge.DocInfo{
+					Source: "edgeworkers_activation.md",
+				},
+			},
 			"akamai_edgeworkers_property_rules": {Tok: makeDataSource(mainMod, "getEdgeWorkersPropertyRules")},
 			"akamai_edgeworkers_resource_tier":  {Tok: makeDataSource(mainMod, "getEdgeWorkersResourceTier")},
 
-			"akamai_properties":              {Tok: makeDataSource(mainMod, "getProperties")},
-			"akamai_property_products":       {Tok: makeDataSource(mainMod, "getPropertyProducts")},
-			"akamai_property_rule_formats":   {Tok: makeDataSource(mainMod, "getPropertyRuleFormats")},
-			"akamai_property_rules_template": {Tok: makeDataSource(mainMod, "getPropertyRulesTemplate")},
-			"akamai_property_hostnames":      {Tok: makeDataSource(mainMod, "getPropertyHostnames")},
+			"akamai_properties":                  {Tok: makeDataSource(mainMod, "getProperties")},
+			"akamai_property_products":           {Tok: makeDataSource(mainMod, "getPropertyProducts")},
+			"akamai_property_rule_formats":       {Tok: makeDataSource(mainMod, "getPropertyRuleFormats")},
+			"akamai_property_rules_template":     {Tok: makeDataSource(mainMod, "getPropertyRulesTemplate")},
+			"akamai_property_hostnames":          {Tok: makeDataSource(mainMod, "getPropertyHostnames")},
+			"akamai_property_include":            {Tok: makeDataSource(mainMod, "getPropertyInclude")},
+			"akamai_property_includes":           {Tok: makeDataSource(mainMod, "getPropertyIncludes")},
+			"akamai_property_include_activation": {Tok: makeDataSource(mainMod, "getPropertyIncludeActivation")},
+			"akamai_property_include_parents":    {Tok: makeDataSource(mainMod, "getPropertyIncludeParents")},
+			"akamai_property_include_rules":      {Tok: makeDataSource(mainMod, "getPropertyIncludeRules")},
 
 			"akamai_networklist_network_lists":            {Tok: makeDataSource(mainMod, "getNetworkLists")},
 			"akamai_cloudlets_request_control_match_rule": {Tok: makeDataSource(mainMod, "getCloudletsRequestControlMatchRule")},

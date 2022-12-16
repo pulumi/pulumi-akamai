@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const exampleUser = new akamai.IamUser("example_user", {
+ * const exampleUser = new akamai.IamUser("exampleUser", {
  *     authGrantsJson: "[{\"groupId\":18451,\"roleId\":14},{\"groupId\":18453,\"roleId\":13}]",
  *     country: "Grenada",
  *     email: "jperez@example.com",

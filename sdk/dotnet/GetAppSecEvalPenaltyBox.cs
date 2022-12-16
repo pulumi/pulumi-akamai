@@ -28,34 +28,30 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var evalPenaltyBox = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalPenaltyBox.InvokeAsync(new Akamai.GetAppSecEvalPenaltyBoxArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.EvalPenaltyBoxAction = evalPenaltyBox.Apply(evalPenaltyBox =&gt; evalPenaltyBox.Action);
-        ///         this.EvalPenaltyBoxEnabled = evalPenaltyBox.Apply(evalPenaltyBox =&gt; evalPenaltyBox.Enabled);
-        ///         this.EvalPenaltyBoxText = evalPenaltyBox.Apply(evalPenaltyBox =&gt; evalPenaltyBox.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("evalPenaltyBoxAction")]
-        ///     public Output&lt;string&gt; EvalPenaltyBoxAction { get; set; }
-        ///     [Output("evalPenaltyBoxEnabled")]
-        ///     public Output&lt;string&gt; EvalPenaltyBoxEnabled { get; set; }
-        ///     [Output("evalPenaltyBoxText")]
-        ///     public Output&lt;string&gt; EvalPenaltyBoxText { get; set; }
-        /// }
+        ///     var evalPenaltyBox = Akamai.GetAppSecEvalPenaltyBox.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["evalPenaltyBoxAction"] = evalPenaltyBox.Apply(getAppSecEvalPenaltyBoxResult =&gt; getAppSecEvalPenaltyBoxResult.Action),
+        ///         ["evalPenaltyBoxEnabled"] = evalPenaltyBox.Apply(getAppSecEvalPenaltyBoxResult =&gt; getAppSecEvalPenaltyBoxResult.Enabled),
+        ///         ["evalPenaltyBoxText"] = evalPenaltyBox.Apply(getAppSecEvalPenaltyBoxResult =&gt; getAppSecEvalPenaltyBoxResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -72,7 +68,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of evaluation penalty box protection settings.
         /// </summary>
         public static Task<GetAppSecEvalPenaltyBoxResult> InvokeAsync(GetAppSecEvalPenaltyBoxArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalPenaltyBoxResult>("akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox", args ?? new GetAppSecEvalPenaltyBoxArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalPenaltyBoxResult>("akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox", args ?? new GetAppSecEvalPenaltyBoxArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -91,34 +87,30 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var evalPenaltyBox = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalPenaltyBox.InvokeAsync(new Akamai.GetAppSecEvalPenaltyBoxArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.EvalPenaltyBoxAction = evalPenaltyBox.Apply(evalPenaltyBox =&gt; evalPenaltyBox.Action);
-        ///         this.EvalPenaltyBoxEnabled = evalPenaltyBox.Apply(evalPenaltyBox =&gt; evalPenaltyBox.Enabled);
-        ///         this.EvalPenaltyBoxText = evalPenaltyBox.Apply(evalPenaltyBox =&gt; evalPenaltyBox.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("evalPenaltyBoxAction")]
-        ///     public Output&lt;string&gt; EvalPenaltyBoxAction { get; set; }
-        ///     [Output("evalPenaltyBoxEnabled")]
-        ///     public Output&lt;string&gt; EvalPenaltyBoxEnabled { get; set; }
-        ///     [Output("evalPenaltyBoxText")]
-        ///     public Output&lt;string&gt; EvalPenaltyBoxText { get; set; }
-        /// }
+        ///     var evalPenaltyBox = Akamai.GetAppSecEvalPenaltyBox.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["evalPenaltyBoxAction"] = evalPenaltyBox.Apply(getAppSecEvalPenaltyBoxResult =&gt; getAppSecEvalPenaltyBoxResult.Action),
+        ///         ["evalPenaltyBoxEnabled"] = evalPenaltyBox.Apply(getAppSecEvalPenaltyBoxResult =&gt; getAppSecEvalPenaltyBoxResult.Enabled),
+        ///         ["evalPenaltyBoxText"] = evalPenaltyBox.Apply(getAppSecEvalPenaltyBoxResult =&gt; getAppSecEvalPenaltyBoxResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -135,11 +127,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of evaluation penalty box protection settings.
         /// </summary>
         public static Output<GetAppSecEvalPenaltyBoxResult> Invoke(GetAppSecEvalPenaltyBoxInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalPenaltyBoxResult>("akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox", args ?? new GetAppSecEvalPenaltyBoxInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecEvalPenaltyBoxResult>("akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox", args ?? new GetAppSecEvalPenaltyBoxInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecEvalPenaltyBoxArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecEvalPenaltyBoxArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the evaluation penalty box settings.
@@ -156,9 +148,10 @@ namespace Pulumi.Akamai
         public GetAppSecEvalPenaltyBoxArgs()
         {
         }
+        public static new GetAppSecEvalPenaltyBoxArgs Empty => new GetAppSecEvalPenaltyBoxArgs();
     }
 
-    public sealed class GetAppSecEvalPenaltyBoxInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecEvalPenaltyBoxInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the evaluation penalty box settings.
@@ -175,6 +168,7 @@ namespace Pulumi.Akamai
         public GetAppSecEvalPenaltyBoxInvokeArgs()
         {
         }
+        public static new GetAppSecEvalPenaltyBoxInvokeArgs Empty => new GetAppSecEvalPenaltyBoxInvokeArgs();
     }
 
 

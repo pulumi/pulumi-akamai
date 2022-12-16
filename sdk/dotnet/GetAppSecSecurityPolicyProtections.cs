@@ -25,52 +25,36 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var protections = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSecurityPolicyProtections.InvokeAsync(new Akamai.GetAppSecSecurityPolicyProtectionsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.ProtectionsJson = protections.Apply(protections =&gt; protections.Json);
-        ///         this.ProtectionsApplyApiConstraints = protections.Apply(protections =&gt; protections.ApplyApiConstraints);
-        ///         this.ProtectionsApplyApplicationLayerControls = protections.Apply(protections =&gt; protections.ApplyApplicationLayerControls);
-        ///         this.ProtectionsApplyBotmanControls = protections.Apply(protections =&gt; protections.ApplyBotmanControls);
-        ///         this.ProtectionsApplyMalwareControls = protections.Apply(protections =&gt; protections.ApplyMalwareControls);
-        ///         this.ProtectionsApplyNetworkLayerControls = protections.Apply(protections =&gt; protections.ApplyNetworkLayerControls);
-        ///         this.ProtectionsApplyRateControls = protections.Apply(protections =&gt; protections.ApplyRateControls);
-        ///         this.ProtectionsApplyReputationControls = protections.Apply(protections =&gt; protections.ApplyReputationControls);
-        ///         this.ProtectionsApplySlowPostControls = protections.Apply(protections =&gt; protections.ApplySlowPostControls);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("protectionsJson")]
-        ///     public Output&lt;string&gt; ProtectionsJson { get; set; }
-        ///     [Output("protectionsApplyApiConstraints")]
-        ///     public Output&lt;string&gt; ProtectionsApplyApiConstraints { get; set; }
-        ///     [Output("protectionsApplyApplicationLayerControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplyApplicationLayerControls { get; set; }
-        ///     [Output("protectionsApplyBotmanControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplyBotmanControls { get; set; }
-        ///     [Output("protectionsApplyMalwareControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplyMalwareControls { get; set; }
-        ///     [Output("protectionsApplyNetworkLayerControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplyNetworkLayerControls { get; set; }
-        ///     [Output("protectionsApplyRateControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplyRateControls { get; set; }
-        ///     [Output("protectionsApplyReputationControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplyReputationControls { get; set; }
-        ///     [Output("protectionsApplySlowPostControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplySlowPostControls { get; set; }
-        /// }
+        ///     var protections = Akamai.GetAppSecSecurityPolicyProtections.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["protectionsJson"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.Json),
+        ///         ["protectionsApplyApiConstraints"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyApiConstraints),
+        ///         ["protectionsApplyApplicationLayerControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyApplicationLayerControls),
+        ///         ["protectionsApplyBotmanControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyBotmanControls),
+        ///         ["protectionsApplyMalwareControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyMalwareControls),
+        ///         ["protectionsApplyNetworkLayerControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyNetworkLayerControls),
+        ///         ["protectionsApplyRateControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyRateControls),
+        ///         ["protectionsApplyReputationControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyReputationControls),
+        ///         ["protectionsApplySlowPostControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplySlowPostControls),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -90,7 +74,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the status of the protection settings.
         /// </summary>
         public static Task<GetAppSecSecurityPolicyProtectionsResult> InvokeAsync(GetAppSecSecurityPolicyProtectionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -106,52 +90,36 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var protections = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSecurityPolicyProtections.InvokeAsync(new Akamai.GetAppSecSecurityPolicyProtectionsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.ProtectionsJson = protections.Apply(protections =&gt; protections.Json);
-        ///         this.ProtectionsApplyApiConstraints = protections.Apply(protections =&gt; protections.ApplyApiConstraints);
-        ///         this.ProtectionsApplyApplicationLayerControls = protections.Apply(protections =&gt; protections.ApplyApplicationLayerControls);
-        ///         this.ProtectionsApplyBotmanControls = protections.Apply(protections =&gt; protections.ApplyBotmanControls);
-        ///         this.ProtectionsApplyMalwareControls = protections.Apply(protections =&gt; protections.ApplyMalwareControls);
-        ///         this.ProtectionsApplyNetworkLayerControls = protections.Apply(protections =&gt; protections.ApplyNetworkLayerControls);
-        ///         this.ProtectionsApplyRateControls = protections.Apply(protections =&gt; protections.ApplyRateControls);
-        ///         this.ProtectionsApplyReputationControls = protections.Apply(protections =&gt; protections.ApplyReputationControls);
-        ///         this.ProtectionsApplySlowPostControls = protections.Apply(protections =&gt; protections.ApplySlowPostControls);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("protectionsJson")]
-        ///     public Output&lt;string&gt; ProtectionsJson { get; set; }
-        ///     [Output("protectionsApplyApiConstraints")]
-        ///     public Output&lt;string&gt; ProtectionsApplyApiConstraints { get; set; }
-        ///     [Output("protectionsApplyApplicationLayerControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplyApplicationLayerControls { get; set; }
-        ///     [Output("protectionsApplyBotmanControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplyBotmanControls { get; set; }
-        ///     [Output("protectionsApplyMalwareControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplyMalwareControls { get; set; }
-        ///     [Output("protectionsApplyNetworkLayerControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplyNetworkLayerControls { get; set; }
-        ///     [Output("protectionsApplyRateControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplyRateControls { get; set; }
-        ///     [Output("protectionsApplyReputationControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplyReputationControls { get; set; }
-        ///     [Output("protectionsApplySlowPostControls")]
-        ///     public Output&lt;string&gt; ProtectionsApplySlowPostControls { get; set; }
-        /// }
+        ///     var protections = Akamai.GetAppSecSecurityPolicyProtections.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["protectionsJson"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.Json),
+        ///         ["protectionsApplyApiConstraints"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyApiConstraints),
+        ///         ["protectionsApplyApplicationLayerControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyApplicationLayerControls),
+        ///         ["protectionsApplyBotmanControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyBotmanControls),
+        ///         ["protectionsApplyMalwareControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyMalwareControls),
+        ///         ["protectionsApplyNetworkLayerControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyNetworkLayerControls),
+        ///         ["protectionsApplyRateControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyRateControls),
+        ///         ["protectionsApplyReputationControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplyReputationControls),
+        ///         ["protectionsApplySlowPostControls"] = protections.Apply(getAppSecSecurityPolicyProtectionsResult =&gt; getAppSecSecurityPolicyProtectionsResult.ApplySlowPostControls),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -171,11 +139,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the status of the protection settings.
         /// </summary>
         public static Output<GetAppSecSecurityPolicyProtectionsResult> Invoke(GetAppSecSecurityPolicyProtectionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSecurityPolicyProtectionsResult>("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args ?? new GetAppSecSecurityPolicyProtectionsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecSecurityPolicyProtectionsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecSecurityPolicyProtectionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the security policy protections.
@@ -192,9 +160,10 @@ namespace Pulumi.Akamai
         public GetAppSecSecurityPolicyProtectionsArgs()
         {
         }
+        public static new GetAppSecSecurityPolicyProtectionsArgs Empty => new GetAppSecSecurityPolicyProtectionsArgs();
     }
 
-    public sealed class GetAppSecSecurityPolicyProtectionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecSecurityPolicyProtectionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the security policy protections.
@@ -211,6 +180,7 @@ namespace Pulumi.Akamai
         public GetAppSecSecurityPolicyProtectionsInvokeArgs()
         {
         }
+        public static new GetAppSecSecurityPolicyProtectionsInvokeArgs Empty => new GetAppSecSecurityPolicyProtectionsInvokeArgs();
     }
 
 

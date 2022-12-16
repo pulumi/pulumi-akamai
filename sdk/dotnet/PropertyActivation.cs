@@ -19,63 +19,65 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using System.IO;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
-    ///     {
-    ///         var email = "user@example.org";
-    ///         var ruleFormat = "v2020-03-04";
-    ///         var example = new Akamai.Property("example", new Akamai.PropertyArgs
-    ///         {
-    ///             ProductId = "prd_SPM",
-    ///             ContractId = @var.Contractid,
-    ///             GroupId = @var.Groupid,
-    ///             Hostnames = 
-    ///             {
-    ///                 { "example.org", "example.org.edgesuite.net" },
-    ///                 { "www.example.org", "example.org.edgesuite.net" },
-    ///                 { "sub.example.org", "sub.example.org.edgesuite.net" },
-    ///             },
-    ///             RuleFormat = ruleFormat,
-    ///             Rules = File.ReadAllText($"{path.Module}/main.json"),
-    ///         });
-    ///         var exampleStaging = new Akamai.PropertyActivation("exampleStaging", new Akamai.PropertyActivationArgs
-    ///         {
-    ///             PropertyId = example.Id,
-    ///             Contacts = 
-    ///             {
-    ///                 email,
-    ///             },
-    ///             Version = example.LatestVersion,
-    ///             Note = "Sample activation",
-    ///         });
-    ///         var exampleProd = new Akamai.PropertyActivation("exampleProd", new Akamai.PropertyActivationArgs
-    ///         {
-    ///             PropertyId = example.Id,
-    ///             Network = "PRODUCTION",
-    ///             Version = 3,
-    ///             Contacts = 
-    ///             {
-    ///                 email,
-    ///             },
-    ///         }, new CustomResourceOptions
-    ///         {
-    ///             DependsOn = 
-    ///             {
-    ///                 exampleStaging,
-    ///             },
-    ///         });
-    ///     }
+    ///     var email = "user@example.org";
     /// 
-    /// }
+    ///     var ruleFormat = "v2020-03-04";
+    /// 
+    ///     var example = new Akamai.Property("example", new()
+    ///     {
+    ///         ProductId = "prd_SPM",
+    ///         ContractId = @var.Contractid,
+    ///         GroupId = @var.Groupid,
+    ///         Hostnames = 
+    ///         {
+    ///             { "example.org", "example.org.edgesuite.net" },
+    ///             { "www.example.org", "example.org.edgesuite.net" },
+    ///             { "sub.example.org", "sub.example.org.edgesuite.net" },
+    ///         },
+    ///         RuleFormat = ruleFormat,
+    ///         Rules = File.ReadAllText($"{path.Module}/main.json"),
+    ///     });
+    /// 
+    ///     var exampleStaging = new Akamai.PropertyActivation("exampleStaging", new()
+    ///     {
+    ///         PropertyId = example.Id,
+    ///         Contacts = new[]
+    ///         {
+    ///             email,
+    ///         },
+    ///         Version = example.LatestVersion,
+    ///         Note = "Sample activation",
+    ///     });
+    /// 
+    ///     var exampleProd = new Akamai.PropertyActivation("exampleProd", new()
+    ///     {
+    ///         PropertyId = example.Id,
+    ///         Network = "PRODUCTION",
+    ///         Version = 3,
+    ///         Contacts = new[]
+    ///         {
+    ///             email,
+    ///         },
+    ///     }, new CustomResourceOptions
+    ///     {
+    ///         DependsOn = new[]
+    ///         {
+    ///             exampleStaging,
+    ///         },
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/propertyActivation:PropertyActivation")]
-    public partial class PropertyActivation : Pulumi.CustomResource
+    public partial class PropertyActivation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The ID given to the activation event while it's in progress.
@@ -174,7 +176,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new Pulumi.Alias { Type = "akamai:properties/propertyActivation:PropertyActivation"},
+                    new global::Pulumi.Alias { Type = "akamai:properties/propertyActivation:PropertyActivation"},
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -197,7 +199,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class PropertyActivationArgs : Pulumi.ResourceArgs
+    public sealed class PropertyActivationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The ID given to the activation event while it's in progress.
@@ -273,9 +275,10 @@ namespace Pulumi.Akamai
         public PropertyActivationArgs()
         {
         }
+        public static new PropertyActivationArgs Empty => new PropertyActivationArgs();
     }
 
-    public sealed class PropertyActivationState : Pulumi.ResourceArgs
+    public sealed class PropertyActivationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The ID given to the activation event while it's in progress.
@@ -369,5 +372,6 @@ namespace Pulumi.Akamai
         public PropertyActivationState()
         {
         }
+        public static new PropertyActivationState Empty => new PropertyActivationState();
     }
 }

@@ -60,6 +60,7 @@ class _CpsDvValidationState:
         Input properties used for looking up and filtering CpsDvValidation resources.
         :param pulumi.Input[int] enrollment_id: Unique identifier for the DV certificate enrollment.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        :param pulumi.Input[str] status: Status of validation
         """
         if enrollment_id is not None:
             pulumi.set(__self__, "enrollment_id", enrollment_id)
@@ -95,6 +96,9 @@ class _CpsDvValidationState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        Status of validation
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -212,6 +216,7 @@ class CpsDvValidation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] enrollment_id: Unique identifier for the DV certificate enrollment.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        :param pulumi.Input[str] status: Status of validation
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -241,5 +246,8 @@ class CpsDvValidation(pulumi.CustomResource):
     @property
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
+        """
+        Status of validation
+        """
         return pulumi.get(self, "status")
 

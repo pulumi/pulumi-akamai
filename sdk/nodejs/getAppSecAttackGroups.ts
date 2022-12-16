@@ -46,11 +46,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report showing the attack group's action as well as Boolean values indicating whether conditions and exceptions have been configured for the group.
  */
 export function getAppSecAttackGroups(args: GetAppSecAttackGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecAttackGroupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", {
         "attackGroup": args.attackGroup,
         "configId": args.configId,
@@ -92,9 +89,49 @@ export interface GetAppSecAttackGroupsResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-
+/**
+ * **Scopes**: Security policy; attack group
+ *
+ * Returns the action and the condition-exception information for an attack group or set of attack groups. Attack groups are collections of Kona Rule Set rules used to streamline the management of website protections.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups](https://techdocs.akamai.com/application-security/reference/get-policy-attack-groups)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const attackGroup = configuration.then(configuration => akamai.getAppSecAttackGroups({
+ *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
+ *     attackGroup: "SQL",
+ * }));
+ * export const attackGroupAction = attackGroup.then(attackGroup => attackGroup.attackGroupAction);
+ * export const conditionException = attackGroup.then(attackGroup => attackGroup.conditionException);
+ * export const json = attackGroup.then(attackGroup => attackGroup.json);
+ * export const outputText = attackGroup.then(attackGroup => attackGroup.outputText);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `attackGroupAction`. Action taken anytime the attack group is triggered. This information is returned only when a single attack group is retrieved. Valid values are:
+ *   - **alert**. The event is recorded.
+ *   - **deny**. The request is blocked.
+ *   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
+ *   - **none**. No action is taken.
+ * - `conditionException`. Conditions and exceptions assigned to the attack group. This information is returned only when a single attack group is retrieved.
+ * - `json`. JSON-formatted list of the action and the condition-exception information for the attack group. This information is returned only when a single attack group is retrieved.
+ * - `outputText`. Tabular report showing the attack group's action as well as Boolean values indicating whether conditions and exceptions have been configured for the group.
+ */
 export function getAppSecAttackGroupsOutput(args: GetAppSecAttackGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAttackGroupsResult> {
-    return pulumi.output(args).apply(a => getAppSecAttackGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecAttackGroups(a, opts))
 }
 
 /**

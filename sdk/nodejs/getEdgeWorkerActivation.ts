@@ -4,12 +4,32 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * Use the `akamai.getEdgeWorkerActivation` data source to fetch the latest activation for a given EdgeWorker ID.
+ *
+ * ## Example Usage
+ *
+ * This example returns the latest activation on the staging network:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const test = akamai.getEdgeWorkerActivation({
+ *     edgeworkerId: 1,
+ *     network: "STAGING",
+ * });
+ * ```
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `activationId` - The unique identifier of the activation.
+ * * `version` - The EdgeWorker version of the latest activation.
+ */
 export function getEdgeWorkerActivation(args: GetEdgeWorkerActivationArgs, opts?: pulumi.InvokeOptions): Promise<GetEdgeWorkerActivationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation", {
         "edgeworkerId": args.edgeworkerId,
         "network": args.network,
@@ -20,7 +40,13 @@ export function getEdgeWorkerActivation(args: GetEdgeWorkerActivationArgs, opts?
  * A collection of arguments for invoking getEdgeWorkerActivation.
  */
 export interface GetEdgeWorkerActivationArgs {
+    /**
+     * The unique identifier of the EdgeWorker.
+     */
     edgeworkerId: number;
+    /**
+     * The network from where the activation information will be fetched.
+     */
     network: string;
 }
 
@@ -37,15 +63,43 @@ export interface GetEdgeWorkerActivationResult {
     readonly network: string;
     readonly version: string;
 }
-
+/**
+ * Use the `akamai.getEdgeWorkerActivation` data source to fetch the latest activation for a given EdgeWorker ID.
+ *
+ * ## Example Usage
+ *
+ * This example returns the latest activation on the staging network:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const test = akamai.getEdgeWorkerActivation({
+ *     edgeworkerId: 1,
+ *     network: "STAGING",
+ * });
+ * ```
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `activationId` - The unique identifier of the activation.
+ * * `version` - The EdgeWorker version of the latest activation.
+ */
 export function getEdgeWorkerActivationOutput(args: GetEdgeWorkerActivationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeWorkerActivationResult> {
-    return pulumi.output(args).apply(a => getEdgeWorkerActivation(a, opts))
+    return pulumi.output(args).apply((a: any) => getEdgeWorkerActivation(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getEdgeWorkerActivation.
  */
 export interface GetEdgeWorkerActivationOutputArgs {
+    /**
+     * The unique identifier of the EdgeWorker.
+     */
     edgeworkerId: pulumi.Input<number>;
+    /**
+     * The network from where the activation information will be fetched.
+     */
     network: pulumi.Input<string>;
 }

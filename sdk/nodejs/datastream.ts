@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -81,6 +82,10 @@ export class Datastream extends pulumi.CustomResource {
      */
     public readonly datasetFieldsIds!: pulumi.Output<number[]>;
     /**
+     * Specify details about the Elasticsearch connector you can use in a stream, including:
+     */
+    public readonly elasticsearchConnector!: pulumi.Output<outputs.DatastreamElasticsearchConnector | undefined>;
+    /**
      * A list of email addresses you want to notify about activations and deactivations of the stream.
      */
     public readonly emailIds!: pulumi.Output<string[] | undefined>;
@@ -101,6 +106,10 @@ export class Datastream extends pulumi.CustomResource {
      */
     public readonly httpsConnector!: pulumi.Output<outputs.DatastreamHttpsConnector | undefined>;
     /**
+     * Specify details about the Loggly connector you can use in a stream, including:
+     */
+    public readonly logglyConnector!: pulumi.Output<outputs.DatastreamLogglyConnector | undefined>;
+    /**
      * The username who modified the stream
      */
     public /*out*/ readonly modifiedBy!: pulumi.Output<string>;
@@ -108,6 +117,10 @@ export class Datastream extends pulumi.CustomResource {
      * The date and time when the stream was modified
      */
     public /*out*/ readonly modifiedDate!: pulumi.Output<string>;
+    /**
+     * Specify details about the New Relic connector you can use in a stream, including:
+     */
+    public readonly newRelicConnector!: pulumi.Output<outputs.DatastreamNewRelicConnector | undefined>;
     /**
      * Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `accessKey` and `secretAccessKey` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
      */
@@ -178,13 +191,16 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["createdDate"] = state ? state.createdDate : undefined;
             resourceInputs["datadogConnector"] = state ? state.datadogConnector : undefined;
             resourceInputs["datasetFieldsIds"] = state ? state.datasetFieldsIds : undefined;
+            resourceInputs["elasticsearchConnector"] = state ? state.elasticsearchConnector : undefined;
             resourceInputs["emailIds"] = state ? state.emailIds : undefined;
             resourceInputs["gcsConnector"] = state ? state.gcsConnector : undefined;
             resourceInputs["groupId"] = state ? state.groupId : undefined;
             resourceInputs["groupName"] = state ? state.groupName : undefined;
             resourceInputs["httpsConnector"] = state ? state.httpsConnector : undefined;
+            resourceInputs["logglyConnector"] = state ? state.logglyConnector : undefined;
             resourceInputs["modifiedBy"] = state ? state.modifiedBy : undefined;
             resourceInputs["modifiedDate"] = state ? state.modifiedDate : undefined;
+            resourceInputs["newRelicConnector"] = state ? state.newRelicConnector : undefined;
             resourceInputs["oracleConnector"] = state ? state.oracleConnector : undefined;
             resourceInputs["papiJson"] = state ? state.papiJson : undefined;
             resourceInputs["productId"] = state ? state.productId : undefined;
@@ -232,10 +248,13 @@ export class Datastream extends pulumi.CustomResource {
             resourceInputs["contractId"] = args ? args.contractId : undefined;
             resourceInputs["datadogConnector"] = args ? args.datadogConnector : undefined;
             resourceInputs["datasetFieldsIds"] = args ? args.datasetFieldsIds : undefined;
+            resourceInputs["elasticsearchConnector"] = args ? args.elasticsearchConnector : undefined;
             resourceInputs["emailIds"] = args ? args.emailIds : undefined;
             resourceInputs["gcsConnector"] = args ? args.gcsConnector : undefined;
             resourceInputs["groupId"] = args ? args.groupId : undefined;
             resourceInputs["httpsConnector"] = args ? args.httpsConnector : undefined;
+            resourceInputs["logglyConnector"] = args ? args.logglyConnector : undefined;
+            resourceInputs["newRelicConnector"] = args ? args.newRelicConnector : undefined;
             resourceInputs["oracleConnector"] = args ? args.oracleConnector : undefined;
             resourceInputs["propertyIds"] = args ? args.propertyIds : undefined;
             resourceInputs["s3Connector"] = args ? args.s3Connector : undefined;
@@ -296,6 +315,10 @@ export interface DatastreamState {
      */
     datasetFieldsIds?: pulumi.Input<pulumi.Input<number>[]>;
     /**
+     * Specify details about the Elasticsearch connector you can use in a stream, including:
+     */
+    elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector>;
+    /**
      * A list of email addresses you want to notify about activations and deactivations of the stream.
      */
     emailIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -316,6 +339,10 @@ export interface DatastreamState {
      */
     httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector>;
     /**
+     * Specify details about the Loggly connector you can use in a stream, including:
+     */
+    logglyConnector?: pulumi.Input<inputs.DatastreamLogglyConnector>;
+    /**
      * The username who modified the stream
      */
     modifiedBy?: pulumi.Input<string>;
@@ -323,6 +350,10 @@ export interface DatastreamState {
      * The date and time when the stream was modified
      */
     modifiedDate?: pulumi.Input<string>;
+    /**
+     * Specify details about the New Relic connector you can use in a stream, including:
+     */
+    newRelicConnector?: pulumi.Input<inputs.DatastreamNewRelicConnector>;
     /**
      * Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `accessKey` and `secretAccessKey` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
      */
@@ -402,6 +433,10 @@ export interface DatastreamArgs {
      */
     datasetFieldsIds: pulumi.Input<pulumi.Input<number>[]>;
     /**
+     * Specify details about the Elasticsearch connector you can use in a stream, including:
+     */
+    elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector>;
+    /**
      * A list of email addresses you want to notify about activations and deactivations of the stream.
      */
     emailIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -417,6 +452,14 @@ export interface DatastreamArgs {
      * Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
      */
     httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector>;
+    /**
+     * Specify details about the Loggly connector you can use in a stream, including:
+     */
+    logglyConnector?: pulumi.Input<inputs.DatastreamLogglyConnector>;
+    /**
+     * Specify details about the New Relic connector you can use in a stream, including:
+     */
+    newRelicConnector?: pulumi.Input<inputs.DatastreamNewRelicConnector>;
     /**
      * Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `accessKey` and `secretAccessKey` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
      */

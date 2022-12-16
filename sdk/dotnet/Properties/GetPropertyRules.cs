@@ -22,26 +22,25 @@ namespace Pulumi.Akamai.Properties
         /// This example returns the rule tree for version 3 of a property based on the selected contract and group:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var my_example = Akamai.GetPropertyRules.Invoke(new()
         ///     {
-        ///         var my_example = Output.Create(Akamai.GetPropertyRules.InvokeAsync(new Akamai.GetPropertyRulesArgs
-        ///         {
-        ///             PropertyId = "prp_123",
-        ///             GroupId = "grp_12345",
-        ///             ContractId = "ctr_1-AB123",
-        ///             Version = 3,
-        ///         }));
-        ///         this.PropertyMatch = my_example;
-        ///     }
+        ///         PropertyId = "prp_123",
+        ///         GroupId = "grp_12345",
+        ///         ContractId = "ctr_1-AB123",
+        ///         Version = 3,
+        ///     });
         /// 
-        ///     [Output("propertyMatch")]
-        ///     public Output&lt;string&gt; PropertyMatch { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["propertyMatch"] = my_example.Apply(getPropertyRulesResult =&gt; getPropertyRulesResult),
+        ///     };
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -53,7 +52,7 @@ namespace Pulumi.Akamai.Properties
         /// * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the Property Manager API documentation.
         /// </summary>
         public static Task<GetPropertyRulesResult> InvokeAsync(GetPropertyRulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesResult>("akamai:properties/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesResult>("akamai:properties/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getPropertyRules` data source to query and retrieve the rule tree of
@@ -65,26 +64,25 @@ namespace Pulumi.Akamai.Properties
         /// This example returns the rule tree for version 3 of a property based on the selected contract and group:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var my_example = Akamai.GetPropertyRules.Invoke(new()
         ///     {
-        ///         var my_example = Output.Create(Akamai.GetPropertyRules.InvokeAsync(new Akamai.GetPropertyRulesArgs
-        ///         {
-        ///             PropertyId = "prp_123",
-        ///             GroupId = "grp_12345",
-        ///             ContractId = "ctr_1-AB123",
-        ///             Version = 3,
-        ///         }));
-        ///         this.PropertyMatch = my_example;
-        ///     }
+        ///         PropertyId = "prp_123",
+        ///         GroupId = "grp_12345",
+        ///         ContractId = "ctr_1-AB123",
+        ///         Version = 3,
+        ///     });
         /// 
-        ///     [Output("propertyMatch")]
-        ///     public Output&lt;string&gt; PropertyMatch { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["propertyMatch"] = my_example.Apply(getPropertyRulesResult =&gt; getPropertyRulesResult),
+        ///     };
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -96,11 +94,11 @@ namespace Pulumi.Akamai.Properties
         /// * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the Property Manager API documentation.
         /// </summary>
         public static Output<GetPropertyRulesResult> Invoke(GetPropertyRulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertyRulesResult>("akamai:properties/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertyRulesResult>("akamai:properties/getPropertyRules:getPropertyRules", args ?? new GetPropertyRulesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetPropertyRulesArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertyRulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) A contract's unique ID, including the `ctr_` prefix.
@@ -132,9 +130,10 @@ namespace Pulumi.Akamai.Properties
         public GetPropertyRulesArgs()
         {
         }
+        public static new GetPropertyRulesArgs Empty => new GetPropertyRulesArgs();
     }
 
-    public sealed class GetPropertyRulesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertyRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) A contract's unique ID, including the `ctr_` prefix.
@@ -166,6 +165,7 @@ namespace Pulumi.Akamai.Properties
         public GetPropertyRulesInvokeArgs()
         {
         }
+        public static new GetPropertyRulesInvokeArgs Empty => new GetPropertyRulesInvokeArgs();
     }
 
 

@@ -44,6 +44,7 @@ class CpsDvEnrollmentArgs:
         :param pulumi.Input[bool] sni_only: Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
         :param pulumi.Input['CpsDvEnrollmentTechContactArgs'] tech_contact: The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `admin_contact`.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+        :param pulumi.Input[bool] allow_duplicate_common_name: - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type.
         :param pulumi.Input[bool] enable_multi_stacked_certificates: Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: Additional common names to create a Subject Alternative Names (SAN) list.
@@ -64,6 +65,9 @@ class CpsDvEnrollmentArgs:
             pulumi.set(__self__, "allow_duplicate_common_name", allow_duplicate_common_name)
         if certificate_chain_type is not None:
             pulumi.set(__self__, "certificate_chain_type", certificate_chain_type)
+        if enable_multi_stacked_certificates is not None:
+            warnings.warn("""Deprecated, don't use; always false""", DeprecationWarning)
+            pulumi.log.warn("""enable_multi_stacked_certificates is deprecated: Deprecated, don't use; always false""")
         if enable_multi_stacked_certificates is not None:
             pulumi.set(__self__, "enable_multi_stacked_certificates", enable_multi_stacked_certificates)
         if sans is not None:
@@ -204,6 +208,9 @@ class CpsDvEnrollmentArgs:
     @property
     @pulumi.getter(name="allowDuplicateCommonName")
     def allow_duplicate_common_name(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        """
         return pulumi.get(self, "allow_duplicate_common_name")
 
     @allow_duplicate_common_name.setter
@@ -274,18 +281,24 @@ class _CpsDvEnrollmentState:
         Input properties used for looking up and filtering CpsDvEnrollment resources.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
         :param pulumi.Input['CpsDvEnrollmentAdminContactArgs'] admin_contact: Contact information for the certificate administrator at your company.
+        :param pulumi.Input[bool] allow_duplicate_common_name: - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type.
+        :param pulumi.Input[str] certificate_type: Certificate type of enrollment
         :param pulumi.Input[str] common_name: - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
         :param pulumi.Input[str] contract_id: - (Required) A contract's ID, optionally with the `ctr_` prefix.
         :param pulumi.Input['CpsDvEnrollmentCsrArgs'] csr: When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+        :param pulumi.Input[Sequence[pulumi.Input['CpsDvEnrollmentDnsChallengeArgs']]] dns_challenges: DNS challenge information
         :param pulumi.Input[bool] enable_multi_stacked_certificates: Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+        :param pulumi.Input[Sequence[pulumi.Input['CpsDvEnrollmentHttpChallengeArgs']]] http_challenges: HTTP challenge information
         :param pulumi.Input['CpsDvEnrollmentNetworkConfigurationArgs'] network_configuration: The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
         :param pulumi.Input['CpsDvEnrollmentOrganizationArgs'] organization: Your organization information.
+        :param pulumi.Input[str] registration_authority: The registration authority or certificate authority (CA) used to obtain a certificate
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: Additional common names to create a Subject Alternative Names (SAN) list.
         :param pulumi.Input[str] secure_network: The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
         :param pulumi.Input[str] signature_algorithm: The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
         :param pulumi.Input[bool] sni_only: Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
         :param pulumi.Input['CpsDvEnrollmentTechContactArgs'] tech_contact: The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `admin_contact`.
+        :param pulumi.Input[str] validation_type: Enrolment validation type
         """
         if acknowledge_pre_verification_warnings is not None:
             pulumi.set(__self__, "acknowledge_pre_verification_warnings", acknowledge_pre_verification_warnings)
@@ -305,6 +318,9 @@ class _CpsDvEnrollmentState:
             pulumi.set(__self__, "csr", csr)
         if dns_challenges is not None:
             pulumi.set(__self__, "dns_challenges", dns_challenges)
+        if enable_multi_stacked_certificates is not None:
+            warnings.warn("""Deprecated, don't use; always false""", DeprecationWarning)
+            pulumi.log.warn("""enable_multi_stacked_certificates is deprecated: Deprecated, don't use; always false""")
         if enable_multi_stacked_certificates is not None:
             pulumi.set(__self__, "enable_multi_stacked_certificates", enable_multi_stacked_certificates)
         if http_challenges is not None:
@@ -355,6 +371,9 @@ class _CpsDvEnrollmentState:
     @property
     @pulumi.getter(name="allowDuplicateCommonName")
     def allow_duplicate_common_name(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        """
         return pulumi.get(self, "allow_duplicate_common_name")
 
     @allow_duplicate_common_name.setter
@@ -376,6 +395,9 @@ class _CpsDvEnrollmentState:
     @property
     @pulumi.getter(name="certificateType")
     def certificate_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Certificate type of enrollment
+        """
         return pulumi.get(self, "certificate_type")
 
     @certificate_type.setter
@@ -421,6 +443,9 @@ class _CpsDvEnrollmentState:
     @property
     @pulumi.getter(name="dnsChallenges")
     def dns_challenges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CpsDvEnrollmentDnsChallengeArgs']]]]:
+        """
+        DNS challenge information
+        """
         return pulumi.get(self, "dns_challenges")
 
     @dns_challenges.setter
@@ -442,6 +467,9 @@ class _CpsDvEnrollmentState:
     @property
     @pulumi.getter(name="httpChallenges")
     def http_challenges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CpsDvEnrollmentHttpChallengeArgs']]]]:
+        """
+        HTTP challenge information
+        """
         return pulumi.get(self, "http_challenges")
 
     @http_challenges.setter
@@ -475,6 +503,9 @@ class _CpsDvEnrollmentState:
     @property
     @pulumi.getter(name="registrationAuthority")
     def registration_authority(self) -> Optional[pulumi.Input[str]]:
+        """
+        The registration authority or certificate authority (CA) used to obtain a certificate
+        """
         return pulumi.get(self, "registration_authority")
 
     @registration_authority.setter
@@ -544,6 +575,9 @@ class _CpsDvEnrollmentState:
     @property
     @pulumi.getter(name="validationType")
     def validation_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Enrolment validation type
+        """
         return pulumi.get(self, "validation_type")
 
     @validation_type.setter
@@ -573,10 +607,6 @@ class CpsDvEnrollment(pulumi.CustomResource):
                  tech_contact: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentTechContactArgs']]] = None,
                  __props__=None):
         """
-        Use the `CpsDvEnrollment` resource to create an enrollment with all the information about your certificate life cycle, from the time you request it, through removal or automatic renewal. You can treat an enrollment as a core container for all the operations you perform within CPS.
-
-        You can use this resource with `DnsRecord` or other third-party DNS provider to create DNS records, and `CpsDvValidation` to complete the certificate validation.
-
         ## Example Usage
 
         Basic usage:
@@ -624,12 +654,11 @@ class CpsDvEnrollment(pulumi.CustomResource):
             certificate_chain_type="default",
             csr=akamai.CpsDvEnrollmentCsrArgs(
                 country_code="US",
-                city="cambridge",
+                city="Cambridge",
                 organization="Akamai",
                 organizational_unit="Dev",
                 state="MA",
             ),
-            enable_multi_stacked_certificates=False,
             network_configuration=akamai.CpsDvEnrollmentNetworkConfigurationArgs(
                 disallowed_tls_versions=[
                     "TLSv1",
@@ -638,8 +667,8 @@ class CpsDvEnrollment(pulumi.CustomResource):
                 clone_dns_names=False,
                 geography="core",
                 ocsp_stapling="on",
-                preferred_ciphers="ak-akamai-2020q1",
-                must_have_ciphers="ak-akamai-2020q1",
+                preferred_ciphers="ak-akamai-default",
+                must_have_ciphers="ak-akamai-default",
                 quic_enabled=False,
             ),
             signature_algorithm="SHA-256",
@@ -681,7 +710,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
 
         ## Import
 
-        Basic Usagehcl resource "akamai_cps_dv_enrollment" "example" { # (resource arguments) } You can import your Akamai DV enrollment using a comma-delimited string of the enrollment ID and
+        Basic Usagehcl resource "akamai_cps_dv_enrollment" "example" { (resource arguments) } You can import your Akamai DV enrollment using a comma-delimited string of the enrollment ID and
 
          contract ID, optionally with the `ctr_` prefix. You have to enter the IDs in this order`enrollment_id,contract_id` For example
 
@@ -693,6 +722,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentAdminContactArgs']] admin_contact: Contact information for the certificate administrator at your company.
+        :param pulumi.Input[bool] allow_duplicate_common_name: - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type.
         :param pulumi.Input[str] common_name: - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
         :param pulumi.Input[str] contract_id: - (Required) A contract's ID, optionally with the `ctr_` prefix.
@@ -713,10 +743,6 @@ class CpsDvEnrollment(pulumi.CustomResource):
                  args: CpsDvEnrollmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `CpsDvEnrollment` resource to create an enrollment with all the information about your certificate life cycle, from the time you request it, through removal or automatic renewal. You can treat an enrollment as a core container for all the operations you perform within CPS.
-
-        You can use this resource with `DnsRecord` or other third-party DNS provider to create DNS records, and `CpsDvValidation` to complete the certificate validation.
-
         ## Example Usage
 
         Basic usage:
@@ -764,12 +790,11 @@ class CpsDvEnrollment(pulumi.CustomResource):
             certificate_chain_type="default",
             csr=akamai.CpsDvEnrollmentCsrArgs(
                 country_code="US",
-                city="cambridge",
+                city="Cambridge",
                 organization="Akamai",
                 organizational_unit="Dev",
                 state="MA",
             ),
-            enable_multi_stacked_certificates=False,
             network_configuration=akamai.CpsDvEnrollmentNetworkConfigurationArgs(
                 disallowed_tls_versions=[
                     "TLSv1",
@@ -778,8 +803,8 @@ class CpsDvEnrollment(pulumi.CustomResource):
                 clone_dns_names=False,
                 geography="core",
                 ocsp_stapling="on",
-                preferred_ciphers="ak-akamai-2020q1",
-                must_have_ciphers="ak-akamai-2020q1",
+                preferred_ciphers="ak-akamai-default",
+                must_have_ciphers="ak-akamai-default",
                 quic_enabled=False,
             ),
             signature_algorithm="SHA-256",
@@ -821,7 +846,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
 
         ## Import
 
-        Basic Usagehcl resource "akamai_cps_dv_enrollment" "example" { # (resource arguments) } You can import your Akamai DV enrollment using a comma-delimited string of the enrollment ID and
+        Basic Usagehcl resource "akamai_cps_dv_enrollment" "example" { (resource arguments) } You can import your Akamai DV enrollment using a comma-delimited string of the enrollment ID and
 
          contract ID, optionally with the `ctr_` prefix. You have to enter the IDs in this order`enrollment_id,contract_id` For example
 
@@ -883,6 +908,9 @@ class CpsDvEnrollment(pulumi.CustomResource):
             if csr is None and not opts.urn:
                 raise TypeError("Missing required property 'csr'")
             __props__.__dict__["csr"] = csr
+            if enable_multi_stacked_certificates is not None and not opts.urn:
+                warnings.warn("""Deprecated, don't use; always false""", DeprecationWarning)
+                pulumi.log.warn("""enable_multi_stacked_certificates is deprecated: Deprecated, don't use; always false""")
             __props__.__dict__["enable_multi_stacked_certificates"] = enable_multi_stacked_certificates
             if network_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'network_configuration'")
@@ -947,18 +975,24 @@ class CpsDvEnrollment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentAdminContactArgs']] admin_contact: Contact information for the certificate administrator at your company.
+        :param pulumi.Input[bool] allow_duplicate_common_name: - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type.
+        :param pulumi.Input[str] certificate_type: Certificate type of enrollment
         :param pulumi.Input[str] common_name: - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
         :param pulumi.Input[str] contract_id: - (Required) A contract's ID, optionally with the `ctr_` prefix.
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']] csr: When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CpsDvEnrollmentDnsChallengeArgs']]]] dns_challenges: DNS challenge information
         :param pulumi.Input[bool] enable_multi_stacked_certificates: Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CpsDvEnrollmentHttpChallengeArgs']]]] http_challenges: HTTP challenge information
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentNetworkConfigurationArgs']] network_configuration: The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentOrganizationArgs']] organization: Your organization information.
+        :param pulumi.Input[str] registration_authority: The registration authority or certificate authority (CA) used to obtain a certificate
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: Additional common names to create a Subject Alternative Names (SAN) list.
         :param pulumi.Input[str] secure_network: The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
         :param pulumi.Input[str] signature_algorithm: The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
         :param pulumi.Input[bool] sni_only: Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentTechContactArgs']] tech_contact: The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `admin_contact`.
+        :param pulumi.Input[str] validation_type: Enrolment validation type
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1005,6 +1039,9 @@ class CpsDvEnrollment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="allowDuplicateCommonName")
     def allow_duplicate_common_name(self) -> pulumi.Output[Optional[bool]]:
+        """
+        - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        """
         return pulumi.get(self, "allow_duplicate_common_name")
 
     @property
@@ -1018,6 +1055,9 @@ class CpsDvEnrollment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="certificateType")
     def certificate_type(self) -> pulumi.Output[str]:
+        """
+        Certificate type of enrollment
+        """
         return pulumi.get(self, "certificate_type")
 
     @property
@@ -1047,6 +1087,9 @@ class CpsDvEnrollment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="dnsChallenges")
     def dns_challenges(self) -> pulumi.Output[Sequence['outputs.CpsDvEnrollmentDnsChallenge']]:
+        """
+        DNS challenge information
+        """
         return pulumi.get(self, "dns_challenges")
 
     @property
@@ -1060,6 +1103,9 @@ class CpsDvEnrollment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="httpChallenges")
     def http_challenges(self) -> pulumi.Output[Sequence['outputs.CpsDvEnrollmentHttpChallenge']]:
+        """
+        HTTP challenge information
+        """
         return pulumi.get(self, "http_challenges")
 
     @property
@@ -1081,6 +1127,9 @@ class CpsDvEnrollment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="registrationAuthority")
     def registration_authority(self) -> pulumi.Output[str]:
+        """
+        The registration authority or certificate authority (CA) used to obtain a certificate
+        """
         return pulumi.get(self, "registration_authority")
 
     @property
@@ -1126,5 +1175,8 @@ class CpsDvEnrollment(pulumi.CustomResource):
     @property
     @pulumi.getter(name="validationType")
     def validation_type(self) -> pulumi.Output[str]:
+        """
+        Enrolment validation type
+        """
         return pulumi.get(self, "validation_type")
 

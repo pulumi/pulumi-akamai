@@ -17,26 +17,24 @@ namespace Pulumi.Akamai
     /// This example shows how to set up a user:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var exampleUser = new Akamai.IamUser("exampleUser", new()
     ///     {
-    ///         var exampleUser = new Akamai.IamUser("exampleUser", new Akamai.IamUserArgs
-    ///         {
-    ///             AuthGrantsJson = "[{\"groupId\":18451,\"roleId\":14},{\"groupId\":18453,\"roleId\":13}]",
-    ///             Country = "Grenada",
-    ///             Email = "jperez@example.com",
-    ///             EnableTfa = false,
-    ///             FirstName = "Juan",
-    ///             LastName = "Perez",
-    ///             Phone = "+1 206-555-0100",
-    ///         });
-    ///     }
+    ///         AuthGrantsJson = "[{\"groupId\":18451,\"roleId\":14},{\"groupId\":18453,\"roleId\":13}]",
+    ///         Country = "Grenada",
+    ///         Email = "jperez@example.com",
+    ///         EnableTfa = false,
+    ///         FirstName = "Juan",
+    ///         LastName = "Perez",
+    ///         Phone = "+1 206-555-0100",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Attributes reference
@@ -53,7 +51,7 @@ namespace Pulumi.Akamai
     /// * `lock` - (Optional) Flag to block as user account.
     /// </summary>
     [AkamaiResourceType("akamai:index/iamUser:IamUser")]
-    public partial class IamUser : Pulumi.CustomResource
+    public partial class IamUser : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The user's street address.
@@ -249,7 +247,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class IamUserArgs : Pulumi.ResourceArgs
+    public sealed class IamUserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The user's street address.
@@ -368,9 +366,10 @@ namespace Pulumi.Akamai
         public IamUserArgs()
         {
         }
+        public static new IamUserArgs Empty => new IamUserArgs();
     }
 
-    public sealed class IamUserState : Pulumi.ResourceArgs
+    public sealed class IamUserState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The user's street address.
@@ -525,5 +524,6 @@ namespace Pulumi.Akamai
         public IamUserState()
         {
         }
+        public static new IamUserState Empty => new IamUserState();
     }
 }

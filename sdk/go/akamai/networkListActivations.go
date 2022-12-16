@@ -23,22 +23,26 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			networkListsFilter, err := akamai.GetNetworkLists(ctx, &GetNetworkListsArgs{
-//				Name: pulumi.StringRef(_var.Network_list),
-//			}, nil)
+//			_, err := akamai.NewNetworkList(ctx, "networkListIp", &akamai.NetworkListArgs{
+//				Type:        pulumi.String("IP"),
+//				Description: pulumi.String("IP network list"),
+//				Lists:       pulumi.Any(_var.Ip_list),
+//				Mode:        pulumi.String("REPLACE"),
+//			})
 //			if err != nil {
 //				return err
 //			}
 //			_, err = akamai.NewNetworkListActivations(ctx, "activation", &akamai.NetworkListActivationsArgs{
-//				NetworkListId: pulumi.String(networkListsFilter.Lists[0]),
+//				NetworkListId: pulumi.Any(resource.Akamai_networklist_network_list.Network_list_ip.Network_list_id),
 //				Network:       pulumi.String("STAGING"),
+//				SyncPoint:     pulumi.Any(resource.Akamai_networklist_network_list.Network_list_ip.Sync_point),
 //				Notes:         pulumi.String("TEST Notes"),
 //				NotificationEmails: pulumi.StringArray{
 //					pulumi.String("user@example.com"),
@@ -70,6 +74,9 @@ type NetworkListActivations struct {
 	// The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
 	// list was not activated.
 	Status pulumi.StringOutput `pulumi:"status"`
+	// An integer that identifies the current version of the network list; this value is incremented each time
+	// the list is modified.
+	SyncPoint pulumi.IntOutput `pulumi:"syncPoint"`
 }
 
 // NewNetworkListActivations registers a new resource with the given unique name, arguments, and options.
@@ -84,6 +91,9 @@ func NewNetworkListActivations(ctx *pulumi.Context,
 	}
 	if args.NotificationEmails == nil {
 		return nil, errors.New("invalid value for required argument 'NotificationEmails'")
+	}
+	if args.SyncPoint == nil {
+		return nil, errors.New("invalid value for required argument 'SyncPoint'")
 	}
 	var resource NetworkListActivations
 	err := ctx.RegisterResource("akamai:index/networkListActivations:NetworkListActivations", name, args, &resource, opts...)
@@ -122,6 +132,9 @@ type networkListActivationsState struct {
 	// The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
 	// list was not activated.
 	Status *string `pulumi:"status"`
+	// An integer that identifies the current version of the network list; this value is incremented each time
+	// the list is modified.
+	SyncPoint *int `pulumi:"syncPoint"`
 }
 
 type NetworkListActivationsState struct {
@@ -140,6 +153,9 @@ type NetworkListActivationsState struct {
 	// The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
 	// list was not activated.
 	Status pulumi.StringPtrInput
+	// An integer that identifies the current version of the network list; this value is incremented each time
+	// the list is modified.
+	SyncPoint pulumi.IntPtrInput
 }
 
 func (NetworkListActivationsState) ElementType() reflect.Type {
@@ -159,6 +175,9 @@ type networkListActivationsArgs struct {
 	// A bracketed, comma-separated list of email addresses that will be notified when the
 	// operation is complete.
 	NotificationEmails []string `pulumi:"notificationEmails"`
+	// An integer that identifies the current version of the network list; this value is incremented each time
+	// the list is modified.
+	SyncPoint int `pulumi:"syncPoint"`
 }
 
 // The set of arguments for constructing a NetworkListActivations resource.
@@ -175,6 +194,9 @@ type NetworkListActivationsArgs struct {
 	// A bracketed, comma-separated list of email addresses that will be notified when the
 	// operation is complete.
 	NotificationEmails pulumi.StringArrayInput
+	// An integer that identifies the current version of the network list; this value is incremented each time
+	// the list is modified.
+	SyncPoint pulumi.IntInput
 }
 
 func (NetworkListActivationsArgs) ElementType() reflect.Type {
@@ -295,6 +317,12 @@ func (o NetworkListActivationsOutput) NotificationEmails() pulumi.StringArrayOut
 // list was not activated.
 func (o NetworkListActivationsOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkListActivations) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+}
+
+// An integer that identifies the current version of the network list; this value is incremented each time
+// the list is modified.
+func (o NetworkListActivationsOutput) SyncPoint() pulumi.IntOutput {
+	return o.ApplyT(func(v *NetworkListActivations) pulumi.IntOutput { return v.SyncPoint }).(pulumi.IntOutput)
 }
 
 type NetworkListActivationsArrayOutput struct{ *pulumi.OutputState }

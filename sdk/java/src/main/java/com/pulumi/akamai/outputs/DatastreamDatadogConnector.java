@@ -14,8 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatastreamDatadogConnector {
     /**
-     * @return **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-     * * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+     * @return **Secret**. Your Log API token for your account in New Relic.
      * 
      */
     private String authToken;
@@ -41,7 +40,7 @@ public final class DatastreamDatadogConnector {
      */
     private @Nullable String source;
     /**
-     * @return The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+     * @return The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
      * 
      */
     private @Nullable String tags;
@@ -53,8 +52,7 @@ public final class DatastreamDatadogConnector {
 
     private DatastreamDatadogConnector() {}
     /**
-     * @return **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-     * * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+     * @return **Secret**. Your Log API token for your account in New Relic.
      * 
      */
     public String authToken() {
@@ -92,7 +90,7 @@ public final class DatastreamDatadogConnector {
         return Optional.ofNullable(this.source);
     }
     /**
-     * @return The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+     * @return The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
      * 
      */
     public Optional<String> tags() {

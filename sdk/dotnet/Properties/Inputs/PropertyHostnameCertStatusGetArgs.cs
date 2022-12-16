@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties.Inputs
 {
 
-    public sealed class PropertyHostnameCertStatusGetArgs : Pulumi.ResourceArgs
+    public sealed class PropertyHostnameCertStatusGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("hostname")]
         public Input<string>? Hostname { get; set; }
@@ -27,5 +27,6 @@ namespace Pulumi.Akamai.Properties.Inputs
         public PropertyHostnameCertStatusGetArgs()
         {
         }
+        public static new PropertyHostnameCertStatusGetArgs Empty => new PropertyHostnameCertStatusGetArgs();
     }
 }

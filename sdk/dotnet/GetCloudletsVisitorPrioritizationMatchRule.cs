@@ -21,42 +21,40 @@ namespace Pulumi.Akamai
         /// This example returns the JSON-encoded rules for the Visitor Prioritization Cloudlet:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetCloudletsVisitorPrioritizationMatchRule.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsVisitorPrioritizationMatchRule.InvokeAsync(new Akamai.GetCloudletsVisitorPrioritizationMatchRuleArgs
+        ///         MatchRules = new[]
         ///         {
-        ///             MatchRules = 
+        ///             new Akamai.Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleInputArgs
         ///             {
-        ///                 new Akamai.Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs
+        ///                 End = 1645037845,
+        ///                 MatchUrl = "example.com",
+        ///                 Matches = new[]
         ///                 {
-        ///                     End = 1645037845,
-        ///                     MatchUrl = "example.com",
-        ///                     Matches = 
+        ///                     new Akamai.Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchInputArgs
         ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             CaseSensitive = false,
-        ///                             CheckIps = "CONNECTING_IP",
-        ///                             MatchOperator = "equals",
-        ///                             MatchType = "protocol",
-        ///                             MatchValue = "http",
-        ///                             Negate = false,
-        ///                         },
+        ///                         CaseSensitive = false,
+        ///                         CheckIps = "CONNECTING_IP",
+        ///                         MatchOperator = "equals",
+        ///                         MatchType = "protocol",
+        ///                         MatchValue = "http",
+        ///                         Negate = false,
         ///                     },
-        ///                     Name = "rule",
-        ///                     PassThroughPercent = -1,
-        ///                     Start = 1644865045,
         ///                 },
+        ///                 Name = "rule",
+        ///                 PassThroughPercent = -1,
+        ///                 Start = 1644865045,
         ///             },
-        ///         }));
-        ///     }
+        ///         },
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -67,7 +65,7 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Task<GetCloudletsVisitorPrioritizationMatchRuleResult> InvokeAsync(GetCloudletsVisitorPrioritizationMatchRuleArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsVisitorPrioritizationMatchRuleResult>("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", args ?? new GetCloudletsVisitorPrioritizationMatchRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsVisitorPrioritizationMatchRuleResult>("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", args ?? new GetCloudletsVisitorPrioritizationMatchRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
@@ -79,42 +77,40 @@ namespace Pulumi.Akamai
         /// This example returns the JSON-encoded rules for the Visitor Prioritization Cloudlet:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetCloudletsVisitorPrioritizationMatchRule.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsVisitorPrioritizationMatchRule.InvokeAsync(new Akamai.GetCloudletsVisitorPrioritizationMatchRuleArgs
+        ///         MatchRules = new[]
         ///         {
-        ///             MatchRules = 
+        ///             new Akamai.Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleInputArgs
         ///             {
-        ///                 new Akamai.Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs
+        ///                 End = 1645037845,
+        ///                 MatchUrl = "example.com",
+        ///                 Matches = new[]
         ///                 {
-        ///                     End = 1645037845,
-        ///                     MatchUrl = "example.com",
-        ///                     Matches = 
+        ///                     new Akamai.Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchInputArgs
         ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             CaseSensitive = false,
-        ///                             CheckIps = "CONNECTING_IP",
-        ///                             MatchOperator = "equals",
-        ///                             MatchType = "protocol",
-        ///                             MatchValue = "http",
-        ///                             Negate = false,
-        ///                         },
+        ///                         CaseSensitive = false,
+        ///                         CheckIps = "CONNECTING_IP",
+        ///                         MatchOperator = "equals",
+        ///                         MatchType = "protocol",
+        ///                         MatchValue = "http",
+        ///                         Negate = false,
         ///                     },
-        ///                     Name = "rule",
-        ///                     PassThroughPercent = -1,
-        ///                     Start = 1644865045,
         ///                 },
+        ///                 Name = "rule",
+        ///                 PassThroughPercent = -1,
+        ///                 Start = 1644865045,
         ///             },
-        ///         }));
-        ///     }
+        ///         },
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -125,11 +121,11 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Output<GetCloudletsVisitorPrioritizationMatchRuleResult> Invoke(GetCloudletsVisitorPrioritizationMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudletsVisitorPrioritizationMatchRuleResult>("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", args ?? new GetCloudletsVisitorPrioritizationMatchRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsVisitorPrioritizationMatchRuleResult>("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", args ?? new GetCloudletsVisitorPrioritizationMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCloudletsVisitorPrioritizationMatchRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsVisitorPrioritizationMatchRuleArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private List<Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs>? _matchRules;
@@ -146,9 +142,10 @@ namespace Pulumi.Akamai
         public GetCloudletsVisitorPrioritizationMatchRuleArgs()
         {
         }
+        public static new GetCloudletsVisitorPrioritizationMatchRuleArgs Empty => new GetCloudletsVisitorPrioritizationMatchRuleArgs();
     }
 
-    public sealed class GetCloudletsVisitorPrioritizationMatchRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsVisitorPrioritizationMatchRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private InputList<Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleInputArgs>? _matchRules;
@@ -165,6 +162,7 @@ namespace Pulumi.Akamai
         public GetCloudletsVisitorPrioritizationMatchRuleInvokeArgs()
         {
         }
+        public static new GetCloudletsVisitorPrioritizationMatchRuleInvokeArgs Empty => new GetCloudletsVisitorPrioritizationMatchRuleInvokeArgs();
     }
 
 

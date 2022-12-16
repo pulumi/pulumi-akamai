@@ -22,29 +22,28 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configurationAppSecConfiguration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configurationAppSecConfiguration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var configurationAppSecConfigurationRename = new Akamai.AppSecConfigurationRename("configurationAppSecConfigurationRename", new Akamai.AppSecConfigurationRenameArgs
-    ///         {
-    ///             ConfigId = configurationAppSecConfiguration.Apply(configurationAppSecConfiguration =&gt; configurationAppSecConfiguration.ConfigId),
-    ///             Description = "This configuration is by both the documentation team and the training team.",
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var configurationAppSecConfigurationRename = new Akamai.AppSecConfigurationRename("configurationAppSecConfigurationRename", new()
+    ///     {
+    ///         ConfigId = configurationAppSecConfiguration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         Description = "This configuration is by both the documentation team and the training team.",
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecConfigurationRename:AppSecConfigurationRename")]
-    public partial class AppSecConfigurationRename : Pulumi.CustomResource
+    public partial class AppSecConfigurationRename : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuring being renamed.
@@ -108,7 +107,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecConfigurationRenameArgs : Pulumi.ResourceArgs
+    public sealed class AppSecConfigurationRenameArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuring being renamed.
@@ -131,9 +130,10 @@ namespace Pulumi.Akamai
         public AppSecConfigurationRenameArgs()
         {
         }
+        public static new AppSecConfigurationRenameArgs Empty => new AppSecConfigurationRenameArgs();
     }
 
-    public sealed class AppSecConfigurationRenameState : Pulumi.ResourceArgs
+    public sealed class AppSecConfigurationRenameState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuring being renamed.
@@ -156,5 +156,6 @@ namespace Pulumi.Akamai
         public AppSecConfigurationRenameState()
         {
         }
+        public static new AppSecConfigurationRenameState Empty => new AppSecConfigurationRenameState();
     }
 }

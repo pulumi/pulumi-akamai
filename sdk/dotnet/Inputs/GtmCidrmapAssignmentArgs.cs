@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GtmCidrmapAssignmentArgs : Pulumi.ResourceArgs
+    public sealed class GtmCidrmapAssignmentArgs : global::Pulumi.ResourceArgs
     {
         [Input("blocks")]
         private InputList<string>? _blocks;
@@ -39,5 +39,6 @@ namespace Pulumi.Akamai.Inputs
         public GtmCidrmapAssignmentArgs()
         {
         }
+        public static new GtmCidrmapAssignmentArgs Empty => new GtmCidrmapAssignmentArgs();
     }
 }

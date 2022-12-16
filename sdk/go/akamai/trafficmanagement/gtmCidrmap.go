@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -34,7 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := akamai.NewGtmCidrmap(ctx, "demoCidrmap", &akamai.GtmCidrmapArgs{
-//				DefaultDatacenter: &GtmCidrmapDefaultDatacenterArgs{
+//				DefaultDatacenter: &akamai.GtmCidrmapDefaultDatacenterArgs{
 //					DatacenterId: pulumi.Int(5400),
 //					Nickname:     pulumi.String("All Other CIDR Blocks"),
 //				},
@@ -57,7 +57,7 @@ type GtmCidrmap struct {
 	Assignments GtmCidrmapAssignmentArrayOutput `pulumi:"assignments"`
 	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
 	DefaultDatacenter GtmCidrmapDefaultDatacenterOutput `pulumi:"defaultDatacenter"`
-	// GTM Domain name for the AS Map.
+	// GTM Domain name for the CIDR Map.
 	Domain pulumi.StringOutput `pulumi:"domain"`
 	// A descriptive label for the CIDR map, up to 255 characters.
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -104,7 +104,7 @@ type gtmCidrmapState struct {
 	Assignments []GtmCidrmapAssignment `pulumi:"assignments"`
 	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
 	DefaultDatacenter *GtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// GTM Domain name for the AS Map.
+	// GTM Domain name for the CIDR Map.
 	Domain *string `pulumi:"domain"`
 	// A descriptive label for the CIDR map, up to 255 characters.
 	Name *string `pulumi:"name"`
@@ -117,7 +117,7 @@ type GtmCidrmapState struct {
 	Assignments GtmCidrmapAssignmentArrayInput
 	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
 	DefaultDatacenter GtmCidrmapDefaultDatacenterPtrInput
-	// GTM Domain name for the AS Map.
+	// GTM Domain name for the CIDR Map.
 	Domain pulumi.StringPtrInput
 	// A descriptive label for the CIDR map, up to 255 characters.
 	Name pulumi.StringPtrInput
@@ -134,7 +134,7 @@ type gtmCidrmapArgs struct {
 	Assignments []GtmCidrmapAssignment `pulumi:"assignments"`
 	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
 	DefaultDatacenter GtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// GTM Domain name for the AS Map.
+	// GTM Domain name for the CIDR Map.
 	Domain string `pulumi:"domain"`
 	// A descriptive label for the CIDR map, up to 255 characters.
 	Name *string `pulumi:"name"`
@@ -148,7 +148,7 @@ type GtmCidrmapArgs struct {
 	Assignments GtmCidrmapAssignmentArrayInput
 	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
 	DefaultDatacenter GtmCidrmapDefaultDatacenterInput
-	// GTM Domain name for the AS Map.
+	// GTM Domain name for the CIDR Map.
 	Domain pulumi.StringInput
 	// A descriptive label for the CIDR map, up to 255 characters.
 	Name pulumi.StringPtrInput
@@ -253,7 +253,7 @@ func (o GtmCidrmapOutput) DefaultDatacenter() GtmCidrmapDefaultDatacenterOutput 
 	return o.ApplyT(func(v *GtmCidrmap) GtmCidrmapDefaultDatacenterOutput { return v.DefaultDatacenter }).(GtmCidrmapDefaultDatacenterOutput)
 }
 
-// GTM Domain name for the AS Map.
+// GTM Domain name for the CIDR Map.
 func (o GtmCidrmapOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *GtmCidrmap) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }

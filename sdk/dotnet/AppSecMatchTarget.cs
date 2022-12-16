@@ -21,26 +21,25 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using System.IO;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var matchTarget = new Akamai.AppSecMatchTarget("matchTarget", new Akamai.AppSecMatchTargetArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             MatchTarget = File.ReadAllText($"{path.Module}/match_targets.json"),
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var matchTarget = new Akamai.AppSecMatchTarget("matchTarget", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         MatchTarget = File.ReadAllText($"{path.Module}/match_targets.json"),
+    ///     });
+    /// 
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -49,7 +48,7 @@ namespace Pulumi.Akamai
     /// - `match_target_id`. ID of the match target.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecMatchTarget:AppSecMatchTarget")]
-    public partial class AppSecMatchTarget : Pulumi.CustomResource
+    public partial class AppSecMatchTarget : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the match target being modified.
@@ -113,7 +112,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecMatchTargetArgs : Pulumi.ResourceArgs
+    public sealed class AppSecMatchTargetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the match target being modified.
@@ -130,9 +129,10 @@ namespace Pulumi.Akamai
         public AppSecMatchTargetArgs()
         {
         }
+        public static new AppSecMatchTargetArgs Empty => new AppSecMatchTargetArgs();
     }
 
-    public sealed class AppSecMatchTargetState : Pulumi.ResourceArgs
+    public sealed class AppSecMatchTargetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the match target being modified.
@@ -155,5 +155,6 @@ namespace Pulumi.Akamai
         public AppSecMatchTargetState()
         {
         }
+        public static new AppSecMatchTargetState Empty => new AppSecMatchTargetState();
     }
 }

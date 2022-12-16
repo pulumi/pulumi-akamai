@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -50,8 +50,9 @@ type CpsDvValidation struct {
 	// Unique identifier for the DV certificate enrollment.
 	EnrollmentId pulumi.IntOutput `pulumi:"enrollmentId"`
 	// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
-	Sans   pulumi.StringArrayOutput `pulumi:"sans"`
-	Status pulumi.StringOutput      `pulumi:"status"`
+	Sans pulumi.StringArrayOutput `pulumi:"sans"`
+	// Status of validation
+	Status pulumi.StringOutput `pulumi:"status"`
 }
 
 // NewCpsDvValidation registers a new resource with the given unique name, arguments, and options.
@@ -89,15 +90,17 @@ type cpsDvValidationState struct {
 	// Unique identifier for the DV certificate enrollment.
 	EnrollmentId *int `pulumi:"enrollmentId"`
 	// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
-	Sans   []string `pulumi:"sans"`
-	Status *string  `pulumi:"status"`
+	Sans []string `pulumi:"sans"`
+	// Status of validation
+	Status *string `pulumi:"status"`
 }
 
 type CpsDvValidationState struct {
 	// Unique identifier for the DV certificate enrollment.
 	EnrollmentId pulumi.IntPtrInput
 	// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
-	Sans   pulumi.StringArrayInput
+	Sans pulumi.StringArrayInput
+	// Status of validation
 	Status pulumi.StringPtrInput
 }
 
@@ -217,6 +220,7 @@ func (o CpsDvValidationOutput) Sans() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *CpsDvValidation) pulumi.StringArrayOutput { return v.Sans }).(pulumi.StringArrayOutput)
 }
 
+// Status of validation
 func (o CpsDvValidationOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpsDvValidation) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

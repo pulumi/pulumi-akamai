@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class PropertyHostnameArgs : Pulumi.ResourceArgs
+    public sealed class PropertyHostnameArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
@@ -47,5 +47,6 @@ namespace Pulumi.Akamai.Inputs
         public PropertyHostnameArgs()
         {
         }
+        public static new PropertyHostnameArgs Empty => new PropertyHostnameArgs();
     }
 }

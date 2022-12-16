@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class CpsDvEnrollmentAdminContactArgs : Pulumi.ResourceArgs
+    public sealed class CpsDvEnrollmentAdminContactArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The address of your organization.
@@ -87,5 +87,6 @@ namespace Pulumi.Akamai.Inputs
         public CpsDvEnrollmentAdminContactArgs()
         {
         }
+        public static new CpsDvEnrollmentAdminContactArgs Empty => new CpsDvEnrollmentAdminContactArgs();
     }
 }

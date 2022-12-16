@@ -21,21 +21,19 @@ namespace Pulumi.Akamai
         /// This example returns the resource tier fields for an EdgeWorker ID:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetEdgeWorkersResourceTier.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetEdgeWorkersResourceTier.InvokeAsync(new Akamai.GetEdgeWorkersResourceTierArgs
-        ///         {
-        ///             ContractId = "1-ABC",
-        ///             ResourceTierName = "Basic Compute",
-        ///         }));
-        ///     }
+        ///         ContractId = "1-ABC",
+        ///         ResourceTierName = "Basic Compute",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -46,7 +44,7 @@ namespace Pulumi.Akamai
         /// * `resource_tier_id` - Unique identifier of the resource tier.
         /// </summary>
         public static Task<GetEdgeWorkersResourceTierResult> InvokeAsync(GetEdgeWorkersResourceTierArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEdgeWorkersResourceTierResult>("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", args ?? new GetEdgeWorkersResourceTierArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEdgeWorkersResourceTierResult>("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", args ?? new GetEdgeWorkersResourceTierArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getEdgeWorkersResourceTier` data source to list the available resource tiers for a specific contract ID. The resource tier defines the resource consumption [limits](https://techdocs.akamai.com/edgeworkers/docs/resource-tier-limitations) for an EdgeWorker ID.
@@ -58,21 +56,19 @@ namespace Pulumi.Akamai
         /// This example returns the resource tier fields for an EdgeWorker ID:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetEdgeWorkersResourceTier.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetEdgeWorkersResourceTier.InvokeAsync(new Akamai.GetEdgeWorkersResourceTierArgs
-        ///         {
-        ///             ContractId = "1-ABC",
-        ///             ResourceTierName = "Basic Compute",
-        ///         }));
-        ///     }
+        ///         ContractId = "1-ABC",
+        ///         ResourceTierName = "Basic Compute",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,11 +79,11 @@ namespace Pulumi.Akamai
         /// * `resource_tier_id` - Unique identifier of the resource tier.
         /// </summary>
         public static Output<GetEdgeWorkersResourceTierResult> Invoke(GetEdgeWorkersResourceTierInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEdgeWorkersResourceTierResult>("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", args ?? new GetEdgeWorkersResourceTierInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkersResourceTierResult>("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", args ?? new GetEdgeWorkersResourceTierInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetEdgeWorkersResourceTierArgs : Pulumi.InvokeArgs
+    public sealed class GetEdgeWorkersResourceTierArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique identifier of a contract.
@@ -104,9 +100,10 @@ namespace Pulumi.Akamai
         public GetEdgeWorkersResourceTierArgs()
         {
         }
+        public static new GetEdgeWorkersResourceTierArgs Empty => new GetEdgeWorkersResourceTierArgs();
     }
 
-    public sealed class GetEdgeWorkersResourceTierInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEdgeWorkersResourceTierInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique identifier of a contract.
@@ -123,6 +120,7 @@ namespace Pulumi.Akamai
         public GetEdgeWorkersResourceTierInvokeArgs()
         {
         }
+        public static new GetEdgeWorkersResourceTierInvokeArgs Empty => new GetEdgeWorkersResourceTierInvokeArgs();
     }
 
 

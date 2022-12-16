@@ -18,34 +18,37 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var networkListIp = new Akamai.NetworkList("networkListIp", new()
     ///     {
-    ///         var networkListsFilter = Output.Create(Akamai.GetNetworkLists.InvokeAsync(new Akamai.GetNetworkListsArgs
-    ///         {
-    ///             Name = @var.Network_list,
-    ///         }));
-    ///         var activation = new Akamai.NetworkListActivations("activation", new Akamai.NetworkListActivationsArgs
-    ///         {
-    ///             NetworkListId = networkListsFilter.Apply(networkListsFilter =&gt; networkListsFilter.Lists?[0]),
-    ///             Network = "STAGING",
-    ///             Notes = "TEST Notes",
-    ///             NotificationEmails = 
-    ///             {
-    ///                 "user@example.com",
-    ///             },
-    ///         });
-    ///     }
+    ///         Type = "IP",
+    ///         Description = "IP network list",
+    ///         Lists = @var.Ip_list,
+    ///         Mode = "REPLACE",
+    ///     });
     /// 
-    /// }
+    ///     var activation = new Akamai.NetworkListActivations("activation", new()
+    ///     {
+    ///         NetworkListId = resource.Akamai_networklist_network_list.Network_list_ip.Network_list_id,
+    ///         Network = "STAGING",
+    ///         SyncPoint = resource.Akamai_networklist_network_list.Network_list_ip.Sync_point,
+    ///         Notes = "TEST Notes",
+    ///         NotificationEmails = new[]
+    ///         {
+    ///             "user@example.com",
+    ///         },
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/networkListActivations:NetworkListActivations")]
-    public partial class NetworkListActivations : Pulumi.CustomResource
+    public partial class NetworkListActivations : global::Pulumi.CustomResource
     {
         [Output("activate")]
         public Output<bool?> Activate { get; private set; } = null!;
@@ -82,6 +85,13 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
+
+        /// <summary>
+        /// An integer that identifies the current version of the network list; this value is incremented each time
+        /// the list is modified.
+        /// </summary>
+        [Output("syncPoint")]
+        public Output<int> SyncPoint { get; private set; } = null!;
 
 
         /// <summary>
@@ -127,7 +137,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class NetworkListActivationsArgs : Pulumi.ResourceArgs
+    public sealed class NetworkListActivationsArgs : global::Pulumi.ResourceArgs
     {
         [Input("activate")]
         public Input<bool>? Activate { get; set; }
@@ -164,12 +174,20 @@ namespace Pulumi.Akamai
             set => _notificationEmails = value;
         }
 
+        /// <summary>
+        /// An integer that identifies the current version of the network list; this value is incremented each time
+        /// the list is modified.
+        /// </summary>
+        [Input("syncPoint", required: true)]
+        public Input<int> SyncPoint { get; set; } = null!;
+
         public NetworkListActivationsArgs()
         {
         }
+        public static new NetworkListActivationsArgs Empty => new NetworkListActivationsArgs();
     }
 
-    public sealed class NetworkListActivationsState : Pulumi.ResourceArgs
+    public sealed class NetworkListActivationsState : global::Pulumi.ResourceArgs
     {
         [Input("activate")]
         public Input<bool>? Activate { get; set; }
@@ -213,8 +231,16 @@ namespace Pulumi.Akamai
         [Input("status")]
         public Input<string>? Status { get; set; }
 
+        /// <summary>
+        /// An integer that identifies the current version of the network list; this value is incremented each time
+        /// the list is modified.
+        /// </summary>
+        [Input("syncPoint")]
+        public Input<int>? SyncPoint { get; set; }
+
         public NetworkListActivationsState()
         {
         }
+        public static new NetworkListActivationsState Empty => new NetworkListActivationsState();
     }
 }

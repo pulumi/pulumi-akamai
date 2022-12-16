@@ -25,31 +25,29 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var upgradeDetails = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRuleUpgradeDetails.InvokeAsync(new Akamai.GetAppSecRuleUpgradeDetailsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.UpgradeDetailsText = upgradeDetails.Apply(upgradeDetails =&gt; upgradeDetails.OutputText);
-        ///         this.UpgradeDetailsJson = upgradeDetails.Apply(upgradeDetails =&gt; upgradeDetails.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("upgradeDetailsText")]
-        ///     public Output&lt;string&gt; UpgradeDetailsText { get; set; }
-        ///     [Output("upgradeDetailsJson")]
-        ///     public Output&lt;string&gt; UpgradeDetailsJson { get; set; }
-        /// }
+        ///     var upgradeDetails = Akamai.GetAppSecRuleUpgradeDetails.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["upgradeDetailsText"] = upgradeDetails.Apply(getAppSecRuleUpgradeDetailsResult =&gt; getAppSecRuleUpgradeDetailsResult.OutputText),
+        ///         ["upgradeDetailsJson"] = upgradeDetails.Apply(getAppSecRuleUpgradeDetailsResult =&gt; getAppSecRuleUpgradeDetailsResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,7 +59,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
         /// </summary>
         public static Task<GetAppSecRuleUpgradeDetailsResult> InvokeAsync(GetAppSecRuleUpgradeDetailsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRuleUpgradeDetailsResult>("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args ?? new GetAppSecRuleUpgradeDetailsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRuleUpgradeDetailsResult>("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args ?? new GetAppSecRuleUpgradeDetailsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -77,31 +75,29 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var upgradeDetails = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRuleUpgradeDetails.InvokeAsync(new Akamai.GetAppSecRuleUpgradeDetailsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.UpgradeDetailsText = upgradeDetails.Apply(upgradeDetails =&gt; upgradeDetails.OutputText);
-        ///         this.UpgradeDetailsJson = upgradeDetails.Apply(upgradeDetails =&gt; upgradeDetails.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("upgradeDetailsText")]
-        ///     public Output&lt;string&gt; UpgradeDetailsText { get; set; }
-        ///     [Output("upgradeDetailsJson")]
-        ///     public Output&lt;string&gt; UpgradeDetailsJson { get; set; }
-        /// }
+        ///     var upgradeDetails = Akamai.GetAppSecRuleUpgradeDetails.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["upgradeDetailsText"] = upgradeDetails.Apply(getAppSecRuleUpgradeDetailsResult =&gt; getAppSecRuleUpgradeDetailsResult.OutputText),
+        ///         ["upgradeDetailsJson"] = upgradeDetails.Apply(getAppSecRuleUpgradeDetailsResult =&gt; getAppSecRuleUpgradeDetailsResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -113,11 +109,11 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
         /// </summary>
         public static Output<GetAppSecRuleUpgradeDetailsResult> Invoke(GetAppSecRuleUpgradeDetailsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecRuleUpgradeDetailsResult>("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args ?? new GetAppSecRuleUpgradeDetailsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecRuleUpgradeDetailsResult>("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args ?? new GetAppSecRuleUpgradeDetailsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecRuleUpgradeDetailsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecRuleUpgradeDetailsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the Kona Rule Sets.
@@ -134,9 +130,10 @@ namespace Pulumi.Akamai
         public GetAppSecRuleUpgradeDetailsArgs()
         {
         }
+        public static new GetAppSecRuleUpgradeDetailsArgs Empty => new GetAppSecRuleUpgradeDetailsArgs();
     }
 
-    public sealed class GetAppSecRuleUpgradeDetailsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecRuleUpgradeDetailsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the Kona Rule Sets.
@@ -153,6 +150,7 @@ namespace Pulumi.Akamai
         public GetAppSecRuleUpgradeDetailsInvokeArgs()
         {
         }
+        public static new GetAppSecRuleUpgradeDetailsInvokeArgs Empty => new GetAppSecRuleUpgradeDetailsInvokeArgs();
     }
 
 

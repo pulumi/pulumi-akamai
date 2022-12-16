@@ -27,7 +27,7 @@ namespace Pulumi.Akamai
         /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-timezones)
         /// </summary>
         public static Task<GetIamTimezonesResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIamTimezonesResult>("akamai:index/getIamTimezones:getIamTimezones", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamTimezonesResult>("akamai:index/getIamTimezones:getIamTimezones", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -41,11 +42,8 @@ import * as utilities from "./utilities";
  * In your DNS configuration, create a CNAME record and map the `cert_status.hostname` value to the `cert_status.target` value.
  */
 export function getPropertyHostnames(args: GetPropertyHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyHostnamesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyHostnames:getPropertyHostnames", {
         "contractId": args.contractId,
         "groupId": args.groupId,
@@ -85,9 +83,43 @@ export interface GetPropertyHostnamesResult {
     readonly propertyId: string;
     readonly version: number;
 }
-
+/**
+ * Use the `akamai.getPropertyHostnames` data source to query and retrieve hostnames and their certificate statuses for an existing property. This data source lets you search across the contracts and groups you have access to.
+ *
+ * ## Basic usage
+ *
+ * This example returns the property's hostnames based on the selected contract and group:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ *
+ * export const propertyHostnames = data.akamai_property_hostnames["my-example"].hostnames;
+ * ```
+ *
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `hostnames` - A list of hostnames for the property, including:
+ *   * `cnameType` - A string containing the hostname's cname type value.
+ *   * `edgeHostnameId` - The edge hostname's unique ID, including the `ehn_` prefix.
+ *   * `cnameFrom` - A string containing the original origin's hostname.
+ *   * `cnameTo` - A string containing the hostname for edge content.
+ *   * `certProvisioningType` - The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the Certificate Provisioning System (CPS), or `DEFAULT` for certificates provisioned automatically.
+ *   * `certStatus` - If applicable, this shows a list of certificate statuses, including:
+ *     * `target` - The destination part of the CNAME record used to validate the certificate's domain.
+ *     * `hostname` - The hostname part of the CNAME record used to validate the certificate's domain.
+ *     * `productionStatus` - A string containing the status of the certificate deployment on the production network.
+ *     * `stagingStatus` - A string containing the status of the certificate deployment on the staging network.
+ *
+ * ## Domain validation for DEFAULT certificates
+ *
+ * If your `certProvisioningType = "DEFAULT"` and the value for `cert_status.production_status` or `cert_status.staging_status` is either `PENDING`, `EXPIRING_SOON_NEEDS_VALIDATION`, or `EXPIRED_NEEDS_VALIDATION`, you need to perform domain validation. This proves to the certificate authority that you control the domain and are authorized to create certificates for it.
+ *
+ * In your DNS configuration, create a CNAME record and map the `cert_status.hostname` value to the `cert_status.target` value.
+ */
 export function getPropertyHostnamesOutput(args: GetPropertyHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyHostnamesResult> {
-    return pulumi.output(args).apply(a => getPropertyHostnames(a, opts))
+    return pulumi.output(args).apply((a: any) => getPropertyHostnames(a, opts))
 }
 
 /**

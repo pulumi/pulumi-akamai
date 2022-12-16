@@ -21,12 +21,21 @@ __all__ = [
     'CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication',
     'CpsDvEnrollmentOrganization',
     'CpsDvEnrollmentTechContact',
+    'CpsThirdPartyEnrollmentAdminContact',
+    'CpsThirdPartyEnrollmentCsr',
+    'CpsThirdPartyEnrollmentNetworkConfiguration',
+    'CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication',
+    'CpsThirdPartyEnrollmentOrganization',
+    'CpsThirdPartyEnrollmentTechContact',
     'DatastreamAzureConnector',
     'DatastreamConfig',
     'DatastreamConfigFrequency',
     'DatastreamDatadogConnector',
+    'DatastreamElasticsearchConnector',
     'DatastreamGcsConnector',
     'DatastreamHttpsConnector',
+    'DatastreamLogglyConnector',
+    'DatastreamNewRelicConnector',
     'DatastreamOracleConnector',
     'DatastreamS3Connector',
     'DatastreamSplunkConnector',
@@ -49,6 +58,7 @@ __all__ = [
     'PropertyActivationRuleWarning',
     'PropertyHostname',
     'PropertyHostnameCertStatus',
+    'PropertyIncludeActivationComplianceRecord',
     'PropertyOrigin',
     'PropertyRuleError',
     'PropertyRuleWarning',
@@ -112,6 +122,9 @@ __all__ = [
     'GetDatastreamActivationHistoryActivationResult',
     'GetDatastreamDatasetFieldsFieldResult',
     'GetDatastreamDatasetFieldsFieldDatasetFieldResult',
+    'GetDatastreamsStreamResult',
+    'GetDatastreamsStreamErrorResult',
+    'GetDatastreamsStreamPropertyResult',
     'GetGroupsGroupResult',
     'GetIamGrantableRolesGrantableRoleResult',
     'GetIamRolesRoleResult',
@@ -120,6 +133,9 @@ __all__ = [
     'GetPropertiesSearchPropertyResult',
     'GetPropertyHostnamesHostnameResult',
     'GetPropertyHostnamesHostnameCertStatusResult',
+    'GetPropertyIncludeParentsParentResult',
+    'GetPropertyIncludesIncludeResult',
+    'GetPropertyIncludesParentPropertyResult',
     'GetPropertyProductsProductResult',
     'GetPropertyRulesTemplateTemplateResult',
     'GetPropertyRulesTemplateVariableResult',
@@ -1314,6 +1330,737 @@ class CpsDvEnrollmentTechContact(dict):
 
 
 @pulumi.output_type
+class CpsThirdPartyEnrollmentAdminContact(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "addressLineOne":
+            suggest = "address_line_one"
+        elif key == "countryCode":
+            suggest = "country_code"
+        elif key == "firstName":
+            suggest = "first_name"
+        elif key == "lastName":
+            suggest = "last_name"
+        elif key == "postalCode":
+            suggest = "postal_code"
+        elif key == "addressLineTwo":
+            suggest = "address_line_two"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsThirdPartyEnrollmentAdminContact. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsThirdPartyEnrollmentAdminContact.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsThirdPartyEnrollmentAdminContact.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address_line_one: str,
+                 city: str,
+                 country_code: str,
+                 email: str,
+                 first_name: str,
+                 last_name: str,
+                 organization: str,
+                 phone: str,
+                 postal_code: str,
+                 region: str,
+                 address_line_two: Optional[str] = None,
+                 title: Optional[str] = None):
+        """
+        :param str address_line_one: The address of your organization.
+        :param str city: The city where your organization resides.
+        :param str country_code: The code for the country where your organization resides.
+        :param str email: The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+        :param str first_name: The first name of the technical contact at Akamai.
+        :param str last_name: The last name of the technical contact at Akamai.
+        :param str organization: Your organization information.
+        :param str phone: The phone number of the administrator who you want to use as a contact at your company.
+        :param str postal_code: The postal code of your organization.
+        :param str region: The region of your organization, typically a state or province.
+        :param str address_line_two: The address of your organization.
+        :param str title: The title of the technical contact at Akamai.
+        """
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> str:
+        """
+        The address of your organization.
+        """
+        return pulumi.get(self, "address_line_one")
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        """
+        The city where your organization resides.
+        """
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        """
+        The code for the country where your organization resides.
+        """
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        """
+        The first name of the technical contact at Akamai.
+        """
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        """
+        The last name of the technical contact at Akamai.
+        """
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def organization(self) -> str:
+        """
+        Your organization information.
+        """
+        return pulumi.get(self, "organization")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> str:
+        """
+        The phone number of the administrator who you want to use as a contact at your company.
+        """
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> str:
+        """
+        The postal code of your organization.
+        """
+        return pulumi.get(self, "postal_code")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The region of your organization, typically a state or province.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[str]:
+        """
+        The address of your organization.
+        """
+        return pulumi.get(self, "address_line_two")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        """
+        The title of the technical contact at Akamai.
+        """
+        return pulumi.get(self, "title")
+
+
+@pulumi.output_type
+class CpsThirdPartyEnrollmentCsr(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "countryCode":
+            suggest = "country_code"
+        elif key == "organizationalUnit":
+            suggest = "organizational_unit"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsThirdPartyEnrollmentCsr. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsThirdPartyEnrollmentCsr.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsThirdPartyEnrollmentCsr.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 city: str,
+                 country_code: str,
+                 organization: str,
+                 organizational_unit: str,
+                 state: str):
+        """
+        :param str city: The city where your organization resides.
+        :param str country_code: The code for the country where your organization resides.
+        :param str organization: Your organization information.
+        :param str organizational_unit: Your organizational unit.
+        :param str state: Your state or province.
+        """
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "organizational_unit", organizational_unit)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        """
+        The city where your organization resides.
+        """
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        """
+        The code for the country where your organization resides.
+        """
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def organization(self) -> str:
+        """
+        Your organization information.
+        """
+        return pulumi.get(self, "organization")
+
+    @property
+    @pulumi.getter(name="organizationalUnit")
+    def organizational_unit(self) -> str:
+        """
+        Your organizational unit.
+        """
+        return pulumi.get(self, "organizational_unit")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Your state or province.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class CpsThirdPartyEnrollmentNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "clientMutualAuthentication":
+            suggest = "client_mutual_authentication"
+        elif key == "cloneDnsNames":
+            suggest = "clone_dns_names"
+        elif key == "disallowedTlsVersions":
+            suggest = "disallowed_tls_versions"
+        elif key == "mustHaveCiphers":
+            suggest = "must_have_ciphers"
+        elif key == "ocspStapling":
+            suggest = "ocsp_stapling"
+        elif key == "preferredCiphers":
+            suggest = "preferred_ciphers"
+        elif key == "quicEnabled":
+            suggest = "quic_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsThirdPartyEnrollmentNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsThirdPartyEnrollmentNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsThirdPartyEnrollmentNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 geography: str,
+                 client_mutual_authentication: Optional['outputs.CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication'] = None,
+                 clone_dns_names: Optional[bool] = None,
+                 disallowed_tls_versions: Optional[Sequence[str]] = None,
+                 must_have_ciphers: Optional[str] = None,
+                 ocsp_stapling: Optional[str] = None,
+                 preferred_ciphers: Optional[str] = None,
+                 quic_enabled: Optional[bool] = None):
+        """
+        :param str geography: Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+        :param 'CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs' client_mutual_authentication: The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+        :param bool clone_dns_names: Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+        :param Sequence[str] disallowed_tls_versions: The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+        :param str must_have_ciphers: The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        :param str ocsp_stapling: Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+        :param str preferred_ciphers: Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        :param bool quic_enabled: Whether to use the QUIC transport layer network protocol.
+        """
+        pulumi.set(__self__, "geography", geography)
+        if client_mutual_authentication is not None:
+            pulumi.set(__self__, "client_mutual_authentication", client_mutual_authentication)
+        if clone_dns_names is not None:
+            pulumi.set(__self__, "clone_dns_names", clone_dns_names)
+        if disallowed_tls_versions is not None:
+            pulumi.set(__self__, "disallowed_tls_versions", disallowed_tls_versions)
+        if must_have_ciphers is not None:
+            pulumi.set(__self__, "must_have_ciphers", must_have_ciphers)
+        if ocsp_stapling is not None:
+            pulumi.set(__self__, "ocsp_stapling", ocsp_stapling)
+        if preferred_ciphers is not None:
+            pulumi.set(__self__, "preferred_ciphers", preferred_ciphers)
+        if quic_enabled is not None:
+            pulumi.set(__self__, "quic_enabled", quic_enabled)
+
+    @property
+    @pulumi.getter
+    def geography(self) -> str:
+        """
+        Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+        """
+        return pulumi.get(self, "geography")
+
+    @property
+    @pulumi.getter(name="clientMutualAuthentication")
+    def client_mutual_authentication(self) -> Optional['outputs.CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication']:
+        """
+        The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+        """
+        return pulumi.get(self, "client_mutual_authentication")
+
+    @property
+    @pulumi.getter(name="cloneDnsNames")
+    def clone_dns_names(self) -> Optional[bool]:
+        """
+        Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+        """
+        return pulumi.get(self, "clone_dns_names")
+
+    @property
+    @pulumi.getter(name="disallowedTlsVersions")
+    def disallowed_tls_versions(self) -> Optional[Sequence[str]]:
+        """
+        The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+        """
+        return pulumi.get(self, "disallowed_tls_versions")
+
+    @property
+    @pulumi.getter(name="mustHaveCiphers")
+    def must_have_ciphers(self) -> Optional[str]:
+        """
+        The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        """
+        return pulumi.get(self, "must_have_ciphers")
+
+    @property
+    @pulumi.getter(name="ocspStapling")
+    def ocsp_stapling(self) -> Optional[str]:
+        """
+        Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+        """
+        return pulumi.get(self, "ocsp_stapling")
+
+    @property
+    @pulumi.getter(name="preferredCiphers")
+    def preferred_ciphers(self) -> Optional[str]:
+        """
+        Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        """
+        return pulumi.get(self, "preferred_ciphers")
+
+    @property
+    @pulumi.getter(name="quicEnabled")
+    def quic_enabled(self) -> Optional[bool]:
+        """
+        Whether to use the QUIC transport layer network protocol.
+        """
+        return pulumi.get(self, "quic_enabled")
+
+
+@pulumi.output_type
+class CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ocspEnabled":
+            suggest = "ocsp_enabled"
+        elif key == "sendCaListToClient":
+            suggest = "send_ca_list_to_client"
+        elif key == "setId":
+            suggest = "set_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ocsp_enabled: Optional[bool] = None,
+                 send_ca_list_to_client: Optional[bool] = None,
+                 set_id: Optional[str] = None):
+        """
+        :param bool ocsp_enabled: Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+        :param bool send_ca_list_to_client: Whether you want to enable the server to send the certificate authority (CA) list to the client.
+        :param str set_id: The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
+        """
+        if ocsp_enabled is not None:
+            pulumi.set(__self__, "ocsp_enabled", ocsp_enabled)
+        if send_ca_list_to_client is not None:
+            pulumi.set(__self__, "send_ca_list_to_client", send_ca_list_to_client)
+        if set_id is not None:
+            pulumi.set(__self__, "set_id", set_id)
+
+    @property
+    @pulumi.getter(name="ocspEnabled")
+    def ocsp_enabled(self) -> Optional[bool]:
+        """
+        Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+        """
+        return pulumi.get(self, "ocsp_enabled")
+
+    @property
+    @pulumi.getter(name="sendCaListToClient")
+    def send_ca_list_to_client(self) -> Optional[bool]:
+        """
+        Whether you want to enable the server to send the certificate authority (CA) list to the client.
+        """
+        return pulumi.get(self, "send_ca_list_to_client")
+
+    @property
+    @pulumi.getter(name="setId")
+    def set_id(self) -> Optional[str]:
+        """
+        The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
+        """
+        return pulumi.get(self, "set_id")
+
+
+@pulumi.output_type
+class CpsThirdPartyEnrollmentOrganization(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "addressLineOne":
+            suggest = "address_line_one"
+        elif key == "countryCode":
+            suggest = "country_code"
+        elif key == "postalCode":
+            suggest = "postal_code"
+        elif key == "addressLineTwo":
+            suggest = "address_line_two"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsThirdPartyEnrollmentOrganization. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsThirdPartyEnrollmentOrganization.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsThirdPartyEnrollmentOrganization.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address_line_one: str,
+                 city: str,
+                 country_code: str,
+                 name: str,
+                 phone: str,
+                 postal_code: str,
+                 region: str,
+                 address_line_two: Optional[str] = None):
+        """
+        :param str address_line_one: The address of your organization.
+        :param str city: The city where your organization resides.
+        :param str country_code: The code for the country where your organization resides.
+        :param str name: The name of your organization.
+        :param str phone: The phone number of the administrator who you want to use as a contact at your company.
+        :param str postal_code: The postal code of your organization.
+        :param str region: The region of your organization, typically a state or province.
+        :param str address_line_two: The address of your organization.
+        """
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> str:
+        """
+        The address of your organization.
+        """
+        return pulumi.get(self, "address_line_one")
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        """
+        The city where your organization resides.
+        """
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        """
+        The code for the country where your organization resides.
+        """
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of your organization.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> str:
+        """
+        The phone number of the administrator who you want to use as a contact at your company.
+        """
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> str:
+        """
+        The postal code of your organization.
+        """
+        return pulumi.get(self, "postal_code")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The region of your organization, typically a state or province.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[str]:
+        """
+        The address of your organization.
+        """
+        return pulumi.get(self, "address_line_two")
+
+
+@pulumi.output_type
+class CpsThirdPartyEnrollmentTechContact(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "addressLineOne":
+            suggest = "address_line_one"
+        elif key == "countryCode":
+            suggest = "country_code"
+        elif key == "firstName":
+            suggest = "first_name"
+        elif key == "lastName":
+            suggest = "last_name"
+        elif key == "postalCode":
+            suggest = "postal_code"
+        elif key == "addressLineTwo":
+            suggest = "address_line_two"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CpsThirdPartyEnrollmentTechContact. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CpsThirdPartyEnrollmentTechContact.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CpsThirdPartyEnrollmentTechContact.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address_line_one: str,
+                 city: str,
+                 country_code: str,
+                 email: str,
+                 first_name: str,
+                 last_name: str,
+                 organization: str,
+                 phone: str,
+                 postal_code: str,
+                 region: str,
+                 address_line_two: Optional[str] = None,
+                 title: Optional[str] = None):
+        """
+        :param str address_line_one: The address of your organization.
+        :param str city: The city where your organization resides.
+        :param str country_code: The code for the country where your organization resides.
+        :param str email: The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+        :param str first_name: The first name of the technical contact at Akamai.
+        :param str last_name: The last name of the technical contact at Akamai.
+        :param str organization: Your organization information.
+        :param str phone: The phone number of the administrator who you want to use as a contact at your company.
+        :param str postal_code: The postal code of your organization.
+        :param str region: The region of your organization, typically a state or province.
+        :param str address_line_two: The address of your organization.
+        :param str title: The title of the technical contact at Akamai.
+        """
+        pulumi.set(__self__, "address_line_one", address_line_one)
+        pulumi.set(__self__, "city", city)
+        pulumi.set(__self__, "country_code", country_code)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "organization", organization)
+        pulumi.set(__self__, "phone", phone)
+        pulumi.set(__self__, "postal_code", postal_code)
+        pulumi.set(__self__, "region", region)
+        if address_line_two is not None:
+            pulumi.set(__self__, "address_line_two", address_line_two)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter(name="addressLineOne")
+    def address_line_one(self) -> str:
+        """
+        The address of your organization.
+        """
+        return pulumi.get(self, "address_line_one")
+
+    @property
+    @pulumi.getter
+    def city(self) -> str:
+        """
+        The city where your organization resides.
+        """
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="countryCode")
+    def country_code(self) -> str:
+        """
+        The code for the country where your organization resides.
+        """
+        return pulumi.get(self, "country_code")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        """
+        The first name of the technical contact at Akamai.
+        """
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        """
+        The last name of the technical contact at Akamai.
+        """
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def organization(self) -> str:
+        """
+        Your organization information.
+        """
+        return pulumi.get(self, "organization")
+
+    @property
+    @pulumi.getter
+    def phone(self) -> str:
+        """
+        The phone number of the administrator who you want to use as a contact at your company.
+        """
+        return pulumi.get(self, "phone")
+
+    @property
+    @pulumi.getter(name="postalCode")
+    def postal_code(self) -> str:
+        """
+        The postal code of your organization.
+        """
+        return pulumi.get(self, "postal_code")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The region of your organization, typically a state or province.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="addressLineTwo")
+    def address_line_two(self) -> Optional[str]:
+        """
+        The address of your organization.
+        """
+        return pulumi.get(self, "address_line_two")
+
+    @property
+    @pulumi.getter
+    def title(self) -> Optional[str]:
+        """
+        The title of the technical contact at Akamai.
+        """
+        return pulumi.get(self, "title")
+
+
+@pulumi.output_type
 class DatastreamAzureConnector(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1576,14 +2323,13 @@ class DatastreamDatadogConnector(dict):
                  source: Optional[str] = None,
                  tags: Optional[str] = None):
         """
-        :param str auth_token: **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-               * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+        :param str auth_token: **Secret**. Your Log API token for your account in New Relic.
         :param str connector_name: The name of the connector.
         :param str url: Enter the secure URL where you want to send and store your logs.
         :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
         :param str service: The service of the Datadog connector. A service groups together endpoints, queries, or jobs for the purposes of scaling instances. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes).
         :param str source: The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
-        :param str tags: The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+        :param str tags: The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
         """
         pulumi.set(__self__, "auth_token", auth_token)
         pulumi.set(__self__, "connector_name", connector_name)
@@ -1603,8 +2349,7 @@ class DatastreamDatadogConnector(dict):
     @pulumi.getter(name="authToken")
     def auth_token(self) -> str:
         """
-        **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-        * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+        **Secret**. Your Log API token for your account in New Relic.
         """
         return pulumi.get(self, "auth_token")
 
@@ -1657,9 +2402,202 @@ class DatastreamDatadogConnector(dict):
     @pulumi.getter
     def tags(self) -> Optional[str]:
         """
-        The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+        The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
         """
         return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class DatastreamElasticsearchConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorName":
+            suggest = "connector_name"
+        elif key == "indexName":
+            suggest = "index_name"
+        elif key == "userName":
+            suggest = "user_name"
+        elif key == "caCert":
+            suggest = "ca_cert"
+        elif key == "clientCert":
+            suggest = "client_cert"
+        elif key == "clientKey":
+            suggest = "client_key"
+        elif key == "contentType":
+            suggest = "content_type"
+        elif key == "customHeaderName":
+            suggest = "custom_header_name"
+        elif key == "customHeaderValue":
+            suggest = "custom_header_value"
+        elif key == "mTls":
+            suggest = "m_tls"
+        elif key == "tlsHostname":
+            suggest = "tls_hostname"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamElasticsearchConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamElasticsearchConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamElasticsearchConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connector_name: str,
+                 endpoint: str,
+                 index_name: str,
+                 password: str,
+                 user_name: str,
+                 ca_cert: Optional[str] = None,
+                 client_cert: Optional[str] = None,
+                 client_key: Optional[str] = None,
+                 content_type: Optional[str] = None,
+                 custom_header_name: Optional[str] = None,
+                 custom_header_value: Optional[str] = None,
+                 m_tls: Optional[bool] = None,
+                 tls_hostname: Optional[str] = None):
+        """
+        :param str connector_name: The name of the connector.
+        :param str endpoint: The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+               <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+        :param str index_name: **Secret**. The index name of the Elastic cloud where you want to store log files.
+        :param str password: **Secret**. The Elasticsearch basic access authentication password.
+        :param str user_name: **Secret**. The Elasticsearch basic access authentication username.
+        :param str ca_cert: **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+        :param str client_cert: **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        :param str client_key: **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        :param str content_type: Content type to pass in the log file header.
+        :param str custom_header_name: A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        :param str custom_header_value: The custom header's contents passed with the request that contains information about the client connection.
+        :param str tls_hostname: The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+        """
+        pulumi.set(__self__, "connector_name", connector_name)
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "index_name", index_name)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "user_name", user_name)
+        if ca_cert is not None:
+            pulumi.set(__self__, "ca_cert", ca_cert)
+        if client_cert is not None:
+            pulumi.set(__self__, "client_cert", client_cert)
+        if client_key is not None:
+            pulumi.set(__self__, "client_key", client_key)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if custom_header_name is not None:
+            pulumi.set(__self__, "custom_header_name", custom_header_name)
+        if custom_header_value is not None:
+            pulumi.set(__self__, "custom_header_value", custom_header_value)
+        if m_tls is not None:
+            pulumi.set(__self__, "m_tls", m_tls)
+        if tls_hostname is not None:
+            pulumi.set(__self__, "tls_hostname", tls_hostname)
+
+    @property
+    @pulumi.getter(name="connectorName")
+    def connector_name(self) -> str:
+        """
+        The name of the connector.
+        """
+        return pulumi.get(self, "connector_name")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> str:
+        """
+        The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+        <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+        """
+        return pulumi.get(self, "endpoint")
+
+    @property
+    @pulumi.getter(name="indexName")
+    def index_name(self) -> str:
+        """
+        **Secret**. The index name of the Elastic cloud where you want to store log files.
+        """
+        return pulumi.get(self, "index_name")
+
+    @property
+    @pulumi.getter
+    def password(self) -> str:
+        """
+        **Secret**. The Elasticsearch basic access authentication password.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> str:
+        """
+        **Secret**. The Elasticsearch basic access authentication username.
+        """
+        return pulumi.get(self, "user_name")
+
+    @property
+    @pulumi.getter(name="caCert")
+    def ca_cert(self) -> Optional[str]:
+        """
+        **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+        """
+        return pulumi.get(self, "ca_cert")
+
+    @property
+    @pulumi.getter(name="clientCert")
+    def client_cert(self) -> Optional[str]:
+        """
+        **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        """
+        return pulumi.get(self, "client_cert")
+
+    @property
+    @pulumi.getter(name="clientKey")
+    def client_key(self) -> Optional[str]:
+        """
+        **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        """
+        return pulumi.get(self, "client_key")
+
+    @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> Optional[str]:
+        """
+        Content type to pass in the log file header.
+        """
+        return pulumi.get(self, "content_type")
+
+    @property
+    @pulumi.getter(name="customHeaderName")
+    def custom_header_name(self) -> Optional[str]:
+        """
+        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        """
+        return pulumi.get(self, "custom_header_name")
+
+    @property
+    @pulumi.getter(name="customHeaderValue")
+    def custom_header_value(self) -> Optional[str]:
+        """
+        The custom header's contents passed with the request that contains information about the client connection.
+        """
+        return pulumi.get(self, "custom_header_value")
+
+    @property
+    @pulumi.getter(name="mTls")
+    def m_tls(self) -> Optional[bool]:
+        return pulumi.get(self, "m_tls")
+
+    @property
+    @pulumi.getter(name="tlsHostname")
+    def tls_hostname(self) -> Optional[str]:
+        """
+        The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+        """
+        return pulumi.get(self, "tls_hostname")
 
 
 @pulumi.output_type
@@ -1792,10 +2730,26 @@ class DatastreamHttpsConnector(dict):
             suggest = "authentication_type"
         elif key == "connectorName":
             suggest = "connector_name"
+        elif key == "caCert":
+            suggest = "ca_cert"
+        elif key == "clientCert":
+            suggest = "client_cert"
+        elif key == "clientKey":
+            suggest = "client_key"
         elif key == "compressLogs":
             suggest = "compress_logs"
         elif key == "connectorId":
             suggest = "connector_id"
+        elif key == "contentType":
+            suggest = "content_type"
+        elif key == "customHeaderName":
+            suggest = "custom_header_name"
+        elif key == "customHeaderValue":
+            suggest = "custom_header_value"
+        elif key == "mTls":
+            suggest = "m_tls"
+        elif key == "tlsHostname":
+            suggest = "tls_hostname"
         elif key == "userName":
             suggest = "user_name"
 
@@ -1814,27 +2768,58 @@ class DatastreamHttpsConnector(dict):
                  authentication_type: str,
                  connector_name: str,
                  url: str,
+                 ca_cert: Optional[str] = None,
+                 client_cert: Optional[str] = None,
+                 client_key: Optional[str] = None,
                  compress_logs: Optional[bool] = None,
                  connector_id: Optional[int] = None,
+                 content_type: Optional[str] = None,
+                 custom_header_name: Optional[str] = None,
+                 custom_header_value: Optional[str] = None,
+                 m_tls: Optional[bool] = None,
                  password: Optional[str] = None,
+                 tls_hostname: Optional[str] = None,
                  user_name: Optional[str] = None):
         """
         :param str authentication_type: Either `NONE` for no authentication, or `BASIC`. For basic authentication, provide the `user_name` and `password` you set in your custom HTTPS endpoint.
         :param str connector_name: The name of the connector.
         :param str url: Enter the secure URL where you want to send and store your logs.
+        :param str ca_cert: **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+        :param str client_cert: **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        :param str client_key: **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
         :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-        :param str password: **Secret**. Enter the password you set in your custom HTTPS endpoint for authentication.
-        :param str user_name: **Secret**. Enter the valid username you set in your custom HTTPS endpoint for authentication.
+        :param str content_type: Content type to pass in the log file header.
+        :param str custom_header_name: A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        :param str custom_header_value: The custom header's contents passed with the request that contains information about the client connection.
+        :param str password: **Secret**. The Elasticsearch basic access authentication password.
+        :param str tls_hostname: The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+        :param str user_name: **Secret**. The Elasticsearch basic access authentication username.
         """
         pulumi.set(__self__, "authentication_type", authentication_type)
         pulumi.set(__self__, "connector_name", connector_name)
         pulumi.set(__self__, "url", url)
+        if ca_cert is not None:
+            pulumi.set(__self__, "ca_cert", ca_cert)
+        if client_cert is not None:
+            pulumi.set(__self__, "client_cert", client_cert)
+        if client_key is not None:
+            pulumi.set(__self__, "client_key", client_key)
         if compress_logs is not None:
             pulumi.set(__self__, "compress_logs", compress_logs)
         if connector_id is not None:
             pulumi.set(__self__, "connector_id", connector_id)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if custom_header_name is not None:
+            pulumi.set(__self__, "custom_header_name", custom_header_name)
+        if custom_header_value is not None:
+            pulumi.set(__self__, "custom_header_value", custom_header_value)
+        if m_tls is not None:
+            pulumi.set(__self__, "m_tls", m_tls)
         if password is not None:
             pulumi.set(__self__, "password", password)
+        if tls_hostname is not None:
+            pulumi.set(__self__, "tls_hostname", tls_hostname)
         if user_name is not None:
             pulumi.set(__self__, "user_name", user_name)
 
@@ -1863,6 +2848,30 @@ class DatastreamHttpsConnector(dict):
         return pulumi.get(self, "url")
 
     @property
+    @pulumi.getter(name="caCert")
+    def ca_cert(self) -> Optional[str]:
+        """
+        **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+        """
+        return pulumi.get(self, "ca_cert")
+
+    @property
+    @pulumi.getter(name="clientCert")
+    def client_cert(self) -> Optional[str]:
+        """
+        **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        """
+        return pulumi.get(self, "client_cert")
+
+    @property
+    @pulumi.getter(name="clientKey")
+    def client_key(self) -> Optional[str]:
+        """
+        **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        """
+        return pulumi.get(self, "client_key")
+
+    @property
     @pulumi.getter(name="compressLogs")
     def compress_logs(self) -> Optional[bool]:
         """
@@ -1876,20 +2885,275 @@ class DatastreamHttpsConnector(dict):
         return pulumi.get(self, "connector_id")
 
     @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> Optional[str]:
+        """
+        Content type to pass in the log file header.
+        """
+        return pulumi.get(self, "content_type")
+
+    @property
+    @pulumi.getter(name="customHeaderName")
+    def custom_header_name(self) -> Optional[str]:
+        """
+        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        """
+        return pulumi.get(self, "custom_header_name")
+
+    @property
+    @pulumi.getter(name="customHeaderValue")
+    def custom_header_value(self) -> Optional[str]:
+        """
+        The custom header's contents passed with the request that contains information about the client connection.
+        """
+        return pulumi.get(self, "custom_header_value")
+
+    @property
+    @pulumi.getter(name="mTls")
+    def m_tls(self) -> Optional[bool]:
+        return pulumi.get(self, "m_tls")
+
+    @property
     @pulumi.getter
     def password(self) -> Optional[str]:
         """
-        **Secret**. Enter the password you set in your custom HTTPS endpoint for authentication.
+        **Secret**. The Elasticsearch basic access authentication password.
         """
         return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="tlsHostname")
+    def tls_hostname(self) -> Optional[str]:
+        """
+        The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+        """
+        return pulumi.get(self, "tls_hostname")
 
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[str]:
         """
-        **Secret**. Enter the valid username you set in your custom HTTPS endpoint for authentication.
+        **Secret**. The Elasticsearch basic access authentication username.
         """
         return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class DatastreamLogglyConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authToken":
+            suggest = "auth_token"
+        elif key == "connectorName":
+            suggest = "connector_name"
+        elif key == "contentType":
+            suggest = "content_type"
+        elif key == "customHeaderName":
+            suggest = "custom_header_name"
+        elif key == "customHeaderValue":
+            suggest = "custom_header_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamLogglyConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamLogglyConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamLogglyConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 auth_token: str,
+                 connector_name: str,
+                 endpoint: str,
+                 content_type: Optional[str] = None,
+                 custom_header_name: Optional[str] = None,
+                 custom_header_value: Optional[str] = None,
+                 tags: Optional[str] = None):
+        """
+        :param str auth_token: **Secret**. Your Log API token for your account in New Relic.
+        :param str connector_name: The name of the connector.
+        :param str endpoint: The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+               <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+        :param str content_type: Content type to pass in the log file header.
+        :param str custom_header_name: A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        :param str custom_header_value: The custom header's contents passed with the request that contains information about the client connection.
+        :param str tags: The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
+        """
+        pulumi.set(__self__, "auth_token", auth_token)
+        pulumi.set(__self__, "connector_name", connector_name)
+        pulumi.set(__self__, "endpoint", endpoint)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if custom_header_name is not None:
+            pulumi.set(__self__, "custom_header_name", custom_header_name)
+        if custom_header_value is not None:
+            pulumi.set(__self__, "custom_header_value", custom_header_value)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @property
+    @pulumi.getter(name="authToken")
+    def auth_token(self) -> str:
+        """
+        **Secret**. Your Log API token for your account in New Relic.
+        """
+        return pulumi.get(self, "auth_token")
+
+    @property
+    @pulumi.getter(name="connectorName")
+    def connector_name(self) -> str:
+        """
+        The name of the connector.
+        """
+        return pulumi.get(self, "connector_name")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> str:
+        """
+        The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+        <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+        """
+        return pulumi.get(self, "endpoint")
+
+    @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> Optional[str]:
+        """
+        Content type to pass in the log file header.
+        """
+        return pulumi.get(self, "content_type")
+
+    @property
+    @pulumi.getter(name="customHeaderName")
+    def custom_header_name(self) -> Optional[str]:
+        """
+        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        """
+        return pulumi.get(self, "custom_header_name")
+
+    @property
+    @pulumi.getter(name="customHeaderValue")
+    def custom_header_value(self) -> Optional[str]:
+        """
+        The custom header's contents passed with the request that contains information about the client connection.
+        """
+        return pulumi.get(self, "custom_header_value")
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[str]:
+        """
+        The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class DatastreamNewRelicConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authToken":
+            suggest = "auth_token"
+        elif key == "connectorName":
+            suggest = "connector_name"
+        elif key == "contentType":
+            suggest = "content_type"
+        elif key == "customHeaderName":
+            suggest = "custom_header_name"
+        elif key == "customHeaderValue":
+            suggest = "custom_header_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatastreamNewRelicConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatastreamNewRelicConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatastreamNewRelicConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 auth_token: str,
+                 connector_name: str,
+                 endpoint: str,
+                 content_type: Optional[str] = None,
+                 custom_header_name: Optional[str] = None,
+                 custom_header_value: Optional[str] = None):
+        """
+        :param str auth_token: **Secret**. Your Log API token for your account in New Relic.
+        :param str connector_name: The name of the connector.
+        :param str endpoint: The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+               <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+        :param str content_type: Content type to pass in the log file header.
+        :param str custom_header_name: A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        :param str custom_header_value: The custom header's contents passed with the request that contains information about the client connection.
+        """
+        pulumi.set(__self__, "auth_token", auth_token)
+        pulumi.set(__self__, "connector_name", connector_name)
+        pulumi.set(__self__, "endpoint", endpoint)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if custom_header_name is not None:
+            pulumi.set(__self__, "custom_header_name", custom_header_name)
+        if custom_header_value is not None:
+            pulumi.set(__self__, "custom_header_value", custom_header_value)
+
+    @property
+    @pulumi.getter(name="authToken")
+    def auth_token(self) -> str:
+        """
+        **Secret**. Your Log API token for your account in New Relic.
+        """
+        return pulumi.get(self, "auth_token")
+
+    @property
+    @pulumi.getter(name="connectorName")
+    def connector_name(self) -> str:
+        """
+        The name of the connector.
+        """
+        return pulumi.get(self, "connector_name")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> str:
+        """
+        The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+        <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+        """
+        return pulumi.get(self, "endpoint")
+
+    @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> Optional[str]:
+        """
+        Content type to pass in the log file header.
+        """
+        return pulumi.get(self, "content_type")
+
+    @property
+    @pulumi.getter(name="customHeaderName")
+    def custom_header_name(self) -> Optional[str]:
+        """
+        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        """
+        return pulumi.get(self, "custom_header_name")
+
+    @property
+    @pulumi.getter(name="customHeaderValue")
+    def custom_header_value(self) -> Optional[str]:
+        """
+        The custom header's contents passed with the request that contains information about the client connection.
+        """
+        return pulumi.get(self, "custom_header_value")
 
 
 @pulumi.output_type
@@ -2148,10 +3412,24 @@ class DatastreamSplunkConnector(dict):
             suggest = "connector_name"
         elif key == "eventCollectorToken":
             suggest = "event_collector_token"
+        elif key == "caCert":
+            suggest = "ca_cert"
+        elif key == "clientCert":
+            suggest = "client_cert"
+        elif key == "clientKey":
+            suggest = "client_key"
         elif key == "compressLogs":
             suggest = "compress_logs"
         elif key == "connectorId":
             suggest = "connector_id"
+        elif key == "customHeaderName":
+            suggest = "custom_header_name"
+        elif key == "customHeaderValue":
+            suggest = "custom_header_value"
+        elif key == "mTls":
+            suggest = "m_tls"
+        elif key == "tlsHostname":
+            suggest = "tls_hostname"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DatastreamSplunkConnector. Access the value via the '{suggest}' property getter instead.")
@@ -2168,21 +3446,48 @@ class DatastreamSplunkConnector(dict):
                  connector_name: str,
                  event_collector_token: str,
                  url: str,
+                 ca_cert: Optional[str] = None,
+                 client_cert: Optional[str] = None,
+                 client_key: Optional[str] = None,
                  compress_logs: Optional[bool] = None,
-                 connector_id: Optional[int] = None):
+                 connector_id: Optional[int] = None,
+                 custom_header_name: Optional[str] = None,
+                 custom_header_value: Optional[str] = None,
+                 m_tls: Optional[bool] = None,
+                 tls_hostname: Optional[str] = None):
         """
         :param str connector_name: The name of the connector.
         :param str event_collector_token: **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
         :param str url: Enter the secure URL where you want to send and store your logs.
+        :param str ca_cert: **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+        :param str client_cert: **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        :param str client_key: **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
         :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        :param str custom_header_name: A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        :param str custom_header_value: The custom header's contents passed with the request that contains information about the client connection.
+        :param str tls_hostname: The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
         """
         pulumi.set(__self__, "connector_name", connector_name)
         pulumi.set(__self__, "event_collector_token", event_collector_token)
         pulumi.set(__self__, "url", url)
+        if ca_cert is not None:
+            pulumi.set(__self__, "ca_cert", ca_cert)
+        if client_cert is not None:
+            pulumi.set(__self__, "client_cert", client_cert)
+        if client_key is not None:
+            pulumi.set(__self__, "client_key", client_key)
         if compress_logs is not None:
             pulumi.set(__self__, "compress_logs", compress_logs)
         if connector_id is not None:
             pulumi.set(__self__, "connector_id", connector_id)
+        if custom_header_name is not None:
+            pulumi.set(__self__, "custom_header_name", custom_header_name)
+        if custom_header_value is not None:
+            pulumi.set(__self__, "custom_header_value", custom_header_value)
+        if m_tls is not None:
+            pulumi.set(__self__, "m_tls", m_tls)
+        if tls_hostname is not None:
+            pulumi.set(__self__, "tls_hostname", tls_hostname)
 
     @property
     @pulumi.getter(name="connectorName")
@@ -2209,6 +3514,30 @@ class DatastreamSplunkConnector(dict):
         return pulumi.get(self, "url")
 
     @property
+    @pulumi.getter(name="caCert")
+    def ca_cert(self) -> Optional[str]:
+        """
+        **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+        """
+        return pulumi.get(self, "ca_cert")
+
+    @property
+    @pulumi.getter(name="clientCert")
+    def client_cert(self) -> Optional[str]:
+        """
+        **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        """
+        return pulumi.get(self, "client_cert")
+
+    @property
+    @pulumi.getter(name="clientKey")
+    def client_key(self) -> Optional[str]:
+        """
+        **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        """
+        return pulumi.get(self, "client_key")
+
+    @property
     @pulumi.getter(name="compressLogs")
     def compress_logs(self) -> Optional[bool]:
         """
@@ -2220,6 +3549,35 @@ class DatastreamSplunkConnector(dict):
     @pulumi.getter(name="connectorId")
     def connector_id(self) -> Optional[int]:
         return pulumi.get(self, "connector_id")
+
+    @property
+    @pulumi.getter(name="customHeaderName")
+    def custom_header_name(self) -> Optional[str]:
+        """
+        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        """
+        return pulumi.get(self, "custom_header_name")
+
+    @property
+    @pulumi.getter(name="customHeaderValue")
+    def custom_header_value(self) -> Optional[str]:
+        """
+        The custom header's contents passed with the request that contains information about the client connection.
+        """
+        return pulumi.get(self, "custom_header_value")
+
+    @property
+    @pulumi.getter(name="mTls")
+    def m_tls(self) -> Optional[bool]:
+        return pulumi.get(self, "m_tls")
+
+    @property
+    @pulumi.getter(name="tlsHostname")
+    def tls_hostname(self) -> Optional[str]:
+        """
+        The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+        """
+        return pulumi.get(self, "tls_hostname")
 
 
 @pulumi.output_type
@@ -2235,6 +3593,12 @@ class DatastreamSumologicConnector(dict):
             suggest = "compress_logs"
         elif key == "connectorId":
             suggest = "connector_id"
+        elif key == "contentType":
+            suggest = "content_type"
+        elif key == "customHeaderName":
+            suggest = "custom_header_name"
+        elif key == "customHeaderValue":
+            suggest = "custom_header_value"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DatastreamSumologicConnector. Access the value via the '{suggest}' property getter instead.")
@@ -2252,12 +3616,19 @@ class DatastreamSumologicConnector(dict):
                  connector_name: str,
                  endpoint: str,
                  compress_logs: Optional[bool] = None,
-                 connector_id: Optional[int] = None):
+                 connector_id: Optional[int] = None,
+                 content_type: Optional[str] = None,
+                 custom_header_name: Optional[str] = None,
+                 custom_header_value: Optional[str] = None):
         """
         :param str collector_code: **Secret**. The unique HTTP collector code of your Sumo Logic `endpoint`.
         :param str connector_name: The name of the connector.
-        :param str endpoint: The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://<SumoEndpoint>/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+        :param str endpoint: The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+               <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
         :param bool compress_logs: Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
+        :param str content_type: Content type to pass in the log file header.
+        :param str custom_header_name: A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        :param str custom_header_value: The custom header's contents passed with the request that contains information about the client connection.
         """
         pulumi.set(__self__, "collector_code", collector_code)
         pulumi.set(__self__, "connector_name", connector_name)
@@ -2266,6 +3637,12 @@ class DatastreamSumologicConnector(dict):
             pulumi.set(__self__, "compress_logs", compress_logs)
         if connector_id is not None:
             pulumi.set(__self__, "connector_id", connector_id)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if custom_header_name is not None:
+            pulumi.set(__self__, "custom_header_name", custom_header_name)
+        if custom_header_value is not None:
+            pulumi.set(__self__, "custom_header_value", custom_header_value)
 
     @property
     @pulumi.getter(name="collectorCode")
@@ -2287,7 +3664,8 @@ class DatastreamSumologicConnector(dict):
     @pulumi.getter
     def endpoint(self) -> str:
         """
-        The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://<SumoEndpoint>/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+        The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+        <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
         """
         return pulumi.get(self, "endpoint")
 
@@ -2303,6 +3681,30 @@ class DatastreamSumologicConnector(dict):
     @pulumi.getter(name="connectorId")
     def connector_id(self) -> Optional[int]:
         return pulumi.get(self, "connector_id")
+
+    @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> Optional[str]:
+        """
+        Content type to pass in the log file header.
+        """
+        return pulumi.get(self, "content_type")
+
+    @property
+    @pulumi.getter(name="customHeaderName")
+    def custom_header_name(self) -> Optional[str]:
+        """
+        A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        """
+        return pulumi.get(self, "custom_header_name")
+
+    @property
+    @pulumi.getter(name="customHeaderValue")
+    def custom_header_value(self) -> Optional[str]:
+        """
+        The custom header's contents passed with the request that contains information about the client connection.
+        """
+        return pulumi.get(self, "custom_header_value")
 
 
 @pulumi.output_type
@@ -3673,6 +5075,85 @@ class PropertyHostnameCertStatus(dict):
     @pulumi.getter
     def target(self) -> Optional[str]:
         return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class PropertyIncludeActivationComplianceRecord(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "noncomplianceReason":
+            suggest = "noncompliance_reason"
+        elif key == "customerEmail":
+            suggest = "customer_email"
+        elif key == "otherNoncomplianceReason":
+            suggest = "other_noncompliance_reason"
+        elif key == "peerReviewedBy":
+            suggest = "peer_reviewed_by"
+        elif key == "ticketId":
+            suggest = "ticket_id"
+        elif key == "unitTested":
+            suggest = "unit_tested"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyIncludeActivationComplianceRecord. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyIncludeActivationComplianceRecord.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyIncludeActivationComplianceRecord.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 noncompliance_reason: str,
+                 customer_email: Optional[str] = None,
+                 other_noncompliance_reason: Optional[str] = None,
+                 peer_reviewed_by: Optional[str] = None,
+                 ticket_id: Optional[str] = None,
+                 unit_tested: Optional[bool] = None):
+        pulumi.set(__self__, "noncompliance_reason", noncompliance_reason)
+        if customer_email is not None:
+            pulumi.set(__self__, "customer_email", customer_email)
+        if other_noncompliance_reason is not None:
+            pulumi.set(__self__, "other_noncompliance_reason", other_noncompliance_reason)
+        if peer_reviewed_by is not None:
+            pulumi.set(__self__, "peer_reviewed_by", peer_reviewed_by)
+        if ticket_id is not None:
+            pulumi.set(__self__, "ticket_id", ticket_id)
+        if unit_tested is not None:
+            pulumi.set(__self__, "unit_tested", unit_tested)
+
+    @property
+    @pulumi.getter(name="noncomplianceReason")
+    def noncompliance_reason(self) -> str:
+        return pulumi.get(self, "noncompliance_reason")
+
+    @property
+    @pulumi.getter(name="customerEmail")
+    def customer_email(self) -> Optional[str]:
+        return pulumi.get(self, "customer_email")
+
+    @property
+    @pulumi.getter(name="otherNoncomplianceReason")
+    def other_noncompliance_reason(self) -> Optional[str]:
+        return pulumi.get(self, "other_noncompliance_reason")
+
+    @property
+    @pulumi.getter(name="peerReviewedBy")
+    def peer_reviewed_by(self) -> Optional[str]:
+        return pulumi.get(self, "peer_reviewed_by")
+
+    @property
+    @pulumi.getter(name="ticketId")
+    def ticket_id(self) -> Optional[str]:
+        return pulumi.get(self, "ticket_id")
+
+    @property
+    @pulumi.getter(name="unitTested")
+    def unit_tested(self) -> Optional[bool]:
+        return pulumi.get(self, "unit_tested")
 
 
 @pulumi.output_type
@@ -8091,6 +9572,167 @@ class GetDatastreamDatasetFieldsFieldDatasetFieldResult(dict):
 
 
 @pulumi.output_type
+class GetDatastreamsStreamResult(dict):
+    def __init__(__self__, *,
+                 activation_status: str,
+                 archived: bool,
+                 connectors: str,
+                 contract_id: str,
+                 created_by: str,
+                 created_date: str,
+                 current_version_id: int,
+                 errors: Sequence['outputs.GetDatastreamsStreamErrorResult'],
+                 group_id: int,
+                 group_name: str,
+                 properties: Sequence['outputs.GetDatastreamsStreamPropertyResult'],
+                 stream_id: int,
+                 stream_name: str,
+                 stream_type_name: str,
+                 stream_version_id: int):
+        """
+        :param int group_id: Unique identifier of the group that can access the product.
+        """
+        pulumi.set(__self__, "activation_status", activation_status)
+        pulumi.set(__self__, "archived", archived)
+        pulumi.set(__self__, "connectors", connectors)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_date", created_date)
+        pulumi.set(__self__, "current_version_id", current_version_id)
+        pulumi.set(__self__, "errors", errors)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "group_name", group_name)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "stream_id", stream_id)
+        pulumi.set(__self__, "stream_name", stream_name)
+        pulumi.set(__self__, "stream_type_name", stream_type_name)
+        pulumi.set(__self__, "stream_version_id", stream_version_id)
+
+    @property
+    @pulumi.getter(name="activationStatus")
+    def activation_status(self) -> str:
+        return pulumi.get(self, "activation_status")
+
+    @property
+    @pulumi.getter
+    def archived(self) -> bool:
+        return pulumi.get(self, "archived")
+
+    @property
+    @pulumi.getter
+    def connectors(self) -> str:
+        return pulumi.get(self, "connectors")
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> str:
+        return pulumi.get(self, "contract_id")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="createdDate")
+    def created_date(self) -> str:
+        return pulumi.get(self, "created_date")
+
+    @property
+    @pulumi.getter(name="currentVersionId")
+    def current_version_id(self) -> int:
+        return pulumi.get(self, "current_version_id")
+
+    @property
+    @pulumi.getter
+    def errors(self) -> Sequence['outputs.GetDatastreamsStreamErrorResult']:
+        return pulumi.get(self, "errors")
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> int:
+        """
+        Unique identifier of the group that can access the product.
+        """
+        return pulumi.get(self, "group_id")
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> str:
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetDatastreamsStreamPropertyResult']:
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter(name="streamId")
+    def stream_id(self) -> int:
+        return pulumi.get(self, "stream_id")
+
+    @property
+    @pulumi.getter(name="streamName")
+    def stream_name(self) -> str:
+        return pulumi.get(self, "stream_name")
+
+    @property
+    @pulumi.getter(name="streamTypeName")
+    def stream_type_name(self) -> str:
+        return pulumi.get(self, "stream_type_name")
+
+    @property
+    @pulumi.getter(name="streamVersionId")
+    def stream_version_id(self) -> int:
+        return pulumi.get(self, "stream_version_id")
+
+
+@pulumi.output_type
+class GetDatastreamsStreamErrorResult(dict):
+    def __init__(__self__, *,
+                 detail: str,
+                 title: str,
+                 type: str):
+        pulumi.set(__self__, "detail", detail)
+        pulumi.set(__self__, "title", title)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def detail(self) -> str:
+        return pulumi.get(self, "detail")
+
+    @property
+    @pulumi.getter
+    def title(self) -> str:
+        return pulumi.get(self, "title")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatastreamsStreamPropertyResult(dict):
+    def __init__(__self__, *,
+                 property_id: int,
+                 property_name: str):
+        pulumi.set(__self__, "property_id", property_id)
+        pulumi.set(__self__, "property_name", property_name)
+
+    @property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> int:
+        return pulumi.get(self, "property_id")
+
+    @property
+    @pulumi.getter(name="propertyName")
+    def property_name(self) -> str:
+        return pulumi.get(self, "property_name")
+
+
+@pulumi.output_type
 class GetGroupsGroupResult(dict):
     def __init__(__self__, *,
                  contract_ids: Sequence[str],
@@ -8502,6 +10144,139 @@ class GetPropertyHostnamesHostnameCertStatusResult(dict):
     @pulumi.getter
     def target(self) -> str:
         return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class GetPropertyIncludeParentsParentResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 is_include_used_in_production_version: bool,
+                 is_include_used_in_staging_version: bool,
+                 name: str,
+                 production_version: str,
+                 staging_version: str):
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_include_used_in_production_version", is_include_used_in_production_version)
+        pulumi.set(__self__, "is_include_used_in_staging_version", is_include_used_in_staging_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "production_version", production_version)
+        pulumi.set(__self__, "staging_version", staging_version)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isIncludeUsedInProductionVersion")
+    def is_include_used_in_production_version(self) -> bool:
+        return pulumi.get(self, "is_include_used_in_production_version")
+
+    @property
+    @pulumi.getter(name="isIncludeUsedInStagingVersion")
+    def is_include_used_in_staging_version(self) -> bool:
+        return pulumi.get(self, "is_include_used_in_staging_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="productionVersion")
+    def production_version(self) -> str:
+        return pulumi.get(self, "production_version")
+
+    @property
+    @pulumi.getter(name="stagingVersion")
+    def staging_version(self) -> str:
+        return pulumi.get(self, "staging_version")
+
+
+@pulumi.output_type
+class GetPropertyIncludesIncludeResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 latest_version: int,
+                 name: str,
+                 production_version: str,
+                 staging_version: str,
+                 type: str):
+        """
+        :param str id: - (Required) The property's unique identifier.
+        :param str type: - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "latest_version", latest_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "production_version", production_version)
+        pulumi.set(__self__, "staging_version", staging_version)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        - (Required) The property's unique identifier.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="latestVersion")
+    def latest_version(self) -> int:
+        return pulumi.get(self, "latest_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="productionVersion")
+    def production_version(self) -> str:
+        return pulumi.get(self, "production_version")
+
+    @property
+    @pulumi.getter(name="stagingVersion")
+    def staging_version(self) -> str:
+        return pulumi.get(self, "staging_version")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetPropertyIncludesParentPropertyResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 version: int):
+        """
+        :param str id: - (Required) The property's unique identifier.
+        :param int version: - (Required) The version of the activated parent property.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        - (Required) The property's unique identifier.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def version(self) -> int:
+        """
+        - (Required) The version of the activated parent property.
+        """
+        return pulumi.get(self, "version")
 
 
 @pulumi.output_type

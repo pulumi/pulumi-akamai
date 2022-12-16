@@ -17,7 +17,7 @@ namespace Pulumi.Akamai
     /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}](https://techdocs.akamai.com/application-security/reference/put-policy)
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename")]
-    public partial class AppSecSecurityPolicyRename : Pulumi.CustomResource
+    public partial class AppSecSecurityPolicyRename : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the security policy being renamed.
@@ -81,7 +81,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecSecurityPolicyRenameArgs : Pulumi.ResourceArgs
+    public sealed class AppSecSecurityPolicyRenameArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the security policy being renamed.
@@ -104,9 +104,10 @@ namespace Pulumi.Akamai
         public AppSecSecurityPolicyRenameArgs()
         {
         }
+        public static new AppSecSecurityPolicyRenameArgs Empty => new AppSecSecurityPolicyRenameArgs();
     }
 
-    public sealed class AppSecSecurityPolicyRenameState : Pulumi.ResourceArgs
+    public sealed class AppSecSecurityPolicyRenameState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the security policy being renamed.
@@ -129,5 +130,6 @@ namespace Pulumi.Akamai
         public AppSecSecurityPolicyRenameState()
         {
         }
+        public static new AppSecSecurityPolicyRenameState Empty => new AppSecSecurityPolicyRenameState();
     }
 }

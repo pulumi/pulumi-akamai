@@ -5,23 +5,46 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getGtmDefaultDatacenter";
-export * from "./gtmASmap";
-export * from "./gtmCidrmap";
-export * from "./gtmDatacenter";
-export * from "./gtmDomain";
-export * from "./gtmGeomap";
-export * from "./gtmProperty";
-export * from "./gtmResource";
+export { GetGtmDefaultDatacenterArgs, GetGtmDefaultDatacenterResult, GetGtmDefaultDatacenterOutputArgs } from "./getGtmDefaultDatacenter";
+export const getGtmDefaultDatacenter: typeof import("./getGtmDefaultDatacenter").getGtmDefaultDatacenter = null as any;
+export const getGtmDefaultDatacenterOutput: typeof import("./getGtmDefaultDatacenter").getGtmDefaultDatacenterOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmDefaultDatacenter","getGtmDefaultDatacenterOutput"], () => require("./getGtmDefaultDatacenter"));
 
-// Import resources to register:
-import { GtmASmap } from "./gtmASmap";
-import { GtmCidrmap } from "./gtmCidrmap";
-import { GtmDatacenter } from "./gtmDatacenter";
-import { GtmDomain } from "./gtmDomain";
-import { GtmGeomap } from "./gtmGeomap";
-import { GtmProperty } from "./gtmProperty";
-import { GtmResource } from "./gtmResource";
+export { GtmASmapArgs, GtmASmapState } from "./gtmASmap";
+export type GtmASmap = import("./gtmASmap").GtmASmap;
+export const GtmASmap: typeof import("./gtmASmap").GtmASmap = null as any;
+utilities.lazyLoad(exports, ["GtmASmap"], () => require("./gtmASmap"));
+
+export { GtmCidrmapArgs, GtmCidrmapState } from "./gtmCidrmap";
+export type GtmCidrmap = import("./gtmCidrmap").GtmCidrmap;
+export const GtmCidrmap: typeof import("./gtmCidrmap").GtmCidrmap = null as any;
+utilities.lazyLoad(exports, ["GtmCidrmap"], () => require("./gtmCidrmap"));
+
+export { GtmDatacenterArgs, GtmDatacenterState } from "./gtmDatacenter";
+export type GtmDatacenter = import("./gtmDatacenter").GtmDatacenter;
+export const GtmDatacenter: typeof import("./gtmDatacenter").GtmDatacenter = null as any;
+utilities.lazyLoad(exports, ["GtmDatacenter"], () => require("./gtmDatacenter"));
+
+export { GtmDomainArgs, GtmDomainState } from "./gtmDomain";
+export type GtmDomain = import("./gtmDomain").GtmDomain;
+export const GtmDomain: typeof import("./gtmDomain").GtmDomain = null as any;
+utilities.lazyLoad(exports, ["GtmDomain"], () => require("./gtmDomain"));
+
+export { GtmGeomapArgs, GtmGeomapState } from "./gtmGeomap";
+export type GtmGeomap = import("./gtmGeomap").GtmGeomap;
+export const GtmGeomap: typeof import("./gtmGeomap").GtmGeomap = null as any;
+utilities.lazyLoad(exports, ["GtmGeomap"], () => require("./gtmGeomap"));
+
+export { GtmPropertyArgs, GtmPropertyState } from "./gtmProperty";
+export type GtmProperty = import("./gtmProperty").GtmProperty;
+export const GtmProperty: typeof import("./gtmProperty").GtmProperty = null as any;
+utilities.lazyLoad(exports, ["GtmProperty"], () => require("./gtmProperty"));
+
+export { GtmResourceArgs, GtmResourceState } from "./gtmResource";
+export type GtmResource = import("./gtmResource").GtmResource;
+export const GtmResource: typeof import("./gtmResource").GtmResource = null as any;
+utilities.lazyLoad(exports, ["GtmResource"], () => require("./gtmResource"));
+
 
 const _module = {
     version: utilities.getVersion(),

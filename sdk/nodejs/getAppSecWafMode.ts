@@ -47,11 +47,8 @@ import * as utilities from "./utilities";
  * - `json`. JSON-formatted list of the mode information.
  */
 export function getAppSecWafMode(args: GetAppSecWafModeArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecWafModeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecWafMode:getAppSecWafMode", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
@@ -90,9 +87,50 @@ export interface GetAppSecWafModeResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-
+/**
+ * **Scopes**: Security policy
+ *
+ * Returns information about how the Kona Rule Set rules associated with a security configuration and security policy are updated. The WAF (Web Application Firewall) mode determines whether Kona Rule Sets are automatically updated as part of automated attack groups (`mode = AAG`) or whether you must periodically check for new rules and then manually update those rules yourself (`mode = KRS`).
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://techdocs.akamai.com/application-security/reference/get-policy-mode)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const wafMode = configuration.then(configuration => akamai.getAppSecWafMode({
+ *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
+ * }));
+ * export const wafModeMode = wafMode.then(wafMode => wafMode.mode);
+ * export const wafModeCurrentRuleset = wafMode.then(wafMode => wafMode.currentRuleset);
+ * export const wafModeEvalStatus = wafMode.then(wafMode => wafMode.evalStatus);
+ * export const wafModeEvalRuleset = wafMode.then(wafMode => wafMode.evalRuleset);
+ * export const wafModeEvalExpirationDate = wafMode.then(wafMode => wafMode.evalExpirationDate);
+ * export const wafModeText = wafMode.then(wafMode => wafMode.outputText);
+ * export const wafModeJson = wafMode.then(wafMode => wafMode.json);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `mode`. Security policy mode, either **KRS** (update manually) or **AAG** (update automatically), For organizations running the Adaptive Security Engine (ASE) beta, you'll get back **ASE_AUTO** for automatic updates or **ASE_MANUAL** for manual updates. Please contact your Akamai representative to learn more about ASE.
+ * - `currentRuleset`. Current ruleset version and the ISO 8601 date the version was introduced.
+ * - `evalStatus`. Specifies whether evaluation mode is enabled or disabled.
+ * - `evalRuleset`. Evaluation ruleset version and the ISO 8601 date the evaluation began.
+ * - `evalExpirationDate`. ISO 8601 timestamp indicating when evaluation mode expires. Valid only if `evalStatus` is set to **enabled**.
+ * - `outputText`. Tabular report of the mode information.
+ * - `json`. JSON-formatted list of the mode information.
+ */
 export function getAppSecWafModeOutput(args: GetAppSecWafModeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecWafModeResult> {
-    return pulumi.output(args).apply(a => getAppSecWafMode(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecWafMode(a, opts))
 }
 
 /**

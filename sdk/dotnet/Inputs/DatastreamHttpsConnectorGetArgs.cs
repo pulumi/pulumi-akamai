@@ -10,13 +10,61 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class DatastreamHttpsConnectorGetArgs : Pulumi.ResourceArgs
+    public sealed class DatastreamHttpsConnectorGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Either `NONE` for no authentication, or `BASIC`. For basic authentication, provide the `user_name` and `password` you set in your custom HTTPS endpoint.
         /// </summary>
         [Input("authenticationType", required: true)]
         public Input<string> AuthenticationType { get; set; } = null!;
+
+        [Input("caCert")]
+        private Input<string>? _caCert;
+
+        /// <summary>
+        /// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+        /// </summary>
+        public Input<string>? CaCert
+        {
+            get => _caCert;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _caCert = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("clientCert")]
+        private Input<string>? _clientCert;
+
+        /// <summary>
+        /// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        /// </summary>
+        public Input<string>? ClientCert
+        {
+            get => _clientCert;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clientCert = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("clientKey")]
+        private Input<string>? _clientKey;
+
+        /// <summary>
+        /// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        /// </summary>
+        public Input<string>? ClientKey
+        {
+            get => _clientKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clientKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
@@ -34,10 +82,47 @@ namespace Pulumi.Akamai.Inputs
         public Input<string> ConnectorName { get; set; } = null!;
 
         /// <summary>
-        /// **Secret**. Enter the password you set in your custom HTTPS endpoint for authentication.
+        /// Content type to pass in the log file header.
         /// </summary>
+        [Input("contentType")]
+        public Input<string>? ContentType { get; set; }
+
+        /// <summary>
+        /// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        /// </summary>
+        [Input("customHeaderName")]
+        public Input<string>? CustomHeaderName { get; set; }
+
+        /// <summary>
+        /// The custom header's contents passed with the request that contains information about the client connection.
+        /// </summary>
+        [Input("customHeaderValue")]
+        public Input<string>? CustomHeaderValue { get; set; }
+
+        [Input("mTls")]
+        public Input<bool>? MTls { get; set; }
+
         [Input("password")]
-        public Input<string>? Password { get; set; }
+        private Input<string>? _password;
+
+        /// <summary>
+        /// **Secret**. The Elasticsearch basic access authentication password.
+        /// </summary>
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+        /// </summary>
+        [Input("tlsHostname")]
+        public Input<string>? TlsHostname { get; set; }
 
         /// <summary>
         /// Enter the secure URL where you want to send and store your logs.
@@ -45,14 +130,25 @@ namespace Pulumi.Akamai.Inputs
         [Input("url", required: true)]
         public Input<string> Url { get; set; } = null!;
 
-        /// <summary>
-        /// **Secret**. Enter the valid username you set in your custom HTTPS endpoint for authentication.
-        /// </summary>
         [Input("userName")]
-        public Input<string>? UserName { get; set; }
+        private Input<string>? _userName;
+
+        /// <summary>
+        /// **Secret**. The Elasticsearch basic access authentication username.
+        /// </summary>
+        public Input<string>? UserName
+        {
+            get => _userName;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _userName = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public DatastreamHttpsConnectorGetArgs()
         {
         }
+        public static new DatastreamHttpsConnectorGetArgs Empty => new DatastreamHttpsConnectorGetArgs();
     }
 }

@@ -10,13 +10,23 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class DatastreamOracleConnectorGetArgs : Pulumi.ResourceArgs
+    public sealed class DatastreamOracleConnectorGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("accessKey", required: true)]
+        private Input<string>? _accessKey;
+
         /// <summary>
         /// **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
         /// </summary>
-        [Input("accessKey", required: true)]
-        public Input<string> AccessKey { get; set; } = null!;
+        public Input<string>? AccessKey
+        {
+            get => _accessKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _accessKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
@@ -57,14 +67,25 @@ namespace Pulumi.Akamai.Inputs
         [Input("region", required: true)]
         public Input<string> Region { get; set; } = null!;
 
+        [Input("secretAccessKey", required: true)]
+        private Input<string>? _secretAccessKey;
+
         /// <summary>
         /// **Secret**. The secret access key identifier that you use to authenticate requests to your Oracle Cloud account.
         /// </summary>
-        [Input("secretAccessKey", required: true)]
-        public Input<string> SecretAccessKey { get; set; } = null!;
+        public Input<string>? SecretAccessKey
+        {
+            get => _secretAccessKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _secretAccessKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public DatastreamOracleConnectorGetArgs()
         {
         }
+        public static new DatastreamOracleConnectorGetArgs Empty => new DatastreamOracleConnectorGetArgs();
     }
 }

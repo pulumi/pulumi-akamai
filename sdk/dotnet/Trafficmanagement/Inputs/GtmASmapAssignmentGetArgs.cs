@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Trafficmanagement.Inputs
 {
 
-    public sealed class GtmASmapAssignmentGetArgs : Pulumi.ResourceArgs
+    public sealed class GtmASmapAssignmentGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("asNumbers", required: true)]
         private InputList<int>? _asNumbers;
@@ -39,5 +39,6 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
         public GtmASmapAssignmentGetArgs()
         {
         }
+        public static new GtmASmapAssignmentGetArgs Empty => new GtmASmapAssignmentGetArgs();
     }
 }

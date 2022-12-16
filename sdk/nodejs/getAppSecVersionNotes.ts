@@ -36,11 +36,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report showing the version notes.
  */
 export function getAppSecVersionNotes(args: GetAppSecVersionNotesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecVersionNotesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", {
         "configId": args.configId,
     }, opts);
@@ -68,9 +65,39 @@ export interface GetAppSecVersionNotesResult {
     readonly json: string;
     readonly outputText: string;
 }
-
+/**
+ * **Scopes**: Security configuration
+ *
+ * Returns the most recent version notes for a security configuration.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://techdocs.akamai.com/application-security/reference/get-version-notes)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const versionNotes = configuration.then(configuration => akamai.getAppSecVersionNotes({
+ *     configId: configuration.configId,
+ * }));
+ * export const versionNotesText = versionNotes.then(versionNotes => versionNotes.outputText);
+ * export const versionNotesJson = versionNotes.then(versionNotes => versionNotes.json);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list showing the version notes.
+ * - `outputText`. Tabular report showing the version notes.
+ */
 export function getAppSecVersionNotesOutput(args: GetAppSecVersionNotesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecVersionNotesResult> {
-    return pulumi.output(args).apply(a => getAppSecVersionNotes(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecVersionNotes(a, opts))
 }
 
 /**

@@ -20,20 +20,20 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
 //				Name: pulumi.StringRef("Documentation"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			apiEndpoint, err := akamai.GetAppSecApiEndpoints(ctx, &GetAppSecApiEndpointsArgs{
+//			apiEndpoint, err := akamai.GetAppSecApiEndpoints(ctx, &akamai.GetAppSecApiEndpointsArgs{
 //				ConfigId:         configuration.ConfigId,
 //				SecurityPolicyId: pulumi.StringRef("gms1_134637"),
 //				ApiName:          pulumi.StringRef("Contracts"),

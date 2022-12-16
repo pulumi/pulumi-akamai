@@ -18,11 +18,8 @@ import * as utilities from "../utilities";
 /** @deprecated akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter */
 export function getGtmDefaultDatacenter(args: GetGtmDefaultDatacenterArgs, opts?: pulumi.InvokeOptions): Promise<GetGtmDefaultDatacenterResult> {
     pulumi.log.warn("getGtmDefaultDatacenter is deprecated: akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter")
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", {
         "datacenter": args.datacenter,
         "domain": args.domain,
@@ -53,9 +50,20 @@ export interface GetGtmDefaultDatacenterResult {
     readonly id: string;
     readonly nickname: string;
 }
-
+/**
+ * Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
+ *
+ * ## Attributes reference
+ *
+ * This data source supports these attributes:
+ *
+ * * `id` - The data resource ID. Enter in this format: `<domain>:default_datacenter:<datacenter_id>`.
+ * * `datacenterId` - The default data center ID.
+ * * `nickname` - The default data center nickname.
+ */
+/** @deprecated akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter */
 export function getGtmDefaultDatacenterOutput(args: GetGtmDefaultDatacenterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmDefaultDatacenterResult> {
-    return pulumi.output(args).apply(a => getGtmDefaultDatacenter(a, opts))
+    return pulumi.output(args).apply((a: any) => getGtmDefaultDatacenter(a, opts))
 }
 
 /**

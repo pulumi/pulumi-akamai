@@ -5,11 +5,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getEdgeWorkersPropertyRules(args: GetEdgeWorkersPropertyRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetEdgeWorkersPropertyRulesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", {
         "edgeworkerId": args.edgeworkerId,
     }, opts);
@@ -36,9 +33,8 @@ export interface GetEdgeWorkersPropertyRulesResult {
     readonly id: string;
     readonly json: string;
 }
-
 export function getEdgeWorkersPropertyRulesOutput(args: GetEdgeWorkersPropertyRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeWorkersPropertyRulesResult> {
-    return pulumi.output(args).apply(a => getEdgeWorkersPropertyRules(a, opts))
+    return pulumi.output(args).apply((a: any) => getEdgeWorkersPropertyRules(a, opts))
 }
 
 /**

@@ -19,36 +19,34 @@ namespace Pulumi.Akamai.Trafficmanagement
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var demoProperty = new Akamai.GtmProperty("demoProperty", new()
     ///     {
-    ///         var demoProperty = new Akamai.GtmProperty("demoProperty", new Akamai.GtmPropertyArgs
+    ///         Domain = "demo_domain.akadns.net",
+    ///         HandoutLimit = 5,
+    ///         HandoutMode = "normal",
+    ///         ScoreAggregationType = "median",
+    ///         TrafficTargets = new[]
     ///         {
-    ///             Domain = "demo_domain.akadns.net",
-    ///             HandoutLimit = 5,
-    ///             HandoutMode = "normal",
-    ///             ScoreAggregationType = "median",
-    ///             TrafficTargets = 
+    ///             new Akamai.Inputs.GtmPropertyTrafficTargetArgs
     ///             {
-    ///                 new Akamai.Inputs.GtmPropertyTrafficTargetArgs
-    ///                 {
-    ///                     DatacenterId = 3131,
-    ///                 },
+    ///                 DatacenterId = 3131,
     ///             },
-    ///             Type = "weighted-round-robin",
-    ///         });
-    ///     }
+    ///         },
+    ///         Type = "weighted-round-robin",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [Obsolete(@"akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmProperty:GtmProperty")]
-    public partial class GtmProperty : Pulumi.CustomResource
+    public partial class GtmProperty : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
@@ -289,7 +287,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         }
     }
 
-    public sealed class GtmPropertyArgs : Pulumi.ResourceArgs
+    public sealed class GtmPropertyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
@@ -501,9 +499,10 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmPropertyArgs()
         {
         }
+        public static new GtmPropertyArgs Empty => new GtmPropertyArgs();
     }
 
-    public sealed class GtmPropertyState : Pulumi.ResourceArgs
+    public sealed class GtmPropertyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Specifies a backup CNAME. If GTM declares that all of the servers configured for your property are down, the backup CNAME is handed out. If a backup CNAME is set, do not set a backup IP.
@@ -721,5 +720,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmPropertyState()
         {
         }
+        public static new GtmPropertyState Empty => new GtmPropertyState();
     }
 }

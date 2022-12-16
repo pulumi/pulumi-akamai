@@ -32,11 +32,8 @@ import * as utilities from "./utilities";
  */
 export function getNetworkLists(args?: GetNetworkListsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkListsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getNetworkLists:getNetworkLists", {
         "name": args.name,
         "networkListId": args.networkListId,
@@ -91,9 +88,34 @@ export interface GetNetworkListsResult {
     readonly outputText: string;
     readonly type?: string;
 }
-
+/**
+ * Use the `akamai.getNetworkLists` data source to retrieve information about the available network lists,
+ * optionally filtered by list type or based on a search string. The information available is described in
+ * [List network lists](https://techdocs.akamai.com/network-lists/reference/get-network-lists).
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const networkLists = akamai.getNetworkLists({});
+ * export const networkListsText = networkLists.then(networkLists => networkLists.outputText);
+ * export const networkListsJson = networkLists.then(networkLists => networkLists.json);
+ * export const networkListsList = networkLists.then(networkLists => networkLists.lists);
+ * const networkListsFilter = akamai.getNetworkLists({
+ *     name: "Test Whitelist",
+ *     type: "IP",
+ * });
+ * export const networkListsFilterText = networkListsFilter.then(networkListsFilter => networkListsFilter.outputText);
+ * export const networkListsFilterJson = networkListsFilter.then(networkListsFilter => networkListsFilter.json);
+ * export const networkListsFilterList = networkListsFilter.then(networkListsFilter => networkListsFilter.lists);
+ * ```
+ */
 export function getNetworkListsOutput(args?: GetNetworkListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkListsResult> {
-    return pulumi.output(args).apply(a => getNetworkLists(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkLists(a, opts))
 }
 
 /**

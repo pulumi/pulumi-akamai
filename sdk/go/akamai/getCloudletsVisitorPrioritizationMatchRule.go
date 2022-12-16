@@ -23,20 +23,20 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.GetCloudletsVisitorPrioritizationMatchRule(ctx, &GetCloudletsVisitorPrioritizationMatchRuleArgs{
-//				MatchRules: []GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
-//					GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
+//			_, err = akamai.GetCloudletsVisitorPrioritizationMatchRule(ctx, &akamai.GetCloudletsVisitorPrioritizationMatchRuleArgs{
+//				MatchRules: []akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
+//					akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
 //						End:      pulumi.IntRef(1645037845),
 //						MatchUrl: pulumi.StringRef("example.com"),
-//						Matches: []GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
-//							GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
+//						Matches: []akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
+//							akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
 //								CaseSensitive: pulumi.BoolRef(false),
 //								CheckIps:      pulumi.StringRef("CONNECTING_IP"),
 //								MatchOperator: pulumi.StringRef("equals"),

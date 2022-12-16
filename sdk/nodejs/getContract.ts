@@ -7,33 +7,14 @@ import * as utilities from "./utilities";
 /**
  * Use the `akamai.getContract` data source to find a contract ID.
  *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const exampleContract = pulumi.output(akamai.getContract({
- *     groupName: "example group name",
- * }));
- * const exampleProperty = new akamai.Property("example", {
- *     contractId: "",
- *     "data.akamai_contract.example.id": [{}],
- * });
- * ```
  * ## Attributes reference
  *
  * * `id` - The contract's unique ID, including the `ctr_` prefix.
  */
 export function getContract(args?: GetContractArgs, opts?: pulumi.InvokeOptions): Promise<GetContractResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getContract:getContract", {
         "group": args.group,
         "groupId": args.groupId,
@@ -76,9 +57,15 @@ export interface GetContractResult {
      */
     readonly id: string;
 }
-
+/**
+ * Use the `akamai.getContract` data source to find a contract ID.
+ *
+ * ## Attributes reference
+ *
+ * * `id` - The contract's unique ID, including the `ctr_` prefix.
+ */
 export function getContractOutput(args?: GetContractOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContractResult> {
-    return pulumi.output(args).apply(a => getContract(a, opts))
+    return pulumi.output(args).apply((a: any) => getContract(a, opts))
 }
 
 /**

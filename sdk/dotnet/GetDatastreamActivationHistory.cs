@@ -21,26 +21,23 @@ namespace Pulumi.Akamai
         /// This example returns the activation history for a provided stream ID:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var ds = Akamai.GetDatastreamActivationHistory.Invoke(new()
         ///     {
-        ///         var ds = Output.Create(Akamai.GetDatastreamActivationHistory.InvokeAsync(new Akamai.GetDatastreamActivationHistoryArgs
-        ///         {
-        ///             StreamId = 12345,
-        ///         }));
-        ///         this.DsHistoryStreamId = ds.Apply(ds =&gt; ds.StreamId);
-        ///         this.DsHistoryActivations = ds.Apply(ds =&gt; ds.Activations);
-        ///     }
+        ///         StreamId = 12345,
+        ///     });
         /// 
-        ///     [Output("dsHistoryStreamId")]
-        ///     public Output&lt;string&gt; DsHistoryStreamId { get; set; }
-        ///     [Output("dsHistoryActivations")]
-        ///     public Output&lt;string&gt; DsHistoryActivations { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["dsHistoryStreamId"] = ds.Apply(getDatastreamActivationHistoryResult =&gt; getDatastreamActivationHistoryResult.StreamId),
+        ///         ["dsHistoryActivations"] = ds.Apply(getDatastreamActivationHistoryResult =&gt; getDatastreamActivationHistoryResult.Activations),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,7 +53,7 @@ namespace Pulumi.Akamai
         ///   * `is_active` -	Whether the version of the stream is active.
         /// </summary>
         public static Task<GetDatastreamActivationHistoryResult> InvokeAsync(GetDatastreamActivationHistoryArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatastreamActivationHistoryResult>("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args ?? new GetDatastreamActivationHistoryArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatastreamActivationHistoryResult>("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args ?? new GetDatastreamActivationHistoryArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getDatastreamActivationHistory` data source to list detailed information about the activation status changes for all versions of a stream.
@@ -68,26 +65,23 @@ namespace Pulumi.Akamai
         /// This example returns the activation history for a provided stream ID:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var ds = Akamai.GetDatastreamActivationHistory.Invoke(new()
         ///     {
-        ///         var ds = Output.Create(Akamai.GetDatastreamActivationHistory.InvokeAsync(new Akamai.GetDatastreamActivationHistoryArgs
-        ///         {
-        ///             StreamId = 12345,
-        ///         }));
-        ///         this.DsHistoryStreamId = ds.Apply(ds =&gt; ds.StreamId);
-        ///         this.DsHistoryActivations = ds.Apply(ds =&gt; ds.Activations);
-        ///     }
+        ///         StreamId = 12345,
+        ///     });
         /// 
-        ///     [Output("dsHistoryStreamId")]
-        ///     public Output&lt;string&gt; DsHistoryStreamId { get; set; }
-        ///     [Output("dsHistoryActivations")]
-        ///     public Output&lt;string&gt; DsHistoryActivations { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["dsHistoryStreamId"] = ds.Apply(getDatastreamActivationHistoryResult =&gt; getDatastreamActivationHistoryResult.StreamId),
+        ///         ["dsHistoryActivations"] = ds.Apply(getDatastreamActivationHistoryResult =&gt; getDatastreamActivationHistoryResult.Activations),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -103,11 +97,11 @@ namespace Pulumi.Akamai
         ///   * `is_active` -	Whether the version of the stream is active.
         /// </summary>
         public static Output<GetDatastreamActivationHistoryResult> Invoke(GetDatastreamActivationHistoryInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatastreamActivationHistoryResult>("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args ?? new GetDatastreamActivationHistoryInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatastreamActivationHistoryResult>("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args ?? new GetDatastreamActivationHistoryInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetDatastreamActivationHistoryArgs : Pulumi.InvokeArgs
+    public sealed class GetDatastreamActivationHistoryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) A stream's unique identifier.
@@ -118,9 +112,10 @@ namespace Pulumi.Akamai
         public GetDatastreamActivationHistoryArgs()
         {
         }
+        public static new GetDatastreamActivationHistoryArgs Empty => new GetDatastreamActivationHistoryArgs();
     }
 
-    public sealed class GetDatastreamActivationHistoryInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatastreamActivationHistoryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) A stream's unique identifier.
@@ -131,6 +126,7 @@ namespace Pulumi.Akamai
         public GetDatastreamActivationHistoryInvokeArgs()
         {
         }
+        public static new GetDatastreamActivationHistoryInvokeArgs Empty => new GetDatastreamActivationHistoryInvokeArgs();
     }
 
 

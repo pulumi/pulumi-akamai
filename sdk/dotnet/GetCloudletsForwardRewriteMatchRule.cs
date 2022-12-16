@@ -21,44 +21,42 @@ namespace Pulumi.Akamai
         /// This example returns the JSON-encoded rules for the Forward Rewrite Cloudlet:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetCloudletsForwardRewriteMatchRule.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsForwardRewriteMatchRule.InvokeAsync(new Akamai.GetCloudletsForwardRewriteMatchRuleArgs
+        ///         MatchRules = new[]
         ///         {
-        ///             MatchRules = 
+        ///             new Akamai.Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleInputArgs
         ///             {
-        ///                 new Akamai.Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleArgs
+        ///                 ForwardSettings = new Akamai.Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsInputArgs
         ///                 {
-        ///                     ForwardSettings = new Akamai.Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs
-        ///                     {
-        ///                         OriginId = "1234",
-        ///                         PathAndQs = "/path",
-        ///                         UseIncomingQueryString = true,
-        ///                     },
-        ///                     Matches = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             CaseSensitive = false,
-        ///                             CheckIps = "CONNECTING_IP XFF_HEADERS",
-        ///                             MatchOperator = "equals",
-        ///                             MatchType = "clientip",
-        ///                             MatchValue = "192.0.2.0",
-        ///                             Negate = false,
-        ///                         },
-        ///                     },
-        ///                     Name = "rule",
+        ///                     OriginId = "1234",
+        ///                     PathAndQs = "/path",
+        ///                     UseIncomingQueryString = true,
         ///                 },
+        ///                 Matches = new[]
+        ///                 {
+        ///                     new Akamai.Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchInputArgs
+        ///                     {
+        ///                         CaseSensitive = false,
+        ///                         CheckIps = "CONNECTING_IP XFF_HEADERS",
+        ///                         MatchOperator = "equals",
+        ///                         MatchType = "clientip",
+        ///                         MatchValue = "192.0.2.0",
+        ///                         Negate = false,
+        ///                     },
+        ///                 },
+        ///                 Name = "rule",
         ///             },
-        ///         }));
-        ///     }
+        ///         },
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -69,7 +67,7 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Task<GetCloudletsForwardRewriteMatchRuleResult> InvokeAsync(GetCloudletsForwardRewriteMatchRuleArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsForwardRewriteMatchRuleResult>("akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule", args ?? new GetCloudletsForwardRewriteMatchRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsForwardRewriteMatchRuleResult>("akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule", args ?? new GetCloudletsForwardRewriteMatchRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
@@ -81,44 +79,42 @@ namespace Pulumi.Akamai
         /// This example returns the JSON-encoded rules for the Forward Rewrite Cloudlet:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetCloudletsForwardRewriteMatchRule.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsForwardRewriteMatchRule.InvokeAsync(new Akamai.GetCloudletsForwardRewriteMatchRuleArgs
+        ///         MatchRules = new[]
         ///         {
-        ///             MatchRules = 
+        ///             new Akamai.Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleInputArgs
         ///             {
-        ///                 new Akamai.Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleArgs
+        ///                 ForwardSettings = new Akamai.Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsInputArgs
         ///                 {
-        ///                     ForwardSettings = new Akamai.Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs
-        ///                     {
-        ///                         OriginId = "1234",
-        ///                         PathAndQs = "/path",
-        ///                         UseIncomingQueryString = true,
-        ///                     },
-        ///                     Matches = 
-        ///                     {
-        ///                         new Akamai.Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs
-        ///                         {
-        ///                             CaseSensitive = false,
-        ///                             CheckIps = "CONNECTING_IP XFF_HEADERS",
-        ///                             MatchOperator = "equals",
-        ///                             MatchType = "clientip",
-        ///                             MatchValue = "192.0.2.0",
-        ///                             Negate = false,
-        ///                         },
-        ///                     },
-        ///                     Name = "rule",
+        ///                     OriginId = "1234",
+        ///                     PathAndQs = "/path",
+        ///                     UseIncomingQueryString = true,
         ///                 },
+        ///                 Matches = new[]
+        ///                 {
+        ///                     new Akamai.Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchInputArgs
+        ///                     {
+        ///                         CaseSensitive = false,
+        ///                         CheckIps = "CONNECTING_IP XFF_HEADERS",
+        ///                         MatchOperator = "equals",
+        ///                         MatchType = "clientip",
+        ///                         MatchValue = "192.0.2.0",
+        ///                         Negate = false,
+        ///                     },
+        ///                 },
+        ///                 Name = "rule",
         ///             },
-        ///         }));
-        ///     }
+        ///         },
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -129,11 +125,11 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Output<GetCloudletsForwardRewriteMatchRuleResult> Invoke(GetCloudletsForwardRewriteMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudletsForwardRewriteMatchRuleResult>("akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule", args ?? new GetCloudletsForwardRewriteMatchRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsForwardRewriteMatchRuleResult>("akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule", args ?? new GetCloudletsForwardRewriteMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCloudletsForwardRewriteMatchRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsForwardRewriteMatchRuleArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private List<Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleArgs>? _matchRules;
@@ -150,9 +146,10 @@ namespace Pulumi.Akamai
         public GetCloudletsForwardRewriteMatchRuleArgs()
         {
         }
+        public static new GetCloudletsForwardRewriteMatchRuleArgs Empty => new GetCloudletsForwardRewriteMatchRuleArgs();
     }
 
-    public sealed class GetCloudletsForwardRewriteMatchRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsForwardRewriteMatchRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private InputList<Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleInputArgs>? _matchRules;
@@ -169,6 +166,7 @@ namespace Pulumi.Akamai
         public GetCloudletsForwardRewriteMatchRuleInvokeArgs()
         {
         }
+        public static new GetCloudletsForwardRewriteMatchRuleInvokeArgs Empty => new GetCloudletsForwardRewriteMatchRuleInvokeArgs();
     }
 
 

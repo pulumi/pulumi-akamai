@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GtmPropertyTrafficTargetArgs : Pulumi.ResourceArgs
+    public sealed class GtmPropertyTrafficTargetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A unique identifier for an existing data center in the domain.
@@ -57,5 +57,6 @@ namespace Pulumi.Akamai.Inputs
         public GtmPropertyTrafficTargetArgs()
         {
         }
+        public static new GtmPropertyTrafficTargetArgs Empty => new GtmPropertyTrafficTargetArgs();
     }
 }

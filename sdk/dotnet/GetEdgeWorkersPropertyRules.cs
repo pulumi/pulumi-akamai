@@ -12,14 +12,14 @@ namespace Pulumi.Akamai
     public static class GetEdgeWorkersPropertyRules
     {
         public static Task<GetEdgeWorkersPropertyRulesResult> InvokeAsync(GetEdgeWorkersPropertyRulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEdgeWorkersPropertyRulesResult>("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", args ?? new GetEdgeWorkersPropertyRulesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEdgeWorkersPropertyRulesResult>("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", args ?? new GetEdgeWorkersPropertyRulesArgs(), options.WithDefaults());
 
         public static Output<GetEdgeWorkersPropertyRulesResult> Invoke(GetEdgeWorkersPropertyRulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEdgeWorkersPropertyRulesResult>("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", args ?? new GetEdgeWorkersPropertyRulesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkersPropertyRulesResult>("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", args ?? new GetEdgeWorkersPropertyRulesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetEdgeWorkersPropertyRulesArgs : Pulumi.InvokeArgs
+    public sealed class GetEdgeWorkersPropertyRulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique identifier of an EdgeWorker ID.
@@ -30,9 +30,10 @@ namespace Pulumi.Akamai
         public GetEdgeWorkersPropertyRulesArgs()
         {
         }
+        public static new GetEdgeWorkersPropertyRulesArgs Empty => new GetEdgeWorkersPropertyRulesArgs();
     }
 
-    public sealed class GetEdgeWorkersPropertyRulesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEdgeWorkersPropertyRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique identifier of an EdgeWorker ID.
@@ -43,6 +44,7 @@ namespace Pulumi.Akamai
         public GetEdgeWorkersPropertyRulesInvokeArgs()
         {
         }
+        public static new GetEdgeWorkersPropertyRulesInvokeArgs Empty => new GetEdgeWorkersPropertyRulesInvokeArgs();
     }
 
 

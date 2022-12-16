@@ -23,26 +23,25 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var protection = new Akamai.AppSecReputationProtection("protection", new Akamai.AppSecReputationProtectionArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             Enabled = true,
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var protection = new Akamai.AppSecReputationProtection("protection", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         Enabled = true,
+    ///     });
+    /// 
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -51,7 +50,7 @@ namespace Pulumi.Akamai
     /// - `output_text`. Tabular report showing the current protection settings.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecReputationProtection:AppSecReputationProtection")]
-    public partial class AppSecReputationProtection : Pulumi.CustomResource
+    public partial class AppSecReputationProtection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation protection settings being modified.
@@ -121,7 +120,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecReputationProtectionArgs : Pulumi.ResourceArgs
+    public sealed class AppSecReputationProtectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation protection settings being modified.
@@ -144,9 +143,10 @@ namespace Pulumi.Akamai
         public AppSecReputationProtectionArgs()
         {
         }
+        public static new AppSecReputationProtectionArgs Empty => new AppSecReputationProtectionArgs();
     }
 
-    public sealed class AppSecReputationProtectionState : Pulumi.ResourceArgs
+    public sealed class AppSecReputationProtectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation protection settings being modified.
@@ -175,5 +175,6 @@ namespace Pulumi.Akamai
         public AppSecReputationProtectionState()
         {
         }
+        public static new AppSecReputationProtectionState Empty => new AppSecReputationProtectionState();
     }
 }

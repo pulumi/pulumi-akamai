@@ -18,6 +18,48 @@ namespace Pulumi.Akamai
         /// 
         /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://techdocs.akamai.com/application-security/reference/get-selectable-hostnames)
         /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
+        ///     {
+        ///         Name = "Documentation",
+        ///     });
+        /// 
+        ///     var selectableHostnamesAppSecSelectableHostnames = Akamai.GetAppSecSelectableHostnames.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var selectableHostnamesForCreateConfigurationAppSecSelectableHostnames = Akamai.GetAppSecSelectableHostnames.Invoke(new()
+        ///     {
+        ///         ContractId = "5-2WA382",
+        ///         GroupId = 12198,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["selectableHostnames"] = selectableHostnamesAppSecSelectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.Hostnames),
+        ///         ["selectableHostnamesJson"] = selectableHostnamesAppSecSelectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.HostnamesJson),
+        ///         ["selectableHostnamesOutputText"] = selectableHostnamesAppSecSelectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.OutputText),
+        ///         ["selectableHostnamesForCreateConfiguration"] = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.Hostnames),
+        ///         ["selectableHostnamesForCreateConfigurationJson"] = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.HostnamesJson),
+        ///         ["selectableHostnamesForCreateConfigurationOutputText"] = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.OutputText),
+        ///     };
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// ## Output Options
         /// 
         /// The following options can be used to determine the information returned, and how that returned information is formatted:
@@ -27,7 +69,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the selectable hostnames showing the name and config_id of the security configuration under which the host is protected in production.
         /// </summary>
         public static Task<GetAppSecSelectableHostnamesResult> InvokeAsync(GetAppSecSelectableHostnamesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSelectableHostnamesResult>("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args ?? new GetAppSecSelectableHostnamesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSelectableHostnamesResult>("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args ?? new GetAppSecSelectableHostnamesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; contract; group
@@ -36,6 +78,48 @@ namespace Pulumi.Akamai
         /// 
         /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://techdocs.akamai.com/application-security/reference/get-selectable-hostnames)
         /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// Basic usage:
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
+        ///     {
+        ///         Name = "Documentation",
+        ///     });
+        /// 
+        ///     var selectableHostnamesAppSecSelectableHostnames = Akamai.GetAppSecSelectableHostnames.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var selectableHostnamesForCreateConfigurationAppSecSelectableHostnames = Akamai.GetAppSecSelectableHostnames.Invoke(new()
+        ///     {
+        ///         ContractId = "5-2WA382",
+        ///         GroupId = 12198,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["selectableHostnames"] = selectableHostnamesAppSecSelectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.Hostnames),
+        ///         ["selectableHostnamesJson"] = selectableHostnamesAppSecSelectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.HostnamesJson),
+        ///         ["selectableHostnamesOutputText"] = selectableHostnamesAppSecSelectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.OutputText),
+        ///         ["selectableHostnamesForCreateConfiguration"] = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.Hostnames),
+        ///         ["selectableHostnamesForCreateConfigurationJson"] = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.HostnamesJson),
+        ///         ["selectableHostnamesForCreateConfigurationOutputText"] = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.OutputText),
+        ///     };
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
         /// ## Output Options
         /// 
         /// The following options can be used to determine the information returned, and how that returned information is formatted:
@@ -45,11 +129,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the selectable hostnames showing the name and config_id of the security configuration under which the host is protected in production.
         /// </summary>
         public static Output<GetAppSecSelectableHostnamesResult> Invoke(GetAppSecSelectableHostnamesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecSelectableHostnamesResult>("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args ?? new GetAppSecSelectableHostnamesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSelectableHostnamesResult>("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args ?? new GetAppSecSelectableHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecSelectableHostnamesArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecSelectableHostnamesArgs : global::Pulumi.InvokeArgs
     {
         [Input("activeInProduction")]
         public bool? ActiveInProduction { get; set; }
@@ -78,9 +162,10 @@ namespace Pulumi.Akamai
         public GetAppSecSelectableHostnamesArgs()
         {
         }
+        public static new GetAppSecSelectableHostnamesArgs Empty => new GetAppSecSelectableHostnamesArgs();
     }
 
-    public sealed class GetAppSecSelectableHostnamesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecSelectableHostnamesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("activeInProduction")]
         public Input<bool>? ActiveInProduction { get; set; }
@@ -109,6 +194,7 @@ namespace Pulumi.Akamai
         public GetAppSecSelectableHostnamesInvokeArgs()
         {
         }
+        public static new GetAppSecSelectableHostnamesInvokeArgs Empty => new GetAppSecSelectableHostnamesInvokeArgs();
     }
 
 

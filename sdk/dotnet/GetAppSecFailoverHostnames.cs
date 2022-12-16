@@ -25,33 +25,29 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var failoverHostnamesAppSecFailoverHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecFailoverHostnames.InvokeAsync(new Akamai.GetAppSecFailoverHostnamesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.FailoverHostnames = failoverHostnamesAppSecFailoverHostnames.Apply(failoverHostnamesAppSecFailoverHostnames =&gt; failoverHostnamesAppSecFailoverHostnames.Hostnames);
-        ///         this.FailoverHostnamesOutput = failoverHostnamesAppSecFailoverHostnames.Apply(failoverHostnamesAppSecFailoverHostnames =&gt; failoverHostnamesAppSecFailoverHostnames.OutputText);
-        ///         this.FailoverHostnamesJson = failoverHostnamesAppSecFailoverHostnames.Apply(failoverHostnamesAppSecFailoverHostnames =&gt; failoverHostnamesAppSecFailoverHostnames.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("failoverHostnames")]
-        ///     public Output&lt;string&gt; FailoverHostnames { get; set; }
-        ///     [Output("failoverHostnamesOutput")]
-        ///     public Output&lt;string&gt; FailoverHostnamesOutput { get; set; }
-        ///     [Output("failoverHostnamesJson")]
-        ///     public Output&lt;string&gt; FailoverHostnamesJson { get; set; }
-        /// }
+        ///     var failoverHostnamesAppSecFailoverHostnames = Akamai.GetAppSecFailoverHostnames.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["failoverHostnames"] = failoverHostnamesAppSecFailoverHostnames.Apply(getAppSecFailoverHostnamesResult =&gt; getAppSecFailoverHostnamesResult.Hostnames),
+        ///         ["failoverHostnamesOutput"] = failoverHostnamesAppSecFailoverHostnames.Apply(getAppSecFailoverHostnamesResult =&gt; getAppSecFailoverHostnamesResult.OutputText),
+        ///         ["failoverHostnamesJson"] = failoverHostnamesAppSecFailoverHostnames.Apply(getAppSecFailoverHostnamesResult =&gt; getAppSecFailoverHostnamesResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,7 +59,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the failover hostnames.
         /// </summary>
         public static Task<GetAppSecFailoverHostnamesResult> InvokeAsync(GetAppSecFailoverHostnamesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration
@@ -79,33 +75,29 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var failoverHostnamesAppSecFailoverHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecFailoverHostnames.InvokeAsync(new Akamai.GetAppSecFailoverHostnamesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.FailoverHostnames = failoverHostnamesAppSecFailoverHostnames.Apply(failoverHostnamesAppSecFailoverHostnames =&gt; failoverHostnamesAppSecFailoverHostnames.Hostnames);
-        ///         this.FailoverHostnamesOutput = failoverHostnamesAppSecFailoverHostnames.Apply(failoverHostnamesAppSecFailoverHostnames =&gt; failoverHostnamesAppSecFailoverHostnames.OutputText);
-        ///         this.FailoverHostnamesJson = failoverHostnamesAppSecFailoverHostnames.Apply(failoverHostnamesAppSecFailoverHostnames =&gt; failoverHostnamesAppSecFailoverHostnames.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("failoverHostnames")]
-        ///     public Output&lt;string&gt; FailoverHostnames { get; set; }
-        ///     [Output("failoverHostnamesOutput")]
-        ///     public Output&lt;string&gt; FailoverHostnamesOutput { get; set; }
-        ///     [Output("failoverHostnamesJson")]
-        ///     public Output&lt;string&gt; FailoverHostnamesJson { get; set; }
-        /// }
+        ///     var failoverHostnamesAppSecFailoverHostnames = Akamai.GetAppSecFailoverHostnames.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["failoverHostnames"] = failoverHostnamesAppSecFailoverHostnames.Apply(getAppSecFailoverHostnamesResult =&gt; getAppSecFailoverHostnamesResult.Hostnames),
+        ///         ["failoverHostnamesOutput"] = failoverHostnamesAppSecFailoverHostnames.Apply(getAppSecFailoverHostnamesResult =&gt; getAppSecFailoverHostnamesResult.OutputText),
+        ///         ["failoverHostnamesJson"] = failoverHostnamesAppSecFailoverHostnames.Apply(getAppSecFailoverHostnamesResult =&gt; getAppSecFailoverHostnamesResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -117,11 +109,11 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the failover hostnames.
         /// </summary>
         public static Output<GetAppSecFailoverHostnamesResult> Invoke(GetAppSecFailoverHostnamesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecFailoverHostnamesArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecFailoverHostnamesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the failover hosts.
@@ -132,9 +124,10 @@ namespace Pulumi.Akamai
         public GetAppSecFailoverHostnamesArgs()
         {
         }
+        public static new GetAppSecFailoverHostnamesArgs Empty => new GetAppSecFailoverHostnamesArgs();
     }
 
-    public sealed class GetAppSecFailoverHostnamesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecFailoverHostnamesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the failover hosts.
@@ -145,6 +138,7 @@ namespace Pulumi.Akamai
         public GetAppSecFailoverHostnamesInvokeArgs()
         {
         }
+        public static new GetAppSecFailoverHostnamesInvokeArgs Empty => new GetAppSecFailoverHostnamesInvokeArgs();
     }
 
 

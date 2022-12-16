@@ -10,14 +10,23 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class DatastreamDatadogConnectorGetArgs : Pulumi.ResourceArgs
+    public sealed class DatastreamDatadogConnectorGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-        /// * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
-        /// </summary>
         [Input("authToken", required: true)]
-        public Input<string> AuthToken { get; set; } = null!;
+        private Input<string>? _authToken;
+
+        /// <summary>
+        /// **Secret**. Your Log API token for your account in New Relic.
+        /// </summary>
+        public Input<string>? AuthToken
+        {
+            get => _authToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _authToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
@@ -47,7 +56,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+        /// The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
         /// </summary>
         [Input("tags")]
         public Input<string>? Tags { get; set; }
@@ -61,5 +70,6 @@ namespace Pulumi.Akamai.Inputs
         public DatastreamDatadogConnectorGetArgs()
         {
         }
+        public static new DatastreamDatadogConnectorGetArgs Empty => new DatastreamDatadogConnectorGetArgs();
     }
 }

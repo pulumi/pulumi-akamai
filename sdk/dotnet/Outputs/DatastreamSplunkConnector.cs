@@ -14,6 +14,18 @@ namespace Pulumi.Akamai.Outputs
     public sealed class DatastreamSplunkConnector
     {
         /// <summary>
+        /// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+        /// </summary>
+        public readonly string? CaCert;
+        /// <summary>
+        /// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        /// </summary>
+        public readonly string? ClientCert;
+        /// <summary>
+        /// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+        /// </summary>
+        public readonly string? ClientKey;
+        /// <summary>
         /// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
         /// </summary>
         public readonly bool? CompressLogs;
@@ -23,9 +35,22 @@ namespace Pulumi.Akamai.Outputs
         /// </summary>
         public readonly string ConnectorName;
         /// <summary>
+        /// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+        /// </summary>
+        public readonly string? CustomHeaderName;
+        /// <summary>
+        /// The custom header's contents passed with the request that contains information about the client connection.
+        /// </summary>
+        public readonly string? CustomHeaderValue;
+        /// <summary>
         /// **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
         /// </summary>
         public readonly string EventCollectorToken;
+        public readonly bool? MTls;
+        /// <summary>
+        /// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+        /// </summary>
+        public readonly string? TlsHostname;
         /// <summary>
         /// Enter the secure URL where you want to send and store your logs.
         /// </summary>
@@ -33,20 +58,41 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private DatastreamSplunkConnector(
+            string? caCert,
+
+            string? clientCert,
+
+            string? clientKey,
+
             bool? compressLogs,
 
             int? connectorId,
 
             string connectorName,
 
+            string? customHeaderName,
+
+            string? customHeaderValue,
+
             string eventCollectorToken,
+
+            bool? mTls,
+
+            string? tlsHostname,
 
             string url)
         {
+            CaCert = caCert;
+            ClientCert = clientCert;
+            ClientKey = clientKey;
             CompressLogs = compressLogs;
             ConnectorId = connectorId;
             ConnectorName = connectorName;
+            CustomHeaderName = customHeaderName;
+            CustomHeaderValue = customHeaderValue;
             EventCollectorToken = eventCollectorToken;
+            MTls = mTls;
+            TlsHostname = tlsHostname;
             Url = url;
         }
     }

@@ -23,37 +23,37 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using System.IO;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var logging = new Akamai.AppSecAdvancedSettingsLogging("logging", new Akamai.AppSecAdvancedSettingsLoggingArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Logging = File.ReadAllText($"{path.Module}/logging.json"),
-    ///         });
-    ///         // USE CASE: User wants to configure logging settings for a security policy.
-    ///         var policyLogging = new Akamai.AppSecAdvancedSettingsLogging("policyLogging", new Akamai.AppSecAdvancedSettingsLoggingArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             Logging = File.ReadAllText($"{path.Module}/logging.json"),
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var logging = new Akamai.AppSecAdvancedSettingsLogging("logging", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         Logging = File.ReadAllText($"{path.Module}/logging.json"),
+    ///     });
+    /// 
+    ///     // USE CASE: User wants to configure logging settings for a security policy.
+    ///     var policyLogging = new Akamai.AppSecAdvancedSettingsLogging("policyLogging", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         Logging = File.ReadAllText($"{path.Module}/logging.json"),
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecAdvancedSettingsLogging:AppSecAdvancedSettingsLogging")]
-    public partial class AppSecAdvancedSettingsLogging : Pulumi.CustomResource
+    public partial class AppSecAdvancedSettingsLogging : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration containing the logging settings being modified.
@@ -117,7 +117,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecAdvancedSettingsLoggingArgs : Pulumi.ResourceArgs
+    public sealed class AppSecAdvancedSettingsLoggingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration containing the logging settings being modified.
@@ -140,9 +140,10 @@ namespace Pulumi.Akamai
         public AppSecAdvancedSettingsLoggingArgs()
         {
         }
+        public static new AppSecAdvancedSettingsLoggingArgs Empty => new AppSecAdvancedSettingsLoggingArgs();
     }
 
-    public sealed class AppSecAdvancedSettingsLoggingState : Pulumi.ResourceArgs
+    public sealed class AppSecAdvancedSettingsLoggingState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration containing the logging settings being modified.
@@ -165,5 +166,6 @@ namespace Pulumi.Akamai
         public AppSecAdvancedSettingsLoggingState()
         {
         }
+        public static new AppSecAdvancedSettingsLoggingState Empty => new AppSecAdvancedSettingsLoggingState();
     }
 }

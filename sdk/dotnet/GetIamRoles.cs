@@ -21,20 +21,19 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var my_roles = Output.Create(Akamai.GetIamRoles.InvokeAsync());
-        ///         this.Roles = my_roles;
-        ///     }
+        ///     var my_roles = Akamai.GetIamRoles.Invoke();
         /// 
-        ///     [Output("roles")]
-        ///     public Output&lt;string&gt; Roles { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["roles"] = my_roles.Apply(getIamRolesResult =&gt; getIamRolesResult),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -47,7 +46,7 @@ namespace Pulumi.Akamai
         /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-roles)
         /// </summary>
         public static Task<GetIamRolesResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIamRolesResult>("akamai:index/getIamRoles:getIamRoles", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamRolesResult>("akamai:index/getIamRoles:getIamRoles", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

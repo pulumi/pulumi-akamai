@@ -21,17 +21,15 @@ namespace Pulumi.Akamai
         /// This example returns data set fields for a default template:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var fields = Output.Create(Akamai.GetDatastreamDatasetFields.InvokeAsync());
-        ///     }
+        ///     var fields = Akamai.GetDatastreamDatasetFields.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -49,7 +47,7 @@ namespace Pulumi.Akamai
         ///       * `dataset_field_name` - The name of the data set field.
         /// </summary>
         public static Task<GetDatastreamDatasetFieldsResult> InvokeAsync(GetDatastreamDatasetFieldsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatastreamDatasetFieldsResult>("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args ?? new GetDatastreamDatasetFieldsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatastreamDatasetFieldsResult>("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args ?? new GetDatastreamDatasetFieldsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getDatastreamDatasetFields` data source to list groups of data set fields available in the template.
@@ -61,17 +59,15 @@ namespace Pulumi.Akamai
         /// This example returns data set fields for a default template:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var fields = Output.Create(Akamai.GetDatastreamDatasetFields.InvokeAsync());
-        ///     }
+        ///     var fields = Akamai.GetDatastreamDatasetFields.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,11 +85,11 @@ namespace Pulumi.Akamai
         ///       * `dataset_field_name` - The name of the data set field.
         /// </summary>
         public static Output<GetDatastreamDatasetFieldsResult> Invoke(GetDatastreamDatasetFieldsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatastreamDatasetFieldsResult>("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args ?? new GetDatastreamDatasetFieldsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatastreamDatasetFieldsResult>("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args ?? new GetDatastreamDatasetFieldsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetDatastreamDatasetFieldsArgs : Pulumi.InvokeArgs
+    public sealed class GetDatastreamDatasetFieldsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
@@ -104,9 +100,10 @@ namespace Pulumi.Akamai
         public GetDatastreamDatasetFieldsArgs()
         {
         }
+        public static new GetDatastreamDatasetFieldsArgs Empty => new GetDatastreamDatasetFieldsArgs();
     }
 
-    public sealed class GetDatastreamDatasetFieldsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatastreamDatasetFieldsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
@@ -117,6 +114,7 @@ namespace Pulumi.Akamai
         public GetDatastreamDatasetFieldsInvokeArgs()
         {
         }
+        public static new GetDatastreamDatasetFieldsInvokeArgs Empty => new GetDatastreamDatasetFieldsInvokeArgs();
     }
 
 

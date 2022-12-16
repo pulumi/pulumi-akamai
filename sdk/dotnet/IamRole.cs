@@ -17,22 +17,20 @@ namespace Pulumi.Akamai
     /// This example returns information on available roles:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var example = new Akamai.IamRole("example", new()
     ///     {
-    ///         var example = new Akamai.IamRole("example", new Akamai.IamRoleArgs
-    ///         {
-    ///             Description = "This role will allow you to view",
-    ///             GrantedRoles = 2051,
-    ///             Type = "custom",
-    ///         });
-    ///     }
+    ///         Description = "This role will allow you to view",
+    ///         GrantedRoles = 2051,
+    ///         Type = "custom",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Attributes reference
@@ -42,7 +40,7 @@ namespace Pulumi.Akamai
     /// * `type` - The type indicates whether the role is `standard`, provided by Akamai, or `custom` for the account.
     /// </summary>
     [AkamaiResourceType("akamai:index/iamRole:IamRole")]
-    public partial class IamRole : Pulumi.CustomResource
+    public partial class IamRole : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The description for a role.
@@ -112,7 +110,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class IamRoleArgs : Pulumi.ResourceArgs
+    public sealed class IamRoleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The description for a role.
@@ -147,9 +145,10 @@ namespace Pulumi.Akamai
         public IamRoleArgs()
         {
         }
+        public static new IamRoleArgs Empty => new IamRoleArgs();
     }
 
-    public sealed class IamRoleState : Pulumi.ResourceArgs
+    public sealed class IamRoleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The description for a role.
@@ -184,5 +183,6 @@ namespace Pulumi.Akamai
         public IamRoleState()
         {
         }
+        public static new IamRoleState Empty => new IamRoleState();
     }
 }

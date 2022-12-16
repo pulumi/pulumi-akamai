@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("disabled")]
         public Input<bool>? Disabled { get; set; }
@@ -84,5 +84,6 @@ namespace Pulumi.Akamai.Inputs
         public GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleInputArgs()
         {
         }
+        public static new GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleInputArgs Empty => new GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleInputArgs();
     }
 }

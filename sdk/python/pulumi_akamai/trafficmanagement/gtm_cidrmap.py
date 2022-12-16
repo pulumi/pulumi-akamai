@@ -24,7 +24,7 @@ class GtmCidrmapArgs:
         """
         The set of arguments for constructing a GtmCidrmap resource.
         :param pulumi.Input['GtmCidrmapDefaultDatacenterArgs'] default_datacenter: A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
-        :param pulumi.Input[str] domain: GTM Domain name for the AS Map.
+        :param pulumi.Input[str] domain: GTM Domain name for the CIDR Map.
         :param pulumi.Input[Sequence[pulumi.Input['GtmCidrmapAssignmentArgs']]] assignments: Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
         :param pulumi.Input[str] name: A descriptive label for the CIDR map, up to 255 characters.
         :param pulumi.Input[bool] wait_on_complete: A boolean that, if set to `true`, waits for transaction to complete.
@@ -54,7 +54,7 @@ class GtmCidrmapArgs:
     @pulumi.getter
     def domain(self) -> pulumi.Input[str]:
         """
-        GTM Domain name for the AS Map.
+        GTM Domain name for the CIDR Map.
         """
         return pulumi.get(self, "domain")
 
@@ -111,7 +111,7 @@ class _GtmCidrmapState:
         Input properties used for looking up and filtering GtmCidrmap resources.
         :param pulumi.Input[Sequence[pulumi.Input['GtmCidrmapAssignmentArgs']]] assignments: Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
         :param pulumi.Input['GtmCidrmapDefaultDatacenterArgs'] default_datacenter: A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
-        :param pulumi.Input[str] domain: GTM Domain name for the AS Map.
+        :param pulumi.Input[str] domain: GTM Domain name for the CIDR Map.
         :param pulumi.Input[str] name: A descriptive label for the CIDR map, up to 255 characters.
         :param pulumi.Input[bool] wait_on_complete: A boolean that, if set to `true`, waits for transaction to complete.
         """
@@ -154,7 +154,7 @@ class _GtmCidrmapState:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
         """
-        GTM Domain name for the AS Map.
+        GTM Domain name for the CIDR Map.
         """
         return pulumi.get(self, "domain")
 
@@ -230,7 +230,7 @@ class GtmCidrmap(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmCidrmapAssignmentArgs']]]] assignments: Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
         :param pulumi.Input[pulumi.InputType['GtmCidrmapDefaultDatacenterArgs']] default_datacenter: A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
-        :param pulumi.Input[str] domain: GTM Domain name for the AS Map.
+        :param pulumi.Input[str] domain: GTM Domain name for the CIDR Map.
         :param pulumi.Input[str] name: A descriptive label for the CIDR map, up to 255 characters.
         :param pulumi.Input[bool] wait_on_complete: A boolean that, if set to `true`, waits for transaction to complete.
         """
@@ -326,7 +326,7 @@ class GtmCidrmap(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['GtmCidrmapAssignmentArgs']]]] assignments: Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
         :param pulumi.Input[pulumi.InputType['GtmCidrmapDefaultDatacenterArgs']] default_datacenter: A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
-        :param pulumi.Input[str] domain: GTM Domain name for the AS Map.
+        :param pulumi.Input[str] domain: GTM Domain name for the CIDR Map.
         :param pulumi.Input[str] name: A descriptive label for the CIDR map, up to 255 characters.
         :param pulumi.Input[bool] wait_on_complete: A boolean that, if set to `true`, waits for transaction to complete.
         """
@@ -361,7 +361,7 @@ class GtmCidrmap(pulumi.CustomResource):
     @pulumi.getter
     def domain(self) -> pulumi.Output[str]:
         """
-        GTM Domain name for the AS Map.
+        GTM Domain name for the CIDR Map.
         """
         return pulumi.get(self, "domain")
 

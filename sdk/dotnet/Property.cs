@@ -29,39 +29,37 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var example = new Akamai.Property("example", new()
     ///     {
-    ///         var example = new Akamai.Property("example", new Akamai.PropertyArgs
+    ///         ProductId = "prd_SPM",
+    ///         ContractId = @var.Contractid,
+    ///         GroupId = @var.Groupid,
+    ///         Hostnames = new[]
     ///         {
-    ///             ProductId = "prd_SPM",
-    ///             ContractId = @var.Contractid,
-    ///             GroupId = @var.Groupid,
-    ///             Hostnames = 
+    ///             new Akamai.Inputs.PropertyHostnameArgs
     ///             {
-    ///                 new Akamai.Inputs.PropertyHostnameArgs
-    ///                 {
-    ///                     CnameFrom = "example.com",
-    ///                     CnameTo = "example.com.edgekey.net",
-    ///                     CertProvisioningType = "DEFAULT",
-    ///                 },
-    ///                 new Akamai.Inputs.PropertyHostnameArgs
-    ///                 {
-    ///                     CnameFrom = "www.example.com",
-    ///                     CnameTo = "example.com.edgesuite.net",
-    ///                     CertProvisioningType = "CPS_MANAGED",
-    ///                 },
+    ///                 CnameFrom = "example.com",
+    ///                 CnameTo = "example.com.edgekey.net",
+    ///                 CertProvisioningType = "DEFAULT",
     ///             },
-    ///             RuleFormat = "v2020-03-04",
-    ///             Rules = data.Akamai_property_rules_template.Example.Json,
-    ///         });
-    ///     }
+    ///             new Akamai.Inputs.PropertyHostnameArgs
+    ///             {
+    ///                 CnameFrom = "www.example.com",
+    ///                 CnameTo = "example.com.edgesuite.net",
+    ///                 CertProvisioningType = "CPS_MANAGED",
+    ///             },
+    ///         },
+    ///         RuleFormat = "v2020-03-04",
+    ///         Rules = data.Akamai_property_rules_template.Example.Json,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -107,7 +105,7 @@ namespace Pulumi.Akamai
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/property:Property")]
-    public partial class Property : Pulumi.CustomResource
+    public partial class Property : global::Pulumi.CustomResource
     {
         [Output("contacts")]
         public Output<ImmutableArray<string>> Contacts { get; private set; } = null!;
@@ -242,7 +240,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new Pulumi.Alias { Type = "akamai:properties/property:Property"},
+                    new global::Pulumi.Alias { Type = "akamai:properties/property:Property"},
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -265,7 +263,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class PropertyArgs : Pulumi.ResourceArgs
+    public sealed class PropertyArgs : global::Pulumi.ResourceArgs
     {
         [Input("contacts")]
         private InputList<string>? _contacts;
@@ -372,9 +370,10 @@ namespace Pulumi.Akamai
         public PropertyArgs()
         {
         }
+        public static new PropertyArgs Empty => new PropertyArgs();
     }
 
-    public sealed class PropertyState : Pulumi.ResourceArgs
+    public sealed class PropertyState : global::Pulumi.ResourceArgs
     {
         [Input("contacts")]
         private InputList<string>? _contacts;
@@ -517,5 +516,6 @@ namespace Pulumi.Akamai
         public PropertyState()
         {
         }
+        public static new PropertyState Empty => new PropertyState();
     }
 }

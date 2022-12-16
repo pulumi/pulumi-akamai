@@ -16,6 +16,7 @@ class NetworkListActivationsArgs:
     def __init__(__self__, *,
                  network_list_id: pulumi.Input[str],
                  notification_emails: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 sync_point: pulumi.Input[int],
                  activate: Optional[pulumi.Input[bool]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  notes: Optional[pulumi.Input[str]] = None):
@@ -24,12 +25,15 @@ class NetworkListActivationsArgs:
         :param pulumi.Input[str] network_list_id: The ID of the network list to be activated
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the
                operation is complete.
+        :param pulumi.Input[int] sync_point: An integer that identifies the current version of the network list; this value is incremented each time
+               the list is modified.
         :param pulumi.Input[str] network: The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
                `STAGING`.
         :param pulumi.Input[str] notes: A comment describing the activation.
         """
         pulumi.set(__self__, "network_list_id", network_list_id)
         pulumi.set(__self__, "notification_emails", notification_emails)
+        pulumi.set(__self__, "sync_point", sync_point)
         if activate is not None:
             warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
             pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
@@ -64,6 +68,19 @@ class NetworkListActivationsArgs:
     @notification_emails.setter
     def notification_emails(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
         pulumi.set(self, "notification_emails", value)
+
+    @property
+    @pulumi.getter(name="syncPoint")
+    def sync_point(self) -> pulumi.Input[int]:
+        """
+        An integer that identifies the current version of the network list; this value is incremented each time
+        the list is modified.
+        """
+        return pulumi.get(self, "sync_point")
+
+    @sync_point.setter
+    def sync_point(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sync_point", value)
 
     @property
     @pulumi.getter
@@ -108,7 +125,8 @@ class _NetworkListActivationsState:
                  network_list_id: Optional[pulumi.Input[str]] = None,
                  notes: Optional[pulumi.Input[str]] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 status: Optional[pulumi.Input[str]] = None):
+                 status: Optional[pulumi.Input[str]] = None,
+                 sync_point: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering NetworkListActivations resources.
         :param pulumi.Input[str] network: The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
@@ -119,6 +137,8 @@ class _NetworkListActivationsState:
                operation is complete.
         :param pulumi.Input[str] status: The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
                list was not activated.
+        :param pulumi.Input[int] sync_point: An integer that identifies the current version of the network list; this value is incremented each time
+               the list is modified.
         """
         if activate is not None:
             warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
@@ -135,6 +155,8 @@ class _NetworkListActivationsState:
             pulumi.set(__self__, "notification_emails", notification_emails)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if sync_point is not None:
+            pulumi.set(__self__, "sync_point", sync_point)
 
     @property
     @pulumi.getter
@@ -208,6 +230,19 @@ class _NetworkListActivationsState:
     def status(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "status", value)
 
+    @property
+    @pulumi.getter(name="syncPoint")
+    def sync_point(self) -> Optional[pulumi.Input[int]]:
+        """
+        An integer that identifies the current version of the network list; this value is incremented each time
+        the list is modified.
+        """
+        return pulumi.get(self, "sync_point")
+
+    @sync_point.setter
+    def sync_point(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "sync_point", value)
+
 
 class NetworkListActivations(pulumi.CustomResource):
     @overload
@@ -219,6 +254,7 @@ class NetworkListActivations(pulumi.CustomResource):
                  network_list_id: Optional[pulumi.Input[str]] = None,
                  notes: Optional[pulumi.Input[str]] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 sync_point: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         Use the `NetworkListActivations` resource to activate a network list in either the STAGING or PRODUCTION
@@ -232,10 +268,15 @@ class NetworkListActivations(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        network_lists_filter = akamai.get_network_lists(name=var["network_list"])
+        network_list_ip = akamai.NetworkList("networkListIp",
+            type="IP",
+            description="IP network list",
+            lists=var["ip_list"],
+            mode="REPLACE")
         activation = akamai.NetworkListActivations("activation",
-            network_list_id=network_lists_filter.lists[0],
+            network_list_id=resource["akamai_networklist_network_list"]["network_list_ip"]["network_list_id"],
             network="STAGING",
+            sync_point=resource["akamai_networklist_network_list"]["network_list_ip"]["sync_point"],
             notes="TEST Notes",
             notification_emails=["user@example.com"])
         ```
@@ -248,6 +289,8 @@ class NetworkListActivations(pulumi.CustomResource):
         :param pulumi.Input[str] notes: A comment describing the activation.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the
                operation is complete.
+        :param pulumi.Input[int] sync_point: An integer that identifies the current version of the network list; this value is incremented each time
+               the list is modified.
         """
         ...
     @overload
@@ -267,10 +310,15 @@ class NetworkListActivations(pulumi.CustomResource):
         import pulumi
         import pulumi_akamai as akamai
 
-        network_lists_filter = akamai.get_network_lists(name=var["network_list"])
+        network_list_ip = akamai.NetworkList("networkListIp",
+            type="IP",
+            description="IP network list",
+            lists=var["ip_list"],
+            mode="REPLACE")
         activation = akamai.NetworkListActivations("activation",
-            network_list_id=network_lists_filter.lists[0],
+            network_list_id=resource["akamai_networklist_network_list"]["network_list_ip"]["network_list_id"],
             network="STAGING",
+            sync_point=resource["akamai_networklist_network_list"]["network_list_ip"]["sync_point"],
             notes="TEST Notes",
             notification_emails=["user@example.com"])
         ```
@@ -295,6 +343,7 @@ class NetworkListActivations(pulumi.CustomResource):
                  network_list_id: Optional[pulumi.Input[str]] = None,
                  notes: Optional[pulumi.Input[str]] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 sync_point: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -316,6 +365,9 @@ class NetworkListActivations(pulumi.CustomResource):
             if notification_emails is None and not opts.urn:
                 raise TypeError("Missing required property 'notification_emails'")
             __props__.__dict__["notification_emails"] = notification_emails
+            if sync_point is None and not opts.urn:
+                raise TypeError("Missing required property 'sync_point'")
+            __props__.__dict__["sync_point"] = sync_point
             __props__.__dict__["status"] = None
         super(NetworkListActivations, __self__).__init__(
             'akamai:index/networkListActivations:NetworkListActivations',
@@ -332,7 +384,8 @@ class NetworkListActivations(pulumi.CustomResource):
             network_list_id: Optional[pulumi.Input[str]] = None,
             notes: Optional[pulumi.Input[str]] = None,
             notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            status: Optional[pulumi.Input[str]] = None) -> 'NetworkListActivations':
+            status: Optional[pulumi.Input[str]] = None,
+            sync_point: Optional[pulumi.Input[int]] = None) -> 'NetworkListActivations':
         """
         Get an existing NetworkListActivations resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -348,6 +401,8 @@ class NetworkListActivations(pulumi.CustomResource):
                operation is complete.
         :param pulumi.Input[str] status: The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
                list was not activated.
+        :param pulumi.Input[int] sync_point: An integer that identifies the current version of the network list; this value is incremented each time
+               the list is modified.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -359,6 +414,7 @@ class NetworkListActivations(pulumi.CustomResource):
         __props__.__dict__["notes"] = notes
         __props__.__dict__["notification_emails"] = notification_emails
         __props__.__dict__["status"] = status
+        __props__.__dict__["sync_point"] = sync_point
         return NetworkListActivations(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -408,4 +464,13 @@ class NetworkListActivations(pulumi.CustomResource):
         list was not activated.
         """
         return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="syncPoint")
+    def sync_point(self) -> pulumi.Output[int]:
+        """
+        An integer that identifies the current version of the network list; this value is incremented each time
+        the list is modified.
+        """
+        return pulumi.get(self, "sync_point")
 

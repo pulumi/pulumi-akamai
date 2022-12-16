@@ -129,6 +129,25 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[bool] = None
 
     **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://techdocs.akamai.com/application-security/reference/get-selectable-hostnames)
 
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
+    selectable_hostnames_app_sec_selectable_hostnames = akamai.get_app_sec_selectable_hostnames(config_id=configuration.config_id)
+    pulumi.export("selectableHostnames", selectable_hostnames_app_sec_selectable_hostnames.hostnames)
+    pulumi.export("selectableHostnamesJson", selectable_hostnames_app_sec_selectable_hostnames.hostnames_json)
+    pulumi.export("selectableHostnamesOutputText", selectable_hostnames_app_sec_selectable_hostnames.output_text)
+    selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames = akamai.get_app_sec_selectable_hostnames(contract_id="5-2WA382",
+        group_id=12198)
+    pulumi.export("selectableHostnamesForCreateConfiguration", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.hostnames)
+    pulumi.export("selectableHostnamesForCreateConfigurationJson", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.hostnames_json)
+    pulumi.export("selectableHostnamesForCreateConfigurationOutputText", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.output_text)
+    ```
     ## Output Options
 
     The following options can be used to determine the information returned, and how that returned information is formatted:
@@ -177,6 +196,25 @@ def get_app_sec_selectable_hostnames_output(active_in_production: Optional[pulum
 
     **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://techdocs.akamai.com/application-security/reference/get-selectable-hostnames)
 
+    ## Example Usage
+
+    Basic usage:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    configuration = akamai.get_app_sec_configuration(name="Documentation")
+    selectable_hostnames_app_sec_selectable_hostnames = akamai.get_app_sec_selectable_hostnames(config_id=configuration.config_id)
+    pulumi.export("selectableHostnames", selectable_hostnames_app_sec_selectable_hostnames.hostnames)
+    pulumi.export("selectableHostnamesJson", selectable_hostnames_app_sec_selectable_hostnames.hostnames_json)
+    pulumi.export("selectableHostnamesOutputText", selectable_hostnames_app_sec_selectable_hostnames.output_text)
+    selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames = akamai.get_app_sec_selectable_hostnames(contract_id="5-2WA382",
+        group_id=12198)
+    pulumi.export("selectableHostnamesForCreateConfiguration", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.hostnames)
+    pulumi.export("selectableHostnamesForCreateConfigurationJson", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.hostnames_json)
+    pulumi.export("selectableHostnamesForCreateConfigurationOutputText", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.output_text)
+    ```
     ## Output Options
 
     The following options can be used to determine the information returned, and how that returned information is formatted:

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -34,11 +35,8 @@ import * as utilities from "./utilities";
  *   * `isActive` -	Whether the version of the stream is active.
  */
 export function getDatastreamActivationHistory(args: GetDatastreamActivationHistoryArgs, opts?: pulumi.InvokeOptions): Promise<GetDatastreamActivationHistoryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", {
         "streamId": args.streamId,
     }, opts);
@@ -65,9 +63,36 @@ export interface GetDatastreamActivationHistoryResult {
     readonly id: string;
     readonly streamId: number;
 }
-
+/**
+ * Use the `akamai.getDatastreamActivationHistory` data source to list detailed information about the activation status changes for all versions of a stream.
+ *
+ * ## Example Usage
+ *
+ * This example returns the activation history for a provided stream ID:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const ds = akamai.getDatastreamActivationHistory({
+ *     streamId: 12345,
+ * });
+ * export const dsHistoryStreamId = ds.then(ds => ds.streamId);
+ * export const dsHistoryActivations = ds.then(ds => ds.activations);
+ * ```
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `activations` - Detailed information about an activation status change for a version of a stream, including:
+ *   * `createdBy` - The user who activated or deactivated the stream.
+ *   * `createdDate` - The date and time of an activation status change.
+ *   * `streamId` - A stream's unique identifier.
+ *   * `streamVersionId` - A stream version's unique identifier.
+ *   * `isActive` -	Whether the version of the stream is active.
+ */
 export function getDatastreamActivationHistoryOutput(args: GetDatastreamActivationHistoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatastreamActivationHistoryResult> {
-    return pulumi.output(args).apply(a => getDatastreamActivationHistory(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatastreamActivationHistory(a, opts))
 }
 
 /**

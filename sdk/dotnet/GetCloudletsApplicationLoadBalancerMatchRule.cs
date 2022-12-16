@@ -24,7 +24,7 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Task<GetCloudletsApplicationLoadBalancerMatchRuleResult> InvokeAsync(GetCloudletsApplicationLoadBalancerMatchRuleArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsApplicationLoadBalancerMatchRuleResult>("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", args ?? new GetCloudletsApplicationLoadBalancerMatchRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsApplicationLoadBalancerMatchRuleResult>("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", args ?? new GetCloudletsApplicationLoadBalancerMatchRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
@@ -39,11 +39,11 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Output<GetCloudletsApplicationLoadBalancerMatchRuleResult> Invoke(GetCloudletsApplicationLoadBalancerMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudletsApplicationLoadBalancerMatchRuleResult>("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", args ?? new GetCloudletsApplicationLoadBalancerMatchRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsApplicationLoadBalancerMatchRuleResult>("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", args ?? new GetCloudletsApplicationLoadBalancerMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCloudletsApplicationLoadBalancerMatchRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsApplicationLoadBalancerMatchRuleArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private List<Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs>? _matchRules;
@@ -60,9 +60,10 @@ namespace Pulumi.Akamai
         public GetCloudletsApplicationLoadBalancerMatchRuleArgs()
         {
         }
+        public static new GetCloudletsApplicationLoadBalancerMatchRuleArgs Empty => new GetCloudletsApplicationLoadBalancerMatchRuleArgs();
     }
 
-    public sealed class GetCloudletsApplicationLoadBalancerMatchRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsApplicationLoadBalancerMatchRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private InputList<Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleInputArgs>? _matchRules;
@@ -79,6 +80,7 @@ namespace Pulumi.Akamai
         public GetCloudletsApplicationLoadBalancerMatchRuleInvokeArgs()
         {
         }
+        public static new GetCloudletsApplicationLoadBalancerMatchRuleInvokeArgs Empty => new GetCloudletsApplicationLoadBalancerMatchRuleInvokeArgs();
     }
 
 

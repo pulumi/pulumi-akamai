@@ -5,176 +5,909 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
-export * from "./appSecActivations";
-export * from "./appSecAdvancedSettingsEvasivePathMatch";
-export * from "./appSecAdvancedSettingsLogging";
-export * from "./appSecAdvancedSettingsPragmaHeader";
-export * from "./appSecAdvancedSettingsPrefetch";
-export * from "./appSecApiConstraintsProtection";
-export * from "./appSecApiRequestConstraints";
-export * from "./appSecAttackGroup";
-export * from "./appSecByPassNetworkList";
-export * from "./appSecConfiguration";
-export * from "./appSecConfigurationRename";
-export * from "./appSecCustomDeny";
-export * from "./appSecCustomRule";
-export * from "./appSecCustomRuleAction";
-export * from "./appSecEval";
-export * from "./appSecEvalGroup";
-export * from "./appSecEvalPenaltyBox";
-export * from "./appSecEvalRule";
-export * from "./appSecIPGeo";
-export * from "./appSecIPGeoProtection";
-export * from "./appSecMalwarePolicy";
-export * from "./appSecMalwarePolicyAction";
-export * from "./appSecMalwarePolicyActions";
-export * from "./appSecMalwareProtection";
-export * from "./appSecMatchTarget";
-export * from "./appSecMatchTargetSequence";
-export * from "./appSecPenaltyBox";
-export * from "./appSecRatePolicy";
-export * from "./appSecRatePolicyAction";
-export * from "./appSecRateProtection";
-export * from "./appSecReputationProfile";
-export * from "./appSecReputationProfileAction";
-export * from "./appSecReputationProfileAnalysis";
-export * from "./appSecReputationProtection";
-export * from "./appSecRule";
-export * from "./appSecRuleUpgrade";
-export * from "./appSecSecurityPolicy";
-export * from "./appSecSecurityPolicyRename";
-export * from "./appSecSelectedHostnames";
-export * from "./appSecSiemSettings";
-export * from "./appSecSlowPost";
-export * from "./appSecSlowPostProtection";
-export * from "./appSecThreatIntel";
-export * from "./appSecVersionNodes";
-export * from "./appSecWafMode";
-export * from "./appSecWafProtection";
-export * from "./appSecWapSelectedHostnames";
-export * from "./cloudletsApplicationLoadBalancer";
-export * from "./cloudletsApplicationLoadBalancerActivation";
-export * from "./cloudletsPolicy";
-export * from "./cloudletsPolicyActivation";
-export * from "./cpCode";
-export * from "./cpsDvEnrollment";
-export * from "./cpsDvValidation";
-export * from "./datastream";
-export * from "./dnsRecord";
-export * from "./dnsZone";
-export * from "./edgeHostName";
-export * from "./edgeKv";
-export * from "./edgeWorker";
-export * from "./edgeWorkersActivation";
-export * from "./getAppSecAdvancedSettingsEvasivePathMatch";
-export * from "./getAppSecAdvancedSettingsLogging";
-export * from "./getAppSecAdvancedSettingsPragmaHeader";
-export * from "./getAppSecAdvancedSettingsPrefetch";
-export * from "./getAppSecApiEndpoints";
-export * from "./getAppSecApiRequestConstraints";
-export * from "./getAppSecAttackGroups";
-export * from "./getAppSecBypassNetworkLists";
-export * from "./getAppSecConfiguration";
-export * from "./getAppSecConfigurationVersion";
-export * from "./getAppSecContractsGroups";
-export * from "./getAppSecCustomDeny";
-export * from "./getAppSecCustomRuleActions";
-export * from "./getAppSecCustomRules";
-export * from "./getAppSecEval";
-export * from "./getAppSecEvalGroups";
-export * from "./getAppSecEvalPenaltyBox";
-export * from "./getAppSecEvalRules";
-export * from "./getAppSecExportConfiguration";
-export * from "./getAppSecFailoverHostnames";
-export * from "./getAppSecHostnameCoverage";
-export * from "./getAppSecHostnameCoverageMatchTargets";
-export * from "./getAppSecHostnameCoverageOverlapping";
-export * from "./getAppSecIPGeo";
-export * from "./getAppSecMalwareContentTypes";
-export * from "./getAppSecMalwarePolicies";
-export * from "./getAppSecMalwarePolicyActions";
-export * from "./getAppSecMatchTargets";
-export * from "./getAppSecPenaltyBox";
-export * from "./getAppSecRatePolicies";
-export * from "./getAppSecRatePolicyActions";
-export * from "./getAppSecReputationProfileActions";
-export * from "./getAppSecReputationProfileAnalysis";
-export * from "./getAppSecReputationProfiles";
-export * from "./getAppSecRuleUpgradeDetails";
-export * from "./getAppSecRules";
-export * from "./getAppSecSecurityPolicy";
-export * from "./getAppSecSecurityPolicyProtections";
-export * from "./getAppSecSelectableHostnames";
-export * from "./getAppSecSelectedHostnames";
-export * from "./getAppSecSiemDefinitions";
-export * from "./getAppSecSiemSettings";
-export * from "./getAppSecSlowPost";
-export * from "./getAppSecThreatIntel";
-export * from "./getAppSecTuningRecommendations";
-export * from "./getAppSecVersionNotes";
-export * from "./getAppSecWafMode";
-export * from "./getAppSecWapSelectedHostnames";
-export * from "./getAuthoritiesSet";
-export * from "./getCPSEnrollment";
-export * from "./getCPSEnrollments";
-export * from "./getCloudletsApiPrioritizationMatchRule";
-export * from "./getCloudletsApplicationLoadBalancer";
-export * from "./getCloudletsApplicationLoadBalancerMatchRule";
-export * from "./getCloudletsAudienceSegmentationMatchRule";
-export * from "./getCloudletsEdgeRedirectorMatchRule";
-export * from "./getCloudletsForwardRewriteMatchRule";
-export * from "./getCloudletsPhasedReleaseMatchRule";
-export * from "./getCloudletsPolicy";
-export * from "./getCloudletsRequestControlMatchRule";
-export * from "./getCloudletsVisitorPrioritizationMatchRule";
-export * from "./getContract";
-export * from "./getContracts";
-export * from "./getCpCode";
-export * from "./getDatastreamActivationHistory";
-export * from "./getDatastreamDatasetFields";
-export * from "./getDnsRecordSet";
-export * from "./getEdgeWorker";
-export * from "./getEdgeWorkerActivation";
-export * from "./getEdgeWorkersPropertyRules";
-export * from "./getEdgeWorkersResourceTier";
-export * from "./getGroup";
-export * from "./getGroups";
-export * from "./getGtmDefaultDatacenter";
-export * from "./getIamContactTypes";
-export * from "./getIamCountries";
-export * from "./getIamGrantableRoles";
-export * from "./getIamRoles";
-export * from "./getIamStates";
-export * from "./getIamSupportedLangs";
-export * from "./getIamTimeoutPolicies";
-export * from "./getIamTimezones";
-export * from "./getNetworkLists";
-export * from "./getProperties";
-export * from "./getPropertiesSearch";
-export * from "./getProperty";
-export * from "./getPropertyHostnames";
-export * from "./getPropertyProducts";
-export * from "./getPropertyRuleFormats";
-export * from "./getPropertyRules";
-export * from "./getPropertyRulesTemplate";
-export * from "./gtmAsmap";
-export * from "./gtmCidrmap";
-export * from "./gtmDatacenter";
-export * from "./gtmDomain";
-export * from "./gtmGeomap";
-export * from "./gtmProperty";
-export * from "./gtmResource";
-export * from "./iamBlockedUserProperties";
-export * from "./iamGroup";
-export * from "./iamRole";
-export * from "./iamUser";
-export * from "./networkList";
-export * from "./networkListActivations";
-export * from "./networkListDescription";
-export * from "./networkListSubscription";
-export * from "./property";
-export * from "./propertyActivation";
-export * from "./provider";
+export { AppSecActivationsArgs, AppSecActivationsState } from "./appSecActivations";
+export type AppSecActivations = import("./appSecActivations").AppSecActivations;
+export const AppSecActivations: typeof import("./appSecActivations").AppSecActivations = null as any;
+utilities.lazyLoad(exports, ["AppSecActivations"], () => require("./appSecActivations"));
+
+export { AppSecAdvancedSettingsEvasivePathMatchArgs, AppSecAdvancedSettingsEvasivePathMatchState } from "./appSecAdvancedSettingsEvasivePathMatch";
+export type AppSecAdvancedSettingsEvasivePathMatch = import("./appSecAdvancedSettingsEvasivePathMatch").AppSecAdvancedSettingsEvasivePathMatch;
+export const AppSecAdvancedSettingsEvasivePathMatch: typeof import("./appSecAdvancedSettingsEvasivePathMatch").AppSecAdvancedSettingsEvasivePathMatch = null as any;
+utilities.lazyLoad(exports, ["AppSecAdvancedSettingsEvasivePathMatch"], () => require("./appSecAdvancedSettingsEvasivePathMatch"));
+
+export { AppSecAdvancedSettingsLoggingArgs, AppSecAdvancedSettingsLoggingState } from "./appSecAdvancedSettingsLogging";
+export type AppSecAdvancedSettingsLogging = import("./appSecAdvancedSettingsLogging").AppSecAdvancedSettingsLogging;
+export const AppSecAdvancedSettingsLogging: typeof import("./appSecAdvancedSettingsLogging").AppSecAdvancedSettingsLogging = null as any;
+utilities.lazyLoad(exports, ["AppSecAdvancedSettingsLogging"], () => require("./appSecAdvancedSettingsLogging"));
+
+export { AppSecAdvancedSettingsPragmaHeaderArgs, AppSecAdvancedSettingsPragmaHeaderState } from "./appSecAdvancedSettingsPragmaHeader";
+export type AppSecAdvancedSettingsPragmaHeader = import("./appSecAdvancedSettingsPragmaHeader").AppSecAdvancedSettingsPragmaHeader;
+export const AppSecAdvancedSettingsPragmaHeader: typeof import("./appSecAdvancedSettingsPragmaHeader").AppSecAdvancedSettingsPragmaHeader = null as any;
+utilities.lazyLoad(exports, ["AppSecAdvancedSettingsPragmaHeader"], () => require("./appSecAdvancedSettingsPragmaHeader"));
+
+export { AppSecAdvancedSettingsPrefetchArgs, AppSecAdvancedSettingsPrefetchState } from "./appSecAdvancedSettingsPrefetch";
+export type AppSecAdvancedSettingsPrefetch = import("./appSecAdvancedSettingsPrefetch").AppSecAdvancedSettingsPrefetch;
+export const AppSecAdvancedSettingsPrefetch: typeof import("./appSecAdvancedSettingsPrefetch").AppSecAdvancedSettingsPrefetch = null as any;
+utilities.lazyLoad(exports, ["AppSecAdvancedSettingsPrefetch"], () => require("./appSecAdvancedSettingsPrefetch"));
+
+export { AppSecApiConstraintsProtectionArgs, AppSecApiConstraintsProtectionState } from "./appSecApiConstraintsProtection";
+export type AppSecApiConstraintsProtection = import("./appSecApiConstraintsProtection").AppSecApiConstraintsProtection;
+export const AppSecApiConstraintsProtection: typeof import("./appSecApiConstraintsProtection").AppSecApiConstraintsProtection = null as any;
+utilities.lazyLoad(exports, ["AppSecApiConstraintsProtection"], () => require("./appSecApiConstraintsProtection"));
+
+export { AppSecApiRequestConstraintsArgs, AppSecApiRequestConstraintsState } from "./appSecApiRequestConstraints";
+export type AppSecApiRequestConstraints = import("./appSecApiRequestConstraints").AppSecApiRequestConstraints;
+export const AppSecApiRequestConstraints: typeof import("./appSecApiRequestConstraints").AppSecApiRequestConstraints = null as any;
+utilities.lazyLoad(exports, ["AppSecApiRequestConstraints"], () => require("./appSecApiRequestConstraints"));
+
+export { AppSecAttackGroupArgs, AppSecAttackGroupState } from "./appSecAttackGroup";
+export type AppSecAttackGroup = import("./appSecAttackGroup").AppSecAttackGroup;
+export const AppSecAttackGroup: typeof import("./appSecAttackGroup").AppSecAttackGroup = null as any;
+utilities.lazyLoad(exports, ["AppSecAttackGroup"], () => require("./appSecAttackGroup"));
+
+export { AppSecByPassNetworkListArgs, AppSecByPassNetworkListState } from "./appSecByPassNetworkList";
+export type AppSecByPassNetworkList = import("./appSecByPassNetworkList").AppSecByPassNetworkList;
+export const AppSecByPassNetworkList: typeof import("./appSecByPassNetworkList").AppSecByPassNetworkList = null as any;
+utilities.lazyLoad(exports, ["AppSecByPassNetworkList"], () => require("./appSecByPassNetworkList"));
+
+export { AppSecConfigurationArgs, AppSecConfigurationState } from "./appSecConfiguration";
+export type AppSecConfiguration = import("./appSecConfiguration").AppSecConfiguration;
+export const AppSecConfiguration: typeof import("./appSecConfiguration").AppSecConfiguration = null as any;
+utilities.lazyLoad(exports, ["AppSecConfiguration"], () => require("./appSecConfiguration"));
+
+export { AppSecConfigurationRenameArgs, AppSecConfigurationRenameState } from "./appSecConfigurationRename";
+export type AppSecConfigurationRename = import("./appSecConfigurationRename").AppSecConfigurationRename;
+export const AppSecConfigurationRename: typeof import("./appSecConfigurationRename").AppSecConfigurationRename = null as any;
+utilities.lazyLoad(exports, ["AppSecConfigurationRename"], () => require("./appSecConfigurationRename"));
+
+export { AppSecCustomDenyArgs, AppSecCustomDenyState } from "./appSecCustomDeny";
+export type AppSecCustomDeny = import("./appSecCustomDeny").AppSecCustomDeny;
+export const AppSecCustomDeny: typeof import("./appSecCustomDeny").AppSecCustomDeny = null as any;
+utilities.lazyLoad(exports, ["AppSecCustomDeny"], () => require("./appSecCustomDeny"));
+
+export { AppSecCustomRuleArgs, AppSecCustomRuleState } from "./appSecCustomRule";
+export type AppSecCustomRule = import("./appSecCustomRule").AppSecCustomRule;
+export const AppSecCustomRule: typeof import("./appSecCustomRule").AppSecCustomRule = null as any;
+utilities.lazyLoad(exports, ["AppSecCustomRule"], () => require("./appSecCustomRule"));
+
+export { AppSecCustomRuleActionArgs, AppSecCustomRuleActionState } from "./appSecCustomRuleAction";
+export type AppSecCustomRuleAction = import("./appSecCustomRuleAction").AppSecCustomRuleAction;
+export const AppSecCustomRuleAction: typeof import("./appSecCustomRuleAction").AppSecCustomRuleAction = null as any;
+utilities.lazyLoad(exports, ["AppSecCustomRuleAction"], () => require("./appSecCustomRuleAction"));
+
+export { AppSecEvalArgs, AppSecEvalState } from "./appSecEval";
+export type AppSecEval = import("./appSecEval").AppSecEval;
+export const AppSecEval: typeof import("./appSecEval").AppSecEval = null as any;
+utilities.lazyLoad(exports, ["AppSecEval"], () => require("./appSecEval"));
+
+export { AppSecEvalGroupArgs, AppSecEvalGroupState } from "./appSecEvalGroup";
+export type AppSecEvalGroup = import("./appSecEvalGroup").AppSecEvalGroup;
+export const AppSecEvalGroup: typeof import("./appSecEvalGroup").AppSecEvalGroup = null as any;
+utilities.lazyLoad(exports, ["AppSecEvalGroup"], () => require("./appSecEvalGroup"));
+
+export { AppSecEvalPenaltyBoxArgs, AppSecEvalPenaltyBoxState } from "./appSecEvalPenaltyBox";
+export type AppSecEvalPenaltyBox = import("./appSecEvalPenaltyBox").AppSecEvalPenaltyBox;
+export const AppSecEvalPenaltyBox: typeof import("./appSecEvalPenaltyBox").AppSecEvalPenaltyBox = null as any;
+utilities.lazyLoad(exports, ["AppSecEvalPenaltyBox"], () => require("./appSecEvalPenaltyBox"));
+
+export { AppSecEvalRuleArgs, AppSecEvalRuleState } from "./appSecEvalRule";
+export type AppSecEvalRule = import("./appSecEvalRule").AppSecEvalRule;
+export const AppSecEvalRule: typeof import("./appSecEvalRule").AppSecEvalRule = null as any;
+utilities.lazyLoad(exports, ["AppSecEvalRule"], () => require("./appSecEvalRule"));
+
+export { AppSecIPGeoArgs, AppSecIPGeoState } from "./appSecIPGeo";
+export type AppSecIPGeo = import("./appSecIPGeo").AppSecIPGeo;
+export const AppSecIPGeo: typeof import("./appSecIPGeo").AppSecIPGeo = null as any;
+utilities.lazyLoad(exports, ["AppSecIPGeo"], () => require("./appSecIPGeo"));
+
+export { AppSecIPGeoProtectionArgs, AppSecIPGeoProtectionState } from "./appSecIPGeoProtection";
+export type AppSecIPGeoProtection = import("./appSecIPGeoProtection").AppSecIPGeoProtection;
+export const AppSecIPGeoProtection: typeof import("./appSecIPGeoProtection").AppSecIPGeoProtection = null as any;
+utilities.lazyLoad(exports, ["AppSecIPGeoProtection"], () => require("./appSecIPGeoProtection"));
+
+export { AppSecMalwarePolicyArgs, AppSecMalwarePolicyState } from "./appSecMalwarePolicy";
+export type AppSecMalwarePolicy = import("./appSecMalwarePolicy").AppSecMalwarePolicy;
+export const AppSecMalwarePolicy: typeof import("./appSecMalwarePolicy").AppSecMalwarePolicy = null as any;
+utilities.lazyLoad(exports, ["AppSecMalwarePolicy"], () => require("./appSecMalwarePolicy"));
+
+export { AppSecMalwarePolicyActionArgs, AppSecMalwarePolicyActionState } from "./appSecMalwarePolicyAction";
+export type AppSecMalwarePolicyAction = import("./appSecMalwarePolicyAction").AppSecMalwarePolicyAction;
+export const AppSecMalwarePolicyAction: typeof import("./appSecMalwarePolicyAction").AppSecMalwarePolicyAction = null as any;
+utilities.lazyLoad(exports, ["AppSecMalwarePolicyAction"], () => require("./appSecMalwarePolicyAction"));
+
+export { AppSecMalwarePolicyActionsArgs, AppSecMalwarePolicyActionsState } from "./appSecMalwarePolicyActions";
+export type AppSecMalwarePolicyActions = import("./appSecMalwarePolicyActions").AppSecMalwarePolicyActions;
+export const AppSecMalwarePolicyActions: typeof import("./appSecMalwarePolicyActions").AppSecMalwarePolicyActions = null as any;
+utilities.lazyLoad(exports, ["AppSecMalwarePolicyActions"], () => require("./appSecMalwarePolicyActions"));
+
+export { AppSecMalwareProtectionArgs, AppSecMalwareProtectionState } from "./appSecMalwareProtection";
+export type AppSecMalwareProtection = import("./appSecMalwareProtection").AppSecMalwareProtection;
+export const AppSecMalwareProtection: typeof import("./appSecMalwareProtection").AppSecMalwareProtection = null as any;
+utilities.lazyLoad(exports, ["AppSecMalwareProtection"], () => require("./appSecMalwareProtection"));
+
+export { AppSecMatchTargetArgs, AppSecMatchTargetState } from "./appSecMatchTarget";
+export type AppSecMatchTarget = import("./appSecMatchTarget").AppSecMatchTarget;
+export const AppSecMatchTarget: typeof import("./appSecMatchTarget").AppSecMatchTarget = null as any;
+utilities.lazyLoad(exports, ["AppSecMatchTarget"], () => require("./appSecMatchTarget"));
+
+export { AppSecMatchTargetSequenceArgs, AppSecMatchTargetSequenceState } from "./appSecMatchTargetSequence";
+export type AppSecMatchTargetSequence = import("./appSecMatchTargetSequence").AppSecMatchTargetSequence;
+export const AppSecMatchTargetSequence: typeof import("./appSecMatchTargetSequence").AppSecMatchTargetSequence = null as any;
+utilities.lazyLoad(exports, ["AppSecMatchTargetSequence"], () => require("./appSecMatchTargetSequence"));
+
+export { AppSecPenaltyBoxArgs, AppSecPenaltyBoxState } from "./appSecPenaltyBox";
+export type AppSecPenaltyBox = import("./appSecPenaltyBox").AppSecPenaltyBox;
+export const AppSecPenaltyBox: typeof import("./appSecPenaltyBox").AppSecPenaltyBox = null as any;
+utilities.lazyLoad(exports, ["AppSecPenaltyBox"], () => require("./appSecPenaltyBox"));
+
+export { AppSecRatePolicyArgs, AppSecRatePolicyState } from "./appSecRatePolicy";
+export type AppSecRatePolicy = import("./appSecRatePolicy").AppSecRatePolicy;
+export const AppSecRatePolicy: typeof import("./appSecRatePolicy").AppSecRatePolicy = null as any;
+utilities.lazyLoad(exports, ["AppSecRatePolicy"], () => require("./appSecRatePolicy"));
+
+export { AppSecRatePolicyActionArgs, AppSecRatePolicyActionState } from "./appSecRatePolicyAction";
+export type AppSecRatePolicyAction = import("./appSecRatePolicyAction").AppSecRatePolicyAction;
+export const AppSecRatePolicyAction: typeof import("./appSecRatePolicyAction").AppSecRatePolicyAction = null as any;
+utilities.lazyLoad(exports, ["AppSecRatePolicyAction"], () => require("./appSecRatePolicyAction"));
+
+export { AppSecRateProtectionArgs, AppSecRateProtectionState } from "./appSecRateProtection";
+export type AppSecRateProtection = import("./appSecRateProtection").AppSecRateProtection;
+export const AppSecRateProtection: typeof import("./appSecRateProtection").AppSecRateProtection = null as any;
+utilities.lazyLoad(exports, ["AppSecRateProtection"], () => require("./appSecRateProtection"));
+
+export { AppSecReputationProfileArgs, AppSecReputationProfileState } from "./appSecReputationProfile";
+export type AppSecReputationProfile = import("./appSecReputationProfile").AppSecReputationProfile;
+export const AppSecReputationProfile: typeof import("./appSecReputationProfile").AppSecReputationProfile = null as any;
+utilities.lazyLoad(exports, ["AppSecReputationProfile"], () => require("./appSecReputationProfile"));
+
+export { AppSecReputationProfileActionArgs, AppSecReputationProfileActionState } from "./appSecReputationProfileAction";
+export type AppSecReputationProfileAction = import("./appSecReputationProfileAction").AppSecReputationProfileAction;
+export const AppSecReputationProfileAction: typeof import("./appSecReputationProfileAction").AppSecReputationProfileAction = null as any;
+utilities.lazyLoad(exports, ["AppSecReputationProfileAction"], () => require("./appSecReputationProfileAction"));
+
+export { AppSecReputationProfileAnalysisArgs, AppSecReputationProfileAnalysisState } from "./appSecReputationProfileAnalysis";
+export type AppSecReputationProfileAnalysis = import("./appSecReputationProfileAnalysis").AppSecReputationProfileAnalysis;
+export const AppSecReputationProfileAnalysis: typeof import("./appSecReputationProfileAnalysis").AppSecReputationProfileAnalysis = null as any;
+utilities.lazyLoad(exports, ["AppSecReputationProfileAnalysis"], () => require("./appSecReputationProfileAnalysis"));
+
+export { AppSecReputationProtectionArgs, AppSecReputationProtectionState } from "./appSecReputationProtection";
+export type AppSecReputationProtection = import("./appSecReputationProtection").AppSecReputationProtection;
+export const AppSecReputationProtection: typeof import("./appSecReputationProtection").AppSecReputationProtection = null as any;
+utilities.lazyLoad(exports, ["AppSecReputationProtection"], () => require("./appSecReputationProtection"));
+
+export { AppSecRuleArgs, AppSecRuleState } from "./appSecRule";
+export type AppSecRule = import("./appSecRule").AppSecRule;
+export const AppSecRule: typeof import("./appSecRule").AppSecRule = null as any;
+utilities.lazyLoad(exports, ["AppSecRule"], () => require("./appSecRule"));
+
+export { AppSecRuleUpgradeArgs, AppSecRuleUpgradeState } from "./appSecRuleUpgrade";
+export type AppSecRuleUpgrade = import("./appSecRuleUpgrade").AppSecRuleUpgrade;
+export const AppSecRuleUpgrade: typeof import("./appSecRuleUpgrade").AppSecRuleUpgrade = null as any;
+utilities.lazyLoad(exports, ["AppSecRuleUpgrade"], () => require("./appSecRuleUpgrade"));
+
+export { AppSecSecurityPolicyArgs, AppSecSecurityPolicyState } from "./appSecSecurityPolicy";
+export type AppSecSecurityPolicy = import("./appSecSecurityPolicy").AppSecSecurityPolicy;
+export const AppSecSecurityPolicy: typeof import("./appSecSecurityPolicy").AppSecSecurityPolicy = null as any;
+utilities.lazyLoad(exports, ["AppSecSecurityPolicy"], () => require("./appSecSecurityPolicy"));
+
+export { AppSecSecurityPolicyRenameArgs, AppSecSecurityPolicyRenameState } from "./appSecSecurityPolicyRename";
+export type AppSecSecurityPolicyRename = import("./appSecSecurityPolicyRename").AppSecSecurityPolicyRename;
+export const AppSecSecurityPolicyRename: typeof import("./appSecSecurityPolicyRename").AppSecSecurityPolicyRename = null as any;
+utilities.lazyLoad(exports, ["AppSecSecurityPolicyRename"], () => require("./appSecSecurityPolicyRename"));
+
+export { AppSecSelectedHostnamesArgs, AppSecSelectedHostnamesState } from "./appSecSelectedHostnames";
+export type AppSecSelectedHostnames = import("./appSecSelectedHostnames").AppSecSelectedHostnames;
+export const AppSecSelectedHostnames: typeof import("./appSecSelectedHostnames").AppSecSelectedHostnames = null as any;
+utilities.lazyLoad(exports, ["AppSecSelectedHostnames"], () => require("./appSecSelectedHostnames"));
+
+export { AppSecSiemSettingsArgs, AppSecSiemSettingsState } from "./appSecSiemSettings";
+export type AppSecSiemSettings = import("./appSecSiemSettings").AppSecSiemSettings;
+export const AppSecSiemSettings: typeof import("./appSecSiemSettings").AppSecSiemSettings = null as any;
+utilities.lazyLoad(exports, ["AppSecSiemSettings"], () => require("./appSecSiemSettings"));
+
+export { AppSecSlowPostArgs, AppSecSlowPostState } from "./appSecSlowPost";
+export type AppSecSlowPost = import("./appSecSlowPost").AppSecSlowPost;
+export const AppSecSlowPost: typeof import("./appSecSlowPost").AppSecSlowPost = null as any;
+utilities.lazyLoad(exports, ["AppSecSlowPost"], () => require("./appSecSlowPost"));
+
+export { AppSecSlowPostProtectionArgs, AppSecSlowPostProtectionState } from "./appSecSlowPostProtection";
+export type AppSecSlowPostProtection = import("./appSecSlowPostProtection").AppSecSlowPostProtection;
+export const AppSecSlowPostProtection: typeof import("./appSecSlowPostProtection").AppSecSlowPostProtection = null as any;
+utilities.lazyLoad(exports, ["AppSecSlowPostProtection"], () => require("./appSecSlowPostProtection"));
+
+export { AppSecThreatIntelArgs, AppSecThreatIntelState } from "./appSecThreatIntel";
+export type AppSecThreatIntel = import("./appSecThreatIntel").AppSecThreatIntel;
+export const AppSecThreatIntel: typeof import("./appSecThreatIntel").AppSecThreatIntel = null as any;
+utilities.lazyLoad(exports, ["AppSecThreatIntel"], () => require("./appSecThreatIntel"));
+
+export { AppSecVersionNodesArgs, AppSecVersionNodesState } from "./appSecVersionNodes";
+export type AppSecVersionNodes = import("./appSecVersionNodes").AppSecVersionNodes;
+export const AppSecVersionNodes: typeof import("./appSecVersionNodes").AppSecVersionNodes = null as any;
+utilities.lazyLoad(exports, ["AppSecVersionNodes"], () => require("./appSecVersionNodes"));
+
+export { AppSecWafModeArgs, AppSecWafModeState } from "./appSecWafMode";
+export type AppSecWafMode = import("./appSecWafMode").AppSecWafMode;
+export const AppSecWafMode: typeof import("./appSecWafMode").AppSecWafMode = null as any;
+utilities.lazyLoad(exports, ["AppSecWafMode"], () => require("./appSecWafMode"));
+
+export { AppSecWafProtectionArgs, AppSecWafProtectionState } from "./appSecWafProtection";
+export type AppSecWafProtection = import("./appSecWafProtection").AppSecWafProtection;
+export const AppSecWafProtection: typeof import("./appSecWafProtection").AppSecWafProtection = null as any;
+utilities.lazyLoad(exports, ["AppSecWafProtection"], () => require("./appSecWafProtection"));
+
+export { AppSecWapSelectedHostnamesArgs, AppSecWapSelectedHostnamesState } from "./appSecWapSelectedHostnames";
+export type AppSecWapSelectedHostnames = import("./appSecWapSelectedHostnames").AppSecWapSelectedHostnames;
+export const AppSecWapSelectedHostnames: typeof import("./appSecWapSelectedHostnames").AppSecWapSelectedHostnames = null as any;
+utilities.lazyLoad(exports, ["AppSecWapSelectedHostnames"], () => require("./appSecWapSelectedHostnames"));
+
+export { CloudletsApplicationLoadBalancerArgs, CloudletsApplicationLoadBalancerState } from "./cloudletsApplicationLoadBalancer";
+export type CloudletsApplicationLoadBalancer = import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer;
+export const CloudletsApplicationLoadBalancer: typeof import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer = null as any;
+utilities.lazyLoad(exports, ["CloudletsApplicationLoadBalancer"], () => require("./cloudletsApplicationLoadBalancer"));
+
+export { CloudletsApplicationLoadBalancerActivationArgs, CloudletsApplicationLoadBalancerActivationState } from "./cloudletsApplicationLoadBalancerActivation";
+export type CloudletsApplicationLoadBalancerActivation = import("./cloudletsApplicationLoadBalancerActivation").CloudletsApplicationLoadBalancerActivation;
+export const CloudletsApplicationLoadBalancerActivation: typeof import("./cloudletsApplicationLoadBalancerActivation").CloudletsApplicationLoadBalancerActivation = null as any;
+utilities.lazyLoad(exports, ["CloudletsApplicationLoadBalancerActivation"], () => require("./cloudletsApplicationLoadBalancerActivation"));
+
+export { CloudletsPolicyArgs, CloudletsPolicyState } from "./cloudletsPolicy";
+export type CloudletsPolicy = import("./cloudletsPolicy").CloudletsPolicy;
+export const CloudletsPolicy: typeof import("./cloudletsPolicy").CloudletsPolicy = null as any;
+utilities.lazyLoad(exports, ["CloudletsPolicy"], () => require("./cloudletsPolicy"));
+
+export { CloudletsPolicyActivationArgs, CloudletsPolicyActivationState } from "./cloudletsPolicyActivation";
+export type CloudletsPolicyActivation = import("./cloudletsPolicyActivation").CloudletsPolicyActivation;
+export const CloudletsPolicyActivation: typeof import("./cloudletsPolicyActivation").CloudletsPolicyActivation = null as any;
+utilities.lazyLoad(exports, ["CloudletsPolicyActivation"], () => require("./cloudletsPolicyActivation"));
+
+export { CpCodeArgs, CpCodeState } from "./cpCode";
+export type CpCode = import("./cpCode").CpCode;
+export const CpCode: typeof import("./cpCode").CpCode = null as any;
+utilities.lazyLoad(exports, ["CpCode"], () => require("./cpCode"));
+
+export { CpsDvEnrollmentArgs, CpsDvEnrollmentState } from "./cpsDvEnrollment";
+export type CpsDvEnrollment = import("./cpsDvEnrollment").CpsDvEnrollment;
+export const CpsDvEnrollment: typeof import("./cpsDvEnrollment").CpsDvEnrollment = null as any;
+utilities.lazyLoad(exports, ["CpsDvEnrollment"], () => require("./cpsDvEnrollment"));
+
+export { CpsDvValidationArgs, CpsDvValidationState } from "./cpsDvValidation";
+export type CpsDvValidation = import("./cpsDvValidation").CpsDvValidation;
+export const CpsDvValidation: typeof import("./cpsDvValidation").CpsDvValidation = null as any;
+utilities.lazyLoad(exports, ["CpsDvValidation"], () => require("./cpsDvValidation"));
+
+export { CpsThirdPartyEnrollmentArgs, CpsThirdPartyEnrollmentState } from "./cpsThirdPartyEnrollment";
+export type CpsThirdPartyEnrollment = import("./cpsThirdPartyEnrollment").CpsThirdPartyEnrollment;
+export const CpsThirdPartyEnrollment: typeof import("./cpsThirdPartyEnrollment").CpsThirdPartyEnrollment = null as any;
+utilities.lazyLoad(exports, ["CpsThirdPartyEnrollment"], () => require("./cpsThirdPartyEnrollment"));
+
+export { CpsUploadCertificateArgs, CpsUploadCertificateState } from "./cpsUploadCertificate";
+export type CpsUploadCertificate = import("./cpsUploadCertificate").CpsUploadCertificate;
+export const CpsUploadCertificate: typeof import("./cpsUploadCertificate").CpsUploadCertificate = null as any;
+utilities.lazyLoad(exports, ["CpsUploadCertificate"], () => require("./cpsUploadCertificate"));
+
+export { DatastreamArgs, DatastreamState } from "./datastream";
+export type Datastream = import("./datastream").Datastream;
+export const Datastream: typeof import("./datastream").Datastream = null as any;
+utilities.lazyLoad(exports, ["Datastream"], () => require("./datastream"));
+
+export { DnsRecordArgs, DnsRecordState } from "./dnsRecord";
+export type DnsRecord = import("./dnsRecord").DnsRecord;
+export const DnsRecord: typeof import("./dnsRecord").DnsRecord = null as any;
+utilities.lazyLoad(exports, ["DnsRecord"], () => require("./dnsRecord"));
+
+export { DnsZoneArgs, DnsZoneState } from "./dnsZone";
+export type DnsZone = import("./dnsZone").DnsZone;
+export const DnsZone: typeof import("./dnsZone").DnsZone = null as any;
+utilities.lazyLoad(exports, ["DnsZone"], () => require("./dnsZone"));
+
+export { EdgeHostNameArgs, EdgeHostNameState } from "./edgeHostName";
+export type EdgeHostName = import("./edgeHostName").EdgeHostName;
+export const EdgeHostName: typeof import("./edgeHostName").EdgeHostName = null as any;
+utilities.lazyLoad(exports, ["EdgeHostName"], () => require("./edgeHostName"));
+
+export { EdgeKvArgs, EdgeKvState } from "./edgeKv";
+export type EdgeKv = import("./edgeKv").EdgeKv;
+export const EdgeKv: typeof import("./edgeKv").EdgeKv = null as any;
+utilities.lazyLoad(exports, ["EdgeKv"], () => require("./edgeKv"));
+
+export { EdgeWorkerArgs, EdgeWorkerState } from "./edgeWorker";
+export type EdgeWorker = import("./edgeWorker").EdgeWorker;
+export const EdgeWorker: typeof import("./edgeWorker").EdgeWorker = null as any;
+utilities.lazyLoad(exports, ["EdgeWorker"], () => require("./edgeWorker"));
+
+export { EdgeWorkersActivationArgs, EdgeWorkersActivationState } from "./edgeWorkersActivation";
+export type EdgeWorkersActivation = import("./edgeWorkersActivation").EdgeWorkersActivation;
+export const EdgeWorkersActivation: typeof import("./edgeWorkersActivation").EdgeWorkersActivation = null as any;
+utilities.lazyLoad(exports, ["EdgeWorkersActivation"], () => require("./edgeWorkersActivation"));
+
+export { GetAppSecAdvancedSettingsEvasivePathMatchArgs, GetAppSecAdvancedSettingsEvasivePathMatchResult, GetAppSecAdvancedSettingsEvasivePathMatchOutputArgs } from "./getAppSecAdvancedSettingsEvasivePathMatch";
+export const getAppSecAdvancedSettingsEvasivePathMatch: typeof import("./getAppSecAdvancedSettingsEvasivePathMatch").getAppSecAdvancedSettingsEvasivePathMatch = null as any;
+export const getAppSecAdvancedSettingsEvasivePathMatchOutput: typeof import("./getAppSecAdvancedSettingsEvasivePathMatch").getAppSecAdvancedSettingsEvasivePathMatchOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecAdvancedSettingsEvasivePathMatch","getAppSecAdvancedSettingsEvasivePathMatchOutput"], () => require("./getAppSecAdvancedSettingsEvasivePathMatch"));
+
+export { GetAppSecAdvancedSettingsLoggingArgs, GetAppSecAdvancedSettingsLoggingResult, GetAppSecAdvancedSettingsLoggingOutputArgs } from "./getAppSecAdvancedSettingsLogging";
+export const getAppSecAdvancedSettingsLogging: typeof import("./getAppSecAdvancedSettingsLogging").getAppSecAdvancedSettingsLogging = null as any;
+export const getAppSecAdvancedSettingsLoggingOutput: typeof import("./getAppSecAdvancedSettingsLogging").getAppSecAdvancedSettingsLoggingOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecAdvancedSettingsLogging","getAppSecAdvancedSettingsLoggingOutput"], () => require("./getAppSecAdvancedSettingsLogging"));
+
+export { GetAppSecAdvancedSettingsPragmaHeaderArgs, GetAppSecAdvancedSettingsPragmaHeaderResult, GetAppSecAdvancedSettingsPragmaHeaderOutputArgs } from "./getAppSecAdvancedSettingsPragmaHeader";
+export const getAppSecAdvancedSettingsPragmaHeader: typeof import("./getAppSecAdvancedSettingsPragmaHeader").getAppSecAdvancedSettingsPragmaHeader = null as any;
+export const getAppSecAdvancedSettingsPragmaHeaderOutput: typeof import("./getAppSecAdvancedSettingsPragmaHeader").getAppSecAdvancedSettingsPragmaHeaderOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecAdvancedSettingsPragmaHeader","getAppSecAdvancedSettingsPragmaHeaderOutput"], () => require("./getAppSecAdvancedSettingsPragmaHeader"));
+
+export { GetAppSecAdvancedSettingsPrefetchArgs, GetAppSecAdvancedSettingsPrefetchResult, GetAppSecAdvancedSettingsPrefetchOutputArgs } from "./getAppSecAdvancedSettingsPrefetch";
+export const getAppSecAdvancedSettingsPrefetch: typeof import("./getAppSecAdvancedSettingsPrefetch").getAppSecAdvancedSettingsPrefetch = null as any;
+export const getAppSecAdvancedSettingsPrefetchOutput: typeof import("./getAppSecAdvancedSettingsPrefetch").getAppSecAdvancedSettingsPrefetchOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecAdvancedSettingsPrefetch","getAppSecAdvancedSettingsPrefetchOutput"], () => require("./getAppSecAdvancedSettingsPrefetch"));
+
+export { GetAppSecApiEndpointsArgs, GetAppSecApiEndpointsResult, GetAppSecApiEndpointsOutputArgs } from "./getAppSecApiEndpoints";
+export const getAppSecApiEndpoints: typeof import("./getAppSecApiEndpoints").getAppSecApiEndpoints = null as any;
+export const getAppSecApiEndpointsOutput: typeof import("./getAppSecApiEndpoints").getAppSecApiEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecApiEndpoints","getAppSecApiEndpointsOutput"], () => require("./getAppSecApiEndpoints"));
+
+export { GetAppSecApiRequestConstraintsArgs, GetAppSecApiRequestConstraintsResult, GetAppSecApiRequestConstraintsOutputArgs } from "./getAppSecApiRequestConstraints";
+export const getAppSecApiRequestConstraints: typeof import("./getAppSecApiRequestConstraints").getAppSecApiRequestConstraints = null as any;
+export const getAppSecApiRequestConstraintsOutput: typeof import("./getAppSecApiRequestConstraints").getAppSecApiRequestConstraintsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecApiRequestConstraints","getAppSecApiRequestConstraintsOutput"], () => require("./getAppSecApiRequestConstraints"));
+
+export { GetAppSecAttackGroupsArgs, GetAppSecAttackGroupsResult, GetAppSecAttackGroupsOutputArgs } from "./getAppSecAttackGroups";
+export const getAppSecAttackGroups: typeof import("./getAppSecAttackGroups").getAppSecAttackGroups = null as any;
+export const getAppSecAttackGroupsOutput: typeof import("./getAppSecAttackGroups").getAppSecAttackGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecAttackGroups","getAppSecAttackGroupsOutput"], () => require("./getAppSecAttackGroups"));
+
+export { GetAppSecBypassNetworkListsArgs, GetAppSecBypassNetworkListsResult, GetAppSecBypassNetworkListsOutputArgs } from "./getAppSecBypassNetworkLists";
+export const getAppSecBypassNetworkLists: typeof import("./getAppSecBypassNetworkLists").getAppSecBypassNetworkLists = null as any;
+export const getAppSecBypassNetworkListsOutput: typeof import("./getAppSecBypassNetworkLists").getAppSecBypassNetworkListsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecBypassNetworkLists","getAppSecBypassNetworkListsOutput"], () => require("./getAppSecBypassNetworkLists"));
+
+export { GetAppSecConfigurationArgs, GetAppSecConfigurationResult, GetAppSecConfigurationOutputArgs } from "./getAppSecConfiguration";
+export const getAppSecConfiguration: typeof import("./getAppSecConfiguration").getAppSecConfiguration = null as any;
+export const getAppSecConfigurationOutput: typeof import("./getAppSecConfiguration").getAppSecConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecConfiguration","getAppSecConfigurationOutput"], () => require("./getAppSecConfiguration"));
+
+export { GetAppSecConfigurationVersionArgs, GetAppSecConfigurationVersionResult, GetAppSecConfigurationVersionOutputArgs } from "./getAppSecConfigurationVersion";
+export const getAppSecConfigurationVersion: typeof import("./getAppSecConfigurationVersion").getAppSecConfigurationVersion = null as any;
+export const getAppSecConfigurationVersionOutput: typeof import("./getAppSecConfigurationVersion").getAppSecConfigurationVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecConfigurationVersion","getAppSecConfigurationVersionOutput"], () => require("./getAppSecConfigurationVersion"));
+
+export { GetAppSecContractsGroupsArgs, GetAppSecContractsGroupsResult, GetAppSecContractsGroupsOutputArgs } from "./getAppSecContractsGroups";
+export const getAppSecContractsGroups: typeof import("./getAppSecContractsGroups").getAppSecContractsGroups = null as any;
+export const getAppSecContractsGroupsOutput: typeof import("./getAppSecContractsGroups").getAppSecContractsGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecContractsGroups","getAppSecContractsGroupsOutput"], () => require("./getAppSecContractsGroups"));
+
+export { GetAppSecCustomDenyArgs, GetAppSecCustomDenyResult, GetAppSecCustomDenyOutputArgs } from "./getAppSecCustomDeny";
+export const getAppSecCustomDeny: typeof import("./getAppSecCustomDeny").getAppSecCustomDeny = null as any;
+export const getAppSecCustomDenyOutput: typeof import("./getAppSecCustomDeny").getAppSecCustomDenyOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecCustomDeny","getAppSecCustomDenyOutput"], () => require("./getAppSecCustomDeny"));
+
+export { GetAppSecCustomRuleActionsArgs, GetAppSecCustomRuleActionsResult, GetAppSecCustomRuleActionsOutputArgs } from "./getAppSecCustomRuleActions";
+export const getAppSecCustomRuleActions: typeof import("./getAppSecCustomRuleActions").getAppSecCustomRuleActions = null as any;
+export const getAppSecCustomRuleActionsOutput: typeof import("./getAppSecCustomRuleActions").getAppSecCustomRuleActionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecCustomRuleActions","getAppSecCustomRuleActionsOutput"], () => require("./getAppSecCustomRuleActions"));
+
+export { GetAppSecCustomRulesArgs, GetAppSecCustomRulesResult, GetAppSecCustomRulesOutputArgs } from "./getAppSecCustomRules";
+export const getAppSecCustomRules: typeof import("./getAppSecCustomRules").getAppSecCustomRules = null as any;
+export const getAppSecCustomRulesOutput: typeof import("./getAppSecCustomRules").getAppSecCustomRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecCustomRules","getAppSecCustomRulesOutput"], () => require("./getAppSecCustomRules"));
+
+export { GetAppSecEvalArgs, GetAppSecEvalResult, GetAppSecEvalOutputArgs } from "./getAppSecEval";
+export const getAppSecEval: typeof import("./getAppSecEval").getAppSecEval = null as any;
+export const getAppSecEvalOutput: typeof import("./getAppSecEval").getAppSecEvalOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecEval","getAppSecEvalOutput"], () => require("./getAppSecEval"));
+
+export { GetAppSecEvalGroupsArgs, GetAppSecEvalGroupsResult, GetAppSecEvalGroupsOutputArgs } from "./getAppSecEvalGroups";
+export const getAppSecEvalGroups: typeof import("./getAppSecEvalGroups").getAppSecEvalGroups = null as any;
+export const getAppSecEvalGroupsOutput: typeof import("./getAppSecEvalGroups").getAppSecEvalGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecEvalGroups","getAppSecEvalGroupsOutput"], () => require("./getAppSecEvalGroups"));
+
+export { GetAppSecEvalPenaltyBoxArgs, GetAppSecEvalPenaltyBoxResult, GetAppSecEvalPenaltyBoxOutputArgs } from "./getAppSecEvalPenaltyBox";
+export const getAppSecEvalPenaltyBox: typeof import("./getAppSecEvalPenaltyBox").getAppSecEvalPenaltyBox = null as any;
+export const getAppSecEvalPenaltyBoxOutput: typeof import("./getAppSecEvalPenaltyBox").getAppSecEvalPenaltyBoxOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecEvalPenaltyBox","getAppSecEvalPenaltyBoxOutput"], () => require("./getAppSecEvalPenaltyBox"));
+
+export { GetAppSecEvalRulesArgs, GetAppSecEvalRulesResult, GetAppSecEvalRulesOutputArgs } from "./getAppSecEvalRules";
+export const getAppSecEvalRules: typeof import("./getAppSecEvalRules").getAppSecEvalRules = null as any;
+export const getAppSecEvalRulesOutput: typeof import("./getAppSecEvalRules").getAppSecEvalRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecEvalRules","getAppSecEvalRulesOutput"], () => require("./getAppSecEvalRules"));
+
+export { GetAppSecExportConfigurationArgs, GetAppSecExportConfigurationResult, GetAppSecExportConfigurationOutputArgs } from "./getAppSecExportConfiguration";
+export const getAppSecExportConfiguration: typeof import("./getAppSecExportConfiguration").getAppSecExportConfiguration = null as any;
+export const getAppSecExportConfigurationOutput: typeof import("./getAppSecExportConfiguration").getAppSecExportConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecExportConfiguration","getAppSecExportConfigurationOutput"], () => require("./getAppSecExportConfiguration"));
+
+export { GetAppSecFailoverHostnamesArgs, GetAppSecFailoverHostnamesResult, GetAppSecFailoverHostnamesOutputArgs } from "./getAppSecFailoverHostnames";
+export const getAppSecFailoverHostnames: typeof import("./getAppSecFailoverHostnames").getAppSecFailoverHostnames = null as any;
+export const getAppSecFailoverHostnamesOutput: typeof import("./getAppSecFailoverHostnames").getAppSecFailoverHostnamesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecFailoverHostnames","getAppSecFailoverHostnamesOutput"], () => require("./getAppSecFailoverHostnames"));
+
+export { GetAppSecHostnameCoverageResult } from "./getAppSecHostnameCoverage";
+export const getAppSecHostnameCoverage: typeof import("./getAppSecHostnameCoverage").getAppSecHostnameCoverage = null as any;
+utilities.lazyLoad(exports, ["getAppSecHostnameCoverage"], () => require("./getAppSecHostnameCoverage"));
+
+export { GetAppSecHostnameCoverageMatchTargetsArgs, GetAppSecHostnameCoverageMatchTargetsResult, GetAppSecHostnameCoverageMatchTargetsOutputArgs } from "./getAppSecHostnameCoverageMatchTargets";
+export const getAppSecHostnameCoverageMatchTargets: typeof import("./getAppSecHostnameCoverageMatchTargets").getAppSecHostnameCoverageMatchTargets = null as any;
+export const getAppSecHostnameCoverageMatchTargetsOutput: typeof import("./getAppSecHostnameCoverageMatchTargets").getAppSecHostnameCoverageMatchTargetsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecHostnameCoverageMatchTargets","getAppSecHostnameCoverageMatchTargetsOutput"], () => require("./getAppSecHostnameCoverageMatchTargets"));
+
+export { GetAppSecHostnameCoverageOverlappingArgs, GetAppSecHostnameCoverageOverlappingResult, GetAppSecHostnameCoverageOverlappingOutputArgs } from "./getAppSecHostnameCoverageOverlapping";
+export const getAppSecHostnameCoverageOverlapping: typeof import("./getAppSecHostnameCoverageOverlapping").getAppSecHostnameCoverageOverlapping = null as any;
+export const getAppSecHostnameCoverageOverlappingOutput: typeof import("./getAppSecHostnameCoverageOverlapping").getAppSecHostnameCoverageOverlappingOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecHostnameCoverageOverlapping","getAppSecHostnameCoverageOverlappingOutput"], () => require("./getAppSecHostnameCoverageOverlapping"));
+
+export { GetAppSecIPGeoArgs, GetAppSecIPGeoResult, GetAppSecIPGeoOutputArgs } from "./getAppSecIPGeo";
+export const getAppSecIPGeo: typeof import("./getAppSecIPGeo").getAppSecIPGeo = null as any;
+export const getAppSecIPGeoOutput: typeof import("./getAppSecIPGeo").getAppSecIPGeoOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecIPGeo","getAppSecIPGeoOutput"], () => require("./getAppSecIPGeo"));
+
+export { GetAppSecMalwareContentTypesArgs, GetAppSecMalwareContentTypesResult, GetAppSecMalwareContentTypesOutputArgs } from "./getAppSecMalwareContentTypes";
+export const getAppSecMalwareContentTypes: typeof import("./getAppSecMalwareContentTypes").getAppSecMalwareContentTypes = null as any;
+export const getAppSecMalwareContentTypesOutput: typeof import("./getAppSecMalwareContentTypes").getAppSecMalwareContentTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecMalwareContentTypes","getAppSecMalwareContentTypesOutput"], () => require("./getAppSecMalwareContentTypes"));
+
+export { GetAppSecMalwarePoliciesArgs, GetAppSecMalwarePoliciesResult, GetAppSecMalwarePoliciesOutputArgs } from "./getAppSecMalwarePolicies";
+export const getAppSecMalwarePolicies: typeof import("./getAppSecMalwarePolicies").getAppSecMalwarePolicies = null as any;
+export const getAppSecMalwarePoliciesOutput: typeof import("./getAppSecMalwarePolicies").getAppSecMalwarePoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecMalwarePolicies","getAppSecMalwarePoliciesOutput"], () => require("./getAppSecMalwarePolicies"));
+
+export { GetAppSecMalwarePolicyActionsArgs, GetAppSecMalwarePolicyActionsResult, GetAppSecMalwarePolicyActionsOutputArgs } from "./getAppSecMalwarePolicyActions";
+export const getAppSecMalwarePolicyActions: typeof import("./getAppSecMalwarePolicyActions").getAppSecMalwarePolicyActions = null as any;
+export const getAppSecMalwarePolicyActionsOutput: typeof import("./getAppSecMalwarePolicyActions").getAppSecMalwarePolicyActionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecMalwarePolicyActions","getAppSecMalwarePolicyActionsOutput"], () => require("./getAppSecMalwarePolicyActions"));
+
+export { GetAppSecMatchTargetsArgs, GetAppSecMatchTargetsResult, GetAppSecMatchTargetsOutputArgs } from "./getAppSecMatchTargets";
+export const getAppSecMatchTargets: typeof import("./getAppSecMatchTargets").getAppSecMatchTargets = null as any;
+export const getAppSecMatchTargetsOutput: typeof import("./getAppSecMatchTargets").getAppSecMatchTargetsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecMatchTargets","getAppSecMatchTargetsOutput"], () => require("./getAppSecMatchTargets"));
+
+export { GetAppSecPenaltyBoxArgs, GetAppSecPenaltyBoxResult, GetAppSecPenaltyBoxOutputArgs } from "./getAppSecPenaltyBox";
+export const getAppSecPenaltyBox: typeof import("./getAppSecPenaltyBox").getAppSecPenaltyBox = null as any;
+export const getAppSecPenaltyBoxOutput: typeof import("./getAppSecPenaltyBox").getAppSecPenaltyBoxOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecPenaltyBox","getAppSecPenaltyBoxOutput"], () => require("./getAppSecPenaltyBox"));
+
+export { GetAppSecRatePoliciesArgs, GetAppSecRatePoliciesResult, GetAppSecRatePoliciesOutputArgs } from "./getAppSecRatePolicies";
+export const getAppSecRatePolicies: typeof import("./getAppSecRatePolicies").getAppSecRatePolicies = null as any;
+export const getAppSecRatePoliciesOutput: typeof import("./getAppSecRatePolicies").getAppSecRatePoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecRatePolicies","getAppSecRatePoliciesOutput"], () => require("./getAppSecRatePolicies"));
+
+export { GetAppSecRatePolicyActionsArgs, GetAppSecRatePolicyActionsResult, GetAppSecRatePolicyActionsOutputArgs } from "./getAppSecRatePolicyActions";
+export const getAppSecRatePolicyActions: typeof import("./getAppSecRatePolicyActions").getAppSecRatePolicyActions = null as any;
+export const getAppSecRatePolicyActionsOutput: typeof import("./getAppSecRatePolicyActions").getAppSecRatePolicyActionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecRatePolicyActions","getAppSecRatePolicyActionsOutput"], () => require("./getAppSecRatePolicyActions"));
+
+export { GetAppSecReputationProfileActionsArgs, GetAppSecReputationProfileActionsResult, GetAppSecReputationProfileActionsOutputArgs } from "./getAppSecReputationProfileActions";
+export const getAppSecReputationProfileActions: typeof import("./getAppSecReputationProfileActions").getAppSecReputationProfileActions = null as any;
+export const getAppSecReputationProfileActionsOutput: typeof import("./getAppSecReputationProfileActions").getAppSecReputationProfileActionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecReputationProfileActions","getAppSecReputationProfileActionsOutput"], () => require("./getAppSecReputationProfileActions"));
+
+export { GetAppSecReputationProfileAnalysisArgs, GetAppSecReputationProfileAnalysisResult, GetAppSecReputationProfileAnalysisOutputArgs } from "./getAppSecReputationProfileAnalysis";
+export const getAppSecReputationProfileAnalysis: typeof import("./getAppSecReputationProfileAnalysis").getAppSecReputationProfileAnalysis = null as any;
+export const getAppSecReputationProfileAnalysisOutput: typeof import("./getAppSecReputationProfileAnalysis").getAppSecReputationProfileAnalysisOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecReputationProfileAnalysis","getAppSecReputationProfileAnalysisOutput"], () => require("./getAppSecReputationProfileAnalysis"));
+
+export { GetAppSecReputationProfilesArgs, GetAppSecReputationProfilesResult, GetAppSecReputationProfilesOutputArgs } from "./getAppSecReputationProfiles";
+export const getAppSecReputationProfiles: typeof import("./getAppSecReputationProfiles").getAppSecReputationProfiles = null as any;
+export const getAppSecReputationProfilesOutput: typeof import("./getAppSecReputationProfiles").getAppSecReputationProfilesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecReputationProfiles","getAppSecReputationProfilesOutput"], () => require("./getAppSecReputationProfiles"));
+
+export { GetAppSecRuleUpgradeDetailsArgs, GetAppSecRuleUpgradeDetailsResult, GetAppSecRuleUpgradeDetailsOutputArgs } from "./getAppSecRuleUpgradeDetails";
+export const getAppSecRuleUpgradeDetails: typeof import("./getAppSecRuleUpgradeDetails").getAppSecRuleUpgradeDetails = null as any;
+export const getAppSecRuleUpgradeDetailsOutput: typeof import("./getAppSecRuleUpgradeDetails").getAppSecRuleUpgradeDetailsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecRuleUpgradeDetails","getAppSecRuleUpgradeDetailsOutput"], () => require("./getAppSecRuleUpgradeDetails"));
+
+export { GetAppSecRulesArgs, GetAppSecRulesResult, GetAppSecRulesOutputArgs } from "./getAppSecRules";
+export const getAppSecRules: typeof import("./getAppSecRules").getAppSecRules = null as any;
+export const getAppSecRulesOutput: typeof import("./getAppSecRules").getAppSecRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecRules","getAppSecRulesOutput"], () => require("./getAppSecRules"));
+
+export { GetAppSecSecurityPolicyArgs, GetAppSecSecurityPolicyResult, GetAppSecSecurityPolicyOutputArgs } from "./getAppSecSecurityPolicy";
+export const getAppSecSecurityPolicy: typeof import("./getAppSecSecurityPolicy").getAppSecSecurityPolicy = null as any;
+export const getAppSecSecurityPolicyOutput: typeof import("./getAppSecSecurityPolicy").getAppSecSecurityPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecSecurityPolicy","getAppSecSecurityPolicyOutput"], () => require("./getAppSecSecurityPolicy"));
+
+export { GetAppSecSecurityPolicyProtectionsArgs, GetAppSecSecurityPolicyProtectionsResult, GetAppSecSecurityPolicyProtectionsOutputArgs } from "./getAppSecSecurityPolicyProtections";
+export const getAppSecSecurityPolicyProtections: typeof import("./getAppSecSecurityPolicyProtections").getAppSecSecurityPolicyProtections = null as any;
+export const getAppSecSecurityPolicyProtectionsOutput: typeof import("./getAppSecSecurityPolicyProtections").getAppSecSecurityPolicyProtectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecSecurityPolicyProtections","getAppSecSecurityPolicyProtectionsOutput"], () => require("./getAppSecSecurityPolicyProtections"));
+
+export { GetAppSecSelectableHostnamesArgs, GetAppSecSelectableHostnamesResult, GetAppSecSelectableHostnamesOutputArgs } from "./getAppSecSelectableHostnames";
+export const getAppSecSelectableHostnames: typeof import("./getAppSecSelectableHostnames").getAppSecSelectableHostnames = null as any;
+export const getAppSecSelectableHostnamesOutput: typeof import("./getAppSecSelectableHostnames").getAppSecSelectableHostnamesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecSelectableHostnames","getAppSecSelectableHostnamesOutput"], () => require("./getAppSecSelectableHostnames"));
+
+export { GetAppSecSelectedHostnamesArgs, GetAppSecSelectedHostnamesResult, GetAppSecSelectedHostnamesOutputArgs } from "./getAppSecSelectedHostnames";
+export const getAppSecSelectedHostnames: typeof import("./getAppSecSelectedHostnames").getAppSecSelectedHostnames = null as any;
+export const getAppSecSelectedHostnamesOutput: typeof import("./getAppSecSelectedHostnames").getAppSecSelectedHostnamesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecSelectedHostnames","getAppSecSelectedHostnamesOutput"], () => require("./getAppSecSelectedHostnames"));
+
+export { GetAppSecSiemDefinitionsArgs, GetAppSecSiemDefinitionsResult, GetAppSecSiemDefinitionsOutputArgs } from "./getAppSecSiemDefinitions";
+export const getAppSecSiemDefinitions: typeof import("./getAppSecSiemDefinitions").getAppSecSiemDefinitions = null as any;
+export const getAppSecSiemDefinitionsOutput: typeof import("./getAppSecSiemDefinitions").getAppSecSiemDefinitionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecSiemDefinitions","getAppSecSiemDefinitionsOutput"], () => require("./getAppSecSiemDefinitions"));
+
+export { GetAppSecSiemSettingsArgs, GetAppSecSiemSettingsResult, GetAppSecSiemSettingsOutputArgs } from "./getAppSecSiemSettings";
+export const getAppSecSiemSettings: typeof import("./getAppSecSiemSettings").getAppSecSiemSettings = null as any;
+export const getAppSecSiemSettingsOutput: typeof import("./getAppSecSiemSettings").getAppSecSiemSettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecSiemSettings","getAppSecSiemSettingsOutput"], () => require("./getAppSecSiemSettings"));
+
+export { GetAppSecSlowPostArgs, GetAppSecSlowPostResult, GetAppSecSlowPostOutputArgs } from "./getAppSecSlowPost";
+export const getAppSecSlowPost: typeof import("./getAppSecSlowPost").getAppSecSlowPost = null as any;
+export const getAppSecSlowPostOutput: typeof import("./getAppSecSlowPost").getAppSecSlowPostOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecSlowPost","getAppSecSlowPostOutput"], () => require("./getAppSecSlowPost"));
+
+export { GetAppSecThreatIntelArgs, GetAppSecThreatIntelResult, GetAppSecThreatIntelOutputArgs } from "./getAppSecThreatIntel";
+export const getAppSecThreatIntel: typeof import("./getAppSecThreatIntel").getAppSecThreatIntel = null as any;
+export const getAppSecThreatIntelOutput: typeof import("./getAppSecThreatIntel").getAppSecThreatIntelOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecThreatIntel","getAppSecThreatIntelOutput"], () => require("./getAppSecThreatIntel"));
+
+export { GetAppSecTuningRecommendationsArgs, GetAppSecTuningRecommendationsResult, GetAppSecTuningRecommendationsOutputArgs } from "./getAppSecTuningRecommendations";
+export const getAppSecTuningRecommendations: typeof import("./getAppSecTuningRecommendations").getAppSecTuningRecommendations = null as any;
+export const getAppSecTuningRecommendationsOutput: typeof import("./getAppSecTuningRecommendations").getAppSecTuningRecommendationsOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecTuningRecommendations","getAppSecTuningRecommendationsOutput"], () => require("./getAppSecTuningRecommendations"));
+
+export { GetAppSecVersionNotesArgs, GetAppSecVersionNotesResult, GetAppSecVersionNotesOutputArgs } from "./getAppSecVersionNotes";
+export const getAppSecVersionNotes: typeof import("./getAppSecVersionNotes").getAppSecVersionNotes = null as any;
+export const getAppSecVersionNotesOutput: typeof import("./getAppSecVersionNotes").getAppSecVersionNotesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecVersionNotes","getAppSecVersionNotesOutput"], () => require("./getAppSecVersionNotes"));
+
+export { GetAppSecWafModeArgs, GetAppSecWafModeResult, GetAppSecWafModeOutputArgs } from "./getAppSecWafMode";
+export const getAppSecWafMode: typeof import("./getAppSecWafMode").getAppSecWafMode = null as any;
+export const getAppSecWafModeOutput: typeof import("./getAppSecWafMode").getAppSecWafModeOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecWafMode","getAppSecWafModeOutput"], () => require("./getAppSecWafMode"));
+
+export { GetAppSecWapSelectedHostnamesArgs, GetAppSecWapSelectedHostnamesResult, GetAppSecWapSelectedHostnamesOutputArgs } from "./getAppSecWapSelectedHostnames";
+export const getAppSecWapSelectedHostnames: typeof import("./getAppSecWapSelectedHostnames").getAppSecWapSelectedHostnames = null as any;
+export const getAppSecWapSelectedHostnamesOutput: typeof import("./getAppSecWapSelectedHostnames").getAppSecWapSelectedHostnamesOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecWapSelectedHostnames","getAppSecWapSelectedHostnamesOutput"], () => require("./getAppSecWapSelectedHostnames"));
+
+export { GetAuthoritiesSetArgs, GetAuthoritiesSetResult, GetAuthoritiesSetOutputArgs } from "./getAuthoritiesSet";
+export const getAuthoritiesSet: typeof import("./getAuthoritiesSet").getAuthoritiesSet = null as any;
+export const getAuthoritiesSetOutput: typeof import("./getAuthoritiesSet").getAuthoritiesSetOutput = null as any;
+utilities.lazyLoad(exports, ["getAuthoritiesSet","getAuthoritiesSetOutput"], () => require("./getAuthoritiesSet"));
+
+export { GetCPSEnrollmentArgs, GetCPSEnrollmentResult, GetCPSEnrollmentOutputArgs } from "./getCPSEnrollment";
+export const getCPSEnrollment: typeof import("./getCPSEnrollment").getCPSEnrollment = null as any;
+export const getCPSEnrollmentOutput: typeof import("./getCPSEnrollment").getCPSEnrollmentOutput = null as any;
+utilities.lazyLoad(exports, ["getCPSEnrollment","getCPSEnrollmentOutput"], () => require("./getCPSEnrollment"));
+
+export { GetCPSEnrollmentsArgs, GetCPSEnrollmentsResult, GetCPSEnrollmentsOutputArgs } from "./getCPSEnrollments";
+export const getCPSEnrollments: typeof import("./getCPSEnrollments").getCPSEnrollments = null as any;
+export const getCPSEnrollmentsOutput: typeof import("./getCPSEnrollments").getCPSEnrollmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getCPSEnrollments","getCPSEnrollmentsOutput"], () => require("./getCPSEnrollments"));
+
+export { GetCloudletsApiPrioritizationMatchRuleArgs, GetCloudletsApiPrioritizationMatchRuleResult, GetCloudletsApiPrioritizationMatchRuleOutputArgs } from "./getCloudletsApiPrioritizationMatchRule";
+export const getCloudletsApiPrioritizationMatchRule: typeof import("./getCloudletsApiPrioritizationMatchRule").getCloudletsApiPrioritizationMatchRule = null as any;
+export const getCloudletsApiPrioritizationMatchRuleOutput: typeof import("./getCloudletsApiPrioritizationMatchRule").getCloudletsApiPrioritizationMatchRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudletsApiPrioritizationMatchRule","getCloudletsApiPrioritizationMatchRuleOutput"], () => require("./getCloudletsApiPrioritizationMatchRule"));
+
+export { GetCloudletsApplicationLoadBalancerArgs, GetCloudletsApplicationLoadBalancerResult, GetCloudletsApplicationLoadBalancerOutputArgs } from "./getCloudletsApplicationLoadBalancer";
+export const getCloudletsApplicationLoadBalancer: typeof import("./getCloudletsApplicationLoadBalancer").getCloudletsApplicationLoadBalancer = null as any;
+export const getCloudletsApplicationLoadBalancerOutput: typeof import("./getCloudletsApplicationLoadBalancer").getCloudletsApplicationLoadBalancerOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudletsApplicationLoadBalancer","getCloudletsApplicationLoadBalancerOutput"], () => require("./getCloudletsApplicationLoadBalancer"));
+
+export { GetCloudletsApplicationLoadBalancerMatchRuleArgs, GetCloudletsApplicationLoadBalancerMatchRuleResult, GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs } from "./getCloudletsApplicationLoadBalancerMatchRule";
+export const getCloudletsApplicationLoadBalancerMatchRule: typeof import("./getCloudletsApplicationLoadBalancerMatchRule").getCloudletsApplicationLoadBalancerMatchRule = null as any;
+export const getCloudletsApplicationLoadBalancerMatchRuleOutput: typeof import("./getCloudletsApplicationLoadBalancerMatchRule").getCloudletsApplicationLoadBalancerMatchRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudletsApplicationLoadBalancerMatchRule","getCloudletsApplicationLoadBalancerMatchRuleOutput"], () => require("./getCloudletsApplicationLoadBalancerMatchRule"));
+
+export { GetCloudletsAudienceSegmentationMatchRuleArgs, GetCloudletsAudienceSegmentationMatchRuleResult, GetCloudletsAudienceSegmentationMatchRuleOutputArgs } from "./getCloudletsAudienceSegmentationMatchRule";
+export const getCloudletsAudienceSegmentationMatchRule: typeof import("./getCloudletsAudienceSegmentationMatchRule").getCloudletsAudienceSegmentationMatchRule = null as any;
+export const getCloudletsAudienceSegmentationMatchRuleOutput: typeof import("./getCloudletsAudienceSegmentationMatchRule").getCloudletsAudienceSegmentationMatchRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudletsAudienceSegmentationMatchRule","getCloudletsAudienceSegmentationMatchRuleOutput"], () => require("./getCloudletsAudienceSegmentationMatchRule"));
+
+export { GetCloudletsEdgeRedirectorMatchRuleArgs, GetCloudletsEdgeRedirectorMatchRuleResult, GetCloudletsEdgeRedirectorMatchRuleOutputArgs } from "./getCloudletsEdgeRedirectorMatchRule";
+export const getCloudletsEdgeRedirectorMatchRule: typeof import("./getCloudletsEdgeRedirectorMatchRule").getCloudletsEdgeRedirectorMatchRule = null as any;
+export const getCloudletsEdgeRedirectorMatchRuleOutput: typeof import("./getCloudletsEdgeRedirectorMatchRule").getCloudletsEdgeRedirectorMatchRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudletsEdgeRedirectorMatchRule","getCloudletsEdgeRedirectorMatchRuleOutput"], () => require("./getCloudletsEdgeRedirectorMatchRule"));
+
+export { GetCloudletsForwardRewriteMatchRuleArgs, GetCloudletsForwardRewriteMatchRuleResult, GetCloudletsForwardRewriteMatchRuleOutputArgs } from "./getCloudletsForwardRewriteMatchRule";
+export const getCloudletsForwardRewriteMatchRule: typeof import("./getCloudletsForwardRewriteMatchRule").getCloudletsForwardRewriteMatchRule = null as any;
+export const getCloudletsForwardRewriteMatchRuleOutput: typeof import("./getCloudletsForwardRewriteMatchRule").getCloudletsForwardRewriteMatchRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudletsForwardRewriteMatchRule","getCloudletsForwardRewriteMatchRuleOutput"], () => require("./getCloudletsForwardRewriteMatchRule"));
+
+export { GetCloudletsPhasedReleaseMatchRuleArgs, GetCloudletsPhasedReleaseMatchRuleResult, GetCloudletsPhasedReleaseMatchRuleOutputArgs } from "./getCloudletsPhasedReleaseMatchRule";
+export const getCloudletsPhasedReleaseMatchRule: typeof import("./getCloudletsPhasedReleaseMatchRule").getCloudletsPhasedReleaseMatchRule = null as any;
+export const getCloudletsPhasedReleaseMatchRuleOutput: typeof import("./getCloudletsPhasedReleaseMatchRule").getCloudletsPhasedReleaseMatchRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudletsPhasedReleaseMatchRule","getCloudletsPhasedReleaseMatchRuleOutput"], () => require("./getCloudletsPhasedReleaseMatchRule"));
+
+export { GetCloudletsPolicyArgs, GetCloudletsPolicyResult, GetCloudletsPolicyOutputArgs } from "./getCloudletsPolicy";
+export const getCloudletsPolicy: typeof import("./getCloudletsPolicy").getCloudletsPolicy = null as any;
+export const getCloudletsPolicyOutput: typeof import("./getCloudletsPolicy").getCloudletsPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudletsPolicy","getCloudletsPolicyOutput"], () => require("./getCloudletsPolicy"));
+
+export { GetCloudletsRequestControlMatchRuleArgs, GetCloudletsRequestControlMatchRuleResult, GetCloudletsRequestControlMatchRuleOutputArgs } from "./getCloudletsRequestControlMatchRule";
+export const getCloudletsRequestControlMatchRule: typeof import("./getCloudletsRequestControlMatchRule").getCloudletsRequestControlMatchRule = null as any;
+export const getCloudletsRequestControlMatchRuleOutput: typeof import("./getCloudletsRequestControlMatchRule").getCloudletsRequestControlMatchRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudletsRequestControlMatchRule","getCloudletsRequestControlMatchRuleOutput"], () => require("./getCloudletsRequestControlMatchRule"));
+
+export { GetCloudletsVisitorPrioritizationMatchRuleArgs, GetCloudletsVisitorPrioritizationMatchRuleResult, GetCloudletsVisitorPrioritizationMatchRuleOutputArgs } from "./getCloudletsVisitorPrioritizationMatchRule";
+export const getCloudletsVisitorPrioritizationMatchRule: typeof import("./getCloudletsVisitorPrioritizationMatchRule").getCloudletsVisitorPrioritizationMatchRule = null as any;
+export const getCloudletsVisitorPrioritizationMatchRuleOutput: typeof import("./getCloudletsVisitorPrioritizationMatchRule").getCloudletsVisitorPrioritizationMatchRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudletsVisitorPrioritizationMatchRule","getCloudletsVisitorPrioritizationMatchRuleOutput"], () => require("./getCloudletsVisitorPrioritizationMatchRule"));
+
+export { GetContractArgs, GetContractResult, GetContractOutputArgs } from "./getContract";
+export const getContract: typeof import("./getContract").getContract = null as any;
+export const getContractOutput: typeof import("./getContract").getContractOutput = null as any;
+utilities.lazyLoad(exports, ["getContract","getContractOutput"], () => require("./getContract"));
+
+export { GetContractsResult } from "./getContracts";
+export const getContracts: typeof import("./getContracts").getContracts = null as any;
+utilities.lazyLoad(exports, ["getContracts"], () => require("./getContracts"));
+
+export { GetCpCodeArgs, GetCpCodeResult, GetCpCodeOutputArgs } from "./getCpCode";
+export const getCpCode: typeof import("./getCpCode").getCpCode = null as any;
+export const getCpCodeOutput: typeof import("./getCpCode").getCpCodeOutput = null as any;
+utilities.lazyLoad(exports, ["getCpCode","getCpCodeOutput"], () => require("./getCpCode"));
+
+export { GetCpsCsrArgs, GetCpsCsrResult, GetCpsCsrOutputArgs } from "./getCpsCsr";
+export const getCpsCsr: typeof import("./getCpsCsr").getCpsCsr = null as any;
+export const getCpsCsrOutput: typeof import("./getCpsCsr").getCpsCsrOutput = null as any;
+utilities.lazyLoad(exports, ["getCpsCsr","getCpsCsrOutput"], () => require("./getCpsCsr"));
+
+export { GetCpsDeploymentsArgs, GetCpsDeploymentsResult, GetCpsDeploymentsOutputArgs } from "./getCpsDeployments";
+export const getCpsDeployments: typeof import("./getCpsDeployments").getCpsDeployments = null as any;
+export const getCpsDeploymentsOutput: typeof import("./getCpsDeployments").getCpsDeploymentsOutput = null as any;
+utilities.lazyLoad(exports, ["getCpsDeployments","getCpsDeploymentsOutput"], () => require("./getCpsDeployments"));
+
+export { GetCpsWarningsResult } from "./getCpsWarnings";
+export const getCpsWarnings: typeof import("./getCpsWarnings").getCpsWarnings = null as any;
+utilities.lazyLoad(exports, ["getCpsWarnings"], () => require("./getCpsWarnings"));
+
+export { GetDatastreamActivationHistoryArgs, GetDatastreamActivationHistoryResult, GetDatastreamActivationHistoryOutputArgs } from "./getDatastreamActivationHistory";
+export const getDatastreamActivationHistory: typeof import("./getDatastreamActivationHistory").getDatastreamActivationHistory = null as any;
+export const getDatastreamActivationHistoryOutput: typeof import("./getDatastreamActivationHistory").getDatastreamActivationHistoryOutput = null as any;
+utilities.lazyLoad(exports, ["getDatastreamActivationHistory","getDatastreamActivationHistoryOutput"], () => require("./getDatastreamActivationHistory"));
+
+export { GetDatastreamDatasetFieldsArgs, GetDatastreamDatasetFieldsResult, GetDatastreamDatasetFieldsOutputArgs } from "./getDatastreamDatasetFields";
+export const getDatastreamDatasetFields: typeof import("./getDatastreamDatasetFields").getDatastreamDatasetFields = null as any;
+export const getDatastreamDatasetFieldsOutput: typeof import("./getDatastreamDatasetFields").getDatastreamDatasetFieldsOutput = null as any;
+utilities.lazyLoad(exports, ["getDatastreamDatasetFields","getDatastreamDatasetFieldsOutput"], () => require("./getDatastreamDatasetFields"));
+
+export { GetDatastreamsArgs, GetDatastreamsResult, GetDatastreamsOutputArgs } from "./getDatastreams";
+export const getDatastreams: typeof import("./getDatastreams").getDatastreams = null as any;
+export const getDatastreamsOutput: typeof import("./getDatastreams").getDatastreamsOutput = null as any;
+utilities.lazyLoad(exports, ["getDatastreams","getDatastreamsOutput"], () => require("./getDatastreams"));
+
+export { GetDnsRecordSetArgs, GetDnsRecordSetResult, GetDnsRecordSetOutputArgs } from "./getDnsRecordSet";
+export const getDnsRecordSet: typeof import("./getDnsRecordSet").getDnsRecordSet = null as any;
+export const getDnsRecordSetOutput: typeof import("./getDnsRecordSet").getDnsRecordSetOutput = null as any;
+utilities.lazyLoad(exports, ["getDnsRecordSet","getDnsRecordSetOutput"], () => require("./getDnsRecordSet"));
+
+export { GetEdgeWorkerArgs, GetEdgeWorkerResult, GetEdgeWorkerOutputArgs } from "./getEdgeWorker";
+export const getEdgeWorker: typeof import("./getEdgeWorker").getEdgeWorker = null as any;
+export const getEdgeWorkerOutput: typeof import("./getEdgeWorker").getEdgeWorkerOutput = null as any;
+utilities.lazyLoad(exports, ["getEdgeWorker","getEdgeWorkerOutput"], () => require("./getEdgeWorker"));
+
+export { GetEdgeWorkerActivationArgs, GetEdgeWorkerActivationResult, GetEdgeWorkerActivationOutputArgs } from "./getEdgeWorkerActivation";
+export const getEdgeWorkerActivation: typeof import("./getEdgeWorkerActivation").getEdgeWorkerActivation = null as any;
+export const getEdgeWorkerActivationOutput: typeof import("./getEdgeWorkerActivation").getEdgeWorkerActivationOutput = null as any;
+utilities.lazyLoad(exports, ["getEdgeWorkerActivation","getEdgeWorkerActivationOutput"], () => require("./getEdgeWorkerActivation"));
+
+export { GetEdgeWorkersPropertyRulesArgs, GetEdgeWorkersPropertyRulesResult, GetEdgeWorkersPropertyRulesOutputArgs } from "./getEdgeWorkersPropertyRules";
+export const getEdgeWorkersPropertyRules: typeof import("./getEdgeWorkersPropertyRules").getEdgeWorkersPropertyRules = null as any;
+export const getEdgeWorkersPropertyRulesOutput: typeof import("./getEdgeWorkersPropertyRules").getEdgeWorkersPropertyRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getEdgeWorkersPropertyRules","getEdgeWorkersPropertyRulesOutput"], () => require("./getEdgeWorkersPropertyRules"));
+
+export { GetEdgeWorkersResourceTierArgs, GetEdgeWorkersResourceTierResult, GetEdgeWorkersResourceTierOutputArgs } from "./getEdgeWorkersResourceTier";
+export const getEdgeWorkersResourceTier: typeof import("./getEdgeWorkersResourceTier").getEdgeWorkersResourceTier = null as any;
+export const getEdgeWorkersResourceTierOutput: typeof import("./getEdgeWorkersResourceTier").getEdgeWorkersResourceTierOutput = null as any;
+utilities.lazyLoad(exports, ["getEdgeWorkersResourceTier","getEdgeWorkersResourceTierOutput"], () => require("./getEdgeWorkersResourceTier"));
+
+export { GetGroupArgs, GetGroupResult, GetGroupOutputArgs } from "./getGroup";
+export const getGroup: typeof import("./getGroup").getGroup = null as any;
+export const getGroupOutput: typeof import("./getGroup").getGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getGroup","getGroupOutput"], () => require("./getGroup"));
+
+export { GetGroupsResult } from "./getGroups";
+export const getGroups: typeof import("./getGroups").getGroups = null as any;
+utilities.lazyLoad(exports, ["getGroups"], () => require("./getGroups"));
+
+export { GetGtmDefaultDatacenterArgs, GetGtmDefaultDatacenterResult, GetGtmDefaultDatacenterOutputArgs } from "./getGtmDefaultDatacenter";
+export const getGtmDefaultDatacenter: typeof import("./getGtmDefaultDatacenter").getGtmDefaultDatacenter = null as any;
+export const getGtmDefaultDatacenterOutput: typeof import("./getGtmDefaultDatacenter").getGtmDefaultDatacenterOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmDefaultDatacenter","getGtmDefaultDatacenterOutput"], () => require("./getGtmDefaultDatacenter"));
+
+export { GetIamContactTypesResult } from "./getIamContactTypes";
+export const getIamContactTypes: typeof import("./getIamContactTypes").getIamContactTypes = null as any;
+utilities.lazyLoad(exports, ["getIamContactTypes"], () => require("./getIamContactTypes"));
+
+export { GetIamCountriesResult } from "./getIamCountries";
+export const getIamCountries: typeof import("./getIamCountries").getIamCountries = null as any;
+utilities.lazyLoad(exports, ["getIamCountries"], () => require("./getIamCountries"));
+
+export { GetIamGrantableRolesResult } from "./getIamGrantableRoles";
+export const getIamGrantableRoles: typeof import("./getIamGrantableRoles").getIamGrantableRoles = null as any;
+utilities.lazyLoad(exports, ["getIamGrantableRoles"], () => require("./getIamGrantableRoles"));
+
+export { GetIamRolesResult } from "./getIamRoles";
+export const getIamRoles: typeof import("./getIamRoles").getIamRoles = null as any;
+utilities.lazyLoad(exports, ["getIamRoles"], () => require("./getIamRoles"));
+
+export { GetIamStatesArgs, GetIamStatesResult, GetIamStatesOutputArgs } from "./getIamStates";
+export const getIamStates: typeof import("./getIamStates").getIamStates = null as any;
+export const getIamStatesOutput: typeof import("./getIamStates").getIamStatesOutput = null as any;
+utilities.lazyLoad(exports, ["getIamStates","getIamStatesOutput"], () => require("./getIamStates"));
+
+export { GetIamSupportedLangsResult } from "./getIamSupportedLangs";
+export const getIamSupportedLangs: typeof import("./getIamSupportedLangs").getIamSupportedLangs = null as any;
+utilities.lazyLoad(exports, ["getIamSupportedLangs"], () => require("./getIamSupportedLangs"));
+
+export { GetIamTimeoutPoliciesResult } from "./getIamTimeoutPolicies";
+export const getIamTimeoutPolicies: typeof import("./getIamTimeoutPolicies").getIamTimeoutPolicies = null as any;
+utilities.lazyLoad(exports, ["getIamTimeoutPolicies"], () => require("./getIamTimeoutPolicies"));
+
+export { GetIamTimezonesResult } from "./getIamTimezones";
+export const getIamTimezones: typeof import("./getIamTimezones").getIamTimezones = null as any;
+utilities.lazyLoad(exports, ["getIamTimezones"], () => require("./getIamTimezones"));
+
+export { GetNetworkListsArgs, GetNetworkListsResult, GetNetworkListsOutputArgs } from "./getNetworkLists";
+export const getNetworkLists: typeof import("./getNetworkLists").getNetworkLists = null as any;
+export const getNetworkListsOutput: typeof import("./getNetworkLists").getNetworkListsOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkLists","getNetworkListsOutput"], () => require("./getNetworkLists"));
+
+export { GetPropertiesArgs, GetPropertiesResult, GetPropertiesOutputArgs } from "./getProperties";
+export const getProperties: typeof import("./getProperties").getProperties = null as any;
+export const getPropertiesOutput: typeof import("./getProperties").getPropertiesOutput = null as any;
+utilities.lazyLoad(exports, ["getProperties","getPropertiesOutput"], () => require("./getProperties"));
+
+export { GetPropertiesSearchArgs, GetPropertiesSearchResult, GetPropertiesSearchOutputArgs } from "./getPropertiesSearch";
+export const getPropertiesSearch: typeof import("./getPropertiesSearch").getPropertiesSearch = null as any;
+export const getPropertiesSearchOutput: typeof import("./getPropertiesSearch").getPropertiesSearchOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertiesSearch","getPropertiesSearchOutput"], () => require("./getPropertiesSearch"));
+
+export { GetPropertyArgs, GetPropertyResult, GetPropertyOutputArgs } from "./getProperty";
+export const getProperty: typeof import("./getProperty").getProperty = null as any;
+export const getPropertyOutput: typeof import("./getProperty").getPropertyOutput = null as any;
+utilities.lazyLoad(exports, ["getProperty","getPropertyOutput"], () => require("./getProperty"));
+
+export { GetPropertyHostnamesArgs, GetPropertyHostnamesResult, GetPropertyHostnamesOutputArgs } from "./getPropertyHostnames";
+export const getPropertyHostnames: typeof import("./getPropertyHostnames").getPropertyHostnames = null as any;
+export const getPropertyHostnamesOutput: typeof import("./getPropertyHostnames").getPropertyHostnamesOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyHostnames","getPropertyHostnamesOutput"], () => require("./getPropertyHostnames"));
+
+export { GetPropertyIncludeArgs, GetPropertyIncludeResult, GetPropertyIncludeOutputArgs } from "./getPropertyInclude";
+export const getPropertyInclude: typeof import("./getPropertyInclude").getPropertyInclude = null as any;
+export const getPropertyIncludeOutput: typeof import("./getPropertyInclude").getPropertyIncludeOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyInclude","getPropertyIncludeOutput"], () => require("./getPropertyInclude"));
+
+export { GetPropertyIncludeActivationArgs, GetPropertyIncludeActivationResult, GetPropertyIncludeActivationOutputArgs } from "./getPropertyIncludeActivation";
+export const getPropertyIncludeActivation: typeof import("./getPropertyIncludeActivation").getPropertyIncludeActivation = null as any;
+export const getPropertyIncludeActivationOutput: typeof import("./getPropertyIncludeActivation").getPropertyIncludeActivationOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyIncludeActivation","getPropertyIncludeActivationOutput"], () => require("./getPropertyIncludeActivation"));
+
+export { GetPropertyIncludeParentsArgs, GetPropertyIncludeParentsResult, GetPropertyIncludeParentsOutputArgs } from "./getPropertyIncludeParents";
+export const getPropertyIncludeParents: typeof import("./getPropertyIncludeParents").getPropertyIncludeParents = null as any;
+export const getPropertyIncludeParentsOutput: typeof import("./getPropertyIncludeParents").getPropertyIncludeParentsOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyIncludeParents","getPropertyIncludeParentsOutput"], () => require("./getPropertyIncludeParents"));
+
+export { GetPropertyIncludeRulesArgs, GetPropertyIncludeRulesResult, GetPropertyIncludeRulesOutputArgs } from "./getPropertyIncludeRules";
+export const getPropertyIncludeRules: typeof import("./getPropertyIncludeRules").getPropertyIncludeRules = null as any;
+export const getPropertyIncludeRulesOutput: typeof import("./getPropertyIncludeRules").getPropertyIncludeRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyIncludeRules","getPropertyIncludeRulesOutput"], () => require("./getPropertyIncludeRules"));
+
+export { GetPropertyIncludesArgs, GetPropertyIncludesResult, GetPropertyIncludesOutputArgs } from "./getPropertyIncludes";
+export const getPropertyIncludes: typeof import("./getPropertyIncludes").getPropertyIncludes = null as any;
+export const getPropertyIncludesOutput: typeof import("./getPropertyIncludes").getPropertyIncludesOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyIncludes","getPropertyIncludesOutput"], () => require("./getPropertyIncludes"));
+
+export { GetPropertyProductsArgs, GetPropertyProductsResult, GetPropertyProductsOutputArgs } from "./getPropertyProducts";
+export const getPropertyProducts: typeof import("./getPropertyProducts").getPropertyProducts = null as any;
+export const getPropertyProductsOutput: typeof import("./getPropertyProducts").getPropertyProductsOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyProducts","getPropertyProductsOutput"], () => require("./getPropertyProducts"));
+
+export { GetPropertyRuleFormatsResult } from "./getPropertyRuleFormats";
+export const getPropertyRuleFormats: typeof import("./getPropertyRuleFormats").getPropertyRuleFormats = null as any;
+utilities.lazyLoad(exports, ["getPropertyRuleFormats"], () => require("./getPropertyRuleFormats"));
+
+export { GetPropertyRulesArgs, GetPropertyRulesResult, GetPropertyRulesOutputArgs } from "./getPropertyRules";
+export const getPropertyRules: typeof import("./getPropertyRules").getPropertyRules = null as any;
+export const getPropertyRulesOutput: typeof import("./getPropertyRules").getPropertyRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyRules","getPropertyRulesOutput"], () => require("./getPropertyRules"));
+
+export { GetPropertyRulesTemplateArgs, GetPropertyRulesTemplateResult, GetPropertyRulesTemplateOutputArgs } from "./getPropertyRulesTemplate";
+export const getPropertyRulesTemplate: typeof import("./getPropertyRulesTemplate").getPropertyRulesTemplate = null as any;
+export const getPropertyRulesTemplateOutput: typeof import("./getPropertyRulesTemplate").getPropertyRulesTemplateOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyRulesTemplate","getPropertyRulesTemplateOutput"], () => require("./getPropertyRulesTemplate"));
+
+export { GtmAsmapArgs, GtmAsmapState } from "./gtmAsmap";
+export type GtmAsmap = import("./gtmAsmap").GtmAsmap;
+export const GtmAsmap: typeof import("./gtmAsmap").GtmAsmap = null as any;
+utilities.lazyLoad(exports, ["GtmAsmap"], () => require("./gtmAsmap"));
+
+export { GtmCidrmapArgs, GtmCidrmapState } from "./gtmCidrmap";
+export type GtmCidrmap = import("./gtmCidrmap").GtmCidrmap;
+export const GtmCidrmap: typeof import("./gtmCidrmap").GtmCidrmap = null as any;
+utilities.lazyLoad(exports, ["GtmCidrmap"], () => require("./gtmCidrmap"));
+
+export { GtmDatacenterArgs, GtmDatacenterState } from "./gtmDatacenter";
+export type GtmDatacenter = import("./gtmDatacenter").GtmDatacenter;
+export const GtmDatacenter: typeof import("./gtmDatacenter").GtmDatacenter = null as any;
+utilities.lazyLoad(exports, ["GtmDatacenter"], () => require("./gtmDatacenter"));
+
+export { GtmDomainArgs, GtmDomainState } from "./gtmDomain";
+export type GtmDomain = import("./gtmDomain").GtmDomain;
+export const GtmDomain: typeof import("./gtmDomain").GtmDomain = null as any;
+utilities.lazyLoad(exports, ["GtmDomain"], () => require("./gtmDomain"));
+
+export { GtmGeomapArgs, GtmGeomapState } from "./gtmGeomap";
+export type GtmGeomap = import("./gtmGeomap").GtmGeomap;
+export const GtmGeomap: typeof import("./gtmGeomap").GtmGeomap = null as any;
+utilities.lazyLoad(exports, ["GtmGeomap"], () => require("./gtmGeomap"));
+
+export { GtmPropertyArgs, GtmPropertyState } from "./gtmProperty";
+export type GtmProperty = import("./gtmProperty").GtmProperty;
+export const GtmProperty: typeof import("./gtmProperty").GtmProperty = null as any;
+utilities.lazyLoad(exports, ["GtmProperty"], () => require("./gtmProperty"));
+
+export { GtmResourceArgs, GtmResourceState } from "./gtmResource";
+export type GtmResource = import("./gtmResource").GtmResource;
+export const GtmResource: typeof import("./gtmResource").GtmResource = null as any;
+utilities.lazyLoad(exports, ["GtmResource"], () => require("./gtmResource"));
+
+export { IamBlockedUserPropertiesArgs, IamBlockedUserPropertiesState } from "./iamBlockedUserProperties";
+export type IamBlockedUserProperties = import("./iamBlockedUserProperties").IamBlockedUserProperties;
+export const IamBlockedUserProperties: typeof import("./iamBlockedUserProperties").IamBlockedUserProperties = null as any;
+utilities.lazyLoad(exports, ["IamBlockedUserProperties"], () => require("./iamBlockedUserProperties"));
+
+export { IamGroupArgs, IamGroupState } from "./iamGroup";
+export type IamGroup = import("./iamGroup").IamGroup;
+export const IamGroup: typeof import("./iamGroup").IamGroup = null as any;
+utilities.lazyLoad(exports, ["IamGroup"], () => require("./iamGroup"));
+
+export { IamRoleArgs, IamRoleState } from "./iamRole";
+export type IamRole = import("./iamRole").IamRole;
+export const IamRole: typeof import("./iamRole").IamRole = null as any;
+utilities.lazyLoad(exports, ["IamRole"], () => require("./iamRole"));
+
+export { IamUserArgs, IamUserState } from "./iamUser";
+export type IamUser = import("./iamUser").IamUser;
+export const IamUser: typeof import("./iamUser").IamUser = null as any;
+utilities.lazyLoad(exports, ["IamUser"], () => require("./iamUser"));
+
+export { NetworkListArgs, NetworkListState } from "./networkList";
+export type NetworkList = import("./networkList").NetworkList;
+export const NetworkList: typeof import("./networkList").NetworkList = null as any;
+utilities.lazyLoad(exports, ["NetworkList"], () => require("./networkList"));
+
+export { NetworkListActivationsArgs, NetworkListActivationsState } from "./networkListActivations";
+export type NetworkListActivations = import("./networkListActivations").NetworkListActivations;
+export const NetworkListActivations: typeof import("./networkListActivations").NetworkListActivations = null as any;
+utilities.lazyLoad(exports, ["NetworkListActivations"], () => require("./networkListActivations"));
+
+export { NetworkListDescriptionArgs, NetworkListDescriptionState } from "./networkListDescription";
+export type NetworkListDescription = import("./networkListDescription").NetworkListDescription;
+export const NetworkListDescription: typeof import("./networkListDescription").NetworkListDescription = null as any;
+utilities.lazyLoad(exports, ["NetworkListDescription"], () => require("./networkListDescription"));
+
+export { NetworkListSubscriptionArgs, NetworkListSubscriptionState } from "./networkListSubscription";
+export type NetworkListSubscription = import("./networkListSubscription").NetworkListSubscription;
+export const NetworkListSubscription: typeof import("./networkListSubscription").NetworkListSubscription = null as any;
+utilities.lazyLoad(exports, ["NetworkListSubscription"], () => require("./networkListSubscription"));
+
+export { PropertyArgs, PropertyState } from "./property";
+export type Property = import("./property").Property;
+export const Property: typeof import("./property").Property = null as any;
+utilities.lazyLoad(exports, ["Property"], () => require("./property"));
+
+export { PropertyActivationArgs, PropertyActivationState } from "./propertyActivation";
+export type PropertyActivation = import("./propertyActivation").PropertyActivation;
+export const PropertyActivation: typeof import("./propertyActivation").PropertyActivation = null as any;
+utilities.lazyLoad(exports, ["PropertyActivation"], () => require("./propertyActivation"));
+
+export { PropertyIncludeArgs, PropertyIncludeState } from "./propertyInclude";
+export type PropertyInclude = import("./propertyInclude").PropertyInclude;
+export const PropertyInclude: typeof import("./propertyInclude").PropertyInclude = null as any;
+utilities.lazyLoad(exports, ["PropertyInclude"], () => require("./propertyInclude"));
+
+export { PropertyIncludeActivationArgs, PropertyIncludeActivationState } from "./propertyIncludeActivation";
+export type PropertyIncludeActivation = import("./propertyIncludeActivation").PropertyIncludeActivation;
+export const PropertyIncludeActivation: typeof import("./propertyIncludeActivation").PropertyIncludeActivation = null as any;
+utilities.lazyLoad(exports, ["PropertyIncludeActivation"], () => require("./propertyIncludeActivation"));
+
+export { ProviderArgs } from "./provider";
+export type Provider = import("./provider").Provider;
+export const Provider: typeof import("./provider").Provider = null as any;
+utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+
 
 // Export sub-modules:
 import * as config from "./config";
@@ -190,86 +923,6 @@ export {
     trafficmanagement,
     types,
 };
-
-// Import resources to register:
-import { AppSecActivations } from "./appSecActivations";
-import { AppSecAdvancedSettingsEvasivePathMatch } from "./appSecAdvancedSettingsEvasivePathMatch";
-import { AppSecAdvancedSettingsLogging } from "./appSecAdvancedSettingsLogging";
-import { AppSecAdvancedSettingsPragmaHeader } from "./appSecAdvancedSettingsPragmaHeader";
-import { AppSecAdvancedSettingsPrefetch } from "./appSecAdvancedSettingsPrefetch";
-import { AppSecApiConstraintsProtection } from "./appSecApiConstraintsProtection";
-import { AppSecApiRequestConstraints } from "./appSecApiRequestConstraints";
-import { AppSecAttackGroup } from "./appSecAttackGroup";
-import { AppSecByPassNetworkList } from "./appSecByPassNetworkList";
-import { AppSecConfiguration } from "./appSecConfiguration";
-import { AppSecConfigurationRename } from "./appSecConfigurationRename";
-import { AppSecCustomDeny } from "./appSecCustomDeny";
-import { AppSecCustomRule } from "./appSecCustomRule";
-import { AppSecCustomRuleAction } from "./appSecCustomRuleAction";
-import { AppSecEval } from "./appSecEval";
-import { AppSecEvalGroup } from "./appSecEvalGroup";
-import { AppSecEvalPenaltyBox } from "./appSecEvalPenaltyBox";
-import { AppSecEvalRule } from "./appSecEvalRule";
-import { AppSecIPGeo } from "./appSecIPGeo";
-import { AppSecIPGeoProtection } from "./appSecIPGeoProtection";
-import { AppSecMalwarePolicy } from "./appSecMalwarePolicy";
-import { AppSecMalwarePolicyAction } from "./appSecMalwarePolicyAction";
-import { AppSecMalwarePolicyActions } from "./appSecMalwarePolicyActions";
-import { AppSecMalwareProtection } from "./appSecMalwareProtection";
-import { AppSecMatchTarget } from "./appSecMatchTarget";
-import { AppSecMatchTargetSequence } from "./appSecMatchTargetSequence";
-import { AppSecPenaltyBox } from "./appSecPenaltyBox";
-import { AppSecRatePolicy } from "./appSecRatePolicy";
-import { AppSecRatePolicyAction } from "./appSecRatePolicyAction";
-import { AppSecRateProtection } from "./appSecRateProtection";
-import { AppSecReputationProfile } from "./appSecReputationProfile";
-import { AppSecReputationProfileAction } from "./appSecReputationProfileAction";
-import { AppSecReputationProfileAnalysis } from "./appSecReputationProfileAnalysis";
-import { AppSecReputationProtection } from "./appSecReputationProtection";
-import { AppSecRule } from "./appSecRule";
-import { AppSecRuleUpgrade } from "./appSecRuleUpgrade";
-import { AppSecSecurityPolicy } from "./appSecSecurityPolicy";
-import { AppSecSecurityPolicyRename } from "./appSecSecurityPolicyRename";
-import { AppSecSelectedHostnames } from "./appSecSelectedHostnames";
-import { AppSecSiemSettings } from "./appSecSiemSettings";
-import { AppSecSlowPost } from "./appSecSlowPost";
-import { AppSecSlowPostProtection } from "./appSecSlowPostProtection";
-import { AppSecThreatIntel } from "./appSecThreatIntel";
-import { AppSecVersionNodes } from "./appSecVersionNodes";
-import { AppSecWafMode } from "./appSecWafMode";
-import { AppSecWafProtection } from "./appSecWafProtection";
-import { AppSecWapSelectedHostnames } from "./appSecWapSelectedHostnames";
-import { CloudletsApplicationLoadBalancer } from "./cloudletsApplicationLoadBalancer";
-import { CloudletsApplicationLoadBalancerActivation } from "./cloudletsApplicationLoadBalancerActivation";
-import { CloudletsPolicy } from "./cloudletsPolicy";
-import { CloudletsPolicyActivation } from "./cloudletsPolicyActivation";
-import { CpCode } from "./cpCode";
-import { CpsDvEnrollment } from "./cpsDvEnrollment";
-import { CpsDvValidation } from "./cpsDvValidation";
-import { Datastream } from "./datastream";
-import { DnsRecord } from "./dnsRecord";
-import { DnsZone } from "./dnsZone";
-import { EdgeHostName } from "./edgeHostName";
-import { EdgeKv } from "./edgeKv";
-import { EdgeWorker } from "./edgeWorker";
-import { EdgeWorkersActivation } from "./edgeWorkersActivation";
-import { GtmAsmap } from "./gtmAsmap";
-import { GtmCidrmap } from "./gtmCidrmap";
-import { GtmDatacenter } from "./gtmDatacenter";
-import { GtmDomain } from "./gtmDomain";
-import { GtmGeomap } from "./gtmGeomap";
-import { GtmProperty } from "./gtmProperty";
-import { GtmResource } from "./gtmResource";
-import { IamBlockedUserProperties } from "./iamBlockedUserProperties";
-import { IamGroup } from "./iamGroup";
-import { IamRole } from "./iamRole";
-import { IamUser } from "./iamUser";
-import { NetworkList } from "./networkList";
-import { NetworkListActivations } from "./networkListActivations";
-import { NetworkListDescription } from "./networkListDescription";
-import { NetworkListSubscription } from "./networkListSubscription";
-import { Property } from "./property";
-import { PropertyActivation } from "./propertyActivation";
 
 const _module = {
     version: utilities.getVersion(),
@@ -383,6 +1036,10 @@ const _module = {
                 return new CpsDvEnrollment(name, <any>undefined, { urn })
             case "akamai:index/cpsDvValidation:CpsDvValidation":
                 return new CpsDvValidation(name, <any>undefined, { urn })
+            case "akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment":
+                return new CpsThirdPartyEnrollment(name, <any>undefined, { urn })
+            case "akamai:index/cpsUploadCertificate:CpsUploadCertificate":
+                return new CpsUploadCertificate(name, <any>undefined, { urn })
             case "akamai:index/datastream:Datastream":
                 return new Datastream(name, <any>undefined, { urn })
             case "akamai:index/dnsRecord:DnsRecord":
@@ -431,6 +1088,10 @@ const _module = {
                 return new Property(name, <any>undefined, { urn })
             case "akamai:index/propertyActivation:PropertyActivation":
                 return new PropertyActivation(name, <any>undefined, { urn })
+            case "akamai:index/propertyInclude:PropertyInclude":
+                return new PropertyInclude(name, <any>undefined, { urn })
+            case "akamai:index/propertyIncludeActivation:PropertyIncludeActivation":
+                return new PropertyIncludeActivation(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -490,6 +1151,8 @@ pulumi.runtime.registerResourceModule("akamai", "index/cloudletsPolicyActivation
 pulumi.runtime.registerResourceModule("akamai", "index/cpCode", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cpsDvEnrollment", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cpsDvValidation", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cpsThirdPartyEnrollment", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cpsUploadCertificate", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/datastream", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/dnsRecord", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/dnsZone", _module)
@@ -514,9 +1177,8 @@ pulumi.runtime.registerResourceModule("akamai", "index/networkListDescription", 
 pulumi.runtime.registerResourceModule("akamai", "index/networkListSubscription", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/property", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/propertyActivation", _module)
-
-import { Provider } from "./provider";
-
+pulumi.runtime.registerResourceModule("akamai", "index/propertyInclude", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/propertyIncludeActivation", _module)
 pulumi.runtime.registerResourcePackage("akamai", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {

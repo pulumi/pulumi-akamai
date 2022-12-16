@@ -22,24 +22,23 @@ namespace Pulumi.Akamai
         /// 
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetProperty.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetProperty.InvokeAsync(new Akamai.GetPropertyArgs
-        ///         {
-        ///             Name = "terraform-demo",
-        ///             Version = 1,
-        ///         }));
-        ///         this.MyPropertyID = example;
-        ///     }
+        ///         Name = "terraform-demo",
+        ///         Version = 1,
+        ///     });
         /// 
-        ///     [Output("myPropertyID")]
-        ///     public Output&lt;string&gt; MyPropertyID { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["myPropertyID"] = example.Apply(getPropertyResult =&gt; getPropertyResult),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -51,7 +50,7 @@ namespace Pulumi.Akamai
         /// * `rules` - A JSON-encoded rule tree for a given property.
         /// </summary>
         public static Task<GetPropertyResult> InvokeAsync(GetPropertyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyResult>("akamai:index/getProperty:getProperty", args ?? new GetPropertyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyResult>("akamai:index/getProperty:getProperty", args ?? new GetPropertyArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.Property` data source to query and list the property ID and rule tree based on the property name.
@@ -64,24 +63,23 @@ namespace Pulumi.Akamai
         /// 
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetProperty.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetProperty.InvokeAsync(new Akamai.GetPropertyArgs
-        ///         {
-        ///             Name = "terraform-demo",
-        ///             Version = 1,
-        ///         }));
-        ///         this.MyPropertyID = example;
-        ///     }
+        ///         Name = "terraform-demo",
+        ///         Version = 1,
+        ///     });
         /// 
-        ///     [Output("myPropertyID")]
-        ///     public Output&lt;string&gt; MyPropertyID { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["myPropertyID"] = example.Apply(getPropertyResult =&gt; getPropertyResult),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,11 +91,11 @@ namespace Pulumi.Akamai
         /// * `rules` - A JSON-encoded rule tree for a given property.
         /// </summary>
         public static Output<GetPropertyResult> Invoke(GetPropertyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertyResult>("akamai:index/getProperty:getProperty", args ?? new GetPropertyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertyResult>("akamai:index/getProperty:getProperty", args ?? new GetPropertyInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetPropertyArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) The property name.
@@ -114,9 +112,10 @@ namespace Pulumi.Akamai
         public GetPropertyArgs()
         {
         }
+        public static new GetPropertyArgs Empty => new GetPropertyArgs();
     }
 
-    public sealed class GetPropertyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) The property name.
@@ -133,6 +132,7 @@ namespace Pulumi.Akamai
         public GetPropertyInvokeArgs()
         {
         }
+        public static new GetPropertyInvokeArgs Empty => new GetPropertyInvokeArgs();
     }
 
 

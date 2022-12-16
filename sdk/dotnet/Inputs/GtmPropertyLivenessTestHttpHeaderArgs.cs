@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GtmPropertyLivenessTestHttpHeaderArgs : Pulumi.ResourceArgs
+    public sealed class GtmPropertyLivenessTestHttpHeaderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of HTTP header.
@@ -27,5 +27,6 @@ namespace Pulumi.Akamai.Inputs
         public GtmPropertyLivenessTestHttpHeaderArgs()
         {
         }
+        public static new GtmPropertyLivenessTestHttpHeaderArgs Empty => new GtmPropertyLivenessTestHttpHeaderArgs();
     }
 }

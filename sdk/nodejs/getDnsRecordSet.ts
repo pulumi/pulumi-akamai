@@ -5,11 +5,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getDnsRecordSet(args: GetDnsRecordSetArgs, opts?: pulumi.InvokeOptions): Promise<GetDnsRecordSetResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getDnsRecordSet:getDnsRecordSet", {
         "host": args.host,
         "recordType": args.recordType,
@@ -39,9 +36,8 @@ export interface GetDnsRecordSetResult {
     readonly recordType: string;
     readonly zone: string;
 }
-
 export function getDnsRecordSetOutput(args: GetDnsRecordSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDnsRecordSetResult> {
-    return pulumi.output(args).apply(a => getDnsRecordSet(a, opts))
+    return pulumi.output(args).apply((a: any) => getDnsRecordSet(a, opts))
 }
 
 /**

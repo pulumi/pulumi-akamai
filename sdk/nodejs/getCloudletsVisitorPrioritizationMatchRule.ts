@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -18,7 +19,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const example = pulumi.output(akamai.getCloudletsVisitorPrioritizationMatchRule({
+ * const example = akamai.getCloudletsVisitorPrioritizationMatchRule({
  *     matchRules: [{
  *         end: 1645037845,
  *         matchUrl: "example.com",
@@ -34,7 +35,7 @@ import * as utilities from "./utilities";
  *         passThroughPercent: -1,
  *         start: 1644865045,
  *     }],
- * }));
+ * });
  * ```
  *
  * ## Attributes reference
@@ -46,11 +47,8 @@ import * as utilities from "./utilities";
  */
 export function getCloudletsVisitorPrioritizationMatchRule(args?: GetCloudletsVisitorPrioritizationMatchRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsVisitorPrioritizationMatchRuleResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", {
         "matchRules": args.matchRules,
     }, opts);
@@ -77,9 +75,47 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRule[];
 }
-
+/**
+ * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
+ *
+ * Use the `akamai.getCloudletsVisitorPrioritizationMatchRule` data source to build a match rule JSON object for the Visitor Prioritization Cloudlet.
+ *
+ * ## Basic usage
+ *
+ * This example returns the JSON-encoded rules for the Visitor Prioritization Cloudlet:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const example = akamai.getCloudletsVisitorPrioritizationMatchRule({
+ *     matchRules: [{
+ *         end: 1645037845,
+ *         matchUrl: "example.com",
+ *         matches: [{
+ *             caseSensitive: false,
+ *             checkIps: "CONNECTING_IP",
+ *             matchOperator: "equals",
+ *             matchType: "protocol",
+ *             matchValue: "http",
+ *             negate: false,
+ *         }],
+ *         name: "rule",
+ *         passThroughPercent: -1,
+ *         start: 1644865045,
+ *     }],
+ * });
+ * ```
+ *
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `type` - The type of Cloudlet the rule is for.
+ * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
+ */
 export function getCloudletsVisitorPrioritizationMatchRuleOutput(args?: GetCloudletsVisitorPrioritizationMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsVisitorPrioritizationMatchRuleResult> {
-    return pulumi.output(args).apply(a => getCloudletsVisitorPrioritizationMatchRule(a, opts))
+    return pulumi.output(args).apply((a: any) => getCloudletsVisitorPrioritizationMatchRule(a, opts))
 }
 
 /**

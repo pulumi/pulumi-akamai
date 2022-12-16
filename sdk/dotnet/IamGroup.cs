@@ -17,20 +17,18 @@ namespace Pulumi.Akamai
     /// This example returns the policy details based on the policy ID and optionally, a version:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var example = new Akamai.IamGroup("example", new()
     ///     {
-    ///         var example = new Akamai.IamGroup("example", new Akamai.IamGroupArgs
-    ///         {
-    ///             ParentGroupId = 12345,
-    ///         });
-    ///     }
+    ///         ParentGroupId = 12345,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Attributes reference
@@ -40,7 +38,7 @@ namespace Pulumi.Akamai
     /// * `sub_groups` - Sub-groups that are related to this group. Each identifier must be an integer.
     /// </summary>
     [AkamaiResourceType("akamai:index/iamGroup:IamGroup")]
-    public partial class IamGroup : Pulumi.CustomResource
+    public partial class IamGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Human readable name for a group.
@@ -104,7 +102,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class IamGroupArgs : Pulumi.ResourceArgs
+    public sealed class IamGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Human readable name for a group.
@@ -121,9 +119,10 @@ namespace Pulumi.Akamai
         public IamGroupArgs()
         {
         }
+        public static new IamGroupArgs Empty => new IamGroupArgs();
     }
 
-    public sealed class IamGroupState : Pulumi.ResourceArgs
+    public sealed class IamGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Human readable name for a group.
@@ -152,5 +151,6 @@ namespace Pulumi.Akamai
         public IamGroupState()
         {
         }
+        public static new IamGroupState Empty => new IamGroupState();
     }
 }

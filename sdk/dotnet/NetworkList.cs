@@ -17,29 +17,27 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var networkList = new Akamai.NetworkList("networkList", new()
     ///     {
-    ///         var networkList = new Akamai.NetworkList("networkList", new Akamai.NetworkListArgs
-    ///         {
-    ///             Type = "IP",
-    ///             Description = "network list description",
-    ///             Lists = @var.List,
-    ///             Mode = "APPEND",
-    ///             ContractId = "ABC-123",
-    ///             GroupId = 12345,
-    ///         });
-    ///     }
+    ///         Type = "IP",
+    ///         Description = "network list description",
+    ///         Lists = @var.List,
+    ///         Mode = "APPEND",
+    ///         ContractId = "ABC-123",
+    ///         GroupId = 12345,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/networkList:NetworkList")]
-    public partial class NetworkList : Pulumi.CustomResource
+    public partial class NetworkList : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The contract ID of the network list. If supplied, group_id must also be supplied. The
@@ -149,7 +147,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class NetworkListArgs : Pulumi.ResourceArgs
+    public sealed class NetworkListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The contract ID of the network list. If supplied, group_id must also be supplied. The
@@ -205,9 +203,10 @@ namespace Pulumi.Akamai
         public NetworkListArgs()
         {
         }
+        public static new NetworkListArgs Empty => new NetworkListArgs();
     }
 
-    public sealed class NetworkListState : Pulumi.ResourceArgs
+    public sealed class NetworkListState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The contract ID of the network list. If supplied, group_id must also be supplied. The
@@ -282,5 +281,6 @@ namespace Pulumi.Akamai
         public NetworkListState()
         {
         }
+        public static new NetworkListState Empty => new NetworkListState();
     }
 }

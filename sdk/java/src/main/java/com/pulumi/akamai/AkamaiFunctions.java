@@ -128,10 +128,16 @@ import com.pulumi.akamai.inputs.GetContractArgs;
 import com.pulumi.akamai.inputs.GetContractPlainArgs;
 import com.pulumi.akamai.inputs.GetCpCodeArgs;
 import com.pulumi.akamai.inputs.GetCpCodePlainArgs;
+import com.pulumi.akamai.inputs.GetCpsCsrArgs;
+import com.pulumi.akamai.inputs.GetCpsCsrPlainArgs;
+import com.pulumi.akamai.inputs.GetCpsDeploymentsArgs;
+import com.pulumi.akamai.inputs.GetCpsDeploymentsPlainArgs;
 import com.pulumi.akamai.inputs.GetDatastreamActivationHistoryArgs;
 import com.pulumi.akamai.inputs.GetDatastreamActivationHistoryPlainArgs;
 import com.pulumi.akamai.inputs.GetDatastreamDatasetFieldsArgs;
 import com.pulumi.akamai.inputs.GetDatastreamDatasetFieldsPlainArgs;
+import com.pulumi.akamai.inputs.GetDatastreamsArgs;
+import com.pulumi.akamai.inputs.GetDatastreamsPlainArgs;
 import com.pulumi.akamai.inputs.GetDnsRecordSetArgs;
 import com.pulumi.akamai.inputs.GetDnsRecordSetPlainArgs;
 import com.pulumi.akamai.inputs.GetEdgeWorkerActivationArgs;
@@ -157,6 +163,16 @@ import com.pulumi.akamai.inputs.GetPropertiesSearchPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnamesArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnamesPlainArgs;
+import com.pulumi.akamai.inputs.GetPropertyIncludeActivationArgs;
+import com.pulumi.akamai.inputs.GetPropertyIncludeActivationPlainArgs;
+import com.pulumi.akamai.inputs.GetPropertyIncludeArgs;
+import com.pulumi.akamai.inputs.GetPropertyIncludeParentsArgs;
+import com.pulumi.akamai.inputs.GetPropertyIncludeParentsPlainArgs;
+import com.pulumi.akamai.inputs.GetPropertyIncludePlainArgs;
+import com.pulumi.akamai.inputs.GetPropertyIncludeRulesArgs;
+import com.pulumi.akamai.inputs.GetPropertyIncludeRulesPlainArgs;
+import com.pulumi.akamai.inputs.GetPropertyIncludesArgs;
+import com.pulumi.akamai.inputs.GetPropertyIncludesPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyProductsArgs;
 import com.pulumi.akamai.inputs.GetPropertyProductsPlainArgs;
@@ -228,8 +244,12 @@ import com.pulumi.akamai.outputs.GetCloudletsVisitorPrioritizationMatchRuleResul
 import com.pulumi.akamai.outputs.GetContractResult;
 import com.pulumi.akamai.outputs.GetContractsResult;
 import com.pulumi.akamai.outputs.GetCpCodeResult;
+import com.pulumi.akamai.outputs.GetCpsCsrResult;
+import com.pulumi.akamai.outputs.GetCpsDeploymentsResult;
+import com.pulumi.akamai.outputs.GetCpsWarningsResult;
 import com.pulumi.akamai.outputs.GetDatastreamActivationHistoryResult;
 import com.pulumi.akamai.outputs.GetDatastreamDatasetFieldsResult;
+import com.pulumi.akamai.outputs.GetDatastreamsResult;
 import com.pulumi.akamai.outputs.GetDnsRecordSetResult;
 import com.pulumi.akamai.outputs.GetEdgeWorkerActivationResult;
 import com.pulumi.akamai.outputs.GetEdgeWorkerResult;
@@ -250,6 +270,11 @@ import com.pulumi.akamai.outputs.GetNetworkListsResult;
 import com.pulumi.akamai.outputs.GetPropertiesResult;
 import com.pulumi.akamai.outputs.GetPropertiesSearchResult;
 import com.pulumi.akamai.outputs.GetPropertyHostnamesResult;
+import com.pulumi.akamai.outputs.GetPropertyIncludeActivationResult;
+import com.pulumi.akamai.outputs.GetPropertyIncludeParentsResult;
+import com.pulumi.akamai.outputs.GetPropertyIncludeResult;
+import com.pulumi.akamai.outputs.GetPropertyIncludeRulesResult;
+import com.pulumi.akamai.outputs.GetPropertyIncludesResult;
 import com.pulumi.akamai.outputs.GetPropertyProductsResult;
 import com.pulumi.akamai.outputs.GetPropertyResult;
 import com.pulumi.akamai.outputs.GetPropertyRuleFormatsResult;
@@ -4285,6 +4310,35 @@ public final class AkamaiFunctions {
      * **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage)
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var hostnameCoverage = AkamaiFunctions.getAppSecHostnameCoverage();
+     * 
+     *         ctx.export(&#34;hostnameCoverageListJson&#34;, hostnameCoverage.applyValue(getAppSecHostnameCoverageResult -&gt; getAppSecHostnameCoverageResult.json()));
+     *         ctx.export(&#34;hostnameCoverageListOutput&#34;, hostnameCoverage.applyValue(getAppSecHostnameCoverageResult -&gt; getAppSecHostnameCoverageResult.outputText()));
+     *     }
+     * }
+     * ```
      * ## Output Options
      * 
      * The following options can be used to determine the information returned, and how that returned information is formatted:
@@ -4304,6 +4358,35 @@ public final class AkamaiFunctions {
      * **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage)
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var hostnameCoverage = AkamaiFunctions.getAppSecHostnameCoverage();
+     * 
+     *         ctx.export(&#34;hostnameCoverageListJson&#34;, hostnameCoverage.applyValue(getAppSecHostnameCoverageResult -&gt; getAppSecHostnameCoverageResult.json()));
+     *         ctx.export(&#34;hostnameCoverageListOutput&#34;, hostnameCoverage.applyValue(getAppSecHostnameCoverageResult -&gt; getAppSecHostnameCoverageResult.outputText()));
+     *     }
+     * }
+     * ```
      * ## Output Options
      * 
      * The following options can be used to determine the information returned, and how that returned information is formatted:
@@ -4323,6 +4406,35 @@ public final class AkamaiFunctions {
      * **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage)
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var hostnameCoverage = AkamaiFunctions.getAppSecHostnameCoverage();
+     * 
+     *         ctx.export(&#34;hostnameCoverageListJson&#34;, hostnameCoverage.applyValue(getAppSecHostnameCoverageResult -&gt; getAppSecHostnameCoverageResult.json()));
+     *         ctx.export(&#34;hostnameCoverageListOutput&#34;, hostnameCoverage.applyValue(getAppSecHostnameCoverageResult -&gt; getAppSecHostnameCoverageResult.outputText()));
+     *     }
+     * }
+     * ```
      * ## Output Options
      * 
      * The following options can be used to determine the information returned, and how that returned information is formatted:
@@ -4342,6 +4454,35 @@ public final class AkamaiFunctions {
      * **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage)
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var hostnameCoverage = AkamaiFunctions.getAppSecHostnameCoverage();
+     * 
+     *         ctx.export(&#34;hostnameCoverageListJson&#34;, hostnameCoverage.applyValue(getAppSecHostnameCoverageResult -&gt; getAppSecHostnameCoverageResult.json()));
+     *         ctx.export(&#34;hostnameCoverageListOutput&#34;, hostnameCoverage.applyValue(getAppSecHostnameCoverageResult -&gt; getAppSecHostnameCoverageResult.outputText()));
+     *     }
+     * }
+     * ```
      * ## Output Options
      * 
      * The following options can be used to determine the information returned, and how that returned information is formatted:
@@ -4361,6 +4502,35 @@ public final class AkamaiFunctions {
      * **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage)
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var hostnameCoverage = AkamaiFunctions.getAppSecHostnameCoverage();
+     * 
+     *         ctx.export(&#34;hostnameCoverageListJson&#34;, hostnameCoverage.applyValue(getAppSecHostnameCoverageResult -&gt; getAppSecHostnameCoverageResult.json()));
+     *         ctx.export(&#34;hostnameCoverageListOutput&#34;, hostnameCoverage.applyValue(getAppSecHostnameCoverageResult -&gt; getAppSecHostnameCoverageResult.outputText()));
+     *     }
+     * }
+     * ```
      * ## Output Options
      * 
      * The following options can be used to determine the information returned, and how that returned information is formatted:
@@ -4380,6 +4550,35 @@ public final class AkamaiFunctions {
      * **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage)
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var hostnameCoverage = AkamaiFunctions.getAppSecHostnameCoverage();
+     * 
+     *         ctx.export(&#34;hostnameCoverageListJson&#34;, hostnameCoverage.applyValue(getAppSecHostnameCoverageResult -&gt; getAppSecHostnameCoverageResult.json()));
+     *         ctx.export(&#34;hostnameCoverageListOutput&#34;, hostnameCoverage.applyValue(getAppSecHostnameCoverageResult -&gt; getAppSecHostnameCoverageResult.outputText()));
+     *     }
+     * }
+     * ```
      * ## Output Options
      * 
      * The following options can be used to determine the information returned, and how that returned information is formatted:
@@ -8061,7 +8260,6 @@ public final class AkamaiFunctions {
      * ## Example Usage
      * 
      * Basic usage:
-     * 
      * ```java
      * package generated_program;
      * 
@@ -8128,7 +8326,6 @@ public final class AkamaiFunctions {
      * ## Example Usage
      * 
      * Basic usage:
-     * 
      * ```java
      * package generated_program;
      * 
@@ -8195,7 +8392,6 @@ public final class AkamaiFunctions {
      * ## Example Usage
      * 
      * Basic usage:
-     * 
      * ```java
      * package generated_program;
      * 
@@ -8262,7 +8458,6 @@ public final class AkamaiFunctions {
      * ## Example Usage
      * 
      * Basic usage:
-     * 
      * ```java
      * package generated_program;
      * 
@@ -8329,7 +8524,6 @@ public final class AkamaiFunctions {
      * ## Example Usage
      * 
      * Basic usage:
-     * 
      * ```java
      * package generated_program;
      * 
@@ -8396,7 +8590,6 @@ public final class AkamaiFunctions {
      * ## Example Usage
      * 
      * Basic usage:
-     * 
      * ```java
      * package generated_program;
      * 
@@ -11577,6 +11770,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the API Prioritization Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11639,6 +11833,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the API Prioritization Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11701,6 +11896,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the API Prioritization Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11763,6 +11959,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the API Prioritization Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11825,6 +12022,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the API Prioritization Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -11887,6 +12085,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the API Prioritization Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -12277,6 +12476,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Application Load Balancer Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -12340,6 +12540,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Application Load Balancer Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -12403,6 +12604,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Application Load Balancer Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -12466,6 +12668,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Application Load Balancer Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -12529,6 +12732,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Application Load Balancer Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -12592,6 +12796,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Application Load Balancer Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -12655,6 +12860,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Audience Segmentation Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -12715,6 +12921,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Audience Segmentation Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -12775,6 +12982,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Audience Segmentation Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -12835,6 +13043,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Audience Segmentation Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -12895,6 +13104,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Audience Segmentation Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -12955,6 +13165,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Audience Segmentation Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -13015,6 +13226,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Edge Redirector Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -13079,6 +13291,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Edge Redirector Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -13143,6 +13356,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Edge Redirector Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -13207,6 +13421,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Edge Redirector Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -13271,6 +13486,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Edge Redirector Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -13335,6 +13551,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Edge Redirector Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -13777,6 +13994,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Phased Release Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -13841,6 +14059,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Phased Release Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -13905,6 +14124,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Phased Release Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -13969,6 +14189,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Phased Release Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -14033,6 +14254,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Phased Release Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -14097,6 +14319,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Phased Release Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -14461,6 +14684,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Request Control Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -14539,6 +14763,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Request Control Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -14617,6 +14842,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Request Control Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -14695,6 +14921,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Request Control Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -14773,6 +15000,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Request Control Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -14851,6 +15079,7 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the JSON-encoded rules for the Request Control Cloudlet:
+     * 
      * ```java
      * package generated_program;
      * 
@@ -15044,7 +15273,6 @@ public final class AkamaiFunctions {
     /**
      * Use the `akamai.getContract` data source to find a contract ID.
      * 
-     * ## Example Usage
      * ## Attributes reference
      * 
      * * `id` - The contract&#39;s unique ID, including the `ctr_` prefix.
@@ -15056,7 +15284,6 @@ public final class AkamaiFunctions {
     /**
      * Use the `akamai.getContract` data source to find a contract ID.
      * 
-     * ## Example Usage
      * ## Attributes reference
      * 
      * * `id` - The contract&#39;s unique ID, including the `ctr_` prefix.
@@ -15068,7 +15295,6 @@ public final class AkamaiFunctions {
     /**
      * Use the `akamai.getContract` data source to find a contract ID.
      * 
-     * ## Example Usage
      * ## Attributes reference
      * 
      * * `id` - The contract&#39;s unique ID, including the `ctr_` prefix.
@@ -15080,7 +15306,6 @@ public final class AkamaiFunctions {
     /**
      * Use the `akamai.getContract` data source to find a contract ID.
      * 
-     * ## Example Usage
      * ## Attributes reference
      * 
      * * `id` - The contract&#39;s unique ID, including the `ctr_` prefix.
@@ -15092,7 +15317,6 @@ public final class AkamaiFunctions {
     /**
      * Use the `akamai.getContract` data source to find a contract ID.
      * 
-     * ## Example Usage
      * ## Attributes reference
      * 
      * * `id` - The contract&#39;s unique ID, including the `ctr_` prefix.
@@ -15104,7 +15328,6 @@ public final class AkamaiFunctions {
     /**
      * Use the `akamai.getContract` data source to find a contract ID.
      * 
-     * ## Example Usage
      * ## Attributes reference
      * 
      * * `id` - The contract&#39;s unique ID, including the `ctr_` prefix.
@@ -15117,6 +15340,34 @@ public final class AkamaiFunctions {
      * Use the `akamai.getContracts` data source to list contracts associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you&#39;re using.
      * 
      * ## Example Usage
+     * 
+     * Return contracts associated with the EdgeGrid API client token currently used for authentication:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-example = AkamaiFunctions.getContracts();
+     * 
+     *         ctx.export(&#34;propertyMatch&#34;, my_example);
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * This data source returns these attributes:
@@ -15133,6 +15384,34 @@ public final class AkamaiFunctions {
      * Use the `akamai.getContracts` data source to list contracts associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you&#39;re using.
      * 
      * ## Example Usage
+     * 
+     * Return contracts associated with the EdgeGrid API client token currently used for authentication:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-example = AkamaiFunctions.getContracts();
+     * 
+     *         ctx.export(&#34;propertyMatch&#34;, my_example);
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * This data source returns these attributes:
@@ -15149,6 +15428,34 @@ public final class AkamaiFunctions {
      * Use the `akamai.getContracts` data source to list contracts associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you&#39;re using.
      * 
      * ## Example Usage
+     * 
+     * Return contracts associated with the EdgeGrid API client token currently used for authentication:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-example = AkamaiFunctions.getContracts();
+     * 
+     *         ctx.export(&#34;propertyMatch&#34;, my_example);
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * This data source returns these attributes:
@@ -15165,6 +15472,34 @@ public final class AkamaiFunctions {
      * Use the `akamai.getContracts` data source to list contracts associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you&#39;re using.
      * 
      * ## Example Usage
+     * 
+     * Return contracts associated with the EdgeGrid API client token currently used for authentication:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-example = AkamaiFunctions.getContracts();
+     * 
+     *         ctx.export(&#34;propertyMatch&#34;, my_example);
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * This data source returns these attributes:
@@ -15181,6 +15516,34 @@ public final class AkamaiFunctions {
      * Use the `akamai.getContracts` data source to list contracts associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you&#39;re using.
      * 
      * ## Example Usage
+     * 
+     * Return contracts associated with the EdgeGrid API client token currently used for authentication:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-example = AkamaiFunctions.getContracts();
+     * 
+     *         ctx.export(&#34;propertyMatch&#34;, my_example);
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * This data source returns these attributes:
@@ -15197,6 +15560,34 @@ public final class AkamaiFunctions {
      * Use the `akamai.getContracts` data source to list contracts associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you&#39;re using.
      * 
      * ## Example Usage
+     * 
+     * Return contracts associated with the EdgeGrid API client token currently used for authentication:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-example = AkamaiFunctions.getContracts();
+     * 
+     *         ctx.export(&#34;propertyMatch&#34;, my_example);
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * This data source returns these attributes:
@@ -15220,6 +15611,682 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetCpCodeResult> getCpCodePlain(GetCpCodePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getCpCode:getCpCode", TypeShape.of(GetCpCodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * When setting up a third-party enrollment, use the `akamai.getCpsCsr` data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
+     * 
+     * If you&#39;re using dual-stacked certificates, you&#39;ll see data for both ECDSA and RSA keys.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return CSR information for enrollment ID 12345:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetCpsCsrArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsCsr(GetCpsCsrArgs.builder()
+     *             .enrollmentId(12345)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     *   * `csr_rsa` - Returns CSR information for a certificate that uses the RSA algorithm.
+     *   * `csr_ecdsa` - Returns CSR information for a certificate that uses the ECDSA algorithm.
+     * 
+     */
+    public static Output<GetCpsCsrResult> getCpsCsr(GetCpsCsrArgs args) {
+        return getCpsCsr(args, InvokeOptions.Empty);
+    }
+    /**
+     * When setting up a third-party enrollment, use the `akamai.getCpsCsr` data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
+     * 
+     * If you&#39;re using dual-stacked certificates, you&#39;ll see data for both ECDSA and RSA keys.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return CSR information for enrollment ID 12345:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetCpsCsrArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsCsr(GetCpsCsrArgs.builder()
+     *             .enrollmentId(12345)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     *   * `csr_rsa` - Returns CSR information for a certificate that uses the RSA algorithm.
+     *   * `csr_ecdsa` - Returns CSR information for a certificate that uses the ECDSA algorithm.
+     * 
+     */
+    public static CompletableFuture<GetCpsCsrResult> getCpsCsrPlain(GetCpsCsrPlainArgs args) {
+        return getCpsCsrPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * When setting up a third-party enrollment, use the `akamai.getCpsCsr` data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
+     * 
+     * If you&#39;re using dual-stacked certificates, you&#39;ll see data for both ECDSA and RSA keys.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return CSR information for enrollment ID 12345:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetCpsCsrArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsCsr(GetCpsCsrArgs.builder()
+     *             .enrollmentId(12345)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     *   * `csr_rsa` - Returns CSR information for a certificate that uses the RSA algorithm.
+     *   * `csr_ecdsa` - Returns CSR information for a certificate that uses the ECDSA algorithm.
+     * 
+     */
+    public static Output<GetCpsCsrResult> getCpsCsr(GetCpsCsrArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCpsCsr:getCpsCsr", TypeShape.of(GetCpsCsrResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * When setting up a third-party enrollment, use the `akamai.getCpsCsr` data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
+     * 
+     * If you&#39;re using dual-stacked certificates, you&#39;ll see data for both ECDSA and RSA keys.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return CSR information for enrollment ID 12345:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetCpsCsrArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsCsr(GetCpsCsrArgs.builder()
+     *             .enrollmentId(12345)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     *   * `csr_rsa` - Returns CSR information for a certificate that uses the RSA algorithm.
+     *   * `csr_ecdsa` - Returns CSR information for a certificate that uses the ECDSA algorithm.
+     * 
+     */
+    public static CompletableFuture<GetCpsCsrResult> getCpsCsrPlain(GetCpsCsrPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCpsCsr:getCpsCsr", TypeShape.of(GetCpsCsrResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.getCpsDeployments` data source to retrieve deployed certificates for a specific enrollment.
+     * 
+     * You&#39;ll see data for ECDSA, RSA, or both depending on the type and number of certificates you uploaded.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return information about deployed certificates for enrollment ID 12345.
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetCpsDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsDeployments(GetCpsDeploymentsArgs.builder()
+     *             .enrollmentId(12345)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `production_certificate_rsa` - The RSA certificate deployed on the production network.
+     * * `production_certificate_ecdsa` - The ECDSA certificate deployed on the production network.
+     * * `staging_certificate_rsa` - The RSA certificate deployed on the staging network.
+     * * `staging_certificate_ecdsa` - The ECDSA certificate deployed on the staging network.
+     * * `expiry_date` - The expiration date for the certificate in ISO-8601 format.
+     * * `auto_renewal_start_time` - The specific date the automatic renewal will start on. The date is in ISO-8601 format. &lt;br&gt; For DV certificates, CPS automatically starts the renewal process 90 days before the current certificate expires. It then automatically deploys the renewed certificate when it receives it from the CA. &lt;br&gt; For third-party certificates, CPS creates a change. This change is needed to get a new CSR and upload the new certificate. Use the `akamai.getCPSEnrollments` data source to view pending changes.
+     * 
+     */
+    public static Output<GetCpsDeploymentsResult> getCpsDeployments(GetCpsDeploymentsArgs args) {
+        return getCpsDeployments(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getCpsDeployments` data source to retrieve deployed certificates for a specific enrollment.
+     * 
+     * You&#39;ll see data for ECDSA, RSA, or both depending on the type and number of certificates you uploaded.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return information about deployed certificates for enrollment ID 12345.
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetCpsDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsDeployments(GetCpsDeploymentsArgs.builder()
+     *             .enrollmentId(12345)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `production_certificate_rsa` - The RSA certificate deployed on the production network.
+     * * `production_certificate_ecdsa` - The ECDSA certificate deployed on the production network.
+     * * `staging_certificate_rsa` - The RSA certificate deployed on the staging network.
+     * * `staging_certificate_ecdsa` - The ECDSA certificate deployed on the staging network.
+     * * `expiry_date` - The expiration date for the certificate in ISO-8601 format.
+     * * `auto_renewal_start_time` - The specific date the automatic renewal will start on. The date is in ISO-8601 format. &lt;br&gt; For DV certificates, CPS automatically starts the renewal process 90 days before the current certificate expires. It then automatically deploys the renewed certificate when it receives it from the CA. &lt;br&gt; For third-party certificates, CPS creates a change. This change is needed to get a new CSR and upload the new certificate. Use the `akamai.getCPSEnrollments` data source to view pending changes.
+     * 
+     */
+    public static CompletableFuture<GetCpsDeploymentsResult> getCpsDeploymentsPlain(GetCpsDeploymentsPlainArgs args) {
+        return getCpsDeploymentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getCpsDeployments` data source to retrieve deployed certificates for a specific enrollment.
+     * 
+     * You&#39;ll see data for ECDSA, RSA, or both depending on the type and number of certificates you uploaded.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return information about deployed certificates for enrollment ID 12345.
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetCpsDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsDeployments(GetCpsDeploymentsArgs.builder()
+     *             .enrollmentId(12345)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `production_certificate_rsa` - The RSA certificate deployed on the production network.
+     * * `production_certificate_ecdsa` - The ECDSA certificate deployed on the production network.
+     * * `staging_certificate_rsa` - The RSA certificate deployed on the staging network.
+     * * `staging_certificate_ecdsa` - The ECDSA certificate deployed on the staging network.
+     * * `expiry_date` - The expiration date for the certificate in ISO-8601 format.
+     * * `auto_renewal_start_time` - The specific date the automatic renewal will start on. The date is in ISO-8601 format. &lt;br&gt; For DV certificates, CPS automatically starts the renewal process 90 days before the current certificate expires. It then automatically deploys the renewed certificate when it receives it from the CA. &lt;br&gt; For third-party certificates, CPS creates a change. This change is needed to get a new CSR and upload the new certificate. Use the `akamai.getCPSEnrollments` data source to view pending changes.
+     * 
+     */
+    public static Output<GetCpsDeploymentsResult> getCpsDeployments(GetCpsDeploymentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCpsDeployments:getCpsDeployments", TypeShape.of(GetCpsDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.getCpsDeployments` data source to retrieve deployed certificates for a specific enrollment.
+     * 
+     * You&#39;ll see data for ECDSA, RSA, or both depending on the type and number of certificates you uploaded.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return information about deployed certificates for enrollment ID 12345.
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetCpsDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsDeployments(GetCpsDeploymentsArgs.builder()
+     *             .enrollmentId(12345)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `production_certificate_rsa` - The RSA certificate deployed on the production network.
+     * * `production_certificate_ecdsa` - The ECDSA certificate deployed on the production network.
+     * * `staging_certificate_rsa` - The RSA certificate deployed on the staging network.
+     * * `staging_certificate_ecdsa` - The ECDSA certificate deployed on the staging network.
+     * * `expiry_date` - The expiration date for the certificate in ISO-8601 format.
+     * * `auto_renewal_start_time` - The specific date the automatic renewal will start on. The date is in ISO-8601 format. &lt;br&gt; For DV certificates, CPS automatically starts the renewal process 90 days before the current certificate expires. It then automatically deploys the renewed certificate when it receives it from the CA. &lt;br&gt; For third-party certificates, CPS creates a change. This change is needed to get a new CSR and upload the new certificate. Use the `akamai.getCPSEnrollments` data source to view pending changes.
+     * 
+     */
+    public static CompletableFuture<GetCpsDeploymentsResult> getCpsDeploymentsPlain(GetCpsDeploymentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCpsDeployments:getCpsDeployments", TypeShape.of(GetCpsDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.getCpsWarnings` data source to return a map of all possible pre- and post-verification warnings. The map includes both the ID needed to acknowledge a warning and a brief description of the issue.
+     * 
+     * CPS produces warnings during enrollment creation or after a client uploads the certificate. CPS won&#39;t process a change until you acknowledge all warnings.
+     * 
+     * You can use the warning IDs returned by this data source to acknowledge or auto-approve warnings. The `akamai.CpsThirdPartyEnrollment` and `akamai.CpsUploadCertificate` resources include arguments to help you do this.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return a map of verification warnings:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsWarnings();
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns this attribute:
+     * 
+     *   * `warnings` - Validation warnings for the current change you&#39;re making. Warnings display with an ID and a short description. Unless you auto-approve warnings, you need the ID to acknowledge the change. CPS won&#39;t process the change until you acknowledge these warnings.
+     * 
+     */
+    public static Output<GetCpsWarningsResult> getCpsWarnings() {
+        return getCpsWarnings(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getCpsWarnings` data source to return a map of all possible pre- and post-verification warnings. The map includes both the ID needed to acknowledge a warning and a brief description of the issue.
+     * 
+     * CPS produces warnings during enrollment creation or after a client uploads the certificate. CPS won&#39;t process a change until you acknowledge all warnings.
+     * 
+     * You can use the warning IDs returned by this data source to acknowledge or auto-approve warnings. The `akamai.CpsThirdPartyEnrollment` and `akamai.CpsUploadCertificate` resources include arguments to help you do this.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return a map of verification warnings:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsWarnings();
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns this attribute:
+     * 
+     *   * `warnings` - Validation warnings for the current change you&#39;re making. Warnings display with an ID and a short description. Unless you auto-approve warnings, you need the ID to acknowledge the change. CPS won&#39;t process the change until you acknowledge these warnings.
+     * 
+     */
+    public static CompletableFuture<GetCpsWarningsResult> getCpsWarningsPlain() {
+        return getCpsWarningsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getCpsWarnings` data source to return a map of all possible pre- and post-verification warnings. The map includes both the ID needed to acknowledge a warning and a brief description of the issue.
+     * 
+     * CPS produces warnings during enrollment creation or after a client uploads the certificate. CPS won&#39;t process a change until you acknowledge all warnings.
+     * 
+     * You can use the warning IDs returned by this data source to acknowledge or auto-approve warnings. The `akamai.CpsThirdPartyEnrollment` and `akamai.CpsUploadCertificate` resources include arguments to help you do this.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return a map of verification warnings:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsWarnings();
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns this attribute:
+     * 
+     *   * `warnings` - Validation warnings for the current change you&#39;re making. Warnings display with an ID and a short description. Unless you auto-approve warnings, you need the ID to acknowledge the change. CPS won&#39;t process the change until you acknowledge these warnings.
+     * 
+     */
+    public static Output<GetCpsWarningsResult> getCpsWarnings(InvokeArgs args) {
+        return getCpsWarnings(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getCpsWarnings` data source to return a map of all possible pre- and post-verification warnings. The map includes both the ID needed to acknowledge a warning and a brief description of the issue.
+     * 
+     * CPS produces warnings during enrollment creation or after a client uploads the certificate. CPS won&#39;t process a change until you acknowledge all warnings.
+     * 
+     * You can use the warning IDs returned by this data source to acknowledge or auto-approve warnings. The `akamai.CpsThirdPartyEnrollment` and `akamai.CpsUploadCertificate` resources include arguments to help you do this.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return a map of verification warnings:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsWarnings();
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns this attribute:
+     * 
+     *   * `warnings` - Validation warnings for the current change you&#39;re making. Warnings display with an ID and a short description. Unless you auto-approve warnings, you need the ID to acknowledge the change. CPS won&#39;t process the change until you acknowledge these warnings.
+     * 
+     */
+    public static CompletableFuture<GetCpsWarningsResult> getCpsWarningsPlain(InvokeArgs args) {
+        return getCpsWarningsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getCpsWarnings` data source to return a map of all possible pre- and post-verification warnings. The map includes both the ID needed to acknowledge a warning and a brief description of the issue.
+     * 
+     * CPS produces warnings during enrollment creation or after a client uploads the certificate. CPS won&#39;t process a change until you acknowledge all warnings.
+     * 
+     * You can use the warning IDs returned by this data source to acknowledge or auto-approve warnings. The `akamai.CpsThirdPartyEnrollment` and `akamai.CpsUploadCertificate` resources include arguments to help you do this.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return a map of verification warnings:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsWarnings();
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns this attribute:
+     * 
+     *   * `warnings` - Validation warnings for the current change you&#39;re making. Warnings display with an ID and a short description. Unless you auto-approve warnings, you need the ID to acknowledge the change. CPS won&#39;t process the change until you acknowledge these warnings.
+     * 
+     */
+    public static Output<GetCpsWarningsResult> getCpsWarnings(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCpsWarnings:getCpsWarnings", TypeShape.of(GetCpsWarningsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.getCpsWarnings` data source to return a map of all possible pre- and post-verification warnings. The map includes both the ID needed to acknowledge a warning and a brief description of the issue.
+     * 
+     * CPS produces warnings during enrollment creation or after a client uploads the certificate. CPS won&#39;t process a change until you acknowledge all warnings.
+     * 
+     * You can use the warning IDs returned by this data source to acknowledge or auto-approve warnings. The `akamai.CpsThirdPartyEnrollment` and `akamai.CpsUploadCertificate` resources include arguments to help you do this.
+     * 
+     * ## Basic usage
+     * 
+     * This example shows how to return a map of verification warnings:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getCpsWarnings();
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns this attribute:
+     * 
+     *   * `warnings` - Validation warnings for the current change you&#39;re making. Warnings display with an ID and a short description. Unless you auto-approve warnings, you need the ID to acknowledge the change. CPS won&#39;t process the change until you acknowledge these warnings.
+     * 
+     */
+    public static CompletableFuture<GetCpsWarningsResult> getCpsWarningsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCpsWarnings:getCpsWarnings", TypeShape.of(GetCpsWarningsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Use the `akamai.getDatastreamActivationHistory` data source to list detailed information about the activation status changes for all versions of a stream.
@@ -15719,6 +16786,204 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetDatastreamDatasetFieldsResult> getDatastreamDatasetFieldsPlain(GetDatastreamDatasetFieldsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", TypeShape.of(GetDatastreamDatasetFieldsResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * Use the `akamai.getDatastreams` data source to list details about the DataStream configuration.
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `streams` - Returns the latest versions of the stream configurations for all groups within in your account. You can use the `group_id` parameter to view the latest versions of all configurations in a specific group.
+     *   * `activation_status` - The activation status of the stream. These are possible values: `ACTIVATED`, `DEACTIVATED`, `ACTIVATING`, `DEACTIVATING`, or `INACTIVE`. See the [Activate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-activate) and [Deactivate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-deactivate) operations.
+     *   * `archived` - Whether the stream is archived.
+     *   * `connectors` - The connector where the stream sends logs.
+     *   * `contract_id` - Identifies the contract that the stream is associated with.
+     *   * `created_by` - The user who created the stream.
+     *   * `created_date` - The date and time when the stream was created in this format: `14-07-2020 07:07:40 GMT`.
+     *   * `current_version_id` - Identifies the current version of the stream.
+     *   * `errors` - Objects that may indicate stream failure errors. Learn more about [Errors](https://techdocs.akamai.com/datastream2/reference/errors).
+     *     * `detail` - A message informing about the status of the failed stream.
+     *     * `title` - A descriptive label for the type of error.
+     *     * `type` - Identifies the error type, either `ACTIVATION_ERROR` or `UNEXPECTED_SYSTEM_ERROR`. In case of these errors, contact support for assistance before continuing.
+     *   * `group_id` - Identifies the group where the stream is created.
+     *   * `group_name` - The group name where the stream is created.
+     *   * `properties` - List of properties associated with the stream.
+     *     * `property_id` - The identifier of the property.
+     *     * `property_name` - The descriptive label for the property.
+     *   * `stream_id` - A stream&#39;s unique identifier.
+     *   * `stream_name` - The name of the stream.
+     *   * `stream_type_name` - Specifies the type of the data stream. `Logs - Raw` is the only stream type name currently available.
+     *   * `stream_version_id` - A stream version&#39;s unique identifier.
+     * 
+     */
+    public static Output<GetDatastreamsResult> getDatastreams() {
+        return getDatastreams(GetDatastreamsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getDatastreams` data source to list details about the DataStream configuration.
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `streams` - Returns the latest versions of the stream configurations for all groups within in your account. You can use the `group_id` parameter to view the latest versions of all configurations in a specific group.
+     *   * `activation_status` - The activation status of the stream. These are possible values: `ACTIVATED`, `DEACTIVATED`, `ACTIVATING`, `DEACTIVATING`, or `INACTIVE`. See the [Activate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-activate) and [Deactivate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-deactivate) operations.
+     *   * `archived` - Whether the stream is archived.
+     *   * `connectors` - The connector where the stream sends logs.
+     *   * `contract_id` - Identifies the contract that the stream is associated with.
+     *   * `created_by` - The user who created the stream.
+     *   * `created_date` - The date and time when the stream was created in this format: `14-07-2020 07:07:40 GMT`.
+     *   * `current_version_id` - Identifies the current version of the stream.
+     *   * `errors` - Objects that may indicate stream failure errors. Learn more about [Errors](https://techdocs.akamai.com/datastream2/reference/errors).
+     *     * `detail` - A message informing about the status of the failed stream.
+     *     * `title` - A descriptive label for the type of error.
+     *     * `type` - Identifies the error type, either `ACTIVATION_ERROR` or `UNEXPECTED_SYSTEM_ERROR`. In case of these errors, contact support for assistance before continuing.
+     *   * `group_id` - Identifies the group where the stream is created.
+     *   * `group_name` - The group name where the stream is created.
+     *   * `properties` - List of properties associated with the stream.
+     *     * `property_id` - The identifier of the property.
+     *     * `property_name` - The descriptive label for the property.
+     *   * `stream_id` - A stream&#39;s unique identifier.
+     *   * `stream_name` - The name of the stream.
+     *   * `stream_type_name` - Specifies the type of the data stream. `Logs - Raw` is the only stream type name currently available.
+     *   * `stream_version_id` - A stream version&#39;s unique identifier.
+     * 
+     */
+    public static CompletableFuture<GetDatastreamsResult> getDatastreamsPlain() {
+        return getDatastreamsPlain(GetDatastreamsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getDatastreams` data source to list details about the DataStream configuration.
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `streams` - Returns the latest versions of the stream configurations for all groups within in your account. You can use the `group_id` parameter to view the latest versions of all configurations in a specific group.
+     *   * `activation_status` - The activation status of the stream. These are possible values: `ACTIVATED`, `DEACTIVATED`, `ACTIVATING`, `DEACTIVATING`, or `INACTIVE`. See the [Activate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-activate) and [Deactivate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-deactivate) operations.
+     *   * `archived` - Whether the stream is archived.
+     *   * `connectors` - The connector where the stream sends logs.
+     *   * `contract_id` - Identifies the contract that the stream is associated with.
+     *   * `created_by` - The user who created the stream.
+     *   * `created_date` - The date and time when the stream was created in this format: `14-07-2020 07:07:40 GMT`.
+     *   * `current_version_id` - Identifies the current version of the stream.
+     *   * `errors` - Objects that may indicate stream failure errors. Learn more about [Errors](https://techdocs.akamai.com/datastream2/reference/errors).
+     *     * `detail` - A message informing about the status of the failed stream.
+     *     * `title` - A descriptive label for the type of error.
+     *     * `type` - Identifies the error type, either `ACTIVATION_ERROR` or `UNEXPECTED_SYSTEM_ERROR`. In case of these errors, contact support for assistance before continuing.
+     *   * `group_id` - Identifies the group where the stream is created.
+     *   * `group_name` - The group name where the stream is created.
+     *   * `properties` - List of properties associated with the stream.
+     *     * `property_id` - The identifier of the property.
+     *     * `property_name` - The descriptive label for the property.
+     *   * `stream_id` - A stream&#39;s unique identifier.
+     *   * `stream_name` - The name of the stream.
+     *   * `stream_type_name` - Specifies the type of the data stream. `Logs - Raw` is the only stream type name currently available.
+     *   * `stream_version_id` - A stream version&#39;s unique identifier.
+     * 
+     */
+    public static Output<GetDatastreamsResult> getDatastreams(GetDatastreamsArgs args) {
+        return getDatastreams(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getDatastreams` data source to list details about the DataStream configuration.
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `streams` - Returns the latest versions of the stream configurations for all groups within in your account. You can use the `group_id` parameter to view the latest versions of all configurations in a specific group.
+     *   * `activation_status` - The activation status of the stream. These are possible values: `ACTIVATED`, `DEACTIVATED`, `ACTIVATING`, `DEACTIVATING`, or `INACTIVE`. See the [Activate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-activate) and [Deactivate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-deactivate) operations.
+     *   * `archived` - Whether the stream is archived.
+     *   * `connectors` - The connector where the stream sends logs.
+     *   * `contract_id` - Identifies the contract that the stream is associated with.
+     *   * `created_by` - The user who created the stream.
+     *   * `created_date` - The date and time when the stream was created in this format: `14-07-2020 07:07:40 GMT`.
+     *   * `current_version_id` - Identifies the current version of the stream.
+     *   * `errors` - Objects that may indicate stream failure errors. Learn more about [Errors](https://techdocs.akamai.com/datastream2/reference/errors).
+     *     * `detail` - A message informing about the status of the failed stream.
+     *     * `title` - A descriptive label for the type of error.
+     *     * `type` - Identifies the error type, either `ACTIVATION_ERROR` or `UNEXPECTED_SYSTEM_ERROR`. In case of these errors, contact support for assistance before continuing.
+     *   * `group_id` - Identifies the group where the stream is created.
+     *   * `group_name` - The group name where the stream is created.
+     *   * `properties` - List of properties associated with the stream.
+     *     * `property_id` - The identifier of the property.
+     *     * `property_name` - The descriptive label for the property.
+     *   * `stream_id` - A stream&#39;s unique identifier.
+     *   * `stream_name` - The name of the stream.
+     *   * `stream_type_name` - Specifies the type of the data stream. `Logs - Raw` is the only stream type name currently available.
+     *   * `stream_version_id` - A stream version&#39;s unique identifier.
+     * 
+     */
+    public static CompletableFuture<GetDatastreamsResult> getDatastreamsPlain(GetDatastreamsPlainArgs args) {
+        return getDatastreamsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getDatastreams` data source to list details about the DataStream configuration.
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `streams` - Returns the latest versions of the stream configurations for all groups within in your account. You can use the `group_id` parameter to view the latest versions of all configurations in a specific group.
+     *   * `activation_status` - The activation status of the stream. These are possible values: `ACTIVATED`, `DEACTIVATED`, `ACTIVATING`, `DEACTIVATING`, or `INACTIVE`. See the [Activate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-activate) and [Deactivate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-deactivate) operations.
+     *   * `archived` - Whether the stream is archived.
+     *   * `connectors` - The connector where the stream sends logs.
+     *   * `contract_id` - Identifies the contract that the stream is associated with.
+     *   * `created_by` - The user who created the stream.
+     *   * `created_date` - The date and time when the stream was created in this format: `14-07-2020 07:07:40 GMT`.
+     *   * `current_version_id` - Identifies the current version of the stream.
+     *   * `errors` - Objects that may indicate stream failure errors. Learn more about [Errors](https://techdocs.akamai.com/datastream2/reference/errors).
+     *     * `detail` - A message informing about the status of the failed stream.
+     *     * `title` - A descriptive label for the type of error.
+     *     * `type` - Identifies the error type, either `ACTIVATION_ERROR` or `UNEXPECTED_SYSTEM_ERROR`. In case of these errors, contact support for assistance before continuing.
+     *   * `group_id` - Identifies the group where the stream is created.
+     *   * `group_name` - The group name where the stream is created.
+     *   * `properties` - List of properties associated with the stream.
+     *     * `property_id` - The identifier of the property.
+     *     * `property_name` - The descriptive label for the property.
+     *   * `stream_id` - A stream&#39;s unique identifier.
+     *   * `stream_name` - The name of the stream.
+     *   * `stream_type_name` - Specifies the type of the data stream. `Logs - Raw` is the only stream type name currently available.
+     *   * `stream_version_id` - A stream version&#39;s unique identifier.
+     * 
+     */
+    public static Output<GetDatastreamsResult> getDatastreams(GetDatastreamsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getDatastreams:getDatastreams", TypeShape.of(GetDatastreamsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.getDatastreams` data source to list details about the DataStream configuration.
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `streams` - Returns the latest versions of the stream configurations for all groups within in your account. You can use the `group_id` parameter to view the latest versions of all configurations in a specific group.
+     *   * `activation_status` - The activation status of the stream. These are possible values: `ACTIVATED`, `DEACTIVATED`, `ACTIVATING`, `DEACTIVATING`, or `INACTIVE`. See the [Activate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-activate) and [Deactivate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-deactivate) operations.
+     *   * `archived` - Whether the stream is archived.
+     *   * `connectors` - The connector where the stream sends logs.
+     *   * `contract_id` - Identifies the contract that the stream is associated with.
+     *   * `created_by` - The user who created the stream.
+     *   * `created_date` - The date and time when the stream was created in this format: `14-07-2020 07:07:40 GMT`.
+     *   * `current_version_id` - Identifies the current version of the stream.
+     *   * `errors` - Objects that may indicate stream failure errors. Learn more about [Errors](https://techdocs.akamai.com/datastream2/reference/errors).
+     *     * `detail` - A message informing about the status of the failed stream.
+     *     * `title` - A descriptive label for the type of error.
+     *     * `type` - Identifies the error type, either `ACTIVATION_ERROR` or `UNEXPECTED_SYSTEM_ERROR`. In case of these errors, contact support for assistance before continuing.
+     *   * `group_id` - Identifies the group where the stream is created.
+     *   * `group_name` - The group name where the stream is created.
+     *   * `properties` - List of properties associated with the stream.
+     *     * `property_id` - The identifier of the property.
+     *     * `property_name` - The descriptive label for the property.
+     *   * `stream_id` - A stream&#39;s unique identifier.
+     *   * `stream_name` - The name of the stream.
+     *   * `stream_type_name` - Specifies the type of the data stream. `Logs - Raw` is the only stream type name currently available.
+     *   * `stream_version_id` - A stream version&#39;s unique identifier.
+     * 
+     */
+    public static CompletableFuture<GetDatastreamsResult> getDatastreamsPlain(GetDatastreamsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getDatastreams:getDatastreams", TypeShape.of(GetDatastreamsResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetDnsRecordSetResult> getDnsRecordSet(GetDnsRecordSetArgs args) {
         return getDnsRecordSet(args, InvokeOptions.Empty);
     }
@@ -15931,15 +17196,187 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetEdgeWorkerResult> getEdgeWorkerPlain(GetEdgeWorkerPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getEdgeWorker:getEdgeWorker", TypeShape.of(GetEdgeWorkerResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * Use the `akamai.getEdgeWorkerActivation` data source to fetch the latest activation for a given EdgeWorker ID.
+     * 
+     * ## Example Usage
+     * 
+     * This example returns the latest activation on the staging network:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetEdgeWorkerActivationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = AkamaiFunctions.getEdgeWorkerActivation(GetEdgeWorkerActivationArgs.builder()
+     *             .edgeworkerId(1)
+     *             .network(&#34;STAGING&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `activation_id` - The unique identifier of the activation.
+     * * `version` - The EdgeWorker version of the latest activation.
+     * 
+     */
     public static Output<GetEdgeWorkerActivationResult> getEdgeWorkerActivation(GetEdgeWorkerActivationArgs args) {
         return getEdgeWorkerActivation(args, InvokeOptions.Empty);
     }
+    /**
+     * Use the `akamai.getEdgeWorkerActivation` data source to fetch the latest activation for a given EdgeWorker ID.
+     * 
+     * ## Example Usage
+     * 
+     * This example returns the latest activation on the staging network:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetEdgeWorkerActivationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = AkamaiFunctions.getEdgeWorkerActivation(GetEdgeWorkerActivationArgs.builder()
+     *             .edgeworkerId(1)
+     *             .network(&#34;STAGING&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `activation_id` - The unique identifier of the activation.
+     * * `version` - The EdgeWorker version of the latest activation.
+     * 
+     */
     public static CompletableFuture<GetEdgeWorkerActivationResult> getEdgeWorkerActivationPlain(GetEdgeWorkerActivationPlainArgs args) {
         return getEdgeWorkerActivationPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * Use the `akamai.getEdgeWorkerActivation` data source to fetch the latest activation for a given EdgeWorker ID.
+     * 
+     * ## Example Usage
+     * 
+     * This example returns the latest activation on the staging network:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetEdgeWorkerActivationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = AkamaiFunctions.getEdgeWorkerActivation(GetEdgeWorkerActivationArgs.builder()
+     *             .edgeworkerId(1)
+     *             .network(&#34;STAGING&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `activation_id` - The unique identifier of the activation.
+     * * `version` - The EdgeWorker version of the latest activation.
+     * 
+     */
     public static Output<GetEdgeWorkerActivationResult> getEdgeWorkerActivation(GetEdgeWorkerActivationArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation", TypeShape.of(GetEdgeWorkerActivationResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * Use the `akamai.getEdgeWorkerActivation` data source to fetch the latest activation for a given EdgeWorker ID.
+     * 
+     * ## Example Usage
+     * 
+     * This example returns the latest activation on the staging network:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetEdgeWorkerActivationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = AkamaiFunctions.getEdgeWorkerActivation(GetEdgeWorkerActivationArgs.builder()
+     *             .edgeworkerId(1)
+     *             .network(&#34;STAGING&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `activation_id` - The unique identifier of the activation.
+     * * `version` - The EdgeWorker version of the latest activation.
+     * 
+     */
     public static CompletableFuture<GetEdgeWorkerActivationResult> getEdgeWorkerActivationPlain(GetEdgeWorkerActivationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation", TypeShape.of(GetEdgeWorkerActivationResult.class), args, Utilities.withVersion(options));
     }
@@ -16145,7 +17582,6 @@ public final class AkamaiFunctions {
      * account administrators can assign properties to specific groups, each with
      * its own set of users and accompanying roles.
      * 
-     * ## Example Usage
      * ## Attributes reference
      * 
      * This data source returns this attribute:
@@ -16166,7 +17602,6 @@ public final class AkamaiFunctions {
      * account administrators can assign properties to specific groups, each with
      * its own set of users and accompanying roles.
      * 
-     * ## Example Usage
      * ## Attributes reference
      * 
      * This data source returns this attribute:
@@ -16187,7 +17622,6 @@ public final class AkamaiFunctions {
      * account administrators can assign properties to specific groups, each with
      * its own set of users and accompanying roles.
      * 
-     * ## Example Usage
      * ## Attributes reference
      * 
      * This data source returns this attribute:
@@ -16208,7 +17642,6 @@ public final class AkamaiFunctions {
      * account administrators can assign properties to specific groups, each with
      * its own set of users and accompanying roles.
      * 
-     * ## Example Usage
      * ## Attributes reference
      * 
      * This data source returns this attribute:
@@ -16229,7 +17662,6 @@ public final class AkamaiFunctions {
      * account administrators can assign properties to specific groups, each with
      * its own set of users and accompanying roles.
      * 
-     * ## Example Usage
      * ## Attributes reference
      * 
      * This data source returns this attribute:
@@ -16250,7 +17682,6 @@ public final class AkamaiFunctions {
      * account administrators can assign properties to specific groups, each with
      * its own set of users and accompanying roles.
      * 
-     * ## Example Usage
      * ## Attributes reference
      * 
      * This data source returns this attribute:
@@ -16267,6 +17698,32 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * Return groups associated with the EdgeGrid API client token you&#39;re using:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-example = AkamaiFunctions.getGroups();
+     * 
+     *         ctx.export(&#34;propertyMatch&#34;, my_example);
+     *     }
+     * }
+     * ```
      * 
      * ## Attributes reference
      * 
@@ -16288,6 +17745,32 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * Return groups associated with the EdgeGrid API client token you&#39;re using:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-example = AkamaiFunctions.getGroups();
+     * 
+     *         ctx.export(&#34;propertyMatch&#34;, my_example);
+     *     }
+     * }
+     * ```
      * 
      * ## Attributes reference
      * 
@@ -16309,6 +17792,32 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * Return groups associated with the EdgeGrid API client token you&#39;re using:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-example = AkamaiFunctions.getGroups();
+     * 
+     *         ctx.export(&#34;propertyMatch&#34;, my_example);
+     *     }
+     * }
+     * ```
      * 
      * ## Attributes reference
      * 
@@ -16330,6 +17839,32 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * Return groups associated with the EdgeGrid API client token you&#39;re using:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-example = AkamaiFunctions.getGroups();
+     * 
+     *         ctx.export(&#34;propertyMatch&#34;, my_example);
+     *     }
+     * }
+     * ```
      * 
      * ## Attributes reference
      * 
@@ -16351,6 +17886,32 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * Return groups associated with the EdgeGrid API client token you&#39;re using:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-example = AkamaiFunctions.getGroups();
+     * 
+     *         ctx.export(&#34;propertyMatch&#34;, my_example);
+     *     }
+     * }
+     * ```
      * 
      * ## Attributes reference
      * 
@@ -16372,6 +17933,32 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * Return groups associated with the EdgeGrid API client token you&#39;re using:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-example = AkamaiFunctions.getGroups();
+     * 
+     *         ctx.export(&#34;propertyMatch&#34;, my_example);
+     *     }
+     * }
+     * ```
      * 
      * ## Attributes reference
      * 
@@ -16451,6 +18038,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamContactTypes` to retrieve all the possible `contact_types` that Akamai supports. Use the values from this data source to add or update a user&#39;s contact type.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var contactTypes = AkamaiFunctions.getIamContactTypes();
+     * 
+     *         ctx.export(&#34;supportedContactTypes&#34;, contactTypes.applyValue(getIamContactTypesResult -&gt; getIamContactTypesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16467,6 +18082,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamContactTypes` to retrieve all the possible `contact_types` that Akamai supports. Use the values from this data source to add or update a user&#39;s contact type.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var contactTypes = AkamaiFunctions.getIamContactTypes();
+     * 
+     *         ctx.export(&#34;supportedContactTypes&#34;, contactTypes.applyValue(getIamContactTypesResult -&gt; getIamContactTypesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16483,6 +18126,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamContactTypes` to retrieve all the possible `contact_types` that Akamai supports. Use the values from this data source to add or update a user&#39;s contact type.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var contactTypes = AkamaiFunctions.getIamContactTypes();
+     * 
+     *         ctx.export(&#34;supportedContactTypes&#34;, contactTypes.applyValue(getIamContactTypesResult -&gt; getIamContactTypesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16499,6 +18170,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamContactTypes` to retrieve all the possible `contact_types` that Akamai supports. Use the values from this data source to add or update a user&#39;s contact type.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var contactTypes = AkamaiFunctions.getIamContactTypes();
+     * 
+     *         ctx.export(&#34;supportedContactTypes&#34;, contactTypes.applyValue(getIamContactTypesResult -&gt; getIamContactTypesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16515,6 +18214,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamContactTypes` to retrieve all the possible `contact_types` that Akamai supports. Use the values from this data source to add or update a user&#39;s contact type.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var contactTypes = AkamaiFunctions.getIamContactTypes();
+     * 
+     *         ctx.export(&#34;supportedContactTypes&#34;, contactTypes.applyValue(getIamContactTypesResult -&gt; getIamContactTypesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16531,6 +18258,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamContactTypes` to retrieve all the possible `contact_types` that Akamai supports. Use the values from this data source to add or update a user&#39;s contact type.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var contactTypes = AkamaiFunctions.getIamContactTypes();
+     * 
+     *         ctx.export(&#34;supportedContactTypes&#34;, contactTypes.applyValue(getIamContactTypesResult -&gt; getIamContactTypesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16547,6 +18302,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamCountries` to retrieve all the possible countries that Akamai supports. Use the values from this data source to add or update a user&#39;s country information.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var countries = AkamaiFunctions.getIamCountries();
+     * 
+     *         ctx.export(&#34;supportedCountries&#34;, countries.applyValue(getIamCountriesResult -&gt; getIamCountriesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16563,6 +18346,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamCountries` to retrieve all the possible countries that Akamai supports. Use the values from this data source to add or update a user&#39;s country information.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var countries = AkamaiFunctions.getIamCountries();
+     * 
+     *         ctx.export(&#34;supportedCountries&#34;, countries.applyValue(getIamCountriesResult -&gt; getIamCountriesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16579,6 +18390,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamCountries` to retrieve all the possible countries that Akamai supports. Use the values from this data source to add or update a user&#39;s country information.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var countries = AkamaiFunctions.getIamCountries();
+     * 
+     *         ctx.export(&#34;supportedCountries&#34;, countries.applyValue(getIamCountriesResult -&gt; getIamCountriesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16595,6 +18434,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamCountries` to retrieve all the possible countries that Akamai supports. Use the values from this data source to add or update a user&#39;s country information.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var countries = AkamaiFunctions.getIamCountries();
+     * 
+     *         ctx.export(&#34;supportedCountries&#34;, countries.applyValue(getIamCountriesResult -&gt; getIamCountriesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16611,6 +18478,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamCountries` to retrieve all the possible countries that Akamai supports. Use the values from this data source to add or update a user&#39;s country information.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var countries = AkamaiFunctions.getIamCountries();
+     * 
+     *         ctx.export(&#34;supportedCountries&#34;, countries.applyValue(getIamCountriesResult -&gt; getIamCountriesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16627,6 +18522,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamCountries` to retrieve all the possible countries that Akamai supports. Use the values from this data source to add or update a user&#39;s country information.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var countries = AkamaiFunctions.getIamCountries();
+     * 
+     *         ctx.export(&#34;supportedCountries&#34;, countries.applyValue(getIamCountriesResult -&gt; getIamCountriesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16645,6 +18568,33 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the available roles to grant to users:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getIamGrantableRoles();
+     * 
+     *         ctx.export(&#34;akaGrantableRolesCount&#34;, data.akamai_iam_grantable_roles().test().grantable_roles().length());
+     *         ctx.export(&#34;akaGrantableRoles&#34;, data.akamai_iam_grantable_roles().test());
+     *     }
+     * }
+     * ```
      * 
      * ## Attributes reference
      * 
@@ -16665,6 +18615,33 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the available roles to grant to users:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getIamGrantableRoles();
+     * 
+     *         ctx.export(&#34;akaGrantableRolesCount&#34;, data.akamai_iam_grantable_roles().test().grantable_roles().length());
+     *         ctx.export(&#34;akaGrantableRoles&#34;, data.akamai_iam_grantable_roles().test());
+     *     }
+     * }
+     * ```
      * 
      * ## Attributes reference
      * 
@@ -16685,6 +18662,33 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the available roles to grant to users:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getIamGrantableRoles();
+     * 
+     *         ctx.export(&#34;akaGrantableRolesCount&#34;, data.akamai_iam_grantable_roles().test().grantable_roles().length());
+     *         ctx.export(&#34;akaGrantableRoles&#34;, data.akamai_iam_grantable_roles().test());
+     *     }
+     * }
+     * ```
      * 
      * ## Attributes reference
      * 
@@ -16705,6 +18709,33 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the available roles to grant to users:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getIamGrantableRoles();
+     * 
+     *         ctx.export(&#34;akaGrantableRolesCount&#34;, data.akamai_iam_grantable_roles().test().grantable_roles().length());
+     *         ctx.export(&#34;akaGrantableRoles&#34;, data.akamai_iam_grantable_roles().test());
+     *     }
+     * }
+     * ```
      * 
      * ## Attributes reference
      * 
@@ -16725,6 +18756,33 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the available roles to grant to users:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getIamGrantableRoles();
+     * 
+     *         ctx.export(&#34;akaGrantableRolesCount&#34;, data.akamai_iam_grantable_roles().test().grantable_roles().length());
+     *         ctx.export(&#34;akaGrantableRoles&#34;, data.akamai_iam_grantable_roles().test());
+     *     }
+     * }
+     * ```
      * 
      * ## Attributes reference
      * 
@@ -16745,6 +18803,33 @@ public final class AkamaiFunctions {
      * ## Basic usage
      * 
      * This example returns the available roles to grant to users:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = AkamaiFunctions.getIamGrantableRoles();
+     * 
+     *         ctx.export(&#34;akaGrantableRolesCount&#34;, data.akamai_iam_grantable_roles().test().grantable_roles().length());
+     *         ctx.export(&#34;akaGrantableRoles&#34;, data.akamai_iam_grantable_roles().test());
+     *     }
+     * }
+     * ```
      * 
      * ## Attributes reference
      * 
@@ -16763,6 +18848,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamRoles` to list roles for the current account and contract type. The account and contract type are determined by the access tokens in your API client. Use the `roleId` from this data source to construct the `auth_grants_json` when creating or updating a user&#39;s auth grants.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-roles = AkamaiFunctions.getIamRoles();
+     * 
+     *         ctx.export(&#34;roles&#34;, my_roles);
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16779,6 +18892,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamRoles` to list roles for the current account and contract type. The account and contract type are determined by the access tokens in your API client. Use the `roleId` from this data source to construct the `auth_grants_json` when creating or updating a user&#39;s auth grants.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-roles = AkamaiFunctions.getIamRoles();
+     * 
+     *         ctx.export(&#34;roles&#34;, my_roles);
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16795,6 +18936,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamRoles` to list roles for the current account and contract type. The account and contract type are determined by the access tokens in your API client. Use the `roleId` from this data source to construct the `auth_grants_json` when creating or updating a user&#39;s auth grants.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-roles = AkamaiFunctions.getIamRoles();
+     * 
+     *         ctx.export(&#34;roles&#34;, my_roles);
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16811,6 +18980,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamRoles` to list roles for the current account and contract type. The account and contract type are determined by the access tokens in your API client. Use the `roleId` from this data source to construct the `auth_grants_json` when creating or updating a user&#39;s auth grants.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-roles = AkamaiFunctions.getIamRoles();
+     * 
+     *         ctx.export(&#34;roles&#34;, my_roles);
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16827,6 +19024,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamRoles` to list roles for the current account and contract type. The account and contract type are determined by the access tokens in your API client. Use the `roleId` from this data source to construct the `auth_grants_json` when creating or updating a user&#39;s auth grants.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-roles = AkamaiFunctions.getIamRoles();
+     * 
+     *         ctx.export(&#34;roles&#34;, my_roles);
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -16843,6 +19068,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamRoles` to list roles for the current account and contract type. The account and contract type are determined by the access tokens in your API client. Use the `roleId` from this data source to construct the `auth_grants_json` when creating or updating a user&#39;s auth grants.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var my-roles = AkamaiFunctions.getIamRoles();
+     * 
+     *         ctx.export(&#34;roles&#34;, my_roles);
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -17047,6 +19300,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamSupportedLangs` to list all the possible languages Akamai supports. Use the values from this API to set the preferred language for a user. Users should see Control Center in the language you set for them. The default language is English.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var supportedLangs = AkamaiFunctions.getIamSupportedLangs();
+     * 
+     *         ctx.export(&#34;supportedSupportedLangs&#34;, supportedLangs.applyValue(getIamSupportedLangsResult -&gt; getIamSupportedLangsResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -17063,6 +19344,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamSupportedLangs` to list all the possible languages Akamai supports. Use the values from this API to set the preferred language for a user. Users should see Control Center in the language you set for them. The default language is English.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var supportedLangs = AkamaiFunctions.getIamSupportedLangs();
+     * 
+     *         ctx.export(&#34;supportedSupportedLangs&#34;, supportedLangs.applyValue(getIamSupportedLangsResult -&gt; getIamSupportedLangsResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -17079,6 +19388,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamSupportedLangs` to list all the possible languages Akamai supports. Use the values from this API to set the preferred language for a user. Users should see Control Center in the language you set for them. The default language is English.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var supportedLangs = AkamaiFunctions.getIamSupportedLangs();
+     * 
+     *         ctx.export(&#34;supportedSupportedLangs&#34;, supportedLangs.applyValue(getIamSupportedLangsResult -&gt; getIamSupportedLangsResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -17095,6 +19432,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamSupportedLangs` to list all the possible languages Akamai supports. Use the values from this API to set the preferred language for a user. Users should see Control Center in the language you set for them. The default language is English.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var supportedLangs = AkamaiFunctions.getIamSupportedLangs();
+     * 
+     *         ctx.export(&#34;supportedSupportedLangs&#34;, supportedLangs.applyValue(getIamSupportedLangsResult -&gt; getIamSupportedLangsResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -17111,6 +19476,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamSupportedLangs` to list all the possible languages Akamai supports. Use the values from this API to set the preferred language for a user. Users should see Control Center in the language you set for them. The default language is English.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var supportedLangs = AkamaiFunctions.getIamSupportedLangs();
+     * 
+     *         ctx.export(&#34;supportedSupportedLangs&#34;, supportedLangs.applyValue(getIamSupportedLangsResult -&gt; getIamSupportedLangsResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -17127,6 +19520,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamSupportedLangs` to list all the possible languages Akamai supports. Use the values from this API to set the preferred language for a user. Users should see Control Center in the language you set for them. The default language is English.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var supportedLangs = AkamaiFunctions.getIamSupportedLangs();
+     * 
+     *         ctx.export(&#34;supportedSupportedLangs&#34;, supportedLangs.applyValue(getIamSupportedLangsResult -&gt; getIamSupportedLangsResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -17143,6 +19564,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamTimeoutPolicies` to list all the possible session timeout policies that Akamai supports. Use the values from this data source to set the session timeout for a user. The name for each timeout period is in minutes, and the time value is in seconds.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var timeoutPolicies = AkamaiFunctions.getIamTimeoutPolicies();
+     * 
+     *         ctx.export(&#34;supportedTimeoutPolicies&#34;, timeoutPolicies.applyValue(getIamTimeoutPoliciesResult -&gt; getIamTimeoutPoliciesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -17159,6 +19608,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamTimeoutPolicies` to list all the possible session timeout policies that Akamai supports. Use the values from this data source to set the session timeout for a user. The name for each timeout period is in minutes, and the time value is in seconds.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var timeoutPolicies = AkamaiFunctions.getIamTimeoutPolicies();
+     * 
+     *         ctx.export(&#34;supportedTimeoutPolicies&#34;, timeoutPolicies.applyValue(getIamTimeoutPoliciesResult -&gt; getIamTimeoutPoliciesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -17175,6 +19652,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamTimeoutPolicies` to list all the possible session timeout policies that Akamai supports. Use the values from this data source to set the session timeout for a user. The name for each timeout period is in minutes, and the time value is in seconds.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var timeoutPolicies = AkamaiFunctions.getIamTimeoutPolicies();
+     * 
+     *         ctx.export(&#34;supportedTimeoutPolicies&#34;, timeoutPolicies.applyValue(getIamTimeoutPoliciesResult -&gt; getIamTimeoutPoliciesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -17191,6 +19696,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamTimeoutPolicies` to list all the possible session timeout policies that Akamai supports. Use the values from this data source to set the session timeout for a user. The name for each timeout period is in minutes, and the time value is in seconds.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var timeoutPolicies = AkamaiFunctions.getIamTimeoutPolicies();
+     * 
+     *         ctx.export(&#34;supportedTimeoutPolicies&#34;, timeoutPolicies.applyValue(getIamTimeoutPoliciesResult -&gt; getIamTimeoutPoliciesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -17207,6 +19740,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamTimeoutPolicies` to list all the possible session timeout policies that Akamai supports. Use the values from this data source to set the session timeout for a user. The name for each timeout period is in minutes, and the time value is in seconds.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var timeoutPolicies = AkamaiFunctions.getIamTimeoutPolicies();
+     * 
+     *         ctx.export(&#34;supportedTimeoutPolicies&#34;, timeoutPolicies.applyValue(getIamTimeoutPoliciesResult -&gt; getIamTimeoutPoliciesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -17223,6 +19784,34 @@ public final class AkamaiFunctions {
      * Use `akamai.getIamTimeoutPolicies` to list all the possible session timeout policies that Akamai supports. Use the values from this data source to set the session timeout for a user. The name for each timeout period is in minutes, and the time value is in seconds.
      * 
      * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var timeoutPolicies = AkamaiFunctions.getIamTimeoutPolicies();
+     * 
+     *         ctx.export(&#34;supportedTimeoutPolicies&#34;, timeoutPolicies.applyValue(getIamTimeoutPoliciesResult -&gt; getIamTimeoutPoliciesResult));
+     *     }
+     * }
+     * ```
      * ## Attributes reference
      * 
      * These attributes are returned:
@@ -18376,6 +20965,922 @@ public final class AkamaiFunctions {
      */
     public static CompletableFuture<GetPropertyHostnamesResult> getPropertyHostnamesPlain(GetPropertyHostnamesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getPropertyHostnames:getPropertyHostnames", TypeShape.of(GetPropertyHostnamesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.PropertyInclude` data source to get details about a specific include.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns details for an include based on contract, group, and include IDs.
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyInclude = AkamaiFunctions.getPropertyInclude(GetPropertyIncludeArgs.builder()
+     *             .contractId(&#34;ctr_1234&#34;)
+     *             .groupId(&#34;grp_5678&#34;)
+     *             .includeId(&#34;inc_9012&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyInclude.applyValue(getPropertyIncludeResult -&gt; getPropertyIncludeResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `name` - The descriptive name for the include.
+     * * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * * `latest_version` - Returns the most recent version of the include.
+     * * `staging_version` - The include version currently activated on the staging network.
+     * * `production_version` - The include version currently activated on the production network.
+     * 
+     */
+    public static Output<GetPropertyIncludeResult> getPropertyInclude(GetPropertyIncludeArgs args) {
+        return getPropertyInclude(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.PropertyInclude` data source to get details about a specific include.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns details for an include based on contract, group, and include IDs.
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyInclude = AkamaiFunctions.getPropertyInclude(GetPropertyIncludeArgs.builder()
+     *             .contractId(&#34;ctr_1234&#34;)
+     *             .groupId(&#34;grp_5678&#34;)
+     *             .includeId(&#34;inc_9012&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyInclude.applyValue(getPropertyIncludeResult -&gt; getPropertyIncludeResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `name` - The descriptive name for the include.
+     * * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * * `latest_version` - Returns the most recent version of the include.
+     * * `staging_version` - The include version currently activated on the staging network.
+     * * `production_version` - The include version currently activated on the production network.
+     * 
+     */
+    public static CompletableFuture<GetPropertyIncludeResult> getPropertyIncludePlain(GetPropertyIncludePlainArgs args) {
+        return getPropertyIncludePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.PropertyInclude` data source to get details about a specific include.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns details for an include based on contract, group, and include IDs.
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyInclude = AkamaiFunctions.getPropertyInclude(GetPropertyIncludeArgs.builder()
+     *             .contractId(&#34;ctr_1234&#34;)
+     *             .groupId(&#34;grp_5678&#34;)
+     *             .includeId(&#34;inc_9012&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyInclude.applyValue(getPropertyIncludeResult -&gt; getPropertyIncludeResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `name` - The descriptive name for the include.
+     * * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * * `latest_version` - Returns the most recent version of the include.
+     * * `staging_version` - The include version currently activated on the staging network.
+     * * `production_version` - The include version currently activated on the production network.
+     * 
+     */
+    public static Output<GetPropertyIncludeResult> getPropertyInclude(GetPropertyIncludeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyInclude:getPropertyInclude", TypeShape.of(GetPropertyIncludeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.PropertyInclude` data source to get details about a specific include.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns details for an include based on contract, group, and include IDs.
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyInclude = AkamaiFunctions.getPropertyInclude(GetPropertyIncludeArgs.builder()
+     *             .contractId(&#34;ctr_1234&#34;)
+     *             .groupId(&#34;grp_5678&#34;)
+     *             .includeId(&#34;inc_9012&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyInclude.applyValue(getPropertyIncludeResult -&gt; getPropertyIncludeResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `name` - The descriptive name for the include.
+     * * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * * `latest_version` - Returns the most recent version of the include.
+     * * `staging_version` - The include version currently activated on the staging network.
+     * * `production_version` - The include version currently activated on the production network.
+     * 
+     */
+    public static CompletableFuture<GetPropertyIncludeResult> getPropertyIncludePlain(GetPropertyIncludePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyInclude:getPropertyInclude", TypeShape.of(GetPropertyIncludeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.PropertyIncludeActivation` data source to get activation details for an include on the provided network.
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `version` - The version of the activated include.
+     * * `name` - The descriptive name for the property.
+     * * `note` - A log message assigned to the activation request.
+     * * `notify_emails` - The list of email addresses notified when the activation status changes.
+     * 
+     */
+    public static Output<GetPropertyIncludeActivationResult> getPropertyIncludeActivation(GetPropertyIncludeActivationArgs args) {
+        return getPropertyIncludeActivation(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.PropertyIncludeActivation` data source to get activation details for an include on the provided network.
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `version` - The version of the activated include.
+     * * `name` - The descriptive name for the property.
+     * * `note` - A log message assigned to the activation request.
+     * * `notify_emails` - The list of email addresses notified when the activation status changes.
+     * 
+     */
+    public static CompletableFuture<GetPropertyIncludeActivationResult> getPropertyIncludeActivationPlain(GetPropertyIncludeActivationPlainArgs args) {
+        return getPropertyIncludeActivationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.PropertyIncludeActivation` data source to get activation details for an include on the provided network.
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `version` - The version of the activated include.
+     * * `name` - The descriptive name for the property.
+     * * `note` - A log message assigned to the activation request.
+     * * `notify_emails` - The list of email addresses notified when the activation status changes.
+     * 
+     */
+    public static Output<GetPropertyIncludeActivationResult> getPropertyIncludeActivation(GetPropertyIncludeActivationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation", TypeShape.of(GetPropertyIncludeActivationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.PropertyIncludeActivation` data source to get activation details for an include on the provided network.
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `version` - The version of the activated include.
+     * * `name` - The descriptive name for the property.
+     * * `note` - A log message assigned to the activation request.
+     * * `notify_emails` - The list of email addresses notified when the activation status changes.
+     * 
+     */
+    public static CompletableFuture<GetPropertyIncludeActivationResult> getPropertyIncludeActivationPlain(GetPropertyIncludeActivationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation", TypeShape.of(GetPropertyIncludeActivationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.getPropertyIncludeParents` data source to return a list of parent properties that use the given include. In your property&#39;s rule tree, you can reference an include by adding the `include` behavior and specifying the `include_id`.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns all active properties a specific include is referenced in, based on the contract, group, and include IDs.
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludeParentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyIncludeParents = AkamaiFunctions.getPropertyIncludeParents(GetPropertyIncludeParentsArgs.builder()
+     *             .contractId(&#34;ctr_1-AB123&#34;)
+     *             .groupId(&#34;grp_12345&#34;)
+     *             .includeId(&#34;inc_123456&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyIncludeParents.applyValue(getPropertyIncludeParentsResult -&gt; getPropertyIncludeParentsResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `parents` - The list of include&#39;s parent properties.
+     *  * `id` - The property&#39;s unique identifier.
+     *  * `name` - The descriptive name for the property.
+     *  * `staging_version` - The property version currently activated on the staging network.
+     *  * `production_version` - The property version currently activated on the production network.
+     *  * `is_include_used_in_staging_version` - Whether the specified include is active on the staging network and is referenced in parent&#39;s `staging_version`.
+     *  * `is_include_used_in_production_version` - Whether the specified include is active on the production network and is referenced in parent&#39;s `production_version`.
+     * 
+     */
+    public static Output<GetPropertyIncludeParentsResult> getPropertyIncludeParents(GetPropertyIncludeParentsArgs args) {
+        return getPropertyIncludeParents(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getPropertyIncludeParents` data source to return a list of parent properties that use the given include. In your property&#39;s rule tree, you can reference an include by adding the `include` behavior and specifying the `include_id`.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns all active properties a specific include is referenced in, based on the contract, group, and include IDs.
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludeParentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyIncludeParents = AkamaiFunctions.getPropertyIncludeParents(GetPropertyIncludeParentsArgs.builder()
+     *             .contractId(&#34;ctr_1-AB123&#34;)
+     *             .groupId(&#34;grp_12345&#34;)
+     *             .includeId(&#34;inc_123456&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyIncludeParents.applyValue(getPropertyIncludeParentsResult -&gt; getPropertyIncludeParentsResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `parents` - The list of include&#39;s parent properties.
+     *  * `id` - The property&#39;s unique identifier.
+     *  * `name` - The descriptive name for the property.
+     *  * `staging_version` - The property version currently activated on the staging network.
+     *  * `production_version` - The property version currently activated on the production network.
+     *  * `is_include_used_in_staging_version` - Whether the specified include is active on the staging network and is referenced in parent&#39;s `staging_version`.
+     *  * `is_include_used_in_production_version` - Whether the specified include is active on the production network and is referenced in parent&#39;s `production_version`.
+     * 
+     */
+    public static CompletableFuture<GetPropertyIncludeParentsResult> getPropertyIncludeParentsPlain(GetPropertyIncludeParentsPlainArgs args) {
+        return getPropertyIncludeParentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getPropertyIncludeParents` data source to return a list of parent properties that use the given include. In your property&#39;s rule tree, you can reference an include by adding the `include` behavior and specifying the `include_id`.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns all active properties a specific include is referenced in, based on the contract, group, and include IDs.
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludeParentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyIncludeParents = AkamaiFunctions.getPropertyIncludeParents(GetPropertyIncludeParentsArgs.builder()
+     *             .contractId(&#34;ctr_1-AB123&#34;)
+     *             .groupId(&#34;grp_12345&#34;)
+     *             .includeId(&#34;inc_123456&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyIncludeParents.applyValue(getPropertyIncludeParentsResult -&gt; getPropertyIncludeParentsResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `parents` - The list of include&#39;s parent properties.
+     *  * `id` - The property&#39;s unique identifier.
+     *  * `name` - The descriptive name for the property.
+     *  * `staging_version` - The property version currently activated on the staging network.
+     *  * `production_version` - The property version currently activated on the production network.
+     *  * `is_include_used_in_staging_version` - Whether the specified include is active on the staging network and is referenced in parent&#39;s `staging_version`.
+     *  * `is_include_used_in_production_version` - Whether the specified include is active on the production network and is referenced in parent&#39;s `production_version`.
+     * 
+     */
+    public static Output<GetPropertyIncludeParentsResult> getPropertyIncludeParents(GetPropertyIncludeParentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyIncludeParents:getPropertyIncludeParents", TypeShape.of(GetPropertyIncludeParentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.getPropertyIncludeParents` data source to return a list of parent properties that use the given include. In your property&#39;s rule tree, you can reference an include by adding the `include` behavior and specifying the `include_id`.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns all active properties a specific include is referenced in, based on the contract, group, and include IDs.
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludeParentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyIncludeParents = AkamaiFunctions.getPropertyIncludeParents(GetPropertyIncludeParentsArgs.builder()
+     *             .contractId(&#34;ctr_1-AB123&#34;)
+     *             .groupId(&#34;grp_12345&#34;)
+     *             .includeId(&#34;inc_123456&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyIncludeParents.applyValue(getPropertyIncludeParentsResult -&gt; getPropertyIncludeParentsResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `parents` - The list of include&#39;s parent properties.
+     *  * `id` - The property&#39;s unique identifier.
+     *  * `name` - The descriptive name for the property.
+     *  * `staging_version` - The property version currently activated on the staging network.
+     *  * `production_version` - The property version currently activated on the production network.
+     *  * `is_include_used_in_staging_version` - Whether the specified include is active on the staging network and is referenced in parent&#39;s `staging_version`.
+     *  * `is_include_used_in_production_version` - Whether the specified include is active on the production network and is referenced in parent&#39;s `production_version`.
+     * 
+     */
+    public static CompletableFuture<GetPropertyIncludeParentsResult> getPropertyIncludeParentsPlain(GetPropertyIncludeParentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyIncludeParents:getPropertyIncludeParents", TypeShape.of(GetPropertyIncludeParentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.getPropertyIncludeRules` data source to query and get an include&#39;s rules. This data source lets you search across the contracts and groups you have access to.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns the include&#39;s rule tree based on the specified contract, group, and include IDs:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludeRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyIncludeRules = AkamaiFunctions.getPropertyIncludeRules(GetPropertyIncludeRulesArgs.builder()
+     *             .contractId(&#34;ctr_1-AB123&#34;)
+     *             .groupId(&#34;grp_12345&#34;)
+     *             .includeId(&#34;inc_123456&#34;)
+     *             .version(3)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyIncludeRules.applyValue(getPropertyIncludeRulesResult -&gt; getPropertyIncludeRulesResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `rules` - Include&#39;s rules as JSON.
+     * * `name` - The descriptive name for the include.
+     * * `rule_errors` - Rule&#39;s validation errors. You need to resolve returned errors, as they block an activation.
+     * * `rule_warnings` - Rule&#39;s validation warnings. You can activate a version that yields non-blocking warnings.
+     * * `rule_format` - Indicates the versioned set of features and criteria that are currently applied to a rule tree. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+     * * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * 
+     */
+    public static Output<GetPropertyIncludeRulesResult> getPropertyIncludeRules(GetPropertyIncludeRulesArgs args) {
+        return getPropertyIncludeRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getPropertyIncludeRules` data source to query and get an include&#39;s rules. This data source lets you search across the contracts and groups you have access to.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns the include&#39;s rule tree based on the specified contract, group, and include IDs:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludeRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyIncludeRules = AkamaiFunctions.getPropertyIncludeRules(GetPropertyIncludeRulesArgs.builder()
+     *             .contractId(&#34;ctr_1-AB123&#34;)
+     *             .groupId(&#34;grp_12345&#34;)
+     *             .includeId(&#34;inc_123456&#34;)
+     *             .version(3)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyIncludeRules.applyValue(getPropertyIncludeRulesResult -&gt; getPropertyIncludeRulesResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `rules` - Include&#39;s rules as JSON.
+     * * `name` - The descriptive name for the include.
+     * * `rule_errors` - Rule&#39;s validation errors. You need to resolve returned errors, as they block an activation.
+     * * `rule_warnings` - Rule&#39;s validation warnings. You can activate a version that yields non-blocking warnings.
+     * * `rule_format` - Indicates the versioned set of features and criteria that are currently applied to a rule tree. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+     * * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * 
+     */
+    public static CompletableFuture<GetPropertyIncludeRulesResult> getPropertyIncludeRulesPlain(GetPropertyIncludeRulesPlainArgs args) {
+        return getPropertyIncludeRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getPropertyIncludeRules` data source to query and get an include&#39;s rules. This data source lets you search across the contracts and groups you have access to.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns the include&#39;s rule tree based on the specified contract, group, and include IDs:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludeRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyIncludeRules = AkamaiFunctions.getPropertyIncludeRules(GetPropertyIncludeRulesArgs.builder()
+     *             .contractId(&#34;ctr_1-AB123&#34;)
+     *             .groupId(&#34;grp_12345&#34;)
+     *             .includeId(&#34;inc_123456&#34;)
+     *             .version(3)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyIncludeRules.applyValue(getPropertyIncludeRulesResult -&gt; getPropertyIncludeRulesResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `rules` - Include&#39;s rules as JSON.
+     * * `name` - The descriptive name for the include.
+     * * `rule_errors` - Rule&#39;s validation errors. You need to resolve returned errors, as they block an activation.
+     * * `rule_warnings` - Rule&#39;s validation warnings. You can activate a version that yields non-blocking warnings.
+     * * `rule_format` - Indicates the versioned set of features and criteria that are currently applied to a rule tree. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+     * * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * 
+     */
+    public static Output<GetPropertyIncludeRulesResult> getPropertyIncludeRules(GetPropertyIncludeRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyIncludeRules:getPropertyIncludeRules", TypeShape.of(GetPropertyIncludeRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.getPropertyIncludeRules` data source to query and get an include&#39;s rules. This data source lets you search across the contracts and groups you have access to.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns the include&#39;s rule tree based on the specified contract, group, and include IDs:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludeRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyIncludeRules = AkamaiFunctions.getPropertyIncludeRules(GetPropertyIncludeRulesArgs.builder()
+     *             .contractId(&#34;ctr_1-AB123&#34;)
+     *             .groupId(&#34;grp_12345&#34;)
+     *             .includeId(&#34;inc_123456&#34;)
+     *             .version(3)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyIncludeRules.applyValue(getPropertyIncludeRulesResult -&gt; getPropertyIncludeRulesResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `rules` - Include&#39;s rules as JSON.
+     * * `name` - The descriptive name for the include.
+     * * `rule_errors` - Rule&#39;s validation errors. You need to resolve returned errors, as they block an activation.
+     * * `rule_warnings` - Rule&#39;s validation warnings. You can activate a version that yields non-blocking warnings.
+     * * `rule_format` - Indicates the versioned set of features and criteria that are currently applied to a rule tree. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+     * * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * 
+     */
+    public static CompletableFuture<GetPropertyIncludeRulesResult> getPropertyIncludeRulesPlain(GetPropertyIncludeRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyIncludeRules:getPropertyIncludeRules", TypeShape.of(GetPropertyIncludeRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.getPropertyIncludes` data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns all includes for the specified contract and group:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyIncludes = AkamaiFunctions.getPropertyIncludes(GetPropertyIncludesArgs.builder()
+     *             .contractId(&#34;ctr_1-AB123&#34;)
+     *             .groupId(&#34;grp_12345&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyIncludes.applyValue(getPropertyIncludesResult -&gt; getPropertyIncludesResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `includes` -  The small, reusable, configurable components for your properties.
+     *  * `latest_version` - Returns the most recent version of the include.
+     *  * `staging_version` - The include version currently activated on the staging network.
+     *  * `production_version` - The include version currently activated on the production network.
+     *  * `id` - The include&#39;s unique identifier.
+     *  * `name` - The descriptive name for the include.
+     *  * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
+     * 
+     */
+    public static Output<GetPropertyIncludesResult> getPropertyIncludes(GetPropertyIncludesArgs args) {
+        return getPropertyIncludes(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getPropertyIncludes` data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns all includes for the specified contract and group:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyIncludes = AkamaiFunctions.getPropertyIncludes(GetPropertyIncludesArgs.builder()
+     *             .contractId(&#34;ctr_1-AB123&#34;)
+     *             .groupId(&#34;grp_12345&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyIncludes.applyValue(getPropertyIncludesResult -&gt; getPropertyIncludesResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `includes` -  The small, reusable, configurable components for your properties.
+     *  * `latest_version` - Returns the most recent version of the include.
+     *  * `staging_version` - The include version currently activated on the staging network.
+     *  * `production_version` - The include version currently activated on the production network.
+     *  * `id` - The include&#39;s unique identifier.
+     *  * `name` - The descriptive name for the include.
+     *  * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
+     * 
+     */
+    public static CompletableFuture<GetPropertyIncludesResult> getPropertyIncludesPlain(GetPropertyIncludesPlainArgs args) {
+        return getPropertyIncludesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.getPropertyIncludes` data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns all includes for the specified contract and group:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyIncludes = AkamaiFunctions.getPropertyIncludes(GetPropertyIncludesArgs.builder()
+     *             .contractId(&#34;ctr_1-AB123&#34;)
+     *             .groupId(&#34;grp_12345&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyIncludes.applyValue(getPropertyIncludesResult -&gt; getPropertyIncludesResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `includes` -  The small, reusable, configurable components for your properties.
+     *  * `latest_version` - Returns the most recent version of the include.
+     *  * `staging_version` - The include version currently activated on the staging network.
+     *  * `production_version` - The include version currently activated on the production network.
+     *  * `id` - The include&#39;s unique identifier.
+     *  * `name` - The descriptive name for the include.
+     *  * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
+     * 
+     */
+    public static Output<GetPropertyIncludesResult> getPropertyIncludes(GetPropertyIncludesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyIncludes:getPropertyIncludes", TypeShape.of(GetPropertyIncludesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.getPropertyIncludes` data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
+     * 
+     * ## Basic usage
+     * 
+     * This example returns all includes for the specified contract and group:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetPropertyIncludesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var myExamplePropertyIncludes = AkamaiFunctions.getPropertyIncludes(GetPropertyIncludesArgs.builder()
+     *             .contractId(&#34;ctr_1-AB123&#34;)
+     *             .groupId(&#34;grp_12345&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;myExample&#34;, myExamplePropertyIncludes.applyValue(getPropertyIncludesResult -&gt; getPropertyIncludesResult));
+     *     }
+     * }
+     * ```
+     * 
+     * ## Attributes reference
+     * 
+     * This data source returns these attributes:
+     * 
+     * * `includes` -  The small, reusable, configurable components for your properties.
+     *  * `latest_version` - Returns the most recent version of the include.
+     *  * `staging_version` - The include version currently activated on the staging network.
+     *  * `production_version` - The include version currently activated on the production network.
+     *  * `id` - The include&#39;s unique identifier.
+     *  * `name` - The descriptive name for the include.
+     *  * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
+     * 
+     */
+    public static CompletableFuture<GetPropertyIncludesResult> getPropertyIncludesPlain(GetPropertyIncludesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyIncludes:getPropertyIncludes", TypeShape.of(GetPropertyIncludesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Use the `akamai.getPropertyProducts` data source to list the products included on a contract.

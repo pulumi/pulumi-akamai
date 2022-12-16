@@ -1,6 +1,6 @@
-module github.com/pulumi/pulumi-akamai/sdk/v3
+module github.com/pulumi/pulumi-akamai/sdk/v4
 
-go 1.17
+go 1.18
 
 require (
 	github.com/blang/semver v3.5.1+incompatible

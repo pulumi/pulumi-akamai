@@ -21,71 +21,62 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var ipGeoBlock = new Akamai.AppSecIPGeo("ipGeoBlock", new Akamai.AppSecIPGeoArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             Mode = "block",
-    ///             GeoNetworkLists = 
-    ///             {
-    ///                 "06038_GEO_TEST",
-    ///             },
-    ///             IpNetworkLists = 
-    ///             {
-    ///                 "56921_TEST",
-    ///             },
-    ///             ExceptionIpNetworkLists = 
-    ///             {
-    ///                 "07126_EXCEPTION_TEST",
-    ///             },
-    ///         });
-    ///         // USE CASE: User wants to update the IP/Geo firewall mode and update the exception list.
-    ///         var ipGeoAllow = new Akamai.AppSecIPGeo("ipGeoAllow", new Akamai.AppSecIPGeoArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1-090334",
-    ///             Mode = "allow",
-    ///             ExceptionIpNetworkLists = 
-    ///             {
-    ///                 "07126_EXCEPTION_TEST",
-    ///             },
-    ///         });
-    ///         this.IpGeoModeBlock = ipGeoBlock.Mode;
-    ///         this.BlockGeoNetworkLists = ipGeoBlock.GeoNetworkLists;
-    ///         this.BlockIpNetworkLists = ipGeoBlock.IpNetworkLists;
-    ///         this.BlockExceptionIpNetworkLists = ipGeoBlock.ExceptionIpNetworkLists;
-    ///         this.IpGeoModeAllow = ipGeoAllow.Mode;
-    ///         this.AllowExceptionIpNetworkLists = ipGeoAllow.ExceptionIpNetworkLists;
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    ///     [Output("ipGeoModeBlock")]
-    ///     public Output&lt;string&gt; IpGeoModeBlock { get; set; }
-    ///     [Output("blockGeoNetworkLists")]
-    ///     public Output&lt;string&gt; BlockGeoNetworkLists { get; set; }
-    ///     [Output("blockIpNetworkLists")]
-    ///     public Output&lt;string&gt; BlockIpNetworkLists { get; set; }
-    ///     [Output("blockExceptionIpNetworkLists")]
-    ///     public Output&lt;string&gt; BlockExceptionIpNetworkLists { get; set; }
-    ///     [Output("ipGeoModeAllow")]
-    ///     public Output&lt;string&gt; IpGeoModeAllow { get; set; }
-    ///     [Output("allowExceptionIpNetworkLists")]
-    ///     public Output&lt;string&gt; AllowExceptionIpNetworkLists { get; set; }
-    /// }
+    ///     var ipGeoBlock = new Akamai.AppSecIPGeo("ipGeoBlock", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         Mode = "block",
+    ///         GeoNetworkLists = new[]
+    ///         {
+    ///             "06038_GEO_TEST",
+    ///         },
+    ///         IpNetworkLists = new[]
+    ///         {
+    ///             "56921_TEST",
+    ///         },
+    ///         ExceptionIpNetworkLists = new[]
+    ///         {
+    ///             "07126_EXCEPTION_TEST",
+    ///         },
+    ///     });
+    /// 
+    ///     // USE CASE: User wants to update the IP/Geo firewall mode and update the exception list.
+    ///     var ipGeoAllow = new Akamai.AppSecIPGeo("ipGeoAllow", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1-090334",
+    ///         Mode = "allow",
+    ///         ExceptionIpNetworkLists = new[]
+    ///         {
+    ///             "07126_EXCEPTION_TEST",
+    ///         },
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["ipGeoModeBlock"] = ipGeoBlock.Mode,
+    ///         ["blockGeoNetworkLists"] = ipGeoBlock.GeoNetworkLists,
+    ///         ["blockIpNetworkLists"] = ipGeoBlock.IpNetworkLists,
+    ///         ["blockExceptionIpNetworkLists"] = ipGeoBlock.ExceptionIpNetworkLists,
+    ///         ["ipGeoModeAllow"] = ipGeoAllow.Mode,
+    ///         ["allowExceptionIpNetworkLists"] = ipGeoAllow.ExceptionIpNetworkLists,
+    ///     };
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecIPGeo:AppSecIPGeo")]
-    public partial class AppSecIPGeo : Pulumi.CustomResource
+    public partial class AppSecIPGeo : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
@@ -167,7 +158,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecIPGeoArgs : Pulumi.ResourceArgs
+    public sealed class AppSecIPGeoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
@@ -226,9 +217,10 @@ namespace Pulumi.Akamai
         public AppSecIPGeoArgs()
         {
         }
+        public static new AppSecIPGeoArgs Empty => new AppSecIPGeoArgs();
     }
 
-    public sealed class AppSecIPGeoState : Pulumi.ResourceArgs
+    public sealed class AppSecIPGeoState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
@@ -287,5 +279,6 @@ namespace Pulumi.Akamai
         public AppSecIPGeoState()
         {
         }
+        public static new AppSecIPGeoState Empty => new AppSecIPGeoState();
     }
 }

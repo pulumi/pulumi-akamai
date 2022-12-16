@@ -21,20 +21,19 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var supportedLangs = Output.Create(Akamai.GetIamSupportedLangs.InvokeAsync());
-        ///         this.SupportedSupportedLangs = supportedLangs;
-        ///     }
+        ///     var supportedLangs = Akamai.GetIamSupportedLangs.Invoke();
         /// 
-        ///     [Output("supportedSupportedLangs")]
-        ///     public Output&lt;string&gt; SupportedSupportedLangs { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["supportedSupportedLangs"] = supportedLangs.Apply(getIamSupportedLangsResult =&gt; getIamSupportedLangsResult),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -47,7 +46,7 @@ namespace Pulumi.Akamai
         /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-languages)
         /// </summary>
         public static Task<GetIamSupportedLangsResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIamSupportedLangsResult>("akamai:index/getIamSupportedLangs:getIamSupportedLangs", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamSupportedLangsResult>("akamai:index/getIamSupportedLangs:getIamSupportedLangs", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

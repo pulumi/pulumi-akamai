@@ -14,6 +14,21 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatastreamSplunkConnector {
     /**
+     * @return **Secret**. The certification authority (CA) certificate used to verify the origin server&#39;s certificate. It&#39;s needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     * 
+     */
+    private @Nullable String caCert;
+    /**
+     * @return **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
+    private @Nullable String clientCert;
+    /**
+     * @return **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
+    private @Nullable String clientKey;
+    /**
      * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
      * 
      */
@@ -25,10 +40,26 @@ public final class DatastreamSplunkConnector {
      */
     private String connectorName;
     /**
+     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
+     * 
+     */
+    private @Nullable String customHeaderName;
+    /**
+     * @return The custom header&#39;s contents passed with the request that contains information about the client connection.
+     * 
+     */
+    private @Nullable String customHeaderValue;
+    /**
      * @return **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
      * 
      */
     private String eventCollectorToken;
+    private @Nullable Boolean mTls;
+    /**
+     * @return The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     * 
+     */
+    private @Nullable String tlsHostname;
     /**
      * @return Enter the secure URL where you want to send and store your logs.
      * 
@@ -36,6 +67,27 @@ public final class DatastreamSplunkConnector {
     private String url;
 
     private DatastreamSplunkConnector() {}
+    /**
+     * @return **Secret**. The certification authority (CA) certificate used to verify the origin server&#39;s certificate. It&#39;s needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     * 
+     */
+    public Optional<String> caCert() {
+        return Optional.ofNullable(this.caCert);
+    }
+    /**
+     * @return **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
+    public Optional<String> clientCert() {
+        return Optional.ofNullable(this.clientCert);
+    }
+    /**
+     * @return **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     * 
+     */
+    public Optional<String> clientKey() {
+        return Optional.ofNullable(this.clientKey);
+    }
     /**
      * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
      * 
@@ -54,11 +106,35 @@ public final class DatastreamSplunkConnector {
         return this.connectorName;
     }
     /**
+     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
+     * 
+     */
+    public Optional<String> customHeaderName() {
+        return Optional.ofNullable(this.customHeaderName);
+    }
+    /**
+     * @return The custom header&#39;s contents passed with the request that contains information about the client connection.
+     * 
+     */
+    public Optional<String> customHeaderValue() {
+        return Optional.ofNullable(this.customHeaderValue);
+    }
+    /**
      * @return **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
      * 
      */
     public String eventCollectorToken() {
         return this.eventCollectorToken;
+    }
+    public Optional<Boolean> mTls() {
+        return Optional.ofNullable(this.mTls);
+    }
+    /**
+     * @return The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     * 
+     */
+    public Optional<String> tlsHostname() {
+        return Optional.ofNullable(this.tlsHostname);
     }
     /**
      * @return Enter the secure URL where you want to send and store your logs.
@@ -77,21 +153,50 @@ public final class DatastreamSplunkConnector {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String caCert;
+        private @Nullable String clientCert;
+        private @Nullable String clientKey;
         private @Nullable Boolean compressLogs;
         private @Nullable Integer connectorId;
         private String connectorName;
+        private @Nullable String customHeaderName;
+        private @Nullable String customHeaderValue;
         private String eventCollectorToken;
+        private @Nullable Boolean mTls;
+        private @Nullable String tlsHostname;
         private String url;
         public Builder() {}
         public Builder(DatastreamSplunkConnector defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.caCert = defaults.caCert;
+    	      this.clientCert = defaults.clientCert;
+    	      this.clientKey = defaults.clientKey;
     	      this.compressLogs = defaults.compressLogs;
     	      this.connectorId = defaults.connectorId;
     	      this.connectorName = defaults.connectorName;
+    	      this.customHeaderName = defaults.customHeaderName;
+    	      this.customHeaderValue = defaults.customHeaderValue;
     	      this.eventCollectorToken = defaults.eventCollectorToken;
+    	      this.mTls = defaults.mTls;
+    	      this.tlsHostname = defaults.tlsHostname;
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
+        public Builder caCert(@Nullable String caCert) {
+            this.caCert = caCert;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clientCert(@Nullable String clientCert) {
+            this.clientCert = clientCert;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clientKey(@Nullable String clientKey) {
+            this.clientKey = clientKey;
+            return this;
+        }
         @CustomType.Setter
         public Builder compressLogs(@Nullable Boolean compressLogs) {
             this.compressLogs = compressLogs;
@@ -108,8 +213,28 @@ public final class DatastreamSplunkConnector {
             return this;
         }
         @CustomType.Setter
+        public Builder customHeaderName(@Nullable String customHeaderName) {
+            this.customHeaderName = customHeaderName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder customHeaderValue(@Nullable String customHeaderValue) {
+            this.customHeaderValue = customHeaderValue;
+            return this;
+        }
+        @CustomType.Setter
         public Builder eventCollectorToken(String eventCollectorToken) {
             this.eventCollectorToken = Objects.requireNonNull(eventCollectorToken);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mTls(@Nullable Boolean mTls) {
+            this.mTls = mTls;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder tlsHostname(@Nullable String tlsHostname) {
+            this.tlsHostname = tlsHostname;
             return this;
         }
         @CustomType.Setter
@@ -119,10 +244,17 @@ public final class DatastreamSplunkConnector {
         }
         public DatastreamSplunkConnector build() {
             final var o = new DatastreamSplunkConnector();
+            o.caCert = caCert;
+            o.clientCert = clientCert;
+            o.clientKey = clientKey;
             o.compressLogs = compressLogs;
             o.connectorId = connectorId;
             o.connectorName = connectorName;
+            o.customHeaderName = customHeaderName;
+            o.customHeaderValue = customHeaderValue;
             o.eventCollectorToken = eventCollectorToken;
+            o.mTls = mTls;
+            o.tlsHostname = tlsHostname;
             o.url = url;
             return o;
         }

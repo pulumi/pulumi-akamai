@@ -21,33 +21,32 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var appsecselectedhostnames = new Akamai.AppSecSelectedHostnames("appsecselectedhostnames", new Akamai.AppSecSelectedHostnamesArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             Hostnames = 
-    ///             {
-    ///                 "example.com",
-    ///             },
-    ///             Mode = "APPEND",
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var appsecselectedhostnames = new Akamai.AppSecSelectedHostnames("appsecselectedhostnames", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         Hostnames = new[]
+    ///         {
+    ///             "example.com",
+    ///         },
+    ///         Mode = "APPEND",
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames")]
-    public partial class AppSecSelectedHostnames : Pulumi.CustomResource
+    public partial class AppSecSelectedHostnames : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the hostnames.
@@ -114,7 +113,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecSelectedHostnamesArgs : Pulumi.ResourceArgs
+    public sealed class AppSecSelectedHostnamesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the hostnames.
@@ -146,9 +145,10 @@ namespace Pulumi.Akamai
         public AppSecSelectedHostnamesArgs()
         {
         }
+        public static new AppSecSelectedHostnamesArgs Empty => new AppSecSelectedHostnamesArgs();
     }
 
-    public sealed class AppSecSelectedHostnamesState : Pulumi.ResourceArgs
+    public sealed class AppSecSelectedHostnamesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the hostnames.
@@ -180,5 +180,6 @@ namespace Pulumi.Akamai
         public AppSecSelectedHostnamesState()
         {
         }
+        public static new AppSecSelectedHostnamesState Empty => new AppSecSelectedHostnamesState();
     }
 }

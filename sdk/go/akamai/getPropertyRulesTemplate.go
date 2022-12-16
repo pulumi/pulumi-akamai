@@ -69,7 +69,7 @@ import (
 //
 //	"encoding/json"
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -88,9 +88,9 @@ import (
 //				return err
 //			}
 //			json0 := string(tmpJSON0)
-//			examplePropertyRulesTemplate, err := akamai.GetPropertyRulesTemplate(ctx, &GetPropertyRulesTemplateArgs{
-//				Templates: []GetPropertyRulesTemplateTemplate{
-//					GetPropertyRulesTemplateTemplate{
+//			examplePropertyRulesTemplate, err := akamai.GetPropertyRulesTemplate(ctx, &akamai.GetPropertyRulesTemplateArgs{
+//				Templates: []akamai.GetPropertyRulesTemplateTemplate{
+//					akamai.GetPropertyRulesTemplateTemplate{
 //						TemplateData: json0,
 //						TemplateDir:  "property-snippets/",
 //					},

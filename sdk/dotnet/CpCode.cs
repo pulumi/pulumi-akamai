@@ -21,54 +21,54 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var cpCode = new Akamai.CpCode("cpCode", new()
     ///     {
-    ///         var cpCode = new Akamai.CpCode("cpCode", new Akamai.CpCodeArgs
-    ///         {
-    ///             ContractId = akamai_contract.Contract.Id,
-    ///             GroupId = akamai_group.Group.Id,
-    ///             ProductId = "prd_Object_Delivery",
-    ///         });
-    ///     }
+    ///         ContractId = akamai_contract.Contract.Id,
+    ///         GroupId = akamai_group.Group.Id,
+    ///         ProductId = "prd_Object_Delivery",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// Here's a real-life example that includes other data sources as dependencies:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
-    ///     {
-    ///         var groupName = "example group name";
-    ///         var cpcodeName = "My CP Code";
-    ///         var exampleContract = Output.Create(Akamai.GetContract.InvokeAsync(new Akamai.GetContractArgs
-    ///         {
-    ///             GroupName = groupName,
-    ///         }));
-    ///         var exampleGroup = exampleContract.Apply(exampleContract =&gt; Output.Create(Akamai.GetGroup.InvokeAsync(new Akamai.GetGroupArgs
-    ///         {
-    ///             Name = groupName,
-    ///             ContractId = exampleContract.Id,
-    ///         })));
-    ///         var exampleCp = new Akamai.CpCode("exampleCp", new Akamai.CpCodeArgs
-    ///         {
-    ///             GroupId = exampleGroup.Apply(exampleGroup =&gt; exampleGroup.Id),
-    ///             ContractId = exampleContract.Apply(exampleContract =&gt; exampleContract.Id),
-    ///             ProductId = "prd_Object_Delivery",
-    ///         });
-    ///     }
+    ///     var groupName = "example group name";
     /// 
-    /// }
+    ///     var cpcodeName = "My CP Code";
+    /// 
+    ///     var exampleContract = Akamai.GetContract.Invoke(new()
+    ///     {
+    ///         GroupName = groupName,
+    ///     });
+    /// 
+    ///     var exampleGroup = Akamai.GetGroup.Invoke(new()
+    ///     {
+    ///         Name = groupName,
+    ///         ContractId = exampleContract.Apply(getContractResult =&gt; getContractResult.Id),
+    ///     });
+    /// 
+    ///     var exampleCp = new Akamai.CpCode("exampleCp", new()
+    ///     {
+    ///         GroupId = exampleGroup.Apply(getGroupResult =&gt; getGroupResult.Id),
+    ///         ContractId = exampleContract.Apply(getContractResult =&gt; getContractResult.Id),
+    ///         ProductId = "prd_Object_Delivery",
+    ///     });
+    /// 
+    /// });
     /// ```
     /// ## Attributes reference
     /// 
@@ -87,7 +87,7 @@ namespace Pulumi.Akamai
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/cpCode:CpCode")]
-    public partial class CpCode : Pulumi.CustomResource
+    public partial class CpCode : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Replaced by `contract_id`. Maintained for legacy purposes.
@@ -153,7 +153,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new Pulumi.Alias { Type = "akamai:properties/cpCode:CpCode"},
+                    new global::Pulumi.Alias { Type = "akamai:properties/cpCode:CpCode"},
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -176,7 +176,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class CpCodeArgs : Pulumi.ResourceArgs
+    public sealed class CpCodeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Replaced by `contract_id`. Maintained for legacy purposes.
@@ -220,9 +220,10 @@ namespace Pulumi.Akamai
         public CpCodeArgs()
         {
         }
+        public static new CpCodeArgs Empty => new CpCodeArgs();
     }
 
-    public sealed class CpCodeState : Pulumi.ResourceArgs
+    public sealed class CpCodeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Replaced by `contract_id`. Maintained for legacy purposes.
@@ -266,5 +267,6 @@ namespace Pulumi.Akamai
         public CpCodeState()
         {
         }
+        public static new CpCodeState Empty => new CpCodeState();
     }
 }

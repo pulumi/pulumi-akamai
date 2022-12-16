@@ -23,31 +23,30 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using System.IO;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var pragmaHeader = new Akamai.AppSecAdvancedSettingsPragmaHeader("pragmaHeader", new Akamai.AppSecAdvancedSettingsPragmaHeaderArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             PragmaHeader = File.ReadAllText($"{path.Module}/pragma_header.json"),
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var pragmaHeader = new Akamai.AppSecAdvancedSettingsPragmaHeader("pragmaHeader", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         PragmaHeader = File.ReadAllText($"{path.Module}/pragma_header.json"),
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader")]
-    public partial class AppSecAdvancedSettingsPragmaHeader : Pulumi.CustomResource
+    public partial class AppSecAdvancedSettingsPragmaHeader : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the pragma header settings being modified.
@@ -111,7 +110,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecAdvancedSettingsPragmaHeaderArgs : Pulumi.ResourceArgs
+    public sealed class AppSecAdvancedSettingsPragmaHeaderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the pragma header settings being modified.
@@ -134,9 +133,10 @@ namespace Pulumi.Akamai
         public AppSecAdvancedSettingsPragmaHeaderArgs()
         {
         }
+        public static new AppSecAdvancedSettingsPragmaHeaderArgs Empty => new AppSecAdvancedSettingsPragmaHeaderArgs();
     }
 
-    public sealed class AppSecAdvancedSettingsPragmaHeaderState : Pulumi.ResourceArgs
+    public sealed class AppSecAdvancedSettingsPragmaHeaderState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the pragma header settings being modified.
@@ -159,5 +159,6 @@ namespace Pulumi.Akamai
         public AppSecAdvancedSettingsPragmaHeaderState()
         {
         }
+        public static new AppSecAdvancedSettingsPragmaHeaderState Empty => new AppSecAdvancedSettingsPragmaHeaderState();
     }
 }

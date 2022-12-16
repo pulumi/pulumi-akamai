@@ -21,20 +21,19 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var countries = Output.Create(Akamai.GetIamCountries.InvokeAsync());
-        ///         this.SupportedCountries = countries;
-        ///     }
+        ///     var countries = Akamai.GetIamCountries.Invoke();
         /// 
-        ///     [Output("supportedCountries")]
-        ///     public Output&lt;string&gt; SupportedCountries { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["supportedCountries"] = countries.Apply(getIamCountriesResult =&gt; getIamCountriesResult),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -47,7 +46,7 @@ namespace Pulumi.Akamai
         /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-countries)
         /// </summary>
         public static Task<GetIamCountriesResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIamCountriesResult>("akamai:index/getIamCountries:getIamCountries", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamCountriesResult>("akamai:index/getIamCountries:getIamCountries", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

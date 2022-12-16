@@ -17,7 +17,7 @@ namespace Pulumi.Akamai
     /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules]https://techdocs.akamai.com/application-security/reference/get-configs-custom-rules)
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecCustomRule:AppSecCustomRule")]
-    public partial class AppSecCustomRule : Pulumi.CustomResource
+    public partial class AppSecCustomRule : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom rule being modified.
@@ -78,7 +78,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecCustomRuleArgs : Pulumi.ResourceArgs
+    public sealed class AppSecCustomRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom rule being modified.
@@ -95,9 +95,10 @@ namespace Pulumi.Akamai
         public AppSecCustomRuleArgs()
         {
         }
+        public static new AppSecCustomRuleArgs Empty => new AppSecCustomRuleArgs();
     }
 
-    public sealed class AppSecCustomRuleState : Pulumi.ResourceArgs
+    public sealed class AppSecCustomRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom rule being modified.
@@ -117,5 +118,6 @@ namespace Pulumi.Akamai
         public AppSecCustomRuleState()
         {
         }
+        public static new AppSecCustomRuleState Empty => new AppSecCustomRuleState();
     }
 }

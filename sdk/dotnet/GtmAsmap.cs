@@ -21,29 +21,27 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var demoAsmap = new Akamai.GtmAsmap("demoAsmap", new()
     ///     {
-    ///         var demoAsmap = new Akamai.GtmAsmap("demoAsmap", new Akamai.GtmAsmapArgs
+    ///         DefaultDatacenter = new Akamai.Inputs.GtmAsmapDefaultDatacenterArgs
     ///         {
-    ///             DefaultDatacenter = new Akamai.Inputs.GtmAsmapDefaultDatacenterArgs
-    ///             {
-    ///                 DatacenterId = 5400,
-    ///                 Nickname = "All Other AS numbers",
-    ///             },
-    ///             Domain = "demo_domain.akadns.net",
-    ///         });
-    ///     }
+    ///             DatacenterId = 5400,
+    ///             Nickname = "All Other AS numbers",
+    ///         },
+    ///         Domain = "demo_domain.akadns.net",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/gtmAsmap:GtmAsmap")]
-    public partial class GtmAsmap : Pulumi.CustomResource
+    public partial class GtmAsmap : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
@@ -100,7 +98,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new Pulumi.Alias { Type = "akamai:trafficmanagement/gtmASmap:GtmASmap"},
+                    new global::Pulumi.Alias { Type = "akamai:trafficmanagement/gtmASmap:GtmASmap"},
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -123,7 +121,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class GtmAsmapArgs : Pulumi.ResourceArgs
+    public sealed class GtmAsmapArgs : global::Pulumi.ResourceArgs
     {
         [Input("assignments")]
         private InputList<Inputs.GtmAsmapAssignmentArgs>? _assignments;
@@ -164,9 +162,10 @@ namespace Pulumi.Akamai
         public GtmAsmapArgs()
         {
         }
+        public static new GtmAsmapArgs Empty => new GtmAsmapArgs();
     }
 
-    public sealed class GtmAsmapState : Pulumi.ResourceArgs
+    public sealed class GtmAsmapState : global::Pulumi.ResourceArgs
     {
         [Input("assignments")]
         private InputList<Inputs.GtmAsmapAssignmentGetArgs>? _assignments;
@@ -207,5 +206,6 @@ namespace Pulumi.Akamai
         public GtmAsmapState()
         {
         }
+        public static new GtmAsmapState Empty => new GtmAsmapState();
     }
 }

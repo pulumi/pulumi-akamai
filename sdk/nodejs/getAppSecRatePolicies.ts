@@ -42,11 +42,8 @@ import * as utilities from "./utilities";
  * - `json`. JSON-formatted list of the rate policy information.
  */
 export function getAppSecRatePolicies(args: GetAppSecRatePoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecRatePoliciesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", {
         "configId": args.configId,
         "ratePolicyId": args.ratePolicyId,
@@ -80,9 +77,45 @@ export interface GetAppSecRatePoliciesResult {
     readonly outputText: string;
     readonly ratePolicyId?: number;
 }
-
+/**
+ * **Scopes**: Security configuration; rate policy
+ *
+ * Returns information about your rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive; in turn, this helps you prevent your website from being overwhelmed by a dramatic, and unexpected, surge in traffic.
+ *
+ * **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://techdocs.akamai.com/application-security/reference/get-rate-policies)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const ratePolicies = configuration.then(configuration => akamai.getAppSecRatePolicies({
+ *     configId: configuration.configId,
+ * }));
+ * export const ratePoliciesOutput = ratePolicies.then(ratePolicies => ratePolicies.outputText);
+ * export const ratePoliciesJson = ratePolicies.then(ratePolicies => ratePolicies.json);
+ * const ratePolicy = configuration.then(configuration => akamai.getAppSecRatePolicies({
+ *     configId: configuration.configId,
+ *     ratePolicyId: 122149,
+ * }));
+ * export const ratePolicyJson = ratePolicy.then(ratePolicy => ratePolicy.json);
+ * export const ratePolicyOutput = ratePolicy.then(ratePolicy => ratePolicy.outputText);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the ID and name of the rate policies.
+ * - `json`. JSON-formatted list of the rate policy information.
+ */
 export function getAppSecRatePoliciesOutput(args: GetAppSecRatePoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecRatePoliciesResult> {
-    return pulumi.output(args).apply(a => getAppSecRatePolicies(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecRatePolicies(a, opts))
 }
 
 /**

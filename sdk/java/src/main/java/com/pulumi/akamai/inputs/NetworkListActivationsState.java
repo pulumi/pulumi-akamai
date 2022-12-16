@@ -6,6 +6,7 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -117,6 +118,23 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * An integer that identifies the current version of the network list; this value is incremented each time
+     * the list is modified.
+     * 
+     */
+    @Import(name="syncPoint")
+    private @Nullable Output<Integer> syncPoint;
+
+    /**
+     * @return An integer that identifies the current version of the network list; this value is incremented each time
+     * the list is modified.
+     * 
+     */
+    public Optional<Output<Integer>> syncPoint() {
+        return Optional.ofNullable(this.syncPoint);
+    }
+
     private NetworkListActivationsState() {}
 
     private NetworkListActivationsState(NetworkListActivationsState $) {
@@ -126,6 +144,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         this.notes = $.notes;
         this.notificationEmails = $.notificationEmails;
         this.status = $.status;
+        this.syncPoint = $.syncPoint;
     }
 
     public static Builder builder() {
@@ -291,6 +310,29 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
          */
         public Builder status(String status) {
             return status(Output.of(status));
+        }
+
+        /**
+         * @param syncPoint An integer that identifies the current version of the network list; this value is incremented each time
+         * the list is modified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder syncPoint(@Nullable Output<Integer> syncPoint) {
+            $.syncPoint = syncPoint;
+            return this;
+        }
+
+        /**
+         * @param syncPoint An integer that identifies the current version of the network list; this value is incremented each time
+         * the list is modified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder syncPoint(Integer syncPoint) {
+            return syncPoint(Output.of(syncPoint));
         }
 
         public NetworkListActivationsState build() {

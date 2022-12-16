@@ -23,33 +23,32 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using System.IO;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var evalRule = new Akamai.AppSecEvalRule("evalRule", new Akamai.AppSecEvalRuleArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             RuleId = 60029316,
-    ///             RuleAction = "deny",
-    ///             ConditionException = File.ReadAllText($"{path.Module}/condition_exception.json"),
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var evalRule = new Akamai.AppSecEvalRule("evalRule", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         RuleId = 60029316,
+    ///         RuleAction = "deny",
+    ///         ConditionException = File.ReadAllText($"{path.Module}/condition_exception.json"),
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecEvalRule:AppSecEvalRule")]
-    public partial class AppSecEvalRule : Pulumi.CustomResource
+    public partial class AppSecEvalRule : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
@@ -129,7 +128,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecEvalRuleArgs : Pulumi.ResourceArgs
+    public sealed class AppSecEvalRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
@@ -168,9 +167,10 @@ namespace Pulumi.Akamai
         public AppSecEvalRuleArgs()
         {
         }
+        public static new AppSecEvalRuleArgs Empty => new AppSecEvalRuleArgs();
     }
 
-    public sealed class AppSecEvalRuleState : Pulumi.ResourceArgs
+    public sealed class AppSecEvalRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
@@ -209,5 +209,6 @@ namespace Pulumi.Akamai
         public AppSecEvalRuleState()
         {
         }
+        public static new AppSecEvalRuleState Empty => new AppSecEvalRuleState();
     }
 }

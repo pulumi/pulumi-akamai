@@ -19,6 +19,7 @@ public final class GetAppSecSecurityPolicyResult {
      * 
      */
     private String id;
+    private String json;
     private String outputText;
     private String securityPolicyId;
     private List<String> securityPolicyIdLists;
@@ -34,6 +35,9 @@ public final class GetAppSecSecurityPolicyResult {
      */
     public String id() {
         return this.id;
+    }
+    public String json() {
+        return this.json;
     }
     public String outputText() {
         return this.outputText;
@@ -59,6 +63,7 @@ public final class GetAppSecSecurityPolicyResult {
     public static final class Builder {
         private Integer configId;
         private String id;
+        private String json;
         private String outputText;
         private String securityPolicyId;
         private List<String> securityPolicyIdLists;
@@ -68,6 +73,7 @@ public final class GetAppSecSecurityPolicyResult {
     	      Objects.requireNonNull(defaults);
     	      this.configId = defaults.configId;
     	      this.id = defaults.id;
+    	      this.json = defaults.json;
     	      this.outputText = defaults.outputText;
     	      this.securityPolicyId = defaults.securityPolicyId;
     	      this.securityPolicyIdLists = defaults.securityPolicyIdLists;
@@ -82,6 +88,11 @@ public final class GetAppSecSecurityPolicyResult {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder json(String json) {
+            this.json = Objects.requireNonNull(json);
             return this;
         }
         @CustomType.Setter
@@ -111,6 +122,7 @@ public final class GetAppSecSecurityPolicyResult {
             final var o = new GetAppSecSecurityPolicyResult();
             o.configId = configId;
             o.id = id;
+            o.json = json;
             o.outputText = outputText;
             o.securityPolicyId = securityPolicyId;
             o.securityPolicyIdLists = securityPolicyIdLists;

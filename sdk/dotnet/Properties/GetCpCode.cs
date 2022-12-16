@@ -13,14 +13,14 @@ namespace Pulumi.Akamai.Properties
     public static class GetCpCode
     {
         public static Task<GetCpCodeResult> InvokeAsync(GetCpCodeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCpCodeResult>("akamai:properties/getCpCode:getCpCode", args ?? new GetCpCodeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCpCodeResult>("akamai:properties/getCpCode:getCpCode", args ?? new GetCpCodeArgs(), options.WithDefaults());
 
         public static Output<GetCpCodeResult> Invoke(GetCpCodeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCpCodeResult>("akamai:properties/getCpCode:getCpCode", args ?? new GetCpCodeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCpCodeResult>("akamai:properties/getCpCode:getCpCode", args ?? new GetCpCodeInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCpCodeArgs : Pulumi.InvokeArgs
+    public sealed class GetCpCodeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Replaced by `contract_id`. Maintained for legacy purposes.
@@ -55,9 +55,10 @@ namespace Pulumi.Akamai.Properties
         public GetCpCodeArgs()
         {
         }
+        public static new GetCpCodeArgs Empty => new GetCpCodeArgs();
     }
 
-    public sealed class GetCpCodeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCpCodeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Replaced by `contract_id`. Maintained for legacy purposes.
@@ -92,6 +93,7 @@ namespace Pulumi.Akamai.Properties
         public GetCpCodeInvokeArgs()
         {
         }
+        public static new GetCpCodeInvokeArgs Empty => new GetCpCodeInvokeArgs();
     }
 
 
