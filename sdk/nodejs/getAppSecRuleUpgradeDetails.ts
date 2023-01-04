@@ -37,11 +37,8 @@ import * as utilities from "./utilities";
  * - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
  */
 export function getAppSecRuleUpgradeDetails(args: GetAppSecRuleUpgradeDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecRuleUpgradeDetailsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
@@ -75,9 +72,40 @@ export interface GetAppSecRuleUpgradeDetailsResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-
+/**
+ * **Scopes**: Security policy
+ *
+ * Returns information indicating which of your Kona Rule Sets, if any, need to be updated. A value of **false** indicates that no updates are required.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://techdocs.akamai.com/application-security/reference/get-rules-upgrade-details)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const upgradeDetails = configuration.then(configuration => akamai.getAppSecRuleUpgradeDetails({
+ *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
+ * }));
+ * export const upgradeDetailsText = upgradeDetails.then(upgradeDetails => upgradeDetails.outputText);
+ * export const upgradeDetailsJson = upgradeDetails.then(upgradeDetails => upgradeDetails.json);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing changes (additions and deletions) to the rules for the specified security policy.
+ * - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
+ */
 export function getAppSecRuleUpgradeDetailsOutput(args: GetAppSecRuleUpgradeDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecRuleUpgradeDetailsResult> {
-    return pulumi.output(args).apply(a => getAppSecRuleUpgradeDetails(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecRuleUpgradeDetails(a, opts))
 }
 
 /**

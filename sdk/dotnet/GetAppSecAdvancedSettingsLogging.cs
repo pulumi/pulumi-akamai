@@ -25,41 +25,36 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var customRules = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomRules.InvokeAsync(new Akamai.GetAppSecCustomRulesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.CustomRulesOutputText = customRules.Apply(customRules =&gt; customRules.OutputText);
-        ///         this.CustomRulesJson = customRules.Apply(customRules =&gt; customRules.Json);
-        ///         this.CustomRulesConfigId = customRules.Apply(customRules =&gt; customRules.ConfigId);
-        ///         var specificCustomRule = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomRules.InvokeAsync(new Akamai.GetAppSecCustomRulesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             CustomRuleId = 60029316,
-        ///         })));
-        ///         this.SpecificCustomRuleJson = specificCustomRule.Apply(specificCustomRule =&gt; specificCustomRule.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("customRulesOutputText")]
-        ///     public Output&lt;string&gt; CustomRulesOutputText { get; set; }
-        ///     [Output("customRulesJson")]
-        ///     public Output&lt;string&gt; CustomRulesJson { get; set; }
-        ///     [Output("customRulesConfigId")]
-        ///     public Output&lt;string&gt; CustomRulesConfigId { get; set; }
-        ///     [Output("specificCustomRuleJson")]
-        ///     public Output&lt;string&gt; SpecificCustomRuleJson { get; set; }
-        /// }
+        ///     var customRules = Akamai.GetAppSecCustomRules.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var specificCustomRule = Akamai.GetAppSecCustomRules.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         CustomRuleId = 60029316,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["customRulesOutputText"] = customRules.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.OutputText),
+        ///         ["customRulesJson"] = customRules.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.Json),
+        ///         ["customRulesConfigId"] = customRules.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.ConfigId),
+        ///         ["specificCustomRuleJson"] = specificCustomRule.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -71,7 +66,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the logging settings.
         /// </summary>
         public static Task<GetAppSecAdvancedSettingsLoggingResult> InvokeAsync(GetAppSecAdvancedSettingsLoggingArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsLoggingResult>("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", args ?? new GetAppSecAdvancedSettingsLoggingArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsLoggingResult>("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", args ?? new GetAppSecAdvancedSettingsLoggingArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; security policy
@@ -87,41 +82,36 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var customRules = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomRules.InvokeAsync(new Akamai.GetAppSecCustomRulesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.CustomRulesOutputText = customRules.Apply(customRules =&gt; customRules.OutputText);
-        ///         this.CustomRulesJson = customRules.Apply(customRules =&gt; customRules.Json);
-        ///         this.CustomRulesConfigId = customRules.Apply(customRules =&gt; customRules.ConfigId);
-        ///         var specificCustomRule = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomRules.InvokeAsync(new Akamai.GetAppSecCustomRulesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             CustomRuleId = 60029316,
-        ///         })));
-        ///         this.SpecificCustomRuleJson = specificCustomRule.Apply(specificCustomRule =&gt; specificCustomRule.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("customRulesOutputText")]
-        ///     public Output&lt;string&gt; CustomRulesOutputText { get; set; }
-        ///     [Output("customRulesJson")]
-        ///     public Output&lt;string&gt; CustomRulesJson { get; set; }
-        ///     [Output("customRulesConfigId")]
-        ///     public Output&lt;string&gt; CustomRulesConfigId { get; set; }
-        ///     [Output("specificCustomRuleJson")]
-        ///     public Output&lt;string&gt; SpecificCustomRuleJson { get; set; }
-        /// }
+        ///     var customRules = Akamai.GetAppSecCustomRules.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var specificCustomRule = Akamai.GetAppSecCustomRules.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         CustomRuleId = 60029316,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["customRulesOutputText"] = customRules.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.OutputText),
+        ///         ["customRulesJson"] = customRules.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.Json),
+        ///         ["customRulesConfigId"] = customRules.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.ConfigId),
+        ///         ["specificCustomRuleJson"] = specificCustomRule.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -133,11 +123,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the logging settings.
         /// </summary>
         public static Output<GetAppSecAdvancedSettingsLoggingResult> Invoke(GetAppSecAdvancedSettingsLoggingInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsLoggingResult>("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", args ?? new GetAppSecAdvancedSettingsLoggingInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsLoggingResult>("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", args ?? new GetAppSecAdvancedSettingsLoggingInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecAdvancedSettingsLoggingArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecAdvancedSettingsLoggingArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the logging settings.
@@ -154,9 +144,10 @@ namespace Pulumi.Akamai
         public GetAppSecAdvancedSettingsLoggingArgs()
         {
         }
+        public static new GetAppSecAdvancedSettingsLoggingArgs Empty => new GetAppSecAdvancedSettingsLoggingArgs();
     }
 
-    public sealed class GetAppSecAdvancedSettingsLoggingInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecAdvancedSettingsLoggingInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the logging settings.
@@ -173,6 +164,7 @@ namespace Pulumi.Akamai
         public GetAppSecAdvancedSettingsLoggingInvokeArgs()
         {
         }
+        public static new GetAppSecAdvancedSettingsLoggingInvokeArgs Empty => new GetAppSecAdvancedSettingsLoggingInvokeArgs();
     }
 
 

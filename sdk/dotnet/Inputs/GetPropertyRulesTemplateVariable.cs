@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetPropertyRulesTemplateVariableArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertyRulesTemplateVariableArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the variable used in the template.
@@ -33,5 +33,6 @@ namespace Pulumi.Akamai.Inputs
         public GetPropertyRulesTemplateVariableArgs()
         {
         }
+        public static new GetPropertyRulesTemplateVariableArgs Empty => new GetPropertyRulesTemplateVariableArgs();
     }
 }

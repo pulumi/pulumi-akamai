@@ -38,11 +38,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report of the selected hostnames.
  */
 export function getAppSecSelectedHostnames(args: GetAppSecSelectedHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSelectedHostnamesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames", {
         "configId": args.configId,
     }, opts);
@@ -71,9 +68,41 @@ export interface GetAppSecSelectedHostnamesResult {
     readonly id: string;
     readonly outputText: string;
 }
-
+/**
+ * **Scopes**: Security configuration
+ *
+ * Returns a list of the hostnames currently protected by the specified security configuration.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://techdocs.akamai.com/application-security/reference/get-selected-hostnames)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const selectedHostnamesAppSecSelectedHostnames = configuration.then(configuration => akamai.getAppSecSelectedHostnames({
+ *     configId: configuration.configId,
+ * }));
+ * export const selectedHostnames = selectedHostnamesAppSecSelectedHostnames.then(selectedHostnamesAppSecSelectedHostnames => selectedHostnamesAppSecSelectedHostnames.hostnames);
+ * export const selectedHostnamesJson = selectedHostnamesAppSecSelectedHostnames.then(selectedHostnamesAppSecSelectedHostnames => selectedHostnamesAppSecSelectedHostnames.hostnamesJson);
+ * export const selectedHostnamesOutputText = selectedHostnamesAppSecSelectedHostnames.then(selectedHostnamesAppSecSelectedHostnames => selectedHostnamesAppSecSelectedHostnames.outputText);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `hostnames`. List of selected hostnames.
+ * - `hostnamesJson`. JSON-formatted list of selected hostnames.
+ * - `outputText`. Tabular report of the selected hostnames.
+ */
 export function getAppSecSelectedHostnamesOutput(args: GetAppSecSelectedHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSelectedHostnamesResult> {
-    return pulumi.output(args).apply(a => getAppSecSelectedHostnames(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecSelectedHostnames(a, opts))
 }
 
 /**

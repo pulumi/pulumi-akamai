@@ -9,8 +9,11 @@ import com.pulumi.akamai.inputs.DatastreamState;
 import com.pulumi.akamai.outputs.DatastreamAzureConnector;
 import com.pulumi.akamai.outputs.DatastreamConfig;
 import com.pulumi.akamai.outputs.DatastreamDatadogConnector;
+import com.pulumi.akamai.outputs.DatastreamElasticsearchConnector;
 import com.pulumi.akamai.outputs.DatastreamGcsConnector;
 import com.pulumi.akamai.outputs.DatastreamHttpsConnector;
+import com.pulumi.akamai.outputs.DatastreamLogglyConnector;
+import com.pulumi.akamai.outputs.DatastreamNewRelicConnector;
 import com.pulumi.akamai.outputs.DatastreamOracleConnector;
 import com.pulumi.akamai.outputs.DatastreamS3Connector;
 import com.pulumi.akamai.outputs.DatastreamSplunkConnector;
@@ -157,6 +160,20 @@ public class Datastream extends com.pulumi.resources.CustomResource {
         return this.datasetFieldsIds;
     }
     /**
+     * Specify details about the Elasticsearch connector you can use in a stream, including:
+     * 
+     */
+    @Export(name="elasticsearchConnector", type=DatastreamElasticsearchConnector.class, parameters={})
+    private Output</* @Nullable */ DatastreamElasticsearchConnector> elasticsearchConnector;
+
+    /**
+     * @return Specify details about the Elasticsearch connector you can use in a stream, including:
+     * 
+     */
+    public Output<Optional<DatastreamElasticsearchConnector>> elasticsearchConnector() {
+        return Codegen.optional(this.elasticsearchConnector);
+    }
+    /**
      * A list of email addresses you want to notify about activations and deactivations of the stream.
      * 
      */
@@ -227,6 +244,20 @@ public class Datastream extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.httpsConnector);
     }
     /**
+     * Specify details about the Loggly connector you can use in a stream, including:
+     * 
+     */
+    @Export(name="logglyConnector", type=DatastreamLogglyConnector.class, parameters={})
+    private Output</* @Nullable */ DatastreamLogglyConnector> logglyConnector;
+
+    /**
+     * @return Specify details about the Loggly connector you can use in a stream, including:
+     * 
+     */
+    public Output<Optional<DatastreamLogglyConnector>> logglyConnector() {
+        return Codegen.optional(this.logglyConnector);
+    }
+    /**
      * The username who modified the stream
      * 
      */
@@ -253,6 +284,20 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      */
     public Output<String> modifiedDate() {
         return this.modifiedDate;
+    }
+    /**
+     * Specify details about the New Relic connector you can use in a stream, including:
+     * 
+     */
+    @Export(name="newRelicConnector", type=DatastreamNewRelicConnector.class, parameters={})
+    private Output</* @Nullable */ DatastreamNewRelicConnector> newRelicConnector;
+
+    /**
+     * @return Specify details about the New Relic connector you can use in a stream, including:
+     * 
+     */
+    public Output<Optional<DatastreamNewRelicConnector>> newRelicConnector() {
+        return Codegen.optional(this.newRelicConnector);
     }
     /**
      * Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_&lt;timestamp&gt;.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.

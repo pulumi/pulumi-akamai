@@ -19,29 +19,28 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var example = new Akamai.CloudletsApplicationLoadBalancerActivation("example", new()
     ///     {
-    ///         var example = new Akamai.CloudletsApplicationLoadBalancerActivation("example", new Akamai.CloudletsApplicationLoadBalancerActivationArgs
-    ///         {
-    ///             OriginId = "alb_test_1",
-    ///             Network = "staging",
-    ///             Version = 1,
-    ///         });
-    ///         this.Status = example.Status;
-    ///     }
+    ///         OriginId = "alb_test_1",
+    ///         Network = "staging",
+    ///         Version = 1,
+    ///     });
     /// 
-    ///     [Output("status")]
-    ///     public Output&lt;string&gt; Status { get; set; }
-    /// }
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["status"] = example.Status,
+    ///     };
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation")]
-    public partial class CloudletsApplicationLoadBalancerActivation : Pulumi.CustomResource
+    public partial class CloudletsApplicationLoadBalancerActivation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
@@ -111,7 +110,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class CloudletsApplicationLoadBalancerActivationArgs : Pulumi.ResourceArgs
+    public sealed class CloudletsApplicationLoadBalancerActivationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
@@ -134,9 +133,10 @@ namespace Pulumi.Akamai
         public CloudletsApplicationLoadBalancerActivationArgs()
         {
         }
+        public static new CloudletsApplicationLoadBalancerActivationArgs Empty => new CloudletsApplicationLoadBalancerActivationArgs();
     }
 
-    public sealed class CloudletsApplicationLoadBalancerActivationState : Pulumi.ResourceArgs
+    public sealed class CloudletsApplicationLoadBalancerActivationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
@@ -165,5 +165,6 @@ namespace Pulumi.Akamai
         public CloudletsApplicationLoadBalancerActivationState()
         {
         }
+        public static new CloudletsApplicationLoadBalancerActivationState Empty => new CloudletsApplicationLoadBalancerActivationState();
     }
 }

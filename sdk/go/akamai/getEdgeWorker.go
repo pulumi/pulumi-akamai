@@ -21,14 +21,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.LookupEdgeWorker(ctx, &GetEdgeWorkerArgs{
+//			_, err = akamai.LookupEdgeWorker(ctx, &akamai.LookupEdgeWorkerArgs{
 //				EdgeworkerId: 3,
 //				LocalBundle:  pulumi.StringRef("test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz"),
 //			}, nil)

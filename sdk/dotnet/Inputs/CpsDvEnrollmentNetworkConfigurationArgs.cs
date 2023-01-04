@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class CpsDvEnrollmentNetworkConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class CpsDvEnrollmentNetworkConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
@@ -69,5 +69,6 @@ namespace Pulumi.Akamai.Inputs
         public CpsDvEnrollmentNetworkConfigurationArgs()
         {
         }
+        public static new CpsDvEnrollmentNetworkConfigurationArgs Empty => new CpsDvEnrollmentNetworkConfigurationArgs();
     }
 }

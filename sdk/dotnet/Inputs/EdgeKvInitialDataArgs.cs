@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class EdgeKvInitialDataArgs : Pulumi.ResourceArgs
+    public sealed class EdgeKvInitialDataArgs : global::Pulumi.ResourceArgs
     {
         [Input("group")]
         public Input<string>? Group { get; set; }
@@ -24,5 +24,6 @@ namespace Pulumi.Akamai.Inputs
         public EdgeKvInitialDataArgs()
         {
         }
+        public static new EdgeKvInitialDataArgs Empty => new EdgeKvInitialDataArgs();
     }
 }

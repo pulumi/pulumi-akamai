@@ -6,6 +6,7 @@ package com.pulumi.akamai;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -100,6 +101,23 @@ public final class NetworkListActivationsArgs extends com.pulumi.resources.Resou
         return this.notificationEmails;
     }
 
+    /**
+     * An integer that identifies the current version of the network list; this value is incremented each time
+     * the list is modified.
+     * 
+     */
+    @Import(name="syncPoint", required=true)
+    private Output<Integer> syncPoint;
+
+    /**
+     * @return An integer that identifies the current version of the network list; this value is incremented each time
+     * the list is modified.
+     * 
+     */
+    public Output<Integer> syncPoint() {
+        return this.syncPoint;
+    }
+
     private NetworkListActivationsArgs() {}
 
     private NetworkListActivationsArgs(NetworkListActivationsArgs $) {
@@ -108,6 +126,7 @@ public final class NetworkListActivationsArgs extends com.pulumi.resources.Resou
         this.networkListId = $.networkListId;
         this.notes = $.notes;
         this.notificationEmails = $.notificationEmails;
+        this.syncPoint = $.syncPoint;
     }
 
     public static Builder builder() {
@@ -252,9 +271,33 @@ public final class NetworkListActivationsArgs extends com.pulumi.resources.Resou
             return notificationEmails(List.of(notificationEmails));
         }
 
+        /**
+         * @param syncPoint An integer that identifies the current version of the network list; this value is incremented each time
+         * the list is modified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder syncPoint(Output<Integer> syncPoint) {
+            $.syncPoint = syncPoint;
+            return this;
+        }
+
+        /**
+         * @param syncPoint An integer that identifies the current version of the network list; this value is incremented each time
+         * the list is modified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder syncPoint(Integer syncPoint) {
+            return syncPoint(Output.of(syncPoint));
+        }
+
         public NetworkListActivationsArgs build() {
             $.networkListId = Objects.requireNonNull($.networkListId, "expected parameter 'networkListId' to be non-null");
             $.notificationEmails = Objects.requireNonNull($.notificationEmails, "expected parameter 'notificationEmails' to be non-null");
+            $.syncPoint = Objects.requireNonNull($.syncPoint, "expected parameter 'syncPoint' to be non-null");
             return $;
         }
     }

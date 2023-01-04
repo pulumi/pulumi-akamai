@@ -100,14 +100,14 @@ public class AppSecReputationProfile extends com.pulumi.resources.CustomResource
         return this.reputationProfile;
     }
     /**
-     * Unique identifer of the reputation profile
+     * Unique identifier of the reputation profile
      * 
      */
     @Export(name="reputationProfileId", type=Integer.class, parameters={})
     private Output<Integer> reputationProfileId;
 
     /**
-     * @return Unique identifer of the reputation profile
+     * @return Unique identifier of the reputation profile
      * 
      */
     public Output<Integer> reputationProfileId() {

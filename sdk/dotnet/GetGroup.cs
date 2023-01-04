@@ -28,7 +28,7 @@ namespace Pulumi.Akamai
         /// * `id` - The group's unique ID, including the `grp_` prefix.
         /// </summary>
         public static Task<GetGroupResult> InvokeAsync(GetGroupArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetGroupResult>("akamai:index/getGroup:getGroup", args ?? new GetGroupArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetGroupResult>("akamai:index/getGroup:getGroup", args ?? new GetGroupArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getGroup` data source to get a group by name.
@@ -47,11 +47,11 @@ namespace Pulumi.Akamai
         /// * `id` - The group's unique ID, including the `grp_` prefix.
         /// </summary>
         public static Output<GetGroupResult> Invoke(GetGroupInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetGroupResult>("akamai:index/getGroup:getGroup", args ?? new GetGroupInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetGroupResult>("akamai:index/getGroup:getGroup", args ?? new GetGroupInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetGroupArgs : Pulumi.InvokeArgs
+    public sealed class GetGroupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Replaced by `contract_id`. Maintained for legacy purposes.
@@ -80,9 +80,10 @@ namespace Pulumi.Akamai
         public GetGroupArgs()
         {
         }
+        public static new GetGroupArgs Empty => new GetGroupArgs();
     }
 
-    public sealed class GetGroupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Replaced by `contract_id`. Maintained for legacy purposes.
@@ -111,6 +112,7 @@ namespace Pulumi.Akamai
         public GetGroupInvokeArgs()
         {
         }
+        public static new GetGroupInvokeArgs Empty => new GetGroupInvokeArgs();
     }
 
 

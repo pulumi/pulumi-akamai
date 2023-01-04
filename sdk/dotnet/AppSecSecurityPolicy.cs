@@ -25,30 +25,30 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var securityPolicyCreateAppSecSecurityPolicy = new Akamai.AppSecSecurityPolicy("securityPolicyCreateAppSecSecurityPolicy", new Akamai.AppSecSecurityPolicyArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             DefaultSettings = true,
-    ///             SecurityPolicyName = "Documentation Policy",
-    ///             SecurityPolicyPrefix = "gms1",
-    ///         });
-    ///         this.SecurityPolicyCreate = securityPolicyCreateAppSecSecurityPolicy.SecurityPolicyId;
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    ///     [Output("securityPolicyCreate")]
-    ///     public Output&lt;string&gt; SecurityPolicyCreate { get; set; }
-    /// }
+    ///     var securityPolicyCreateAppSecSecurityPolicy = new Akamai.AppSecSecurityPolicy("securityPolicyCreateAppSecSecurityPolicy", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         DefaultSettings = true,
+    ///         SecurityPolicyName = "Documentation Policy",
+    ///         SecurityPolicyPrefix = "gms1",
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["securityPolicyCreate"] = securityPolicyCreateAppSecSecurityPolicy.SecurityPolicyId,
+    ///     };
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -57,7 +57,7 @@ namespace Pulumi.Akamai
     /// - `security_policy_id`. ID of the newly-created security policy.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecSecurityPolicy:AppSecSecurityPolicy")]
-    public partial class AppSecSecurityPolicy : Pulumi.CustomResource
+    public partial class AppSecSecurityPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration to be associated with the new security policy.
@@ -139,7 +139,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecSecurityPolicyArgs : Pulumi.ResourceArgs
+    public sealed class AppSecSecurityPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration to be associated with the new security policy.
@@ -174,9 +174,10 @@ namespace Pulumi.Akamai
         public AppSecSecurityPolicyArgs()
         {
         }
+        public static new AppSecSecurityPolicyArgs Empty => new AppSecSecurityPolicyArgs();
     }
 
-    public sealed class AppSecSecurityPolicyState : Pulumi.ResourceArgs
+    public sealed class AppSecSecurityPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration to be associated with the new security policy.
@@ -217,5 +218,6 @@ namespace Pulumi.Akamai
         public AppSecSecurityPolicyState()
         {
         }
+        public static new AppSecSecurityPolicyState Empty => new AppSecSecurityPolicyState();
     }
 }

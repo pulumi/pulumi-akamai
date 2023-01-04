@@ -12,14 +12,14 @@ namespace Pulumi.Akamai
     public static class GetAppSecRules
     {
         public static Task<GetAppSecRulesResult> InvokeAsync(GetAppSecRulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRulesResult>("akamai:index/getAppSecRules:getAppSecRules", args ?? new GetAppSecRulesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRulesResult>("akamai:index/getAppSecRules:getAppSecRules", args ?? new GetAppSecRulesArgs(), options.WithDefaults());
 
         public static Output<GetAppSecRulesResult> Invoke(GetAppSecRulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecRulesResult>("akamai:index/getAppSecRules:getAppSecRules", args ?? new GetAppSecRulesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecRulesResult>("akamai:index/getAppSecRules:getAppSecRules", args ?? new GetAppSecRulesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecRulesArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecRulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rules.
@@ -42,9 +42,10 @@ namespace Pulumi.Akamai
         public GetAppSecRulesArgs()
         {
         }
+        public static new GetAppSecRulesArgs Empty => new GetAppSecRulesArgs();
     }
 
-    public sealed class GetAppSecRulesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rules.
@@ -67,6 +68,7 @@ namespace Pulumi.Akamai
         public GetAppSecRulesInvokeArgs()
         {
         }
+        public static new GetAppSecRulesInvokeArgs Empty => new GetAppSecRulesInvokeArgs();
     }
 
 

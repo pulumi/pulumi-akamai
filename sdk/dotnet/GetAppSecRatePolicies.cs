@@ -25,41 +25,36 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var ratePolicies = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.RatePoliciesOutput = ratePolicies.Apply(ratePolicies =&gt; ratePolicies.OutputText);
-        ///         this.RatePoliciesJson = ratePolicies.Apply(ratePolicies =&gt; ratePolicies.Json);
-        ///         var ratePolicy = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             RatePolicyId = 122149,
-        ///         })));
-        ///         this.RatePolicyJson = ratePolicy.Apply(ratePolicy =&gt; ratePolicy.Json);
-        ///         this.RatePolicyOutput = ratePolicy.Apply(ratePolicy =&gt; ratePolicy.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("ratePoliciesOutput")]
-        ///     public Output&lt;string&gt; RatePoliciesOutput { get; set; }
-        ///     [Output("ratePoliciesJson")]
-        ///     public Output&lt;string&gt; RatePoliciesJson { get; set; }
-        ///     [Output("ratePolicyJson")]
-        ///     public Output&lt;string&gt; RatePolicyJson { get; set; }
-        ///     [Output("ratePolicyOutput")]
-        ///     public Output&lt;string&gt; RatePolicyOutput { get; set; }
-        /// }
+        ///     var ratePolicies = Akamai.GetAppSecRatePolicies.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var ratePolicy = Akamai.GetAppSecRatePolicies.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         RatePolicyId = 122149,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["ratePoliciesOutput"] = ratePolicies.Apply(getAppSecRatePoliciesResult =&gt; getAppSecRatePoliciesResult.OutputText),
+        ///         ["ratePoliciesJson"] = ratePolicies.Apply(getAppSecRatePoliciesResult =&gt; getAppSecRatePoliciesResult.Json),
+        ///         ["ratePolicyJson"] = ratePolicy.Apply(getAppSecRatePoliciesResult =&gt; getAppSecRatePoliciesResult.Json),
+        ///         ["ratePolicyOutput"] = ratePolicy.Apply(getAppSecRatePoliciesResult =&gt; getAppSecRatePoliciesResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -71,7 +66,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the rate policy information.
         /// </summary>
         public static Task<GetAppSecRatePoliciesResult> InvokeAsync(GetAppSecRatePoliciesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRatePoliciesResult>("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args ?? new GetAppSecRatePoliciesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRatePoliciesResult>("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args ?? new GetAppSecRatePoliciesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; rate policy
@@ -87,41 +82,36 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var ratePolicies = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.RatePoliciesOutput = ratePolicies.Apply(ratePolicies =&gt; ratePolicies.OutputText);
-        ///         this.RatePoliciesJson = ratePolicies.Apply(ratePolicies =&gt; ratePolicies.Json);
-        ///         var ratePolicy = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecRatePolicies.InvokeAsync(new Akamai.GetAppSecRatePoliciesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             RatePolicyId = 122149,
-        ///         })));
-        ///         this.RatePolicyJson = ratePolicy.Apply(ratePolicy =&gt; ratePolicy.Json);
-        ///         this.RatePolicyOutput = ratePolicy.Apply(ratePolicy =&gt; ratePolicy.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("ratePoliciesOutput")]
-        ///     public Output&lt;string&gt; RatePoliciesOutput { get; set; }
-        ///     [Output("ratePoliciesJson")]
-        ///     public Output&lt;string&gt; RatePoliciesJson { get; set; }
-        ///     [Output("ratePolicyJson")]
-        ///     public Output&lt;string&gt; RatePolicyJson { get; set; }
-        ///     [Output("ratePolicyOutput")]
-        ///     public Output&lt;string&gt; RatePolicyOutput { get; set; }
-        /// }
+        ///     var ratePolicies = Akamai.GetAppSecRatePolicies.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var ratePolicy = Akamai.GetAppSecRatePolicies.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         RatePolicyId = 122149,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["ratePoliciesOutput"] = ratePolicies.Apply(getAppSecRatePoliciesResult =&gt; getAppSecRatePoliciesResult.OutputText),
+        ///         ["ratePoliciesJson"] = ratePolicies.Apply(getAppSecRatePoliciesResult =&gt; getAppSecRatePoliciesResult.Json),
+        ///         ["ratePolicyJson"] = ratePolicy.Apply(getAppSecRatePoliciesResult =&gt; getAppSecRatePoliciesResult.Json),
+        ///         ["ratePolicyOutput"] = ratePolicy.Apply(getAppSecRatePoliciesResult =&gt; getAppSecRatePoliciesResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -133,11 +123,11 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the rate policy information.
         /// </summary>
         public static Output<GetAppSecRatePoliciesResult> Invoke(GetAppSecRatePoliciesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecRatePoliciesResult>("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args ?? new GetAppSecRatePoliciesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecRatePoliciesResult>("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args ?? new GetAppSecRatePoliciesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecRatePoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecRatePoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rate policies.
@@ -154,9 +144,10 @@ namespace Pulumi.Akamai
         public GetAppSecRatePoliciesArgs()
         {
         }
+        public static new GetAppSecRatePoliciesArgs Empty => new GetAppSecRatePoliciesArgs();
     }
 
-    public sealed class GetAppSecRatePoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecRatePoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rate policies.
@@ -173,6 +164,7 @@ namespace Pulumi.Akamai
         public GetAppSecRatePoliciesInvokeArgs()
         {
         }
+        public static new GetAppSecRatePoliciesInvokeArgs Empty => new GetAppSecRatePoliciesInvokeArgs();
     }
 
 

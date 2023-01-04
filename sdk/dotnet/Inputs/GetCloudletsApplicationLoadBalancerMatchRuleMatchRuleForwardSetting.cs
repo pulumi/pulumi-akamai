@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) The ID of the Conditional Origin the requests are forwarded to.
@@ -21,5 +21,6 @@ namespace Pulumi.Akamai.Inputs
         public GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs()
         {
         }
+        public static new GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs Empty => new GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs();
     }
 }

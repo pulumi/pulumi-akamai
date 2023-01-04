@@ -21,29 +21,27 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var demoGeomap = new Akamai.GtmGeomap("demoGeomap", new()
     ///     {
-    ///         var demoGeomap = new Akamai.GtmGeomap("demoGeomap", new Akamai.GtmGeomapArgs
+    ///         DefaultDatacenter = new Akamai.Inputs.GtmGeomapDefaultDatacenterArgs
     ///         {
-    ///             DefaultDatacenter = new Akamai.Inputs.GtmGeomapDefaultDatacenterArgs
-    ///             {
-    ///                 DatacenterId = 5400,
-    ///                 Nickname = "All Others",
-    ///             },
-    ///             Domain = "demo_domain.akadns.net",
-    ///         });
-    ///     }
+    ///             DatacenterId = 5400,
+    ///             Nickname = "All Others",
+    ///         },
+    ///         Domain = "demo_domain.akadns.net",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/gtmGeomap:GtmGeomap")]
-    public partial class GtmGeomap : Pulumi.CustomResource
+    public partial class GtmGeomap : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
@@ -100,7 +98,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new Pulumi.Alias { Type = "akamai:trafficmanagement/gtmGeomap:GtmGeomap"},
+                    new global::Pulumi.Alias { Type = "akamai:trafficmanagement/gtmGeomap:GtmGeomap"},
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -123,7 +121,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class GtmGeomapArgs : Pulumi.ResourceArgs
+    public sealed class GtmGeomapArgs : global::Pulumi.ResourceArgs
     {
         [Input("assignments")]
         private InputList<Inputs.GtmGeomapAssignmentArgs>? _assignments;
@@ -164,9 +162,10 @@ namespace Pulumi.Akamai
         public GtmGeomapArgs()
         {
         }
+        public static new GtmGeomapArgs Empty => new GtmGeomapArgs();
     }
 
-    public sealed class GtmGeomapState : Pulumi.ResourceArgs
+    public sealed class GtmGeomapState : global::Pulumi.ResourceArgs
     {
         [Input("assignments")]
         private InputList<Inputs.GtmGeomapAssignmentGetArgs>? _assignments;
@@ -207,5 +206,6 @@ namespace Pulumi.Akamai
         public GtmGeomapState()
         {
         }
+        public static new GtmGeomapState Empty => new GtmGeomapState();
     }
 }

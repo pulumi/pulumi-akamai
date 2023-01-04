@@ -2,45 +2,14 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
  *
  * Use the `akamai.getCloudletsEdgeRedirectorMatchRule` data source to build a match rule JSON object for the Edge Redirector Cloudlet.
- *
- * ## Basic usage
- *
- * This example returns the JSON-encoded rules for the Edge Redirector Cloudlet:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = pulumi.output(akamai.getCloudletsEdgeRedirectorMatchRule({
- *     matchRules: [{
- *         end: 1645037845,
- *         matchUrl: "example.com",
- *         matches: [{
- *             caseSensitive: false,
- *             matchOperator: "equals",
- *             matchType: "method",
- *             negate: false,
- *             objectMatchValues: [{
- *                 type: "simple",
- *                 values: ["GET"],
- *             }],
- *         }],
- *         name: "rule",
- *         redirectUrl: "https://www.example.com",
- *         start: 1644865045,
- *         statusCode: 301,
- *         useIncomingQueryString: false,
- *         useRelativeUrl: "none",
- *     }],
- * }));
- * ```
  *
  * ## Attributes reference
  *
@@ -51,11 +20,8 @@ import * as utilities from "./utilities";
  */
 export function getCloudletsEdgeRedirectorMatchRule(args?: GetCloudletsEdgeRedirectorMatchRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsEdgeRedirectorMatchRuleResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule", {
         "matchRules": args.matchRules,
     }, opts);
@@ -82,9 +48,20 @@ export interface GetCloudletsEdgeRedirectorMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRule[];
 }
-
+/**
+ * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
+ *
+ * Use the `akamai.getCloudletsEdgeRedirectorMatchRule` data source to build a match rule JSON object for the Edge Redirector Cloudlet.
+ *
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `type` - The type of Cloudlet the rule is for.
+ * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
+ */
 export function getCloudletsEdgeRedirectorMatchRuleOutput(args?: GetCloudletsEdgeRedirectorMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsEdgeRedirectorMatchRuleResult> {
-    return pulumi.output(args).apply(a => getCloudletsEdgeRedirectorMatchRule(a, opts))
+    return pulumi.output(args).apply((a: any) => getCloudletsEdgeRedirectorMatchRule(a, opts))
 }
 
 /**

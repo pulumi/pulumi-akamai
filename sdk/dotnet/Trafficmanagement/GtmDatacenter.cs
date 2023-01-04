@@ -21,26 +21,24 @@ namespace Pulumi.Akamai.Trafficmanagement
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var demoDatacenter = new Akamai.GtmDatacenter("demoDatacenter", new()
     ///     {
-    ///         var demoDatacenter = new Akamai.GtmDatacenter("demoDatacenter", new Akamai.GtmDatacenterArgs
-    ///         {
-    ///             Domain = "demo_domain.akadns.net",
-    ///             Nickname = "demo_datacenter",
-    ///         });
-    ///     }
+    ///         Domain = "demo_domain.akadns.net",
+    ///         Nickname = "demo_datacenter",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [Obsolete(@"akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmDatacenter:GtmDatacenter")]
-    public partial class GtmDatacenter : Pulumi.CustomResource
+    public partial class GtmDatacenter : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The name of the city where the data center is located.
@@ -200,7 +198,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         }
     }
 
-    public sealed class GtmDatacenterArgs : Pulumi.ResourceArgs
+    public sealed class GtmDatacenterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the city where the data center is located.
@@ -283,9 +281,10 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmDatacenterArgs()
         {
         }
+        public static new GtmDatacenterArgs Empty => new GtmDatacenterArgs();
     }
 
-    public sealed class GtmDatacenterState : Pulumi.ResourceArgs
+    public sealed class GtmDatacenterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the city where the data center is located.
@@ -404,5 +403,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmDatacenterState()
         {
         }
+        public static new GtmDatacenterState Empty => new GtmDatacenterState();
     }
 }

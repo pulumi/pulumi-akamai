@@ -33,7 +33,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -44,13 +44,13 @@ import (
 //				ProductId:  pulumi.String("prd_SPM"),
 //				ContractId: pulumi.Any(_var.Contractid),
 //				GroupId:    pulumi.Any(_var.Groupid),
-//				Hostnames: PropertyHostnameArray{
-//					&PropertyHostnameArgs{
+//				Hostnames: akamai.PropertyHostnameArray{
+//					&akamai.PropertyHostnameArgs{
 //						CnameFrom:            pulumi.String("example.com"),
 //						CnameTo:              pulumi.String("example.com.edgekey.net"),
 //						CertProvisioningType: pulumi.String("DEFAULT"),
 //					},
-//					&PropertyHostnameArgs{
+//					&akamai.PropertyHostnameArgs{
 //						CnameFrom:            pulumi.String("www.example.com"),
 //						CnameTo:              pulumi.String("example.com.edgesuite.net"),
 //						CertProvisioningType: pulumi.String("CPS_MANAGED"),

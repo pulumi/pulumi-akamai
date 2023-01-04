@@ -27,11 +27,8 @@ import * as utilities from "./utilities";
  * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-countries)
  */
 export function getIamCountries(opts?: pulumi.InvokeOptions): Promise<GetIamCountriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getIamCountries:getIamCountries", {
     }, opts);
 }

@@ -25,7 +25,7 @@ namespace Pulumi.Akamai
     ///  ~&gt; **IMPORTANT:** For security reasons, this command doesn't import any secrets you specify for your connector. To make sure the state file includes complete data, use this resource to manually add the arguments marked **Secret** above.
     /// </summary>
     [AkamaiResourceType("akamai:index/datastream:Datastream")]
-    public partial class Datastream : Pulumi.CustomResource
+    public partial class Datastream : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
@@ -76,6 +76,12 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<int>> DatasetFieldsIds { get; private set; } = null!;
 
         /// <summary>
+        /// Specify details about the Elasticsearch connector you can use in a stream, including:
+        /// </summary>
+        [Output("elasticsearchConnector")]
+        public Output<Outputs.DatastreamElasticsearchConnector?> ElasticsearchConnector { get; private set; } = null!;
+
+        /// <summary>
         /// A list of email addresses you want to notify about activations and deactivations of the stream.
         /// </summary>
         [Output("emailIds")]
@@ -106,6 +112,12 @@ namespace Pulumi.Akamai
         public Output<Outputs.DatastreamHttpsConnector?> HttpsConnector { get; private set; } = null!;
 
         /// <summary>
+        /// Specify details about the Loggly connector you can use in a stream, including:
+        /// </summary>
+        [Output("logglyConnector")]
+        public Output<Outputs.DatastreamLogglyConnector?> LogglyConnector { get; private set; } = null!;
+
+        /// <summary>
         /// The username who modified the stream
         /// </summary>
         [Output("modifiedBy")]
@@ -116,6 +128,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("modifiedDate")]
         public Output<string> ModifiedDate { get; private set; } = null!;
+
+        /// <summary>
+        /// Specify details about the New Relic connector you can use in a stream, including:
+        /// </summary>
+        [Output("newRelicConnector")]
+        public Output<Outputs.DatastreamNewRelicConnector?> NewRelicConnector { get; private set; } = null!;
 
         /// <summary>
         /// Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_&lt;timestamp&gt;.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
@@ -233,7 +251,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class DatastreamArgs : Pulumi.ResourceArgs
+    public sealed class DatastreamArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
@@ -277,6 +295,12 @@ namespace Pulumi.Akamai
             set => _datasetFieldsIds = value;
         }
 
+        /// <summary>
+        /// Specify details about the Elasticsearch connector you can use in a stream, including:
+        /// </summary>
+        [Input("elasticsearchConnector")]
+        public Input<Inputs.DatastreamElasticsearchConnectorArgs>? ElasticsearchConnector { get; set; }
+
         [Input("emailIds")]
         private InputList<string>? _emailIds;
 
@@ -306,6 +330,18 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("httpsConnector")]
         public Input<Inputs.DatastreamHttpsConnectorArgs>? HttpsConnector { get; set; }
+
+        /// <summary>
+        /// Specify details about the Loggly connector you can use in a stream, including:
+        /// </summary>
+        [Input("logglyConnector")]
+        public Input<Inputs.DatastreamLogglyConnectorArgs>? LogglyConnector { get; set; }
+
+        /// <summary>
+        /// Specify details about the New Relic connector you can use in a stream, including:
+        /// </summary>
+        [Input("newRelicConnector")]
+        public Input<Inputs.DatastreamNewRelicConnectorArgs>? NewRelicConnector { get; set; }
 
         /// <summary>
         /// Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_&lt;timestamp&gt;.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
@@ -364,9 +400,10 @@ namespace Pulumi.Akamai
         public DatastreamArgs()
         {
         }
+        public static new DatastreamArgs Empty => new DatastreamArgs();
     }
 
-    public sealed class DatastreamState : Pulumi.ResourceArgs
+    public sealed class DatastreamState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
@@ -422,6 +459,12 @@ namespace Pulumi.Akamai
             set => _datasetFieldsIds = value;
         }
 
+        /// <summary>
+        /// Specify details about the Elasticsearch connector you can use in a stream, including:
+        /// </summary>
+        [Input("elasticsearchConnector")]
+        public Input<Inputs.DatastreamElasticsearchConnectorGetArgs>? ElasticsearchConnector { get; set; }
+
         [Input("emailIds")]
         private InputList<string>? _emailIds;
 
@@ -459,6 +502,12 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamHttpsConnectorGetArgs>? HttpsConnector { get; set; }
 
         /// <summary>
+        /// Specify details about the Loggly connector you can use in a stream, including:
+        /// </summary>
+        [Input("logglyConnector")]
+        public Input<Inputs.DatastreamLogglyConnectorGetArgs>? LogglyConnector { get; set; }
+
+        /// <summary>
         /// The username who modified the stream
         /// </summary>
         [Input("modifiedBy")]
@@ -469,6 +518,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("modifiedDate")]
         public Input<string>? ModifiedDate { get; set; }
+
+        /// <summary>
+        /// Specify details about the New Relic connector you can use in a stream, including:
+        /// </summary>
+        [Input("newRelicConnector")]
+        public Input<Inputs.DatastreamNewRelicConnectorGetArgs>? NewRelicConnector { get; set; }
 
         /// <summary>
         /// Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_&lt;timestamp&gt;.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
@@ -551,5 +606,6 @@ namespace Pulumi.Akamai
         public DatastreamState()
         {
         }
+        public static new DatastreamState Empty => new DatastreamState();
     }
 }

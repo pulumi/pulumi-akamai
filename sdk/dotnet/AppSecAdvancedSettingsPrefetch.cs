@@ -25,39 +25,38 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var prefetch = new Akamai.AppSecAdvancedSettingsPrefetch("prefetch", new Akamai.AppSecAdvancedSettingsPrefetchArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             EnableAppLayer = false,
-    ///             AllExtensions = true,
-    ///             EnableRateControls = false,
-    ///             Extensions = 
-    ///             {
-    ///                 ".tiff",
-    ///                 ".bmp",
-    ///                 ".jpg",
-    ///                 ".gif",
-    ///                 ".png",
-    ///             },
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var prefetch = new Akamai.AppSecAdvancedSettingsPrefetch("prefetch", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         EnableAppLayer = false,
+    ///         AllExtensions = true,
+    ///         EnableRateControls = false,
+    ///         Extensions = new[]
+    ///         {
+    ///             ".tiff",
+    ///             ".bmp",
+    ///             ".jpg",
+    ///             ".gif",
+    ///             ".png",
+    ///         },
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch")]
-    public partial class AppSecAdvancedSettingsPrefetch : Pulumi.CustomResource
+    public partial class AppSecAdvancedSettingsPrefetch : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
@@ -133,7 +132,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecAdvancedSettingsPrefetchArgs : Pulumi.ResourceArgs
+    public sealed class AppSecAdvancedSettingsPrefetchArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
@@ -174,9 +173,10 @@ namespace Pulumi.Akamai
         public AppSecAdvancedSettingsPrefetchArgs()
         {
         }
+        public static new AppSecAdvancedSettingsPrefetchArgs Empty => new AppSecAdvancedSettingsPrefetchArgs();
     }
 
-    public sealed class AppSecAdvancedSettingsPrefetchState : Pulumi.ResourceArgs
+    public sealed class AppSecAdvancedSettingsPrefetchState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
@@ -217,5 +217,6 @@ namespace Pulumi.Akamai
         public AppSecAdvancedSettingsPrefetchState()
         {
         }
+        public static new AppSecAdvancedSettingsPrefetchState Empty => new AppSecAdvancedSettingsPrefetchState();
     }
 }

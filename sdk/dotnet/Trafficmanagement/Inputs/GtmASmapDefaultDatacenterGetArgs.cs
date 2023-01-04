@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Trafficmanagement.Inputs
 {
 
-    public sealed class GtmASmapDefaultDatacenterGetArgs : Pulumi.ResourceArgs
+    public sealed class GtmASmapDefaultDatacenterGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A unique identifier for an existing data center in the domain.
@@ -27,5 +27,6 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
         public GtmASmapDefaultDatacenterGetArgs()
         {
         }
+        public static new GtmASmapDefaultDatacenterGetArgs Empty => new GtmASmapDefaultDatacenterGetArgs();
     }
 }

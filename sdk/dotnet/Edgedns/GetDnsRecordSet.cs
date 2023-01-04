@@ -13,14 +13,14 @@ namespace Pulumi.Akamai.Edgedns
     public static class GetDnsRecordSet
     {
         public static Task<GetDnsRecordSetResult> InvokeAsync(GetDnsRecordSetArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDnsRecordSetResult>("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", args ?? new GetDnsRecordSetArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDnsRecordSetResult>("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", args ?? new GetDnsRecordSetArgs(), options.WithDefaults());
 
         public static Output<GetDnsRecordSetResult> Invoke(GetDnsRecordSetInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDnsRecordSetResult>("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", args ?? new GetDnsRecordSetInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDnsRecordSetResult>("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", args ?? new GetDnsRecordSetInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetDnsRecordSetArgs : Pulumi.InvokeArgs
+    public sealed class GetDnsRecordSetArgs : global::Pulumi.InvokeArgs
     {
         [Input("host", required: true)]
         public string Host { get; set; } = null!;
@@ -34,9 +34,10 @@ namespace Pulumi.Akamai.Edgedns
         public GetDnsRecordSetArgs()
         {
         }
+        public static new GetDnsRecordSetArgs Empty => new GetDnsRecordSetArgs();
     }
 
-    public sealed class GetDnsRecordSetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDnsRecordSetInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("host", required: true)]
         public Input<string> Host { get; set; } = null!;
@@ -50,6 +51,7 @@ namespace Pulumi.Akamai.Edgedns
         public GetDnsRecordSetInvokeArgs()
         {
         }
+        public static new GetDnsRecordSetInvokeArgs Empty => new GetDnsRecordSetInvokeArgs();
     }
 
 

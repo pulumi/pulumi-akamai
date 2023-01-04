@@ -17,58 +17,56 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var example = new Akamai.CloudletsApplicationLoadBalancer("example", new()
     ///     {
-    ///         var example = new Akamai.CloudletsApplicationLoadBalancer("example", new Akamai.CloudletsApplicationLoadBalancerArgs
+    ///         BalancingType = "WEIGHTED",
+    ///         DataCenters = new[]
     ///         {
-    ///             BalancingType = "WEIGHTED",
-    ///             DataCenters = 
+    ///             new Akamai.Inputs.CloudletsApplicationLoadBalancerDataCenterArgs
     ///             {
-    ///                 new Akamai.Inputs.CloudletsApplicationLoadBalancerDataCenterArgs
+    ///                 City = "Boston",
+    ///                 CloudServerHostHeaderOverride = false,
+    ///                 CloudService = true,
+    ///                 Continent = "NA",
+    ///                 Country = "US",
+    ///                 Hostname = "example-hostname",
+    ///                 Latitude = 102.78108,
+    ///                 LivenessHosts = new[]
     ///                 {
-    ///                     City = "Boston",
-    ///                     CloudServerHostHeaderOverride = false,
-    ///                     CloudService = true,
-    ///                     Continent = "NA",
-    ///                     Country = "US",
-    ///                     Hostname = "example-hostname",
-    ///                     Latitude = 102.78108,
-    ///                     LivenessHosts = 
-    ///                     {
-    ///                         "example",
-    ///                     },
-    ///                     Longitude = -116.07064,
-    ///                     OriginId = "alb_test_1",
-    ///                     Percent = 100,
-    ///                     StateOrProvince = "MA",
+    ///                     "example",
     ///                 },
+    ///                 Longitude = -116.07064,
+    ///                 OriginId = "alb_test_1",
+    ///                 Percent = 100,
+    ///                 StateOrProvince = "MA",
     ///             },
-    ///             Description = "application_load_balancer description",
-    ///             LivenessSettings = new Akamai.Inputs.CloudletsApplicationLoadBalancerLivenessSettingsArgs
+    ///         },
+    ///         Description = "application_load_balancer description",
+    ///         LivenessSettings = new Akamai.Inputs.CloudletsApplicationLoadBalancerLivenessSettingsArgs
+    ///         {
+    ///             AdditionalHeaders = 
     ///             {
-    ///                 AdditionalHeaders = 
-    ///                 {
-    ///                     { "additionalHeaders", "123" },
-    ///                 },
-    ///                 HostHeader = "header",
-    ///                 Interval = 10,
-    ///                 Path = "/status",
-    ///                 Port = 1234,
-    ///                 Protocol = "HTTP",
-    ///                 RequestString = "test_request_string",
-    ///                 ResponseString = "test_response_string",
-    ///                 Timeout = 60,
+    ///                 { "additionalHeaders", "123" },
     ///             },
-    ///             OriginId = "alb_test_1",
-    ///         });
-    ///     }
+    ///             HostHeader = "header",
+    ///             Interval = 10,
+    ///             Path = "/status",
+    ///             Port = 1234,
+    ///             Protocol = "HTTP",
+    ///             RequestString = "test_request_string",
+    ///             ResponseString = "test_response_string",
+    ///             Timeout = 60,
+    ///         },
+    ///         OriginId = "alb_test_1",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -84,7 +82,7 @@ namespace Pulumi.Akamai
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer")]
-    public partial class CloudletsApplicationLoadBalancer : Pulumi.CustomResource
+    public partial class CloudletsApplicationLoadBalancer : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
@@ -172,7 +170,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class CloudletsApplicationLoadBalancerArgs : Pulumi.ResourceArgs
+    public sealed class CloudletsApplicationLoadBalancerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
@@ -213,9 +211,10 @@ namespace Pulumi.Akamai
         public CloudletsApplicationLoadBalancerArgs()
         {
         }
+        public static new CloudletsApplicationLoadBalancerArgs Empty => new CloudletsApplicationLoadBalancerArgs();
     }
 
-    public sealed class CloudletsApplicationLoadBalancerState : Pulumi.ResourceArgs
+    public sealed class CloudletsApplicationLoadBalancerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
@@ -268,5 +267,6 @@ namespace Pulumi.Akamai
         public CloudletsApplicationLoadBalancerState()
         {
         }
+        public static new CloudletsApplicationLoadBalancerState Empty => new CloudletsApplicationLoadBalancerState();
     }
 }

@@ -21,13 +21,16 @@ class GetAppSecSecurityPolicyResult:
     """
     A collection of values returned by getAppSecSecurityPolicy.
     """
-    def __init__(__self__, config_id=None, id=None, output_text=None, security_policy_id=None, security_policy_id_lists=None, security_policy_name=None):
+    def __init__(__self__, config_id=None, id=None, json=None, output_text=None, security_policy_id=None, security_policy_id_lists=None, security_policy_name=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if json and not isinstance(json, str):
+            raise TypeError("Expected argument 'json' to be a str")
+        pulumi.set(__self__, "json", json)
         if output_text and not isinstance(output_text, str):
             raise TypeError("Expected argument 'output_text' to be a str")
         pulumi.set(__self__, "output_text", output_text)
@@ -53,6 +56,11 @@ class GetAppSecSecurityPolicyResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def json(self) -> str:
+        return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
@@ -83,6 +91,7 @@ class AwaitableGetAppSecSecurityPolicyResult(GetAppSecSecurityPolicyResult):
         return GetAppSecSecurityPolicyResult(
             config_id=self.config_id,
             id=self.id,
+            json=self.json,
             output_text=self.output_text,
             security_policy_id=self.security_policy_id,
             security_policy_id_lists=self.security_policy_id_lists,
@@ -107,6 +116,7 @@ def get_app_sec_security_policy(config_id: Optional[int] = None,
     return AwaitableGetAppSecSecurityPolicyResult(
         config_id=__ret__.config_id,
         id=__ret__.id,
+        json=__ret__.json,
         output_text=__ret__.output_text,
         security_policy_id=__ret__.security_policy_id,
         security_policy_id_lists=__ret__.security_policy_id_lists,

@@ -20,7 +20,7 @@ namespace Pulumi.Akamai
     /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://techdocs.akamai.com/application-security/reference/put-reputation-analysis)
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecReputationProfileAnalysis:AppSecReputationProfileAnalysis")]
-    public partial class AppSecReputationProfileAnalysis : Pulumi.CustomResource
+    public partial class AppSecReputationProfileAnalysis : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
@@ -90,7 +90,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecReputationProfileAnalysisArgs : Pulumi.ResourceArgs
+    public sealed class AppSecReputationProfileAnalysisArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
@@ -119,9 +119,10 @@ namespace Pulumi.Akamai
         public AppSecReputationProfileAnalysisArgs()
         {
         }
+        public static new AppSecReputationProfileAnalysisArgs Empty => new AppSecReputationProfileAnalysisArgs();
     }
 
-    public sealed class AppSecReputationProfileAnalysisState : Pulumi.ResourceArgs
+    public sealed class AppSecReputationProfileAnalysisState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
@@ -150,5 +151,6 @@ namespace Pulumi.Akamai
         public AppSecReputationProfileAnalysisState()
         {
         }
+        public static new AppSecReputationProfileAnalysisState Empty => new AppSecReputationProfileAnalysisState();
     }
 }

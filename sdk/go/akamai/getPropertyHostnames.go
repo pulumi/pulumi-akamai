@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			ctx.Export("propertyHostnames", data.Akamai_property_hostnames.My-example.Hostnames)
+//			ctx.Export("propertyHostnames", data.Akamai_property_hostnames.MyExample.Hostnames)
 //			return nil
 //		})
 //	}

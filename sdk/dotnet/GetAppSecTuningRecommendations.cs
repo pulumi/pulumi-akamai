@@ -28,44 +28,43 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = @var.Security_configuration,
-        ///         }));
-        ///         var policyRecommendations = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecTuningRecommendations.InvokeAsync(new Akamai.GetAppSecTuningRecommendationsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///         })));
-        ///         this.PolicyRecommendationsJson = policyRecommendations.Apply(policyRecommendations =&gt; policyRecommendations.Json);
-        ///         var attackGroupRecommendations = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecTuningRecommendations.InvokeAsync(new Akamai.GetAppSecTuningRecommendationsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///             RulesetType = @var.Ruleset_type,
-        ///             AttackGroup = @var.Attack_group,
-        ///         })));
-        ///         this.AttackGroupRecommendationsJson = attackGroupRecommendations.Apply(attackGroupRecommendations =&gt; attackGroupRecommendations.Json);
-        ///     }
+        ///         Name = @var.Security_configuration,
+        ///     });
         /// 
-        ///     [Output("policyRecommendationsJson")]
-        ///     public Output&lt;string&gt; PolicyRecommendationsJson { get; set; }
-        ///     [Output("attackGroupRecommendationsJson")]
-        ///     public Output&lt;string&gt; AttackGroupRecommendationsJson { get; set; }
-        /// }
+        ///     var policyRecommendations = Akamai.GetAppSecTuningRecommendations.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = @var.Security_policy_id,
+        ///     });
+        /// 
+        ///     var attackGroupRecommendations = Akamai.GetAppSecTuningRecommendations.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = @var.Security_policy_id,
+        ///         RulesetType = @var.Ruleset_type,
+        ///         AttackGroup = @var.Attack_group,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["policyRecommendationsJson"] = policyRecommendations.Apply(getAppSecTuningRecommendationsResult =&gt; getAppSecTuningRecommendationsResult.Json),
+        ///         ["attackGroupRecommendationsJson"] = attackGroupRecommendations.Apply(getAppSecTuningRecommendationsResult =&gt; getAppSecTuningRecommendationsResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAppSecTuningRecommendationsResult> InvokeAsync(GetAppSecTuningRecommendationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecTuningRecommendationsResult>("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", args ?? new GetAppSecTuningRecommendationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecTuningRecommendationsResult>("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", args ?? new GetAppSecTuningRecommendationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Returns tuning recommendations for the specified attack group or rule (or, if both the `attack_group` and the `rule_id` arguments are not included, returns tuning recommendations for all the attack groups and rules in the specified security policy).
@@ -84,48 +83,47 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = @var.Security_configuration,
-        ///         }));
-        ///         var policyRecommendations = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecTuningRecommendations.InvokeAsync(new Akamai.GetAppSecTuningRecommendationsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///         })));
-        ///         this.PolicyRecommendationsJson = policyRecommendations.Apply(policyRecommendations =&gt; policyRecommendations.Json);
-        ///         var attackGroupRecommendations = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecTuningRecommendations.InvokeAsync(new Akamai.GetAppSecTuningRecommendationsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = @var.Security_policy_id,
-        ///             RulesetType = @var.Ruleset_type,
-        ///             AttackGroup = @var.Attack_group,
-        ///         })));
-        ///         this.AttackGroupRecommendationsJson = attackGroupRecommendations.Apply(attackGroupRecommendations =&gt; attackGroupRecommendations.Json);
-        ///     }
+        ///         Name = @var.Security_configuration,
+        ///     });
         /// 
-        ///     [Output("policyRecommendationsJson")]
-        ///     public Output&lt;string&gt; PolicyRecommendationsJson { get; set; }
-        ///     [Output("attackGroupRecommendationsJson")]
-        ///     public Output&lt;string&gt; AttackGroupRecommendationsJson { get; set; }
-        /// }
+        ///     var policyRecommendations = Akamai.GetAppSecTuningRecommendations.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = @var.Security_policy_id,
+        ///     });
+        /// 
+        ///     var attackGroupRecommendations = Akamai.GetAppSecTuningRecommendations.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = @var.Security_policy_id,
+        ///         RulesetType = @var.Ruleset_type,
+        ///         AttackGroup = @var.Attack_group,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["policyRecommendationsJson"] = policyRecommendations.Apply(getAppSecTuningRecommendationsResult =&gt; getAppSecTuningRecommendationsResult.Json),
+        ///         ["attackGroupRecommendationsJson"] = attackGroupRecommendations.Apply(getAppSecTuningRecommendationsResult =&gt; getAppSecTuningRecommendationsResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAppSecTuningRecommendationsResult> Invoke(GetAppSecTuningRecommendationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecTuningRecommendationsResult>("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", args ?? new GetAppSecTuningRecommendationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecTuningRecommendationsResult>("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", args ?? new GetAppSecTuningRecommendationsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecTuningRecommendationsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecTuningRecommendationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique name of the attack group you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
@@ -160,9 +158,10 @@ namespace Pulumi.Akamai
         public GetAppSecTuningRecommendationsArgs()
         {
         }
+        public static new GetAppSecTuningRecommendationsArgs Empty => new GetAppSecTuningRecommendationsArgs();
     }
 
-    public sealed class GetAppSecTuningRecommendationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecTuningRecommendationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique name of the attack group you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
@@ -197,6 +196,7 @@ namespace Pulumi.Akamai
         public GetAppSecTuningRecommendationsInvokeArgs()
         {
         }
+        public static new GetAppSecTuningRecommendationsInvokeArgs Empty => new GetAppSecTuningRecommendationsInvokeArgs();
     }
 
 

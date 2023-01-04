@@ -45,6 +45,8 @@ type Datastream struct {
 	DatadogConnector DatastreamDatadogConnectorPtrOutput `pulumi:"datadogConnector"`
 	// Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
 	DatasetFieldsIds pulumi.IntArrayOutput `pulumi:"datasetFieldsIds"`
+	// Specify details about the Elasticsearch connector you can use in a stream, including:
+	ElasticsearchConnector DatastreamElasticsearchConnectorPtrOutput `pulumi:"elasticsearchConnector"`
 	// A list of email addresses you want to notify about activations and deactivations of the stream.
 	EmailIds pulumi.StringArrayOutput `pulumi:"emailIds"`
 	// Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
@@ -55,10 +57,14 @@ type Datastream struct {
 	GroupName pulumi.StringOutput `pulumi:"groupName"`
 	// Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
 	HttpsConnector DatastreamHttpsConnectorPtrOutput `pulumi:"httpsConnector"`
+	// Specify details about the Loggly connector you can use in a stream, including:
+	LogglyConnector DatastreamLogglyConnectorPtrOutput `pulumi:"logglyConnector"`
 	// The username who modified the stream
 	ModifiedBy pulumi.StringOutput `pulumi:"modifiedBy"`
 	// The date and time when the stream was modified
 	ModifiedDate pulumi.StringOutput `pulumi:"modifiedDate"`
+	// Specify details about the New Relic connector you can use in a stream, including:
+	NewRelicConnector DatastreamNewRelicConnectorPtrOutput `pulumi:"newRelicConnector"`
 	// Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `accessKey` and `secretAccessKey` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
 	OracleConnector DatastreamOracleConnectorPtrOutput `pulumi:"oracleConnector"`
 	// The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
@@ -157,6 +163,8 @@ type datastreamState struct {
 	DatadogConnector *DatastreamDatadogConnector `pulumi:"datadogConnector"`
 	// Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
 	DatasetFieldsIds []int `pulumi:"datasetFieldsIds"`
+	// Specify details about the Elasticsearch connector you can use in a stream, including:
+	ElasticsearchConnector *DatastreamElasticsearchConnector `pulumi:"elasticsearchConnector"`
 	// A list of email addresses you want to notify about activations and deactivations of the stream.
 	EmailIds []string `pulumi:"emailIds"`
 	// Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
@@ -167,10 +175,14 @@ type datastreamState struct {
 	GroupName *string `pulumi:"groupName"`
 	// Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
 	HttpsConnector *DatastreamHttpsConnector `pulumi:"httpsConnector"`
+	// Specify details about the Loggly connector you can use in a stream, including:
+	LogglyConnector *DatastreamLogglyConnector `pulumi:"logglyConnector"`
 	// The username who modified the stream
 	ModifiedBy *string `pulumi:"modifiedBy"`
 	// The date and time when the stream was modified
 	ModifiedDate *string `pulumi:"modifiedDate"`
+	// Specify details about the New Relic connector you can use in a stream, including:
+	NewRelicConnector *DatastreamNewRelicConnector `pulumi:"newRelicConnector"`
 	// Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `accessKey` and `secretAccessKey` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
 	OracleConnector *DatastreamOracleConnector `pulumi:"oracleConnector"`
 	// The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
@@ -214,6 +226,8 @@ type DatastreamState struct {
 	DatadogConnector DatastreamDatadogConnectorPtrInput
 	// Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
 	DatasetFieldsIds pulumi.IntArrayInput
+	// Specify details about the Elasticsearch connector you can use in a stream, including:
+	ElasticsearchConnector DatastreamElasticsearchConnectorPtrInput
 	// A list of email addresses you want to notify about activations and deactivations of the stream.
 	EmailIds pulumi.StringArrayInput
 	// Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
@@ -224,10 +238,14 @@ type DatastreamState struct {
 	GroupName pulumi.StringPtrInput
 	// Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
 	HttpsConnector DatastreamHttpsConnectorPtrInput
+	// Specify details about the Loggly connector you can use in a stream, including:
+	LogglyConnector DatastreamLogglyConnectorPtrInput
 	// The username who modified the stream
 	ModifiedBy pulumi.StringPtrInput
 	// The date and time when the stream was modified
 	ModifiedDate pulumi.StringPtrInput
+	// Specify details about the New Relic connector you can use in a stream, including:
+	NewRelicConnector DatastreamNewRelicConnectorPtrInput
 	// Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `accessKey` and `secretAccessKey` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
 	OracleConnector DatastreamOracleConnectorPtrInput
 	// The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
@@ -271,6 +289,8 @@ type datastreamArgs struct {
 	DatadogConnector *DatastreamDatadogConnector `pulumi:"datadogConnector"`
 	// Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
 	DatasetFieldsIds []int `pulumi:"datasetFieldsIds"`
+	// Specify details about the Elasticsearch connector you can use in a stream, including:
+	ElasticsearchConnector *DatastreamElasticsearchConnector `pulumi:"elasticsearchConnector"`
 	// A list of email addresses you want to notify about activations and deactivations of the stream.
 	EmailIds []string `pulumi:"emailIds"`
 	// Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
@@ -279,6 +299,10 @@ type datastreamArgs struct {
 	GroupId string `pulumi:"groupId"`
 	// Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
 	HttpsConnector *DatastreamHttpsConnector `pulumi:"httpsConnector"`
+	// Specify details about the Loggly connector you can use in a stream, including:
+	LogglyConnector *DatastreamLogglyConnector `pulumi:"logglyConnector"`
+	// Specify details about the New Relic connector you can use in a stream, including:
+	NewRelicConnector *DatastreamNewRelicConnector `pulumi:"newRelicConnector"`
 	// Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `accessKey` and `secretAccessKey` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
 	OracleConnector *DatastreamOracleConnector `pulumi:"oracleConnector"`
 	// Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
@@ -311,6 +335,8 @@ type DatastreamArgs struct {
 	DatadogConnector DatastreamDatadogConnectorPtrInput
 	// Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
 	DatasetFieldsIds pulumi.IntArrayInput
+	// Specify details about the Elasticsearch connector you can use in a stream, including:
+	ElasticsearchConnector DatastreamElasticsearchConnectorPtrInput
 	// A list of email addresses you want to notify about activations and deactivations of the stream.
 	EmailIds pulumi.StringArrayInput
 	// Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
@@ -319,6 +345,10 @@ type DatastreamArgs struct {
 	GroupId pulumi.StringInput
 	// Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
 	HttpsConnector DatastreamHttpsConnectorPtrInput
+	// Specify details about the Loggly connector you can use in a stream, including:
+	LogglyConnector DatastreamLogglyConnectorPtrInput
+	// Specify details about the New Relic connector you can use in a stream, including:
+	NewRelicConnector DatastreamNewRelicConnectorPtrInput
 	// Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `accessKey` and `secretAccessKey` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
 	OracleConnector DatastreamOracleConnectorPtrInput
 	// Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
@@ -464,6 +494,11 @@ func (o DatastreamOutput) DatasetFieldsIds() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.IntArrayOutput { return v.DatasetFieldsIds }).(pulumi.IntArrayOutput)
 }
 
+// Specify details about the Elasticsearch connector you can use in a stream, including:
+func (o DatastreamOutput) ElasticsearchConnector() DatastreamElasticsearchConnectorPtrOutput {
+	return o.ApplyT(func(v *Datastream) DatastreamElasticsearchConnectorPtrOutput { return v.ElasticsearchConnector }).(DatastreamElasticsearchConnectorPtrOutput)
+}
+
 // A list of email addresses you want to notify about activations and deactivations of the stream.
 func (o DatastreamOutput) EmailIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.StringArrayOutput { return v.EmailIds }).(pulumi.StringArrayOutput)
@@ -489,6 +524,11 @@ func (o DatastreamOutput) HttpsConnector() DatastreamHttpsConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamHttpsConnectorPtrOutput { return v.HttpsConnector }).(DatastreamHttpsConnectorPtrOutput)
 }
 
+// Specify details about the Loggly connector you can use in a stream, including:
+func (o DatastreamOutput) LogglyConnector() DatastreamLogglyConnectorPtrOutput {
+	return o.ApplyT(func(v *Datastream) DatastreamLogglyConnectorPtrOutput { return v.LogglyConnector }).(DatastreamLogglyConnectorPtrOutput)
+}
+
 // The username who modified the stream
 func (o DatastreamOutput) ModifiedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.ModifiedBy }).(pulumi.StringOutput)
@@ -497,6 +537,11 @@ func (o DatastreamOutput) ModifiedBy() pulumi.StringOutput {
 // The date and time when the stream was modified
 func (o DatastreamOutput) ModifiedDate() pulumi.StringOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.ModifiedDate }).(pulumi.StringOutput)
+}
+
+// Specify details about the New Relic connector you can use in a stream, including:
+func (o DatastreamOutput) NewRelicConnector() DatastreamNewRelicConnectorPtrOutput {
+	return o.ApplyT(func(v *Datastream) DatastreamNewRelicConnectorPtrOutput { return v.NewRelicConnector }).(DatastreamNewRelicConnectorPtrOutput)
 }
 
 // Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `accessKey` and `secretAccessKey` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.

@@ -14,27 +14,6 @@ import * as utilities from "./utilities";
  * account administrators can assign properties to specific groups, each with
  * its own set of users and accompanying roles.
  *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const exampleGroup = pulumi.output(akamai.getGroup({
- *     contractId: "",
- *     "data.akamai_contract.example.id": [{}],
- *     groupName: "example group name",
- * }));
- * const exampleContract = pulumi.output(akamai.getContract({
- *     groupName: "example group name",
- * }));
- * const exampleProperty = new akamai.Property("example", {
- *     "data.akamai_group.example.id": [{}],
- *     groupId: "",
- * });
- * ```
  * ## Attributes reference
  *
  * This data source returns this attribute:
@@ -43,11 +22,8 @@ import * as utilities from "./utilities";
  */
 export function getGroup(args?: GetGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetGroupResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getGroup:getGroup", {
         "contract": args.contract,
         "contractId": args.contractId,
@@ -101,9 +77,24 @@ export interface GetGroupResult {
      */
     readonly name: string;
 }
-
+/**
+ * Use the `akamai.getGroup` data source to get a group by name.
+ *
+ * Each account features a hierarchy of groups, which control access to your
+ * Akamai configurations and help consolidate reporting functions, typically
+ * mapping to an organizational hierarchy. Using either Control Center or the
+ * [Identity Management: User Administration API](https://techdocs.akamai.com/iam-api/reference/api),
+ * account administrators can assign properties to specific groups, each with
+ * its own set of users and accompanying roles.
+ *
+ * ## Attributes reference
+ *
+ * This data source returns this attribute:
+ *
+ * * `id` - The group's unique ID, including the `grp_` prefix.
+ */
 export function getGroupOutput(args?: GetGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGroupResult> {
-    return pulumi.output(args).apply(a => getGroup(a, opts))
+    return pulumi.output(args).apply((a: any) => getGroup(a, opts))
 }
 
 /**

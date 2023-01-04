@@ -23,23 +23,23 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.GetCloudletsForwardRewriteMatchRule(ctx, &GetCloudletsForwardRewriteMatchRuleArgs{
-//				MatchRules: []GetCloudletsForwardRewriteMatchRuleMatchRule{
-//					GetCloudletsForwardRewriteMatchRuleMatchRule{
-//						ForwardSettings: GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings{
+//			_, err = akamai.GetCloudletsForwardRewriteMatchRule(ctx, &akamai.GetCloudletsForwardRewriteMatchRuleArgs{
+//				MatchRules: []akamai.GetCloudletsForwardRewriteMatchRuleMatchRule{
+//					akamai.GetCloudletsForwardRewriteMatchRuleMatchRule{
+//						ForwardSettings: akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings{
 //							OriginId:               pulumi.StringRef("1234"),
 //							PathAndQs:              pulumi.StringRef("/path"),
 //							UseIncomingQueryString: pulumi.BoolRef(true),
 //						},
-//						Matches: []GetCloudletsForwardRewriteMatchRuleMatchRuleMatch{
-//							GetCloudletsForwardRewriteMatchRuleMatchRuleMatch{
+//						Matches: []akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleMatch{
+//							akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleMatch{
 //								CaseSensitive: pulumi.BoolRef(false),
 //								CheckIps:      pulumi.StringRef("CONNECTING_IP XFF_HEADERS"),
 //								MatchOperator: pulumi.StringRef("equals"),

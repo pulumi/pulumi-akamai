@@ -25,23 +25,20 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var hostnameCoverage = Output.Create(Akamai.GetAppSecHostnameCoverage.InvokeAsync());
-        ///         this.HostnameCoverageListJson = hostnameCoverage.Apply(hostnameCoverage =&gt; hostnameCoverage.Json);
-        ///         this.HostnameCoverageListOutput = hostnameCoverage.Apply(hostnameCoverage =&gt; hostnameCoverage.OutputText);
-        ///     }
+        ///     var hostnameCoverage = Akamai.GetAppSecHostnameCoverage.Invoke();
         /// 
-        ///     [Output("hostnameCoverageListJson")]
-        ///     public Output&lt;string&gt; HostnameCoverageListJson { get; set; }
-        ///     [Output("hostnameCoverageListOutput")]
-        ///     public Output&lt;string&gt; HostnameCoverageListOutput { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["hostnameCoverageListJson"] = hostnameCoverage.Apply(getAppSecHostnameCoverageResult =&gt; getAppSecHostnameCoverageResult.Json),
+        ///         ["hostnameCoverageListOutput"] = hostnameCoverage.Apply(getAppSecHostnameCoverageResult =&gt; getAppSecHostnameCoverageResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,7 +50,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the hostname coverage information.
         /// </summary>
         public static Task<GetAppSecHostnameCoverageResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageResult>("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageResult>("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

@@ -30,7 +30,7 @@ namespace Pulumi.Akamai
             }
         }
 
-        private static readonly Pulumi.Config __config = new Pulumi.Config("akamai");
+        private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("akamai");
 
         private static readonly __Value<string?> _appsecSection = new __Value<string?>(() => __config.Get("appsecSection"));
         public static string? AppsecSection

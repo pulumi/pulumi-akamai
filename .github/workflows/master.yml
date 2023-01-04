@@ -23,6 +23,7 @@ env:
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
   TRAVIS_OS_NAME: linux
   TF_APPEND_USER_AGENT: pulumi
+  VERSION_PREFIX: 4.0.0
 jobs:
   build_sdk:
     name: build_sdk

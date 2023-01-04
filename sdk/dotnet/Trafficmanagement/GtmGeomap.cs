@@ -21,30 +21,28 @@ namespace Pulumi.Akamai.Trafficmanagement
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var demoGeomap = new Akamai.GtmGeomap("demoGeomap", new()
     ///     {
-    ///         var demoGeomap = new Akamai.GtmGeomap("demoGeomap", new Akamai.GtmGeomapArgs
+    ///         DefaultDatacenter = new Akamai.Inputs.GtmGeomapDefaultDatacenterArgs
     ///         {
-    ///             DefaultDatacenter = new Akamai.Inputs.GtmGeomapDefaultDatacenterArgs
-    ///             {
-    ///                 DatacenterId = 5400,
-    ///                 Nickname = "All Others",
-    ///             },
-    ///             Domain = "demo_domain.akadns.net",
-    ///         });
-    ///     }
+    ///             DatacenterId = 5400,
+    ///             Nickname = "All Others",
+    ///         },
+    ///         Domain = "demo_domain.akadns.net",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [Obsolete(@"akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmGeomap:GtmGeomap")]
-    public partial class GtmGeomap : Pulumi.CustomResource
+    public partial class GtmGeomap : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
@@ -120,7 +118,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         }
     }
 
-    public sealed class GtmGeomapArgs : Pulumi.ResourceArgs
+    public sealed class GtmGeomapArgs : global::Pulumi.ResourceArgs
     {
         [Input("assignments")]
         private InputList<Inputs.GtmGeomapAssignmentArgs>? _assignments;
@@ -161,9 +159,10 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmGeomapArgs()
         {
         }
+        public static new GtmGeomapArgs Empty => new GtmGeomapArgs();
     }
 
-    public sealed class GtmGeomapState : Pulumi.ResourceArgs
+    public sealed class GtmGeomapState : global::Pulumi.ResourceArgs
     {
         [Input("assignments")]
         private InputList<Inputs.GtmGeomapAssignmentGetArgs>? _assignments;
@@ -204,5 +203,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmGeomapState()
         {
         }
+        public static new GtmGeomapState Empty => new GtmGeomapState();
     }
 }

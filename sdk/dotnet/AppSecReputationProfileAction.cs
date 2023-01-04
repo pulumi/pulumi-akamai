@@ -21,37 +21,35 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var appsecReputationProfileAction = new Akamai.AppSecReputationProfileAction("appsecReputationProfileAction", new Akamai.AppSecReputationProfileActionArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             ReputationProfileId = 130713,
-    ///             Action = "alert",
-    ///         });
-    ///         this.ReputationProfileId = appsecReputationProfileAction.ReputationProfileId;
-    ///         this.ReputationProfileAction = appsecReputationProfileAction.Action;
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    ///     [Output("reputationProfileId")]
-    ///     public Output&lt;string&gt; ReputationProfileId { get; set; }
-    ///     [Output("reputationProfileAction")]
-    ///     public Output&lt;string&gt; ReputationProfileAction { get; set; }
-    /// }
+    ///     var appsecReputationProfileAction = new Akamai.AppSecReputationProfileAction("appsecReputationProfileAction", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         ReputationProfileId = 130713,
+    ///         Action = "alert",
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["reputationProfileId"] = appsecReputationProfileAction.ReputationProfileId,
+    ///         ["reputationProfileAction"] = appsecReputationProfileAction.Action,
+    ///     };
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecReputationProfileAction:AppSecReputationProfileAction")]
-    public partial class AppSecReputationProfileAction : Pulumi.CustomResource
+    public partial class AppSecReputationProfileAction : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Action taken any time the reputation profile is triggered. Allows values are:
@@ -125,7 +123,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecReputationProfileActionArgs : Pulumi.ResourceArgs
+    public sealed class AppSecReputationProfileActionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Action taken any time the reputation profile is triggered. Allows values are:
@@ -158,9 +156,10 @@ namespace Pulumi.Akamai
         public AppSecReputationProfileActionArgs()
         {
         }
+        public static new AppSecReputationProfileActionArgs Empty => new AppSecReputationProfileActionArgs();
     }
 
-    public sealed class AppSecReputationProfileActionState : Pulumi.ResourceArgs
+    public sealed class AppSecReputationProfileActionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Action taken any time the reputation profile is triggered. Allows values are:
@@ -193,5 +192,6 @@ namespace Pulumi.Akamai
         public AppSecReputationProfileActionState()
         {
         }
+        public static new AppSecReputationProfileActionState Empty => new AppSecReputationProfileActionState();
     }
 }

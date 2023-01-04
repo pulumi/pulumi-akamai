@@ -74,7 +74,7 @@ export class AppSecReputationProfile extends pulumi.CustomResource {
      */
     public readonly reputationProfile!: pulumi.Output<string>;
     /**
-     * Unique identifer of the reputation profile
+     * Unique identifier of the reputation profile
      */
     public /*out*/ readonly reputationProfileId!: pulumi.Output<number>;
 
@@ -124,7 +124,7 @@ export interface AppSecReputationProfileState {
      */
     reputationProfile?: pulumi.Input<string>;
     /**
-     * Unique identifer of the reputation profile
+     * Unique identifier of the reputation profile
      */
     reputationProfileId?: pulumi.Input<number>;
 }

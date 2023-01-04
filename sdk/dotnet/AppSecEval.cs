@@ -23,38 +23,32 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var evalOperation = new Akamai.AppSecEval("evalOperation", new Akamai.AppSecEvalArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             EvalOperation = "START",
-    ///         });
-    ///         this.EvalModeEvaluatingRuleset = evalOperation.EvaluatingRuleset;
-    ///         this.EvalModeExpirationDate = evalOperation.ExpirationDate;
-    ///         this.EvalModeCurrentRuleset = evalOperation.CurrentRuleset;
-    ///         this.EvalModeStatus = evalOperation.EvalStatus;
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    ///     [Output("evalModeEvaluatingRuleset")]
-    ///     public Output&lt;string&gt; EvalModeEvaluatingRuleset { get; set; }
-    ///     [Output("evalModeExpirationDate")]
-    ///     public Output&lt;string&gt; EvalModeExpirationDate { get; set; }
-    ///     [Output("evalModeCurrentRuleset")]
-    ///     public Output&lt;string&gt; EvalModeCurrentRuleset { get; set; }
-    ///     [Output("evalModeStatus")]
-    ///     public Output&lt;string&gt; EvalModeStatus { get; set; }
-    /// }
+    ///     var evalOperation = new Akamai.AppSecEval("evalOperation", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         EvalOperation = "START",
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["evalModeEvaluatingRuleset"] = evalOperation.EvaluatingRuleset,
+    ///         ["evalModeExpirationDate"] = evalOperation.ExpirationDate,
+    ///         ["evalModeCurrentRuleset"] = evalOperation.CurrentRuleset,
+    ///         ["evalModeStatus"] = evalOperation.EvalStatus,
+    ///     };
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -66,7 +60,7 @@ namespace Pulumi.Akamai
     /// - `eval_status`. If **true**, an evaluation is currently in progress; if **false**, evaluation is either paused or is not running.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecEval:AppSecEval")]
-    public partial class AppSecEval : Pulumi.CustomResource
+    public partial class AppSecEval : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
@@ -165,7 +159,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecEvalArgs : Pulumi.ResourceArgs
+    public sealed class AppSecEvalArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
@@ -199,9 +193,10 @@ namespace Pulumi.Akamai
         public AppSecEvalArgs()
         {
         }
+        public static new AppSecEvalArgs Empty => new AppSecEvalArgs();
     }
 
-    public sealed class AppSecEvalState : Pulumi.ResourceArgs
+    public sealed class AppSecEvalState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
@@ -259,5 +254,6 @@ namespace Pulumi.Akamai
         public AppSecEvalState()
         {
         }
+        public static new AppSecEvalState Empty => new AppSecEvalState();
     }
 }

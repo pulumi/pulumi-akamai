@@ -24,10 +24,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * Use the `akamai.CpsDvEnrollment` resource to create an enrollment with all the information about your certificate life cycle, from the time you request it, through removal or automatic renewal. You can treat an enrollment as a core container for all the operations you perform within CPS.
- * 
- * You can use this resource with `akamai.DnsRecord` or other third-party DNS provider to create DNS records, and `akamai.CpsDvValidation` to complete the certificate validation.
- * 
  * ## Example Usage
  * 
  * Basic usage:
@@ -95,12 +91,11 @@ import javax.annotation.Nullable;
  *             .certificateChainType(&#34;default&#34;)
  *             .csr(CpsDvEnrollmentCsrArgs.builder()
  *                 .countryCode(&#34;US&#34;)
- *                 .city(&#34;cambridge&#34;)
+ *                 .city(&#34;Cambridge&#34;)
  *                 .organization(&#34;Akamai&#34;)
  *                 .organizationalUnit(&#34;Dev&#34;)
  *                 .state(&#34;MA&#34;)
  *                 .build())
- *             .enableMultiStackedCertificates(false)
  *             .networkConfiguration(CpsDvEnrollmentNetworkConfigurationArgs.builder()
  *                 .disallowedTlsVersions(                
  *                     &#34;TLSv1&#34;,
@@ -108,8 +103,8 @@ import javax.annotation.Nullable;
  *                 .cloneDnsNames(false)
  *                 .geography(&#34;core&#34;)
  *                 .ocspStapling(&#34;on&#34;)
- *                 .preferredCiphers(&#34;ak-akamai-2020q1&#34;)
- *                 .mustHaveCiphers(&#34;ak-akamai-2020q1&#34;)
+ *                 .preferredCiphers(&#34;ak-akamai-default&#34;)
+ *                 .mustHaveCiphers(&#34;ak-akamai-default&#34;)
  *                 .quicEnabled(false)
  *                 .build())
  *             .signatureAlgorithm(&#34;SHA-256&#34;)
@@ -155,7 +150,7 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * Basic Usagehcl resource &#34;akamai_cps_dv_enrollment&#34; &#34;example&#34; { # (resource arguments) } You can import your Akamai DV enrollment using a comma-delimited string of the enrollment ID and
+ * Basic Usagehcl resource &#34;akamai_cps_dv_enrollment&#34; &#34;example&#34; { (resource arguments) } You can import your Akamai DV enrollment using a comma-delimited string of the enrollment ID and
  * 
  *  contract ID, optionally with the `ctr_` prefix. You have to enter the IDs in this order`enrollment_id,contract_id` For example
  * 
@@ -194,9 +189,17 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
     public Output<CpsDvEnrollmentAdminContact> adminContact() {
         return this.adminContact;
     }
+    /**
+     * - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * 
+     */
     @Export(name="allowDuplicateCommonName", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> allowDuplicateCommonName;
 
+    /**
+     * @return - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * 
+     */
     public Output<Optional<Boolean>> allowDuplicateCommonName() {
         return Codegen.optional(this.allowDuplicateCommonName);
     }
@@ -214,9 +217,17 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
     public Output<Optional<String>> certificateChainType() {
         return Codegen.optional(this.certificateChainType);
     }
+    /**
+     * Certificate type of enrollment
+     * 
+     */
     @Export(name="certificateType", type=String.class, parameters={})
     private Output<String> certificateType;
 
+    /**
+     * @return Certificate type of enrollment
+     * 
+     */
     public Output<String> certificateType() {
         return this.certificateType;
     }
@@ -262,16 +273,28 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
     public Output<CpsDvEnrollmentCsr> csr() {
         return this.csr;
     }
+    /**
+     * DNS challenge information
+     * 
+     */
     @Export(name="dnsChallenges", type=List.class, parameters={CpsDvEnrollmentDnsChallenge.class})
     private Output<List<CpsDvEnrollmentDnsChallenge>> dnsChallenges;
 
+    /**
+     * @return DNS challenge information
+     * 
+     */
     public Output<List<CpsDvEnrollmentDnsChallenge>> dnsChallenges() {
         return this.dnsChallenges;
     }
     /**
      * Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
      * 
+     * @deprecated
+     * Deprecated, don&#39;t use; always false
+     * 
      */
+    @Deprecated /* Deprecated, don't use; always false */
     @Export(name="enableMultiStackedCertificates", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> enableMultiStackedCertificates;
 
@@ -282,9 +305,17 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
     public Output<Optional<Boolean>> enableMultiStackedCertificates() {
         return Codegen.optional(this.enableMultiStackedCertificates);
     }
+    /**
+     * HTTP challenge information
+     * 
+     */
     @Export(name="httpChallenges", type=List.class, parameters={CpsDvEnrollmentHttpChallenge.class})
     private Output<List<CpsDvEnrollmentHttpChallenge>> httpChallenges;
 
+    /**
+     * @return HTTP challenge information
+     * 
+     */
     public Output<List<CpsDvEnrollmentHttpChallenge>> httpChallenges() {
         return this.httpChallenges;
     }
@@ -316,9 +347,17 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
     public Output<CpsDvEnrollmentOrganization> organization() {
         return this.organization;
     }
+    /**
+     * The registration authority or certificate authority (CA) used to obtain a certificate
+     * 
+     */
     @Export(name="registrationAuthority", type=String.class, parameters={})
     private Output<String> registrationAuthority;
 
+    /**
+     * @return The registration authority or certificate authority (CA) used to obtain a certificate
+     * 
+     */
     public Output<String> registrationAuthority() {
         return this.registrationAuthority;
     }
@@ -392,9 +431,17 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
     public Output<CpsDvEnrollmentTechContact> techContact() {
         return this.techContact;
     }
+    /**
+     * Enrolment validation type
+     * 
+     */
     @Export(name="validationType", type=String.class, parameters={})
     private Output<String> validationType;
 
+    /**
+     * @return Enrolment validation type
+     * 
+     */
     public Output<String> validationType() {
         return this.validationType;
     }

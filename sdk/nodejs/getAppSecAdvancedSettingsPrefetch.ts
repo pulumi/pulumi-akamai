@@ -36,11 +36,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report showing the prefetch request settings.
  */
 export function getAppSecAdvancedSettingsPrefetch(args: GetAppSecAdvancedSettingsPrefetchArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecAdvancedSettingsPrefetchResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", {
         "configId": args.configId,
     }, opts);
@@ -68,9 +65,39 @@ export interface GetAppSecAdvancedSettingsPrefetchResult {
     readonly json: string;
     readonly outputText: string;
 }
-
+/**
+ * **Scopes**: Security configuration
+ *
+ * Returns information about your prefetch request settings. By default, Web Application Firewall inspects only external requests — requests originating outside of your firewall or Akamai's edge servers. When prefetch is enabled, requests between your origin servers and Akamai's edge servers can also be inspected by the firewall.
+ *
+ * **Related** **API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-prefetch)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const prefetch = configuration.then(configuration => akamai.getAppSecAdvancedSettingsPrefetch({
+ *     configId: configuration.configId,
+ * }));
+ * export const advancedSettingsPrefetchOutput = prefetch.then(prefetch => prefetch.outputText);
+ * export const advancedSettingsPrefetchJson = prefetch.then(prefetch => prefetch.json);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of information about the prefetch request settings.
+ * - `outputText`. Tabular report showing the prefetch request settings.
+ */
 export function getAppSecAdvancedSettingsPrefetchOutput(args: GetAppSecAdvancedSettingsPrefetchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAdvancedSettingsPrefetchResult> {
-    return pulumi.output(args).apply(a => getAppSecAdvancedSettingsPrefetch(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecAdvancedSettingsPrefetch(a, opts))
 }
 
 /**

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GtmPropertyStaticRrSetArgs : Pulumi.ResourceArgs
+    public sealed class GtmPropertyStaticRrSetArgs : global::Pulumi.ResourceArgs
     {
         [Input("rdatas")]
         private InputList<string>? _rdatas;
@@ -39,5 +39,6 @@ namespace Pulumi.Akamai.Inputs
         public GtmPropertyStaticRrSetArgs()
         {
         }
+        public static new GtmPropertyStaticRrSetArgs Empty => new GtmPropertyStaticRrSetArgs();
     }
 }

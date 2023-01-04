@@ -23,46 +23,45 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var selectableHostnames = Akamai.GetAppSecSelectableHostnames.Invoke(new()
     ///     {
-    ///         var selectableHostnames = Output.Create(Akamai.GetAppSecSelectableHostnames.InvokeAsync(new Akamai.GetAppSecSelectableHostnamesArgs
-    ///         {
-    ///             ConfigId = "Documentation",
-    ///         }));
-    ///         var createConfig = new Akamai.AppSecConfiguration("createConfig", new Akamai.AppSecConfigurationArgs
-    ///         {
-    ///             Description = "This configuration is used as a testing environment for the documentation team.",
-    ///             ContractId = "5-2WA382",
-    ///             GroupId = 12198,
-    ///             HostNames = 
-    ///             {
-    ///                 "documentation.akamai.com",
-    ///                 "training.akamai.com",
-    ///             },
-    ///         });
-    ///         this.CreateConfigId = createConfig.ConfigId;
-    ///         var cloneConfig = new Akamai.AppSecConfiguration("cloneConfig", new Akamai.AppSecConfigurationArgs
-    ///         {
-    ///             Description = "This configuration is used as a testing environment for the documentation team.",
-    ///             CreateFromConfigId = data.Akamai_appsec_configuration.Configuration.Config_id,
-    ///             CreateFromVersion = data.Akamai_appsec_configuration.Configuration.Latest_version,
-    ///             ContractId = "5-2WA382",
-    ///             GroupId = 12198,
-    ///             HostNames = selectableHostnames.Apply(selectableHostnames =&gt; selectableHostnames.Hostnames),
-    ///         });
-    ///         this.CloneConfigId = cloneConfig.ConfigId;
-    ///     }
+    ///         ConfigId = "Documentation",
+    ///     });
     /// 
-    ///     [Output("createConfigId")]
-    ///     public Output&lt;string&gt; CreateConfigId { get; set; }
-    ///     [Output("cloneConfigId")]
-    ///     public Output&lt;string&gt; CloneConfigId { get; set; }
-    /// }
+    ///     var createConfig = new Akamai.AppSecConfiguration("createConfig", new()
+    ///     {
+    ///         Description = "This configuration is used as a testing environment for the documentation team.",
+    ///         ContractId = "5-2WA382",
+    ///         GroupId = 12198,
+    ///         HostNames = new[]
+    ///         {
+    ///             "documentation.akamai.com",
+    ///             "training.akamai.com",
+    ///         },
+    ///     });
+    /// 
+    ///     var cloneConfig = new Akamai.AppSecConfiguration("cloneConfig", new()
+    ///     {
+    ///         Description = "This configuration is used as a testing environment for the documentation team.",
+    ///         CreateFromConfigId = data.Akamai_appsec_configuration.Configuration.Config_id,
+    ///         CreateFromVersion = data.Akamai_appsec_configuration.Configuration.Latest_version,
+    ///         ContractId = "5-2WA382",
+    ///         GroupId = 12198,
+    ///         HostNames = selectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.Hostnames),
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["createConfigId"] = createConfig.ConfigId,
+    ///         ["cloneConfigId"] = cloneConfig.ConfigId,
+    ///     };
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -71,7 +70,7 @@ namespace Pulumi.Akamai
     /// - `config_id`. ID of the new security configuration.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecConfiguration:AppSecConfiguration")]
-    public partial class AppSecConfiguration : Pulumi.CustomResource
+    public partial class AppSecConfiguration : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Unique identifier of the new security configuration
@@ -165,7 +164,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class AppSecConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the Akamai contract associated with the new configuration.
@@ -218,9 +217,10 @@ namespace Pulumi.Akamai
         public AppSecConfigurationArgs()
         {
         }
+        public static new AppSecConfigurationArgs Empty => new AppSecConfigurationArgs();
     }
 
-    public sealed class AppSecConfigurationState : Pulumi.ResourceArgs
+    public sealed class AppSecConfigurationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique identifier of the new security configuration
@@ -279,5 +279,6 @@ namespace Pulumi.Akamai
         public AppSecConfigurationState()
         {
         }
+        public static new AppSecConfigurationState Empty => new AppSecConfigurationState();
     }
 }

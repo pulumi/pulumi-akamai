@@ -21,30 +21,28 @@ namespace Pulumi.Akamai.Trafficmanagement
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var demoCidrmap = new Akamai.GtmCidrmap("demoCidrmap", new()
     ///     {
-    ///         var demoCidrmap = new Akamai.GtmCidrmap("demoCidrmap", new Akamai.GtmCidrmapArgs
+    ///         DefaultDatacenter = new Akamai.Inputs.GtmCidrmapDefaultDatacenterArgs
     ///         {
-    ///             DefaultDatacenter = new Akamai.Inputs.GtmCidrmapDefaultDatacenterArgs
-    ///             {
-    ///                 DatacenterId = 5400,
-    ///                 Nickname = "All Other CIDR Blocks",
-    ///             },
-    ///             Domain = "demo_domain.akadns.net",
-    ///         });
-    ///     }
+    ///             DatacenterId = 5400,
+    ///             Nickname = "All Other CIDR Blocks",
+    ///         },
+    ///         Domain = "demo_domain.akadns.net",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [Obsolete(@"akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmCidrmap:GtmCidrmap")]
-    public partial class GtmCidrmap : Pulumi.CustomResource
+    public partial class GtmCidrmap : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
@@ -59,7 +57,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         public Output<Outputs.GtmCidrmapDefaultDatacenter> DefaultDatacenter { get; private set; } = null!;
 
         /// <summary>
-        /// GTM Domain name for the AS Map.
+        /// GTM Domain name for the CIDR Map.
         /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
@@ -120,7 +118,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         }
     }
 
-    public sealed class GtmCidrmapArgs : Pulumi.ResourceArgs
+    public sealed class GtmCidrmapArgs : global::Pulumi.ResourceArgs
     {
         [Input("assignments")]
         private InputList<Inputs.GtmCidrmapAssignmentArgs>? _assignments;
@@ -141,7 +139,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         public Input<Inputs.GtmCidrmapDefaultDatacenterArgs> DefaultDatacenter { get; set; } = null!;
 
         /// <summary>
-        /// GTM Domain name for the AS Map.
+        /// GTM Domain name for the CIDR Map.
         /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
@@ -161,9 +159,10 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmCidrmapArgs()
         {
         }
+        public static new GtmCidrmapArgs Empty => new GtmCidrmapArgs();
     }
 
-    public sealed class GtmCidrmapState : Pulumi.ResourceArgs
+    public sealed class GtmCidrmapState : global::Pulumi.ResourceArgs
     {
         [Input("assignments")]
         private InputList<Inputs.GtmCidrmapAssignmentGetArgs>? _assignments;
@@ -184,7 +183,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         public Input<Inputs.GtmCidrmapDefaultDatacenterGetArgs>? DefaultDatacenter { get; set; }
 
         /// <summary>
-        /// GTM Domain name for the AS Map.
+        /// GTM Domain name for the CIDR Map.
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
@@ -204,5 +203,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmCidrmapState()
         {
         }
+        public static new GtmCidrmapState Empty => new GtmCidrmapState();
     }
 }

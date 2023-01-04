@@ -21,29 +21,29 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using System.IO;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var customDeny = new Akamai.AppSecCustomDeny("customDeny", new Akamai.AppSecCustomDenyArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             CustomDeny = File.ReadAllText($"{path.Module}/custom_deny.json"),
-    ///         });
-    ///         this.CustomDenyId = customDeny.CustomDenyId;
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    ///     [Output("customDenyId")]
-    ///     public Output&lt;string&gt; CustomDenyId { get; set; }
-    /// }
+    ///     var customDeny = new Akamai.AppSecCustomDeny("customDeny", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         CustomDeny = File.ReadAllText($"{path.Module}/custom_deny.json"),
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["customDenyId"] = customDeny.CustomDenyId,
+    ///     };
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -52,7 +52,7 @@ namespace Pulumi.Akamai
     /// - `custom_deny_id`. ID of the new custom deny action.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecCustomDeny:AppSecCustomDeny")]
-    public partial class AppSecCustomDeny : Pulumi.CustomResource
+    public partial class AppSecCustomDeny : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom deny.
@@ -116,7 +116,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecCustomDenyArgs : Pulumi.ResourceArgs
+    public sealed class AppSecCustomDenyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom deny.
@@ -133,9 +133,10 @@ namespace Pulumi.Akamai
         public AppSecCustomDenyArgs()
         {
         }
+        public static new AppSecCustomDenyArgs Empty => new AppSecCustomDenyArgs();
     }
 
-    public sealed class AppSecCustomDenyState : Pulumi.ResourceArgs
+    public sealed class AppSecCustomDenyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom deny.
@@ -158,5 +159,6 @@ namespace Pulumi.Akamai
         public AppSecCustomDenyState()
         {
         }
+        public static new AppSecCustomDenyState Empty => new AppSecCustomDenyState();
     }
 }

@@ -21,26 +21,25 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var protection = new Akamai.AppSecApiConstraintsProtection("protection", new Akamai.AppSecApiConstraintsProtectionArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             Enabled = true,
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var protection = new Akamai.AppSecApiConstraintsProtection("protection", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         Enabled = true,
+    ///     });
+    /// 
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -49,7 +48,7 @@ namespace Pulumi.Akamai
     /// - `output_text`. Tabular report showing the current protection settings.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecApiConstraintsProtection:AppSecApiConstraintsProtection")]
-    public partial class AppSecApiConstraintsProtection : Pulumi.CustomResource
+    public partial class AppSecApiConstraintsProtection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Unique identifier of the security configuration
@@ -119,7 +118,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecApiConstraintsProtectionArgs : Pulumi.ResourceArgs
+    public sealed class AppSecApiConstraintsProtectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique identifier of the security configuration
@@ -142,9 +141,10 @@ namespace Pulumi.Akamai
         public AppSecApiConstraintsProtectionArgs()
         {
         }
+        public static new AppSecApiConstraintsProtectionArgs Empty => new AppSecApiConstraintsProtectionArgs();
     }
 
-    public sealed class AppSecApiConstraintsProtectionState : Pulumi.ResourceArgs
+    public sealed class AppSecApiConstraintsProtectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique identifier of the security configuration
@@ -173,5 +173,6 @@ namespace Pulumi.Akamai
         public AppSecApiConstraintsProtectionState()
         {
         }
+        public static new AppSecApiConstraintsProtectionState Empty => new AppSecApiConstraintsProtectionState();
     }
 }

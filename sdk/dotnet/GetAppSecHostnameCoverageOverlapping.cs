@@ -25,25 +25,24 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var test = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecHostnameCoverageOverlapping.InvokeAsync(new Akamai.GetAppSecHostnameCoverageOverlappingArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             Hostname = "documentation.akamai.com",
-        ///         })));
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        /// }
+        ///     var test = Akamai.GetAppSecHostnameCoverageOverlapping.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         Hostname = "documentation.akamai.com",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,7 +54,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the overlap information.
         /// </summary>
         public static Task<GetAppSecHostnameCoverageOverlappingResult> InvokeAsync(GetAppSecHostnameCoverageOverlappingArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageOverlappingResult>("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args ?? new GetAppSecHostnameCoverageOverlappingArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageOverlappingResult>("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args ?? new GetAppSecHostnameCoverageOverlappingArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; hostname
@@ -71,25 +70,24 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var test = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecHostnameCoverageOverlapping.InvokeAsync(new Akamai.GetAppSecHostnameCoverageOverlappingArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             Hostname = "documentation.akamai.com",
-        ///         })));
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        /// }
+        ///     var test = Akamai.GetAppSecHostnameCoverageOverlapping.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         Hostname = "documentation.akamai.com",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -101,11 +99,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the overlap information.
         /// </summary>
         public static Output<GetAppSecHostnameCoverageOverlappingResult> Invoke(GetAppSecHostnameCoverageOverlappingInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageOverlappingResult>("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args ?? new GetAppSecHostnameCoverageOverlappingInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageOverlappingResult>("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", args ?? new GetAppSecHostnameCoverageOverlappingInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecHostnameCoverageOverlappingArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecHostnameCoverageOverlappingArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration you want to return information for.
@@ -122,9 +120,10 @@ namespace Pulumi.Akamai
         public GetAppSecHostnameCoverageOverlappingArgs()
         {
         }
+        public static new GetAppSecHostnameCoverageOverlappingArgs Empty => new GetAppSecHostnameCoverageOverlappingArgs();
     }
 
-    public sealed class GetAppSecHostnameCoverageOverlappingInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecHostnameCoverageOverlappingInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration you want to return information for.
@@ -141,6 +140,7 @@ namespace Pulumi.Akamai
         public GetAppSecHostnameCoverageOverlappingInvokeArgs()
         {
         }
+        public static new GetAppSecHostnameCoverageOverlappingInvokeArgs Empty => new GetAppSecHostnameCoverageOverlappingInvokeArgs();
     }
 
 

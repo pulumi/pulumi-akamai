@@ -17,19 +17,18 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var example = new Akamai.CloudletsPolicy("example", new()
     ///     {
-    ///         var example = new Akamai.CloudletsPolicy("example", new Akamai.CloudletsPolicyArgs
-    ///         {
-    ///             CloudletCode = "ER",
-    ///             Description = "policy description",
-    ///             GroupId = "grp_123",
-    ///             MatchRules = @"  [
+    ///         CloudletCode = "ER",
+    ///         Description = "policy description",
+    ///         GroupId = "grp_123",
+    ///         MatchRules = @"  [
     ///   {
     ///     ""name"": ""rule1"",
     ///     ""type"": ""erMatchRule"",
@@ -60,10 +59,9 @@ namespace Pulumi.Akamai
     ///   }
     /// ]
     /// ",
-    ///         });
-    ///     }
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -79,7 +77,7 @@ namespace Pulumi.Akamai
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/cloudletsPolicy:CloudletsPolicy")]
-    public partial class CloudletsPolicy : Pulumi.CustomResource
+    public partial class CloudletsPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
@@ -179,7 +177,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class CloudletsPolicyArgs : Pulumi.ResourceArgs
+    public sealed class CloudletsPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
@@ -220,9 +218,10 @@ namespace Pulumi.Akamai
         public CloudletsPolicyArgs()
         {
         }
+        public static new CloudletsPolicyArgs Empty => new CloudletsPolicyArgs();
     }
 
-    public sealed class CloudletsPolicyState : Pulumi.ResourceArgs
+    public sealed class CloudletsPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
@@ -281,5 +280,6 @@ namespace Pulumi.Akamai
         public CloudletsPolicyState()
         {
         }
+        public static new CloudletsPolicyState Empty => new CloudletsPolicyState();
     }
 }

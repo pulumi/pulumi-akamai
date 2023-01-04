@@ -11,7 +11,7 @@ namespace Pulumi.Akamai.Edgedns
 {
     [Obsolete(@"akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone")]
     [AkamaiResourceType("akamai:edgedns/dnsZone:DnsZone")]
-    public partial class DnsZone : Pulumi.CustomResource
+    public partial class DnsZone : global::Pulumi.CustomResource
     {
         [Output("activationState")]
         public Output<string> ActivationState { get; private set; } = null!;
@@ -132,7 +132,7 @@ namespace Pulumi.Akamai.Edgedns
         }
     }
 
-    public sealed class DnsZoneArgs : Pulumi.ResourceArgs
+    public sealed class DnsZoneArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A descriptive comment.
@@ -209,9 +209,10 @@ namespace Pulumi.Akamai.Edgedns
         public DnsZoneArgs()
         {
         }
+        public static new DnsZoneArgs Empty => new DnsZoneArgs();
     }
 
-    public sealed class DnsZoneState : Pulumi.ResourceArgs
+    public sealed class DnsZoneState : global::Pulumi.ResourceArgs
     {
         [Input("activationState")]
         public Input<string>? ActivationState { get; set; }
@@ -297,5 +298,6 @@ namespace Pulumi.Akamai.Edgedns
         public DnsZoneState()
         {
         }
+        public static new DnsZoneState Empty => new DnsZoneState();
     }
 }

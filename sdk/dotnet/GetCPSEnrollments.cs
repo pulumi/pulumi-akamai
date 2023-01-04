@@ -18,23 +18,22 @@ namespace Pulumi.Akamai
         /// 
         /// This example shows how to set up a user:
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEnrollmentsList = Akamai.GetCPSEnrollments.Invoke(new()
         ///     {
-        ///         var testEnrollmentsList = Output.Create(Akamai.GetCPSEnrollments.InvokeAsync(new Akamai.GetCPSEnrollmentsArgs
-        ///         {
-        ///             ContractId = @var.Contract_id,
-        ///         }));
-        ///         this.DvOutput = testEnrollmentsList;
-        ///     }
+        ///         ContractId = @var.Contract_id,
+        ///     });
         /// 
-        ///     [Output("dvOutput")]
-        ///     public Output&lt;string&gt; DvOutput { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["dvOutput"] = testEnrollmentsList.Apply(getCPSEnrollmentsResult =&gt; getCPSEnrollmentsResult),
+        ///     };
+        /// });
         /// ```
         /// 
         /// 
@@ -86,7 +85,7 @@ namespace Pulumi.Akamai
         ///   * `pending_changes` - If `true`, there are changes currently pending in CPS. To view pending changes, use the `data_akamai_cps_enrollment` data source.
         /// </summary>
         public static Task<GetCPSEnrollmentsResult> InvokeAsync(GetCPSEnrollmentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCPSEnrollmentsResult>("akamai:index/getCPSEnrollments:getCPSEnrollments", args ?? new GetCPSEnrollmentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCPSEnrollmentsResult>("akamai:index/getCPSEnrollments:getCPSEnrollments", args ?? new GetCPSEnrollmentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getCPSEnrollments` data source to return data for all of a specific contract's enrollments.
@@ -95,23 +94,22 @@ namespace Pulumi.Akamai
         /// 
         /// This example shows how to set up a user:
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEnrollmentsList = Akamai.GetCPSEnrollments.Invoke(new()
         ///     {
-        ///         var testEnrollmentsList = Output.Create(Akamai.GetCPSEnrollments.InvokeAsync(new Akamai.GetCPSEnrollmentsArgs
-        ///         {
-        ///             ContractId = @var.Contract_id,
-        ///         }));
-        ///         this.DvOutput = testEnrollmentsList;
-        ///     }
+        ///         ContractId = @var.Contract_id,
+        ///     });
         /// 
-        ///     [Output("dvOutput")]
-        ///     public Output&lt;string&gt; DvOutput { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["dvOutput"] = testEnrollmentsList.Apply(getCPSEnrollmentsResult =&gt; getCPSEnrollmentsResult),
+        ///     };
+        /// });
         /// ```
         /// 
         /// 
@@ -163,11 +161,11 @@ namespace Pulumi.Akamai
         ///   * `pending_changes` - If `true`, there are changes currently pending in CPS. To view pending changes, use the `data_akamai_cps_enrollment` data source.
         /// </summary>
         public static Output<GetCPSEnrollmentsResult> Invoke(GetCPSEnrollmentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCPSEnrollmentsResult>("akamai:index/getCPSEnrollments:getCPSEnrollments", args ?? new GetCPSEnrollmentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCPSEnrollmentsResult>("akamai:index/getCPSEnrollments:getCPSEnrollments", args ?? new GetCPSEnrollmentsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCPSEnrollmentsArgs : Pulumi.InvokeArgs
+    public sealed class GetCPSEnrollmentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A contract's ID, optionally with the `ctr_` prefix.
@@ -178,9 +176,10 @@ namespace Pulumi.Akamai
         public GetCPSEnrollmentsArgs()
         {
         }
+        public static new GetCPSEnrollmentsArgs Empty => new GetCPSEnrollmentsArgs();
     }
 
-    public sealed class GetCPSEnrollmentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCPSEnrollmentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A contract's ID, optionally with the `ctr_` prefix.
@@ -191,6 +190,7 @@ namespace Pulumi.Akamai
         public GetCPSEnrollmentsInvokeArgs()
         {
         }
+        public static new GetCPSEnrollmentsInvokeArgs Empty => new GetCPSEnrollmentsInvokeArgs();
     }
 
 

@@ -21,20 +21,19 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var contactTypes = Output.Create(Akamai.GetIamContactTypes.InvokeAsync());
-        ///         this.SupportedContactTypes = contactTypes;
-        ///     }
+        ///     var contactTypes = Akamai.GetIamContactTypes.Invoke();
         /// 
-        ///     [Output("supportedContactTypes")]
-        ///     public Output&lt;string&gt; SupportedContactTypes { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["supportedContactTypes"] = contactTypes.Apply(getIamContactTypesResult =&gt; getIamContactTypesResult),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -47,7 +46,7 @@ namespace Pulumi.Akamai
         /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-contact-types)
         /// </summary>
         public static Task<GetIamContactTypesResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIamContactTypesResult>("akamai:index/getIamContactTypes:getIamContactTypes", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamContactTypesResult>("akamai:index/getIamContactTypes:getIamContactTypes", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

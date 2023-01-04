@@ -10,13 +10,23 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class DatastreamAzureConnectorArgs : Pulumi.ResourceArgs
+    public sealed class DatastreamAzureConnectorArgs : global::Pulumi.ResourceArgs
     {
+        [Input("accessKey", required: true)]
+        private Input<string>? _accessKey;
+
         /// <summary>
         /// **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
         /// </summary>
-        [Input("accessKey", required: true)]
-        public Input<string> AccessKey { get; set; } = null!;
+        public Input<string>? AccessKey
+        {
+            get => _accessKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _accessKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Specifies the Azure Storage account name.
@@ -54,5 +64,6 @@ namespace Pulumi.Akamai.Inputs
         public DatastreamAzureConnectorArgs()
         {
         }
+        public static new DatastreamAzureConnectorArgs Empty => new DatastreamAzureConnectorArgs();
     }
 }

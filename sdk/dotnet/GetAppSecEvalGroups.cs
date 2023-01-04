@@ -12,14 +12,14 @@ namespace Pulumi.Akamai
     public static class GetAppSecEvalGroups
     {
         public static Task<GetAppSecEvalGroupsResult> InvokeAsync(GetAppSecEvalGroupsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalGroupsResult>("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", args ?? new GetAppSecEvalGroupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalGroupsResult>("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", args ?? new GetAppSecEvalGroupsArgs(), options.WithDefaults());
 
         public static Output<GetAppSecEvalGroupsResult> Invoke(GetAppSecEvalGroupsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalGroupsResult>("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", args ?? new GetAppSecEvalGroupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecEvalGroupsResult>("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", args ?? new GetAppSecEvalGroupsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecEvalGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecEvalGroupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
@@ -42,9 +42,10 @@ namespace Pulumi.Akamai
         public GetAppSecEvalGroupsArgs()
         {
         }
+        public static new GetAppSecEvalGroupsArgs Empty => new GetAppSecEvalGroupsArgs();
     }
 
-    public sealed class GetAppSecEvalGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecEvalGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
@@ -67,6 +68,7 @@ namespace Pulumi.Akamai
         public GetAppSecEvalGroupsInvokeArgs()
         {
         }
+        public static new GetAppSecEvalGroupsInvokeArgs Empty => new GetAppSecEvalGroupsInvokeArgs();
     }
 
 

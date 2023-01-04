@@ -17,29 +17,27 @@ namespace Pulumi.Akamai
     /// This example returns the policy details based on the policy ID and optionally, a version:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var example = new Akamai.IamBlockedUserProperties("example", new()
     ///     {
-    ///         var example = new Akamai.IamBlockedUserProperties("example", new Akamai.IamBlockedUserPropertiesArgs
+    ///         BlockedProperties = new[]
     ///         {
-    ///             BlockedProperties = 
-    ///             {
-    ///                 1,
-    ///                 2,
-    ///                 3,
-    ///                 4,
-    ///                 5,
-    ///             },
-    ///             GroupId = 12345,
-    ///             IdentityId = "A-B-123456",
-    ///         });
-    ///     }
+    ///             1,
+    ///             2,
+    ///             3,
+    ///             4,
+    ///             5,
+    ///         },
+    ///         GroupId = 12345,
+    ///         IdentityId = "A-B-123456",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Attributes reference
@@ -47,7 +45,7 @@ namespace Pulumi.Akamai
     /// This resource doesn't return any attributes.
     /// </summary>
     [AkamaiResourceType("akamai:index/iamBlockedUserProperties:IamBlockedUserProperties")]
-    public partial class IamBlockedUserProperties : Pulumi.CustomResource
+    public partial class IamBlockedUserProperties : global::Pulumi.CustomResource
     {
         /// <summary>
         /// List of properties to block for a user. The property IDs must be an integer.
@@ -111,7 +109,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class IamBlockedUserPropertiesArgs : Pulumi.ResourceArgs
+    public sealed class IamBlockedUserPropertiesArgs : global::Pulumi.ResourceArgs
     {
         [Input("blockedProperties", required: true)]
         private InputList<int>? _blockedProperties;
@@ -140,9 +138,10 @@ namespace Pulumi.Akamai
         public IamBlockedUserPropertiesArgs()
         {
         }
+        public static new IamBlockedUserPropertiesArgs Empty => new IamBlockedUserPropertiesArgs();
     }
 
-    public sealed class IamBlockedUserPropertiesState : Pulumi.ResourceArgs
+    public sealed class IamBlockedUserPropertiesState : global::Pulumi.ResourceArgs
     {
         [Input("blockedProperties")]
         private InputList<int>? _blockedProperties;
@@ -171,5 +170,6 @@ namespace Pulumi.Akamai
         public IamBlockedUserPropertiesState()
         {
         }
+        public static new IamBlockedUserPropertiesState Empty => new IamBlockedUserPropertiesState();
     }
 }

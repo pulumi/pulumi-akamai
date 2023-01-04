@@ -39,11 +39,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report of the threat intelligence information.
  */
 export function getAppSecThreatIntel(args: GetAppSecThreatIntelArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecThreatIntelResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
@@ -78,9 +75,42 @@ export interface GetAppSecThreatIntelResult {
     readonly securityPolicyId: string;
     readonly threatIntel: string;
 }
-
+/**
+ * **Scopes**: Security policy
+ *
+ * Returns threat intelligence settings for a security policy Note that this data source is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information on ASE, please contact your Akamai representative.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://techdocs.akamai.com/application-security/reference/get-rules-threat-intel)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const threatIntelAppSecThreatIntel = configuration.then(configuration => akamai.getAppSecThreatIntel({
+ *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
+ * }));
+ * export const threatIntel = threatIntelAppSecThreatIntel.then(threatIntelAppSecThreatIntel => threatIntelAppSecThreatIntel.threatIntel);
+ * export const json = threatIntelAppSecThreatIntel.then(threatIntelAppSecThreatIntel => threatIntelAppSecThreatIntel.json);
+ * export const outputText = threatIntelAppSecThreatIntel.then(threatIntelAppSecThreatIntel => threatIntelAppSecThreatIntel.outputText);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `threatIntel`. Reports the threat Intelligence setting, either **on** or **off**.
+ * - `json`. JSON-formatted threat intelligence report.
+ * - `outputText`. Tabular report of the threat intelligence information.
+ */
 export function getAppSecThreatIntelOutput(args: GetAppSecThreatIntelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecThreatIntelResult> {
-    return pulumi.output(args).apply(a => getAppSecThreatIntel(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecThreatIntel(a, opts))
 }
 
 /**

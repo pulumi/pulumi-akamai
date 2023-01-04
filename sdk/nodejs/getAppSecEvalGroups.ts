@@ -5,11 +5,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getAppSecEvalGroups(args: GetAppSecEvalGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecEvalGroupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecEvalGroups:getAppSecEvalGroups", {
         "attackGroup": args.attackGroup,
         "configId": args.configId,
@@ -51,9 +48,8 @@ export interface GetAppSecEvalGroupsResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-
 export function getAppSecEvalGroupsOutput(args: GetAppSecEvalGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecEvalGroupsResult> {
-    return pulumi.output(args).apply(a => getAppSecEvalGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecEvalGroups(a, opts))
 }
 
 /**

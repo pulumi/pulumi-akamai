@@ -21,26 +21,25 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var protection = new Akamai.AppSecSlowPostProtection("protection", new Akamai.AppSecSlowPostProtectionArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             Enabled = true,
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var protection = new Akamai.AppSecSlowPostProtection("protection", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         Enabled = true,
+    ///     });
+    /// 
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -49,7 +48,7 @@ namespace Pulumi.Akamai
     /// - `output_text`. Tabular report showing the current protection settings.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecSlowPostProtection:AppSecSlowPostProtection")]
-    public partial class AppSecSlowPostProtection : Pulumi.CustomResource
+    public partial class AppSecSlowPostProtection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
@@ -119,7 +118,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecSlowPostProtectionArgs : Pulumi.ResourceArgs
+    public sealed class AppSecSlowPostProtectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
@@ -142,9 +141,10 @@ namespace Pulumi.Akamai
         public AppSecSlowPostProtectionArgs()
         {
         }
+        public static new AppSecSlowPostProtectionArgs Empty => new AppSecSlowPostProtectionArgs();
     }
 
-    public sealed class AppSecSlowPostProtectionState : Pulumi.ResourceArgs
+    public sealed class AppSecSlowPostProtectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
@@ -173,5 +173,6 @@ namespace Pulumi.Akamai
         public AppSecSlowPostProtectionState()
         {
         }
+        public static new AppSecSlowPostProtectionState Empty => new AppSecSlowPostProtectionState();
     }
 }

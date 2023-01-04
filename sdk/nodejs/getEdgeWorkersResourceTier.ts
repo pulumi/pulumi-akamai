@@ -15,10 +15,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const example = pulumi.output(akamai.getEdgeWorkersResourceTier({
+ * const example = akamai.getEdgeWorkersResourceTier({
  *     contractId: "1-ABC",
  *     resourceTierName: "Basic Compute",
- * }));
+ * });
  * ```
  * ## Attributes reference
  *
@@ -27,11 +27,8 @@ import * as utilities from "./utilities";
  * * `resourceTierId` - Unique identifier of the resource tier.
  */
 export function getEdgeWorkersResourceTier(args: GetEdgeWorkersResourceTierArgs, opts?: pulumi.InvokeOptions): Promise<GetEdgeWorkersResourceTierResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", {
         "contractId": args.contractId,
         "resourceTierName": args.resourceTierName,
@@ -64,9 +61,30 @@ export interface GetEdgeWorkersResourceTierResult {
     readonly resourceTierId: number;
     readonly resourceTierName: string;
 }
-
+/**
+ * Use the `akamai.getEdgeWorkersResourceTier` data source to list the available resource tiers for a specific contract ID. The resource tier defines the resource consumption [limits](https://techdocs.akamai.com/edgeworkers/docs/resource-tier-limitations) for an EdgeWorker ID.
+ *
+ * ## Example Usage
+ *
+ * This example returns the resource tier fields for an EdgeWorker ID:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const example = akamai.getEdgeWorkersResourceTier({
+ *     contractId: "1-ABC",
+ *     resourceTierName: "Basic Compute",
+ * });
+ * ```
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `resourceTierId` - Unique identifier of the resource tier.
+ */
 export function getEdgeWorkersResourceTierOutput(args: GetEdgeWorkersResourceTierOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeWorkersResourceTierResult> {
-    return pulumi.output(args).apply(a => getEdgeWorkersResourceTier(a, opts))
+    return pulumi.output(args).apply((a: any) => getEdgeWorkersResourceTier(a, opts))
 }
 
 /**

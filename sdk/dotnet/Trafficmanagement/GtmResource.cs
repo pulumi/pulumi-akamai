@@ -20,27 +20,25 @@ namespace Pulumi.Akamai.Trafficmanagement
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var demoResource = new Akamai.GtmResource("demoResource", new()
     ///     {
-    ///         var demoResource = new Akamai.GtmResource("demoResource", new Akamai.GtmResourceArgs
-    ///         {
-    ///             AggregationType = "latest",
-    ///             Domain = "demo_domain.akadns.net",
-    ///             Type = "XML load object via HTTP",
-    ///         });
-    ///     }
+    ///         AggregationType = "latest",
+    ///         Domain = "demo_domain.akadns.net",
+    ///         Type = "XML load object via HTTP",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [Obsolete(@"akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmResource:GtmResource")]
-    public partial class GtmResource : Pulumi.CustomResource
+    public partial class GtmResource : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
@@ -173,7 +171,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         }
     }
 
-    public sealed class GtmResourceArgs : Pulumi.ResourceArgs
+    public sealed class GtmResourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
@@ -271,9 +269,10 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmResourceArgs()
         {
         }
+        public static new GtmResourceArgs Empty => new GtmResourceArgs();
     }
 
-    public sealed class GtmResourceState : Pulumi.ResourceArgs
+    public sealed class GtmResourceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
@@ -371,5 +370,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmResourceState()
         {
         }
+        public static new GtmResourceState Empty => new GtmResourceState();
     }
 }

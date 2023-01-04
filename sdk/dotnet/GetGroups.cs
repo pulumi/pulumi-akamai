@@ -19,20 +19,19 @@ namespace Pulumi.Akamai
         /// Return groups associated with the EdgeGrid API client token you're using:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var my_example = Output.Create(Akamai.GetGroups.InvokeAsync());
-        ///         this.PropertyMatch = my_example;
-        ///     }
+        ///     var my_example = Akamai.GetGroups.Invoke();
         /// 
-        ///     [Output("propertyMatch")]
-        ///     public Output&lt;string&gt; PropertyMatch { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["propertyMatch"] = my_example.Apply(getGroupsResult =&gt; getGroupsResult),
+        ///     };
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -46,7 +45,7 @@ namespace Pulumi.Akamai
         ///   * `contract_ids` - An array of strings listing the contract IDs for each group.
         /// </summary>
         public static Task<GetGroupsResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetGroupsResult>("akamai:index/getGroups:getGroups", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetGroupsResult>("akamai:index/getGroups:getGroups", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

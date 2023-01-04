@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class DatastreamGcsConnectorArgs : Pulumi.ResourceArgs
+    public sealed class DatastreamGcsConnectorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
@@ -39,11 +39,21 @@ namespace Pulumi.Akamai.Inputs
         [Input("path")]
         public Input<string>? Path { get; set; }
 
+        [Input("privateKey", required: true)]
+        private Input<string>? _privateKey;
+
         /// <summary>
         /// **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
         /// </summary>
-        [Input("privateKey", required: true)]
-        public Input<string> PrivateKey { get; set; } = null!;
+        public Input<string>? PrivateKey
+        {
+            get => _privateKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _privateKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The unique ID of your Google Cloud project.
@@ -60,5 +70,6 @@ namespace Pulumi.Akamai.Inputs
         public DatastreamGcsConnectorArgs()
         {
         }
+        public static new DatastreamGcsConnectorArgs Empty => new DatastreamGcsConnectorArgs();
     }
 }

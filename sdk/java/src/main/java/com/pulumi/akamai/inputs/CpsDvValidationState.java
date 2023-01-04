@@ -47,9 +47,17 @@ public final class CpsDvValidationState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.sans);
     }
 
+    /**
+     * Status of validation
+     * 
+     */
     @Import(name="status")
     private @Nullable Output<String> status;
 
+    /**
+     * @return Status of validation
+     * 
+     */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
@@ -132,11 +140,23 @@ public final class CpsDvValidationState extends com.pulumi.resources.ResourceArg
             return sans(List.of(sans));
         }
 
+        /**
+         * @param status Status of validation
+         * 
+         * @return builder
+         * 
+         */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
             return this;
         }
 
+        /**
+         * @param status Status of validation
+         * 
+         * @return builder
+         * 
+         */
         public Builder status(String status) {
             return status(Output.of(status));
         }

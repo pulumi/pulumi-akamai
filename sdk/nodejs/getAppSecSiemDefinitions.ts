@@ -36,11 +36,8 @@ import * as utilities from "./utilities";
  */
 export function getAppSecSiemDefinitions(args?: GetAppSecSiemDefinitionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSiemDefinitionsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", {
         "siemDefinitionName": args.siemDefinitionName,
     }, opts);
@@ -68,9 +65,38 @@ export interface GetAppSecSiemDefinitionsResult {
     readonly outputText: string;
     readonly siemDefinitionName?: string;
 }
-
+/**
+ * **Scopes**: SIEM definition
+ *
+ * Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions) section of the Application Security API.
+ *
+ * **Related API Endpoint**: [/appsec/v1/siem-definitions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const siemDefinitions = akamai.getAppSecSiemDefinitions({});
+ * export const siemDefinitionsJson = siemDefinitions.then(siemDefinitions => siemDefinitions.json);
+ * export const siemDefinitionsOutput = siemDefinitions.then(siemDefinitions => siemDefinitions.outputText);
+ * const siemDefinition = akamai.getAppSecSiemDefinitions({
+ *     siemDefinitionName: "SIEM Version 01",
+ * });
+ * export const siemDefinitionId = siemDefinition.then(siemDefinition => siemDefinition.id);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of the SIEM version information.
+ * - `outputText`. Tabular report showing the ID and name of each SIEM version.
+ */
 export function getAppSecSiemDefinitionsOutput(args?: GetAppSecSiemDefinitionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSiemDefinitionsResult> {
-    return pulumi.output(args).apply(a => getAppSecSiemDefinitions(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecSiemDefinitions(a, opts))
 }
 
 /**

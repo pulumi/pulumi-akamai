@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     [AkamaiResourceType("akamai:index/dnsZone:DnsZone")]
-    public partial class DnsZone : Pulumi.CustomResource
+    public partial class DnsZone : global::Pulumi.CustomResource
     {
         [Output("activationState")]
         public Output<string> ActivationState { get; private set; } = null!;
@@ -112,7 +112,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new Pulumi.Alias { Type = "akamai:edgedns/dnsZone:DnsZone"},
+                    new global::Pulumi.Alias { Type = "akamai:edgedns/dnsZone:DnsZone"},
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -135,7 +135,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class DnsZoneArgs : Pulumi.ResourceArgs
+    public sealed class DnsZoneArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A descriptive comment.
@@ -212,9 +212,10 @@ namespace Pulumi.Akamai
         public DnsZoneArgs()
         {
         }
+        public static new DnsZoneArgs Empty => new DnsZoneArgs();
     }
 
-    public sealed class DnsZoneState : Pulumi.ResourceArgs
+    public sealed class DnsZoneState : global::Pulumi.ResourceArgs
     {
         [Input("activationState")]
         public Input<string>? ActivationState { get; set; }
@@ -300,5 +301,6 @@ namespace Pulumi.Akamai
         public DnsZoneState()
         {
         }
+        public static new DnsZoneState Empty => new DnsZoneState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class CloudletsApplicationLoadBalancerDataCenterGetArgs : Pulumi.ResourceArgs
+    public sealed class CloudletsApplicationLoadBalancerDataCenterGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The city in which the data center is located.
@@ -93,5 +93,6 @@ namespace Pulumi.Akamai.Inputs
         public CloudletsApplicationLoadBalancerDataCenterGetArgs()
         {
         }
+        public static new CloudletsApplicationLoadBalancerDataCenterGetArgs Empty => new CloudletsApplicationLoadBalancerDataCenterGetArgs();
     }
 }

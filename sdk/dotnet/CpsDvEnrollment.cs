@@ -10,110 +10,100 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     /// <summary>
-    /// Use the `akamai.CpsDvEnrollment` resource to create an enrollment with all the information about your certificate life cycle, from the time you request it, through removal or automatic renewal. You can treat an enrollment as a core container for all the operations you perform within CPS.
-    /// 
-    /// You can use this resource with `akamai.DnsRecord` or other third-party DNS provider to create DNS records, and `akamai.CpsDvValidation` to complete the certificate validation.
-    /// 
     /// ## Example Usage
     /// 
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var example = new Akamai.CpsDvEnrollment("example", new()
     ///     {
-    ///         var example = new Akamai.CpsDvEnrollment("example", new Akamai.CpsDvEnrollmentArgs
+    ///         ContractId = "ctr_1-AB123",
+    ///         AcknowledgePreVerificationWarnings = true,
+    ///         CommonName = "cps-test.example.net",
+    ///         Sans = new[]
     ///         {
-    ///             ContractId = "ctr_1-AB123",
-    ///             AcknowledgePreVerificationWarnings = true,
-    ///             CommonName = "cps-test.example.net",
-    ///             Sans = 
+    ///             "san1.cps-test.example.net",
+    ///             "san2.cps-test.example.net",
+    ///         },
+    ///         SecureNetwork = "enhanced-tls",
+    ///         SniOnly = true,
+    ///         AdminContact = new Akamai.Inputs.CpsDvEnrollmentAdminContactArgs
+    ///         {
+    ///             FirstName = "x1",
+    ///             LastName = "x2",
+    ///             Phone = "123123123",
+    ///             Email = "x1x2@example.net",
+    ///             AddressLineOne = "150 Broadway",
+    ///             City = "Cambridge",
+    ///             CountryCode = "US",
+    ///             Organization = "Akamai",
+    ///             PostalCode = "02142",
+    ///             Region = "MA",
+    ///             Title = "Administrator",
+    ///         },
+    ///         TechContact = new Akamai.Inputs.CpsDvEnrollmentTechContactArgs
+    ///         {
+    ///             FirstName = "x3",
+    ///             LastName = "x4",
+    ///             Phone = "123123123",
+    ///             Email = "x3x4@akamai.com",
+    ///             AddressLineOne = "150 Broadway",
+    ///             City = "Cambridge",
+    ///             CountryCode = "US",
+    ///             Organization = "Akamai",
+    ///             PostalCode = "02142",
+    ///             Region = "MA",
+    ///             Title = "Administrator",
+    ///         },
+    ///         CertificateChainType = "default",
+    ///         Csr = new Akamai.Inputs.CpsDvEnrollmentCsrArgs
+    ///         {
+    ///             CountryCode = "US",
+    ///             City = "Cambridge",
+    ///             Organization = "Akamai",
+    ///             OrganizationalUnit = "Dev",
+    ///             State = "MA",
+    ///         },
+    ///         NetworkConfiguration = new Akamai.Inputs.CpsDvEnrollmentNetworkConfigurationArgs
+    ///         {
+    ///             DisallowedTlsVersions = new[]
     ///             {
-    ///                 "san1.cps-test.example.net",
-    ///                 "san2.cps-test.example.net",
+    ///                 "TLSv1",
+    ///                 "TLSv1_1",
     ///             },
-    ///             SecureNetwork = "enhanced-tls",
-    ///             SniOnly = true,
-    ///             AdminContact = new Akamai.Inputs.CpsDvEnrollmentAdminContactArgs
-    ///             {
-    ///                 FirstName = "x1",
-    ///                 LastName = "x2",
-    ///                 Phone = "123123123",
-    ///                 Email = "x1x2@example.net",
-    ///                 AddressLineOne = "150 Broadway",
-    ///                 City = "Cambridge",
-    ///                 CountryCode = "US",
-    ///                 Organization = "Akamai",
-    ///                 PostalCode = "02142",
-    ///                 Region = "MA",
-    ///                 Title = "Administrator",
-    ///             },
-    ///             TechContact = new Akamai.Inputs.CpsDvEnrollmentTechContactArgs
-    ///             {
-    ///                 FirstName = "x3",
-    ///                 LastName = "x4",
-    ///                 Phone = "123123123",
-    ///                 Email = "x3x4@akamai.com",
-    ///                 AddressLineOne = "150 Broadway",
-    ///                 City = "Cambridge",
-    ///                 CountryCode = "US",
-    ///                 Organization = "Akamai",
-    ///                 PostalCode = "02142",
-    ///                 Region = "MA",
-    ///                 Title = "Administrator",
-    ///             },
-    ///             CertificateChainType = "default",
-    ///             Csr = new Akamai.Inputs.CpsDvEnrollmentCsrArgs
-    ///             {
-    ///                 CountryCode = "US",
-    ///                 City = "cambridge",
-    ///                 Organization = "Akamai",
-    ///                 OrganizationalUnit = "Dev",
-    ///                 State = "MA",
-    ///             },
-    ///             EnableMultiStackedCertificates = false,
-    ///             NetworkConfiguration = new Akamai.Inputs.CpsDvEnrollmentNetworkConfigurationArgs
-    ///             {
-    ///                 DisallowedTlsVersions = 
-    ///                 {
-    ///                     "TLSv1",
-    ///                     "TLSv1_1",
-    ///                 },
-    ///                 CloneDnsNames = false,
-    ///                 Geography = "core",
-    ///                 OcspStapling = "on",
-    ///                 PreferredCiphers = "ak-akamai-2020q1",
-    ///                 MustHaveCiphers = "ak-akamai-2020q1",
-    ///                 QuicEnabled = false,
-    ///             },
-    ///             SignatureAlgorithm = "SHA-256",
-    ///             Organization = new Akamai.Inputs.CpsDvEnrollmentOrganizationArgs
-    ///             {
-    ///                 Name = "Akamai",
-    ///                 Phone = "123123123",
-    ///                 AddressLineOne = "150 Broadway",
-    ///                 City = "Cambridge",
-    ///                 CountryCode = "US",
-    ///                 PostalCode = "02142",
-    ///                 Region = "MA",
-    ///             },
-    ///         });
-    ///         this.DnsChallenges = example.DnsChallenges;
-    ///         this.HttpChallenges = example.HttpChallenges;
-    ///         this.EnrollmentId = example.Id;
-    ///     }
+    ///             CloneDnsNames = false,
+    ///             Geography = "core",
+    ///             OcspStapling = "on",
+    ///             PreferredCiphers = "ak-akamai-default",
+    ///             MustHaveCiphers = "ak-akamai-default",
+    ///             QuicEnabled = false,
+    ///         },
+    ///         SignatureAlgorithm = "SHA-256",
+    ///         Organization = new Akamai.Inputs.CpsDvEnrollmentOrganizationArgs
+    ///         {
+    ///             Name = "Akamai",
+    ///             Phone = "123123123",
+    ///             AddressLineOne = "150 Broadway",
+    ///             City = "Cambridge",
+    ///             CountryCode = "US",
+    ///             PostalCode = "02142",
+    ///             Region = "MA",
+    ///         },
+    ///     });
     /// 
-    ///     [Output("dnsChallenges")]
-    ///     public Output&lt;string&gt; DnsChallenges { get; set; }
-    ///     [Output("httpChallenges")]
-    ///     public Output&lt;string&gt; HttpChallenges { get; set; }
-    ///     [Output("enrollmentId")]
-    ///     public Output&lt;string&gt; EnrollmentId { get; set; }
-    /// }
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["dnsChallenges"] = example.DnsChallenges,
+    ///         ["httpChallenges"] = example.HttpChallenges,
+    ///         ["enrollmentId"] = example.Id,
+    ///     };
+    /// });
     /// ```
     /// ## Attributes reference
     /// 
@@ -140,7 +130,7 @@ namespace Pulumi.Akamai
     /// 
     /// ## Import
     /// 
-    /// Basic Usagehcl resource "akamai_cps_dv_enrollment" "example" { # (resource arguments) } You can import your Akamai DV enrollment using a comma-delimited string of the enrollment ID and
+    /// Basic Usagehcl resource "akamai_cps_dv_enrollment" "example" { (resource arguments) } You can import your Akamai DV enrollment using a comma-delimited string of the enrollment ID and
     /// 
     ///  contract ID, optionally with the `ctr_` prefix. You have to enter the IDs in this order`enrollment_id,contract_id` For example
     /// 
@@ -149,7 +139,7 @@ namespace Pulumi.Akamai
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/cpsDvEnrollment:CpsDvEnrollment")]
-    public partial class CpsDvEnrollment : Pulumi.CustomResource
+    public partial class CpsDvEnrollment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
@@ -163,6 +153,9 @@ namespace Pulumi.Akamai
         [Output("adminContact")]
         public Output<Outputs.CpsDvEnrollmentAdminContact> AdminContact { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        /// </summary>
         [Output("allowDuplicateCommonName")]
         public Output<bool?> AllowDuplicateCommonName { get; private set; } = null!;
 
@@ -172,6 +165,9 @@ namespace Pulumi.Akamai
         [Output("certificateChainType")]
         public Output<string?> CertificateChainType { get; private set; } = null!;
 
+        /// <summary>
+        /// Certificate type of enrollment
+        /// </summary>
         [Output("certificateType")]
         public Output<string> CertificateType { get; private set; } = null!;
 
@@ -193,6 +189,9 @@ namespace Pulumi.Akamai
         [Output("csr")]
         public Output<Outputs.CpsDvEnrollmentCsr> Csr { get; private set; } = null!;
 
+        /// <summary>
+        /// DNS challenge information
+        /// </summary>
         [Output("dnsChallenges")]
         public Output<ImmutableArray<Outputs.CpsDvEnrollmentDnsChallenge>> DnsChallenges { get; private set; } = null!;
 
@@ -202,6 +201,9 @@ namespace Pulumi.Akamai
         [Output("enableMultiStackedCertificates")]
         public Output<bool?> EnableMultiStackedCertificates { get; private set; } = null!;
 
+        /// <summary>
+        /// HTTP challenge information
+        /// </summary>
         [Output("httpChallenges")]
         public Output<ImmutableArray<Outputs.CpsDvEnrollmentHttpChallenge>> HttpChallenges { get; private set; } = null!;
 
@@ -217,6 +219,9 @@ namespace Pulumi.Akamai
         [Output("organization")]
         public Output<Outputs.CpsDvEnrollmentOrganization> Organization { get; private set; } = null!;
 
+        /// <summary>
+        /// The registration authority or certificate authority (CA) used to obtain a certificate
+        /// </summary>
         [Output("registrationAuthority")]
         public Output<string> RegistrationAuthority { get; private set; } = null!;
 
@@ -250,6 +255,9 @@ namespace Pulumi.Akamai
         [Output("techContact")]
         public Output<Outputs.CpsDvEnrollmentTechContact> TechContact { get; private set; } = null!;
 
+        /// <summary>
+        /// Enrolment validation type
+        /// </summary>
         [Output("validationType")]
         public Output<string> ValidationType { get; private set; } = null!;
 
@@ -297,7 +305,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class CpsDvEnrollmentArgs : Pulumi.ResourceArgs
+    public sealed class CpsDvEnrollmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
@@ -311,6 +319,9 @@ namespace Pulumi.Akamai
         [Input("adminContact", required: true)]
         public Input<Inputs.CpsDvEnrollmentAdminContactArgs> AdminContact { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        /// </summary>
         [Input("allowDuplicateCommonName")]
         public Input<bool>? AllowDuplicateCommonName { get; set; }
 
@@ -395,9 +406,10 @@ namespace Pulumi.Akamai
         public CpsDvEnrollmentArgs()
         {
         }
+        public static new CpsDvEnrollmentArgs Empty => new CpsDvEnrollmentArgs();
     }
 
-    public sealed class CpsDvEnrollmentState : Pulumi.ResourceArgs
+    public sealed class CpsDvEnrollmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
@@ -411,6 +423,9 @@ namespace Pulumi.Akamai
         [Input("adminContact")]
         public Input<Inputs.CpsDvEnrollmentAdminContactGetArgs>? AdminContact { get; set; }
 
+        /// <summary>
+        /// - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        /// </summary>
         [Input("allowDuplicateCommonName")]
         public Input<bool>? AllowDuplicateCommonName { get; set; }
 
@@ -420,6 +435,9 @@ namespace Pulumi.Akamai
         [Input("certificateChainType")]
         public Input<string>? CertificateChainType { get; set; }
 
+        /// <summary>
+        /// Certificate type of enrollment
+        /// </summary>
         [Input("certificateType")]
         public Input<string>? CertificateType { get; set; }
 
@@ -443,6 +461,10 @@ namespace Pulumi.Akamai
 
         [Input("dnsChallenges")]
         private InputList<Inputs.CpsDvEnrollmentDnsChallengeGetArgs>? _dnsChallenges;
+
+        /// <summary>
+        /// DNS challenge information
+        /// </summary>
         public InputList<Inputs.CpsDvEnrollmentDnsChallengeGetArgs> DnsChallenges
         {
             get => _dnsChallenges ?? (_dnsChallenges = new InputList<Inputs.CpsDvEnrollmentDnsChallengeGetArgs>());
@@ -457,6 +479,10 @@ namespace Pulumi.Akamai
 
         [Input("httpChallenges")]
         private InputList<Inputs.CpsDvEnrollmentHttpChallengeGetArgs>? _httpChallenges;
+
+        /// <summary>
+        /// HTTP challenge information
+        /// </summary>
         public InputList<Inputs.CpsDvEnrollmentHttpChallengeGetArgs> HttpChallenges
         {
             get => _httpChallenges ?? (_httpChallenges = new InputList<Inputs.CpsDvEnrollmentHttpChallengeGetArgs>());
@@ -475,6 +501,9 @@ namespace Pulumi.Akamai
         [Input("organization")]
         public Input<Inputs.CpsDvEnrollmentOrganizationGetArgs>? Organization { get; set; }
 
+        /// <summary>
+        /// The registration authority or certificate authority (CA) used to obtain a certificate
+        /// </summary>
         [Input("registrationAuthority")]
         public Input<string>? RegistrationAuthority { get; set; }
 
@@ -514,11 +543,15 @@ namespace Pulumi.Akamai
         [Input("techContact")]
         public Input<Inputs.CpsDvEnrollmentTechContactGetArgs>? TechContact { get; set; }
 
+        /// <summary>
+        /// Enrolment validation type
+        /// </summary>
         [Input("validationType")]
         public Input<string>? ValidationType { get; set; }
 
         public CpsDvEnrollmentState()
         {
         }
+        public static new CpsDvEnrollmentState Empty => new CpsDvEnrollmentState();
     }
 }

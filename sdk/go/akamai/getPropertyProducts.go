@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			ctx.Export("propertyMatch", data.Akamai_property_products.My-example)
+//			ctx.Export("propertyMatch", data.Akamai_property_products.MyExample)
 //			return nil
 //		})
 //	}

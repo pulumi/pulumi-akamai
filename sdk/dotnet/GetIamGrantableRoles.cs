@@ -19,23 +19,20 @@ namespace Pulumi.Akamai
         /// This example returns the available roles to grant to users:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var example = Output.Create(Akamai.GetIamGrantableRoles.InvokeAsync());
-        ///         this.AkaGrantableRolesCount = data.Akamai_iam_grantable_roles.Test.Grantable_roles.Length;
-        ///         this.AkaGrantableRoles = data.Akamai_iam_grantable_roles.Test;
-        ///     }
+        ///     var example = Akamai.GetIamGrantableRoles.Invoke();
         /// 
-        ///     [Output("akaGrantableRolesCount")]
-        ///     public Output&lt;string&gt; AkaGrantableRolesCount { get; set; }
-        ///     [Output("akaGrantableRoles")]
-        ///     public Output&lt;string&gt; AkaGrantableRoles { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["akaGrantableRolesCount"] = data.Akamai_iam_grantable_roles.Test.Grantable_roles.Length,
+        ///         ["akaGrantableRoles"] = data.Akamai_iam_grantable_roles.Test,
+        ///     };
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -48,7 +45,7 @@ namespace Pulumi.Akamai
         ///   * `description` - Granted role description.
         /// </summary>
         public static Task<GetIamGrantableRolesResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIamGrantableRolesResult>("akamai:index/getIamGrantableRoles:getIamGrantableRoles", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamGrantableRolesResult>("akamai:index/getIamGrantableRoles:getIamGrantableRoles", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

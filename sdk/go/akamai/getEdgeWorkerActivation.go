@@ -10,6 +10,42 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Use the `getEdgeWorkerActivation` data source to fetch the latest activation for a given EdgeWorker ID.
+//
+// ## Example Usage
+//
+// This example returns the latest activation on the staging network:
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err = akamai.GetEdgeWorkerActivation(ctx, &akamai.GetEdgeWorkerActivationArgs{
+//				EdgeworkerId: 1,
+//				Network:      "STAGING",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// ## Attributes reference
+//
+// This data source returns these attributes:
+//
+// * `activationId` - The unique identifier of the activation.
+// * `version` - The EdgeWorker version of the latest activation.
 func GetEdgeWorkerActivation(ctx *pulumi.Context, args *GetEdgeWorkerActivationArgs, opts ...pulumi.InvokeOption) (*GetEdgeWorkerActivationResult, error) {
 	var rv GetEdgeWorkerActivationResult
 	err := ctx.Invoke("akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation", args, &rv, opts...)
@@ -21,8 +57,10 @@ func GetEdgeWorkerActivation(ctx *pulumi.Context, args *GetEdgeWorkerActivationA
 
 // A collection of arguments for invoking getEdgeWorkerActivation.
 type GetEdgeWorkerActivationArgs struct {
-	EdgeworkerId int    `pulumi:"edgeworkerId"`
-	Network      string `pulumi:"network"`
+	// The unique identifier of the EdgeWorker.
+	EdgeworkerId int `pulumi:"edgeworkerId"`
+	// The network from where the activation information will be fetched.
+	Network string `pulumi:"network"`
 }
 
 // A collection of values returned by getEdgeWorkerActivation.
@@ -50,8 +88,10 @@ func GetEdgeWorkerActivationOutput(ctx *pulumi.Context, args GetEdgeWorkerActiva
 
 // A collection of arguments for invoking getEdgeWorkerActivation.
 type GetEdgeWorkerActivationOutputArgs struct {
-	EdgeworkerId pulumi.IntInput    `pulumi:"edgeworkerId"`
-	Network      pulumi.StringInput `pulumi:"network"`
+	// The unique identifier of the EdgeWorker.
+	EdgeworkerId pulumi.IntInput `pulumi:"edgeworkerId"`
+	// The network from where the activation information will be fetched.
+	Network pulumi.StringInput `pulumi:"network"`
 }
 
 func (GetEdgeWorkerActivationOutputArgs) ElementType() reflect.Type {

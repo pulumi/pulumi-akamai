@@ -31,7 +31,7 @@ import (
 //	"fmt"
 //	"io/ioutil"
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -46,7 +46,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
 //				Name: pulumi.StringRef("Documentation"),
 //			}, nil)
 //			if err != nil {
@@ -77,7 +77,7 @@ type AppSecReputationProfile struct {
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// . Path to a JSON file containing a definition of the reputation profile.
 	ReputationProfile pulumi.StringOutput `pulumi:"reputationProfile"`
-	// Unique identifer of the reputation profile
+	// Unique identifier of the reputation profile
 	ReputationProfileId pulumi.IntOutput `pulumi:"reputationProfileId"`
 }
 
@@ -120,7 +120,7 @@ type appSecReputationProfileState struct {
 	ConfigId *int `pulumi:"configId"`
 	// . Path to a JSON file containing a definition of the reputation profile.
 	ReputationProfile *string `pulumi:"reputationProfile"`
-	// Unique identifer of the reputation profile
+	// Unique identifier of the reputation profile
 	ReputationProfileId *int `pulumi:"reputationProfileId"`
 }
 
@@ -129,7 +129,7 @@ type AppSecReputationProfileState struct {
 	ConfigId pulumi.IntPtrInput
 	// . Path to a JSON file containing a definition of the reputation profile.
 	ReputationProfile pulumi.StringPtrInput
-	// Unique identifer of the reputation profile
+	// Unique identifier of the reputation profile
 	ReputationProfileId pulumi.IntPtrInput
 }
 
@@ -249,7 +249,7 @@ func (o AppSecReputationProfileOutput) ReputationProfile() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecReputationProfile) pulumi.StringOutput { return v.ReputationProfile }).(pulumi.StringOutput)
 }
 
-// Unique identifer of the reputation profile
+// Unique identifier of the reputation profile
 func (o AppSecReputationProfileOutput) ReputationProfileId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecReputationProfile) pulumi.IntOutput { return v.ReputationProfileId }).(pulumi.IntOutput)
 }

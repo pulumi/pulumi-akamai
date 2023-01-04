@@ -12,14 +12,14 @@ namespace Pulumi.Akamai
     public static class GetAppSecConfiguration
     {
         public static Task<GetAppSecConfigurationResult> InvokeAsync(GetAppSecConfigurationArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecConfigurationResult>("akamai:index/getAppSecConfiguration:getAppSecConfiguration", args ?? new GetAppSecConfigurationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecConfigurationResult>("akamai:index/getAppSecConfiguration:getAppSecConfiguration", args ?? new GetAppSecConfigurationArgs(), options.WithDefaults());
 
         public static Output<GetAppSecConfigurationResult> Invoke(GetAppSecConfigurationInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecConfigurationResult>("akamai:index/getAppSecConfiguration:getAppSecConfiguration", args ?? new GetAppSecConfigurationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecConfigurationResult>("akamai:index/getAppSecConfiguration:getAppSecConfiguration", args ?? new GetAppSecConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecConfigurationArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
@@ -30,9 +30,10 @@ namespace Pulumi.Akamai
         public GetAppSecConfigurationArgs()
         {
         }
+        public static new GetAppSecConfigurationArgs Empty => new GetAppSecConfigurationArgs();
     }
 
-    public sealed class GetAppSecConfigurationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
@@ -43,6 +44,7 @@ namespace Pulumi.Akamai
         public GetAppSecConfigurationInvokeArgs()
         {
         }
+        public static new GetAppSecConfigurationInvokeArgs Empty => new GetAppSecConfigurationInvokeArgs();
     }
 
 

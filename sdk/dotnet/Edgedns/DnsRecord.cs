@@ -11,7 +11,7 @@ namespace Pulumi.Akamai.Edgedns
 {
     [Obsolete(@"akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord")]
     [AkamaiResourceType("akamai:edgedns/dnsRecord:DnsRecord")]
-    public partial class DnsRecord : Pulumi.CustomResource
+    public partial class DnsRecord : global::Pulumi.CustomResource
     {
         [Output("active")]
         public Output<bool?> Active { get; private set; } = null!;
@@ -237,7 +237,7 @@ namespace Pulumi.Akamai.Edgedns
         }
     }
 
-    public sealed class DnsRecordArgs : Pulumi.ResourceArgs
+    public sealed class DnsRecordArgs : global::Pulumi.ResourceArgs
     {
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -415,9 +415,10 @@ namespace Pulumi.Akamai.Edgedns
         public DnsRecordArgs()
         {
         }
+        public static new DnsRecordArgs Empty => new DnsRecordArgs();
     }
 
-    public sealed class DnsRecordState : Pulumi.ResourceArgs
+    public sealed class DnsRecordState : global::Pulumi.ResourceArgs
     {
         [Input("active")]
         public Input<bool>? Active { get; set; }
@@ -607,5 +608,6 @@ namespace Pulumi.Akamai.Edgedns
         public DnsRecordState()
         {
         }
+        public static new DnsRecordState Empty => new DnsRecordState();
     }
 }

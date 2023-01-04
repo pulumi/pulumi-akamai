@@ -21,25 +21,23 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var demoDatacenter = new Akamai.GtmDatacenter("demoDatacenter", new()
     ///     {
-    ///         var demoDatacenter = new Akamai.GtmDatacenter("demoDatacenter", new Akamai.GtmDatacenterArgs
-    ///         {
-    ///             Domain = "demo_domain.akadns.net",
-    ///             Nickname = "demo_datacenter",
-    ///         });
-    ///     }
+    ///         Domain = "demo_domain.akadns.net",
+    ///         Nickname = "demo_datacenter",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/gtmDatacenter:GtmDatacenter")]
-    public partial class GtmDatacenter : Pulumi.CustomResource
+    public partial class GtmDatacenter : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The name of the city where the data center is located.
@@ -180,7 +178,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new Pulumi.Alias { Type = "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter"},
+                    new global::Pulumi.Alias { Type = "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter"},
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -203,7 +201,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class GtmDatacenterArgs : Pulumi.ResourceArgs
+    public sealed class GtmDatacenterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the city where the data center is located.
@@ -286,9 +284,10 @@ namespace Pulumi.Akamai
         public GtmDatacenterArgs()
         {
         }
+        public static new GtmDatacenterArgs Empty => new GtmDatacenterArgs();
     }
 
-    public sealed class GtmDatacenterState : Pulumi.ResourceArgs
+    public sealed class GtmDatacenterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the city where the data center is located.
@@ -407,5 +406,6 @@ namespace Pulumi.Akamai
         public GtmDatacenterState()
         {
         }
+        public static new GtmDatacenterState Empty => new GtmDatacenterState();
     }
 }

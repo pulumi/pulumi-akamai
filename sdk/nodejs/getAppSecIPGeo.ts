@@ -44,11 +44,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report of the IP/Geo firewall settings.
  */
 export function getAppSecIPGeo(args: GetAppSecIPGeoArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecIPGeoResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecIPGeo:getAppSecIPGeo", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
@@ -85,9 +82,47 @@ export interface GetAppSecIPGeoResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-
+/**
+ * **Scopes**: Security configuration; security policy
+ *
+ * Returns information about the network lists used in the IP/Geo Firewall settings; also returns the firewall `mode`, which indicates whether devices on the geographic or IP address lists are allowed through the firewall or are blocked by the firewall.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/get-policy-ip-geo-firewall)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const ipGeo = configuration.then(configuration => akamai.getAppSecIPGeo({
+ *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
+ * }));
+ * export const ipGeoMode = ipGeo.then(ipGeo => ipGeo.mode);
+ * export const geoNetworkLists = ipGeo.then(ipGeo => ipGeo.geoNetworkLists);
+ * export const ipNetworkLists = ipGeo.then(ipGeo => ipGeo.ipNetworkLists);
+ * export const exceptionIpNetworkLists = ipGeo.then(ipGeo => ipGeo.exceptionIpNetworkLists);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `mode`. Specifies the action taken by the IP/Geo firewall. Valid values are:
+ *   - **block**. Networks on the IP and geographic network lists are prevented from passing through the firewall.
+ *   - **allow**.  Networks on the IP and geographic network lists are allowed to pass through the firewall.
+ * - `geoNetworkLists`. Network lists blocked or allowed based on geographic location.
+ * - `ipNetworkLists`. Network lists blocked or allowed based on IP address.
+ * - `exceptionIpNetworkLists`. Network lists allowed through the firewall regardless of the values assigned to the `mode`, `geoNetworkLists`, and `ipNetworkLists` parameters.
+ * - `outputText`. Tabular report of the IP/Geo firewall settings.
+ */
 export function getAppSecIPGeoOutput(args: GetAppSecIPGeoOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecIPGeoResult> {
-    return pulumi.output(args).apply(a => getAppSecIPGeo(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecIPGeo(a, opts))
 }
 
 /**

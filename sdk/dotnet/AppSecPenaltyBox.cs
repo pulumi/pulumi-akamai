@@ -23,31 +23,30 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var penaltyBox = new Akamai.AppSecPenaltyBox("penaltyBox", new Akamai.AppSecPenaltyBoxArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             PenaltyBoxProtection = true,
-    ///             PenaltyBoxAction = "deny",
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var penaltyBox = new Akamai.AppSecPenaltyBox("penaltyBox", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         PenaltyBoxProtection = true,
+    ///         PenaltyBoxAction = "deny",
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecPenaltyBox:AppSecPenaltyBox")]
-    public partial class AppSecPenaltyBox : Pulumi.CustomResource
+    public partial class AppSecPenaltyBox : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the penalty box settings being modified.
@@ -121,7 +120,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecPenaltyBoxArgs : Pulumi.ResourceArgs
+    public sealed class AppSecPenaltyBoxArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the penalty box settings being modified.
@@ -154,9 +153,10 @@ namespace Pulumi.Akamai
         public AppSecPenaltyBoxArgs()
         {
         }
+        public static new AppSecPenaltyBoxArgs Empty => new AppSecPenaltyBoxArgs();
     }
 
-    public sealed class AppSecPenaltyBoxState : Pulumi.ResourceArgs
+    public sealed class AppSecPenaltyBoxState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the penalty box settings being modified.
@@ -189,5 +189,6 @@ namespace Pulumi.Akamai
         public AppSecPenaltyBoxState()
         {
         }
+        public static new AppSecPenaltyBoxState Empty => new AppSecPenaltyBoxState();
     }
 }

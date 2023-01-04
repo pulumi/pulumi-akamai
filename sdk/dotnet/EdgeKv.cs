@@ -17,40 +17,38 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testStaging = new Akamai.EdgeKv("testStaging", new()
     ///     {
-    ///         var testStaging = new Akamai.EdgeKv("testStaging", new Akamai.EdgeKvArgs
+    ///         GeoLocation = "US",
+    ///         GroupId = 4284,
+    ///         InitialDatas = new[]
     ///         {
-    ///             GeoLocation = "US",
-    ///             GroupId = 4284,
-    ///             InitialDatas = 
+    ///             new Akamai.Inputs.EdgeKvInitialDataArgs
     ///             {
-    ///                 new Akamai.Inputs.EdgeKvInitialDataArgs
-    ///                 {
-    ///                     Group = "translations",
-    ///                     Key = "lang",
-    ///                     Value = "English",
-    ///                 },
+    ///                 Group = "translations",
+    ///                 Key = "lang",
+    ///                 Value = "English",
     ///             },
-    ///             NamespaceName = "Marketing",
-    ///             Network = "staging",
-    ///             RetentionInSeconds = 15724800,
-    ///         });
-    ///     }
+    ///         },
+    ///         NamespaceName = "Marketing",
+    ///         Network = "staging",
+    ///         RetentionInSeconds = 15724800,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// ## Attributes reference
     /// 
     /// There are no supported arguments for this resource.
     /// </summary>
     [AkamaiResourceType("akamai:index/edgeKv:EdgeKv")]
-    public partial class EdgeKv : Pulumi.CustomResource
+    public partial class EdgeKv : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
@@ -132,7 +130,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class EdgeKvArgs : Pulumi.ResourceArgs
+    public sealed class EdgeKvArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
@@ -179,9 +177,10 @@ namespace Pulumi.Akamai
         public EdgeKvArgs()
         {
         }
+        public static new EdgeKvArgs Empty => new EdgeKvArgs();
     }
 
-    public sealed class EdgeKvState : Pulumi.ResourceArgs
+    public sealed class EdgeKvState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
@@ -228,5 +227,6 @@ namespace Pulumi.Akamai
         public EdgeKvState()
         {
         }
+        public static new EdgeKvState Empty => new EdgeKvState();
     }
 }

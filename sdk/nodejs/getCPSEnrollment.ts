@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -72,11 +73,8 @@ import * as utilities from "./utilities";
  *     * `responseBody` - The data Let's Encrypt expects to find served at `fullPath` URL.
  */
 export function getCPSEnrollment(args: GetCPSEnrollmentArgs, opts?: pulumi.InvokeOptions): Promise<GetCPSEnrollmentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCPSEnrollment:getCPSEnrollment", {
         "enrollmentId": args.enrollmentId,
     }, opts);
@@ -120,9 +118,74 @@ export interface GetCPSEnrollmentResult {
     readonly techContacts: outputs.GetCPSEnrollmentTechContact[];
     readonly validationType: string;
 }
-
+/**
+ * Use the `akamai.getCPSEnrollment` data source to return data for specific enrollment.
+ *
+ * ## Basic usage
+ *
+ * This example shows how to set up a user:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const testEnrollment = akamai.getCPSEnrollment({
+ *     enrollmentId: _var.enrollment_id,
+ * });
+ * export const dvOutput = testEnrollment;
+ * ```
+ *
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ *   * `commonName` - The fully qualified domain name (FQDN) used for the certificate.
+ *   * `sans` - Additional common names in a Subject Alternative Names (SAN) list.
+ *   * `secureNetwork` - The type of deployment network used. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+ *   * `sniOnly` - Whether you enabled SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname.
+ *   * `adminContact` - Contact information for the certificate administrator at your company.
+ *   * `certificateChainType` - Certificate trust chain type.
+ *   * `csr` - When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+ *     * `countryCode` - The country code for the country where your organization is located.
+ *     * `city` - The city where your organization resides.
+ *     * `organization` - The name of your company or organization.
+ *     * `organizationalUnit` - Your organizational unit.
+ *     * `state` - Your state or province.
+ *   * `enableMultiStackedCertificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
+ *   * `networkConfiguration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+ *     * `clientMutualAuthentication` - If present, shows the configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+ *       * `sendCaListToClient` - If present, the server is enabled to send the certificate authority (CA) list to the client.
+ *       * `ocspEnabled` - If present, the Online Certificate Status Protocol (OCSP) stapling is enabled for client certificates.
+ *       * `setId` - The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
+ *     * `disallowedTlsVersions` - The TLS protocol version that is not trusted. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+ *     * `cloneDnsNames` - If present, CPS directs traffic using all the SANs listed in the SANs parameter when the enrollment was created.
+ *     * `geography` - A list of where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia.
+ *     * `mustHaveCiphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+ *     * `ocspStapling` - If present, its using OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response.
+ *     * `preferredCiphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-default` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+ *     * `quicEnabled` - If present, uses the QUIC transport layer network protocol.
+ *   * `signatureAlgorithm` - If present, shows the Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+ *   * `techContact` - The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `adminContact`.
+ *   * `organization` - The name of the organization in Akamai where your technical contact works.
+ *     * `name` - The name of the technical contact at Akamai.
+ *     * `phone` - The phone number of the technical contact at Akamai.
+ *     * `addressLineOne` - The address for the technical contact at Akamai.
+ *     * `addressLineTwo` - The address for the technical contact at Akamai.
+ *     * `city` - The address for the technical contact at Akamai.
+ *     * `region` - The region for the technical contact at Akamai.
+ *     * `postalCode` - The postal code for the technical contact at Akamai.
+ *     * `countryCode` - The country code for the technical contact at Akamai.
+ *   * `contractId` - A contract's ID, optionally with the `ctr_` prefix.
+ *   * `certificateType` - Populates automatically with the `san` certificate type and is preserved in the `state` file.
+ *   * `validationType` - Populates automatically with the `dv` validation type and is preserved in the `state` file.
+ *   * `registrationAuthority` - Populates automatically with the `lets-encrypt` certificate type and is preserved in the `state` file.
+ *   * `dnsChallenges` - If present, the validation challenge for the domains listed in the certificate.
+ *     * `domain` - The domain to validate.
+ *     * `fullPath` - The URL where Akamai publishes `responseBody` for Let's Encrypt to validate.
+ *     * `responseBody` - The data Let's Encrypt expects to find served at `fullPath` URL.
+ */
 export function getCPSEnrollmentOutput(args: GetCPSEnrollmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCPSEnrollmentResult> {
-    return pulumi.output(args).apply(a => getCPSEnrollment(a, opts))
+    return pulumi.output(args).apply((a: any) => getCPSEnrollment(a, opts))
 }
 
 /**

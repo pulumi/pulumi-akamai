@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			ctx.Export("propertyMatch", data.Akamai_property_rule_formats.My-example)
+//			ctx.Export("propertyMatch", data.Akamai_property_rule_formats.MyExample)
 //			return nil
 //		})
 //	}

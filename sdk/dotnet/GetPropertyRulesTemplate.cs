@@ -24,15 +24,12 @@ namespace Pulumi.Akamai
         /// Here's an example of a JSON template file with nested templates:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///     }
-        /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% example %}}
@@ -41,15 +38,12 @@ namespace Pulumi.Akamai
         /// Here’s a simple default rule example that you can include inside the `template_data` argument:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///     }
-        /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// {{% /example %}}
@@ -67,42 +61,39 @@ namespace Pulumi.Akamai
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var examplePropertyRulesTemplate = Akamai.GetPropertyRulesTemplate.Invoke(new()
         ///     {
-        ///         var examplePropertyRulesTemplate = Output.Create(Akamai.GetPropertyRulesTemplate.InvokeAsync(new Akamai.GetPropertyRulesTemplateArgs
+        ///         Templates = new[]
         ///         {
-        ///             Templates = 
+        ///             new Akamai.Inputs.GetPropertyRulesTemplateTemplateInputArgs
         ///             {
-        ///                 new Akamai.Inputs.GetPropertyRulesTemplateTemplateArgs
+        ///                 TemplateData = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
         ///                 {
-        ///                     TemplateData = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
+        ///                     ["rules"] = new Dictionary&lt;string, object?&gt;
         ///                     {
-        ///                         { "rules", new Dictionary&lt;string, object?&gt;
+        ///                         ["name"] = "default",
+        ///                         ["children"] = new[]
         ///                         {
-        ///                             { "name", "default" },
-        ///                             { "children", new[]
-        ///                                 {
-        ///                                     "#include:rules.json",
-        ///                                 }
-        ///                              },
-        ///                         } },
-        ///                     }),
-        ///                     TemplateDir = "property-snippets/",
-        ///                 },
+        ///                             "#include:rules.json",
+        ///                         },
+        ///                     },
+        ///                 }),
+        ///                 TemplateDir = "property-snippets/",
         ///             },
-        ///         }));
-        ///         var exampleProperty = new Akamai.Property("exampleProperty", new Akamai.PropertyArgs
-        ///         {
-        ///             ContractId = @var.Contractid,
-        ///             GroupId = @var.Groupid,
-        ///             RuleFormat = "v2020-03-04",
-        ///             Rules = examplePropertyRulesTemplate.Apply(examplePropertyRulesTemplate =&gt; examplePropertyRulesTemplate.Json),
-        ///         });
-        ///     }
+        ///         },
+        ///     });
         /// 
-        /// }
+        ///     var exampleProperty = new Akamai.Property("exampleProperty", new()
+        ///     {
+        ///         ContractId = @var.Contractid,
+        ///         GroupId = @var.Groupid,
+        ///         RuleFormat = "v2020-03-04",
+        ///         Rules = examplePropertyRulesTemplate.Apply(getPropertyRulesTemplateResult =&gt; getPropertyRulesTemplateResult.Json),
+        ///     });
+        /// 
+        /// });
         /// ```
         /// 
         /// {{% /example %}}
@@ -117,7 +108,7 @@ namespace Pulumi.Akamai
         /// * `json` - The fully expanded template with variables and all nested templates resolved.
         /// </summary>
         public static Task<GetPropertyRulesTemplateResult> InvokeAsync(GetPropertyRulesTemplateArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesTemplateResult>("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args ?? new GetPropertyRulesTemplateArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesTemplateResult>("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args ?? new GetPropertyRulesTemplateArgs(), options.WithDefaults());
 
         /// <summary>
         /// {{% examples %}}
@@ -132,15 +123,12 @@ namespace Pulumi.Akamai
         /// Here's an example of a JSON template file with nested templates:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///     }
-        /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% example %}}
@@ -149,15 +137,12 @@ namespace Pulumi.Akamai
         /// Here’s a simple default rule example that you can include inside the `template_data` argument:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///     }
-        /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// {{% /example %}}
@@ -175,42 +160,39 @@ namespace Pulumi.Akamai
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var examplePropertyRulesTemplate = Akamai.GetPropertyRulesTemplate.Invoke(new()
         ///     {
-        ///         var examplePropertyRulesTemplate = Output.Create(Akamai.GetPropertyRulesTemplate.InvokeAsync(new Akamai.GetPropertyRulesTemplateArgs
+        ///         Templates = new[]
         ///         {
-        ///             Templates = 
+        ///             new Akamai.Inputs.GetPropertyRulesTemplateTemplateInputArgs
         ///             {
-        ///                 new Akamai.Inputs.GetPropertyRulesTemplateTemplateArgs
+        ///                 TemplateData = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
         ///                 {
-        ///                     TemplateData = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
+        ///                     ["rules"] = new Dictionary&lt;string, object?&gt;
         ///                     {
-        ///                         { "rules", new Dictionary&lt;string, object?&gt;
+        ///                         ["name"] = "default",
+        ///                         ["children"] = new[]
         ///                         {
-        ///                             { "name", "default" },
-        ///                             { "children", new[]
-        ///                                 {
-        ///                                     "#include:rules.json",
-        ///                                 }
-        ///                              },
-        ///                         } },
-        ///                     }),
-        ///                     TemplateDir = "property-snippets/",
-        ///                 },
+        ///                             "#include:rules.json",
+        ///                         },
+        ///                     },
+        ///                 }),
+        ///                 TemplateDir = "property-snippets/",
         ///             },
-        ///         }));
-        ///         var exampleProperty = new Akamai.Property("exampleProperty", new Akamai.PropertyArgs
-        ///         {
-        ///             ContractId = @var.Contractid,
-        ///             GroupId = @var.Groupid,
-        ///             RuleFormat = "v2020-03-04",
-        ///             Rules = examplePropertyRulesTemplate.Apply(examplePropertyRulesTemplate =&gt; examplePropertyRulesTemplate.Json),
-        ///         });
-        ///     }
+        ///         },
+        ///     });
         /// 
-        /// }
+        ///     var exampleProperty = new Akamai.Property("exampleProperty", new()
+        ///     {
+        ///         ContractId = @var.Contractid,
+        ///         GroupId = @var.Groupid,
+        ///         RuleFormat = "v2020-03-04",
+        ///         Rules = examplePropertyRulesTemplate.Apply(getPropertyRulesTemplateResult =&gt; getPropertyRulesTemplateResult.Json),
+        ///     });
+        /// 
+        /// });
         /// ```
         /// 
         /// {{% /example %}}
@@ -225,11 +207,11 @@ namespace Pulumi.Akamai
         /// * `json` - The fully expanded template with variables and all nested templates resolved.
         /// </summary>
         public static Output<GetPropertyRulesTemplateResult> Invoke(GetPropertyRulesTemplateInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertyRulesTemplateResult>("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args ?? new GetPropertyRulesTemplateInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertyRulesTemplateResult>("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args ?? new GetPropertyRulesTemplateInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetPropertyRulesTemplateArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertyRulesTemplateArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
@@ -276,9 +258,10 @@ namespace Pulumi.Akamai
         public GetPropertyRulesTemplateArgs()
         {
         }
+        public static new GetPropertyRulesTemplateArgs Empty => new GetPropertyRulesTemplateArgs();
     }
 
-    public sealed class GetPropertyRulesTemplateInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertyRulesTemplateInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
@@ -325,6 +308,7 @@ namespace Pulumi.Akamai
         public GetPropertyRulesTemplateInvokeArgs()
         {
         }
+        public static new GetPropertyRulesTemplateInvokeArgs Empty => new GetPropertyRulesTemplateInvokeArgs();
     }
 
 

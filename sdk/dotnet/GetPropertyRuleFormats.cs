@@ -26,24 +26,22 @@ namespace Pulumi.Akamai
         /// Use this example to list available property rule formats:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         this.PropertyMatch = data.Akamai_property_rule_formats.My_example;
-        ///     }
-        /// 
-        ///     [Output("propertyMatch")]
-        ///     public Output&lt;string&gt; PropertyMatch { get; set; }
-        /// }
+        ///         ["propertyMatch"] = data.Akamai_property_rule_formats.My_example,
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPropertyRuleFormatsResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRuleFormatsResult>("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRuleFormatsResult>("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

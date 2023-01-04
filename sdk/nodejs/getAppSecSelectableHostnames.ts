@@ -11,6 +11,31 @@ import * as utilities from "./utilities";
  *
  * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://techdocs.akamai.com/application-security/reference/get-selectable-hostnames)
  *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const selectableHostnamesAppSecSelectableHostnames = configuration.then(configuration => akamai.getAppSecSelectableHostnames({
+ *     configId: configuration.configId,
+ * }));
+ * export const selectableHostnames = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.hostnames);
+ * export const selectableHostnamesJson = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.hostnamesJson);
+ * export const selectableHostnamesOutputText = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.outputText);
+ * const selectableHostnamesForCreateConfigurationAppSecSelectableHostnames = akamai.getAppSecSelectableHostnames({
+ *     contractId: "5-2WA382",
+ *     groupId: 12198,
+ * });
+ * export const selectableHostnamesForCreateConfiguration = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.then(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames => selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.hostnames);
+ * export const selectableHostnamesForCreateConfigurationJson = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.then(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames => selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.hostnamesJson);
+ * export const selectableHostnamesForCreateConfigurationOutputText = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.then(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames => selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.outputText);
+ * ```
  * ## Output Options
  *
  * The following options can be used to determine the information returned, and how that returned information is formatted:
@@ -21,11 +46,8 @@ import * as utilities from "./utilities";
  */
 export function getAppSecSelectableHostnames(args?: GetAppSecSelectableHostnamesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSelectableHostnamesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", {
         "activeInProduction": args.activeInProduction,
         "activeInStaging": args.activeInStaging,
@@ -72,9 +94,48 @@ export interface GetAppSecSelectableHostnamesResult {
     readonly id: string;
     readonly outputText: string;
 }
-
+/**
+ * **Scopes**: Security configuration; contract; group
+ *
+ * Returns the list of hostnames that can be (but aren't yet) protected by a security configuration. You can specify the set of hostnames to be retrieved either by supplying the name of a security configuration or by supplying an Akamai group ID and contract ID.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://techdocs.akamai.com/application-security/reference/get-selectable-hostnames)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const selectableHostnamesAppSecSelectableHostnames = configuration.then(configuration => akamai.getAppSecSelectableHostnames({
+ *     configId: configuration.configId,
+ * }));
+ * export const selectableHostnames = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.hostnames);
+ * export const selectableHostnamesJson = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.hostnamesJson);
+ * export const selectableHostnamesOutputText = selectableHostnamesAppSecSelectableHostnames.then(selectableHostnamesAppSecSelectableHostnames => selectableHostnamesAppSecSelectableHostnames.outputText);
+ * const selectableHostnamesForCreateConfigurationAppSecSelectableHostnames = akamai.getAppSecSelectableHostnames({
+ *     contractId: "5-2WA382",
+ *     groupId: 12198,
+ * });
+ * export const selectableHostnamesForCreateConfiguration = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.then(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames => selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.hostnames);
+ * export const selectableHostnamesForCreateConfigurationJson = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.then(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames => selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.hostnamesJson);
+ * export const selectableHostnamesForCreateConfigurationOutputText = selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.then(selectableHostnamesForCreateConfigurationAppSecSelectableHostnames => selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.outputText);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `hostnames`. List of selectable hostnames.
+ * - `hostnamesJson`. JSON-formatted list of selectable hostnames.
+ * - `outputText`. Tabular report of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production.
+ */
 export function getAppSecSelectableHostnamesOutput(args?: GetAppSecSelectableHostnamesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSelectableHostnamesResult> {
-    return pulumi.output(args).apply(a => getAppSecSelectableHostnames(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecSelectableHostnames(a, opts))
 }
 
 /**

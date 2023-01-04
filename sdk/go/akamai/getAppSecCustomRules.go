@@ -25,20 +25,20 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
 //				Name: pulumi.StringRef("Documentation"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			customRules, err := akamai.GetAppSecCustomRules(ctx, &GetAppSecCustomRulesArgs{
+//			customRules, err := akamai.GetAppSecCustomRules(ctx, &akamai.GetAppSecCustomRulesArgs{
 //				ConfigId: configuration.ConfigId,
 //			}, nil)
 //			if err != nil {
@@ -47,7 +47,7 @@ import (
 //			ctx.Export("customRulesOutputText", customRules.OutputText)
 //			ctx.Export("customRulesJson", customRules.Json)
 //			ctx.Export("customRulesConfigId", customRules.ConfigId)
-//			specificCustomRule, err := akamai.GetAppSecCustomRules(ctx, &GetAppSecCustomRulesArgs{
+//			specificCustomRule, err := akamai.GetAppSecCustomRules(ctx, &akamai.GetAppSecCustomRulesArgs{
 //				ConfigId:     configuration.ConfigId,
 //				CustomRuleId: pulumi.IntRef(60029316),
 //			}, nil)

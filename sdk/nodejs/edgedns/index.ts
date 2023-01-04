@@ -5,14 +5,26 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./dnsRecord";
-export * from "./dnsZone";
-export * from "./getAuthoritiesSet";
-export * from "./getDnsRecordSet";
+export { DnsRecordArgs, DnsRecordState } from "./dnsRecord";
+export type DnsRecord = import("./dnsRecord").DnsRecord;
+export const DnsRecord: typeof import("./dnsRecord").DnsRecord = null as any;
+utilities.lazyLoad(exports, ["DnsRecord"], () => require("./dnsRecord"));
 
-// Import resources to register:
-import { DnsRecord } from "./dnsRecord";
-import { DnsZone } from "./dnsZone";
+export { DnsZoneArgs, DnsZoneState } from "./dnsZone";
+export type DnsZone = import("./dnsZone").DnsZone;
+export const DnsZone: typeof import("./dnsZone").DnsZone = null as any;
+utilities.lazyLoad(exports, ["DnsZone"], () => require("./dnsZone"));
+
+export { GetAuthoritiesSetArgs, GetAuthoritiesSetResult, GetAuthoritiesSetOutputArgs } from "./getAuthoritiesSet";
+export const getAuthoritiesSet: typeof import("./getAuthoritiesSet").getAuthoritiesSet = null as any;
+export const getAuthoritiesSetOutput: typeof import("./getAuthoritiesSet").getAuthoritiesSetOutput = null as any;
+utilities.lazyLoad(exports, ["getAuthoritiesSet","getAuthoritiesSetOutput"], () => require("./getAuthoritiesSet"));
+
+export { GetDnsRecordSetArgs, GetDnsRecordSetResult, GetDnsRecordSetOutputArgs } from "./getDnsRecordSet";
+export const getDnsRecordSet: typeof import("./getDnsRecordSet").getDnsRecordSet = null as any;
+export const getDnsRecordSetOutput: typeof import("./getDnsRecordSet").getDnsRecordSetOutput = null as any;
+utilities.lazyLoad(exports, ["getDnsRecordSet","getDnsRecordSetOutput"], () => require("./getDnsRecordSet"));
+
 
 const _module = {
     version: utilities.getVersion(),

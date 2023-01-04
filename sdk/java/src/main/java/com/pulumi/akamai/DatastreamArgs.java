@@ -6,8 +6,11 @@ package com.pulumi.akamai;
 import com.pulumi.akamai.inputs.DatastreamAzureConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamConfigArgs;
 import com.pulumi.akamai.inputs.DatastreamDatadogConnectorArgs;
+import com.pulumi.akamai.inputs.DatastreamElasticsearchConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamGcsConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamHttpsConnectorArgs;
+import com.pulumi.akamai.inputs.DatastreamLogglyConnectorArgs;
+import com.pulumi.akamai.inputs.DatastreamNewRelicConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamOracleConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamS3ConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamSplunkConnectorArgs;
@@ -118,6 +121,21 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Specify details about the Elasticsearch connector you can use in a stream, including:
+     * 
+     */
+    @Import(name="elasticsearchConnector")
+    private @Nullable Output<DatastreamElasticsearchConnectorArgs> elasticsearchConnector;
+
+    /**
+     * @return Specify details about the Elasticsearch connector you can use in a stream, including:
+     * 
+     */
+    public Optional<Output<DatastreamElasticsearchConnectorArgs>> elasticsearchConnector() {
+        return Optional.ofNullable(this.elasticsearchConnector);
+    }
+
+    /**
      * A list of email addresses you want to notify about activations and deactivations of the stream.
      * 
      */
@@ -175,6 +193,36 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<DatastreamHttpsConnectorArgs>> httpsConnector() {
         return Optional.ofNullable(this.httpsConnector);
+    }
+
+    /**
+     * Specify details about the Loggly connector you can use in a stream, including:
+     * 
+     */
+    @Import(name="logglyConnector")
+    private @Nullable Output<DatastreamLogglyConnectorArgs> logglyConnector;
+
+    /**
+     * @return Specify details about the Loggly connector you can use in a stream, including:
+     * 
+     */
+    public Optional<Output<DatastreamLogglyConnectorArgs>> logglyConnector() {
+        return Optional.ofNullable(this.logglyConnector);
+    }
+
+    /**
+     * Specify details about the New Relic connector you can use in a stream, including:
+     * 
+     */
+    @Import(name="newRelicConnector")
+    private @Nullable Output<DatastreamNewRelicConnectorArgs> newRelicConnector;
+
+    /**
+     * @return Specify details about the New Relic connector you can use in a stream, including:
+     * 
+     */
+    public Optional<Output<DatastreamNewRelicConnectorArgs>> newRelicConnector() {
+        return Optional.ofNullable(this.newRelicConnector);
     }
 
     /**
@@ -306,10 +354,13 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         this.contractId = $.contractId;
         this.datadogConnector = $.datadogConnector;
         this.datasetFieldsIds = $.datasetFieldsIds;
+        this.elasticsearchConnector = $.elasticsearchConnector;
         this.emailIds = $.emailIds;
         this.gcsConnector = $.gcsConnector;
         this.groupId = $.groupId;
         this.httpsConnector = $.httpsConnector;
+        this.logglyConnector = $.logglyConnector;
+        this.newRelicConnector = $.newRelicConnector;
         this.oracleConnector = $.oracleConnector;
         this.propertyIds = $.propertyIds;
         this.s3Connector = $.s3Connector;
@@ -475,6 +526,27 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param elasticsearchConnector Specify details about the Elasticsearch connector you can use in a stream, including:
+         * 
+         * @return builder
+         * 
+         */
+        public Builder elasticsearchConnector(@Nullable Output<DatastreamElasticsearchConnectorArgs> elasticsearchConnector) {
+            $.elasticsearchConnector = elasticsearchConnector;
+            return this;
+        }
+
+        /**
+         * @param elasticsearchConnector Specify details about the Elasticsearch connector you can use in a stream, including:
+         * 
+         * @return builder
+         * 
+         */
+        public Builder elasticsearchConnector(DatastreamElasticsearchConnectorArgs elasticsearchConnector) {
+            return elasticsearchConnector(Output.of(elasticsearchConnector));
+        }
+
+        /**
          * @param emailIds A list of email addresses you want to notify about activations and deactivations of the stream.
          * 
          * @return builder
@@ -566,6 +638,48 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder httpsConnector(DatastreamHttpsConnectorArgs httpsConnector) {
             return httpsConnector(Output.of(httpsConnector));
+        }
+
+        /**
+         * @param logglyConnector Specify details about the Loggly connector you can use in a stream, including:
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logglyConnector(@Nullable Output<DatastreamLogglyConnectorArgs> logglyConnector) {
+            $.logglyConnector = logglyConnector;
+            return this;
+        }
+
+        /**
+         * @param logglyConnector Specify details about the Loggly connector you can use in a stream, including:
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logglyConnector(DatastreamLogglyConnectorArgs logglyConnector) {
+            return logglyConnector(Output.of(logglyConnector));
+        }
+
+        /**
+         * @param newRelicConnector Specify details about the New Relic connector you can use in a stream, including:
+         * 
+         * @return builder
+         * 
+         */
+        public Builder newRelicConnector(@Nullable Output<DatastreamNewRelicConnectorArgs> newRelicConnector) {
+            $.newRelicConnector = newRelicConnector;
+            return this;
+        }
+
+        /**
+         * @param newRelicConnector Specify details about the New Relic connector you can use in a stream, including:
+         * 
+         * @return builder
+         * 
+         */
+        public Builder newRelicConnector(DatastreamNewRelicConnectorArgs newRelicConnector) {
+            return newRelicConnector(Output.of(newRelicConnector));
         }
 
         /**

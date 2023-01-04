@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GtmGeomapAssignmentArgs : Pulumi.ResourceArgs
+    public sealed class GtmGeomapAssignmentArgs : global::Pulumi.ResourceArgs
     {
         [Input("countries")]
         private InputList<string>? _countries;
@@ -39,5 +39,6 @@ namespace Pulumi.Akamai.Inputs
         public GtmGeomapAssignmentArgs()
         {
         }
+        public static new GtmGeomapAssignmentArgs Empty => new GtmGeomapAssignmentArgs();
     }
 }

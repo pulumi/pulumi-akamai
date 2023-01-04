@@ -27,11 +27,8 @@ import * as utilities from "./utilities";
  * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-contact-types)
  */
 export function getIamContactTypes(opts?: pulumi.InvokeOptions): Promise<GetIamContactTypesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getIamContactTypes:getIamContactTypes", {
     }, opts);
 }

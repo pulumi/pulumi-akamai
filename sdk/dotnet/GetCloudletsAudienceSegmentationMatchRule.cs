@@ -24,7 +24,7 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Task<GetCloudletsAudienceSegmentationMatchRuleResult> InvokeAsync(GetCloudletsAudienceSegmentationMatchRuleArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsAudienceSegmentationMatchRuleResult>("akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule", args ?? new GetCloudletsAudienceSegmentationMatchRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsAudienceSegmentationMatchRuleResult>("akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule", args ?? new GetCloudletsAudienceSegmentationMatchRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
@@ -39,11 +39,11 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Output<GetCloudletsAudienceSegmentationMatchRuleResult> Invoke(GetCloudletsAudienceSegmentationMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudletsAudienceSegmentationMatchRuleResult>("akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule", args ?? new GetCloudletsAudienceSegmentationMatchRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsAudienceSegmentationMatchRuleResult>("akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule", args ?? new GetCloudletsAudienceSegmentationMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCloudletsAudienceSegmentationMatchRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsAudienceSegmentationMatchRuleArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private List<Inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs>? _matchRules;
@@ -60,9 +60,10 @@ namespace Pulumi.Akamai
         public GetCloudletsAudienceSegmentationMatchRuleArgs()
         {
         }
+        public static new GetCloudletsAudienceSegmentationMatchRuleArgs Empty => new GetCloudletsAudienceSegmentationMatchRuleArgs();
     }
 
-    public sealed class GetCloudletsAudienceSegmentationMatchRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsAudienceSegmentationMatchRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private InputList<Inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleInputArgs>? _matchRules;
@@ -79,6 +80,7 @@ namespace Pulumi.Akamai
         public GetCloudletsAudienceSegmentationMatchRuleInvokeArgs()
         {
         }
+        public static new GetCloudletsAudienceSegmentationMatchRuleInvokeArgs Empty => new GetCloudletsAudienceSegmentationMatchRuleInvokeArgs();
     }
 
 

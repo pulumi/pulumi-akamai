@@ -25,34 +25,30 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var threatIntelAppSecThreatIntel = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecThreatIntel.InvokeAsync(new Akamai.GetAppSecThreatIntelArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.ThreatIntel = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.ThreatIntel);
-        ///         this.Json = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.Json);
-        ///         this.OutputText = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("threatIntel")]
-        ///     public Output&lt;string&gt; ThreatIntel { get; set; }
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("outputText")]
-        ///     public Output&lt;string&gt; OutputText { get; set; }
-        /// }
+        ///     var threatIntelAppSecThreatIntel = Akamai.GetAppSecThreatIntel.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["threatIntel"] = threatIntelAppSecThreatIntel.Apply(getAppSecThreatIntelResult =&gt; getAppSecThreatIntelResult.ThreatIntel),
+        ///         ["json"] = threatIntelAppSecThreatIntel.Apply(getAppSecThreatIntelResult =&gt; getAppSecThreatIntelResult.Json),
+        ///         ["outputText"] = threatIntelAppSecThreatIntel.Apply(getAppSecThreatIntelResult =&gt; getAppSecThreatIntelResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -65,7 +61,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the threat intelligence information.
         /// </summary>
         public static Task<GetAppSecThreatIntelResult> InvokeAsync(GetAppSecThreatIntelArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecThreatIntelResult>("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args ?? new GetAppSecThreatIntelArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecThreatIntelResult>("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args ?? new GetAppSecThreatIntelArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -81,34 +77,30 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var threatIntelAppSecThreatIntel = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecThreatIntel.InvokeAsync(new Akamai.GetAppSecThreatIntelArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.ThreatIntel = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.ThreatIntel);
-        ///         this.Json = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.Json);
-        ///         this.OutputText = threatIntelAppSecThreatIntel.Apply(threatIntelAppSecThreatIntel =&gt; threatIntelAppSecThreatIntel.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("threatIntel")]
-        ///     public Output&lt;string&gt; ThreatIntel { get; set; }
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("outputText")]
-        ///     public Output&lt;string&gt; OutputText { get; set; }
-        /// }
+        ///     var threatIntelAppSecThreatIntel = Akamai.GetAppSecThreatIntel.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["threatIntel"] = threatIntelAppSecThreatIntel.Apply(getAppSecThreatIntelResult =&gt; getAppSecThreatIntelResult.ThreatIntel),
+        ///         ["json"] = threatIntelAppSecThreatIntel.Apply(getAppSecThreatIntelResult =&gt; getAppSecThreatIntelResult.Json),
+        ///         ["outputText"] = threatIntelAppSecThreatIntel.Apply(getAppSecThreatIntelResult =&gt; getAppSecThreatIntelResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -121,11 +113,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the threat intelligence information.
         /// </summary>
         public static Output<GetAppSecThreatIntelResult> Invoke(GetAppSecThreatIntelInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecThreatIntelResult>("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args ?? new GetAppSecThreatIntelInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecThreatIntelResult>("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args ?? new GetAppSecThreatIntelInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecThreatIntelArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecThreatIntelArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the threat intelligence settings.
@@ -142,9 +134,10 @@ namespace Pulumi.Akamai
         public GetAppSecThreatIntelArgs()
         {
         }
+        public static new GetAppSecThreatIntelArgs Empty => new GetAppSecThreatIntelArgs();
     }
 
-    public sealed class GetAppSecThreatIntelInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecThreatIntelInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the threat intelligence settings.
@@ -161,6 +154,7 @@ namespace Pulumi.Akamai
         public GetAppSecThreatIntelInvokeArgs()
         {
         }
+        public static new GetAppSecThreatIntelInvokeArgs Empty => new GetAppSecThreatIntelInvokeArgs();
     }
 
 

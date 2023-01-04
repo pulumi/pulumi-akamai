@@ -19,74 +19,71 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var example = new Akamai.CloudletsPolicyActivation("example", new()
     ///     {
-    ///         var example = new Akamai.CloudletsPolicyActivation("example", new Akamai.CloudletsPolicyActivationArgs
+    ///         AssociatedProperties = new[]
     ///         {
-    ///             AssociatedProperties = 
-    ///             {
-    ///                 "Property_1",
-    ///                 "Property_2",
-    ///                 "Property_3",
-    ///             },
-    ///             Network = "staging",
-    ///             PolicyId = 1234,
-    ///             Version = 1,
-    ///         });
-    ///     }
+    ///             "Property_1",
+    ///             "Property_2",
+    ///             "Property_3",
+    ///         },
+    ///         Network = "staging",
+    ///         PolicyId = 1234,
+    ///         Version = 1,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// If you're handling two `akamai.CloudletsPolicyActivation` resources in the same configuration file with the same `policy_id`, but different `network` arguments (for example, `production` and `staging`), you need to add `depends_on` to the production resource. See the example:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var stag = new Akamai.CloudletsPolicyActivation("stag", new()
     ///     {
-    ///         var stag = new Akamai.CloudletsPolicyActivation("stag", new Akamai.CloudletsPolicyActivationArgs
+    ///         PolicyId = 1234567,
+    ///         Network = "staging",
+    ///         Version = 1,
+    ///         AssociatedProperties = new[]
     ///         {
-    ///             PolicyId = 1234567,
-    ///             Network = "staging",
-    ///             Version = 1,
-    ///             AssociatedProperties = 
-    ///             {
-    ///                 "Property_1",
-    ///                 "Property_2",
-    ///             },
-    ///         });
-    ///         var prod = new Akamai.CloudletsPolicyActivation("prod", new Akamai.CloudletsPolicyActivationArgs
-    ///         {
-    ///             PolicyId = 1234567,
-    ///             Network = "production",
-    ///             Version = 1,
-    ///             AssociatedProperties = 
-    ///             {
-    ///                 "Property_1",
-    ///                 "Property_2",
-    ///             },
-    ///         }, new CustomResourceOptions
-    ///         {
-    ///             DependsOn = 
-    ///             {
-    ///                 stag,
-    ///             },
-    ///         });
-    ///     }
+    ///             "Property_1",
+    ///             "Property_2",
+    ///         },
+    ///     });
     /// 
-    /// }
+    ///     var prod = new Akamai.CloudletsPolicyActivation("prod", new()
+    ///     {
+    ///         PolicyId = 1234567,
+    ///         Network = "production",
+    ///         Version = 1,
+    ///         AssociatedProperties = new[]
+    ///         {
+    ///             "Property_1",
+    ///             "Property_2",
+    ///         },
+    ///     }, new CustomResourceOptions
+    ///     {
+    ///         DependsOn = new[]
+    ///         {
+    ///             stag,
+    ///         },
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation")]
-    public partial class CloudletsPolicyActivation : Pulumi.CustomResource
+    public partial class CloudletsPolicyActivation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
@@ -162,7 +159,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class CloudletsPolicyActivationArgs : Pulumi.ResourceArgs
+    public sealed class CloudletsPolicyActivationArgs : global::Pulumi.ResourceArgs
     {
         [Input("associatedProperties", required: true)]
         private InputList<string>? _associatedProperties;
@@ -197,9 +194,10 @@ namespace Pulumi.Akamai
         public CloudletsPolicyActivationArgs()
         {
         }
+        public static new CloudletsPolicyActivationArgs Empty => new CloudletsPolicyActivationArgs();
     }
 
-    public sealed class CloudletsPolicyActivationState : Pulumi.ResourceArgs
+    public sealed class CloudletsPolicyActivationState : global::Pulumi.ResourceArgs
     {
         [Input("associatedProperties")]
         private InputList<string>? _associatedProperties;
@@ -240,5 +238,6 @@ namespace Pulumi.Akamai
         public CloudletsPolicyActivationState()
         {
         }
+        public static new CloudletsPolicyActivationState Empty => new CloudletsPolicyActivationState();
     }
 }

@@ -31,11 +31,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report of the hostname coverage information.
  */
 export function getAppSecHostnameCoverage(opts?: pulumi.InvokeOptions): Promise<GetAppSecHostnameCoverageResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", {
     }, opts);
 }

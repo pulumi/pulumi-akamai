@@ -21,37 +21,38 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var siemDefinition = Output.Create(Akamai.GetAppSecSiemDefinitions.InvokeAsync(new Akamai.GetAppSecSiemDefinitionsArgs
-    ///         {
-    ///             SiemDefinitionName = "SIEM Version 01",
-    ///         }));
-    ///         var securityPolicies = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSecurityPolicy.InvokeAsync(new Akamai.GetAppSecSecurityPolicyArgs
-    ///         {
-    ///             ConfigId = configuration.ConfigId,
-    ///         })));
-    ///         var siem = new Akamai.AppSecSiemSettings("siem", new Akamai.AppSecSiemSettingsArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             EnableSiem = true,
-    ///             EnableForAllPolicies = false,
-    ///             EnableBotmanSiem = true,
-    ///             SiemId = siemDefinition.Apply(siemDefinition =&gt; siemDefinition.Id),
-    ///             SecurityPolicyIds = securityPolicies.Apply(securityPolicies =&gt; securityPolicies.SecurityPolicyIdLists),
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var siemDefinition = Akamai.GetAppSecSiemDefinitions.Invoke(new()
+    ///     {
+    ///         SiemDefinitionName = "SIEM Version 01",
+    ///     });
+    /// 
+    ///     var securityPolicies = Akamai.GetAppSecSecurityPolicy.Invoke(new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///     });
+    /// 
+    ///     var siem = new Akamai.AppSecSiemSettings("siem", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         EnableSiem = true,
+    ///         EnableForAllPolicies = false,
+    ///         EnableBotmanSiem = true,
+    ///         SiemId = siemDefinition.Apply(getAppSecSiemDefinitionsResult =&gt; getAppSecSiemDefinitionsResult.Id),
+    ///         SecurityPolicyIds = securityPolicies.Apply(getAppSecSecurityPolicyResult =&gt; getAppSecSecurityPolicyResult.SecurityPolicyIdLists),
+    ///     });
+    /// 
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -60,7 +61,7 @@ namespace Pulumi.Akamai
     /// - `output_text`. Tabular report showing the updated SIEM integration settings.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecSiemSettings:AppSecSiemSettings")]
-    public partial class AppSecSiemSettings : Pulumi.CustomResource
+    public partial class AppSecSiemSettings : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the SIEM settings being modified.
@@ -142,7 +143,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecSiemSettingsArgs : Pulumi.ResourceArgs
+    public sealed class AppSecSiemSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the SIEM settings being modified.
@@ -189,9 +190,10 @@ namespace Pulumi.Akamai
         public AppSecSiemSettingsArgs()
         {
         }
+        public static new AppSecSiemSettingsArgs Empty => new AppSecSiemSettingsArgs();
     }
 
-    public sealed class AppSecSiemSettingsState : Pulumi.ResourceArgs
+    public sealed class AppSecSiemSettingsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the SIEM settings being modified.
@@ -238,5 +240,6 @@ namespace Pulumi.Akamai
         public AppSecSiemSettingsState()
         {
         }
+        public static new AppSecSiemSettingsState Empty => new AppSecSiemSettingsState();
     }
 }

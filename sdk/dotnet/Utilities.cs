@@ -74,7 +74,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    internal sealed class AkamaiResourceTypeAttribute : Pulumi.ResourceTypeAttribute
+    internal sealed class AkamaiResourceTypeAttribute : global::Pulumi.ResourceTypeAttribute
     {
         public AkamaiResourceTypeAttribute(string type) : base(type, Utilities.Version)
         {

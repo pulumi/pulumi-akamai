@@ -35,24 +35,22 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var provider_demo = new Akamai.EdgeHostName("provider-demo", new()
     ///     {
-    ///         var provider_demo = new Akamai.EdgeHostName("provider-demo", new Akamai.EdgeHostNameArgs
-    ///         {
-    ///             ContractId = "ctr_1-AB123",
-    ///             EdgeHostname = "www.example.org.edgesuite.net",
-    ///             GroupId = "grp_123",
-    ///             IpBehavior = "IPV4",
-    ///             ProductId = "prd_Object_Delivery",
-    ///         });
-    ///     }
+    ///         ContractId = "ctr_1-AB123",
+    ///         EdgeHostname = "www.example.org.edgesuite.net",
+    ///         GroupId = "grp_123",
+    ///         IpBehavior = "IPV4",
+    ///         ProductId = "prd_Object_Delivery",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// ## Attributes reference
     /// 
@@ -73,7 +71,7 @@ namespace Pulumi.Akamai
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/edgeHostName:EdgeHostName")]
-    public partial class EdgeHostName : Pulumi.CustomResource
+    public partial class EdgeHostName : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
@@ -163,7 +161,7 @@ namespace Pulumi.Akamai
                 Version = Utilities.Version,
                 Aliases =
                 {
-                    new Pulumi.Alias { Type = "akamai:properties/edgeHostName:EdgeHostName"},
+                    new global::Pulumi.Alias { Type = "akamai:properties/edgeHostName:EdgeHostName"},
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -186,7 +184,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class EdgeHostNameArgs : Pulumi.ResourceArgs
+    public sealed class EdgeHostNameArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
@@ -260,9 +258,10 @@ namespace Pulumi.Akamai
         public EdgeHostNameArgs()
         {
         }
+        public static new EdgeHostNameArgs Empty => new EdgeHostNameArgs();
     }
 
-    public sealed class EdgeHostNameState : Pulumi.ResourceArgs
+    public sealed class EdgeHostNameState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
@@ -336,5 +335,6 @@ namespace Pulumi.Akamai
         public EdgeHostNameState()
         {
         }
+        public static new EdgeHostNameState Empty => new EdgeHostNameState();
     }
 }

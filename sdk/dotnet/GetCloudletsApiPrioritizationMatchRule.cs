@@ -24,7 +24,7 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Task<GetCloudletsApiPrioritizationMatchRuleResult> InvokeAsync(GetCloudletsApiPrioritizationMatchRuleArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsApiPrioritizationMatchRuleResult>("akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule", args ?? new GetCloudletsApiPrioritizationMatchRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsApiPrioritizationMatchRuleResult>("akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule", args ?? new GetCloudletsApiPrioritizationMatchRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
@@ -39,11 +39,11 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Output<GetCloudletsApiPrioritizationMatchRuleResult> Invoke(GetCloudletsApiPrioritizationMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudletsApiPrioritizationMatchRuleResult>("akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule", args ?? new GetCloudletsApiPrioritizationMatchRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsApiPrioritizationMatchRuleResult>("akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule", args ?? new GetCloudletsApiPrioritizationMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCloudletsApiPrioritizationMatchRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsApiPrioritizationMatchRuleArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private List<Inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs>? _matchRules;
@@ -60,9 +60,10 @@ namespace Pulumi.Akamai
         public GetCloudletsApiPrioritizationMatchRuleArgs()
         {
         }
+        public static new GetCloudletsApiPrioritizationMatchRuleArgs Empty => new GetCloudletsApiPrioritizationMatchRuleArgs();
     }
 
-    public sealed class GetCloudletsApiPrioritizationMatchRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsApiPrioritizationMatchRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private InputList<Inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleInputArgs>? _matchRules;
@@ -79,6 +80,7 @@ namespace Pulumi.Akamai
         public GetCloudletsApiPrioritizationMatchRuleInvokeArgs()
         {
         }
+        public static new GetCloudletsApiPrioritizationMatchRuleInvokeArgs Empty => new GetCloudletsApiPrioritizationMatchRuleInvokeArgs();
     }
 
 

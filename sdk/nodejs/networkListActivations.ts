@@ -16,12 +16,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const networkListsFilter = akamai.getNetworkLists({
- *     name: _var.network_list,
+ * const networkListIp = new akamai.NetworkList("networkListIp", {
+ *     type: "IP",
+ *     description: "IP network list",
+ *     lists: _var.ip_list,
+ *     mode: "REPLACE",
  * });
  * const activation = new akamai.NetworkListActivations("activation", {
- *     networkListId: networkListsFilter.then(networkListsFilter => networkListsFilter.lists?[0]),
+ *     networkListId: resource.akamai_networklist_network_list.network_list_ip.network_list_id,
  *     network: "STAGING",
+ *     syncPoint: resource.akamai_networklist_network_list.network_list_ip.sync_point,
  *     notes: "TEST Notes",
  *     notificationEmails: ["user@example.com"],
  * });
@@ -82,6 +86,11 @@ export class NetworkListActivations extends pulumi.CustomResource {
      * list was not activated.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
+    /**
+     * An integer that identifies the current version of the network list; this value is incremented each time
+     * the list is modified.
+     */
+    public readonly syncPoint!: pulumi.Output<number>;
 
     /**
      * Create a NetworkListActivations resource with the given unique name, arguments, and options.
@@ -102,6 +111,7 @@ export class NetworkListActivations extends pulumi.CustomResource {
             resourceInputs["notes"] = state ? state.notes : undefined;
             resourceInputs["notificationEmails"] = state ? state.notificationEmails : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
+            resourceInputs["syncPoint"] = state ? state.syncPoint : undefined;
         } else {
             const args = argsOrState as NetworkListActivationsArgs | undefined;
             if ((!args || args.networkListId === undefined) && !opts.urn) {
@@ -110,11 +120,15 @@ export class NetworkListActivations extends pulumi.CustomResource {
             if ((!args || args.notificationEmails === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'notificationEmails'");
             }
+            if ((!args || args.syncPoint === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'syncPoint'");
+            }
             resourceInputs["activate"] = args ? args.activate : undefined;
             resourceInputs["network"] = args ? args.network : undefined;
             resourceInputs["networkListId"] = args ? args.networkListId : undefined;
             resourceInputs["notes"] = args ? args.notes : undefined;
             resourceInputs["notificationEmails"] = args ? args.notificationEmails : undefined;
+            resourceInputs["syncPoint"] = args ? args.syncPoint : undefined;
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -153,6 +167,11 @@ export interface NetworkListActivationsState {
      * list was not activated.
      */
     status?: pulumi.Input<string>;
+    /**
+     * An integer that identifies the current version of the network list; this value is incremented each time
+     * the list is modified.
+     */
+    syncPoint?: pulumi.Input<number>;
 }
 
 /**
@@ -181,4 +200,9 @@ export interface NetworkListActivationsArgs {
      * operation is complete.
      */
     notificationEmails: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * An integer that identifies the current version of the network list; this value is incremented each time
+     * the list is modified.
+     */
+    syncPoint: pulumi.Input<number>;
 }

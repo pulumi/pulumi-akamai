@@ -17,28 +17,26 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var example = new Akamai.CpsDvValidation("example", new()
     ///     {
-    ///         var example = new Akamai.CpsDvValidation("example", new Akamai.CpsDvValidationArgs
-    ///         {
-    ///             EnrollmentId = akamai_cps_dv_enrollment.Example.Id,
-    ///             Sans = akamai_cps_dv_enrollment.Example.Sans,
-    ///         });
-    ///     }
+    ///         EnrollmentId = akamai_cps_dv_enrollment.Example.Id,
+    ///         Sans = akamai_cps_dv_enrollment.Example.Sans,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// ## Attributes reference
     /// 
     /// * `status` - The status of certificate validation.
     /// </summary>
     [AkamaiResourceType("akamai:index/cpsDvValidation:CpsDvValidation")]
-    public partial class CpsDvValidation : Pulumi.CustomResource
+    public partial class CpsDvValidation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Unique identifier for the DV certificate enrollment.
@@ -52,6 +50,9 @@ namespace Pulumi.Akamai
         [Output("sans")]
         public Output<ImmutableArray<string>> Sans { get; private set; } = null!;
 
+        /// <summary>
+        /// Status of validation
+        /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
@@ -99,7 +100,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class CpsDvValidationArgs : Pulumi.ResourceArgs
+    public sealed class CpsDvValidationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique identifier for the DV certificate enrollment.
@@ -122,9 +123,10 @@ namespace Pulumi.Akamai
         public CpsDvValidationArgs()
         {
         }
+        public static new CpsDvValidationArgs Empty => new CpsDvValidationArgs();
     }
 
-    public sealed class CpsDvValidationState : Pulumi.ResourceArgs
+    public sealed class CpsDvValidationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique identifier for the DV certificate enrollment.
@@ -144,11 +146,15 @@ namespace Pulumi.Akamai
             set => _sans = value;
         }
 
+        /// <summary>
+        /// Status of validation
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         public CpsDvValidationState()
         {
         }
+        public static new CpsDvValidationState Empty => new CpsDvValidationState();
     }
 }

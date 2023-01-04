@@ -25,33 +25,26 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var contractsGroups = Akamai.GetAppSecContractsGroups.Invoke(new()
         ///     {
-        ///         var contractsGroups = Output.Create(Akamai.GetAppSecContractsGroups.InvokeAsync(new Akamai.GetAppSecContractsGroupsArgs
-        ///         {
-        ///             Contractid = "5-2WA382",
-        ///             Groupid = 12198,
-        ///         }));
-        ///         this.ContractsGroupsList = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.OutputText);
-        ///         this.ContractsGroupsJson = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.Json);
-        ///         this.ContractGroupsDefaultContractid = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.DefaultContractid);
-        ///         this.ContractGroupsDefaultGroupid = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.DefaultGroupid);
-        ///     }
+        ///         Contractid = "5-2WA382",
+        ///         Groupid = 12198,
+        ///     });
         /// 
-        ///     [Output("contractsGroupsList")]
-        ///     public Output&lt;string&gt; ContractsGroupsList { get; set; }
-        ///     [Output("contractsGroupsJson")]
-        ///     public Output&lt;string&gt; ContractsGroupsJson { get; set; }
-        ///     [Output("contractGroupsDefaultContractid")]
-        ///     public Output&lt;string&gt; ContractGroupsDefaultContractid { get; set; }
-        ///     [Output("contractGroupsDefaultGroupid")]
-        ///     public Output&lt;string&gt; ContractGroupsDefaultGroupid { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["contractsGroupsList"] = contractsGroups.Apply(getAppSecContractsGroupsResult =&gt; getAppSecContractsGroupsResult.OutputText),
+        ///         ["contractsGroupsJson"] = contractsGroups.Apply(getAppSecContractsGroupsResult =&gt; getAppSecContractsGroupsResult.Json),
+        ///         ["contractGroupsDefaultContractid"] = contractsGroups.Apply(getAppSecContractsGroupsResult =&gt; getAppSecContractsGroupsResult.DefaultContractid),
+        ///         ["contractGroupsDefaultGroupid"] = contractsGroups.Apply(getAppSecContractsGroupsResult =&gt; getAppSecContractsGroupsResult.DefaultGroupid),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -65,7 +58,7 @@ namespace Pulumi.Akamai
         /// - `default_groupid`. Default group ID for the specified contract and group.
         /// </summary>
         public static Task<GetAppSecContractsGroupsResult> InvokeAsync(GetAppSecContractsGroupsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Contract; group
@@ -81,33 +74,26 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var contractsGroups = Akamai.GetAppSecContractsGroups.Invoke(new()
         ///     {
-        ///         var contractsGroups = Output.Create(Akamai.GetAppSecContractsGroups.InvokeAsync(new Akamai.GetAppSecContractsGroupsArgs
-        ///         {
-        ///             Contractid = "5-2WA382",
-        ///             Groupid = 12198,
-        ///         }));
-        ///         this.ContractsGroupsList = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.OutputText);
-        ///         this.ContractsGroupsJson = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.Json);
-        ///         this.ContractGroupsDefaultContractid = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.DefaultContractid);
-        ///         this.ContractGroupsDefaultGroupid = contractsGroups.Apply(contractsGroups =&gt; contractsGroups.DefaultGroupid);
-        ///     }
+        ///         Contractid = "5-2WA382",
+        ///         Groupid = 12198,
+        ///     });
         /// 
-        ///     [Output("contractsGroupsList")]
-        ///     public Output&lt;string&gt; ContractsGroupsList { get; set; }
-        ///     [Output("contractsGroupsJson")]
-        ///     public Output&lt;string&gt; ContractsGroupsJson { get; set; }
-        ///     [Output("contractGroupsDefaultContractid")]
-        ///     public Output&lt;string&gt; ContractGroupsDefaultContractid { get; set; }
-        ///     [Output("contractGroupsDefaultGroupid")]
-        ///     public Output&lt;string&gt; ContractGroupsDefaultGroupid { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["contractsGroupsList"] = contractsGroups.Apply(getAppSecContractsGroupsResult =&gt; getAppSecContractsGroupsResult.OutputText),
+        ///         ["contractsGroupsJson"] = contractsGroups.Apply(getAppSecContractsGroupsResult =&gt; getAppSecContractsGroupsResult.Json),
+        ///         ["contractGroupsDefaultContractid"] = contractsGroups.Apply(getAppSecContractsGroupsResult =&gt; getAppSecContractsGroupsResult.DefaultContractid),
+        ///         ["contractGroupsDefaultGroupid"] = contractsGroups.Apply(getAppSecContractsGroupsResult =&gt; getAppSecContractsGroupsResult.DefaultGroupid),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -121,11 +107,11 @@ namespace Pulumi.Akamai
         /// - `default_groupid`. Default group ID for the specified contract and group.
         /// </summary>
         public static Output<GetAppSecContractsGroupsResult> Invoke(GetAppSecContractsGroupsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecContractsGroupsResult>("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args ?? new GetAppSecContractsGroupsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecContractsGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecContractsGroupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
@@ -142,9 +128,10 @@ namespace Pulumi.Akamai
         public GetAppSecContractsGroupsArgs()
         {
         }
+        public static new GetAppSecContractsGroupsArgs Empty => new GetAppSecContractsGroupsArgs();
     }
 
-    public sealed class GetAppSecContractsGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecContractsGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
@@ -161,6 +148,7 @@ namespace Pulumi.Akamai
         public GetAppSecContractsGroupsInvokeArgs()
         {
         }
+        public static new GetAppSecContractsGroupsInvokeArgs Empty => new GetAppSecContractsGroupsInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class ProviderPropertyArgs : Pulumi.ResourceArgs
+    public sealed class ProviderPropertyArgs : global::Pulumi.ResourceArgs
     {
         [Input("accessToken")]
         public Input<string>? AccessToken { get; set; }
@@ -33,5 +33,6 @@ namespace Pulumi.Akamai.Inputs
         public ProviderPropertyArgs()
         {
         }
+        public static new ProviderPropertyArgs Empty => new ProviderPropertyArgs();
     }
 }

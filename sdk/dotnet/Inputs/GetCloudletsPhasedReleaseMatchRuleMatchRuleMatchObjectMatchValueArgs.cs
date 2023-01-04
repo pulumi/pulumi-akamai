@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
@@ -57,5 +57,6 @@ namespace Pulumi.Akamai.Inputs
         public GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueInputArgs()
         {
         }
+        public static new GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueInputArgs Empty => new GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueInputArgs();
     }
 }

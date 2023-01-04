@@ -25,41 +25,36 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var reputationProfiles = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.ReputationProfilesOutput = reputationProfiles.Apply(reputationProfiles =&gt; reputationProfiles.OutputText);
-        ///         this.ReputationProfilesJson = reputationProfiles.Apply(reputationProfiles =&gt; reputationProfiles.Json);
-        ///         var reputationProfile = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             ReputationProfileId = 12345,
-        ///         })));
-        ///         this.ReputationProfileJson = reputationProfile.Apply(reputationProfile =&gt; reputationProfile.Json);
-        ///         this.ReputationProfileOutput = reputationProfile.Apply(reputationProfile =&gt; reputationProfile.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("reputationProfilesOutput")]
-        ///     public Output&lt;string&gt; ReputationProfilesOutput { get; set; }
-        ///     [Output("reputationProfilesJson")]
-        ///     public Output&lt;string&gt; ReputationProfilesJson { get; set; }
-        ///     [Output("reputationProfileJson")]
-        ///     public Output&lt;string&gt; ReputationProfileJson { get; set; }
-        ///     [Output("reputationProfileOutput")]
-        ///     public Output&lt;string&gt; ReputationProfileOutput { get; set; }
-        /// }
+        ///     var reputationProfiles = Akamai.GetAppSecReputationProfiles.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var reputationProfile = Akamai.GetAppSecReputationProfiles.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         ReputationProfileId = 12345,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["reputationProfilesOutput"] = reputationProfiles.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.OutputText),
+        ///         ["reputationProfilesJson"] = reputationProfiles.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.Json),
+        ///         ["reputationProfileJson"] = reputationProfile.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.Json),
+        ///         ["reputationProfileOutput"] = reputationProfile.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -71,7 +66,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted report of the details about the specified reputation profile or profiles.
         /// </summary>
         public static Task<GetAppSecReputationProfilesResult> InvokeAsync(GetAppSecReputationProfilesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; reputation profile
@@ -87,41 +82,36 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var reputationProfiles = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.ReputationProfilesOutput = reputationProfiles.Apply(reputationProfiles =&gt; reputationProfiles.OutputText);
-        ///         this.ReputationProfilesJson = reputationProfiles.Apply(reputationProfiles =&gt; reputationProfiles.Json);
-        ///         var reputationProfile = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecReputationProfiles.InvokeAsync(new Akamai.GetAppSecReputationProfilesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             ReputationProfileId = 12345,
-        ///         })));
-        ///         this.ReputationProfileJson = reputationProfile.Apply(reputationProfile =&gt; reputationProfile.Json);
-        ///         this.ReputationProfileOutput = reputationProfile.Apply(reputationProfile =&gt; reputationProfile.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("reputationProfilesOutput")]
-        ///     public Output&lt;string&gt; ReputationProfilesOutput { get; set; }
-        ///     [Output("reputationProfilesJson")]
-        ///     public Output&lt;string&gt; ReputationProfilesJson { get; set; }
-        ///     [Output("reputationProfileJson")]
-        ///     public Output&lt;string&gt; ReputationProfileJson { get; set; }
-        ///     [Output("reputationProfileOutput")]
-        ///     public Output&lt;string&gt; ReputationProfileOutput { get; set; }
-        /// }
+        ///     var reputationProfiles = Akamai.GetAppSecReputationProfiles.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var reputationProfile = Akamai.GetAppSecReputationProfiles.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         ReputationProfileId = 12345,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["reputationProfilesOutput"] = reputationProfiles.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.OutputText),
+        ///         ["reputationProfilesJson"] = reputationProfiles.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.Json),
+        ///         ["reputationProfileJson"] = reputationProfile.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.Json),
+        ///         ["reputationProfileOutput"] = reputationProfile.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -133,11 +123,11 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted report of the details about the specified reputation profile or profiles.
         /// </summary>
         public static Output<GetAppSecReputationProfilesResult> Invoke(GetAppSecReputationProfilesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecReputationProfilesArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecReputationProfilesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation profiles.
@@ -154,9 +144,10 @@ namespace Pulumi.Akamai
         public GetAppSecReputationProfilesArgs()
         {
         }
+        public static new GetAppSecReputationProfilesArgs Empty => new GetAppSecReputationProfilesArgs();
     }
 
-    public sealed class GetAppSecReputationProfilesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecReputationProfilesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the reputation profiles.
@@ -173,6 +164,7 @@ namespace Pulumi.Akamai
         public GetAppSecReputationProfilesInvokeArgs()
         {
         }
+        public static new GetAppSecReputationProfilesInvokeArgs Empty => new GetAppSecReputationProfilesInvokeArgs();
     }
 
 

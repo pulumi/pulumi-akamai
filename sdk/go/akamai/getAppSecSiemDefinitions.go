@@ -25,7 +25,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -38,7 +38,7 @@ import (
 //			}
 //			ctx.Export("siemDefinitionsJson", siemDefinitions.Json)
 //			ctx.Export("siemDefinitionsOutput", siemDefinitions.OutputText)
-//			siemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, &GetAppSecSiemDefinitionsArgs{
+//			siemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, &akamai.GetAppSecSiemDefinitionsArgs{
 //				SiemDefinitionName: pulumi.StringRef("SIEM Version 01"),
 //			}, nil)
 //			if err != nil {

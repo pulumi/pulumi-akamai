@@ -11,38 +11,118 @@ namespace Pulumi.Akamai
 {
     public static class GetEdgeWorkerActivation
     {
+        /// <summary>
+        /// Use the `akamai.getEdgeWorkerActivation` data source to fetch the latest activation for a given EdgeWorker ID.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// This example returns the latest activation on the staging network:
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Akamai.GetEdgeWorkerActivation.Invoke(new()
+        ///     {
+        ///         EdgeworkerId = 1,
+        ///         Network = "STAGING",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Attributes reference
+        /// 
+        /// This data source returns these attributes:
+        /// 
+        /// * `activation_id` - The unique identifier of the activation.
+        /// * `version` - The EdgeWorker version of the latest activation.
+        /// </summary>
         public static Task<GetEdgeWorkerActivationResult> InvokeAsync(GetEdgeWorkerActivationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEdgeWorkerActivationResult>("akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation", args ?? new GetEdgeWorkerActivationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEdgeWorkerActivationResult>("akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation", args ?? new GetEdgeWorkerActivationArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// Use the `akamai.getEdgeWorkerActivation` data source to fetch the latest activation for a given EdgeWorker ID.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// This example returns the latest activation on the staging network:
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using Pulumi;
+        /// using Akamai = Pulumi.Akamai;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Akamai.GetEdgeWorkerActivation.Invoke(new()
+        ///     {
+        ///         EdgeworkerId = 1,
+        ///         Network = "STAGING",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Attributes reference
+        /// 
+        /// This data source returns these attributes:
+        /// 
+        /// * `activation_id` - The unique identifier of the activation.
+        /// * `version` - The EdgeWorker version of the latest activation.
+        /// </summary>
         public static Output<GetEdgeWorkerActivationResult> Invoke(GetEdgeWorkerActivationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEdgeWorkerActivationResult>("akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation", args ?? new GetEdgeWorkerActivationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkerActivationResult>("akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation", args ?? new GetEdgeWorkerActivationInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetEdgeWorkerActivationArgs : Pulumi.InvokeArgs
+    public sealed class GetEdgeWorkerActivationArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The unique identifier of the EdgeWorker.
+        /// </summary>
         [Input("edgeworkerId", required: true)]
         public int EdgeworkerId { get; set; }
 
+        /// <summary>
+        /// The network from where the activation information will be fetched.
+        /// </summary>
         [Input("network", required: true)]
         public string Network { get; set; } = null!;
 
         public GetEdgeWorkerActivationArgs()
         {
         }
+        public static new GetEdgeWorkerActivationArgs Empty => new GetEdgeWorkerActivationArgs();
     }
 
-    public sealed class GetEdgeWorkerActivationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEdgeWorkerActivationInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The unique identifier of the EdgeWorker.
+        /// </summary>
         [Input("edgeworkerId", required: true)]
         public Input<int> EdgeworkerId { get; set; } = null!;
 
+        /// <summary>
+        /// The network from where the activation information will be fetched.
+        /// </summary>
         [Input("network", required: true)]
         public Input<string> Network { get; set; } = null!;
 
         public GetEdgeWorkerActivationInvokeArgs()
         {
         }
+        public static new GetEdgeWorkerActivationInvokeArgs Empty => new GetEdgeWorkerActivationInvokeArgs();
     }
 
 

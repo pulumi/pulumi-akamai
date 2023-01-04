@@ -35,11 +35,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report of the overlap information.
  */
 export function getAppSecHostnameCoverageOverlapping(args: GetAppSecHostnameCoverageOverlappingArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecHostnameCoverageOverlappingResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping", {
         "configId": args.configId,
         "hostname": args.hostname,
@@ -73,9 +70,38 @@ export interface GetAppSecHostnameCoverageOverlappingResult {
     readonly json: string;
     readonly outputText: string;
 }
-
+/**
+ * **Scopes**: Security configuration; hostname
+ *
+ * Returns information about any other configuration versions that contain a hostname found in the current configuration version.
+ *
+ * **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/overlapping](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage-overlapping)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const test = configuration.then(configuration => akamai.getAppSecHostnameCoverageOverlapping({
+ *     configId: configuration.configId,
+ *     hostname: "documentation.akamai.com",
+ * }));
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of the overlap information.
+ * - `outputText`. Tabular report of the overlap information.
+ */
 export function getAppSecHostnameCoverageOverlappingOutput(args: GetAppSecHostnameCoverageOverlappingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecHostnameCoverageOverlappingResult> {
-    return pulumi.output(args).apply(a => getAppSecHostnameCoverageOverlapping(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecHostnameCoverageOverlapping(a, opts))
 }
 
 /**

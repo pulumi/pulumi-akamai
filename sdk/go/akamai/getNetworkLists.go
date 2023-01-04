@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -37,7 +37,7 @@ import (
 //			ctx.Export("networkListsText", networkLists.OutputText)
 //			ctx.Export("networkListsJson", networkLists.Json)
 //			ctx.Export("networkListsList", networkLists.Lists)
-//			networkListsFilter, err := akamai.GetNetworkLists(ctx, &GetNetworkListsArgs{
+//			networkListsFilter, err := akamai.GetNetworkLists(ctx, &akamai.GetNetworkListsArgs{
 //				Name: pulumi.StringRef("Test Whitelist"),
 //				Type: pulumi.StringRef("IP"),
 //			}, nil)

@@ -21,26 +21,25 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var protection = new Akamai.AppSecWafProtection("protection", new Akamai.AppSecWafProtectionArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             Enabled = true,
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var protection = new Akamai.AppSecWafProtection("protection", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         Enabled = true,
+    ///     });
+    /// 
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -49,7 +48,7 @@ namespace Pulumi.Akamai
     /// - `output_text`. Tabular report showing the current protection settings.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecWafProtection:AppSecWafProtection")]
-    public partial class AppSecWafProtection : Pulumi.CustomResource
+    public partial class AppSecWafProtection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
@@ -119,7 +118,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecWafProtectionArgs : Pulumi.ResourceArgs
+    public sealed class AppSecWafProtectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
@@ -142,9 +141,10 @@ namespace Pulumi.Akamai
         public AppSecWafProtectionArgs()
         {
         }
+        public static new AppSecWafProtectionArgs Empty => new AppSecWafProtectionArgs();
     }
 
-    public sealed class AppSecWafProtectionState : Pulumi.ResourceArgs
+    public sealed class AppSecWafProtectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
@@ -173,5 +173,6 @@ namespace Pulumi.Akamai
         public AppSecWafProtectionState()
         {
         }
+        public static new AppSecWafProtectionState Empty => new AppSecWafProtectionState();
     }
 }

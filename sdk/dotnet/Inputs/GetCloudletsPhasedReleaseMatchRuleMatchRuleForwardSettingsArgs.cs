@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// - (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
@@ -27,5 +27,6 @@ namespace Pulumi.Akamai.Inputs
         public GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsInputArgs()
         {
         }
+        public static new GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsInputArgs Empty => new GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsInputArgs();
     }
 }

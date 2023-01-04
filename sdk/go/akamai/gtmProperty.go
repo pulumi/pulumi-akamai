@@ -24,7 +24,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -36,8 +36,8 @@ import (
 //				HandoutLimit:         pulumi.Int(5),
 //				HandoutMode:          pulumi.String("normal"),
 //				ScoreAggregationType: pulumi.String("median"),
-//				TrafficTargets: GtmPropertyTrafficTargetArray{
-//					&GtmPropertyTrafficTargetArgs{
+//				TrafficTargets: akamai.GtmPropertyTrafficTargetArray{
+//					&akamai.GtmPropertyTrafficTargetArgs{
 //						DatacenterId: pulumi.Int(3131),
 //					},
 //				},

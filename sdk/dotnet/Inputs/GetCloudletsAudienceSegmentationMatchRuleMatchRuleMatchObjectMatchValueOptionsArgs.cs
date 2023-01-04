@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
@@ -45,5 +45,6 @@ namespace Pulumi.Akamai.Inputs
         public GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsInputArgs()
         {
         }
+        public static new GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsInputArgs Empty => new GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptionsInputArgs();
     }
 }

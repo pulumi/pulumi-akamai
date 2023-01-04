@@ -35,11 +35,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
  */
 export function getAppSecExportConfiguration(args: GetAppSecExportConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecExportConfigurationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", {
         "configId": args.configId,
         "searches": args.searches,
@@ -79,9 +76,38 @@ export interface GetAppSecExportConfigurationResult {
     readonly searches?: string[];
     readonly version: number;
 }
-
+/**
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const export = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecExportConfiguration({
+ *     configId: configuration.configId,
+ *     version: configuration1.latestVersion,
+ *     searches: [
+ *         "securityPolicies",
+ *         "selectedHosts",
+ *     ],
+ * }));
+ * export const json = _export.then(_export => _export.json);
+ * export const text = _export.then(_export => _export.outputText);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. Complete set of information about the specified security configuration version in JSON format. When this option is included information is always returned for the _entire_ configuration. Among other things, that means that, if your command uses the `search` parameter, that parameter is ignored.
+ * - `outputText`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
+ */
 export function getAppSecExportConfigurationOutput(args: GetAppSecExportConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecExportConfigurationResult> {
-    return pulumi.output(args).apply(a => getAppSecExportConfiguration(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecExportConfiguration(a, opts))
 }
 
 /**

@@ -24,7 +24,7 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Task<GetCloudletsPhasedReleaseMatchRuleResult> InvokeAsync(GetCloudletsPhasedReleaseMatchRuleArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsPhasedReleaseMatchRuleResult>("akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule", args ?? new GetCloudletsPhasedReleaseMatchRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsPhasedReleaseMatchRuleResult>("akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule", args ?? new GetCloudletsPhasedReleaseMatchRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
@@ -39,11 +39,11 @@ namespace Pulumi.Akamai
         /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
         /// </summary>
         public static Output<GetCloudletsPhasedReleaseMatchRuleResult> Invoke(GetCloudletsPhasedReleaseMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudletsPhasedReleaseMatchRuleResult>("akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule", args ?? new GetCloudletsPhasedReleaseMatchRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsPhasedReleaseMatchRuleResult>("akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule", args ?? new GetCloudletsPhasedReleaseMatchRuleInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCloudletsPhasedReleaseMatchRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsPhasedReleaseMatchRuleArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private List<Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs>? _matchRules;
@@ -60,9 +60,10 @@ namespace Pulumi.Akamai
         public GetCloudletsPhasedReleaseMatchRuleArgs()
         {
         }
+        public static new GetCloudletsPhasedReleaseMatchRuleArgs Empty => new GetCloudletsPhasedReleaseMatchRuleArgs();
     }
 
-    public sealed class GetCloudletsPhasedReleaseMatchRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsPhasedReleaseMatchRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("matchRules")]
         private InputList<Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleInputArgs>? _matchRules;
@@ -79,6 +80,7 @@ namespace Pulumi.Akamai
         public GetCloudletsPhasedReleaseMatchRuleInvokeArgs()
         {
         }
+        public static new GetCloudletsPhasedReleaseMatchRuleInvokeArgs Empty => new GetCloudletsPhasedReleaseMatchRuleInvokeArgs();
     }
 
 

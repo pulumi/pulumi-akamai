@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "./utilities";
  *   * `description` - Granted role description.
  */
 export function getIamGrantableRoles(opts?: pulumi.InvokeOptions): Promise<GetIamGrantableRolesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getIamGrantableRoles:getIamGrantableRoles", {
     }, opts);
 }

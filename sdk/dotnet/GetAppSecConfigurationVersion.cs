@@ -12,14 +12,14 @@ namespace Pulumi.Akamai
     public static class GetAppSecConfigurationVersion
     {
         public static Task<GetAppSecConfigurationVersionResult> InvokeAsync(GetAppSecConfigurationVersionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecConfigurationVersionResult>("akamai:index/getAppSecConfigurationVersion:getAppSecConfigurationVersion", args ?? new GetAppSecConfigurationVersionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecConfigurationVersionResult>("akamai:index/getAppSecConfigurationVersion:getAppSecConfigurationVersion", args ?? new GetAppSecConfigurationVersionArgs(), options.WithDefaults());
 
         public static Output<GetAppSecConfigurationVersionResult> Invoke(GetAppSecConfigurationVersionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecConfigurationVersionResult>("akamai:index/getAppSecConfigurationVersion:getAppSecConfigurationVersion", args ?? new GetAppSecConfigurationVersionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecConfigurationVersionResult>("akamai:index/getAppSecConfigurationVersion:getAppSecConfigurationVersion", args ?? new GetAppSecConfigurationVersionInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecConfigurationVersionArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecConfigurationVersionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration you want to return version information for.
@@ -36,9 +36,10 @@ namespace Pulumi.Akamai
         public GetAppSecConfigurationVersionArgs()
         {
         }
+        public static new GetAppSecConfigurationVersionArgs Empty => new GetAppSecConfigurationVersionArgs();
     }
 
-    public sealed class GetAppSecConfigurationVersionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecConfigurationVersionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration you want to return version information for.
@@ -55,6 +56,7 @@ namespace Pulumi.Akamai
         public GetAppSecConfigurationVersionInvokeArgs()
         {
         }
+        public static new GetAppSecConfigurationVersionInvokeArgs Empty => new GetAppSecConfigurationVersionInvokeArgs();
     }
 
 

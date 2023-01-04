@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Properties.Inputs
 {
 
-    public sealed class PropertyOriginArgs : Pulumi.ResourceArgs
+    public sealed class PropertyOriginArgs : global::Pulumi.ResourceArgs
     {
         [Input("cacheKeyHostname")]
         public Input<string>? CacheKeyHostname { get; set; }
@@ -33,5 +33,6 @@ namespace Pulumi.Akamai.Properties.Inputs
         public PropertyOriginArgs()
         {
         }
+        public static new PropertyOriginArgs Empty => new PropertyOriginArgs();
     }
 }

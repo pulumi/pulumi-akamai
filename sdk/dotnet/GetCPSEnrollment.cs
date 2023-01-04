@@ -19,23 +19,22 @@ namespace Pulumi.Akamai
         /// This example shows how to set up a user:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEnrollment = Akamai.GetCPSEnrollment.Invoke(new()
         ///     {
-        ///         var testEnrollment = Output.Create(Akamai.GetCPSEnrollment.InvokeAsync(new Akamai.GetCPSEnrollmentArgs
-        ///         {
-        ///             EnrollmentId = @var.Enrollment_id,
-        ///         }));
-        ///         this.DvOutput = testEnrollment;
-        ///     }
+        ///         EnrollmentId = @var.Enrollment_id,
+        ///     });
         /// 
-        ///     [Output("dvOutput")]
-        ///     public Output&lt;string&gt; DvOutput { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["dvOutput"] = testEnrollment.Apply(getCPSEnrollmentResult =&gt; getCPSEnrollmentResult),
+        ///     };
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -88,7 +87,7 @@ namespace Pulumi.Akamai
         ///     * `response_body` - The data Let's Encrypt expects to find served at `full_path` URL.
         /// </summary>
         public static Task<GetCPSEnrollmentResult> InvokeAsync(GetCPSEnrollmentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCPSEnrollmentResult>("akamai:index/getCPSEnrollment:getCPSEnrollment", args ?? new GetCPSEnrollmentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCPSEnrollmentResult>("akamai:index/getCPSEnrollment:getCPSEnrollment", args ?? new GetCPSEnrollmentArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getCPSEnrollment` data source to return data for specific enrollment.
@@ -98,23 +97,22 @@ namespace Pulumi.Akamai
         /// This example shows how to set up a user:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEnrollment = Akamai.GetCPSEnrollment.Invoke(new()
         ///     {
-        ///         var testEnrollment = Output.Create(Akamai.GetCPSEnrollment.InvokeAsync(new Akamai.GetCPSEnrollmentArgs
-        ///         {
-        ///             EnrollmentId = @var.Enrollment_id,
-        ///         }));
-        ///         this.DvOutput = testEnrollment;
-        ///     }
+        ///         EnrollmentId = @var.Enrollment_id,
+        ///     });
         /// 
-        ///     [Output("dvOutput")]
-        ///     public Output&lt;string&gt; DvOutput { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["dvOutput"] = testEnrollment.Apply(getCPSEnrollmentResult =&gt; getCPSEnrollmentResult),
+        ///     };
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -167,11 +165,11 @@ namespace Pulumi.Akamai
         ///     * `response_body` - The data Let's Encrypt expects to find served at `full_path` URL.
         /// </summary>
         public static Output<GetCPSEnrollmentResult> Invoke(GetCPSEnrollmentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCPSEnrollmentResult>("akamai:index/getCPSEnrollment:getCPSEnrollment", args ?? new GetCPSEnrollmentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCPSEnrollmentResult>("akamai:index/getCPSEnrollment:getCPSEnrollment", args ?? new GetCPSEnrollmentInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCPSEnrollmentArgs : Pulumi.InvokeArgs
+    public sealed class GetCPSEnrollmentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique identifier for the certificate enrollment.
@@ -182,9 +180,10 @@ namespace Pulumi.Akamai
         public GetCPSEnrollmentArgs()
         {
         }
+        public static new GetCPSEnrollmentArgs Empty => new GetCPSEnrollmentArgs();
     }
 
-    public sealed class GetCPSEnrollmentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCPSEnrollmentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique identifier for the certificate enrollment.
@@ -195,6 +194,7 @@ namespace Pulumi.Akamai
         public GetCPSEnrollmentInvokeArgs()
         {
         }
+        public static new GetCPSEnrollmentInvokeArgs Empty => new GetCPSEnrollmentInvokeArgs();
     }
 
 

@@ -27,11 +27,8 @@ import * as utilities from "./utilities";
  * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-languages)
  */
 export function getIamSupportedLangs(opts?: pulumi.InvokeOptions): Promise<GetIamSupportedLangsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getIamSupportedLangs:getIamSupportedLangs", {
     }, opts);
 }

@@ -23,11 +23,8 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getPropertyRuleFormats(opts?: pulumi.InvokeOptions): Promise<GetPropertyRuleFormatsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", {
     }, opts);
 }

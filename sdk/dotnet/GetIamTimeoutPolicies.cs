@@ -21,20 +21,19 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var timeoutPolicies = Output.Create(Akamai.GetIamTimeoutPolicies.InvokeAsync());
-        ///         this.SupportedTimeoutPolicies = timeoutPolicies;
-        ///     }
+        ///     var timeoutPolicies = Akamai.GetIamTimeoutPolicies.Invoke();
         /// 
-        ///     [Output("supportedTimeoutPolicies")]
-        ///     public Output&lt;string&gt; SupportedTimeoutPolicies { get; set; }
-        /// }
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["supportedTimeoutPolicies"] = timeoutPolicies.Apply(getIamTimeoutPoliciesResult =&gt; getIamTimeoutPoliciesResult),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -47,7 +46,7 @@ namespace Pulumi.Akamai
         /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-timeout-policies)
         /// </summary>
         public static Task<GetIamTimeoutPoliciesResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIamTimeoutPoliciesResult>("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamTimeoutPoliciesResult>("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

@@ -5,19 +5,41 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./cpCode";
-export * from "./edgeHostName";
-export * from "./getCpCode";
-export * from "./getProperty";
-export * from "./getPropertyRules";
-export * from "./property";
-export * from "./propertyActivation";
+export { CpCodeArgs, CpCodeState } from "./cpCode";
+export type CpCode = import("./cpCode").CpCode;
+export const CpCode: typeof import("./cpCode").CpCode = null as any;
+utilities.lazyLoad(exports, ["CpCode"], () => require("./cpCode"));
 
-// Import resources to register:
-import { CpCode } from "./cpCode";
-import { EdgeHostName } from "./edgeHostName";
-import { Property } from "./property";
-import { PropertyActivation } from "./propertyActivation";
+export { EdgeHostNameArgs, EdgeHostNameState } from "./edgeHostName";
+export type EdgeHostName = import("./edgeHostName").EdgeHostName;
+export const EdgeHostName: typeof import("./edgeHostName").EdgeHostName = null as any;
+utilities.lazyLoad(exports, ["EdgeHostName"], () => require("./edgeHostName"));
+
+export { GetCpCodeArgs, GetCpCodeResult, GetCpCodeOutputArgs } from "./getCpCode";
+export const getCpCode: typeof import("./getCpCode").getCpCode = null as any;
+export const getCpCodeOutput: typeof import("./getCpCode").getCpCodeOutput = null as any;
+utilities.lazyLoad(exports, ["getCpCode","getCpCodeOutput"], () => require("./getCpCode"));
+
+export { GetPropertyArgs, GetPropertyResult, GetPropertyOutputArgs } from "./getProperty";
+export const getProperty: typeof import("./getProperty").getProperty = null as any;
+export const getPropertyOutput: typeof import("./getProperty").getPropertyOutput = null as any;
+utilities.lazyLoad(exports, ["getProperty","getPropertyOutput"], () => require("./getProperty"));
+
+export { GetPropertyRulesArgs, GetPropertyRulesResult, GetPropertyRulesOutputArgs } from "./getPropertyRules";
+export const getPropertyRules: typeof import("./getPropertyRules").getPropertyRules = null as any;
+export const getPropertyRulesOutput: typeof import("./getPropertyRules").getPropertyRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyRules","getPropertyRulesOutput"], () => require("./getPropertyRules"));
+
+export { PropertyArgs, PropertyState } from "./property";
+export type Property = import("./property").Property;
+export const Property: typeof import("./property").Property = null as any;
+utilities.lazyLoad(exports, ["Property"], () => require("./property"));
+
+export { PropertyActivationArgs, PropertyActivationState } from "./propertyActivation";
+export type PropertyActivation = import("./propertyActivation").PropertyActivation;
+export const PropertyActivation: typeof import("./propertyActivation").PropertyActivation = null as any;
+utilities.lazyLoad(exports, ["PropertyActivation"], () => require("./propertyActivation"));
+
 
 const _module = {
     version: utilities.getVersion(),

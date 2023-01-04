@@ -50,14 +50,14 @@ public final class GtmCidrmapState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * GTM Domain name for the AS Map.
+     * GTM Domain name for the CIDR Map.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return GTM Domain name for the AS Map.
+     * @return GTM Domain name for the CIDR Map.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -175,7 +175,7 @@ public final class GtmCidrmapState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain GTM Domain name for the AS Map.
+         * @param domain GTM Domain name for the CIDR Map.
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class GtmCidrmapState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain GTM Domain name for the AS Map.
+         * @param domain GTM Domain name for the CIDR Map.
          * 
          * @return builder
          * 

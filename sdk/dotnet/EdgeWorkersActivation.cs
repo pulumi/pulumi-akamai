@@ -19,26 +19,24 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var test = new Akamai.EdgeWorkersActivation("test", new()
     ///     {
-    ///         var test = new Akamai.EdgeWorkersActivation("test", new Akamai.EdgeWorkersActivationArgs
-    ///         {
-    ///             EdgeworkerId = 1234,
-    ///             Network = "STAGING",
-    ///             Version = "test1",
-    ///         });
-    ///     }
+    ///         EdgeworkerId = 1234,
+    ///         Network = "STAGING",
+    ///         Version = "test1",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/edgeWorkersActivation:EdgeWorkersActivation")]
-    public partial class EdgeWorkersActivation : Pulumi.CustomResource
+    public partial class EdgeWorkersActivation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Required) Unique identifier of the activation.
@@ -108,7 +106,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class EdgeWorkersActivationArgs : Pulumi.ResourceArgs
+    public sealed class EdgeWorkersActivationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A unique identifier for the EdgeWorker ID you want to activate.
@@ -131,9 +129,10 @@ namespace Pulumi.Akamai
         public EdgeWorkersActivationArgs()
         {
         }
+        public static new EdgeWorkersActivationArgs Empty => new EdgeWorkersActivationArgs();
     }
 
-    public sealed class EdgeWorkersActivationState : Pulumi.ResourceArgs
+    public sealed class EdgeWorkersActivationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Required) Unique identifier of the activation.
@@ -162,5 +161,6 @@ namespace Pulumi.Akamai
         public EdgeWorkersActivationState()
         {
         }
+        public static new EdgeWorkersActivationState Empty => new EdgeWorkersActivationState();
     }
 }

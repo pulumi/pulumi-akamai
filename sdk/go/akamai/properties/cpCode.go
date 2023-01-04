@@ -25,7 +25,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -53,7 +53,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -62,13 +62,13 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			groupName := "example group name"
 //			_ := "My CP Code"
-//			exampleContract, err := akamai.GetContract(ctx, &GetContractArgs{
+//			exampleContract, err := akamai.GetContract(ctx, &akamai.GetContractArgs{
 //				GroupName: pulumi.StringRef(groupName),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			exampleGroup, err := akamai.GetGroup(ctx, &GetGroupArgs{
+//			exampleGroup, err := akamai.GetGroup(ctx, &akamai.GetGroupArgs{
 //				Name:       pulumi.StringRef(groupName),
 //				ContractId: pulumi.StringRef(exampleContract.Id),
 //			}, nil)

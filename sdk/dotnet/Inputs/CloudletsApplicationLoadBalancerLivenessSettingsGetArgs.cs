@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class CloudletsApplicationLoadBalancerLivenessSettingsGetArgs : Pulumi.ResourceArgs
+    public sealed class CloudletsApplicationLoadBalancerLivenessSettingsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalHeaders")]
         private InputMap<string>? _additionalHeaders;
@@ -99,5 +99,6 @@ namespace Pulumi.Akamai.Inputs
         public CloudletsApplicationLoadBalancerLivenessSettingsGetArgs()
         {
         }
+        public static new CloudletsApplicationLoadBalancerLivenessSettingsGetArgs Empty => new CloudletsApplicationLoadBalancerLivenessSettingsGetArgs();
     }
 }

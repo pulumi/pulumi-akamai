@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetCloudletsForwardRewriteMatchRuleMatchRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsForwardRewriteMatchRuleMatchRuleArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
@@ -69,5 +69,6 @@ namespace Pulumi.Akamai.Inputs
         public GetCloudletsForwardRewriteMatchRuleMatchRuleArgs()
         {
         }
+        public static new GetCloudletsForwardRewriteMatchRuleMatchRuleArgs Empty => new GetCloudletsForwardRewriteMatchRuleMatchRuleArgs();
     }
 }

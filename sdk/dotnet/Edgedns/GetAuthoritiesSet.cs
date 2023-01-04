@@ -22,20 +22,18 @@ namespace Pulumi.Akamai.Edgedns
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetAuthoritiesSet.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetAuthoritiesSet.InvokeAsync(new Akamai.GetAuthoritiesSetArgs
-        ///         {
-        ///             Contract = "ctr_1-AB123",
-        ///         }));
-        ///     }
+        ///         Contract = "ctr_1-AB123",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -46,7 +44,7 @@ namespace Pulumi.Akamai.Edgedns
         /// * `authorities` - A list of authorities.
         /// </summary>
         public static Task<GetAuthoritiesSetResult> InvokeAsync(GetAuthoritiesSetArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuthoritiesSetResult>("akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet", args ?? new GetAuthoritiesSetArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuthoritiesSetResult>("akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet", args ?? new GetAuthoritiesSetArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
@@ -58,20 +56,18 @@ namespace Pulumi.Akamai.Edgedns
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetAuthoritiesSet.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetAuthoritiesSet.InvokeAsync(new Akamai.GetAuthoritiesSetArgs
-        ///         {
-        ///             Contract = "ctr_1-AB123",
-        ///         }));
-        ///     }
+        ///         Contract = "ctr_1-AB123",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -82,11 +78,11 @@ namespace Pulumi.Akamai.Edgedns
         /// * `authorities` - A list of authorities.
         /// </summary>
         public static Output<GetAuthoritiesSetResult> Invoke(GetAuthoritiesSetInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuthoritiesSetResult>("akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet", args ?? new GetAuthoritiesSetInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuthoritiesSetResult>("akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet", args ?? new GetAuthoritiesSetInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAuthoritiesSetArgs : Pulumi.InvokeArgs
+    public sealed class GetAuthoritiesSetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The contract ID.
@@ -97,9 +93,10 @@ namespace Pulumi.Akamai.Edgedns
         public GetAuthoritiesSetArgs()
         {
         }
+        public static new GetAuthoritiesSetArgs Empty => new GetAuthoritiesSetArgs();
     }
 
-    public sealed class GetAuthoritiesSetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuthoritiesSetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The contract ID.
@@ -110,6 +107,7 @@ namespace Pulumi.Akamai.Edgedns
         public GetAuthoritiesSetInvokeArgs()
         {
         }
+        public static new GetAuthoritiesSetInvokeArgs Empty => new GetAuthoritiesSetInvokeArgs();
     }
 
 

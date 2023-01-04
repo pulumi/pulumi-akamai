@@ -25,20 +25,20 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
 //				Name: pulumi.StringRef("Documentation"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			customDenyList, err := akamai.LookupAppSecCustomDeny(ctx, &GetAppSecCustomDenyArgs{
+//			customDenyList, err := akamai.LookupAppSecCustomDeny(ctx, &akamai.LookupAppSecCustomDenyArgs{
 //				ConfigId: configuration.ConfigId,
 //			}, nil)
 //			if err != nil {
@@ -46,7 +46,7 @@ import (
 //			}
 //			ctx.Export("customDenyListOutput", customDenyList.OutputText)
 //			ctx.Export("customDenyListJson", customDenyList.Json)
-//			customDeny, err := akamai.LookupAppSecCustomDeny(ctx, &GetAppSecCustomDenyArgs{
+//			customDeny, err := akamai.LookupAppSecCustomDeny(ctx, &akamai.LookupAppSecCustomDenyArgs{
 //				ConfigId:     configuration.ConfigId,
 //				CustomDenyId: pulumi.StringRef("deny_custom_64386"),
 //			}, nil)

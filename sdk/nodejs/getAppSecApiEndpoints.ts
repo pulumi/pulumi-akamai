@@ -19,10 +19,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const apiEndpoints = pulumi.output(akamai.getAppSecApiEndpoints({
+ * const apiEndpoints = akamai.getAppSecApiEndpoints({
  *     apiName: "Contracts",
  *     configId: 58843,
- * }));
+ * });
  * ```
  * ## Output Options
  *
@@ -33,11 +33,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report showing the ID and name of the API endpoints.
  */
 export function getAppSecApiEndpoints(args: GetAppSecApiEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecApiEndpointsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", {
         "apiName": args.apiName,
         "configId": args.configId,
@@ -78,9 +75,36 @@ export interface GetAppSecApiEndpointsResult {
     readonly outputText: string;
     readonly securityPolicyId?: string;
 }
-
+/**
+ * **Scopes**: Security configuration; security policy
+ *
+ * Returns information about the API endpoints associated with a security policy or configuration.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-endpoints](https://techdocs.akamai.com/application-security/reference/get-api-endpoints)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const apiEndpoints = akamai.getAppSecApiEndpoints({
+ *     apiName: "Contracts",
+ *     configId: 58843,
+ * });
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `idList`. List of API endpoint IDs.
+ * - `json`. JSON-formatted list of information about the API endpoints.
+ * - `outputText`. Tabular report showing the ID and name of the API endpoints.
+ */
 export function getAppSecApiEndpointsOutput(args: GetAppSecApiEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecApiEndpointsResult> {
-    return pulumi.output(args).apply(a => getAppSecApiEndpoints(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecApiEndpoints(a, opts))
 }
 
 /**

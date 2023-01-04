@@ -25,41 +25,36 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var customDenyList = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomDeny.InvokeAsync(new Akamai.GetAppSecCustomDenyArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.CustomDenyListOutput = customDenyList.Apply(customDenyList =&gt; customDenyList.OutputText);
-        ///         this.CustomDenyListJson = customDenyList.Apply(customDenyList =&gt; customDenyList.Json);
-        ///         var customDeny = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomDeny.InvokeAsync(new Akamai.GetAppSecCustomDenyArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             CustomDenyId = "deny_custom_64386",
-        ///         })));
-        ///         this.CustomDenyJson = customDeny.Apply(customDeny =&gt; customDeny.Json);
-        ///         this.CustomDenyOutput = customDeny.Apply(customDeny =&gt; customDeny.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("customDenyListOutput")]
-        ///     public Output&lt;string&gt; CustomDenyListOutput { get; set; }
-        ///     [Output("customDenyListJson")]
-        ///     public Output&lt;string&gt; CustomDenyListJson { get; set; }
-        ///     [Output("customDenyJson")]
-        ///     public Output&lt;string&gt; CustomDenyJson { get; set; }
-        ///     [Output("customDenyOutput")]
-        ///     public Output&lt;string&gt; CustomDenyOutput { get; set; }
-        /// }
+        ///     var customDenyList = Akamai.GetAppSecCustomDeny.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var customDeny = Akamai.GetAppSecCustomDeny.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         CustomDenyId = "deny_custom_64386",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["customDenyListOutput"] = customDenyList.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.OutputText),
+        ///         ["customDenyListJson"] = customDenyList.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.Json),
+        ///         ["customDenyJson"] = customDeny.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.Json),
+        ///         ["customDenyOutput"] = customDeny.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -71,7 +66,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the custom deny information.
         /// </summary>
         public static Task<GetAppSecCustomDenyResult> InvokeAsync(GetAppSecCustomDenyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecCustomDenyResult>("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args ?? new GetAppSecCustomDenyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecCustomDenyResult>("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args ?? new GetAppSecCustomDenyArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration; custom deny
@@ -87,41 +82,36 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var customDenyList = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomDeny.InvokeAsync(new Akamai.GetAppSecCustomDenyArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.CustomDenyListOutput = customDenyList.Apply(customDenyList =&gt; customDenyList.OutputText);
-        ///         this.CustomDenyListJson = customDenyList.Apply(customDenyList =&gt; customDenyList.Json);
-        ///         var customDeny = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecCustomDeny.InvokeAsync(new Akamai.GetAppSecCustomDenyArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             CustomDenyId = "deny_custom_64386",
-        ///         })));
-        ///         this.CustomDenyJson = customDeny.Apply(customDeny =&gt; customDeny.Json);
-        ///         this.CustomDenyOutput = customDeny.Apply(customDeny =&gt; customDeny.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("customDenyListOutput")]
-        ///     public Output&lt;string&gt; CustomDenyListOutput { get; set; }
-        ///     [Output("customDenyListJson")]
-        ///     public Output&lt;string&gt; CustomDenyListJson { get; set; }
-        ///     [Output("customDenyJson")]
-        ///     public Output&lt;string&gt; CustomDenyJson { get; set; }
-        ///     [Output("customDenyOutput")]
-        ///     public Output&lt;string&gt; CustomDenyOutput { get; set; }
-        /// }
+        ///     var customDenyList = Akamai.GetAppSecCustomDeny.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     var customDeny = Akamai.GetAppSecCustomDeny.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         CustomDenyId = "deny_custom_64386",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["customDenyListOutput"] = customDenyList.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.OutputText),
+        ///         ["customDenyListJson"] = customDenyList.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.Json),
+        ///         ["customDenyJson"] = customDeny.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.Json),
+        ///         ["customDenyOutput"] = customDeny.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -133,11 +123,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the custom deny information.
         /// </summary>
         public static Output<GetAppSecCustomDenyResult> Invoke(GetAppSecCustomDenyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecCustomDenyResult>("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args ?? new GetAppSecCustomDenyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecCustomDenyResult>("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args ?? new GetAppSecCustomDenyInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecCustomDenyArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecCustomDenyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom denies.
@@ -154,9 +144,10 @@ namespace Pulumi.Akamai
         public GetAppSecCustomDenyArgs()
         {
         }
+        public static new GetAppSecCustomDenyArgs Empty => new GetAppSecCustomDenyArgs();
     }
 
-    public sealed class GetAppSecCustomDenyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecCustomDenyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom denies.
@@ -173,6 +164,7 @@ namespace Pulumi.Akamai
         public GetAppSecCustomDenyInvokeArgs()
         {
         }
+        public static new GetAppSecCustomDenyInvokeArgs Empty => new GetAppSecCustomDenyInvokeArgs();
     }
 
 

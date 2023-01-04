@@ -19,21 +19,19 @@ namespace Pulumi.Akamai
         /// This example returns the policy details based on the policy ID and optionally, a version:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetCloudletsPolicy.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsPolicy.InvokeAsync(new Akamai.GetCloudletsPolicyArgs
-        ///         {
-        ///             PolicyId = 1234,
-        ///             Version = 1,
-        ///         }));
-        ///     }
+        ///         PolicyId = 1234,
+        ///         Version = 1,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -72,7 +70,7 @@ namespace Pulumi.Akamai
         ///       * `activation_date` - The date on which the property was activated in milliseconds since epoch.
         /// </summary>
         public static Task<GetCloudletsPolicyResult> InvokeAsync(GetCloudletsPolicyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsPolicyResult>("akamai:index/getCloudletsPolicy:getCloudletsPolicy", args ?? new GetCloudletsPolicyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsPolicyResult>("akamai:index/getCloudletsPolicy:getCloudletsPolicy", args ?? new GetCloudletsPolicyArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.CloudletsPolicy` data source to list details about a policy with and its specified version, or latest if not specified.
@@ -82,21 +80,19 @@ namespace Pulumi.Akamai
         /// This example returns the policy details based on the policy ID and optionally, a version:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var example = Akamai.GetCloudletsPolicy.Invoke(new()
         ///     {
-        ///         var example = Output.Create(Akamai.GetCloudletsPolicy.InvokeAsync(new Akamai.GetCloudletsPolicyArgs
-        ///         {
-        ///             PolicyId = 1234,
-        ///             Version = 1,
-        ///         }));
-        ///     }
+        ///         PolicyId = 1234,
+        ///         Version = 1,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -135,11 +131,11 @@ namespace Pulumi.Akamai
         ///       * `activation_date` - The date on which the property was activated in milliseconds since epoch.
         /// </summary>
         public static Output<GetCloudletsPolicyResult> Invoke(GetCloudletsPolicyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudletsPolicyResult>("akamai:index/getCloudletsPolicy:getCloudletsPolicy", args ?? new GetCloudletsPolicyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsPolicyResult>("akamai:index/getCloudletsPolicy:getCloudletsPolicy", args ?? new GetCloudletsPolicyInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCloudletsPolicyArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsPolicyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) An integer identifier that is associated with all versions of a policy.
@@ -156,9 +152,10 @@ namespace Pulumi.Akamai
         public GetCloudletsPolicyArgs()
         {
         }
+        public static new GetCloudletsPolicyArgs Empty => new GetCloudletsPolicyArgs();
     }
 
-    public sealed class GetCloudletsPolicyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) An integer identifier that is associated with all versions of a policy.
@@ -175,6 +172,7 @@ namespace Pulumi.Akamai
         public GetCloudletsPolicyInvokeArgs()
         {
         }
+        public static new GetCloudletsPolicyInvokeArgs Empty => new GetCloudletsPolicyInvokeArgs();
     }
 
 

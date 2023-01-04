@@ -70,14 +70,61 @@ public final class DatastreamSumologicConnectorArgs extends com.pulumi.resources
     }
 
     /**
-     * The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://&lt;SumoEndpoint&gt;/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+     * Content type to pass in the log file header.
+     * 
+     */
+    @Import(name="contentType")
+    private @Nullable Output<String> contentType;
+
+    /**
+     * @return Content type to pass in the log file header.
+     * 
+     */
+    public Optional<Output<String>> contentType() {
+        return Optional.ofNullable(this.contentType);
+    }
+
+    /**
+     * A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
+     * 
+     */
+    @Import(name="customHeaderName")
+    private @Nullable Output<String> customHeaderName;
+
+    /**
+     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
+     * 
+     */
+    public Optional<Output<String>> customHeaderName() {
+        return Optional.ofNullable(this.customHeaderName);
+    }
+
+    /**
+     * The custom header&#39;s contents passed with the request that contains information about the client connection.
+     * 
+     */
+    @Import(name="customHeaderValue")
+    private @Nullable Output<String> customHeaderValue;
+
+    /**
+     * @return The custom header&#39;s contents passed with the request that contains information about the client connection.
+     * 
+     */
+    public Optional<Output<String>> customHeaderValue() {
+        return Optional.ofNullable(this.customHeaderValue);
+    }
+
+    /**
+     * The Elasticsearch bulk endpoint URL in the format: `https://&lt;hostname&gt;.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+     * &lt;br&gt;Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
      * 
      */
     @Import(name="endpoint", required=true)
     private Output<String> endpoint;
 
     /**
-     * @return The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://&lt;SumoEndpoint&gt;/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+     * @return The Elasticsearch bulk endpoint URL in the format: `https://&lt;hostname&gt;.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+     * &lt;br&gt;Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
      * 
      */
     public Output<String> endpoint() {
@@ -91,6 +138,9 @@ public final class DatastreamSumologicConnectorArgs extends com.pulumi.resources
         this.compressLogs = $.compressLogs;
         this.connectorId = $.connectorId;
         this.connectorName = $.connectorName;
+        this.contentType = $.contentType;
+        this.customHeaderName = $.customHeaderName;
+        this.customHeaderValue = $.customHeaderValue;
         this.endpoint = $.endpoint;
     }
 
@@ -185,7 +235,71 @@ public final class DatastreamSumologicConnectorArgs extends com.pulumi.resources
         }
 
         /**
-         * @param endpoint The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://&lt;SumoEndpoint&gt;/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+         * @param contentType Content type to pass in the log file header.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder contentType(@Nullable Output<String> contentType) {
+            $.contentType = contentType;
+            return this;
+        }
+
+        /**
+         * @param contentType Content type to pass in the log file header.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder contentType(String contentType) {
+            return contentType(Output.of(contentType));
+        }
+
+        /**
+         * @param customHeaderName A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customHeaderName(@Nullable Output<String> customHeaderName) {
+            $.customHeaderName = customHeaderName;
+            return this;
+        }
+
+        /**
+         * @param customHeaderName A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customHeaderName(String customHeaderName) {
+            return customHeaderName(Output.of(customHeaderName));
+        }
+
+        /**
+         * @param customHeaderValue The custom header&#39;s contents passed with the request that contains information about the client connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customHeaderValue(@Nullable Output<String> customHeaderValue) {
+            $.customHeaderValue = customHeaderValue;
+            return this;
+        }
+
+        /**
+         * @param customHeaderValue The custom header&#39;s contents passed with the request that contains information about the client connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customHeaderValue(String customHeaderValue) {
+            return customHeaderValue(Output.of(customHeaderValue));
+        }
+
+        /**
+         * @param endpoint The Elasticsearch bulk endpoint URL in the format: `https://&lt;hostname&gt;.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+         * &lt;br&gt;Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
          * 
          * @return builder
          * 
@@ -196,7 +310,8 @@ public final class DatastreamSumologicConnectorArgs extends com.pulumi.resources
         }
 
         /**
-         * @param endpoint The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://&lt;SumoEndpoint&gt;/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+         * @param endpoint The Elasticsearch bulk endpoint URL in the format: `https://&lt;hostname&gt;.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
+         * &lt;br&gt;Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
          * 
          * @return builder
          * 

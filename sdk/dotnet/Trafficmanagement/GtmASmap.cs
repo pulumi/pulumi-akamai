@@ -21,30 +21,28 @@ namespace Pulumi.Akamai.Trafficmanagement
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var demoAsmap = new Akamai.GtmAsmap("demoAsmap", new()
     ///     {
-    ///         var demoAsmap = new Akamai.GtmAsmap("demoAsmap", new Akamai.GtmAsmapArgs
+    ///         DefaultDatacenter = new Akamai.Inputs.GtmAsmapDefaultDatacenterArgs
     ///         {
-    ///             DefaultDatacenter = new Akamai.Inputs.GtmAsmapDefaultDatacenterArgs
-    ///             {
-    ///                 DatacenterId = 5400,
-    ///                 Nickname = "All Other AS numbers",
-    ///             },
-    ///             Domain = "demo_domain.akadns.net",
-    ///         });
-    ///     }
+    ///             DatacenterId = 5400,
+    ///             Nickname = "All Other AS numbers",
+    ///         },
+    ///         Domain = "demo_domain.akadns.net",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [Obsolete(@"akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmASmap:GtmASmap")]
-    public partial class GtmASmap : Pulumi.CustomResource
+    public partial class GtmASmap : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
@@ -120,7 +118,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         }
     }
 
-    public sealed class GtmASmapArgs : Pulumi.ResourceArgs
+    public sealed class GtmASmapArgs : global::Pulumi.ResourceArgs
     {
         [Input("assignments")]
         private InputList<Inputs.GtmASmapAssignmentArgs>? _assignments;
@@ -161,9 +159,10 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmASmapArgs()
         {
         }
+        public static new GtmASmapArgs Empty => new GtmASmapArgs();
     }
 
-    public sealed class GtmASmapState : Pulumi.ResourceArgs
+    public sealed class GtmASmapState : global::Pulumi.ResourceArgs
     {
         [Input("assignments")]
         private InputList<Inputs.GtmASmapAssignmentGetArgs>? _assignments;
@@ -204,5 +203,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmASmapState()
         {
         }
+        public static new GtmASmapState Empty => new GtmASmapState();
     }
 }

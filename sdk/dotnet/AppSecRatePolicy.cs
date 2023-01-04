@@ -22,29 +22,29 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using System.IO;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var ratePolicy = new Akamai.AppSecRatePolicy("ratePolicy", new Akamai.AppSecRatePolicyArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             RatePolicy = File.ReadAllText($"{path.Module}/rate_policy.json"),
-    ///         });
-    ///         this.RatePolicyId = ratePolicy.RatePolicyId;
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    ///     [Output("ratePolicyId")]
-    ///     public Output&lt;string&gt; RatePolicyId { get; set; }
-    /// }
+    ///     var ratePolicy = new Akamai.AppSecRatePolicy("ratePolicy", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         RatePolicy = File.ReadAllText($"{path.Module}/rate_policy.json"),
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["ratePolicyId"] = ratePolicy.RatePolicyId,
+    ///     };
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -53,7 +53,7 @@ namespace Pulumi.Akamai
     /// - `rate_policy_id`. ID of the modified or newly-created rate policy.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecRatePolicy:AppSecRatePolicy")]
-    public partial class AppSecRatePolicy : Pulumi.CustomResource
+    public partial class AppSecRatePolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rate policy being modified.
@@ -117,7 +117,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecRatePolicyArgs : Pulumi.ResourceArgs
+    public sealed class AppSecRatePolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rate policy being modified.
@@ -134,9 +134,10 @@ namespace Pulumi.Akamai
         public AppSecRatePolicyArgs()
         {
         }
+        public static new AppSecRatePolicyArgs Empty => new AppSecRatePolicyArgs();
     }
 
-    public sealed class AppSecRatePolicyState : Pulumi.ResourceArgs
+    public sealed class AppSecRatePolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rate policy being modified.
@@ -159,5 +160,6 @@ namespace Pulumi.Akamai
         public AppSecRatePolicyState()
         {
         }
+        public static new AppSecRatePolicyState Empty => new AppSecRatePolicyState();
     }
 }

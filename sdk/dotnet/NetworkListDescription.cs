@@ -17,25 +17,23 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var networkListDescription = new Akamai.NetworkListDescription("networkListDescription", new()
     ///     {
-    ///         var networkListDescription = new Akamai.NetworkListDescription("networkListDescription", new Akamai.NetworkListDescriptionArgs
-    ///         {
-    ///             NetworkListId = @var.Network_list_id,
-    ///             Description = "Test network list updated description",
-    ///         });
-    ///     }
+    ///         NetworkListId = @var.Network_list_id,
+    ///         Description = "Test network list updated description",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/networkListDescription:NetworkListDescription")]
-    public partial class NetworkListDescription : Pulumi.CustomResource
+    public partial class NetworkListDescription : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The description to be assigned to the network list.
@@ -99,7 +97,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class NetworkListDescriptionArgs : Pulumi.ResourceArgs
+    public sealed class NetworkListDescriptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The description to be assigned to the network list.
@@ -122,9 +120,10 @@ namespace Pulumi.Akamai
         public NetworkListDescriptionArgs()
         {
         }
+        public static new NetworkListDescriptionArgs Empty => new NetworkListDescriptionArgs();
     }
 
-    public sealed class NetworkListDescriptionState : Pulumi.ResourceArgs
+    public sealed class NetworkListDescriptionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The description to be assigned to the network list.
@@ -147,5 +146,6 @@ namespace Pulumi.Akamai
         public NetworkListDescriptionState()
         {
         }
+        public static new NetworkListDescriptionState Empty => new NetworkListDescriptionState();
     }
 }

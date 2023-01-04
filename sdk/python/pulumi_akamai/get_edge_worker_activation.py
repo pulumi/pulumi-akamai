@@ -84,7 +84,29 @@ def get_edge_worker_activation(edgeworker_id: Optional[int] = None,
                                network: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEdgeWorkerActivationResult:
     """
-    Use this data source to access information about an existing resource.
+    Use the `get_edge_worker_activation` data source to fetch the latest activation for a given EdgeWorker ID.
+
+    ## Example Usage
+
+    This example returns the latest activation on the staging network:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    test = akamai.get_edge_worker_activation(edgeworker_id=1,
+        network="STAGING")
+    ```
+    ## Attributes reference
+
+    This data source returns these attributes:
+
+    * `activation_id` - The unique identifier of the activation.
+    * `version` - The EdgeWorker version of the latest activation.
+
+
+    :param int edgeworker_id: The unique identifier of the EdgeWorker.
+    :param str network: The network from where the activation information will be fetched.
     """
     __args__ = dict()
     __args__['edgeworkerId'] = edgeworker_id
@@ -105,6 +127,28 @@ def get_edge_worker_activation_output(edgeworker_id: Optional[pulumi.Input[int]]
                                       network: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeWorkerActivationResult]:
     """
-    Use this data source to access information about an existing resource.
+    Use the `get_edge_worker_activation` data source to fetch the latest activation for a given EdgeWorker ID.
+
+    ## Example Usage
+
+    This example returns the latest activation on the staging network:
+
+    ```python
+    import pulumi
+    import pulumi_akamai as akamai
+
+    test = akamai.get_edge_worker_activation(edgeworker_id=1,
+        network="STAGING")
+    ```
+    ## Attributes reference
+
+    This data source returns these attributes:
+
+    * `activation_id` - The unique identifier of the activation.
+    * `version` - The EdgeWorker version of the latest activation.
+
+
+    :param int edgeworker_id: The unique identifier of the EdgeWorker.
+    :param str network: The network from where the activation information will be fetched.
     """
     ...

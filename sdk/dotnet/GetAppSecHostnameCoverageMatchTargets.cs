@@ -25,25 +25,24 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var matchTargets = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecHostnameCoverageMatchTargets.InvokeAsync(new Akamai.GetAppSecHostnameCoverageMatchTargetsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             Hostname = "documentation.akamai.com",
-        ///         })));
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        /// }
+        ///     var matchTargets = Akamai.GetAppSecHostnameCoverageMatchTargets.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         Hostname = "documentation.akamai.com",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,7 +54,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the coverage information.
         /// </summary>
         public static Task<GetAppSecHostnameCoverageMatchTargetsResult> InvokeAsync(GetAppSecHostnameCoverageMatchTargetsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageMatchTargetsResult>("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args ?? new GetAppSecHostnameCoverageMatchTargetsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageMatchTargetsResult>("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args ?? new GetAppSecHostnameCoverageMatchTargetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Hostname
@@ -71,25 +70,24 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var matchTargets = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecHostnameCoverageMatchTargets.InvokeAsync(new Akamai.GetAppSecHostnameCoverageMatchTargetsArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             Hostname = "documentation.akamai.com",
-        ///         })));
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        /// }
+        ///     var matchTargets = Akamai.GetAppSecHostnameCoverageMatchTargets.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         Hostname = "documentation.akamai.com",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -101,11 +99,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the coverage information.
         /// </summary>
         public static Output<GetAppSecHostnameCoverageMatchTargetsResult> Invoke(GetAppSecHostnameCoverageMatchTargetsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageMatchTargetsResult>("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args ?? new GetAppSecHostnameCoverageMatchTargetsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageMatchTargetsResult>("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args ?? new GetAppSecHostnameCoverageMatchTargetsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecHostnameCoverageMatchTargetsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecHostnameCoverageMatchTargetsArgs : global::Pulumi.InvokeArgs
     {
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
@@ -119,9 +117,10 @@ namespace Pulumi.Akamai
         public GetAppSecHostnameCoverageMatchTargetsArgs()
         {
         }
+        public static new GetAppSecHostnameCoverageMatchTargetsArgs Empty => new GetAppSecHostnameCoverageMatchTargetsArgs();
     }
 
-    public sealed class GetAppSecHostnameCoverageMatchTargetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecHostnameCoverageMatchTargetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -135,6 +134,7 @@ namespace Pulumi.Akamai
         public GetAppSecHostnameCoverageMatchTargetsInvokeArgs()
         {
         }
+        public static new GetAppSecHostnameCoverageMatchTargetsInvokeArgs Empty => new GetAppSecHostnameCoverageMatchTargetsInvokeArgs();
     }
 
 

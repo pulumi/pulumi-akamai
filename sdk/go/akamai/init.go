@@ -128,6 +128,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CpsDvEnrollment{}
 	case "akamai:index/cpsDvValidation:CpsDvValidation":
 		r = &CpsDvValidation{}
+	case "akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment":
+		r = &CpsThirdPartyEnrollment{}
+	case "akamai:index/cpsUploadCertificate:CpsUploadCertificate":
+		r = &CpsUploadCertificate{}
 	case "akamai:index/datastream:Datastream":
 		r = &Datastream{}
 	case "akamai:index/dnsRecord:DnsRecord":
@@ -176,6 +180,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Property{}
 	case "akamai:index/propertyActivation:PropertyActivation":
 		r = &PropertyActivation{}
+	case "akamai:index/propertyInclude:PropertyInclude":
+		r = &PropertyInclude{}
+	case "akamai:index/propertyIncludeActivation:PropertyIncludeActivation":
+		r = &PropertyIncludeActivation{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -476,6 +484,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/cpsThirdPartyEnrollment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/cpsUploadCertificate",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/datastream",
 		&module{version},
 	)
@@ -592,6 +610,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/propertyActivation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/propertyInclude",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/propertyIncludeActivation",
 		&module{version},
 	)
 	pulumi.RegisterResourcePackage(

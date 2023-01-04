@@ -18,32 +18,31 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var networkListsFilter = Akamai.GetNetworkLists.Invoke(new()
     ///     {
-    ///         var networkListsFilter = Output.Create(Akamai.GetNetworkLists.InvokeAsync(new Akamai.GetNetworkListsArgs
-    ///         {
-    ///             Name = @var.Network_list,
-    ///         }));
-    ///         var subscribe = new Akamai.NetworkListSubscription("subscribe", new Akamai.NetworkListSubscriptionArgs
-    ///         {
-    ///             NetworkLists = networkListsFilter.Apply(networkListsFilter =&gt; networkListsFilter.Lists),
-    ///             Recipients = 
-    ///             {
-    ///                 "user@example.com",
-    ///             },
-    ///         });
-    ///     }
+    ///         Name = @var.Network_list,
+    ///     });
     /// 
-    /// }
+    ///     var subscribe = new Akamai.NetworkListSubscription("subscribe", new()
+    ///     {
+    ///         NetworkLists = networkListsFilter.Apply(getNetworkListsResult =&gt; getNetworkListsResult.Lists),
+    ///         Recipients = new[]
+    ///         {
+    ///             "user@example.com",
+    ///         },
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/networkListSubscription:NetworkListSubscription")]
-    public partial class NetworkListSubscription : Pulumi.CustomResource
+    public partial class NetworkListSubscription : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list containing one or more IDs of the network lists to which the indicated email
@@ -103,7 +102,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class NetworkListSubscriptionArgs : Pulumi.ResourceArgs
+    public sealed class NetworkListSubscriptionArgs : global::Pulumi.ResourceArgs
     {
         [Input("networkLists", required: true)]
         private InputList<string>? _networkLists;
@@ -134,9 +133,10 @@ namespace Pulumi.Akamai
         public NetworkListSubscriptionArgs()
         {
         }
+        public static new NetworkListSubscriptionArgs Empty => new NetworkListSubscriptionArgs();
     }
 
-    public sealed class NetworkListSubscriptionState : Pulumi.ResourceArgs
+    public sealed class NetworkListSubscriptionState : global::Pulumi.ResourceArgs
     {
         [Input("networkLists")]
         private InputList<string>? _networkLists;
@@ -167,5 +167,6 @@ namespace Pulumi.Akamai
         public NetworkListSubscriptionState()
         {
         }
+        public static new NetworkListSubscriptionState Empty => new NetworkListSubscriptionState();
     }
 }

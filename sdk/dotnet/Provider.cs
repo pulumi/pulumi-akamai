@@ -16,7 +16,7 @@ namespace Pulumi.Akamai
     /// [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
     /// </summary>
     [AkamaiResourceType("pulumi:providers:akamai")]
-    public partial class Provider : Pulumi.ProviderResource
+    public partial class Provider : global::Pulumi.ProviderResource
     {
         [Output("appsecSection")]
         public Output<string?> AppsecSection { get; private set; } = null!;
@@ -71,7 +71,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class ProviderArgs : Pulumi.ResourceArgs
+    public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
         [Input("appsecSection")]
         public Input<string>? AppsecSection { get; set; }
@@ -135,5 +135,6 @@ namespace Pulumi.Akamai
         public ProviderArgs()
         {
         }
+        public static new ProviderArgs Empty => new ProviderArgs();
     }
 }

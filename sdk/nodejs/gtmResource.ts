@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -19,7 +20,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const demoResource = new akamai.GtmResource("demo_resource", {
+ * const demoResource = new akamai.GtmResource("demoResource", {
  *     aggregationType: "latest",
  *     domain: "demo_domain.akadns.net",
  *     type: "XML load object via HTTP",

@@ -5,11 +5,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Promise<GetCpCodeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCpCode:getCpCode", {
         "contract": args.contract,
         "contractId": args.contractId,
@@ -70,9 +67,8 @@ export interface GetCpCodeResult {
     readonly name: string;
     readonly productIds: string[];
 }
-
 export function getCpCodeOutput(args: GetCpCodeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpCodeResult> {
-    return pulumi.output(args).apply(a => getCpCode(a, opts))
+    return pulumi.output(args).apply((a: any) => getCpCode(a, opts))
 }
 
 /**

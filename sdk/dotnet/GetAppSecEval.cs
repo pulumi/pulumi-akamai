@@ -12,14 +12,14 @@ namespace Pulumi.Akamai
     public static class GetAppSecEval
     {
         public static Task<GetAppSecEvalResult> InvokeAsync(GetAppSecEvalArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalResult>("akamai:index/getAppSecEval:getAppSecEval", args ?? new GetAppSecEvalArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalResult>("akamai:index/getAppSecEval:getAppSecEval", args ?? new GetAppSecEvalArgs(), options.WithDefaults());
 
         public static Output<GetAppSecEvalResult> Invoke(GetAppSecEvalInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalResult>("akamai:index/getAppSecEval:getAppSecEval", args ?? new GetAppSecEvalInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecEvalResult>("akamai:index/getAppSecEval:getAppSecEval", args ?? new GetAppSecEvalInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecEvalArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecEvalArgs : global::Pulumi.InvokeArgs
     {
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
@@ -30,9 +30,10 @@ namespace Pulumi.Akamai
         public GetAppSecEvalArgs()
         {
         }
+        public static new GetAppSecEvalArgs Empty => new GetAppSecEvalArgs();
     }
 
-    public sealed class GetAppSecEvalInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecEvalInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -43,6 +44,7 @@ namespace Pulumi.Akamai
         public GetAppSecEvalInvokeArgs()
         {
         }
+        public static new GetAppSecEvalInvokeArgs Empty => new GetAppSecEvalInvokeArgs();
     }
 
 

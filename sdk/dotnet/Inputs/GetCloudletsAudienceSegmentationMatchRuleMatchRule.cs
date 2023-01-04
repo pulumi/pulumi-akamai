@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
@@ -69,5 +69,6 @@ namespace Pulumi.Akamai.Inputs
         public GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs()
         {
         }
+        public static new GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs Empty => new GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs();
     }
 }

@@ -40,11 +40,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report showing the reputation analysis settings.
  */
 export function getAppSecReputationProfileAnalysis(args: GetAppSecReputationProfileAnalysisArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecReputationProfileAnalysisResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", {
         "configId": args.configId,
         "securityPolicyId": args.securityPolicyId,
@@ -78,9 +75,43 @@ export interface GetAppSecReputationProfileAnalysisResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-
+/**
+ * **Scopes**: Security policy
+ *
+ * Returns information about the following two reputation analysis settings:
+ *
+ * - `forwardToHTTPHeader`. When enabled, client reputation information associated with a request is forwarded to origin servers by using an HTTP header.
+ * - `forwardSharedIPToHTTPHeaderAndSIEM`. When enabled, both the HTTP header and SIEM integration events include a value indicating that the IP addresses is shared address.
+ *
+ * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://techdocs.akamai.com/application-security/reference/get-reputation-analysis)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const reputationAnalysis = configuration.then(configuration => akamai.getAppSecReputationProfileAnalysis({
+ *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
+ * }));
+ * export const reputationAnalysisText = reputationAnalysis.then(reputationAnalysis => reputationAnalysis.outputText);
+ * export const reputationAnalysisJson = reputationAnalysis.then(reputationAnalysis => reputationAnalysis.json);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `json`. JSON-formatted list of the reputation analysis settings.
+ * - `outputText`. Tabular report showing the reputation analysis settings.
+ */
 export function getAppSecReputationProfileAnalysisOutput(args: GetAppSecReputationProfileAnalysisOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecReputationProfileAnalysisResult> {
-    return pulumi.output(args).apply(a => getAppSecReputationProfileAnalysis(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecReputationProfileAnalysis(a, opts))
 }
 
 /**

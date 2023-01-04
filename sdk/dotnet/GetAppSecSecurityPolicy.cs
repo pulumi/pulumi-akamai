@@ -12,14 +12,14 @@ namespace Pulumi.Akamai
     public static class GetAppSecSecurityPolicy
     {
         public static Task<GetAppSecSecurityPolicyResult> InvokeAsync(GetAppSecSecurityPolicyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSecurityPolicyResult>("akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy", args ?? new GetAppSecSecurityPolicyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSecurityPolicyResult>("akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy", args ?? new GetAppSecSecurityPolicyArgs(), options.WithDefaults());
 
         public static Output<GetAppSecSecurityPolicyResult> Invoke(GetAppSecSecurityPolicyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecSecurityPolicyResult>("akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy", args ?? new GetAppSecSecurityPolicyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSecurityPolicyResult>("akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy", args ?? new GetAppSecSecurityPolicyInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecSecurityPolicyArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecSecurityPolicyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the security policies.
@@ -34,9 +34,10 @@ namespace Pulumi.Akamai
         public GetAppSecSecurityPolicyArgs()
         {
         }
+        public static new GetAppSecSecurityPolicyArgs Empty => new GetAppSecSecurityPolicyArgs();
     }
 
-    public sealed class GetAppSecSecurityPolicyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecSecurityPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the security policies.
@@ -51,6 +52,7 @@ namespace Pulumi.Akamai
         public GetAppSecSecurityPolicyInvokeArgs()
         {
         }
+        public static new GetAppSecSecurityPolicyInvokeArgs Empty => new GetAppSecSecurityPolicyInvokeArgs();
     }
 
 
@@ -62,6 +64,7 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string Json;
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
         public readonly ImmutableArray<string> SecurityPolicyIdLists;
@@ -73,6 +76,8 @@ namespace Pulumi.Akamai
 
             string id,
 
+            string json,
+
             string outputText,
 
             string securityPolicyId,
@@ -83,6 +88,7 @@ namespace Pulumi.Akamai
         {
             ConfigId = configId;
             Id = id;
+            Json = json;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
             SecurityPolicyIdLists = securityPolicyIdLists;

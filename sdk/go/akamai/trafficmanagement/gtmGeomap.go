@@ -26,7 +26,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -34,7 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := akamai.NewGtmGeomap(ctx, "demoGeomap", &akamai.GtmGeomapArgs{
-//				DefaultDatacenter: &GtmGeomapDefaultDatacenterArgs{
+//				DefaultDatacenter: &akamai.GtmGeomapDefaultDatacenterArgs{
 //					DatacenterId: pulumi.Int(5400),
 //					Nickname:     pulumi.String("All Others"),
 //				},

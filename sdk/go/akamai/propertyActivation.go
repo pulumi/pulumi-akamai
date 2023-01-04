@@ -27,7 +27,7 @@ import (
 //	"fmt"
 //	"io/ioutil"
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -48,7 +48,7 @@ import (
 //				ProductId:  pulumi.String("prd_SPM"),
 //				ContractId: pulumi.Any(_var.Contractid),
 //				GroupId:    pulumi.Any(_var.Groupid),
-//				Hostnames: PropertyHostnameArray{
+//				Hostnames: akamai.PropertyHostnameArray{
 //					Example.org:     "example.org.edgesuite.net",
 //					Www.example.org: "example.org.edgesuite.net",
 //					Sub.example.org: "sub.example.org.edgesuite.net",

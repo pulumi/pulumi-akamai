@@ -35,11 +35,8 @@ import * as utilities from "./utilities";
  * - `outputText`. Tabular report showing the ID, IPv4 action, and IPv6 action of the rate policies.
  */
 export function getAppSecRatePolicyActions(args: GetAppSecRatePolicyActionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecRatePolicyActionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", {
         "configId": args.configId,
         "ratePolicyId": args.ratePolicyId,
@@ -78,9 +75,38 @@ export interface GetAppSecRatePolicyActionsResult {
     readonly ratePolicyId?: number;
     readonly securityPolicyId: string;
 }
-
+/**
+ * **Scopes**: Security policy; rate policy
+ *
+ * Returns information about your rate policy actions. Actions specify what happens any time a rate policy is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
+ *
+ * **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies](https://techdocs.akamai.com/application-security/reference/get-rate-policies-actions)
+ *
+ * ## Example Usage
+ *
+ * Basic usage:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const configuration = akamai.getAppSecConfiguration({
+ *     name: "Documentation",
+ * });
+ * const ratePolicyActionsAppSecRatePolicyActions = configuration.then(configuration => akamai.getAppSecRatePolicyActions({
+ *     configId: configuration.configId,
+ *     securityPolicyId: "gms1_134637",
+ * }));
+ * export const ratePolicyActions = ratePolicyActionsAppSecRatePolicyActions.then(ratePolicyActionsAppSecRatePolicyActions => ratePolicyActionsAppSecRatePolicyActions.outputText);
+ * ```
+ * ## Output Options
+ *
+ * The following options can be used to determine the information returned, and how that returned information is formatted:
+ *
+ * - `outputText`. Tabular report showing the ID, IPv4 action, and IPv6 action of the rate policies.
+ */
 export function getAppSecRatePolicyActionsOutput(args: GetAppSecRatePolicyActionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecRatePolicyActionsResult> {
-    return pulumi.output(args).apply(a => getAppSecRatePolicyActions(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppSecRatePolicyActions(a, opts))
 }
 
 /**

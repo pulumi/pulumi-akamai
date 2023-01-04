@@ -23,30 +23,29 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var bypassNetworkLists = new Akamai.AppSecByPassNetworkList("bypassNetworkLists", new Akamai.AppSecByPassNetworkListArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             BypassNetworkLists = 
-    ///             {
-    ///                 "DocumentationNetworkList",
-    ///                 "TrainingNetworkList",
-    ///             },
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var bypassNetworkLists = new Akamai.AppSecByPassNetworkList("bypassNetworkLists", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         BypassNetworkLists = new[]
+    ///         {
+    ///             "DocumentationNetworkList",
+    ///             "TrainingNetworkList",
+    ///         },
+    ///     });
+    /// 
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -55,7 +54,7 @@ namespace Pulumi.Akamai
     /// - `output_text`. Tabular report showing the updated list of bypass network IDs.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList")]
-    public partial class AppSecByPassNetworkList : Pulumi.CustomResource
+    public partial class AppSecByPassNetworkList : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . JSON array of network IDs that comprise the bypass list.
@@ -119,7 +118,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecByPassNetworkListArgs : Pulumi.ResourceArgs
+    public sealed class AppSecByPassNetworkListArgs : global::Pulumi.ResourceArgs
     {
         [Input("bypassNetworkLists", required: true)]
         private InputList<string>? _bypassNetworkLists;
@@ -148,9 +147,10 @@ namespace Pulumi.Akamai
         public AppSecByPassNetworkListArgs()
         {
         }
+        public static new AppSecByPassNetworkListArgs Empty => new AppSecByPassNetworkListArgs();
     }
 
-    public sealed class AppSecByPassNetworkListState : Pulumi.ResourceArgs
+    public sealed class AppSecByPassNetworkListState : global::Pulumi.ResourceArgs
     {
         [Input("bypassNetworkLists")]
         private InputList<string>? _bypassNetworkLists;
@@ -179,5 +179,6 @@ namespace Pulumi.Akamai
         public AppSecByPassNetworkListState()
         {
         }
+        public static new AppSecByPassNetworkListState Empty => new AppSecByPassNetworkListState();
     }
 }

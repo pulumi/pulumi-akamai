@@ -59,7 +59,7 @@ class _AppSecReputationProfileState:
         Input properties used for looking up and filtering AppSecReputationProfile resources.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile being modified.
         :param pulumi.Input[str] reputation_profile: . Path to a JSON file containing a definition of the reputation profile.
-        :param pulumi.Input[int] reputation_profile_id: Unique identifer of the reputation profile
+        :param pulumi.Input[int] reputation_profile_id: Unique identifier of the reputation profile
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -96,7 +96,7 @@ class _AppSecReputationProfileState:
     @pulumi.getter(name="reputationProfileId")
     def reputation_profile_id(self) -> Optional[pulumi.Input[int]]:
         """
-        Unique identifer of the reputation profile
+        Unique identifier of the reputation profile
         """
         return pulumi.get(self, "reputation_profile_id")
 
@@ -237,7 +237,7 @@ class AppSecReputationProfile(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile being modified.
         :param pulumi.Input[str] reputation_profile: . Path to a JSON file containing a definition of the reputation profile.
-        :param pulumi.Input[int] reputation_profile_id: Unique identifer of the reputation profile
+        :param pulumi.Input[int] reputation_profile_id: Unique identifier of the reputation profile
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -268,7 +268,7 @@ class AppSecReputationProfile(pulumi.CustomResource):
     @pulumi.getter(name="reputationProfileId")
     def reputation_profile_id(self) -> pulumi.Output[int]:
         """
-        Unique identifer of the reputation profile
+        Unique identifier of the reputation profile
         """
         return pulumi.get(self, "reputation_profile_id")
 

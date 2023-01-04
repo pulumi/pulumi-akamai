@@ -15,10 +15,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const test = pulumi.output(akamai.getEdgeWorker({
+ * const test = akamai.getEdgeWorker({
  *     edgeworkerId: 3,
  *     localBundle: "test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz",
- * }));
+ * });
  * ```
  * ## Attributes reference
  *
@@ -32,11 +32,8 @@ import * as utilities from "./utilities";
  * * `warnings` - The list of warnings returned by EdgeWorker validation.
  */
 export function getEdgeWorker(args: GetEdgeWorkerArgs, opts?: pulumi.InvokeOptions): Promise<GetEdgeWorkerResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getEdgeWorker:getEdgeWorker", {
         "edgeworkerId": args.edgeworkerId,
         "localBundle": args.localBundle,
@@ -74,9 +71,35 @@ export interface GetEdgeWorkerResult {
     readonly version: string;
     readonly warnings: string[];
 }
-
+/**
+ * Use the `akamai.EdgeWorker` data source to get an EdgeWorker for a given EdgeWorker ID.
+ *
+ * ## Example Usage
+ *
+ * This example returns the resource tier fields for the selected EdgeWorker ID:
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as akamai from "@pulumi/akamai";
+ *
+ * const test = akamai.getEdgeWorker({
+ *     edgeworkerId: 3,
+ *     localBundle: "test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz",
+ * });
+ * ```
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `name` - The EdgeWorker name.
+ * * `groupId` - Defines the group association for the EdgeWorker.
+ * * `resourceTierId` - The unique identifier of a resource tier.
+ * * `localBundleHash` - The local bundle hash for the EdgeWorker. It's used to identify content changes for the bundle.
+ * * `version` - The bundle version.
+ * * `warnings` - The list of warnings returned by EdgeWorker validation.
+ */
 export function getEdgeWorkerOutput(args: GetEdgeWorkerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeWorkerResult> {
-    return pulumi.output(args).apply(a => getEdgeWorker(a, opts))
+    return pulumi.output(args).apply((a: any) => getEdgeWorker(a, opts))
 }
 
 /**

@@ -59,6 +59,8 @@ from .cloudlets_policy_activation import *
 from .cp_code import *
 from .cps_dv_enrollment import *
 from .cps_dv_validation import *
+from .cps_third_party_enrollment import *
+from .cps_upload_certificate import *
 from .datastream import *
 from .dns_record import *
 from .dns_zone import *
@@ -128,10 +130,14 @@ from .get_cloudlets_visitor_prioritization_match_rule import *
 from .get_contract import *
 from .get_contracts import *
 from .get_cp_code import *
+from .get_cps_csr import *
+from .get_cps_deployments import *
 from .get_cps_enrollment import *
 from .get_cps_enrollments import *
+from .get_cps_warnings import *
 from .get_datastream_activation_history import *
 from .get_datastream_dataset_fields import *
+from .get_datastreams import *
 from .get_dns_record_set import *
 from .get_edge_worker import *
 from .get_edge_worker_activation import *
@@ -153,6 +159,11 @@ from .get_properties import *
 from .get_properties_search import *
 from .get_property import *
 from .get_property_hostnames import *
+from .get_property_include import *
+from .get_property_include_activation import *
+from .get_property_include_parents import *
+from .get_property_include_rules import *
+from .get_property_includes import *
 from .get_property_products import *
 from .get_property_rule_formats import *
 from .get_property_rules import *
@@ -174,6 +185,8 @@ from .network_list_description import *
 from .network_list_subscription import *
 from .property import *
 from .property_activation import *
+from .property_include import *
+from .property_include_activation import *
 from .provider import *
 from ._inputs import *
 from . import outputs
@@ -647,6 +660,22 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/cpsThirdPartyEnrollment",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment": "CpsThirdPartyEnrollment"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/cpsUploadCertificate",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cpsUploadCertificate:CpsUploadCertificate": "CpsUploadCertificate"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/datastream",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -835,6 +864,22 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/propertyActivation:PropertyActivation": "PropertyActivation"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/propertyInclude",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/propertyInclude:PropertyInclude": "PropertyInclude"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/propertyIncludeActivation",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/propertyIncludeActivation:PropertyIncludeActivation": "PropertyIncludeActivation"
   }
  },
  {

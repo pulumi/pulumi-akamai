@@ -21,34 +21,34 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var createCustomRuleAction = new Akamai.AppSecCustomRuleAction("createCustomRuleAction", new Akamai.AppSecCustomRuleActionArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             CustomRuleId = 12345,
-    ///             CustomRuleAction = "alert",
-    ///         });
-    ///         this.CustomRuleId = createCustomRuleAction.CustomRuleId;
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    ///     [Output("customRuleId")]
-    ///     public Output&lt;string&gt; CustomRuleId { get; set; }
-    /// }
+    ///     var createCustomRuleAction = new Akamai.AppSecCustomRuleAction("createCustomRuleAction", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         CustomRuleId = 12345,
+    ///         CustomRuleAction = "alert",
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["customRuleId"] = createCustomRuleAction.CustomRuleId,
+    ///     };
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecCustomRuleAction:AppSecCustomRuleAction")]
-    public partial class AppSecCustomRuleAction : Pulumi.CustomResource
+    public partial class AppSecCustomRuleAction : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom rule action being modified.
@@ -122,7 +122,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecCustomRuleActionArgs : Pulumi.ResourceArgs
+    public sealed class AppSecCustomRuleActionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom rule action being modified.
@@ -155,9 +155,10 @@ namespace Pulumi.Akamai
         public AppSecCustomRuleActionArgs()
         {
         }
+        public static new AppSecCustomRuleActionArgs Empty => new AppSecCustomRuleActionArgs();
     }
 
-    public sealed class AppSecCustomRuleActionState : Pulumi.ResourceArgs
+    public sealed class AppSecCustomRuleActionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the custom rule action being modified.
@@ -190,5 +191,6 @@ namespace Pulumi.Akamai
         public AppSecCustomRuleActionState()
         {
         }
+        public static new AppSecCustomRuleActionState Empty => new AppSecCustomRuleActionState();
     }
 }

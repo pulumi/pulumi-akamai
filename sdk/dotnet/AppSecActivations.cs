@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai
 {
     [AkamaiResourceType("akamai:index/appSecActivations:AppSecActivations")]
-    public partial class AppSecActivations : Pulumi.CustomResource
+    public partial class AppSecActivations : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
@@ -106,7 +106,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecActivationsArgs : Pulumi.ResourceArgs
+    public sealed class AppSecActivationsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
@@ -161,9 +161,10 @@ namespace Pulumi.Akamai
         public AppSecActivationsArgs()
         {
         }
+        public static new AppSecActivationsArgs Empty => new AppSecActivationsArgs();
     }
 
-    public sealed class AppSecActivationsState : Pulumi.ResourceArgs
+    public sealed class AppSecActivationsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
@@ -224,5 +225,6 @@ namespace Pulumi.Akamai
         public AppSecActivationsState()
         {
         }
+        public static new AppSecActivationsState Empty => new AppSecActivationsState();
     }
 }

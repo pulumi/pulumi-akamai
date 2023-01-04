@@ -15,9 +15,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as akamai from "@pulumi/akamai";
  *
- * const example = new akamai.IamGroup("example", {
- *     parentGroupId: 12345,
- * });
+ * const example = new akamai.IamGroup("example", {parentGroupId: 12345});
  * ```
  *
  * ## Attributes reference

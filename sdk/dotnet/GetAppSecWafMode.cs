@@ -25,46 +25,34 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var wafMode = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecWafMode.InvokeAsync(new Akamai.GetAppSecWafModeArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.WafModeMode = wafMode.Apply(wafMode =&gt; wafMode.Mode);
-        ///         this.WafModeCurrentRuleset = wafMode.Apply(wafMode =&gt; wafMode.CurrentRuleset);
-        ///         this.WafModeEvalStatus = wafMode.Apply(wafMode =&gt; wafMode.EvalStatus);
-        ///         this.WafModeEvalRuleset = wafMode.Apply(wafMode =&gt; wafMode.EvalRuleset);
-        ///         this.WafModeEvalExpirationDate = wafMode.Apply(wafMode =&gt; wafMode.EvalExpirationDate);
-        ///         this.WafModeText = wafMode.Apply(wafMode =&gt; wafMode.OutputText);
-        ///         this.WafModeJson = wafMode.Apply(wafMode =&gt; wafMode.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("wafModeMode")]
-        ///     public Output&lt;string&gt; WafModeMode { get; set; }
-        ///     [Output("wafModeCurrentRuleset")]
-        ///     public Output&lt;string&gt; WafModeCurrentRuleset { get; set; }
-        ///     [Output("wafModeEvalStatus")]
-        ///     public Output&lt;string&gt; WafModeEvalStatus { get; set; }
-        ///     [Output("wafModeEvalRuleset")]
-        ///     public Output&lt;string&gt; WafModeEvalRuleset { get; set; }
-        ///     [Output("wafModeEvalExpirationDate")]
-        ///     public Output&lt;string&gt; WafModeEvalExpirationDate { get; set; }
-        ///     [Output("wafModeText")]
-        ///     public Output&lt;string&gt; WafModeText { get; set; }
-        ///     [Output("wafModeJson")]
-        ///     public Output&lt;string&gt; WafModeJson { get; set; }
-        /// }
+        ///     var wafMode = Akamai.GetAppSecWafMode.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["wafModeMode"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.Mode),
+        ///         ["wafModeCurrentRuleset"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.CurrentRuleset),
+        ///         ["wafModeEvalStatus"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.EvalStatus),
+        ///         ["wafModeEvalRuleset"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.EvalRuleset),
+        ///         ["wafModeEvalExpirationDate"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.EvalExpirationDate),
+        ///         ["wafModeText"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.OutputText),
+        ///         ["wafModeJson"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +69,7 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the mode information.
         /// </summary>
         public static Task<GetAppSecWafModeResult> InvokeAsync(GetAppSecWafModeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy
@@ -97,46 +85,34 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var wafMode = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecWafMode.InvokeAsync(new Akamai.GetAppSecWafModeArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///         })));
-        ///         this.WafModeMode = wafMode.Apply(wafMode =&gt; wafMode.Mode);
-        ///         this.WafModeCurrentRuleset = wafMode.Apply(wafMode =&gt; wafMode.CurrentRuleset);
-        ///         this.WafModeEvalStatus = wafMode.Apply(wafMode =&gt; wafMode.EvalStatus);
-        ///         this.WafModeEvalRuleset = wafMode.Apply(wafMode =&gt; wafMode.EvalRuleset);
-        ///         this.WafModeEvalExpirationDate = wafMode.Apply(wafMode =&gt; wafMode.EvalExpirationDate);
-        ///         this.WafModeText = wafMode.Apply(wafMode =&gt; wafMode.OutputText);
-        ///         this.WafModeJson = wafMode.Apply(wafMode =&gt; wafMode.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("wafModeMode")]
-        ///     public Output&lt;string&gt; WafModeMode { get; set; }
-        ///     [Output("wafModeCurrentRuleset")]
-        ///     public Output&lt;string&gt; WafModeCurrentRuleset { get; set; }
-        ///     [Output("wafModeEvalStatus")]
-        ///     public Output&lt;string&gt; WafModeEvalStatus { get; set; }
-        ///     [Output("wafModeEvalRuleset")]
-        ///     public Output&lt;string&gt; WafModeEvalRuleset { get; set; }
-        ///     [Output("wafModeEvalExpirationDate")]
-        ///     public Output&lt;string&gt; WafModeEvalExpirationDate { get; set; }
-        ///     [Output("wafModeText")]
-        ///     public Output&lt;string&gt; WafModeText { get; set; }
-        ///     [Output("wafModeJson")]
-        ///     public Output&lt;string&gt; WafModeJson { get; set; }
-        /// }
+        ///     var wafMode = Akamai.GetAppSecWafMode.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["wafModeMode"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.Mode),
+        ///         ["wafModeCurrentRuleset"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.CurrentRuleset),
+        ///         ["wafModeEvalStatus"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.EvalStatus),
+        ///         ["wafModeEvalRuleset"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.EvalRuleset),
+        ///         ["wafModeEvalExpirationDate"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.EvalExpirationDate),
+        ///         ["wafModeText"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.OutputText),
+        ///         ["wafModeJson"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -153,11 +129,11 @@ namespace Pulumi.Akamai
         /// - `json`. JSON-formatted list of the mode information.
         /// </summary>
         public static Output<GetAppSecWafModeResult> Invoke(GetAppSecWafModeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecWafModeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecWafModeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the Kona Rule Set rules.
@@ -174,9 +150,10 @@ namespace Pulumi.Akamai
         public GetAppSecWafModeArgs()
         {
         }
+        public static new GetAppSecWafModeArgs Empty => new GetAppSecWafModeArgs();
     }
 
-    public sealed class GetAppSecWafModeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecWafModeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the Kona Rule Set rules.
@@ -193,6 +170,7 @@ namespace Pulumi.Akamai
         public GetAppSecWafModeInvokeArgs()
         {
         }
+        public static new GetAppSecWafModeInvokeArgs Empty => new GetAppSecWafModeInvokeArgs();
     }
 
 

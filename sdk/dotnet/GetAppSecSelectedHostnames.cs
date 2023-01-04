@@ -25,33 +25,29 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var selectedHostnamesAppSecSelectedHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSelectedHostnames.InvokeAsync(new Akamai.GetAppSecSelectedHostnamesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.SelectedHostnames = selectedHostnamesAppSecSelectedHostnames.Apply(selectedHostnamesAppSecSelectedHostnames =&gt; selectedHostnamesAppSecSelectedHostnames.Hostnames);
-        ///         this.SelectedHostnamesJson = selectedHostnamesAppSecSelectedHostnames.Apply(selectedHostnamesAppSecSelectedHostnames =&gt; selectedHostnamesAppSecSelectedHostnames.HostnamesJson);
-        ///         this.SelectedHostnamesOutputText = selectedHostnamesAppSecSelectedHostnames.Apply(selectedHostnamesAppSecSelectedHostnames =&gt; selectedHostnamesAppSecSelectedHostnames.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("selectedHostnames")]
-        ///     public Output&lt;string&gt; SelectedHostnames { get; set; }
-        ///     [Output("selectedHostnamesJson")]
-        ///     public Output&lt;string&gt; SelectedHostnamesJson { get; set; }
-        ///     [Output("selectedHostnamesOutputText")]
-        ///     public Output&lt;string&gt; SelectedHostnamesOutputText { get; set; }
-        /// }
+        ///     var selectedHostnamesAppSecSelectedHostnames = Akamai.GetAppSecSelectedHostnames.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["selectedHostnames"] = selectedHostnamesAppSecSelectedHostnames.Apply(getAppSecSelectedHostnamesResult =&gt; getAppSecSelectedHostnamesResult.Hostnames),
+        ///         ["selectedHostnamesJson"] = selectedHostnamesAppSecSelectedHostnames.Apply(getAppSecSelectedHostnamesResult =&gt; getAppSecSelectedHostnamesResult.HostnamesJson),
+        ///         ["selectedHostnamesOutputText"] = selectedHostnamesAppSecSelectedHostnames.Apply(getAppSecSelectedHostnamesResult =&gt; getAppSecSelectedHostnamesResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -64,7 +60,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the selected hostnames.
         /// </summary>
         public static Task<GetAppSecSelectedHostnamesResult> InvokeAsync(GetAppSecSelectedHostnamesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSelectedHostnamesResult>("akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames", args ?? new GetAppSecSelectedHostnamesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSelectedHostnamesResult>("akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames", args ?? new GetAppSecSelectedHostnamesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration
@@ -80,33 +76,29 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var selectedHostnamesAppSecSelectedHostnames = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecSelectedHostnames.InvokeAsync(new Akamai.GetAppSecSelectedHostnamesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.SelectedHostnames = selectedHostnamesAppSecSelectedHostnames.Apply(selectedHostnamesAppSecSelectedHostnames =&gt; selectedHostnamesAppSecSelectedHostnames.Hostnames);
-        ///         this.SelectedHostnamesJson = selectedHostnamesAppSecSelectedHostnames.Apply(selectedHostnamesAppSecSelectedHostnames =&gt; selectedHostnamesAppSecSelectedHostnames.HostnamesJson);
-        ///         this.SelectedHostnamesOutputText = selectedHostnamesAppSecSelectedHostnames.Apply(selectedHostnamesAppSecSelectedHostnames =&gt; selectedHostnamesAppSecSelectedHostnames.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("selectedHostnames")]
-        ///     public Output&lt;string&gt; SelectedHostnames { get; set; }
-        ///     [Output("selectedHostnamesJson")]
-        ///     public Output&lt;string&gt; SelectedHostnamesJson { get; set; }
-        ///     [Output("selectedHostnamesOutputText")]
-        ///     public Output&lt;string&gt; SelectedHostnamesOutputText { get; set; }
-        /// }
+        ///     var selectedHostnamesAppSecSelectedHostnames = Akamai.GetAppSecSelectedHostnames.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["selectedHostnames"] = selectedHostnamesAppSecSelectedHostnames.Apply(getAppSecSelectedHostnamesResult =&gt; getAppSecSelectedHostnamesResult.Hostnames),
+        ///         ["selectedHostnamesJson"] = selectedHostnamesAppSecSelectedHostnames.Apply(getAppSecSelectedHostnamesResult =&gt; getAppSecSelectedHostnamesResult.HostnamesJson),
+        ///         ["selectedHostnamesOutputText"] = selectedHostnamesAppSecSelectedHostnames.Apply(getAppSecSelectedHostnamesResult =&gt; getAppSecSelectedHostnamesResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -119,11 +111,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report of the selected hostnames.
         /// </summary>
         public static Output<GetAppSecSelectedHostnamesResult> Invoke(GetAppSecSelectedHostnamesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecSelectedHostnamesResult>("akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames", args ?? new GetAppSecSelectedHostnamesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSelectedHostnamesResult>("akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames", args ?? new GetAppSecSelectedHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecSelectedHostnamesArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecSelectedHostnamesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the protected hosts.
@@ -134,9 +126,10 @@ namespace Pulumi.Akamai
         public GetAppSecSelectedHostnamesArgs()
         {
         }
+        public static new GetAppSecSelectedHostnamesArgs Empty => new GetAppSecSelectedHostnamesArgs();
     }
 
-    public sealed class GetAppSecSelectedHostnamesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecSelectedHostnamesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the protected hosts.
@@ -147,6 +140,7 @@ namespace Pulumi.Akamai
         public GetAppSecSelectedHostnamesInvokeArgs()
         {
         }
+        public static new GetAppSecSelectedHostnamesInvokeArgs Empty => new GetAppSecSelectedHostnamesInvokeArgs();
     }
 
 

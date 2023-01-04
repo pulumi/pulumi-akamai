@@ -23,14 +23,14 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			my_example, err := akamai.GetPropertyRules(ctx, &GetPropertyRulesArgs{
+//			my_example, err := akamai.GetPropertyRules(ctx, &akamai.GetPropertyRulesArgs{
 //				PropertyId: "prp_123",
 //				GroupId:    pulumi.StringRef("grp_12345"),
 //				ContractId: pulumi.StringRef("ctr_1-AB123"),

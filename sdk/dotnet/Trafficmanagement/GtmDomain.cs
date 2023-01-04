@@ -19,28 +19,26 @@ namespace Pulumi.Akamai.Trafficmanagement
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var demodomain = new Akamai.GtmDomain("demodomain", new()
     ///     {
-    ///         var demodomain = new Akamai.GtmDomain("demodomain", new Akamai.GtmDomainArgs
-    ///         {
-    ///             Comment = "some comment",
-    ///             Contract = "XXX",
-    ///             Group = "100",
-    ///             Type = "basic",
-    ///         });
-    ///     }
+    ///         Comment = "some comment",
+    ///         Contract = "XXX",
+    ///         Group = "100",
+    ///         Type = "basic",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [Obsolete(@"akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmDomain:GtmDomain")]
-    public partial class GtmDomain : Pulumi.CustomResource
+    public partial class GtmDomain : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
@@ -233,7 +231,7 @@ namespace Pulumi.Akamai.Trafficmanagement
         }
     }
 
-    public sealed class GtmDomainArgs : Pulumi.ResourceArgs
+    public sealed class GtmDomainArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
@@ -334,9 +332,10 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmDomainArgs()
         {
         }
+        public static new GtmDomainArgs Empty => new GtmDomainArgs();
     }
 
-    public sealed class GtmDomainState : Pulumi.ResourceArgs
+    public sealed class GtmDomainState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
@@ -494,5 +493,6 @@ namespace Pulumi.Akamai.Trafficmanagement
         public GtmDomainState()
         {
         }
+        public static new GtmDomainState Empty => new GtmDomainState();
     }
 }

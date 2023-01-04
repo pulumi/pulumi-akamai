@@ -86,9 +86,17 @@ public class CpsDvValidation extends com.pulumi.resources.CustomResource {
     public Output<Optional<List<String>>> sans() {
         return Codegen.optional(this.sans);
     }
+    /**
+     * Status of validation
+     * 
+     */
     @Export(name="status", type=String.class, parameters={})
     private Output<String> status;
 
+    /**
+     * @return Status of validation
+     * 
+     */
     public Output<String> status() {
         return this.status;
     }

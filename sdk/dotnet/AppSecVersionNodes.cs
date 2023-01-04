@@ -21,28 +21,28 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var versionNotesAppSecVersionNodes = new Akamai.AppSecVersionNodes("versionNotesAppSecVersionNodes", new Akamai.AppSecVersionNodesArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             VersionNotes = "This version enables reputation profiles.",
-    ///         });
-    ///         this.VersionNotes = versionNotesAppSecVersionNodes.OutputText;
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    ///     [Output("versionNotes")]
-    ///     public Output&lt;string&gt; VersionNotes { get; set; }
-    /// }
+    ///     var versionNotesAppSecVersionNodes = new Akamai.AppSecVersionNodes("versionNotesAppSecVersionNodes", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         VersionNotes = "This version enables reputation profiles.",
+    ///     });
+    /// 
+    ///     return new Dictionary&lt;string, object?&gt;
+    ///     {
+    ///         ["versionNotes"] = versionNotesAppSecVersionNodes.OutputText,
+    ///     };
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -51,7 +51,7 @@ namespace Pulumi.Akamai
     /// - `output_text`. Tabular report showing the updated version notes.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecVersionNodes:AppSecVersionNodes")]
-    public partial class AppSecVersionNodes : Pulumi.CustomResource
+    public partial class AppSecVersionNodes : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration whose version notes are being modified.
@@ -115,7 +115,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecVersionNodesArgs : Pulumi.ResourceArgs
+    public sealed class AppSecVersionNodesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration whose version notes are being modified.
@@ -132,9 +132,10 @@ namespace Pulumi.Akamai
         public AppSecVersionNodesArgs()
         {
         }
+        public static new AppSecVersionNodesArgs Empty => new AppSecVersionNodesArgs();
     }
 
-    public sealed class AppSecVersionNodesState : Pulumi.ResourceArgs
+    public sealed class AppSecVersionNodesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration whose version notes are being modified.
@@ -157,5 +158,6 @@ namespace Pulumi.Akamai
         public AppSecVersionNodesState()
         {
         }
+        public static new AppSecVersionNodesState Empty => new AppSecVersionNodesState();
     }
 }

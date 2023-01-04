@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class GtmPropertyLivenessTestGetArgs : Pulumi.ResourceArgs
+    public sealed class GtmPropertyLivenessTestGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// If `test_object_protocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
@@ -165,5 +165,6 @@ namespace Pulumi.Akamai.Inputs
         public GtmPropertyLivenessTestGetArgs()
         {
         }
+        public static new GtmPropertyLivenessTestGetArgs Empty => new GtmPropertyLivenessTestGetArgs();
     }
 }

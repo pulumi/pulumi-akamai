@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 
 export interface CloudletsApplicationLoadBalancerDataCenter {
     /**
@@ -332,6 +333,216 @@ export interface CpsDvEnrollmentTechContact {
     title?: string;
 }
 
+export interface CpsThirdPartyEnrollmentAdminContact {
+    /**
+     * The address of your organization.
+     */
+    addressLineOne: string;
+    /**
+     * The address of your organization.
+     */
+    addressLineTwo?: string;
+    /**
+     * The city where your organization resides.
+     */
+    city: string;
+    /**
+     * The code for the country where your organization resides.
+     */
+    countryCode: string;
+    /**
+     * The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+     */
+    email: string;
+    /**
+     * The first name of the technical contact at Akamai.
+     */
+    firstName: string;
+    /**
+     * The last name of the technical contact at Akamai.
+     */
+    lastName: string;
+    /**
+     * Your organization information.
+     */
+    organization: string;
+    /**
+     * The phone number of the administrator who you want to use as a contact at your company.
+     */
+    phone: string;
+    /**
+     * The postal code of your organization.
+     */
+    postalCode: string;
+    /**
+     * The region of your organization, typically a state or province.
+     */
+    region: string;
+    /**
+     * The title of the technical contact at Akamai.
+     */
+    title?: string;
+}
+
+export interface CpsThirdPartyEnrollmentCsr {
+    /**
+     * The city where your organization resides.
+     */
+    city: string;
+    /**
+     * The code for the country where your organization resides.
+     */
+    countryCode: string;
+    /**
+     * Your organization information.
+     */
+    organization: string;
+    /**
+     * Your organizational unit.
+     */
+    organizationalUnit: string;
+    /**
+     * Your state or province.
+     */
+    state: string;
+}
+
+export interface CpsThirdPartyEnrollmentNetworkConfiguration {
+    /**
+     * The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
+     */
+    clientMutualAuthentication?: outputs.CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication;
+    /**
+     * Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
+     */
+    cloneDnsNames?: boolean;
+    /**
+     * The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
+     */
+    disallowedTlsVersions?: string[];
+    /**
+     * Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
+     */
+    geography: string;
+    /**
+     * The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     */
+    mustHaveCiphers?: string;
+    /**
+     * Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
+     */
+    ocspStapling?: string;
+    /**
+     * Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     */
+    preferredCiphers?: string;
+    /**
+     * Whether to use the QUIC transport layer network protocol.
+     */
+    quicEnabled?: boolean;
+}
+
+export interface CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication {
+    /**
+     * Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
+     */
+    ocspEnabled?: boolean;
+    /**
+     * Whether you want to enable the server to send the certificate authority (CA) list to the client.
+     */
+    sendCaListToClient?: boolean;
+    /**
+     * The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
+     */
+    setId?: string;
+}
+
+export interface CpsThirdPartyEnrollmentOrganization {
+    /**
+     * The address of your organization.
+     */
+    addressLineOne: string;
+    /**
+     * The address of your organization.
+     */
+    addressLineTwo?: string;
+    /**
+     * The city where your organization resides.
+     */
+    city: string;
+    /**
+     * The code for the country where your organization resides.
+     */
+    countryCode: string;
+    /**
+     * The name of your organization.
+     */
+    name: string;
+    /**
+     * The phone number of the administrator who you want to use as a contact at your company.
+     */
+    phone: string;
+    /**
+     * The postal code of your organization.
+     */
+    postalCode: string;
+    /**
+     * The region of your organization, typically a state or province.
+     */
+    region: string;
+}
+
+export interface CpsThirdPartyEnrollmentTechContact {
+    /**
+     * The address of your organization.
+     */
+    addressLineOne: string;
+    /**
+     * The address of your organization.
+     */
+    addressLineTwo?: string;
+    /**
+     * The city where your organization resides.
+     */
+    city: string;
+    /**
+     * The code for the country where your organization resides.
+     */
+    countryCode: string;
+    /**
+     * The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
+     */
+    email: string;
+    /**
+     * The first name of the technical contact at Akamai.
+     */
+    firstName: string;
+    /**
+     * The last name of the technical contact at Akamai.
+     */
+    lastName: string;
+    /**
+     * Your organization information.
+     */
+    organization: string;
+    /**
+     * The phone number of the administrator who you want to use as a contact at your company.
+     */
+    phone: string;
+    /**
+     * The postal code of your organization.
+     */
+    postalCode: string;
+    /**
+     * The region of your organization, typically a state or province.
+     */
+    region: string;
+    /**
+     * The title of the technical contact at Akamai.
+     */
+    title?: string;
+}
+
 export interface DatastreamAzureConnector {
     /**
      * **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
@@ -392,8 +603,7 @@ export interface DatastreamConfigFrequency {
 
 export interface DatastreamDatadogConnector {
     /**
-     * **Secret**. The API key associated with your Datadog account. See [View API keys in Datadog](https://docs.datadoghq.com/account_management/api-app-keys/#api-keys).
-     * * `compress logs` - (Optional) Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `false`.
+     * **Secret**. Your Log API token for your account in New Relic.
      */
     authToken: string;
     /**
@@ -414,13 +624,66 @@ export interface DatastreamDatadogConnector {
      */
     source?: string;
     /**
-     * The tags of the Datadog connector. See [View Datadog tags](https://docs.datadoghq.com/getting_started/tagging/).
+     * The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
      */
     tags?: string;
     /**
      * Enter the secure URL where you want to send and store your logs.
      */
     url: string;
+}
+
+export interface DatastreamElasticsearchConnector {
+    /**
+     * **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     */
+    caCert?: string;
+    /**
+     * **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     */
+    clientCert?: string;
+    /**
+     * **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     */
+    clientKey?: string;
+    /**
+     * The name of the connector.
+     */
+    connectorName: string;
+    /**
+     * Content type to pass in the log file header.
+     */
+    contentType?: string;
+    /**
+     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+     */
+    customHeaderName?: string;
+    /**
+     * The custom header's contents passed with the request that contains information about the client connection.
+     */
+    customHeaderValue?: string;
+    /**
+     * The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+     * <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+     */
+    endpoint: string;
+    /**
+     * **Secret**. The index name of the Elastic cloud where you want to store log files.
+     */
+    indexName: string;
+    mTls: boolean;
+    /**
+     * **Secret**. The Elasticsearch basic access authentication password.
+     */
+    password: string;
+    /**
+     * The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     */
+    tlsHostname?: string;
+    /**
+     * **Secret**. The Elasticsearch basic access authentication username.
+     */
+    userName: string;
 }
 
 export interface DatastreamGcsConnector {
@@ -461,6 +724,18 @@ export interface DatastreamHttpsConnector {
      */
     authenticationType: string;
     /**
+     * **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     */
+    caCert?: string;
+    /**
+     * **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     */
+    clientCert?: string;
+    /**
+     * **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     */
+    clientKey?: string;
+    /**
      * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
      */
     compressLogs?: boolean;
@@ -470,17 +745,94 @@ export interface DatastreamHttpsConnector {
      */
     connectorName: string;
     /**
-     * **Secret**. Enter the password you set in your custom HTTPS endpoint for authentication.
+     * Content type to pass in the log file header.
+     */
+    contentType?: string;
+    /**
+     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+     */
+    customHeaderName?: string;
+    /**
+     * The custom header's contents passed with the request that contains information about the client connection.
+     */
+    customHeaderValue?: string;
+    mTls: boolean;
+    /**
+     * **Secret**. The Elasticsearch basic access authentication password.
      */
     password?: string;
+    /**
+     * The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     */
+    tlsHostname?: string;
     /**
      * Enter the secure URL where you want to send and store your logs.
      */
     url: string;
     /**
-     * **Secret**. Enter the valid username you set in your custom HTTPS endpoint for authentication.
+     * **Secret**. The Elasticsearch basic access authentication username.
      */
     userName?: string;
+}
+
+export interface DatastreamLogglyConnector {
+    /**
+     * **Secret**. Your Log API token for your account in New Relic.
+     */
+    authToken: string;
+    /**
+     * The name of the connector.
+     */
+    connectorName: string;
+    /**
+     * Content type to pass in the log file header.
+     */
+    contentType?: string;
+    /**
+     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+     */
+    customHeaderName?: string;
+    /**
+     * The custom header's contents passed with the request that contains information about the client connection.
+     */
+    customHeaderValue?: string;
+    /**
+     * The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+     * <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+     */
+    endpoint: string;
+    /**
+     * The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
+     */
+    tags?: string;
+}
+
+export interface DatastreamNewRelicConnector {
+    /**
+     * **Secret**. Your Log API token for your account in New Relic.
+     */
+    authToken: string;
+    /**
+     * The name of the connector.
+     */
+    connectorName: string;
+    /**
+     * Content type to pass in the log file header.
+     */
+    contentType?: string;
+    /**
+     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+     */
+    customHeaderName?: string;
+    /**
+     * The custom header's contents passed with the request that contains information about the client connection.
+     */
+    customHeaderValue?: string;
+    /**
+     * The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+     * <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
+     */
+    endpoint: string;
 }
 
 export interface DatastreamOracleConnector {
@@ -553,6 +905,18 @@ export interface DatastreamS3Connector {
 
 export interface DatastreamSplunkConnector {
     /**
+     * **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
+     */
+    caCert?: string;
+    /**
+     * **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     */
+    clientCert?: string;
+    /**
+     * **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
+     */
+    clientKey?: string;
+    /**
      * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
      */
     compressLogs?: boolean;
@@ -562,9 +926,22 @@ export interface DatastreamSplunkConnector {
      */
     connectorName: string;
     /**
+     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+     */
+    customHeaderName?: string;
+    /**
+     * The custom header's contents passed with the request that contains information about the client connection.
+     */
+    customHeaderValue?: string;
+    /**
      * **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
      */
     eventCollectorToken: string;
+    mTls: boolean;
+    /**
+     * The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
+     */
+    tlsHostname?: string;
     /**
      * Enter the secure URL where you want to send and store your logs.
      */
@@ -586,7 +963,20 @@ export interface DatastreamSumologicConnector {
      */
     connectorName: string;
     /**
-     * The Sumo Logic collection endpoint where you want to send your logs. You should follow the `https://<SumoEndpoint>/receiver/v1/http` format and pass the collector code in the `collectorCode` argument.
+     * Content type to pass in the log file header.
+     */
+    contentType?: string;
+    /**
+     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
+     */
+    customHeaderName?: string;
+    /**
+     * The custom header's contents passed with the request that contains information about the client connection.
+     */
+    customHeaderValue?: string;
+    /**
+     * The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
+     * <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
      */
     endpoint: string;
 }
@@ -1835,6 +2225,38 @@ export interface GetDatastreamDatasetFieldsFieldDatasetField {
     datasetFieldName: string;
 }
 
+export interface GetDatastreamsStream {
+    activationStatus: string;
+    archived: boolean;
+    connectors: string;
+    contractId: string;
+    createdBy: string;
+    createdDate: string;
+    currentVersionId: number;
+    errors: outputs.GetDatastreamsStreamError[];
+    /**
+     * Unique identifier of the group that can access the product.
+     */
+    groupId: number;
+    groupName: string;
+    properties: outputs.GetDatastreamsStreamProperty[];
+    streamId: number;
+    streamName: string;
+    streamTypeName: string;
+    streamVersionId: number;
+}
+
+export interface GetDatastreamsStreamError {
+    detail: string;
+    title: string;
+    type: string;
+}
+
+export interface GetDatastreamsStreamProperty {
+    propertyId: number;
+    propertyName: string;
+}
+
 export interface GetGroupsGroup {
     contractIds: string[];
     groupId: string;
@@ -1915,6 +2337,41 @@ export interface GetPropertyHostnamesHostnameCertStatus {
     productionStatus: string;
     stagingStatus: string;
     target: string;
+}
+
+export interface GetPropertyIncludeParentsParent {
+    id: string;
+    isIncludeUsedInProductionVersion: boolean;
+    isIncludeUsedInStagingVersion: boolean;
+    name: string;
+    productionVersion: string;
+    stagingVersion: string;
+}
+
+export interface GetPropertyIncludesInclude {
+    /**
+     * - (Required) The property's unique identifier.
+     */
+    id: string;
+    latestVersion: number;
+    name: string;
+    productionVersion: string;
+    stagingVersion: string;
+    /**
+     * - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     */
+    type: string;
+}
+
+export interface GetPropertyIncludesParentProperty {
+    /**
+     * - (Required) The property's unique identifier.
+     */
+    id: string;
+    /**
+     * - (Required) The version of the activated parent property.
+     */
+    version: number;
 }
 
 export interface GetPropertyProductsProduct {
@@ -2259,6 +2716,15 @@ export interface PropertyHostnameCertStatus {
     productionStatus: string;
     stagingStatus: string;
     target: string;
+}
+
+export interface PropertyIncludeActivationComplianceRecord {
+    customerEmail?: string;
+    noncomplianceReason: string;
+    otherNoncomplianceReason?: string;
+    peerReviewedBy?: string;
+    ticketId?: string;
+    unitTested?: boolean;
 }
 
 export interface PropertyOrigin {

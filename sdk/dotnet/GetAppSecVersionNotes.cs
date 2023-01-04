@@ -25,30 +25,28 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var versionNotes = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecVersionNotes.InvokeAsync(new Akamai.GetAppSecVersionNotesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.VersionNotesText = versionNotes.Apply(versionNotes =&gt; versionNotes.OutputText);
-        ///         this.VersionNotesJson = versionNotes.Apply(versionNotes =&gt; versionNotes.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("versionNotesText")]
-        ///     public Output&lt;string&gt; VersionNotesText { get; set; }
-        ///     [Output("versionNotesJson")]
-        ///     public Output&lt;string&gt; VersionNotesJson { get; set; }
-        /// }
+        ///     var versionNotes = Akamai.GetAppSecVersionNotes.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["versionNotesText"] = versionNotes.Apply(getAppSecVersionNotesResult =&gt; getAppSecVersionNotesResult.OutputText),
+        ///         ["versionNotesJson"] = versionNotes.Apply(getAppSecVersionNotesResult =&gt; getAppSecVersionNotesResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,7 +58,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the version notes.
         /// </summary>
         public static Task<GetAppSecVersionNotesResult> InvokeAsync(GetAppSecVersionNotesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecVersionNotesResult>("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args ?? new GetAppSecVersionNotesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecVersionNotesResult>("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args ?? new GetAppSecVersionNotesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security configuration
@@ -76,30 +74,28 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var versionNotes = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecVersionNotes.InvokeAsync(new Akamai.GetAppSecVersionNotesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///         })));
-        ///         this.VersionNotesText = versionNotes.Apply(versionNotes =&gt; versionNotes.OutputText);
-        ///         this.VersionNotesJson = versionNotes.Apply(versionNotes =&gt; versionNotes.Json);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("versionNotesText")]
-        ///     public Output&lt;string&gt; VersionNotesText { get; set; }
-        ///     [Output("versionNotesJson")]
-        ///     public Output&lt;string&gt; VersionNotesJson { get; set; }
-        /// }
+        ///     var versionNotes = Akamai.GetAppSecVersionNotes.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["versionNotesText"] = versionNotes.Apply(getAppSecVersionNotesResult =&gt; getAppSecVersionNotesResult.OutputText),
+        ///         ["versionNotesJson"] = versionNotes.Apply(getAppSecVersionNotesResult =&gt; getAppSecVersionNotesResult.Json),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -111,11 +107,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the version notes.
         /// </summary>
         public static Output<GetAppSecVersionNotesResult> Invoke(GetAppSecVersionNotesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecVersionNotesResult>("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args ?? new GetAppSecVersionNotesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecVersionNotesResult>("akamai:index/getAppSecVersionNotes:getAppSecVersionNotes", args ?? new GetAppSecVersionNotesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecVersionNotesArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecVersionNotesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration you want to return information for.
@@ -126,9 +122,10 @@ namespace Pulumi.Akamai
         public GetAppSecVersionNotesArgs()
         {
         }
+        public static new GetAppSecVersionNotesArgs Empty => new GetAppSecVersionNotesArgs();
     }
 
-    public sealed class GetAppSecVersionNotesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecVersionNotesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration you want to return information for.
@@ -139,6 +136,7 @@ namespace Pulumi.Akamai
         public GetAppSecVersionNotesInvokeArgs()
         {
         }
+        public static new GetAppSecVersionNotesInvokeArgs Empty => new GetAppSecVersionNotesInvokeArgs();
     }
 
 

@@ -21,33 +21,32 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using System.IO;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var evalAttackGroup = new Akamai.AppSecEvalGroup("evalAttackGroup", new Akamai.AppSecEvalGroupArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             AttackGroup = "SQL",
-    ///             AttackGroupAction = "deny",
-    ///             ConditionException = File.ReadAllText($"{path.Module}/condition_exception.json"),
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var evalAttackGroup = new Akamai.AppSecEvalGroup("evalAttackGroup", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         AttackGroup = "SQL",
+    ///         AttackGroupAction = "deny",
+    ///         ConditionException = File.ReadAllText($"{path.Module}/condition_exception.json"),
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecEvalGroup:AppSecEvalGroup")]
-    public partial class AppSecEvalGroup : Pulumi.CustomResource
+    public partial class AppSecEvalGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the evaluation attack group being modified.
@@ -127,7 +126,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecEvalGroupArgs : Pulumi.ResourceArgs
+    public sealed class AppSecEvalGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the evaluation attack group being modified.
@@ -166,9 +165,10 @@ namespace Pulumi.Akamai
         public AppSecEvalGroupArgs()
         {
         }
+        public static new AppSecEvalGroupArgs Empty => new AppSecEvalGroupArgs();
     }
 
-    public sealed class AppSecEvalGroupState : Pulumi.ResourceArgs
+    public sealed class AppSecEvalGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the evaluation attack group being modified.
@@ -207,5 +207,6 @@ namespace Pulumi.Akamai
         public AppSecEvalGroupState()
         {
         }
+        public static new AppSecEvalGroupState Empty => new AppSecEvalGroupState();
     }
 }

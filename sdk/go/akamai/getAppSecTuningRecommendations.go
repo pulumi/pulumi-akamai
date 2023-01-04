@@ -28,20 +28,20 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-akamai/sdk/v3/go/akamai"
+//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &GetAppSecConfigurationArgs{
+//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
 //				Name: pulumi.StringRef(_var.Security_configuration),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			policyRecommendations, err := akamai.GetAppSecTuningRecommendations(ctx, &GetAppSecTuningRecommendationsArgs{
+//			policyRecommendations, err := akamai.GetAppSecTuningRecommendations(ctx, &akamai.GetAppSecTuningRecommendationsArgs{
 //				ConfigId:         configuration.ConfigId,
 //				SecurityPolicyId: pulumi.StringRef(_var.Security_policy_id),
 //			}, nil)
@@ -49,7 +49,7 @@ import (
 //				return err
 //			}
 //			ctx.Export("policyRecommendationsJson", policyRecommendations.Json)
-//			attackGroupRecommendations, err := akamai.GetAppSecTuningRecommendations(ctx, &GetAppSecTuningRecommendationsArgs{
+//			attackGroupRecommendations, err := akamai.GetAppSecTuningRecommendations(ctx, &akamai.GetAppSecTuningRecommendationsArgs{
 //				ConfigId:         configuration.ConfigId,
 //				SecurityPolicyId: pulumi.StringRef(_var.Security_policy_id),
 //				RulesetType:      pulumi.StringRef(_var.Ruleset_type),

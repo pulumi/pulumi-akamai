@@ -27,9 +27,12 @@ class DatastreamArgs:
                  template_name: pulumi.Input[str],
                  azure_connector: Optional[pulumi.Input['DatastreamAzureConnectorArgs']] = None,
                  datadog_connector: Optional[pulumi.Input['DatastreamDatadogConnectorArgs']] = None,
+                 elasticsearch_connector: Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']] = None,
                  email_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  gcs_connector: Optional[pulumi.Input['DatastreamGcsConnectorArgs']] = None,
                  https_connector: Optional[pulumi.Input['DatastreamHttpsConnectorArgs']] = None,
+                 loggly_connector: Optional[pulumi.Input['DatastreamLogglyConnectorArgs']] = None,
+                 new_relic_connector: Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']] = None,
                  oracle_connector: Optional[pulumi.Input['DatastreamOracleConnectorArgs']] = None,
                  s3_connector: Optional[pulumi.Input['DatastreamS3ConnectorArgs']] = None,
                  splunk_connector: Optional[pulumi.Input['DatastreamSplunkConnectorArgs']] = None,
@@ -47,9 +50,12 @@ class DatastreamArgs:
         :param pulumi.Input[str] template_name: The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
         :param pulumi.Input['DatastreamAzureConnectorArgs'] azure_connector: Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
         :param pulumi.Input['DatastreamDatadogConnectorArgs'] datadog_connector: Specify details about the Datadog connector in a stream, including:
+        :param pulumi.Input['DatastreamElasticsearchConnectorArgs'] elasticsearch_connector: Specify details about the Elasticsearch connector you can use in a stream, including:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: A list of email addresses you want to notify about activations and deactivations of the stream.
         :param pulumi.Input['DatastreamGcsConnectorArgs'] gcs_connector: Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
         :param pulumi.Input['DatastreamHttpsConnectorArgs'] https_connector: Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
+        :param pulumi.Input['DatastreamLogglyConnectorArgs'] loggly_connector: Specify details about the Loggly connector you can use in a stream, including:
+        :param pulumi.Input['DatastreamNewRelicConnectorArgs'] new_relic_connector: Specify details about the New Relic connector you can use in a stream, including:
         :param pulumi.Input['DatastreamOracleConnectorArgs'] oracle_connector: Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
         :param pulumi.Input['DatastreamS3ConnectorArgs'] s3_connector: Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
         :param pulumi.Input['DatastreamSplunkConnectorArgs'] splunk_connector: Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
@@ -68,12 +74,18 @@ class DatastreamArgs:
             pulumi.set(__self__, "azure_connector", azure_connector)
         if datadog_connector is not None:
             pulumi.set(__self__, "datadog_connector", datadog_connector)
+        if elasticsearch_connector is not None:
+            pulumi.set(__self__, "elasticsearch_connector", elasticsearch_connector)
         if email_ids is not None:
             pulumi.set(__self__, "email_ids", email_ids)
         if gcs_connector is not None:
             pulumi.set(__self__, "gcs_connector", gcs_connector)
         if https_connector is not None:
             pulumi.set(__self__, "https_connector", https_connector)
+        if loggly_connector is not None:
+            pulumi.set(__self__, "loggly_connector", loggly_connector)
+        if new_relic_connector is not None:
+            pulumi.set(__self__, "new_relic_connector", new_relic_connector)
         if oracle_connector is not None:
             pulumi.set(__self__, "oracle_connector", oracle_connector)
         if s3_connector is not None:
@@ -216,6 +228,18 @@ class DatastreamArgs:
         pulumi.set(self, "datadog_connector", value)
 
     @property
+    @pulumi.getter(name="elasticsearchConnector")
+    def elasticsearch_connector(self) -> Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']]:
+        """
+        Specify details about the Elasticsearch connector you can use in a stream, including:
+        """
+        return pulumi.get(self, "elasticsearch_connector")
+
+    @elasticsearch_connector.setter
+    def elasticsearch_connector(self, value: Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']]):
+        pulumi.set(self, "elasticsearch_connector", value)
+
+    @property
     @pulumi.getter(name="emailIds")
     def email_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -250,6 +274,30 @@ class DatastreamArgs:
     @https_connector.setter
     def https_connector(self, value: Optional[pulumi.Input['DatastreamHttpsConnectorArgs']]):
         pulumi.set(self, "https_connector", value)
+
+    @property
+    @pulumi.getter(name="logglyConnector")
+    def loggly_connector(self) -> Optional[pulumi.Input['DatastreamLogglyConnectorArgs']]:
+        """
+        Specify details about the Loggly connector you can use in a stream, including:
+        """
+        return pulumi.get(self, "loggly_connector")
+
+    @loggly_connector.setter
+    def loggly_connector(self, value: Optional[pulumi.Input['DatastreamLogglyConnectorArgs']]):
+        pulumi.set(self, "loggly_connector", value)
+
+    @property
+    @pulumi.getter(name="newRelicConnector")
+    def new_relic_connector(self) -> Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']]:
+        """
+        Specify details about the New Relic connector you can use in a stream, including:
+        """
+        return pulumi.get(self, "new_relic_connector")
+
+    @new_relic_connector.setter
+    def new_relic_connector(self, value: Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']]):
+        pulumi.set(self, "new_relic_connector", value)
 
     @property
     @pulumi.getter(name="oracleConnector")
@@ -311,13 +359,16 @@ class _DatastreamState:
                  created_date: Optional[pulumi.Input[str]] = None,
                  datadog_connector: Optional[pulumi.Input['DatastreamDatadogConnectorArgs']] = None,
                  dataset_fields_ids: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 elasticsearch_connector: Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']] = None,
                  email_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  gcs_connector: Optional[pulumi.Input['DatastreamGcsConnectorArgs']] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  group_name: Optional[pulumi.Input[str]] = None,
                  https_connector: Optional[pulumi.Input['DatastreamHttpsConnectorArgs']] = None,
+                 loggly_connector: Optional[pulumi.Input['DatastreamLogglyConnectorArgs']] = None,
                  modified_by: Optional[pulumi.Input[str]] = None,
                  modified_date: Optional[pulumi.Input[str]] = None,
+                 new_relic_connector: Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']] = None,
                  oracle_connector: Optional[pulumi.Input['DatastreamOracleConnectorArgs']] = None,
                  papi_json: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
@@ -340,13 +391,16 @@ class _DatastreamState:
         :param pulumi.Input[str] created_date: The date and time when the stream was created
         :param pulumi.Input['DatastreamDatadogConnectorArgs'] datadog_connector: Specify details about the Datadog connector in a stream, including:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] dataset_fields_ids: Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+        :param pulumi.Input['DatastreamElasticsearchConnectorArgs'] elasticsearch_connector: Specify details about the Elasticsearch connector you can use in a stream, including:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: A list of email addresses you want to notify about activations and deactivations of the stream.
         :param pulumi.Input['DatastreamGcsConnectorArgs'] gcs_connector: Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
         :param pulumi.Input[str] group_id: Identifies the group that has access to the product and this stream configuration.
         :param pulumi.Input[str] group_name: The name of the user group for which the stream was created
         :param pulumi.Input['DatastreamHttpsConnectorArgs'] https_connector: Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
+        :param pulumi.Input['DatastreamLogglyConnectorArgs'] loggly_connector: Specify details about the Loggly connector you can use in a stream, including:
         :param pulumi.Input[str] modified_by: The username who modified the stream
         :param pulumi.Input[str] modified_date: The date and time when the stream was modified
+        :param pulumi.Input['DatastreamNewRelicConnectorArgs'] new_relic_connector: Specify details about the New Relic connector you can use in a stream, including:
         :param pulumi.Input['DatastreamOracleConnectorArgs'] oracle_connector: Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
         :param pulumi.Input[str] papi_json: The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
         :param pulumi.Input[str] product_id: The ID of the product for which the stream was created
@@ -376,6 +430,8 @@ class _DatastreamState:
             pulumi.set(__self__, "datadog_connector", datadog_connector)
         if dataset_fields_ids is not None:
             pulumi.set(__self__, "dataset_fields_ids", dataset_fields_ids)
+        if elasticsearch_connector is not None:
+            pulumi.set(__self__, "elasticsearch_connector", elasticsearch_connector)
         if email_ids is not None:
             pulumi.set(__self__, "email_ids", email_ids)
         if gcs_connector is not None:
@@ -386,10 +442,14 @@ class _DatastreamState:
             pulumi.set(__self__, "group_name", group_name)
         if https_connector is not None:
             pulumi.set(__self__, "https_connector", https_connector)
+        if loggly_connector is not None:
+            pulumi.set(__self__, "loggly_connector", loggly_connector)
         if modified_by is not None:
             pulumi.set(__self__, "modified_by", modified_by)
         if modified_date is not None:
             pulumi.set(__self__, "modified_date", modified_date)
+        if new_relic_connector is not None:
+            pulumi.set(__self__, "new_relic_connector", new_relic_connector)
         if oracle_connector is not None:
             pulumi.set(__self__, "oracle_connector", oracle_connector)
         if papi_json is not None:
@@ -512,6 +572,18 @@ class _DatastreamState:
         pulumi.set(self, "dataset_fields_ids", value)
 
     @property
+    @pulumi.getter(name="elasticsearchConnector")
+    def elasticsearch_connector(self) -> Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']]:
+        """
+        Specify details about the Elasticsearch connector you can use in a stream, including:
+        """
+        return pulumi.get(self, "elasticsearch_connector")
+
+    @elasticsearch_connector.setter
+    def elasticsearch_connector(self, value: Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']]):
+        pulumi.set(self, "elasticsearch_connector", value)
+
+    @property
     @pulumi.getter(name="emailIds")
     def email_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -572,6 +644,18 @@ class _DatastreamState:
         pulumi.set(self, "https_connector", value)
 
     @property
+    @pulumi.getter(name="logglyConnector")
+    def loggly_connector(self) -> Optional[pulumi.Input['DatastreamLogglyConnectorArgs']]:
+        """
+        Specify details about the Loggly connector you can use in a stream, including:
+        """
+        return pulumi.get(self, "loggly_connector")
+
+    @loggly_connector.setter
+    def loggly_connector(self, value: Optional[pulumi.Input['DatastreamLogglyConnectorArgs']]):
+        pulumi.set(self, "loggly_connector", value)
+
+    @property
     @pulumi.getter(name="modifiedBy")
     def modified_by(self) -> Optional[pulumi.Input[str]]:
         """
@@ -594,6 +678,18 @@ class _DatastreamState:
     @modified_date.setter
     def modified_date(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "modified_date", value)
+
+    @property
+    @pulumi.getter(name="newRelicConnector")
+    def new_relic_connector(self) -> Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']]:
+        """
+        Specify details about the New Relic connector you can use in a stream, including:
+        """
+        return pulumi.get(self, "new_relic_connector")
+
+    @new_relic_connector.setter
+    def new_relic_connector(self, value: Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']]):
+        pulumi.set(self, "new_relic_connector", value)
 
     @property
     @pulumi.getter(name="oracleConnector")
@@ -751,10 +847,13 @@ class Datastream(pulumi.CustomResource):
                  contract_id: Optional[pulumi.Input[str]] = None,
                  datadog_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamDatadogConnectorArgs']]] = None,
                  dataset_fields_ids: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 elasticsearch_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamElasticsearchConnectorArgs']]] = None,
                  email_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  gcs_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamGcsConnectorArgs']]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  https_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamHttpsConnectorArgs']]] = None,
+                 loggly_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamLogglyConnectorArgs']]] = None,
+                 new_relic_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamNewRelicConnectorArgs']]] = None,
                  oracle_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamOracleConnectorArgs']]] = None,
                  property_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  s3_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamS3ConnectorArgs']]] = None,
@@ -787,10 +886,13 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[str] contract_id: Identifies the contract that has access to the product.
         :param pulumi.Input[pulumi.InputType['DatastreamDatadogConnectorArgs']] datadog_connector: Specify details about the Datadog connector in a stream, including:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] dataset_fields_ids: Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+        :param pulumi.Input[pulumi.InputType['DatastreamElasticsearchConnectorArgs']] elasticsearch_connector: Specify details about the Elasticsearch connector you can use in a stream, including:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: A list of email addresses you want to notify about activations and deactivations of the stream.
         :param pulumi.Input[pulumi.InputType['DatastreamGcsConnectorArgs']] gcs_connector: Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
         :param pulumi.Input[str] group_id: Identifies the group that has access to the product and this stream configuration.
         :param pulumi.Input[pulumi.InputType['DatastreamHttpsConnectorArgs']] https_connector: Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
+        :param pulumi.Input[pulumi.InputType['DatastreamLogglyConnectorArgs']] loggly_connector: Specify details about the Loggly connector you can use in a stream, including:
+        :param pulumi.Input[pulumi.InputType['DatastreamNewRelicConnectorArgs']] new_relic_connector: Specify details about the New Relic connector you can use in a stream, including:
         :param pulumi.Input[pulumi.InputType['DatastreamOracleConnectorArgs']] oracle_connector: Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] property_ids: Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
         :param pulumi.Input[pulumi.InputType['DatastreamS3ConnectorArgs']] s3_connector: Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
@@ -842,10 +944,13 @@ class Datastream(pulumi.CustomResource):
                  contract_id: Optional[pulumi.Input[str]] = None,
                  datadog_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamDatadogConnectorArgs']]] = None,
                  dataset_fields_ids: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 elasticsearch_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamElasticsearchConnectorArgs']]] = None,
                  email_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  gcs_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamGcsConnectorArgs']]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  https_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamHttpsConnectorArgs']]] = None,
+                 loggly_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamLogglyConnectorArgs']]] = None,
+                 new_relic_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamNewRelicConnectorArgs']]] = None,
                  oracle_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamOracleConnectorArgs']]] = None,
                  property_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  s3_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamS3ConnectorArgs']]] = None,
@@ -877,12 +982,15 @@ class Datastream(pulumi.CustomResource):
             if dataset_fields_ids is None and not opts.urn:
                 raise TypeError("Missing required property 'dataset_fields_ids'")
             __props__.__dict__["dataset_fields_ids"] = dataset_fields_ids
+            __props__.__dict__["elasticsearch_connector"] = elasticsearch_connector
             __props__.__dict__["email_ids"] = email_ids
             __props__.__dict__["gcs_connector"] = gcs_connector
             if group_id is None and not opts.urn:
                 raise TypeError("Missing required property 'group_id'")
             __props__.__dict__["group_id"] = group_id
             __props__.__dict__["https_connector"] = https_connector
+            __props__.__dict__["loggly_connector"] = loggly_connector
+            __props__.__dict__["new_relic_connector"] = new_relic_connector
             __props__.__dict__["oracle_connector"] = oracle_connector
             if property_ids is None and not opts.urn:
                 raise TypeError("Missing required property 'property_ids'")
@@ -926,13 +1034,16 @@ class Datastream(pulumi.CustomResource):
             created_date: Optional[pulumi.Input[str]] = None,
             datadog_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamDatadogConnectorArgs']]] = None,
             dataset_fields_ids: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+            elasticsearch_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamElasticsearchConnectorArgs']]] = None,
             email_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             gcs_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamGcsConnectorArgs']]] = None,
             group_id: Optional[pulumi.Input[str]] = None,
             group_name: Optional[pulumi.Input[str]] = None,
             https_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamHttpsConnectorArgs']]] = None,
+            loggly_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamLogglyConnectorArgs']]] = None,
             modified_by: Optional[pulumi.Input[str]] = None,
             modified_date: Optional[pulumi.Input[str]] = None,
+            new_relic_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamNewRelicConnectorArgs']]] = None,
             oracle_connector: Optional[pulumi.Input[pulumi.InputType['DatastreamOracleConnectorArgs']]] = None,
             papi_json: Optional[pulumi.Input[str]] = None,
             product_id: Optional[pulumi.Input[str]] = None,
@@ -960,13 +1071,16 @@ class Datastream(pulumi.CustomResource):
         :param pulumi.Input[str] created_date: The date and time when the stream was created
         :param pulumi.Input[pulumi.InputType['DatastreamDatadogConnectorArgs']] datadog_connector: Specify details about the Datadog connector in a stream, including:
         :param pulumi.Input[Sequence[pulumi.Input[int]]] dataset_fields_ids: Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+        :param pulumi.Input[pulumi.InputType['DatastreamElasticsearchConnectorArgs']] elasticsearch_connector: Specify details about the Elasticsearch connector you can use in a stream, including:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: A list of email addresses you want to notify about activations and deactivations of the stream.
         :param pulumi.Input[pulumi.InputType['DatastreamGcsConnectorArgs']] gcs_connector: Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
         :param pulumi.Input[str] group_id: Identifies the group that has access to the product and this stream configuration.
         :param pulumi.Input[str] group_name: The name of the user group for which the stream was created
         :param pulumi.Input[pulumi.InputType['DatastreamHttpsConnectorArgs']] https_connector: Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
+        :param pulumi.Input[pulumi.InputType['DatastreamLogglyConnectorArgs']] loggly_connector: Specify details about the Loggly connector you can use in a stream, including:
         :param pulumi.Input[str] modified_by: The username who modified the stream
         :param pulumi.Input[str] modified_date: The date and time when the stream was modified
+        :param pulumi.Input[pulumi.InputType['DatastreamNewRelicConnectorArgs']] new_relic_connector: Specify details about the New Relic connector you can use in a stream, including:
         :param pulumi.Input[pulumi.InputType['DatastreamOracleConnectorArgs']] oracle_connector: Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
         :param pulumi.Input[str] papi_json: The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
         :param pulumi.Input[str] product_id: The ID of the product for which the stream was created
@@ -992,13 +1106,16 @@ class Datastream(pulumi.CustomResource):
         __props__.__dict__["created_date"] = created_date
         __props__.__dict__["datadog_connector"] = datadog_connector
         __props__.__dict__["dataset_fields_ids"] = dataset_fields_ids
+        __props__.__dict__["elasticsearch_connector"] = elasticsearch_connector
         __props__.__dict__["email_ids"] = email_ids
         __props__.__dict__["gcs_connector"] = gcs_connector
         __props__.__dict__["group_id"] = group_id
         __props__.__dict__["group_name"] = group_name
         __props__.__dict__["https_connector"] = https_connector
+        __props__.__dict__["loggly_connector"] = loggly_connector
         __props__.__dict__["modified_by"] = modified_by
         __props__.__dict__["modified_date"] = modified_date
+        __props__.__dict__["new_relic_connector"] = new_relic_connector
         __props__.__dict__["oracle_connector"] = oracle_connector
         __props__.__dict__["papi_json"] = papi_json
         __props__.__dict__["product_id"] = product_id
@@ -1078,6 +1195,14 @@ class Datastream(pulumi.CustomResource):
         return pulumi.get(self, "dataset_fields_ids")
 
     @property
+    @pulumi.getter(name="elasticsearchConnector")
+    def elasticsearch_connector(self) -> pulumi.Output[Optional['outputs.DatastreamElasticsearchConnector']]:
+        """
+        Specify details about the Elasticsearch connector you can use in a stream, including:
+        """
+        return pulumi.get(self, "elasticsearch_connector")
+
+    @property
     @pulumi.getter(name="emailIds")
     def email_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
@@ -1118,6 +1243,14 @@ class Datastream(pulumi.CustomResource):
         return pulumi.get(self, "https_connector")
 
     @property
+    @pulumi.getter(name="logglyConnector")
+    def loggly_connector(self) -> pulumi.Output[Optional['outputs.DatastreamLogglyConnector']]:
+        """
+        Specify details about the Loggly connector you can use in a stream, including:
+        """
+        return pulumi.get(self, "loggly_connector")
+
+    @property
     @pulumi.getter(name="modifiedBy")
     def modified_by(self) -> pulumi.Output[str]:
         """
@@ -1132,6 +1265,14 @@ class Datastream(pulumi.CustomResource):
         The date and time when the stream was modified
         """
         return pulumi.get(self, "modified_date")
+
+    @property
+    @pulumi.getter(name="newRelicConnector")
+    def new_relic_connector(self) -> pulumi.Output[Optional['outputs.DatastreamNewRelicConnector']]:
+        """
+        Specify details about the New Relic connector you can use in a stream, including:
+        """
+        return pulumi.get(self, "new_relic_connector")
 
     @property
     @pulumi.getter(name="oracleConnector")

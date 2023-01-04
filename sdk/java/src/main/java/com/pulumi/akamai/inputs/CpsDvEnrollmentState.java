@@ -54,9 +54,17 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.adminContact);
     }
 
+    /**
+     * - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * 
+     */
     @Import(name="allowDuplicateCommonName")
     private @Nullable Output<Boolean> allowDuplicateCommonName;
 
+    /**
+     * @return - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * 
+     */
     public Optional<Output<Boolean>> allowDuplicateCommonName() {
         return Optional.ofNullable(this.allowDuplicateCommonName);
     }
@@ -76,9 +84,17 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.certificateChainType);
     }
 
+    /**
+     * Certificate type of enrollment
+     * 
+     */
     @Import(name="certificateType")
     private @Nullable Output<String> certificateType;
 
+    /**
+     * @return Certificate type of enrollment
+     * 
+     */
     public Optional<Output<String>> certificateType() {
         return Optional.ofNullable(this.certificateType);
     }
@@ -128,9 +144,17 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.csr);
     }
 
+    /**
+     * DNS challenge information
+     * 
+     */
     @Import(name="dnsChallenges")
     private @Nullable Output<List<CpsDvEnrollmentDnsChallengeArgs>> dnsChallenges;
 
+    /**
+     * @return DNS challenge information
+     * 
+     */
     public Optional<Output<List<CpsDvEnrollmentDnsChallengeArgs>>> dnsChallenges() {
         return Optional.ofNullable(this.dnsChallenges);
     }
@@ -138,21 +162,37 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     /**
      * Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
      * 
+     * @deprecated
+     * Deprecated, don&#39;t use; always false
+     * 
      */
+    @Deprecated /* Deprecated, don't use; always false */
     @Import(name="enableMultiStackedCertificates")
     private @Nullable Output<Boolean> enableMultiStackedCertificates;
 
     /**
      * @return Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
      * 
+     * @deprecated
+     * Deprecated, don&#39;t use; always false
+     * 
      */
+    @Deprecated /* Deprecated, don't use; always false */
     public Optional<Output<Boolean>> enableMultiStackedCertificates() {
         return Optional.ofNullable(this.enableMultiStackedCertificates);
     }
 
+    /**
+     * HTTP challenge information
+     * 
+     */
     @Import(name="httpChallenges")
     private @Nullable Output<List<CpsDvEnrollmentHttpChallengeArgs>> httpChallenges;
 
+    /**
+     * @return HTTP challenge information
+     * 
+     */
     public Optional<Output<List<CpsDvEnrollmentHttpChallengeArgs>>> httpChallenges() {
         return Optional.ofNullable(this.httpChallenges);
     }
@@ -187,9 +227,17 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.organization);
     }
 
+    /**
+     * The registration authority or certificate authority (CA) used to obtain a certificate
+     * 
+     */
     @Import(name="registrationAuthority")
     private @Nullable Output<String> registrationAuthority;
 
+    /**
+     * @return The registration authority or certificate authority (CA) used to obtain a certificate
+     * 
+     */
     public Optional<Output<String>> registrationAuthority() {
         return Optional.ofNullable(this.registrationAuthority);
     }
@@ -269,9 +317,17 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.techContact);
     }
 
+    /**
+     * Enrolment validation type
+     * 
+     */
     @Import(name="validationType")
     private @Nullable Output<String> validationType;
 
+    /**
+     * @return Enrolment validation type
+     * 
+     */
     public Optional<Output<String>> validationType() {
         return Optional.ofNullable(this.validationType);
     }
@@ -361,11 +417,23 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
             return adminContact(Output.of(adminContact));
         }
 
+        /**
+         * @param allowDuplicateCommonName - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowDuplicateCommonName(@Nullable Output<Boolean> allowDuplicateCommonName) {
             $.allowDuplicateCommonName = allowDuplicateCommonName;
             return this;
         }
 
+        /**
+         * @param allowDuplicateCommonName - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allowDuplicateCommonName(Boolean allowDuplicateCommonName) {
             return allowDuplicateCommonName(Output.of(allowDuplicateCommonName));
         }
@@ -391,11 +459,23 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
             return certificateChainType(Output.of(certificateChainType));
         }
 
+        /**
+         * @param certificateType Certificate type of enrollment
+         * 
+         * @return builder
+         * 
+         */
         public Builder certificateType(@Nullable Output<String> certificateType) {
             $.certificateType = certificateType;
             return this;
         }
 
+        /**
+         * @param certificateType Certificate type of enrollment
+         * 
+         * @return builder
+         * 
+         */
         public Builder certificateType(String certificateType) {
             return certificateType(Output.of(certificateType));
         }
@@ -463,15 +543,33 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
             return csr(Output.of(csr));
         }
 
+        /**
+         * @param dnsChallenges DNS challenge information
+         * 
+         * @return builder
+         * 
+         */
         public Builder dnsChallenges(@Nullable Output<List<CpsDvEnrollmentDnsChallengeArgs>> dnsChallenges) {
             $.dnsChallenges = dnsChallenges;
             return this;
         }
 
+        /**
+         * @param dnsChallenges DNS challenge information
+         * 
+         * @return builder
+         * 
+         */
         public Builder dnsChallenges(List<CpsDvEnrollmentDnsChallengeArgs> dnsChallenges) {
             return dnsChallenges(Output.of(dnsChallenges));
         }
 
+        /**
+         * @param dnsChallenges DNS challenge information
+         * 
+         * @return builder
+         * 
+         */
         public Builder dnsChallenges(CpsDvEnrollmentDnsChallengeArgs... dnsChallenges) {
             return dnsChallenges(List.of(dnsChallenges));
         }
@@ -481,7 +579,11 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
          * 
          * @return builder
          * 
+         * @deprecated
+         * Deprecated, don&#39;t use; always false
+         * 
          */
+        @Deprecated /* Deprecated, don't use; always false */
         public Builder enableMultiStackedCertificates(@Nullable Output<Boolean> enableMultiStackedCertificates) {
             $.enableMultiStackedCertificates = enableMultiStackedCertificates;
             return this;
@@ -492,20 +594,42 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
          * 
          * @return builder
          * 
+         * @deprecated
+         * Deprecated, don&#39;t use; always false
+         * 
          */
+        @Deprecated /* Deprecated, don't use; always false */
         public Builder enableMultiStackedCertificates(Boolean enableMultiStackedCertificates) {
             return enableMultiStackedCertificates(Output.of(enableMultiStackedCertificates));
         }
 
+        /**
+         * @param httpChallenges HTTP challenge information
+         * 
+         * @return builder
+         * 
+         */
         public Builder httpChallenges(@Nullable Output<List<CpsDvEnrollmentHttpChallengeArgs>> httpChallenges) {
             $.httpChallenges = httpChallenges;
             return this;
         }
 
+        /**
+         * @param httpChallenges HTTP challenge information
+         * 
+         * @return builder
+         * 
+         */
         public Builder httpChallenges(List<CpsDvEnrollmentHttpChallengeArgs> httpChallenges) {
             return httpChallenges(Output.of(httpChallenges));
         }
 
+        /**
+         * @param httpChallenges HTTP challenge information
+         * 
+         * @return builder
+         * 
+         */
         public Builder httpChallenges(CpsDvEnrollmentHttpChallengeArgs... httpChallenges) {
             return httpChallenges(List.of(httpChallenges));
         }
@@ -552,11 +676,23 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
             return organization(Output.of(organization));
         }
 
+        /**
+         * @param registrationAuthority The registration authority or certificate authority (CA) used to obtain a certificate
+         * 
+         * @return builder
+         * 
+         */
         public Builder registrationAuthority(@Nullable Output<String> registrationAuthority) {
             $.registrationAuthority = registrationAuthority;
             return this;
         }
 
+        /**
+         * @param registrationAuthority The registration authority or certificate authority (CA) used to obtain a certificate
+         * 
+         * @return builder
+         * 
+         */
         public Builder registrationAuthority(String registrationAuthority) {
             return registrationAuthority(Output.of(registrationAuthority));
         }
@@ -676,11 +812,23 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
             return techContact(Output.of(techContact));
         }
 
+        /**
+         * @param validationType Enrolment validation type
+         * 
+         * @return builder
+         * 
+         */
         public Builder validationType(@Nullable Output<String> validationType) {
             $.validationType = validationType;
             return this;
         }
 
+        /**
+         * @param validationType Enrolment validation type
+         * 
+         * @return builder
+         * 
+         */
         public Builder validationType(String validationType) {
             return validationType(Output.of(validationType));
         }

@@ -25,38 +25,32 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var evalRule = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalRules.InvokeAsync(new Akamai.GetAppSecEvalRulesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///             RuleId = 60029316,
-        ///         })));
-        ///         this.EvalRuleAction = evalRule.Apply(evalRule =&gt; evalRule.EvalRuleAction);
-        ///         this.ConditionException = evalRule.Apply(evalRule =&gt; evalRule.ConditionException);
-        ///         this.Json = evalRule.Apply(evalRule =&gt; evalRule.Json);
-        ///         this.OutputText = evalRule.Apply(evalRule =&gt; evalRule.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("evalRuleAction")]
-        ///     public Output&lt;string&gt; EvalRuleAction { get; set; }
-        ///     [Output("conditionException")]
-        ///     public Output&lt;string&gt; ConditionException { get; set; }
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("outputText")]
-        ///     public Output&lt;string&gt; OutputText { get; set; }
-        /// }
+        ///     var evalRule = Akamai.GetAppSecEvalRules.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///         RuleId = 60029316,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["evalRuleAction"] = evalRule.Apply(getAppSecEvalRulesResult =&gt; getAppSecEvalRulesResult.EvalRuleAction),
+        ///         ["conditionException"] = evalRule.Apply(getAppSecEvalRulesResult =&gt; getAppSecEvalRulesResult.ConditionException),
+        ///         ["json"] = evalRule.Apply(getAppSecEvalRulesResult =&gt; getAppSecEvalRulesResult.Json),
+        ///         ["outputText"] = evalRule.Apply(getAppSecEvalRulesResult =&gt; getAppSecEvalRulesResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -74,7 +68,7 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the rule action as well as Boolean values indicating whether conditions and exceptions have been configured for the rule.
         /// </summary>
         public static Task<GetAppSecEvalRulesResult> InvokeAsync(GetAppSecEvalRulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalRulesResult>("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args ?? new GetAppSecEvalRulesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalRulesResult>("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args ?? new GetAppSecEvalRulesArgs(), options.WithDefaults());
 
         /// <summary>
         /// **Scopes**: Security policy; evaluation rule
@@ -90,38 +84,32 @@ namespace Pulumi.Akamai
         /// Basic usage:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Akamai = Pulumi.Akamai;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
         ///     {
-        ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-        ///         {
-        ///             Name = "Documentation",
-        ///         }));
-        ///         var evalRule = configuration.Apply(configuration =&gt; Output.Create(Akamai.GetAppSecEvalRules.InvokeAsync(new Akamai.GetAppSecEvalRulesArgs
-        ///         {
-        ///             ConfigId = configuration.ConfigId,
-        ///             SecurityPolicyId = "gms1_134637",
-        ///             RuleId = 60029316,
-        ///         })));
-        ///         this.EvalRuleAction = evalRule.Apply(evalRule =&gt; evalRule.EvalRuleAction);
-        ///         this.ConditionException = evalRule.Apply(evalRule =&gt; evalRule.ConditionException);
-        ///         this.Json = evalRule.Apply(evalRule =&gt; evalRule.Json);
-        ///         this.OutputText = evalRule.Apply(evalRule =&gt; evalRule.OutputText);
-        ///     }
+        ///         Name = "Documentation",
+        ///     });
         /// 
-        ///     [Output("evalRuleAction")]
-        ///     public Output&lt;string&gt; EvalRuleAction { get; set; }
-        ///     [Output("conditionException")]
-        ///     public Output&lt;string&gt; ConditionException { get; set; }
-        ///     [Output("json")]
-        ///     public Output&lt;string&gt; Json { get; set; }
-        ///     [Output("outputText")]
-        ///     public Output&lt;string&gt; OutputText { get; set; }
-        /// }
+        ///     var evalRule = Akamai.GetAppSecEvalRules.Invoke(new()
+        ///     {
+        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+        ///         SecurityPolicyId = "gms1_134637",
+        ///         RuleId = 60029316,
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["evalRuleAction"] = evalRule.Apply(getAppSecEvalRulesResult =&gt; getAppSecEvalRulesResult.EvalRuleAction),
+        ///         ["conditionException"] = evalRule.Apply(getAppSecEvalRulesResult =&gt; getAppSecEvalRulesResult.ConditionException),
+        ///         ["json"] = evalRule.Apply(getAppSecEvalRulesResult =&gt; getAppSecEvalRulesResult.Json),
+        ///         ["outputText"] = evalRule.Apply(getAppSecEvalRulesResult =&gt; getAppSecEvalRulesResult.OutputText),
+        ///     };
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -139,11 +127,11 @@ namespace Pulumi.Akamai
         /// - `output_text`. Tabular report showing the rule action as well as Boolean values indicating whether conditions and exceptions have been configured for the rule.
         /// </summary>
         public static Output<GetAppSecEvalRulesResult> Invoke(GetAppSecEvalRulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppSecEvalRulesResult>("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args ?? new GetAppSecEvalRulesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppSecEvalRulesResult>("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args ?? new GetAppSecEvalRulesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAppSecEvalRulesArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecEvalRulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration running in evaluation mode.
@@ -166,9 +154,10 @@ namespace Pulumi.Akamai
         public GetAppSecEvalRulesArgs()
         {
         }
+        public static new GetAppSecEvalRulesArgs Empty => new GetAppSecEvalRulesArgs();
     }
 
-    public sealed class GetAppSecEvalRulesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppSecEvalRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration running in evaluation mode.
@@ -191,6 +180,7 @@ namespace Pulumi.Akamai
         public GetAppSecEvalRulesInvokeArgs()
         {
         }
+        public static new GetAppSecEvalRulesInvokeArgs Empty => new GetAppSecEvalRulesInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Inputs
 {
 
-    public sealed class ProviderNetworkArgs : Pulumi.ResourceArgs
+    public sealed class ProviderNetworkArgs : global::Pulumi.ResourceArgs
     {
         [Input("accessToken")]
         public Input<string>? AccessToken { get; set; }
@@ -33,5 +33,6 @@ namespace Pulumi.Akamai.Inputs
         public ProviderNetworkArgs()
         {
         }
+        public static new ProviderNetworkArgs Empty => new ProviderNetworkArgs();
     }
 }

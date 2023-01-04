@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Akamai.Trafficmanagement.Inputs
 {
 
-    public sealed class GtmDatacenterDefaultLoadObjectArgs : Pulumi.ResourceArgs
+    public sealed class GtmDatacenterDefaultLoadObjectArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
@@ -39,5 +39,6 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
         public GtmDatacenterDefaultLoadObjectArgs()
         {
         }
+        public static new GtmDatacenterDefaultLoadObjectArgs Empty => new GtmDatacenterDefaultLoadObjectArgs();
     }
 }

@@ -19,18 +19,16 @@ namespace Pulumi.Akamai
         /// This example returns the property's hostnames based on the selected contract and group:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         this.PropertyHostnames = data.Akamai_property_hostnames.My_example.Hostnames;
-        ///     }
-        /// 
-        ///     [Output("propertyHostnames")]
-        ///     public Output&lt;string&gt; PropertyHostnames { get; set; }
-        /// }
+        ///         ["propertyHostnames"] = data.Akamai_property_hostnames.My_example.Hostnames,
+        ///     };
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -56,7 +54,7 @@ namespace Pulumi.Akamai
         /// In your DNS configuration, create a CNAME record and map the `cert_status.hostname` value to the `cert_status.target` value.
         /// </summary>
         public static Task<GetPropertyHostnamesResult> InvokeAsync(GetPropertyHostnamesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use the `akamai.getPropertyHostnames` data source to query and retrieve hostnames and their certificate statuses for an existing property. This data source lets you search across the contracts and groups you have access to.
@@ -66,18 +64,16 @@ namespace Pulumi.Akamai
         /// This example returns the property's hostnames based on the selected contract and group:
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         this.PropertyHostnames = data.Akamai_property_hostnames.My_example.Hostnames;
-        ///     }
-        /// 
-        ///     [Output("propertyHostnames")]
-        ///     public Output&lt;string&gt; PropertyHostnames { get; set; }
-        /// }
+        ///         ["propertyHostnames"] = data.Akamai_property_hostnames.My_example.Hostnames,
+        ///     };
+        /// });
         /// ```
         /// 
         /// ## Attributes reference
@@ -103,11 +99,11 @@ namespace Pulumi.Akamai
         /// In your DNS configuration, create a CNAME record and map the `cert_status.hostname` value to the `cert_status.target` value.
         /// </summary>
         public static Output<GetPropertyHostnamesResult> Invoke(GetPropertyHostnamesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetPropertyHostnamesArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertyHostnamesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) A contract's unique ID, including the `ctr_` prefix.
@@ -130,9 +126,10 @@ namespace Pulumi.Akamai
         public GetPropertyHostnamesArgs()
         {
         }
+        public static new GetPropertyHostnamesArgs Empty => new GetPropertyHostnamesArgs();
     }
 
-    public sealed class GetPropertyHostnamesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPropertyHostnamesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// - (Required) A contract's unique ID, including the `ctr_` prefix.
@@ -155,6 +152,7 @@ namespace Pulumi.Akamai
         public GetPropertyHostnamesInvokeArgs()
         {
         }
+        public static new GetPropertyHostnamesInvokeArgs Empty => new GetPropertyHostnamesInvokeArgs();
     }
 
 

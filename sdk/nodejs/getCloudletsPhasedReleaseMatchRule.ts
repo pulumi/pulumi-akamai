@@ -2,48 +2,14 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
  *
  * Use the `akamai.getCloudletsPhasedReleaseMatchRule` data source to build a match rule JSON object for the Phased Release Cloudlet.
- *
- * ## Basic usage
- *
- * This example returns the JSON-encoded rules for the Phased Release Cloudlet:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = pulumi.output(akamai.getCloudletsPhasedReleaseMatchRule({
- *     matchRules: [{
- *         end: 1645037845,
- *         forwardSettings: {
- *             originId: "1234",
- *             percent: 100,
- *         },
- *         matches: [{
- *             caseSensitive: false,
- *             checkIps: "CONNECTING_IP XFF_HEADERS",
- *             matchOperator: "equals",
- *             matchType: "header",
- *             negate: false,
- *             objectMatchValues: [{
- *                 name: "Content-Type",
- *                 options: {
- *                     values: ["application/json"],
- *                 },
- *                 type: "object",
- *             }],
- *         }],
- *         name: "rule",
- *         start: 1644865045,
- *     }],
- * }));
- * ```
  *
  * ## Attributes reference
  *
@@ -54,11 +20,8 @@ import * as utilities from "./utilities";
  */
 export function getCloudletsPhasedReleaseMatchRule(args?: GetCloudletsPhasedReleaseMatchRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsPhasedReleaseMatchRuleResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule", {
         "matchRules": args.matchRules,
     }, opts);
@@ -85,9 +48,20 @@ export interface GetCloudletsPhasedReleaseMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsPhasedReleaseMatchRuleMatchRule[];
 }
-
+/**
+ * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
+ *
+ * Use the `akamai.getCloudletsPhasedReleaseMatchRule` data source to build a match rule JSON object for the Phased Release Cloudlet.
+ *
+ * ## Attributes reference
+ *
+ * This data source returns these attributes:
+ *
+ * * `type` - The type of Cloudlet the rule is for.
+ * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
+ */
 export function getCloudletsPhasedReleaseMatchRuleOutput(args?: GetCloudletsPhasedReleaseMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsPhasedReleaseMatchRuleResult> {
-    return pulumi.output(args).apply(a => getCloudletsPhasedReleaseMatchRule(a, opts))
+    return pulumi.output(args).apply((a: any) => getCloudletsPhasedReleaseMatchRule(a, opts))
 }
 
 /**

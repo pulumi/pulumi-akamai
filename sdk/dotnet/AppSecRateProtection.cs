@@ -21,26 +21,25 @@ namespace Pulumi.Akamai
     /// Basic usage:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Akamai = Pulumi.Akamai;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
     ///     {
-    ///         var configuration = Output.Create(Akamai.GetAppSecConfiguration.InvokeAsync(new Akamai.GetAppSecConfigurationArgs
-    ///         {
-    ///             Name = "Documentation",
-    ///         }));
-    ///         var protection = new Akamai.AppSecRateProtection("protection", new Akamai.AppSecRateProtectionArgs
-    ///         {
-    ///             ConfigId = configuration.Apply(configuration =&gt; configuration.ConfigId),
-    ///             SecurityPolicyId = "gms1_134637",
-    ///             Enabled = true,
-    ///         });
-    ///     }
+    ///         Name = "Documentation",
+    ///     });
     /// 
-    /// }
+    ///     var protection = new Akamai.AppSecRateProtection("protection", new()
+    ///     {
+    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
+    ///         SecurityPolicyId = "gms1_134637",
+    ///         Enabled = true,
+    ///     });
+    /// 
+    /// });
     /// ```
     /// ## Output Options
     /// 
@@ -49,7 +48,7 @@ namespace Pulumi.Akamai
     /// - `output_text`. Tabular report showing the current protection settings.
     /// </summary>
     [AkamaiResourceType("akamai:index/appSecRateProtection:AppSecRateProtection")]
-    public partial class AppSecRateProtection : Pulumi.CustomResource
+    public partial class AppSecRateProtection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rate protection settings being modified.
@@ -119,7 +118,7 @@ namespace Pulumi.Akamai
         }
     }
 
-    public sealed class AppSecRateProtectionArgs : Pulumi.ResourceArgs
+    public sealed class AppSecRateProtectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rate protection settings being modified.
@@ -142,9 +141,10 @@ namespace Pulumi.Akamai
         public AppSecRateProtectionArgs()
         {
         }
+        public static new AppSecRateProtectionArgs Empty => new AppSecRateProtectionArgs();
     }
 
-    public sealed class AppSecRateProtectionState : Pulumi.ResourceArgs
+    public sealed class AppSecRateProtectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// . Unique identifier of the security configuration associated with the rate protection settings being modified.
@@ -173,5 +173,6 @@ namespace Pulumi.Akamai
         public AppSecRateProtectionState()
         {
         }
+        public static new AppSecRateProtectionState Empty => new AppSecRateProtectionState();
     }
 }
