@@ -22,7 +22,6 @@ env:
   SIGNING_PASSWORD: ${{ secrets.JAVA_SIGNING_PASSWORD }}
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
   TRAVIS_OS_NAME: linux
-  TF_APPEND_USER_AGENT: pulumi
 jobs:
   build_sdk:
     name: build_sdk
@@ -107,7 +106,9 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - |
+          6.0.x
+          3.1.301
         goversion:
         - 1.19.x
         javaversion:
@@ -203,7 +204,9 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - |
+          6.0.x
+          3.1.301
         goversion:
         - 1.19.x
         nodeversion:
@@ -258,7 +261,9 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - |
+          6.0.x
+          3.1.301
         goversion:
         - 1.19.x
         nodeversion:
@@ -397,7 +402,9 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - |
+          6.0.x
+          3.1.301
         goversion:
         - 1.19.x
         nodeversion:
@@ -511,7 +518,9 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - |
+          6.0.x
+          3.1.301
         goversion:
         - 1.19.x
         javaversion:
