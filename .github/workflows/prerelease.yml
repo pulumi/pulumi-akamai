@@ -6,6 +6,7 @@ env:
   AKAMAI_CLIENT_TOKEN: ${{ secrets.AKAMAI_CLIENT_TOKEN }}
   AKAMAI_HOST: ${{ secrets.AKAMAI_HOST }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  IS_PRERELEASE: true
   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   NUGET_PUBLISH_KEY: ${{ secrets.NUGET_PUBLISH_KEY }}
@@ -21,8 +22,8 @@ env:
   SIGNING_KEY_ID: ${{ secrets.JAVA_SIGNING_KEY_ID }}
   SIGNING_PASSWORD: ${{ secrets.JAVA_SIGNING_PASSWORD }}
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-  TRAVIS_OS_NAME: linux
   TF_APPEND_USER_AGENT: pulumi
+  TRAVIS_OS_NAME: linux
 jobs:
   build_sdk:
     name: build_sdk
@@ -107,7 +108,9 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - |
+          6.0.x
+          3.1.301
         goversion:
         - 1.19.x
         javaversion:
@@ -189,7 +192,9 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - |
+          6.0.x
+          3.1.301
         goversion:
         - 1.19.x
         nodeversion:
@@ -245,7 +250,9 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - |
+          6.0.x
+          3.1.301
         goversion:
         - 1.19.x
         nodeversion:
@@ -384,7 +391,9 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - |
+          6.0.x
+          3.1.301
         goversion:
         - 1.19.x
         nodeversion:
@@ -484,7 +493,9 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - |
+          6.0.x
+          3.1.301
         goversion:
         - 1.19.x
         javaversion:
