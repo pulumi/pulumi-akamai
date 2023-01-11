@@ -51,7 +51,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecMatchTargetSequence(ctx, "matchTargetSequence", &akamai.AppSecMatchTargetSequenceArgs{
-//				ConfigId:            pulumi.Int(configuration.ConfigId),
+//				ConfigId:            *pulumi.Int(configuration.ConfigId),
 //				MatchTargetSequence: readFileOrPanic(fmt.Sprintf("%v/match_targets_sequence.json", path.Module)),
 //			})
 //			if err != nil {

@@ -42,7 +42,7 @@ import (
 //				return err
 //			}
 //			evalOperation, err := akamai.NewAppSecEval(ctx, "evalOperation", &akamai.AppSecEvalArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //				EvalOperation:    pulumi.String("START"),
 //			})

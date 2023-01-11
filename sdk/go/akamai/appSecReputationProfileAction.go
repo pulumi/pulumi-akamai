@@ -40,7 +40,7 @@ import (
 //				return err
 //			}
 //			appsecReputationProfileAction, err := akamai.NewAppSecReputationProfileAction(ctx, "appsecReputationProfileAction", &akamai.AppSecReputationProfileActionArgs{
-//				ConfigId:            pulumi.Int(configuration.ConfigId),
+//				ConfigId:            *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId:    pulumi.String("gms1_134637"),
 //				ReputationProfileId: pulumi.Int(130713),
 //				Action:              pulumi.String("alert"),

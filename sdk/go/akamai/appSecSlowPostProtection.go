@@ -40,7 +40,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecSlowPostProtection(ctx, "protection", &akamai.AppSecSlowPostProtectionArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //				Enabled:          pulumi.Bool(true),
 //			})

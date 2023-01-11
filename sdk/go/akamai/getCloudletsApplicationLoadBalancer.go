@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.LookupCloudletsApplicationLoadBalancer(ctx, &akamai.LookupCloudletsApplicationLoadBalancerArgs{
+//			_, err := akamai.LookupCloudletsApplicationLoadBalancer(ctx, &akamai.LookupCloudletsApplicationLoadBalancerArgs{
 //				OriginId: "alb_test_1",
 //				Version:  pulumi.IntRef(1),
 //			}, nil)

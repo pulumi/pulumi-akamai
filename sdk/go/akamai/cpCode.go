@@ -76,8 +76,8 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewCpCode(ctx, "exampleCp", &akamai.CpCodeArgs{
-//				GroupId:    pulumi.String(exampleGroup.Id),
-//				ContractId: pulumi.String(exampleContract.Id),
+//				GroupId:    *pulumi.String(exampleGroup.Id),
+//				ContractId: *pulumi.String(exampleContract.Id),
 //				ProductId:  pulumi.String("prd_Object_Delivery"),
 //			})
 //			if err != nil {

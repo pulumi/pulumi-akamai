@@ -51,7 +51,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecEvalGroup(ctx, "evalAttackGroup", &akamai.AppSecEvalGroupArgs{
-//				ConfigId:           pulumi.Int(configuration.ConfigId),
+//				ConfigId:           *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId:   pulumi.String("gms1_134637"),
 //				AttackGroup:        pulumi.String("SQL"),
 //				AttackGroupAction:  pulumi.String("deny"),

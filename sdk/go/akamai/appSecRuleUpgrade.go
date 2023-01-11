@@ -34,7 +34,7 @@ import (
 //				return err
 //			}
 //			ruleUpgrade, err := akamai.NewAppSecRuleUpgrade(ctx, "ruleUpgrade", &akamai.AppSecRuleUpgradeArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //			})
 //			if err != nil {

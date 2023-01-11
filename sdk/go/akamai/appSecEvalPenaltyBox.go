@@ -43,7 +43,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecEvalPenaltyBox(ctx, "evalPenaltyBox", &akamai.AppSecEvalPenaltyBoxArgs{
-//				ConfigId:             pulumi.Int(configuration.ConfigId),
+//				ConfigId:             *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId:     pulumi.String("gms1_134637"),
 //				PenaltyBoxProtection: pulumi.Bool(true),
 //				PenaltyBoxAction:     pulumi.String("deny"),

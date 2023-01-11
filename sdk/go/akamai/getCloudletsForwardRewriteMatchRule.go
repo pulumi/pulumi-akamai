@@ -30,16 +30,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.GetCloudletsForwardRewriteMatchRule(ctx, &akamai.GetCloudletsForwardRewriteMatchRuleArgs{
+//			_, err := akamai.GetCloudletsForwardRewriteMatchRule(ctx, &akamai.GetCloudletsForwardRewriteMatchRuleArgs{
 //				MatchRules: []akamai.GetCloudletsForwardRewriteMatchRuleMatchRule{
-//					akamai.GetCloudletsForwardRewriteMatchRuleMatchRule{
-//						ForwardSettings: akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings{
+//					{
+//						ForwardSettings: {
 //							OriginId:               pulumi.StringRef("1234"),
 //							PathAndQs:              pulumi.StringRef("/path"),
 //							UseIncomingQueryString: pulumi.BoolRef(true),
 //						},
 //						Matches: []akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleMatch{
-//							akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleMatch{
+//							{
 //								CaseSensitive: pulumi.BoolRef(false),
 //								CheckIps:      pulumi.StringRef("CONNECTING_IP XFF_HEADERS"),
 //								MatchOperator: pulumi.StringRef("equals"),

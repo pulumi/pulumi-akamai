@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.LookupEdgeWorker(ctx, &akamai.LookupEdgeWorkerArgs{
+//			_, err := akamai.LookupEdgeWorker(ctx, &akamai.LookupEdgeWorkerArgs{
 //				EdgeworkerId: 3,
 //				LocalBundle:  pulumi.StringRef("test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz"),
 //			}, nil)

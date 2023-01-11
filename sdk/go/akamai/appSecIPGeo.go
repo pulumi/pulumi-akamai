@@ -40,7 +40,7 @@ import (
 //				return err
 //			}
 //			ipGeoBlock, err := akamai.NewAppSecIPGeo(ctx, "ipGeoBlock", &akamai.AppSecIPGeoArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //				Mode:             pulumi.String("block"),
 //				GeoNetworkLists: pulumi.StringArray{
@@ -57,7 +57,7 @@ import (
 //				return err
 //			}
 //			ipGeoAllow, err := akamai.NewAppSecIPGeo(ctx, "ipGeoAllow", &akamai.AppSecIPGeoArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1-090334"),
 //				Mode:             pulumi.String("allow"),
 //				ExceptionIpNetworkLists: pulumi.StringArray{

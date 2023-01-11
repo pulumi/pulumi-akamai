@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.LookupCloudletsPolicy(ctx, &akamai.LookupCloudletsPolicyArgs{
+//			_, err := akamai.LookupCloudletsPolicy(ctx, &akamai.LookupCloudletsPolicyArgs{
 //				PolicyId: 1234,
 //				Version:  pulumi.IntRef(1),
 //			}, nil)

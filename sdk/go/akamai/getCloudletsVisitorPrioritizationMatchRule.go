@@ -30,13 +30,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.GetCloudletsVisitorPrioritizationMatchRule(ctx, &akamai.GetCloudletsVisitorPrioritizationMatchRuleArgs{
+//			_, err := akamai.GetCloudletsVisitorPrioritizationMatchRule(ctx, &akamai.GetCloudletsVisitorPrioritizationMatchRuleArgs{
 //				MatchRules: []akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
-//					akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
+//					{
 //						End:      pulumi.IntRef(1645037845),
 //						MatchUrl: pulumi.StringRef("example.com"),
 //						Matches: []akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
-//							akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
+//							{
 //								CaseSensitive: pulumi.BoolRef(false),
 //								CheckIps:      pulumi.StringRef("CONNECTING_IP"),
 //								MatchOperator: pulumi.StringRef("equals"),

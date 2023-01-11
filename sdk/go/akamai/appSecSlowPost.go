@@ -40,7 +40,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecSlowPost(ctx, "slowPost", &akamai.AppSecSlowPostArgs{
-//				ConfigId:                 pulumi.Int(configuration.ConfigId),
+//				ConfigId:                 *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId:         pulumi.String("gms1_134637"),
 //				SlowRateAction:           pulumi.String("alert"),
 //				SlowRateThresholdRate:    pulumi.Int(10),

@@ -53,7 +53,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecAdvancedSettingsPragmaHeader(ctx, "pragmaHeader", &akamai.AppSecAdvancedSettingsPragmaHeaderArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //				PragmaHeader:     readFileOrPanic(fmt.Sprintf("%v/pragma_header.json", path.Module)),
 //			})

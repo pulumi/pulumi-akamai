@@ -41,7 +41,7 @@ import (
 //				return err
 //			}
 //			wafMode, err := akamai.NewAppSecWafMode(ctx, "wafMode", &akamai.AppSecWafModeArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //				Mode:             pulumi.String("KRS"),
 //			})
