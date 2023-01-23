@@ -19,6 +19,20 @@ func TestAccEdgeHostnameTs(t *testing.T) {
 	integration.ProgramTest(t, &test)
 }
 
+func TestPropertyUpdate(t *testing.T) {
+	dir := path.Join(getCwd(t), "property", "ts")
+	test := getJSBaseOptions(t).
+		With(integration.ProgramTestOptions{
+			Dir: dir,
+			EditDirs: []integration.EditDir{{
+				Dir:             path.Join(dir, "update"),
+				ExpectNoChanges: false,
+				Additive:        true,
+			}},
+		})
+	integration.ProgramTest(t, &test)
+}
+
 func getJSBaseOptions(t *testing.T) integration.ProgramTestOptions {
 	base := getBaseOptions(t)
 	baseJS := base.With(integration.ProgramTestOptions{
