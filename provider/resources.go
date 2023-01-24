@@ -33,6 +33,7 @@ import (
 	"github.com/pulumi/pulumi-akamai/provider/v4/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
+	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 )
 
@@ -446,6 +447,19 @@ func Provider() tfbridge.ProviderInfo {
 		makeResource(mainMod, "Property"), propertiesMod, mainMod, &tfbridge.ResourceInfo{
 			Docs: &tfbridge.DocInfo{
 				Source: "property.md",
+			},
+			Fields: map[string]*tfbridge.SchemaInfo{
+				"read_version": {
+					Transform: func(v resource.PropertyValue) (resource.PropertyValue, error) {
+						// Read version needs to be populated and non-zero on updates, but
+						// for some reason isn't. See
+						// https://github.com/pulumi/pulumi-akamai/issues/107
+						if v.IsNull() || (v.IsNumber() && v.NumberValue() == 0) {
+							v = resource.NewNumberProperty(1)
+						}
+						return v, nil
+					},
+				},
 			},
 		})
 	prov.RenameResourceWithAlias("akamai_property_activation", makeResource(propertiesMod, "PropertyActivation"),
