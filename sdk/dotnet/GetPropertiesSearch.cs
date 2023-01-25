@@ -91,7 +91,7 @@ namespace Pulumi.Akamai
         public string Key { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) Value to search for.
+        /// (Required) Value to search for.
         /// </summary>
         [Input("value", required: true)]
         public string Value { get; set; } = null!;
@@ -114,7 +114,7 @@ namespace Pulumi.Akamai
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) Value to search for.
+        /// (Required) Value to search for.
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

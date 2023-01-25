@@ -60,7 +60,7 @@ export function getCloudletsForwardRewriteMatchRule(args?: GetCloudletsForwardRe
  */
 export interface GetCloudletsForwardRewriteMatchRuleArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: inputs.GetCloudletsForwardRewriteMatchRuleMatchRule[];
 }
@@ -125,7 +125,7 @@ export function getCloudletsForwardRewriteMatchRuleOutput(args?: GetCloudletsFor
  */
 export interface GetCloudletsForwardRewriteMatchRuleOutputArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleArgs>[]>;
 }

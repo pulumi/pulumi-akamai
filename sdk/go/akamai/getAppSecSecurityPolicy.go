@@ -22,8 +22,8 @@ func LookupAppSecSecurityPolicy(ctx *pulumi.Context, args *LookupAppSecSecurityP
 // A collection of arguments for invoking getAppSecSecurityPolicy.
 type LookupAppSecSecurityPolicyArgs struct {
 	// . Unique identifier of the security configuration associated with the security policies.
-	// - `securityPolicyName`. (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
-	ConfigId           int     `pulumi:"configId"`
+	ConfigId int `pulumi:"configId"`
+	// . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
 	SecurityPolicyName *string `pulumi:"securityPolicyName"`
 }
 
@@ -55,8 +55,8 @@ func LookupAppSecSecurityPolicyOutput(ctx *pulumi.Context, args LookupAppSecSecu
 // A collection of arguments for invoking getAppSecSecurityPolicy.
 type LookupAppSecSecurityPolicyOutputArgs struct {
 	// . Unique identifier of the security configuration associated with the security policies.
-	// - `securityPolicyName`. (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
-	ConfigId           pulumi.IntInput       `pulumi:"configId"`
+	ConfigId pulumi.IntInput `pulumi:"configId"`
+	// . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
 	SecurityPolicyName pulumi.StringPtrInput `pulumi:"securityPolicyName"`
 }
 

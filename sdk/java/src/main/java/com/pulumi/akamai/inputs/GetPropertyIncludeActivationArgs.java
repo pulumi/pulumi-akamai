@@ -14,14 +14,14 @@ public final class GetPropertyIncludeActivationArgs extends com.pulumi.resources
     public static final GetPropertyIncludeActivationArgs Empty = new GetPropertyIncludeActivationArgs();
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     @Import(name="contractId", required=true)
     private Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     public Output<String> contractId() {
@@ -29,14 +29,14 @@ public final class GetPropertyIncludeActivationArgs extends com.pulumi.resources
     }
 
     /**
-     * - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     @Import(name="groupId", required=true)
     private Output<String> groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     public Output<String> groupId() {
@@ -44,14 +44,14 @@ public final class GetPropertyIncludeActivationArgs extends com.pulumi.resources
     }
 
     /**
-     * - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+     * (Required) An include&#39;s unique ID with the optional `inc_` prefix.
      * 
      */
     @Import(name="includeId", required=true)
     private Output<String> includeId;
 
     /**
-     * @return - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+     * @return (Required) An include&#39;s unique ID with the optional `inc_` prefix.
      * 
      */
     public Output<String> includeId() {
@@ -59,14 +59,14 @@ public final class GetPropertyIncludeActivationArgs extends com.pulumi.resources
     }
 
     /**
-     * - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+     * (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
      * 
      */
     @Import(name="network", required=true)
     private Output<String> network;
 
     /**
-     * @return - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+     * @return (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
      * 
      */
     public Output<String> network() {
@@ -101,7 +101,7 @@ public final class GetPropertyIncludeActivationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -112,7 +112,7 @@ public final class GetPropertyIncludeActivationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -122,7 +122,7 @@ public final class GetPropertyIncludeActivationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class GetPropertyIncludeActivationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class GetPropertyIncludeActivationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param includeId - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+         * @param includeId (Required) An include&#39;s unique ID with the optional `inc_` prefix.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class GetPropertyIncludeActivationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param includeId - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+         * @param includeId (Required) An include&#39;s unique ID with the optional `inc_` prefix.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class GetPropertyIncludeActivationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param network - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+         * @param network (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class GetPropertyIncludeActivationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param network - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+         * @param network (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
          * 
          * @return builder
          * 

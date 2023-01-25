@@ -13,19 +13,19 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+        /// (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
         /// </summary>
         [Input("originId")]
         public Input<string>? OriginId { get; set; }
 
         /// <summary>
-        /// - (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
+        /// (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
         /// </summary>
         [Input("pathAndQs")]
         public Input<string>? PathAndQs { get; set; }
 
         /// <summary>
-        /// - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+        /// (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
         /// </summary>
         [Input("useIncomingQueryString")]
         public Input<bool>? UseIncomingQueryString { get; set; }

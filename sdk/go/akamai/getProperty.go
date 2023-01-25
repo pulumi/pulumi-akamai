@@ -58,9 +58,9 @@ func LookupProperty(ctx *pulumi.Context, args *LookupPropertyArgs, opts ...pulum
 
 // A collection of arguments for invoking getProperty.
 type LookupPropertyArgs struct {
-	// - (Required) The property name.
+	// (Required) The property name.
 	Name string `pulumi:"name"`
-	// - (Optional) The version of the property whose ID you want to list.
+	// (Optional) The version of the property whose ID you want to list.
 	Version *int `pulumi:"version"`
 }
 
@@ -88,9 +88,9 @@ func LookupPropertyOutput(ctx *pulumi.Context, args LookupPropertyOutputArgs, op
 
 // A collection of arguments for invoking getProperty.
 type LookupPropertyOutputArgs struct {
-	// - (Required) The property name.
+	// (Required) The property name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// - (Optional) The version of the property whose ID you want to list.
+	// (Optional) The version of the property whose ID you want to list.
 	Version pulumi.IntPtrInput `pulumi:"version"`
 }
 

@@ -100,25 +100,25 @@ namespace Pulumi.Akamai
     public sealed class GetPropertyIncludesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the optional `grp_` prefix.
+        /// (Required) A group's unique ID, including the optional `grp_` prefix.
         /// </summary>
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) The property that references the includes you want to list.
+        /// (Optional) The property that references the includes you want to list.
         /// </summary>
         [Input("parentProperty")]
         public Inputs.GetPropertyIncludesParentPropertyArgs? ParentProperty { get; set; }
 
         /// <summary>
-        /// - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        /// (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
         /// </summary>
         [Input("type")]
         public string? Type { get; set; }
@@ -132,25 +132,25 @@ namespace Pulumi.Akamai
     public sealed class GetPropertyIncludesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the optional `grp_` prefix.
+        /// (Required) A group's unique ID, including the optional `grp_` prefix.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) The property that references the includes you want to list.
+        /// (Optional) The property that references the includes you want to list.
         /// </summary>
         [Input("parentProperty")]
         public Input<Inputs.GetPropertyIncludesParentPropertyInputArgs>? ParentProperty { get; set; }
 
         /// <summary>
-        /// - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        /// (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

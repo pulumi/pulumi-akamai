@@ -60,7 +60,7 @@ namespace Pulumi.Akamai
         public Output<int?> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+        /// A list of IP addresses or locations to be included in the list, added to an existing list, or
         /// removed from an existing list.
         /// </summary>
         [Output("lists")]
@@ -173,7 +173,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _lists;
 
         /// <summary>
-        /// : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+        /// A list of IP addresses or locations to be included in the list, added to an existing list, or
         /// removed from an existing list.
         /// </summary>
         public InputList<string> Lists
@@ -232,7 +232,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _lists;
 
         /// <summary>
-        /// : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+        /// A list of IP addresses or locations to be included in the list, added to an existing list, or
         /// removed from an existing list.
         /// </summary>
         public InputList<string> Lists

@@ -104,7 +104,7 @@ namespace Pulumi.Akamai
     public sealed class GetDatastreamActivationHistoryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A stream's unique identifier.
+        /// (Required) A stream's unique identifier.
         /// </summary>
         [Input("streamId", required: true)]
         public int StreamId { get; set; }
@@ -118,7 +118,7 @@ namespace Pulumi.Akamai
     public sealed class GetDatastreamActivationHistoryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A stream's unique identifier.
+        /// (Required) A stream's unique identifier.
         /// </summary>
         [Input("streamId", required: true)]
         public Input<int> StreamId { get; set; } = null!;

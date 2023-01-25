@@ -49,13 +49,13 @@ namespace Pulumi.Akamai
         public Output<int> EdgeworkerId { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) Identifies a group to assign to the EdgeWorker ID.
+        /// (Required) Identifies a group to assign to the EdgeWorker ID.
         /// </summary>
         [Output("groupId")]
         public Output<int> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) The path to the EdgeWorkers code bundle.
+        /// (Optional) The path to the EdgeWorkers code bundle.
         /// </summary>
         [Output("localBundle")]
         public Output<string?> LocalBundle { get; private set; } = null!;
@@ -67,13 +67,13 @@ namespace Pulumi.Akamai
         public Output<string> LocalBundleHash { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The name of the EdgeWorker ID.
+        /// (Required) The name of the EdgeWorker ID.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) Unique identifier of the resource tier.
+        /// (Required) Unique identifier of the resource tier.
         /// </summary>
         [Output("resourceTierId")]
         public Output<int> ResourceTierId { get; private set; } = null!;
@@ -137,25 +137,25 @@ namespace Pulumi.Akamai
     public sealed class EdgeWorkerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Required) Identifies a group to assign to the EdgeWorker ID.
+        /// (Required) Identifies a group to assign to the EdgeWorker ID.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<int> GroupId { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) The path to the EdgeWorkers code bundle.
+        /// (Optional) The path to the EdgeWorkers code bundle.
         /// </summary>
         [Input("localBundle")]
         public Input<string>? LocalBundle { get; set; }
 
         /// <summary>
-        /// - (Required) The name of the EdgeWorker ID.
+        /// (Required) The name of the EdgeWorker ID.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// - (Required) Unique identifier of the resource tier.
+        /// (Required) Unique identifier of the resource tier.
         /// </summary>
         [Input("resourceTierId", required: true)]
         public Input<int> ResourceTierId { get; set; } = null!;
@@ -175,13 +175,13 @@ namespace Pulumi.Akamai
         public Input<int>? EdgeworkerId { get; set; }
 
         /// <summary>
-        /// - (Required) Identifies a group to assign to the EdgeWorker ID.
+        /// (Required) Identifies a group to assign to the EdgeWorker ID.
         /// </summary>
         [Input("groupId")]
         public Input<int>? GroupId { get; set; }
 
         /// <summary>
-        /// - (Optional) The path to the EdgeWorkers code bundle.
+        /// (Optional) The path to the EdgeWorkers code bundle.
         /// </summary>
         [Input("localBundle")]
         public Input<string>? LocalBundle { get; set; }
@@ -193,13 +193,13 @@ namespace Pulumi.Akamai
         public Input<string>? LocalBundleHash { get; set; }
 
         /// <summary>
-        /// - (Required) The name of the EdgeWorker ID.
+        /// (Required) The name of the EdgeWorker ID.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// - (Required) Unique identifier of the resource tier.
+        /// (Required) Unique identifier of the resource tier.
         /// </summary>
         [Input("resourceTierId")]
         public Input<int>? ResourceTierId { get; set; }

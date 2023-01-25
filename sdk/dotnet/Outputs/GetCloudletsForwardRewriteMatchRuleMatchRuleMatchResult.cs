@@ -14,31 +14,31 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchResult
     {
         /// <summary>
-        /// - (Optional) Whether the match is case sensitive.
+        /// (Optional) Whether the match is case sensitive.
         /// </summary>
         public readonly bool? CaseSensitive;
         /// <summary>
-        /// - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+        /// (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
         /// </summary>
         public readonly string? CheckIps;
         /// <summary>
-        /// - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+        /// (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
         /// </summary>
         public readonly string? MatchOperator;
         /// <summary>
-        /// - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+        /// (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
         /// </summary>
         public readonly string? MatchType;
         /// <summary>
-        /// - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+        /// (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
         /// </summary>
         public readonly string? MatchValue;
         /// <summary>
-        /// - (Optional) Whether to negate the match.
+        /// (Optional) Whether to negate the match.
         /// </summary>
         public readonly bool? Negate;
         /// <summary>
-        /// - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+        /// (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueResult> ObjectMatchValues;
 

@@ -131,7 +131,7 @@ namespace Pulumi.Akamai
         private List<Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs>? _matchRules;
 
         /// <summary>
-        /// - (Optional) A list of Cloudlet-specific match rules for a policy.
+        /// (Optional) A list of Cloudlet-specific match rules for a policy.
         /// </summary>
         public List<Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs> MatchRules
         {
@@ -151,7 +151,7 @@ namespace Pulumi.Akamai
         private InputList<Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleInputArgs>? _matchRules;
 
         /// <summary>
-        /// - (Optional) A list of Cloudlet-specific match rules for a policy.
+        /// (Optional) A list of Cloudlet-specific match rules for a policy.
         /// </summary>
         public InputList<Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleInputArgs> MatchRules
         {

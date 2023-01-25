@@ -16,14 +16,14 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
     public static final PropertyIncludeArgs Empty = new PropertyIncludeArgs();
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     @Import(name="contractId", required=true)
     private Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     public Output<String> contractId() {
@@ -31,14 +31,14 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     @Import(name="groupId", required=true)
     private Output<String> groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     public Output<String> groupId() {
@@ -46,14 +46,14 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * - (Required) The descriptive name for the include.
+     * (Required) The descriptive name for the include.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return - (Required) The descriptive name for the include.
+     * @return (Required) The descriptive name for the include.
      * 
      */
     public Optional<Output<String>> name() {
@@ -76,14 +76,14 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+     * (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
      * 
      */
     @Import(name="ruleFormat", required=true)
     private Output<String> ruleFormat;
 
     /**
-     * @return - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+     * @return (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
      * 
      */
     public Output<String> ruleFormat() {
@@ -91,14 +91,14 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * - (Optional) Include&#39;s rules as JSON.
+     * (Optional) Include&#39;s rules as JSON.
      * 
      */
     @Import(name="rules")
     private @Nullable Output<String> rules;
 
     /**
-     * @return - (Optional) Include&#39;s rules as JSON.
+     * @return (Optional) Include&#39;s rules as JSON.
      * 
      */
     public Optional<Output<String>> rules() {
@@ -106,14 +106,14 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * @return (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
      * 
      */
     public Output<String> type() {
@@ -151,7 +151,7 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param name - (Required) The descriptive name for the include.
+         * @param name (Required) The descriptive name for the include.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param name - (Required) The descriptive name for the include.
+         * @param name (Required) The descriptive name for the include.
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ruleFormat - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+         * @param ruleFormat (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param ruleFormat - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+         * @param ruleFormat (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param rules - (Optional) Include&#39;s rules as JSON.
+         * @param rules (Optional) Include&#39;s rules as JSON.
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param rules - (Optional) Include&#39;s rules as JSON.
+         * @param rules (Optional) Include&#39;s rules as JSON.
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param type - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+         * @param type (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class PropertyIncludeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param type - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+         * @param type (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
          * 
          * @return builder
          * 

@@ -130,7 +130,7 @@ type Property struct {
 	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringOutput `pulumi:"contract"`
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
 	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode pulumi.StringPtrOutput `pulumi:"cpCode"`
@@ -138,7 +138,7 @@ type Property struct {
 	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringOutput `pulumi:"group"`
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
 	// A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
 	Hostnames PropertyHostnameArrayOutput `pulumi:"hostnames"`
@@ -164,6 +164,8 @@ type Property struct {
 	RuleErrors PropertyRuleErrorArrayOutput `pulumi:"ruleErrors"`
 	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
 	RuleFormat pulumi.StringOutput `pulumi:"ruleFormat"`
+	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyRuleWarningArrayOutput `pulumi:"ruleWarnings"`
 	// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
@@ -215,7 +217,7 @@ type propertyState struct {
 	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract *string `pulumi:"contract"`
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
 	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode *string `pulumi:"cpCode"`
@@ -223,7 +225,7 @@ type propertyState struct {
 	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group *string `pulumi:"group"`
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
 	// A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
 	Hostnames []PropertyHostname `pulumi:"hostnames"`
@@ -249,6 +251,8 @@ type propertyState struct {
 	RuleErrors []PropertyRuleError `pulumi:"ruleErrors"`
 	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
 	RuleFormat *string `pulumi:"ruleFormat"`
+	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings []PropertyRuleWarning `pulumi:"ruleWarnings"`
 	// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
@@ -266,7 +270,7 @@ type PropertyState struct {
 	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringPtrInput
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput
 	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode pulumi.StringPtrInput
@@ -274,7 +278,7 @@ type PropertyState struct {
 	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringPtrInput
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringPtrInput
 	// A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
 	Hostnames PropertyHostnameArrayInput
@@ -300,6 +304,8 @@ type PropertyState struct {
 	RuleErrors PropertyRuleErrorArrayInput
 	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
 	RuleFormat pulumi.StringPtrInput
+	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyRuleWarningArrayInput
 	// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
@@ -321,7 +327,7 @@ type propertyArgs struct {
 	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract *string `pulumi:"contract"`
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
 	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode *string `pulumi:"cpCode"`
@@ -329,7 +335,7 @@ type propertyArgs struct {
 	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group *string `pulumi:"group"`
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
 	// A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
 	Hostnames []PropertyHostname `pulumi:"hostnames"`
@@ -347,6 +353,8 @@ type propertyArgs struct {
 	ProductId *string `pulumi:"productId"`
 	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
 	RuleFormat *string `pulumi:"ruleFormat"`
+	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings []PropertyRuleWarning `pulumi:"ruleWarnings"`
 	// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
@@ -363,7 +371,7 @@ type PropertyArgs struct {
 	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringPtrInput
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput
 	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode pulumi.StringPtrInput
@@ -371,7 +379,7 @@ type PropertyArgs struct {
 	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringPtrInput
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringPtrInput
 	// A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
 	Hostnames PropertyHostnameArrayInput
@@ -389,6 +397,8 @@ type PropertyArgs struct {
 	ProductId pulumi.StringPtrInput
 	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
 	RuleFormat pulumi.StringPtrInput
+	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyRuleWarningArrayInput
 	// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
@@ -496,7 +506,7 @@ func (o PropertyOutput) Contract() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Contract }).(pulumi.StringOutput)
 }
 
-// - (Required) A contract's unique ID, including the `ctr_` prefix.
+// (Required) A contract's unique ID, including the `ctr_` prefix.
 func (o PropertyOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }
@@ -513,7 +523,7 @@ func (o PropertyOutput) Group() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
 }
 
-// - (Required) A group's unique ID, including the `grp_` prefix.
+// (Required) A group's unique ID, including the `grp_` prefix.
 func (o PropertyOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }
@@ -575,6 +585,8 @@ func (o PropertyOutput) RuleFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.RuleFormat }).(pulumi.StringOutput)
 }
 
+// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+//
 // Deprecated: Rule warnings will not be set in state anymore
 func (o PropertyOutput) RuleWarnings() PropertyRuleWarningArrayOutput {
 	return o.ApplyT(func(v *Property) PropertyRuleWarningArrayOutput { return v.RuleWarnings }).(PropertyRuleWarningArrayOutput)

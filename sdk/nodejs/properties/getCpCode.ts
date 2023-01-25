@@ -29,7 +29,7 @@ export interface GetCpCodeArgs {
      */
     contract?: string;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: string;
     /**
@@ -85,7 +85,7 @@ export interface GetCpCodeOutputArgs {
      */
     contract?: pulumi.Input<string>;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**

@@ -14,11 +14,11 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetPropertiesPropertyResult
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         public readonly string ContractId;
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         public readonly string GroupId;
         public readonly int LatestVersion;

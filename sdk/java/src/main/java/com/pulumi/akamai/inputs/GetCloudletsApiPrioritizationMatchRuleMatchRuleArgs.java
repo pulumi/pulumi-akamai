@@ -21,14 +21,14 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
     public static final GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs Empty = new GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs();
 
     /**
-     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     * (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
      * 
      */
     @Import(name="disabled")
     private @Nullable Output<Boolean> disabled;
 
     /**
-     * @return - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     * @return (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
      * 
      */
     public Optional<Output<Boolean>> disabled() {
@@ -36,14 +36,14 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
     }
 
     /**
-     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     @Import(name="end")
     private @Nullable Output<Integer> end;
 
     /**
-     * @return - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Output<Integer>> end() {
@@ -51,16 +51,14 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
     }
 
     /**
-     * - (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-     * * `pass_through_percent`- (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
+     * (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
      * 
      */
     @Import(name="matchUrl")
     private @Nullable Output<String> matchUrl;
 
     /**
-     * @return - (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-     * * `pass_through_percent`- (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
+     * @return (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
      * 
      */
     public Optional<Output<String>> matchUrl() {
@@ -68,14 +66,14 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
     }
 
     /**
-     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     @Import(name="matches")
     private @Nullable Output<List<GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs>> matches;
 
     /**
-     * @return - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     public Optional<Output<List<GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchArgs>>> matches() {
@@ -83,36 +81,44 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
     }
 
     /**
-     * - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
+     * 
+     */
     @Import(name="passThroughPercent", required=true)
     private Output<Double> passThroughPercent;
 
+    /**
+     * @return (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
+     * 
+     */
     public Output<Double> passThroughPercent() {
         return this.passThroughPercent;
     }
 
     /**
-     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     @Import(name="start")
     private @Nullable Output<Integer> start;
 
     /**
-     * @return - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Output<Integer>> start() {
@@ -120,14 +126,14 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
     }
 
     /**
-     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     public Output<String> type() {
@@ -166,7 +172,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param disabled - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+         * @param disabled (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
          * 
          * @return builder
          * 
@@ -177,7 +183,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param disabled - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+         * @param disabled (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
          * 
          * @return builder
          * 
@@ -187,7 +193,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param end - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param end (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -198,7 +204,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param end - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param end (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -208,8 +214,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param matchUrl - (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-         * * `pass_through_percent`- (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
+         * @param matchUrl (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
          * 
          * @return builder
          * 
@@ -220,8 +225,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param matchUrl - (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-         * * `pass_through_percent`- (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
+         * @param matchUrl (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
          * 
          * @return builder
          * 
@@ -231,7 +235,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param matches - (Optional) A list of conditions to apply to a Cloudlet, including:
+         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
          * 
          * @return builder
          * 
@@ -242,7 +246,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param matches - (Optional) A list of conditions to apply to a Cloudlet, including:
+         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
          * 
          * @return builder
          * 
@@ -252,7 +256,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param matches - (Optional) A list of conditions to apply to a Cloudlet, including:
+         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
          * 
          * @return builder
          * 
@@ -262,7 +266,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param name - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
          * 
          * @return builder
          * 
@@ -273,7 +277,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param name - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
          * 
          * @return builder
          * 
@@ -282,17 +286,29 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
             return name(Output.of(name));
         }
 
+        /**
+         * @param passThroughPercent (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder passThroughPercent(Output<Double> passThroughPercent) {
             $.passThroughPercent = passThroughPercent;
             return this;
         }
 
+        /**
+         * @param passThroughPercent (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
+         * 
+         * @return builder
+         * 
+         */
         public Builder passThroughPercent(Double passThroughPercent) {
             return passThroughPercent(Output.of(passThroughPercent));
         }
 
         /**
-         * @param start - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param start (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -303,7 +319,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param start - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param start (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -313,7 +329,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param type - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+         * @param type (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
          * 
          * @return builder
          * 
@@ -324,7 +340,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs extends c
         }
 
         /**
-         * @param type - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+         * @param type (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
          * 
          * @return builder
          * 

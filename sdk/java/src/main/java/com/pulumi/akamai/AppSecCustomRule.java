@@ -52,9 +52,17 @@ public class AppSecCustomRule extends com.pulumi.resources.CustomResource {
     public Output<String> customRule() {
         return this.customRule;
     }
+    /**
+     * . ID of the new custom rule.
+     * 
+     */
     @Export(name="customRuleId", type=Integer.class, parameters={})
     private Output<Integer> customRuleId;
 
+    /**
+     * @return . ID of the new custom rule.
+     * 
+     */
     public Output<Integer> customRuleId() {
         return this.customRuleId;
     }

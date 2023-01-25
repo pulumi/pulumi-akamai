@@ -55,14 +55,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
      * 
      */
     @Import(name="allowDuplicateCommonName")
     private @Nullable Output<Boolean> allowDuplicateCommonName;
 
     /**
-     * @return - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * @return (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
      * 
      */
     public Optional<Output<Boolean>> allowDuplicateCommonName() {
@@ -100,14 +100,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+     * (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
      * 
      */
     @Import(name="commonName")
     private @Nullable Output<String> commonName;
 
     /**
-     * @return - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+     * @return (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
      * 
      */
     public Optional<Output<String>> commonName() {
@@ -115,14 +115,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * - (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
+     * (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
      * 
      */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
+     * @return (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
      * 
      */
     public Optional<Output<String>> contractId() {
@@ -418,7 +418,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param allowDuplicateCommonName - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+         * @param allowDuplicateCommonName (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param allowDuplicateCommonName - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+         * @param allowDuplicateCommonName (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
          * 
          * @return builder
          * 
@@ -481,7 +481,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param commonName - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+         * @param commonName (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param commonName - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+         * @param commonName (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
          * 
          * @return builder
          * 
@@ -502,7 +502,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
          * 
          * @return builder
          * 

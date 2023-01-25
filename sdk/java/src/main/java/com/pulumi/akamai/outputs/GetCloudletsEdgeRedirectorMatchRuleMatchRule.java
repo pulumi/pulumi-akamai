@@ -16,134 +16,134 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetCloudletsEdgeRedirectorMatchRuleMatchRule {
     /**
-     * @return - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     * @return (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
      * 
      */
     private @Nullable Boolean disabled;
     /**
-     * @return - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     private @Nullable Integer end;
     /**
-     * @return - (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     * @return (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
      * 
      */
     private @Nullable String matchUrl;
     /**
-     * @return - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     private @Nullable List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch> matches;
     /**
-     * @return - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     private @Nullable String name;
     /**
-     * @return - (Required) The URL Edge Redirector redirects the request to. If you&#39;re using `use_relative_url`, you can enter a path for the value.
+     * @return (Required) The URL Edge Redirector redirects the request to. If you&#39;re using `use_relative_url`, you can enter a path for the value.
      * 
      */
     private String redirectUrl;
     /**
-     * @return - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     private @Nullable Integer start;
     /**
-     * @return - (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
+     * @return (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
      * 
      */
     private Integer statusCode;
     /**
-     * @return - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     private String type;
     /**
-     * @return - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+     * @return (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
      * 
      */
     private @Nullable Boolean useIncomingQueryString;
     /**
-     * @return - (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
+     * @return (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
      * 
      */
     private @Nullable String useRelativeUrl;
 
     private GetCloudletsEdgeRedirectorMatchRuleMatchRule() {}
     /**
-     * @return - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     * @return (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
      * 
      */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
     /**
-     * @return - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
     /**
-     * @return - (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     * @return (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
      * 
      */
     public Optional<String> matchUrl() {
         return Optional.ofNullable(this.matchUrl);
     }
     /**
-     * @return - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     public List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch> matches() {
         return this.matches == null ? List.of() : this.matches;
     }
     /**
-     * @return - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return - (Required) The URL Edge Redirector redirects the request to. If you&#39;re using `use_relative_url`, you can enter a path for the value.
+     * @return (Required) The URL Edge Redirector redirects the request to. If you&#39;re using `use_relative_url`, you can enter a path for the value.
      * 
      */
     public String redirectUrl() {
         return this.redirectUrl;
     }
     /**
-     * @return - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
     /**
-     * @return - (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
+     * @return (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
      * 
      */
     public Integer statusCode() {
         return this.statusCode;
     }
     /**
-     * @return - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+     * @return (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
      * 
      */
     public Optional<Boolean> useIncomingQueryString() {
         return Optional.ofNullable(this.useIncomingQueryString);
     }
     /**
-     * @return - (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
+     * @return (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
      * 
      */
     public Optional<String> useRelativeUrl() {

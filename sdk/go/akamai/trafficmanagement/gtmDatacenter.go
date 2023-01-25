@@ -63,12 +63,6 @@ type GtmDatacenter struct {
 	// A two-letter ISO 3166 country code that specifies the country where the data center maps to.
 	Country pulumi.StringPtrOutput `pulumi:"country"`
 	// A unique identifier for an existing data center in the domain.
-	// * `pingInterval`
-	// * `pingPacketSize`
-	// * `scorePenalty`
-	// * `servermonitorLivenessCount`
-	// * `servermonitorLoadCount`
-	// * `servermonitorPool`
 	DatacenterId pulumi.IntOutput `pulumi:"datacenterId"`
 	// Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
 	DefaultLoadObject GtmDatacenterDefaultLoadObjectPtrOutput `pulumi:"defaultLoadObject"`
@@ -139,12 +133,6 @@ type gtmDatacenterState struct {
 	// A two-letter ISO 3166 country code that specifies the country where the data center maps to.
 	Country *string `pulumi:"country"`
 	// A unique identifier for an existing data center in the domain.
-	// * `pingInterval`
-	// * `pingPacketSize`
-	// * `scorePenalty`
-	// * `servermonitorLivenessCount`
-	// * `servermonitorLoadCount`
-	// * `servermonitorPool`
 	DatacenterId *int `pulumi:"datacenterId"`
 	// Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
 	DefaultLoadObject *GtmDatacenterDefaultLoadObject `pulumi:"defaultLoadObject"`
@@ -184,12 +172,6 @@ type GtmDatacenterState struct {
 	// A two-letter ISO 3166 country code that specifies the country where the data center maps to.
 	Country pulumi.StringPtrInput
 	// A unique identifier for an existing data center in the domain.
-	// * `pingInterval`
-	// * `pingPacketSize`
-	// * `scorePenalty`
-	// * `servermonitorLivenessCount`
-	// * `servermonitorLoadCount`
-	// * `servermonitorPool`
 	DatacenterId pulumi.IntPtrInput
 	// Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
 	DefaultLoadObject GtmDatacenterDefaultLoadObjectPtrInput
@@ -396,12 +378,6 @@ func (o GtmDatacenterOutput) Country() pulumi.StringPtrOutput {
 }
 
 // A unique identifier for an existing data center in the domain.
-// * `pingInterval`
-// * `pingPacketSize`
-// * `scorePenalty`
-// * `servermonitorLivenessCount`
-// * `servermonitorLoadCount`
-// * `servermonitorPool`
 func (o GtmDatacenterOutput) DatacenterId() pulumi.IntOutput {
 	return o.ApplyT(func(v *GtmDatacenter) pulumi.IntOutput { return v.DatacenterId }).(pulumi.IntOutput)
 }

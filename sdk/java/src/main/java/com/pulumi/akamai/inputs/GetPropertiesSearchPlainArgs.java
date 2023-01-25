@@ -34,14 +34,14 @@ public final class GetPropertiesSearchPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * - (Required) Value to search for.
+     * (Required) Value to search for.
      * 
      */
     @Import(name="value", required=true)
     private String value;
 
     /**
-     * @return - (Required) Value to search for.
+     * @return (Required) Value to search for.
      * 
      */
     public String value() {
@@ -88,7 +88,7 @@ public final class GetPropertiesSearchPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param value - (Required) Value to search for.
+         * @param value (Required) Value to search for.
          * 
          * @return builder
          * 

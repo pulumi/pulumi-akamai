@@ -43,14 +43,14 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecAdvancedSettingsEvasivePathMatch(ctx, "configEvasivePathMatch", &akamai.AppSecAdvancedSettingsEvasivePathMatchArgs{
-//				ConfigId:        pulumi.Int(configuration.ConfigId),
+//				ConfigId:        *pulumi.Int(configuration.ConfigId),
 //				EnablePathMatch: pulumi.Bool(true),
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			_, err = akamai.NewAppSecAdvancedSettingsEvasivePathMatch(ctx, "policyOverride", &akamai.AppSecAdvancedSettingsEvasivePathMatchArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.Any(_var.Security_policy_id),
 //				EnablePathMatch:  pulumi.Bool(true),
 //			})

@@ -16,14 +16,14 @@ public final class GetCloudletsPhasedReleaseMatchRulePlainArgs extends com.pulum
     public static final GetCloudletsPhasedReleaseMatchRulePlainArgs Empty = new GetCloudletsPhasedReleaseMatchRulePlainArgs();
 
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      * 
      */
     @Import(name="matchRules")
     private @Nullable List<GetCloudletsPhasedReleaseMatchRuleMatchRule> matchRules;
 
     /**
-     * @return - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * @return (Optional) A list of Cloudlet-specific match rules for a policy.
      * 
      */
     public Optional<List<GetCloudletsPhasedReleaseMatchRuleMatchRule>> matchRules() {
@@ -55,7 +55,7 @@ public final class GetCloudletsPhasedReleaseMatchRulePlainArgs extends com.pulum
         }
 
         /**
-         * @param matchRules - (Optional) A list of Cloudlet-specific match rules for a policy.
+         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class GetCloudletsPhasedReleaseMatchRulePlainArgs extends com.pulum
         }
 
         /**
-         * @param matchRules - (Optional) A list of Cloudlet-specific match rules for a policy.
+         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
          * 
          * @return builder
          * 

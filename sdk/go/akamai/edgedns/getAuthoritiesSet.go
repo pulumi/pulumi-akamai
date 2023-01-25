@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.GetAuthoritiesSet(ctx, &akamai.GetAuthoritiesSetArgs{
+//			_, err := akamai.GetAuthoritiesSet(ctx, &akamai.GetAuthoritiesSetArgs{
 //				Contract: "ctr_1-AB123",
 //			}, nil)
 //			if err != nil {

@@ -30,7 +30,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.GetCpsCsr(ctx, &akamai.GetCpsCsrArgs{
+//			_, err := akamai.GetCpsCsr(ctx, &akamai.GetCpsCsrArgs{
 //				EnrollmentId: 12345,
 //			}, nil)
 //			if err != nil {

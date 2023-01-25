@@ -32,7 +32,7 @@ export function getCloudletsEdgeRedirectorMatchRule(args?: GetCloudletsEdgeRedir
  */
 export interface GetCloudletsEdgeRedirectorMatchRuleArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRule[];
 }
@@ -69,7 +69,7 @@ export function getCloudletsEdgeRedirectorMatchRuleOutput(args?: GetCloudletsEdg
  */
 export interface GetCloudletsEdgeRedirectorMatchRuleOutputArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs>[]>;
 }

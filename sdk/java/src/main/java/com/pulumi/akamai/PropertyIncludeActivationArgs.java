@@ -20,14 +20,14 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
     public static final PropertyIncludeActivationArgs Empty = new PropertyIncludeActivationArgs();
 
     /**
-     * - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+     * (Optional) Automatically acknowledge all rule warnings for activation and continue.
      * 
      */
     @Import(name="autoAcknowledgeRuleWarnings")
     private @Nullable Output<Boolean> autoAcknowledgeRuleWarnings;
 
     /**
-     * @return - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+     * @return (Optional) Automatically acknowledge all rule warnings for activation and continue.
      * 
      */
     public Optional<Output<Boolean>> autoAcknowledgeRuleWarnings() {
@@ -50,14 +50,14 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     @Import(name="contractId", required=true)
     private Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     public Output<String> contractId() {
@@ -65,14 +65,14 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     @Import(name="groupId", required=true)
     private Output<String> groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     public Output<String> groupId() {
@@ -80,14 +80,14 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+     * (Required) An include&#39;s unique ID with the optional `inc_` prefix.
      * 
      */
     @Import(name="includeId", required=true)
     private Output<String> includeId;
 
     /**
-     * @return - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+     * @return (Required) An include&#39;s unique ID with the optional `inc_` prefix.
      * 
      */
     public Output<String> includeId() {
@@ -95,14 +95,14 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * - (Required) The network for which the activation will be performed.
+     * (Required) The network for which the activation will be performed.
      * 
      */
     @Import(name="network", required=true)
     private Output<String> network;
 
     /**
-     * @return - (Required) The network for which the activation will be performed.
+     * @return (Required) The network for which the activation will be performed.
      * 
      */
     public Output<String> network() {
@@ -110,14 +110,14 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * - (Optional) A log message assigned to the activation request.
+     * (Optional) A log message assigned to the activation request.
      * 
      */
     @Import(name="note")
     private @Nullable Output<String> note;
 
     /**
-     * @return - (Optional) A log message assigned to the activation request.
+     * @return (Optional) A log message assigned to the activation request.
      * 
      */
     public Optional<Output<String>> note() {
@@ -125,14 +125,14 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * - (Required) The list of email addresses to notify when the activation status changes.
+     * (Required) The list of email addresses to notify when the activation status changes.
      * 
      */
     @Import(name="notifyEmails", required=true)
     private Output<List<String>> notifyEmails;
 
     /**
-     * @return - (Required) The list of email addresses to notify when the activation status changes.
+     * @return (Required) The list of email addresses to notify when the activation status changes.
      * 
      */
     public Output<List<String>> notifyEmails() {
@@ -140,14 +140,14 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * - (Required) The version of the include you want to activate.
+     * (Required) The version of the include you want to activate.
      * 
      */
     @Import(name="version", required=true)
     private Output<Integer> version;
 
     /**
-     * @return - (Required) The version of the include you want to activate.
+     * @return (Required) The version of the include you want to activate.
      * 
      */
     public Output<Integer> version() {
@@ -187,7 +187,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autoAcknowledgeRuleWarnings - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+         * @param autoAcknowledgeRuleWarnings (Optional) Automatically acknowledge all rule warnings for activation and continue.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autoAcknowledgeRuleWarnings - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+         * @param autoAcknowledgeRuleWarnings (Optional) Automatically acknowledge all rule warnings for activation and continue.
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
          * 
          * @return builder
          * 
@@ -261,7 +261,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param includeId - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+         * @param includeId (Required) An include&#39;s unique ID with the optional `inc_` prefix.
          * 
          * @return builder
          * 
@@ -282,7 +282,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param includeId - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+         * @param includeId (Required) An include&#39;s unique ID with the optional `inc_` prefix.
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param network - (Required) The network for which the activation will be performed.
+         * @param network (Required) The network for which the activation will be performed.
          * 
          * @return builder
          * 
@@ -303,7 +303,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param network - (Required) The network for which the activation will be performed.
+         * @param network (Required) The network for which the activation will be performed.
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param note - (Optional) A log message assigned to the activation request.
+         * @param note (Optional) A log message assigned to the activation request.
          * 
          * @return builder
          * 
@@ -324,7 +324,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param note - (Optional) A log message assigned to the activation request.
+         * @param note (Optional) A log message assigned to the activation request.
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param notifyEmails - (Required) The list of email addresses to notify when the activation status changes.
+         * @param notifyEmails (Required) The list of email addresses to notify when the activation status changes.
          * 
          * @return builder
          * 
@@ -345,7 +345,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param notifyEmails - (Required) The list of email addresses to notify when the activation status changes.
+         * @param notifyEmails (Required) The list of email addresses to notify when the activation status changes.
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param notifyEmails - (Required) The list of email addresses to notify when the activation status changes.
+         * @param notifyEmails (Required) The list of email addresses to notify when the activation status changes.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param version - (Required) The version of the include you want to activate.
+         * @param version (Required) The version of the include you want to activate.
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class PropertyIncludeActivationArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param version - (Required) The version of the include you want to activate.
+         * @param version (Required) The version of the include you want to activate.
          * 
          * @return builder
          * 

@@ -92,7 +92,7 @@ def get_datastream_dataset_fields(template_name: Optional[str] = None,
           * `dataset_field_name` - The name of the data set field.
 
 
-    :param str template_name: - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
+    :param str template_name: (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
     """
     __args__ = dict()
     __args__['templateName'] = template_name
@@ -135,6 +135,6 @@ def get_datastream_dataset_fields_output(template_name: Optional[pulumi.Input[Op
           * `dataset_field_name` - The name of the data set field.
 
 
-    :param str template_name: - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
+    :param str template_name: (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
     """
     ...

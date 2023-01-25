@@ -16,14 +16,14 @@ public final class GetCloudletsApplicationLoadBalancerPlainArgs extends com.pulu
     public static final GetCloudletsApplicationLoadBalancerPlainArgs Empty = new GetCloudletsApplicationLoadBalancerPlainArgs();
 
     /**
-     * - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+     * (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
      * 
      */
     @Import(name="originId", required=true)
     private String originId;
 
     /**
-     * @return - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+     * @return (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
      * 
      */
     public String originId() {
@@ -31,14 +31,14 @@ public final class GetCloudletsApplicationLoadBalancerPlainArgs extends com.pulu
     }
 
     /**
-     * - (Optional) The version number of the load balancing configuration.
+     * (Optional) The version number of the load balancing configuration.
      * 
      */
     @Import(name="version")
     private @Nullable Integer version;
 
     /**
-     * @return - (Optional) The version number of the load balancing configuration.
+     * @return (Optional) The version number of the load balancing configuration.
      * 
      */
     public Optional<Integer> version() {
@@ -71,7 +71,7 @@ public final class GetCloudletsApplicationLoadBalancerPlainArgs extends com.pulu
         }
 
         /**
-         * @param originId - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+         * @param originId (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class GetCloudletsApplicationLoadBalancerPlainArgs extends com.pulu
         }
 
         /**
-         * @param version - (Optional) The version number of the load balancing configuration.
+         * @param version (Optional) The version number of the load balancing configuration.
          * 
          * @return builder
          * 

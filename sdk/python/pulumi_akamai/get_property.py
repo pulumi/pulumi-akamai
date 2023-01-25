@@ -97,8 +97,8 @@ def get_property(name: Optional[str] = None,
     * `rules` - A JSON-encoded rule tree for a given property.
 
 
-    :param str name: - (Required) The property name.
-    :param int version: - (Optional) The version of the property whose ID you want to list.
+    :param str name: (Required) The property name.
+    :param int version: (Optional) The version of the property whose ID you want to list.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -140,7 +140,7 @@ def get_property_output(name: Optional[pulumi.Input[str]] = None,
     * `rules` - A JSON-encoded rule tree for a given property.
 
 
-    :param str name: - (Required) The property name.
-    :param int version: - (Optional) The version of the property whose ID you want to list.
+    :param str name: (Required) The property name.
+    :param int version: (Optional) The version of the property whose ID you want to list.
     """
     ...

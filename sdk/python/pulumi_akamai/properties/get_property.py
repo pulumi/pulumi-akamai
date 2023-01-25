@@ -99,8 +99,8 @@ def get_property(name: Optional[str] = None,
     * `rules` - A JSON-encoded rule tree for a given property.
 
 
-    :param str name: - (Required) The property name.
-    :param int version: - (Optional) The version of the property whose ID you want to list.
+    :param str name: (Required) The property name.
+    :param int version: (Optional) The version of the property whose ID you want to list.
     """
     pulumi.log.warn("""get_property is deprecated: akamai.properties.getProperty has been deprecated in favor of akamai.getProperty""")
     __args__ = dict()
@@ -143,8 +143,8 @@ def get_property_output(name: Optional[pulumi.Input[str]] = None,
     * `rules` - A JSON-encoded rule tree for a given property.
 
 
-    :param str name: - (Required) The property name.
-    :param int version: - (Optional) The version of the property whose ID you want to list.
+    :param str name: (Required) The property name.
+    :param int version: (Optional) The version of the property whose ID you want to list.
     """
     pulumi.log.warn("""get_property is deprecated: akamai.properties.getProperty has been deprecated in favor of akamai.getProperty""")
     ...

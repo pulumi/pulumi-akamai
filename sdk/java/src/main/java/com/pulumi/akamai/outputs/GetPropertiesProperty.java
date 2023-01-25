@@ -11,12 +11,12 @@ import java.util.Objects;
 @CustomType
 public final class GetPropertiesProperty {
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     private String contractId;
     /**
-     * @return - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     private String groupId;
@@ -31,14 +31,14 @@ public final class GetPropertiesProperty {
 
     private GetPropertiesProperty() {}
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     public String contractId() {
         return this.contractId;
     }
     /**
-     * @return - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     public String groupId() {

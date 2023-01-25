@@ -28,14 +28,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
     }
 
     /**
-     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     @Import(name="end")
     private @Nullable Output<Integer> end;
 
     /**
-     * @return - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Output<Integer>> end() {
@@ -43,14 +43,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
     }
 
     /**
-     * - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
+     * (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
      * 
      */
     @Import(name="forwardSettings", required=true)
     private Output<List<GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs>> forwardSettings;
 
     /**
-     * @return - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
+     * @return (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
      * 
      */
     public Output<List<GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs>> forwardSettings() {
@@ -58,14 +58,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
     }
 
     /**
-     * - (Optional) An identifier for Akamai internal use only.
+     * (Optional) An identifier for Akamai internal use only.
      * 
      */
     @Import(name="id")
     private @Nullable Output<Integer> id;
 
     /**
-     * @return - (Optional) An identifier for Akamai internal use only.
+     * @return (Optional) An identifier for Akamai internal use only.
      * 
      */
     public Optional<Output<Integer>> id() {
@@ -73,14 +73,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
     }
 
     /**
-     * - (Optional) The URL that the Cloudlet uses to match the incoming request.
+     * (Optional) The URL that the Cloudlet uses to match the incoming request.
      * 
      */
     @Import(name="matchUrl")
     private @Nullable Output<String> matchUrl;
 
     /**
-     * @return - (Optional) The URL that the Cloudlet uses to match the incoming request.
+     * @return (Optional) The URL that the Cloudlet uses to match the incoming request.
      * 
      */
     public Optional<Output<String>> matchUrl() {
@@ -88,14 +88,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
     }
 
     /**
-     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     @Import(name="matches")
     private @Nullable Output<List<GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs>> matches;
 
     /**
-     * @return - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     public Optional<Output<List<GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs>>> matches() {
@@ -103,14 +103,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
     }
 
     /**
-     * - (Optional) Whether the match supports default rules that apply to all requests.
+     * (Optional) Whether the match supports default rules that apply to all requests.
      * 
      */
     @Import(name="matchesAlways")
     private @Nullable Output<Boolean> matchesAlways;
 
     /**
-     * @return - (Optional) Whether the match supports default rules that apply to all requests.
+     * @return (Optional) Whether the match supports default rules that apply to all requests.
      * 
      */
     public Optional<Output<Boolean>> matchesAlways() {
@@ -118,14 +118,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
     }
 
     /**
-     * - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     public Optional<Output<String>> name() {
@@ -133,14 +133,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
     }
 
     /**
-     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     @Import(name="start")
     private @Nullable Output<Integer> start;
 
     /**
-     * @return - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Output<Integer>> start() {
@@ -148,14 +148,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
     }
 
     /**
-     * - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * @return (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     public Output<String> type() {
@@ -205,7 +205,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param end - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param end (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param end - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param end (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param forwardSettings - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
+         * @param forwardSettings (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param forwardSettings - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
+         * @param forwardSettings (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param forwardSettings - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
+         * @param forwardSettings (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param id - (Optional) An identifier for Akamai internal use only.
+         * @param id (Optional) An identifier for Akamai internal use only.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param id - (Optional) An identifier for Akamai internal use only.
+         * @param id (Optional) An identifier for Akamai internal use only.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param matchUrl - (Optional) The URL that the Cloudlet uses to match the incoming request.
+         * @param matchUrl (Optional) The URL that the Cloudlet uses to match the incoming request.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param matchUrl - (Optional) The URL that the Cloudlet uses to match the incoming request.
+         * @param matchUrl (Optional) The URL that the Cloudlet uses to match the incoming request.
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param matches - (Optional) A list of conditions to apply to a Cloudlet, including:
+         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param matches - (Optional) A list of conditions to apply to a Cloudlet, including:
+         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param matches - (Optional) A list of conditions to apply to a Cloudlet, including:
+         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
          * 
          * @return builder
          * 
@@ -330,7 +330,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param matchesAlways - (Optional) Whether the match supports default rules that apply to all requests.
+         * @param matchesAlways (Optional) Whether the match supports default rules that apply to all requests.
          * 
          * @return builder
          * 
@@ -341,7 +341,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param matchesAlways - (Optional) Whether the match supports default rules that apply to all requests.
+         * @param matchesAlways (Optional) Whether the match supports default rules that apply to all requests.
          * 
          * @return builder
          * 
@@ -351,7 +351,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param name - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param name - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param start - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param start (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param start - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param start (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param type - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+         * @param type (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs ext
         }
 
         /**
-         * @param type - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+         * @param type (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
          * 
          * @return builder
          * 

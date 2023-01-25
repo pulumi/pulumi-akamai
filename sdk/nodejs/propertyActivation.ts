@@ -103,17 +103,19 @@ export class PropertyActivation extends pulumi.CustomResource {
      */
     public readonly note!: pulumi.Output<string | undefined>;
     /**
-     * - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+     * (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
      *
      * @deprecated The setting "property" has been deprecated.
      */
     public readonly property!: pulumi.Output<string>;
     /**
-     * - (Required) The property's unique identifier, including the `prp_` prefix.
+     * (Required) The property's unique identifier, including the `prp_` prefix.
      */
     public readonly propertyId!: pulumi.Output<string>;
     public readonly ruleErrors!: pulumi.Output<outputs.PropertyActivationRuleError[]>;
     /**
+     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     *
      * @deprecated Rule warnings will not be set in state anymore
      */
     public readonly ruleWarnings!: pulumi.Output<outputs.PropertyActivationRuleWarning[]>;
@@ -214,17 +216,19 @@ export interface PropertyActivationState {
      */
     note?: pulumi.Input<string>;
     /**
-     * - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+     * (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
      *
      * @deprecated The setting "property" has been deprecated.
      */
     property?: pulumi.Input<string>;
     /**
-     * - (Required) The property's unique identifier, including the `prp_` prefix.
+     * (Required) The property's unique identifier, including the `prp_` prefix.
      */
     propertyId?: pulumi.Input<string>;
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleError>[]>;
     /**
+     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     *
      * @deprecated Rule warnings will not be set in state anymore
      */
     ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleWarning>[]>;
@@ -267,17 +271,19 @@ export interface PropertyActivationArgs {
      */
     note?: pulumi.Input<string>;
     /**
-     * - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+     * (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
      *
      * @deprecated The setting "property" has been deprecated.
      */
     property?: pulumi.Input<string>;
     /**
-     * - (Required) The property's unique identifier, including the `prp_` prefix.
+     * (Required) The property's unique identifier, including the `prp_` prefix.
      */
     propertyId?: pulumi.Input<string>;
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleError>[]>;
     /**
+     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     *
      * @deprecated Rule warnings will not be set in state anymore
      */
     ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleWarning>[]>;

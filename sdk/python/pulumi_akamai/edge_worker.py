@@ -20,10 +20,10 @@ class EdgeWorkerArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a EdgeWorker resource.
-        :param pulumi.Input[int] group_id: - (Required) Identifies a group to assign to the EdgeWorker ID.
-        :param pulumi.Input[int] resource_tier_id: - (Required) Unique identifier of the resource tier.
-        :param pulumi.Input[str] local_bundle: - (Optional) The path to the EdgeWorkers code bundle.
-        :param pulumi.Input[str] name: - (Required) The name of the EdgeWorker ID.
+        :param pulumi.Input[int] group_id: (Required) Identifies a group to assign to the EdgeWorker ID.
+        :param pulumi.Input[int] resource_tier_id: (Required) Unique identifier of the resource tier.
+        :param pulumi.Input[str] local_bundle: (Optional) The path to the EdgeWorkers code bundle.
+        :param pulumi.Input[str] name: (Required) The name of the EdgeWorker ID.
         """
         pulumi.set(__self__, "group_id", group_id)
         pulumi.set(__self__, "resource_tier_id", resource_tier_id)
@@ -36,7 +36,7 @@ class EdgeWorkerArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[int]:
         """
-        - (Required) Identifies a group to assign to the EdgeWorker ID.
+        (Required) Identifies a group to assign to the EdgeWorker ID.
         """
         return pulumi.get(self, "group_id")
 
@@ -48,7 +48,7 @@ class EdgeWorkerArgs:
     @pulumi.getter(name="resourceTierId")
     def resource_tier_id(self) -> pulumi.Input[int]:
         """
-        - (Required) Unique identifier of the resource tier.
+        (Required) Unique identifier of the resource tier.
         """
         return pulumi.get(self, "resource_tier_id")
 
@@ -60,7 +60,7 @@ class EdgeWorkerArgs:
     @pulumi.getter(name="localBundle")
     def local_bundle(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Optional) The path to the EdgeWorkers code bundle.
+        (Optional) The path to the EdgeWorkers code bundle.
         """
         return pulumi.get(self, "local_bundle")
 
@@ -72,7 +72,7 @@ class EdgeWorkerArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required) The name of the EdgeWorker ID.
+        (Required) The name of the EdgeWorker ID.
         """
         return pulumi.get(self, "name")
 
@@ -95,11 +95,11 @@ class _EdgeWorkerState:
         """
         Input properties used for looking up and filtering EdgeWorker resources.
         :param pulumi.Input[int] edgeworker_id: The unique identifier of the EdgeWorker
-        :param pulumi.Input[int] group_id: - (Required) Identifies a group to assign to the EdgeWorker ID.
-        :param pulumi.Input[str] local_bundle: - (Optional) The path to the EdgeWorkers code bundle.
+        :param pulumi.Input[int] group_id: (Required) Identifies a group to assign to the EdgeWorker ID.
+        :param pulumi.Input[str] local_bundle: (Optional) The path to the EdgeWorkers code bundle.
         :param pulumi.Input[str] local_bundle_hash: The local bundle hash for the EdgeWorker
-        :param pulumi.Input[str] name: - (Required) The name of the EdgeWorker ID.
-        :param pulumi.Input[int] resource_tier_id: - (Required) Unique identifier of the resource tier.
+        :param pulumi.Input[str] name: (Required) The name of the EdgeWorker ID.
+        :param pulumi.Input[int] resource_tier_id: (Required) Unique identifier of the resource tier.
         :param pulumi.Input[str] version: The bundle version
         :param pulumi.Input[Sequence[pulumi.Input[str]]] warnings: The list of warnings returned by EdgeWorker validation
         """
@@ -136,7 +136,7 @@ class _EdgeWorkerState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[int]]:
         """
-        - (Required) Identifies a group to assign to the EdgeWorker ID.
+        (Required) Identifies a group to assign to the EdgeWorker ID.
         """
         return pulumi.get(self, "group_id")
 
@@ -148,7 +148,7 @@ class _EdgeWorkerState:
     @pulumi.getter(name="localBundle")
     def local_bundle(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Optional) The path to the EdgeWorkers code bundle.
+        (Optional) The path to the EdgeWorkers code bundle.
         """
         return pulumi.get(self, "local_bundle")
 
@@ -172,7 +172,7 @@ class _EdgeWorkerState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required) The name of the EdgeWorker ID.
+        (Required) The name of the EdgeWorker ID.
         """
         return pulumi.get(self, "name")
 
@@ -184,7 +184,7 @@ class _EdgeWorkerState:
     @pulumi.getter(name="resourceTierId")
     def resource_tier_id(self) -> Optional[pulumi.Input[int]]:
         """
-        - (Required) Unique identifier of the resource tier.
+        (Required) Unique identifier of the resource tier.
         """
         return pulumi.get(self, "resource_tier_id")
 
@@ -252,10 +252,10 @@ class EdgeWorker(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] group_id: - (Required) Identifies a group to assign to the EdgeWorker ID.
-        :param pulumi.Input[str] local_bundle: - (Optional) The path to the EdgeWorkers code bundle.
-        :param pulumi.Input[str] name: - (Required) The name of the EdgeWorker ID.
-        :param pulumi.Input[int] resource_tier_id: - (Required) Unique identifier of the resource tier.
+        :param pulumi.Input[int] group_id: (Required) Identifies a group to assign to the EdgeWorker ID.
+        :param pulumi.Input[str] local_bundle: (Optional) The path to the EdgeWorkers code bundle.
+        :param pulumi.Input[str] name: (Required) The name of the EdgeWorker ID.
+        :param pulumi.Input[int] resource_tier_id: (Required) Unique identifier of the resource tier.
         """
         ...
     @overload
@@ -352,11 +352,11 @@ class EdgeWorker(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] edgeworker_id: The unique identifier of the EdgeWorker
-        :param pulumi.Input[int] group_id: - (Required) Identifies a group to assign to the EdgeWorker ID.
-        :param pulumi.Input[str] local_bundle: - (Optional) The path to the EdgeWorkers code bundle.
+        :param pulumi.Input[int] group_id: (Required) Identifies a group to assign to the EdgeWorker ID.
+        :param pulumi.Input[str] local_bundle: (Optional) The path to the EdgeWorkers code bundle.
         :param pulumi.Input[str] local_bundle_hash: The local bundle hash for the EdgeWorker
-        :param pulumi.Input[str] name: - (Required) The name of the EdgeWorker ID.
-        :param pulumi.Input[int] resource_tier_id: - (Required) Unique identifier of the resource tier.
+        :param pulumi.Input[str] name: (Required) The name of the EdgeWorker ID.
+        :param pulumi.Input[int] resource_tier_id: (Required) Unique identifier of the resource tier.
         :param pulumi.Input[str] version: The bundle version
         :param pulumi.Input[Sequence[pulumi.Input[str]]] warnings: The list of warnings returned by EdgeWorker validation
         """
@@ -386,7 +386,7 @@ class EdgeWorker(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[int]:
         """
-        - (Required) Identifies a group to assign to the EdgeWorker ID.
+        (Required) Identifies a group to assign to the EdgeWorker ID.
         """
         return pulumi.get(self, "group_id")
 
@@ -394,7 +394,7 @@ class EdgeWorker(pulumi.CustomResource):
     @pulumi.getter(name="localBundle")
     def local_bundle(self) -> pulumi.Output[Optional[str]]:
         """
-        - (Optional) The path to the EdgeWorkers code bundle.
+        (Optional) The path to the EdgeWorkers code bundle.
         """
         return pulumi.get(self, "local_bundle")
 
@@ -410,7 +410,7 @@ class EdgeWorker(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        - (Required) The name of the EdgeWorker ID.
+        (Required) The name of the EdgeWorker ID.
         """
         return pulumi.get(self, "name")
 
@@ -418,7 +418,7 @@ class EdgeWorker(pulumi.CustomResource):
     @pulumi.getter(name="resourceTierId")
     def resource_tier_id(self) -> pulumi.Output[int]:
         """
-        - (Required) Unique identifier of the resource tier.
+        (Required) Unique identifier of the resource tier.
         """
         return pulumi.get(self, "resource_tier_id")
 

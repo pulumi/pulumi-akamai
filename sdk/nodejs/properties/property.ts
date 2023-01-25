@@ -134,7 +134,7 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly contract!: pulumi.Output<string>;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     public readonly contractId!: pulumi.Output<string>;
     /**
@@ -148,7 +148,7 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly group!: pulumi.Output<string>;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * (Required) A group's unique ID, including the `grp_` prefix.
      */
     public readonly groupId!: pulumi.Output<string>;
     /**
@@ -198,6 +198,8 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly ruleFormat!: pulumi.Output<string>;
     /**
+     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     *
      * @deprecated Rule warnings will not be set in state anymore
      */
     public readonly ruleWarnings!: pulumi.Output<outputs.properties.PropertyRuleWarning[]>;
@@ -295,7 +297,7 @@ export interface PropertyState {
      */
     contract?: pulumi.Input<string>;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**
@@ -309,7 +311,7 @@ export interface PropertyState {
      */
     group?: pulumi.Input<string>;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId?: pulumi.Input<string>;
     /**
@@ -359,6 +361,8 @@ export interface PropertyState {
      */
     ruleFormat?: pulumi.Input<string>;
     /**
+     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     *
      * @deprecated Rule warnings will not be set in state anymore
      */
     ruleWarnings?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRuleWarning>[]>;
@@ -391,7 +395,7 @@ export interface PropertyArgs {
      */
     contract?: pulumi.Input<string>;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**
@@ -405,7 +409,7 @@ export interface PropertyArgs {
      */
     group?: pulumi.Input<string>;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId?: pulumi.Input<string>;
     /**
@@ -439,6 +443,8 @@ export interface PropertyArgs {
      */
     ruleFormat?: pulumi.Input<string>;
     /**
+     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     *
      * @deprecated Rule warnings will not be set in state anymore
      */
     ruleWarnings?: pulumi.Input<pulumi.Input<inputs.properties.PropertyRuleWarning>[]>;

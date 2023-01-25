@@ -148,9 +148,9 @@ def get_property_include(contract_id: Optional[str] = None,
     * `production_version` - The include version currently activated on the production network.
 
 
-    :param str contract_id: - (Required) A contract's unique ID, including the optional `ctr_` prefix.
-    :param str group_id: - (Required) A group's unique ID, including the optional `grp_` prefix.
-    :param str include_id: - (Required) An include's unique ID with the optional `inc_` prefix.
+    :param str contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
+    :param str group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
+    :param str include_id: (Required) An include's unique ID with the optional `inc_` prefix.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -204,8 +204,8 @@ def get_property_include_output(contract_id: Optional[pulumi.Input[str]] = None,
     * `production_version` - The include version currently activated on the production network.
 
 
-    :param str contract_id: - (Required) A contract's unique ID, including the optional `ctr_` prefix.
-    :param str group_id: - (Required) A group's unique ID, including the optional `grp_` prefix.
-    :param str include_id: - (Required) An include's unique ID with the optional `inc_` prefix.
+    :param str contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
+    :param str group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
+    :param str include_id: (Required) An include's unique ID with the optional `inc_` prefix.
     """
     ...

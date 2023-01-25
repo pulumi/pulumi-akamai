@@ -16,98 +16,98 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetCloudletsRequestControlMatchRuleMatchRule {
     /**
-     * @return - (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
+     * @return (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
      * 
      */
     private String allowDeny;
     /**
-     * @return - (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
+     * @return (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
      * 
      */
     private @Nullable Boolean disabled;
     /**
-     * @return - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     private @Nullable Integer end;
     /**
-     * @return - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     private @Nullable List<GetCloudletsRequestControlMatchRuleMatchRuleMatch> matches;
     /**
-     * @return - (Optional) Match on all incoming requests.
+     * @return (Optional) Match on all incoming requests.
      * 
      */
     private @Nullable Boolean matchesAlways;
     /**
-     * @return - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     private @Nullable String name;
     /**
-     * @return - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     private @Nullable Integer start;
     /**
-     * @return - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     private String type;
 
     private GetCloudletsRequestControlMatchRuleMatchRule() {}
     /**
-     * @return - (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
+     * @return (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
      * 
      */
     public String allowDeny() {
         return this.allowDeny;
     }
     /**
-     * @return - (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
+     * @return (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
      * 
      */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
     /**
-     * @return - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
     /**
-     * @return - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     public List<GetCloudletsRequestControlMatchRuleMatchRuleMatch> matches() {
         return this.matches == null ? List.of() : this.matches;
     }
     /**
-     * @return - (Optional) Match on all incoming requests.
+     * @return (Optional) Match on all incoming requests.
      * 
      */
     public Optional<Boolean> matchesAlways() {
         return Optional.ofNullable(this.matchesAlways);
     }
     /**
-     * @return - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
     /**
-     * @return - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     public String type() {

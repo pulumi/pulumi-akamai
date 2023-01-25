@@ -13,13 +13,13 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetCloudletsAudienceSegmentationMatchRuleMatchRuleInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        /// (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
         /// </summary>
         [Input("disabled")]
         public Input<bool>? Disabled { get; set; }
 
         /// <summary>
-        /// - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        /// (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
         /// </summary>
         [Input("end")]
         public Input<int>? End { get; set; }
@@ -31,7 +31,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<Inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettingsInputArgs> ForwardSettings { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+        /// (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
         /// </summary>
         [Input("matchUrl")]
         public Input<string>? MatchUrl { get; set; }
@@ -40,7 +40,7 @@ namespace Pulumi.Akamai.Inputs
         private InputList<Inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchInputArgs>? _matches;
 
         /// <summary>
-        /// - (Optional) A list of conditions to apply to a Cloudlet, including:
+        /// (Optional) A list of conditions to apply to a Cloudlet, including:
         /// </summary>
         public InputList<Inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchInputArgs> Matches
         {
@@ -49,19 +49,19 @@ namespace Pulumi.Akamai.Inputs
         }
 
         /// <summary>
-        /// - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        /// (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        /// (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
         /// </summary>
         [Input("start")]
         public Input<int>? Start { get; set; }
 
         /// <summary>
-        /// - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        /// (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

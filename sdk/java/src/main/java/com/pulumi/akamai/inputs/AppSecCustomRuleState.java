@@ -46,9 +46,17 @@ public final class AppSecCustomRuleState extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.customRule);
     }
 
+    /**
+     * . ID of the new custom rule.
+     * 
+     */
     @Import(name="customRuleId")
     private @Nullable Output<Integer> customRuleId;
 
+    /**
+     * @return . ID of the new custom rule.
+     * 
+     */
     public Optional<Output<Integer>> customRuleId() {
         return Optional.ofNullable(this.customRuleId);
     }
@@ -121,11 +129,23 @@ public final class AppSecCustomRuleState extends com.pulumi.resources.ResourceAr
             return customRule(Output.of(customRule));
         }
 
+        /**
+         * @param customRuleId . ID of the new custom rule.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customRuleId(@Nullable Output<Integer> customRuleId) {
             $.customRuleId = customRuleId;
             return this;
         }
 
+        /**
+         * @param customRuleId . ID of the new custom rule.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customRuleId(Integer customRuleId) {
             return customRuleId(Output.of(customRuleId));
         }

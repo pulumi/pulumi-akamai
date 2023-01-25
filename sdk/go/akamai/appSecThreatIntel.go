@@ -40,7 +40,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecThreatIntel(ctx, "threatIntel", &akamai.AppSecThreatIntelArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //				ThreatIntel:      pulumi.String("on"),
 //			})

@@ -16,7 +16,7 @@ namespace Pulumi.Akamai.Inputs
         public bool? Disabled { get; set; }
 
         /// <summary>
-        /// - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        /// (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
         /// </summary>
         [Input("end")]
         public int? End { get; set; }
@@ -25,7 +25,7 @@ namespace Pulumi.Akamai.Inputs
         private List<Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs>? _forwardSettings;
 
         /// <summary>
-        /// - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
+        /// (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
         /// </summary>
         public List<Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs> ForwardSettings
         {
@@ -34,13 +34,13 @@ namespace Pulumi.Akamai.Inputs
         }
 
         /// <summary>
-        /// - (Optional) An identifier for Akamai internal use only.
+        /// (Optional) An identifier for Akamai internal use only.
         /// </summary>
         [Input("id")]
         public int? Id { get; set; }
 
         /// <summary>
-        /// - (Optional) The URL that the Cloudlet uses to match the incoming request.
+        /// (Optional) The URL that the Cloudlet uses to match the incoming request.
         /// </summary>
         [Input("matchUrl")]
         public string? MatchUrl { get; set; }
@@ -49,7 +49,7 @@ namespace Pulumi.Akamai.Inputs
         private List<Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs>? _matches;
 
         /// <summary>
-        /// - (Optional) A list of conditions to apply to a Cloudlet, including:
+        /// (Optional) A list of conditions to apply to a Cloudlet, including:
         /// </summary>
         public List<Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchArgs> Matches
         {
@@ -58,25 +58,25 @@ namespace Pulumi.Akamai.Inputs
         }
 
         /// <summary>
-        /// - (Optional) Whether the match supports default rules that apply to all requests.
+        /// (Optional) Whether the match supports default rules that apply to all requests.
         /// </summary>
         [Input("matchesAlways")]
         public bool? MatchesAlways { get; set; }
 
         /// <summary>
-        /// - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        /// (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        /// (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
         /// </summary>
         [Input("start")]
         public int? Start { get; set; }
 
         /// <summary>
-        /// - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+        /// (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
         /// </summary>
         [Input("type", required: true)]
         public string Type { get; set; } = null!;

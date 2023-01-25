@@ -49,7 +49,7 @@ namespace Pulumi.Akamai
         private List<Inputs.GetCloudletsRequestControlMatchRuleMatchRuleArgs>? _matchRules;
 
         /// <summary>
-        /// - (Optional) A list of Cloudlet-specific match rules for a policy.
+        /// (Optional) A list of Cloudlet-specific match rules for a policy.
         /// </summary>
         public List<Inputs.GetCloudletsRequestControlMatchRuleMatchRuleArgs> MatchRules
         {
@@ -69,7 +69,7 @@ namespace Pulumi.Akamai
         private InputList<Inputs.GetCloudletsRequestControlMatchRuleMatchRuleInputArgs>? _matchRules;
 
         /// <summary>
-        /// - (Optional) A list of Cloudlet-specific match rules for a policy.
+        /// (Optional) A list of Cloudlet-specific match rules for a policy.
         /// </summary>
         public InputList<Inputs.GetCloudletsRequestControlMatchRuleMatchRuleInputArgs> MatchRules
         {

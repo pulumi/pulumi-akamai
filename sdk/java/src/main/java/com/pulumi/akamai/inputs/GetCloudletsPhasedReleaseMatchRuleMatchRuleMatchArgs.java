@@ -19,14 +19,14 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
     public static final GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs Empty = new GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs();
 
     /**
-     * - (Optional) Whether the match is case sensitive.
+     * (Optional) Whether the match is case sensitive.
      * 
      */
     @Import(name="caseSensitive")
     private @Nullable Output<Boolean> caseSensitive;
 
     /**
-     * @return - (Optional) Whether the match is case sensitive.
+     * @return (Optional) Whether the match is case sensitive.
      * 
      */
     public Optional<Output<Boolean>> caseSensitive() {
@@ -34,14 +34,14 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
     }
 
     /**
-     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     * (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
      * 
      */
     @Import(name="checkIps")
     private @Nullable Output<String> checkIps;
 
     /**
-     * @return - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     * @return (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
      * 
      */
     public Optional<Output<String>> checkIps() {
@@ -49,14 +49,14 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
     }
 
     /**
-     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     * (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
      * 
      */
     @Import(name="matchOperator")
     private @Nullable Output<String> matchOperator;
 
     /**
-     * @return - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     * @return (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
      * 
      */
     public Optional<Output<String>> matchOperator() {
@@ -64,14 +64,14 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
     }
 
     /**
-     * - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     * (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
      * 
      */
     @Import(name="matchType")
     private @Nullable Output<String> matchType;
 
     /**
-     * @return - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     * @return (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
      * 
      */
     public Optional<Output<String>> matchType() {
@@ -79,14 +79,14 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
     }
 
     /**
-     * - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+     * (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
      * 
      */
     @Import(name="matchValue")
     private @Nullable Output<String> matchValue;
 
     /**
-     * @return - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+     * @return (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
      * 
      */
     public Optional<Output<String>> matchValue() {
@@ -94,14 +94,14 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
     }
 
     /**
-     * - (Optional) Whether to negate the match.
+     * (Optional) Whether to negate the match.
      * 
      */
     @Import(name="negate")
     private @Nullable Output<Boolean> negate;
 
     /**
-     * @return - (Optional) Whether to negate the match.
+     * @return (Optional) Whether to negate the match.
      * 
      */
     public Optional<Output<Boolean>> negate() {
@@ -109,14 +109,14 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
     }
 
     /**
-     * - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     * (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
      * 
      */
     @Import(name="objectMatchValues")
     private @Nullable Output<List<GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs>> objectMatchValues;
 
     /**
-     * @return - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     * @return (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
      * 
      */
     public Optional<Output<List<GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueArgs>>> objectMatchValues() {
@@ -154,7 +154,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param caseSensitive - (Optional) Whether the match is case sensitive.
+         * @param caseSensitive (Optional) Whether the match is case sensitive.
          * 
          * @return builder
          * 
@@ -165,7 +165,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param caseSensitive - (Optional) Whether the match is case sensitive.
+         * @param caseSensitive (Optional) Whether the match is case sensitive.
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param checkIps - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+         * @param checkIps (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param checkIps - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+         * @param checkIps (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param matchOperator - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+         * @param matchOperator (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
          * 
          * @return builder
          * 
@@ -207,7 +207,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param matchOperator - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+         * @param matchOperator (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param matchType - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+         * @param matchType (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param matchType - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+         * @param matchType (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param matchValue - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+         * @param matchValue (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
          * 
          * @return builder
          * 
@@ -249,7 +249,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param matchValue - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+         * @param matchValue (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param negate - (Optional) Whether to negate the match.
+         * @param negate (Optional) Whether to negate the match.
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param negate - (Optional) Whether to negate the match.
+         * @param negate (Optional) Whether to negate the match.
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param objectMatchValues - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+         * @param objectMatchValues (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param objectMatchValues - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+         * @param objectMatchValues (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchArgs extends 
         }
 
         /**
-         * @param objectMatchValues - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+         * @param objectMatchValues (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
          * 
          * @return builder
          * 

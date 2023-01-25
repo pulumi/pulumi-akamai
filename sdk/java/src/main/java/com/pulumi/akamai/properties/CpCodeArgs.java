@@ -39,14 +39,14 @@ public final class CpCodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     public Optional<Output<String>> contractId() {
@@ -77,14 +77,14 @@ public final class CpCodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -92,14 +92,14 @@ public final class CpCodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * - (Required) A descriptive label for the CP code. If you&#39;re creating a new CP code, the name can&#39;t include commas, underscores, quotes, or any of these special characters: ^ # %.
+     * (Required) A descriptive label for the CP code. If you&#39;re creating a new CP code, the name can&#39;t include commas, underscores, quotes, or any of these special characters: ^ # %.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return - (Required) A descriptive label for the CP code. If you&#39;re creating a new CP code, the name can&#39;t include commas, underscores, quotes, or any of these special characters: ^ # %.
+     * @return (Required) A descriptive label for the CP code. If you&#39;re creating a new CP code, the name can&#39;t include commas, underscores, quotes, or any of these special characters: ^ # %.
      * 
      */
     public Optional<Output<String>> name() {
@@ -196,7 +196,7 @@ public final class CpCodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -207,7 +207,7 @@ public final class CpCodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class CpCodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class CpCodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class CpCodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name - (Required) A descriptive label for the CP code. If you&#39;re creating a new CP code, the name can&#39;t include commas, underscores, quotes, or any of these special characters: ^ # %.
+         * @param name (Required) A descriptive label for the CP code. If you&#39;re creating a new CP code, the name can&#39;t include commas, underscores, quotes, or any of these special characters: ^ # %.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class CpCodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name - (Required) A descriptive label for the CP code. If you&#39;re creating a new CP code, the name can&#39;t include commas, underscores, quotes, or any of these special characters: ^ # %.
+         * @param name (Required) A descriptive label for the CP code. If you&#39;re creating a new CP code, the name can&#39;t include commas, underscores, quotes, or any of these special characters: ^ # %.
          * 
          * @return builder
          * 

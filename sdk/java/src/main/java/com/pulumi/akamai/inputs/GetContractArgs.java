@@ -39,14 +39,14 @@ public final class GetContractArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * - The unique ID of the group containing the contract, including the  `grp_` prefix.
+     * The unique ID of the group containing the contract, including the  `grp_` prefix.
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return - The unique ID of the group containing the contract, including the  `grp_` prefix.
+     * @return The unique ID of the group containing the contract, including the  `grp_` prefix.
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -124,7 +124,7 @@ public final class GetContractArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param groupId - The unique ID of the group containing the contract, including the  `grp_` prefix.
+         * @param groupId The unique ID of the group containing the contract, including the  `grp_` prefix.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class GetContractArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param groupId - The unique ID of the group containing the contract, including the  `grp_` prefix.
+         * @param groupId The unique ID of the group containing the contract, including the  `grp_` prefix.
          * 
          * @return builder
          * 

@@ -96,7 +96,7 @@ namespace Pulumi.Akamai
         public Output<string> Contract { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
@@ -108,13 +108,13 @@ namespace Pulumi.Akamai
         public Output<string> Group { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+        /// (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -185,7 +185,7 @@ namespace Pulumi.Akamai
         public Input<string>? Contract { get; set; }
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
@@ -197,13 +197,13 @@ namespace Pulumi.Akamai
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
-        /// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+        /// (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -232,7 +232,7 @@ namespace Pulumi.Akamai
         public Input<string>? Contract { get; set; }
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
@@ -244,13 +244,13 @@ namespace Pulumi.Akamai
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
-        /// - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+        /// (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

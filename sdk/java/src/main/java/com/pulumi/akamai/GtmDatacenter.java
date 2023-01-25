@@ -149,12 +149,6 @@ public class GtmDatacenter extends com.pulumi.resources.CustomResource {
     }
     /**
      * A unique identifier for an existing data center in the domain.
-     * * `ping_interval`
-     * * `ping_packet_size`
-     * * `score_penalty`
-     * * `servermonitor_liveness_count`
-     * * `servermonitor_load_count`
-     * * `servermonitor_pool`
      * 
      */
     @Export(name="datacenterId", type=Integer.class, parameters={})
@@ -162,12 +156,6 @@ public class GtmDatacenter extends com.pulumi.resources.CustomResource {
 
     /**
      * @return A unique identifier for an existing data center in the domain.
-     * * `ping_interval`
-     * * `ping_packet_size`
-     * * `score_penalty`
-     * * `servermonitor_liveness_count`
-     * * `servermonitor_load_count`
-     * * `servermonitor_pool`
      * 
      */
     public Output<Integer> datacenterId() {

@@ -118,7 +118,7 @@ namespace Pulumi.Akamai.Properties
         public Output<string> Contract { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
@@ -133,7 +133,7 @@ namespace Pulumi.Akamai.Properties
         public Output<string> Group { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
@@ -198,6 +198,9 @@ namespace Pulumi.Akamai.Properties
         [Output("ruleFormat")]
         public Output<string> RuleFormat { get; private set; } = null!;
 
+        /// <summary>
+        /// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        /// </summary>
         [Output("ruleWarnings")]
         public Output<ImmutableArray<Outputs.PropertyRuleWarning>> RuleWarnings { get; private set; } = null!;
 
@@ -278,7 +281,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Contract { get; set; }
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
@@ -293,7 +296,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
@@ -348,6 +351,10 @@ namespace Pulumi.Akamai.Properties
 
         [Input("ruleWarnings")]
         private InputList<Inputs.PropertyRuleWarningArgs>? _ruleWarnings;
+
+        /// <summary>
+        /// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        /// </summary>
         [Obsolete(@"Rule warnings will not be set in state anymore")]
         public InputList<Inputs.PropertyRuleWarningArgs> RuleWarnings
         {
@@ -388,7 +395,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Contract { get; set; }
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
@@ -403,7 +410,7 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
@@ -488,6 +495,10 @@ namespace Pulumi.Akamai.Properties
 
         [Input("ruleWarnings")]
         private InputList<Inputs.PropertyRuleWarningGetArgs>? _ruleWarnings;
+
+        /// <summary>
+        /// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        /// </summary>
         [Obsolete(@"Rule warnings will not be set in state anymore")]
         public InputList<Inputs.PropertyRuleWarningGetArgs> RuleWarnings
         {

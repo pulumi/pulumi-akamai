@@ -31,7 +31,7 @@ func GetCloudletsAudienceSegmentationMatchRule(ctx *pulumi.Context, args *GetClo
 
 // A collection of arguments for invoking getCloudletsAudienceSegmentationMatchRule.
 type GetCloudletsAudienceSegmentationMatchRuleArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsAudienceSegmentationMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -58,7 +58,7 @@ func GetCloudletsAudienceSegmentationMatchRuleOutput(ctx *pulumi.Context, args G
 
 // A collection of arguments for invoking getCloudletsAudienceSegmentationMatchRule.
 type GetCloudletsAudienceSegmentationMatchRuleOutputArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsAudienceSegmentationMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

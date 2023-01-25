@@ -65,14 +65,14 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     public Optional<Output<String>> contractId() {
@@ -122,14 +122,14 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -318,6 +318,8 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     * 
      * @deprecated
      * Rule warnings will not be set in state anymore
      * 
@@ -327,6 +329,8 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<List<PropertyRuleWarningArgs>> ruleWarnings;
 
     /**
+     * @return (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     * 
      * @deprecated
      * Rule warnings will not be set in state anymore
      * 
@@ -496,7 +500,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -507,7 +511,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -571,7 +575,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
          * 
          * @return builder
          * 
@@ -582,7 +586,7 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
          * 
          * @return builder
          * 
@@ -871,6 +875,8 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param ruleWarnings (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+         * 
          * @return builder
          * 
          * @deprecated
@@ -884,6 +890,8 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param ruleWarnings (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+         * 
          * @return builder
          * 
          * @deprecated
@@ -896,6 +904,8 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param ruleWarnings (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+         * 
          * @return builder
          * 
          * @deprecated

@@ -16,14 +16,14 @@ public final class GetCloudletsVisitorPrioritizationMatchRulePlainArgs extends c
     public static final GetCloudletsVisitorPrioritizationMatchRulePlainArgs Empty = new GetCloudletsVisitorPrioritizationMatchRulePlainArgs();
 
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      * 
      */
     @Import(name="matchRules")
     private @Nullable List<GetCloudletsVisitorPrioritizationMatchRuleMatchRule> matchRules;
 
     /**
-     * @return - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * @return (Optional) A list of Cloudlet-specific match rules for a policy.
      * 
      */
     public Optional<List<GetCloudletsVisitorPrioritizationMatchRuleMatchRule>> matchRules() {
@@ -55,7 +55,7 @@ public final class GetCloudletsVisitorPrioritizationMatchRulePlainArgs extends c
         }
 
         /**
-         * @param matchRules - (Optional) A list of Cloudlet-specific match rules for a policy.
+         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class GetCloudletsVisitorPrioritizationMatchRulePlainArgs extends c
         }
 
         /**
-         * @param matchRules - (Optional) A list of Cloudlet-specific match rules for a policy.
+         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
          * 
          * @return builder
          * 

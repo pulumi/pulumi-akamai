@@ -40,7 +40,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecIPGeoProtection(ctx, "protection", &akamai.AppSecIPGeoProtectionArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //				Enabled:          pulumi.Bool(true),
 //			})

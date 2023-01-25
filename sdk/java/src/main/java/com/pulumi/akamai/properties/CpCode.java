@@ -143,14 +143,14 @@ public class CpCode extends com.pulumi.resources.CustomResource {
         return this.contract;
     }
     /**
-     * - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     @Export(name="contractId", type=String.class, parameters={})
     private Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     public Output<String> contractId() {
@@ -175,28 +175,28 @@ public class CpCode extends com.pulumi.resources.CustomResource {
         return this.group;
     }
     /**
-     * - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     @Export(name="groupId", type=String.class, parameters={})
     private Output<String> groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     public Output<String> groupId() {
         return this.groupId;
     }
     /**
-     * - (Required) A descriptive label for the CP code. If you&#39;re creating a new CP code, the name can&#39;t include commas, underscores, quotes, or any of these special characters: ^ # %.
+     * (Required) A descriptive label for the CP code. If you&#39;re creating a new CP code, the name can&#39;t include commas, underscores, quotes, or any of these special characters: ^ # %.
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return - (Required) A descriptive label for the CP code. If you&#39;re creating a new CP code, the name can&#39;t include commas, underscores, quotes, or any of these special characters: ^ # %.
+     * @return (Required) A descriptive label for the CP code. If you&#39;re creating a new CP code, the name can&#39;t include commas, underscores, quotes, or any of these special characters: ^ # %.
      * 
      */
     public Output<String> name() {

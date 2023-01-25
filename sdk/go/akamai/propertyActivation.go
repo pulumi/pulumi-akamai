@@ -103,13 +103,15 @@ type PropertyActivation struct {
 	Network pulumi.StringPtrOutput `pulumi:"network"`
 	// A log message you can assign to the activation request.
 	Note pulumi.StringPtrOutput `pulumi:"note"`
-	// - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+	// (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "property" has been deprecated.
 	Property pulumi.StringOutput `pulumi:"property"`
-	// - (Required) The property's unique identifier, including the `prp_` prefix.
+	// (Required) The property's unique identifier, including the `prp_` prefix.
 	PropertyId pulumi.StringOutput                    `pulumi:"propertyId"`
 	RuleErrors PropertyActivationRuleErrorArrayOutput `pulumi:"ruleErrors"`
+	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyActivationRuleWarningArrayOutput `pulumi:"ruleWarnings"`
 	// The property version's activation status on the selected network.
@@ -173,13 +175,15 @@ type propertyActivationState struct {
 	Network *string `pulumi:"network"`
 	// A log message you can assign to the activation request.
 	Note *string `pulumi:"note"`
-	// - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+	// (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "property" has been deprecated.
 	Property *string `pulumi:"property"`
-	// - (Required) The property's unique identifier, including the `prp_` prefix.
+	// (Required) The property's unique identifier, including the `prp_` prefix.
 	PropertyId *string                       `pulumi:"propertyId"`
 	RuleErrors []PropertyActivationRuleError `pulumi:"ruleErrors"`
+	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings []PropertyActivationRuleWarning `pulumi:"ruleWarnings"`
 	// The property version's activation status on the selected network.
@@ -203,13 +207,15 @@ type PropertyActivationState struct {
 	Network pulumi.StringPtrInput
 	// A log message you can assign to the activation request.
 	Note pulumi.StringPtrInput
-	// - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+	// (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "property" has been deprecated.
 	Property pulumi.StringPtrInput
-	// - (Required) The property's unique identifier, including the `prp_` prefix.
+	// (Required) The property's unique identifier, including the `prp_` prefix.
 	PropertyId pulumi.StringPtrInput
 	RuleErrors PropertyActivationRuleErrorArrayInput
+	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyActivationRuleWarningArrayInput
 	// The property version's activation status on the selected network.
@@ -235,13 +241,15 @@ type propertyActivationArgs struct {
 	Network *string `pulumi:"network"`
 	// A log message you can assign to the activation request.
 	Note *string `pulumi:"note"`
-	// - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+	// (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "property" has been deprecated.
 	Property *string `pulumi:"property"`
-	// - (Required) The property's unique identifier, including the `prp_` prefix.
+	// (Required) The property's unique identifier, including the `prp_` prefix.
 	PropertyId *string                       `pulumi:"propertyId"`
 	RuleErrors []PropertyActivationRuleError `pulumi:"ruleErrors"`
+	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings []PropertyActivationRuleWarning `pulumi:"ruleWarnings"`
 	// The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `Property` resource labeled `example`.
@@ -260,13 +268,15 @@ type PropertyActivationArgs struct {
 	Network pulumi.StringPtrInput
 	// A log message you can assign to the activation request.
 	Note pulumi.StringPtrInput
-	// - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+	// (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
 	//
 	// Deprecated: The setting "property" has been deprecated.
 	Property pulumi.StringPtrInput
-	// - (Required) The property's unique identifier, including the `prp_` prefix.
+	// (Required) The property's unique identifier, including the `prp_` prefix.
 	PropertyId pulumi.StringPtrInput
 	RuleErrors PropertyActivationRuleErrorArrayInput
+	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyActivationRuleWarningArrayInput
 	// The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latestVersion` attribute in the `Property` resource labeled `example`.
@@ -390,14 +400,14 @@ func (o PropertyActivationOutput) Note() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringPtrOutput { return v.Note }).(pulumi.StringPtrOutput)
 }
 
-// - (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
+// (Deprecated) Replaced by `propertyId`. Maintained for legacy purposes.
 //
 // Deprecated: The setting "property" has been deprecated.
 func (o PropertyActivationOutput) Property() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.Property }).(pulumi.StringOutput)
 }
 
-// - (Required) The property's unique identifier, including the `prp_` prefix.
+// (Required) The property's unique identifier, including the `prp_` prefix.
 func (o PropertyActivationOutput) PropertyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.PropertyId }).(pulumi.StringOutput)
 }
@@ -406,6 +416,8 @@ func (o PropertyActivationOutput) RuleErrors() PropertyActivationRuleErrorArrayO
 	return o.ApplyT(func(v *PropertyActivation) PropertyActivationRuleErrorArrayOutput { return v.RuleErrors }).(PropertyActivationRuleErrorArrayOutput)
 }
 
+// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+//
 // Deprecated: Rule warnings will not be set in state anymore
 func (o PropertyActivationOutput) RuleWarnings() PropertyActivationRuleWarningArrayOutput {
 	return o.ApplyT(func(v *PropertyActivation) PropertyActivationRuleWarningArrayOutput { return v.RuleWarnings }).(PropertyActivationRuleWarningArrayOutput)

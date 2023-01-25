@@ -17,14 +17,14 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
     public static final GetPropertyRulesArgs Empty = new GetPropertyRulesArgs();
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     public Optional<Output<String>> contractId() {
@@ -32,14 +32,14 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -47,14 +47,14 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * - (Required) A property&#39;s unique ID, including the `prp_` prefix.
+     * (Required) A property&#39;s unique ID, including the `prp_` prefix.
      * 
      */
     @Import(name="propertyId", required=true)
     private Output<String> propertyId;
 
     /**
-     * @return - (Required) A property&#39;s unique ID, including the `prp_` prefix.
+     * @return (Required) A property&#39;s unique ID, including the `prp_` prefix.
      * 
      */
     public Output<String> propertyId() {
@@ -69,14 +69,14 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * - (Optional) The version to return. Returns the latest version by default.
+     * (Optional) The version to return. Returns the latest version by default.
      * 
      */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
     /**
-     * @return - (Optional) The version to return. Returns the latest version by default.
+     * @return (Optional) The version to return. Returns the latest version by default.
      * 
      */
     public Optional<Output<Integer>> version() {
@@ -112,7 +112,7 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -123,7 +123,7 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
          * 
          * @return builder
          * 
@@ -144,7 +144,7 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param propertyId - (Required) A property&#39;s unique ID, including the `prp_` prefix.
+         * @param propertyId (Required) A property&#39;s unique ID, including the `prp_` prefix.
          * 
          * @return builder
          * 
@@ -165,7 +165,7 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param propertyId - (Required) A property&#39;s unique ID, including the `prp_` prefix.
+         * @param propertyId (Required) A property&#39;s unique ID, including the `prp_` prefix.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param version - (Optional) The version to return. Returns the latest version by default.
+         * @param version (Optional) The version to return. Returns the latest version by default.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param version - (Optional) The version to return. Returns the latest version by default.
+         * @param version (Optional) The version to return. Returns the latest version by default.
          * 
          * @return builder
          * 

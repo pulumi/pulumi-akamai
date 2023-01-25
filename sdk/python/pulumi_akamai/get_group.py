@@ -111,7 +111,7 @@ def get_group(contract: Optional[str] = None,
 
 
     :param str contract: Replaced by `contract_id`. Maintained for legacy purposes.
-    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
     :param str group_name: The group name.
     :param str name: Replaced by `group_name`. Maintained for legacy purposes.
     """
@@ -155,7 +155,7 @@ def get_group_output(contract: Optional[pulumi.Input[Optional[str]]] = None,
 
 
     :param str contract: Replaced by `contract_id`. Maintained for legacy purposes.
-    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
     :param str group_name: The group name.
     :param str name: Replaced by `group_name`. Maintained for legacy purposes.
     """

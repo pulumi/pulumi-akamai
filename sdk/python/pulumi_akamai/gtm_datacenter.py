@@ -261,12 +261,6 @@ class _GtmDatacenterState:
         :param pulumi.Input[str] continent: A two-letter code that specifies the continent where the data center maps to.
         :param pulumi.Input[str] country: A two-letter ISO 3166 country code that specifies the country where the data center maps to.
         :param pulumi.Input[int] datacenter_id: A unique identifier for an existing data center in the domain.
-               * `ping_interval`
-               * `ping_packet_size`
-               * `score_penalty`
-               * `servermonitor_liveness_count`
-               * `servermonitor_load_count`
-               * `servermonitor_pool`
         :param pulumi.Input['GtmDatacenterDefaultLoadObjectArgs'] default_load_object: Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
         :param pulumi.Input[str] domain: The GTM domain name for the data center.
         :param pulumi.Input[float] latitude: Specifies the geographical latitude of the data center's position. See also longitude within this object.
@@ -396,12 +390,6 @@ class _GtmDatacenterState:
     def datacenter_id(self) -> Optional[pulumi.Input[int]]:
         """
         A unique identifier for an existing data center in the domain.
-        * `ping_interval`
-        * `ping_packet_size`
-        * `score_penalty`
-        * `servermonitor_liveness_count`
-        * `servermonitor_load_count`
-        * `servermonitor_pool`
         """
         return pulumi.get(self, "datacenter_id")
 
@@ -748,12 +736,6 @@ class GtmDatacenter(pulumi.CustomResource):
         :param pulumi.Input[str] continent: A two-letter code that specifies the continent where the data center maps to.
         :param pulumi.Input[str] country: A two-letter ISO 3166 country code that specifies the country where the data center maps to.
         :param pulumi.Input[int] datacenter_id: A unique identifier for an existing data center in the domain.
-               * `ping_interval`
-               * `ping_packet_size`
-               * `score_penalty`
-               * `servermonitor_liveness_count`
-               * `servermonitor_load_count`
-               * `servermonitor_pool`
         :param pulumi.Input[pulumi.InputType['GtmDatacenterDefaultLoadObjectArgs']] default_load_object: Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
         :param pulumi.Input[str] domain: The GTM domain name for the data center.
         :param pulumi.Input[float] latitude: Specifies the geographical latitude of the data center's position. See also longitude within this object.
@@ -843,12 +825,6 @@ class GtmDatacenter(pulumi.CustomResource):
     def datacenter_id(self) -> pulumi.Output[int]:
         """
         A unique identifier for an existing data center in the domain.
-        * `ping_interval`
-        * `ping_packet_size`
-        * `score_penalty`
-        * `servermonitor_liveness_count`
-        * `servermonitor_load_count`
-        * `servermonitor_pool`
         """
         return pulumi.get(self, "datacenter_id")
 

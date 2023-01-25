@@ -130,9 +130,9 @@ def get_property_hostnames(contract_id: Optional[str] = None,
     In your DNS configuration, create a CNAME record and map the `cert_status.hostname` value to the `cert_status.target` value.
 
 
-    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
-    :param str group_id: - (Required) A group's unique ID, including the `grp_` prefix.
-    :param str property_id: - (Required) A property's unique ID, including the `prp_` prefix.
+    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group_id: (Required) A group's unique ID, including the `grp_` prefix.
+    :param str property_id: (Required) A property's unique ID, including the `prp_` prefix.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -191,8 +191,8 @@ def get_property_hostnames_output(contract_id: Optional[pulumi.Input[str]] = Non
     In your DNS configuration, create a CNAME record and map the `cert_status.hostname` value to the `cert_status.target` value.
 
 
-    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
-    :param str group_id: - (Required) A group's unique ID, including the `grp_` prefix.
-    :param str property_id: - (Required) A property's unique ID, including the `prp_` prefix.
+    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group_id: (Required) A group's unique ID, including the `grp_` prefix.
+    :param str property_id: (Required) A property's unique ID, including the `prp_` prefix.
     """
     ...

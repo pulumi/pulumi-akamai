@@ -59,6 +59,7 @@ class _AppSecCustomRuleState:
         Input properties used for looking up and filtering AppSecCustomRule resources.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom rule being modified.
         :param pulumi.Input[str] custom_rule: . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
+        :param pulumi.Input[int] custom_rule_id: . ID of the new custom rule.
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -94,6 +95,9 @@ class _AppSecCustomRuleState:
     @property
     @pulumi.getter(name="customRuleId")
     def custom_rule_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        . ID of the new custom rule.
+        """
         return pulumi.get(self, "custom_rule_id")
 
     @custom_rule_id.setter
@@ -189,6 +193,7 @@ class AppSecCustomRule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the custom rule being modified.
         :param pulumi.Input[str] custom_rule: . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
+        :param pulumi.Input[int] custom_rule_id: . ID of the new custom rule.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -218,5 +223,8 @@ class AppSecCustomRule(pulumi.CustomResource):
     @property
     @pulumi.getter(name="customRuleId")
     def custom_rule_id(self) -> pulumi.Output[int]:
+        """
+        . ID of the new custom rule.
+        """
         return pulumi.get(self, "custom_rule_id")
 

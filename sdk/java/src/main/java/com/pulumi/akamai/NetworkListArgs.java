@@ -67,7 +67,7 @@ public final class NetworkListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or
      * removed from an existing list.
      * 
      */
@@ -75,7 +75,7 @@ public final class NetworkListArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<List<String>> lists;
 
     /**
-     * @return : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+     * @return A list of IP addresses or locations to be included in the list, added to an existing list, or
      * removed from an existing list.
      * 
      */
@@ -226,7 +226,7 @@ public final class NetworkListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lists : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+         * @param lists A list of IP addresses or locations to be included in the list, added to an existing list, or
          * removed from an existing list.
          * 
          * @return builder
@@ -238,7 +238,7 @@ public final class NetworkListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lists : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+         * @param lists A list of IP addresses or locations to be included in the list, added to an existing list, or
          * removed from an existing list.
          * 
          * @return builder
@@ -249,7 +249,7 @@ public final class NetworkListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lists : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+         * @param lists A list of IP addresses or locations to be included in the list, added to an existing list, or
          * removed from an existing list.
          * 
          * @return builder

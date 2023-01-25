@@ -110,6 +110,7 @@ def get_app_sec_hostname_coverage_match_targets(config_id: Optional[int] = None,
     - `output_text`. Tabular report of the coverage information.
 
 
+    :param int config_id: . (Required). Unique identifier of the security configuration associated with the hostname.
     :param str hostname: . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
     """
     __args__ = dict()
@@ -157,6 +158,7 @@ def get_app_sec_hostname_coverage_match_targets_output(config_id: Optional[pulum
     - `output_text`. Tabular report of the coverage information.
 
 
+    :param int config_id: . (Required). Unique identifier of the security configuration associated with the hostname.
     :param str hostname: . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
     """
     ...

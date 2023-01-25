@@ -14,14 +14,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardS
     public static final GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs Empty = new GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs();
 
     /**
-     * - (Required) The ID of the Conditional Origin the requests are forwarded to.
+     * (Required) The ID of the Conditional Origin the requests are forwarded to.
      * 
      */
     @Import(name="originId", required=true)
     private Output<String> originId;
 
     /**
-     * @return - (Required) The ID of the Conditional Origin the requests are forwarded to.
+     * @return (Required) The ID of the Conditional Origin the requests are forwarded to.
      * 
      */
     public Output<String> originId() {
@@ -53,7 +53,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardS
         }
 
         /**
-         * @param originId - (Required) The ID of the Conditional Origin the requests are forwarded to.
+         * @param originId (Required) The ID of the Conditional Origin the requests are forwarded to.
          * 
          * @return builder
          * 
@@ -64,7 +64,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardS
         }
 
         /**
-         * @param originId - (Required) The ID of the Conditional Origin the requests are forwarded to.
+         * @param originId (Required) The ID of the Conditional Origin the requests are forwarded to.
          * 
          * @return builder
          * 

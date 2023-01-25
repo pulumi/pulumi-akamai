@@ -72,11 +72,11 @@ export function getCloudletsPolicy(args: GetCloudletsPolicyArgs, opts?: pulumi.I
  */
 export interface GetCloudletsPolicyArgs {
     /**
-     * - (Required) An integer identifier that is associated with all versions of a policy.
+     * (Required) An integer identifier that is associated with all versions of a policy.
      */
     policyId: number;
     /**
-     * - (Optional) The version number of a policy.
+     * (Optional) The version number of a policy.
      */
     version?: number;
 }
@@ -166,11 +166,11 @@ export function getCloudletsPolicyOutput(args: GetCloudletsPolicyOutputArgs, opt
  */
 export interface GetCloudletsPolicyOutputArgs {
     /**
-     * - (Required) An integer identifier that is associated with all versions of a policy.
+     * (Required) An integer identifier that is associated with all versions of a policy.
      */
     policyId: pulumi.Input<number>;
     /**
-     * - (Optional) The version number of a policy.
+     * (Optional) The version number of a policy.
      */
     version?: pulumi.Input<number>;
 }

@@ -59,15 +59,15 @@ type EdgeKv struct {
 
 	// Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
 	GeoLocation pulumi.StringPtrOutput `pulumi:"geoLocation"`
-	// - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+	// (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
 	GroupId pulumi.IntOutput `pulumi:"groupId"`
 	// List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
 	InitialDatas EdgeKvInitialDataArrayOutput `pulumi:"initialDatas"`
-	// - (Required) The name of the namespace.
+	// (Required) The name of the namespace.
 	NamespaceName pulumi.StringOutput `pulumi:"namespaceName"`
 	// The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
 	Network pulumi.StringOutput `pulumi:"network"`
-	// - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+	// (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
 	RetentionInSeconds pulumi.IntOutput `pulumi:"retentionInSeconds"`
 }
 
@@ -114,30 +114,30 @@ func GetEdgeKv(ctx *pulumi.Context,
 type edgeKvState struct {
 	// Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
 	GeoLocation *string `pulumi:"geoLocation"`
-	// - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+	// (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
 	GroupId *int `pulumi:"groupId"`
 	// List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
 	InitialDatas []EdgeKvInitialData `pulumi:"initialDatas"`
-	// - (Required) The name of the namespace.
+	// (Required) The name of the namespace.
 	NamespaceName *string `pulumi:"namespaceName"`
 	// The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
 	Network *string `pulumi:"network"`
-	// - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+	// (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
 	RetentionInSeconds *int `pulumi:"retentionInSeconds"`
 }
 
 type EdgeKvState struct {
 	// Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
 	GeoLocation pulumi.StringPtrInput
-	// - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+	// (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
 	GroupId pulumi.IntPtrInput
 	// List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
 	InitialDatas EdgeKvInitialDataArrayInput
-	// - (Required) The name of the namespace.
+	// (Required) The name of the namespace.
 	NamespaceName pulumi.StringPtrInput
 	// The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
 	Network pulumi.StringPtrInput
-	// - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+	// (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
 	RetentionInSeconds pulumi.IntPtrInput
 }
 
@@ -148,15 +148,15 @@ func (EdgeKvState) ElementType() reflect.Type {
 type edgeKvArgs struct {
 	// Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
 	GeoLocation *string `pulumi:"geoLocation"`
-	// - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+	// (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
 	GroupId int `pulumi:"groupId"`
 	// List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
 	InitialDatas []EdgeKvInitialData `pulumi:"initialDatas"`
-	// - (Required) The name of the namespace.
+	// (Required) The name of the namespace.
 	NamespaceName string `pulumi:"namespaceName"`
 	// The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
 	Network string `pulumi:"network"`
-	// - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+	// (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
 	RetentionInSeconds int `pulumi:"retentionInSeconds"`
 }
 
@@ -164,15 +164,15 @@ type edgeKvArgs struct {
 type EdgeKvArgs struct {
 	// Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
 	GeoLocation pulumi.StringPtrInput
-	// - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+	// (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
 	GroupId pulumi.IntInput
 	// List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
 	InitialDatas EdgeKvInitialDataArrayInput
-	// - (Required) The name of the namespace.
+	// (Required) The name of the namespace.
 	NamespaceName pulumi.StringInput
 	// The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
 	Network pulumi.StringInput
-	// - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+	// (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
 	RetentionInSeconds pulumi.IntInput
 }
 
@@ -268,7 +268,7 @@ func (o EdgeKvOutput) GeoLocation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EdgeKv) pulumi.StringPtrOutput { return v.GeoLocation }).(pulumi.StringPtrOutput)
 }
 
-// - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+// (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
 func (o EdgeKvOutput) GroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v *EdgeKv) pulumi.IntOutput { return v.GroupId }).(pulumi.IntOutput)
 }
@@ -278,7 +278,7 @@ func (o EdgeKvOutput) InitialDatas() EdgeKvInitialDataArrayOutput {
 	return o.ApplyT(func(v *EdgeKv) EdgeKvInitialDataArrayOutput { return v.InitialDatas }).(EdgeKvInitialDataArrayOutput)
 }
 
-// - (Required) The name of the namespace.
+// (Required) The name of the namespace.
 func (o EdgeKvOutput) NamespaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeKv) pulumi.StringOutput { return v.NamespaceName }).(pulumi.StringOutput)
 }
@@ -288,7 +288,7 @@ func (o EdgeKvOutput) Network() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeKv) pulumi.StringOutput { return v.Network }).(pulumi.StringOutput)
 }
 
-// - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+// (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
 func (o EdgeKvOutput) RetentionInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v *EdgeKv) pulumi.IntOutput { return v.RetentionInSeconds }).(pulumi.IntOutput)
 }

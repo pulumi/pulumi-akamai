@@ -19,14 +19,14 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
     public static final GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs Empty = new GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueArgs();
 
     /**
-     * - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     public Optional<Output<String>> name() {
@@ -34,14 +34,14 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
     }
 
     /**
-     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     * (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
      * 
      */
     @Import(name="nameCaseSensitive")
     private @Nullable Output<Boolean> nameCaseSensitive;
 
     /**
-     * @return - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     * @return (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
      * 
      */
     public Optional<Output<Boolean>> nameCaseSensitive() {
@@ -49,14 +49,14 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
     }
 
     /**
-     * - (Optional) Whether the `name` argument includes wildcards.
+     * (Optional) Whether the `name` argument includes wildcards.
      * 
      */
     @Import(name="nameHasWildcard")
     private @Nullable Output<Boolean> nameHasWildcard;
 
     /**
-     * @return - (Optional) Whether the `name` argument includes wildcards.
+     * @return (Optional) Whether the `name` argument includes wildcards.
      * 
      */
     public Optional<Output<Boolean>> nameHasWildcard() {
@@ -64,14 +64,14 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
     }
 
     /**
-     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     * (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
      * 
      */
     @Import(name="options")
     private @Nullable Output<GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs> options;
 
     /**
-     * @return - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     * @return (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
      * 
      */
     public Optional<Output<GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs>> options() {
@@ -79,14 +79,14 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
     }
 
     /**
-     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     public Output<String> type() {
@@ -94,14 +94,14 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
     }
 
     /**
-     * - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+     * @return (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -138,7 +138,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param name - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param name - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param nameCaseSensitive - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+         * @param nameCaseSensitive (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param nameCaseSensitive - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+         * @param nameCaseSensitive (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param nameHasWildcard - (Optional) Whether the `name` argument includes wildcards.
+         * @param nameHasWildcard (Optional) Whether the `name` argument includes wildcards.
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param nameHasWildcard - (Optional) Whether the `name` argument includes wildcards.
+         * @param nameHasWildcard (Optional) Whether the `name` argument includes wildcards.
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param options - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+         * @param options (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param options - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+         * @param options (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param type - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+         * @param type (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param type - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+         * @param type (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param values - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+         * @param values (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param values - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+         * @param values (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchV
         }
 
         /**
-         * @param values - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+         * @param values (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
          * 
          * @return builder
          * 

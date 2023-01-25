@@ -96,7 +96,7 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+     * (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
      * 
      * @deprecated
      * The setting &#34;property&#34; has been deprecated.
@@ -107,7 +107,7 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> property;
 
     /**
-     * @return - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+     * @return (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
      * 
      * @deprecated
      * The setting &#34;property&#34; has been deprecated.
@@ -119,14 +119,14 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * - (Required) The property&#39;s unique identifier, including the `prp_` prefix.
+     * (Required) The property&#39;s unique identifier, including the `prp_` prefix.
      * 
      */
     @Import(name="propertyId")
     private @Nullable Output<String> propertyId;
 
     /**
-     * @return - (Required) The property&#39;s unique identifier, including the `prp_` prefix.
+     * @return (Required) The property&#39;s unique identifier, including the `prp_` prefix.
      * 
      */
     public Optional<Output<String>> propertyId() {
@@ -141,6 +141,8 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     * 
      * @deprecated
      * Rule warnings will not be set in state anymore
      * 
@@ -150,6 +152,8 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
     private @Nullable Output<List<PropertyActivationRuleWarningArgs>> ruleWarnings;
 
     /**
+     * @return (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     * 
      * @deprecated
      * Rule warnings will not be set in state anymore
      * 
@@ -323,7 +327,7 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param property - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+         * @param property (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
          * 
          * @return builder
          * 
@@ -338,7 +342,7 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param property - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+         * @param property (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
          * 
          * @return builder
          * 
@@ -352,7 +356,7 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param propertyId - (Required) The property&#39;s unique identifier, including the `prp_` prefix.
+         * @param propertyId (Required) The property&#39;s unique identifier, including the `prp_` prefix.
          * 
          * @return builder
          * 
@@ -363,7 +367,7 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param propertyId - (Required) The property&#39;s unique identifier, including the `prp_` prefix.
+         * @param propertyId (Required) The property&#39;s unique identifier, including the `prp_` prefix.
          * 
          * @return builder
          * 
@@ -386,6 +390,8 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param ruleWarnings (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+         * 
          * @return builder
          * 
          * @deprecated
@@ -399,6 +405,8 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param ruleWarnings (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+         * 
          * @return builder
          * 
          * @deprecated
@@ -411,6 +419,8 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param ruleWarnings (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+         * 
          * @return builder
          * 
          * @deprecated

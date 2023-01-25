@@ -99,13 +99,13 @@ namespace Pulumi.Akamai.Properties
     public sealed class GetPropertyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) The property name.
+        /// (Required) The property name.
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) The version of the property whose ID you want to list.
+        /// (Optional) The version of the property whose ID you want to list.
         /// </summary>
         [Input("version")]
         public int? Version { get; set; }
@@ -119,13 +119,13 @@ namespace Pulumi.Akamai.Properties
     public sealed class GetPropertyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) The property name.
+        /// (Required) The property name.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) The version of the property whose ID you want to list.
+        /// (Optional) The version of the property whose ID you want to list.
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }

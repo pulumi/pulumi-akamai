@@ -57,7 +57,7 @@ namespace Pulumi.Akamai
         public Output<string?> GeoLocation { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        /// (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
         /// </summary>
         [Output("groupId")]
         public Output<int> GroupId { get; private set; } = null!;
@@ -69,7 +69,7 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<Outputs.EdgeKvInitialData>> InitialDatas { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The name of the namespace.
+        /// (Required) The name of the namespace.
         /// </summary>
         [Output("namespaceName")]
         public Output<string> NamespaceName { get; private set; } = null!;
@@ -81,7 +81,7 @@ namespace Pulumi.Akamai
         public Output<string> Network { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        /// (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
         /// </summary>
         [Output("retentionInSeconds")]
         public Output<int> RetentionInSeconds { get; private set; } = null!;
@@ -139,7 +139,7 @@ namespace Pulumi.Akamai
         public Input<string>? GeoLocation { get; set; }
 
         /// <summary>
-        /// - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        /// (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<int> GroupId { get; set; } = null!;
@@ -157,7 +157,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// - (Required) The name of the namespace.
+        /// (Required) The name of the namespace.
         /// </summary>
         [Input("namespaceName", required: true)]
         public Input<string> NamespaceName { get; set; } = null!;
@@ -169,7 +169,7 @@ namespace Pulumi.Akamai
         public Input<string> Network { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        /// (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
         /// </summary>
         [Input("retentionInSeconds", required: true)]
         public Input<int> RetentionInSeconds { get; set; } = null!;
@@ -189,7 +189,7 @@ namespace Pulumi.Akamai
         public Input<string>? GeoLocation { get; set; }
 
         /// <summary>
-        /// - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        /// (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
         /// </summary>
         [Input("groupId")]
         public Input<int>? GroupId { get; set; }
@@ -207,7 +207,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// - (Required) The name of the namespace.
+        /// (Required) The name of the namespace.
         /// </summary>
         [Input("namespaceName")]
         public Input<string>? NamespaceName { get; set; }
@@ -219,7 +219,7 @@ namespace Pulumi.Akamai
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        /// (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
         /// </summary>
         [Input("retentionInSeconds")]
         public Input<int>? RetentionInSeconds { get; set; }

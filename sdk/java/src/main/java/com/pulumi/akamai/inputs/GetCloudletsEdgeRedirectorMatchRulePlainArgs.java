@@ -16,14 +16,14 @@ public final class GetCloudletsEdgeRedirectorMatchRulePlainArgs extends com.pulu
     public static final GetCloudletsEdgeRedirectorMatchRulePlainArgs Empty = new GetCloudletsEdgeRedirectorMatchRulePlainArgs();
 
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      * 
      */
     @Import(name="matchRules")
     private @Nullable List<GetCloudletsEdgeRedirectorMatchRuleMatchRule> matchRules;
 
     /**
-     * @return - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * @return (Optional) A list of Cloudlet-specific match rules for a policy.
      * 
      */
     public Optional<List<GetCloudletsEdgeRedirectorMatchRuleMatchRule>> matchRules() {
@@ -55,7 +55,7 @@ public final class GetCloudletsEdgeRedirectorMatchRulePlainArgs extends com.pulu
         }
 
         /**
-         * @param matchRules - (Optional) A list of Cloudlet-specific match rules for a policy.
+         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class GetCloudletsEdgeRedirectorMatchRulePlainArgs extends com.pulu
         }
 
         /**
-         * @param matchRules - (Optional) A list of Cloudlet-specific match rules for a policy.
+         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
          * 
          * @return builder
          * 

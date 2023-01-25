@@ -101,7 +101,7 @@ export class CpCode extends pulumi.CustomResource {
      */
     public readonly contract!: pulumi.Output<string>;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     public readonly contractId!: pulumi.Output<string>;
     /**
@@ -111,11 +111,11 @@ export class CpCode extends pulumi.CustomResource {
      */
     public readonly group!: pulumi.Output<string>;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * (Required) A group's unique ID, including the `grp_` prefix.
      */
     public readonly groupId!: pulumi.Output<string>;
     /**
-     * - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+     * (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -175,7 +175,7 @@ export interface CpCodeState {
      */
     contract?: pulumi.Input<string>;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**
@@ -185,11 +185,11 @@ export interface CpCodeState {
      */
     group?: pulumi.Input<string>;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId?: pulumi.Input<string>;
     /**
-     * - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+     * (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
      */
     name?: pulumi.Input<string>;
     /**
@@ -212,7 +212,7 @@ export interface CpCodeArgs {
      */
     contract?: pulumi.Input<string>;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**
@@ -222,11 +222,11 @@ export interface CpCodeArgs {
      */
     group?: pulumi.Input<string>;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId?: pulumi.Input<string>;
     /**
-     * - (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
+     * (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
      */
     name?: pulumi.Input<string>;
     /**

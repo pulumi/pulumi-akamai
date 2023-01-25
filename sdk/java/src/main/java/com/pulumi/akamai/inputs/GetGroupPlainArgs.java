@@ -38,14 +38,14 @@ public final class GetGroupPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     @Import(name="contractId")
     private @Nullable String contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     public Optional<String> contractId() {
@@ -133,7 +133,7 @@ public final class GetGroupPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
          * 
          * @return builder
          * 

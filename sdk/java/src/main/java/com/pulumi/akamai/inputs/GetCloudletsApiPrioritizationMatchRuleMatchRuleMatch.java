@@ -18,14 +18,14 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
     public static final GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch Empty = new GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch();
 
     /**
-     * - (Optional) Whether the match is case sensitive.
+     * (Optional) Whether the match is case sensitive.
      * 
      */
     @Import(name="caseSensitive")
     private @Nullable Boolean caseSensitive;
 
     /**
-     * @return - (Optional) Whether the match is case sensitive.
+     * @return (Optional) Whether the match is case sensitive.
      * 
      */
     public Optional<Boolean> caseSensitive() {
@@ -33,14 +33,14 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
     }
 
     /**
-     * - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     * (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
      * 
      */
     @Import(name="checkIps")
     private @Nullable String checkIps;
 
     /**
-     * @return - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     * @return (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
      * 
      */
     public Optional<String> checkIps() {
@@ -48,14 +48,14 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
     }
 
     /**
-     * - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     * (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
      * 
      */
     @Import(name="matchOperator")
     private @Nullable String matchOperator;
 
     /**
-     * @return - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     * @return (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
      * 
      */
     public Optional<String> matchOperator() {
@@ -63,14 +63,14 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
     }
 
     /**
-     * - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     * (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
      * 
      */
     @Import(name="matchType")
     private @Nullable String matchType;
 
     /**
-     * @return - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     * @return (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
      * 
      */
     public Optional<String> matchType() {
@@ -78,14 +78,14 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
     }
 
     /**
-     * - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+     * (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
      * 
      */
     @Import(name="matchValue")
     private @Nullable String matchValue;
 
     /**
-     * @return - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+     * @return (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
      * 
      */
     public Optional<String> matchValue() {
@@ -93,14 +93,14 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
     }
 
     /**
-     * - (Optional) Whether to negate the match.
+     * (Optional) Whether to negate the match.
      * 
      */
     @Import(name="negate")
     private @Nullable Boolean negate;
 
     /**
-     * @return - (Optional) Whether to negate the match.
+     * @return (Optional) Whether to negate the match.
      * 
      */
     public Optional<Boolean> negate() {
@@ -108,14 +108,14 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
     }
 
     /**
-     * - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     * (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
      * 
      */
     @Import(name="objectMatchValues")
     private @Nullable List<GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValue> objectMatchValues;
 
     /**
-     * @return - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     * @return (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
      * 
      */
     public Optional<List<GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValue>> objectMatchValues() {
@@ -153,7 +153,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
         }
 
         /**
-         * @param caseSensitive - (Optional) Whether the match is case sensitive.
+         * @param caseSensitive (Optional) Whether the match is case sensitive.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
         }
 
         /**
-         * @param checkIps - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+         * @param checkIps (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
         }
 
         /**
-         * @param matchOperator - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+         * @param matchOperator (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
         }
 
         /**
-         * @param matchType - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+         * @param matchType (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
          * 
          * @return builder
          * 
@@ -197,7 +197,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
         }
 
         /**
-         * @param matchValue - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+         * @param matchValue (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
          * 
          * @return builder
          * 
@@ -208,7 +208,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
         }
 
         /**
-         * @param negate - (Optional) Whether to negate the match.
+         * @param negate (Optional) Whether to negate the match.
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
         }
 
         /**
-         * @param objectMatchValues - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+         * @param objectMatchValues (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch extends 
         }
 
         /**
-         * @param objectMatchValues - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+         * @param objectMatchValues (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
          * 
          * @return builder
          * 

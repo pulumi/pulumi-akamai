@@ -31,13 +31,13 @@ func LookupPropertyIncludeActivation(ctx *pulumi.Context, args *LookupPropertyIn
 
 // A collection of arguments for invoking getPropertyIncludeActivation.
 type LookupPropertyIncludeActivationArgs struct {
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId string `pulumi:"groupId"`
-	// - (Required) An include's unique ID with the optional `inc_` prefix.
+	// (Required) An include's unique ID with the optional `inc_` prefix.
 	IncludeId string `pulumi:"includeId"`
-	// - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+	// (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
 	Network string `pulumi:"network"`
 }
 
@@ -70,13 +70,13 @@ func LookupPropertyIncludeActivationOutput(ctx *pulumi.Context, args LookupPrope
 
 // A collection of arguments for invoking getPropertyIncludeActivation.
 type LookupPropertyIncludeActivationOutputArgs struct {
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId pulumi.StringInput `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// - (Required) An include's unique ID with the optional `inc_` prefix.
+	// (Required) An include's unique ID with the optional `inc_` prefix.
 	IncludeId pulumi.StringInput `pulumi:"includeId"`
-	// - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+	// (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
 	Network pulumi.StringInput `pulumi:"network"`
 }
 

@@ -17,14 +17,14 @@ public final class GetPropertyArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetPropertyArgs Empty = new GetPropertyArgs();
 
     /**
-     * - (Required) The property name.
+     * (Required) The property name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return - (Required) The property name.
+     * @return (Required) The property name.
      * 
      */
     public Output<String> name() {
@@ -32,14 +32,14 @@ public final class GetPropertyArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * - (Optional) The version of the property whose ID you want to list.
+     * (Optional) The version of the property whose ID you want to list.
      * 
      */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
     /**
-     * @return - (Optional) The version of the property whose ID you want to list.
+     * @return (Optional) The version of the property whose ID you want to list.
      * 
      */
     public Optional<Output<Integer>> version() {
@@ -72,7 +72,7 @@ public final class GetPropertyArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param name - (Required) The property name.
+         * @param name (Required) The property name.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class GetPropertyArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param name - (Required) The property name.
+         * @param name (Required) The property name.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class GetPropertyArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param version - (Optional) The version of the property whose ID you want to list.
+         * @param version (Optional) The version of the property whose ID you want to list.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class GetPropertyArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param version - (Optional) The version of the property whose ID you want to list.
+         * @param version (Optional) The version of the property whose ID you want to list.
          * 
          * @return builder
          * 

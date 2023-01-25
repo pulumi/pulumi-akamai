@@ -168,14 +168,14 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
         return this.adminContact;
     }
     /**
-     * - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
      * 
      */
     @Export(name="allowDuplicateCommonName", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> allowDuplicateCommonName;
 
     /**
-     * @return - (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * @return (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
      * 
      */
     public Output<Optional<Boolean>> allowDuplicateCommonName() {
@@ -224,28 +224,28 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
         return Codegen.optional(this.changeManagement);
     }
     /**
-     * - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+     * (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
      * 
      */
     @Export(name="commonName", type=String.class, parameters={})
     private Output<String> commonName;
 
     /**
-     * @return - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+     * @return (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
      * 
      */
     public Output<String> commonName() {
         return this.commonName;
     }
     /**
-     * - (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
+     * (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
      * 
      */
     @Export(name="contractId", type=String.class, parameters={})
     private Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
+     * @return (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
      * 
      */
     public Output<String> contractId() {

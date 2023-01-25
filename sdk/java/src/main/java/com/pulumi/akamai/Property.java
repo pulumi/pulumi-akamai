@@ -161,14 +161,14 @@ public class Property extends com.pulumi.resources.CustomResource {
         return this.contract;
     }
     /**
-     * - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     @Export(name="contractId", type=String.class, parameters={})
     private Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     public Output<String> contractId() {
@@ -205,14 +205,14 @@ public class Property extends com.pulumi.resources.CustomResource {
         return this.group;
     }
     /**
-     * - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     @Export(name="groupId", type=String.class, parameters={})
     private Output<String> groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     public Output<String> groupId() {
@@ -373,6 +373,8 @@ public class Property extends com.pulumi.resources.CustomResource {
         return this.ruleFormat;
     }
     /**
+     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     * 
      * @deprecated
      * Rule warnings will not be set in state anymore
      * 
@@ -381,6 +383,10 @@ public class Property extends com.pulumi.resources.CustomResource {
     @Export(name="ruleWarnings", type=List.class, parameters={PropertyRuleWarning.class})
     private Output<List<PropertyRuleWarning>> ruleWarnings;
 
+    /**
+     * @return (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     * 
+     */
     public Output<List<PropertyRuleWarning>> ruleWarnings() {
         return this.ruleWarnings;
     }

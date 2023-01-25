@@ -18,47 +18,47 @@ import javax.annotation.Nullable;
 public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRule {
     private @Nullable Boolean disabled;
     /**
-     * @return - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     private @Nullable Integer end;
     /**
-     * @return - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
+     * @return (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
      * 
      */
     private List<GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting> forwardSettings;
     /**
-     * @return - (Optional) An identifier for Akamai internal use only.
+     * @return (Optional) An identifier for Akamai internal use only.
      * 
      */
     private @Nullable Integer id;
     /**
-     * @return - (Optional) The URL that the Cloudlet uses to match the incoming request.
+     * @return (Optional) The URL that the Cloudlet uses to match the incoming request.
      * 
      */
     private @Nullable String matchUrl;
     /**
-     * @return - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     private @Nullable List<GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatch> matches;
     /**
-     * @return - (Optional) Whether the match supports default rules that apply to all requests.
+     * @return (Optional) Whether the match supports default rules that apply to all requests.
      * 
      */
     private @Nullable Boolean matchesAlways;
     /**
-     * @return - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     private @Nullable String name;
     /**
-     * @return - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     private @Nullable Integer start;
     /**
-     * @return - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * @return (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     private String type;
@@ -68,63 +68,63 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRule {
         return Optional.ofNullable(this.disabled);
     }
     /**
-     * @return - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
     /**
-     * @return - (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
+     * @return (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
      * 
      */
     public List<GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting> forwardSettings() {
         return this.forwardSettings;
     }
     /**
-     * @return - (Optional) An identifier for Akamai internal use only.
+     * @return (Optional) An identifier for Akamai internal use only.
      * 
      */
     public Optional<Integer> id() {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return - (Optional) The URL that the Cloudlet uses to match the incoming request.
+     * @return (Optional) The URL that the Cloudlet uses to match the incoming request.
      * 
      */
     public Optional<String> matchUrl() {
         return Optional.ofNullable(this.matchUrl);
     }
     /**
-     * @return - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     public List<GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatch> matches() {
         return this.matches == null ? List.of() : this.matches;
     }
     /**
-     * @return - (Optional) Whether the match supports default rules that apply to all requests.
+     * @return (Optional) Whether the match supports default rules that apply to all requests.
      * 
      */
     public Optional<Boolean> matchesAlways() {
         return Optional.ofNullable(this.matchesAlways);
     }
     /**
-     * @return - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
     /**
-     * @return - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * @return (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     public String type() {

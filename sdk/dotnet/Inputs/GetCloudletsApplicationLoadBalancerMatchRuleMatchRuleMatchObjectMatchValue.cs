@@ -13,31 +13,31 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        /// (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        /// (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
         /// </summary>
         [Input("nameCaseSensitive")]
         public bool? NameCaseSensitive { get; set; }
 
         /// <summary>
-        /// - (Optional) Whether the `name` argument includes wildcards.
+        /// (Optional) Whether the `name` argument includes wildcards.
         /// </summary>
         [Input("nameHasWildcard")]
         public bool? NameHasWildcard { get; set; }
 
         /// <summary>
-        /// - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        /// (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
         /// </summary>
         [Input("options")]
         public Inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs? Options { get; set; }
 
         /// <summary>
-        /// - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+        /// (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
         /// </summary>
         [Input("type", required: true)]
         public string Type { get; set; } = null!;
@@ -46,7 +46,7 @@ namespace Pulumi.Akamai.Inputs
         private List<string>? _values;
 
         /// <summary>
-        /// - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+        /// (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
         /// </summary>
         public List<string> Values
         {

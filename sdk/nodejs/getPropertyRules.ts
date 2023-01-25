@@ -51,20 +51,20 @@ export function getPropertyRules(args: GetPropertyRulesArgs, opts?: pulumi.Invok
  */
 export interface GetPropertyRulesArgs {
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: string;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId?: string;
     /**
-     * - (Required) A property's unique ID, including the `prp_` prefix.
+     * (Required) A property's unique ID, including the `prp_` prefix.
      */
     propertyId: string;
     ruleFormat?: string;
     /**
-     * - (Optional) The version to return. Returns the latest version by default.
+     * (Optional) The version to return. Returns the latest version by default.
      */
     version?: number;
 }
@@ -124,20 +124,20 @@ export function getPropertyRulesOutput(args: GetPropertyRulesOutputArgs, opts?: 
  */
 export interface GetPropertyRulesOutputArgs {
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId?: pulumi.Input<string>;
     /**
-     * - (Required) A property's unique ID, including the `prp_` prefix.
+     * (Required) A property's unique ID, including the `prp_` prefix.
      */
     propertyId: pulumi.Input<string>;
     ruleFormat?: pulumi.Input<string>;
     /**
-     * - (Optional) The version to return. Returns the latest version by default.
+     * (Optional) The version to return. Returns the latest version by default.
      */
     version?: pulumi.Input<number>;
 }

@@ -13,13 +13,13 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+        /// (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
         /// </summary>
         [Input("originId", required: true)]
         public Input<string> OriginId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required)
+        /// (Required)
         /// </summary>
         [Input("percent", required: true)]
         public Input<int> Percent { get; set; } = null!;

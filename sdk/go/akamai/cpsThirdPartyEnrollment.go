@@ -126,7 +126,7 @@ type CpsThirdPartyEnrollment struct {
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrOutput `pulumi:"acknowledgePreVerificationWarnings"`
 	// Contact information for the certificate administrator at your company.
 	AdminContact CpsThirdPartyEnrollmentAdminContactOutput `pulumi:"adminContact"`
-	// - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+	// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
 	AllowDuplicateCommonName pulumi.BoolPtrOutput `pulumi:"allowDuplicateCommonName"`
 	// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `getCpsWarnings` data source.
 	AutoApproveWarnings pulumi.StringArrayOutput `pulumi:"autoApproveWarnings"`
@@ -134,9 +134,9 @@ type CpsThirdPartyEnrollment struct {
 	CertificateChainType pulumi.StringPtrOutput `pulumi:"certificateChainType"`
 	// Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledgeChangeManagement` argument in the `CpsUploadCertificate` resource. <br> If you don't use this option, CPS will automatically deploy the certificate to both networks.
 	ChangeManagement pulumi.BoolPtrOutput `pulumi:"changeManagement"`
-	// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+	// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
 	CommonName pulumi.StringOutput `pulumi:"commonName"`
-	// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+	// (Required) A contract's ID, optionally with the `ctr_` prefix.
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
 	// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
 	Csr CpsThirdPartyEnrollmentCsrOutput `pulumi:"csr"`
@@ -218,7 +218,7 @@ type cpsThirdPartyEnrollmentState struct {
 	AcknowledgePreVerificationWarnings *bool `pulumi:"acknowledgePreVerificationWarnings"`
 	// Contact information for the certificate administrator at your company.
 	AdminContact *CpsThirdPartyEnrollmentAdminContact `pulumi:"adminContact"`
-	// - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+	// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
 	AllowDuplicateCommonName *bool `pulumi:"allowDuplicateCommonName"`
 	// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `getCpsWarnings` data source.
 	AutoApproveWarnings []string `pulumi:"autoApproveWarnings"`
@@ -226,9 +226,9 @@ type cpsThirdPartyEnrollmentState struct {
 	CertificateChainType *string `pulumi:"certificateChainType"`
 	// Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledgeChangeManagement` argument in the `CpsUploadCertificate` resource. <br> If you don't use this option, CPS will automatically deploy the certificate to both networks.
 	ChangeManagement *bool `pulumi:"changeManagement"`
-	// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+	// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
 	CommonName *string `pulumi:"commonName"`
-	// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+	// (Required) A contract's ID, optionally with the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
 	// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
 	Csr *CpsThirdPartyEnrollmentCsr `pulumi:"csr"`
@@ -255,7 +255,7 @@ type CpsThirdPartyEnrollmentState struct {
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrInput
 	// Contact information for the certificate administrator at your company.
 	AdminContact CpsThirdPartyEnrollmentAdminContactPtrInput
-	// - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+	// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
 	AllowDuplicateCommonName pulumi.BoolPtrInput
 	// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `getCpsWarnings` data source.
 	AutoApproveWarnings pulumi.StringArrayInput
@@ -263,9 +263,9 @@ type CpsThirdPartyEnrollmentState struct {
 	CertificateChainType pulumi.StringPtrInput
 	// Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledgeChangeManagement` argument in the `CpsUploadCertificate` resource. <br> If you don't use this option, CPS will automatically deploy the certificate to both networks.
 	ChangeManagement pulumi.BoolPtrInput
-	// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+	// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
 	CommonName pulumi.StringPtrInput
-	// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+	// (Required) A contract's ID, optionally with the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput
 	// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
 	Csr CpsThirdPartyEnrollmentCsrPtrInput
@@ -296,7 +296,7 @@ type cpsThirdPartyEnrollmentArgs struct {
 	AcknowledgePreVerificationWarnings *bool `pulumi:"acknowledgePreVerificationWarnings"`
 	// Contact information for the certificate administrator at your company.
 	AdminContact CpsThirdPartyEnrollmentAdminContact `pulumi:"adminContact"`
-	// - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+	// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
 	AllowDuplicateCommonName *bool `pulumi:"allowDuplicateCommonName"`
 	// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `getCpsWarnings` data source.
 	AutoApproveWarnings []string `pulumi:"autoApproveWarnings"`
@@ -304,9 +304,9 @@ type cpsThirdPartyEnrollmentArgs struct {
 	CertificateChainType *string `pulumi:"certificateChainType"`
 	// Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledgeChangeManagement` argument in the `CpsUploadCertificate` resource. <br> If you don't use this option, CPS will automatically deploy the certificate to both networks.
 	ChangeManagement *bool `pulumi:"changeManagement"`
-	// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+	// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
 	CommonName string `pulumi:"commonName"`
-	// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+	// (Required) A contract's ID, optionally with the `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
 	// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
 	Csr CpsThirdPartyEnrollmentCsr `pulumi:"csr"`
@@ -334,7 +334,7 @@ type CpsThirdPartyEnrollmentArgs struct {
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrInput
 	// Contact information for the certificate administrator at your company.
 	AdminContact CpsThirdPartyEnrollmentAdminContactInput
-	// - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+	// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
 	AllowDuplicateCommonName pulumi.BoolPtrInput
 	// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `getCpsWarnings` data source.
 	AutoApproveWarnings pulumi.StringArrayInput
@@ -342,9 +342,9 @@ type CpsThirdPartyEnrollmentArgs struct {
 	CertificateChainType pulumi.StringPtrInput
 	// Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledgeChangeManagement` argument in the `CpsUploadCertificate` resource. <br> If you don't use this option, CPS will automatically deploy the certificate to both networks.
 	ChangeManagement pulumi.BoolPtrInput
-	// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+	// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
 	CommonName pulumi.StringInput
-	// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+	// (Required) A contract's ID, optionally with the `ctr_` prefix.
 	ContractId pulumi.StringInput
 	// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
 	Csr CpsThirdPartyEnrollmentCsrInput
@@ -463,7 +463,7 @@ func (o CpsThirdPartyEnrollmentOutput) AdminContact() CpsThirdPartyEnrollmentAdm
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) CpsThirdPartyEnrollmentAdminContactOutput { return v.AdminContact }).(CpsThirdPartyEnrollmentAdminContactOutput)
 }
 
-// - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
 func (o CpsThirdPartyEnrollmentOutput) AllowDuplicateCommonName() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) pulumi.BoolPtrOutput { return v.AllowDuplicateCommonName }).(pulumi.BoolPtrOutput)
 }
@@ -483,12 +483,12 @@ func (o CpsThirdPartyEnrollmentOutput) ChangeManagement() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) pulumi.BoolPtrOutput { return v.ChangeManagement }).(pulumi.BoolPtrOutput)
 }
 
-// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
 func (o CpsThirdPartyEnrollmentOutput) CommonName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) pulumi.StringOutput { return v.CommonName }).(pulumi.StringOutput)
 }
 
-// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+// (Required) A contract's ID, optionally with the `ctr_` prefix.
 func (o CpsThirdPartyEnrollmentOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollment) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }

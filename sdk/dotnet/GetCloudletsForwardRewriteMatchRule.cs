@@ -135,7 +135,7 @@ namespace Pulumi.Akamai
         private List<Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleArgs>? _matchRules;
 
         /// <summary>
-        /// - (Optional) A list of Cloudlet-specific match rules for a policy.
+        /// (Optional) A list of Cloudlet-specific match rules for a policy.
         /// </summary>
         public List<Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleArgs> MatchRules
         {
@@ -155,7 +155,7 @@ namespace Pulumi.Akamai
         private InputList<Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleInputArgs>? _matchRules;
 
         /// <summary>
-        /// - (Optional) A list of Cloudlet-specific match rules for a policy.
+        /// (Optional) A list of Cloudlet-specific match rules for a policy.
         /// </summary>
         public InputList<Inputs.GetCloudletsForwardRewriteMatchRuleMatchRuleInputArgs> MatchRules
         {

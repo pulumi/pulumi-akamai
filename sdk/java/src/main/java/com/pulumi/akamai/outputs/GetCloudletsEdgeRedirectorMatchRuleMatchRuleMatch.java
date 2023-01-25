@@ -15,86 +15,86 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch {
     /**
-     * @return - (Optional) Whether the match is case sensitive.
+     * @return (Optional) Whether the match is case sensitive.
      * 
      */
     private @Nullable Boolean caseSensitive;
     /**
-     * @return - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     * @return (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
      * 
      */
     private @Nullable String checkIps;
     /**
-     * @return - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     * @return (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
      * 
      */
     private @Nullable String matchOperator;
     /**
-     * @return - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     * @return (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
      * 
      */
     private @Nullable String matchType;
     /**
-     * @return - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+     * @return (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
      * 
      */
     private @Nullable String matchValue;
     /**
-     * @return - (Optional) Whether to negate the match.
+     * @return (Optional) Whether to negate the match.
      * 
      */
     private @Nullable Boolean negate;
     /**
-     * @return - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     * @return (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
      * 
      */
     private @Nullable List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue> objectMatchValues;
 
     private GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch() {}
     /**
-     * @return - (Optional) Whether the match is case sensitive.
+     * @return (Optional) Whether the match is case sensitive.
      * 
      */
     public Optional<Boolean> caseSensitive() {
         return Optional.ofNullable(this.caseSensitive);
     }
     /**
-     * @return - (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
+     * @return (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
      * 
      */
     public Optional<String> checkIps() {
         return Optional.ofNullable(this.checkIps);
     }
     /**
-     * @return - (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
+     * @return (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
      * 
      */
     public Optional<String> matchOperator() {
         return Optional.ofNullable(this.matchOperator);
     }
     /**
-     * @return - (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
+     * @return (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
      * 
      */
     public Optional<String> matchType() {
         return Optional.ofNullable(this.matchType);
     }
     /**
-     * @return - (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
+     * @return (Optional) This depends on the `match_type`. If the `match_type` is `hostname`, then `match_value` is the fully qualified domain name, like `www.akamai.com`.
      * 
      */
     public Optional<String> matchValue() {
         return Optional.ofNullable(this.matchValue);
     }
     /**
-     * @return - (Optional) Whether to negate the match.
+     * @return (Optional) Whether to negate the match.
      * 
      */
     public Optional<Boolean> negate() {
         return Optional.ofNullable(this.negate);
     }
     /**
-     * @return - (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
+     * @return (Optional) If `match_value` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
      * 
      */
     public List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue> objectMatchValues() {

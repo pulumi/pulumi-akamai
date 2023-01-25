@@ -85,15 +85,14 @@ namespace Pulumi.Akamai
 
         /// <summary>
         /// . Unique identifier of the security policy associated with the ruleset being upgraded.
-        /// - `upgrade_mode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-        /// - **ASE_AUTO**. Akamai automatically updates your rulesets.
-        /// - **ASE_MANUAL**. Manually updates your rulesets.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+        /// . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+        /// - **ASE_AUTO**. Akamai automatically updates your rulesets.
+        /// - **ASE_MANUAL**. Manually updates your rulesets.
         /// </summary>
         [Output("upgradeMode")]
         public Output<string?> UpgradeMode { get; private set; } = null!;
@@ -152,15 +151,14 @@ namespace Pulumi.Akamai
 
         /// <summary>
         /// . Unique identifier of the security policy associated with the ruleset being upgraded.
-        /// - `upgrade_mode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-        /// - **ASE_AUTO**. Akamai automatically updates your rulesets.
-        /// - **ASE_MANUAL**. Manually updates your rulesets.
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
         /// <summary>
-        /// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+        /// . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+        /// - **ASE_AUTO**. Akamai automatically updates your rulesets.
+        /// - **ASE_MANUAL**. Manually updates your rulesets.
         /// </summary>
         [Input("upgradeMode")]
         public Input<string>? UpgradeMode { get; set; }
@@ -199,15 +197,14 @@ namespace Pulumi.Akamai
 
         /// <summary>
         /// . Unique identifier of the security policy associated with the ruleset being upgraded.
-        /// - `upgrade_mode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-        /// - **ASE_AUTO**. Akamai automatically updates your rulesets.
-        /// - **ASE_MANUAL**. Manually updates your rulesets.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 
         /// <summary>
-        /// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+        /// . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+        /// - **ASE_AUTO**. Akamai automatically updates your rulesets.
+        /// - **ASE_MANUAL**. Manually updates your rulesets.
         /// </summary>
         [Input("upgradeMode")]
         public Input<string>? UpgradeMode { get; set; }

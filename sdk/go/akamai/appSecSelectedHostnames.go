@@ -40,7 +40,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecSelectedHostnames(ctx, "appsecselectedhostnames", &akamai.AppSecSelectedHostnamesArgs{
-//				ConfigId: pulumi.Int(configuration.ConfigId),
+//				ConfigId: *pulumi.Int(configuration.ConfigId),
 //				Hostnames: pulumi.StringArray{
 //					pulumi.String("example.com"),
 //				},

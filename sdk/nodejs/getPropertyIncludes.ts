@@ -52,19 +52,19 @@ export function getPropertyIncludes(args: GetPropertyIncludesArgs, opts?: pulumi
  */
 export interface GetPropertyIncludesArgs {
     /**
-     * - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
      */
     contractId: string;
     /**
-     * - (Required) A group's unique ID, including the optional `grp_` prefix.
+     * (Required) A group's unique ID, including the optional `grp_` prefix.
      */
     groupId: string;
     /**
-     * - (Optional) The property that references the includes you want to list.
+     * (Optional) The property that references the includes you want to list.
      */
     parentProperty?: inputs.GetPropertyIncludesParentProperty;
     /**
-     * - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
      */
     type?: string;
 }
@@ -122,19 +122,19 @@ export function getPropertyIncludesOutput(args: GetPropertyIncludesOutputArgs, o
  */
 export interface GetPropertyIncludesOutputArgs {
     /**
-     * - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
      */
     contractId: pulumi.Input<string>;
     /**
-     * - (Required) A group's unique ID, including the optional `grp_` prefix.
+     * (Required) A group's unique ID, including the optional `grp_` prefix.
      */
     groupId: pulumi.Input<string>;
     /**
-     * - (Optional) The property that references the includes you want to list.
+     * (Optional) The property that references the includes you want to list.
      */
     parentProperty?: pulumi.Input<inputs.GetPropertyIncludesParentPropertyArgs>;
     /**
-     * - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
      */
     type?: pulumi.Input<string>;
 }

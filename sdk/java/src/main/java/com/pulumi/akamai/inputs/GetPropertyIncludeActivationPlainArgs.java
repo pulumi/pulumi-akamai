@@ -13,14 +13,14 @@ public final class GetPropertyIncludeActivationPlainArgs extends com.pulumi.reso
     public static final GetPropertyIncludeActivationPlainArgs Empty = new GetPropertyIncludeActivationPlainArgs();
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     @Import(name="contractId", required=true)
     private String contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     public String contractId() {
@@ -28,14 +28,14 @@ public final class GetPropertyIncludeActivationPlainArgs extends com.pulumi.reso
     }
 
     /**
-     * - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     @Import(name="groupId", required=true)
     private String groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     public String groupId() {
@@ -43,14 +43,14 @@ public final class GetPropertyIncludeActivationPlainArgs extends com.pulumi.reso
     }
 
     /**
-     * - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+     * (Required) An include&#39;s unique ID with the optional `inc_` prefix.
      * 
      */
     @Import(name="includeId", required=true)
     private String includeId;
 
     /**
-     * @return - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+     * @return (Required) An include&#39;s unique ID with the optional `inc_` prefix.
      * 
      */
     public String includeId() {
@@ -58,14 +58,14 @@ public final class GetPropertyIncludeActivationPlainArgs extends com.pulumi.reso
     }
 
     /**
-     * - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+     * (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
      * 
      */
     @Import(name="network", required=true)
     private String network;
 
     /**
-     * @return - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+     * @return (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
      * 
      */
     public String network() {
@@ -100,7 +100,7 @@ public final class GetPropertyIncludeActivationPlainArgs extends com.pulumi.reso
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -111,7 +111,7 @@ public final class GetPropertyIncludeActivationPlainArgs extends com.pulumi.reso
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
          * 
          * @return builder
          * 
@@ -122,7 +122,7 @@ public final class GetPropertyIncludeActivationPlainArgs extends com.pulumi.reso
         }
 
         /**
-         * @param includeId - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+         * @param includeId (Required) An include&#39;s unique ID with the optional `inc_` prefix.
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class GetPropertyIncludeActivationPlainArgs extends com.pulumi.reso
         }
 
         /**
-         * @param network - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+         * @param network (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
          * 
          * @return builder
          * 

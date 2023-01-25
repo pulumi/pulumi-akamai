@@ -56,15 +56,15 @@ export function getPropertyHostnames(args: GetPropertyHostnamesArgs, opts?: pulu
  */
 export interface GetPropertyHostnamesArgs {
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId: string;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId: string;
     /**
-     * - (Required) A property's unique ID, including the `prp_` prefix.
+     * (Required) A property's unique ID, including the `prp_` prefix.
      */
     propertyId: string;
 }
@@ -127,15 +127,15 @@ export function getPropertyHostnamesOutput(args: GetPropertyHostnamesOutputArgs,
  */
 export interface GetPropertyHostnamesOutputArgs {
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId: pulumi.Input<string>;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId: pulumi.Input<string>;
     /**
-     * - (Required) A property's unique ID, including the `prp_` prefix.
+     * (Required) A property's unique ID, including the `prp_` prefix.
      */
     propertyId: pulumi.Input<string>;
 }

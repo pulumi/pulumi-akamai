@@ -44,7 +44,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecAdvancedSettingsPrefetch(ctx, "prefetch", &akamai.AppSecAdvancedSettingsPrefetchArgs{
-//				ConfigId:           pulumi.Int(configuration.ConfigId),
+//				ConfigId:           *pulumi.Int(configuration.ConfigId),
 //				EnableAppLayer:     pulumi.Bool(false),
 //				AllExtensions:      pulumi.Bool(true),
 //				EnableRateControls: pulumi.Bool(false),

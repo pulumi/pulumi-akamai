@@ -22,8 +22,9 @@ type AppSecCustomRule struct {
 	// . Unique identifier of the security configuration associated with the custom rule being modified.
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
-	CustomRule   pulumi.StringOutput `pulumi:"customRule"`
-	CustomRuleId pulumi.IntOutput    `pulumi:"customRuleId"`
+	CustomRule pulumi.StringOutput `pulumi:"customRule"`
+	// . ID of the new custom rule.
+	CustomRuleId pulumi.IntOutput `pulumi:"customRuleId"`
 }
 
 // NewAppSecCustomRule registers a new resource with the given unique name, arguments, and options.
@@ -64,15 +65,17 @@ type appSecCustomRuleState struct {
 	// . Unique identifier of the security configuration associated with the custom rule being modified.
 	ConfigId *int `pulumi:"configId"`
 	// . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
-	CustomRule   *string `pulumi:"customRule"`
-	CustomRuleId *int    `pulumi:"customRuleId"`
+	CustomRule *string `pulumi:"customRule"`
+	// . ID of the new custom rule.
+	CustomRuleId *int `pulumi:"customRuleId"`
 }
 
 type AppSecCustomRuleState struct {
 	// . Unique identifier of the security configuration associated with the custom rule being modified.
 	ConfigId pulumi.IntPtrInput
 	// . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
-	CustomRule   pulumi.StringPtrInput
+	CustomRule pulumi.StringPtrInput
+	// . ID of the new custom rule.
 	CustomRuleId pulumi.IntPtrInput
 }
 
@@ -192,6 +195,7 @@ func (o AppSecCustomRuleOutput) CustomRule() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecCustomRule) pulumi.StringOutput { return v.CustomRule }).(pulumi.StringOutput)
 }
 
+// . ID of the new custom rule.
 func (o AppSecCustomRuleOutput) CustomRuleId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecCustomRule) pulumi.IntOutput { return v.CustomRuleId }).(pulumi.IntOutput)
 }

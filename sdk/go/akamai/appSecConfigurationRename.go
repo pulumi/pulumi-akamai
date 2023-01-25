@@ -41,7 +41,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecConfigurationRename(ctx, "configurationAppSecConfigurationRename", &akamai.AppSecConfigurationRenameArgs{
-//				ConfigId:    pulumi.Int(configurationAppSecConfiguration.ConfigId),
+//				ConfigId:    *pulumi.Int(configurationAppSecConfiguration.ConfigId),
 //				Description: pulumi.String("This configuration is by both the documentation team and the training team."),
 //			})
 //			if err != nil {

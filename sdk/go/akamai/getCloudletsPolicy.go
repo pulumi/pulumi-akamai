@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.LookupCloudletsPolicy(ctx, &akamai.LookupCloudletsPolicyArgs{
+//			_, err := akamai.LookupCloudletsPolicy(ctx, &akamai.LookupCloudletsPolicyArgs{
 //				PolicyId: 1234,
 //				Version:  pulumi.IntRef(1),
 //			}, nil)
@@ -86,9 +86,9 @@ func LookupCloudletsPolicy(ctx *pulumi.Context, args *LookupCloudletsPolicyArgs,
 
 // A collection of arguments for invoking getCloudletsPolicy.
 type LookupCloudletsPolicyArgs struct {
-	// - (Required) An integer identifier that is associated with all versions of a policy.
+	// (Required) An integer identifier that is associated with all versions of a policy.
 	PolicyId int `pulumi:"policyId"`
-	// - (Optional) The version number of a policy.
+	// (Optional) The version number of a policy.
 	Version *int `pulumi:"version"`
 }
 
@@ -128,9 +128,9 @@ func LookupCloudletsPolicyOutput(ctx *pulumi.Context, args LookupCloudletsPolicy
 
 // A collection of arguments for invoking getCloudletsPolicy.
 type LookupCloudletsPolicyOutputArgs struct {
-	// - (Required) An integer identifier that is associated with all versions of a policy.
+	// (Required) An integer identifier that is associated with all versions of a policy.
 	PolicyId pulumi.IntInput `pulumi:"policyId"`
-	// - (Optional) The version number of a policy.
+	// (Optional) The version number of a policy.
 	Version pulumi.IntPtrInput `pulumi:"version"`
 }
 

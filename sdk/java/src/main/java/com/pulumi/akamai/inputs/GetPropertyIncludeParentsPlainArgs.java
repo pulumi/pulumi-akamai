@@ -13,14 +13,14 @@ public final class GetPropertyIncludeParentsPlainArgs extends com.pulumi.resourc
     public static final GetPropertyIncludeParentsPlainArgs Empty = new GetPropertyIncludeParentsPlainArgs();
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     @Import(name="contractId", required=true)
     private String contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     public String contractId() {
@@ -28,14 +28,14 @@ public final class GetPropertyIncludeParentsPlainArgs extends com.pulumi.resourc
     }
 
     /**
-     * - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     @Import(name="groupId", required=true)
     private String groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     public String groupId() {
@@ -43,14 +43,14 @@ public final class GetPropertyIncludeParentsPlainArgs extends com.pulumi.resourc
     }
 
     /**
-     * - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+     * (Required) An include&#39;s unique ID with the optional `inc_` prefix.
      * 
      */
     @Import(name="includeId", required=true)
     private String includeId;
 
     /**
-     * @return - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+     * @return (Required) An include&#39;s unique ID with the optional `inc_` prefix.
      * 
      */
     public String includeId() {
@@ -84,7 +84,7 @@ public final class GetPropertyIncludeParentsPlainArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -95,7 +95,7 @@ public final class GetPropertyIncludeParentsPlainArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class GetPropertyIncludeParentsPlainArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param includeId - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+         * @param includeId (Required) An include&#39;s unique ID with the optional `inc_` prefix.
          * 
          * @return builder
          * 

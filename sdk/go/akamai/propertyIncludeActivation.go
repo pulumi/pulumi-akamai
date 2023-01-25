@@ -55,25 +55,25 @@ import (
 type PropertyIncludeActivation struct {
 	pulumi.CustomResourceState
 
-	// - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+	// (Optional) Automatically acknowledge all rule warnings for activation and continue.
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrOutput `pulumi:"autoAcknowledgeRuleWarnings"`
 	// Provides an audit record when activating on a production network
 	ComplianceRecord PropertyIncludeActivationComplianceRecordPtrOutput `pulumi:"complianceRecord"`
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
-	// - (Required) An include's unique ID with the optional `inc_` prefix.
+	// (Required) An include's unique ID with the optional `inc_` prefix.
 	IncludeId pulumi.StringOutput `pulumi:"includeId"`
-	// - (Required) The network for which the activation will be performed.
+	// (Required) The network for which the activation will be performed.
 	Network pulumi.StringOutput `pulumi:"network"`
-	// - (Optional) A log message assigned to the activation request.
+	// (Optional) A log message assigned to the activation request.
 	Note pulumi.StringPtrOutput `pulumi:"note"`
-	// - (Required) The list of email addresses to notify when the activation status changes.
+	// (Required) The list of email addresses to notify when the activation status changes.
 	NotifyEmails pulumi.StringArrayOutput `pulumi:"notifyEmails"`
 	// The validation information in JSON format
 	Validations pulumi.StringOutput `pulumi:"validations"`
-	// - (Required) The version of the include you want to activate.
+	// (Required) The version of the include you want to activate.
 	Version pulumi.IntOutput `pulumi:"version"`
 }
 
@@ -124,48 +124,48 @@ func GetPropertyIncludeActivation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PropertyIncludeActivation resources.
 type propertyIncludeActivationState struct {
-	// - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+	// (Optional) Automatically acknowledge all rule warnings for activation and continue.
 	AutoAcknowledgeRuleWarnings *bool `pulumi:"autoAcknowledgeRuleWarnings"`
 	// Provides an audit record when activating on a production network
 	ComplianceRecord *PropertyIncludeActivationComplianceRecord `pulumi:"complianceRecord"`
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
-	// - (Required) An include's unique ID with the optional `inc_` prefix.
+	// (Required) An include's unique ID with the optional `inc_` prefix.
 	IncludeId *string `pulumi:"includeId"`
-	// - (Required) The network for which the activation will be performed.
+	// (Required) The network for which the activation will be performed.
 	Network *string `pulumi:"network"`
-	// - (Optional) A log message assigned to the activation request.
+	// (Optional) A log message assigned to the activation request.
 	Note *string `pulumi:"note"`
-	// - (Required) The list of email addresses to notify when the activation status changes.
+	// (Required) The list of email addresses to notify when the activation status changes.
 	NotifyEmails []string `pulumi:"notifyEmails"`
 	// The validation information in JSON format
 	Validations *string `pulumi:"validations"`
-	// - (Required) The version of the include you want to activate.
+	// (Required) The version of the include you want to activate.
 	Version *int `pulumi:"version"`
 }
 
 type PropertyIncludeActivationState struct {
-	// - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+	// (Optional) Automatically acknowledge all rule warnings for activation and continue.
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrInput
 	// Provides an audit record when activating on a production network
 	ComplianceRecord PropertyIncludeActivationComplianceRecordPtrInput
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId pulumi.StringPtrInput
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId pulumi.StringPtrInput
-	// - (Required) An include's unique ID with the optional `inc_` prefix.
+	// (Required) An include's unique ID with the optional `inc_` prefix.
 	IncludeId pulumi.StringPtrInput
-	// - (Required) The network for which the activation will be performed.
+	// (Required) The network for which the activation will be performed.
 	Network pulumi.StringPtrInput
-	// - (Optional) A log message assigned to the activation request.
+	// (Optional) A log message assigned to the activation request.
 	Note pulumi.StringPtrInput
-	// - (Required) The list of email addresses to notify when the activation status changes.
+	// (Required) The list of email addresses to notify when the activation status changes.
 	NotifyEmails pulumi.StringArrayInput
 	// The validation information in JSON format
 	Validations pulumi.StringPtrInput
-	// - (Required) The version of the include you want to activate.
+	// (Required) The version of the include you want to activate.
 	Version pulumi.IntPtrInput
 }
 
@@ -174,45 +174,45 @@ func (PropertyIncludeActivationState) ElementType() reflect.Type {
 }
 
 type propertyIncludeActivationArgs struct {
-	// - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+	// (Optional) Automatically acknowledge all rule warnings for activation and continue.
 	AutoAcknowledgeRuleWarnings *bool `pulumi:"autoAcknowledgeRuleWarnings"`
 	// Provides an audit record when activating on a production network
 	ComplianceRecord *PropertyIncludeActivationComplianceRecord `pulumi:"complianceRecord"`
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId string `pulumi:"groupId"`
-	// - (Required) An include's unique ID with the optional `inc_` prefix.
+	// (Required) An include's unique ID with the optional `inc_` prefix.
 	IncludeId string `pulumi:"includeId"`
-	// - (Required) The network for which the activation will be performed.
+	// (Required) The network for which the activation will be performed.
 	Network string `pulumi:"network"`
-	// - (Optional) A log message assigned to the activation request.
+	// (Optional) A log message assigned to the activation request.
 	Note *string `pulumi:"note"`
-	// - (Required) The list of email addresses to notify when the activation status changes.
+	// (Required) The list of email addresses to notify when the activation status changes.
 	NotifyEmails []string `pulumi:"notifyEmails"`
-	// - (Required) The version of the include you want to activate.
+	// (Required) The version of the include you want to activate.
 	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a PropertyIncludeActivation resource.
 type PropertyIncludeActivationArgs struct {
-	// - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+	// (Optional) Automatically acknowledge all rule warnings for activation and continue.
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrInput
 	// Provides an audit record when activating on a production network
 	ComplianceRecord PropertyIncludeActivationComplianceRecordPtrInput
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId pulumi.StringInput
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId pulumi.StringInput
-	// - (Required) An include's unique ID with the optional `inc_` prefix.
+	// (Required) An include's unique ID with the optional `inc_` prefix.
 	IncludeId pulumi.StringInput
-	// - (Required) The network for which the activation will be performed.
+	// (Required) The network for which the activation will be performed.
 	Network pulumi.StringInput
-	// - (Optional) A log message assigned to the activation request.
+	// (Optional) A log message assigned to the activation request.
 	Note pulumi.StringPtrInput
-	// - (Required) The list of email addresses to notify when the activation status changes.
+	// (Required) The list of email addresses to notify when the activation status changes.
 	NotifyEmails pulumi.StringArrayInput
-	// - (Required) The version of the include you want to activate.
+	// (Required) The version of the include you want to activate.
 	Version pulumi.IntInput
 }
 
@@ -303,7 +303,7 @@ func (o PropertyIncludeActivationOutput) ToPropertyIncludeActivationOutputWithCo
 	return o
 }
 
-// - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+// (Optional) Automatically acknowledge all rule warnings for activation and continue.
 func (o PropertyIncludeActivationOutput) AutoAcknowledgeRuleWarnings() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *PropertyIncludeActivation) pulumi.BoolPtrOutput { return v.AutoAcknowledgeRuleWarnings }).(pulumi.BoolPtrOutput)
 }
@@ -315,32 +315,32 @@ func (o PropertyIncludeActivationOutput) ComplianceRecord() PropertyIncludeActiv
 	}).(PropertyIncludeActivationComplianceRecordPtrOutput)
 }
 
-// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 func (o PropertyIncludeActivationOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyIncludeActivation) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }
 
-// - (Required) A group's unique ID, including the optional `grp_` prefix.
+// (Required) A group's unique ID, including the optional `grp_` prefix.
 func (o PropertyIncludeActivationOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyIncludeActivation) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// - (Required) An include's unique ID with the optional `inc_` prefix.
+// (Required) An include's unique ID with the optional `inc_` prefix.
 func (o PropertyIncludeActivationOutput) IncludeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyIncludeActivation) pulumi.StringOutput { return v.IncludeId }).(pulumi.StringOutput)
 }
 
-// - (Required) The network for which the activation will be performed.
+// (Required) The network for which the activation will be performed.
 func (o PropertyIncludeActivationOutput) Network() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyIncludeActivation) pulumi.StringOutput { return v.Network }).(pulumi.StringOutput)
 }
 
-// - (Optional) A log message assigned to the activation request.
+// (Optional) A log message assigned to the activation request.
 func (o PropertyIncludeActivationOutput) Note() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PropertyIncludeActivation) pulumi.StringPtrOutput { return v.Note }).(pulumi.StringPtrOutput)
 }
 
-// - (Required) The list of email addresses to notify when the activation status changes.
+// (Required) The list of email addresses to notify when the activation status changes.
 func (o PropertyIncludeActivationOutput) NotifyEmails() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PropertyIncludeActivation) pulumi.StringArrayOutput { return v.NotifyEmails }).(pulumi.StringArrayOutput)
 }
@@ -350,7 +350,7 @@ func (o PropertyIncludeActivationOutput) Validations() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyIncludeActivation) pulumi.StringOutput { return v.Validations }).(pulumi.StringOutput)
 }
 
-// - (Required) The version of the include you want to activate.
+// (Required) The version of the include you want to activate.
 func (o PropertyIncludeActivationOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v *PropertyIncludeActivation) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
 }

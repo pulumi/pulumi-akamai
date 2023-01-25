@@ -31,7 +31,7 @@ func GetCloudletsEdgeRedirectorMatchRule(ctx *pulumi.Context, args *GetCloudlets
 
 // A collection of arguments for invoking getCloudletsEdgeRedirectorMatchRule.
 type GetCloudletsEdgeRedirectorMatchRuleArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsEdgeRedirectorMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -58,7 +58,7 @@ func GetCloudletsEdgeRedirectorMatchRuleOutput(ctx *pulumi.Context, args GetClou
 
 // A collection of arguments for invoking getCloudletsEdgeRedirectorMatchRule.
 type GetCloudletsEdgeRedirectorMatchRuleOutputArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsEdgeRedirectorMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

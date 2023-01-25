@@ -42,7 +42,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecByPassNetworkList(ctx, "bypassNetworkLists", &akamai.AppSecByPassNetworkListArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //				BypassNetworkLists: pulumi.StringArray{
 //					pulumi.String("DocumentationNetworkList"),

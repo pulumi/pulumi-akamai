@@ -17,14 +17,14 @@ public final class GetCloudletsAudienceSegmentationMatchRuleArgs extends com.pul
     public static final GetCloudletsAudienceSegmentationMatchRuleArgs Empty = new GetCloudletsAudienceSegmentationMatchRuleArgs();
 
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      * 
      */
     @Import(name="matchRules")
     private @Nullable Output<List<GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs>> matchRules;
 
     /**
-     * @return - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * @return (Optional) A list of Cloudlet-specific match rules for a policy.
      * 
      */
     public Optional<Output<List<GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs>>> matchRules() {
@@ -56,7 +56,7 @@ public final class GetCloudletsAudienceSegmentationMatchRuleArgs extends com.pul
         }
 
         /**
-         * @param matchRules - (Optional) A list of Cloudlet-specific match rules for a policy.
+         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class GetCloudletsAudienceSegmentationMatchRuleArgs extends com.pul
         }
 
         /**
-         * @param matchRules - (Optional) A list of Cloudlet-specific match rules for a policy.
+         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class GetCloudletsAudienceSegmentationMatchRuleArgs extends com.pul
         }
 
         /**
-         * @param matchRules - (Optional) A list of Cloudlet-specific match rules for a policy.
+         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
          * 
          * @return builder
          * 

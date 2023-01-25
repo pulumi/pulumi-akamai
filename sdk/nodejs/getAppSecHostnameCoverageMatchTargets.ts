@@ -47,6 +47,9 @@ export function getAppSecHostnameCoverageMatchTargets(args: GetAppSecHostnameCov
  * A collection of arguments for invoking getAppSecHostnameCoverageMatchTargets.
  */
 export interface GetAppSecHostnameCoverageMatchTargetsArgs {
+    /**
+     * . (Required). Unique identifier of the security configuration associated with the hostname.
+     */
     configId: number;
     /**
      * . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
@@ -105,6 +108,9 @@ export function getAppSecHostnameCoverageMatchTargetsOutput(args: GetAppSecHostn
  * A collection of arguments for invoking getAppSecHostnameCoverageMatchTargets.
  */
 export interface GetAppSecHostnameCoverageMatchTargetsOutputArgs {
+    /**
+     * . (Required). Unique identifier of the security configuration associated with the hostname.
+     */
     configId: pulumi.Input<number>;
     /**
      * . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
