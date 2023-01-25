@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.GetEdgeWorkersResourceTier(ctx, &akamai.GetEdgeWorkersResourceTierArgs{
+//			_, err := akamai.GetEdgeWorkersResourceTier(ctx, &akamai.GetEdgeWorkersResourceTierArgs{
 //				ContractId:       "1-ABC",
 //				ResourceTierName: "Basic Compute",
 //			}, nil)

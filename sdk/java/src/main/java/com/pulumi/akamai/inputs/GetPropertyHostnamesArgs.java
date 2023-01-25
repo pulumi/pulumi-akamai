@@ -14,14 +14,14 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
     public static final GetPropertyHostnamesArgs Empty = new GetPropertyHostnamesArgs();
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     @Import(name="contractId", required=true)
     private Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     public Output<String> contractId() {
@@ -29,14 +29,14 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
-     * - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     @Import(name="groupId", required=true)
     private Output<String> groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     public Output<String> groupId() {
@@ -44,14 +44,14 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
-     * - (Required) A property&#39;s unique ID, including the `prp_` prefix.
+     * (Required) A property&#39;s unique ID, including the `prp_` prefix.
      * 
      */
     @Import(name="propertyId", required=true)
     private Output<String> propertyId;
 
     /**
-     * @return - (Required) A property&#39;s unique ID, including the `prp_` prefix.
+     * @return (Required) A property&#39;s unique ID, including the `prp_` prefix.
      * 
      */
     public Output<String> propertyId() {
@@ -85,7 +85,7 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -96,7 +96,7 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param propertyId - (Required) A property&#39;s unique ID, including the `prp_` prefix.
+         * @param propertyId (Required) A property&#39;s unique ID, including the `prp_` prefix.
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param propertyId - (Required) A property&#39;s unique ID, including the `prp_` prefix.
+         * @param propertyId (Required) A property&#39;s unique ID, including the `prp_` prefix.
          * 
          * @return builder
          * 

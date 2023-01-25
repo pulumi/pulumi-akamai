@@ -13,7 +13,7 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Required) The ID of the Conditional Origin the requests are forwarded to.
+        /// (Required) The ID of the Conditional Origin the requests are forwarded to.
         /// </summary>
         [Input("originId", required: true)]
         public Input<string> OriginId { get; set; } = null!;

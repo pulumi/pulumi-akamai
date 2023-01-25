@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.GetDatastreamDatasetFields(ctx, nil, nil)
+//			_, err := akamai.GetDatastreamDatasetFields(ctx, nil, nil)
 //			if err != nil {
 //				return err
 //			}
@@ -60,7 +60,7 @@ func GetDatastreamDatasetFields(ctx *pulumi.Context, args *GetDatastreamDatasetF
 
 // A collection of arguments for invoking getDatastreamDatasetFields.
 type GetDatastreamDatasetFieldsArgs struct {
-	// - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
+	// (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
 	TemplateName *string `pulumi:"templateName"`
 }
 
@@ -87,7 +87,7 @@ func GetDatastreamDatasetFieldsOutput(ctx *pulumi.Context, args GetDatastreamDat
 
 // A collection of arguments for invoking getDatastreamDatasetFields.
 type GetDatastreamDatasetFieldsOutputArgs struct {
-	// - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
+	// (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
 	TemplateName pulumi.StringPtrInput `pulumi:"templateName"`
 }
 

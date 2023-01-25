@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.LookupCloudletsApplicationLoadBalancer(ctx, &akamai.LookupCloudletsApplicationLoadBalancerArgs{
+//			_, err := akamai.LookupCloudletsApplicationLoadBalancer(ctx, &akamai.LookupCloudletsApplicationLoadBalancerArgs{
 //				OriginId: "alb_test_1",
 //				Version:  pulumi.IntRef(1),
 //			}, nil)
@@ -94,9 +94,9 @@ func LookupCloudletsApplicationLoadBalancer(ctx *pulumi.Context, args *LookupClo
 
 // A collection of arguments for invoking getCloudletsApplicationLoadBalancer.
 type LookupCloudletsApplicationLoadBalancerArgs struct {
-	// - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+	// (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
 	OriginId string `pulumi:"originId"`
-	// - (Optional) The version number of the load balancing configuration.
+	// (Optional) The version number of the load balancing configuration.
 	Version *int `pulumi:"version"`
 }
 
@@ -135,9 +135,9 @@ func LookupCloudletsApplicationLoadBalancerOutput(ctx *pulumi.Context, args Look
 
 // A collection of arguments for invoking getCloudletsApplicationLoadBalancer.
 type LookupCloudletsApplicationLoadBalancerOutputArgs struct {
-	// - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+	// (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
 	OriginId pulumi.StringInput `pulumi:"originId"`
-	// - (Optional) The version number of the load balancing configuration.
+	// (Optional) The version number of the load balancing configuration.
 	Version pulumi.IntPtrInput `pulumi:"version"`
 }
 

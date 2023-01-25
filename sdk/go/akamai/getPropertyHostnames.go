@@ -66,11 +66,11 @@ func GetPropertyHostnames(ctx *pulumi.Context, args *GetPropertyHostnamesArgs, o
 
 // A collection of arguments for invoking getPropertyHostnames.
 type GetPropertyHostnamesArgs struct {
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId string `pulumi:"groupId"`
-	// - (Required) A property's unique ID, including the `prp_` prefix.
+	// (Required) A property's unique ID, including the `prp_` prefix.
 	PropertyId string `pulumi:"propertyId"`
 }
 
@@ -100,11 +100,11 @@ func GetPropertyHostnamesOutput(ctx *pulumi.Context, args GetPropertyHostnamesOu
 
 // A collection of arguments for invoking getPropertyHostnames.
 type GetPropertyHostnamesOutputArgs struct {
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringInput `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// - (Required) A property's unique ID, including the `prp_` prefix.
+	// (Required) A property's unique ID, including the `prp_` prefix.
 	PropertyId pulumi.StringInput `pulumi:"propertyId"`
 }
 

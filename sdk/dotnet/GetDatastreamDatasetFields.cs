@@ -92,7 +92,7 @@ namespace Pulumi.Akamai
     public sealed class GetDatastreamDatasetFieldsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
+        /// (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
         /// </summary>
         [Input("templateName")]
         public string? TemplateName { get; set; }
@@ -106,7 +106,7 @@ namespace Pulumi.Akamai
     public sealed class GetDatastreamDatasetFieldsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
+        /// (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
         /// </summary>
         [Input("templateName")]
         public Input<string>? TemplateName { get; set; }

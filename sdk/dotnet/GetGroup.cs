@@ -60,7 +60,7 @@ namespace Pulumi.Akamai
         public string? Contract { get; set; }
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public string? ContractId { get; set; }
@@ -92,7 +92,7 @@ namespace Pulumi.Akamai
         public Input<string>? Contract { get; set; }
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }

@@ -40,7 +40,7 @@ import (
 //				return err
 //			}
 //			versionNotesAppSecVersionNodes, err := akamai.NewAppSecVersionNodes(ctx, "versionNotesAppSecVersionNodes", &akamai.AppSecVersionNodesArgs{
-//				ConfigId:     pulumi.Int(configuration.ConfigId),
+//				ConfigId:     *pulumi.Int(configuration.ConfigId),
 //				VersionNotes: pulumi.String("This version enables reputation profiles."),
 //			})
 //			if err != nil {

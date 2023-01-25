@@ -24,10 +24,10 @@ class EdgeKvArgs:
                  initial_datas: Optional[pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]]] = None):
         """
         The set of arguments for constructing a EdgeKv resource.
-        :param pulumi.Input[int] group_id: - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
-        :param pulumi.Input[str] namespace_name: - (Required) The name of the namespace.
+        :param pulumi.Input[int] group_id: (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        :param pulumi.Input[str] namespace_name: (Required) The name of the namespace.
         :param pulumi.Input[str] network: The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
-        :param pulumi.Input[int] retention_in_seconds: - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        :param pulumi.Input[int] retention_in_seconds: (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
         :param pulumi.Input[str] geo_location: Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
         :param pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]] initial_datas: List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
         """
@@ -44,7 +44,7 @@ class EdgeKvArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[int]:
         """
-        - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
         """
         return pulumi.get(self, "group_id")
 
@@ -56,7 +56,7 @@ class EdgeKvArgs:
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> pulumi.Input[str]:
         """
-        - (Required) The name of the namespace.
+        (Required) The name of the namespace.
         """
         return pulumi.get(self, "namespace_name")
 
@@ -80,7 +80,7 @@ class EdgeKvArgs:
     @pulumi.getter(name="retentionInSeconds")
     def retention_in_seconds(self) -> pulumi.Input[int]:
         """
-        - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
         """
         return pulumi.get(self, "retention_in_seconds")
 
@@ -125,11 +125,11 @@ class _EdgeKvState:
         """
         Input properties used for looking up and filtering EdgeKv resources.
         :param pulumi.Input[str] geo_location: Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
-        :param pulumi.Input[int] group_id: - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        :param pulumi.Input[int] group_id: (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
         :param pulumi.Input[Sequence[pulumi.Input['EdgeKvInitialDataArgs']]] initial_datas: List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
-        :param pulumi.Input[str] namespace_name: - (Required) The name of the namespace.
+        :param pulumi.Input[str] namespace_name: (Required) The name of the namespace.
         :param pulumi.Input[str] network: The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
-        :param pulumi.Input[int] retention_in_seconds: - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        :param pulumi.Input[int] retention_in_seconds: (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
         """
         if geo_location is not None:
             pulumi.set(__self__, "geo_location", geo_location)
@@ -160,7 +160,7 @@ class _EdgeKvState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[int]]:
         """
-        - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
         """
         return pulumi.get(self, "group_id")
 
@@ -184,7 +184,7 @@ class _EdgeKvState:
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required) The name of the namespace.
+        (Required) The name of the namespace.
         """
         return pulumi.get(self, "namespace_name")
 
@@ -208,7 +208,7 @@ class _EdgeKvState:
     @pulumi.getter(name="retentionInSeconds")
     def retention_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
-        - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
         """
         return pulumi.get(self, "retention_in_seconds")
 
@@ -259,11 +259,11 @@ class EdgeKv(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] geo_location: Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
-        :param pulumi.Input[int] group_id: - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        :param pulumi.Input[int] group_id: (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['EdgeKvInitialDataArgs']]]] initial_datas: List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
-        :param pulumi.Input[str] namespace_name: - (Required) The name of the namespace.
+        :param pulumi.Input[str] namespace_name: (Required) The name of the namespace.
         :param pulumi.Input[str] network: The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
-        :param pulumi.Input[int] retention_in_seconds: - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        :param pulumi.Input[int] retention_in_seconds: (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
         """
         ...
     @overload
@@ -366,11 +366,11 @@ class EdgeKv(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] geo_location: Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
-        :param pulumi.Input[int] group_id: - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        :param pulumi.Input[int] group_id: (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['EdgeKvInitialDataArgs']]]] initial_datas: List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
-        :param pulumi.Input[str] namespace_name: - (Required) The name of the namespace.
+        :param pulumi.Input[str] namespace_name: (Required) The name of the namespace.
         :param pulumi.Input[str] network: The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
-        :param pulumi.Input[int] retention_in_seconds: - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        :param pulumi.Input[int] retention_in_seconds: (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -396,7 +396,7 @@ class EdgeKv(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[int]:
         """
-        - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
         """
         return pulumi.get(self, "group_id")
 
@@ -412,7 +412,7 @@ class EdgeKv(pulumi.CustomResource):
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> pulumi.Output[str]:
         """
-        - (Required) The name of the namespace.
+        (Required) The name of the namespace.
         """
         return pulumi.get(self, "namespace_name")
 
@@ -428,7 +428,7 @@ class EdgeKv(pulumi.CustomResource):
     @pulumi.getter(name="retentionInSeconds")
     def retention_in_seconds(self) -> pulumi.Output[int]:
         """
-        - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
         """
         return pulumi.get(self, "retention_in_seconds")
 

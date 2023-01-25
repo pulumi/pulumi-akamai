@@ -100,19 +100,19 @@ namespace Pulumi.Akamai
     public sealed class GetPropertyRulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public string? ContractId { get; set; }
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public string? GroupId { get; set; }
 
         /// <summary>
-        /// - (Required) A property's unique ID, including the `prp_` prefix.
+        /// (Required) A property's unique ID, including the `prp_` prefix.
         /// </summary>
         [Input("propertyId", required: true)]
         public string PropertyId { get; set; } = null!;
@@ -121,7 +121,7 @@ namespace Pulumi.Akamai
         public string? RuleFormat { get; set; }
 
         /// <summary>
-        /// - (Optional) The version to return. Returns the latest version by default.
+        /// (Optional) The version to return. Returns the latest version by default.
         /// </summary>
         [Input("version")]
         public int? Version { get; set; }
@@ -135,19 +135,19 @@ namespace Pulumi.Akamai
     public sealed class GetPropertyRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
-        /// - (Required) A property's unique ID, including the `prp_` prefix.
+        /// (Required) A property's unique ID, including the `prp_` prefix.
         /// </summary>
         [Input("propertyId", required: true)]
         public Input<string> PropertyId { get; set; } = null!;
@@ -156,7 +156,7 @@ namespace Pulumi.Akamai
         public Input<string>? RuleFormat { get; set; }
 
         /// <summary>
-        /// - (Optional) The version to return. Returns the latest version by default.
+        /// (Optional) The version to return. Returns the latest version by default.
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }

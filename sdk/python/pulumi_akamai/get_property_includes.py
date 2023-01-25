@@ -125,10 +125,10 @@ def get_property_includes(contract_id: Optional[str] = None,
      * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
 
 
-    :param str contract_id: - (Required) A contract's unique ID, including the optional `ctr_` prefix.
-    :param str group_id: - (Required) A group's unique ID, including the optional `grp_` prefix.
-    :param pulumi.InputType['GetPropertyIncludesParentPropertyArgs'] parent_property: - (Optional) The property that references the includes you want to list.
-    :param str type: - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+    :param str contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
+    :param str group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
+    :param pulumi.InputType['GetPropertyIncludesParentPropertyArgs'] parent_property: (Optional) The property that references the includes you want to list.
+    :param str type: (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -182,9 +182,9 @@ def get_property_includes_output(contract_id: Optional[pulumi.Input[str]] = None
      * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
 
 
-    :param str contract_id: - (Required) A contract's unique ID, including the optional `ctr_` prefix.
-    :param str group_id: - (Required) A group's unique ID, including the optional `grp_` prefix.
-    :param pulumi.InputType['GetPropertyIncludesParentPropertyArgs'] parent_property: - (Optional) The property that references the includes you want to list.
-    :param str type: - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+    :param str contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
+    :param str group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
+    :param pulumi.InputType['GetPropertyIncludesParentPropertyArgs'] parent_property: (Optional) The property that references the includes you want to list.
+    :param str type: (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
     """
     ...

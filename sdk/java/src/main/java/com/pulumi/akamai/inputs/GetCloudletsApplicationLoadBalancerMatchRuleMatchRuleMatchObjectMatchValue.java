@@ -18,14 +18,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
     public static final GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue Empty = new GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue();
 
     /**
-     * - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     @Import(name="name")
     private @Nullable String name;
 
     /**
-     * @return - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     public Optional<String> name() {
@@ -33,14 +33,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
     }
 
     /**
-     * - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     * (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
      * 
      */
     @Import(name="nameCaseSensitive")
     private @Nullable Boolean nameCaseSensitive;
 
     /**
-     * @return - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+     * @return (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
      * 
      */
     public Optional<Boolean> nameCaseSensitive() {
@@ -48,14 +48,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
     }
 
     /**
-     * - (Optional) Whether the `name` argument includes wildcards.
+     * (Optional) Whether the `name` argument includes wildcards.
      * 
      */
     @Import(name="nameHasWildcard")
     private @Nullable Boolean nameHasWildcard;
 
     /**
-     * @return - (Optional) Whether the `name` argument includes wildcards.
+     * @return (Optional) Whether the `name` argument includes wildcards.
      * 
      */
     public Optional<Boolean> nameHasWildcard() {
@@ -63,14 +63,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
     }
 
     /**
-     * - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     * (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
      * 
      */
     @Import(name="options")
     private @Nullable GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptions options;
 
     /**
-     * @return - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+     * @return (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
      * 
      */
     public Optional<GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptions> options() {
@@ -78,14 +78,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
     }
 
     /**
-     * - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     @Import(name="type", required=true)
     private String type;
 
     /**
-     * @return - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * @return (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     public String type() {
@@ -93,14 +93,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
     }
 
     /**
-     * - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+     * (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
      * 
      */
     @Import(name="values")
     private @Nullable List<String> values;
 
     /**
-     * @return - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+     * @return (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
      * 
      */
     public Optional<List<String>> values() {
@@ -137,7 +137,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param name - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param nameCaseSensitive - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+         * @param nameCaseSensitive (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param nameHasWildcard - (Optional) Whether the `name` argument includes wildcards.
+         * @param nameHasWildcard (Optional) Whether the `name` argument includes wildcards.
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param options - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+         * @param options (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param type - (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
+         * @param type (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
          * 
          * @return builder
          * 
@@ -192,7 +192,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param values - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+         * @param values (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param values - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+         * @param values (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
          * 
          * @return builder
          * 

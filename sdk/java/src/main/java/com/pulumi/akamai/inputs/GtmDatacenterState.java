@@ -111,12 +111,6 @@ public final class GtmDatacenterState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * A unique identifier for an existing data center in the domain.
-     * * `ping_interval`
-     * * `ping_packet_size`
-     * * `score_penalty`
-     * * `servermonitor_liveness_count`
-     * * `servermonitor_load_count`
-     * * `servermonitor_pool`
      * 
      */
     @Import(name="datacenterId")
@@ -124,12 +118,6 @@ public final class GtmDatacenterState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * @return A unique identifier for an existing data center in the domain.
-     * * `ping_interval`
-     * * `ping_packet_size`
-     * * `score_penalty`
-     * * `servermonitor_liveness_count`
-     * * `servermonitor_load_count`
-     * * `servermonitor_pool`
      * 
      */
     public Optional<Output<Integer>> datacenterId() {
@@ -470,12 +458,6 @@ public final class GtmDatacenterState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param datacenterId A unique identifier for an existing data center in the domain.
-         * * `ping_interval`
-         * * `ping_packet_size`
-         * * `score_penalty`
-         * * `servermonitor_liveness_count`
-         * * `servermonitor_load_count`
-         * * `servermonitor_pool`
          * 
          * @return builder
          * 
@@ -487,12 +469,6 @@ public final class GtmDatacenterState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param datacenterId A unique identifier for an existing data center in the domain.
-         * * `ping_interval`
-         * * `ping_packet_size`
-         * * `score_penalty`
-         * * `servermonitor_liveness_count`
-         * * `servermonitor_load_count`
-         * * `servermonitor_pool`
          * 
          * @return builder
          * 

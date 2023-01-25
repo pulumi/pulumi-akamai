@@ -83,14 +83,14 @@ public class EdgeKv extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.geoLocation);
     }
     /**
-     * - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+     * (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
      * 
      */
     @Export(name="groupId", type=Integer.class, parameters={})
     private Output<Integer> groupId;
 
     /**
-     * @return - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+     * @return (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
      * 
      */
     public Output<Integer> groupId() {
@@ -111,14 +111,14 @@ public class EdgeKv extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.initialDatas);
     }
     /**
-     * - (Required) The name of the namespace.
+     * (Required) The name of the namespace.
      * 
      */
     @Export(name="namespaceName", type=String.class, parameters={})
     private Output<String> namespaceName;
 
     /**
-     * @return - (Required) The name of the namespace.
+     * @return (Required) The name of the namespace.
      * 
      */
     public Output<String> namespaceName() {
@@ -139,14 +139,14 @@ public class EdgeKv extends com.pulumi.resources.CustomResource {
         return this.network;
     }
     /**
-     * - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+     * (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
      * 
      */
     @Export(name="retentionInSeconds", type=Integer.class, parameters={})
     private Output<Integer> retentionInSeconds;
 
     /**
-     * @return - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+     * @return (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
      * 
      */
     public Output<Integer> retentionInSeconds() {

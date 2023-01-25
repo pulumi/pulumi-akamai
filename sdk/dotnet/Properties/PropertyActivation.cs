@@ -117,13 +117,13 @@ namespace Pulumi.Akamai.Properties
         public Output<string?> Note { get; private set; } = null!;
 
         /// <summary>
-        /// - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        /// (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
         /// </summary>
         [Output("property")]
         public Output<string> Property { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The property's unique identifier, including the `prp_` prefix.
+        /// (Required) The property's unique identifier, including the `prp_` prefix.
         /// </summary>
         [Output("propertyId")]
         public Output<string> PropertyId { get; private set; } = null!;
@@ -131,6 +131,9 @@ namespace Pulumi.Akamai.Properties
         [Output("ruleErrors")]
         public Output<ImmutableArray<Outputs.PropertyActivationRuleError>> RuleErrors { get; private set; } = null!;
 
+        /// <summary>
+        /// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        /// </summary>
         [Output("ruleWarnings")]
         public Output<ImmutableArray<Outputs.PropertyActivationRuleWarning>> RuleWarnings { get; private set; } = null!;
 
@@ -235,13 +238,13 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Note { get; set; }
 
         /// <summary>
-        /// - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        /// (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
         /// </summary>
         [Input("property")]
         public Input<string>? Property { get; set; }
 
         /// <summary>
-        /// - (Required) The property's unique identifier, including the `prp_` prefix.
+        /// (Required) The property's unique identifier, including the `prp_` prefix.
         /// </summary>
         [Input("propertyId")]
         public Input<string>? PropertyId { get; set; }
@@ -256,6 +259,10 @@ namespace Pulumi.Akamai.Properties
 
         [Input("ruleWarnings")]
         private InputList<Inputs.PropertyActivationRuleWarningArgs>? _ruleWarnings;
+
+        /// <summary>
+        /// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        /// </summary>
         [Obsolete(@"Rule warnings will not be set in state anymore")]
         public InputList<Inputs.PropertyActivationRuleWarningArgs> RuleWarnings
         {
@@ -320,13 +327,13 @@ namespace Pulumi.Akamai.Properties
         public Input<string>? Note { get; set; }
 
         /// <summary>
-        /// - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        /// (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
         /// </summary>
         [Input("property")]
         public Input<string>? Property { get; set; }
 
         /// <summary>
-        /// - (Required) The property's unique identifier, including the `prp_` prefix.
+        /// (Required) The property's unique identifier, including the `prp_` prefix.
         /// </summary>
         [Input("propertyId")]
         public Input<string>? PropertyId { get; set; }
@@ -341,6 +348,10 @@ namespace Pulumi.Akamai.Properties
 
         [Input("ruleWarnings")]
         private InputList<Inputs.PropertyActivationRuleWarningGetArgs>? _ruleWarnings;
+
+        /// <summary>
+        /// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        /// </summary>
         [Obsolete(@"Rule warnings will not be set in state anymore")]
         public InputList<Inputs.PropertyActivationRuleWarningGetArgs> RuleWarnings
         {

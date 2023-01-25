@@ -32,7 +32,7 @@ export function getCloudletsRequestControlMatchRule(args?: GetCloudletsRequestCo
  */
 export interface GetCloudletsRequestControlMatchRuleArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: inputs.GetCloudletsRequestControlMatchRuleMatchRule[];
 }
@@ -69,7 +69,7 @@ export function getCloudletsRequestControlMatchRuleOutput(args?: GetCloudletsReq
  */
 export interface GetCloudletsRequestControlMatchRuleOutputArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleArgs>[]>;
 }

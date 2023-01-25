@@ -15,7 +15,7 @@ public final class GetDatastreamActivationHistoryActivation {
     private String createdDate;
     private Boolean isActive;
     /**
-     * @return - (Required) A stream&#39;s unique identifier.
+     * @return (Required) A stream&#39;s unique identifier.
      * 
      */
     private Integer streamId;
@@ -32,7 +32,7 @@ public final class GetDatastreamActivationHistoryActivation {
         return this.isActive;
     }
     /**
-     * @return - (Required) A stream&#39;s unique identifier.
+     * @return (Required) A stream&#39;s unique identifier.
      * 
      */
     public Integer streamId() {

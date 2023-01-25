@@ -18,7 +18,6 @@ public final class GetAppSecSecurityPolicyArgs extends com.pulumi.resources.Invo
 
     /**
      * . Unique identifier of the security configuration associated with the security policies.
-     * - `security_policy_name`. (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
      * 
      */
     @Import(name="configId", required=true)
@@ -26,16 +25,23 @@ public final class GetAppSecSecurityPolicyArgs extends com.pulumi.resources.Invo
 
     /**
      * @return . Unique identifier of the security configuration associated with the security policies.
-     * - `security_policy_name`. (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
 
+    /**
+     * . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
+     * 
+     */
     @Import(name="securityPolicyName")
     private @Nullable Output<String> securityPolicyName;
 
+    /**
+     * @return . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
+     * 
+     */
     public Optional<Output<String>> securityPolicyName() {
         return Optional.ofNullable(this.securityPolicyName);
     }
@@ -67,7 +73,6 @@ public final class GetAppSecSecurityPolicyArgs extends com.pulumi.resources.Invo
 
         /**
          * @param configId . Unique identifier of the security configuration associated with the security policies.
-         * - `security_policy_name`. (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
          * 
          * @return builder
          * 
@@ -79,7 +84,6 @@ public final class GetAppSecSecurityPolicyArgs extends com.pulumi.resources.Invo
 
         /**
          * @param configId . Unique identifier of the security configuration associated with the security policies.
-         * - `security_policy_name`. (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
          * 
          * @return builder
          * 
@@ -88,11 +92,23 @@ public final class GetAppSecSecurityPolicyArgs extends com.pulumi.resources.Invo
             return configId(Output.of(configId));
         }
 
+        /**
+         * @param securityPolicyName . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
+         * 
+         * @return builder
+         * 
+         */
         public Builder securityPolicyName(@Nullable Output<String> securityPolicyName) {
             $.securityPolicyName = securityPolicyName;
             return this;
         }
 
+        /**
+         * @param securityPolicyName . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
+         * 
+         * @return builder
+         * 
+         */
         public Builder securityPolicyName(String securityPolicyName) {
             return securityPolicyName(Output.of(securityPolicyName));
         }

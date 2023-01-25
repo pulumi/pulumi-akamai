@@ -106,7 +106,7 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.groupId);
     }
     /**
-     * : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or
      * removed from an existing list.
      * 
      */
@@ -114,7 +114,7 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ List<String>> lists;
 
     /**
-     * @return : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+     * @return A list of IP addresses or locations to be included in the list, added to an existing list, or
      * removed from an existing list.
      * 
      */

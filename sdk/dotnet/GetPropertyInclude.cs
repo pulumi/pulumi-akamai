@@ -98,19 +98,19 @@ namespace Pulumi.Akamai
     public sealed class GetPropertyIncludeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the optional `grp_` prefix.
+        /// (Required) A group's unique ID, including the optional `grp_` prefix.
         /// </summary>
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) An include's unique ID with the optional `inc_` prefix.
+        /// (Required) An include's unique ID with the optional `inc_` prefix.
         /// </summary>
         [Input("includeId", required: true)]
         public string IncludeId { get; set; } = null!;
@@ -124,19 +124,19 @@ namespace Pulumi.Akamai
     public sealed class GetPropertyIncludeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the optional `grp_` prefix.
+        /// (Required) A group's unique ID, including the optional `grp_` prefix.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) An include's unique ID with the optional `inc_` prefix.
+        /// (Required) An include's unique ID with the optional `inc_` prefix.
         /// </summary>
         [Input("includeId", required: true)]
         public Input<string> IncludeId { get; set; } = null!;

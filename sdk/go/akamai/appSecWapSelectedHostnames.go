@@ -34,7 +34,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecWapSelectedHostnames(ctx, "appsecwapSelectedhostnames", &akamai.AppSecWapSelectedHostnamesArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //				ProtectedHosts: pulumi.StringArray{
 //					pulumi.String("documentation.akamai.com"),

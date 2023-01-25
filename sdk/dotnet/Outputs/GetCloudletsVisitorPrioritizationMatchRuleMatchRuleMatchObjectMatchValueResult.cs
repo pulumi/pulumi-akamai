@@ -14,27 +14,27 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueResult
     {
         /// <summary>
-        /// - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        /// (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// - (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
+        /// (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
         /// </summary>
         public readonly bool? NameCaseSensitive;
         /// <summary>
-        /// - (Optional) Whether the `name` argument includes wildcards.
+        /// (Optional) Whether the `name` argument includes wildcards.
         /// </summary>
         public readonly bool? NameHasWildcard;
         /// <summary>
-        /// - (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
+        /// (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
         /// </summary>
         public readonly Outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsResult? Options;
         /// <summary>
-        /// - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        /// (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// - (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
+        /// (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

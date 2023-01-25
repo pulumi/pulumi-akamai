@@ -174,7 +174,7 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.note);
     }
     /**
-     * - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+     * (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
      * 
      * @deprecated
      * The setting &#34;property&#34; has been deprecated.
@@ -185,21 +185,21 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
     private Output<String> property;
 
     /**
-     * @return - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+     * @return (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
      * 
      */
     public Output<String> property() {
         return this.property;
     }
     /**
-     * - (Required) The property&#39;s unique identifier, including the `prp_` prefix.
+     * (Required) The property&#39;s unique identifier, including the `prp_` prefix.
      * 
      */
     @Export(name="propertyId", type=String.class, parameters={})
     private Output<String> propertyId;
 
     /**
-     * @return - (Required) The property&#39;s unique identifier, including the `prp_` prefix.
+     * @return (Required) The property&#39;s unique identifier, including the `prp_` prefix.
      * 
      */
     public Output<String> propertyId() {
@@ -212,6 +212,8 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
         return this.ruleErrors;
     }
     /**
+     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     * 
      * @deprecated
      * Rule warnings will not be set in state anymore
      * 
@@ -220,6 +222,10 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
     @Export(name="ruleWarnings", type=List.class, parameters={PropertyActivationRuleWarning.class})
     private Output<List<PropertyActivationRuleWarning>> ruleWarnings;
 
+    /**
+     * @return (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+     * 
+     */
     public Output<List<PropertyActivationRuleWarning>> ruleWarnings() {
         return this.ruleWarnings;
     }

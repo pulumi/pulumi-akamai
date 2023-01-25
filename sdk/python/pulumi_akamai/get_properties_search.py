@@ -98,7 +98,7 @@ def get_properties_search(key: Optional[str] = None,
            * **hostname**
            * **edgeHostname**
            * **propertyName**
-    :param str value: - (Required) Value to search for.
+    :param str value: (Required) Value to search for.
     """
     __args__ = dict()
     __args__['key'] = key
@@ -140,6 +140,6 @@ def get_properties_search_output(key: Optional[pulumi.Input[str]] = None,
            * **hostname**
            * **edgeHostname**
            * **propertyName**
-    :param str value: - (Required) Value to search for.
+    :param str value: (Required) Value to search for.
     """
     ...

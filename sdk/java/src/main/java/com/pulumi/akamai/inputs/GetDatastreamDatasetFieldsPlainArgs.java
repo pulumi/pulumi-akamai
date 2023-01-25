@@ -15,14 +15,14 @@ public final class GetDatastreamDatasetFieldsPlainArgs extends com.pulumi.resour
     public static final GetDatastreamDatasetFieldsPlainArgs Empty = new GetDatastreamDatasetFieldsPlainArgs();
 
     /**
-     * - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
+     * (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
      * 
      */
     @Import(name="templateName")
     private @Nullable String templateName;
 
     /**
-     * @return - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
+     * @return (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
      * 
      */
     public Optional<String> templateName() {
@@ -54,7 +54,7 @@ public final class GetDatastreamDatasetFieldsPlainArgs extends com.pulumi.resour
         }
 
         /**
-         * @param templateName - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
+         * @param templateName (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
          * 
          * @return builder
          * 

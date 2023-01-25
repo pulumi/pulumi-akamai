@@ -14,14 +14,14 @@ public final class GetPropertyIncludesParentProperty extends com.pulumi.resource
     public static final GetPropertyIncludesParentProperty Empty = new GetPropertyIncludesParentProperty();
 
     /**
-     * - (Required) The property&#39;s unique identifier.
+     * (Required) The property&#39;s unique identifier.
      * 
      */
     @Import(name="id", required=true)
     private String id;
 
     /**
-     * @return - (Required) The property&#39;s unique identifier.
+     * @return (Required) The property&#39;s unique identifier.
      * 
      */
     public String id() {
@@ -29,14 +29,14 @@ public final class GetPropertyIncludesParentProperty extends com.pulumi.resource
     }
 
     /**
-     * - (Required) The version of the activated parent property.
+     * (Required) The version of the activated parent property.
      * 
      */
     @Import(name="version", required=true)
     private Integer version;
 
     /**
-     * @return - (Required) The version of the activated parent property.
+     * @return (Required) The version of the activated parent property.
      * 
      */
     public Integer version() {
@@ -69,7 +69,7 @@ public final class GetPropertyIncludesParentProperty extends com.pulumi.resource
         }
 
         /**
-         * @param id - (Required) The property&#39;s unique identifier.
+         * @param id (Required) The property&#39;s unique identifier.
          * 
          * @return builder
          * 
@@ -80,7 +80,7 @@ public final class GetPropertyIncludesParentProperty extends com.pulumi.resource
         }
 
         /**
-         * @param version - (Required) The version of the activated parent property.
+         * @param version (Required) The version of the activated parent property.
          * 
          * @return builder
          * 

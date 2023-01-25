@@ -28,7 +28,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.GetEdgeWorkerActivation(ctx, &akamai.GetEdgeWorkerActivationArgs{
+//			_, err := akamai.GetEdgeWorkerActivation(ctx, &akamai.GetEdgeWorkerActivationArgs{
 //				EdgeworkerId: 1,
 //				Network:      "STAGING",
 //			}, nil)

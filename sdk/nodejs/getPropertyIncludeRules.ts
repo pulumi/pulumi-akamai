@@ -51,19 +51,19 @@ export function getPropertyIncludeRules(args: GetPropertyIncludeRulesArgs, opts?
  */
 export interface GetPropertyIncludeRulesArgs {
     /**
-     * - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
      */
     contractId: string;
     /**
-     * - (Required) A group's unique ID, including the optional `grp_` prefix.
+     * (Required) A group's unique ID, including the optional `grp_` prefix.
      */
     groupId: string;
     /**
-     * - (Required) An include's unique ID with the optional `inc_` prefix.
+     * (Required) An include's unique ID with the optional `inc_` prefix.
      */
     includeId: string;
     /**
-     * - (Required) The include version you want to view the rules for.
+     * (Required) The include version you want to view the rules for.
      */
     version: number;
 }
@@ -127,19 +127,19 @@ export function getPropertyIncludeRulesOutput(args: GetPropertyIncludeRulesOutpu
  */
 export interface GetPropertyIncludeRulesOutputArgs {
     /**
-     * - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
      */
     contractId: pulumi.Input<string>;
     /**
-     * - (Required) A group's unique ID, including the optional `grp_` prefix.
+     * (Required) A group's unique ID, including the optional `grp_` prefix.
      */
     groupId: pulumi.Input<string>;
     /**
-     * - (Required) An include's unique ID with the optional `inc_` prefix.
+     * (Required) An include's unique ID with the optional `inc_` prefix.
      */
     includeId: pulumi.Input<string>;
     /**
-     * - (Required) The include version you want to view the rules for.
+     * (Required) The include version you want to view the rules for.
      */
     version: pulumi.Input<number>;
 }

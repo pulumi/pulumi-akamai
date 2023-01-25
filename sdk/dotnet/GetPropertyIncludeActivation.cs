@@ -46,25 +46,25 @@ namespace Pulumi.Akamai
     public sealed class GetPropertyIncludeActivationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the optional `grp_` prefix.
+        /// (Required) A group's unique ID, including the optional `grp_` prefix.
         /// </summary>
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) An include's unique ID with the optional `inc_` prefix.
+        /// (Required) An include's unique ID with the optional `inc_` prefix.
         /// </summary>
         [Input("includeId", required: true)]
         public string IncludeId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+        /// (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
         /// </summary>
         [Input("network", required: true)]
         public string Network { get; set; } = null!;
@@ -78,25 +78,25 @@ namespace Pulumi.Akamai
     public sealed class GetPropertyIncludeActivationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the optional `grp_` prefix.
+        /// (Required) A group's unique ID, including the optional `grp_` prefix.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) An include's unique ID with the optional `inc_` prefix.
+        /// (Required) An include's unique ID with the optional `inc_` prefix.
         /// </summary>
         [Input("includeId", required: true)]
         public Input<string> IncludeId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+        /// (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
         /// </summary>
         [Input("network", required: true)]
         public Input<string> Network { get; set; } = null!;

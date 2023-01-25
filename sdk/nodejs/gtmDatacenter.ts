@@ -81,12 +81,6 @@ export class GtmDatacenter extends pulumi.CustomResource {
     public readonly country!: pulumi.Output<string | undefined>;
     /**
      * A unique identifier for an existing data center in the domain.
-     * * `pingInterval`
-     * * `pingPacketSize`
-     * * `scorePenalty`
-     * * `servermonitorLivenessCount`
-     * * `servermonitorLoadCount`
-     * * `servermonitorPool`
      */
     public /*out*/ readonly datacenterId!: pulumi.Output<number>;
     /**
@@ -226,12 +220,6 @@ export interface GtmDatacenterState {
     country?: pulumi.Input<string>;
     /**
      * A unique identifier for an existing data center in the domain.
-     * * `pingInterval`
-     * * `pingPacketSize`
-     * * `scorePenalty`
-     * * `servermonitorLivenessCount`
-     * * `servermonitorLoadCount`
-     * * `servermonitorPool`
      */
     datacenterId?: pulumi.Input<number>;
     /**

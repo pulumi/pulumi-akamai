@@ -44,11 +44,11 @@ export function getProperty(args: GetPropertyArgs, opts?: pulumi.InvokeOptions):
  */
 export interface GetPropertyArgs {
     /**
-     * - (Required) The property name.
+     * (Required) The property name.
      */
     name: string;
     /**
-     * - (Optional) The version of the property whose ID you want to list.
+     * (Optional) The version of the property whose ID you want to list.
      */
     version?: number;
 }
@@ -99,11 +99,11 @@ export function getPropertyOutput(args: GetPropertyOutputArgs, opts?: pulumi.Inv
  */
 export interface GetPropertyOutputArgs {
     /**
-     * - (Required) The property name.
+     * (Required) The property name.
      */
     name: pulumi.Input<string>;
     /**
-     * - (Optional) The version of the property whose ID you want to list.
+     * (Optional) The version of the property whose ID you want to list.
      */
     version?: pulumi.Input<number>;
 }

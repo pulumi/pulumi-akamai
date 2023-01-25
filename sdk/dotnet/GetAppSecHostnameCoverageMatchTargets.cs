@@ -105,6 +105,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecHostnameCoverageMatchTargetsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// . (Required). Unique identifier of the security configuration associated with the hostname.
+        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
@@ -122,6 +125,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecHostnameCoverageMatchTargetsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// . (Required). Unique identifier of the security configuration associated with the hostname.
+        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 

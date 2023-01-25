@@ -232,8 +232,8 @@ def get_cloudlets_application_load_balancer(origin_id: Optional[str] = None,
       * `timeout` - The number of seconds the system waits before failing the liveness test.
 
 
-    :param str origin_id: - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-    :param int version: - (Optional) The version number of the load balancing configuration.
+    :param str origin_id: (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+    :param int version: (Optional) The version number of the load balancing configuration.
     """
     __args__ = dict()
     __args__['originId'] = origin_id
@@ -321,7 +321,7 @@ def get_cloudlets_application_load_balancer_output(origin_id: Optional[pulumi.In
       * `timeout` - The number of seconds the system waits before failing the liveness test.
 
 
-    :param str origin_id: - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-    :param int version: - (Optional) The version number of the load balancing configuration.
+    :param str origin_id: (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+    :param int version: (Optional) The version number of the load balancing configuration.
     """
     ...

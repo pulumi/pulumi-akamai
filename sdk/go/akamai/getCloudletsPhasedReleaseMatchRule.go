@@ -31,7 +31,7 @@ func GetCloudletsPhasedReleaseMatchRule(ctx *pulumi.Context, args *GetCloudletsP
 
 // A collection of arguments for invoking getCloudletsPhasedReleaseMatchRule.
 type GetCloudletsPhasedReleaseMatchRuleArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsPhasedReleaseMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -58,7 +58,7 @@ func GetCloudletsPhasedReleaseMatchRuleOutput(ctx *pulumi.Context, args GetCloud
 
 // A collection of arguments for invoking getCloudletsPhasedReleaseMatchRule.
 type GetCloudletsPhasedReleaseMatchRuleOutputArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsPhasedReleaseMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

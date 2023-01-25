@@ -66,28 +66,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/propertyInclude:PropertyInclude")
 public class PropertyInclude extends com.pulumi.resources.CustomResource {
     /**
-     * - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     @Export(name="contractId", type=String.class, parameters={})
     private Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     public Output<String> contractId() {
         return this.contractId;
     }
     /**
-     * - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     @Export(name="groupId", type=String.class, parameters={})
     private Output<String> groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     public Output<String> groupId() {
@@ -108,14 +108,14 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
         return this.latestVersion;
     }
     /**
-     * - (Required) The descriptive name for the include.
+     * (Required) The descriptive name for the include.
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return - (Required) The descriptive name for the include.
+     * @return (Required) The descriptive name for the include.
      * 
      */
     public Output<String> name() {
@@ -164,14 +164,14 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
         return this.ruleErrors;
     }
     /**
-     * - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+     * (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
      * 
      */
     @Export(name="ruleFormat", type=String.class, parameters={})
     private Output<String> ruleFormat;
 
     /**
-     * @return - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+     * @return (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
      * 
      */
     public Output<String> ruleFormat() {
@@ -192,14 +192,14 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
         return this.ruleWarnings;
     }
     /**
-     * - (Optional) Include&#39;s rules as JSON.
+     * (Optional) Include&#39;s rules as JSON.
      * 
      */
     @Export(name="rules", type=String.class, parameters={})
     private Output<String> rules;
 
     /**
-     * @return - (Optional) Include&#39;s rules as JSON.
+     * @return (Optional) Include&#39;s rules as JSON.
      * 
      */
     public Output<String> rules() {
@@ -220,14 +220,14 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
         return this.stagingVersion;
     }
     /**
-     * - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
      * 
      */
     @Export(name="type", type=String.class, parameters={})
     private Output<String> type;
 
     /**
-     * @return - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * @return (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
      * 
      */
     public Output<String> type() {

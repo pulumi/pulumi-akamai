@@ -17,14 +17,14 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
     public static final EdgeWorkerArgs Empty = new EdgeWorkerArgs();
 
     /**
-     * - (Required) Identifies a group to assign to the EdgeWorker ID.
+     * (Required) Identifies a group to assign to the EdgeWorker ID.
      * 
      */
     @Import(name="groupId", required=true)
     private Output<Integer> groupId;
 
     /**
-     * @return - (Required) Identifies a group to assign to the EdgeWorker ID.
+     * @return (Required) Identifies a group to assign to the EdgeWorker ID.
      * 
      */
     public Output<Integer> groupId() {
@@ -32,14 +32,14 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * - (Optional) The path to the EdgeWorkers code bundle.
+     * (Optional) The path to the EdgeWorkers code bundle.
      * 
      */
     @Import(name="localBundle")
     private @Nullable Output<String> localBundle;
 
     /**
-     * @return - (Optional) The path to the EdgeWorkers code bundle.
+     * @return (Optional) The path to the EdgeWorkers code bundle.
      * 
      */
     public Optional<Output<String>> localBundle() {
@@ -47,14 +47,14 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * - (Required) The name of the EdgeWorker ID.
+     * (Required) The name of the EdgeWorker ID.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return - (Required) The name of the EdgeWorker ID.
+     * @return (Required) The name of the EdgeWorker ID.
      * 
      */
     public Optional<Output<String>> name() {
@@ -62,14 +62,14 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * - (Required) Unique identifier of the resource tier.
+     * (Required) Unique identifier of the resource tier.
      * 
      */
     @Import(name="resourceTierId", required=true)
     private Output<Integer> resourceTierId;
 
     /**
-     * @return - (Required) Unique identifier of the resource tier.
+     * @return (Required) Unique identifier of the resource tier.
      * 
      */
     public Output<Integer> resourceTierId() {
@@ -104,7 +104,7 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId - (Required) Identifies a group to assign to the EdgeWorker ID.
+         * @param groupId (Required) Identifies a group to assign to the EdgeWorker ID.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId - (Required) Identifies a group to assign to the EdgeWorker ID.
+         * @param groupId (Required) Identifies a group to assign to the EdgeWorker ID.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param localBundle - (Optional) The path to the EdgeWorkers code bundle.
+         * @param localBundle (Optional) The path to the EdgeWorkers code bundle.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param localBundle - (Optional) The path to the EdgeWorkers code bundle.
+         * @param localBundle (Optional) The path to the EdgeWorkers code bundle.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name - (Required) The name of the EdgeWorker ID.
+         * @param name (Required) The name of the EdgeWorker ID.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name - (Required) The name of the EdgeWorker ID.
+         * @param name (Required) The name of the EdgeWorker ID.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceTierId - (Required) Unique identifier of the resource tier.
+         * @param resourceTierId (Required) Unique identifier of the resource tier.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class EdgeWorkerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceTierId - (Required) Unique identifier of the resource tier.
+         * @param resourceTierId (Required) Unique identifier of the resource tier.
          * 
          * @return builder
          * 

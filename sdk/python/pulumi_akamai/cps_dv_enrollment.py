@@ -34,8 +34,8 @@ class CpsDvEnrollmentArgs:
         """
         The set of arguments for constructing a CpsDvEnrollment resource.
         :param pulumi.Input['CpsDvEnrollmentAdminContactArgs'] admin_contact: Contact information for the certificate administrator at your company.
-        :param pulumi.Input[str] common_name: - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
-        :param pulumi.Input[str] contract_id: - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        :param pulumi.Input[str] common_name: (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        :param pulumi.Input[str] contract_id: (Required) A contract's ID, optionally with the `ctr_` prefix.
         :param pulumi.Input['CpsDvEnrollmentCsrArgs'] csr: When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
         :param pulumi.Input['CpsDvEnrollmentNetworkConfigurationArgs'] network_configuration: The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
         :param pulumi.Input['CpsDvEnrollmentOrganizationArgs'] organization: Your organization information.
@@ -44,7 +44,7 @@ class CpsDvEnrollmentArgs:
         :param pulumi.Input[bool] sni_only: Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
         :param pulumi.Input['CpsDvEnrollmentTechContactArgs'] tech_contact: The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `admin_contact`.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
-        :param pulumi.Input[bool] allow_duplicate_common_name: - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        :param pulumi.Input[bool] allow_duplicate_common_name: (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type.
         :param pulumi.Input[bool] enable_multi_stacked_certificates: Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: Additional common names to create a Subject Alternative Names (SAN) list.
@@ -89,7 +89,7 @@ class CpsDvEnrollmentArgs:
     @pulumi.getter(name="commonName")
     def common_name(self) -> pulumi.Input[str]:
         """
-        - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
         """
         return pulumi.get(self, "common_name")
 
@@ -101,7 +101,7 @@ class CpsDvEnrollmentArgs:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Input[str]:
         """
-        - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        (Required) A contract's ID, optionally with the `ctr_` prefix.
         """
         return pulumi.get(self, "contract_id")
 
@@ -209,7 +209,7 @@ class CpsDvEnrollmentArgs:
     @pulumi.getter(name="allowDuplicateCommonName")
     def allow_duplicate_common_name(self) -> Optional[pulumi.Input[bool]]:
         """
-        - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         """
         return pulumi.get(self, "allow_duplicate_common_name")
 
@@ -281,11 +281,11 @@ class _CpsDvEnrollmentState:
         Input properties used for looking up and filtering CpsDvEnrollment resources.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
         :param pulumi.Input['CpsDvEnrollmentAdminContactArgs'] admin_contact: Contact information for the certificate administrator at your company.
-        :param pulumi.Input[bool] allow_duplicate_common_name: - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        :param pulumi.Input[bool] allow_duplicate_common_name: (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type.
         :param pulumi.Input[str] certificate_type: Certificate type of enrollment
-        :param pulumi.Input[str] common_name: - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
-        :param pulumi.Input[str] contract_id: - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        :param pulumi.Input[str] common_name: (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        :param pulumi.Input[str] contract_id: (Required) A contract's ID, optionally with the `ctr_` prefix.
         :param pulumi.Input['CpsDvEnrollmentCsrArgs'] csr: When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
         :param pulumi.Input[Sequence[pulumi.Input['CpsDvEnrollmentDnsChallengeArgs']]] dns_challenges: DNS challenge information
         :param pulumi.Input[bool] enable_multi_stacked_certificates: Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
@@ -372,7 +372,7 @@ class _CpsDvEnrollmentState:
     @pulumi.getter(name="allowDuplicateCommonName")
     def allow_duplicate_common_name(self) -> Optional[pulumi.Input[bool]]:
         """
-        - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         """
         return pulumi.get(self, "allow_duplicate_common_name")
 
@@ -408,7 +408,7 @@ class _CpsDvEnrollmentState:
     @pulumi.getter(name="commonName")
     def common_name(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
         """
         return pulumi.get(self, "common_name")
 
@@ -420,7 +420,7 @@ class _CpsDvEnrollmentState:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        (Required) A contract's ID, optionally with the `ctr_` prefix.
         """
         return pulumi.get(self, "contract_id")
 
@@ -722,10 +722,10 @@ class CpsDvEnrollment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentAdminContactArgs']] admin_contact: Contact information for the certificate administrator at your company.
-        :param pulumi.Input[bool] allow_duplicate_common_name: - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        :param pulumi.Input[bool] allow_duplicate_common_name: (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type.
-        :param pulumi.Input[str] common_name: - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
-        :param pulumi.Input[str] contract_id: - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        :param pulumi.Input[str] common_name: (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        :param pulumi.Input[str] contract_id: (Required) A contract's ID, optionally with the `ctr_` prefix.
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']] csr: When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
         :param pulumi.Input[bool] enable_multi_stacked_certificates: Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentNetworkConfigurationArgs']] network_configuration: The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
@@ -975,11 +975,11 @@ class CpsDvEnrollment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentAdminContactArgs']] admin_contact: Contact information for the certificate administrator at your company.
-        :param pulumi.Input[bool] allow_duplicate_common_name: - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        :param pulumi.Input[bool] allow_duplicate_common_name: (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type.
         :param pulumi.Input[str] certificate_type: Certificate type of enrollment
-        :param pulumi.Input[str] common_name: - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
-        :param pulumi.Input[str] contract_id: - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        :param pulumi.Input[str] common_name: (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        :param pulumi.Input[str] contract_id: (Required) A contract's ID, optionally with the `ctr_` prefix.
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']] csr: When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CpsDvEnrollmentDnsChallengeArgs']]]] dns_challenges: DNS challenge information
         :param pulumi.Input[bool] enable_multi_stacked_certificates: Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
@@ -1040,7 +1040,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
     @pulumi.getter(name="allowDuplicateCommonName")
     def allow_duplicate_common_name(self) -> pulumi.Output[Optional[bool]]:
         """
-        - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         """
         return pulumi.get(self, "allow_duplicate_common_name")
 
@@ -1064,7 +1064,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
     @pulumi.getter(name="commonName")
     def common_name(self) -> pulumi.Output[str]:
         """
-        - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
         """
         return pulumi.get(self, "common_name")
 
@@ -1072,7 +1072,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[str]:
         """
-        - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        (Required) A contract's ID, optionally with the `ctr_` prefix.
         """
         return pulumi.get(self, "contract_id")
 

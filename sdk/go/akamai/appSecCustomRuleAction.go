@@ -40,7 +40,7 @@ import (
 //				return err
 //			}
 //			createCustomRuleAction, err := akamai.NewAppSecCustomRuleAction(ctx, "createCustomRuleAction", &akamai.AppSecCustomRuleActionArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //				CustomRuleId:     pulumi.Int(12345),
 //				CustomRuleAction: pulumi.String("alert"),

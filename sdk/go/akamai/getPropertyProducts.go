@@ -51,7 +51,7 @@ func GetPropertyProducts(ctx *pulumi.Context, args *GetPropertyProductsArgs, opt
 
 // A collection of arguments for invoking getPropertyProducts.
 type GetPropertyProductsArgs struct {
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
 }
 
@@ -78,7 +78,7 @@ func GetPropertyProductsOutput(ctx *pulumi.Context, args GetPropertyProductsOutp
 
 // A collection of arguments for invoking getPropertyProducts.
 type GetPropertyProductsOutputArgs struct {
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringInput `pulumi:"contractId"`
 }
 

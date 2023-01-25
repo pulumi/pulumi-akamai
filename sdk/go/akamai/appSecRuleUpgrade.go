@@ -34,7 +34,7 @@ import (
 //				return err
 //			}
 //			ruleUpgrade, err := akamai.NewAppSecRuleUpgrade(ctx, "ruleUpgrade", &akamai.AppSecRuleUpgradeArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //			})
 //			if err != nil {
@@ -76,11 +76,10 @@ type AppSecRuleUpgrade struct {
 	// Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
 	Mode pulumi.StringOutput `pulumi:"mode"`
 	// . Unique identifier of the security policy associated with the ruleset being upgraded.
-	// - `upgradeMode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
+	// . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
 	// - **ASE_AUTO**. Akamai automatically updates your rulesets.
 	// - **ASE_MANUAL**. Manually updates your rulesets.
-	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
 	UpgradeMode pulumi.StringPtrOutput `pulumi:"upgradeMode"`
 }
 
@@ -128,11 +127,10 @@ type appSecRuleUpgradeState struct {
 	// Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
 	Mode *string `pulumi:"mode"`
 	// . Unique identifier of the security policy associated with the ruleset being upgraded.
-	// - `upgradeMode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+	SecurityPolicyId *string `pulumi:"securityPolicyId"`
+	// . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
 	// - **ASE_AUTO**. Akamai automatically updates your rulesets.
 	// - **ASE_MANUAL**. Manually updates your rulesets.
-	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
 	UpgradeMode *string `pulumi:"upgradeMode"`
 }
 
@@ -146,11 +144,10 @@ type AppSecRuleUpgradeState struct {
 	// Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
 	Mode pulumi.StringPtrInput
 	// . Unique identifier of the security policy associated with the ruleset being upgraded.
-	// - `upgradeMode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+	SecurityPolicyId pulumi.StringPtrInput
+	// . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
 	// - **ASE_AUTO**. Akamai automatically updates your rulesets.
 	// - **ASE_MANUAL**. Manually updates your rulesets.
-	SecurityPolicyId pulumi.StringPtrInput
-	// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
 	UpgradeMode pulumi.StringPtrInput
 }
 
@@ -162,11 +159,10 @@ type appSecRuleUpgradeArgs struct {
 	// . Unique identifier of the security configuration associated with the ruleset being upgraded.
 	ConfigId int `pulumi:"configId"`
 	// . Unique identifier of the security policy associated with the ruleset being upgraded.
-	// - `upgradeMode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
 	// - **ASE_AUTO**. Akamai automatically updates your rulesets.
 	// - **ASE_MANUAL**. Manually updates your rulesets.
-	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
 	UpgradeMode *string `pulumi:"upgradeMode"`
 }
 
@@ -175,11 +171,10 @@ type AppSecRuleUpgradeArgs struct {
 	// . Unique identifier of the security configuration associated with the ruleset being upgraded.
 	ConfigId pulumi.IntInput
 	// . Unique identifier of the security policy associated with the ruleset being upgraded.
-	// - `upgradeMode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+	SecurityPolicyId pulumi.StringInput
+	// . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
 	// - **ASE_AUTO**. Akamai automatically updates your rulesets.
 	// - **ASE_MANUAL**. Manually updates your rulesets.
-	SecurityPolicyId pulumi.StringInput
-	// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
 	UpgradeMode pulumi.StringPtrInput
 }
 
@@ -291,14 +286,13 @@ func (o AppSecRuleUpgradeOutput) Mode() pulumi.StringOutput {
 }
 
 // . Unique identifier of the security policy associated with the ruleset being upgraded.
-// - `upgradeMode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-// - **ASE_AUTO**. Akamai automatically updates your rulesets.
-// - **ASE_MANUAL**. Manually updates your rulesets.
 func (o AppSecRuleUpgradeOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecRuleUpgrade) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
-// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+// . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+// - **ASE_AUTO**. Akamai automatically updates your rulesets.
+// - **ASE_MANUAL**. Manually updates your rulesets.
 func (o AppSecRuleUpgradeOutput) UpgradeMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppSecRuleUpgrade) pulumi.StringPtrOutput { return v.UpgradeMode }).(pulumi.StringPtrOutput)
 }

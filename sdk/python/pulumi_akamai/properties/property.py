@@ -35,14 +35,15 @@ class PropertyArgs:
         """
         The set of arguments for constructing a Property resource.
         :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
         :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the `grp_` prefix.
         :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
         :param pulumi.Input[str] name: The property name.
         :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[str] rule_format: The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
         :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
         """
         if contacts is not None:
@@ -130,7 +131,7 @@ class PropertyArgs:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required) A contract's unique ID, including the `ctr_` prefix.
+        (Required) A contract's unique ID, including the `ctr_` prefix.
         """
         return pulumi.get(self, "contract_id")
 
@@ -163,7 +164,7 @@ class PropertyArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required) A group's unique ID, including the `grp_` prefix.
+        (Required) A group's unique ID, including the `grp_` prefix.
         """
         return pulumi.get(self, "group_id")
 
@@ -252,6 +253,9 @@ class PropertyArgs:
     @property
     @pulumi.getter(name="ruleWarnings")
     def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]:
+        """
+        (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        """
         return pulumi.get(self, "rule_warnings")
 
     @rule_warnings.setter
@@ -307,9 +311,9 @@ class _PropertyState:
         """
         Input properties used for looking up and filtering Property resources.
         :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
         :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the `grp_` prefix.
         :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
         :param pulumi.Input[int] latest_version: The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
         :param pulumi.Input[str] name: The property name.
@@ -319,6 +323,7 @@ class _PropertyState:
         :param pulumi.Input[int] read_version: Required property's version to be read
         :param pulumi.Input[Sequence[pulumi.Input['PropertyRuleErrorArgs']]] rule_errors: The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         :param pulumi.Input[str] rule_format: The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
         :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
         :param pulumi.Input[int] staging_version: The current version of the property active on the Akamai staging network.
         """
@@ -417,7 +422,7 @@ class _PropertyState:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required) A contract's unique ID, including the `ctr_` prefix.
+        (Required) A contract's unique ID, including the `ctr_` prefix.
         """
         return pulumi.get(self, "contract_id")
 
@@ -450,7 +455,7 @@ class _PropertyState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required) A group's unique ID, including the `grp_` prefix.
+        (Required) A group's unique ID, including the `grp_` prefix.
         """
         return pulumi.get(self, "group_id")
 
@@ -587,6 +592,9 @@ class _PropertyState:
     @property
     @pulumi.getter(name="ruleWarnings")
     def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]:
+        """
+        (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        """
         return pulumi.get(self, "rule_warnings")
 
     @rule_warnings.setter
@@ -742,14 +750,15 @@ class Property(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
         :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the `grp_` prefix.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
         :param pulumi.Input[str] name: The property name.
         :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[str] rule_format: The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
         :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
         """
         ...
@@ -971,9 +980,9 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
         :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] group_id: - (Required) A group's unique ID, including the `grp_` prefix.
+        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the `grp_` prefix.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
         :param pulumi.Input[int] latest_version: The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
         :param pulumi.Input[str] name: The property name.
@@ -983,6 +992,7 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[int] read_version: Required property's version to be read
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleErrorArgs']]]] rule_errors: The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         :param pulumi.Input[str] rule_format: The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
         :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
         :param pulumi.Input[int] staging_version: The current version of the property active on the Akamai staging network.
         """
@@ -1030,7 +1040,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[str]:
         """
-        - (Required) A contract's unique ID, including the `ctr_` prefix.
+        (Required) A contract's unique ID, including the `ctr_` prefix.
         """
         return pulumi.get(self, "contract_id")
 
@@ -1051,7 +1061,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[str]:
         """
-        - (Required) A group's unique ID, including the `grp_` prefix.
+        (Required) A group's unique ID, including the `grp_` prefix.
         """
         return pulumi.get(self, "group_id")
 
@@ -1140,6 +1150,9 @@ class Property(pulumi.CustomResource):
     @property
     @pulumi.getter(name="ruleWarnings")
     def rule_warnings(self) -> pulumi.Output[Sequence['outputs.PropertyRuleWarning']]:
+        """
+        (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        """
         return pulumi.get(self, "rule_warnings")
 
     @property

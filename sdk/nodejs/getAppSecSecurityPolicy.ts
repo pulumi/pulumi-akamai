@@ -19,9 +19,11 @@ export function getAppSecSecurityPolicy(args: GetAppSecSecurityPolicyArgs, opts?
 export interface GetAppSecSecurityPolicyArgs {
     /**
      * . Unique identifier of the security configuration associated with the security policies.
-     * - `securityPolicyName`. (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
      */
     configId: number;
+    /**
+     * . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
+     */
     securityPolicyName?: string;
 }
 
@@ -50,8 +52,10 @@ export function getAppSecSecurityPolicyOutput(args: GetAppSecSecurityPolicyOutpu
 export interface GetAppSecSecurityPolicyOutputArgs {
     /**
      * . Unique identifier of the security configuration associated with the security policies.
-     * - `securityPolicyName`. (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
      */
     configId: pulumi.Input<number>;
+    /**
+     * . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
+     */
     securityPolicyName?: pulumi.Input<string>;
 }

@@ -52,7 +52,7 @@ import (
 //				return err
 //			}
 //			ratePolicy, err := akamai.NewAppSecRatePolicy(ctx, "ratePolicy", &akamai.AppSecRatePolicyArgs{
-//				ConfigId:   pulumi.Int(configuration.ConfigId),
+//				ConfigId:   *pulumi.Int(configuration.ConfigId),
 //				RatePolicy: readFileOrPanic(fmt.Sprintf("%v/rate_policy.json", path.Module)),
 //			})
 //			if err != nil {

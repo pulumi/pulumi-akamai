@@ -47,6 +47,9 @@ export class AppSecCustomRule extends pulumi.CustomResource {
      * . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
      */
     public readonly customRule!: pulumi.Output<string>;
+    /**
+     * . ID of the new custom rule.
+     */
     public /*out*/ readonly customRuleId!: pulumi.Output<number>;
 
     /**
@@ -94,6 +97,9 @@ export interface AppSecCustomRuleState {
      * . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
      */
     customRule?: pulumi.Input<string>;
+    /**
+     * . ID of the new custom rule.
+     */
     customRuleId?: pulumi.Input<number>;
 }
 

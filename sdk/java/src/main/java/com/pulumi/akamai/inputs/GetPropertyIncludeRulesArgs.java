@@ -15,14 +15,14 @@ public final class GetPropertyIncludeRulesArgs extends com.pulumi.resources.Invo
     public static final GetPropertyIncludeRulesArgs Empty = new GetPropertyIncludeRulesArgs();
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     @Import(name="contractId", required=true)
     private Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     public Output<String> contractId() {
@@ -30,14 +30,14 @@ public final class GetPropertyIncludeRulesArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     @Import(name="groupId", required=true)
     private Output<String> groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     public Output<String> groupId() {
@@ -45,14 +45,14 @@ public final class GetPropertyIncludeRulesArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+     * (Required) An include&#39;s unique ID with the optional `inc_` prefix.
      * 
      */
     @Import(name="includeId", required=true)
     private Output<String> includeId;
 
     /**
-     * @return - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+     * @return (Required) An include&#39;s unique ID with the optional `inc_` prefix.
      * 
      */
     public Output<String> includeId() {
@@ -60,14 +60,14 @@ public final class GetPropertyIncludeRulesArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * - (Required) The include version you want to view the rules for.
+     * (Required) The include version you want to view the rules for.
      * 
      */
     @Import(name="version", required=true)
     private Output<Integer> version;
 
     /**
-     * @return - (Required) The include version you want to view the rules for.
+     * @return (Required) The include version you want to view the rules for.
      * 
      */
     public Output<Integer> version() {
@@ -102,7 +102,7 @@ public final class GetPropertyIncludeRulesArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -113,7 +113,7 @@ public final class GetPropertyIncludeRulesArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -123,7 +123,7 @@ public final class GetPropertyIncludeRulesArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
          * 
          * @return builder
          * 
@@ -134,7 +134,7 @@ public final class GetPropertyIncludeRulesArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
          * 
          * @return builder
          * 
@@ -144,7 +144,7 @@ public final class GetPropertyIncludeRulesArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param includeId - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+         * @param includeId (Required) An include&#39;s unique ID with the optional `inc_` prefix.
          * 
          * @return builder
          * 
@@ -155,7 +155,7 @@ public final class GetPropertyIncludeRulesArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param includeId - (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+         * @param includeId (Required) An include&#39;s unique ID with the optional `inc_` prefix.
          * 
          * @return builder
          * 
@@ -165,7 +165,7 @@ public final class GetPropertyIncludeRulesArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param version - (Required) The include version you want to view the rules for.
+         * @param version (Required) The include version you want to view the rules for.
          * 
          * @return builder
          * 
@@ -176,7 +176,7 @@ public final class GetPropertyIncludeRulesArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param version - (Required) The include version you want to view the rules for.
+         * @param version (Required) The include version you want to view the rules for.
          * 
          * @return builder
          * 

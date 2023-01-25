@@ -15,14 +15,14 @@ public final class GetPropertyIncludesParentPropertyArgs extends com.pulumi.reso
     public static final GetPropertyIncludesParentPropertyArgs Empty = new GetPropertyIncludesParentPropertyArgs();
 
     /**
-     * - (Required) The property&#39;s unique identifier.
+     * (Required) The property&#39;s unique identifier.
      * 
      */
     @Import(name="id", required=true)
     private Output<String> id;
 
     /**
-     * @return - (Required) The property&#39;s unique identifier.
+     * @return (Required) The property&#39;s unique identifier.
      * 
      */
     public Output<String> id() {
@@ -30,14 +30,14 @@ public final class GetPropertyIncludesParentPropertyArgs extends com.pulumi.reso
     }
 
     /**
-     * - (Required) The version of the activated parent property.
+     * (Required) The version of the activated parent property.
      * 
      */
     @Import(name="version", required=true)
     private Output<Integer> version;
 
     /**
-     * @return - (Required) The version of the activated parent property.
+     * @return (Required) The version of the activated parent property.
      * 
      */
     public Output<Integer> version() {
@@ -70,7 +70,7 @@ public final class GetPropertyIncludesParentPropertyArgs extends com.pulumi.reso
         }
 
         /**
-         * @param id - (Required) The property&#39;s unique identifier.
+         * @param id (Required) The property&#39;s unique identifier.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class GetPropertyIncludesParentPropertyArgs extends com.pulumi.reso
         }
 
         /**
-         * @param id - (Required) The property&#39;s unique identifier.
+         * @param id (Required) The property&#39;s unique identifier.
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class GetPropertyIncludesParentPropertyArgs extends com.pulumi.reso
         }
 
         /**
-         * @param version - (Required) The version of the activated parent property.
+         * @param version (Required) The version of the activated parent property.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class GetPropertyIncludesParentPropertyArgs extends com.pulumi.reso
         }
 
         /**
-         * @param version - (Required) The version of the activated parent property.
+         * @param version (Required) The version of the activated parent property.
          * 
          * @return builder
          * 

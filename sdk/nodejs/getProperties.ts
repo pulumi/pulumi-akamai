@@ -39,11 +39,11 @@ export function getProperties(args: GetPropertiesArgs, opts?: pulumi.InvokeOptio
  */
 export interface GetPropertiesArgs {
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId: string;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId: string;
 }
@@ -88,11 +88,11 @@ export function getPropertiesOutput(args: GetPropertiesOutputArgs, opts?: pulumi
  */
 export interface GetPropertiesOutputArgs {
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId: pulumi.Input<string>;
     /**
-     * - (Required) A group's unique ID, including the `grp_` prefix.
+     * (Required) A group's unique ID, including the `grp_` prefix.
      */
     groupId: pulumi.Input<string>;
 }

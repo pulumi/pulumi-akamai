@@ -31,7 +31,7 @@ func GetCloudletsApplicationLoadBalancerMatchRule(ctx *pulumi.Context, args *Get
 
 // A collection of arguments for invoking getCloudletsApplicationLoadBalancerMatchRule.
 type GetCloudletsApplicationLoadBalancerMatchRuleArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsApplicationLoadBalancerMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -58,7 +58,7 @@ func GetCloudletsApplicationLoadBalancerMatchRuleOutput(ctx *pulumi.Context, arg
 
 // A collection of arguments for invoking getCloudletsApplicationLoadBalancerMatchRule.
 type GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

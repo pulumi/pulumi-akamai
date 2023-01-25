@@ -234,8 +234,8 @@ def get_cloudlets_policy(policy_id: Optional[int] = None,
           * `activation_date` - The date on which the property was activated in milliseconds since epoch.
 
 
-    :param int policy_id: - (Required) An integer identifier that is associated with all versions of a policy.
-    :param int version: - (Optional) The version number of a policy.
+    :param int policy_id: (Required) An integer identifier that is associated with all versions of a policy.
+    :param int version: (Optional) The version number of a policy.
     """
     __args__ = dict()
     __args__['policyId'] = policy_id
@@ -317,7 +317,7 @@ def get_cloudlets_policy_output(policy_id: Optional[pulumi.Input[int]] = None,
           * `activation_date` - The date on which the property was activated in milliseconds since epoch.
 
 
-    :param int policy_id: - (Required) An integer identifier that is associated with all versions of a policy.
-    :param int version: - (Optional) The version number of a policy.
+    :param int policy_id: (Required) An integer identifier that is associated with all versions of a policy.
+    :param int version: (Optional) The version number of a policy.
     """
     ...

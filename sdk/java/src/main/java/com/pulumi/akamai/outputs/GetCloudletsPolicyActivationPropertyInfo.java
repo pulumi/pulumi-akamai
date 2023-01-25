@@ -16,7 +16,7 @@ public final class GetCloudletsPolicyActivationPropertyInfo {
     private String name;
     private String status;
     /**
-     * @return - (Optional) The version number of a policy.
+     * @return (Optional) The version number of a policy.
      * 
      */
     private Integer version;
@@ -38,7 +38,7 @@ public final class GetCloudletsPolicyActivationPropertyInfo {
         return this.status;
     }
     /**
-     * @return - (Optional) The version number of a policy.
+     * @return (Optional) The version number of a policy.
      * 
      */
     public Integer version() {

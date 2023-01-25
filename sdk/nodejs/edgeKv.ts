@@ -67,7 +67,7 @@ export class EdgeKv extends pulumi.CustomResource {
      */
     public readonly geoLocation!: pulumi.Output<string | undefined>;
     /**
-     * - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+     * (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
      */
     public readonly groupId!: pulumi.Output<number>;
     /**
@@ -75,7 +75,7 @@ export class EdgeKv extends pulumi.CustomResource {
      */
     public readonly initialDatas!: pulumi.Output<outputs.EdgeKvInitialData[] | undefined>;
     /**
-     * - (Required) The name of the namespace.
+     * (Required) The name of the namespace.
      */
     public readonly namespaceName!: pulumi.Output<string>;
     /**
@@ -83,7 +83,7 @@ export class EdgeKv extends pulumi.CustomResource {
      */
     public readonly network!: pulumi.Output<string>;
     /**
-     * - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+     * (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
      */
     public readonly retentionInSeconds!: pulumi.Output<number>;
 
@@ -141,7 +141,7 @@ export interface EdgeKvState {
      */
     geoLocation?: pulumi.Input<string>;
     /**
-     * - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+     * (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
      */
     groupId?: pulumi.Input<number>;
     /**
@@ -149,7 +149,7 @@ export interface EdgeKvState {
      */
     initialDatas?: pulumi.Input<pulumi.Input<inputs.EdgeKvInitialData>[]>;
     /**
-     * - (Required) The name of the namespace.
+     * (Required) The name of the namespace.
      */
     namespaceName?: pulumi.Input<string>;
     /**
@@ -157,7 +157,7 @@ export interface EdgeKvState {
      */
     network?: pulumi.Input<string>;
     /**
-     * - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+     * (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
      */
     retentionInSeconds?: pulumi.Input<number>;
 }
@@ -171,7 +171,7 @@ export interface EdgeKvArgs {
      */
     geoLocation?: pulumi.Input<string>;
     /**
-     * - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+     * (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
      */
     groupId: pulumi.Input<number>;
     /**
@@ -179,7 +179,7 @@ export interface EdgeKvArgs {
      */
     initialDatas?: pulumi.Input<pulumi.Input<inputs.EdgeKvInitialData>[]>;
     /**
-     * - (Required) The name of the namespace.
+     * (Required) The name of the namespace.
      */
     namespaceName: pulumi.Input<string>;
     /**
@@ -187,7 +187,7 @@ export interface EdgeKvArgs {
      */
     network: pulumi.Input<string>;
     /**
-     * - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+     * (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
      */
     retentionInSeconds: pulumi.Input<number>;
 }

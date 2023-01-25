@@ -77,28 +77,28 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
         return this.edgeworkerId;
     }
     /**
-     * - (Required) Identifies a group to assign to the EdgeWorker ID.
+     * (Required) Identifies a group to assign to the EdgeWorker ID.
      * 
      */
     @Export(name="groupId", type=Integer.class, parameters={})
     private Output<Integer> groupId;
 
     /**
-     * @return - (Required) Identifies a group to assign to the EdgeWorker ID.
+     * @return (Required) Identifies a group to assign to the EdgeWorker ID.
      * 
      */
     public Output<Integer> groupId() {
         return this.groupId;
     }
     /**
-     * - (Optional) The path to the EdgeWorkers code bundle.
+     * (Optional) The path to the EdgeWorkers code bundle.
      * 
      */
     @Export(name="localBundle", type=String.class, parameters={})
     private Output</* @Nullable */ String> localBundle;
 
     /**
-     * @return - (Optional) The path to the EdgeWorkers code bundle.
+     * @return (Optional) The path to the EdgeWorkers code bundle.
      * 
      */
     public Output<Optional<String>> localBundle() {
@@ -119,28 +119,28 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
         return this.localBundleHash;
     }
     /**
-     * - (Required) The name of the EdgeWorker ID.
+     * (Required) The name of the EdgeWorker ID.
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return - (Required) The name of the EdgeWorker ID.
+     * @return (Required) The name of the EdgeWorker ID.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * - (Required) Unique identifier of the resource tier.
+     * (Required) Unique identifier of the resource tier.
      * 
      */
     @Export(name="resourceTierId", type=Integer.class, parameters={})
     private Output<Integer> resourceTierId;
 
     /**
-     * @return - (Required) Unique identifier of the resource tier.
+     * @return (Required) Unique identifier of the resource tier.
      * 
      */
     public Output<Integer> resourceTierId() {

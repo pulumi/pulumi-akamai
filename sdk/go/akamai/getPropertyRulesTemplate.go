@@ -90,7 +90,7 @@ import (
 //			json0 := string(tmpJSON0)
 //			examplePropertyRulesTemplate, err := akamai.GetPropertyRulesTemplate(ctx, &akamai.GetPropertyRulesTemplateArgs{
 //				Templates: []akamai.GetPropertyRulesTemplateTemplate{
-//					akamai.GetPropertyRulesTemplateTemplate{
+//					{
 //						TemplateData: json0,
 //						TemplateDir:  "property-snippets/",
 //					},
@@ -103,7 +103,7 @@ import (
 //				ContractId: pulumi.Any(_var.Contractid),
 //				GroupId:    pulumi.Any(_var.Groupid),
 //				RuleFormat: pulumi.String("v2020-03-04"),
-//				Rules:      pulumi.String(examplePropertyRulesTemplate.Json),
+//				Rules:      *pulumi.String(examplePropertyRulesTemplate.Json),
 //			})
 //			if err != nil {
 //				return err

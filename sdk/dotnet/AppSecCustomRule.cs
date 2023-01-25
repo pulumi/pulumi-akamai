@@ -31,6 +31,9 @@ namespace Pulumi.Akamai
         [Output("customRule")]
         public Output<string> CustomRule { get; private set; } = null!;
 
+        /// <summary>
+        /// . ID of the new custom rule.
+        /// </summary>
         [Output("customRuleId")]
         public Output<int> CustomRuleId { get; private set; } = null!;
 
@@ -112,6 +115,9 @@ namespace Pulumi.Akamai
         [Input("customRule")]
         public Input<string>? CustomRule { get; set; }
 
+        /// <summary>
+        /// . ID of the new custom rule.
+        /// </summary>
         [Input("customRuleId")]
         public Input<int>? CustomRuleId { get; set; }
 

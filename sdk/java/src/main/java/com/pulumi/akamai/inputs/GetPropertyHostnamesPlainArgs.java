@@ -13,14 +13,14 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
     public static final GetPropertyHostnamesPlainArgs Empty = new GetPropertyHostnamesPlainArgs();
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     @Import(name="contractId", required=true)
     private String contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
      * 
      */
     public String contractId() {
@@ -28,14 +28,14 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
     }
 
     /**
-     * - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     @Import(name="groupId", required=true)
     private String groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
      * 
      */
     public String groupId() {
@@ -43,14 +43,14 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
     }
 
     /**
-     * - (Required) A property&#39;s unique ID, including the `prp_` prefix.
+     * (Required) A property&#39;s unique ID, including the `prp_` prefix.
      * 
      */
     @Import(name="propertyId", required=true)
     private String propertyId;
 
     /**
-     * @return - (Required) A property&#39;s unique ID, including the `prp_` prefix.
+     * @return (Required) A property&#39;s unique ID, including the `prp_` prefix.
      * 
      */
     public String propertyId() {
@@ -84,7 +84,7 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -95,7 +95,7 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param propertyId - (Required) A property&#39;s unique ID, including the `prp_` prefix.
+         * @param propertyId (Required) A property&#39;s unique ID, including the `prp_` prefix.
          * 
          * @return builder
          * 

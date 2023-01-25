@@ -52,11 +52,11 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecSiemSettings(ctx, "siem", &akamai.AppSecSiemSettingsArgs{
-//				ConfigId:             pulumi.Int(configuration.ConfigId),
+//				ConfigId:             *pulumi.Int(configuration.ConfigId),
 //				EnableSiem:           pulumi.Bool(true),
 //				EnableForAllPolicies: pulumi.Bool(false),
 //				EnableBotmanSiem:     pulumi.Bool(true),
-//				SiemId:               pulumi.String(siemDefinition.Id),
+//				SiemId:               *pulumi.String(siemDefinition.Id),
 //				SecurityPolicyIds:    interface{}(securityPolicies.SecurityPolicyIdLists),
 //			})
 //			if err != nil {

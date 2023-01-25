@@ -13,9 +13,17 @@ public final class GetAppSecHostnameCoverageMatchTargetsPlainArgs extends com.pu
 
     public static final GetAppSecHostnameCoverageMatchTargetsPlainArgs Empty = new GetAppSecHostnameCoverageMatchTargetsPlainArgs();
 
+    /**
+     * . (Required). Unique identifier of the security configuration associated with the hostname.
+     * 
+     */
     @Import(name="configId", required=true)
     private Integer configId;
 
+    /**
+     * @return . (Required). Unique identifier of the security configuration associated with the hostname.
+     * 
+     */
     public Integer configId() {
         return this.configId;
     }
@@ -60,6 +68,12 @@ public final class GetAppSecHostnameCoverageMatchTargetsPlainArgs extends com.pu
             $ = new GetAppSecHostnameCoverageMatchTargetsPlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param configId . (Required). Unique identifier of the security configuration associated with the hostname.
+         * 
+         * @return builder
+         * 
+         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;

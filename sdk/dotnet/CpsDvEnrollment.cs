@@ -154,7 +154,7 @@ namespace Pulumi.Akamai
         public Output<Outputs.CpsDvEnrollmentAdminContact> AdminContact { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        /// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         /// </summary>
         [Output("allowDuplicateCommonName")]
         public Output<bool?> AllowDuplicateCommonName { get; private set; } = null!;
@@ -172,13 +172,13 @@ namespace Pulumi.Akamai
         public Output<string> CertificateType { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        /// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
         /// </summary>
         [Output("commonName")]
         public Output<string> CommonName { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        /// (Required) A contract's ID, optionally with the `ctr_` prefix.
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
@@ -320,7 +320,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.CpsDvEnrollmentAdminContactArgs> AdminContact { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        /// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         /// </summary>
         [Input("allowDuplicateCommonName")]
         public Input<bool>? AllowDuplicateCommonName { get; set; }
@@ -332,13 +332,13 @@ namespace Pulumi.Akamai
         public Input<string>? CertificateChainType { get; set; }
 
         /// <summary>
-        /// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        /// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
         /// </summary>
         [Input("commonName", required: true)]
         public Input<string> CommonName { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        /// (Required) A contract's ID, optionally with the `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
@@ -424,7 +424,7 @@ namespace Pulumi.Akamai
         public Input<Inputs.CpsDvEnrollmentAdminContactGetArgs>? AdminContact { get; set; }
 
         /// <summary>
-        /// - (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        /// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
         /// </summary>
         [Input("allowDuplicateCommonName")]
         public Input<bool>? AllowDuplicateCommonName { get; set; }
@@ -442,13 +442,13 @@ namespace Pulumi.Akamai
         public Input<string>? CertificateType { get; set; }
 
         /// <summary>
-        /// - (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        /// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
         /// </summary>
         [Input("commonName")]
         public Input<string>? CommonName { get; set; }
 
         /// <summary>
-        /// - (Required) A contract's ID, optionally with the `ctr_` prefix.
+        /// (Required) A contract's ID, optionally with the `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }

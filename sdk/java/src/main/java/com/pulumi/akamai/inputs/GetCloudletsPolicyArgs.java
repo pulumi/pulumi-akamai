@@ -16,14 +16,14 @@ public final class GetCloudletsPolicyArgs extends com.pulumi.resources.InvokeArg
     public static final GetCloudletsPolicyArgs Empty = new GetCloudletsPolicyArgs();
 
     /**
-     * - (Required) An integer identifier that is associated with all versions of a policy.
+     * (Required) An integer identifier that is associated with all versions of a policy.
      * 
      */
     @Import(name="policyId", required=true)
     private Output<Integer> policyId;
 
     /**
-     * @return - (Required) An integer identifier that is associated with all versions of a policy.
+     * @return (Required) An integer identifier that is associated with all versions of a policy.
      * 
      */
     public Output<Integer> policyId() {
@@ -31,14 +31,14 @@ public final class GetCloudletsPolicyArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * - (Optional) The version number of a policy.
+     * (Optional) The version number of a policy.
      * 
      */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
     /**
-     * @return - (Optional) The version number of a policy.
+     * @return (Optional) The version number of a policy.
      * 
      */
     public Optional<Output<Integer>> version() {
@@ -71,7 +71,7 @@ public final class GetCloudletsPolicyArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param policyId - (Required) An integer identifier that is associated with all versions of a policy.
+         * @param policyId (Required) An integer identifier that is associated with all versions of a policy.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class GetCloudletsPolicyArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param policyId - (Required) An integer identifier that is associated with all versions of a policy.
+         * @param policyId (Required) An integer identifier that is associated with all versions of a policy.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class GetCloudletsPolicyArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param version - (Optional) The version number of a policy.
+         * @param version (Optional) The version number of a policy.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class GetCloudletsPolicyArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param version - (Optional) The version number of a policy.
+         * @param version (Optional) The version number of a policy.
          * 
          * @return builder
          * 

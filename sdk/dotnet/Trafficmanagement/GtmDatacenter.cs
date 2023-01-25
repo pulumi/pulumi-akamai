@@ -78,12 +78,6 @@ namespace Pulumi.Akamai.Trafficmanagement
 
         /// <summary>
         /// A unique identifier for an existing data center in the domain.
-        /// * `ping_interval`
-        /// * `ping_packet_size`
-        /// * `score_penalty`
-        /// * `servermonitor_liveness_count`
-        /// * `servermonitor_load_count`
-        /// * `servermonitor_pool`
         /// </summary>
         [Output("datacenterId")]
         public Output<int> DatacenterId { get; private set; } = null!;
@@ -324,12 +318,6 @@ namespace Pulumi.Akamai.Trafficmanagement
 
         /// <summary>
         /// A unique identifier for an existing data center in the domain.
-        /// * `ping_interval`
-        /// * `ping_packet_size`
-        /// * `score_penalty`
-        /// * `servermonitor_liveness_count`
-        /// * `servermonitor_load_count`
-        /// * `servermonitor_pool`
         /// </summary>
         [Input("datacenterId")]
         public Input<int>? DatacenterId { get; set; }

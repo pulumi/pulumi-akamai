@@ -54,7 +54,7 @@ type GetPropertiesSearchArgs struct {
 	// * **edgeHostname**
 	// * **propertyName**
 	Key string `pulumi:"key"`
-	// - (Required) Value to search for.
+	// (Required) Value to search for.
 	Value string `pulumi:"value"`
 }
 
@@ -87,7 +87,7 @@ type GetPropertiesSearchOutputArgs struct {
 	// * **edgeHostname**
 	// * **propertyName**
 	Key pulumi.StringInput `pulumi:"key"`
-	// - (Required) Value to search for.
+	// (Required) Value to search for.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 

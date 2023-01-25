@@ -53,14 +53,14 @@ import (
 //				return err
 //			}
 //			appsecRatePolicy, err := akamai.NewAppSecRatePolicy(ctx, "appsecRatePolicy", &akamai.AppSecRatePolicyArgs{
-//				ConfigId:   pulumi.Int(configuration.ConfigId),
+//				ConfigId:   *pulumi.Int(configuration.ConfigId),
 //				RatePolicy: readFileOrPanic(fmt.Sprintf("%v/rate_policy.json", path.Module)),
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			_, err = akamai.NewAppSecRatePolicyAction(ctx, "appsecRatePolicyAction", &akamai.AppSecRatePolicyActionArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //				RatePolicyId:     appsecRatePolicy.RatePolicyId,
 //				Ipv4Action:       pulumi.String("deny"),

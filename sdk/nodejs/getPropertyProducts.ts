@@ -39,7 +39,7 @@ export function getPropertyProducts(args: GetPropertyProductsArgs, opts?: pulumi
  */
 export interface GetPropertyProductsArgs {
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId: string;
 }
@@ -84,7 +84,7 @@ export function getPropertyProductsOutput(args: GetPropertyProductsOutputArgs, o
  */
 export interface GetPropertyProductsOutputArgs {
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId: pulumi.Input<string>;
 }

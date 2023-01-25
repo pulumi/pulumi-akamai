@@ -62,7 +62,7 @@ func GetDatastreamActivationHistory(ctx *pulumi.Context, args *GetDatastreamActi
 
 // A collection of arguments for invoking getDatastreamActivationHistory.
 type GetDatastreamActivationHistoryArgs struct {
-	// - (Required) A stream's unique identifier.
+	// (Required) A stream's unique identifier.
 	StreamId int `pulumi:"streamId"`
 }
 
@@ -89,7 +89,7 @@ func GetDatastreamActivationHistoryOutput(ctx *pulumi.Context, args GetDatastrea
 
 // A collection of arguments for invoking getDatastreamActivationHistory.
 type GetDatastreamActivationHistoryOutputArgs struct {
-	// - (Required) A stream's unique identifier.
+	// (Required) A stream's unique identifier.
 	StreamId pulumi.IntInput `pulumi:"streamId"`
 }
 

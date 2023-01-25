@@ -35,14 +35,14 @@ public final class GetPropertiesSearchArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * - (Required) Value to search for.
+     * (Required) Value to search for.
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return - (Required) Value to search for.
+     * @return (Required) Value to search for.
      * 
      */
     public Output<String> value() {
@@ -102,7 +102,7 @@ public final class GetPropertiesSearchArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param value - (Required) Value to search for.
+         * @param value (Required) Value to search for.
          * 
          * @return builder
          * 
@@ -113,7 +113,7 @@ public final class GetPropertiesSearchArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param value - (Required) Value to search for.
+         * @param value (Required) Value to search for.
          * 
          * @return builder
          * 

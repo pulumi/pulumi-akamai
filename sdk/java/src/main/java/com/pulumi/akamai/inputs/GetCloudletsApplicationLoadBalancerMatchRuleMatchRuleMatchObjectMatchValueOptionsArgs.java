@@ -18,14 +18,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
     public static final GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs Empty = new GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs();
 
     /**
-     * - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     * (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
      * 
      */
     @Import(name="valueCaseSensitive")
     private @Nullable Output<Boolean> valueCaseSensitive;
 
     /**
-     * @return - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+     * @return (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
      * 
      */
     public Optional<Output<Boolean>> valueCaseSensitive() {
@@ -33,14 +33,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
     }
 
     /**
-     * - (Optional) Whether the `value` argument should be compared in an escaped form.
+     * (Optional) Whether the `value` argument should be compared in an escaped form.
      * 
      */
     @Import(name="valueEscaped")
     private @Nullable Output<Boolean> valueEscaped;
 
     /**
-     * @return - (Optional) Whether the `value` argument should be compared in an escaped form.
+     * @return (Optional) Whether the `value` argument should be compared in an escaped form.
      * 
      */
     public Optional<Output<Boolean>> valueEscaped() {
@@ -48,14 +48,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
     }
 
     /**
-     * - (Optional) Whether the `value` argument includes wildcards.
+     * (Optional) Whether the `value` argument includes wildcards.
      * 
      */
     @Import(name="valueHasWildcard")
     private @Nullable Output<Boolean> valueHasWildcard;
 
     /**
-     * @return - (Optional) Whether the `value` argument includes wildcards.
+     * @return (Optional) Whether the `value` argument includes wildcards.
      * 
      */
     public Optional<Output<Boolean>> valueHasWildcard() {
@@ -63,14 +63,14 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
     }
 
     /**
-     * - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+     * (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+     * @return (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -105,7 +105,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param valueCaseSensitive - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+         * @param valueCaseSensitive (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param valueCaseSensitive - (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
+         * @param valueCaseSensitive (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param valueEscaped - (Optional) Whether the `value` argument should be compared in an escaped form.
+         * @param valueEscaped (Optional) Whether the `value` argument should be compared in an escaped form.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param valueEscaped - (Optional) Whether the `value` argument should be compared in an escaped form.
+         * @param valueEscaped (Optional) Whether the `value` argument should be compared in an escaped form.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param valueHasWildcard - (Optional) Whether the `value` argument includes wildcards.
+         * @param valueHasWildcard (Optional) Whether the `value` argument includes wildcards.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param valueHasWildcard - (Optional) Whether the `value` argument includes wildcards.
+         * @param valueHasWildcard (Optional) Whether the `value` argument includes wildcards.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param values - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+         * @param values (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param values - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+         * @param values (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObj
         }
 
         /**
-         * @param values - (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
+         * @param values (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
          * 
          * @return builder
          * 

@@ -31,7 +31,7 @@ func GetCloudletsRequestControlMatchRule(ctx *pulumi.Context, args *GetCloudlets
 
 // A collection of arguments for invoking getCloudletsRequestControlMatchRule.
 type GetCloudletsRequestControlMatchRuleArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsRequestControlMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -58,7 +58,7 @@ func GetCloudletsRequestControlMatchRuleOutput(ctx *pulumi.Context, args GetClou
 
 // A collection of arguments for invoking getCloudletsRequestControlMatchRule.
 type GetCloudletsRequestControlMatchRuleOutputArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsRequestControlMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

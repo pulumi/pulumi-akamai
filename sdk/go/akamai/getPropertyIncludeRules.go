@@ -65,13 +65,13 @@ func GetPropertyIncludeRules(ctx *pulumi.Context, args *GetPropertyIncludeRulesA
 
 // A collection of arguments for invoking getPropertyIncludeRules.
 type GetPropertyIncludeRulesArgs struct {
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId string `pulumi:"groupId"`
-	// - (Required) An include's unique ID with the optional `inc_` prefix.
+	// (Required) An include's unique ID with the optional `inc_` prefix.
 	IncludeId string `pulumi:"includeId"`
-	// - (Required) The include version you want to view the rules for.
+	// (Required) The include version you want to view the rules for.
 	Version int `pulumi:"version"`
 }
 
@@ -106,13 +106,13 @@ func GetPropertyIncludeRulesOutput(ctx *pulumi.Context, args GetPropertyIncludeR
 
 // A collection of arguments for invoking getPropertyIncludeRules.
 type GetPropertyIncludeRulesOutputArgs struct {
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId pulumi.StringInput `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// - (Required) An include's unique ID with the optional `inc_` prefix.
+	// (Required) An include's unique ID with the optional `inc_` prefix.
 	IncludeId pulumi.StringInput `pulumi:"includeId"`
-	// - (Required) The include version you want to view the rules for.
+	// (Required) The include version you want to view the rules for.
 	Version pulumi.IntInput `pulumi:"version"`
 }
 

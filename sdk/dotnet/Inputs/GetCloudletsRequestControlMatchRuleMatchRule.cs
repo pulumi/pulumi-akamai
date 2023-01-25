@@ -13,19 +13,19 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetCloudletsRequestControlMatchRuleMatchRuleArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
+        /// (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
         /// </summary>
         [Input("allowDeny", required: true)]
         public string AllowDeny { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) Whether to disable a rule. When a rule is disabled it's not evaluated against incoming requests.
+        /// (Optional) Whether to disable a rule. When a rule is disabled it's not evaluated against incoming requests.
         /// </summary>
         [Input("disabled")]
         public bool? Disabled { get; set; }
 
         /// <summary>
-        /// - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        /// (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
         /// </summary>
         [Input("end")]
         public int? End { get; set; }
@@ -34,7 +34,7 @@ namespace Pulumi.Akamai.Inputs
         private List<Inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs>? _matches;
 
         /// <summary>
-        /// - (Optional) A list of conditions to apply to a Cloudlet, including:
+        /// (Optional) A list of conditions to apply to a Cloudlet, including:
         /// </summary>
         public List<Inputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs> Matches
         {
@@ -43,25 +43,25 @@ namespace Pulumi.Akamai.Inputs
         }
 
         /// <summary>
-        /// - (Optional) Match on all incoming requests.
+        /// (Optional) Match on all incoming requests.
         /// </summary>
         [Input("matchesAlways")]
         public bool? MatchesAlways { get; set; }
 
         /// <summary>
-        /// - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        /// (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        /// (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
         /// </summary>
         [Input("start")]
         public int? Start { get; set; }
 
         /// <summary>
-        /// - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        /// (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
         /// </summary>
         [Input("type", required: true)]
         public string Type { get; set; } = null!;

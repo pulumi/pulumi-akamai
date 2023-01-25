@@ -14,9 +14,17 @@ public final class GetAppSecHostnameCoverageMatchTargetsArgs extends com.pulumi.
 
     public static final GetAppSecHostnameCoverageMatchTargetsArgs Empty = new GetAppSecHostnameCoverageMatchTargetsArgs();
 
+    /**
+     * . (Required). Unique identifier of the security configuration associated with the hostname.
+     * 
+     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
+    /**
+     * @return . (Required). Unique identifier of the security configuration associated with the hostname.
+     * 
+     */
     public Output<Integer> configId() {
         return this.configId;
     }
@@ -61,11 +69,23 @@ public final class GetAppSecHostnameCoverageMatchTargetsArgs extends com.pulumi.
             $ = new GetAppSecHostnameCoverageMatchTargetsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param configId . (Required). Unique identifier of the security configuration associated with the hostname.
+         * 
+         * @return builder
+         * 
+         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
+        /**
+         * @param configId . (Required). Unique identifier of the security configuration associated with the hostname.
+         * 
+         * @return builder
+         * 
+         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }

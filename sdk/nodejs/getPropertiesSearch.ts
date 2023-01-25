@@ -45,7 +45,7 @@ export interface GetPropertiesSearchArgs {
      */
     key: string;
     /**
-     * - (Required) Value to search for.
+     * (Required) Value to search for.
      */
     value: string;
 }
@@ -96,7 +96,7 @@ export interface GetPropertiesSearchOutputArgs {
      */
     key: pulumi.Input<string>;
     /**
-     * - (Required) Value to search for.
+     * (Required) Value to search for.
      */
     value: pulumi.Input<string>;
 }

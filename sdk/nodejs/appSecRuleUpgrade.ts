@@ -86,13 +86,12 @@ export class AppSecRuleUpgrade extends pulumi.CustomResource {
     public /*out*/ readonly mode!: pulumi.Output<string>;
     /**
      * . Unique identifier of the security policy associated with the ruleset being upgraded.
-     * - `upgradeMode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
-     * - **ASE_MANUAL**. Manually updates your rulesets.
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
     /**
-     * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+     * . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
+     * - **ASE_MANUAL**. Manually updates your rulesets.
      */
     public readonly upgradeMode!: pulumi.Output<string | undefined>;
 
@@ -157,13 +156,12 @@ export interface AppSecRuleUpgradeState {
     mode?: pulumi.Input<string>;
     /**
      * . Unique identifier of the security policy associated with the ruleset being upgraded.
-     * - `upgradeMode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
-     * - **ASE_MANUAL**. Manually updates your rulesets.
      */
     securityPolicyId?: pulumi.Input<string>;
     /**
-     * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+     * . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
+     * - **ASE_MANUAL**. Manually updates your rulesets.
      */
     upgradeMode?: pulumi.Input<string>;
 }
@@ -178,13 +176,12 @@ export interface AppSecRuleUpgradeArgs {
     configId: pulumi.Input<number>;
     /**
      * . Unique identifier of the security policy associated with the ruleset being upgraded.
-     * - `upgradeMode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
-     * - **ASE_MANUAL**. Manually updates your rulesets.
      */
     securityPolicyId: pulumi.Input<string>;
     /**
-     * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+     * . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
+     * - **ASE_MANUAL**. Manually updates your rulesets.
      */
     upgradeMode?: pulumi.Input<string>;
 }

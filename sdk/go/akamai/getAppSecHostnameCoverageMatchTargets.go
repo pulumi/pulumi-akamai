@@ -67,6 +67,7 @@ func GetAppSecHostnameCoverageMatchTargets(ctx *pulumi.Context, args *GetAppSecH
 
 // A collection of arguments for invoking getAppSecHostnameCoverageMatchTargets.
 type GetAppSecHostnameCoverageMatchTargetsArgs struct {
+	// . (Required). Unique identifier of the security configuration associated with the hostname.
 	ConfigId int `pulumi:"configId"`
 	// . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
 	Hostname string `pulumi:"hostname"`
@@ -97,6 +98,7 @@ func GetAppSecHostnameCoverageMatchTargetsOutput(ctx *pulumi.Context, args GetAp
 
 // A collection of arguments for invoking getAppSecHostnameCoverageMatchTargets.
 type GetAppSecHostnameCoverageMatchTargetsOutputArgs struct {
+	// . (Required). Unique identifier of the security configuration associated with the hostname.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
 	// . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
 	Hostname pulumi.StringInput `pulumi:"hostname"`

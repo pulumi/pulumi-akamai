@@ -79,7 +79,7 @@ def get_cloudlets_edge_redirector_match_rule(match_rules: Optional[Sequence[pulu
     * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
 
 
-    :param Sequence[pulumi.InputType['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs']] match_rules: - (Optional) A list of Cloudlet-specific match rules for a policy.
+    :param Sequence[pulumi.InputType['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs']] match_rules: (Optional) A list of Cloudlet-specific match rules for a policy.
     """
     __args__ = dict()
     __args__['matchRules'] = match_rules
@@ -108,6 +108,6 @@ def get_cloudlets_edge_redirector_match_rule_output(match_rules: Optional[pulumi
     * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
 
 
-    :param Sequence[pulumi.InputType['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs']] match_rules: - (Optional) A list of Cloudlet-specific match rules for a policy.
+    :param Sequence[pulumi.InputType['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs']] match_rules: (Optional) A list of Cloudlet-specific match rules for a policy.
     """
     ...

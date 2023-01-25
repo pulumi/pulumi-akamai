@@ -47,7 +47,7 @@ export function getDatastreamActivationHistory(args: GetDatastreamActivationHist
  */
 export interface GetDatastreamActivationHistoryArgs {
     /**
-     * - (Required) A stream's unique identifier.
+     * (Required) A stream's unique identifier.
      */
     streamId: number;
 }
@@ -100,7 +100,7 @@ export function getDatastreamActivationHistoryOutput(args: GetDatastreamActivati
  */
 export interface GetDatastreamActivationHistoryOutputArgs {
     /**
-     * - (Required) A stream's unique identifier.
+     * (Required) A stream's unique identifier.
      */
     streamId: pulumi.Input<number>;
 }

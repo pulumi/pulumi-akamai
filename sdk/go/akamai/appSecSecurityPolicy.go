@@ -44,7 +44,7 @@ import (
 //				return err
 //			}
 //			securityPolicyCreateAppSecSecurityPolicy, err := akamai.NewAppSecSecurityPolicy(ctx, "securityPolicyCreateAppSecSecurityPolicy", &akamai.AppSecSecurityPolicyArgs{
-//				ConfigId:             pulumi.Int(configuration.ConfigId),
+//				ConfigId:             *pulumi.Int(configuration.ConfigId),
 //				DefaultSettings:      pulumi.Bool(true),
 //				SecurityPolicyName:   pulumi.String("Documentation Policy"),
 //				SecurityPolicyPrefix: pulumi.String("gms1"),

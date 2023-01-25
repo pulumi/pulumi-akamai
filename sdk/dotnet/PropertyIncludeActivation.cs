@@ -48,7 +48,7 @@ namespace Pulumi.Akamai
     public partial class PropertyIncludeActivation : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+        /// (Optional) Automatically acknowledge all rule warnings for activation and continue.
         /// </summary>
         [Output("autoAcknowledgeRuleWarnings")]
         public Output<bool?> AutoAcknowledgeRuleWarnings { get; private set; } = null!;
@@ -60,37 +60,37 @@ namespace Pulumi.Akamai
         public Output<Outputs.PropertyIncludeActivationComplianceRecord?> ComplianceRecord { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the optional `grp_` prefix.
+        /// (Required) A group's unique ID, including the optional `grp_` prefix.
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) An include's unique ID with the optional `inc_` prefix.
+        /// (Required) An include's unique ID with the optional `inc_` prefix.
         /// </summary>
         [Output("includeId")]
         public Output<string> IncludeId { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The network for which the activation will be performed.
+        /// (Required) The network for which the activation will be performed.
         /// </summary>
         [Output("network")]
         public Output<string> Network { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) A log message assigned to the activation request.
+        /// (Optional) A log message assigned to the activation request.
         /// </summary>
         [Output("note")]
         public Output<string?> Note { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The list of email addresses to notify when the activation status changes.
+        /// (Required) The list of email addresses to notify when the activation status changes.
         /// </summary>
         [Output("notifyEmails")]
         public Output<ImmutableArray<string>> NotifyEmails { get; private set; } = null!;
@@ -102,7 +102,7 @@ namespace Pulumi.Akamai
         public Output<string> Validations { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The version of the include you want to activate.
+        /// (Required) The version of the include you want to activate.
         /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
@@ -154,7 +154,7 @@ namespace Pulumi.Akamai
     public sealed class PropertyIncludeActivationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+        /// (Optional) Automatically acknowledge all rule warnings for activation and continue.
         /// </summary>
         [Input("autoAcknowledgeRuleWarnings")]
         public Input<bool>? AutoAcknowledgeRuleWarnings { get; set; }
@@ -166,31 +166,31 @@ namespace Pulumi.Akamai
         public Input<Inputs.PropertyIncludeActivationComplianceRecordArgs>? ComplianceRecord { get; set; }
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the optional `grp_` prefix.
+        /// (Required) A group's unique ID, including the optional `grp_` prefix.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) An include's unique ID with the optional `inc_` prefix.
+        /// (Required) An include's unique ID with the optional `inc_` prefix.
         /// </summary>
         [Input("includeId", required: true)]
         public Input<string> IncludeId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) The network for which the activation will be performed.
+        /// (Required) The network for which the activation will be performed.
         /// </summary>
         [Input("network", required: true)]
         public Input<string> Network { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) A log message assigned to the activation request.
+        /// (Optional) A log message assigned to the activation request.
         /// </summary>
         [Input("note")]
         public Input<string>? Note { get; set; }
@@ -199,7 +199,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _notifyEmails;
 
         /// <summary>
-        /// - (Required) The list of email addresses to notify when the activation status changes.
+        /// (Required) The list of email addresses to notify when the activation status changes.
         /// </summary>
         public InputList<string> NotifyEmails
         {
@@ -208,7 +208,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// - (Required) The version of the include you want to activate.
+        /// (Required) The version of the include you want to activate.
         /// </summary>
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
@@ -222,7 +222,7 @@ namespace Pulumi.Akamai
     public sealed class PropertyIncludeActivationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Optional) Automatically acknowledge all rule warnings for activation and continue.
+        /// (Optional) Automatically acknowledge all rule warnings for activation and continue.
         /// </summary>
         [Input("autoAcknowledgeRuleWarnings")]
         public Input<bool>? AutoAcknowledgeRuleWarnings { get; set; }
@@ -234,31 +234,31 @@ namespace Pulumi.Akamai
         public Input<Inputs.PropertyIncludeActivationComplianceRecordGetArgs>? ComplianceRecord { get; set; }
 
         /// <summary>
-        /// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the optional `grp_` prefix.
+        /// (Required) A group's unique ID, including the optional `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
-        /// - (Required) An include's unique ID with the optional `inc_` prefix.
+        /// (Required) An include's unique ID with the optional `inc_` prefix.
         /// </summary>
         [Input("includeId")]
         public Input<string>? IncludeId { get; set; }
 
         /// <summary>
-        /// - (Required) The network for which the activation will be performed.
+        /// (Required) The network for which the activation will be performed.
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// - (Optional) A log message assigned to the activation request.
+        /// (Optional) A log message assigned to the activation request.
         /// </summary>
         [Input("note")]
         public Input<string>? Note { get; set; }
@@ -267,7 +267,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _notifyEmails;
 
         /// <summary>
-        /// - (Required) The list of email addresses to notify when the activation status changes.
+        /// (Required) The list of email addresses to notify when the activation status changes.
         /// </summary>
         public InputList<string> NotifyEmails
         {
@@ -282,7 +282,7 @@ namespace Pulumi.Akamai
         public Input<string>? Validations { get; set; }
 
         /// <summary>
-        /// - (Required) The version of the include you want to activate.
+        /// (Required) The version of the include you want to activate.
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }

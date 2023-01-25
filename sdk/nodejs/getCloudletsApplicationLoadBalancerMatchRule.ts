@@ -32,7 +32,7 @@ export function getCloudletsApplicationLoadBalancerMatchRule(args?: GetCloudlets
  */
 export interface GetCloudletsApplicationLoadBalancerMatchRuleArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRule[];
 }
@@ -69,7 +69,7 @@ export function getCloudletsApplicationLoadBalancerMatchRuleOutput(args?: GetClo
  */
 export interface GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs>[]>;
 }

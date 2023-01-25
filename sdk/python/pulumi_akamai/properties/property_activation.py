@@ -34,8 +34,9 @@ class PropertyActivationArgs:
         :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Whether the activation should proceed despite any warnings. By default set to `true`.
         :param pulumi.Input[str] network: Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
         :param pulumi.Input[str] note: A log message you can assign to the activation request.
-        :param pulumi.Input[str] property: - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] property_id: - (Required) The property's unique identifier, including the `prp_` prefix.
+        :param pulumi.Input[str] property: (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] property_id: (Required) The property's unique identifier, including the `prp_` prefix.
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
         """
         pulumi.set(__self__, "contacts", contacts)
         pulumi.set(__self__, "version", version)
@@ -138,7 +139,7 @@ class PropertyActivationArgs:
     @pulumi.getter(name="propertyId")
     def property_id(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required) The property's unique identifier, including the `prp_` prefix.
+        (Required) The property's unique identifier, including the `prp_` prefix.
         """
         return pulumi.get(self, "property_id")
 
@@ -158,6 +159,9 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter(name="ruleWarnings")
     def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]]:
+        """
+        (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        """
         return pulumi.get(self, "rule_warnings")
 
     @rule_warnings.setter
@@ -168,7 +172,7 @@ class PropertyActivationArgs:
     @pulumi.getter
     def property(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
         """
         return pulumi.get(self, "property")
 
@@ -201,8 +205,9 @@ class _PropertyActivationState:
         :param pulumi.Input[str] errors: The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         :param pulumi.Input[str] network: Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
         :param pulumi.Input[str] note: A log message you can assign to the activation request.
-        :param pulumi.Input[str] property: - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] property_id: - (Required) The property's unique identifier, including the `prp_` prefix.
+        :param pulumi.Input[str] property: (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] property_id: (Required) The property's unique identifier, including the `prp_` prefix.
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
         :param pulumi.Input[str] status: The property version's activation status on the selected network.
         :param pulumi.Input[int] version: The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `Property` resource labeled `example`.
         :param pulumi.Input[str] warnings: The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
@@ -316,7 +321,7 @@ class _PropertyActivationState:
     @pulumi.getter(name="propertyId")
     def property_id(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Required) The property's unique identifier, including the `prp_` prefix.
+        (Required) The property's unique identifier, including the `prp_` prefix.
         """
         return pulumi.get(self, "property_id")
 
@@ -336,6 +341,9 @@ class _PropertyActivationState:
     @property
     @pulumi.getter(name="ruleWarnings")
     def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]]:
+        """
+        (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        """
         return pulumi.get(self, "rule_warnings")
 
     @rule_warnings.setter
@@ -382,7 +390,7 @@ class _PropertyActivationState:
     @pulumi.getter
     def property(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
         """
         return pulumi.get(self, "property")
 
@@ -458,8 +466,9 @@ class PropertyActivation(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: One or more email addresses to send activation status changes to.
         :param pulumi.Input[str] network: Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
         :param pulumi.Input[str] note: A log message you can assign to the activation request.
-        :param pulumi.Input[str] property: - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] property_id: - (Required) The property's unique identifier, including the `prp_` prefix.
+        :param pulumi.Input[str] property: (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] property_id: (Required) The property's unique identifier, including the `prp_` prefix.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleWarningArgs']]]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
         :param pulumi.Input[int] version: The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `Property` resource labeled `example`.
         """
         ...
@@ -601,8 +610,9 @@ class PropertyActivation(pulumi.CustomResource):
         :param pulumi.Input[str] errors: The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         :param pulumi.Input[str] network: Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
         :param pulumi.Input[str] note: A log message you can assign to the activation request.
-        :param pulumi.Input[str] property: - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] property_id: - (Required) The property's unique identifier, including the `prp_` prefix.
+        :param pulumi.Input[str] property: (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        :param pulumi.Input[str] property_id: (Required) The property's unique identifier, including the `prp_` prefix.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleWarningArgs']]]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
         :param pulumi.Input[str] status: The property version's activation status on the selected network.
         :param pulumi.Input[int] version: The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `Property` resource labeled `example`.
         :param pulumi.Input[str] warnings: The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
@@ -678,7 +688,7 @@ class PropertyActivation(pulumi.CustomResource):
     @pulumi.getter(name="propertyId")
     def property_id(self) -> pulumi.Output[str]:
         """
-        - (Required) The property's unique identifier, including the `prp_` prefix.
+        (Required) The property's unique identifier, including the `prp_` prefix.
         """
         return pulumi.get(self, "property_id")
 
@@ -690,6 +700,9 @@ class PropertyActivation(pulumi.CustomResource):
     @property
     @pulumi.getter(name="ruleWarnings")
     def rule_warnings(self) -> pulumi.Output[Sequence['outputs.PropertyActivationRuleWarning']]:
+        """
+        (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        """
         return pulumi.get(self, "rule_warnings")
 
     @property
@@ -720,7 +733,7 @@ class PropertyActivation(pulumi.CustomResource):
     @pulumi.getter
     def property(self) -> pulumi.Output[str]:
         """
-        - (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
+        (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
         """
         return pulumi.get(self, "property")
 

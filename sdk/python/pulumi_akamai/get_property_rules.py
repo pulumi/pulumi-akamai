@@ -142,10 +142,10 @@ def get_property_rules(contract_id: Optional[str] = None,
     * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the Property Manager API documentation.
 
 
-    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
-    :param str group_id: - (Required) A group's unique ID, including the `grp_` prefix.
-    :param str property_id: - (Required) A property's unique ID, including the `prp_` prefix.
-    :param int version: - (Optional) The version to return. Returns the latest version by default.
+    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group_id: (Required) A group's unique ID, including the `grp_` prefix.
+    :param str property_id: (Required) A property's unique ID, including the `prp_` prefix.
+    :param int version: (Optional) The version to return. Returns the latest version by default.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -203,9 +203,9 @@ def get_property_rules_output(contract_id: Optional[pulumi.Input[Optional[str]]]
     * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the Property Manager API documentation.
 
 
-    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
-    :param str group_id: - (Required) A group's unique ID, including the `grp_` prefix.
-    :param str property_id: - (Required) A property's unique ID, including the `prp_` prefix.
-    :param int version: - (Optional) The version to return. Returns the latest version by default.
+    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str group_id: (Required) A group's unique ID, including the `grp_` prefix.
+    :param str property_id: (Required) A property's unique ID, including the `prp_` prefix.
+    :param int version: (Optional) The version to return. Returns the latest version by default.
     """
     ...

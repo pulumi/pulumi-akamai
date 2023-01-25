@@ -79,11 +79,11 @@ export function getCloudletsApplicationLoadBalancer(args: GetCloudletsApplicatio
  */
 export interface GetCloudletsApplicationLoadBalancerArgs {
     /**
-     * - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+     * (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
      */
     originId: string;
     /**
-     * - (Optional) The version number of the load balancing configuration.
+     * (Optional) The version number of the load balancing configuration.
      */
     version?: number;
 }
@@ -179,11 +179,11 @@ export function getCloudletsApplicationLoadBalancerOutput(args: GetCloudletsAppl
  */
 export interface GetCloudletsApplicationLoadBalancerOutputArgs {
     /**
-     * - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+     * (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
      */
     originId: pulumi.Input<string>;
     /**
-     * - (Optional) The version number of the load balancing configuration.
+     * (Optional) The version number of the load balancing configuration.
      */
     version?: pulumi.Input<number>;
 }

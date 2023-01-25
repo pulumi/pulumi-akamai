@@ -17,14 +17,14 @@ public final class GetCloudletsApplicationLoadBalancerArgs extends com.pulumi.re
     public static final GetCloudletsApplicationLoadBalancerArgs Empty = new GetCloudletsApplicationLoadBalancerArgs();
 
     /**
-     * - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+     * (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
      * 
      */
     @Import(name="originId", required=true)
     private Output<String> originId;
 
     /**
-     * @return - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+     * @return (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
      * 
      */
     public Output<String> originId() {
@@ -32,14 +32,14 @@ public final class GetCloudletsApplicationLoadBalancerArgs extends com.pulumi.re
     }
 
     /**
-     * - (Optional) The version number of the load balancing configuration.
+     * (Optional) The version number of the load balancing configuration.
      * 
      */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
     /**
-     * @return - (Optional) The version number of the load balancing configuration.
+     * @return (Optional) The version number of the load balancing configuration.
      * 
      */
     public Optional<Output<Integer>> version() {
@@ -72,7 +72,7 @@ public final class GetCloudletsApplicationLoadBalancerArgs extends com.pulumi.re
         }
 
         /**
-         * @param originId - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+         * @param originId (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class GetCloudletsApplicationLoadBalancerArgs extends com.pulumi.re
         }
 
         /**
-         * @param originId - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+         * @param originId (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class GetCloudletsApplicationLoadBalancerArgs extends com.pulumi.re
         }
 
         /**
-         * @param version - (Optional) The version number of the load balancing configuration.
+         * @param version (Optional) The version number of the load balancing configuration.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class GetCloudletsApplicationLoadBalancerArgs extends com.pulumi.re
         }
 
         /**
-         * @param version - (Optional) The version number of the load balancing configuration.
+         * @param version (Optional) The version number of the load balancing configuration.
          * 
          * @return builder
          * 

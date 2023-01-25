@@ -17,7 +17,7 @@ namespace Pulumi.Akamai.Outputs
         public readonly string CreatedDate;
         public readonly bool IsActive;
         /// <summary>
-        /// - (Required) A stream's unique identifier.
+        /// (Required) A stream's unique identifier.
         /// </summary>
         public readonly int StreamId;
         public readonly int StreamVersionId;

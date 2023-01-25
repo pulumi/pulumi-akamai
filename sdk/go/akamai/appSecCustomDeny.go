@@ -51,7 +51,7 @@ import (
 //				return err
 //			}
 //			customDeny, err := akamai.NewAppSecCustomDeny(ctx, "customDeny", &akamai.AppSecCustomDenyArgs{
-//				ConfigId:   pulumi.Int(configuration.ConfigId),
+//				ConfigId:   *pulumi.Int(configuration.ConfigId),
 //				CustomDeny: readFileOrPanic(fmt.Sprintf("%v/custom_deny.json", path.Module)),
 //			})
 //			if err != nil {

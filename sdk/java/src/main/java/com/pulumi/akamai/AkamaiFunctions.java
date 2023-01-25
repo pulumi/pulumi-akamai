@@ -10895,7 +10895,7 @@ public final class AkamaiFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.edgedns.inputs.GetAuthoritiesSetArgs;
+     * import com.pulumi.akamai.inputs.GetAuthoritiesSetArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -10939,7 +10939,7 @@ public final class AkamaiFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.edgedns.inputs.GetAuthoritiesSetArgs;
+     * import com.pulumi.akamai.inputs.GetAuthoritiesSetArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -10983,7 +10983,7 @@ public final class AkamaiFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.edgedns.inputs.GetAuthoritiesSetArgs;
+     * import com.pulumi.akamai.inputs.GetAuthoritiesSetArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -11027,7 +11027,7 @@ public final class AkamaiFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.edgedns.inputs.GetAuthoritiesSetArgs;
+     * import com.pulumi.akamai.inputs.GetAuthoritiesSetArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

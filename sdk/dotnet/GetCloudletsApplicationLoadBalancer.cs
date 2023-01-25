@@ -152,13 +152,13 @@ namespace Pulumi.Akamai
     public sealed class GetCloudletsApplicationLoadBalancerArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+        /// (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
         /// </summary>
         [Input("originId", required: true)]
         public string OriginId { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) The version number of the load balancing configuration.
+        /// (Optional) The version number of the load balancing configuration.
         /// </summary>
         [Input("version")]
         public int? Version { get; set; }
@@ -172,13 +172,13 @@ namespace Pulumi.Akamai
     public sealed class GetCloudletsApplicationLoadBalancerInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
+        /// (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
         /// </summary>
         [Input("originId", required: true)]
         public Input<string> OriginId { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) The version number of the load balancing configuration.
+        /// (Optional) The version number of the load balancing configuration.
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }

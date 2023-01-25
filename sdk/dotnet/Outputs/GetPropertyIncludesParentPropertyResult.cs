@@ -14,11 +14,11 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetPropertyIncludesParentPropertyResult
     {
         /// <summary>
-        /// - (Required) The property's unique identifier.
+        /// (Required) The property's unique identifier.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// - (Required) The version of the activated parent property.
+        /// (Required) The version of the activated parent property.
         /// </summary>
         public readonly int Version;
 

@@ -66,14 +66,14 @@ func GetPropertyRules(ctx *pulumi.Context, args *GetPropertyRulesArgs, opts ...p
 
 // A collection of arguments for invoking getPropertyRules.
 type GetPropertyRulesArgs struct {
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
-	// - (Required) A property's unique ID, including the `prp_` prefix.
+	// (Required) A property's unique ID, including the `prp_` prefix.
 	PropertyId string  `pulumi:"propertyId"`
 	RuleFormat *string `pulumi:"ruleFormat"`
-	// - (Optional) The version to return. Returns the latest version by default.
+	// (Optional) The version to return. Returns the latest version by default.
 	Version *int `pulumi:"version"`
 }
 
@@ -105,14 +105,14 @@ func GetPropertyRulesOutput(ctx *pulumi.Context, args GetPropertyRulesOutputArgs
 
 // A collection of arguments for invoking getPropertyRules.
 type GetPropertyRulesOutputArgs struct {
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the `grp_` prefix.
+	// (Required) A group's unique ID, including the `grp_` prefix.
 	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
-	// - (Required) A property's unique ID, including the `prp_` prefix.
+	// (Required) A property's unique ID, including the `prp_` prefix.
 	PropertyId pulumi.StringInput    `pulumi:"propertyId"`
 	RuleFormat pulumi.StringPtrInput `pulumi:"ruleFormat"`
-	// - (Optional) The version to return. Returns the latest version by default.
+	// (Optional) The version to return. Returns the latest version by default.
 	Version pulumi.IntPtrInput `pulumi:"version"`
 }
 

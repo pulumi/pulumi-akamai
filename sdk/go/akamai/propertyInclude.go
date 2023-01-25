@@ -55,13 +55,13 @@ import (
 type PropertyInclude struct {
 	pulumi.CustomResourceState
 
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
 	// Specifies the most recent version of the include
 	LatestVersion pulumi.IntOutput `pulumi:"latestVersion"`
-	// - (Required) The descriptive name for the include.
+	// (Required) The descriptive name for the include.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The product assigned to the include
 	ProductId pulumi.StringPtrOutput `pulumi:"productId"`
@@ -69,15 +69,15 @@ type PropertyInclude struct {
 	ProductionVersion pulumi.StringOutput `pulumi:"productionVersion"`
 	// Rule validation errors
 	RuleErrors pulumi.StringOutput `pulumi:"ruleErrors"`
-	// - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+	// (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
 	RuleFormat pulumi.StringOutput `pulumi:"ruleFormat"`
 	// Rule validation warnings
 	RuleWarnings pulumi.StringOutput `pulumi:"ruleWarnings"`
-	// - (Optional) Include's rules as JSON.
+	// (Optional) Include's rules as JSON.
 	Rules pulumi.StringOutput `pulumi:"rules"`
 	// The most recent version to be activated to the staging network
 	StagingVersion pulumi.StringOutput `pulumi:"stagingVersion"`
-	// - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+	// (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
 	Type pulumi.StringOutput `pulumi:"type"`
 }
 
@@ -122,13 +122,13 @@ func GetPropertyInclude(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PropertyInclude resources.
 type propertyIncludeState struct {
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId *string `pulumi:"groupId"`
 	// Specifies the most recent version of the include
 	LatestVersion *int `pulumi:"latestVersion"`
-	// - (Required) The descriptive name for the include.
+	// (Required) The descriptive name for the include.
 	Name *string `pulumi:"name"`
 	// The product assigned to the include
 	ProductId *string `pulumi:"productId"`
@@ -136,26 +136,26 @@ type propertyIncludeState struct {
 	ProductionVersion *string `pulumi:"productionVersion"`
 	// Rule validation errors
 	RuleErrors *string `pulumi:"ruleErrors"`
-	// - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+	// (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
 	RuleFormat *string `pulumi:"ruleFormat"`
 	// Rule validation warnings
 	RuleWarnings *string `pulumi:"ruleWarnings"`
-	// - (Optional) Include's rules as JSON.
+	// (Optional) Include's rules as JSON.
 	Rules *string `pulumi:"rules"`
 	// The most recent version to be activated to the staging network
 	StagingVersion *string `pulumi:"stagingVersion"`
-	// - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+	// (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
 	Type *string `pulumi:"type"`
 }
 
 type PropertyIncludeState struct {
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId pulumi.StringPtrInput
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId pulumi.StringPtrInput
 	// Specifies the most recent version of the include
 	LatestVersion pulumi.IntPtrInput
-	// - (Required) The descriptive name for the include.
+	// (Required) The descriptive name for the include.
 	Name pulumi.StringPtrInput
 	// The product assigned to the include
 	ProductId pulumi.StringPtrInput
@@ -163,15 +163,15 @@ type PropertyIncludeState struct {
 	ProductionVersion pulumi.StringPtrInput
 	// Rule validation errors
 	RuleErrors pulumi.StringPtrInput
-	// - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+	// (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
 	RuleFormat pulumi.StringPtrInput
 	// Rule validation warnings
 	RuleWarnings pulumi.StringPtrInput
-	// - (Optional) Include's rules as JSON.
+	// (Optional) Include's rules as JSON.
 	Rules pulumi.StringPtrInput
 	// The most recent version to be activated to the staging network
 	StagingVersion pulumi.StringPtrInput
-	// - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+	// (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
 	Type pulumi.StringPtrInput
 }
 
@@ -180,37 +180,37 @@ func (PropertyIncludeState) ElementType() reflect.Type {
 }
 
 type propertyIncludeArgs struct {
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId string `pulumi:"groupId"`
-	// - (Required) The descriptive name for the include.
+	// (Required) The descriptive name for the include.
 	Name *string `pulumi:"name"`
 	// The product assigned to the include
 	ProductId *string `pulumi:"productId"`
-	// - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+	// (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
 	RuleFormat string `pulumi:"ruleFormat"`
-	// - (Optional) Include's rules as JSON.
+	// (Optional) Include's rules as JSON.
 	Rules *string `pulumi:"rules"`
-	// - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+	// (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
 	Type string `pulumi:"type"`
 }
 
 // The set of arguments for constructing a PropertyInclude resource.
 type PropertyIncludeArgs struct {
-	// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId pulumi.StringInput
-	// - (Required) A group's unique ID, including the optional `grp_` prefix.
+	// (Required) A group's unique ID, including the optional `grp_` prefix.
 	GroupId pulumi.StringInput
-	// - (Required) The descriptive name for the include.
+	// (Required) The descriptive name for the include.
 	Name pulumi.StringPtrInput
 	// The product assigned to the include
 	ProductId pulumi.StringPtrInput
-	// - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+	// (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
 	RuleFormat pulumi.StringInput
-	// - (Optional) Include's rules as JSON.
+	// (Optional) Include's rules as JSON.
 	Rules pulumi.StringPtrInput
-	// - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+	// (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
 	Type pulumi.StringInput
 }
 
@@ -301,12 +301,12 @@ func (o PropertyIncludeOutput) ToPropertyIncludeOutputWithContext(ctx context.Co
 	return o
 }
 
-// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 func (o PropertyIncludeOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyInclude) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }
 
-// - (Required) A group's unique ID, including the optional `grp_` prefix.
+// (Required) A group's unique ID, including the optional `grp_` prefix.
 func (o PropertyIncludeOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyInclude) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }
@@ -316,7 +316,7 @@ func (o PropertyIncludeOutput) LatestVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *PropertyInclude) pulumi.IntOutput { return v.LatestVersion }).(pulumi.IntOutput)
 }
 
-// - (Required) The descriptive name for the include.
+// (Required) The descriptive name for the include.
 func (o PropertyIncludeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyInclude) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -336,7 +336,7 @@ func (o PropertyIncludeOutput) RuleErrors() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyInclude) pulumi.StringOutput { return v.RuleErrors }).(pulumi.StringOutput)
 }
 
-// - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+// (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
 func (o PropertyIncludeOutput) RuleFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyInclude) pulumi.StringOutput { return v.RuleFormat }).(pulumi.StringOutput)
 }
@@ -346,7 +346,7 @@ func (o PropertyIncludeOutput) RuleWarnings() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyInclude) pulumi.StringOutput { return v.RuleWarnings }).(pulumi.StringOutput)
 }
 
-// - (Optional) Include's rules as JSON.
+// (Optional) Include's rules as JSON.
 func (o PropertyIncludeOutput) Rules() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyInclude) pulumi.StringOutput { return v.Rules }).(pulumi.StringOutput)
 }
@@ -356,7 +356,7 @@ func (o PropertyIncludeOutput) StagingVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyInclude) pulumi.StringOutput { return v.StagingVersion }).(pulumi.StringOutput)
 }
 
-// - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+// (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
 func (o PropertyIncludeOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyInclude) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

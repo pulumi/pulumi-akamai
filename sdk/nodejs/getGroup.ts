@@ -43,7 +43,7 @@ export interface GetGroupArgs {
      */
     contract?: string;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: string;
     /**
@@ -108,7 +108,7 @@ export interface GetGroupOutputArgs {
      */
     contract?: pulumi.Input<string>;
     /**
-     * - (Required) A contract's unique ID, including the `ctr_` prefix.
+     * (Required) A contract's unique ID, including the `ctr_` prefix.
      */
     contractId?: pulumi.Input<string>;
     /**

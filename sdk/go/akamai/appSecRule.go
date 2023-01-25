@@ -51,7 +51,7 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecRule(ctx, "rule", &akamai.AppSecRuleArgs{
-//				ConfigId:           pulumi.Int(configuration.ConfigId),
+//				ConfigId:           *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId:   pulumi.String("gms1_134637"),
 //				RuleId:             pulumi.Int(60029316),
 //				RuleAction:         pulumi.String("deny"),

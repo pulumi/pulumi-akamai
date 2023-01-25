@@ -53,7 +53,7 @@ import (
 //				return err
 //			}
 //			reputationProfile, err := akamai.NewAppSecReputationProfile(ctx, "reputationProfile", &akamai.AppSecReputationProfileArgs{
-//				ConfigId:          pulumi.Int(configuration.ConfigId),
+//				ConfigId:          *pulumi.Int(configuration.ConfigId),
 //				ReputationProfile: readFileOrPanic(fmt.Sprintf("%v/reputation_profile.json", path.Module)),
 //			})
 //			if err != nil {

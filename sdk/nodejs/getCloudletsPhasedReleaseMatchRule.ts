@@ -32,7 +32,7 @@ export function getCloudletsPhasedReleaseMatchRule(args?: GetCloudletsPhasedRele
  */
 export interface GetCloudletsPhasedReleaseMatchRuleArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: inputs.GetCloudletsPhasedReleaseMatchRuleMatchRule[];
 }
@@ -69,7 +69,7 @@ export function getCloudletsPhasedReleaseMatchRuleOutput(args?: GetCloudletsPhas
  */
 export interface GetCloudletsPhasedReleaseMatchRuleOutputArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs>[]>;
 }

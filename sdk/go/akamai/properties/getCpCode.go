@@ -26,7 +26,7 @@ type LookupCpCodeArgs struct {
 	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract *string `pulumi:"contract"`
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId *string `pulumi:"contractId"`
 	// Replaced by `groupId`. Maintained for legacy purposes.
 	//
@@ -71,7 +71,7 @@ type LookupCpCodeOutputArgs struct {
 	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringPtrInput `pulumi:"contract"`
-	// - (Required) A contract's unique ID, including the `ctr_` prefix.
+	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
 	// Replaced by `groupId`. Maintained for legacy purposes.
 	//

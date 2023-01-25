@@ -68,7 +68,7 @@ export class NetworkList extends pulumi.CustomResource {
      */
     public readonly groupId!: pulumi.Output<number | undefined>;
     /**
-     * : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or
      * removed from an existing list.
      */
     public readonly lists!: pulumi.Output<string[] | undefined>;
@@ -167,7 +167,7 @@ export interface NetworkListState {
      */
     groupId?: pulumi.Input<number>;
     /**
-     * : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or
      * removed from an existing list.
      */
     lists?: pulumi.Input<pulumi.Input<string>[]>;
@@ -217,7 +217,7 @@ export interface NetworkListArgs {
      */
     groupId?: pulumi.Input<number>;
     /**
-     * : (Optional) A list of IP addresses or locations to be included in the list, added to an existing list, or
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or
      * removed from an existing list.
      */
     lists?: pulumi.Input<pulumi.Input<string>[]>;

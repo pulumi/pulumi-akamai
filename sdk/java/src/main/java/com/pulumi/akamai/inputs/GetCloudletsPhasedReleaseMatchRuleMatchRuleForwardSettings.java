@@ -14,14 +14,14 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings ex
     public static final GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings Empty = new GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings();
 
     /**
-     * - (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+     * (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
      * 
      */
     @Import(name="originId", required=true)
     private String originId;
 
     /**
-     * @return - (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+     * @return (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
      * 
      */
     public String originId() {
@@ -29,14 +29,14 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings ex
     }
 
     /**
-     * - (Required)
+     * (Required)
      * 
      */
     @Import(name="percent", required=true)
     private Integer percent;
 
     /**
-     * @return - (Required)
+     * @return (Required)
      * 
      */
     public Integer percent() {
@@ -69,7 +69,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings ex
         }
 
         /**
-         * @param originId - (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
+         * @param originId (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
          * 
          * @return builder
          * 
@@ -80,7 +80,7 @@ public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings ex
         }
 
         /**
-         * @param percent - (Required)
+         * @param percent (Required)
          * 
          * @return builder
          * 

@@ -138,13 +138,13 @@ namespace Pulumi.Akamai
     public sealed class GetCloudletsPolicyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) An integer identifier that is associated with all versions of a policy.
+        /// (Required) An integer identifier that is associated with all versions of a policy.
         /// </summary>
         [Input("policyId", required: true)]
         public int PolicyId { get; set; }
 
         /// <summary>
-        /// - (Optional) The version number of a policy.
+        /// (Optional) The version number of a policy.
         /// </summary>
         [Input("version")]
         public int? Version { get; set; }
@@ -158,13 +158,13 @@ namespace Pulumi.Akamai
     public sealed class GetCloudletsPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) An integer identifier that is associated with all versions of a policy.
+        /// (Required) An integer identifier that is associated with all versions of a policy.
         /// </summary>
         [Input("policyId", required: true)]
         public Input<int> PolicyId { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) The version number of a policy.
+        /// (Optional) The version number of a policy.
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }

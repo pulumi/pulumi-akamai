@@ -30,13 +30,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err = akamai.GetCloudletsVisitorPrioritizationMatchRule(ctx, &akamai.GetCloudletsVisitorPrioritizationMatchRuleArgs{
+//			_, err := akamai.GetCloudletsVisitorPrioritizationMatchRule(ctx, &akamai.GetCloudletsVisitorPrioritizationMatchRuleArgs{
 //				MatchRules: []akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
-//					akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
+//					{
 //						End:      pulumi.IntRef(1645037845),
 //						MatchUrl: pulumi.StringRef("example.com"),
 //						Matches: []akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
-//							akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
+//							{
 //								CaseSensitive: pulumi.BoolRef(false),
 //								CheckIps:      pulumi.StringRef("CONNECTING_IP"),
 //								MatchOperator: pulumi.StringRef("equals"),
@@ -77,7 +77,7 @@ func GetCloudletsVisitorPrioritizationMatchRule(ctx *pulumi.Context, args *GetCl
 
 // A collection of arguments for invoking getCloudletsVisitorPrioritizationMatchRule.
 type GetCloudletsVisitorPrioritizationMatchRuleArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsVisitorPrioritizationMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -104,7 +104,7 @@ func GetCloudletsVisitorPrioritizationMatchRuleOutput(ctx *pulumi.Context, args 
 
 // A collection of arguments for invoking getCloudletsVisitorPrioritizationMatchRule.
 type GetCloudletsVisitorPrioritizationMatchRuleOutputArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

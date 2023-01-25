@@ -34,14 +34,14 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+     * (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<Integer> groupId;
 
     /**
-     * @return - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+     * @return (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
      * 
      */
     public Optional<Output<Integer>> groupId() {
@@ -64,14 +64,14 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * - (Required) The name of the namespace.
+     * (Required) The name of the namespace.
      * 
      */
     @Import(name="namespaceName")
     private @Nullable Output<String> namespaceName;
 
     /**
-     * @return - (Required) The name of the namespace.
+     * @return (Required) The name of the namespace.
      * 
      */
     public Optional<Output<String>> namespaceName() {
@@ -94,14 +94,14 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+     * (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
      * 
      */
     @Import(name="retentionInSeconds")
     private @Nullable Output<Integer> retentionInSeconds;
 
     /**
-     * @return - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+     * @return (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
      * 
      */
     public Optional<Output<Integer>> retentionInSeconds() {
@@ -159,7 +159,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+         * @param groupId (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId - (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+         * @param groupId (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespaceName - (Required) The name of the namespace.
+         * @param namespaceName (Required) The name of the namespace.
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespaceName - (Required) The name of the namespace.
+         * @param namespaceName (Required) The name of the namespace.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionInSeconds - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+         * @param retentionInSeconds (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionInSeconds - (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+         * @param retentionInSeconds (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
          * 
          * @return builder
          * 

@@ -92,7 +92,7 @@ def get_datastream_activation_history(stream_id: Optional[int] = None,
       * `is_active` -	Whether the version of the stream is active.
 
 
-    :param int stream_id: - (Required) A stream's unique identifier.
+    :param int stream_id: (Required) A stream's unique identifier.
     """
     __args__ = dict()
     __args__['streamId'] = stream_id
@@ -135,6 +135,6 @@ def get_datastream_activation_history_output(stream_id: Optional[pulumi.Input[in
       * `is_active` -	Whether the version of the stream is active.
 
 
-    :param int stream_id: - (Required) A stream's unique identifier.
+    :param int stream_id: (Required) A stream's unique identifier.
     """
     ...

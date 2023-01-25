@@ -134,9 +134,6 @@ public class AppSecRuleUpgrade extends com.pulumi.resources.CustomResource {
     }
     /**
      * . Unique identifier of the security policy associated with the ruleset being upgraded.
-     * - `upgrade_mode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
-     * - **ASE_MANUAL**. Manually updates your rulesets.
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
@@ -144,23 +141,24 @@ public class AppSecRuleUpgrade extends com.pulumi.resources.CustomResource {
 
     /**
      * @return . Unique identifier of the security policy associated with the ruleset being upgraded.
-     * - `upgrade_mode`. (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
-     * - **ASE_MANUAL**. Manually updates your rulesets.
      * 
      */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
     /**
-     * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+     * . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
+     * - **ASE_MANUAL**. Manually updates your rulesets.
      * 
      */
     @Export(name="upgradeMode", type=String.class, parameters={})
     private Output</* @Nullable */ String> upgradeMode;
 
     /**
-     * @return Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
+     * @return . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
+     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
+     * - **ASE_MANUAL**. Manually updates your rulesets.
      * 
      */
     public Output<Optional<String>> upgradeMode() {

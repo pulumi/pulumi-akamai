@@ -84,7 +84,7 @@ namespace Pulumi.Akamai
     public sealed class GetPropertyProductsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
@@ -98,7 +98,7 @@ namespace Pulumi.Akamai
     public sealed class GetPropertyProductsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;

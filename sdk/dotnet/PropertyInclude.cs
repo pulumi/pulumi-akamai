@@ -47,13 +47,13 @@ namespace Pulumi.Akamai
     public partial class PropertyInclude : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the optional `grp_` prefix.
+        /// (Required) A group's unique ID, including the optional `grp_` prefix.
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
@@ -65,7 +65,7 @@ namespace Pulumi.Akamai
         public Output<int> LatestVersion { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The descriptive name for the include.
+        /// (Required) The descriptive name for the include.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -89,7 +89,7 @@ namespace Pulumi.Akamai
         public Output<string> RuleErrors { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+        /// (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
         /// </summary>
         [Output("ruleFormat")]
         public Output<string> RuleFormat { get; private set; } = null!;
@@ -101,7 +101,7 @@ namespace Pulumi.Akamai
         public Output<string> RuleWarnings { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) Include's rules as JSON.
+        /// (Optional) Include's rules as JSON.
         /// </summary>
         [Output("rules")]
         public Output<string> Rules { get; private set; } = null!;
@@ -113,7 +113,7 @@ namespace Pulumi.Akamai
         public Output<string> StagingVersion { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        /// (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -165,19 +165,19 @@ namespace Pulumi.Akamai
     public sealed class PropertyIncludeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the optional `grp_` prefix.
+        /// (Required) A group's unique ID, including the optional `grp_` prefix.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) The descriptive name for the include.
+        /// (Required) The descriptive name for the include.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -189,19 +189,19 @@ namespace Pulumi.Akamai
         public Input<string>? ProductId { get; set; }
 
         /// <summary>
-        /// - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+        /// (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
         /// </summary>
         [Input("ruleFormat", required: true)]
         public Input<string> RuleFormat { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) Include's rules as JSON.
+        /// (Optional) Include's rules as JSON.
         /// </summary>
         [Input("rules")]
         public Input<string>? Rules { get; set; }
 
         /// <summary>
-        /// - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        /// (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -215,13 +215,13 @@ namespace Pulumi.Akamai
     public sealed class PropertyIncludeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the optional `grp_` prefix.
+        /// (Required) A group's unique ID, including the optional `grp_` prefix.
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
@@ -233,7 +233,7 @@ namespace Pulumi.Akamai
         public Input<int>? LatestVersion { get; set; }
 
         /// <summary>
-        /// - (Required) The descriptive name for the include.
+        /// (Required) The descriptive name for the include.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -257,7 +257,7 @@ namespace Pulumi.Akamai
         public Input<string>? RuleErrors { get; set; }
 
         /// <summary>
-        /// - (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+        /// (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
         /// </summary>
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }
@@ -269,7 +269,7 @@ namespace Pulumi.Akamai
         public Input<string>? RuleWarnings { get; set; }
 
         /// <summary>
-        /// - (Optional) Include's rules as JSON.
+        /// (Optional) Include's rules as JSON.
         /// </summary>
         [Input("rules")]
         public Input<string>? Rules { get; set; }
@@ -281,7 +281,7 @@ namespace Pulumi.Akamai
         public Input<string>? StagingVersion { get; set; }
 
         /// <summary>
-        /// - (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        /// (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

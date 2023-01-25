@@ -32,19 +32,19 @@ export function getPropertyIncludeActivation(args: GetPropertyIncludeActivationA
  */
 export interface GetPropertyIncludeActivationArgs {
     /**
-     * - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
      */
     contractId: string;
     /**
-     * - (Required) A group's unique ID, including the optional `grp_` prefix.
+     * (Required) A group's unique ID, including the optional `grp_` prefix.
      */
     groupId: string;
     /**
-     * - (Required) An include's unique ID with the optional `inc_` prefix.
+     * (Required) An include's unique ID with the optional `inc_` prefix.
      */
     includeId: string;
     /**
-     * - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+     * (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
      */
     network: string;
 }
@@ -87,19 +87,19 @@ export function getPropertyIncludeActivationOutput(args: GetPropertyIncludeActiv
  */
 export interface GetPropertyIncludeActivationOutputArgs {
     /**
-     * - (Required) A contract's unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
      */
     contractId: pulumi.Input<string>;
     /**
-     * - (Required) A group's unique ID, including the optional `grp_` prefix.
+     * (Required) A group's unique ID, including the optional `grp_` prefix.
      */
     groupId: pulumi.Input<string>;
     /**
-     * - (Required) An include's unique ID with the optional `inc_` prefix.
+     * (Required) An include's unique ID with the optional `inc_` prefix.
      */
     includeId: pulumi.Input<string>;
     /**
-     * - (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+     * (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
      */
     network: pulumi.Input<string>;
 }

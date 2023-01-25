@@ -20,14 +20,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
     public static final GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs Empty = new GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs();
 
     /**
-     * - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     * (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
      * 
      */
     @Import(name="disabled")
     private @Nullable Output<Boolean> disabled;
 
     /**
-     * @return - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+     * @return (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
      * 
      */
     public Optional<Output<Boolean>> disabled() {
@@ -35,14 +35,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     @Import(name="end")
     private @Nullable Output<Integer> end;
 
     /**
-     * @return - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Output<Integer>> end() {
@@ -50,14 +50,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     * (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
      * 
      */
     @Import(name="matchUrl")
     private @Nullable Output<String> matchUrl;
 
     /**
-     * @return - (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+     * @return (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
      * 
      */
     public Optional<Output<String>> matchUrl() {
@@ -65,14 +65,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     @Import(name="matches")
     private @Nullable Output<List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs>> matches;
 
     /**
-     * @return - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     public Optional<Output<List<GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs>>> matches() {
@@ -80,14 +80,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     public Optional<Output<String>> name() {
@@ -95,14 +95,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Required) The URL Edge Redirector redirects the request to. If you&#39;re using `use_relative_url`, you can enter a path for the value.
+     * (Required) The URL Edge Redirector redirects the request to. If you&#39;re using `use_relative_url`, you can enter a path for the value.
      * 
      */
     @Import(name="redirectUrl", required=true)
     private Output<String> redirectUrl;
 
     /**
-     * @return - (Required) The URL Edge Redirector redirects the request to. If you&#39;re using `use_relative_url`, you can enter a path for the value.
+     * @return (Required) The URL Edge Redirector redirects the request to. If you&#39;re using `use_relative_url`, you can enter a path for the value.
      * 
      */
     public Output<String> redirectUrl() {
@@ -110,14 +110,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     @Import(name="start")
     private @Nullable Output<Integer> start;
 
     /**
-     * @return - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Output<Integer>> start() {
@@ -125,14 +125,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
+     * (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
      * 
      */
     @Import(name="statusCode", required=true)
     private Output<Integer> statusCode;
 
     /**
-     * @return - (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
+     * @return (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
      * 
      */
     public Output<Integer> statusCode() {
@@ -140,14 +140,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     public Output<String> type() {
@@ -155,14 +155,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+     * (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
      * 
      */
     @Import(name="useIncomingQueryString")
     private @Nullable Output<Boolean> useIncomingQueryString;
 
     /**
-     * @return - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+     * @return (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
      * 
      */
     public Optional<Output<Boolean>> useIncomingQueryString() {
@@ -170,14 +170,14 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
+     * (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
      * 
      */
     @Import(name="useRelativeUrl")
     private @Nullable Output<String> useRelativeUrl;
 
     /**
-     * @return - (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
+     * @return (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
      * 
      */
     public Optional<Output<String>> useRelativeUrl() {
@@ -219,7 +219,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param disabled - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+         * @param disabled (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param disabled - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+         * @param disabled (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param end - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param end (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param end - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param end (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -261,7 +261,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param matchUrl - (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+         * @param matchUrl (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param matchUrl - (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+         * @param matchUrl (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
          * 
          * @return builder
          * 
@@ -282,7 +282,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param matches - (Optional) A list of conditions to apply to a Cloudlet, including:
+         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param matches - (Optional) A list of conditions to apply to a Cloudlet, including:
+         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
          * 
          * @return builder
          * 
@@ -303,7 +303,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param matches - (Optional) A list of conditions to apply to a Cloudlet, including:
+         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param name - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
          * 
          * @return builder
          * 
@@ -324,7 +324,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param name - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param redirectUrl - (Required) The URL Edge Redirector redirects the request to. If you&#39;re using `use_relative_url`, you can enter a path for the value.
+         * @param redirectUrl (Required) The URL Edge Redirector redirects the request to. If you&#39;re using `use_relative_url`, you can enter a path for the value.
          * 
          * @return builder
          * 
@@ -345,7 +345,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param redirectUrl - (Required) The URL Edge Redirector redirects the request to. If you&#39;re using `use_relative_url`, you can enter a path for the value.
+         * @param redirectUrl (Required) The URL Edge Redirector redirects the request to. If you&#39;re using `use_relative_url`, you can enter a path for the value.
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param start - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param start (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param start - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param start (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param statusCode - (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
+         * @param statusCode (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
          * 
          * @return builder
          * 
@@ -387,7 +387,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param statusCode - (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
+         * @param statusCode (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param type - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+         * @param type (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
          * 
          * @return builder
          * 
@@ -408,7 +408,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param type - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+         * @param type (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param useIncomingQueryString - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+         * @param useIncomingQueryString (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param useIncomingQueryString - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+         * @param useIncomingQueryString (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param useRelativeUrl - (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
+         * @param useRelativeUrl (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param useRelativeUrl - (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
+         * @param useRelativeUrl (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
          * 
          * @return builder
          * 

@@ -13,19 +13,19 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
+        /// (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
         /// </summary>
         [Input("disabled")]
         public bool? Disabled { get; set; }
 
         /// <summary>
-        /// - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+        /// (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
         /// </summary>
         [Input("end")]
         public int? End { get; set; }
 
         /// <summary>
-        /// - (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
+        /// (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
         /// </summary>
         [Input("matchUrl")]
         public string? MatchUrl { get; set; }
@@ -34,7 +34,7 @@ namespace Pulumi.Akamai.Inputs
         private List<Inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs>? _matches;
 
         /// <summary>
-        /// - (Optional) A list of conditions to apply to a Cloudlet, including:
+        /// (Optional) A list of conditions to apply to a Cloudlet, including:
         /// </summary>
         public List<Inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchArgs> Matches
         {
@@ -43,43 +43,43 @@ namespace Pulumi.Akamai.Inputs
         }
 
         /// <summary>
-        /// - (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+        /// (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// - (Required) The URL Edge Redirector redirects the request to. If you're using `use_relative_url`, you can enter a path for the value.
+        /// (Required) The URL Edge Redirector redirects the request to. If you're using `use_relative_url`, you can enter a path for the value.
         /// </summary>
         [Input("redirectUrl", required: true)]
         public string RedirectUrl { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+        /// (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
         /// </summary>
         [Input("start")]
         public int? Start { get; set; }
 
         /// <summary>
-        /// - (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
+        /// (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
         /// </summary>
         [Input("statusCode", required: true)]
         public int StatusCode { get; set; }
 
         /// <summary>
-        /// - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+        /// (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
         /// </summary>
         [Input("type", required: true)]
         public string Type { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
+        /// (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
         /// </summary>
         [Input("useIncomingQueryString")]
         public bool? UseIncomingQueryString { get; set; }
 
         /// <summary>
-        /// - (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
+        /// (Optional) If set to `relative_url`, takes the path you specify in the `redirect_url` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copy_scheme_hostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirect_url` argument. This absolute path is set in the response’s Location header. If you do not specify use_relative_url or set to `none`, then specify the `redirect_url` argument as a fully-qualified URL.
         /// </summary>
         [Input("useRelativeUrl")]
         public string? UseRelativeUrl { get; set; }

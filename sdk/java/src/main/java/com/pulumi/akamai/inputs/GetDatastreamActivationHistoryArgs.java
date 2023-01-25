@@ -14,14 +14,14 @@ public final class GetDatastreamActivationHistoryArgs extends com.pulumi.resourc
     public static final GetDatastreamActivationHistoryArgs Empty = new GetDatastreamActivationHistoryArgs();
 
     /**
-     * - (Required) A stream&#39;s unique identifier.
+     * (Required) A stream&#39;s unique identifier.
      * 
      */
     @Import(name="streamId", required=true)
     private Output<Integer> streamId;
 
     /**
-     * @return - (Required) A stream&#39;s unique identifier.
+     * @return (Required) A stream&#39;s unique identifier.
      * 
      */
     public Output<Integer> streamId() {
@@ -53,7 +53,7 @@ public final class GetDatastreamActivationHistoryArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param streamId - (Required) A stream&#39;s unique identifier.
+         * @param streamId (Required) A stream&#39;s unique identifier.
          * 
          * @return builder
          * 
@@ -64,7 +64,7 @@ public final class GetDatastreamActivationHistoryArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param streamId - (Required) A stream&#39;s unique identifier.
+         * @param streamId (Required) A stream&#39;s unique identifier.
          * 
          * @return builder
          * 

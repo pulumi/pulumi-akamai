@@ -59,7 +59,7 @@ export function getCloudletsVisitorPrioritizationMatchRule(args?: GetCloudletsVi
  */
 export interface GetCloudletsVisitorPrioritizationMatchRuleArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRule[];
 }
@@ -123,7 +123,7 @@ export function getCloudletsVisitorPrioritizationMatchRuleOutput(args?: GetCloud
  */
 export interface GetCloudletsVisitorPrioritizationMatchRuleOutputArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs>[]>;
 }

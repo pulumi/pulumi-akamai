@@ -53,14 +53,14 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecAdvancedSettingsLogging(ctx, "logging", &akamai.AppSecAdvancedSettingsLoggingArgs{
-//				ConfigId: pulumi.Int(configuration.ConfigId),
+//				ConfigId: *pulumi.Int(configuration.ConfigId),
 //				Logging:  readFileOrPanic(fmt.Sprintf("%v/logging.json", path.Module)),
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			_, err = akamai.NewAppSecAdvancedSettingsLogging(ctx, "policyLogging", &akamai.AppSecAdvancedSettingsLoggingArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
 //				Logging:          readFileOrPanic(fmt.Sprintf("%v/logging.json", path.Module)),
 //			})

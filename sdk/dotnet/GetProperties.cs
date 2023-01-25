@@ -84,13 +84,13 @@ namespace Pulumi.Akamai
     public sealed class GetPropertiesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
@@ -104,13 +104,13 @@ namespace Pulumi.Akamai
     public sealed class GetPropertiesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// - (Required) A contract's unique ID, including the `ctr_` prefix.
+        /// (Required) A contract's unique ID, including the `ctr_` prefix.
         /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
-        /// - (Required) A group's unique ID, including the `grp_` prefix.
+        /// (Required) A group's unique ID, including the `grp_` prefix.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;

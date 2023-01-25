@@ -32,7 +32,7 @@ export function getCloudletsAudienceSegmentationMatchRule(args?: GetCloudletsAud
  */
 export interface GetCloudletsAudienceSegmentationMatchRuleArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRule[];
 }
@@ -69,7 +69,7 @@ export function getCloudletsAudienceSegmentationMatchRuleOutput(args?: GetCloudl
  */
 export interface GetCloudletsAudienceSegmentationMatchRuleOutputArgs {
     /**
-     * - (Optional) A list of Cloudlet-specific match rules for a policy.
+     * (Optional) A list of Cloudlet-specific match rules for a policy.
      */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs>[]>;
 }

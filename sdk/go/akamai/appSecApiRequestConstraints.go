@@ -42,9 +42,9 @@ import (
 //				return err
 //			}
 //			_, err = akamai.NewAppSecApiRequestConstraints(ctx, "apiRequestConstraints", &akamai.AppSecApiRequestConstraintsArgs{
-//				ConfigId:         pulumi.Int(configuration.ConfigId),
+//				ConfigId:         *pulumi.Int(configuration.ConfigId),
 //				SecurityPolicyId: pulumi.String("gms1_134637"),
-//				ApiEndpointId:    pulumi.String(apiEndpoint.Id),
+//				ApiEndpointId:    *pulumi.String(apiEndpoint.Id),
 //				Action:           pulumi.String("alert"),
 //			})
 //			if err != nil {

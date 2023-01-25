@@ -20,14 +20,14 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
     public static final GetCloudletsRequestControlMatchRuleMatchRuleArgs Empty = new GetCloudletsRequestControlMatchRuleMatchRuleArgs();
 
     /**
-     * - (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
+     * (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
      * 
      */
     @Import(name="allowDeny", required=true)
     private Output<String> allowDeny;
 
     /**
-     * @return - (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
+     * @return (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
      * 
      */
     public Output<String> allowDeny() {
@@ -35,14 +35,14 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
+     * (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
      * 
      */
     @Import(name="disabled")
     private @Nullable Output<Boolean> disabled;
 
     /**
-     * @return - (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
+     * @return (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
      * 
      */
     public Optional<Output<Boolean>> disabled() {
@@ -50,14 +50,14 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     @Import(name="end")
     private @Nullable Output<Integer> end;
 
     /**
-     * @return - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Output<Integer>> end() {
@@ -65,14 +65,14 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     @Import(name="matches")
     private @Nullable Output<List<GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs>> matches;
 
     /**
-     * @return - (Optional) A list of conditions to apply to a Cloudlet, including:
+     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
      * 
      */
     public Optional<Output<List<GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs>>> matches() {
@@ -80,14 +80,14 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) Match on all incoming requests.
+     * (Optional) Match on all incoming requests.
      * 
      */
     @Import(name="matchesAlways")
     private @Nullable Output<Boolean> matchesAlways;
 
     /**
-     * @return - (Optional) Match on all incoming requests.
+     * @return (Optional) Match on all incoming requests.
      * 
      */
     public Optional<Output<Boolean>> matchesAlways() {
@@ -95,14 +95,14 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
      * 
      */
     public Optional<Output<String>> name() {
@@ -110,14 +110,14 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     @Import(name="start")
     private @Nullable Output<Integer> start;
 
     /**
-     * @return - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
      * 
      */
     public Optional<Output<Integer>> start() {
@@ -125,14 +125,14 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
     }
 
     /**
-     * - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
      * 
      */
     public Output<String> type() {
@@ -171,7 +171,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param allowDeny - (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
+         * @param allowDeny (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param allowDeny - (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
+         * @param allowDeny (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
          * 
          * @return builder
          * 
@@ -192,7 +192,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param disabled - (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
+         * @param disabled (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param disabled - (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
+         * @param disabled (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
          * 
          * @return builder
          * 
@@ -213,7 +213,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param end - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param end (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -224,7 +224,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param end - (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param end (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -234,7 +234,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param matches - (Optional) A list of conditions to apply to a Cloudlet, including:
+         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
          * 
          * @return builder
          * 
@@ -245,7 +245,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param matches - (Optional) A list of conditions to apply to a Cloudlet, including:
+         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
          * 
          * @return builder
          * 
@@ -255,7 +255,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param matches - (Optional) A list of conditions to apply to a Cloudlet, including:
+         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param matchesAlways - (Optional) Match on all incoming requests.
+         * @param matchesAlways (Optional) Match on all incoming requests.
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param matchesAlways - (Optional) Match on all incoming requests.
+         * @param matchesAlways (Optional) Match on all incoming requests.
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param name - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param name - (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
+         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param start - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param start (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param start - (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
+         * @param start (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param type - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+         * @param type (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
         }
 
         /**
-         * @param type - (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
+         * @param type (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
          * 
          * @return builder
          * 

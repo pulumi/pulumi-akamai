@@ -53,15 +53,15 @@ type EdgeWorker struct {
 
 	// The unique identifier of the EdgeWorker
 	EdgeworkerId pulumi.IntOutput `pulumi:"edgeworkerId"`
-	// - (Required) Identifies a group to assign to the EdgeWorker ID.
+	// (Required) Identifies a group to assign to the EdgeWorker ID.
 	GroupId pulumi.IntOutput `pulumi:"groupId"`
-	// - (Optional) The path to the EdgeWorkers code bundle.
+	// (Optional) The path to the EdgeWorkers code bundle.
 	LocalBundle pulumi.StringPtrOutput `pulumi:"localBundle"`
 	// The local bundle hash for the EdgeWorker
 	LocalBundleHash pulumi.StringOutput `pulumi:"localBundleHash"`
-	// - (Required) The name of the EdgeWorker ID.
+	// (Required) The name of the EdgeWorker ID.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// - (Required) Unique identifier of the resource tier.
+	// (Required) Unique identifier of the resource tier.
 	ResourceTierId pulumi.IntOutput `pulumi:"resourceTierId"`
 	// The bundle version
 	Version pulumi.StringOutput `pulumi:"version"`
@@ -106,15 +106,15 @@ func GetEdgeWorker(ctx *pulumi.Context,
 type edgeWorkerState struct {
 	// The unique identifier of the EdgeWorker
 	EdgeworkerId *int `pulumi:"edgeworkerId"`
-	// - (Required) Identifies a group to assign to the EdgeWorker ID.
+	// (Required) Identifies a group to assign to the EdgeWorker ID.
 	GroupId *int `pulumi:"groupId"`
-	// - (Optional) The path to the EdgeWorkers code bundle.
+	// (Optional) The path to the EdgeWorkers code bundle.
 	LocalBundle *string `pulumi:"localBundle"`
 	// The local bundle hash for the EdgeWorker
 	LocalBundleHash *string `pulumi:"localBundleHash"`
-	// - (Required) The name of the EdgeWorker ID.
+	// (Required) The name of the EdgeWorker ID.
 	Name *string `pulumi:"name"`
-	// - (Required) Unique identifier of the resource tier.
+	// (Required) Unique identifier of the resource tier.
 	ResourceTierId *int `pulumi:"resourceTierId"`
 	// The bundle version
 	Version *string `pulumi:"version"`
@@ -125,15 +125,15 @@ type edgeWorkerState struct {
 type EdgeWorkerState struct {
 	// The unique identifier of the EdgeWorker
 	EdgeworkerId pulumi.IntPtrInput
-	// - (Required) Identifies a group to assign to the EdgeWorker ID.
+	// (Required) Identifies a group to assign to the EdgeWorker ID.
 	GroupId pulumi.IntPtrInput
-	// - (Optional) The path to the EdgeWorkers code bundle.
+	// (Optional) The path to the EdgeWorkers code bundle.
 	LocalBundle pulumi.StringPtrInput
 	// The local bundle hash for the EdgeWorker
 	LocalBundleHash pulumi.StringPtrInput
-	// - (Required) The name of the EdgeWorker ID.
+	// (Required) The name of the EdgeWorker ID.
 	Name pulumi.StringPtrInput
-	// - (Required) Unique identifier of the resource tier.
+	// (Required) Unique identifier of the resource tier.
 	ResourceTierId pulumi.IntPtrInput
 	// The bundle version
 	Version pulumi.StringPtrInput
@@ -146,25 +146,25 @@ func (EdgeWorkerState) ElementType() reflect.Type {
 }
 
 type edgeWorkerArgs struct {
-	// - (Required) Identifies a group to assign to the EdgeWorker ID.
+	// (Required) Identifies a group to assign to the EdgeWorker ID.
 	GroupId int `pulumi:"groupId"`
-	// - (Optional) The path to the EdgeWorkers code bundle.
+	// (Optional) The path to the EdgeWorkers code bundle.
 	LocalBundle *string `pulumi:"localBundle"`
-	// - (Required) The name of the EdgeWorker ID.
+	// (Required) The name of the EdgeWorker ID.
 	Name *string `pulumi:"name"`
-	// - (Required) Unique identifier of the resource tier.
+	// (Required) Unique identifier of the resource tier.
 	ResourceTierId int `pulumi:"resourceTierId"`
 }
 
 // The set of arguments for constructing a EdgeWorker resource.
 type EdgeWorkerArgs struct {
-	// - (Required) Identifies a group to assign to the EdgeWorker ID.
+	// (Required) Identifies a group to assign to the EdgeWorker ID.
 	GroupId pulumi.IntInput
-	// - (Optional) The path to the EdgeWorkers code bundle.
+	// (Optional) The path to the EdgeWorkers code bundle.
 	LocalBundle pulumi.StringPtrInput
-	// - (Required) The name of the EdgeWorker ID.
+	// (Required) The name of the EdgeWorker ID.
 	Name pulumi.StringPtrInput
-	// - (Required) Unique identifier of the resource tier.
+	// (Required) Unique identifier of the resource tier.
 	ResourceTierId pulumi.IntInput
 }
 
@@ -260,12 +260,12 @@ func (o EdgeWorkerOutput) EdgeworkerId() pulumi.IntOutput {
 	return o.ApplyT(func(v *EdgeWorker) pulumi.IntOutput { return v.EdgeworkerId }).(pulumi.IntOutput)
 }
 
-// - (Required) Identifies a group to assign to the EdgeWorker ID.
+// (Required) Identifies a group to assign to the EdgeWorker ID.
 func (o EdgeWorkerOutput) GroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v *EdgeWorker) pulumi.IntOutput { return v.GroupId }).(pulumi.IntOutput)
 }
 
-// - (Optional) The path to the EdgeWorkers code bundle.
+// (Optional) The path to the EdgeWorkers code bundle.
 func (o EdgeWorkerOutput) LocalBundle() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EdgeWorker) pulumi.StringPtrOutput { return v.LocalBundle }).(pulumi.StringPtrOutput)
 }
@@ -275,12 +275,12 @@ func (o EdgeWorkerOutput) LocalBundleHash() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeWorker) pulumi.StringOutput { return v.LocalBundleHash }).(pulumi.StringOutput)
 }
 
-// - (Required) The name of the EdgeWorker ID.
+// (Required) The name of the EdgeWorker ID.
 func (o EdgeWorkerOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeWorker) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// - (Required) Unique identifier of the resource tier.
+// (Required) Unique identifier of the resource tier.
 func (o EdgeWorkerOutput) ResourceTierId() pulumi.IntOutput {
 	return o.ApplyT(func(v *EdgeWorker) pulumi.IntOutput { return v.ResourceTierId }).(pulumi.IntOutput)
 }

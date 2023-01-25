@@ -17,14 +17,14 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
     public static final GetPropertyIncludesArgs Empty = new GetPropertyIncludesArgs();
 
     /**
-     * - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     @Import(name="contractId", required=true)
     private Output<String> contractId;
 
     /**
-     * @return - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
      * 
      */
     public Output<String> contractId() {
@@ -32,14 +32,14 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     @Import(name="groupId", required=true)
     private Output<String> groupId;
 
     /**
-     * @return - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
      * 
      */
     public Output<String> groupId() {
@@ -47,14 +47,14 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * - (Optional) The property that references the includes you want to list.
+     * (Optional) The property that references the includes you want to list.
      * 
      */
     @Import(name="parentProperty")
     private @Nullable Output<GetPropertyIncludesParentPropertyArgs> parentProperty;
 
     /**
-     * @return - (Optional) The property that references the includes you want to list.
+     * @return (Optional) The property that references the includes you want to list.
      * 
      */
     public Optional<Output<GetPropertyIncludesParentPropertyArgs>> parentProperty() {
@@ -62,14 +62,14 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * @return (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
      * 
      */
     public Optional<Output<String>> type() {
@@ -104,7 +104,7 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param contractId - (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param groupId - (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param parentProperty - (Optional) The property that references the includes you want to list.
+         * @param parentProperty (Optional) The property that references the includes you want to list.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param parentProperty - (Optional) The property that references the includes you want to list.
+         * @param parentProperty (Optional) The property that references the includes you want to list.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param type - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+         * @param type (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param type - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+         * @param type (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
          * 
          * @return builder
          * 

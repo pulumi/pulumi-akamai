@@ -86,7 +86,7 @@ def get_property_products(contract_id: Optional[str] = None,
       * `product_name` - A string containing the product name.
 
 
-    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -123,6 +123,6 @@ def get_property_products_output(contract_id: Optional[pulumi.Input[str]] = None
       * `product_name` - A string containing the product name.
 
 
-    :param str contract_id: - (Required) A contract's unique ID, including the `ctr_` prefix.
+    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
     """
     ...

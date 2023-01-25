@@ -46,7 +46,7 @@ export function getDatastreamDatasetFields(args?: GetDatastreamDatasetFieldsArgs
  */
 export interface GetDatastreamDatasetFieldsArgs {
     /**
-     * - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
+     * (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
      */
     templateName?: string;
 }
@@ -97,7 +97,7 @@ export function getDatastreamDatasetFieldsOutput(args?: GetDatastreamDatasetFiel
  */
 export interface GetDatastreamDatasetFieldsOutputArgs {
     /**
-     * - (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
+     * (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
      */
     templateName?: pulumi.Input<string>;
 }

@@ -31,7 +31,7 @@ func GetCloudletsApiPrioritizationMatchRule(ctx *pulumi.Context, args *GetCloudl
 
 // A collection of arguments for invoking getCloudletsApiPrioritizationMatchRule.
 type GetCloudletsApiPrioritizationMatchRuleArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsApiPrioritizationMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -58,7 +58,7 @@ func GetCloudletsApiPrioritizationMatchRuleOutput(ctx *pulumi.Context, args GetC
 
 // A collection of arguments for invoking getCloudletsApiPrioritizationMatchRule.
 type GetCloudletsApiPrioritizationMatchRuleOutputArgs struct {
-	// - (Optional) A list of Cloudlet-specific match rules for a policy.
+	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsApiPrioritizationMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

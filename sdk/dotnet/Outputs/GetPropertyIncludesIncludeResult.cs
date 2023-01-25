@@ -14,7 +14,7 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetPropertyIncludesIncludeResult
     {
         /// <summary>
-        /// - (Required) The property's unique identifier.
+        /// (Required) The property's unique identifier.
         /// </summary>
         public readonly string Id;
         public readonly int LatestVersion;
@@ -22,7 +22,7 @@ namespace Pulumi.Akamai.Outputs
         public readonly string ProductionVersion;
         public readonly string StagingVersion;
         /// <summary>
-        /// - (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        /// (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
         /// </summary>
         public readonly string Type;
 
