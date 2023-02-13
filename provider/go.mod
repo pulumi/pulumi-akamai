@@ -1,6 +1,6 @@
 module github.com/pulumi/pulumi-akamai/provider/v4
 
-go 1.18
+go 1.19
 
 replace (
 	github.com/akamai/terraform-provider-akamai/v3 => github.com/pulumi/terraform-provider-akamai/v3 v3.0.0-20230125192443-fe155a5e9179
