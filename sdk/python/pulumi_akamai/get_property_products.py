@@ -66,7 +66,7 @@ class AwaitableGetPropertyProductsResult(GetPropertyProductsResult):
 def get_property_products(contract_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyProductsResult:
     """
-    Use the `get_property_products` data source to list the products included on a contract.
+    Use the _get_property_products_ data source to list the products included on a contract.
 
     ## Example Usage
 
@@ -103,7 +103,7 @@ def get_property_products(contract_id: Optional[str] = None,
 def get_property_products_output(contract_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyProductsResult]:
     """
-    Use the `get_property_products` data source to list the products included on a contract.
+    Use the _get_property_products_ data source to list the products included on a contract.
 
     ## Example Usage
 

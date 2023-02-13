@@ -86,7 +86,7 @@ def get_property_include_parents(contract_id: Optional[str] = None,
                                  include_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyIncludeParentsResult:
     """
-    Use the `get_property_include_parents` data source to return a list of parent properties that use the given include. In your property's rule tree, you can reference an include by adding the `include` behavior and specifying the `include_id`.
+    Use the _get_property_include_parents_ data source to return a list of parent properties that use the given include. In your property's rule tree, you can reference an include by adding the `include` behavior and specifying the `include_id`.
 
     ## Basic usage
 
@@ -140,7 +140,7 @@ def get_property_include_parents_output(contract_id: Optional[pulumi.Input[str]]
                                         include_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyIncludeParentsResult]:
     """
-    Use the `get_property_include_parents` data source to return a list of parent properties that use the given include. In your property's rule tree, you can reference an include by adding the `include` behavior and specifying the `include_id`.
+    Use the _get_property_include_parents_ data source to return a list of parent properties that use the given include. In your property's rule tree, you can reference an include by adding the `include` behavior and specifying the `include_id`.
 
     ## Basic usage
 

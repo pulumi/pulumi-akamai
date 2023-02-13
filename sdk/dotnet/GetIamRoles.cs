@@ -31,7 +31,7 @@ namespace Pulumi.Akamai
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["roles"] = my_roles.Apply(getIamRolesResult =&gt; getIamRolesResult),
+        ///         ["roles"] = my_roles,
         ///     };
         /// });
         /// ```

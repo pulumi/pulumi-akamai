@@ -54,7 +54,7 @@ class AwaitableGetCpsWarningsResult(GetCpsWarningsResult):
 
 def get_cps_warnings(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpsWarningsResult:
     """
-    Use the `get_cps_warnings` data source to return a map of all possible pre- and post-verification warnings. The map includes both the ID needed to acknowledge a warning and a brief description of the issue.
+    Use the _get_cps_warnings_ data source to return a map of all possible pre- and post-verification warnings. The map includes both the ID needed to acknowledge a warning and a brief description of the issue.
 
     CPS produces warnings during enrollment creation or after a client uploads the certificate. CPS won't process a change until you acknowledge all warnings.
 

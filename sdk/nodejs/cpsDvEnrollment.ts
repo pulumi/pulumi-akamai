@@ -57,6 +57,7 @@ import * as utilities from "./utilities";
  *         city: "Cambridge",
  *         organization: "Akamai",
  *         organizationalUnit: "Dev",
+ *         preferredTrustChain: "intermediate-a",
  *         state: "MA",
  *     },
  *     networkConfiguration: {

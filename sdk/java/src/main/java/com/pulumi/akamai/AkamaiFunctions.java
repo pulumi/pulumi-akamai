@@ -11109,6 +11109,7 @@ public final class AkamaiFunctions {
      *     * `city` - The city where your organization resides.
      *     * `organization` - The name of your company or organization.
      *     * `organizational_unit` - Your organizational unit.
+     *     * `preferred_trust_chain` - For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake.
      *     * `state` - Your state or province.
      *   * `enable_multi_stacked_certificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
      *   * `network_configuration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
@@ -11198,6 +11199,7 @@ public final class AkamaiFunctions {
      *     * `city` - The city where your organization resides.
      *     * `organization` - The name of your company or organization.
      *     * `organizational_unit` - Your organizational unit.
+     *     * `preferred_trust_chain` - For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake.
      *     * `state` - Your state or province.
      *   * `enable_multi_stacked_certificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
      *   * `network_configuration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
@@ -11287,6 +11289,7 @@ public final class AkamaiFunctions {
      *     * `city` - The city where your organization resides.
      *     * `organization` - The name of your company or organization.
      *     * `organizational_unit` - Your organizational unit.
+     *     * `preferred_trust_chain` - For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake.
      *     * `state` - Your state or province.
      *   * `enable_multi_stacked_certificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
      *   * `network_configuration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
@@ -11376,6 +11379,7 @@ public final class AkamaiFunctions {
      *     * `city` - The city where your organization resides.
      *     * `organization` - The name of your company or organization.
      *     * `organizational_unit` - Your organizational unit.
+     *     * `preferred_trust_chain` - For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake.
      *     * `state` - Your state or province.
      *   * `enable_multi_stacked_certificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
      *   * `network_configuration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
@@ -11467,6 +11471,7 @@ public final class AkamaiFunctions {
      *     * `city` - The city where your organization resides.
      *     * `organization` - The name of your company or organization.
      *     * `organizational_unit` - Your organizational unit.
+     *     * `preferred_trust_chain` - For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake.
      *     * `state` - Your state or province.
      *   * `enable_multi_stacked_certificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
      *   * `network_configuration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
@@ -11554,6 +11559,7 @@ public final class AkamaiFunctions {
      *     * `city` - The city where your organization resides.
      *     * `organization` - The name of your company or organization.
      *     * `organizational_unit` - Your organizational unit.
+     *     * `preferred_trust_chain` - For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake.
      *     * `state` - Your state or province.
      *   * `enable_multi_stacked_certificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
      *   * `network_configuration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
@@ -11641,6 +11647,7 @@ public final class AkamaiFunctions {
      *     * `city` - The city where your organization resides.
      *     * `organization` - The name of your company or organization.
      *     * `organizational_unit` - Your organizational unit.
+     *     * `preferred_trust_chain` - For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake.
      *     * `state` - Your state or province.
      *   * `enable_multi_stacked_certificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
      *   * `network_configuration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
@@ -11728,6 +11735,7 @@ public final class AkamaiFunctions {
      *     * `city` - The city where your organization resides.
      *     * `organization` - The name of your company or organization.
      *     * `organizational_unit` - Your organizational unit.
+     *     * `preferred_trust_chain` - For the Let&#39;s Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake.
      *     * `state` - Your state or province.
      *   * `enable_multi_stacked_certificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
      *   * `network_configuration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.

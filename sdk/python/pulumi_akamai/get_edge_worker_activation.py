@@ -84,7 +84,7 @@ def get_edge_worker_activation(edgeworker_id: Optional[int] = None,
                                network: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEdgeWorkerActivationResult:
     """
-    Use the `get_edge_worker_activation` data source to fetch the latest activation for a given EdgeWorker ID.
+    Use the _get_edge_worker_activation_ data source to fetch the latest activation for a given EdgeWorker ID.
 
     ## Example Usage
 
@@ -127,7 +127,7 @@ def get_edge_worker_activation_output(edgeworker_id: Optional[pulumi.Input[int]]
                                       network: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeWorkerActivationResult]:
     """
-    Use the `get_edge_worker_activation` data source to fetch the latest activation for a given EdgeWorker ID.
+    Use the _get_edge_worker_activation_ data source to fetch the latest activation for a given EdgeWorker ID.
 
     ## Example Usage
 

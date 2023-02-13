@@ -74,7 +74,7 @@ class AwaitableGetCpsCsrResult(GetCpsCsrResult):
 def get_cps_csr(enrollment_id: Optional[int] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpsCsrResult:
     """
-    When setting up a third-party enrollment, use the `get_cps_csr` data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
+    When setting up a third-party enrollment, use the _get_cps_csr_ data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
 
     If you're using dual-stacked certificates, you'll see data for both ECDSA and RSA keys.
 
@@ -115,7 +115,7 @@ def get_cps_csr(enrollment_id: Optional[int] = None,
 def get_cps_csr_output(enrollment_id: Optional[pulumi.Input[int]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpsCsrResult]:
     """
-    When setting up a third-party enrollment, use the `get_cps_csr` data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
+    When setting up a third-party enrollment, use the _get_cps_csr_ data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
 
     If you're using dual-stacked certificates, you'll see data for both ECDSA and RSA keys.
 

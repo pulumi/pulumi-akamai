@@ -34,7 +34,7 @@ namespace Pulumi.Akamai
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["supportedStates"] = states.Apply(getIamStatesResult =&gt; getIamStatesResult),
+        ///         ["supportedStates"] = states,
         ///     };
         /// });
         /// ```
@@ -74,7 +74,7 @@ namespace Pulumi.Akamai
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["supportedStates"] = states.Apply(getIamStatesResult =&gt; getIamStatesResult),
+        ///         ["supportedStates"] = states,
         ///     };
         /// });
         /// ```

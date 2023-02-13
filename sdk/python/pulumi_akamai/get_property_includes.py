@@ -97,7 +97,7 @@ def get_property_includes(contract_id: Optional[str] = None,
                           type: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyIncludesResult:
     """
-    Use the `get_property_includes` data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
+    Use the _get_property_includes_ data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
 
     ## Basic usage
 
@@ -154,7 +154,7 @@ def get_property_includes_output(contract_id: Optional[pulumi.Input[str]] = None
                                  type: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyIncludesResult]:
     """
-    Use the `get_property_includes` data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
+    Use the _get_property_includes_ data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
 
     ## Basic usage
 

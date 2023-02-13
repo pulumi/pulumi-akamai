@@ -180,6 +180,10 @@ export interface CpsDvEnrollmentCsr {
      */
     organizationalUnit: pulumi.Input<string>;
     /**
+     * The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+     */
+    preferredTrustChain?: pulumi.Input<string>;
+    /**
      * Your state or province.
      */
     state: pulumi.Input<string>;
@@ -401,6 +405,7 @@ export interface CpsThirdPartyEnrollmentCsr {
      * Your organizational unit.
      */
     organizationalUnit: pulumi.Input<string>;
+    preferredTrustChain?: pulumi.Input<string>;
     /**
      * Your state or province.
      */

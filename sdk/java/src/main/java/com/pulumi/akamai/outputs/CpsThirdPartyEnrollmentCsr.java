@@ -6,6 +6,8 @@ package com.pulumi.akamai.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class CpsThirdPartyEnrollmentCsr {
@@ -29,6 +31,7 @@ public final class CpsThirdPartyEnrollmentCsr {
      * 
      */
     private String organizationalUnit;
+    private @Nullable String preferredTrustChain;
     /**
      * @return Your state or province.
      * 
@@ -64,6 +67,9 @@ public final class CpsThirdPartyEnrollmentCsr {
     public String organizationalUnit() {
         return this.organizationalUnit;
     }
+    public Optional<String> preferredTrustChain() {
+        return Optional.ofNullable(this.preferredTrustChain);
+    }
     /**
      * @return Your state or province.
      * 
@@ -85,6 +91,7 @@ public final class CpsThirdPartyEnrollmentCsr {
         private String countryCode;
         private String organization;
         private String organizationalUnit;
+        private @Nullable String preferredTrustChain;
         private String state;
         public Builder() {}
         public Builder(CpsThirdPartyEnrollmentCsr defaults) {
@@ -93,6 +100,7 @@ public final class CpsThirdPartyEnrollmentCsr {
     	      this.countryCode = defaults.countryCode;
     	      this.organization = defaults.organization;
     	      this.organizationalUnit = defaults.organizationalUnit;
+    	      this.preferredTrustChain = defaults.preferredTrustChain;
     	      this.state = defaults.state;
         }
 
@@ -117,6 +125,11 @@ public final class CpsThirdPartyEnrollmentCsr {
             return this;
         }
         @CustomType.Setter
+        public Builder preferredTrustChain(@Nullable String preferredTrustChain) {
+            this.preferredTrustChain = preferredTrustChain;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -127,6 +140,7 @@ public final class CpsThirdPartyEnrollmentCsr {
             o.countryCode = countryCode;
             o.organization = organization;
             o.organizationalUnit = organizationalUnit;
+            o.preferredTrustChain = preferredTrustChain;
             o.state = state;
             return o;
         }

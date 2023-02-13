@@ -65,7 +65,7 @@ class AwaitableGetIamStatesResult(GetIamStatesResult):
 def get_iam_states(country: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamStatesResult:
     """
-    Use `get_iam_states` to list US states or Canadian provinces. If `country=USA` you may enter a value of `TBD` if you don't know a user's state. Administrators use this data source to set a user's state.
+    Use _get_iam_states_ to list US states or Canadian provinces. If `country=USA` you may enter a value of `TBD` if you don't know a user's state. Administrators use this data source to set a user's state.
 
     ## Example Usage
 
@@ -104,7 +104,7 @@ def get_iam_states(country: Optional[str] = None,
 def get_iam_states_output(country: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamStatesResult]:
     """
-    Use `get_iam_states` to list US states or Canadian provinces. If `country=USA` you may enter a value of `TBD` if you don't know a user's state. Administrators use this data source to set a user's state.
+    Use _get_iam_states_ to list US states or Canadian provinces. If `country=USA` you may enter a value of `TBD` if you don't know a user's state. Administrators use this data source to set a user's state.
 
     ## Example Usage
 

@@ -54,7 +54,7 @@ class AwaitableGetIamContactTypesResult(GetIamContactTypesResult):
 
 def get_iam_contact_types(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamContactTypesResult:
     """
-    Use `get_iam_contact_types` to retrieve all the possible `contact_types` that Akamai supports. Use the values from this data source to add or update a user's contact type.
+    Use _get_iam_contact_types_ to retrieve all the possible `contact_types` that Akamai supports. Use the values from this data source to add or update a user's contact type.
 
     ## Example Usage
 

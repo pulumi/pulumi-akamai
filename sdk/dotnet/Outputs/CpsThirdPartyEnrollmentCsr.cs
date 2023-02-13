@@ -29,6 +29,7 @@ namespace Pulumi.Akamai.Outputs
         /// Your organizational unit.
         /// </summary>
         public readonly string OrganizationalUnit;
+        public readonly string? PreferredTrustChain;
         /// <summary>
         /// Your state or province.
         /// </summary>
@@ -44,12 +45,15 @@ namespace Pulumi.Akamai.Outputs
 
             string organizationalUnit,
 
+            string? preferredTrustChain,
+
             string state)
         {
             City = city;
             CountryCode = countryCode;
             Organization = organization;
             OrganizationalUnit = organizationalUnit;
+            PreferredTrustChain = preferredTrustChain;
             State = state;
         }
     }

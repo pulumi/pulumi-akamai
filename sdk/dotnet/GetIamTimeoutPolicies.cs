@@ -31,7 +31,7 @@ namespace Pulumi.Akamai
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["supportedTimeoutPolicies"] = timeoutPolicies.Apply(getIamTimeoutPoliciesResult =&gt; getIamTimeoutPoliciesResult),
+        ///         ["supportedTimeoutPolicies"] = timeoutPolicies,
         ///     };
         /// });
         /// ```

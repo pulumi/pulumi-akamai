@@ -80,7 +80,7 @@ def get_contract(group: Optional[str] = None,
                  group_name: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContractResult:
     """
-    Use the `get_contract` data source to find a contract ID.
+    Use the _get_contract_ data source to find a contract ID.
 
     ## Attributes reference
 
@@ -111,7 +111,7 @@ def get_contract_output(group: Optional[pulumi.Input[Optional[str]]] = None,
                         group_name: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetContractResult]:
     """
-    Use the `get_contract` data source to find a contract ID.
+    Use the _get_contract_ data source to find a contract ID.
 
     ## Attributes reference
 

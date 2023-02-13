@@ -66,7 +66,7 @@ class AwaitableGetDatastreamActivationHistoryResult(GetDatastreamActivationHisto
 def get_datastream_activation_history(stream_id: Optional[int] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatastreamActivationHistoryResult:
     """
-    Use the `get_datastream_activation_history` data source to list detailed information about the activation status changes for all versions of a stream.
+    Use the _get_datastream_activation_history_ data source to list detailed information about the activation status changes for all versions of a stream.
 
     ## Example Usage
 
@@ -109,7 +109,7 @@ def get_datastream_activation_history(stream_id: Optional[int] = None,
 def get_datastream_activation_history_output(stream_id: Optional[pulumi.Input[int]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatastreamActivationHistoryResult]:
     """
-    Use the `get_datastream_activation_history` data source to list detailed information about the activation status changes for all versions of a stream.
+    Use the _get_datastream_activation_history_ data source to list detailed information about the activation status changes for all versions of a stream.
 
     ## Example Usage
 

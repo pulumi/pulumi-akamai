@@ -37,6 +37,12 @@ namespace Pulumi.Akamai.Inputs
         public Input<string> OrganizationalUnit { get; set; } = null!;
 
         /// <summary>
+        /// The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+        /// </summary>
+        [Input("preferredTrustChain")]
+        public Input<string>? PreferredTrustChain { get; set; }
+
+        /// <summary>
         /// Your state or province.
         /// </summary>
         [Input("state", required: true)]

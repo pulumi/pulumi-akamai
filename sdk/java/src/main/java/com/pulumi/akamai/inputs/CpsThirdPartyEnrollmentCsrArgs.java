@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.ResourceArgs {
@@ -73,6 +75,13 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
         return this.organizationalUnit;
     }
 
+    @Import(name="preferredTrustChain")
+    private @Nullable Output<String> preferredTrustChain;
+
+    public Optional<Output<String>> preferredTrustChain() {
+        return Optional.ofNullable(this.preferredTrustChain);
+    }
+
     /**
      * Your state or province.
      * 
@@ -95,6 +104,7 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
         this.countryCode = $.countryCode;
         this.organization = $.organization;
         this.organizationalUnit = $.organizationalUnit;
+        this.preferredTrustChain = $.preferredTrustChain;
         this.state = $.state;
     }
 
@@ -198,6 +208,15 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
          */
         public Builder organizationalUnit(String organizationalUnit) {
             return organizationalUnit(Output.of(organizationalUnit));
+        }
+
+        public Builder preferredTrustChain(@Nullable Output<String> preferredTrustChain) {
+            $.preferredTrustChain = preferredTrustChain;
+            return this;
+        }
+
+        public Builder preferredTrustChain(String preferredTrustChain) {
+            return preferredTrustChain(Output.of(preferredTrustChain));
         }
 
         /**

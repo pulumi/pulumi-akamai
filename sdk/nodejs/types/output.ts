@@ -180,6 +180,10 @@ export interface CpsDvEnrollmentCsr {
      */
     organizationalUnit: string;
     /**
+     * The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+     */
+    preferredTrustChain?: string;
+    /**
      * Your state or province.
      */
     state: string;
@@ -401,6 +405,7 @@ export interface CpsThirdPartyEnrollmentCsr {
      * Your organizational unit.
      */
     organizationalUnit: string;
+    preferredTrustChain?: string;
     /**
      * Your state or province.
      */
@@ -1022,6 +1027,7 @@ export interface GetCPSEnrollmentCsr {
     countryCode: string;
     organization: string;
     organizationalUnit: string;
+    preferredTrustChain: string;
     state: string;
 }
 
@@ -1120,6 +1126,7 @@ export interface GetCPSEnrollmentsEnrollmentCsr {
     countryCode: string;
     organization: string;
     organizationalUnit: string;
+    preferredTrustChain: string;
     state: string;
 }
 

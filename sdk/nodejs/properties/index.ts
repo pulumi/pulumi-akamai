@@ -15,6 +15,11 @@ export type EdgeHostName = import("./edgeHostName").EdgeHostName;
 export const EdgeHostName: typeof import("./edgeHostName").EdgeHostName = null as any;
 utilities.lazyLoad(exports, ["EdgeHostName"], () => require("./edgeHostName"));
 
+export { GetActivationArgs, GetActivationResult, GetActivationOutputArgs } from "./getActivation";
+export const getActivation: typeof import("./getActivation").getActivation = null as any;
+export const getActivationOutput: typeof import("./getActivation").getActivationOutput = null as any;
+utilities.lazyLoad(exports, ["getActivation","getActivationOutput"], () => require("./getActivation"));
+
 export { GetCpCodeArgs, GetCpCodeResult, GetCpCodeOutputArgs } from "./getCpCode";
 export const getCpCode: typeof import("./getCpCode").getCpCode = null as any;
 export const getCpCodeOutput: typeof import("./getCpCode").getCpCodeOutput = null as any;

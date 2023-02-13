@@ -29,7 +29,7 @@ namespace Pulumi.Akamai
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["propertyMatch"] = my_example.Apply(getGroupsResult =&gt; getGroupsResult),
+        ///         ["propertyMatch"] = my_example,
         ///     };
         /// });
         /// ```

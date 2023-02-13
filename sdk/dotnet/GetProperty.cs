@@ -36,7 +36,7 @@ namespace Pulumi.Akamai
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["myPropertyID"] = example.Apply(getPropertyResult =&gt; getPropertyResult),
+        ///         ["myPropertyID"] = example,
         ///     };
         /// });
         /// ```
@@ -77,7 +77,7 @@ namespace Pulumi.Akamai
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["myPropertyID"] = example.Apply(getPropertyResult =&gt; getPropertyResult),
+        ///         ["myPropertyID"] = example,
         ///     };
         /// });
         /// ```

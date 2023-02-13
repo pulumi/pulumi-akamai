@@ -38,13 +38,13 @@ class PropertyArgs:
         :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
         :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
         :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the `grp_` prefix.
-        :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]] hostnames: A mapping of public hostnames to edge hostnames. See the _get_property_hostnames_ data source for details on the necessary DNS configuration.
         :param pulumi.Input[str] name: The property name.
         :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[str] rule_format: The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
         :param pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-        :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
+        :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the _get_property_rules_ data source.
         """
         if contacts is not None:
             warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
@@ -176,7 +176,7 @@ class PropertyArgs:
     @pulumi.getter
     def hostnames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]:
         """
-        A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        A mapping of public hostnames to edge hostnames. See the _get_property_hostnames_ data source for details on the necessary DNS configuration.
         """
         return pulumi.get(self, "hostnames")
 
@@ -266,7 +266,7 @@ class PropertyArgs:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[str]]:
         """
-        A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
+        A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the _get_property_rules_ data source.
         """
         return pulumi.get(self, "rules")
 
@@ -314,7 +314,7 @@ class _PropertyState:
         :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
         :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
         :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the `grp_` prefix.
-        :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        :param pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]] hostnames: A mapping of public hostnames to edge hostnames. See the _get_property_hostnames_ data source for details on the necessary DNS configuration.
         :param pulumi.Input[int] latest_version: The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
         :param pulumi.Input[str] name: The property name.
         :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
@@ -324,7 +324,7 @@ class _PropertyState:
         :param pulumi.Input[Sequence[pulumi.Input['PropertyRuleErrorArgs']]] rule_errors: The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         :param pulumi.Input[str] rule_format: The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
         :param pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-        :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
+        :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the _get_property_rules_ data source.
         :param pulumi.Input[int] staging_version: The current version of the property active on the Akamai staging network.
         """
         if contacts is not None:
@@ -467,7 +467,7 @@ class _PropertyState:
     @pulumi.getter
     def hostnames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]:
         """
-        A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        A mapping of public hostnames to edge hostnames. See the _get_property_hostnames_ data source for details on the necessary DNS configuration.
         """
         return pulumi.get(self, "hostnames")
 
@@ -605,7 +605,7 @@ class _PropertyState:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[str]]:
         """
-        A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
+        A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the _get_property_rules_ data source.
         """
         return pulumi.get(self, "rules")
 
@@ -753,13 +753,13 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
         :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
         :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the `grp_` prefix.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]] hostnames: A mapping of public hostnames to edge hostnames. See the _get_property_hostnames_ data source for details on the necessary DNS configuration.
         :param pulumi.Input[str] name: The property name.
         :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
         :param pulumi.Input[str] rule_format: The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-        :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
+        :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the _get_property_rules_ data source.
         """
         ...
     @overload
@@ -983,7 +983,7 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
         :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
         :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the `grp_` prefix.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]] hostnames: A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]] hostnames: A mapping of public hostnames to edge hostnames. See the _get_property_hostnames_ data source for details on the necessary DNS configuration.
         :param pulumi.Input[int] latest_version: The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
         :param pulumi.Input[str] name: The property name.
         :param pulumi.Input[str] product: Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
@@ -993,7 +993,7 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleErrorArgs']]]] rule_errors: The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
         :param pulumi.Input[str] rule_format: The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-        :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
+        :param pulumi.Input[str] rules: A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the _get_property_rules_ data source.
         :param pulumi.Input[int] staging_version: The current version of the property active on the Akamai staging network.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -1069,7 +1069,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter
     def hostnames(self) -> pulumi.Output[Optional[Sequence['outputs.PropertyHostname']]]:
         """
-        A mapping of public hostnames to edge hostnames. See the `get_property_hostnames` data source for details on the necessary DNS configuration.
+        A mapping of public hostnames to edge hostnames. See the _get_property_hostnames_ data source for details on the necessary DNS configuration.
         """
         return pulumi.get(self, "hostnames")
 
@@ -1159,7 +1159,7 @@ class Property(pulumi.CustomResource):
     @pulumi.getter
     def rules(self) -> pulumi.Output[str]:
         """
-        A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `get_property_rules` data source.
+        A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the _get_property_rules_ data source.
         """
         return pulumi.get(self, "rules")
 

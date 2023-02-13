@@ -31,7 +31,7 @@ namespace Pulumi.Akamai
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["supportedSupportedLangs"] = supportedLangs.Apply(getIamSupportedLangsResult =&gt; getIamSupportedLangsResult),
+        ///         ["supportedSupportedLangs"] = supportedLangs,
         ///     };
         /// });
         /// ```

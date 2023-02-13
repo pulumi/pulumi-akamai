@@ -679,6 +679,8 @@ class CpsDvEnrollmentCsr(dict):
             suggest = "country_code"
         elif key == "organizationalUnit":
             suggest = "organizational_unit"
+        elif key == "preferredTrustChain":
+            suggest = "preferred_trust_chain"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in CpsDvEnrollmentCsr. Access the value via the '{suggest}' property getter instead.")
@@ -696,19 +698,23 @@ class CpsDvEnrollmentCsr(dict):
                  country_code: str,
                  organization: str,
                  organizational_unit: str,
-                 state: str):
+                 state: str,
+                 preferred_trust_chain: Optional[str] = None):
         """
         :param str city: The city where your organization resides.
         :param str country_code: The code for the country where your organization resides.
         :param str organization: Your organization information.
         :param str organizational_unit: Your organizational unit.
         :param str state: Your state or province.
+        :param str preferred_trust_chain: The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
         """
         pulumi.set(__self__, "city", city)
         pulumi.set(__self__, "country_code", country_code)
         pulumi.set(__self__, "organization", organization)
         pulumi.set(__self__, "organizational_unit", organizational_unit)
         pulumi.set(__self__, "state", state)
+        if preferred_trust_chain is not None:
+            pulumi.set(__self__, "preferred_trust_chain", preferred_trust_chain)
 
     @property
     @pulumi.getter
@@ -749,6 +755,14 @@ class CpsDvEnrollmentCsr(dict):
         Your state or province.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="preferredTrustChain")
+    def preferred_trust_chain(self) -> Optional[str]:
+        """
+        The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+        """
+        return pulumi.get(self, "preferred_trust_chain")
 
 
 @pulumi.output_type
@@ -1506,6 +1520,8 @@ class CpsThirdPartyEnrollmentCsr(dict):
             suggest = "country_code"
         elif key == "organizationalUnit":
             suggest = "organizational_unit"
+        elif key == "preferredTrustChain":
+            suggest = "preferred_trust_chain"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in CpsThirdPartyEnrollmentCsr. Access the value via the '{suggest}' property getter instead.")
@@ -1523,7 +1539,8 @@ class CpsThirdPartyEnrollmentCsr(dict):
                  country_code: str,
                  organization: str,
                  organizational_unit: str,
-                 state: str):
+                 state: str,
+                 preferred_trust_chain: Optional[str] = None):
         """
         :param str city: The city where your organization resides.
         :param str country_code: The code for the country where your organization resides.
@@ -1536,6 +1553,8 @@ class CpsThirdPartyEnrollmentCsr(dict):
         pulumi.set(__self__, "organization", organization)
         pulumi.set(__self__, "organizational_unit", organizational_unit)
         pulumi.set(__self__, "state", state)
+        if preferred_trust_chain is not None:
+            pulumi.set(__self__, "preferred_trust_chain", preferred_trust_chain)
 
     @property
     @pulumi.getter
@@ -1576,6 +1595,11 @@ class CpsThirdPartyEnrollmentCsr(dict):
         Your state or province.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="preferredTrustChain")
+    def preferred_trust_chain(self) -> Optional[str]:
+        return pulumi.get(self, "preferred_trust_chain")
 
 
 @pulumi.output_type
@@ -5492,11 +5516,13 @@ class GetCPSEnrollmentCsrResult(dict):
                  country_code: str,
                  organization: str,
                  organizational_unit: str,
+                 preferred_trust_chain: str,
                  state: str):
         pulumi.set(__self__, "city", city)
         pulumi.set(__self__, "country_code", country_code)
         pulumi.set(__self__, "organization", organization)
         pulumi.set(__self__, "organizational_unit", organizational_unit)
+        pulumi.set(__self__, "preferred_trust_chain", preferred_trust_chain)
         pulumi.set(__self__, "state", state)
 
     @property
@@ -5518,6 +5544,11 @@ class GetCPSEnrollmentCsrResult(dict):
     @pulumi.getter(name="organizationalUnit")
     def organizational_unit(self) -> str:
         return pulumi.get(self, "organizational_unit")
+
+    @property
+    @pulumi.getter(name="preferredTrustChain")
+    def preferred_trust_chain(self) -> str:
+        return pulumi.get(self, "preferred_trust_chain")
 
     @property
     @pulumi.getter
@@ -6038,11 +6069,13 @@ class GetCPSEnrollmentsEnrollmentCsrResult(dict):
                  country_code: str,
                  organization: str,
                  organizational_unit: str,
+                 preferred_trust_chain: str,
                  state: str):
         pulumi.set(__self__, "city", city)
         pulumi.set(__self__, "country_code", country_code)
         pulumi.set(__self__, "organization", organization)
         pulumi.set(__self__, "organizational_unit", organizational_unit)
+        pulumi.set(__self__, "preferred_trust_chain", preferred_trust_chain)
         pulumi.set(__self__, "state", state)
 
     @property
@@ -6064,6 +6097,11 @@ class GetCPSEnrollmentsEnrollmentCsrResult(dict):
     @pulumi.getter(name="organizationalUnit")
     def organizational_unit(self) -> str:
         return pulumi.get(self, "organizational_unit")
+
+    @property
+    @pulumi.getter(name="preferredTrustChain")
+    def preferred_trust_chain(self) -> str:
+        return pulumi.get(self, "preferred_trust_chain")
 
     @property
     @pulumi.getter

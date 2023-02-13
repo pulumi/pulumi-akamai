@@ -54,7 +54,7 @@ class AwaitableGetIamTimeoutPoliciesResult(GetIamTimeoutPoliciesResult):
 
 def get_iam_timeout_policies(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamTimeoutPoliciesResult:
     """
-    Use `get_iam_timeout_policies` to list all the possible session timeout policies that Akamai supports. Use the values from this data source to set the session timeout for a user. The name for each timeout period is in minutes, and the time value is in seconds.
+    Use _get_iam_timeout_policies_ to list all the possible session timeout policies that Akamai supports. Use the values from this data source to set the session timeout for a user. The name for each timeout period is in minutes, and the time value is in seconds.
 
     ## Example Usage
 

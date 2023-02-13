@@ -657,6 +657,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
                 city="Cambridge",
                 organization="Akamai",
                 organizational_unit="Dev",
+                preferred_trust_chain="intermediate-a",
                 state="MA",
             ),
             network_configuration=akamai.CpsDvEnrollmentNetworkConfigurationArgs(
@@ -793,6 +794,7 @@ class CpsDvEnrollment(pulumi.CustomResource):
                 city="Cambridge",
                 organization="Akamai",
                 organizational_unit="Dev",
+                preferred_trust_chain="intermediate-a",
                 state="MA",
             ),
             network_configuration=akamai.CpsDvEnrollmentNetworkConfigurationArgs(

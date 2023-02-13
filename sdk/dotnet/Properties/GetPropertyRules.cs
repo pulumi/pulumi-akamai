@@ -38,7 +38,7 @@ namespace Pulumi.Akamai.Properties
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["propertyMatch"] = my_example.Apply(getPropertyRulesResult =&gt; getPropertyRulesResult),
+        ///         ["propertyMatch"] = my_example,
         ///     };
         /// });
         /// ```
@@ -80,7 +80,7 @@ namespace Pulumi.Akamai.Properties
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["propertyMatch"] = my_example.Apply(getPropertyRulesResult =&gt; getPropertyRulesResult),
+        ///         ["propertyMatch"] = my_example,
         ///     };
         /// });
         /// ```

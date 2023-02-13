@@ -709,19 +709,23 @@ class CpsDvEnrollmentCsrArgs:
                  country_code: pulumi.Input[str],
                  organization: pulumi.Input[str],
                  organizational_unit: pulumi.Input[str],
-                 state: pulumi.Input[str]):
+                 state: pulumi.Input[str],
+                 preferred_trust_chain: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] city: The city where your organization resides.
         :param pulumi.Input[str] country_code: The code for the country where your organization resides.
         :param pulumi.Input[str] organization: Your organization information.
         :param pulumi.Input[str] organizational_unit: Your organizational unit.
         :param pulumi.Input[str] state: Your state or province.
+        :param pulumi.Input[str] preferred_trust_chain: The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
         """
         pulumi.set(__self__, "city", city)
         pulumi.set(__self__, "country_code", country_code)
         pulumi.set(__self__, "organization", organization)
         pulumi.set(__self__, "organizational_unit", organizational_unit)
         pulumi.set(__self__, "state", state)
+        if preferred_trust_chain is not None:
+            pulumi.set(__self__, "preferred_trust_chain", preferred_trust_chain)
 
     @property
     @pulumi.getter
@@ -782,6 +786,18 @@ class CpsDvEnrollmentCsrArgs:
     @state.setter
     def state(self, value: pulumi.Input[str]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="preferredTrustChain")
+    def preferred_trust_chain(self) -> Optional[pulumi.Input[str]]:
+        """
+        The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+        """
+        return pulumi.get(self, "preferred_trust_chain")
+
+    @preferred_trust_chain.setter
+    def preferred_trust_chain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preferred_trust_chain", value)
 
 
 @pulumi.input_type
@@ -1568,7 +1584,8 @@ class CpsThirdPartyEnrollmentCsrArgs:
                  country_code: pulumi.Input[str],
                  organization: pulumi.Input[str],
                  organizational_unit: pulumi.Input[str],
-                 state: pulumi.Input[str]):
+                 state: pulumi.Input[str],
+                 preferred_trust_chain: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] city: The city where your organization resides.
         :param pulumi.Input[str] country_code: The code for the country where your organization resides.
@@ -1581,6 +1598,8 @@ class CpsThirdPartyEnrollmentCsrArgs:
         pulumi.set(__self__, "organization", organization)
         pulumi.set(__self__, "organizational_unit", organizational_unit)
         pulumi.set(__self__, "state", state)
+        if preferred_trust_chain is not None:
+            pulumi.set(__self__, "preferred_trust_chain", preferred_trust_chain)
 
     @property
     @pulumi.getter
@@ -1641,6 +1660,15 @@ class CpsThirdPartyEnrollmentCsrArgs:
     @state.setter
     def state(self, value: pulumi.Input[str]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="preferredTrustChain")
+    def preferred_trust_chain(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "preferred_trust_chain")
+
+    @preferred_trust_chain.setter
+    def preferred_trust_chain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preferred_trust_chain", value)
 
 
 @pulumi.input_type

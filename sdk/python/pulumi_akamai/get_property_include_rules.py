@@ -140,7 +140,7 @@ def get_property_include_rules(contract_id: Optional[str] = None,
                                version: Optional[int] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyIncludeRulesResult:
     """
-    Use the `get_property_include_rules` data source to query and get an include's rules. This data source lets you search across the contracts and groups you have access to.
+    Use the _get_property_include_rules_ data source to query and get an include's rules. This data source lets you search across the contracts and groups you have access to.
 
     ## Basic usage
 
@@ -203,7 +203,7 @@ def get_property_include_rules_output(contract_id: Optional[pulumi.Input[str]] =
                                       version: Optional[pulumi.Input[int]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyIncludeRulesResult]:
     """
-    Use the `get_property_include_rules` data source to query and get an include's rules. This data source lets you search across the contracts and groups you have access to.
+    Use the _get_property_include_rules_ data source to query and get an include's rules. This data source lets you search across the contracts and groups you have access to.
 
     ## Basic usage
 

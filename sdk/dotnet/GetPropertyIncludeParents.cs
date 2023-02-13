@@ -34,7 +34,7 @@ namespace Pulumi.Akamai
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["myExample"] = myExamplePropertyIncludeParents.Apply(getPropertyIncludeParentsResult =&gt; getPropertyIncludeParentsResult),
+        ///         ["myExample"] = myExamplePropertyIncludeParents,
         ///     };
         /// });
         /// ```
@@ -77,7 +77,7 @@ namespace Pulumi.Akamai
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["myExample"] = myExamplePropertyIncludeParents.Apply(getPropertyIncludeParentsResult =&gt; getPropertyIncludeParentsResult),
+        ///         ["myExample"] = myExamplePropertyIncludeParents,
         ///     };
         /// });
         /// ```

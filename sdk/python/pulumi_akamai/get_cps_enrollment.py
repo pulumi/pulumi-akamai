@@ -219,7 +219,7 @@ class AwaitableGetCPSEnrollmentResult(GetCPSEnrollmentResult):
 def get_cps_enrollment(enrollment_id: Optional[int] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCPSEnrollmentResult:
     """
-    Use the `get_cps_enrollment` data source to return data for specific enrollment.
+    Use the _get_cps_enrollment_ data source to return data for specific enrollment.
 
     ## Basic usage
 
@@ -248,6 +248,7 @@ def get_cps_enrollment(enrollment_id: Optional[int] = None,
         * `city` - The city where your organization resides.
         * `organization` - The name of your company or organization.
         * `organizational_unit` - Your organizational unit.
+        * `preferred_trust_chain` - For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake.
         * `state` - Your state or province.
       * `enable_multi_stacked_certificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
       * `network_configuration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
@@ -317,7 +318,7 @@ def get_cps_enrollment(enrollment_id: Optional[int] = None,
 def get_cps_enrollment_output(enrollment_id: Optional[pulumi.Input[int]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCPSEnrollmentResult]:
     """
-    Use the `get_cps_enrollment` data source to return data for specific enrollment.
+    Use the _get_cps_enrollment_ data source to return data for specific enrollment.
 
     ## Basic usage
 
@@ -346,6 +347,7 @@ def get_cps_enrollment_output(enrollment_id: Optional[pulumi.Input[int]] = None,
         * `city` - The city where your organization resides.
         * `organization` - The name of your company or organization.
         * `organizational_unit` - Your organizational unit.
+        * `preferred_trust_chain` - For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake.
         * `state` - Your state or province.
       * `enable_multi_stacked_certificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
       * `network_configuration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
