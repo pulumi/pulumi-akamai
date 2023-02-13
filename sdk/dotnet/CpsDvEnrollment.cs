@@ -68,6 +68,7 @@ namespace Pulumi.Akamai
     ///             City = "Cambridge",
     ///             Organization = "Akamai",
     ///             OrganizationalUnit = "Dev",
+    ///             PreferredTrustChain = "intermediate-a",
     ///             State = "MA",
     ///         },
     ///         NetworkConfiguration = new Akamai.Inputs.CpsDvEnrollmentNetworkConfigurationArgs

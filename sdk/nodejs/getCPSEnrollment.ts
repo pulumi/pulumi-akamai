@@ -38,6 +38,7 @@ import * as utilities from "./utilities";
  *     * `city` - The city where your organization resides.
  *     * `organization` - The name of your company or organization.
  *     * `organizationalUnit` - Your organizational unit.
+ *     * `preferredTrustChain` - For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake.
  *     * `state` - Your state or province.
  *   * `enableMultiStackedCertificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
  *   * `networkConfiguration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
@@ -150,6 +151,7 @@ export interface GetCPSEnrollmentResult {
  *     * `city` - The city where your organization resides.
  *     * `organization` - The name of your company or organization.
  *     * `organizationalUnit` - Your organizational unit.
+ *     * `preferredTrustChain` - For the Let's Encrypt Domain Validated (DV) SAN certificates, the preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake.
  *     * `state` - Your state or province.
  *   * `enableMultiStackedCertificates` - If present, an ECDSA certificate is enabled in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties.
  *   * `networkConfiguration` - The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.

@@ -103,8 +103,7 @@ def get_app_sec_reputation_profile_actions(config_id: Optional[int] = None,
                                            security_policy_id: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecReputationProfileActionsResult:
     """
-    ## get_app_sec_reputation_profile_actions
-
+    ##_get_app_sec_reputation_profile_actions_
     **Scopes**: Security policy; reputation profile
 
     Returns action information for your reputation profiles. Actions specify what happens any time a profile is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
@@ -169,8 +168,7 @@ def get_app_sec_reputation_profile_actions_output(config_id: Optional[pulumi.Inp
                                                   security_policy_id: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecReputationProfileActionsResult]:
     """
-    ## get_app_sec_reputation_profile_actions
-
+    ##_get_app_sec_reputation_profile_actions_
     **Scopes**: Security policy; reputation profile
 
     Returns action information for your reputation profiles. Actions specify what happens any time a profile is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.

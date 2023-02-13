@@ -94,6 +94,7 @@ import javax.annotation.Nullable;
  *                 .city(&#34;Cambridge&#34;)
  *                 .organization(&#34;Akamai&#34;)
  *                 .organizationalUnit(&#34;Dev&#34;)
+ *                 .preferredTrustChain(&#34;intermediate-a&#34;)
  *                 .state(&#34;MA&#34;)
  *                 .build())
  *             .networkConfiguration(CpsDvEnrollmentNetworkConfigurationArgs.builder()

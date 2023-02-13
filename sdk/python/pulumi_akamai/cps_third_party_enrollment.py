@@ -46,7 +46,7 @@ class CpsThirdPartyEnrollmentArgs:
         :param pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs'] tech_contact: The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `admin_contact`.
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether you want to automatically acknowledge the validation warnings related to the current job state and proceed with the change.
         :param pulumi.Input[bool] allow_duplicate_common_name: (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type.
         :param pulumi.Input[bool] change_management: Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledge_change_management` argument in the `CpsUploadCertificate` resource. <br> If you don't use this option, CPS will automatically deploy the certificate to both networks.
         :param pulumi.Input[bool] exclude_sans: If set to `true`, then the SANs in the enrollment don't appear in the CSR that you send to your CA.
@@ -215,7 +215,7 @@ class CpsThirdPartyEnrollmentArgs:
     @pulumi.getter(name="autoApproveWarnings")
     def auto_approve_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         """
         return pulumi.get(self, "auto_approve_warnings")
 
@@ -309,7 +309,7 @@ class _CpsThirdPartyEnrollmentState:
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether you want to automatically acknowledge the validation warnings related to the current job state and proceed with the change.
         :param pulumi.Input['CpsThirdPartyEnrollmentAdminContactArgs'] admin_contact: Contact information for the certificate administrator at your company.
         :param pulumi.Input[bool] allow_duplicate_common_name: (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type.
         :param pulumi.Input[bool] change_management: Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledge_change_management` argument in the `CpsUploadCertificate` resource. <br> If you don't use this option, CPS will automatically deploy the certificate to both networks.
         :param pulumi.Input[str] common_name: (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
@@ -399,7 +399,7 @@ class _CpsThirdPartyEnrollmentState:
     @pulumi.getter(name="autoApproveWarnings")
     def auto_approve_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         """
         return pulumi.get(self, "auto_approve_warnings")
 
@@ -684,7 +684,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether you want to automatically acknowledge the validation warnings related to the current job state and proceed with the change.
         :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentAdminContactArgs']] admin_contact: Contact information for the certificate administrator at your company.
         :param pulumi.Input[bool] allow_duplicate_common_name: (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type.
         :param pulumi.Input[bool] change_management: Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledge_change_management` argument in the `CpsUploadCertificate` resource. <br> If you don't use this option, CPS will automatically deploy the certificate to both networks.
         :param pulumi.Input[str] common_name: (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
@@ -910,7 +910,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether you want to automatically acknowledge the validation warnings related to the current job state and proceed with the change.
         :param pulumi.Input[pulumi.InputType['CpsThirdPartyEnrollmentAdminContactArgs']] admin_contact: Contact information for the certificate administrator at your company.
         :param pulumi.Input[bool] allow_duplicate_common_name: (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type.
         :param pulumi.Input[bool] change_management: Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledge_change_management` argument in the `CpsUploadCertificate` resource. <br> If you don't use this option, CPS will automatically deploy the certificate to both networks.
         :param pulumi.Input[str] common_name: (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
@@ -976,7 +976,7 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
     @pulumi.getter(name="autoApproveWarnings")
     def auto_approve_warnings(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         """
         return pulumi.get(self, "auto_approve_warnings")
 

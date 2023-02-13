@@ -75,7 +75,7 @@ def get_edge_workers_resource_tier(contract_id: Optional[str] = None,
                                    resource_tier_name: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEdgeWorkersResourceTierResult:
     """
-    Use the `get_edge_workers_resource_tier` data source to list the available resource tiers for a specific contract ID. The resource tier defines the resource consumption [limits](https://techdocs.akamai.com/edgeworkers/docs/resource-tier-limitations) for an EdgeWorker ID.
+    Use the _get_edge_workers_resource_tier_ data source to list the available resource tiers for a specific contract ID. The resource tier defines the resource consumption [limits](https://techdocs.akamai.com/edgeworkers/docs/resource-tier-limitations) for an EdgeWorker ID.
 
     ## Example Usage
 
@@ -116,7 +116,7 @@ def get_edge_workers_resource_tier_output(contract_id: Optional[pulumi.Input[str
                                           resource_tier_name: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeWorkersResourceTierResult]:
     """
-    Use the `get_edge_workers_resource_tier` data source to list the available resource tiers for a specific contract ID. The resource tier defines the resource consumption [limits](https://techdocs.akamai.com/edgeworkers/docs/resource-tier-limitations) for an EdgeWorker ID.
+    Use the _get_edge_workers_resource_tier_ data source to list the available resource tiers for a specific contract ID. The resource tier defines the resource consumption [limits](https://techdocs.akamai.com/edgeworkers/docs/resource-tier-limitations) for an EdgeWorker ID.
 
     ## Example Usage
 

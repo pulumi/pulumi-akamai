@@ -926,6 +926,8 @@ type CpsDvEnrollmentCsr struct {
 	Organization string `pulumi:"organization"`
 	// Your organizational unit.
 	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	// The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+	PreferredTrustChain *string `pulumi:"preferredTrustChain"`
 	// Your state or province.
 	State string `pulumi:"state"`
 }
@@ -950,6 +952,8 @@ type CpsDvEnrollmentCsrArgs struct {
 	Organization pulumi.StringInput `pulumi:"organization"`
 	// Your organizational unit.
 	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	// The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+	PreferredTrustChain pulumi.StringPtrInput `pulumi:"preferredTrustChain"`
 	// Your state or province.
 	State pulumi.StringInput `pulumi:"state"`
 }
@@ -1051,6 +1055,11 @@ func (o CpsDvEnrollmentCsrOutput) OrganizationalUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
 }
 
+// The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+func (o CpsDvEnrollmentCsrOutput) PreferredTrustChain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsDvEnrollmentCsr) *string { return v.PreferredTrustChain }).(pulumi.StringPtrOutput)
+}
+
 // Your state or province.
 func (o CpsDvEnrollmentCsrOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentCsr) string { return v.State }).(pulumi.StringOutput)
@@ -1117,6 +1126,16 @@ func (o CpsDvEnrollmentCsrPtrOutput) OrganizationalUnit() pulumi.StringPtrOutput
 			return nil
 		}
 		return &v.OrganizationalUnit
+	}).(pulumi.StringPtrOutput)
+}
+
+// The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+func (o CpsDvEnrollmentCsrPtrOutput) PreferredTrustChain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsDvEnrollmentCsr) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PreferredTrustChain
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2761,7 +2780,8 @@ type CpsThirdPartyEnrollmentCsr struct {
 	// Your organization information.
 	Organization string `pulumi:"organization"`
 	// Your organizational unit.
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
+	OrganizationalUnit  string  `pulumi:"organizationalUnit"`
+	PreferredTrustChain *string `pulumi:"preferredTrustChain"`
 	// Your state or province.
 	State string `pulumi:"state"`
 }
@@ -2785,7 +2805,8 @@ type CpsThirdPartyEnrollmentCsrArgs struct {
 	// Your organization information.
 	Organization pulumi.StringInput `pulumi:"organization"`
 	// Your organizational unit.
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
+	OrganizationalUnit  pulumi.StringInput    `pulumi:"organizationalUnit"`
+	PreferredTrustChain pulumi.StringPtrInput `pulumi:"preferredTrustChain"`
 	// Your state or province.
 	State pulumi.StringInput `pulumi:"state"`
 }
@@ -2887,6 +2908,10 @@ func (o CpsThirdPartyEnrollmentCsrOutput) OrganizationalUnit() pulumi.StringOutp
 	return o.ApplyT(func(v CpsThirdPartyEnrollmentCsr) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
 }
 
+func (o CpsThirdPartyEnrollmentCsrOutput) PreferredTrustChain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CpsThirdPartyEnrollmentCsr) *string { return v.PreferredTrustChain }).(pulumi.StringPtrOutput)
+}
+
 // Your state or province.
 func (o CpsThirdPartyEnrollmentCsrOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v CpsThirdPartyEnrollmentCsr) string { return v.State }).(pulumi.StringOutput)
@@ -2953,6 +2978,15 @@ func (o CpsThirdPartyEnrollmentCsrPtrOutput) OrganizationalUnit() pulumi.StringP
 			return nil
 		}
 		return &v.OrganizationalUnit
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o CpsThirdPartyEnrollmentCsrPtrOutput) PreferredTrustChain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CpsThirdPartyEnrollmentCsr) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PreferredTrustChain
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -11979,11 +12013,12 @@ func (o GetCPSEnrollmentAdminContactArrayOutput) Index(i pulumi.IntInput) GetCPS
 }
 
 type GetCPSEnrollmentCsr struct {
-	City               string `pulumi:"city"`
-	CountryCode        string `pulumi:"countryCode"`
-	Organization       string `pulumi:"organization"`
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
-	State              string `pulumi:"state"`
+	City                string `pulumi:"city"`
+	CountryCode         string `pulumi:"countryCode"`
+	Organization        string `pulumi:"organization"`
+	OrganizationalUnit  string `pulumi:"organizationalUnit"`
+	PreferredTrustChain string `pulumi:"preferredTrustChain"`
+	State               string `pulumi:"state"`
 }
 
 // GetCPSEnrollmentCsrInput is an input type that accepts GetCPSEnrollmentCsrArgs and GetCPSEnrollmentCsrOutput values.
@@ -11998,11 +12033,12 @@ type GetCPSEnrollmentCsrInput interface {
 }
 
 type GetCPSEnrollmentCsrArgs struct {
-	City               pulumi.StringInput `pulumi:"city"`
-	CountryCode        pulumi.StringInput `pulumi:"countryCode"`
-	Organization       pulumi.StringInput `pulumi:"organization"`
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
-	State              pulumi.StringInput `pulumi:"state"`
+	City                pulumi.StringInput `pulumi:"city"`
+	CountryCode         pulumi.StringInput `pulumi:"countryCode"`
+	Organization        pulumi.StringInput `pulumi:"organization"`
+	OrganizationalUnit  pulumi.StringInput `pulumi:"organizationalUnit"`
+	PreferredTrustChain pulumi.StringInput `pulumi:"preferredTrustChain"`
+	State               pulumi.StringInput `pulumi:"state"`
 }
 
 func (GetCPSEnrollmentCsrArgs) ElementType() reflect.Type {
@@ -12070,6 +12106,10 @@ func (o GetCPSEnrollmentCsrOutput) Organization() pulumi.StringOutput {
 
 func (o GetCPSEnrollmentCsrOutput) OrganizationalUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCPSEnrollmentCsr) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentCsrOutput) PreferredTrustChain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentCsr) string { return v.PreferredTrustChain }).(pulumi.StringOutput)
 }
 
 func (o GetCPSEnrollmentCsrOutput) State() pulumi.StringOutput {
@@ -13203,11 +13243,12 @@ func (o GetCPSEnrollmentsEnrollmentAdminContactArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetCPSEnrollmentsEnrollmentCsr struct {
-	City               string `pulumi:"city"`
-	CountryCode        string `pulumi:"countryCode"`
-	Organization       string `pulumi:"organization"`
-	OrganizationalUnit string `pulumi:"organizationalUnit"`
-	State              string `pulumi:"state"`
+	City                string `pulumi:"city"`
+	CountryCode         string `pulumi:"countryCode"`
+	Organization        string `pulumi:"organization"`
+	OrganizationalUnit  string `pulumi:"organizationalUnit"`
+	PreferredTrustChain string `pulumi:"preferredTrustChain"`
+	State               string `pulumi:"state"`
 }
 
 // GetCPSEnrollmentsEnrollmentCsrInput is an input type that accepts GetCPSEnrollmentsEnrollmentCsrArgs and GetCPSEnrollmentsEnrollmentCsrOutput values.
@@ -13222,11 +13263,12 @@ type GetCPSEnrollmentsEnrollmentCsrInput interface {
 }
 
 type GetCPSEnrollmentsEnrollmentCsrArgs struct {
-	City               pulumi.StringInput `pulumi:"city"`
-	CountryCode        pulumi.StringInput `pulumi:"countryCode"`
-	Organization       pulumi.StringInput `pulumi:"organization"`
-	OrganizationalUnit pulumi.StringInput `pulumi:"organizationalUnit"`
-	State              pulumi.StringInput `pulumi:"state"`
+	City                pulumi.StringInput `pulumi:"city"`
+	CountryCode         pulumi.StringInput `pulumi:"countryCode"`
+	Organization        pulumi.StringInput `pulumi:"organization"`
+	OrganizationalUnit  pulumi.StringInput `pulumi:"organizationalUnit"`
+	PreferredTrustChain pulumi.StringInput `pulumi:"preferredTrustChain"`
+	State               pulumi.StringInput `pulumi:"state"`
 }
 
 func (GetCPSEnrollmentsEnrollmentCsrArgs) ElementType() reflect.Type {
@@ -13294,6 +13336,10 @@ func (o GetCPSEnrollmentsEnrollmentCsrOutput) Organization() pulumi.StringOutput
 
 func (o GetCPSEnrollmentsEnrollmentCsrOutput) OrganizationalUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentCsr) string { return v.OrganizationalUnit }).(pulumi.StringOutput)
+}
+
+func (o GetCPSEnrollmentsEnrollmentCsrOutput) PreferredTrustChain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentsEnrollmentCsr) string { return v.PreferredTrustChain }).(pulumi.StringOutput)
 }
 
 func (o GetCPSEnrollmentsEnrollmentCsrOutput) State() pulumi.StringOutput {

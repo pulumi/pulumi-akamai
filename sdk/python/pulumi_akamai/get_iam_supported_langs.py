@@ -54,7 +54,7 @@ class AwaitableGetIamSupportedLangsResult(GetIamSupportedLangsResult):
 
 def get_iam_supported_langs(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamSupportedLangsResult:
     """
-    Use `get_iam_supported_langs` to list all the possible languages Akamai supports. Use the values from this API to set the preferred language for a user. Users should see Control Center in the language you set for them. The default language is English.
+    Use _get_iam_supported_langs_ to list all the possible languages Akamai supports. Use the values from this API to set the preferred language for a user. Users should see Control Center in the language you set for them. The default language is English.
 
     ## Example Usage
 

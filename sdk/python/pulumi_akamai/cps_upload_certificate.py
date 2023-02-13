@@ -29,7 +29,7 @@ class CpsUploadCertificateArgs:
                * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
         :param pulumi.Input[bool] acknowledge_change_management: Boolean. Use only if `change_management` is set to `true` in the `CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
         :param pulumi.Input[bool] acknowledge_post_verification_warnings: Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `auto_approve_warnings`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         :param pulumi.Input[str] certificate_ecdsa_pem: The ECDSA certificate in PEM format you want to upload.
         :param pulumi.Input[str] certificate_rsa_pem: The RSA certificate in PEM format you want to upload.
         :param pulumi.Input[str] trust_chain_ecdsa_pem: The trust chain in PEM format for the ECDSA certificate you want to upload.
@@ -95,7 +95,7 @@ class CpsUploadCertificateArgs:
     @pulumi.getter(name="autoApproveWarnings")
     def auto_approve_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         """
         return pulumi.get(self, "auto_approve_warnings")
 
@@ -181,7 +181,7 @@ class _CpsUploadCertificateState:
         Input properties used for looking up and filtering CpsUploadCertificate resources.
         :param pulumi.Input[bool] acknowledge_change_management: Boolean. Use only if `change_management` is set to `true` in the `CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
         :param pulumi.Input[bool] acknowledge_post_verification_warnings: Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `auto_approve_warnings`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         :param pulumi.Input[str] certificate_ecdsa_pem: The ECDSA certificate in PEM format you want to upload.
         :param pulumi.Input[str] certificate_rsa_pem: The RSA certificate in PEM format you want to upload.
         :param pulumi.Input[int] enrollment_id: Unique identifier for the certificate enrollment.
@@ -240,7 +240,7 @@ class _CpsUploadCertificateState:
     @pulumi.getter(name="autoApproveWarnings")
     def auto_approve_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         """
         return pulumi.get(self, "auto_approve_warnings")
 
@@ -375,7 +375,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] acknowledge_change_management: Boolean. Use only if `change_management` is set to `true` in the `CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
         :param pulumi.Input[bool] acknowledge_post_verification_warnings: Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `auto_approve_warnings`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         :param pulumi.Input[str] certificate_ecdsa_pem: The ECDSA certificate in PEM format you want to upload.
         :param pulumi.Input[str] certificate_rsa_pem: The RSA certificate in PEM format you want to upload.
         :param pulumi.Input[int] enrollment_id: Unique identifier for the certificate enrollment.
@@ -486,7 +486,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] acknowledge_change_management: Boolean. Use only if `change_management` is set to `true` in the `CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
         :param pulumi.Input[bool] acknowledge_post_verification_warnings: Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `auto_approve_warnings`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] auto_approve_warnings: The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         :param pulumi.Input[str] certificate_ecdsa_pem: The ECDSA certificate in PEM format you want to upload.
         :param pulumi.Input[str] certificate_rsa_pem: The RSA certificate in PEM format you want to upload.
         :param pulumi.Input[int] enrollment_id: Unique identifier for the certificate enrollment.
@@ -532,7 +532,7 @@ class CpsUploadCertificate(pulumi.CustomResource):
     @pulumi.getter(name="autoApproveWarnings")
     def auto_approve_warnings(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `get_cps_warnings` data source.
+        The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the _get_cps_warnings_ data source.
         """
         return pulumi.get(self, "auto_approve_warnings")
 

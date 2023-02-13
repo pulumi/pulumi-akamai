@@ -36,6 +36,9 @@ namespace Pulumi.Akamai.Inputs
         [Input("organizationalUnit", required: true)]
         public Input<string> OrganizationalUnit { get; set; } = null!;
 
+        [Input("preferredTrustChain")]
+        public Input<string>? PreferredTrustChain { get; set; }
+
         /// <summary>
         /// Your state or province.
         /// </summary>

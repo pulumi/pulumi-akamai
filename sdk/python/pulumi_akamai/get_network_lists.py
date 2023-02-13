@@ -130,7 +130,7 @@ def get_network_lists(name: Optional[str] = None,
                       type: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkListsResult:
     """
-    Use the `get_network_lists` data source to retrieve information about the available network lists,
+    Use the _get_network_lists_ data source to retrieve information about the available network lists,
     optionally filtered by list type or based on a search string. The information available is described in
     [List network lists](https://techdocs.akamai.com/network-lists/reference/get-network-lists).
 
@@ -186,7 +186,7 @@ def get_network_lists_output(name: Optional[pulumi.Input[Optional[str]]] = None,
                              type: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkListsResult]:
     """
-    Use the `get_network_lists` data source to retrieve information about the available network lists,
+    Use the _get_network_lists_ data source to retrieve information about the available network lists,
     optionally filtered by list type or based on a search string. The information available is described in
     [List network lists](https://techdocs.akamai.com/network-lists/reference/get-network-lists).
 

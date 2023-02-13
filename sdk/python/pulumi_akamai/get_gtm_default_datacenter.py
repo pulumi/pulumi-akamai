@@ -84,7 +84,7 @@ def get_gtm_default_datacenter(datacenter: Optional[int] = None,
                                domain: Optional[str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGtmDefaultDatacenterResult:
     """
-    Use the `get_gtm_default_datacenter` data source to retrieve the default data center, ID, and nickname.
+    Use the _get_gtm_default_datacenter_ data source to retrieve the default data center, ID, and nickname.
 
     ## Attributes reference
 
@@ -116,7 +116,7 @@ def get_gtm_default_datacenter_output(datacenter: Optional[pulumi.Input[Optional
                                       domain: Optional[pulumi.Input[str]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGtmDefaultDatacenterResult]:
     """
-    Use the `get_gtm_default_datacenter` data source to retrieve the default data center, ID, and nickname.
+    Use the _get_gtm_default_datacenter_ data source to retrieve the default data center, ID, and nickname.
 
     ## Attributes reference
 

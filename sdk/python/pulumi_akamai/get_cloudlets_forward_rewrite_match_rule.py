@@ -69,7 +69,7 @@ def get_cloudlets_forward_rewrite_match_rule(match_rules: Optional[Sequence[pulu
     """
     Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
 
-    Use the `get_cloudlets_forward_rewrite_match_rule` data source to build a match rule JSON object for the Forward Rewrite Cloudlet.
+    Use the _get_cloudlets_forward_rewrite_match_rule_ data source to build a match rule JSON object for the Forward Rewrite Cloudlet.
 
     ## Basic usage
 
@@ -124,7 +124,7 @@ def get_cloudlets_forward_rewrite_match_rule_output(match_rules: Optional[pulumi
     """
     Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
 
-    Use the `get_cloudlets_forward_rewrite_match_rule` data source to build a match rule JSON object for the Forward Rewrite Cloudlet.
+    Use the _get_cloudlets_forward_rewrite_match_rule_ data source to build a match rule JSON object for the Forward Rewrite Cloudlet.
 
     ## Basic usage
 

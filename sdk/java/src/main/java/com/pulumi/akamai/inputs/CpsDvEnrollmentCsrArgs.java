@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class CpsDvEnrollmentCsrArgs extends com.pulumi.resources.ResourceArgs {
@@ -74,6 +76,21 @@ public final class CpsDvEnrollmentCsrArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+     * 
+     */
+    @Import(name="preferredTrustChain")
+    private @Nullable Output<String> preferredTrustChain;
+
+    /**
+     * @return The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+     * 
+     */
+    public Optional<Output<String>> preferredTrustChain() {
+        return Optional.ofNullable(this.preferredTrustChain);
+    }
+
+    /**
      * Your state or province.
      * 
      */
@@ -95,6 +112,7 @@ public final class CpsDvEnrollmentCsrArgs extends com.pulumi.resources.ResourceA
         this.countryCode = $.countryCode;
         this.organization = $.organization;
         this.organizationalUnit = $.organizationalUnit;
+        this.preferredTrustChain = $.preferredTrustChain;
         this.state = $.state;
     }
 
@@ -198,6 +216,27 @@ public final class CpsDvEnrollmentCsrArgs extends com.pulumi.resources.ResourceA
          */
         public Builder organizationalUnit(String organizationalUnit) {
             return organizationalUnit(Output.of(organizationalUnit));
+        }
+
+        /**
+         * @param preferredTrustChain The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferredTrustChain(@Nullable Output<String> preferredTrustChain) {
+            $.preferredTrustChain = preferredTrustChain;
+            return this;
+        }
+
+        /**
+         * @param preferredTrustChain The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferredTrustChain(String preferredTrustChain) {
+            return preferredTrustChain(Output.of(preferredTrustChain));
         }
 
         /**

@@ -69,7 +69,7 @@ def get_cloudlets_audience_segmentation_match_rule(match_rules: Optional[Sequenc
     """
     Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
 
-    Use the `get_cloudlets_audience_segmentation_match_rule` data source to build a match rule JSON object for the Audience Segmentation Cloudlet.
+    Use the _get_cloudlets_audience_segmentation_match_rule_ data source to build a match rule JSON object for the Audience Segmentation Cloudlet.
 
     ## Attributes reference
 
@@ -98,7 +98,7 @@ def get_cloudlets_audience_segmentation_match_rule_output(match_rules: Optional[
     """
     Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
 
-    Use the `get_cloudlets_audience_segmentation_match_rule` data source to build a match rule JSON object for the Audience Segmentation Cloudlet.
+    Use the _get_cloudlets_audience_segmentation_match_rule_ data source to build a match rule JSON object for the Audience Segmentation Cloudlet.
 
     ## Attributes reference
 

@@ -201,6 +201,7 @@
         "networkListSubscription.ts",
         "properties/cpCode.ts",
         "properties/edgeHostName.ts",
+        "properties/getActivation.ts",
         "properties/getCpCode.ts",
         "properties/getProperty.ts",
         "properties/getPropertyRules.ts",

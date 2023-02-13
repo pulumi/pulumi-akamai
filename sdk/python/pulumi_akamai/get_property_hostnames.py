@@ -95,7 +95,7 @@ def get_property_hostnames(contract_id: Optional[str] = None,
                            property_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyHostnamesResult:
     """
-    Use the `get_property_hostnames` data source to query and retrieve hostnames and their certificate statuses for an existing property. This data source lets you search across the contracts and groups you have access to.
+    Use the _get_property_hostnames_ data source to query and retrieve hostnames and their certificate statuses for an existing property. This data source lets you search across the contracts and groups you have access to.
 
     ## Basic usage
 
@@ -156,7 +156,7 @@ def get_property_hostnames_output(contract_id: Optional[pulumi.Input[str]] = Non
                                   property_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyHostnamesResult]:
     """
-    Use the `get_property_hostnames` data source to query and retrieve hostnames and their certificate statuses for an existing property. This data source lets you search across the contracts and groups you have access to.
+    Use the _get_property_hostnames_ data source to query and retrieve hostnames and their certificate statuses for an existing property. This data source lets you search across the contracts and groups you have access to.
 
     ## Basic usage
 

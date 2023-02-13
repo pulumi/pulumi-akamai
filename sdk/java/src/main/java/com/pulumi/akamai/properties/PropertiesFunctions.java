@@ -4,12 +4,15 @@
 package com.pulumi.akamai.properties;
 
 import com.pulumi.akamai.Utilities;
+import com.pulumi.akamai.properties.inputs.GetActivationArgs;
+import com.pulumi.akamai.properties.inputs.GetActivationPlainArgs;
 import com.pulumi.akamai.properties.inputs.GetCpCodeArgs;
 import com.pulumi.akamai.properties.inputs.GetCpCodePlainArgs;
 import com.pulumi.akamai.properties.inputs.GetPropertyArgs;
 import com.pulumi.akamai.properties.inputs.GetPropertyPlainArgs;
 import com.pulumi.akamai.properties.inputs.GetPropertyRulesArgs;
 import com.pulumi.akamai.properties.inputs.GetPropertyRulesPlainArgs;
+import com.pulumi.akamai.properties.outputs.GetActivationResult;
 import com.pulumi.akamai.properties.outputs.GetCpCodeResult;
 import com.pulumi.akamai.properties.outputs.GetPropertyResult;
 import com.pulumi.akamai.properties.outputs.GetPropertyRulesResult;
@@ -20,6 +23,286 @@ import com.pulumi.deployment.InvokeOptions;
 import java.util.concurrent.CompletableFuture;
 
 public final class PropertiesFunctions {
+    /**
+     * Use the `akamai.PropertyActivation` data source to retrieve activation information for a property version on staging
+     * or production network.
+     * 
+     * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.Property;
+     * import com.pulumi.akamai.PropertyArgs;
+     * import com.pulumi.akamai.inputs.PropertyHostnameArgs;
+     * import com.pulumi.akamai.PropertyActivation;
+     * import com.pulumi.akamai.PropertyActivationArgs;
+     * import com.pulumi.akamai.properties.PropertiesFunctions;
+     * import com.pulumi.akamai.properties.inputs.GetActivationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var email = &#34;user@example.org&#34;;
+     * 
+     *         final var ruleFormat = &#34;v2022-10-18&#34;;
+     * 
+     *         var example = new Property(&#34;example&#34;, PropertyArgs.builder()        
+     *             .productId(&#34;prd_SPM&#34;)
+     *             .contractId(var_.contractid())
+     *             .groupId(var_.groupid())
+     *             .hostnames(PropertyHostnameArgs.builder()
+     *                 .cnameTo(&#34;www.example.com.edgekey.net&#34;)
+     *                 .cnameFrom(&#34;www.example.com&#34;)
+     *                 .certProvisioningType(&#34;DEFAULT&#34;)
+     *                 .build())
+     *             .ruleFormat(ruleFormat)
+     *             .rules(Files.readString(Paths.get(String.format(&#34;%s/main.json&#34;, path.module()))))
+     *             .build());
+     * 
+     *         var exampleStagingPropertyActivation = new PropertyActivation(&#34;exampleStagingPropertyActivation&#34;, PropertyActivationArgs.builder()        
+     *             .propertyId(example.id())
+     *             .contacts(email)
+     *             .version(example.latestVersion())
+     *             .note(&#34;Sample activation&#34;)
+     *             .build());
+     * 
+     *         final var exampleStagingActivation = PropertiesFunctions.getActivation(GetActivationArgs.builder()
+     *             .propertyId(example.id())
+     *             .version(example.latestVersion())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetActivationResult> getActivation(GetActivationArgs args) {
+        return getActivation(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.PropertyActivation` data source to retrieve activation information for a property version on staging
+     * or production network.
+     * 
+     * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.Property;
+     * import com.pulumi.akamai.PropertyArgs;
+     * import com.pulumi.akamai.inputs.PropertyHostnameArgs;
+     * import com.pulumi.akamai.PropertyActivation;
+     * import com.pulumi.akamai.PropertyActivationArgs;
+     * import com.pulumi.akamai.properties.PropertiesFunctions;
+     * import com.pulumi.akamai.properties.inputs.GetActivationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var email = &#34;user@example.org&#34;;
+     * 
+     *         final var ruleFormat = &#34;v2022-10-18&#34;;
+     * 
+     *         var example = new Property(&#34;example&#34;, PropertyArgs.builder()        
+     *             .productId(&#34;prd_SPM&#34;)
+     *             .contractId(var_.contractid())
+     *             .groupId(var_.groupid())
+     *             .hostnames(PropertyHostnameArgs.builder()
+     *                 .cnameTo(&#34;www.example.com.edgekey.net&#34;)
+     *                 .cnameFrom(&#34;www.example.com&#34;)
+     *                 .certProvisioningType(&#34;DEFAULT&#34;)
+     *                 .build())
+     *             .ruleFormat(ruleFormat)
+     *             .rules(Files.readString(Paths.get(String.format(&#34;%s/main.json&#34;, path.module()))))
+     *             .build());
+     * 
+     *         var exampleStagingPropertyActivation = new PropertyActivation(&#34;exampleStagingPropertyActivation&#34;, PropertyActivationArgs.builder()        
+     *             .propertyId(example.id())
+     *             .contacts(email)
+     *             .version(example.latestVersion())
+     *             .note(&#34;Sample activation&#34;)
+     *             .build());
+     * 
+     *         final var exampleStagingActivation = PropertiesFunctions.getActivation(GetActivationArgs.builder()
+     *             .propertyId(example.id())
+     *             .version(example.latestVersion())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetActivationResult> getActivationPlain(GetActivationPlainArgs args) {
+        return getActivationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Use the `akamai.PropertyActivation` data source to retrieve activation information for a property version on staging
+     * or production network.
+     * 
+     * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.Property;
+     * import com.pulumi.akamai.PropertyArgs;
+     * import com.pulumi.akamai.inputs.PropertyHostnameArgs;
+     * import com.pulumi.akamai.PropertyActivation;
+     * import com.pulumi.akamai.PropertyActivationArgs;
+     * import com.pulumi.akamai.properties.PropertiesFunctions;
+     * import com.pulumi.akamai.properties.inputs.GetActivationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var email = &#34;user@example.org&#34;;
+     * 
+     *         final var ruleFormat = &#34;v2022-10-18&#34;;
+     * 
+     *         var example = new Property(&#34;example&#34;, PropertyArgs.builder()        
+     *             .productId(&#34;prd_SPM&#34;)
+     *             .contractId(var_.contractid())
+     *             .groupId(var_.groupid())
+     *             .hostnames(PropertyHostnameArgs.builder()
+     *                 .cnameTo(&#34;www.example.com.edgekey.net&#34;)
+     *                 .cnameFrom(&#34;www.example.com&#34;)
+     *                 .certProvisioningType(&#34;DEFAULT&#34;)
+     *                 .build())
+     *             .ruleFormat(ruleFormat)
+     *             .rules(Files.readString(Paths.get(String.format(&#34;%s/main.json&#34;, path.module()))))
+     *             .build());
+     * 
+     *         var exampleStagingPropertyActivation = new PropertyActivation(&#34;exampleStagingPropertyActivation&#34;, PropertyActivationArgs.builder()        
+     *             .propertyId(example.id())
+     *             .contacts(email)
+     *             .version(example.latestVersion())
+     *             .note(&#34;Sample activation&#34;)
+     *             .build());
+     * 
+     *         final var exampleStagingActivation = PropertiesFunctions.getActivation(GetActivationArgs.builder()
+     *             .propertyId(example.id())
+     *             .version(example.latestVersion())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetActivationResult> getActivation(GetActivationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:properties/getActivation:getActivation", TypeShape.of(GetActivationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Use the `akamai.PropertyActivation` data source to retrieve activation information for a property version on staging
+     * or production network.
+     * 
+     * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.Property;
+     * import com.pulumi.akamai.PropertyArgs;
+     * import com.pulumi.akamai.inputs.PropertyHostnameArgs;
+     * import com.pulumi.akamai.PropertyActivation;
+     * import com.pulumi.akamai.PropertyActivationArgs;
+     * import com.pulumi.akamai.properties.PropertiesFunctions;
+     * import com.pulumi.akamai.properties.inputs.GetActivationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var email = &#34;user@example.org&#34;;
+     * 
+     *         final var ruleFormat = &#34;v2022-10-18&#34;;
+     * 
+     *         var example = new Property(&#34;example&#34;, PropertyArgs.builder()        
+     *             .productId(&#34;prd_SPM&#34;)
+     *             .contractId(var_.contractid())
+     *             .groupId(var_.groupid())
+     *             .hostnames(PropertyHostnameArgs.builder()
+     *                 .cnameTo(&#34;www.example.com.edgekey.net&#34;)
+     *                 .cnameFrom(&#34;www.example.com&#34;)
+     *                 .certProvisioningType(&#34;DEFAULT&#34;)
+     *                 .build())
+     *             .ruleFormat(ruleFormat)
+     *             .rules(Files.readString(Paths.get(String.format(&#34;%s/main.json&#34;, path.module()))))
+     *             .build());
+     * 
+     *         var exampleStagingPropertyActivation = new PropertyActivation(&#34;exampleStagingPropertyActivation&#34;, PropertyActivationArgs.builder()        
+     *             .propertyId(example.id())
+     *             .contacts(email)
+     *             .version(example.latestVersion())
+     *             .note(&#34;Sample activation&#34;)
+     *             .build());
+     * 
+     *         final var exampleStagingActivation = PropertiesFunctions.getActivation(GetActivationArgs.builder()
+     *             .propertyId(example.id())
+     *             .version(example.latestVersion())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetActivationResult> getActivationPlain(GetActivationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:properties/getActivation:getActivation", TypeShape.of(GetActivationResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * 
      * @deprecated

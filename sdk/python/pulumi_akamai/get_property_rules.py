@@ -114,7 +114,7 @@ def get_property_rules(contract_id: Optional[str] = None,
                        version: Optional[int] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyRulesResult:
     """
-    Use the `get_property_rules` data source to query and retrieve the rule tree of
+    Use the _get_property_rules_ data source to query and retrieve the rule tree of
     an existing property version. This data source lets you search across the contracts
     and groups you have access to.
 
@@ -175,7 +175,7 @@ def get_property_rules_output(contract_id: Optional[pulumi.Input[Optional[str]]]
                               version: Optional[pulumi.Input[Optional[int]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyRulesResult]:
     """
-    Use the `get_property_rules` data source to query and retrieve the rule tree of
+    Use the _get_property_rules_ data source to query and retrieve the rule tree of
     an existing property version. This data source lets you search across the contracts
     and groups you have access to.
 

@@ -66,7 +66,7 @@ class AwaitableGetDatastreamDatasetFieldsResult(GetDatastreamDatasetFieldsResult
 def get_datastream_dataset_fields(template_name: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatastreamDatasetFieldsResult:
     """
-    Use the `get_datastream_dataset_fields` data source to list groups of data set fields available in the template.
+    Use the _get_datastream_dataset_fields_ data source to list groups of data set fields available in the template.
 
     ## Example Usage
 
@@ -109,7 +109,7 @@ def get_datastream_dataset_fields(template_name: Optional[str] = None,
 def get_datastream_dataset_fields_output(template_name: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatastreamDatasetFieldsResult]:
     """
-    Use the `get_datastream_dataset_fields` data source to list groups of data set fields available in the template.
+    Use the _get_datastream_dataset_fields_ data source to list groups of data set fields available in the template.
 
     ## Example Usage
 

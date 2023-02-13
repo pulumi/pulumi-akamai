@@ -66,7 +66,7 @@ class AwaitableGetDatastreamsResult(GetDatastreamsResult):
 def get_datastreams(group_id: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatastreamsResult:
     """
-    Use the `get_datastreams` data source to list details about the DataStream configuration.
+    Use the _get_datastreams_ data source to list details about the DataStream configuration.
 
     ## Attributes reference
 
@@ -112,7 +112,7 @@ def get_datastreams(group_id: Optional[str] = None,
 def get_datastreams_output(group_id: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatastreamsResult]:
     """
-    Use the `get_datastreams` data source to list details about the DataStream configuration.
+    Use the _get_datastreams_ data source to list details about the DataStream configuration.
 
     ## Attributes reference
 

@@ -13,6 +13,7 @@ public final class GetCPSEnrollmentCsr {
     private String countryCode;
     private String organization;
     private String organizationalUnit;
+    private String preferredTrustChain;
     private String state;
 
     private GetCPSEnrollmentCsr() {}
@@ -27,6 +28,9 @@ public final class GetCPSEnrollmentCsr {
     }
     public String organizationalUnit() {
         return this.organizationalUnit;
+    }
+    public String preferredTrustChain() {
+        return this.preferredTrustChain;
     }
     public String state() {
         return this.state;
@@ -45,6 +49,7 @@ public final class GetCPSEnrollmentCsr {
         private String countryCode;
         private String organization;
         private String organizationalUnit;
+        private String preferredTrustChain;
         private String state;
         public Builder() {}
         public Builder(GetCPSEnrollmentCsr defaults) {
@@ -53,6 +58,7 @@ public final class GetCPSEnrollmentCsr {
     	      this.countryCode = defaults.countryCode;
     	      this.organization = defaults.organization;
     	      this.organizationalUnit = defaults.organizationalUnit;
+    	      this.preferredTrustChain = defaults.preferredTrustChain;
     	      this.state = defaults.state;
         }
 
@@ -77,6 +83,11 @@ public final class GetCPSEnrollmentCsr {
             return this;
         }
         @CustomType.Setter
+        public Builder preferredTrustChain(String preferredTrustChain) {
+            this.preferredTrustChain = Objects.requireNonNull(preferredTrustChain);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -87,6 +98,7 @@ public final class GetCPSEnrollmentCsr {
             o.countryCode = countryCode;
             o.organization = organization;
             o.organizationalUnit = organizationalUnit;
+            o.preferredTrustChain = preferredTrustChain;
             o.state = state;
             return o;
         }

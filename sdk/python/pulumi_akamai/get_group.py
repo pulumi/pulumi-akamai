@@ -94,7 +94,7 @@ def get_group(contract: Optional[str] = None,
               name: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGroupResult:
     """
-    Use the `get_group` data source to get a group by name.
+    Use the _get_group_ data source to get a group by name.
 
     Each account features a hierarchy of groups, which control access to your
     Akamai configurations and help consolidate reporting functions, typically
@@ -138,7 +138,7 @@ def get_group_output(contract: Optional[pulumi.Input[Optional[str]]] = None,
                      name: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGroupResult]:
     """
-    Use the `get_group` data source to get a group by name.
+    Use the _get_group_ data source to get a group by name.
 
     Each account features a hierarchy of groups, which control access to your
     Akamai configurations and help consolidate reporting functions, typically

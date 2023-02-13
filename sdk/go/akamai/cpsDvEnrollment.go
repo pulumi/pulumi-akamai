@@ -65,11 +65,12 @@ import (
 //				},
 //				CertificateChainType: pulumi.String("default"),
 //				Csr: &akamai.CpsDvEnrollmentCsrArgs{
-//					CountryCode:        pulumi.String("US"),
-//					City:               pulumi.String("Cambridge"),
-//					Organization:       pulumi.String("Akamai"),
-//					OrganizationalUnit: pulumi.String("Dev"),
-//					State:              pulumi.String("MA"),
+//					CountryCode:         pulumi.String("US"),
+//					City:                pulumi.String("Cambridge"),
+//					Organization:        pulumi.String("Akamai"),
+//					OrganizationalUnit:  pulumi.String("Dev"),
+//					PreferredTrustChain: pulumi.String("intermediate-a"),
+//					State:               pulumi.String("MA"),
 //				},
 //				NetworkConfiguration: &akamai.CpsDvEnrollmentNetworkConfigurationArgs{
 //					DisallowedTlsVersions: pulumi.StringArray{

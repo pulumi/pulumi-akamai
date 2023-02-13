@@ -31,7 +31,7 @@ namespace Pulumi.Akamai
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["supportedContactTypes"] = contactTypes.Apply(getIamContactTypesResult =&gt; getIamContactTypesResult),
+        ///         ["supportedContactTypes"] = contactTypes,
         ///     };
         /// });
         /// ```

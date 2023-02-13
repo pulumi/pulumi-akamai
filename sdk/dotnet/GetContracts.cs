@@ -31,7 +31,7 @@ namespace Pulumi.Akamai
         /// 
         ///     return new Dictionary&lt;string, object?&gt;
         ///     {
-        ///         ["propertyMatch"] = my_example.Apply(getContractsResult =&gt; getContractsResult),
+        ///         ["propertyMatch"] = my_example,
         ///     };
         /// });
         /// ```

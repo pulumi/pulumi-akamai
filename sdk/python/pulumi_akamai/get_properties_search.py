@@ -76,7 +76,7 @@ def get_properties_search(key: Optional[str] = None,
                           value: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertiesSearchResult:
     """
-    Use the `get_properties_search` data source to retrieve the list of properties matching a specific hostname, edge hostname or property name based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
+    Use the _get_properties_search_ data source to retrieve the list of properties matching a specific hostname, edge hostname or property name based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
 
     ## Example Usage
 
@@ -118,7 +118,7 @@ def get_properties_search_output(key: Optional[pulumi.Input[str]] = None,
                                  value: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertiesSearchResult]:
     """
-    Use the `get_properties_search` data source to retrieve the list of properties matching a specific hostname, edge hostname or property name based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
+    Use the _get_properties_search_ data source to retrieve the list of properties matching a specific hostname, edge hostname or property name based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
 
     ## Example Usage
 

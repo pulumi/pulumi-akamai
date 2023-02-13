@@ -17,6 +17,7 @@ namespace Pulumi.Akamai.Outputs
         public readonly string CountryCode;
         public readonly string Organization;
         public readonly string OrganizationalUnit;
+        public readonly string PreferredTrustChain;
         public readonly string State;
 
         [OutputConstructor]
@@ -29,12 +30,15 @@ namespace Pulumi.Akamai.Outputs
 
             string organizationalUnit,
 
+            string preferredTrustChain,
+
             string state)
         {
             City = city;
             CountryCode = countryCode;
             Organization = organization;
             OrganizationalUnit = organizationalUnit;
+            PreferredTrustChain = preferredTrustChain;
             State = state;
         }
     }

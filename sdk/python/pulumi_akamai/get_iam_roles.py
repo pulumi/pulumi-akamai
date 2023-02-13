@@ -55,7 +55,7 @@ class AwaitableGetIamRolesResult(GetIamRolesResult):
 
 def get_iam_roles(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamRolesResult:
     """
-    Use `get_iam_roles` to list roles for the current account and contract type. The account and contract type are determined by the access tokens in your API client. Use the `roleId` from this data source to construct the `auth_grants_json` when creating or updating a user's auth grants.
+    Use _get_iam_roles_ to list roles for the current account and contract type. The account and contract type are determined by the access tokens in your API client. Use the `roleId` from this data source to construct the `auth_grants_json` when creating or updating a user's auth grants.
 
     ## Example Usage
 

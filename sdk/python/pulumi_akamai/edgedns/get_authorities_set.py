@@ -67,7 +67,7 @@ class AwaitableGetAuthoritiesSetResult(GetAuthoritiesSetResult):
 def get_authorities_set(contract: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAuthoritiesSetResult:
     """
-    Use the `get_authorities_set` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+    Use the _get_authorities_set_ data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
 
     ## Example Usage
 
@@ -104,7 +104,7 @@ def get_authorities_set(contract: Optional[str] = None,
 def get_authorities_set_output(contract: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAuthoritiesSetResult]:
     """
-    Use the `get_authorities_set` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
+    Use the _get_authorities_set_ data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
 
     ## Example Usage
 

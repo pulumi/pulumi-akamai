@@ -298,6 +298,7 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_edgeworkers_resource_tier":  {Tok: makeDataSource(mainMod, "getEdgeWorkersResourceTier")},
 
 			"akamai_properties":                  {Tok: makeDataSource(mainMod, "getProperties")},
+			"akamai_property_activation":         {Tok: makeDataSource(propertiesMod, "getActivation")},
 			"akamai_property_products":           {Tok: makeDataSource(mainMod, "getPropertyProducts")},
 			"akamai_property_rule_formats":       {Tok: makeDataSource(mainMod, "getPropertyRuleFormats")},
 			"akamai_property_rules_template":     {Tok: makeDataSource(mainMod, "getPropertyRulesTemplate")},
