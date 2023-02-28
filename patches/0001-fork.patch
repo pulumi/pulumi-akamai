@@ -1,0 +1,173 @@
+diff --git b/docs/data-sources/property_rules_template.md a/docs/data-sources/property_rules_template.md
+index 8ae3960d..456ec8a4 100644
+--- b/docs/data-sources/property_rules_template.md
++++ a/docs/data-sources/property_rules_template.md
+@@ -11,7 +11,7 @@ With this data source, you define which JSON template files to use for your prop
+ 
+ This data source uses the rule template format from the [Property Manager CLI](https://github.com/akamai/cli-property-manager#set-up-property-snippets).
+ 
+-~> You can define variables either by using the Property Manager CLI syntax or by using standard Terraform variables.
++~> You can define variables either by using the Property Manager CLI syntax or by using standard variables.
+ 
+ ## How to work with JSON template files
+ 
+@@ -83,7 +83,7 @@ You need to create these files when using property variables:
+ * a `variableDefinitions.json` file to define your variables and their default values.
+ * one or more `variables.json` files to define settings specific to an environment. <br> The file name should always be `variables.json`. If using multiple environments, set up a directory for each environment to store this file in.
+ 
+-~> Property variables are separate from Terraform variables. Terraform variables work as expected in this data source.
++~> Property variables are separate from variables.
+ 
+ ## Example usage: JSON template files
+ 
+diff --git b/docs/resources/cp_code.md a/docs/resources/cp_code.md
+index 7e44b4ba..fba9bd21 100644
+--- b/docs/resources/cp_code.md
++++ a/docs/resources/cp_code.md
+@@ -61,7 +61,7 @@ The following arguments are supported:
+ 
+ * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
+ * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
+-* `product` - (Deprecated) Replaced by `product_id`. Maintained for legacy purposes.
++* `product` - (Deprecated) Replaced by `product_id`. Maintained for legacy purposes.
+ 
+ ## Attributes reference
+ 
+diff --git b/docs/resources/edge_hostname.md a/docs/resources/edge_hostname.md
+index 856ee0b6..7ac2088c 100644
+--- b/docs/resources/edge_hostname.md
++++ a/docs/resources/edge_hostname.md
+@@ -30,7 +30,7 @@ For example, if you use Standard TLS and have `www.example.com` as a hostname, y
+ Basic usage:
+ 
+ ```hcl
+-resource "akamai_edge_hostname" "terraform-demo" {
++resource "akamai_edge_hostname" "provider-demo" {
+   product_id    = "prd_Object_Delivery"
+   contract_id   = "ctr_1-AB123"
+   group_id      = "grp_123"
+diff --git b/docs/resources/gtm_datacenter.md a/docs/resources/gtm_datacenter.md
+index 6f7bf060..52aaafed 100644
+--- b/docs/resources/gtm_datacenter.md
++++ a/docs/resources/gtm_datacenter.md
+@@ -45,7 +45,7 @@ This resource supports these arguments:
+ 
+ ## Attribute reference
+ 
+-This resource returns these computed attributes in the `terraform.tfstate` file:
++This resource returns these computed attributes in the state file:
+ 
+ * `datacenter_id` - A unique identifier for an existing data center in the domain.
+ * `ping_interval`
+diff --git b/docs/resources/gtm_domain.md a/docs/resources/gtm_domain.md
+index 276dcbe3..279fa287 100644
+--- b/docs/resources/gtm_domain.md
++++ a/docs/resources/gtm_domain.md
+@@ -45,7 +45,7 @@ This resource supports these arguments:
+ 
+ ## Attribute reference
+ 
+-This resource returns these computed attributes in the `terraform.tfstate` file:
++This resource returns these computed attributes in the state file:
+ 
+ * `default_unreachable_threshold`
+ * `min_pingable_region_fraction`
+diff --git b/docs/resources/gtm_property.md a/docs/resources/gtm_property.md
+index 2953ebfc..78c52061 100644
+--- b/docs/resources/gtm_property.md
++++ a/docs/resources/gtm_property.md
+@@ -100,7 +100,7 @@ This resource supports these arguments:
+ 
+ ## Attribute reference
+ 
+-This resource returns these computed attributes in the `terraform.tfstate` file:
++This resource returns these computed attributes in the state file:
+ 
+ * `weighted_hash_bits_for_ipv4`
+ * `weighted_hash_bits_for_ipv6`
+diff --git b/docs/resources/property.md a/docs/resources/property.md
+index 85a0b786..f6138f62 100644
+--- b/docs/resources/property.md
++++ a/docs/resources/property.md
+@@ -25,7 +25,7 @@ Basic usage:
+ 
+ ```hcl
+ resource "akamai_property" "example" {
+-    name    = "terraform-demo"
++    name    = "demo"
+     product_id  = "prd_SPM"
+     contract_id = var.contractid
+     group_id    = var.groupid
+@@ -68,7 +68,7 @@ This resource supports these arguments:
+ 
+ * `contract` - (Deprecated) Replaced by `contract_id`. Maintained for legacy purposes.
+ * `group` - (Deprecated) Replaced by `group_id`. Maintained for legacy purposes.
+-* `product` - (Deprecated) Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
++* `product` - (Deprecated) Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
+ 
+ ## Attribute reference
+ 
+diff --git b/docs/resources/property_activation.md a/docs/resources/property_activation.md
+index 812bfc92..c4bbf2c9 100644
+--- b/docs/resources/property_activation.md
++++ a/docs/resources/property_activation.md
+@@ -21,7 +21,7 @@ locals {
+ }
+ 
+ resource "akamai_property" "example" {
+-    name    = "terraform-demo"
++    name    = "demo"
+     product_id  = "prd_SPM"
+     contract_id = var.contractid
+     group_id    = var.groupid
+@@ -65,7 +65,7 @@ The following arguments are supported:
+ 
+ * `property_id` - (Required) The property's unique identifier, including the `prp_` prefix.
+ * `contact` - (Required) One or more email addresses to send activation status changes to.
+-* `version` - (Required) The property version to activate. Previously this field was optional. It now depends on the `akamai_property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai_property` resource labeled `example`.
++* `version` - (Required) The property version to activate. Previously this field was optional. It now depends on the `akamai_property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai_property` resource labeled `example`.
+ * `network` - (Optional) Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+ * `note` - (Optional) A log message you can assign to the activation request.
+ * `auto_acknowledge_rule_warnings` - (Optional) Whether the activation should proceed despite any warnings. By default set to `true`.
+diff --git b/pkg/akamai/errors.go a/pkg/akamai/errors.go
+index fb831b27..0b4485c7 100644
+--- b/pkg/akamai/errors.go
++++ a/pkg/akamai/errors.go
+@@ -32,8 +32,7 @@ var (
+ 	// Terraform now supports section aliases
+ 	// TODO: Add alias example to the examples directory
+ 	NoticeDeprecatedUseAlias = func(n string) string {
+-		return fmt.Sprintf(`The setting %q has been deprecated. See:
+-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations`, n)
++		return fmt.Sprintf(`The setting %q has been deprecated.`, n)
+ 	}
+ )
+ 
+diff --git b/pkg/providers/property/resource_akamai_property.go a/pkg/providers/property/resource_akamai_property.go
+index ee781a71..6770465c 100644
+--- b/pkg/providers/property/resource_akamai_property.go
++++ a/pkg/providers/property/resource_akamai_property.go
+@@ -504,10 +504,11 @@ func resourcePropertyCreate(ctx context.Context, d *schema.ResourceData, m inter
+ 	// Save minimum state BEFORE moving on
+ 	d.SetId(PropertyID)
+ 	attrs := map[string]interface{}{
+-		"group_id":    GroupID,
+-		"contract_id": ContractID,
+-		"product_id":  ProductID,
+-		"product":     ProductID,
++		"group_id":       GroupID,
++		"contract_id":    ContractID,
++		"product_id":     ProductID,
++		"product":        ProductID,
++		"latest_version": 1, // we are defaulting to 1 here in the create like we do below in the property creation
+ 	}
+ 	if err := rdSetAttrs(ctx, d, attrs); err != nil {
+ 		return diag.FromErr(err)
+@@ -732,6 +733,7 @@ func resourcePropertyUpdate(ctx context.Context, d *schema.ResourceData, m inter
+ 
+ 	var PropertyVersion int
+ 	if v, ok := d.GetOk("read_version"); ok && v.(int) != 0 {
++		Property.LatestVersion = v.(int)
+ 		PropertyVersion = v.(int)
+ 	} else {
+ 		PropertyVersion = Property.LatestVersion

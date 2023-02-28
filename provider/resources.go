@@ -104,6 +104,7 @@ func Provider() tfbridge.ProviderInfo {
 		Repository:              "https://github.com/pulumi/pulumi-akamai",
 		GitHubOrg:               "akamai",
 		TFProviderModuleVersion: "v3",
+		UpstreamRepoPath:        "./upstream",
 		Config: map[string]*tfbridge.SchemaInfo{
 			"config": {
 				CSharpName: "ConfigDetails",
