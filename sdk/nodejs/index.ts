@@ -240,6 +240,11 @@ export type AppSecWapSelectedHostnames = import("./appSecWapSelectedHostnames").
 export const AppSecWapSelectedHostnames: typeof import("./appSecWapSelectedHostnames").AppSecWapSelectedHostnames = null as any;
 utilities.lazyLoad(exports, ["AppSecWapSelectedHostnames"], () => require("./appSecWapSelectedHostnames"));
 
+export { AppsecAdvancedSettingsAttackPayloadLoggingArgs, AppsecAdvancedSettingsAttackPayloadLoggingState } from "./appsecAdvancedSettingsAttackPayloadLogging";
+export type AppsecAdvancedSettingsAttackPayloadLogging = import("./appsecAdvancedSettingsAttackPayloadLogging").AppsecAdvancedSettingsAttackPayloadLogging;
+export const AppsecAdvancedSettingsAttackPayloadLogging: typeof import("./appsecAdvancedSettingsAttackPayloadLogging").AppsecAdvancedSettingsAttackPayloadLogging = null as any;
+utilities.lazyLoad(exports, ["AppsecAdvancedSettingsAttackPayloadLogging"], () => require("./appsecAdvancedSettingsAttackPayloadLogging"));
+
 export { CloudletsApplicationLoadBalancerArgs, CloudletsApplicationLoadBalancerState } from "./cloudletsApplicationLoadBalancer";
 export type CloudletsApplicationLoadBalancer = import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer;
 export const CloudletsApplicationLoadBalancer: typeof import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer = null as any;
@@ -558,6 +563,11 @@ export { GetAppSecWapSelectedHostnamesArgs, GetAppSecWapSelectedHostnamesResult,
 export const getAppSecWapSelectedHostnames: typeof import("./getAppSecWapSelectedHostnames").getAppSecWapSelectedHostnames = null as any;
 export const getAppSecWapSelectedHostnamesOutput: typeof import("./getAppSecWapSelectedHostnames").getAppSecWapSelectedHostnamesOutput = null as any;
 utilities.lazyLoad(exports, ["getAppSecWapSelectedHostnames","getAppSecWapSelectedHostnamesOutput"], () => require("./getAppSecWapSelectedHostnames"));
+
+export { GetAppsecAdvancedSettingsAttackPayloadLoggingArgs, GetAppsecAdvancedSettingsAttackPayloadLoggingResult, GetAppsecAdvancedSettingsAttackPayloadLoggingOutputArgs } from "./getAppsecAdvancedSettingsAttackPayloadLogging";
+export const getAppsecAdvancedSettingsAttackPayloadLogging: typeof import("./getAppsecAdvancedSettingsAttackPayloadLogging").getAppsecAdvancedSettingsAttackPayloadLogging = null as any;
+export const getAppsecAdvancedSettingsAttackPayloadLoggingOutput: typeof import("./getAppsecAdvancedSettingsAttackPayloadLogging").getAppsecAdvancedSettingsAttackPayloadLoggingOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecAdvancedSettingsAttackPayloadLogging","getAppsecAdvancedSettingsAttackPayloadLoggingOutput"], () => require("./getAppsecAdvancedSettingsAttackPayloadLogging"));
 
 export { GetAuthoritiesSetArgs, GetAuthoritiesSetResult, GetAuthoritiesSetOutputArgs } from "./getAuthoritiesSet";
 export const getAuthoritiesSet: typeof import("./getAuthoritiesSet").getAuthoritiesSet = null as any;
@@ -1022,6 +1032,8 @@ const _module = {
                 return new AppSecWafProtection(name, <any>undefined, { urn })
             case "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames":
                 return new AppSecWapSelectedHostnames(name, <any>undefined, { urn })
+            case "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging":
+                return new AppsecAdvancedSettingsAttackPayloadLogging(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
                 return new CloudletsApplicationLoadBalancer(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -1144,6 +1156,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecVersionNodes", _mod
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWafMode", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWafProtection", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWapSelectedHostnames", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsAttackPayloadLogging", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancer", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancerActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsPolicy", _module)

@@ -13,49 +13,6 @@ import (
 
 // Use the `NetworkListActivations` resource to activate a network list in either the STAGING or PRODUCTION
 // environment.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewNetworkList(ctx, "networkListIp", &akamai.NetworkListArgs{
-//				Type:        pulumi.String("IP"),
-//				Description: pulumi.String("IP network list"),
-//				Lists:       pulumi.Any(_var.Ip_list),
-//				Mode:        pulumi.String("REPLACE"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewNetworkListActivations(ctx, "activation", &akamai.NetworkListActivationsArgs{
-//				NetworkListId: pulumi.Any(resource.Akamai_networklist_network_list.Network_list_ip.Network_list_id),
-//				Network:       pulumi.String("STAGING"),
-//				SyncPoint:     pulumi.Any(resource.Akamai_networklist_network_list.Network_list_ip.Sync_point),
-//				Notes:         pulumi.String("TEST Notes"),
-//				NotificationEmails: pulumi.StringArray{
-//					pulumi.String("user@example.com"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type NetworkListActivations struct {
 	pulumi.CustomResourceState
 

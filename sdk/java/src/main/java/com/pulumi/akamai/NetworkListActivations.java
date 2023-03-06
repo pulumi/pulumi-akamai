@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * Basic usage:
+ * 
  * ```java
  * package generated_program;
  * 
@@ -58,7 +59,7 @@ import javax.annotation.Nullable;
  *             .networkListId(resource.akamai_networklist_network_list().network_list_ip().network_list_id())
  *             .network(&#34;STAGING&#34;)
  *             .syncPoint(resource.akamai_networklist_network_list().network_list_ip().sync_point())
- *             .notes(&#34;TEST Notes&#34;)
+ *             .note(&#34;TEST Notes&#34;)
  *             .notificationEmails(&#34;user@example.com&#34;)
  *             .build());
  * 

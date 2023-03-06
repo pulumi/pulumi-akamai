@@ -7,29 +7,6 @@ import * as utilities from "./utilities";
 /**
  * Use the `akamai.NetworkListActivations` resource to activate a network list in either the STAGING or PRODUCTION
  * environment.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const networkListIp = new akamai.NetworkList("networkListIp", {
- *     type: "IP",
- *     description: "IP network list",
- *     lists: _var.ip_list,
- *     mode: "REPLACE",
- * });
- * const activation = new akamai.NetworkListActivations("activation", {
- *     networkListId: resource.akamai_networklist_network_list.network_list_ip.network_list_id,
- *     network: "STAGING",
- *     syncPoint: resource.akamai_networklist_network_list.network_list_ip.sync_point,
- *     notes: "TEST Notes",
- *     notificationEmails: ["user@example.com"],
- * });
- * ```
  */
 export class NetworkListActivations extends pulumi.CustomResource {
     /**

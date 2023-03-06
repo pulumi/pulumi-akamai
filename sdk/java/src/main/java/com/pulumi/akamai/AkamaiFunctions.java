@@ -98,6 +98,8 @@ import com.pulumi.akamai.inputs.GetAppSecWafModeArgs;
 import com.pulumi.akamai.inputs.GetAppSecWafModePlainArgs;
 import com.pulumi.akamai.inputs.GetAppSecWapSelectedHostnamesArgs;
 import com.pulumi.akamai.inputs.GetAppSecWapSelectedHostnamesPlainArgs;
+import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsAttackPayloadLoggingArgs;
+import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsAttackPayloadLoggingPlainArgs;
 import com.pulumi.akamai.inputs.GetAuthoritiesSetArgs;
 import com.pulumi.akamai.inputs.GetAuthoritiesSetPlainArgs;
 import com.pulumi.akamai.inputs.GetCPSEnrollmentArgs;
@@ -228,6 +230,7 @@ import com.pulumi.akamai.outputs.GetAppSecTuningRecommendationsResult;
 import com.pulumi.akamai.outputs.GetAppSecVersionNotesResult;
 import com.pulumi.akamai.outputs.GetAppSecWafModeResult;
 import com.pulumi.akamai.outputs.GetAppSecWapSelectedHostnamesResult;
+import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsAttackPayloadLoggingResult;
 import com.pulumi.akamai.outputs.GetAuthoritiesSetResult;
 import com.pulumi.akamai.outputs.GetCPSEnrollmentResult;
 import com.pulumi.akamai.outputs.GetCPSEnrollmentsResult;
@@ -10883,6 +10886,262 @@ public final class AkamaiFunctions {
         return Deployment.getInstance().invokeAsync("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", TypeShape.of(GetAppSecWapSelectedHostnamesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * **Scopes**: Security configuration; security policy
+     * 
+     * Returns information about your Attack Payload Logging controls. By default, information is returned for all the security policies in the configuration.
+     * However, you can return data for a single policy by using the `security_policy_id` parameter.
+     * 
+     * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
+     * 
+     * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
+     * import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsAttackPayloadLoggingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
+     *             .name(&#34;Documentation&#34;)
+     *             .build());
+     * 
+     *         final var attackPayloadLogging = AkamaiFunctions.getAppsecAdvancedSettingsAttackPayloadLogging(GetAppsecAdvancedSettingsAttackPayloadLoggingArgs.builder()
+     *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
+     *             .build());
+     * 
+     *         ctx.export(&#34;advancedSettingsAttackPayloadLoggingJson&#34;, attackPayloadLogging.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.json()));
+     *         ctx.export(&#34;advancedSettingsAttackPayloadLoggingOutput&#34;, attackPayloadLogging.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.outputText()));
+     *         final var policyOverride = AkamaiFunctions.getAppsecAdvancedSettingsAttackPayloadLogging(GetAppsecAdvancedSettingsAttackPayloadLoggingArgs.builder()
+     *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
+     *             .securityPolicyId(var_.security_policy_id())
+     *             .build());
+     * 
+     *         ctx.export(&#34;advancedSettingsPolicyAttackPayloadLoggingOutput&#34;, policyOverride.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.outputText()));
+     *         ctx.export(&#34;advancedSettingsPolicyAttackPayloadLoggingJson&#34;, policyOverride.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.json()));
+     *     }
+     * }
+     * ```
+     * ## Output Options
+     * 
+     * The following options can be used to determine the information returned, and how that returned information is formatted:
+     * 
+     * - `json`. JSON-formatted list of information about the Attack Payload Logging settings.
+     * - `output_text`. Tabular report showing the Attack Payload Logging settings.
+     * 
+     */
+    public static Output<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> getAppsecAdvancedSettingsAttackPayloadLogging(GetAppsecAdvancedSettingsAttackPayloadLoggingArgs args) {
+        return getAppsecAdvancedSettingsAttackPayloadLogging(args, InvokeOptions.Empty);
+    }
+    /**
+     * **Scopes**: Security configuration; security policy
+     * 
+     * Returns information about your Attack Payload Logging controls. By default, information is returned for all the security policies in the configuration.
+     * However, you can return data for a single policy by using the `security_policy_id` parameter.
+     * 
+     * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
+     * 
+     * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
+     * import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsAttackPayloadLoggingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
+     *             .name(&#34;Documentation&#34;)
+     *             .build());
+     * 
+     *         final var attackPayloadLogging = AkamaiFunctions.getAppsecAdvancedSettingsAttackPayloadLogging(GetAppsecAdvancedSettingsAttackPayloadLoggingArgs.builder()
+     *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
+     *             .build());
+     * 
+     *         ctx.export(&#34;advancedSettingsAttackPayloadLoggingJson&#34;, attackPayloadLogging.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.json()));
+     *         ctx.export(&#34;advancedSettingsAttackPayloadLoggingOutput&#34;, attackPayloadLogging.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.outputText()));
+     *         final var policyOverride = AkamaiFunctions.getAppsecAdvancedSettingsAttackPayloadLogging(GetAppsecAdvancedSettingsAttackPayloadLoggingArgs.builder()
+     *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
+     *             .securityPolicyId(var_.security_policy_id())
+     *             .build());
+     * 
+     *         ctx.export(&#34;advancedSettingsPolicyAttackPayloadLoggingOutput&#34;, policyOverride.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.outputText()));
+     *         ctx.export(&#34;advancedSettingsPolicyAttackPayloadLoggingJson&#34;, policyOverride.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.json()));
+     *     }
+     * }
+     * ```
+     * ## Output Options
+     * 
+     * The following options can be used to determine the information returned, and how that returned information is formatted:
+     * 
+     * - `json`. JSON-formatted list of information about the Attack Payload Logging settings.
+     * - `output_text`. Tabular report showing the Attack Payload Logging settings.
+     * 
+     */
+    public static CompletableFuture<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> getAppsecAdvancedSettingsAttackPayloadLoggingPlain(GetAppsecAdvancedSettingsAttackPayloadLoggingPlainArgs args) {
+        return getAppsecAdvancedSettingsAttackPayloadLoggingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * **Scopes**: Security configuration; security policy
+     * 
+     * Returns information about your Attack Payload Logging controls. By default, information is returned for all the security policies in the configuration.
+     * However, you can return data for a single policy by using the `security_policy_id` parameter.
+     * 
+     * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
+     * 
+     * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
+     * import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsAttackPayloadLoggingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
+     *             .name(&#34;Documentation&#34;)
+     *             .build());
+     * 
+     *         final var attackPayloadLogging = AkamaiFunctions.getAppsecAdvancedSettingsAttackPayloadLogging(GetAppsecAdvancedSettingsAttackPayloadLoggingArgs.builder()
+     *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
+     *             .build());
+     * 
+     *         ctx.export(&#34;advancedSettingsAttackPayloadLoggingJson&#34;, attackPayloadLogging.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.json()));
+     *         ctx.export(&#34;advancedSettingsAttackPayloadLoggingOutput&#34;, attackPayloadLogging.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.outputText()));
+     *         final var policyOverride = AkamaiFunctions.getAppsecAdvancedSettingsAttackPayloadLogging(GetAppsecAdvancedSettingsAttackPayloadLoggingArgs.builder()
+     *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
+     *             .securityPolicyId(var_.security_policy_id())
+     *             .build());
+     * 
+     *         ctx.export(&#34;advancedSettingsPolicyAttackPayloadLoggingOutput&#34;, policyOverride.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.outputText()));
+     *         ctx.export(&#34;advancedSettingsPolicyAttackPayloadLoggingJson&#34;, policyOverride.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.json()));
+     *     }
+     * }
+     * ```
+     * ## Output Options
+     * 
+     * The following options can be used to determine the information returned, and how that returned information is formatted:
+     * 
+     * - `json`. JSON-formatted list of information about the Attack Payload Logging settings.
+     * - `output_text`. Tabular report showing the Attack Payload Logging settings.
+     * 
+     */
+    public static Output<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> getAppsecAdvancedSettingsAttackPayloadLogging(GetAppsecAdvancedSettingsAttackPayloadLoggingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", TypeShape.of(GetAppsecAdvancedSettingsAttackPayloadLoggingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * **Scopes**: Security configuration; security policy
+     * 
+     * Returns information about your Attack Payload Logging controls. By default, information is returned for all the security policies in the configuration.
+     * However, you can return data for a single policy by using the `security_policy_id` parameter.
+     * 
+     * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
+     * 
+     * ## Example Usage
+     * 
+     * Basic usage:
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.akamai.AkamaiFunctions;
+     * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
+     * import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsAttackPayloadLoggingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
+     *             .name(&#34;Documentation&#34;)
+     *             .build());
+     * 
+     *         final var attackPayloadLogging = AkamaiFunctions.getAppsecAdvancedSettingsAttackPayloadLogging(GetAppsecAdvancedSettingsAttackPayloadLoggingArgs.builder()
+     *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
+     *             .build());
+     * 
+     *         ctx.export(&#34;advancedSettingsAttackPayloadLoggingJson&#34;, attackPayloadLogging.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.json()));
+     *         ctx.export(&#34;advancedSettingsAttackPayloadLoggingOutput&#34;, attackPayloadLogging.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.outputText()));
+     *         final var policyOverride = AkamaiFunctions.getAppsecAdvancedSettingsAttackPayloadLogging(GetAppsecAdvancedSettingsAttackPayloadLoggingArgs.builder()
+     *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
+     *             .securityPolicyId(var_.security_policy_id())
+     *             .build());
+     * 
+     *         ctx.export(&#34;advancedSettingsPolicyAttackPayloadLoggingOutput&#34;, policyOverride.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.outputText()));
+     *         ctx.export(&#34;advancedSettingsPolicyAttackPayloadLoggingJson&#34;, policyOverride.applyValue(getAppsecAdvancedSettingsAttackPayloadLoggingResult -&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.json()));
+     *     }
+     * }
+     * ```
+     * ## Output Options
+     * 
+     * The following options can be used to determine the information returned, and how that returned information is formatted:
+     * 
+     * - `json`. JSON-formatted list of information about the Attack Payload Logging settings.
+     * - `output_text`. Tabular report showing the Attack Payload Logging settings.
+     * 
+     */
+    public static CompletableFuture<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> getAppsecAdvancedSettingsAttackPayloadLoggingPlain(GetAppsecAdvancedSettingsAttackPayloadLoggingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", TypeShape.of(GetAppsecAdvancedSettingsAttackPayloadLoggingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * Use the `akamai.getAuthoritiesSet` data source to retrieve a contract&#39;s authorities set. You use the authorities set when creating new zones.
      * 
      * ## Example Usage
@@ -11120,9 +11379,9 @@ public final class AkamaiFunctions {
      *     * `disallowed_tls_versions` - The TLS protocol version that is not trusted. CPS uses the TLS protocols that Akamai currently supports as a best practice.
      *     * `clone_dns_names` - If present, CPS directs traffic using all the SANs listed in the SANs parameter when the enrollment was created.
      *     * `geography` - A list of where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia.
-     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `ocsp_stapling` - If present, its using OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response.
-     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-default` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-2020q1` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `quic_enabled` - If present, uses the QUIC transport layer network protocol.
      *   * `signature_algorithm` - If present, shows the Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
      *   * `tech_contact` - The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
@@ -11210,9 +11469,9 @@ public final class AkamaiFunctions {
      *     * `disallowed_tls_versions` - The TLS protocol version that is not trusted. CPS uses the TLS protocols that Akamai currently supports as a best practice.
      *     * `clone_dns_names` - If present, CPS directs traffic using all the SANs listed in the SANs parameter when the enrollment was created.
      *     * `geography` - A list of where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia.
-     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `ocsp_stapling` - If present, its using OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response.
-     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-default` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-2020q1` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `quic_enabled` - If present, uses the QUIC transport layer network protocol.
      *   * `signature_algorithm` - If present, shows the Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
      *   * `tech_contact` - The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
@@ -11300,9 +11559,9 @@ public final class AkamaiFunctions {
      *     * `disallowed_tls_versions` - The TLS protocol version that is not trusted. CPS uses the TLS protocols that Akamai currently supports as a best practice.
      *     * `clone_dns_names` - If present, CPS directs traffic using all the SANs listed in the SANs parameter when the enrollment was created.
      *     * `geography` - A list of where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia.
-     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `ocsp_stapling` - If present, its using OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response.
-     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-default` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-2020q1` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `quic_enabled` - If present, uses the QUIC transport layer network protocol.
      *   * `signature_algorithm` - If present, shows the Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
      *   * `tech_contact` - The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
@@ -11390,9 +11649,9 @@ public final class AkamaiFunctions {
      *     * `disallowed_tls_versions` - The TLS protocol version that is not trusted. CPS uses the TLS protocols that Akamai currently supports as a best practice.
      *     * `clone_dns_names` - If present, CPS directs traffic using all the SANs listed in the SANs parameter when the enrollment was created.
      *     * `geography` - A list of where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia.
-     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `ocsp_stapling` - If present, its using OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response.
-     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-default` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-2020q1` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `quic_enabled` - If present, uses the QUIC transport layer network protocol.
      *   * `signature_algorithm` - If present, shows the Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
      *   * `tech_contact` - The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
@@ -11482,9 +11741,9 @@ public final class AkamaiFunctions {
      *     * `disallowed_tls_versions` - The TLS protocol version that is not trusted. CPS uses the TLS protocols that Akamai currently supports as a best practice.
      *     * `clone_dns_names` - If present, CPS directs traffic using all the SANs listed in the SANs parameter when the enrollment was created.
      *     * `geography` - A list of where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia.
-     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `ocsp_stapling` - If present, the enrollment is using OCSP stapling. OCSP stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. Possible values are `on`, `off`, or `not-set`.
-     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-default` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-2020q1` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `quic_enabled` - If present, uses the QUIC transport layer network protocol.
      *   * `signature_algorithm` - If present, shows the Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
      *   * `tech_contact` - The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
@@ -11570,9 +11829,9 @@ public final class AkamaiFunctions {
      *     * `disallowed_tls_versions` - The TLS protocol version that is not trusted. CPS uses the TLS protocols that Akamai currently supports as a best practice.
      *     * `clone_dns_names` - If present, CPS directs traffic using all the SANs listed in the SANs parameter when the enrollment was created.
      *     * `geography` - A list of where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia.
-     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `ocsp_stapling` - If present, the enrollment is using OCSP stapling. OCSP stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. Possible values are `on`, `off`, or `not-set`.
-     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-default` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-2020q1` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `quic_enabled` - If present, uses the QUIC transport layer network protocol.
      *   * `signature_algorithm` - If present, shows the Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
      *   * `tech_contact` - The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
@@ -11658,9 +11917,9 @@ public final class AkamaiFunctions {
      *     * `disallowed_tls_versions` - The TLS protocol version that is not trusted. CPS uses the TLS protocols that Akamai currently supports as a best practice.
      *     * `clone_dns_names` - If present, CPS directs traffic using all the SANs listed in the SANs parameter when the enrollment was created.
      *     * `geography` - A list of where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia.
-     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `ocsp_stapling` - If present, the enrollment is using OCSP stapling. OCSP stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. Possible values are `on`, `off`, or `not-set`.
-     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-default` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-2020q1` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `quic_enabled` - If present, uses the QUIC transport layer network protocol.
      *   * `signature_algorithm` - If present, shows the Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
      *   * `tech_contact` - The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
@@ -11746,9 +12005,9 @@ public final class AkamaiFunctions {
      *     * `disallowed_tls_versions` - The TLS protocol version that is not trusted. CPS uses the TLS protocols that Akamai currently supports as a best practice.
      *     * `clone_dns_names` - If present, CPS directs traffic using all the SANs listed in the SANs parameter when the enrollment was created.
      *     * `geography` - A list of where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia.
-     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `must_have_ciphers` - If present, shows ciphers included for enrollment when deployed on the network. The default is `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `ocsp_stapling` - If present, the enrollment is using OCSP stapling. OCSP stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. Possible values are `on`, `off`, or `not-set`.
-     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-default` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     *     * `preferred_ciphers` - If present, shows the ciphers that you prefer to include for the enrollment while deploying it on the network. The default is `ak-akamai-2020q1` when its not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      *     * `quic_enabled` - If present, uses the QUIC transport layer network protocol.
      *   * `signature_algorithm` - If present, shows the Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
      *   * `tech_contact` - The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.

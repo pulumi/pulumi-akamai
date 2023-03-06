@@ -8,25 +8,7 @@ import * as utilities from "./utilities";
 
 /**
  * Use the `akamai.PropertyIncludeActivation` resource to activate your include and make available to a property.
- *
- * ## Basic usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const myExample = new akamai.PropertyIncludeActivation("myExample", {
- *     contractId: "C-0N7RAC7",
- *     groupId: "X112233",
- *     includeId: "inc_X12345",
- *     network: "STAGING",
- *     notifyEmails: [
- *         "example@example.com",
- *         "example2@example.com",
- *     ],
- *     version: 1,
- * });
- * ```
+ * You can also modify the activation time out with the `AKAMAI_ACTIVATION_TIMEOUT` environment variable, providing time in minutes. The default time out is 30 minutes.
  *
  * ## Attributes reference
  *

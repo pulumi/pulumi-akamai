@@ -1370,11 +1370,11 @@ type CpsDvEnrollmentNetworkConfiguration struct {
 	DisallowedTlsVersions []string `pulumi:"disallowedTlsVersions"`
 	// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
 	Geography string `pulumi:"geography"`
-	// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 	MustHaveCiphers *string `pulumi:"mustHaveCiphers"`
 	// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
 	OcspStapling *string `pulumi:"ocspStapling"`
-	// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 	PreferredCiphers *string `pulumi:"preferredCiphers"`
 	// Whether to use the QUIC transport layer network protocol.
 	QuicEnabled *bool `pulumi:"quicEnabled"`
@@ -1400,11 +1400,11 @@ type CpsDvEnrollmentNetworkConfigurationArgs struct {
 	DisallowedTlsVersions pulumi.StringArrayInput `pulumi:"disallowedTlsVersions"`
 	// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
 	Geography pulumi.StringInput `pulumi:"geography"`
-	// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 	MustHaveCiphers pulumi.StringPtrInput `pulumi:"mustHaveCiphers"`
 	// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
 	OcspStapling pulumi.StringPtrInput `pulumi:"ocspStapling"`
-	// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 	PreferredCiphers pulumi.StringPtrInput `pulumi:"preferredCiphers"`
 	// Whether to use the QUIC transport layer network protocol.
 	QuicEnabled pulumi.BoolPtrInput `pulumi:"quicEnabled"`
@@ -1509,7 +1509,7 @@ func (o CpsDvEnrollmentNetworkConfigurationOutput) Geography() pulumi.StringOutp
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) string { return v.Geography }).(pulumi.StringOutput)
 }
 
-// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 func (o CpsDvEnrollmentNetworkConfigurationOutput) MustHaveCiphers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *string { return v.MustHaveCiphers }).(pulumi.StringPtrOutput)
 }
@@ -1519,7 +1519,7 @@ func (o CpsDvEnrollmentNetworkConfigurationOutput) OcspStapling() pulumi.StringP
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *string { return v.OcspStapling }).(pulumi.StringPtrOutput)
 }
 
-// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 func (o CpsDvEnrollmentNetworkConfigurationOutput) PreferredCiphers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsDvEnrollmentNetworkConfiguration) *string { return v.PreferredCiphers }).(pulumi.StringPtrOutput)
 }
@@ -1593,7 +1593,7 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) Geography() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) MustHaveCiphers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *string {
 		if v == nil {
@@ -1613,7 +1613,7 @@ func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) OcspStapling() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 func (o CpsDvEnrollmentNetworkConfigurationPtrOutput) PreferredCiphers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollmentNetworkConfiguration) *string {
 		if v == nil {
@@ -3009,11 +3009,11 @@ type CpsThirdPartyEnrollmentNetworkConfiguration struct {
 	DisallowedTlsVersions []string `pulumi:"disallowedTlsVersions"`
 	// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
 	Geography string `pulumi:"geography"`
-	// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 	MustHaveCiphers *string `pulumi:"mustHaveCiphers"`
 	// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
 	OcspStapling *string `pulumi:"ocspStapling"`
-	// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 	PreferredCiphers *string `pulumi:"preferredCiphers"`
 	// Whether to use the QUIC transport layer network protocol.
 	QuicEnabled *bool `pulumi:"quicEnabled"`
@@ -3039,11 +3039,11 @@ type CpsThirdPartyEnrollmentNetworkConfigurationArgs struct {
 	DisallowedTlsVersions pulumi.StringArrayInput `pulumi:"disallowedTlsVersions"`
 	// Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
 	Geography pulumi.StringInput `pulumi:"geography"`
-	// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 	MustHaveCiphers pulumi.StringPtrInput `pulumi:"mustHaveCiphers"`
 	// Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
 	OcspStapling pulumi.StringPtrInput `pulumi:"ocspStapling"`
-	// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+	// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 	PreferredCiphers pulumi.StringPtrInput `pulumi:"preferredCiphers"`
 	// Whether to use the QUIC transport layer network protocol.
 	QuicEnabled pulumi.BoolPtrInput `pulumi:"quicEnabled"`
@@ -3148,7 +3148,7 @@ func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) Geography() pulumi.St
 	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) string { return v.Geography }).(pulumi.StringOutput)
 }
 
-// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) MustHaveCiphers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) *string { return v.MustHaveCiphers }).(pulumi.StringPtrOutput)
 }
@@ -3158,7 +3158,7 @@ func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) OcspStapling() pulumi
 	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) *string { return v.OcspStapling }).(pulumi.StringPtrOutput)
 }
 
-// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 func (o CpsThirdPartyEnrollmentNetworkConfigurationOutput) PreferredCiphers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CpsThirdPartyEnrollmentNetworkConfiguration) *string { return v.PreferredCiphers }).(pulumi.StringPtrOutput)
 }
@@ -3232,7 +3232,7 @@ func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) Geography() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+// The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) MustHaveCiphers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) *string {
 		if v == nil {
@@ -3252,7 +3252,7 @@ func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) OcspStapling() pul
 	}).(pulumi.StringPtrOutput)
 }
 
-// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+// Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
 func (o CpsThirdPartyEnrollmentNetworkConfigurationPtrOutput) PreferredCiphers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsThirdPartyEnrollmentNetworkConfiguration) *string {
 		if v == nil {

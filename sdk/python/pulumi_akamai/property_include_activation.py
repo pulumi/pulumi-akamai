@@ -344,24 +344,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
                  __props__=None):
         """
         Use the `PropertyIncludeActivation` resource to activate your include and make available to a property.
-
-        ## Basic usage
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        my_example = akamai.PropertyIncludeActivation("myExample",
-            contract_id="C-0N7RAC7",
-            group_id="X112233",
-            include_id="inc_X12345",
-            network="STAGING",
-            notify_emails=[
-                "example@example.com",
-                "example2@example.com",
-            ],
-            version=1)
-        ```
+        You can also modify the activation time out with the `AKAMAI_ACTIVATION_TIMEOUT` environment variable, providing time in minutes. The default time out is 30 minutes.
 
         ## Attributes reference
 
@@ -389,24 +372,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Use the `PropertyIncludeActivation` resource to activate your include and make available to a property.
-
-        ## Basic usage
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        my_example = akamai.PropertyIncludeActivation("myExample",
-            contract_id="C-0N7RAC7",
-            group_id="X112233",
-            include_id="inc_X12345",
-            network="STAGING",
-            notify_emails=[
-                "example@example.com",
-                "example2@example.com",
-            ],
-            version=1)
-        ```
+        You can also modify the activation time out with the `AKAMAI_ACTIVATION_TIMEOUT` environment variable, providing time in minutes. The default time out is 30 minutes.
 
         ## Attributes reference
 

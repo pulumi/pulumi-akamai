@@ -648,8 +648,8 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
                 clone_dns_names=False,
                 geography="core",
                 ocsp_stapling="on",
-                preferred_ciphers="ak-akamai-default",
-                must_have_ciphers="ak-akamai-default",
+                preferred_ciphers="ak-akamai-2020q1",
+                must_have_ciphers="ak-akamai-2020q1",
                 quic_enabled=False,
             ),
             organization=akamai.CpsThirdPartyEnrollmentOrganizationArgs(
@@ -766,8 +766,8 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
                 clone_dns_names=False,
                 geography="core",
                 ocsp_stapling="on",
-                preferred_ciphers="ak-akamai-default",
-                must_have_ciphers="ak-akamai-default",
+                preferred_ciphers="ak-akamai-2020q1",
+                must_have_ciphers="ak-akamai-2020q1",
                 quic_enabled=False,
             ),
             organization=akamai.CpsThirdPartyEnrollmentOrganizationArgs(
