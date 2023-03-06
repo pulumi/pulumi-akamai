@@ -22,8 +22,6 @@ import (
 //
 // import (
 //
-//	"fmt"
-//
 //	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
@@ -35,39 +33,7 @@ import (
 //				CloudletCode: pulumi.String("ER"),
 //				Description:  pulumi.String("policy description"),
 //				GroupId:      pulumi.String("grp_123"),
-//				MatchRules: pulumi.String(fmt.Sprintf(`  [
-//	  {
-//	    "name": "rule1",
-//	    "type": "erMatchRule",
-//	    "useRelativeUrl": "none",
-//	    "statusCode": 301,
-//	    "redirectURL": "https://www.example.com",
-//	    "matchURL": "example.com",
-//	    "useIncomingQueryString": false,
-//	    "useIncomingSchemeAndHost": false
-//	  },
-//	  {
-//	    "name": "rule2",
-//	    "type": "erMatchRule",
-//	    "matches": [
-//	      {
-//	        "matchType": "path",
-//	        "matchValue": "/example/website.html",
-//	        "matchOperator": "equals",
-//	        "caseSensitive": false,
-//	        "negate": false
-//	      }
-//	    ],
-//	    "useRelativeUrl": "copy_scheme_hostname",
-//	    "statusCode": 301,
-//	    "redirectURL": "/website.html",
-//	    "useIncomingQueryString": false,
-//	    "useIncomingSchemeAndHost": true
-//	  }
-//
-// ]
-// `)),
-//
+//				MatchRules:   pulumi.String("  [\n  {\n    \"name\": \"rule1\",\n    \"type\": \"erMatchRule\",\n    \"useRelativeUrl\": \"none\",\n    \"statusCode\": 301,\n    \"redirectURL\": \"https://www.example.com\",\n    \"matchURL\": \"example.com\",\n    \"useIncomingQueryString\": false,\n    \"useIncomingSchemeAndHost\": false\n  },\n  {\n    \"name\": \"rule2\",\n    \"type\": \"erMatchRule\",\n    \"matches\": [\n      {\n        \"matchType\": \"path\",\n        \"matchValue\": \"/example/website.html\",\n        \"matchOperator\": \"equals\",\n        \"caseSensitive\": false,\n        \"negate\": false\n      }\n    ],\n    \"useRelativeUrl\": \"copy_scheme_hostname\",\n    \"statusCode\": 301,\n    \"redirectURL\": \"/website.html\",\n    \"useIncomingQueryString\": false,\n    \"useIncomingSchemeAndHost\": true\n  }\n]\n"),
 //			})
 //			if err != nil {
 //				return err
