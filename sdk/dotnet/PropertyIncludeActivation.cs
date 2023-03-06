@@ -11,32 +11,7 @@ namespace Pulumi.Akamai
 {
     /// <summary>
     /// Use the `akamai.PropertyIncludeActivation` resource to activate your include and make available to a property.
-    /// 
-    /// ## Basic usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var myExample = new Akamai.PropertyIncludeActivation("myExample", new()
-    ///     {
-    ///         ContractId = "C-0N7RAC7",
-    ///         GroupId = "X112233",
-    ///         IncludeId = "inc_X12345",
-    ///         Network = "STAGING",
-    ///         NotifyEmails = new[]
-    ///         {
-    ///             "example@example.com",
-    ///             "example2@example.com",
-    ///         },
-    ///         Version = 1,
-    ///     });
-    /// 
-    /// });
-    /// ```
+    /// You can also modify the activation time out with the `AKAMAI_ACTIVATION_TIMEOUT` environment variable, providing time in minutes. The default time out is 30 minutes.
     /// 
     /// ## Attributes reference
     /// 

@@ -906,9 +906,9 @@ class CpsDvEnrollmentNetworkConfiguration(dict):
         :param 'CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationArgs' client_mutual_authentication: The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
         :param bool clone_dns_names: Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
         :param Sequence[str] disallowed_tls_versions: The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
-        :param str must_have_ciphers: The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        :param str must_have_ciphers: The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
         :param str ocsp_stapling: Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
-        :param str preferred_ciphers: Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        :param str preferred_ciphers: Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
         :param bool quic_enabled: Whether to use the QUIC transport layer network protocol.
         """
         pulumi.set(__self__, "geography", geography)
@@ -963,7 +963,7 @@ class CpsDvEnrollmentNetworkConfiguration(dict):
     @pulumi.getter(name="mustHaveCiphers")
     def must_have_ciphers(self) -> Optional[str]:
         """
-        The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
         """
         return pulumi.get(self, "must_have_ciphers")
 
@@ -979,7 +979,7 @@ class CpsDvEnrollmentNetworkConfiguration(dict):
     @pulumi.getter(name="preferredCiphers")
     def preferred_ciphers(self) -> Optional[str]:
         """
-        Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
         """
         return pulumi.get(self, "preferred_ciphers")
 
@@ -1647,9 +1647,9 @@ class CpsThirdPartyEnrollmentNetworkConfiguration(dict):
         :param 'CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs' client_mutual_authentication: The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
         :param bool clone_dns_names: Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
         :param Sequence[str] disallowed_tls_versions: The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
-        :param str must_have_ciphers: The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        :param str must_have_ciphers: The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
         :param str ocsp_stapling: Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
-        :param str preferred_ciphers: Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        :param str preferred_ciphers: Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
         :param bool quic_enabled: Whether to use the QUIC transport layer network protocol.
         """
         pulumi.set(__self__, "geography", geography)
@@ -1704,7 +1704,7 @@ class CpsThirdPartyEnrollmentNetworkConfiguration(dict):
     @pulumi.getter(name="mustHaveCiphers")
     def must_have_ciphers(self) -> Optional[str]:
         """
-        The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
         """
         return pulumi.get(self, "must_have_ciphers")
 
@@ -1720,7 +1720,7 @@ class CpsThirdPartyEnrollmentNetworkConfiguration(dict):
     @pulumi.getter(name="preferredCiphers")
     def preferred_ciphers(self) -> Optional[str]:
         """
-        Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+        Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
         """
         return pulumi.get(self, "preferred_ciphers")
 

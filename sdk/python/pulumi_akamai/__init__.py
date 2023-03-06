@@ -52,6 +52,7 @@ from .app_sec_version_nodes import *
 from .app_sec_waf_mode import *
 from .app_sec_waf_protection import *
 from .app_sec_wap_selected_hostnames import *
+from .appsec_advanced_settings_attack_payload_logging import *
 from .cloudlets_application_load_balancer import *
 from .cloudlets_application_load_balancer_activation import *
 from .cloudlets_policy import *
@@ -116,6 +117,7 @@ from .get_app_sec_tuning_recommendations import *
 from .get_app_sec_version_notes import *
 from .get_app_sec_waf_mode import *
 from .get_app_sec_wap_selected_hostnames import *
+from .get_appsec_advanced_settings_attack_payload_logging import *
 from .get_authorities_set import *
 from .get_cloudlets_api_prioritization_match_rule import *
 from .get_cloudlets_application_load_balancer import *
@@ -600,6 +602,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames": "AppSecWapSelectedHostnames"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appsecAdvancedSettingsAttackPayloadLogging",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging": "AppsecAdvancedSettingsAttackPayloadLogging"
   }
  },
  {

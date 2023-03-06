@@ -20,43 +20,7 @@ import javax.annotation.Nullable;
 
 /**
  * Use the `akamai.PropertyIncludeActivation` resource to activate your include and make available to a property.
- * 
- * ## Basic usage
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.PropertyIncludeActivation;
- * import com.pulumi.akamai.PropertyIncludeActivationArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var myExample = new PropertyIncludeActivation(&#34;myExample&#34;, PropertyIncludeActivationArgs.builder()        
- *             .contractId(&#34;C-0N7RAC7&#34;)
- *             .groupId(&#34;X112233&#34;)
- *             .includeId(&#34;inc_X12345&#34;)
- *             .network(&#34;STAGING&#34;)
- *             .notifyEmails(            
- *                 &#34;example@example.com&#34;,
- *                 &#34;example2@example.com&#34;)
- *             .version(1)
- *             .build());
- * 
- *     }
- * }
- * ```
+ * You can also modify the activation time out with the `AKAMAI_ACTIVATION_TIMEOUT` environment variable, providing time in minutes. The default time out is 30 minutes.
  * 
  * ## Attributes reference
  * 

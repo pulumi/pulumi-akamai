@@ -79,8 +79,8 @@ import (
 //					CloneDnsNames:    pulumi.Bool(false),
 //					Geography:        pulumi.String("core"),
 //					OcspStapling:     pulumi.String("on"),
-//					PreferredCiphers: pulumi.String("ak-akamai-default"),
-//					MustHaveCiphers:  pulumi.String("ak-akamai-default"),
+//					PreferredCiphers: pulumi.String("ak-akamai-2020q1"),
+//					MustHaveCiphers:  pulumi.String("ak-akamai-2020q1"),
 //					QuicEnabled:      pulumi.Bool(false),
 //				},
 //				Organization: &akamai.CpsThirdPartyEnrollmentOrganizationArgs{

@@ -12,40 +12,7 @@ import (
 )
 
 // Use the `PropertyIncludeActivation` resource to activate your include and make available to a property.
-//
-// ## Basic usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewPropertyIncludeActivation(ctx, "myExample", &akamai.PropertyIncludeActivationArgs{
-//				ContractId: pulumi.String("C-0N7RAC7"),
-//				GroupId:    pulumi.String("X112233"),
-//				IncludeId:  pulumi.String("inc_X12345"),
-//				Network:    pulumi.String("STAGING"),
-//				NotifyEmails: pulumi.StringArray{
-//					pulumi.String("example@example.com"),
-//					pulumi.String("example2@example.com"),
-//				},
-//				Version: pulumi.Int(1),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
+// You can also modify the activation time out with the `AKAMAI_ACTIVATION_TIMEOUT` environment variable, providing time in minutes. The default time out is 30 minutes.
 //
 // ## Attributes reference
 //

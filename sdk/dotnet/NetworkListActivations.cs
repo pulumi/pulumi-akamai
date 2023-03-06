@@ -12,40 +12,6 @@ namespace Pulumi.Akamai
     /// <summary>
     /// Use the `akamai.NetworkListActivations` resource to activate a network list in either the STAGING or PRODUCTION
     /// environment.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var networkListIp = new Akamai.NetworkList("networkListIp", new()
-    ///     {
-    ///         Type = "IP",
-    ///         Description = "IP network list",
-    ///         Lists = @var.Ip_list,
-    ///         Mode = "REPLACE",
-    ///     });
-    /// 
-    ///     var activation = new Akamai.NetworkListActivations("activation", new()
-    ///     {
-    ///         NetworkListId = resource.Akamai_networklist_network_list.Network_list_ip.Network_list_id,
-    ///         Network = "STAGING",
-    ///         SyncPoint = resource.Akamai_networklist_network_list.Network_list_ip.Sync_point,
-    ///         Notes = "TEST Notes",
-    ///         NotificationEmails = new[]
-    ///         {
-    ///             "user@example.com",
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [AkamaiResourceType("akamai:index/networkListActivations:NetworkListActivations")]
     public partial class NetworkListActivations : global::Pulumi.CustomResource

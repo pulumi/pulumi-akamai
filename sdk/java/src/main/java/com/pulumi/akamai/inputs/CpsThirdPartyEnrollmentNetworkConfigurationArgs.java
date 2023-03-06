@@ -79,14 +79,14 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
     }
 
     /**
-     * The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     * The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      * 
      */
     @Import(name="mustHaveCiphers")
     private @Nullable Output<String> mustHaveCiphers;
 
     /**
-     * @return The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     * @return The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      * 
      */
     public Optional<Output<String>> mustHaveCiphers() {
@@ -109,14 +109,14 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
     }
 
     /**
-     * Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     * Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      * 
      */
     @Import(name="preferredCiphers")
     private @Nullable Output<String> preferredCiphers;
 
     /**
-     * @return Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+     * @return Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
      * 
      */
     public Optional<Output<String>> preferredCiphers() {
@@ -264,7 +264,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param mustHaveCiphers The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+         * @param mustHaveCiphers The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param mustHaveCiphers The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+         * @param mustHaveCiphers The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param preferredCiphers Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+         * @param preferredCiphers Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
         }
 
         /**
-         * @param preferredCiphers Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-default` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
+         * @param preferredCiphers Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
          * 
          * @return builder
          * 

@@ -260,27 +260,6 @@ class NetworkListActivations(pulumi.CustomResource):
         Use the `NetworkListActivations` resource to activate a network list in either the STAGING or PRODUCTION
         environment.
 
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        network_list_ip = akamai.NetworkList("networkListIp",
-            type="IP",
-            description="IP network list",
-            lists=var["ip_list"],
-            mode="REPLACE")
-        activation = akamai.NetworkListActivations("activation",
-            network_list_id=resource["akamai_networklist_network_list"]["network_list_ip"]["network_list_id"],
-            network="STAGING",
-            sync_point=resource["akamai_networklist_network_list"]["network_list_ip"]["sync_point"],
-            notes="TEST Notes",
-            notification_emails=["user@example.com"])
-        ```
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] network: The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
@@ -301,27 +280,6 @@ class NetworkListActivations(pulumi.CustomResource):
         """
         Use the `NetworkListActivations` resource to activate a network list in either the STAGING or PRODUCTION
         environment.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        network_list_ip = akamai.NetworkList("networkListIp",
-            type="IP",
-            description="IP network list",
-            lists=var["ip_list"],
-            mode="REPLACE")
-        activation = akamai.NetworkListActivations("activation",
-            network_list_id=resource["akamai_networklist_network_list"]["network_list_ip"]["network_list_id"],
-            network="STAGING",
-            sync_point=resource["akamai_networklist_network_list"]["network_list_ip"]["sync_point"],
-            notes="TEST Notes",
-            notification_emails=["user@example.com"])
-        ```
 
         :param str resource_name: The name of the resource.
         :param NetworkListActivationsArgs args: The arguments to use to populate this resource's properties.
