@@ -15,47 +15,23 @@ public final class GetPropertyRulesTemplateVariableArgs extends com.pulumi.resou
 
     public static final GetPropertyRulesTemplateVariableArgs Empty = new GetPropertyRulesTemplateVariableArgs();
 
-    /**
-     * The name of the variable used in the template.
-     * 
-     */
     @Import(name="name", required=true)
     private Output<String> name;
 
-    /**
-     * @return The name of the variable used in the template.
-     * 
-     */
     public Output<String> name() {
         return this.name;
     }
 
-    /**
-     * The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-     * 
-     */
     @Import(name="type")
     private @Nullable Output<String> type;
 
-    /**
-     * @return The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-     * 
-     */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
     }
 
-    /**
-     * The value of the variable passed as a string.
-     * 
-     */
     @Import(name="value", required=true)
     private Output<String> value;
 
-    /**
-     * @return The value of the variable passed as a string.
-     * 
-     */
     public Output<String> value() {
         return this.value;
     }
@@ -86,65 +62,29 @@ public final class GetPropertyRulesTemplateVariableArgs extends com.pulumi.resou
             $ = new GetPropertyRulesTemplateVariableArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param name The name of the variable used in the template.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param name The name of the variable used in the template.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
-        /**
-         * @param type The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
             return this;
         }
 
-        /**
-         * @param type The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(String type) {
             return type(Output.of(type));
         }
 
-        /**
-         * @param value The value of the variable passed as a string.
-         * 
-         * @return builder
-         * 
-         */
         public Builder value(Output<String> value) {
             $.value = value;
             return this;
         }
 
-        /**
-         * @param value The value of the variable passed as a string.
-         * 
-         * @return builder
-         * 
-         */
         public Builder value(String value) {
             return value(Output.of(value));
         }

@@ -4,35 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.PropertyInclude` data source to get details about a specific include.
- *
- * ## Basic usage
- *
- * This example returns details for an include based on contract, group, and include IDs.
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const myExamplePropertyInclude = akamai.getPropertyInclude({
- *     contractId: "ctr_1234",
- *     groupId: "grp_5678",
- *     includeId: "inc_9012",
- * });
- * export const myExample = myExamplePropertyInclude;
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `name` - The descriptive name for the include.
- * * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
- * * `latestVersion` - Returns the most recent version of the include.
- * * `stagingVersion` - The include version currently activated on the staging network.
- * * `productionVersion` - The include version currently activated on the production network.
- */
 export function getPropertyInclude(args: GetPropertyIncludeArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyIncludeResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -47,17 +18,8 @@ export function getPropertyInclude(args: GetPropertyIncludeArgs, opts?: pulumi.I
  * A collection of arguments for invoking getPropertyInclude.
  */
 export interface GetPropertyIncludeArgs {
-    /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
-     */
     contractId: string;
-    /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
-     */
     groupId: string;
-    /**
-     * (Required) An include's unique ID with the optional `inc_` prefix.
-     */
     includeId: string;
 }
 
@@ -78,35 +40,6 @@ export interface GetPropertyIncludeResult {
     readonly stagingVersion: number;
     readonly type: string;
 }
-/**
- * Use the `akamai.PropertyInclude` data source to get details about a specific include.
- *
- * ## Basic usage
- *
- * This example returns details for an include based on contract, group, and include IDs.
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const myExamplePropertyInclude = akamai.getPropertyInclude({
- *     contractId: "ctr_1234",
- *     groupId: "grp_5678",
- *     includeId: "inc_9012",
- * });
- * export const myExample = myExamplePropertyInclude;
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `name` - The descriptive name for the include.
- * * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
- * * `latestVersion` - Returns the most recent version of the include.
- * * `stagingVersion` - The include version currently activated on the staging network.
- * * `productionVersion` - The include version currently activated on the production network.
- */
 export function getPropertyIncludeOutput(args: GetPropertyIncludeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyIncludeResult> {
     return pulumi.output(args).apply((a: any) => getPropertyInclude(a, opts))
 }
@@ -115,16 +48,7 @@ export function getPropertyIncludeOutput(args: GetPropertyIncludeOutputArgs, opt
  * A collection of arguments for invoking getPropertyInclude.
  */
 export interface GetPropertyIncludeOutputArgs {
-    /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
-     */
     contractId: pulumi.Input<string>;
-    /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
-     */
     groupId: pulumi.Input<string>;
-    /**
-     * (Required) An include's unique ID with the optional `inc_` prefix.
-     */
     includeId: pulumi.Input<string>;
 }

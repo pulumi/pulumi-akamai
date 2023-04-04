@@ -21,315 +21,199 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.CpsThirdPartyEnrollment;
- * import com.pulumi.akamai.CpsThirdPartyEnrollmentArgs;
- * import com.pulumi.akamai.inputs.CpsThirdPartyEnrollmentAdminContactArgs;
- * import com.pulumi.akamai.inputs.CpsThirdPartyEnrollmentTechContactArgs;
- * import com.pulumi.akamai.inputs.CpsThirdPartyEnrollmentCsrArgs;
- * import com.pulumi.akamai.inputs.CpsThirdPartyEnrollmentNetworkConfigurationArgs;
- * import com.pulumi.akamai.inputs.CpsThirdPartyEnrollmentOrganizationArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var enrollment = new CpsThirdPartyEnrollment(&#34;enrollment&#34;, CpsThirdPartyEnrollmentArgs.builder()        
- *             .contractId(&#34;C-0N7RAC7&#34;)
- *             .commonName(&#34;*.example.com&#34;)
- *             .secureNetwork(&#34;enhanced-tls&#34;)
- *             .sniOnly(true)
- *             .autoApproveWarnings(            
- *                 &#34;DNS_NAME_LONGER_THEN_255_CHARS&#34;,
- *                 &#34;CERTIFICATE_EXPIRATION_DATE_BEYOND_MAX_DAYS&#34;,
- *                 &#34;TRUST_CHAIN_EMPTY_AND_CERTIFICATE_SIGNED_BY_NON_STANDARD_ROOT&#34;)
- *             .signatureAlgorithm(&#34;SHA-256&#34;)
- *             .adminContact(CpsThirdPartyEnrollmentAdminContactArgs.builder()
- *                 .firstName(&#34;Mario&#34;)
- *                 .lastName(&#34;Rossi&#34;)
- *                 .phone(&#34;+1-311-555-2368&#34;)
- *                 .email(&#34;mrossi@example.com&#34;)
- *                 .addressLineOne(&#34;150 Broadway&#34;)
- *                 .city(&#34;Cambridge&#34;)
- *                 .countryCode(&#34;US&#34;)
- *                 .organization(&#34;Example Corp.&#34;)
- *                 .postalCode(&#34;02142&#34;)
- *                 .region(&#34;MA&#34;)
- *                 .title(&#34;Administrator&#34;)
- *                 .build())
- *             .techContact(CpsThirdPartyEnrollmentTechContactArgs.builder()
- *                 .firstName(&#34;Juan&#34;)
- *                 .lastName(&#34;Perez&#34;)
- *                 .phone(&#34;+1-311-555-2369&#34;)
- *                 .email(&#34;jperez@example.com&#34;)
- *                 .addressLineOne(&#34;150 Broadway&#34;)
- *                 .city(&#34;Cambridge&#34;)
- *                 .countryCode(&#34;US&#34;)
- *                 .organization(&#34;Example Corp.&#34;)
- *                 .postalCode(&#34;02142&#34;)
- *                 .region(&#34;MA&#34;)
- *                 .title(&#34;Administrator&#34;)
- *                 .build())
- *             .csr(CpsThirdPartyEnrollmentCsrArgs.builder()
- *                 .countryCode(&#34;US&#34;)
- *                 .city(&#34;Cambridge&#34;)
- *                 .organization(&#34;Example Corp.&#34;)
- *                 .organizationalUnit(&#34;Corp IT&#34;)
- *                 .state(&#34;MA&#34;)
- *                 .build())
- *             .networkConfiguration(CpsThirdPartyEnrollmentNetworkConfigurationArgs.builder()
- *                 .disallowedTlsVersions(                
- *                     &#34;TLSv1&#34;,
- *                     &#34;TLSv1_1&#34;)
- *                 .cloneDnsNames(false)
- *                 .geography(&#34;core&#34;)
- *                 .ocspStapling(&#34;on&#34;)
- *                 .preferredCiphers(&#34;ak-akamai-2020q1&#34;)
- *                 .mustHaveCiphers(&#34;ak-akamai-2020q1&#34;)
- *                 .quicEnabled(false)
- *                 .build())
- *             .organization(CpsThirdPartyEnrollmentOrganizationArgs.builder()
- *                 .name(&#34;Example Corp.&#34;)
- *                 .phone(&#34;+1-311-555-2370&#34;)
- *                 .addressLineOne(&#34;150 Broadway&#34;)
- *                 .city(&#34;Cambridge&#34;)
- *                 .countryCode(&#34;US&#34;)
- *                 .postalCode(&#34;02142&#34;)
- *                 .region(&#34;MA&#34;)
- *                 .build())
- *             .build());
- * 
- *         ctx.export(&#34;enrollmentId&#34;, enrollment.id());
- *     }
- * }
- * ```
- * ## Attributes reference
- * 
- * The resource returns this attribute:
- * 
- * * `id` - The unique identifier for this enrollment.
- * 
- * ## Import
- * 
- * Basic Usagehcl resource &#34;akamai_cps_third_party_enrollment&#34; &#34;example&#34; { (resource arguments) } You can import your Akamai third-party enrollment using a comma-delimited string of the enrollment ID and
- * 
- *  contract ID, optionally with the `ctr_` prefix. You have to enter the IDs in this order`enrollment_id,contract_id` For example
- * 
- * ```sh
- *  $ pulumi import akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment example 12345,1-AB123
- * ```
- * 
- */
 @ResourceType(type="akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment")
 public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource {
     /**
-     * Whether you want to automatically acknowledge the validation warnings related to the current job state and proceed with the change.
+     * Whether acknowledge warnings before certificate verification
      * 
      */
     @Export(name="acknowledgePreVerificationWarnings", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> acknowledgePreVerificationWarnings;
 
     /**
-     * @return Whether you want to automatically acknowledge the validation warnings related to the current job state and proceed with the change.
+     * @return Whether acknowledge warnings before certificate verification
      * 
      */
     public Output<Optional<Boolean>> acknowledgePreVerificationWarnings() {
         return Codegen.optional(this.acknowledgePreVerificationWarnings);
     }
     /**
-     * Contact information for the certificate administrator at your company.
+     * Contact information for the certificate administrator to use at organization
      * 
      */
     @Export(name="adminContact", type=CpsThirdPartyEnrollmentAdminContact.class, parameters={})
     private Output<CpsThirdPartyEnrollmentAdminContact> adminContact;
 
     /**
-     * @return Contact information for the certificate administrator at your company.
+     * @return Contact information for the certificate administrator to use at organization
      * 
      */
     public Output<CpsThirdPartyEnrollmentAdminContact> adminContact() {
         return this.adminContact;
     }
     /**
-     * (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * Allow to duplicate common name
      * 
      */
     @Export(name="allowDuplicateCommonName", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> allowDuplicateCommonName;
 
     /**
-     * @return (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * @return Allow to duplicate common name
      * 
      */
     public Output<Optional<Boolean>> allowDuplicateCommonName() {
         return Codegen.optional(this.allowDuplicateCommonName);
     }
     /**
-     * The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+     * List of warnings to be automatically approved
      * 
      */
     @Export(name="autoApproveWarnings", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> autoApproveWarnings;
 
     /**
-     * @return The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+     * @return List of warnings to be automatically approved
      * 
      */
     public Output<Optional<List<String>>> autoApproveWarnings() {
         return Codegen.optional(this.autoApproveWarnings);
     }
     /**
-     * Certificate trust chain type.
+     * Certificate trust chain type
      * 
      */
     @Export(name="certificateChainType", type=String.class, parameters={})
     private Output</* @Nullable */ String> certificateChainType;
 
     /**
-     * @return Certificate trust chain type.
+     * @return Certificate trust chain type
      * 
      */
     public Output<Optional<String>> certificateChainType() {
         return Codegen.optional(this.certificateChainType);
     }
     /**
-     * Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledge_change_management` argument in the `akamai.CpsUploadCertificate` resource. &lt;br&gt; If you don&#39;t use this option, CPS will automatically deploy the certificate to both networks.
+     * When set to false, the certificate will be deployed to both staging and production networks
      * 
      */
     @Export(name="changeManagement", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> changeManagement;
 
     /**
-     * @return Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledge_change_management` argument in the `akamai.CpsUploadCertificate` resource. &lt;br&gt; If you don&#39;t use this option, CPS will automatically deploy the certificate to both networks.
+     * @return When set to false, the certificate will be deployed to both staging and production networks
      * 
      */
     public Output<Optional<Boolean>> changeManagement() {
         return Codegen.optional(this.changeManagement);
     }
     /**
-     * (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+     * Common name used for enrollment
      * 
      */
     @Export(name="commonName", type=String.class, parameters={})
     private Output<String> commonName;
 
     /**
-     * @return (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+     * @return Common name used for enrollment
      * 
      */
     public Output<String> commonName() {
         return this.commonName;
     }
     /**
-     * (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
+     * Contract ID for which enrollment is retrieved
      * 
      */
     @Export(name="contractId", type=String.class, parameters={})
     private Output<String> contractId;
 
     /**
-     * @return (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
+     * @return Contract ID for which enrollment is retrieved
      * 
      */
     public Output<String> contractId() {
         return this.contractId;
     }
     /**
-     * When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+     * Data used for generation of Certificate Signing Request
      * 
      */
     @Export(name="csr", type=CpsThirdPartyEnrollmentCsr.class, parameters={})
     private Output<CpsThirdPartyEnrollmentCsr> csr;
 
     /**
-     * @return When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+     * @return Data used for generation of Certificate Signing Request
      * 
      */
     public Output<CpsThirdPartyEnrollmentCsr> csr() {
         return this.csr;
     }
     /**
-     * If set to `true`, then the SANs in the enrollment don&#39;t appear in the CSR that you send to your CA.
+     * When true, SANs are excluded from the CSR
      * 
      */
     @Export(name="excludeSans", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> excludeSans;
 
     /**
-     * @return If set to `true`, then the SANs in the enrollment don&#39;t appear in the CSR that you send to your CA.
+     * @return When true, SANs are excluded from the CSR
      * 
      */
     public Output<Optional<Boolean>> excludeSans() {
         return Codegen.optional(this.excludeSans);
     }
     /**
-     * The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+     * Settings containing network information and TLS metadata used by CPS
      * 
      */
     @Export(name="networkConfiguration", type=CpsThirdPartyEnrollmentNetworkConfiguration.class, parameters={})
     private Output<CpsThirdPartyEnrollmentNetworkConfiguration> networkConfiguration;
 
     /**
-     * @return The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+     * @return Settings containing network information and TLS metadata used by CPS
      * 
      */
     public Output<CpsThirdPartyEnrollmentNetworkConfiguration> networkConfiguration() {
         return this.networkConfiguration;
     }
     /**
-     * Your organization information.
+     * Organization information
      * 
      */
     @Export(name="organization", type=CpsThirdPartyEnrollmentOrganization.class, parameters={})
     private Output<CpsThirdPartyEnrollmentOrganization> organization;
 
     /**
-     * @return Your organization information.
+     * @return Organization information
      * 
      */
     public Output<CpsThirdPartyEnrollmentOrganization> organization() {
         return this.organization;
     }
     /**
-     * Additional common names to create a Subject Alternative Names (SAN) list.
+     * List of SANs
      * 
      */
     @Export(name="sans", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> sans;
 
     /**
-     * @return Additional common names to create a Subject Alternative Names (SAN) list.
+     * @return List of SANs
      * 
      */
     public Output<Optional<List<String>>> sans() {
         return Codegen.optional(this.sans);
     }
     /**
-     * The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai&#39;s standard secure network, but it isn&#39;t PCI compliant. `enhanced-tls` deploys your certificate to Akamai&#39;s more secure network with PCI compliance capability.
+     * Type of TLS deployment network
      * 
      */
     @Export(name="secureNetwork", type=String.class, parameters={})
     private Output<String> secureNetwork;
 
     /**
-     * @return The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai&#39;s standard secure network, but it isn&#39;t PCI compliant. `enhanced-tls` deploys your certificate to Akamai&#39;s more secure network with PCI compliance capability.
+     * @return Type of TLS deployment network
      * 
      */
     public Output<String> secureNetwork() {
@@ -350,28 +234,28 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
         return Codegen.optional(this.signatureAlgorithm);
     }
     /**
-     * Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can&#39;t change this setting once an enrollment is created.
+     * Whether Server Name Indication is used for enrollment
      * 
      */
     @Export(name="sniOnly", type=Boolean.class, parameters={})
     private Output<Boolean> sniOnly;
 
     /**
-     * @return Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can&#39;t change this setting once an enrollment is created.
+     * @return Whether Server Name Indication is used for enrollment
      * 
      */
     public Output<Boolean> sniOnly() {
         return this.sniOnly;
     }
     /**
-     * The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
+     * Contact information for an administrator at Akamai
      * 
      */
     @Export(name="techContact", type=CpsThirdPartyEnrollmentTechContact.class, parameters={})
     private Output<CpsThirdPartyEnrollmentTechContact> techContact;
 
     /**
-     * @return The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
+     * @return Contact information for an administrator at Akamai
      * 
      */
     public Output<CpsThirdPartyEnrollmentTechContact> techContact() {

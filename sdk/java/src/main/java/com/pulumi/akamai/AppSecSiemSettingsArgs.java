@@ -19,14 +19,14 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
     public static final AppSecSiemSettingsArgs Empty = new AppSecSiemSettingsArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the SIEM settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the SIEM settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -34,14 +34,14 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
+     * Whether Bot Manager events should be included in SIEM events
      * 
      */
     @Import(name="enableBotmanSiem", required=true)
     private Output<Boolean> enableBotmanSiem;
 
     /**
-     * @return . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
+     * @return Whether Bot Manager events should be included in SIEM events
      * 
      */
     public Output<Boolean> enableBotmanSiem() {
@@ -49,14 +49,14 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
+     * Whether to enable SIEM on all security policies in the security configuration
      * 
      */
     @Import(name="enableForAllPolicies", required=true)
     private Output<Boolean> enableForAllPolicies;
 
     /**
-     * @return . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
+     * @return Whether to enable SIEM on all security policies in the security configuration
      * 
      */
     public Output<Boolean> enableForAllPolicies() {
@@ -64,14 +64,14 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * . Set to **true** to enable SIEM; set to **false** to disable SIEM.
+     * Whether to enable SIEM
      * 
      */
     @Import(name="enableSiem", required=true)
     private Output<Boolean> enableSiem;
 
     /**
-     * @return . Set to **true** to enable SIEM; set to **false** to disable SIEM.
+     * @return Whether to enable SIEM
      * 
      */
     public Output<Boolean> enableSiem() {
@@ -79,14 +79,14 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * JSON array of IDs for the security policies where SIEM integration is to be enabled.
+     * List of IDs of security policy for which SIEM integration is to be enabled
      * 
      */
     @Import(name="securityPolicyIds")
     private @Nullable Output<List<String>> securityPolicyIds;
 
     /**
-     * @return JSON array of IDs for the security policies where SIEM integration is to be enabled.
+     * @return List of IDs of security policy for which SIEM integration is to be enabled
      * 
      */
     public Optional<Output<List<String>>> securityPolicyIds() {
@@ -94,14 +94,14 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * . Unique identifier of the SIEM settings being modified.
+     * Unique identifier of the SIEM settings being modified
      * 
      */
     @Import(name="siemId", required=true)
     private Output<Integer> siemId;
 
     /**
-     * @return . Unique identifier of the SIEM settings being modified.
+     * @return Unique identifier of the SIEM settings being modified
      * 
      */
     public Output<Integer> siemId() {
@@ -138,7 +138,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the SIEM settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the SIEM settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param enableBotmanSiem . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
+         * @param enableBotmanSiem Whether Bot Manager events should be included in SIEM events
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param enableBotmanSiem . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
+         * @param enableBotmanSiem Whether Bot Manager events should be included in SIEM events
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param enableForAllPolicies . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
+         * @param enableForAllPolicies Whether to enable SIEM on all security policies in the security configuration
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param enableForAllPolicies . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
+         * @param enableForAllPolicies Whether to enable SIEM on all security policies in the security configuration
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param enableSiem . Set to **true** to enable SIEM; set to **false** to disable SIEM.
+         * @param enableSiem Whether to enable SIEM
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param enableSiem . Set to **true** to enable SIEM; set to **false** to disable SIEM.
+         * @param enableSiem Whether to enable SIEM
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param securityPolicyIds JSON array of IDs for the security policies where SIEM integration is to be enabled.
+         * @param securityPolicyIds List of IDs of security policy for which SIEM integration is to be enabled
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param securityPolicyIds JSON array of IDs for the security policies where SIEM integration is to be enabled.
+         * @param securityPolicyIds List of IDs of security policy for which SIEM integration is to be enabled
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param securityPolicyIds JSON array of IDs for the security policies where SIEM integration is to be enabled.
+         * @param securityPolicyIds List of IDs of security policy for which SIEM integration is to be enabled
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param siemId . Unique identifier of the SIEM settings being modified.
+         * @param siemId Unique identifier of the SIEM settings being modified
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class AppSecSiemSettingsArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param siemId . Unique identifier of the SIEM settings being modified.
+         * @param siemId Unique identifier of the SIEM settings being modified
          * 
          * @return builder
          * 

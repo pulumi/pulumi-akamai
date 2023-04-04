@@ -4,36 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security policy
- *
- * Enables or disables Web Application Firewall (WAF) protection for a security policy.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const protection = new akamai.AppSecWafProtection("protection", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: "gms1_134637",
- *     enabled: true,
- * });
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `outputText`. Tabular report showing the current protection settings.
- */
 export class AppSecWafProtection extends pulumi.CustomResource {
     /**
      * Get an existing AppSecWafProtection resource's state with the given name, ID, and optional extra
@@ -63,11 +33,11 @@ export class AppSecWafProtection extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+     * Whether to enable WAF protection
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
@@ -75,7 +45,7 @@ export class AppSecWafProtection extends pulumi.CustomResource {
      */
     public /*out*/ readonly outputText!: pulumi.Output<string>;
     /**
-     * . Unique identifier of the security policy associated with the WAF protection settings being modified.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -122,11 +92,11 @@ export class AppSecWafProtection extends pulumi.CustomResource {
  */
 export interface AppSecWafProtectionState {
     /**
-     * . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+     * Whether to enable WAF protection
      */
     enabled?: pulumi.Input<boolean>;
     /**
@@ -134,7 +104,7 @@ export interface AppSecWafProtectionState {
      */
     outputText?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security policy associated with the WAF protection settings being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -144,15 +114,15 @@ export interface AppSecWafProtectionState {
  */
 export interface AppSecWafProtectionArgs {
     /**
-     * . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+     * Whether to enable WAF protection
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * . Unique identifier of the security policy associated with the WAF protection settings being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId: pulumi.Input<string>;
 }

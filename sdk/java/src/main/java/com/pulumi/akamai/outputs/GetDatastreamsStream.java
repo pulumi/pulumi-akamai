@@ -22,10 +22,6 @@ public final class GetDatastreamsStream {
     private String createdDate;
     private Integer currentVersionId;
     private List<GetDatastreamsStreamError> errors;
-    /**
-     * @return Unique identifier of the group that can access the product.
-     * 
-     */
     private Integer groupId;
     private String groupName;
     private List<GetDatastreamsStreamProperty> properties;
@@ -59,10 +55,6 @@ public final class GetDatastreamsStream {
     public List<GetDatastreamsStreamError> errors() {
         return this.errors;
     }
-    /**
-     * @return Unique identifier of the group that can access the product.
-     * 
-     */
     public Integer groupId() {
         return this.groupId;
     }

@@ -12,21 +12,12 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyRulesTemplateVariableInputArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// The name of the variable used in the template.
-        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
-        /// <summary>
-        /// The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
-        /// <summary>
-        /// The value of the variable passed as a string.
-        /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 

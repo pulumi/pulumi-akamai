@@ -17,24 +17,14 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final EdgeHostNameArgs Empty = new EdgeHostNameArgs();
 
-    /**
-     * Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
-     * 
-     */
     @Import(name="certificate")
     private @Nullable Output<Integer> certificate;
 
-    /**
-     * @return Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
-     * 
-     */
     public Optional<Output<Integer>> certificate() {
         return Optional.ofNullable(this.certificate);
     }
 
     /**
-     * Replaced by `contract_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;contract&#34; has been deprecated.
      * 
@@ -44,8 +34,6 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> contract;
 
     /**
-     * @return Replaced by `contract_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;contract&#34; has been deprecated.
      * 
@@ -55,39 +43,21 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.contract);
     }
 
-    /**
-     * A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
-    /**
-     * @return A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     public Optional<Output<String>> contractId() {
         return Optional.ofNullable(this.contractId);
     }
 
-    /**
-     * One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
-     * 
-     */
     @Import(name="edgeHostname", required=true)
     private Output<String> edgeHostname;
 
-    /**
-     * @return One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
-     * 
-     */
     public Output<String> edgeHostname() {
         return this.edgeHostname;
     }
 
     /**
-     * Replaced by `group_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;group&#34; has been deprecated.
      * 
@@ -97,8 +67,6 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> group;
 
     /**
-     * @return Replaced by `group_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;group&#34; has been deprecated.
      * 
@@ -108,39 +76,21 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.group);
     }
 
-    /**
-     * A group&#39;s unique ID, including the `grp_` prefix.
-     * 
-     */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
-    /**
-     * @return A group&#39;s unique ID, including the `grp_` prefix.
-     * 
-     */
     public Optional<Output<String>> groupId() {
         return Optional.ofNullable(this.groupId);
     }
 
-    /**
-     * Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
-     * 
-     */
     @Import(name="ipBehavior", required=true)
     private Output<String> ipBehavior;
 
-    /**
-     * @return Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
-     * 
-     */
     public Output<String> ipBehavior() {
         return this.ipBehavior;
     }
 
     /**
-     * Replaced by `product_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;product&#34; has been deprecated.
      * 
@@ -150,8 +100,6 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> product;
 
     /**
-     * @return Replaced by `product_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;product&#34; has been deprecated.
      * 
@@ -184,14 +132,14 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A JSON encoded list of use cases.
+     * A JSON encoded list of use cases
      * 
      */
     @Import(name="useCases")
     private @Nullable Output<String> useCases;
 
     /**
-     * @return A JSON encoded list of use cases.
+     * @return A JSON encoded list of use cases
      * 
      */
     public Optional<Output<String>> useCases() {
@@ -232,30 +180,16 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
             $ = new EdgeHostNameArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param certificate Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
-         * 
-         * @return builder
-         * 
-         */
         public Builder certificate(@Nullable Output<Integer> certificate) {
             $.certificate = certificate;
             return this;
         }
 
-        /**
-         * @param certificate Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
-         * 
-         * @return builder
-         * 
-         */
         public Builder certificate(Integer certificate) {
             return certificate(Output.of(certificate));
         }
 
         /**
-         * @param contract Replaced by `contract_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -269,8 +203,6 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contract Replaced by `contract_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -282,51 +214,25 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
             return contract(Output.of(contract));
         }
 
-        /**
-         * @param contractId A contract&#39;s unique ID, including the `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(@Nullable Output<String> contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @param contractId A contract&#39;s unique ID, including the `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             return contractId(Output.of(contractId));
         }
 
-        /**
-         * @param edgeHostname One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
-         * 
-         * @return builder
-         * 
-         */
         public Builder edgeHostname(Output<String> edgeHostname) {
             $.edgeHostname = edgeHostname;
             return this;
         }
 
-        /**
-         * @param edgeHostname One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
-         * 
-         * @return builder
-         * 
-         */
         public Builder edgeHostname(String edgeHostname) {
             return edgeHostname(Output.of(edgeHostname));
         }
 
         /**
-         * @param group Replaced by `group_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -340,8 +246,6 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param group Replaced by `group_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -353,51 +257,25 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
             return group(Output.of(group));
         }
 
-        /**
-         * @param groupId A group&#39;s unique ID, including the `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(@Nullable Output<String> groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        /**
-         * @param groupId A group&#39;s unique ID, including the `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
         }
 
-        /**
-         * @param ipBehavior Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ipBehavior(Output<String> ipBehavior) {
             $.ipBehavior = ipBehavior;
             return this;
         }
 
-        /**
-         * @param ipBehavior Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ipBehavior(String ipBehavior) {
             return ipBehavior(Output.of(ipBehavior));
         }
 
         /**
-         * @param product Replaced by `product_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -411,8 +289,6 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param product Replaced by `product_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -465,7 +341,7 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param useCases A JSON encoded list of use cases.
+         * @param useCases A JSON encoded list of use cases
          * 
          * @return builder
          * 
@@ -476,7 +352,7 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param useCases A JSON encoded list of use cases.
+         * @param useCases A JSON encoded list of use cases
          * 
          * @return builder
          * 

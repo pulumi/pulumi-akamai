@@ -84,39 +84,7 @@ def get_app_sec_custom_deny(config_id: Optional[int] = None,
                             custom_deny_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecCustomDenyResult:
     """
-    **Scopes**: Security configuration; custom deny
-
-    Returns information about custom deny actions. Custom denies allow you to craft your own error messages or redirect pages to use when HTTP requests are denied.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://techdocs.akamai.com/application-security/reference/get-custom-deny-actions)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    custom_deny_list = akamai.get_app_sec_custom_deny(config_id=configuration.config_id)
-    pulumi.export("customDenyListOutput", custom_deny_list.output_text)
-    pulumi.export("customDenyListJson", custom_deny_list.json)
-    custom_deny = akamai.get_app_sec_custom_deny(config_id=configuration.config_id,
-        custom_deny_id="deny_custom_64386")
-    pulumi.export("customDenyJson", custom_deny.json)
-    pulumi.export("customDenyOutput", custom_deny.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list of custom deny information.
-    - `output_text`. Tabular report of the custom deny information.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the custom denies.
-    :param str custom_deny_id: . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -137,38 +105,6 @@ def get_app_sec_custom_deny_output(config_id: Optional[pulumi.Input[int]] = None
                                    custom_deny_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecCustomDenyResult]:
     """
-    **Scopes**: Security configuration; custom deny
-
-    Returns information about custom deny actions. Custom denies allow you to craft your own error messages or redirect pages to use when HTTP requests are denied.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://techdocs.akamai.com/application-security/reference/get-custom-deny-actions)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    custom_deny_list = akamai.get_app_sec_custom_deny(config_id=configuration.config_id)
-    pulumi.export("customDenyListOutput", custom_deny_list.output_text)
-    pulumi.export("customDenyListJson", custom_deny_list.json)
-    custom_deny = akamai.get_app_sec_custom_deny(config_id=configuration.config_id,
-        custom_deny_id="deny_custom_64386")
-    pulumi.export("customDenyJson", custom_deny.json)
-    pulumi.export("customDenyOutput", custom_deny.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list of custom deny information.
-    - `output_text`. Tabular report of the custom deny information.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the custom denies.
-    :param str custom_deny_id: . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
+    Use this data source to access information about an existing resource.
     """
     ...

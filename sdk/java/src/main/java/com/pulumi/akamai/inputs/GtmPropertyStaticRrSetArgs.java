@@ -17,47 +17,23 @@ public final class GtmPropertyStaticRrSetArgs extends com.pulumi.resources.Resou
 
     public static final GtmPropertyStaticRrSetArgs Empty = new GtmPropertyStaticRrSetArgs();
 
-    /**
-     * (List) An array of data strings, representing multiple records within a set.
-     * 
-     */
     @Import(name="rdatas")
     private @Nullable Output<List<String>> rdatas;
 
-    /**
-     * @return (List) An array of data strings, representing multiple records within a set.
-     * 
-     */
     public Optional<Output<List<String>>> rdatas() {
         return Optional.ofNullable(this.rdatas);
     }
 
-    /**
-     * The number of seconds that this record should live in a resolver&#39;s cache before being refetched.
-     * 
-     */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
-    /**
-     * @return The number of seconds that this record should live in a resolver&#39;s cache before being refetched.
-     * 
-     */
     public Optional<Output<Integer>> ttl() {
         return Optional.ofNullable(this.ttl);
     }
 
-    /**
-     * The record type.
-     * 
-     */
     @Import(name="type")
     private @Nullable Output<String> type;
 
-    /**
-     * @return The record type.
-     * 
-     */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
     }
@@ -88,75 +64,33 @@ public final class GtmPropertyStaticRrSetArgs extends com.pulumi.resources.Resou
             $ = new GtmPropertyStaticRrSetArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param rdatas (List) An array of data strings, representing multiple records within a set.
-         * 
-         * @return builder
-         * 
-         */
         public Builder rdatas(@Nullable Output<List<String>> rdatas) {
             $.rdatas = rdatas;
             return this;
         }
 
-        /**
-         * @param rdatas (List) An array of data strings, representing multiple records within a set.
-         * 
-         * @return builder
-         * 
-         */
         public Builder rdatas(List<String> rdatas) {
             return rdatas(Output.of(rdatas));
         }
 
-        /**
-         * @param rdatas (List) An array of data strings, representing multiple records within a set.
-         * 
-         * @return builder
-         * 
-         */
         public Builder rdatas(String... rdatas) {
             return rdatas(List.of(rdatas));
         }
 
-        /**
-         * @param ttl The number of seconds that this record should live in a resolver&#39;s cache before being refetched.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ttl(@Nullable Output<Integer> ttl) {
             $.ttl = ttl;
             return this;
         }
 
-        /**
-         * @param ttl The number of seconds that this record should live in a resolver&#39;s cache before being refetched.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ttl(Integer ttl) {
             return ttl(Output.of(ttl));
         }
 
-        /**
-         * @param type The record type.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
             return this;
         }
 
-        /**
-         * @param type The record type.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(String type) {
             return type(Output.of(type));
         }

@@ -10,54 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration
-//
-// Returns a list of the failover hostnames in a configuration.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/failover-hostnames](https://techdocs.akamai.com/application-security/reference/get-failover-hostnames)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			failoverHostnamesAppSecFailoverHostnames, err := akamai.GetAppSecFailoverHostnames(ctx, &akamai.GetAppSecFailoverHostnamesArgs{
-//				ConfigId: configuration.ConfigId,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("failoverHostnames", failoverHostnamesAppSecFailoverHostnames.Hostnames)
-//			ctx.Export("failoverHostnamesOutput", failoverHostnamesAppSecFailoverHostnames.OutputText)
-//			ctx.Export("failoverHostnamesJson", failoverHostnamesAppSecFailoverHostnames.Json)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `hostnames`. List of the failover hostnames.
-// - `json`. JSON-formatted list of the failover hostnames.
 func GetAppSecFailoverHostnames(ctx *pulumi.Context, args *GetAppSecFailoverHostnamesArgs, opts ...pulumi.InvokeOption) (*GetAppSecFailoverHostnamesResult, error) {
 	var rv GetAppSecFailoverHostnamesResult
 	err := ctx.Invoke("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args, &rv, opts...)
@@ -69,7 +21,6 @@ func GetAppSecFailoverHostnames(ctx *pulumi.Context, args *GetAppSecFailoverHost
 
 // A collection of arguments for invoking getAppSecFailoverHostnames.
 type GetAppSecFailoverHostnamesArgs struct {
-	// . Unique identifier of the security configuration associated with the failover hosts.
 	ConfigId int `pulumi:"configId"`
 }
 
@@ -98,7 +49,6 @@ func GetAppSecFailoverHostnamesOutput(ctx *pulumi.Context, args GetAppSecFailove
 
 // A collection of arguments for invoking getAppSecFailoverHostnames.
 type GetAppSecFailoverHostnamesOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the failover hosts.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
 }
 

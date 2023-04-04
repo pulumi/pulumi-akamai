@@ -103,9 +103,6 @@ def get_app_sec_configuration_version(config_id: Optional[int] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecConfigurationVersionResult:
     """
     Use this data source to access information about an existing resource.
-
-    :param int config_id: . Unique identifier of the security configuration you want to return version information for.
-    :param int version: . Version number of the security configuration you want to return information about. If not included, information about all the security configuration's versions is returned.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -129,8 +126,5 @@ def get_app_sec_configuration_version_output(config_id: Optional[pulumi.Input[in
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecConfigurationVersionResult]:
     """
     Use this data source to access information about an existing resource.
-
-    :param int config_id: . Unique identifier of the security configuration you want to return version information for.
-    :param int version: . Version number of the security configuration you want to return information about. If not included, information about all the security configuration's versions is returned.
     """
     ...

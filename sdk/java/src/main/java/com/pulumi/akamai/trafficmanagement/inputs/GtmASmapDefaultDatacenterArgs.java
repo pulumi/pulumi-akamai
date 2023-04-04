@@ -16,32 +16,16 @@ public final class GtmASmapDefaultDatacenterArgs extends com.pulumi.resources.Re
 
     public static final GtmASmapDefaultDatacenterArgs Empty = new GtmASmapDefaultDatacenterArgs();
 
-    /**
-     * A unique identifier for an existing data center in the domain.
-     * 
-     */
     @Import(name="datacenterId", required=true)
     private Output<Integer> datacenterId;
 
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Output<Integer> datacenterId() {
         return this.datacenterId;
     }
 
-    /**
-     * A descriptive label for the group.
-     * 
-     */
     @Import(name="nickname")
     private @Nullable Output<String> nickname;
 
-    /**
-     * @return A descriptive label for the group.
-     * 
-     */
     public Optional<Output<String>> nickname() {
         return Optional.ofNullable(this.nickname);
     }
@@ -71,44 +55,20 @@ public final class GtmASmapDefaultDatacenterArgs extends com.pulumi.resources.Re
             $ = new GtmASmapDefaultDatacenterArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param datacenterId A unique identifier for an existing data center in the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenterId(Output<Integer> datacenterId) {
             $.datacenterId = datacenterId;
             return this;
         }
 
-        /**
-         * @param datacenterId A unique identifier for an existing data center in the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenterId(Integer datacenterId) {
             return datacenterId(Output.of(datacenterId));
         }
 
-        /**
-         * @param nickname A descriptive label for the group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nickname(@Nullable Output<String> nickname) {
             $.nickname = nickname;
             return this;
         }
 
-        /**
-         * @param nickname A descriptive label for the group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nickname(String nickname) {
             return nickname(Output.of(nickname));
         }

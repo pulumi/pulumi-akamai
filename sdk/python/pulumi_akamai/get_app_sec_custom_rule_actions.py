@@ -85,35 +85,7 @@ def get_app_sec_custom_rule_actions(config_id: Optional[int] = None,
                                     security_policy_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecCustomRuleActionsResult:
     """
-    **Scopes**: Security policy; custom rule
-
-    Retrieve information about the actions defined for your custom rules. Custom rules are rules that you create yourself — these rules aren't part of Akamai's Kona Rule Set.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-custom-rules)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    custom_rule_actions_app_sec_custom_rule_actions = akamai.get_app_sec_custom_rule_actions(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("customRuleActions", custom_rule_actions_app_sec_custom_rule_actions.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `output_text`. Tabular report showing the ID, name, and action of the custom rules.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the custom rules.
-    :param int custom_rule_id: . Unique identifier of the custom rule you want to return information for. If not included, action information is returned for all your custom rules.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the custom rules.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -136,34 +108,6 @@ def get_app_sec_custom_rule_actions_output(config_id: Optional[pulumi.Input[int]
                                            security_policy_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecCustomRuleActionsResult]:
     """
-    **Scopes**: Security policy; custom rule
-
-    Retrieve information about the actions defined for your custom rules. Custom rules are rules that you create yourself — these rules aren't part of Akamai's Kona Rule Set.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-custom-rules)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    custom_rule_actions_app_sec_custom_rule_actions = akamai.get_app_sec_custom_rule_actions(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("customRuleActions", custom_rule_actions_app_sec_custom_rule_actions.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `output_text`. Tabular report showing the ID, name, and action of the custom rules.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the custom rules.
-    :param int custom_rule_id: . Unique identifier of the custom rule you want to return information for. If not included, action information is returned for all your custom rules.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the custom rules.
+    Use this data source to access information about an existing resource.
     """
     ...

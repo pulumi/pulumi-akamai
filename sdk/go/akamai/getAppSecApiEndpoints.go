@@ -10,47 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration; security policy
-//
-// Returns information about the API endpoints associated with a security policy or configuration.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-endpoints](https://techdocs.akamai.com/application-security/reference/get-api-endpoints)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.GetAppSecApiEndpoints(ctx, &akamai.GetAppSecApiEndpointsArgs{
-//				ApiName:  pulumi.StringRef("Contracts"),
-//				ConfigId: 58843,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `idList`. List of API endpoint IDs.
-// - `json`. JSON-formatted list of information about the API endpoints.
-// - `outputText`. Tabular report showing the ID and name of the API endpoints.
 func GetAppSecApiEndpoints(ctx *pulumi.Context, args *GetAppSecApiEndpointsArgs, opts ...pulumi.InvokeOption) (*GetAppSecApiEndpointsResult, error) {
 	var rv GetAppSecApiEndpointsResult
 	err := ctx.Invoke("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args, &rv, opts...)
@@ -62,11 +21,8 @@ func GetAppSecApiEndpoints(ctx *pulumi.Context, args *GetAppSecApiEndpointsArgs,
 
 // A collection of arguments for invoking getAppSecApiEndpoints.
 type GetAppSecApiEndpointsArgs struct {
-	// . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
-	ApiName *string `pulumi:"apiName"`
-	// . Unique identifier of the security configuration associated with the API endpoints.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the API endpoints. If not included, information is returned for all your security policies.
+	ApiName          *string `pulumi:"apiName"`
+	ConfigId         int     `pulumi:"configId"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
@@ -97,11 +53,8 @@ func GetAppSecApiEndpointsOutput(ctx *pulumi.Context, args GetAppSecApiEndpoints
 
 // A collection of arguments for invoking getAppSecApiEndpoints.
 type GetAppSecApiEndpointsOutputArgs struct {
-	// . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
-	ApiName pulumi.StringPtrInput `pulumi:"apiName"`
-	// . Unique identifier of the security configuration associated with the API endpoints.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the API endpoints. If not included, information is returned for all your security policies.
+	ApiName          pulumi.StringPtrInput `pulumi:"apiName"`
+	ConfigId         pulumi.IntInput       `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringPtrInput `pulumi:"securityPolicyId"`
 }
 

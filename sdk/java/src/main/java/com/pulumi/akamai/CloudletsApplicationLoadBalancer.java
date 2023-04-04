@@ -18,119 +18,97 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.CloudletsApplicationLoadBalancer` resource to create the Application Load Balancer Cloudlet configuration. The Application Load Balancer Cloudlet provides intelligent, scalable traffic management across physical, virtual, and cloud-hosted data centers without requiring the origin to send load feedback. This Cloudlet can automatically detect load conditions and route traffic to the optimal data source while maintaining custom routing policies and consistent visitor session behavior for your visitors.
- * 
- * ## Example Usage
- * 
- * ## Import
- * 
- * Basic usagehcl resource &#34;akamai_cloudlets_application_load_balancer&#34; &#34;example&#34; {
- * 
- * # (resource arguments)
- * 
- *  } You can import your Akamai Application Load Balancer configuration using an origin ID. For example
- * 
- * ```sh
- *  $ pulumi import akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer example alb_test_1
- * ```
- * 
- */
 @ResourceType(type="akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer")
 public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.CustomResource {
     /**
-     * The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+     * The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
      * 
      */
     @Export(name="balancingType", type=String.class, parameters={})
     private Output</* @Nullable */ String> balancingType;
 
     /**
-     * @return The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+     * @return The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
      * 
      */
     public Output<Optional<String>> balancingType() {
         return Codegen.optional(this.balancingType);
     }
     /**
-     * Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+     * The object containing information on conditional origins being used as data centers for an Application Load Balancer
+     * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+     * application load balancer configuration.
      * 
      */
     @Export(name="dataCenters", type=List.class, parameters={CloudletsApplicationLoadBalancerDataCenter.class})
     private Output<List<CloudletsApplicationLoadBalancerDataCenter>> dataCenters;
 
     /**
-     * @return Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+     * @return The object containing information on conditional origins being used as data centers for an Application Load Balancer
+     * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+     * application load balancer configuration.
      * 
      */
     public Output<List<CloudletsApplicationLoadBalancerDataCenter>> dataCenters() {
         return this.dataCenters;
     }
     /**
-     * The description of the load balancing configuration.
+     * The load balancer configuration description
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output</* @Nullable */ String> description;
 
     /**
-     * @return The description of the load balancing configuration.
+     * @return The load balancer configuration description
      * 
      */
     public Output<Optional<String>> description() {
         return Codegen.optional(this.description);
     }
-    /**
-     * Specifies the health of each load balanced data center defined in the data center list.
-     * 
-     */
     @Export(name="livenessSettings", type=CloudletsApplicationLoadBalancerLivenessSettings.class, parameters={})
     private Output</* @Nullable */ CloudletsApplicationLoadBalancerLivenessSettings> livenessSettings;
 
-    /**
-     * @return Specifies the health of each load balanced data center defined in the data center list.
-     * 
-     */
     public Output<Optional<CloudletsApplicationLoadBalancerLivenessSettings>> livenessSettings() {
         return Codegen.optional(this.livenessSettings);
     }
     /**
-     * The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * The conditional origin’s unique identifier
      * 
      */
     @Export(name="originId", type=String.class, parameters={})
     private Output<String> originId;
 
     /**
-     * @return The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * @return The conditional origin’s unique identifier
      * 
      */
     public Output<String> originId() {
         return this.originId;
     }
     /**
-     * The version number of the load balancing configuration.
+     * The load balancer configuration version
      * 
      */
     @Export(name="version", type=Integer.class, parameters={})
     private Output<Integer> version;
 
     /**
-     * @return The version number of the load balancing configuration.
+     * @return The load balancer configuration version
      * 
      */
     public Output<Integer> version() {
         return this.version;
     }
     /**
-     * A list of warnings that occurred during the activation of the load balancing configuration.
+     * Describes warnings during activation of load balancer configuration
      * 
      */
     @Export(name="warnings", type=String.class, parameters={})
     private Output<String> warnings;
 
     /**
-     * @return A list of warnings that occurred during the activation of the load balancing configuration.
+     * @return Describes warnings during activation of load balancer configuration
      * 
      */
     public Output<String> warnings() {

@@ -21,10 +21,6 @@ public final class GetCloudletsApplicationLoadBalancerDataCenter {
     private Double latitude;
     private List<String> livenessHosts;
     private Double longitude;
-    /**
-     * @return (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-     * 
-     */
     private String originId;
     private Double percent;
     private String stateOrProvince;
@@ -57,10 +53,6 @@ public final class GetCloudletsApplicationLoadBalancerDataCenter {
     public Double longitude() {
         return this.longitude;
     }
-    /**
-     * @return (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-     * 
-     */
     public String originId() {
         return this.originId;
     }

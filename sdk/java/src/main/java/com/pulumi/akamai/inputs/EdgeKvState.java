@@ -19,14 +19,14 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
     public static final EdgeKvState Empty = new EdgeKvState();
 
     /**
-     * Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
+     * Storage location for data
      * 
      */
     @Import(name="geoLocation")
     private @Nullable Output<String> geoLocation;
 
     /**
-     * @return Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
+     * @return Storage location for data
      * 
      */
     public Optional<Output<String>> geoLocation() {
@@ -34,14 +34,14 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+     * Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<Integer> groupId;
 
     /**
-     * @return (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+     * @return Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
      * 
      */
     public Optional<Output<Integer>> groupId() {
@@ -49,14 +49,14 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
+     * List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
      * 
      */
     @Import(name="initialDatas")
     private @Nullable Output<List<EdgeKvInitialDataArgs>> initialDatas;
 
     /**
-     * @return List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
+     * @return List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
      * 
      */
     public Optional<Output<List<EdgeKvInitialDataArgs>>> initialDatas() {
@@ -64,14 +64,14 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Required) The name of the namespace.
+     * Name for the EKV namespace
      * 
      */
     @Import(name="namespaceName")
     private @Nullable Output<String> namespaceName;
 
     /**
-     * @return (Required) The name of the namespace.
+     * @return Name for the EKV namespace
      * 
      */
     public Optional<Output<String>> namespaceName() {
@@ -79,14 +79,14 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * The network on which the namespace will be activated
      * 
      */
     @Import(name="network")
     private @Nullable Output<String> network;
 
     /**
-     * @return The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * @return The network on which the namespace will be activated
      * 
      */
     public Optional<Output<String>> network() {
@@ -94,14 +94,14 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+     * Retention period for data in this namespace. An update of this value will just affect new EKV items.
      * 
      */
     @Import(name="retentionInSeconds")
     private @Nullable Output<Integer> retentionInSeconds;
 
     /**
-     * @return (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+     * @return Retention period for data in this namespace. An update of this value will just affect new EKV items.
      * 
      */
     public Optional<Output<Integer>> retentionInSeconds() {
@@ -138,7 +138,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param geoLocation Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
+         * @param geoLocation Storage location for data
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param geoLocation Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
+         * @param geoLocation Storage location for data
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+         * @param groupId Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+         * @param groupId Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param initialDatas List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
+         * @param initialDatas List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param initialDatas List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
+         * @param initialDatas List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param initialDatas List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
+         * @param initialDatas List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespaceName (Required) The name of the namespace.
+         * @param namespaceName Name for the EKV namespace
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespaceName (Required) The name of the namespace.
+         * @param namespaceName Name for the EKV namespace
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param network The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+         * @param network The network on which the namespace will be activated
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param network The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+         * @param network The network on which the namespace will be activated
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionInSeconds (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+         * @param retentionInSeconds Retention period for data in this namespace. An update of this value will just affect new EKV items.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class EdgeKvState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionInSeconds (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+         * @param retentionInSeconds Retention period for data in this namespace. An update of this value will just affect new EKV items.
          * 
          * @return builder
          * 

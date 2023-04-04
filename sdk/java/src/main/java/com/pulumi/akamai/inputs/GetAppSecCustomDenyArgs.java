@@ -16,32 +16,16 @@ public final class GetAppSecCustomDenyArgs extends com.pulumi.resources.InvokeAr
 
     public static final GetAppSecCustomDenyArgs Empty = new GetAppSecCustomDenyArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the custom denies.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the custom denies.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
-     * 
-     */
     @Import(name="customDenyId")
     private @Nullable Output<String> customDenyId;
 
-    /**
-     * @return . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
-     * 
-     */
     public Optional<Output<String>> customDenyId() {
         return Optional.ofNullable(this.customDenyId);
     }
@@ -71,44 +55,20 @@ public final class GetAppSecCustomDenyArgs extends com.pulumi.resources.InvokeAr
             $ = new GetAppSecCustomDenyArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the custom denies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the custom denies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param customDenyId . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder customDenyId(@Nullable Output<String> customDenyId) {
             $.customDenyId = customDenyId;
             return this;
         }
 
-        /**
-         * @param customDenyId . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder customDenyId(String customDenyId) {
             return customDenyId(Output.of(customDenyId));
         }

@@ -19,49 +19,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * Use the `akamai.GtmCidrmap` resource to create, configure, and import a GTM Classless Inter-Domain Routing (CIDR) map. CIDR mapping uses the IP addresses of the requesting name server to provide IP-specific CNAME entries. CNAMEs let you direct internal users to a specific environment or direct them to the origin. This lets you provide different responses to an internal corporate DNS infrastructure, such as internal test environments and another answer for all other name servers (`default_datacenter`).
- * 
- *  CIDR maps split the Internet into multiple CIDR block zones. Properties that use a map can specify a handout CNAME for each zone on the property&#39;s editing page. To configure a property for CIDR mapping, your domain needs at least one CIDR map defined.
- * 
- * &gt; **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.GtmCidrmap;
- * import com.pulumi.akamai.GtmCidrmapArgs;
- * import com.pulumi.akamai.inputs.GtmCidrmapDefaultDatacenterArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var demoCidrmap = new GtmCidrmap(&#34;demoCidrmap&#34;, GtmCidrmapArgs.builder()        
- *             .defaultDatacenter(GtmCidrmapDefaultDatacenterArgs.builder()
- *                 .datacenterId(5400)
- *                 .nickname(&#34;All Other CIDR Blocks&#34;)
- *                 .build())
- *             .domain(&#34;demo_domain.akadns.net&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
  * @deprecated
  * akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap
  * 
@@ -69,73 +26,33 @@ import javax.annotation.Nullable;
 @Deprecated /* akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap */
 @ResourceType(type="akamai:trafficmanagement/gtmCidrmap:GtmCidrmap")
 public class GtmCidrmap extends com.pulumi.resources.CustomResource {
-    /**
-     * Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-     * 
-     */
     @Export(name="assignments", type=List.class, parameters={GtmCidrmapAssignment.class})
     private Output</* @Nullable */ List<GtmCidrmapAssignment>> assignments;
 
-    /**
-     * @return Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-     * 
-     */
     public Output<Optional<List<GtmCidrmapAssignment>>> assignments() {
         return Codegen.optional(this.assignments);
     }
-    /**
-     * A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
-     * 
-     */
     @Export(name="defaultDatacenter", type=GtmCidrmapDefaultDatacenter.class, parameters={})
     private Output<GtmCidrmapDefaultDatacenter> defaultDatacenter;
 
-    /**
-     * @return A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
-     * 
-     */
     public Output<GtmCidrmapDefaultDatacenter> defaultDatacenter() {
         return this.defaultDatacenter;
     }
-    /**
-     * GTM Domain name for the CIDR Map.
-     * 
-     */
     @Export(name="domain", type=String.class, parameters={})
     private Output<String> domain;
 
-    /**
-     * @return GTM Domain name for the CIDR Map.
-     * 
-     */
     public Output<String> domain() {
         return this.domain;
     }
-    /**
-     * A descriptive label for the CIDR map, up to 255 characters.
-     * 
-     */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
-    /**
-     * @return A descriptive label for the CIDR map, up to 255 characters.
-     * 
-     */
     public Output<String> name() {
         return this.name;
     }
-    /**
-     * A boolean that, if set to `true`, waits for transaction to complete.
-     * 
-     */
     @Export(name="waitOnComplete", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> waitOnComplete;
 
-    /**
-     * @return A boolean that, if set to `true`, waits for transaction to complete.
-     * 
-     */
     public Output<Optional<Boolean>> waitOnComplete() {
         return Codegen.optional(this.waitOnComplete);
     }

@@ -14,32 +14,16 @@ public final class GetAppSecHostnameCoverageOverlappingArgs extends com.pulumi.r
 
     public static final GetAppSecHostnameCoverageOverlappingArgs Empty = new GetAppSecHostnameCoverageOverlappingArgs();
 
-    /**
-     * . Unique identifier of the security configuration you want to return information for.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration you want to return information for.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Name of the host you want to return information for.
-     * 
-     */
     @Import(name="hostname", required=true)
     private Output<String> hostname;
 
-    /**
-     * @return . Name of the host you want to return information for.
-     * 
-     */
     public Output<String> hostname() {
         return this.hostname;
     }
@@ -69,44 +53,20 @@ public final class GetAppSecHostnameCoverageOverlappingArgs extends com.pulumi.r
             $ = new GetAppSecHostnameCoverageOverlappingArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param hostname . Name of the host you want to return information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder hostname(Output<String> hostname) {
             $.hostname = hostname;
             return this;
         }
 
-        /**
-         * @param hostname . Name of the host you want to return information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
         }

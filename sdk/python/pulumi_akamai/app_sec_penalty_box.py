@@ -20,14 +20,10 @@ class AppSecPenaltyBoxArgs:
                  security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecPenaltyBox resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the penalty box settings being modified.
-        :param pulumi.Input[str] penalty_box_action: . Action taken any time penalty box protection is triggered. Allowed values are:
-               - **alert**. Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[bool] penalty_box_protection: . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the penalty box settings being modified.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] penalty_box_action: The action to be taken when the penalty box is triggered
+        :param pulumi.Input[bool] penalty_box_protection: Whether to enable the penalty box for the specified security policy
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "penalty_box_action", penalty_box_action)
@@ -38,7 +34,7 @@ class AppSecPenaltyBoxArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the penalty box settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -50,11 +46,7 @@ class AppSecPenaltyBoxArgs:
     @pulumi.getter(name="penaltyBoxAction")
     def penalty_box_action(self) -> pulumi.Input[str]:
         """
-        . Action taken any time penalty box protection is triggered. Allowed values are:
-        - **alert**. Record the event.
-        - **deny**. Block the request.
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action.
+        The action to be taken when the penalty box is triggered
         """
         return pulumi.get(self, "penalty_box_action")
 
@@ -66,7 +58,7 @@ class AppSecPenaltyBoxArgs:
     @pulumi.getter(name="penaltyBoxProtection")
     def penalty_box_protection(self) -> pulumi.Input[bool]:
         """
-        . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
+        Whether to enable the penalty box for the specified security policy
         """
         return pulumi.get(self, "penalty_box_protection")
 
@@ -78,7 +70,7 @@ class AppSecPenaltyBoxArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        . Unique identifier of the security policy associated with the penalty box settings being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -96,14 +88,10 @@ class _AppSecPenaltyBoxState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecPenaltyBox resources.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the penalty box settings being modified.
-        :param pulumi.Input[str] penalty_box_action: . Action taken any time penalty box protection is triggered. Allowed values are:
-               - **alert**. Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[bool] penalty_box_protection: . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the penalty box settings being modified.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] penalty_box_action: The action to be taken when the penalty box is triggered
+        :param pulumi.Input[bool] penalty_box_protection: Whether to enable the penalty box for the specified security policy
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -118,7 +106,7 @@ class _AppSecPenaltyBoxState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the penalty box settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -130,11 +118,7 @@ class _AppSecPenaltyBoxState:
     @pulumi.getter(name="penaltyBoxAction")
     def penalty_box_action(self) -> Optional[pulumi.Input[str]]:
         """
-        . Action taken any time penalty box protection is triggered. Allowed values are:
-        - **alert**. Record the event.
-        - **deny**. Block the request.
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action.
+        The action to be taken when the penalty box is triggered
         """
         return pulumi.get(self, "penalty_box_action")
 
@@ -146,7 +130,7 @@ class _AppSecPenaltyBoxState:
     @pulumi.getter(name="penaltyBoxProtection")
     def penalty_box_protection(self) -> Optional[pulumi.Input[bool]]:
         """
-        . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
+        Whether to enable the penalty box for the specified security policy
         """
         return pulumi.get(self, "penalty_box_protection")
 
@@ -158,7 +142,7 @@ class _AppSecPenaltyBoxState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the security policy associated with the penalty box settings being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -178,40 +162,13 @@ class AppSecPenaltyBox(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        **Scopes**: Security policy
-
-        Modifies the penalty box settings for a security policy.
-        When the penalty box is enabled for a policy, clients that trigger a WAF Deny action are placed in the “penalty box”.
-        There, the action you select for penalty box (either Alert or Deny ) continues to apply to any requests from that client for the next 10 minutes.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://techdocs.akamai.com/application-security/reference/put-policy-penalty-box)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        penalty_box = akamai.AppSecPenaltyBox("penaltyBox",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            penalty_box_protection=True,
-            penalty_box_action="deny")
-        ```
-
+        Create a AppSecPenaltyBox resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the penalty box settings being modified.
-        :param pulumi.Input[str] penalty_box_action: . Action taken any time penalty box protection is triggered. Allowed values are:
-               - **alert**. Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[bool] penalty_box_protection: . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the penalty box settings being modified.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] penalty_box_action: The action to be taken when the penalty box is triggered
+        :param pulumi.Input[bool] penalty_box_protection: Whether to enable the penalty box for the specified security policy
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         ...
     @overload
@@ -220,30 +177,7 @@ class AppSecPenaltyBox(pulumi.CustomResource):
                  args: AppSecPenaltyBoxArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Security policy
-
-        Modifies the penalty box settings for a security policy.
-        When the penalty box is enabled for a policy, clients that trigger a WAF Deny action are placed in the “penalty box”.
-        There, the action you select for penalty box (either Alert or Deny ) continues to apply to any requests from that client for the next 10 minutes.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://techdocs.akamai.com/application-security/reference/put-policy-penalty-box)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        penalty_box = akamai.AppSecPenaltyBox("penaltyBox",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            penalty_box_protection=True,
-            penalty_box_action="deny")
-        ```
-
+        Create a AppSecPenaltyBox resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecPenaltyBoxArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -305,14 +239,10 @@ class AppSecPenaltyBox(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the penalty box settings being modified.
-        :param pulumi.Input[str] penalty_box_action: . Action taken any time penalty box protection is triggered. Allowed values are:
-               - **alert**. Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[bool] penalty_box_protection: . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the penalty box settings being modified.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] penalty_box_action: The action to be taken when the penalty box is triggered
+        :param pulumi.Input[bool] penalty_box_protection: Whether to enable the penalty box for the specified security policy
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -328,7 +258,7 @@ class AppSecPenaltyBox(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the penalty box settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -336,11 +266,7 @@ class AppSecPenaltyBox(pulumi.CustomResource):
     @pulumi.getter(name="penaltyBoxAction")
     def penalty_box_action(self) -> pulumi.Output[str]:
         """
-        . Action taken any time penalty box protection is triggered. Allowed values are:
-        - **alert**. Record the event.
-        - **deny**. Block the request.
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action.
+        The action to be taken when the penalty box is triggered
         """
         return pulumi.get(self, "penalty_box_action")
 
@@ -348,7 +274,7 @@ class AppSecPenaltyBox(pulumi.CustomResource):
     @pulumi.getter(name="penaltyBoxProtection")
     def penalty_box_protection(self) -> pulumi.Output[bool]:
         """
-        . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
+        Whether to enable the penalty box for the specified security policy
         """
         return pulumi.get(self, "penalty_box_protection")
 
@@ -356,7 +282,7 @@ class AppSecPenaltyBox(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        . Unique identifier of the security policy associated with the penalty box settings being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 

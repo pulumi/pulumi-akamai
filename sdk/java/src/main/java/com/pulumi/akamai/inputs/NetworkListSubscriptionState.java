@@ -16,36 +16,16 @@ public final class NetworkListSubscriptionState extends com.pulumi.resources.Res
 
     public static final NetworkListSubscriptionState Empty = new NetworkListSubscriptionState();
 
-    /**
-     * A list containing one or more IDs of the network lists to which the indicated email
-     * addresses should be subscribed.
-     * 
-     */
     @Import(name="networkLists")
     private @Nullable Output<List<String>> networkLists;
 
-    /**
-     * @return A list containing one or more IDs of the network lists to which the indicated email
-     * addresses should be subscribed.
-     * 
-     */
     public Optional<Output<List<String>>> networkLists() {
         return Optional.ofNullable(this.networkLists);
     }
 
-    /**
-     * A bracketed, comma-separated list of email addresses that will be notified of changes to any
-     * of the specified network lists.
-     * 
-     */
     @Import(name="recipients")
     private @Nullable Output<List<String>> recipients;
 
-    /**
-     * @return A bracketed, comma-separated list of email addresses that will be notified of changes to any
-     * of the specified network lists.
-     * 
-     */
     public Optional<Output<List<String>>> recipients() {
         return Optional.ofNullable(this.recipients);
     }
@@ -75,70 +55,28 @@ public final class NetworkListSubscriptionState extends com.pulumi.resources.Res
             $ = new NetworkListSubscriptionState(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param networkLists A list containing one or more IDs of the network lists to which the indicated email
-         * addresses should be subscribed.
-         * 
-         * @return builder
-         * 
-         */
         public Builder networkLists(@Nullable Output<List<String>> networkLists) {
             $.networkLists = networkLists;
             return this;
         }
 
-        /**
-         * @param networkLists A list containing one or more IDs of the network lists to which the indicated email
-         * addresses should be subscribed.
-         * 
-         * @return builder
-         * 
-         */
         public Builder networkLists(List<String> networkLists) {
             return networkLists(Output.of(networkLists));
         }
 
-        /**
-         * @param networkLists A list containing one or more IDs of the network lists to which the indicated email
-         * addresses should be subscribed.
-         * 
-         * @return builder
-         * 
-         */
         public Builder networkLists(String... networkLists) {
             return networkLists(List.of(networkLists));
         }
 
-        /**
-         * @param recipients A bracketed, comma-separated list of email addresses that will be notified of changes to any
-         * of the specified network lists.
-         * 
-         * @return builder
-         * 
-         */
         public Builder recipients(@Nullable Output<List<String>> recipients) {
             $.recipients = recipients;
             return this;
         }
 
-        /**
-         * @param recipients A bracketed, comma-separated list of email addresses that will be notified of changes to any
-         * of the specified network lists.
-         * 
-         * @return builder
-         * 
-         */
         public Builder recipients(List<String> recipients) {
             return recipients(Output.of(recipients));
         }
 
-        /**
-         * @param recipients A bracketed, comma-separated list of email addresses that will be notified of changes to any
-         * of the specified network lists.
-         * 
-         * @return builder
-         * 
-         */
         public Builder recipients(String... recipients) {
             return recipients(List.of(recipients));
         }

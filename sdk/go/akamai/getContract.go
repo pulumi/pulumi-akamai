@@ -10,11 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getContract` data source to find a contract ID.
-//
-// ## Attributes reference
-//
-// * `id` - The contract's unique ID, including the `ctr_` prefix.
 func GetContract(ctx *pulumi.Context, args *GetContractArgs, opts ...pulumi.InvokeOption) (*GetContractResult, error) {
 	var rv GetContractResult
 	err := ctx.Invoke("akamai:index/getContract:getContract", args, &rv, opts...)
@@ -26,13 +21,9 @@ func GetContract(ctx *pulumi.Context, args *GetContractArgs, opts ...pulumi.Invo
 
 // A collection of arguments for invoking getContract.
 type GetContractArgs struct {
-	// Either the group ID or the group name that includes the contract. You can't use this argument with `groupId` and `groupName`.
-	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group *string `pulumi:"group"`
-	// The unique ID of the group containing the contract, including the  `grp_` prefix.
-	GroupId *string `pulumi:"groupId"`
-	// The name of the group containing the contract.
+	Group     *string `pulumi:"group"`
+	GroupId   *string `pulumi:"groupId"`
 	GroupName *string `pulumi:"groupName"`
 }
 
@@ -61,13 +52,9 @@ func GetContractOutput(ctx *pulumi.Context, args GetContractOutputArgs, opts ...
 
 // A collection of arguments for invoking getContract.
 type GetContractOutputArgs struct {
-	// Either the group ID or the group name that includes the contract. You can't use this argument with `groupId` and `groupName`.
-	//
 	// Deprecated: The setting "group" has been deprecated.
-	Group pulumi.StringPtrInput `pulumi:"group"`
-	// The unique ID of the group containing the contract, including the  `grp_` prefix.
-	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
-	// The name of the group containing the contract.
+	Group     pulumi.StringPtrInput `pulumi:"group"`
+	GroupId   pulumi.StringPtrInput `pulumi:"groupId"`
 	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
 }
 

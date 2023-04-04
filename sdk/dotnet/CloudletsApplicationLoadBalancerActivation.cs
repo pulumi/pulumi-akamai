@@ -9,59 +9,29 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// Use the `akamai.CloudletsApplicationLoadBalancerActivation` resource to activate the Application Load Balancer Cloudlet configuration. An activation deploys the configuration version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
-    /// 
-    /// Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var example = new Akamai.CloudletsApplicationLoadBalancerActivation("example", new()
-    ///     {
-    ///         OriginId = "alb_test_1",
-    ///         Network = "staging",
-    ///         Version = 1,
-    ///     });
-    /// 
-    ///     return new Dictionary&lt;string, object?&gt;
-    ///     {
-    ///         ["status"] = example.Status,
-    ///     };
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation")]
     public partial class CloudletsApplicationLoadBalancerActivation : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+        /// The network you want to activate the application load balancer version on (options are Staging and Production)
         /// </summary>
         [Output("network")]
         public Output<string> Network { get; private set; } = null!;
 
         /// <summary>
-        /// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+        /// The conditional origin’s unique identifier
         /// </summary>
         [Output("originId")]
         public Output<string> OriginId { get; private set; } = null!;
 
         /// <summary>
-        /// The activation status for this load balancing configuration.
+        /// Activation status for this application load balancer
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// The Application Load Balancer Cloudlet configuration version you want to activate.
+        /// Cloudlets application load balancer version you want to activate
         /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
@@ -113,19 +83,19 @@ namespace Pulumi.Akamai
     public sealed class CloudletsApplicationLoadBalancerActivationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+        /// The network you want to activate the application load balancer version on (options are Staging and Production)
         /// </summary>
         [Input("network", required: true)]
         public Input<string> Network { get; set; } = null!;
 
         /// <summary>
-        /// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+        /// The conditional origin’s unique identifier
         /// </summary>
         [Input("originId", required: true)]
         public Input<string> OriginId { get; set; } = null!;
 
         /// <summary>
-        /// The Application Load Balancer Cloudlet configuration version you want to activate.
+        /// Cloudlets application load balancer version you want to activate
         /// </summary>
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
@@ -139,25 +109,25 @@ namespace Pulumi.Akamai
     public sealed class CloudletsApplicationLoadBalancerActivationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+        /// The network you want to activate the application load balancer version on (options are Staging and Production)
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+        /// The conditional origin’s unique identifier
         /// </summary>
         [Input("originId")]
         public Input<string>? OriginId { get; set; }
 
         /// <summary>
-        /// The activation status for this load balancing configuration.
+        /// Activation status for this application load balancer
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// The Application Load Balancer Cloudlet configuration version you want to activate.
+        /// Cloudlets application load balancer version you want to activate
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }

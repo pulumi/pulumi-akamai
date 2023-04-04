@@ -15,182 +15,86 @@ public final class CpsThirdPartyEnrollmentTechContactArgs extends com.pulumi.res
 
     public static final CpsThirdPartyEnrollmentTechContactArgs Empty = new CpsThirdPartyEnrollmentTechContactArgs();
 
-    /**
-     * The address of your organization.
-     * 
-     */
     @Import(name="addressLineOne", required=true)
     private Output<String> addressLineOne;
 
-    /**
-     * @return The address of your organization.
-     * 
-     */
     public Output<String> addressLineOne() {
         return this.addressLineOne;
     }
 
-    /**
-     * The address of your organization.
-     * 
-     */
     @Import(name="addressLineTwo")
     private @Nullable Output<String> addressLineTwo;
 
-    /**
-     * @return The address of your organization.
-     * 
-     */
     public Optional<Output<String>> addressLineTwo() {
         return Optional.ofNullable(this.addressLineTwo);
     }
 
-    /**
-     * The city where your organization resides.
-     * 
-     */
     @Import(name="city", required=true)
     private Output<String> city;
 
-    /**
-     * @return The city where your organization resides.
-     * 
-     */
     public Output<String> city() {
         return this.city;
     }
 
-    /**
-     * The code for the country where your organization resides.
-     * 
-     */
     @Import(name="countryCode", required=true)
     private Output<String> countryCode;
 
-    /**
-     * @return The code for the country where your organization resides.
-     * 
-     */
     public Output<String> countryCode() {
         return this.countryCode;
     }
 
-    /**
-     * The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
-     * 
-     */
     @Import(name="email", required=true)
     private Output<String> email;
 
-    /**
-     * @return The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
-     * 
-     */
     public Output<String> email() {
         return this.email;
     }
 
-    /**
-     * The first name of the technical contact at Akamai.
-     * 
-     */
     @Import(name="firstName", required=true)
     private Output<String> firstName;
 
-    /**
-     * @return The first name of the technical contact at Akamai.
-     * 
-     */
     public Output<String> firstName() {
         return this.firstName;
     }
 
-    /**
-     * The last name of the technical contact at Akamai.
-     * 
-     */
     @Import(name="lastName", required=true)
     private Output<String> lastName;
 
-    /**
-     * @return The last name of the technical contact at Akamai.
-     * 
-     */
     public Output<String> lastName() {
         return this.lastName;
     }
 
-    /**
-     * Your organization information.
-     * 
-     */
     @Import(name="organization", required=true)
     private Output<String> organization;
 
-    /**
-     * @return Your organization information.
-     * 
-     */
     public Output<String> organization() {
         return this.organization;
     }
 
-    /**
-     * The phone number of the administrator who you want to use as a contact at your company.
-     * 
-     */
     @Import(name="phone", required=true)
     private Output<String> phone;
 
-    /**
-     * @return The phone number of the administrator who you want to use as a contact at your company.
-     * 
-     */
     public Output<String> phone() {
         return this.phone;
     }
 
-    /**
-     * The postal code of your organization.
-     * 
-     */
     @Import(name="postalCode", required=true)
     private Output<String> postalCode;
 
-    /**
-     * @return The postal code of your organization.
-     * 
-     */
     public Output<String> postalCode() {
         return this.postalCode;
     }
 
-    /**
-     * The region of your organization, typically a state or province.
-     * 
-     */
     @Import(name="region", required=true)
     private Output<String> region;
 
-    /**
-     * @return The region of your organization, typically a state or province.
-     * 
-     */
     public Output<String> region() {
         return this.region;
     }
 
-    /**
-     * The title of the technical contact at Akamai.
-     * 
-     */
     @Import(name="title")
     private @Nullable Output<String> title;
 
-    /**
-     * @return The title of the technical contact at Akamai.
-     * 
-     */
     public Optional<Output<String>> title() {
         return Optional.ofNullable(this.title);
     }
@@ -230,254 +134,110 @@ public final class CpsThirdPartyEnrollmentTechContactArgs extends com.pulumi.res
             $ = new CpsThirdPartyEnrollmentTechContactArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param addressLineOne The address of your organization.
-         * 
-         * @return builder
-         * 
-         */
         public Builder addressLineOne(Output<String> addressLineOne) {
             $.addressLineOne = addressLineOne;
             return this;
         }
 
-        /**
-         * @param addressLineOne The address of your organization.
-         * 
-         * @return builder
-         * 
-         */
         public Builder addressLineOne(String addressLineOne) {
             return addressLineOne(Output.of(addressLineOne));
         }
 
-        /**
-         * @param addressLineTwo The address of your organization.
-         * 
-         * @return builder
-         * 
-         */
         public Builder addressLineTwo(@Nullable Output<String> addressLineTwo) {
             $.addressLineTwo = addressLineTwo;
             return this;
         }
 
-        /**
-         * @param addressLineTwo The address of your organization.
-         * 
-         * @return builder
-         * 
-         */
         public Builder addressLineTwo(String addressLineTwo) {
             return addressLineTwo(Output.of(addressLineTwo));
         }
 
-        /**
-         * @param city The city where your organization resides.
-         * 
-         * @return builder
-         * 
-         */
         public Builder city(Output<String> city) {
             $.city = city;
             return this;
         }
 
-        /**
-         * @param city The city where your organization resides.
-         * 
-         * @return builder
-         * 
-         */
         public Builder city(String city) {
             return city(Output.of(city));
         }
 
-        /**
-         * @param countryCode The code for the country where your organization resides.
-         * 
-         * @return builder
-         * 
-         */
         public Builder countryCode(Output<String> countryCode) {
             $.countryCode = countryCode;
             return this;
         }
 
-        /**
-         * @param countryCode The code for the country where your organization resides.
-         * 
-         * @return builder
-         * 
-         */
         public Builder countryCode(String countryCode) {
             return countryCode(Output.of(countryCode));
         }
 
-        /**
-         * @param email The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder email(Output<String> email) {
             $.email = email;
             return this;
         }
 
-        /**
-         * @param email The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder email(String email) {
             return email(Output.of(email));
         }
 
-        /**
-         * @param firstName The first name of the technical contact at Akamai.
-         * 
-         * @return builder
-         * 
-         */
         public Builder firstName(Output<String> firstName) {
             $.firstName = firstName;
             return this;
         }
 
-        /**
-         * @param firstName The first name of the technical contact at Akamai.
-         * 
-         * @return builder
-         * 
-         */
         public Builder firstName(String firstName) {
             return firstName(Output.of(firstName));
         }
 
-        /**
-         * @param lastName The last name of the technical contact at Akamai.
-         * 
-         * @return builder
-         * 
-         */
         public Builder lastName(Output<String> lastName) {
             $.lastName = lastName;
             return this;
         }
 
-        /**
-         * @param lastName The last name of the technical contact at Akamai.
-         * 
-         * @return builder
-         * 
-         */
         public Builder lastName(String lastName) {
             return lastName(Output.of(lastName));
         }
 
-        /**
-         * @param organization Your organization information.
-         * 
-         * @return builder
-         * 
-         */
         public Builder organization(Output<String> organization) {
             $.organization = organization;
             return this;
         }
 
-        /**
-         * @param organization Your organization information.
-         * 
-         * @return builder
-         * 
-         */
         public Builder organization(String organization) {
             return organization(Output.of(organization));
         }
 
-        /**
-         * @param phone The phone number of the administrator who you want to use as a contact at your company.
-         * 
-         * @return builder
-         * 
-         */
         public Builder phone(Output<String> phone) {
             $.phone = phone;
             return this;
         }
 
-        /**
-         * @param phone The phone number of the administrator who you want to use as a contact at your company.
-         * 
-         * @return builder
-         * 
-         */
         public Builder phone(String phone) {
             return phone(Output.of(phone));
         }
 
-        /**
-         * @param postalCode The postal code of your organization.
-         * 
-         * @return builder
-         * 
-         */
         public Builder postalCode(Output<String> postalCode) {
             $.postalCode = postalCode;
             return this;
         }
 
-        /**
-         * @param postalCode The postal code of your organization.
-         * 
-         * @return builder
-         * 
-         */
         public Builder postalCode(String postalCode) {
             return postalCode(Output.of(postalCode));
         }
 
-        /**
-         * @param region The region of your organization, typically a state or province.
-         * 
-         * @return builder
-         * 
-         */
         public Builder region(Output<String> region) {
             $.region = region;
             return this;
         }
 
-        /**
-         * @param region The region of your organization, typically a state or province.
-         * 
-         * @return builder
-         * 
-         */
         public Builder region(String region) {
             return region(Output.of(region));
         }
 
-        /**
-         * @param title The title of the technical contact at Akamai.
-         * 
-         * @return builder
-         * 
-         */
         public Builder title(@Nullable Output<String> title) {
             $.title = title;
             return this;
         }
 
-        /**
-         * @param title The title of the technical contact at Akamai.
-         * 
-         * @return builder
-         * 
-         */
         public Builder title(String title) {
             return title(Output.of(title));
         }

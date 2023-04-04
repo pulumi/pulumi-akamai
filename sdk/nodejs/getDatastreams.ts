@@ -6,35 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getDatastreams` data source to list details about the DataStream configuration.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `streams` - Returns the latest versions of the stream configurations for all groups within in your account. You can use the `groupId` parameter to view the latest versions of all configurations in a specific group.
- *   * `activationStatus` - The activation status of the stream. These are possible values: `ACTIVATED`, `DEACTIVATED`, `ACTIVATING`, `DEACTIVATING`, or `INACTIVE`. See the [Activate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-activate) and [Deactivate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-deactivate) operations.
- *   * `archived` - Whether the stream is archived.
- *   * `connectors` - The connector where the stream sends logs.
- *   * `contractId` - Identifies the contract that the stream is associated with.
- *   * `createdBy` - The user who created the stream.
- *   * `createdDate` - The date and time when the stream was created in this format: `14-07-2020 07:07:40 GMT`.
- *   * `currentVersionId` - Identifies the current version of the stream.
- *   * `errors` - Objects that may indicate stream failure errors. Learn more about [Errors](https://techdocs.akamai.com/datastream2/reference/errors).
- *     * `detail` - A message informing about the status of the failed stream.
- *     * `title` - A descriptive label for the type of error.
- *     * `type` - Identifies the error type, either `ACTIVATION_ERROR` or `UNEXPECTED_SYSTEM_ERROR`. In case of these errors, contact support for assistance before continuing.
- *   * `groupId` - Identifies the group where the stream is created.
- *   * `groupName` - The group name where the stream is created.
- *   * `properties` - List of properties associated with the stream.
- *     * `propertyId` - The identifier of the property.
- *     * `propertyName` - The descriptive label for the property.
- *   * `streamId` - A stream's unique identifier.
- *   * `streamName` - The name of the stream.
- *   * `streamTypeName` - Specifies the type of the data stream. `Logs - Raw` is the only stream type name currently available.
- *   * `streamVersionId` - A stream version's unique identifier.
- */
 export function getDatastreams(args?: GetDatastreamsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatastreamsResult> {
     args = args || {};
 
@@ -48,9 +19,6 @@ export function getDatastreams(args?: GetDatastreamsArgs, opts?: pulumi.InvokeOp
  * A collection of arguments for invoking getDatastreams.
  */
 export interface GetDatastreamsArgs {
-    /**
-     * Unique identifier of the group that can access the product.
-     */
     groupId?: string;
 }
 
@@ -65,35 +33,6 @@ export interface GetDatastreamsResult {
     readonly id: string;
     readonly streams: outputs.GetDatastreamsStream[];
 }
-/**
- * Use the `akamai.getDatastreams` data source to list details about the DataStream configuration.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `streams` - Returns the latest versions of the stream configurations for all groups within in your account. You can use the `groupId` parameter to view the latest versions of all configurations in a specific group.
- *   * `activationStatus` - The activation status of the stream. These are possible values: `ACTIVATED`, `DEACTIVATED`, `ACTIVATING`, `DEACTIVATING`, or `INACTIVE`. See the [Activate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-activate) and [Deactivate a stream](https://techdocs.akamai.com/datastream2/reference/put-stream-deactivate) operations.
- *   * `archived` - Whether the stream is archived.
- *   * `connectors` - The connector where the stream sends logs.
- *   * `contractId` - Identifies the contract that the stream is associated with.
- *   * `createdBy` - The user who created the stream.
- *   * `createdDate` - The date and time when the stream was created in this format: `14-07-2020 07:07:40 GMT`.
- *   * `currentVersionId` - Identifies the current version of the stream.
- *   * `errors` - Objects that may indicate stream failure errors. Learn more about [Errors](https://techdocs.akamai.com/datastream2/reference/errors).
- *     * `detail` - A message informing about the status of the failed stream.
- *     * `title` - A descriptive label for the type of error.
- *     * `type` - Identifies the error type, either `ACTIVATION_ERROR` or `UNEXPECTED_SYSTEM_ERROR`. In case of these errors, contact support for assistance before continuing.
- *   * `groupId` - Identifies the group where the stream is created.
- *   * `groupName` - The group name where the stream is created.
- *   * `properties` - List of properties associated with the stream.
- *     * `propertyId` - The identifier of the property.
- *     * `propertyName` - The descriptive label for the property.
- *   * `streamId` - A stream's unique identifier.
- *   * `streamName` - The name of the stream.
- *   * `streamTypeName` - Specifies the type of the data stream. `Logs - Raw` is the only stream type name currently available.
- *   * `streamVersionId` - A stream version's unique identifier.
- */
 export function getDatastreamsOutput(args?: GetDatastreamsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatastreamsResult> {
     return pulumi.output(args).apply((a: any) => getDatastreams(a, opts))
 }
@@ -102,8 +41,5 @@ export function getDatastreamsOutput(args?: GetDatastreamsOutputArgs, opts?: pul
  * A collection of arguments for invoking getDatastreams.
  */
 export interface GetDatastreamsOutputArgs {
-    /**
-     * Unique identifier of the group that can access the product.
-     */
     groupId?: pulumi.Input<string>;
 }

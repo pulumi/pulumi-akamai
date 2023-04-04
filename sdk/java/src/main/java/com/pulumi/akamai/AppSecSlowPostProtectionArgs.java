@@ -16,14 +16,14 @@ public final class AppSecSlowPostProtectionArgs extends com.pulumi.resources.Res
     public static final AppSecSlowPostProtectionArgs Empty = new AppSecSlowPostProtectionArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -31,14 +31,14 @@ public final class AppSecSlowPostProtectionArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
+     * Whether to enable slow POST protection
      * 
      */
     @Import(name="enabled", required=true)
     private Output<Boolean> enabled;
 
     /**
-     * @return . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
+     * @return Whether to enable slow POST protection
      * 
      */
     public Output<Boolean> enabled() {
@@ -46,14 +46,14 @@ public final class AppSecSlowPostProtectionArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * . Unique identifier of the security policy associated with the slow POST protection settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the slow POST protection settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -87,7 +87,7 @@ public final class AppSecSlowPostProtectionArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class AppSecSlowPostProtectionArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class AppSecSlowPostProtectionArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param enabled . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
+         * @param enabled Whether to enable slow POST protection
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class AppSecSlowPostProtectionArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param enabled . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
+         * @param enabled Whether to enable slow POST protection
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class AppSecSlowPostProtectionArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the slow POST protection settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class AppSecSlowPostProtectionArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the slow POST protection settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

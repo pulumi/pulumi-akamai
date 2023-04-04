@@ -14,55 +14,39 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security configuration
- * 
- * Creates a custom rule associated with a security configuration. Custom rules are rules that you define yourself and are not part of the Kona Rule Set.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/custom-rules]https://techdocs.akamai.com/application-security/reference/get-configs-custom-rules)
- * 
- */
 @ResourceType(type="akamai:index/appSecCustomRule:AppSecCustomRule")
 public class AppSecCustomRule extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the custom rule being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the custom rule being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
+     * JSON-formatted definition of the custom rule
      * 
      */
     @Export(name="customRule", type=String.class, parameters={})
     private Output<String> customRule;
 
     /**
-     * @return . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
+     * @return JSON-formatted definition of the custom rule
      * 
      */
     public Output<String> customRule() {
         return this.customRule;
     }
-    /**
-     * . ID of the new custom rule.
-     * 
-     */
     @Export(name="customRuleId", type=Integer.class, parameters={})
     private Output<Integer> customRuleId;
 
-    /**
-     * @return . ID of the new custom rule.
-     * 
-     */
     public Output<Integer> customRuleId() {
         return this.customRuleId;
     }

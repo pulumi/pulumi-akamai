@@ -19,14 +19,14 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
     public static final CloudletsApplicationLoadBalancerArgs Empty = new CloudletsApplicationLoadBalancerArgs();
 
     /**
-     * The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+     * The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
      * 
      */
     @Import(name="balancingType")
     private @Nullable Output<String> balancingType;
 
     /**
-     * @return The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+     * @return The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
      * 
      */
     public Optional<Output<String>> balancingType() {
@@ -34,14 +34,18 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
     }
 
     /**
-     * Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+     * The object containing information on conditional origins being used as data centers for an Application Load Balancer
+     * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+     * application load balancer configuration.
      * 
      */
     @Import(name="dataCenters", required=true)
     private Output<List<CloudletsApplicationLoadBalancerDataCenterArgs>> dataCenters;
 
     /**
-     * @return Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+     * @return The object containing information on conditional origins being used as data centers for an Application Load Balancer
+     * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+     * application load balancer configuration.
      * 
      */
     public Output<List<CloudletsApplicationLoadBalancerDataCenterArgs>> dataCenters() {
@@ -49,44 +53,36 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
     }
 
     /**
-     * The description of the load balancing configuration.
+     * The load balancer configuration description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The description of the load balancing configuration.
+     * @return The load balancer configuration description
      * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
-    /**
-     * Specifies the health of each load balanced data center defined in the data center list.
-     * 
-     */
     @Import(name="livenessSettings")
     private @Nullable Output<CloudletsApplicationLoadBalancerLivenessSettingsArgs> livenessSettings;
 
-    /**
-     * @return Specifies the health of each load balanced data center defined in the data center list.
-     * 
-     */
     public Optional<Output<CloudletsApplicationLoadBalancerLivenessSettingsArgs>> livenessSettings() {
         return Optional.ofNullable(this.livenessSettings);
     }
 
     /**
-     * The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * The conditional origin’s unique identifier
      * 
      */
     @Import(name="originId", required=true)
     private Output<String> originId;
 
     /**
-     * @return The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * @return The conditional origin’s unique identifier
      * 
      */
     public Output<String> originId() {
@@ -122,7 +118,7 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         }
 
         /**
-         * @param balancingType The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+         * @param balancingType The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
          * 
          * @return builder
          * 
@@ -133,7 +129,7 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         }
 
         /**
-         * @param balancingType The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+         * @param balancingType The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
          * 
          * @return builder
          * 
@@ -143,7 +139,9 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dataCenters Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+         * @param dataCenters The object containing information on conditional origins being used as data centers for an Application Load Balancer
+         * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+         * application load balancer configuration.
          * 
          * @return builder
          * 
@@ -154,7 +152,9 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dataCenters Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+         * @param dataCenters The object containing information on conditional origins being used as data centers for an Application Load Balancer
+         * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+         * application load balancer configuration.
          * 
          * @return builder
          * 
@@ -164,7 +164,9 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dataCenters Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+         * @param dataCenters The object containing information on conditional origins being used as data centers for an Application Load Balancer
+         * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+         * application load balancer configuration.
          * 
          * @return builder
          * 
@@ -174,7 +176,7 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         }
 
         /**
-         * @param description The description of the load balancing configuration.
+         * @param description The load balancer configuration description
          * 
          * @return builder
          * 
@@ -185,7 +187,7 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         }
 
         /**
-         * @param description The description of the load balancing configuration.
+         * @param description The load balancer configuration description
          * 
          * @return builder
          * 
@@ -194,29 +196,17 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
             return description(Output.of(description));
         }
 
-        /**
-         * @param livenessSettings Specifies the health of each load balanced data center defined in the data center list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder livenessSettings(@Nullable Output<CloudletsApplicationLoadBalancerLivenessSettingsArgs> livenessSettings) {
             $.livenessSettings = livenessSettings;
             return this;
         }
 
-        /**
-         * @param livenessSettings Specifies the health of each load balanced data center defined in the data center list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder livenessSettings(CloudletsApplicationLoadBalancerLivenessSettingsArgs livenessSettings) {
             return livenessSettings(Output.of(livenessSettings));
         }
 
         /**
-         * @param originId The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+         * @param originId The conditional origin’s unique identifier
          * 
          * @return builder
          * 
@@ -227,7 +217,7 @@ public final class CloudletsApplicationLoadBalancerArgs extends com.pulumi.resou
         }
 
         /**
-         * @param originId The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+         * @param originId The conditional origin’s unique identifier
          * 
          * @return builder
          * 

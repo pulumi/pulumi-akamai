@@ -15,32 +15,16 @@ public final class GetAppSecAdvancedSettingsEvasivePathMatchPlainArgs extends co
 
     public static final GetAppSecAdvancedSettingsEvasivePathMatchPlainArgs Empty = new GetAppSecAdvancedSettingsEvasivePathMatchPlainArgs();
 
-    /**
-     * The configuration ID.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return The configuration ID.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * The ID of the security policy to use.
-     * 
-     */
     @Import(name="securityPolicyId")
     private @Nullable String securityPolicyId;
 
-    /**
-     * @return The ID of the security policy to use.
-     * 
-     */
     public Optional<String> securityPolicyId() {
         return Optional.ofNullable(this.securityPolicyId);
     }
@@ -70,23 +54,11 @@ public final class GetAppSecAdvancedSettingsEvasivePathMatchPlainArgs extends co
             $ = new GetAppSecAdvancedSettingsEvasivePathMatchPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId The configuration ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId The ID of the security policy to use.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(@Nullable String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

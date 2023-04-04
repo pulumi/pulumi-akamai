@@ -11,69 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetPropertiesSearch
     {
-        /// <summary>
-        /// Use the `akamai.getPropertiesSearch` data source to retrieve the list of properties matching a specific hostname, edge hostname or property name based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Return properties associated with the EdgeGrid API client token currently used for authentication:
-        /// 
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["myPropertyList"] = data.Akamai_properties_search.Example,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns this attribute:
-        /// 
-        /// * `properties` - A list of property version matching the given criteria.
-        /// </summary>
         public static Task<GetPropertiesSearchResult> InvokeAsync(GetPropertiesSearchArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertiesSearchResult>("akamai:index/getPropertiesSearch:getPropertiesSearch", args ?? new GetPropertiesSearchArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getPropertiesSearch` data source to retrieve the list of properties matching a specific hostname, edge hostname or property name based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Return properties associated with the EdgeGrid API client token currently used for authentication:
-        /// 
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["myPropertyList"] = data.Akamai_properties_search.Example,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns this attribute:
-        /// 
-        /// * `properties` - A list of property version matching the given criteria.
-        /// </summary>
         public static Output<GetPropertiesSearchResult> Invoke(GetPropertiesSearchInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertiesSearchResult>("akamai:index/getPropertiesSearch:getPropertiesSearch", args ?? new GetPropertiesSearchInvokeArgs(), options.WithDefaults());
     }
@@ -81,18 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertiesSearchArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Key used for search. Valid values are:
-        /// * **hostname**
-        /// * **edgeHostname**
-        /// * **propertyName**
-        /// </summary>
         [Input("key", required: true)]
         public string Key { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) Value to search for.
-        /// </summary>
         [Input("value", required: true)]
         public string Value { get; set; } = null!;
 
@@ -104,18 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertiesSearchInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Key used for search. Valid values are:
-        /// * **hostname**
-        /// * **edgeHostname**
-        /// * **propertyName**
-        /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) Value to search for.
-        /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 

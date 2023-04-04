@@ -16,32 +16,16 @@ public final class GetPropertyArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetPropertyArgs Empty = new GetPropertyArgs();
 
-    /**
-     * (Required) The property name.
-     * 
-     */
     @Import(name="name", required=true)
     private Output<String> name;
 
-    /**
-     * @return (Required) The property name.
-     * 
-     */
     public Output<String> name() {
         return this.name;
     }
 
-    /**
-     * (Optional) The version of the property whose ID you want to list.
-     * 
-     */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
-    /**
-     * @return (Optional) The version of the property whose ID you want to list.
-     * 
-     */
     public Optional<Output<Integer>> version() {
         return Optional.ofNullable(this.version);
     }
@@ -71,44 +55,20 @@ public final class GetPropertyArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetPropertyArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param name (Required) The property name.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param name (Required) The property name.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
-        /**
-         * @param version (Optional) The version of the property whose ID you want to list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(@Nullable Output<Integer> version) {
             $.version = version;
             return this;
         }
 
-        /**
-         * @param version (Optional) The version of the property whose ID you want to list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Integer version) {
             return version(Output.of(version));
         }

@@ -15,84 +15,31 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security policy
- * 
- * Enables or disables slow POST protection for a security configuration and security policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecSlowPostProtection;
- * import com.pulumi.akamai.AppSecSlowPostProtectionArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var protection = new AppSecSlowPostProtection(&#34;protection&#34;, AppSecSlowPostProtectionArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .enabled(true)
- *             .build());
- * 
- *     }
- * }
- * ```
- * ## Output Options
- * 
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- * 
- * - `output_text`. Tabular report showing the current protection settings.
- * 
- */
 @ResourceType(type="akamai:index/appSecSlowPostProtection:AppSecSlowPostProtection")
 public class AppSecSlowPostProtection extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
+     * Whether to enable slow POST protection
      * 
      */
     @Export(name="enabled", type=Boolean.class, parameters={})
     private Output<Boolean> enabled;
 
     /**
-     * @return . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
+     * @return Whether to enable slow POST protection
      * 
      */
     public Output<Boolean> enabled() {
@@ -113,14 +60,14 @@ public class AppSecSlowPostProtection extends com.pulumi.resources.CustomResourc
         return this.outputText;
     }
     /**
-     * . Unique identifier of the security policy associated with the slow POST protection settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the slow POST protection settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {

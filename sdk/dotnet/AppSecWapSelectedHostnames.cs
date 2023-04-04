@@ -9,45 +9,11 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var appsecwapSelectedhostnames = new Akamai.AppSecWapSelectedHostnames("appsecwapSelectedhostnames", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         ProtectedHosts = new[]
-    ///         {
-    ///             "documentation.akamai.com",
-    ///         },
-    ///         EvaluatedHosts = new[]
-    ///         {
-    ///             "training.akamai.com",
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames")]
     public partial class AppSecWapSelectedHostnames : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
@@ -65,7 +31,7 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<string>> ProtectedHosts { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -117,7 +83,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecWapSelectedHostnamesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -147,7 +113,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -161,7 +127,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecWapSelectedHostnamesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
@@ -191,7 +157,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

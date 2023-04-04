@@ -16,47 +16,23 @@ public final class GetAppSecReputationProfileActionsArgs extends com.pulumi.reso
 
     public static final GetAppSecReputationProfileActionsArgs Empty = new GetAppSecReputationProfileActionsArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the reputation profiles.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the reputation profiles.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-     * 
-     */
     @Import(name="reputationProfileId")
     private @Nullable Output<Integer> reputationProfileId;
 
-    /**
-     * @return . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-     * 
-     */
     public Optional<Output<Integer>> reputationProfileId() {
         return Optional.ofNullable(this.reputationProfileId);
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the reputation profiles.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the reputation profiles.
-     * 
-     */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -87,65 +63,29 @@ public final class GetAppSecReputationProfileActionsArgs extends com.pulumi.reso
             $ = new GetAppSecReputationProfileActionsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param reputationProfileId . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder reputationProfileId(@Nullable Output<Integer> reputationProfileId) {
             $.reputationProfileId = reputationProfileId;
             return this;
         }
 
-        /**
-         * @param reputationProfileId . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder reputationProfileId(Integer reputationProfileId) {
             return reputationProfileId(Output.of(reputationProfileId));
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
         }

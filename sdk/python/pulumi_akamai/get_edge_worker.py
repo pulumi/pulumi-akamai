@@ -120,33 +120,7 @@ def get_edge_worker(edgeworker_id: Optional[int] = None,
                     local_bundle: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEdgeWorkerResult:
     """
-    Use the `EdgeWorker` data source to get an EdgeWorker for a given EdgeWorker ID.
-
-    ## Example Usage
-
-    This example returns the resource tier fields for the selected EdgeWorker ID:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    test = akamai.get_edge_worker(edgeworker_id=3,
-        local_bundle="test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz")
-    ```
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `name` - The EdgeWorker name.
-    * `group_id` - Defines the group association for the EdgeWorker.
-    * `resource_tier_id` - The unique identifier of a resource tier.
-    * `local_bundle_hash` - The local bundle hash for the EdgeWorker. It's used to identify content changes for the bundle.
-    * `version` - The bundle version.
-    * `warnings` - The list of warnings returned by EdgeWorker validation.
-
-
-    :param int edgeworker_id: The unique identifier of the EdgeWorker.
-    :param str local_bundle: The path where the EdgeWorkers `.tgz` code bundle will be stored.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['edgeworkerId'] = edgeworker_id
@@ -171,32 +145,6 @@ def get_edge_worker_output(edgeworker_id: Optional[pulumi.Input[int]] = None,
                            local_bundle: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeWorkerResult]:
     """
-    Use the `EdgeWorker` data source to get an EdgeWorker for a given EdgeWorker ID.
-
-    ## Example Usage
-
-    This example returns the resource tier fields for the selected EdgeWorker ID:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    test = akamai.get_edge_worker(edgeworker_id=3,
-        local_bundle="test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz")
-    ```
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `name` - The EdgeWorker name.
-    * `group_id` - Defines the group association for the EdgeWorker.
-    * `resource_tier_id` - The unique identifier of a resource tier.
-    * `local_bundle_hash` - The local bundle hash for the EdgeWorker. It's used to identify content changes for the bundle.
-    * `version` - The bundle version.
-    * `warnings` - The list of warnings returned by EdgeWorker validation.
-
-
-    :param int edgeworker_id: The unique identifier of the EdgeWorker.
-    :param str local_bundle: The path where the EdgeWorkers `.tgz` code bundle will be stored.
+    Use this data source to access information about an existing resource.
     """
     ...

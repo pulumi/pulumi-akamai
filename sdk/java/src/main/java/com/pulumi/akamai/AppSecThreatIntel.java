@@ -14,93 +14,45 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security policy
- * 
- * Enables or disables threat intelligence for a security policy. This resource is only available to organizations running the Adaptive Security Engine (ASE) beta Please contact your Akamai representative for more information.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://techdocs.akamai.com/application-security/reference/put-rules-threat-intel)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecThreatIntel;
- * import com.pulumi.akamai.AppSecThreatIntelArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var threatIntel = new AppSecThreatIntel(&#34;threatIntel&#34;, AppSecThreatIntelArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .threatIntel(&#34;on&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecThreatIntel:AppSecThreatIntel")
 public class AppSecThreatIntel extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
     /**
-     * . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
+     * Whether threat intelligence protection should be on or off
      * 
      */
     @Export(name="threatIntel", type=String.class, parameters={})
     private Output<String> threatIntel;
 
     /**
-     * @return . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
+     * @return Whether threat intelligence protection should be on or off
      * 
      */
     public Output<String> threatIntel() {

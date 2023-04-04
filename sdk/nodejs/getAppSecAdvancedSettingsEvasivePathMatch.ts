@@ -4,37 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security configuration; security policy
- *
- * Use the `akamai.AppSecAdvancedSettingsEvasivePathMatch` data source to retrieve information about the evasive path match for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may retrieve these settings for a particular policy by specifying the policy using the `securityPolicyId` parameter. For more information, see [Get evasive path match setting](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match).
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/advanced-settings/evasive-path-match](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
- * });
- * const evasivePathMatch = configuration.then(configuration => akamai.getAppSecAdvancedSettingsEvasivePathMatch({
- *     configId: configuration.configId,
- * }));
- * export const advancedSettingsEvasivePathMatchOutput = evasivePathMatch.then(evasivePathMatch => evasivePathMatch.outputText);
- * export const advancedSettingsEvasivePathMatchJson = evasivePathMatch.then(evasivePathMatch => evasivePathMatch.json);
- * const policyOverride = configuration.then(configuration => akamai.getAppSecAdvancedSettingsEvasivePathMatch({
- *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
- * }));
- * export const advancedSettingsPolicyEvasivePathMatchOutput = policyOverride.then(policyOverride => policyOverride.outputText);
- * export const advancedSettingsPolicyEvasivePathMatchJson = policyOverride.then(policyOverride => policyOverride.json);
- * ```
- */
 export function getAppSecAdvancedSettingsEvasivePathMatch(args: GetAppSecAdvancedSettingsEvasivePathMatchArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecAdvancedSettingsEvasivePathMatchResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -48,13 +17,7 @@ export function getAppSecAdvancedSettingsEvasivePathMatch(args: GetAppSecAdvance
  * A collection of arguments for invoking getAppSecAdvancedSettingsEvasivePathMatch.
  */
 export interface GetAppSecAdvancedSettingsEvasivePathMatchArgs {
-    /**
-     * The configuration ID.
-     */
     configId: number;
-    /**
-     * The ID of the security policy to use.
-     */
     securityPolicyId?: string;
 }
 
@@ -67,47 +30,10 @@ export interface GetAppSecAdvancedSettingsEvasivePathMatchResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * A JSON-formatted list of information about the evasive path match settings.
-     */
     readonly json: string;
-    /**
-     * A tabular display showing the evasive path match settings.
-     */
     readonly outputText: string;
     readonly securityPolicyId?: string;
 }
-/**
- * **Scopes**: Security configuration; security policy
- *
- * Use the `akamai.AppSecAdvancedSettingsEvasivePathMatch` data source to retrieve information about the evasive path match for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may retrieve these settings for a particular policy by specifying the policy using the `securityPolicyId` parameter. For more information, see [Get evasive path match setting](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match).
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/advanced-settings/evasive-path-match](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
- * });
- * const evasivePathMatch = configuration.then(configuration => akamai.getAppSecAdvancedSettingsEvasivePathMatch({
- *     configId: configuration.configId,
- * }));
- * export const advancedSettingsEvasivePathMatchOutput = evasivePathMatch.then(evasivePathMatch => evasivePathMatch.outputText);
- * export const advancedSettingsEvasivePathMatchJson = evasivePathMatch.then(evasivePathMatch => evasivePathMatch.json);
- * const policyOverride = configuration.then(configuration => akamai.getAppSecAdvancedSettingsEvasivePathMatch({
- *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
- * }));
- * export const advancedSettingsPolicyEvasivePathMatchOutput = policyOverride.then(policyOverride => policyOverride.outputText);
- * export const advancedSettingsPolicyEvasivePathMatchJson = policyOverride.then(policyOverride => policyOverride.json);
- * ```
- */
 export function getAppSecAdvancedSettingsEvasivePathMatchOutput(args: GetAppSecAdvancedSettingsEvasivePathMatchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecAdvancedSettingsEvasivePathMatchResult> {
     return pulumi.output(args).apply((a: any) => getAppSecAdvancedSettingsEvasivePathMatch(a, opts))
 }
@@ -116,12 +42,6 @@ export function getAppSecAdvancedSettingsEvasivePathMatchOutput(args: GetAppSecA
  * A collection of arguments for invoking getAppSecAdvancedSettingsEvasivePathMatch.
  */
 export interface GetAppSecAdvancedSettingsEvasivePathMatchOutputArgs {
-    /**
-     * The configuration ID.
-     */
     configId: pulumi.Input<number>;
-    /**
-     * The ID of the security policy to use.
-     */
     securityPolicyId?: pulumi.Input<string>;
 }

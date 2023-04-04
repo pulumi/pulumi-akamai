@@ -11,71 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAuthoritiesSet
     {
-        /// <summary>
-        /// Use the `akamai.getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var example = Akamai.GetAuthoritiesSet.Invoke(new()
-        ///     {
-        ///         Contract = "ctr_1-AB123",
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source supports this attribute:
-        /// 
-        /// * `authorities` - A list of authorities.
-        /// </summary>
         public static Task<GetAuthoritiesSetResult> InvokeAsync(GetAuthoritiesSetArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuthoritiesSetResult>("akamai:index/getAuthoritiesSet:getAuthoritiesSet", args ?? new GetAuthoritiesSetArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var example = Akamai.GetAuthoritiesSet.Invoke(new()
-        ///     {
-        ///         Contract = "ctr_1-AB123",
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source supports this attribute:
-        /// 
-        /// * `authorities` - A list of authorities.
-        /// </summary>
         public static Output<GetAuthoritiesSetResult> Invoke(GetAuthoritiesSetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuthoritiesSetResult>("akamai:index/getAuthoritiesSet:getAuthoritiesSet", args ?? new GetAuthoritiesSetInvokeArgs(), options.WithDefaults());
     }
@@ -83,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetAuthoritiesSetArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// The contract ID.
-        /// </summary>
         [Input("contract", required: true)]
         public string Contract { get; set; } = null!;
 
@@ -97,9 +32,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetAuthoritiesSetInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// The contract ID.
-        /// </summary>
         [Input("contract", required: true)]
         public Input<string> Contract { get; set; } = null!;
 

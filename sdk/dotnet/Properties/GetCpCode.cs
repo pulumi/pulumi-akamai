@@ -22,33 +22,18 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class GetCpCodeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Replaced by `contract_id`. Maintained for legacy purposes.
-        /// </summary>
         [Input("contract")]
         public string? Contract { get; set; }
 
-        /// <summary>
-        /// (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// </summary>
         [Input("contractId")]
         public string? ContractId { get; set; }
 
-        /// <summary>
-        /// Replaced by `group_id`. Maintained for legacy purposes.
-        /// </summary>
         [Input("group")]
         public string? Group { get; set; }
 
-        /// <summary>
-        /// The group's unique ID, including the `grp_` prefix.
-        /// </summary>
         [Input("groupId")]
         public string? GroupId { get; set; }
 
-        /// <summary>
-        /// The name of the CP code.
-        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 
@@ -60,33 +45,18 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class GetCpCodeInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Replaced by `contract_id`. Maintained for legacy purposes.
-        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
-        /// <summary>
-        /// (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
-        /// <summary>
-        /// Replaced by `group_id`. Maintained for legacy purposes.
-        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
-        /// <summary>
-        /// The group's unique ID, including the `grp_` prefix.
-        /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
-        /// <summary>
-        /// The name of the CP code.
-        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 

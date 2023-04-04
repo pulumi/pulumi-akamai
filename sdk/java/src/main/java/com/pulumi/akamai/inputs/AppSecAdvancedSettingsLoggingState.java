@@ -17,14 +17,14 @@ public final class AppSecAdvancedSettingsLoggingState extends com.pulumi.resourc
     public static final AppSecAdvancedSettingsLoggingState Empty = new AppSecAdvancedSettingsLoggingState();
 
     /**
-     * . Unique identifier of the security configuration containing the logging settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration containing the logging settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -32,14 +32,14 @@ public final class AppSecAdvancedSettingsLoggingState extends com.pulumi.resourc
     }
 
     /**
-     * . Path to a JSON file containing the logging settings to be configured.
+     * Whether to enable, disable, or update HTTP header logging settings
      * 
      */
     @Import(name="logging")
     private @Nullable Output<String> logging;
 
     /**
-     * @return . Path to a JSON file containing the logging settings to be configured.
+     * @return Whether to enable, disable, or update HTTP header logging settings
      * 
      */
     public Optional<Output<String>> logging() {
@@ -47,14 +47,14 @@ public final class AppSecAdvancedSettingsLoggingState extends com.pulumi.resourc
     }
 
     /**
-     * . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -88,7 +88,7 @@ public final class AppSecAdvancedSettingsLoggingState extends com.pulumi.resourc
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration containing the logging settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class AppSecAdvancedSettingsLoggingState extends com.pulumi.resourc
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration containing the logging settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class AppSecAdvancedSettingsLoggingState extends com.pulumi.resourc
         }
 
         /**
-         * @param logging . Path to a JSON file containing the logging settings to be configured.
+         * @param logging Whether to enable, disable, or update HTTP header logging settings
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class AppSecAdvancedSettingsLoggingState extends com.pulumi.resourc
         }
 
         /**
-         * @param logging . Path to a JSON file containing the logging settings to be configured.
+         * @param logging Whether to enable, disable, or update HTTP header logging settings
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class AppSecAdvancedSettingsLoggingState extends com.pulumi.resourc
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AppSecAdvancedSettingsLoggingState extends com.pulumi.resourc
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

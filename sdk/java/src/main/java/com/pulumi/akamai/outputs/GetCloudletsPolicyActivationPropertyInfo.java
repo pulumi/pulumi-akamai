@@ -15,10 +15,6 @@ public final class GetCloudletsPolicyActivationPropertyInfo {
     private Integer groupId;
     private String name;
     private String status;
-    /**
-     * @return (Optional) The version number of a policy.
-     * 
-     */
     private Integer version;
 
     private GetCloudletsPolicyActivationPropertyInfo() {}
@@ -37,10 +33,6 @@ public final class GetCloudletsPolicyActivationPropertyInfo {
     public String status() {
         return this.status;
     }
-    /**
-     * @return (Optional) The version number of a policy.
-     * 
-     */
     public Integer version() {
         return this.version;
     }

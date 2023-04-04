@@ -10,52 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			export, err := akamai.GetAppSecExportConfiguration(ctx, &akamai.GetAppSecExportConfigurationArgs{
-//				ConfigId: configuration.ConfigId,
-//				Version:  configuration.LatestVersion,
-//				Searches: []string{
-//					"securityPolicies",
-//					"selectedHosts",
-//				},
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("json", export.Json)
-//			ctx.Export("text", export.OutputText)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `json`. Complete set of information about the specified security configuration version in JSON format. When this option is included information is always returned for the _entire_ configuration. Among other things, that means that, if your command uses the `search` parameter, that parameter is ignored.
-// - `outputText`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
 func GetAppSecExportConfiguration(ctx *pulumi.Context, args *GetAppSecExportConfigurationArgs, opts ...pulumi.InvokeOption) (*GetAppSecExportConfigurationResult, error) {
 	var rv GetAppSecExportConfigurationResult
 	err := ctx.Invoke("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args, &rv, opts...)
@@ -67,12 +21,9 @@ func GetAppSecExportConfiguration(ctx *pulumi.Context, args *GetAppSecExportConf
 
 // A collection of arguments for invoking getAppSecExportConfiguration.
 type GetAppSecExportConfigurationArgs struct {
-	// . Unique identifier of the security configuration you want to return information for.
-	ConfigId int `pulumi:"configId"`
-	// . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
+	ConfigId int      `pulumi:"configId"`
 	Searches []string `pulumi:"searches"`
-	// . Version number of the security configuration.
-	Version int `pulumi:"version"`
+	Version  int      `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecExportConfiguration.
@@ -101,12 +52,9 @@ func GetAppSecExportConfigurationOutput(ctx *pulumi.Context, args GetAppSecExpor
 
 // A collection of arguments for invoking getAppSecExportConfiguration.
 type GetAppSecExportConfigurationOutputArgs struct {
-	// . Unique identifier of the security configuration you want to return information for.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
+	ConfigId pulumi.IntInput         `pulumi:"configId"`
 	Searches pulumi.StringArrayInput `pulumi:"searches"`
-	// . Version number of the security configuration.
-	Version pulumi.IntInput `pulumi:"version"`
+	Version  pulumi.IntInput         `pulumi:"version"`
 }
 
 func (GetAppSecExportConfigurationOutputArgs) ElementType() reflect.Type {

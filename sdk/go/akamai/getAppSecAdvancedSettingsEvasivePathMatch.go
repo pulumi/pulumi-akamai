@@ -10,56 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration; security policy
-//
-// Use the `AppSecAdvancedSettingsEvasivePathMatch` data source to retrieve information about the evasive path match for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may retrieve these settings for a particular policy by specifying the policy using the `securityPolicyId` parameter. For more information, see [Get evasive path match setting](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match).
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/advanced-settings/evasive-path-match](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef(_var.Security_configuration),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			evasivePathMatch, err := akamai.LookupAppSecAdvancedSettingsEvasivePathMatch(ctx, &akamai.LookupAppSecAdvancedSettingsEvasivePathMatchArgs{
-//				ConfigId: configuration.ConfigId,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("advancedSettingsEvasivePathMatchOutput", evasivePathMatch.OutputText)
-//			ctx.Export("advancedSettingsEvasivePathMatchJson", evasivePathMatch.Json)
-//			policyOverride, err := akamai.LookupAppSecAdvancedSettingsEvasivePathMatch(ctx, &akamai.LookupAppSecAdvancedSettingsEvasivePathMatchArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: pulumi.StringRef(_var.Security_policy_id),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("advancedSettingsPolicyEvasivePathMatchOutput", policyOverride.OutputText)
-//			ctx.Export("advancedSettingsPolicyEvasivePathMatchJson", policyOverride.Json)
-//			return nil
-//		})
-//	}
-//
-// ```
 func LookupAppSecAdvancedSettingsEvasivePathMatch(ctx *pulumi.Context, args *LookupAppSecAdvancedSettingsEvasivePathMatchArgs, opts ...pulumi.InvokeOption) (*LookupAppSecAdvancedSettingsEvasivePathMatchResult, error) {
 	var rv LookupAppSecAdvancedSettingsEvasivePathMatchResult
 	err := ctx.Invoke("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args, &rv, opts...)
@@ -71,9 +21,7 @@ func LookupAppSecAdvancedSettingsEvasivePathMatch(ctx *pulumi.Context, args *Loo
 
 // A collection of arguments for invoking getAppSecAdvancedSettingsEvasivePathMatch.
 type LookupAppSecAdvancedSettingsEvasivePathMatchArgs struct {
-	// The configuration ID.
-	ConfigId int `pulumi:"configId"`
-	// The ID of the security policy to use.
+	ConfigId         int     `pulumi:"configId"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
@@ -81,10 +29,8 @@ type LookupAppSecAdvancedSettingsEvasivePathMatchArgs struct {
 type LookupAppSecAdvancedSettingsEvasivePathMatchResult struct {
 	ConfigId int `pulumi:"configId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of information about the evasive path match settings.
-	Json string `pulumi:"json"`
-	// A tabular display showing the evasive path match settings.
+	Id               string  `pulumi:"id"`
+	Json             string  `pulumi:"json"`
 	OutputText       string  `pulumi:"outputText"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
@@ -104,9 +50,7 @@ func LookupAppSecAdvancedSettingsEvasivePathMatchOutput(ctx *pulumi.Context, arg
 
 // A collection of arguments for invoking getAppSecAdvancedSettingsEvasivePathMatch.
 type LookupAppSecAdvancedSettingsEvasivePathMatchOutputArgs struct {
-	// The configuration ID.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// The ID of the security policy to use.
+	ConfigId         pulumi.IntInput       `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringPtrInput `pulumi:"securityPolicyId"`
 }
 
@@ -138,12 +82,10 @@ func (o LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput) Id() pulumi.St
 	return o.ApplyT(func(v LookupAppSecAdvancedSettingsEvasivePathMatchResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of information about the evasive path match settings.
 func (o LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecAdvancedSettingsEvasivePathMatchResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A tabular display showing the evasive path match settings.
 func (o LookupAppSecAdvancedSettingsEvasivePathMatchResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecAdvancedSettingsEvasivePathMatchResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

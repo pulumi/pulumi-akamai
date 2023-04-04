@@ -55,29 +55,7 @@ class AwaitableGetIamGrantableRolesResult(GetIamGrantableRolesResult):
 
 def get_iam_grantable_roles(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamGrantableRolesResult:
     """
-    List which grantable roles you can include in a new custom role or add to an existing custom role.
-
-    ## Basic usage
-
-    This example returns the available roles to grant to users:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_iam_grantable_roles()
-    pulumi.export("akaGrantableRolesCount", len(data["akamai_iam_grantable_roles"]["test"]["grantable_roles"]))
-    pulumi.export("akaGrantableRoles", data["akamai_iam_grantable_roles"]["test"])
-    ```
-
-    ## Attributes reference
-
-    This resource returns this attribute:
-
-    * `grantable_roles` - Lists which grantable roles you can include in a new custom role or add to an existing custom role.
-      * `granted_role_id` - Granted role ID.
-      * `name` - Granted role name.
-      * `description` - Granted role description.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

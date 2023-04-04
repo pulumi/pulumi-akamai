@@ -132,6 +132,12 @@ namespace Pulumi.Akamai
         [Input("propertySection")]
         public Input<string>? PropertySection { get; set; }
 
+        /// <summary>
+        /// The maximum number of API requests to be made per second (0 for no limit)
+        /// </summary>
+        [Input("requestLimit", json: true)]
+        public Input<int>? RequestLimit { get; set; }
+
         public ProviderArgs()
         {
         }

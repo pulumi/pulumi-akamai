@@ -10,57 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy
-//
-// Returns information about the following two reputation analysis settings:
-//
-// - `forwardToHTTPHeader`. When enabled, client reputation information associated with a request is forwarded to origin servers by using an HTTP header.
-// - `forwardSharedIPToHTTPHeaderAndSIEM`. When enabled, both the HTTP header and SIEM integration events include a value indicating that the IP addresses is shared address.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://techdocs.akamai.com/application-security/reference/get-reputation-analysis)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			reputationAnalysis, err := akamai.LookupAppSecReputationProfileAnalysis(ctx, &akamai.LookupAppSecReputationProfileAnalysisArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: "gms1_134637",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("reputationAnalysisText", reputationAnalysis.OutputText)
-//			ctx.Export("reputationAnalysisJson", reputationAnalysis.Json)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `json`. JSON-formatted list of the reputation analysis settings.
-// - `outputText`. Tabular report showing the reputation analysis settings.
 func LookupAppSecReputationProfileAnalysis(ctx *pulumi.Context, args *LookupAppSecReputationProfileAnalysisArgs, opts ...pulumi.InvokeOption) (*LookupAppSecReputationProfileAnalysisResult, error) {
 	var rv LookupAppSecReputationProfileAnalysisResult
 	err := ctx.Invoke("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args, &rv, opts...)
@@ -72,9 +21,7 @@ func LookupAppSecReputationProfileAnalysis(ctx *pulumi.Context, args *LookupAppS
 
 // A collection of arguments for invoking getAppSecReputationProfileAnalysis.
 type LookupAppSecReputationProfileAnalysisArgs struct {
-	// . Unique identifier of the security configuration associated with the reputation profile analysis settings.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the reputation profile analysis settings.
+	ConfigId         int    `pulumi:"configId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -103,9 +50,7 @@ func LookupAppSecReputationProfileAnalysisOutput(ctx *pulumi.Context, args Looku
 
 // A collection of arguments for invoking getAppSecReputationProfileAnalysis.
 type LookupAppSecReputationProfileAnalysisOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the reputation profile analysis settings.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the reputation profile analysis settings.
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 

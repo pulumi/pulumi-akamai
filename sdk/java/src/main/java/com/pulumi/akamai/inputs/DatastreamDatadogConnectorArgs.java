@@ -17,32 +17,16 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
 
     public static final DatastreamDatadogConnectorArgs Empty = new DatastreamDatadogConnectorArgs();
 
-    /**
-     * **Secret**. Your Log API token for your account in New Relic.
-     * 
-     */
     @Import(name="authToken", required=true)
     private Output<String> authToken;
 
-    /**
-     * @return **Secret**. Your Log API token for your account in New Relic.
-     * 
-     */
     public Output<String> authToken() {
         return this.authToken;
     }
 
-    /**
-     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     @Import(name="compressLogs")
     private @Nullable Output<Boolean> compressLogs;
 
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     public Optional<Output<Boolean>> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
@@ -54,77 +38,37 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.connectorId);
     }
 
-    /**
-     * The name of the connector.
-     * 
-     */
     @Import(name="connectorName", required=true)
     private Output<String> connectorName;
 
-    /**
-     * @return The name of the connector.
-     * 
-     */
     public Output<String> connectorName() {
         return this.connectorName;
     }
 
-    /**
-     * The service of the Datadog connector. A service groups together endpoints, queries, or jobs for the purposes of scaling instances. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes).
-     * 
-     */
     @Import(name="service")
     private @Nullable Output<String> service;
 
-    /**
-     * @return The service of the Datadog connector. A service groups together endpoints, queries, or jobs for the purposes of scaling instances. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes).
-     * 
-     */
     public Optional<Output<String>> service() {
         return Optional.ofNullable(this.service);
     }
 
-    /**
-     * The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
-     * 
-     */
     @Import(name="source")
     private @Nullable Output<String> source;
 
-    /**
-     * @return The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
-     * 
-     */
     public Optional<Output<String>> source() {
         return Optional.ofNullable(this.source);
     }
 
-    /**
-     * The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
-     * 
-     */
     @Import(name="tags")
     private @Nullable Output<String> tags;
 
-    /**
-     * @return The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
-     * 
-     */
     public Optional<Output<String>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
-    /**
-     * Enter the secure URL where you want to send and store your logs.
-     * 
-     */
     @Import(name="url", required=true)
     private Output<String> url;
 
-    /**
-     * @return Enter the secure URL where you want to send and store your logs.
-     * 
-     */
     public Output<String> url() {
         return this.url;
     }
@@ -160,44 +104,20 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
             $ = new DatastreamDatadogConnectorArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param authToken **Secret**. Your Log API token for your account in New Relic.
-         * 
-         * @return builder
-         * 
-         */
         public Builder authToken(Output<String> authToken) {
             $.authToken = authToken;
             return this;
         }
 
-        /**
-         * @param authToken **Secret**. Your Log API token for your account in New Relic.
-         * 
-         * @return builder
-         * 
-         */
         public Builder authToken(String authToken) {
             return authToken(Output.of(authToken));
         }
 
-        /**
-         * @param compressLogs Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder compressLogs(@Nullable Output<Boolean> compressLogs) {
             $.compressLogs = compressLogs;
             return this;
         }
 
-        /**
-         * @param compressLogs Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder compressLogs(Boolean compressLogs) {
             return compressLogs(Output.of(compressLogs));
         }
@@ -211,107 +131,47 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
             return connectorId(Output.of(connectorId));
         }
 
-        /**
-         * @param connectorName The name of the connector.
-         * 
-         * @return builder
-         * 
-         */
         public Builder connectorName(Output<String> connectorName) {
             $.connectorName = connectorName;
             return this;
         }
 
-        /**
-         * @param connectorName The name of the connector.
-         * 
-         * @return builder
-         * 
-         */
         public Builder connectorName(String connectorName) {
             return connectorName(Output.of(connectorName));
         }
 
-        /**
-         * @param service The service of the Datadog connector. A service groups together endpoints, queries, or jobs for the purposes of scaling instances. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes).
-         * 
-         * @return builder
-         * 
-         */
         public Builder service(@Nullable Output<String> service) {
             $.service = service;
             return this;
         }
 
-        /**
-         * @param service The service of the Datadog connector. A service groups together endpoints, queries, or jobs for the purposes of scaling instances. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes).
-         * 
-         * @return builder
-         * 
-         */
         public Builder service(String service) {
             return service(Output.of(service));
         }
 
-        /**
-         * @param source The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
-         * 
-         * @return builder
-         * 
-         */
         public Builder source(@Nullable Output<String> source) {
             $.source = source;
             return this;
         }
 
-        /**
-         * @param source The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
-         * 
-         * @return builder
-         * 
-         */
         public Builder source(String source) {
             return source(Output.of(source));
         }
 
-        /**
-         * @param tags The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
-         * 
-         * @return builder
-         * 
-         */
         public Builder tags(@Nullable Output<String> tags) {
             $.tags = tags;
             return this;
         }
 
-        /**
-         * @param tags The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
-         * 
-         * @return builder
-         * 
-         */
         public Builder tags(String tags) {
             return tags(Output.of(tags));
         }
 
-        /**
-         * @param url Enter the secure URL where you want to send and store your logs.
-         * 
-         * @return builder
-         * 
-         */
         public Builder url(Output<String> url) {
             $.url = url;
             return this;
         }
 
-        /**
-         * @param url Enter the secure URL where you want to send and store your logs.
-         * 
-         * @return builder
-         * 
-         */
         public Builder url(String url) {
             return url(Output.of(url));
         }

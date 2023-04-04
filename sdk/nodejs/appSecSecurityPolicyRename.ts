@@ -4,13 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security policy
- *
- * Renames an existing security policy. Note that you can only change the name of the policy: once issued, the security policy ID can't be modified.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}](https://techdocs.akamai.com/application-security/reference/put-policy)
- */
 export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
     /**
      * Get an existing AppSecSecurityPolicyRename resource's state with the given name, ID, and optional extra
@@ -40,15 +33,15 @@ export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the security policy being renamed.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Unique identifier of the security policy being renamed.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
     /**
-     * . New name to be given to the security policy.
+     * New name to be given to the security policy
      */
     public readonly securityPolicyName!: pulumi.Output<string>;
 
@@ -93,15 +86,15 @@ export class AppSecSecurityPolicyRename extends pulumi.CustomResource {
  */
 export interface AppSecSecurityPolicyRenameState {
     /**
-     * . Unique identifier of the security configuration associated with the security policy being renamed.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy being renamed.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
     /**
-     * . New name to be given to the security policy.
+     * New name to be given to the security policy
      */
     securityPolicyName?: pulumi.Input<string>;
 }
@@ -111,15 +104,15 @@ export interface AppSecSecurityPolicyRenameState {
  */
 export interface AppSecSecurityPolicyRenameArgs {
     /**
-     * . Unique identifier of the security configuration associated with the security policy being renamed.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy being renamed.
+     * Unique identifier of the security policy
      */
     securityPolicyId: pulumi.Input<string>;
     /**
-     * . New name to be given to the security policy.
+     * New name to be given to the security policy
      */
     securityPolicyName: pulumi.Input<string>;
 }

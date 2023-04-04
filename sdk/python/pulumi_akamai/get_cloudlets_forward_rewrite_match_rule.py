@@ -67,45 +67,7 @@ class AwaitableGetCloudletsForwardRewriteMatchRuleResult(GetCloudletsForwardRewr
 def get_cloudlets_forward_rewrite_match_rule(match_rules: Optional[Sequence[pulumi.InputType['GetCloudletsForwardRewriteMatchRuleMatchRuleArgs']]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsForwardRewriteMatchRuleResult:
     """
-    Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-
-    Use the _get_cloudlets_forward_rewrite_match_rule_ data source to build a match rule JSON object for the Forward Rewrite Cloudlet.
-
-    ## Basic usage
-
-    This example returns the JSON-encoded rules for the Forward Rewrite Cloudlet:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_cloudlets_forward_rewrite_match_rule(match_rules=[akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleArgs(
-        forward_settings=akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs(
-            origin_id="1234",
-            path_and_qs="/path",
-            use_incoming_query_string=True,
-        ),
-        matches=[akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs(
-            case_sensitive=False,
-            check_ips="CONNECTING_IP XFF_HEADERS",
-            match_operator="equals",
-            match_type="clientip",
-            match_value="192.0.2.0",
-            negate=False,
-        )],
-        name="rule",
-    )])
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `type` - The type of Cloudlet the rule is for.
-    * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
-
-
-    :param Sequence[pulumi.InputType['GetCloudletsForwardRewriteMatchRuleMatchRuleArgs']] match_rules: (Optional) A list of Cloudlet-specific match rules for a policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['matchRules'] = match_rules
@@ -122,44 +84,6 @@ def get_cloudlets_forward_rewrite_match_rule(match_rules: Optional[Sequence[pulu
 def get_cloudlets_forward_rewrite_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudletsForwardRewriteMatchRuleMatchRuleArgs']]]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsForwardRewriteMatchRuleResult]:
     """
-    Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-
-    Use the _get_cloudlets_forward_rewrite_match_rule_ data source to build a match rule JSON object for the Forward Rewrite Cloudlet.
-
-    ## Basic usage
-
-    This example returns the JSON-encoded rules for the Forward Rewrite Cloudlet:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_cloudlets_forward_rewrite_match_rule(match_rules=[akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleArgs(
-        forward_settings=akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettingsArgs(
-            origin_id="1234",
-            path_and_qs="/path",
-            use_incoming_query_string=True,
-        ),
-        matches=[akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchArgs(
-            case_sensitive=False,
-            check_ips="CONNECTING_IP XFF_HEADERS",
-            match_operator="equals",
-            match_type="clientip",
-            match_value="192.0.2.0",
-            negate=False,
-        )],
-        name="rule",
-    )])
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `type` - The type of Cloudlet the rule is for.
-    * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
-
-
-    :param Sequence[pulumi.InputType['GetCloudletsForwardRewriteMatchRuleMatchRuleArgs']] match_rules: (Optional) A list of Cloudlet-specific match rules for a policy.
+    Use this data source to access information about an existing resource.
     """
     ...

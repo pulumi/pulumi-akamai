@@ -132,3 +132,14 @@ Object.defineProperty(exports, "propertySection", {
     enumerable: true,
 });
 
+/**
+ * The maximum number of API requests to be made per second (0 for no limit)
+ */
+export declare const requestLimit: number | undefined;
+Object.defineProperty(exports, "requestLimit", {
+    get() {
+        return __config.getObject<number>("requestLimit");
+    },
+    enumerable: true,
+});
+

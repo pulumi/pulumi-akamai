@@ -13,32 +13,16 @@ public final class GetAppSecThreatIntelPlainArgs extends com.pulumi.resources.In
 
     public static final GetAppSecThreatIntelPlainArgs Empty = new GetAppSecThreatIntelPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the threat intelligence settings.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the threat intelligence settings.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the threat intelligence settings.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the threat intelligence settings.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -68,23 +52,11 @@ public final class GetAppSecThreatIntelPlainArgs extends com.pulumi.resources.In
             $ = new GetAppSecThreatIntelPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the threat intelligence settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the threat intelligence settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

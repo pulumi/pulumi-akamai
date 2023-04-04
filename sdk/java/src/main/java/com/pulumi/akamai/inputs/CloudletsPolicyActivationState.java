@@ -18,14 +18,14 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
     public static final CloudletsPolicyActivationState Empty = new CloudletsPolicyActivationState();
 
     /**
-     * A set of property identifiers related to this Cloudlet policy. You can&#39;t activate a Cloudlet policy if it doesn&#39;t have any properties associated with it.
+     * Set of property IDs to link to this Cloudlets policy
      * 
      */
     @Import(name="associatedProperties")
     private @Nullable Output<List<String>> associatedProperties;
 
     /**
-     * @return A set of property identifiers related to this Cloudlet policy. You can&#39;t activate a Cloudlet policy if it doesn&#39;t have any properties associated with it.
+     * @return Set of property IDs to link to this Cloudlets policy
      * 
      */
     public Optional<Output<List<String>>> associatedProperties() {
@@ -33,14 +33,14 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
     }
 
     /**
-     * The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+     * The network you want to activate the policy version on (options are Staging and Production)
      * 
      */
     @Import(name="network")
     private @Nullable Output<String> network;
 
     /**
-     * @return The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+     * @return The network you want to activate the policy version on (options are Staging and Production)
      * 
      */
     public Optional<Output<String>> network() {
@@ -48,14 +48,14 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
     }
 
     /**
-     * An identifier for the Cloudlet policy you want to activate.
+     * ID of the Cloudlets policy you want to activate
      * 
      */
     @Import(name="policyId")
     private @Nullable Output<Integer> policyId;
 
     /**
-     * @return An identifier for the Cloudlet policy you want to activate.
+     * @return ID of the Cloudlets policy you want to activate
      * 
      */
     public Optional<Output<Integer>> policyId() {
@@ -63,14 +63,14 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
     }
 
     /**
-     * The activation status for this Cloudlet policy.
+     * Activation status for this Cloudlets policy
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return The activation status for this Cloudlet policy.
+     * @return Activation status for this Cloudlets policy
      * 
      */
     public Optional<Output<String>> status() {
@@ -78,14 +78,14 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
     }
 
     /**
-     * The Cloudlet policy version you want to activate.
+     * Cloudlets policy version you want to activate
      * 
      */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
     /**
-     * @return The Cloudlet policy version you want to activate.
+     * @return Cloudlets policy version you want to activate
      * 
      */
     public Optional<Output<Integer>> version() {
@@ -121,7 +121,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param associatedProperties A set of property identifiers related to this Cloudlet policy. You can&#39;t activate a Cloudlet policy if it doesn&#39;t have any properties associated with it.
+         * @param associatedProperties Set of property IDs to link to this Cloudlets policy
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param associatedProperties A set of property identifiers related to this Cloudlet policy. You can&#39;t activate a Cloudlet policy if it doesn&#39;t have any properties associated with it.
+         * @param associatedProperties Set of property IDs to link to this Cloudlets policy
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param associatedProperties A set of property identifiers related to this Cloudlet policy. You can&#39;t activate a Cloudlet policy if it doesn&#39;t have any properties associated with it.
+         * @param associatedProperties Set of property IDs to link to this Cloudlets policy
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param network The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+         * @param network The network you want to activate the policy version on (options are Staging and Production)
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param network The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+         * @param network The network you want to activate the policy version on (options are Staging and Production)
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param policyId An identifier for the Cloudlet policy you want to activate.
+         * @param policyId ID of the Cloudlets policy you want to activate
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param policyId An identifier for the Cloudlet policy you want to activate.
+         * @param policyId ID of the Cloudlets policy you want to activate
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param status The activation status for this Cloudlet policy.
+         * @param status Activation status for this Cloudlets policy
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param status The activation status for this Cloudlet policy.
+         * @param status Activation status for this Cloudlets policy
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param version The Cloudlet policy version you want to activate.
+         * @param version Cloudlets policy version you want to activate
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class CloudletsPolicyActivationState extends com.pulumi.resources.R
         }
 
         /**
-         * @param version The Cloudlet policy version you want to activate.
+         * @param version Cloudlets policy version you want to activate
          * 
          * @return builder
          * 

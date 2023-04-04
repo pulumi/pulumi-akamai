@@ -4,27 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.NetworkListSubscription` resource to specify a set of email addresses to be notified of changes to any
- * of a set of network lists.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const networkListsFilter = akamai.getNetworkLists({
- *     name: _var.network_list,
- * });
- * const subscribe = new akamai.NetworkListSubscription("subscribe", {
- *     networkLists: networkListsFilter.then(networkListsFilter => networkListsFilter.lists),
- *     recipients: ["user@example.com"],
- * });
- * ```
- */
 export class NetworkListSubscription extends pulumi.CustomResource {
     /**
      * Get an existing NetworkListSubscription resource's state with the given name, ID, and optional extra
@@ -53,15 +32,7 @@ export class NetworkListSubscription extends pulumi.CustomResource {
         return obj['__pulumiType'] === NetworkListSubscription.__pulumiType;
     }
 
-    /**
-     * A list containing one or more IDs of the network lists to which the indicated email
-     * addresses should be subscribed.
-     */
     public readonly networkLists!: pulumi.Output<string[]>;
-    /**
-     * A bracketed, comma-separated list of email addresses that will be notified of changes to any
-     * of the specified network lists.
-     */
     public readonly recipients!: pulumi.Output<string[]>;
 
     /**
@@ -99,15 +70,7 @@ export class NetworkListSubscription extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NetworkListSubscription resources.
  */
 export interface NetworkListSubscriptionState {
-    /**
-     * A list containing one or more IDs of the network lists to which the indicated email
-     * addresses should be subscribed.
-     */
     networkLists?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * A bracketed, comma-separated list of email addresses that will be notified of changes to any
-     * of the specified network lists.
-     */
     recipients?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -115,14 +78,6 @@ export interface NetworkListSubscriptionState {
  * The set of arguments for constructing a NetworkListSubscription resource.
  */
 export interface NetworkListSubscriptionArgs {
-    /**
-     * A list containing one or more IDs of the network lists to which the indicated email
-     * addresses should be subscribed.
-     */
     networkLists: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * A bracketed, comma-separated list of email addresses that will be notified of changes to any
-     * of the specified network lists.
-     */
     recipients: pulumi.Input<pulumi.Input<string>[]>;
 }

@@ -14,65 +14,25 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GtmResourceResourceInstance {
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     private Integer datacenterId;
-    /**
-     * @return Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
-     * 
-     */
     private @Nullable String loadObject;
-    /**
-     * @return Specifies the TCP port of the `load_object`.
-     * 
-     */
     private @Nullable Integer loadObjectPort;
-    /**
-     * @return (List) Specifies a list of servers from which to request the load object.
-     * 
-     */
     private @Nullable List<String> loadServers;
-    /**
-     * @return A boolean that indicates whether a default `load_object` is used for the resources.
-     * 
-     */
     private @Nullable Boolean useDefaultLoadObject;
 
     private GtmResourceResourceInstance() {}
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Integer datacenterId() {
         return this.datacenterId;
     }
-    /**
-     * @return Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
-     * 
-     */
     public Optional<String> loadObject() {
         return Optional.ofNullable(this.loadObject);
     }
-    /**
-     * @return Specifies the TCP port of the `load_object`.
-     * 
-     */
     public Optional<Integer> loadObjectPort() {
         return Optional.ofNullable(this.loadObjectPort);
     }
-    /**
-     * @return (List) Specifies a list of servers from which to request the load object.
-     * 
-     */
     public List<String> loadServers() {
         return this.loadServers == null ? List.of() : this.loadServers;
     }
-    /**
-     * @return A boolean that indicates whether a default `load_object` is used for the resources.
-     * 
-     */
     public Optional<Boolean> useDefaultLoadObject() {
         return Optional.ofNullable(this.useDefaultLoadObject);
     }

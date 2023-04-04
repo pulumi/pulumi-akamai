@@ -17,57 +17,6 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.NetworkListActivations` resource to activate a network list in either the STAGING or PRODUCTION
- * environment.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * 
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.NetworkList;
- * import com.pulumi.akamai.NetworkListArgs;
- * import com.pulumi.akamai.NetworkListActivations;
- * import com.pulumi.akamai.NetworkListActivationsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var networkListIp = new NetworkList(&#34;networkListIp&#34;, NetworkListArgs.builder()        
- *             .type(&#34;IP&#34;)
- *             .description(&#34;IP network list&#34;)
- *             .lists(var_.ip_list())
- *             .mode(&#34;REPLACE&#34;)
- *             .build());
- * 
- *         var activation = new NetworkListActivations(&#34;activation&#34;, NetworkListActivationsArgs.builder()        
- *             .networkListId(resource.akamai_networklist_network_list().network_list_ip().network_list_id())
- *             .network(&#34;STAGING&#34;)
- *             .syncPoint(resource.akamai_networklist_network_list().network_list_ip().sync_point())
- *             .note(&#34;TEST Notes&#34;)
- *             .notificationEmails(&#34;user@example.com&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/networkListActivations:NetworkListActivations")
 public class NetworkListActivations extends com.pulumi.resources.CustomResource {
     /**
@@ -83,92 +32,84 @@ public class NetworkListActivations extends com.pulumi.resources.CustomResource 
         return Codegen.optional(this.activate);
     }
     /**
-     * The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-     * `STAGING`.
+     * The Akamai network on which the list is activated: STAGING or PRODUCTION
      * 
      */
     @Export(name="network", type=String.class, parameters={})
     private Output</* @Nullable */ String> network;
 
     /**
-     * @return The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-     * `STAGING`.
+     * @return The Akamai network on which the list is activated: STAGING or PRODUCTION
      * 
      */
     public Output<Optional<String>> network() {
         return Codegen.optional(this.network);
     }
     /**
-     * The ID of the network list to be activated
+     * Unique identifier of the network list
      * 
      */
     @Export(name="networkListId", type=String.class, parameters={})
     private Output<String> networkListId;
 
     /**
-     * @return The ID of the network list to be activated
+     * @return Unique identifier of the network list
      * 
      */
     public Output<String> networkListId() {
         return this.networkListId;
     }
     /**
-     * A comment describing the activation.
+     * Descriptive text to accompany the activation
      * 
      */
     @Export(name="notes", type=String.class, parameters={})
     private Output</* @Nullable */ String> notes;
 
     /**
-     * @return A comment describing the activation.
+     * @return Descriptive text to accompany the activation
      * 
      */
     public Output<Optional<String>> notes() {
         return Codegen.optional(this.notes);
     }
     /**
-     * A bracketed, comma-separated list of email addresses that will be notified when the
-     * operation is complete.
+     * List of email addresses of Control Center users who receive an email when activation of this list is complete
      * 
      */
     @Export(name="notificationEmails", type=List.class, parameters={String.class})
     private Output<List<String>> notificationEmails;
 
     /**
-     * @return A bracketed, comma-separated list of email addresses that will be notified when the
-     * operation is complete.
+     * @return List of email addresses of Control Center users who receive an email when activation of this list is complete
      * 
      */
     public Output<List<String>> notificationEmails() {
         return this.notificationEmails;
     }
     /**
-     * The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-     * list was not activated.
+     * This network list&#39;s current activation status in the environment specified by the &#34;network&#34; attribute
      * 
      */
     @Export(name="status", type=String.class, parameters={})
     private Output<String> status;
 
     /**
-     * @return The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-     * list was not activated.
+     * @return This network list&#39;s current activation status in the environment specified by the &#34;network&#34; attribute
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * An integer that identifies the current version of the network list; this value is incremented each time
-     * the list is modified.
+     * Identifies the sync point of the network list to be activated
      * 
      */
     @Export(name="syncPoint", type=Integer.class, parameters={})
     private Output<Integer> syncPoint;
 
     /**
-     * @return An integer that identifies the current version of the network list; this value is incremented each time
-     * the list is modified.
+     * @return Identifies the sync point of the network list to be activated
      * 
      */
     public Output<Integer> syncPoint() {

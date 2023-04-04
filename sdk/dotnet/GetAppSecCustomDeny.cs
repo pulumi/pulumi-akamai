@@ -11,117 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecCustomDeny
     {
-        /// <summary>
-        /// **Scopes**: Security configuration; custom deny
-        /// 
-        /// Returns information about custom deny actions. Custom denies allow you to craft your own error messages or redirect pages to use when HTTP requests are denied.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://techdocs.akamai.com/application-security/reference/get-custom-deny-actions)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var customDenyList = Akamai.GetAppSecCustomDeny.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     var customDeny = Akamai.GetAppSecCustomDeny.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         CustomDenyId = "deny_custom_64386",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["customDenyListOutput"] = customDenyList.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.OutputText),
-        ///         ["customDenyListJson"] = customDenyList.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.Json),
-        ///         ["customDenyJson"] = customDeny.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.Json),
-        ///         ["customDenyOutput"] = customDeny.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of custom deny information.
-        /// - `output_text`. Tabular report of the custom deny information.
-        /// </summary>
         public static Task<GetAppSecCustomDenyResult> InvokeAsync(GetAppSecCustomDenyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecCustomDenyResult>("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args ?? new GetAppSecCustomDenyArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security configuration; custom deny
-        /// 
-        /// Returns information about custom deny actions. Custom denies allow you to craft your own error messages or redirect pages to use when HTTP requests are denied.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://techdocs.akamai.com/application-security/reference/get-custom-deny-actions)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var customDenyList = Akamai.GetAppSecCustomDeny.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     var customDeny = Akamai.GetAppSecCustomDeny.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         CustomDenyId = "deny_custom_64386",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["customDenyListOutput"] = customDenyList.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.OutputText),
-        ///         ["customDenyListJson"] = customDenyList.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.Json),
-        ///         ["customDenyJson"] = customDeny.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.Json),
-        ///         ["customDenyOutput"] = customDeny.Apply(getAppSecCustomDenyResult =&gt; getAppSecCustomDenyResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of custom deny information.
-        /// - `output_text`. Tabular report of the custom deny information.
-        /// </summary>
         public static Output<GetAppSecCustomDenyResult> Invoke(GetAppSecCustomDenyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecCustomDenyResult>("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args ?? new GetAppSecCustomDenyInvokeArgs(), options.WithDefaults());
     }
@@ -129,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecCustomDenyArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the custom denies.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
-        /// </summary>
         [Input("customDenyId")]
         public string? CustomDenyId { get; set; }
 
@@ -149,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecCustomDenyInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the custom denies.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
-        /// </summary>
         [Input("customDenyId")]
         public Input<string>? CustomDenyId { get; set; }
 

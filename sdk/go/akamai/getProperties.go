@@ -10,35 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getProperties` data source to query and retrieve the list of properties for a group and contract
-// based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
-//
-// ## Example Usage
-//
-// Return properties associated with the EdgeGrid API client token currently used for authentication:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			ctx.Export("myPropertyList", data.Akamai_properties.Example)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// This data source returns this attribute:
-//
-// * `properties` - A list of properties available for the contract and group IDs provided.
 func GetProperties(ctx *pulumi.Context, args *GetPropertiesArgs, opts ...pulumi.InvokeOption) (*GetPropertiesResult, error) {
 	var rv GetPropertiesResult
 	err := ctx.Invoke("akamai:index/getProperties:getProperties", args, &rv, opts...)
@@ -50,10 +21,8 @@ func GetProperties(ctx *pulumi.Context, args *GetPropertiesArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getProperties.
 type GetPropertiesArgs struct {
-	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
-	// (Required) A group's unique ID, including the `grp_` prefix.
-	GroupId string `pulumi:"groupId"`
+	GroupId    string `pulumi:"groupId"`
 }
 
 // A collection of values returned by getProperties.
@@ -80,10 +49,8 @@ func GetPropertiesOutput(ctx *pulumi.Context, args GetPropertiesOutputArgs, opts
 
 // A collection of arguments for invoking getProperties.
 type GetPropertiesOutputArgs struct {
-	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringInput `pulumi:"contractId"`
-	// (Required) A group's unique ID, including the `grp_` prefix.
-	GroupId pulumi.StringInput `pulumi:"groupId"`
+	GroupId    pulumi.StringInput `pulumi:"groupId"`
 }
 
 func (GetPropertiesOutputArgs) ElementType() reflect.Type {

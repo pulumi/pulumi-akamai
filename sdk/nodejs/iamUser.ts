@@ -4,41 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * The `akamai.IamUser` resource represents a user on the Akamai platform.
- *
- * ## Basic usage
- *
- * This example shows how to set up a user:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const exampleUser = new akamai.IamUser("exampleUser", {
- *     authGrantsJson: "[{\"groupId\":18451,\"roleId\":14},{\"groupId\":18453,\"roleId\":13}]",
- *     country: "Grenada",
- *     email: "jperez@example.com",
- *     enableTfa: false,
- *     firstName: "Juan",
- *     lastName: "Perez",
- *     phone: "+1 206-555-0100",
- * });
- * ```
- *
- * ## Attributes reference
- *
- * This resource returns these attributes:
- *
- * * `sessionTimeout` - The number of seconds it takes for the user's session to time out if there hasn't been any activity.
- * * `userName` - A user's `loginId`. Typically, a user's email address.
- * * `isLocked` - The user's lock status.
- * * `lastLogin` - ISO 8601 timestamp indicating when the user last logged in.
- * * `passwordExpiredAfter` - The date a user's password expires.
- * * `tfaConfigured` - Indicates whether two-factor authentication is configured.
- * * `emailUpdatePending` - Indicates whether email update is pending.
- * * `lock` - (Optional) Flag to block as user account.
- */
 export class IamUser extends pulumi.CustomResource {
     /**
      * Get an existing IamUser resource's state with the given name, ID, and optional extra
@@ -68,27 +33,27 @@ export class IamUser extends pulumi.CustomResource {
     }
 
     /**
-     * The user's street address.
+     * The user's street address
      */
     public readonly address!: pulumi.Output<string>;
     /**
-     * A user's per-group role assignments, in JSON form.
+     * A user's per-group role assignments, in JSON form
      */
     public readonly authGrantsJson!: pulumi.Output<string>;
     /**
-     * The user's city.
+     * The user's city
      */
     public readonly city!: pulumi.Output<string | undefined>;
     /**
-     * To help characterize the user, the value can be any that are available from the view-contact-types operation.
+     * To help characterize the user, the value can be any that are available from the view-contact-types operation
      */
     public readonly contactType!: pulumi.Output<string>;
     /**
-     * As part of the user's location, the value can be any that are available from the view-supported-countries operation.
+     * As part of the user's location, the value can be any that are available from the view-supported-countries operation
      */
     public readonly country!: pulumi.Output<string>;
     /**
-     * The user's email address.
+     * The user's email address
      */
     public readonly email!: pulumi.Output<string>;
     /**
@@ -96,15 +61,15 @@ export class IamUser extends pulumi.CustomResource {
      */
     public /*out*/ readonly emailUpdatePending!: pulumi.Output<boolean>;
     /**
-     * Indicates whether two-factor authentication is allowed.
+     * Indicates whether two-factor authentication is allowed
      */
     public readonly enableTfa!: pulumi.Output<boolean>;
     /**
-     * The user's first name.
+     * The user's first name
      */
     public readonly firstName!: pulumi.Output<string>;
     /**
-     * The user's lock status.
+     * The user's lock status
      *
      * @deprecated The setting "is_locked" has been deprecated. Please use "lock" setting instead
      */
@@ -118,7 +83,7 @@ export class IamUser extends pulumi.CustomResource {
      */
     public /*out*/ readonly lastLogin!: pulumi.Output<string>;
     /**
-     * The user's last name.
+     * The user's surname
      */
     public readonly lastName!: pulumi.Output<string>;
     /**
@@ -126,7 +91,7 @@ export class IamUser extends pulumi.CustomResource {
      */
     public readonly lock!: pulumi.Output<boolean | undefined>;
     /**
-     * The user's mobile phone number.
+     * The user's mobile phone number
      */
     public readonly mobilePhone!: pulumi.Output<string | undefined>;
     /**
@@ -134,7 +99,7 @@ export class IamUser extends pulumi.CustomResource {
      */
     public /*out*/ readonly passwordExpiredAfter!: pulumi.Output<string>;
     /**
-     * The user's main phone number.
+     * The user's main phone number
      */
     public readonly phone!: pulumi.Output<string>;
     /**
@@ -142,7 +107,7 @@ export class IamUser extends pulumi.CustomResource {
      */
     public readonly preferredLanguage!: pulumi.Output<string>;
     /**
-     * The user's secondary email address.
+     * The user's secondary email address
      */
     public readonly secondaryEmail!: pulumi.Output<string | undefined>;
     /**
@@ -150,7 +115,7 @@ export class IamUser extends pulumi.CustomResource {
      */
     public readonly sessionTimeout!: pulumi.Output<number>;
     /**
-     * The user's state.
+     * The user's state
      */
     public readonly state!: pulumi.Output<string | undefined>;
     /**
@@ -166,7 +131,7 @@ export class IamUser extends pulumi.CustomResource {
      */
     public /*out*/ readonly userName!: pulumi.Output<string>;
     /**
-     * The user's five-digit ZIP code.
+     * The user's five-digit ZIP code
      */
     public readonly zipCode!: pulumi.Output<string | undefined>;
 
@@ -267,27 +232,27 @@ export class IamUser extends pulumi.CustomResource {
  */
 export interface IamUserState {
     /**
-     * The user's street address.
+     * The user's street address
      */
     address?: pulumi.Input<string>;
     /**
-     * A user's per-group role assignments, in JSON form.
+     * A user's per-group role assignments, in JSON form
      */
     authGrantsJson?: pulumi.Input<string>;
     /**
-     * The user's city.
+     * The user's city
      */
     city?: pulumi.Input<string>;
     /**
-     * To help characterize the user, the value can be any that are available from the view-contact-types operation.
+     * To help characterize the user, the value can be any that are available from the view-contact-types operation
      */
     contactType?: pulumi.Input<string>;
     /**
-     * As part of the user's location, the value can be any that are available from the view-supported-countries operation.
+     * As part of the user's location, the value can be any that are available from the view-supported-countries operation
      */
     country?: pulumi.Input<string>;
     /**
-     * The user's email address.
+     * The user's email address
      */
     email?: pulumi.Input<string>;
     /**
@@ -295,15 +260,15 @@ export interface IamUserState {
      */
     emailUpdatePending?: pulumi.Input<boolean>;
     /**
-     * Indicates whether two-factor authentication is allowed.
+     * Indicates whether two-factor authentication is allowed
      */
     enableTfa?: pulumi.Input<boolean>;
     /**
-     * The user's first name.
+     * The user's first name
      */
     firstName?: pulumi.Input<string>;
     /**
-     * The user's lock status.
+     * The user's lock status
      *
      * @deprecated The setting "is_locked" has been deprecated. Please use "lock" setting instead
      */
@@ -317,7 +282,7 @@ export interface IamUserState {
      */
     lastLogin?: pulumi.Input<string>;
     /**
-     * The user's last name.
+     * The user's surname
      */
     lastName?: pulumi.Input<string>;
     /**
@@ -325,7 +290,7 @@ export interface IamUserState {
      */
     lock?: pulumi.Input<boolean>;
     /**
-     * The user's mobile phone number.
+     * The user's mobile phone number
      */
     mobilePhone?: pulumi.Input<string>;
     /**
@@ -333,7 +298,7 @@ export interface IamUserState {
      */
     passwordExpiredAfter?: pulumi.Input<string>;
     /**
-     * The user's main phone number.
+     * The user's main phone number
      */
     phone?: pulumi.Input<string>;
     /**
@@ -341,7 +306,7 @@ export interface IamUserState {
      */
     preferredLanguage?: pulumi.Input<string>;
     /**
-     * The user's secondary email address.
+     * The user's secondary email address
      */
     secondaryEmail?: pulumi.Input<string>;
     /**
@@ -349,7 +314,7 @@ export interface IamUserState {
      */
     sessionTimeout?: pulumi.Input<number>;
     /**
-     * The user's state.
+     * The user's state
      */
     state?: pulumi.Input<string>;
     /**
@@ -365,7 +330,7 @@ export interface IamUserState {
      */
     userName?: pulumi.Input<string>;
     /**
-     * The user's five-digit ZIP code.
+     * The user's five-digit ZIP code
      */
     zipCode?: pulumi.Input<string>;
 }
@@ -375,35 +340,35 @@ export interface IamUserState {
  */
 export interface IamUserArgs {
     /**
-     * The user's street address.
+     * The user's street address
      */
     address?: pulumi.Input<string>;
     /**
-     * A user's per-group role assignments, in JSON form.
+     * A user's per-group role assignments, in JSON form
      */
     authGrantsJson: pulumi.Input<string>;
     /**
-     * The user's city.
+     * The user's city
      */
     city?: pulumi.Input<string>;
     /**
-     * To help characterize the user, the value can be any that are available from the view-contact-types operation.
+     * To help characterize the user, the value can be any that are available from the view-contact-types operation
      */
     contactType?: pulumi.Input<string>;
     /**
-     * As part of the user's location, the value can be any that are available from the view-supported-countries operation.
+     * As part of the user's location, the value can be any that are available from the view-supported-countries operation
      */
     country: pulumi.Input<string>;
     /**
-     * The user's email address.
+     * The user's email address
      */
     email: pulumi.Input<string>;
     /**
-     * Indicates whether two-factor authentication is allowed.
+     * Indicates whether two-factor authentication is allowed
      */
     enableTfa: pulumi.Input<boolean>;
     /**
-     * The user's first name.
+     * The user's first name
      */
     firstName: pulumi.Input<string>;
     /**
@@ -411,7 +376,7 @@ export interface IamUserArgs {
      */
     jobTitle?: pulumi.Input<string>;
     /**
-     * The user's last name.
+     * The user's surname
      */
     lastName: pulumi.Input<string>;
     /**
@@ -419,11 +384,11 @@ export interface IamUserArgs {
      */
     lock?: pulumi.Input<boolean>;
     /**
-     * The user's mobile phone number.
+     * The user's mobile phone number
      */
     mobilePhone?: pulumi.Input<string>;
     /**
-     * The user's main phone number.
+     * The user's main phone number
      */
     phone: pulumi.Input<string>;
     /**
@@ -431,7 +396,7 @@ export interface IamUserArgs {
      */
     preferredLanguage?: pulumi.Input<string>;
     /**
-     * The user's secondary email address.
+     * The user's secondary email address
      */
     secondaryEmail?: pulumi.Input<string>;
     /**
@@ -439,7 +404,7 @@ export interface IamUserArgs {
      */
     sessionTimeout?: pulumi.Input<number>;
     /**
-     * The user's state.
+     * The user's state
      */
     state?: pulumi.Input<string>;
     /**
@@ -447,7 +412,7 @@ export interface IamUserArgs {
      */
     timeZone?: pulumi.Input<string>;
     /**
-     * The user's five-digit ZIP code.
+     * The user's five-digit ZIP code
      */
     zipCode?: pulumi.Input<string>;
 }

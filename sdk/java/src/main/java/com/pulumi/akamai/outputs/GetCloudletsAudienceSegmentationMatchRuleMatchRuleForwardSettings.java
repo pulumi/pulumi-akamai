@@ -12,41 +12,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings {
-    /**
-     * @return (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
-     * 
-     */
     private @Nullable String originId;
-    /**
-     * @return (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
-     * 
-     */
     private @Nullable String pathAndQs;
-    /**
-     * @return (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
-     * 
-     */
     private @Nullable Boolean useIncomingQueryString;
 
     private GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings() {}
-    /**
-     * @return (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
-     * 
-     */
     public Optional<String> originId() {
         return Optional.ofNullable(this.originId);
     }
-    /**
-     * @return (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
-     * 
-     */
     public Optional<String> pathAndQs() {
         return Optional.ofNullable(this.pathAndQs);
     }
-    /**
-     * @return (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
-     * 
-     */
     public Optional<Boolean> useIncomingQueryString() {
         return Optional.ofNullable(this.useIncomingQueryString);
     }

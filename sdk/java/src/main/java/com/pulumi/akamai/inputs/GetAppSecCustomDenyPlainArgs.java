@@ -15,32 +15,16 @@ public final class GetAppSecCustomDenyPlainArgs extends com.pulumi.resources.Inv
 
     public static final GetAppSecCustomDenyPlainArgs Empty = new GetAppSecCustomDenyPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the custom denies.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the custom denies.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
-     * 
-     */
     @Import(name="customDenyId")
     private @Nullable String customDenyId;
 
-    /**
-     * @return . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
-     * 
-     */
     public Optional<String> customDenyId() {
         return Optional.ofNullable(this.customDenyId);
     }
@@ -70,23 +54,11 @@ public final class GetAppSecCustomDenyPlainArgs extends com.pulumi.resources.Inv
             $ = new GetAppSecCustomDenyPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the custom denies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param customDenyId . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder customDenyId(@Nullable String customDenyId) {
             $.customDenyId = customDenyId;
             return this;

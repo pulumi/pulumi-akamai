@@ -11,41 +11,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPropertyRulesTemplateVariable {
-    /**
-     * @return The name of the variable used in the template.
-     * 
-     */
     private String name;
-    /**
-     * @return The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-     * 
-     */
     private @Nullable String type;
-    /**
-     * @return The value of the variable passed as a string.
-     * 
-     */
     private String value;
 
     private GetPropertyRulesTemplateVariable() {}
-    /**
-     * @return The name of the variable used in the template.
-     * 
-     */
     public String name() {
         return this.name;
     }
-    /**
-     * @return The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-     * 
-     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
-    /**
-     * @return The value of the variable passed as a string.
-     * 
-     */
     public String value() {
         return this.value;
     }

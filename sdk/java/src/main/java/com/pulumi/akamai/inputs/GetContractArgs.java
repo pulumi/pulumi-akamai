@@ -16,8 +16,6 @@ public final class GetContractArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetContractArgs Empty = new GetContractArgs();
 
     /**
-     * Either the group ID or the group name that includes the contract. You can&#39;t use this argument with `group_id` and `group_name`.
-     * 
      * @deprecated
      * The setting &#34;group&#34; has been deprecated.
      * 
@@ -27,8 +25,6 @@ public final class GetContractArgs extends com.pulumi.resources.InvokeArgs {
     private @Nullable Output<String> group;
 
     /**
-     * @return Either the group ID or the group name that includes the contract. You can&#39;t use this argument with `group_id` and `group_name`.
-     * 
      * @deprecated
      * The setting &#34;group&#34; has been deprecated.
      * 
@@ -38,32 +34,16 @@ public final class GetContractArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.group);
     }
 
-    /**
-     * The unique ID of the group containing the contract, including the  `grp_` prefix.
-     * 
-     */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
-    /**
-     * @return The unique ID of the group containing the contract, including the  `grp_` prefix.
-     * 
-     */
     public Optional<Output<String>> groupId() {
         return Optional.ofNullable(this.groupId);
     }
 
-    /**
-     * The name of the group containing the contract.
-     * 
-     */
     @Import(name="groupName")
     private @Nullable Output<String> groupName;
 
-    /**
-     * @return The name of the group containing the contract.
-     * 
-     */
     public Optional<Output<String>> groupName() {
         return Optional.ofNullable(this.groupName);
     }
@@ -95,8 +75,6 @@ public final class GetContractArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param group Either the group ID or the group name that includes the contract. You can&#39;t use this argument with `group_id` and `group_name`.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -110,8 +88,6 @@ public final class GetContractArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param group Either the group ID or the group name that includes the contract. You can&#39;t use this argument with `group_id` and `group_name`.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -123,44 +99,20 @@ public final class GetContractArgs extends com.pulumi.resources.InvokeArgs {
             return group(Output.of(group));
         }
 
-        /**
-         * @param groupId The unique ID of the group containing the contract, including the  `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(@Nullable Output<String> groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        /**
-         * @param groupId The unique ID of the group containing the contract, including the  `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
         }
 
-        /**
-         * @param groupName The name of the group containing the contract.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupName(@Nullable Output<String> groupName) {
             $.groupName = groupName;
             return this;
         }
 
-        /**
-         * @param groupName The name of the group containing the contract.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupName(String groupName) {
             return groupName(Output.of(groupName));
         }

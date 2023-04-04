@@ -13,9 +13,6 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingResult
     {
-        /// <summary>
-        /// (Required) The ID of the Conditional Origin the requests are forwarded to.
-        /// </summary>
         public readonly string OriginId;
 
         [OutputConstructor]

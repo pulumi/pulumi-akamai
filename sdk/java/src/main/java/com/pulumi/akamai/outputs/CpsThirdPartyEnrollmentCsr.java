@@ -11,69 +11,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CpsThirdPartyEnrollmentCsr {
-    /**
-     * @return The city where your organization resides.
-     * 
-     */
     private String city;
-    /**
-     * @return The code for the country where your organization resides.
-     * 
-     */
     private String countryCode;
-    /**
-     * @return Your organization information.
-     * 
-     */
     private String organization;
-    /**
-     * @return Your organizational unit.
-     * 
-     */
     private String organizationalUnit;
     private @Nullable String preferredTrustChain;
-    /**
-     * @return Your state or province.
-     * 
-     */
     private String state;
 
     private CpsThirdPartyEnrollmentCsr() {}
-    /**
-     * @return The city where your organization resides.
-     * 
-     */
     public String city() {
         return this.city;
     }
-    /**
-     * @return The code for the country where your organization resides.
-     * 
-     */
     public String countryCode() {
         return this.countryCode;
     }
-    /**
-     * @return Your organization information.
-     * 
-     */
     public String organization() {
         return this.organization;
     }
-    /**
-     * @return Your organizational unit.
-     * 
-     */
     public String organizationalUnit() {
         return this.organizationalUnit;
     }
     public Optional<String> preferredTrustChain() {
         return Optional.ofNullable(this.preferredTrustChain);
     }
-    /**
-     * @return Your state or province.
-     * 
-     */
     public String state() {
         return this.state;
     }

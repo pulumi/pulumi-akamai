@@ -9,198 +9,89 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var enrollment = new Akamai.CpsThirdPartyEnrollment("enrollment", new()
-    ///     {
-    ///         ContractId = "C-0N7RAC7",
-    ///         CommonName = "*.example.com",
-    ///         SecureNetwork = "enhanced-tls",
-    ///         SniOnly = true,
-    ///         AutoApproveWarnings = new[]
-    ///         {
-    ///             "DNS_NAME_LONGER_THEN_255_CHARS",
-    ///             "CERTIFICATE_EXPIRATION_DATE_BEYOND_MAX_DAYS",
-    ///             "TRUST_CHAIN_EMPTY_AND_CERTIFICATE_SIGNED_BY_NON_STANDARD_ROOT",
-    ///         },
-    ///         SignatureAlgorithm = "SHA-256",
-    ///         AdminContact = new Akamai.Inputs.CpsThirdPartyEnrollmentAdminContactArgs
-    ///         {
-    ///             FirstName = "Mario",
-    ///             LastName = "Rossi",
-    ///             Phone = "+1-311-555-2368",
-    ///             Email = "mrossi@example.com",
-    ///             AddressLineOne = "150 Broadway",
-    ///             City = "Cambridge",
-    ///             CountryCode = "US",
-    ///             Organization = "Example Corp.",
-    ///             PostalCode = "02142",
-    ///             Region = "MA",
-    ///             Title = "Administrator",
-    ///         },
-    ///         TechContact = new Akamai.Inputs.CpsThirdPartyEnrollmentTechContactArgs
-    ///         {
-    ///             FirstName = "Juan",
-    ///             LastName = "Perez",
-    ///             Phone = "+1-311-555-2369",
-    ///             Email = "jperez@example.com",
-    ///             AddressLineOne = "150 Broadway",
-    ///             City = "Cambridge",
-    ///             CountryCode = "US",
-    ///             Organization = "Example Corp.",
-    ///             PostalCode = "02142",
-    ///             Region = "MA",
-    ///             Title = "Administrator",
-    ///         },
-    ///         Csr = new Akamai.Inputs.CpsThirdPartyEnrollmentCsrArgs
-    ///         {
-    ///             CountryCode = "US",
-    ///             City = "Cambridge",
-    ///             Organization = "Example Corp.",
-    ///             OrganizationalUnit = "Corp IT",
-    ///             State = "MA",
-    ///         },
-    ///         NetworkConfiguration = new Akamai.Inputs.CpsThirdPartyEnrollmentNetworkConfigurationArgs
-    ///         {
-    ///             DisallowedTlsVersions = new[]
-    ///             {
-    ///                 "TLSv1",
-    ///                 "TLSv1_1",
-    ///             },
-    ///             CloneDnsNames = false,
-    ///             Geography = "core",
-    ///             OcspStapling = "on",
-    ///             PreferredCiphers = "ak-akamai-2020q1",
-    ///             MustHaveCiphers = "ak-akamai-2020q1",
-    ///             QuicEnabled = false,
-    ///         },
-    ///         Organization = new Akamai.Inputs.CpsThirdPartyEnrollmentOrganizationArgs
-    ///         {
-    ///             Name = "Example Corp.",
-    ///             Phone = "+1-311-555-2370",
-    ///             AddressLineOne = "150 Broadway",
-    ///             City = "Cambridge",
-    ///             CountryCode = "US",
-    ///             PostalCode = "02142",
-    ///             Region = "MA",
-    ///         },
-    ///     });
-    /// 
-    ///     return new Dictionary&lt;string, object?&gt;
-    ///     {
-    ///         ["enrollmentId"] = enrollment.Id,
-    ///     };
-    /// });
-    /// ```
-    /// ## Attributes reference
-    /// 
-    /// The resource returns this attribute:
-    /// 
-    /// * `id` - The unique identifier for this enrollment.
-    /// 
-    /// ## Import
-    /// 
-    /// Basic Usagehcl resource "akamai_cps_third_party_enrollment" "example" { (resource arguments) } You can import your Akamai third-party enrollment using a comma-delimited string of the enrollment ID and
-    /// 
-    ///  contract ID, optionally with the `ctr_` prefix. You have to enter the IDs in this order`enrollment_id,contract_id` For example
-    /// 
-    /// ```sh
-    ///  $ pulumi import akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment example 12345,1-AB123
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment")]
     public partial class CpsThirdPartyEnrollment : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Whether you want to automatically acknowledge the validation warnings related to the current job state and proceed with the change.
+        /// Whether acknowledge warnings before certificate verification
         /// </summary>
         [Output("acknowledgePreVerificationWarnings")]
         public Output<bool?> AcknowledgePreVerificationWarnings { get; private set; } = null!;
 
         /// <summary>
-        /// Contact information for the certificate administrator at your company.
+        /// Contact information for the certificate administrator to use at organization
         /// </summary>
         [Output("adminContact")]
         public Output<Outputs.CpsThirdPartyEnrollmentAdminContact> AdminContact { get; private set; } = null!;
 
         /// <summary>
-        /// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        /// Allow to duplicate common name
         /// </summary>
         [Output("allowDuplicateCommonName")]
         public Output<bool?> AllowDuplicateCommonName { get; private set; } = null!;
 
         /// <summary>
-        /// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+        /// List of warnings to be automatically approved
         /// </summary>
         [Output("autoApproveWarnings")]
         public Output<ImmutableArray<string>> AutoApproveWarnings { get; private set; } = null!;
 
         /// <summary>
-        /// Certificate trust chain type.
+        /// Certificate trust chain type
         /// </summary>
         [Output("certificateChainType")]
         public Output<string?> CertificateChainType { get; private set; } = null!;
 
         /// <summary>
-        /// Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledge_change_management` argument in the `akamai.CpsUploadCertificate` resource. &lt;br&gt; If you don't use this option, CPS will automatically deploy the certificate to both networks.
+        /// When set to false, the certificate will be deployed to both staging and production networks
         /// </summary>
         [Output("changeManagement")]
         public Output<bool?> ChangeManagement { get; private set; } = null!;
 
         /// <summary>
-        /// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        /// Common name used for enrollment
         /// </summary>
         [Output("commonName")]
         public Output<string> CommonName { get; private set; } = null!;
 
         /// <summary>
-        /// (Required) A contract's ID, optionally with the `ctr_` prefix.
+        /// Contract ID for which enrollment is retrieved
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
 
         /// <summary>
-        /// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+        /// Data used for generation of Certificate Signing Request
         /// </summary>
         [Output("csr")]
         public Output<Outputs.CpsThirdPartyEnrollmentCsr> Csr { get; private set; } = null!;
 
         /// <summary>
-        /// If set to `true`, then the SANs in the enrollment don't appear in the CSR that you send to your CA.
+        /// When true, SANs are excluded from the CSR
         /// </summary>
         [Output("excludeSans")]
         public Output<bool?> ExcludeSans { get; private set; } = null!;
 
         /// <summary>
-        /// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+        /// Settings containing network information and TLS metadata used by CPS
         /// </summary>
         [Output("networkConfiguration")]
         public Output<Outputs.CpsThirdPartyEnrollmentNetworkConfiguration> NetworkConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// Your organization information.
+        /// Organization information
         /// </summary>
         [Output("organization")]
         public Output<Outputs.CpsThirdPartyEnrollmentOrganization> Organization { get; private set; } = null!;
 
         /// <summary>
-        /// Additional common names to create a Subject Alternative Names (SAN) list.
+        /// List of SANs
         /// </summary>
         [Output("sans")]
         public Output<ImmutableArray<string>> Sans { get; private set; } = null!;
 
         /// <summary>
-        /// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+        /// Type of TLS deployment network
         /// </summary>
         [Output("secureNetwork")]
         public Output<string> SecureNetwork { get; private set; } = null!;
@@ -212,13 +103,13 @@ namespace Pulumi.Akamai
         public Output<string?> SignatureAlgorithm { get; private set; } = null!;
 
         /// <summary>
-        /// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+        /// Whether Server Name Indication is used for enrollment
         /// </summary>
         [Output("sniOnly")]
         public Output<bool> SniOnly { get; private set; } = null!;
 
         /// <summary>
-        /// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `admin_contact`.
+        /// Contact information for an administrator at Akamai
         /// </summary>
         [Output("techContact")]
         public Output<Outputs.CpsThirdPartyEnrollmentTechContact> TechContact { get; private set; } = null!;
@@ -270,19 +161,19 @@ namespace Pulumi.Akamai
     public sealed class CpsThirdPartyEnrollmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether you want to automatically acknowledge the validation warnings related to the current job state and proceed with the change.
+        /// Whether acknowledge warnings before certificate verification
         /// </summary>
         [Input("acknowledgePreVerificationWarnings")]
         public Input<bool>? AcknowledgePreVerificationWarnings { get; set; }
 
         /// <summary>
-        /// Contact information for the certificate administrator at your company.
+        /// Contact information for the certificate administrator to use at organization
         /// </summary>
         [Input("adminContact", required: true)]
         public Input<Inputs.CpsThirdPartyEnrollmentAdminContactArgs> AdminContact { get; set; } = null!;
 
         /// <summary>
-        /// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        /// Allow to duplicate common name
         /// </summary>
         [Input("allowDuplicateCommonName")]
         public Input<bool>? AllowDuplicateCommonName { get; set; }
@@ -291,7 +182,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _autoApproveWarnings;
 
         /// <summary>
-        /// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+        /// List of warnings to be automatically approved
         /// </summary>
         public InputList<string> AutoApproveWarnings
         {
@@ -300,49 +191,49 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// Certificate trust chain type.
+        /// Certificate trust chain type
         /// </summary>
         [Input("certificateChainType")]
         public Input<string>? CertificateChainType { get; set; }
 
         /// <summary>
-        /// Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledge_change_management` argument in the `akamai.CpsUploadCertificate` resource. &lt;br&gt; If you don't use this option, CPS will automatically deploy the certificate to both networks.
+        /// When set to false, the certificate will be deployed to both staging and production networks
         /// </summary>
         [Input("changeManagement")]
         public Input<bool>? ChangeManagement { get; set; }
 
         /// <summary>
-        /// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        /// Common name used for enrollment
         /// </summary>
         [Input("commonName", required: true)]
         public Input<string> CommonName { get; set; } = null!;
 
         /// <summary>
-        /// (Required) A contract's ID, optionally with the `ctr_` prefix.
+        /// Contract ID for which enrollment is retrieved
         /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
-        /// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+        /// Data used for generation of Certificate Signing Request
         /// </summary>
         [Input("csr", required: true)]
         public Input<Inputs.CpsThirdPartyEnrollmentCsrArgs> Csr { get; set; } = null!;
 
         /// <summary>
-        /// If set to `true`, then the SANs in the enrollment don't appear in the CSR that you send to your CA.
+        /// When true, SANs are excluded from the CSR
         /// </summary>
         [Input("excludeSans")]
         public Input<bool>? ExcludeSans { get; set; }
 
         /// <summary>
-        /// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+        /// Settings containing network information and TLS metadata used by CPS
         /// </summary>
         [Input("networkConfiguration", required: true)]
         public Input<Inputs.CpsThirdPartyEnrollmentNetworkConfigurationArgs> NetworkConfiguration { get; set; } = null!;
 
         /// <summary>
-        /// Your organization information.
+        /// Organization information
         /// </summary>
         [Input("organization", required: true)]
         public Input<Inputs.CpsThirdPartyEnrollmentOrganizationArgs> Organization { get; set; } = null!;
@@ -351,7 +242,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _sans;
 
         /// <summary>
-        /// Additional common names to create a Subject Alternative Names (SAN) list.
+        /// List of SANs
         /// </summary>
         public InputList<string> Sans
         {
@@ -360,7 +251,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+        /// Type of TLS deployment network
         /// </summary>
         [Input("secureNetwork", required: true)]
         public Input<string> SecureNetwork { get; set; } = null!;
@@ -372,13 +263,13 @@ namespace Pulumi.Akamai
         public Input<string>? SignatureAlgorithm { get; set; }
 
         /// <summary>
-        /// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+        /// Whether Server Name Indication is used for enrollment
         /// </summary>
         [Input("sniOnly", required: true)]
         public Input<bool> SniOnly { get; set; } = null!;
 
         /// <summary>
-        /// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `admin_contact`.
+        /// Contact information for an administrator at Akamai
         /// </summary>
         [Input("techContact", required: true)]
         public Input<Inputs.CpsThirdPartyEnrollmentTechContactArgs> TechContact { get; set; } = null!;
@@ -392,19 +283,19 @@ namespace Pulumi.Akamai
     public sealed class CpsThirdPartyEnrollmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether you want to automatically acknowledge the validation warnings related to the current job state and proceed with the change.
+        /// Whether acknowledge warnings before certificate verification
         /// </summary>
         [Input("acknowledgePreVerificationWarnings")]
         public Input<bool>? AcknowledgePreVerificationWarnings { get; set; }
 
         /// <summary>
-        /// Contact information for the certificate administrator at your company.
+        /// Contact information for the certificate administrator to use at organization
         /// </summary>
         [Input("adminContact")]
         public Input<Inputs.CpsThirdPartyEnrollmentAdminContactGetArgs>? AdminContact { get; set; }
 
         /// <summary>
-        /// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+        /// Allow to duplicate common name
         /// </summary>
         [Input("allowDuplicateCommonName")]
         public Input<bool>? AllowDuplicateCommonName { get; set; }
@@ -413,7 +304,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _autoApproveWarnings;
 
         /// <summary>
-        /// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+        /// List of warnings to be automatically approved
         /// </summary>
         public InputList<string> AutoApproveWarnings
         {
@@ -422,49 +313,49 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// Certificate trust chain type.
+        /// Certificate trust chain type
         /// </summary>
         [Input("certificateChainType")]
         public Input<string>? CertificateChainType { get; set; }
 
         /// <summary>
-        /// Boolean. Set to `true` to have CPS deploy first to staging for testing purposes. To deploy the certificate to production, use the `acknowledge_change_management` argument in the `akamai.CpsUploadCertificate` resource. &lt;br&gt; If you don't use this option, CPS will automatically deploy the certificate to both networks.
+        /// When set to false, the certificate will be deployed to both staging and production networks
         /// </summary>
         [Input("changeManagement")]
         public Input<bool>? ChangeManagement { get; set; }
 
         /// <summary>
-        /// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+        /// Common name used for enrollment
         /// </summary>
         [Input("commonName")]
         public Input<string>? CommonName { get; set; }
 
         /// <summary>
-        /// (Required) A contract's ID, optionally with the `ctr_` prefix.
+        /// Contract ID for which enrollment is retrieved
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
         /// <summary>
-        /// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+        /// Data used for generation of Certificate Signing Request
         /// </summary>
         [Input("csr")]
         public Input<Inputs.CpsThirdPartyEnrollmentCsrGetArgs>? Csr { get; set; }
 
         /// <summary>
-        /// If set to `true`, then the SANs in the enrollment don't appear in the CSR that you send to your CA.
+        /// When true, SANs are excluded from the CSR
         /// </summary>
         [Input("excludeSans")]
         public Input<bool>? ExcludeSans { get; set; }
 
         /// <summary>
-        /// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+        /// Settings containing network information and TLS metadata used by CPS
         /// </summary>
         [Input("networkConfiguration")]
         public Input<Inputs.CpsThirdPartyEnrollmentNetworkConfigurationGetArgs>? NetworkConfiguration { get; set; }
 
         /// <summary>
-        /// Your organization information.
+        /// Organization information
         /// </summary>
         [Input("organization")]
         public Input<Inputs.CpsThirdPartyEnrollmentOrganizationGetArgs>? Organization { get; set; }
@@ -473,7 +364,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _sans;
 
         /// <summary>
-        /// Additional common names to create a Subject Alternative Names (SAN) list.
+        /// List of SANs
         /// </summary>
         public InputList<string> Sans
         {
@@ -482,7 +373,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+        /// Type of TLS deployment network
         /// </summary>
         [Input("secureNetwork")]
         public Input<string>? SecureNetwork { get; set; }
@@ -494,13 +385,13 @@ namespace Pulumi.Akamai
         public Input<string>? SignatureAlgorithm { get; set; }
 
         /// <summary>
-        /// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+        /// Whether Server Name Indication is used for enrollment
         /// </summary>
         [Input("sniOnly")]
         public Input<bool>? SniOnly { get; set; }
 
         /// <summary>
-        /// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `admin_contact`.
+        /// Contact information for an administrator at Akamai
         /// </summary>
         [Input("techContact")]
         public Input<Inputs.CpsThirdPartyEnrollmentTechContactGetArgs>? TechContact { get; set; }

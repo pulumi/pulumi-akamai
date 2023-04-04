@@ -4,31 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * When setting up a third-party enrollment, use the `akamai.getCpsCsr` data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
- *
- * If you're using dual-stacked certificates, you'll see data for both ECDSA and RSA keys.
- *
- * ## Basic usage
- *
- * This example shows how to return CSR information for enrollment ID 12345:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getCpsCsr({
- *     enrollmentId: 12345,
- * });
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- *   * `csrRsa` - Returns CSR information for a certificate that uses the RSA algorithm.
- *   * `csrEcdsa` - Returns CSR information for a certificate that uses the ECDSA algorithm.
- */
 export function getCpsCsr(args: GetCpsCsrArgs, opts?: pulumi.InvokeOptions): Promise<GetCpsCsrResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -41,9 +16,6 @@ export function getCpsCsr(args: GetCpsCsrArgs, opts?: pulumi.InvokeOptions): Pro
  * A collection of arguments for invoking getCpsCsr.
  */
 export interface GetCpsCsrArgs {
-    /**
-     * Unique identifier of the enrollment.
-     */
     enrollmentId: number;
 }
 
@@ -59,31 +31,6 @@ export interface GetCpsCsrResult {
      */
     readonly id: string;
 }
-/**
- * When setting up a third-party enrollment, use the `akamai.getCpsCsr` data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
- *
- * If you're using dual-stacked certificates, you'll see data for both ECDSA and RSA keys.
- *
- * ## Basic usage
- *
- * This example shows how to return CSR information for enrollment ID 12345:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getCpsCsr({
- *     enrollmentId: 12345,
- * });
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- *   * `csrRsa` - Returns CSR information for a certificate that uses the RSA algorithm.
- *   * `csrEcdsa` - Returns CSR information for a certificate that uses the ECDSA algorithm.
- */
 export function getCpsCsrOutput(args: GetCpsCsrOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpsCsrResult> {
     return pulumi.output(args).apply((a: any) => getCpsCsr(a, opts))
 }
@@ -92,8 +39,5 @@ export function getCpsCsrOutput(args: GetCpsCsrOutputArgs, opts?: pulumi.InvokeO
  * A collection of arguments for invoking getCpsCsr.
  */
 export interface GetCpsCsrOutputArgs {
-    /**
-     * Unique identifier of the enrollment.
-     */
     enrollmentId: pulumi.Input<number>;
 }

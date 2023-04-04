@@ -13,17 +13,9 @@ public final class GetAppSecFailoverHostnamesArgs extends com.pulumi.resources.I
 
     public static final GetAppSecFailoverHostnamesArgs Empty = new GetAppSecFailoverHostnamesArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the failover hosts.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the failover hosts.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
@@ -52,23 +44,11 @@ public final class GetAppSecFailoverHostnamesArgs extends com.pulumi.resources.I
             $ = new GetAppSecFailoverHostnamesArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the failover hosts.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the failover hosts.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }

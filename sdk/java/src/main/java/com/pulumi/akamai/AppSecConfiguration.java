@@ -16,75 +16,6 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Contract and group
- * 
- * Creates a new WAP (Web Application Protector) or KSD (Kona Site Defender) security configuration. KSD security configurations start out empty (i.e., unconfigured), while WAP configurations are created using preset values. The contract referenced in the request body determines the type of configuration you can create.
- * 
- * In addition to manually creating a new configuration, you can use the `create_from_config_id` argument to clone an existing configuration.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs](https://techdocs.akamai.com/application-security/reference/post-config)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecSelectableHostnamesArgs;
- * import com.pulumi.akamai.AppSecConfiguration;
- * import com.pulumi.akamai.AppSecConfigurationArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var selectableHostnames = AkamaiFunctions.getAppSecSelectableHostnames(GetAppSecSelectableHostnamesArgs.builder()
- *             .configId(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var createConfig = new AppSecConfiguration(&#34;createConfig&#34;, AppSecConfigurationArgs.builder()        
- *             .description(&#34;This configuration is used as a testing environment for the documentation team.&#34;)
- *             .contractId(&#34;5-2WA382&#34;)
- *             .groupId(12198)
- *             .hostNames(            
- *                 &#34;documentation.akamai.com&#34;,
- *                 &#34;training.akamai.com&#34;)
- *             .build());
- * 
- *         ctx.export(&#34;createConfigId&#34;, createConfig.configId());
- *         var cloneConfig = new AppSecConfiguration(&#34;cloneConfig&#34;, AppSecConfigurationArgs.builder()        
- *             .description(&#34;This configuration is used as a testing environment for the documentation team.&#34;)
- *             .createFromConfigId(data.akamai_appsec_configuration().configuration().config_id())
- *             .createFromVersion(data.akamai_appsec_configuration().configuration().latest_version())
- *             .contractId(&#34;5-2WA382&#34;)
- *             .groupId(12198)
- *             .hostNames(selectableHostnames.applyValue(getAppSecSelectableHostnamesResult -&gt; getAppSecSelectableHostnamesResult.hostnames()))
- *             .build());
- * 
- *         ctx.export(&#34;cloneConfigId&#34;, cloneConfig.configId());
- *     }
- * }
- * ```
- * ## Output Options
- * 
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- * 
- * - `config_id`. ID of the new security configuration.
- * 
- */
 @ResourceType(type="akamai:index/appSecConfiguration:AppSecConfiguration")
 public class AppSecConfiguration extends com.pulumi.resources.CustomResource {
     /**
@@ -102,98 +33,98 @@ public class AppSecConfiguration extends com.pulumi.resources.CustomResource {
         return this.configId;
     }
     /**
-     * . Unique identifier of the Akamai contract associated with the new configuration.
+     * Unique identifier of the Akamai contract associated with the new configuration
      * 
      */
     @Export(name="contractId", type=String.class, parameters={})
     private Output<String> contractId;
 
     /**
-     * @return . Unique identifier of the Akamai contract associated with the new configuration.
+     * @return Unique identifier of the Akamai contract associated with the new configuration
      * 
      */
     public Output<String> contractId() {
         return this.contractId;
     }
     /**
-     * . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+     * Unique identifier of the existing configuration being cloned to create the new configuration
      * 
      */
     @Export(name="createFromConfigId", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> createFromConfigId;
 
     /**
-     * @return . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+     * @return Unique identifier of the existing configuration being cloned to create the new configuration
      * 
      */
     public Output<Optional<Integer>> createFromConfigId() {
         return Codegen.optional(this.createFromConfigId);
     }
     /**
-     * . Version number of the security configuration being cloned.
+     * Version number of the existing configuration being cloned to create the new configuration
      * 
      */
     @Export(name="createFromVersion", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> createFromVersion;
 
     /**
-     * @return . Version number of the security configuration being cloned.
+     * @return Version number of the existing configuration being cloned to create the new configuration
      * 
      */
     public Output<Optional<Integer>> createFromVersion() {
         return Codegen.optional(this.createFromVersion);
     }
     /**
-     * . Brief description of the new configuration.
+     * Brief description of the new configuration
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return . Brief description of the new configuration.
+     * @return Brief description of the new configuration
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * . Unique identifier of the contract group associated with the new configuration.
+     * Unique identifier of the contract group associated with the new configuration
      * 
      */
     @Export(name="groupId", type=Integer.class, parameters={})
     private Output<Integer> groupId;
 
     /**
-     * @return . Unique identifier of the contract group associated with the new configuration.
+     * @return Unique identifier of the contract group associated with the new configuration
      * 
      */
     public Output<Integer> groupId() {
         return this.groupId;
     }
     /**
-     * . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+     * Hostnames to be protected by the new configuration
      * 
      */
     @Export(name="hostNames", type=List.class, parameters={String.class})
     private Output<List<String>> hostNames;
 
     /**
-     * @return . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+     * @return Hostnames to be protected by the new configuration
      * 
      */
     public Output<List<String>> hostNames() {
         return this.hostNames;
     }
     /**
-     * . Name of the new configuration.
+     * Name of the new configuration
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return . Name of the new configuration.
+     * @return Name of the new configuration
      * 
      */
     public Output<String> name() {

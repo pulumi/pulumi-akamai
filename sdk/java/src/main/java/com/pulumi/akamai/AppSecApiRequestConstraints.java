@@ -15,117 +15,59 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.inputs.GetAppSecApiEndpointsArgs;
- * import com.pulumi.akamai.AppSecApiRequestConstraints;
- * import com.pulumi.akamai.AppSecApiRequestConstraintsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         final var apiEndpoint = AkamaiFunctions.getAppSecApiEndpoints(GetAppSecApiEndpointsArgs.builder()
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .apiName(&#34;Contracts&#34;)
- *             .build());
- * 
- *         var apiRequestConstraints = new AppSecApiRequestConstraints(&#34;apiRequestConstraints&#34;, AppSecApiRequestConstraintsArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .apiEndpointId(apiEndpoint.applyValue(getAppSecApiEndpointsResult -&gt; getAppSecApiEndpointsResult.id()))
- *             .action(&#34;alert&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecApiRequestConstraints:AppSecApiRequestConstraints")
 public class AppSecApiRequestConstraints extends com.pulumi.resources.CustomResource {
     /**
-     * . Action to assign to the API request constraint. Allowed values are:
-     * - **alert**, Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the API request constraint is triggered
      * 
      */
     @Export(name="action", type=String.class, parameters={})
     private Output<String> action;
 
     /**
-     * @return . Action to assign to the API request constraint. Allowed values are:
-     * - **alert**, Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * @return Action to be taken when the API request constraint is triggered
      * 
      */
     public Output<String> action() {
         return this.action;
     }
     /**
-     * . ID of the API endpoint the constraint will be assigned to.
+     * Unique identifier of the API endpoint to which the constraint will be assigned
      * 
      */
     @Export(name="apiEndpointId", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> apiEndpointId;
 
     /**
-     * @return . ID of the API endpoint the constraint will be assigned to.
+     * @return Unique identifier of the API endpoint to which the constraint will be assigned
      * 
      */
     public Output<Optional<Integer>> apiEndpointId() {
         return Codegen.optional(this.apiEndpointId);
     }
     /**
-     * . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Unique identifier of the security policy associated with the API request constraint settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the API request constraint settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {

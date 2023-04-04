@@ -18,17 +18,8 @@ export function getAppSecEvalGroups(args: GetAppSecEvalGroupsArgs, opts?: pulumi
  * A collection of arguments for invoking getAppSecEvalGroups.
  */
 export interface GetAppSecEvalGroupsArgs {
-    /**
-     * . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-     */
     attackGroup?: string;
-    /**
-     * . Unique identifier of the security configuration associated with the evaluation attack group.
-     */
     configId: number;
-    /**
-     * . Unique identifier of the security policy associated with the evaluation attack group.
-     */
     securityPolicyId: string;
 }
 
@@ -56,16 +47,7 @@ export function getAppSecEvalGroupsOutput(args: GetAppSecEvalGroupsOutputArgs, o
  * A collection of arguments for invoking getAppSecEvalGroups.
  */
 export interface GetAppSecEvalGroupsOutputArgs {
-    /**
-     * . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-     */
     attackGroup?: pulumi.Input<string>;
-    /**
-     * . Unique identifier of the security configuration associated with the evaluation attack group.
-     */
     configId: pulumi.Input<number>;
-    /**
-     * . Unique identifier of the security policy associated with the evaluation attack group.
-     */
     securityPolicyId: pulumi.Input<string>;
 }

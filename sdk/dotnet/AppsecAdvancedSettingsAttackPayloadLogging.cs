@@ -9,66 +9,23 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security configuration; security policy
-    /// 
-    /// Enables, disables, or updates Attack Payload Logging settings.
-    /// By default, this operation is applied at the configuration level, which means that it is applied to all the security policies within that configuration.
-    /// However, by using the `security_policy_id` parameter you can specify custom settings for an individual security policy.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.IO;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var attackPayloadLogging = new Akamai.AppsecAdvancedSettingsAttackPayloadLogging("attackPayloadLogging", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         AttackPayloadLogging = File.ReadAllText($"{path.Module}/attack-payload-logging.json"),
-    ///     });
-    /// 
-    ///     // USE CASE: User wants to configure Attack Payload Logging settings for a security policy.
-    ///     var policyLogging = new Akamai.AppsecAdvancedSettingsAttackPayloadLogging("policyLogging", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         AttackPayloadLogging = File.ReadAllText($"{path.Module}/attack-payload-logging.json"),
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging")]
     public partial class AppsecAdvancedSettingsAttackPayloadLogging : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . JSON representation of the Attack Payload Logging settings to be configured.
+        /// Whether to enable, disable, or update attack payload logging settings
         /// </summary>
         [Output("attackPayloadLogging")]
         public Output<string> AttackPayloadLogging { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string?> SecurityPolicyId { get; private set; } = null!;
@@ -120,19 +77,19 @@ namespace Pulumi.Akamai
     public sealed class AppsecAdvancedSettingsAttackPayloadLoggingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . JSON representation of the Attack Payload Logging settings to be configured.
+        /// Whether to enable, disable, or update attack payload logging settings
         /// </summary>
         [Input("attackPayloadLogging", required: true)]
         public Input<string> AttackPayloadLogging { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
@@ -146,19 +103,19 @@ namespace Pulumi.Akamai
     public sealed class AppsecAdvancedSettingsAttackPayloadLoggingState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . JSON representation of the Attack Payload Logging settings to be configured.
+        /// Whether to enable, disable, or update attack payload logging settings
         /// </summary>
         [Input("attackPayloadLogging")]
         public Input<string>? AttackPayloadLogging { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

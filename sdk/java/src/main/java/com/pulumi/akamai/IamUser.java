@@ -16,142 +16,87 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * The `akamai.IamUser` resource represents a user on the Akamai platform.
- * 
- * ## Basic usage
- * 
- * This example shows how to set up a user:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.IamUser;
- * import com.pulumi.akamai.IamUserArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var exampleUser = new IamUser(&#34;exampleUser&#34;, IamUserArgs.builder()        
- *             .authGrantsJson(&#34;[{\&#34;groupId\&#34;:18451,\&#34;roleId\&#34;:14},{\&#34;groupId\&#34;:18453,\&#34;roleId\&#34;:13}]&#34;)
- *             .country(&#34;Grenada&#34;)
- *             .email(&#34;jperez@example.com&#34;)
- *             .enableTfa(false)
- *             .firstName(&#34;Juan&#34;)
- *             .lastName(&#34;Perez&#34;)
- *             .phone(&#34;+1 206-555-0100&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- * ## Attributes reference
- * 
- * This resource returns these attributes:
- * 
- * * `session_timeout` - The number of seconds it takes for the user&#39;s session to time out if there hasn&#39;t been any activity.
- * * `user_name` - A user&#39;s `loginId`. Typically, a user&#39;s email address.
- * * `is_locked` - The user&#39;s lock status.
- * * `last_login` - ISO 8601 timestamp indicating when the user last logged in.
- * * `password_expired_after` - The date a user&#39;s password expires.
- * * `tfa_configured` - Indicates whether two-factor authentication is configured.
- * * `email_update_pending` - Indicates whether email update is pending.
- * * `lock` - (Optional) Flag to block as user account.
- * 
- */
 @ResourceType(type="akamai:index/iamUser:IamUser")
 public class IamUser extends com.pulumi.resources.CustomResource {
     /**
-     * The user&#39;s street address.
+     * The user&#39;s street address
      * 
      */
     @Export(name="address", type=String.class, parameters={})
     private Output<String> address;
 
     /**
-     * @return The user&#39;s street address.
+     * @return The user&#39;s street address
      * 
      */
     public Output<String> address() {
         return this.address;
     }
     /**
-     * A user&#39;s per-group role assignments, in JSON form.
+     * A user&#39;s per-group role assignments, in JSON form
      * 
      */
     @Export(name="authGrantsJson", type=String.class, parameters={})
     private Output<String> authGrantsJson;
 
     /**
-     * @return A user&#39;s per-group role assignments, in JSON form.
+     * @return A user&#39;s per-group role assignments, in JSON form
      * 
      */
     public Output<String> authGrantsJson() {
         return this.authGrantsJson;
     }
     /**
-     * The user&#39;s city.
+     * The user&#39;s city
      * 
      */
     @Export(name="city", type=String.class, parameters={})
     private Output</* @Nullable */ String> city;
 
     /**
-     * @return The user&#39;s city.
+     * @return The user&#39;s city
      * 
      */
     public Output<Optional<String>> city() {
         return Codegen.optional(this.city);
     }
     /**
-     * To help characterize the user, the value can be any that are available from the view-contact-types operation.
+     * To help characterize the user, the value can be any that are available from the view-contact-types operation
      * 
      */
     @Export(name="contactType", type=String.class, parameters={})
     private Output<String> contactType;
 
     /**
-     * @return To help characterize the user, the value can be any that are available from the view-contact-types operation.
+     * @return To help characterize the user, the value can be any that are available from the view-contact-types operation
      * 
      */
     public Output<String> contactType() {
         return this.contactType;
     }
     /**
-     * As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation.
+     * As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation
      * 
      */
     @Export(name="country", type=String.class, parameters={})
     private Output<String> country;
 
     /**
-     * @return As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation.
+     * @return As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation
      * 
      */
     public Output<String> country() {
         return this.country;
     }
     /**
-     * The user&#39;s email address.
+     * The user&#39;s email address
      * 
      */
     @Export(name="email", type=String.class, parameters={})
     private Output<String> email;
 
     /**
-     * @return The user&#39;s email address.
+     * @return The user&#39;s email address
      * 
      */
     public Output<String> email() {
@@ -172,35 +117,35 @@ public class IamUser extends com.pulumi.resources.CustomResource {
         return this.emailUpdatePending;
     }
     /**
-     * Indicates whether two-factor authentication is allowed.
+     * Indicates whether two-factor authentication is allowed
      * 
      */
     @Export(name="enableTfa", type=Boolean.class, parameters={})
     private Output<Boolean> enableTfa;
 
     /**
-     * @return Indicates whether two-factor authentication is allowed.
+     * @return Indicates whether two-factor authentication is allowed
      * 
      */
     public Output<Boolean> enableTfa() {
         return this.enableTfa;
     }
     /**
-     * The user&#39;s first name.
+     * The user&#39;s first name
      * 
      */
     @Export(name="firstName", type=String.class, parameters={})
     private Output<String> firstName;
 
     /**
-     * @return The user&#39;s first name.
+     * @return The user&#39;s first name
      * 
      */
     public Output<String> firstName() {
         return this.firstName;
     }
     /**
-     * The user&#39;s lock status.
+     * The user&#39;s lock status
      * 
      * @deprecated
      * The setting &#34;is_locked&#34; has been deprecated. Please use &#34;lock&#34; setting instead
@@ -211,7 +156,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
     private Output<Boolean> isLocked;
 
     /**
-     * @return The user&#39;s lock status.
+     * @return The user&#39;s lock status
      * 
      */
     public Output<Boolean> isLocked() {
@@ -246,14 +191,14 @@ public class IamUser extends com.pulumi.resources.CustomResource {
         return this.lastLogin;
     }
     /**
-     * The user&#39;s last name.
+     * The user&#39;s surname
      * 
      */
     @Export(name="lastName", type=String.class, parameters={})
     private Output<String> lastName;
 
     /**
-     * @return The user&#39;s last name.
+     * @return The user&#39;s surname
      * 
      */
     public Output<String> lastName() {
@@ -274,14 +219,14 @@ public class IamUser extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.lock);
     }
     /**
-     * The user&#39;s mobile phone number.
+     * The user&#39;s mobile phone number
      * 
      */
     @Export(name="mobilePhone", type=String.class, parameters={})
     private Output</* @Nullable */ String> mobilePhone;
 
     /**
-     * @return The user&#39;s mobile phone number.
+     * @return The user&#39;s mobile phone number
      * 
      */
     public Output<Optional<String>> mobilePhone() {
@@ -302,14 +247,14 @@ public class IamUser extends com.pulumi.resources.CustomResource {
         return this.passwordExpiredAfter;
     }
     /**
-     * The user&#39;s main phone number.
+     * The user&#39;s main phone number
      * 
      */
     @Export(name="phone", type=String.class, parameters={})
     private Output<String> phone;
 
     /**
-     * @return The user&#39;s main phone number.
+     * @return The user&#39;s main phone number
      * 
      */
     public Output<String> phone() {
@@ -330,14 +275,14 @@ public class IamUser extends com.pulumi.resources.CustomResource {
         return this.preferredLanguage;
     }
     /**
-     * The user&#39;s secondary email address.
+     * The user&#39;s secondary email address
      * 
      */
     @Export(name="secondaryEmail", type=String.class, parameters={})
     private Output</* @Nullable */ String> secondaryEmail;
 
     /**
-     * @return The user&#39;s secondary email address.
+     * @return The user&#39;s secondary email address
      * 
      */
     public Output<Optional<String>> secondaryEmail() {
@@ -358,14 +303,14 @@ public class IamUser extends com.pulumi.resources.CustomResource {
         return this.sessionTimeout;
     }
     /**
-     * The user&#39;s state.
+     * The user&#39;s state
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output</* @Nullable */ String> state;
 
     /**
-     * @return The user&#39;s state.
+     * @return The user&#39;s state
      * 
      */
     public Output<Optional<String>> state() {
@@ -414,14 +359,14 @@ public class IamUser extends com.pulumi.resources.CustomResource {
         return this.userName;
     }
     /**
-     * The user&#39;s five-digit ZIP code.
+     * The user&#39;s five-digit ZIP code
      * 
      */
     @Export(name="zipCode", type=String.class, parameters={})
     private Output</* @Nullable */ String> zipCode;
 
     /**
-     * @return The user&#39;s five-digit ZIP code.
+     * @return The user&#39;s five-digit ZIP code
      * 
      */
     public Output<Optional<String>> zipCode() {

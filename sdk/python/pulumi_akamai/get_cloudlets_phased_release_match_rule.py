@@ -67,19 +67,7 @@ class AwaitableGetCloudletsPhasedReleaseMatchRuleResult(GetCloudletsPhasedReleas
 def get_cloudlets_phased_release_match_rule(match_rules: Optional[Sequence[pulumi.InputType['GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs']]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsPhasedReleaseMatchRuleResult:
     """
-    Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-
-    Use the _get_cloudlets_phased_release_match_rule_ data source to build a match rule JSON object for the Phased Release Cloudlet.
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `type` - The type of Cloudlet the rule is for.
-    * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
-
-
-    :param Sequence[pulumi.InputType['GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs']] match_rules: (Optional) A list of Cloudlet-specific match rules for a policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['matchRules'] = match_rules
@@ -96,18 +84,6 @@ def get_cloudlets_phased_release_match_rule(match_rules: Optional[Sequence[pulum
 def get_cloudlets_phased_release_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs']]]]] = None,
                                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsPhasedReleaseMatchRuleResult]:
     """
-    Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-
-    Use the _get_cloudlets_phased_release_match_rule_ data source to build a match rule JSON object for the Phased Release Cloudlet.
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `type` - The type of Cloudlet the rule is for.
-    * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
-
-
-    :param Sequence[pulumi.InputType['GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs']] match_rules: (Optional) A list of Cloudlet-specific match rules for a policy.
+    Use this data source to access information about an existing resource.
     """
     ...

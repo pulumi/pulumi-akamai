@@ -4,26 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.EdgeWorkersActivation` resource to activate a specific EdgeWorker version. An activation deploys the version to either the Akamai staging or production network.
- *
- * Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const test = new akamai.EdgeWorkersActivation("test", {
- *     edgeworkerId: 1234,
- *     network: "STAGING",
- *     version: "test1",
- * });
- * ```
- */
 export class EdgeWorkersActivation extends pulumi.CustomResource {
     /**
      * Get an existing EdgeWorkersActivation resource's state with the given name, ID, and optional extra
@@ -53,19 +33,19 @@ export class EdgeWorkersActivation extends pulumi.CustomResource {
     }
 
     /**
-     * (Required) Unique identifier of the activation.
+     * A unique identifier of the activation
      */
     public /*out*/ readonly activationId!: pulumi.Output<number>;
     /**
-     * A unique identifier for the EdgeWorker ID you want to activate.
+     * Id of the EdgeWorker to activate
      */
     public readonly edgeworkerId!: pulumi.Output<number>;
     /**
-     * The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * The network on which the version will be activated
      */
     public readonly network!: pulumi.Output<string>;
     /**
-     * The EdgeWorker version you want to activate.
+     * The version of EdgeWorker to activate
      */
     public readonly version!: pulumi.Output<string>;
 
@@ -112,19 +92,19 @@ export class EdgeWorkersActivation extends pulumi.CustomResource {
  */
 export interface EdgeWorkersActivationState {
     /**
-     * (Required) Unique identifier of the activation.
+     * A unique identifier of the activation
      */
     activationId?: pulumi.Input<number>;
     /**
-     * A unique identifier for the EdgeWorker ID you want to activate.
+     * Id of the EdgeWorker to activate
      */
     edgeworkerId?: pulumi.Input<number>;
     /**
-     * The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * The network on which the version will be activated
      */
     network?: pulumi.Input<string>;
     /**
-     * The EdgeWorker version you want to activate.
+     * The version of EdgeWorker to activate
      */
     version?: pulumi.Input<string>;
 }
@@ -134,15 +114,15 @@ export interface EdgeWorkersActivationState {
  */
 export interface EdgeWorkersActivationArgs {
     /**
-     * A unique identifier for the EdgeWorker ID you want to activate.
+     * Id of the EdgeWorker to activate
      */
     edgeworkerId: pulumi.Input<number>;
     /**
-     * The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * The network on which the version will be activated
      */
     network: pulumi.Input<string>;
     /**
-     * The EdgeWorker version you want to activate.
+     * The version of EdgeWorker to activate
      */
     version: pulumi.Input<string>;
 }

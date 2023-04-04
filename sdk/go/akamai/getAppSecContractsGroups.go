@@ -10,52 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Contract; group
-//
-// Returns information about the contracts and groups associated with your account. Among other things, this information is required to create a new security configuration and to return a list of the hostnames available for use in a security policy.
-//
-// **Related API Endpoint**: [/appsec/v1/contracts-groups](https://techdocs.akamai.com/application-security/reference/get-contracts-groups)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			contractsGroups, err := akamai.GetAppSecContractsGroups(ctx, &akamai.GetAppSecContractsGroupsArgs{
-//				Contractid: pulumi.StringRef("5-2WA382"),
-//				Groupid:    pulumi.IntRef(12198),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("contractsGroupsList", contractsGroups.OutputText)
-//			ctx.Export("contractsGroupsJson", contractsGroups.Json)
-//			ctx.Export("contractGroupsDefaultContractid", contractsGroups.DefaultContractid)
-//			ctx.Export("contractGroupsDefaultGroupid", contractsGroups.DefaultGroupid)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `json`. JSON-formatted list of contract and group information.
-// - `outputText`. Tabular report of contract and group information.
-// - `defaultContractid`. Default contract ID for the specified contract and group.
-// - `defaultGroupid`. Default group ID for the specified contract and group.
 func GetAppSecContractsGroups(ctx *pulumi.Context, args *GetAppSecContractsGroupsArgs, opts ...pulumi.InvokeOption) (*GetAppSecContractsGroupsResult, error) {
 	var rv GetAppSecContractsGroupsResult
 	err := ctx.Invoke("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args, &rv, opts...)
@@ -67,10 +21,8 @@ func GetAppSecContractsGroups(ctx *pulumi.Context, args *GetAppSecContractsGroup
 
 // A collection of arguments for invoking getAppSecContractsGroups.
 type GetAppSecContractsGroupsArgs struct {
-	// . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
 	Contractid *string `pulumi:"contractid"`
-	// . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
-	Groupid *int `pulumi:"groupid"`
+	Groupid    *int    `pulumi:"groupid"`
 }
 
 // A collection of values returned by getAppSecContractsGroups.
@@ -100,10 +52,8 @@ func GetAppSecContractsGroupsOutput(ctx *pulumi.Context, args GetAppSecContracts
 
 // A collection of arguments for invoking getAppSecContractsGroups.
 type GetAppSecContractsGroupsOutputArgs struct {
-	// . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
 	Contractid pulumi.StringPtrInput `pulumi:"contractid"`
-	// . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
-	Groupid pulumi.IntPtrInput `pulumi:"groupid"`
+	Groupid    pulumi.IntPtrInput    `pulumi:"groupid"`
 }
 
 func (GetAppSecContractsGroupsOutputArgs) ElementType() reflect.Type {

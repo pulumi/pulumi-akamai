@@ -4,34 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Reputation profile
- *
- * Modifies the action taken when a reputation profile is triggered.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles/{reputationProfileId}](https://techdocs.akamai.com/application-security/reference/put-reputation-profile-action)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const appsecReputationProfileAction = new akamai.AppSecReputationProfileAction("appsecReputationProfileAction", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: "gms1_134637",
- *     reputationProfileId: 130713,
- *     action: "alert",
- * });
- * export const reputationProfileId = appsecReputationProfileAction.reputationProfileId;
- * export const reputationProfileAction = appsecReputationProfileAction.action;
- * ```
- */
 export class AppSecReputationProfileAction extends pulumi.CustomResource {
     /**
      * Get an existing AppSecReputationProfileAction resource's state with the given name, ID, and optional extra
@@ -61,23 +33,19 @@ export class AppSecReputationProfileAction extends pulumi.CustomResource {
     }
 
     /**
-     * . Action taken any time the reputation profile is triggered. Allows values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the reputation profile is triggered
      */
     public readonly action!: pulumi.Output<string>;
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile action being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Unique identifier of the reputation profile whose action is being modified.
+     * Unique identifier of the reputation profile
      */
     public readonly reputationProfileId!: pulumi.Output<number>;
     /**
-     * . Unique identifier of the security policy associated with the reputation profile action being modified.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -127,23 +95,19 @@ export class AppSecReputationProfileAction extends pulumi.CustomResource {
  */
 export interface AppSecReputationProfileActionState {
     /**
-     * . Action taken any time the reputation profile is triggered. Allows values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the reputation profile is triggered
      */
     action?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile action being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Unique identifier of the reputation profile whose action is being modified.
+     * Unique identifier of the reputation profile
      */
     reputationProfileId?: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy associated with the reputation profile action being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -153,23 +117,19 @@ export interface AppSecReputationProfileActionState {
  */
 export interface AppSecReputationProfileActionArgs {
     /**
-     * . Action taken any time the reputation profile is triggered. Allows values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the reputation profile is triggered
      */
     action: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile action being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Unique identifier of the reputation profile whose action is being modified.
+     * Unique identifier of the reputation profile
      */
     reputationProfileId: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy associated with the reputation profile action being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId: pulumi.Input<string>;
 }

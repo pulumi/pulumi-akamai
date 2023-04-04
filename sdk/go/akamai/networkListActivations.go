@@ -11,28 +11,22 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `NetworkListActivations` resource to activate a network list in either the STAGING or PRODUCTION
-// environment.
 type NetworkListActivations struct {
 	pulumi.CustomResourceState
 
 	// Deprecated: The setting "activate" has been deprecated.
 	Activate pulumi.BoolPtrOutput `pulumi:"activate"`
-	// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-	// `STAGING`.
+	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network pulumi.StringPtrOutput `pulumi:"network"`
-	// The ID of the network list to be activated
+	// Unique identifier of the network list
 	NetworkListId pulumi.StringOutput `pulumi:"networkListId"`
-	// A comment describing the activation.
+	// Descriptive text to accompany the activation
 	Notes pulumi.StringPtrOutput `pulumi:"notes"`
-	// A bracketed, comma-separated list of email addresses that will be notified when the
-	// operation is complete.
+	// List of email addresses of Control Center users who receive an email when activation of this list is complete
 	NotificationEmails pulumi.StringArrayOutput `pulumi:"notificationEmails"`
-	// The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-	// list was not activated.
+	// This network list's current activation status in the environment specified by the "network" attribute
 	Status pulumi.StringOutput `pulumi:"status"`
-	// An integer that identifies the current version of the network list; this value is incremented each time
-	// the list is modified.
+	// Identifies the sync point of the network list to be activated
 	SyncPoint pulumi.IntOutput `pulumi:"syncPoint"`
 }
 
@@ -76,42 +70,34 @@ func GetNetworkListActivations(ctx *pulumi.Context,
 type networkListActivationsState struct {
 	// Deprecated: The setting "activate" has been deprecated.
 	Activate *bool `pulumi:"activate"`
-	// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-	// `STAGING`.
+	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network *string `pulumi:"network"`
-	// The ID of the network list to be activated
+	// Unique identifier of the network list
 	NetworkListId *string `pulumi:"networkListId"`
-	// A comment describing the activation.
+	// Descriptive text to accompany the activation
 	Notes *string `pulumi:"notes"`
-	// A bracketed, comma-separated list of email addresses that will be notified when the
-	// operation is complete.
+	// List of email addresses of Control Center users who receive an email when activation of this list is complete
 	NotificationEmails []string `pulumi:"notificationEmails"`
-	// The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-	// list was not activated.
+	// This network list's current activation status in the environment specified by the "network" attribute
 	Status *string `pulumi:"status"`
-	// An integer that identifies the current version of the network list; this value is incremented each time
-	// the list is modified.
+	// Identifies the sync point of the network list to be activated
 	SyncPoint *int `pulumi:"syncPoint"`
 }
 
 type NetworkListActivationsState struct {
 	// Deprecated: The setting "activate" has been deprecated.
 	Activate pulumi.BoolPtrInput
-	// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-	// `STAGING`.
+	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network pulumi.StringPtrInput
-	// The ID of the network list to be activated
+	// Unique identifier of the network list
 	NetworkListId pulumi.StringPtrInput
-	// A comment describing the activation.
+	// Descriptive text to accompany the activation
 	Notes pulumi.StringPtrInput
-	// A bracketed, comma-separated list of email addresses that will be notified when the
-	// operation is complete.
+	// List of email addresses of Control Center users who receive an email when activation of this list is complete
 	NotificationEmails pulumi.StringArrayInput
-	// The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-	// list was not activated.
+	// This network list's current activation status in the environment specified by the "network" attribute
 	Status pulumi.StringPtrInput
-	// An integer that identifies the current version of the network list; this value is incremented each time
-	// the list is modified.
+	// Identifies the sync point of the network list to be activated
 	SyncPoint pulumi.IntPtrInput
 }
 
@@ -122,18 +108,15 @@ func (NetworkListActivationsState) ElementType() reflect.Type {
 type networkListActivationsArgs struct {
 	// Deprecated: The setting "activate" has been deprecated.
 	Activate *bool `pulumi:"activate"`
-	// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-	// `STAGING`.
+	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network *string `pulumi:"network"`
-	// The ID of the network list to be activated
+	// Unique identifier of the network list
 	NetworkListId string `pulumi:"networkListId"`
-	// A comment describing the activation.
+	// Descriptive text to accompany the activation
 	Notes *string `pulumi:"notes"`
-	// A bracketed, comma-separated list of email addresses that will be notified when the
-	// operation is complete.
+	// List of email addresses of Control Center users who receive an email when activation of this list is complete
 	NotificationEmails []string `pulumi:"notificationEmails"`
-	// An integer that identifies the current version of the network list; this value is incremented each time
-	// the list is modified.
+	// Identifies the sync point of the network list to be activated
 	SyncPoint int `pulumi:"syncPoint"`
 }
 
@@ -141,18 +124,15 @@ type networkListActivationsArgs struct {
 type NetworkListActivationsArgs struct {
 	// Deprecated: The setting "activate" has been deprecated.
 	Activate pulumi.BoolPtrInput
-	// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-	// `STAGING`.
+	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network pulumi.StringPtrInput
-	// The ID of the network list to be activated
+	// Unique identifier of the network list
 	NetworkListId pulumi.StringInput
-	// A comment describing the activation.
+	// Descriptive text to accompany the activation
 	Notes pulumi.StringPtrInput
-	// A bracketed, comma-separated list of email addresses that will be notified when the
-	// operation is complete.
+	// List of email addresses of Control Center users who receive an email when activation of this list is complete
 	NotificationEmails pulumi.StringArrayInput
-	// An integer that identifies the current version of the network list; this value is incremented each time
-	// the list is modified.
+	// Identifies the sync point of the network list to be activated
 	SyncPoint pulumi.IntInput
 }
 
@@ -248,36 +228,32 @@ func (o NetworkListActivationsOutput) Activate() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NetworkListActivations) pulumi.BoolPtrOutput { return v.Activate }).(pulumi.BoolPtrOutput)
 }
 
-// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-// `STAGING`.
+// The Akamai network on which the list is activated: STAGING or PRODUCTION
 func (o NetworkListActivationsOutput) Network() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkListActivations) pulumi.StringPtrOutput { return v.Network }).(pulumi.StringPtrOutput)
 }
 
-// The ID of the network list to be activated
+// Unique identifier of the network list
 func (o NetworkListActivationsOutput) NetworkListId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkListActivations) pulumi.StringOutput { return v.NetworkListId }).(pulumi.StringOutput)
 }
 
-// A comment describing the activation.
+// Descriptive text to accompany the activation
 func (o NetworkListActivationsOutput) Notes() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkListActivations) pulumi.StringPtrOutput { return v.Notes }).(pulumi.StringPtrOutput)
 }
 
-// A bracketed, comma-separated list of email addresses that will be notified when the
-// operation is complete.
+// List of email addresses of Control Center users who receive an email when activation of this list is complete
 func (o NetworkListActivationsOutput) NotificationEmails() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkListActivations) pulumi.StringArrayOutput { return v.NotificationEmails }).(pulumi.StringArrayOutput)
 }
 
-// The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-// list was not activated.
+// This network list's current activation status in the environment specified by the "network" attribute
 func (o NetworkListActivationsOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkListActivations) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// An integer that identifies the current version of the network list; this value is incremented each time
-// the list is modified.
+// Identifies the sync point of the network list to be activated
 func (o NetworkListActivationsOutput) SyncPoint() pulumi.IntOutput {
 	return o.ApplyT(func(v *NetworkListActivations) pulumi.IntOutput { return v.SyncPoint }).(pulumi.IntOutput)
 }

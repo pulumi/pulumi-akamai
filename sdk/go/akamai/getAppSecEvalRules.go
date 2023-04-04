@@ -10,64 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy; evaluation rule
-//
-// Returns the action and the condition-exception information for a rule or set of rules being used in evaluation mode.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules](https://techdocs.akamai.com/application-security/reference/get-policy-eval-rules)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			evalRule, err := akamai.GetAppSecEvalRules(ctx, &akamai.GetAppSecEvalRulesArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: "gms1_134637",
-//				RuleId:           pulumi.IntRef(60029316),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("evalRuleAction", evalRule.EvalRuleAction)
-//			ctx.Export("conditionException", evalRule.ConditionException)
-//			ctx.Export("json", evalRule.Json)
-//			ctx.Export("outputText", evalRule.OutputText)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `evalRuleAction`. Action taken anytime the evaluation rule is triggered. This information is returned only when a single rule is retrieved. Valid values are:
-//   - **alert**. Record the event.
-//   - **deny**. Reject the request.
-//   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-//   - **none**. Take no action.
-//
-// - `conditionException`. Conditions and exceptions associated with the rule. This information is returned only when a single rule is retrieved.
-// - `json`. JSON-formatted list of the action and the condition-exception information for the rule. This information is returned only when a single rule is retrieved.
-// - `outputText`. Tabular report showing the rule action as well as Boolean values indicating whether conditions and exceptions have been configured for the rule.
 func GetAppSecEvalRules(ctx *pulumi.Context, args *GetAppSecEvalRulesArgs, opts ...pulumi.InvokeOption) (*GetAppSecEvalRulesResult, error) {
 	var rv GetAppSecEvalRulesResult
 	err := ctx.Invoke("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args, &rv, opts...)
@@ -79,11 +21,8 @@ func GetAppSecEvalRules(ctx *pulumi.Context, args *GetAppSecEvalRulesArgs, opts 
 
 // A collection of arguments for invoking getAppSecEvalRules.
 type GetAppSecEvalRulesArgs struct {
-	// . Unique identifier of the security configuration running in evaluation mode.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the evaluation rule you want to return information for. If not included, information is returned for all your evaluation rules.
-	RuleId *int `pulumi:"ruleId"`
-	// . Unique identifier of the security policy associated with the evaluation rule.
+	ConfigId         int    `pulumi:"configId"`
+	RuleId           *int   `pulumi:"ruleId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -115,11 +54,8 @@ func GetAppSecEvalRulesOutput(ctx *pulumi.Context, args GetAppSecEvalRulesOutput
 
 // A collection of arguments for invoking getAppSecEvalRules.
 type GetAppSecEvalRulesOutputArgs struct {
-	// . Unique identifier of the security configuration running in evaluation mode.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the evaluation rule you want to return information for. If not included, information is returned for all your evaluation rules.
-	RuleId pulumi.IntPtrInput `pulumi:"ruleId"`
-	// . Unique identifier of the security policy associated with the evaluation rule.
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
+	RuleId           pulumi.IntPtrInput `pulumi:"ruleId"`
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 

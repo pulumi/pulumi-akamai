@@ -15,17 +15,9 @@ public final class GetAppSecConfigurationArgs extends com.pulumi.resources.Invok
 
     public static final GetAppSecConfigurationArgs Empty = new GetAppSecConfigurationArgs();
 
-    /**
-     * . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
-     * 
-     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
-    /**
-     * @return . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
-     * 
-     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
@@ -54,23 +46,11 @@ public final class GetAppSecConfigurationArgs extends com.pulumi.resources.Invok
             $ = new GetAppSecConfigurationArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param name . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param name . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             return name(Output.of(name));
         }

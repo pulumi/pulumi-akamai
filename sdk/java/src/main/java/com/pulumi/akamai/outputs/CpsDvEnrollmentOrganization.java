@@ -11,101 +11,37 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CpsDvEnrollmentOrganization {
-    /**
-     * @return The address of your organization.
-     * 
-     */
     private String addressLineOne;
-    /**
-     * @return The address of your organization.
-     * 
-     */
     private @Nullable String addressLineTwo;
-    /**
-     * @return The city where your organization resides.
-     * 
-     */
     private String city;
-    /**
-     * @return The code for the country where your organization resides.
-     * 
-     */
     private String countryCode;
-    /**
-     * @return The name of your organization.
-     * 
-     */
     private String name;
-    /**
-     * @return The phone number of the administrator who you want to use as a contact at your company.
-     * 
-     */
     private String phone;
-    /**
-     * @return The postal code of your organization.
-     * 
-     */
     private String postalCode;
-    /**
-     * @return The region of your organization, typically a state or province.
-     * 
-     */
     private String region;
 
     private CpsDvEnrollmentOrganization() {}
-    /**
-     * @return The address of your organization.
-     * 
-     */
     public String addressLineOne() {
         return this.addressLineOne;
     }
-    /**
-     * @return The address of your organization.
-     * 
-     */
     public Optional<String> addressLineTwo() {
         return Optional.ofNullable(this.addressLineTwo);
     }
-    /**
-     * @return The city where your organization resides.
-     * 
-     */
     public String city() {
         return this.city;
     }
-    /**
-     * @return The code for the country where your organization resides.
-     * 
-     */
     public String countryCode() {
         return this.countryCode;
     }
-    /**
-     * @return The name of your organization.
-     * 
-     */
     public String name() {
         return this.name;
     }
-    /**
-     * @return The phone number of the administrator who you want to use as a contact at your company.
-     * 
-     */
     public String phone() {
         return this.phone;
     }
-    /**
-     * @return The postal code of your organization.
-     * 
-     */
     public String postalCode() {
         return this.postalCode;
     }
-    /**
-     * @return The region of your organization, typically a state or province.
-     * 
-     */
     public String region() {
         return this.region;
     }

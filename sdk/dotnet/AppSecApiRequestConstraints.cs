@@ -9,68 +9,29 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var apiEndpoint = Akamai.GetAppSecApiEndpoints.Invoke(new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         ApiName = "Contracts",
-    ///     });
-    /// 
-    ///     var apiRequestConstraints = new Akamai.AppSecApiRequestConstraints("apiRequestConstraints", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         ApiEndpointId = apiEndpoint.Apply(getAppSecApiEndpointsResult =&gt; getAppSecApiEndpointsResult.Id),
-    ///         Action = "alert",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecApiRequestConstraints:AppSecApiRequestConstraints")]
     public partial class AppSecApiRequestConstraints : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Action to assign to the API request constraint. Allowed values are:
-        /// - **alert**, Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken when the API request constraint is triggered
         /// </summary>
         [Output("action")]
         public Output<string> Action { get; private set; } = null!;
 
         /// <summary>
-        /// . ID of the API endpoint the constraint will be assigned to.
+        /// Unique identifier of the API endpoint to which the constraint will be assigned
         /// </summary>
         [Output("apiEndpointId")]
         public Output<int?> ApiEndpointId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the API request constraint settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -122,29 +83,25 @@ namespace Pulumi.Akamai
     public sealed class AppSecApiRequestConstraintsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Action to assign to the API request constraint. Allowed values are:
-        /// - **alert**, Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken when the API request constraint is triggered
         /// </summary>
         [Input("action", required: true)]
         public Input<string> Action { get; set; } = null!;
 
         /// <summary>
-        /// . ID of the API endpoint the constraint will be assigned to.
+        /// Unique identifier of the API endpoint to which the constraint will be assigned
         /// </summary>
         [Input("apiEndpointId")]
         public Input<int>? ApiEndpointId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the API request constraint settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -158,29 +115,25 @@ namespace Pulumi.Akamai
     public sealed class AppSecApiRequestConstraintsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Action to assign to the API request constraint. Allowed values are:
-        /// - **alert**, Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken when the API request constraint is triggered
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
 
         /// <summary>
-        /// . ID of the API endpoint the constraint will be assigned to.
+        /// Unique identifier of the API endpoint to which the constraint will be assigned
         /// </summary>
         [Input("apiEndpointId")]
         public Input<int>? ApiEndpointId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the API request constraint settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

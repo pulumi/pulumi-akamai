@@ -15,47 +15,23 @@ public final class GetAppSecApiEndpointsPlainArgs extends com.pulumi.resources.I
 
     public static final GetAppSecApiEndpointsPlainArgs Empty = new GetAppSecApiEndpointsPlainArgs();
 
-    /**
-     * . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
-     * 
-     */
     @Import(name="apiName")
     private @Nullable String apiName;
 
-    /**
-     * @return . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
-     * 
-     */
     public Optional<String> apiName() {
         return Optional.ofNullable(this.apiName);
     }
 
-    /**
-     * . Unique identifier of the security configuration associated with the API endpoints.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the API endpoints.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the API endpoints. If not included, information is returned for all your security policies.
-     * 
-     */
     @Import(name="securityPolicyId")
     private @Nullable String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the API endpoints. If not included, information is returned for all your security policies.
-     * 
-     */
     public Optional<String> securityPolicyId() {
         return Optional.ofNullable(this.securityPolicyId);
     }
@@ -86,34 +62,16 @@ public final class GetAppSecApiEndpointsPlainArgs extends com.pulumi.resources.I
             $ = new GetAppSecApiEndpointsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param apiName . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
-         * 
-         * @return builder
-         * 
-         */
         public Builder apiName(@Nullable String apiName) {
             $.apiName = apiName;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the API endpoints.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the API endpoints. If not included, information is returned for all your security policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(@Nullable String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

@@ -16,17 +16,9 @@ public final class GetCloudletsVisitorPrioritizationMatchRuleArgs extends com.pu
 
     public static final GetCloudletsVisitorPrioritizationMatchRuleArgs Empty = new GetCloudletsVisitorPrioritizationMatchRuleArgs();
 
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     * 
-     */
     @Import(name="matchRules")
     private @Nullable Output<List<GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs>> matchRules;
 
-    /**
-     * @return (Optional) A list of Cloudlet-specific match rules for a policy.
-     * 
-     */
     public Optional<Output<List<GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs>>> matchRules() {
         return Optional.ofNullable(this.matchRules);
     }
@@ -55,33 +47,15 @@ public final class GetCloudletsVisitorPrioritizationMatchRuleArgs extends com.pu
             $ = new GetCloudletsVisitorPrioritizationMatchRuleArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchRules(@Nullable Output<List<GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs>> matchRules) {
             $.matchRules = matchRules;
             return this;
         }
 
-        /**
-         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchRules(List<GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs> matchRules) {
             return matchRules(Output.of(matchRules));
         }
 
-        /**
-         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchRules(GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs... matchRules) {
             return matchRules(List.of(matchRules));
         }

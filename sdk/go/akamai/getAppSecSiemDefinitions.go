@@ -10,52 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: SIEM definition
-//
-// Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions) section of the Application Security API.
-//
-// **Related API Endpoint**: [/appsec/v1/siem-definitions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			siemDefinitions, err := akamai.GetAppSecSiemDefinitions(ctx, nil, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("siemDefinitionsJson", siemDefinitions.Json)
-//			ctx.Export("siemDefinitionsOutput", siemDefinitions.OutputText)
-//			siemDefinition, err := akamai.GetAppSecSiemDefinitions(ctx, &akamai.GetAppSecSiemDefinitionsArgs{
-//				SiemDefinitionName: pulumi.StringRef("SIEM Version 01"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("siemDefinitionId", siemDefinition.Id)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `json`. JSON-formatted list of the SIEM version information.
-// - `outputText`. Tabular report showing the ID and name of each SIEM version.
 func GetAppSecSiemDefinitions(ctx *pulumi.Context, args *GetAppSecSiemDefinitionsArgs, opts ...pulumi.InvokeOption) (*GetAppSecSiemDefinitionsResult, error) {
 	var rv GetAppSecSiemDefinitionsResult
 	err := ctx.Invoke("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args, &rv, opts...)
@@ -67,7 +21,6 @@ func GetAppSecSiemDefinitions(ctx *pulumi.Context, args *GetAppSecSiemDefinition
 
 // A collection of arguments for invoking getAppSecSiemDefinitions.
 type GetAppSecSiemDefinitionsArgs struct {
-	// . Name of the SIEM definition you want to return information for. If not included, information is returned for all your SIEM definitions.
 	SiemDefinitionName *string `pulumi:"siemDefinitionName"`
 }
 
@@ -95,7 +48,6 @@ func GetAppSecSiemDefinitionsOutput(ctx *pulumi.Context, args GetAppSecSiemDefin
 
 // A collection of arguments for invoking getAppSecSiemDefinitions.
 type GetAppSecSiemDefinitionsOutputArgs struct {
-	// . Name of the SIEM definition you want to return information for. If not included, information is returned for all your SIEM definitions.
 	SiemDefinitionName pulumi.StringPtrInput `pulumi:"siemDefinitionName"`
 }
 

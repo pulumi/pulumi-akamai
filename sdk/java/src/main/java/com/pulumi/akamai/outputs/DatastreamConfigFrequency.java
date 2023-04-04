@@ -9,17 +9,9 @@ import java.util.Objects;
 
 @CustomType
 public final class DatastreamConfigFrequency {
-    /**
-     * @return The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
-     * 
-     */
     private Integer timeInSec;
 
     private DatastreamConfigFrequency() {}
-    /**
-     * @return The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
-     * 
-     */
     public Integer timeInSec() {
         return this.timeInSec;
     }

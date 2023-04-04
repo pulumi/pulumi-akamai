@@ -15,142 +15,89 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security policy
- * 
- * Modifies slow POST protection settings for a security configuration and security policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/slow-post](https://techdocs.akamai.com/application-security/reference/put-policy-slow-post)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecSlowPost;
- * import com.pulumi.akamai.AppSecSlowPostArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var slowPost = new AppSecSlowPost(&#34;slowPost&#34;, AppSecSlowPostArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .slowRateAction(&#34;alert&#34;)
- *             .slowRateThresholdRate(10)
- *             .slowRateThresholdPeriod(30)
- *             .durationThresholdTimeout(20)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecSlowPost:AppSecSlowPost")
 public class AppSecSlowPost extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the slow POST settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the slow POST settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
+     * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+     * specified action
      * 
      */
     @Export(name="durationThresholdTimeout", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> durationThresholdTimeout;
 
     /**
-     * @return . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
+     * @return Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+     * specified action
      * 
      */
     public Output<Optional<Integer>> durationThresholdTimeout() {
         return Codegen.optional(this.durationThresholdTimeout);
     }
     /**
-     * . Unique identifier of the security policy associated with the slow POST settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the slow POST settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
     /**
-     * . Action to be taken if slow POST protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **abort**. Block the request.
+     * Action to be taken when slow POST protection is triggered
      * 
      */
     @Export(name="slowRateAction", type=String.class, parameters={})
     private Output<String> slowRateAction;
 
     /**
-     * @return . Action to be taken if slow POST protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **abort**. Block the request.
+     * @return Action to be taken when slow POST protection is triggered
      * 
      */
     public Output<String> slowRateAction() {
         return this.slowRateAction;
     }
     /**
-     * . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
+     * Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
      * 
      */
     @Export(name="slowRateThresholdPeriod", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> slowRateThresholdPeriod;
 
     /**
-     * @return . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
+     * @return Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
      * 
      */
     public Output<Optional<Integer>> slowRateThresholdPeriod() {
         return Codegen.optional(this.slowRateThresholdPeriod);
     }
     /**
-     * . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+     * Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
      * 
      */
     @Export(name="slowRateThresholdRate", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> slowRateThresholdRate;
 
     /**
-     * @return . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+     * @return Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
      * 
      */
     public Output<Optional<Integer>> slowRateThresholdRate() {

@@ -18,14 +18,14 @@ public final class AppSecReputationProfileAnalysisState extends com.pulumi.resou
     public static final AppSecReputationProfileAnalysisState Empty = new AppSecReputationProfileAnalysisState();
 
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -33,14 +33,14 @@ public final class AppSecReputationProfileAnalysisState extends com.pulumi.resou
     }
 
     /**
-     * . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+     * Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
      * 
      */
     @Import(name="forwardSharedIpToHttpHeaderSiem")
     private @Nullable Output<Boolean> forwardSharedIpToHttpHeaderSiem;
 
     /**
-     * @return . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+     * @return Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
      * 
      */
     public Optional<Output<Boolean>> forwardSharedIpToHttpHeaderSiem() {
@@ -48,14 +48,14 @@ public final class AppSecReputationProfileAnalysisState extends com.pulumi.resou
     }
 
     /**
-     * . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+     * Whether to add client reputation details to requests forwarded to the origin server
      * 
      */
     @Import(name="forwardToHttpHeader")
     private @Nullable Output<Boolean> forwardToHttpHeader;
 
     /**
-     * @return . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+     * @return Whether to add client reputation details to requests forwarded to the origin server
      * 
      */
     public Optional<Output<Boolean>> forwardToHttpHeader() {
@@ -63,14 +63,14 @@ public final class AppSecReputationProfileAnalysisState extends com.pulumi.resou
     }
 
     /**
-     * . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -105,7 +105,7 @@ public final class AppSecReputationProfileAnalysisState extends com.pulumi.resou
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class AppSecReputationProfileAnalysisState extends com.pulumi.resou
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class AppSecReputationProfileAnalysisState extends com.pulumi.resou
         }
 
         /**
-         * @param forwardSharedIpToHttpHeaderSiem . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+         * @param forwardSharedIpToHttpHeaderSiem Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class AppSecReputationProfileAnalysisState extends com.pulumi.resou
         }
 
         /**
-         * @param forwardSharedIpToHttpHeaderSiem . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+         * @param forwardSharedIpToHttpHeaderSiem Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class AppSecReputationProfileAnalysisState extends com.pulumi.resou
         }
 
         /**
-         * @param forwardToHttpHeader . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+         * @param forwardToHttpHeader Whether to add client reputation details to requests forwarded to the origin server
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class AppSecReputationProfileAnalysisState extends com.pulumi.resou
         }
 
         /**
-         * @param forwardToHttpHeader . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+         * @param forwardToHttpHeader Whether to add client reputation details to requests forwarded to the origin server
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class AppSecReputationProfileAnalysisState extends com.pulumi.resou
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class AppSecReputationProfileAnalysisState extends com.pulumi.resou
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

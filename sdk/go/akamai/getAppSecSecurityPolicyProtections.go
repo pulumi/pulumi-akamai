@@ -10,69 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy
-//
-// Returns information about the protections in effect for the specified security policy.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/get-policy-protections)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			protections, err := akamai.GetAppSecSecurityPolicyProtections(ctx, &akamai.GetAppSecSecurityPolicyProtectionsArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: "gms1_134637",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("protectionsJson", protections.Json)
-//			ctx.Export("protectionsApplyApiConstraints", protections.ApplyApiConstraints)
-//			ctx.Export("protectionsApplyApplicationLayerControls", protections.ApplyApplicationLayerControls)
-//			ctx.Export("protectionsApplyBotmanControls", protections.ApplyBotmanControls)
-//			ctx.Export("protectionsApplyMalwareControls", protections.ApplyMalwareControls)
-//			ctx.Export("protectionsApplyNetworkLayerControls", protections.ApplyNetworkLayerControls)
-//			ctx.Export("protectionsApplyRateControls", protections.ApplyRateControls)
-//			ctx.Export("protectionsApplyReputationControls", protections.ApplyReputationControls)
-//			ctx.Export("protectionsApplySlowPostControls", protections.ApplySlowPostControls)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned and how that returned information is formatted:
-//
-// - `applyApplicationLayerControls`. Returns **true** if application layer controls are enabled; returns **false** if they are not.
-// - `applyApiConstraints`. Returns **true** if API constraints are enabled; returns **false** if they are not.
-// - `applyBotmanControls`. Returns **true** if Bot Manager controls are enabled; returns **false** if they are not.
-// - `applyMalwareControls`. Returns **true** if malware controls are enabled; returns **false** if they are not.
-// - `applyNetworkLayerControls`. Returns **true** if network layer controls are enabled; returns **false** if they are not.
-// - `applyRateControls`. Returns **true** if rate controls are enabled; returns **false** if they are not.
-// - `applyReputationControls`. Returns **true** if reputation controls are enabled; returns **false** if they are not.
-// - `applySlowPostControls`. Returns **true** if slow POST controls are enabled; returns **false** if they are not.
-// - `json`. JSON-formatted list showing the status of the protection settings.
-// - `outputText`. Tabular report showing the status of the protection settings.
 func GetAppSecSecurityPolicyProtections(ctx *pulumi.Context, args *GetAppSecSecurityPolicyProtectionsArgs, opts ...pulumi.InvokeOption) (*GetAppSecSecurityPolicyProtectionsResult, error) {
 	var rv GetAppSecSecurityPolicyProtectionsResult
 	err := ctx.Invoke("akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections", args, &rv, opts...)
@@ -84,9 +21,7 @@ func GetAppSecSecurityPolicyProtections(ctx *pulumi.Context, args *GetAppSecSecu
 
 // A collection of arguments for invoking getAppSecSecurityPolicyProtections.
 type GetAppSecSecurityPolicyProtectionsArgs struct {
-	// . Unique identifier of the security configuration associated with the security policy protections.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy you want to return protections information for.
+	ConfigId         int    `pulumi:"configId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -123,9 +58,7 @@ func GetAppSecSecurityPolicyProtectionsOutput(ctx *pulumi.Context, args GetAppSe
 
 // A collection of arguments for invoking getAppSecSecurityPolicyProtections.
 type GetAppSecSecurityPolicyProtectionsOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the security policy protections.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy you want to return protections information for.
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 

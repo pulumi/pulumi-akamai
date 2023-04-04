@@ -14,70 +14,17 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security configuration
- * 
- * Updates the version notes for a security configuration.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://techdocs.akamai.com/application-security/reference/put-version-notes)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecVersionNodes;
- * import com.pulumi.akamai.AppSecVersionNodesArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var versionNotesAppSecVersionNodes = new AppSecVersionNodes(&#34;versionNotesAppSecVersionNodes&#34;, AppSecVersionNodesArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .versionNotes(&#34;This version enables reputation profiles.&#34;)
- *             .build());
- * 
- *         ctx.export(&#34;versionNotes&#34;, versionNotesAppSecVersionNodes.outputText());
- *     }
- * }
- * ```
- * ## Output Options
- * 
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- * 
- * - `output_text`. Tabular report showing the updated version notes.
- * 
- */
 @ResourceType(type="akamai:index/appSecVersionNodes:AppSecVersionNodes")
 public class AppSecVersionNodes extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration whose version notes are being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration whose version notes are being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -98,14 +45,14 @@ public class AppSecVersionNodes extends com.pulumi.resources.CustomResource {
         return this.outputText;
     }
     /**
-     * . Brief description of the security configuration version.
+     * Brief description of the security configuration version
      * 
      */
     @Export(name="versionNotes", type=String.class, parameters={})
     private Output<String> versionNotes;
 
     /**
-     * @return . Brief description of the security configuration version.
+     * @return Brief description of the security configuration version
      * 
      */
     public Output<String> versionNotes() {

@@ -18,14 +18,14 @@ public final class IamRoleArgs extends com.pulumi.resources.ResourceArgs {
     public static final IamRoleArgs Empty = new IamRoleArgs();
 
     /**
-     * The description for a role.
+     * The description for a role
      * 
      */
     @Import(name="description", required=true)
     private Output<String> description;
 
     /**
-     * @return The description for a role.
+     * @return The description for a role
      * 
      */
     public Output<String> description() {
@@ -33,14 +33,14 @@ public final class IamRoleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+     * The list of existing unique identifiers for the granted roles
      * 
      */
     @Import(name="grantedRoles", required=true)
     private Output<List<Integer>> grantedRoles;
 
     /**
-     * @return The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+     * @return The list of existing unique identifiers for the granted roles
      * 
      */
     public Output<List<Integer>> grantedRoles() {
@@ -48,14 +48,14 @@ public final class IamRoleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name you supply for a role.
+     * The name you supply for a role
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name you supply for a role.
+     * @return The name you supply for a role
      * 
      */
     public Optional<Output<String>> name() {
@@ -105,7 +105,7 @@ public final class IamRoleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The description for a role.
+         * @param description The description for a role
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class IamRoleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The description for a role.
+         * @param description The description for a role
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class IamRoleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param grantedRoles The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+         * @param grantedRoles The list of existing unique identifiers for the granted roles
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class IamRoleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param grantedRoles The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+         * @param grantedRoles The list of existing unique identifiers for the granted roles
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class IamRoleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param grantedRoles The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+         * @param grantedRoles The list of existing unique identifiers for the granted roles
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class IamRoleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The name you supply for a role.
+         * @param name The name you supply for a role
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class IamRoleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The name you supply for a role.
+         * @param name The name you supply for a role
          * 
          * @return builder
          * 

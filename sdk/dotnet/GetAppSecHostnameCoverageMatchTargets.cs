@@ -11,93 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecHostnameCoverageMatchTargets
     {
-        /// <summary>
-        /// **Scopes**: Hostname
-        /// 
-        /// Returns information about the API and website match targets used to protect a hostname. 
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/match-targets](https://techdocs.akamai.com/application-security/reference/get-coverage-match-targets)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var matchTargets = Akamai.GetAppSecHostnameCoverageMatchTargets.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         Hostname = "documentation.akamai.com",
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of the coverage information.
-        /// - `output_text`. Tabular report of the coverage information.
-        /// </summary>
         public static Task<GetAppSecHostnameCoverageMatchTargetsResult> InvokeAsync(GetAppSecHostnameCoverageMatchTargetsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageMatchTargetsResult>("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args ?? new GetAppSecHostnameCoverageMatchTargetsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Hostname
-        /// 
-        /// Returns information about the API and website match targets used to protect a hostname. 
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/hostname-coverage/match-targets](https://techdocs.akamai.com/application-security/reference/get-coverage-match-targets)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var matchTargets = Akamai.GetAppSecHostnameCoverageMatchTargets.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         Hostname = "documentation.akamai.com",
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of the coverage information.
-        /// - `output_text`. Tabular report of the coverage information.
-        /// </summary>
         public static Output<GetAppSecHostnameCoverageMatchTargetsResult> Invoke(GetAppSecHostnameCoverageMatchTargetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecHostnameCoverageMatchTargetsResult>("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args ?? new GetAppSecHostnameCoverageMatchTargetsInvokeArgs(), options.WithDefaults());
     }
@@ -105,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecHostnameCoverageMatchTargetsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . (Required). Unique identifier of the security configuration associated with the hostname.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
-        /// </summary>
         [Input("hostname", required: true)]
         public string Hostname { get; set; } = null!;
 
@@ -125,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecHostnameCoverageMatchTargetsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . (Required). Unique identifier of the security configuration associated with the hostname.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
-        /// </summary>
         [Input("hostname", required: true)]
         public Input<string> Hostname { get; set; } = null!;
 

@@ -4,27 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.NetworkList` resource to create a network list, or to modify an existing list.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const networkList = new akamai.NetworkList("networkList", {
- *     type: "IP",
- *     description: "network list description",
- *     lists: _var.list,
- *     mode: "APPEND",
- *     contractId: "ABC-123",
- *     groupId: 12345,
- * });
- * ```
- */
 export class NetworkList extends pulumi.CustomResource {
     /**
      * Get an existing NetworkList resource's state with the given name, ID, and optional extra
@@ -54,43 +33,40 @@ export class NetworkList extends pulumi.CustomResource {
     }
 
     /**
-     * The contract ID of the network list. If supplied, groupId must also be supplied. The
-     * contractId value of an existing network list may not be modified.
+     * contract ID
      */
     public readonly contractId!: pulumi.Output<string | undefined>;
     /**
-     * The description to be assigned to the network list.
+     * A description of the network list
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * The group ID of the network list. If supplied, contractId must also be supplied. The
-     * groupId value of an existing network list may not be modified.
+     * group ID
      */
     public readonly groupId!: pulumi.Output<number | undefined>;
     /**
-     * A list of IP addresses or locations to be included in the list, added to an existing list, or
-     * removed from an existing list.
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+     * list
      */
     public readonly lists!: pulumi.Output<string[] | undefined>;
     /**
-     * A string specifying the interpretation of the `list` parameter. Must be one of the following:
+     * A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
      */
     public readonly mode!: pulumi.Output<string>;
     /**
-     * The name to be assigned to the network list.
+     * The name to be assigned to the network list
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * The ID of the network list.
+     * network list ID
      */
     public /*out*/ readonly networkListId!: pulumi.Output<string>;
     /**
-     * An integer that identifies the current version of the network list; this value is incremented each time
-     * the list is modified.
+     * sync point
      */
     public /*out*/ readonly syncPoint!: pulumi.Output<number>;
     /**
-     * The type of the network list; must be either "IP" or "GEO".
+     * The type of the network list; must be either 'IP' or 'GEO'
      */
     public readonly type!: pulumi.Output<string>;
     /**
@@ -153,43 +129,40 @@ export class NetworkList extends pulumi.CustomResource {
  */
 export interface NetworkListState {
     /**
-     * The contract ID of the network list. If supplied, groupId must also be supplied. The
-     * contractId value of an existing network list may not be modified.
+     * contract ID
      */
     contractId?: pulumi.Input<string>;
     /**
-     * The description to be assigned to the network list.
+     * A description of the network list
      */
     description?: pulumi.Input<string>;
     /**
-     * The group ID of the network list. If supplied, contractId must also be supplied. The
-     * groupId value of an existing network list may not be modified.
+     * group ID
      */
     groupId?: pulumi.Input<number>;
     /**
-     * A list of IP addresses or locations to be included in the list, added to an existing list, or
-     * removed from an existing list.
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+     * list
      */
     lists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A string specifying the interpretation of the `list` parameter. Must be one of the following:
+     * A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
      */
     mode?: pulumi.Input<string>;
     /**
-     * The name to be assigned to the network list.
+     * The name to be assigned to the network list
      */
     name?: pulumi.Input<string>;
     /**
-     * The ID of the network list.
+     * network list ID
      */
     networkListId?: pulumi.Input<string>;
     /**
-     * An integer that identifies the current version of the network list; this value is incremented each time
-     * the list is modified.
+     * sync point
      */
     syncPoint?: pulumi.Input<number>;
     /**
-     * The type of the network list; must be either "IP" or "GEO".
+     * The type of the network list; must be either 'IP' or 'GEO'
      */
     type?: pulumi.Input<string>;
     /**
@@ -203,34 +176,32 @@ export interface NetworkListState {
  */
 export interface NetworkListArgs {
     /**
-     * The contract ID of the network list. If supplied, groupId must also be supplied. The
-     * contractId value of an existing network list may not be modified.
+     * contract ID
      */
     contractId?: pulumi.Input<string>;
     /**
-     * The description to be assigned to the network list.
+     * A description of the network list
      */
     description: pulumi.Input<string>;
     /**
-     * The group ID of the network list. If supplied, contractId must also be supplied. The
-     * groupId value of an existing network list may not be modified.
+     * group ID
      */
     groupId?: pulumi.Input<number>;
     /**
-     * A list of IP addresses or locations to be included in the list, added to an existing list, or
-     * removed from an existing list.
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+     * list
      */
     lists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A string specifying the interpretation of the `list` parameter. Must be one of the following:
+     * A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
      */
     mode: pulumi.Input<string>;
     /**
-     * The name to be assigned to the network list.
+     * The name to be assigned to the network list
      */
     name?: pulumi.Input<string>;
     /**
-     * The type of the network list; must be either "IP" or "GEO".
+     * The type of the network list; must be either 'IP' or 'GEO'
      */
     type: pulumi.Input<string>;
 }

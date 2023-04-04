@@ -11,49 +11,16 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `EdgeWorkersActivation` resource to activate a specific EdgeWorker version. An activation deploys the version to either the Akamai staging or production network.
-//
-// Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewEdgeWorkersActivation(ctx, "test", &akamai.EdgeWorkersActivationArgs{
-//				EdgeworkerId: pulumi.Int(1234),
-//				Network:      pulumi.String("STAGING"),
-//				Version:      pulumi.String("test1"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type EdgeWorkersActivation struct {
 	pulumi.CustomResourceState
 
-	// (Required) Unique identifier of the activation.
+	// A unique identifier of the activation
 	ActivationId pulumi.IntOutput `pulumi:"activationId"`
-	// A unique identifier for the EdgeWorker ID you want to activate.
+	// Id of the EdgeWorker to activate
 	EdgeworkerId pulumi.IntOutput `pulumi:"edgeworkerId"`
-	// The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+	// The network on which the version will be activated
 	Network pulumi.StringOutput `pulumi:"network"`
-	// The EdgeWorker version you want to activate.
+	// The version of EdgeWorker to activate
 	Version pulumi.StringOutput `pulumi:"version"`
 }
 
@@ -95,24 +62,24 @@ func GetEdgeWorkersActivation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering EdgeWorkersActivation resources.
 type edgeWorkersActivationState struct {
-	// (Required) Unique identifier of the activation.
+	// A unique identifier of the activation
 	ActivationId *int `pulumi:"activationId"`
-	// A unique identifier for the EdgeWorker ID you want to activate.
+	// Id of the EdgeWorker to activate
 	EdgeworkerId *int `pulumi:"edgeworkerId"`
-	// The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+	// The network on which the version will be activated
 	Network *string `pulumi:"network"`
-	// The EdgeWorker version you want to activate.
+	// The version of EdgeWorker to activate
 	Version *string `pulumi:"version"`
 }
 
 type EdgeWorkersActivationState struct {
-	// (Required) Unique identifier of the activation.
+	// A unique identifier of the activation
 	ActivationId pulumi.IntPtrInput
-	// A unique identifier for the EdgeWorker ID you want to activate.
+	// Id of the EdgeWorker to activate
 	EdgeworkerId pulumi.IntPtrInput
-	// The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+	// The network on which the version will be activated
 	Network pulumi.StringPtrInput
-	// The EdgeWorker version you want to activate.
+	// The version of EdgeWorker to activate
 	Version pulumi.StringPtrInput
 }
 
@@ -121,21 +88,21 @@ func (EdgeWorkersActivationState) ElementType() reflect.Type {
 }
 
 type edgeWorkersActivationArgs struct {
-	// A unique identifier for the EdgeWorker ID you want to activate.
+	// Id of the EdgeWorker to activate
 	EdgeworkerId int `pulumi:"edgeworkerId"`
-	// The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+	// The network on which the version will be activated
 	Network string `pulumi:"network"`
-	// The EdgeWorker version you want to activate.
+	// The version of EdgeWorker to activate
 	Version string `pulumi:"version"`
 }
 
 // The set of arguments for constructing a EdgeWorkersActivation resource.
 type EdgeWorkersActivationArgs struct {
-	// A unique identifier for the EdgeWorker ID you want to activate.
+	// Id of the EdgeWorker to activate
 	EdgeworkerId pulumi.IntInput
-	// The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+	// The network on which the version will be activated
 	Network pulumi.StringInput
-	// The EdgeWorker version you want to activate.
+	// The version of EdgeWorker to activate
 	Version pulumi.StringInput
 }
 
@@ -226,22 +193,22 @@ func (o EdgeWorkersActivationOutput) ToEdgeWorkersActivationOutputWithContext(ct
 	return o
 }
 
-// (Required) Unique identifier of the activation.
+// A unique identifier of the activation
 func (o EdgeWorkersActivationOutput) ActivationId() pulumi.IntOutput {
 	return o.ApplyT(func(v *EdgeWorkersActivation) pulumi.IntOutput { return v.ActivationId }).(pulumi.IntOutput)
 }
 
-// A unique identifier for the EdgeWorker ID you want to activate.
+// Id of the EdgeWorker to activate
 func (o EdgeWorkersActivationOutput) EdgeworkerId() pulumi.IntOutput {
 	return o.ApplyT(func(v *EdgeWorkersActivation) pulumi.IntOutput { return v.EdgeworkerId }).(pulumi.IntOutput)
 }
 
-// The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+// The network on which the version will be activated
 func (o EdgeWorkersActivationOutput) Network() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeWorkersActivation) pulumi.StringOutput { return v.Network }).(pulumi.StringOutput)
 }
 
-// The EdgeWorker version you want to activate.
+// The version of EdgeWorker to activate
 func (o EdgeWorkersActivationOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeWorkersActivation) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }

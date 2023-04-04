@@ -21,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecConfigurationArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
-        /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
@@ -35,9 +32,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

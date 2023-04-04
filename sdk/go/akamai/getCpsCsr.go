@@ -10,44 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// When setting up a third-party enrollment, use the `getCpsCsr` data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
-//
-// If you're using dual-stacked certificates, you'll see data for both ECDSA and RSA keys.
-//
-// ## Basic usage
-//
-// This example shows how to return CSR information for enrollment ID 12345:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.GetCpsCsr(ctx, &akamai.GetCpsCsrArgs{
-//				EnrollmentId: 12345,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-//   - `csrRsa` - Returns CSR information for a certificate that uses the RSA algorithm.
-//   - `csrEcdsa` - Returns CSR information for a certificate that uses the ECDSA algorithm.
 func GetCpsCsr(ctx *pulumi.Context, args *GetCpsCsrArgs, opts ...pulumi.InvokeOption) (*GetCpsCsrResult, error) {
 	var rv GetCpsCsrResult
 	err := ctx.Invoke("akamai:index/getCpsCsr:getCpsCsr", args, &rv, opts...)
@@ -59,7 +21,6 @@ func GetCpsCsr(ctx *pulumi.Context, args *GetCpsCsrArgs, opts ...pulumi.InvokeOp
 
 // A collection of arguments for invoking getCpsCsr.
 type GetCpsCsrArgs struct {
-	// Unique identifier of the enrollment.
 	EnrollmentId int `pulumi:"enrollmentId"`
 }
 
@@ -87,7 +48,6 @@ func GetCpsCsrOutput(ctx *pulumi.Context, args GetCpsCsrOutputArgs, opts ...pulu
 
 // A collection of arguments for invoking getCpsCsr.
 type GetCpsCsrOutputArgs struct {
-	// Unique identifier of the enrollment.
 	EnrollmentId pulumi.IntInput `pulumi:"enrollmentId"`
 }
 

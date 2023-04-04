@@ -15,32 +15,16 @@ public final class GetAppSecMatchTargetsArgs extends com.pulumi.resources.Invoke
 
     public static final GetAppSecMatchTargetsArgs Empty = new GetAppSecMatchTargetsArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the match targets.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the match targets.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
-     * 
-     */
     @Import(name="matchTargetId")
     private @Nullable Output<Integer> matchTargetId;
 
-    /**
-     * @return . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
-     * 
-     */
     public Optional<Output<Integer>> matchTargetId() {
         return Optional.ofNullable(this.matchTargetId);
     }
@@ -70,44 +54,20 @@ public final class GetAppSecMatchTargetsArgs extends com.pulumi.resources.Invoke
             $ = new GetAppSecMatchTargetsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the match targets.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the match targets.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param matchTargetId . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchTargetId(@Nullable Output<Integer> matchTargetId) {
             $.matchTargetId = matchTargetId;
             return this;
         }
 
-        /**
-         * @param matchTargetId . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchTargetId(Integer matchTargetId) {
             return matchTargetId(Output.of(matchTargetId));
         }

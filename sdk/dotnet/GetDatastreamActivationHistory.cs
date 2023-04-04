@@ -11,91 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetDatastreamActivationHistory
     {
-        /// <summary>
-        /// Use the `akamai.getDatastreamActivationHistory` data source to list detailed information about the activation status changes for all versions of a stream.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// This example returns the activation history for a provided stream ID:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var ds = Akamai.GetDatastreamActivationHistory.Invoke(new()
-        ///     {
-        ///         StreamId = 12345,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["dsHistoryStreamId"] = ds.Apply(getDatastreamActivationHistoryResult =&gt; getDatastreamActivationHistoryResult.StreamId),
-        ///         ["dsHistoryActivations"] = ds.Apply(getDatastreamActivationHistoryResult =&gt; getDatastreamActivationHistoryResult.Activations),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `activations` - Detailed information about an activation status change for a version of a stream, including:
-        ///   * `created_by` - The user who activated or deactivated the stream.
-        ///   * `created_date` - The date and time of an activation status change.
-        ///   * `stream_id` - A stream's unique identifier.
-        ///   * `stream_version_id` - A stream version's unique identifier.
-        ///   * `is_active` -	Whether the version of the stream is active.
-        /// </summary>
         public static Task<GetDatastreamActivationHistoryResult> InvokeAsync(GetDatastreamActivationHistoryArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatastreamActivationHistoryResult>("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args ?? new GetDatastreamActivationHistoryArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getDatastreamActivationHistory` data source to list detailed information about the activation status changes for all versions of a stream.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// This example returns the activation history for a provided stream ID:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var ds = Akamai.GetDatastreamActivationHistory.Invoke(new()
-        ///     {
-        ///         StreamId = 12345,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["dsHistoryStreamId"] = ds.Apply(getDatastreamActivationHistoryResult =&gt; getDatastreamActivationHistoryResult.StreamId),
-        ///         ["dsHistoryActivations"] = ds.Apply(getDatastreamActivationHistoryResult =&gt; getDatastreamActivationHistoryResult.Activations),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `activations` - Detailed information about an activation status change for a version of a stream, including:
-        ///   * `created_by` - The user who activated or deactivated the stream.
-        ///   * `created_date` - The date and time of an activation status change.
-        ///   * `stream_id` - A stream's unique identifier.
-        ///   * `stream_version_id` - A stream version's unique identifier.
-        ///   * `is_active` -	Whether the version of the stream is active.
-        /// </summary>
         public static Output<GetDatastreamActivationHistoryResult> Invoke(GetDatastreamActivationHistoryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatastreamActivationHistoryResult>("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args ?? new GetDatastreamActivationHistoryInvokeArgs(), options.WithDefaults());
     }
@@ -103,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetDatastreamActivationHistoryArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A stream's unique identifier.
-        /// </summary>
         [Input("streamId", required: true)]
         public int StreamId { get; set; }
 
@@ -117,9 +32,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetDatastreamActivationHistoryInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A stream's unique identifier.
-        /// </summary>
         [Input("streamId", required: true)]
         public Input<int> StreamId { get; set; } = null!;
 

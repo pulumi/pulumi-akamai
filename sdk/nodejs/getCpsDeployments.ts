@@ -4,35 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getCpsDeployments` data source to retrieve deployed certificates for a specific enrollment.
- *
- * You'll see data for ECDSA, RSA, or both depending on the type and number of certificates you uploaded.
- *
- * ## Basic usage
- *
- * This example shows how to return information about deployed certificates for enrollment ID 12345.
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getCpsDeployments({
- *     enrollmentId: 12345,
- * });
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `productionCertificateRsa` - The RSA certificate deployed on the production network.
- * * `productionCertificateEcdsa` - The ECDSA certificate deployed on the production network.
- * * `stagingCertificateRsa` - The RSA certificate deployed on the staging network.
- * * `stagingCertificateEcdsa` - The ECDSA certificate deployed on the staging network.
- * * `expiryDate` - The expiration date for the certificate in ISO-8601 format.
- * * `autoRenewalStartTime` - The specific date the automatic renewal will start on. The date is in ISO-8601 format. <br> For DV certificates, CPS automatically starts the renewal process 90 days before the current certificate expires. It then automatically deploys the renewed certificate when it receives it from the CA. <br> For third-party certificates, CPS creates a change. This change is needed to get a new CSR and upload the new certificate. Use the `akamai.getCPSEnrollments` data source to view pending changes.
- */
 export function getCpsDeployments(args: GetCpsDeploymentsArgs, opts?: pulumi.InvokeOptions): Promise<GetCpsDeploymentsResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -45,9 +16,6 @@ export function getCpsDeployments(args: GetCpsDeploymentsArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getCpsDeployments.
  */
 export interface GetCpsDeploymentsArgs {
-    /**
-     * Unique identifier of the enrollment.
-     */
     enrollmentId: number;
 }
 
@@ -67,35 +35,6 @@ export interface GetCpsDeploymentsResult {
     readonly stagingCertificateEcdsa: string;
     readonly stagingCertificateRsa: string;
 }
-/**
- * Use the `akamai.getCpsDeployments` data source to retrieve deployed certificates for a specific enrollment.
- *
- * You'll see data for ECDSA, RSA, or both depending on the type and number of certificates you uploaded.
- *
- * ## Basic usage
- *
- * This example shows how to return information about deployed certificates for enrollment ID 12345.
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getCpsDeployments({
- *     enrollmentId: 12345,
- * });
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `productionCertificateRsa` - The RSA certificate deployed on the production network.
- * * `productionCertificateEcdsa` - The ECDSA certificate deployed on the production network.
- * * `stagingCertificateRsa` - The RSA certificate deployed on the staging network.
- * * `stagingCertificateEcdsa` - The ECDSA certificate deployed on the staging network.
- * * `expiryDate` - The expiration date for the certificate in ISO-8601 format.
- * * `autoRenewalStartTime` - The specific date the automatic renewal will start on. The date is in ISO-8601 format. <br> For DV certificates, CPS automatically starts the renewal process 90 days before the current certificate expires. It then automatically deploys the renewed certificate when it receives it from the CA. <br> For third-party certificates, CPS creates a change. This change is needed to get a new CSR and upload the new certificate. Use the `akamai.getCPSEnrollments` data source to view pending changes.
- */
 export function getCpsDeploymentsOutput(args: GetCpsDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpsDeploymentsResult> {
     return pulumi.output(args).apply((a: any) => getCpsDeployments(a, opts))
 }
@@ -104,8 +43,5 @@ export function getCpsDeploymentsOutput(args: GetCpsDeploymentsOutputArgs, opts?
  * A collection of arguments for invoking getCpsDeployments.
  */
 export interface GetCpsDeploymentsOutputArgs {
-    /**
-     * Unique identifier of the enrollment.
-     */
     enrollmentId: pulumi.Input<number>;
 }

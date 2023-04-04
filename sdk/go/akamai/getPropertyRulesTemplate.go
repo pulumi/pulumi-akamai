@@ -10,117 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
-//
-// ### JSON Template Files
-//
-// Here are some examples of how you can set up your JSON template files for use with this data source.
-// ### Single JSON template that calls other templates
-//
-// Here's an example of a JSON template file with nested templates:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			return nil
-//		})
-//	}
-//
-// ```
-// ### Individual JSON rule template file
-//
-// Here’s a simple default rule example that you can include inside the `templateData` argument:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			return nil
-//		})
-//	}
-//
-// ```
-// ### Add Templates To The Data Source
-//
-// Here are some examples of how you can call your JSON template files with this data source.
-// ### Call individual template files with this data source
-//
-// This second example shows how to call a specific JSON template using the `templateData` field:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"encoding/json"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			tmpJSON0, err := json.Marshal(map[string]interface{}{
-//				"rules": map[string]interface{}{
-//					"name": "default",
-//					"children": []string{
-//						"#include:rules.json",
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			json0 := string(tmpJSON0)
-//			examplePropertyRulesTemplate, err := akamai.GetPropertyRulesTemplate(ctx, &akamai.GetPropertyRulesTemplateArgs{
-//				Templates: []akamai.GetPropertyRulesTemplateTemplate{
-//					{
-//						TemplateData: json0,
-//						TemplateDir:  "property-snippets/",
-//					},
-//				},
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewProperty(ctx, "exampleProperty", &akamai.PropertyArgs{
-//				ContractId: pulumi.Any(_var.Contractid),
-//				GroupId:    pulumi.Any(_var.Groupid),
-//				RuleFormat: pulumi.String("v2020-03-04"),
-//				Rules:      *pulumi.String(examplePropertyRulesTemplate.Json),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// ### Variables
-//
-// You can add variables individually or reference variable definition files.
-// ## Attributes reference
-//
-// This data source returns this attribute:
-//
-// * `json` - The fully expanded template with variables and all nested templates resolved.
 func GetPropertyRulesTemplate(ctx *pulumi.Context, args *GetPropertyRulesTemplateArgs, opts ...pulumi.InvokeOption) (*GetPropertyRulesTemplateResult, error) {
 	var rv GetPropertyRulesTemplateResult
 	err := ctx.Invoke("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args, &rv, opts...)
@@ -132,16 +21,11 @@ func GetPropertyRulesTemplate(ctx *pulumi.Context, args *GetPropertyRulesTemplat
 
 // A collection of arguments for invoking getPropertyRulesTemplate.
 type GetPropertyRulesTemplateArgs struct {
-	// The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
-	TemplateFile *string `pulumi:"templateFile"`
-	// The template you use in your configuration. This argument conflicts with the `templateFile` argument.
-	Templates []GetPropertyRulesTemplateTemplate `pulumi:"templates"`
-	// Required when using `varValuesFile`. The absolute path to the file containing variable definitions and defaults. This argument conflicts with the `variables` argument.
-	VarDefinitionFile *string `pulumi:"varDefinitionFile"`
-	// Required when using `varDefinitionFile`. The absolute path to the file containing variable values. This argument conflicts with the `variables` argument.
-	VarValuesFile *string `pulumi:"varValuesFile"`
-	// The definition of one or more variables. This argument conflicts with the `varDefinitionFile` and `varValuesFile` arguments. A `variables` block includes:
-	Variables []GetPropertyRulesTemplateVariable `pulumi:"variables"`
+	TemplateFile      *string                            `pulumi:"templateFile"`
+	Templates         []GetPropertyRulesTemplateTemplate `pulumi:"templates"`
+	VarDefinitionFile *string                            `pulumi:"varDefinitionFile"`
+	VarValuesFile     *string                            `pulumi:"varValuesFile"`
+	Variables         []GetPropertyRulesTemplateVariable `pulumi:"variables"`
 }
 
 // A collection of values returned by getPropertyRulesTemplate.
@@ -171,16 +55,11 @@ func GetPropertyRulesTemplateOutput(ctx *pulumi.Context, args GetPropertyRulesTe
 
 // A collection of arguments for invoking getPropertyRulesTemplate.
 type GetPropertyRulesTemplateOutputArgs struct {
-	// The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
-	TemplateFile pulumi.StringPtrInput `pulumi:"templateFile"`
-	// The template you use in your configuration. This argument conflicts with the `templateFile` argument.
-	Templates GetPropertyRulesTemplateTemplateArrayInput `pulumi:"templates"`
-	// Required when using `varValuesFile`. The absolute path to the file containing variable definitions and defaults. This argument conflicts with the `variables` argument.
-	VarDefinitionFile pulumi.StringPtrInput `pulumi:"varDefinitionFile"`
-	// Required when using `varDefinitionFile`. The absolute path to the file containing variable values. This argument conflicts with the `variables` argument.
-	VarValuesFile pulumi.StringPtrInput `pulumi:"varValuesFile"`
-	// The definition of one or more variables. This argument conflicts with the `varDefinitionFile` and `varValuesFile` arguments. A `variables` block includes:
-	Variables GetPropertyRulesTemplateVariableArrayInput `pulumi:"variables"`
+	TemplateFile      pulumi.StringPtrInput                      `pulumi:"templateFile"`
+	Templates         GetPropertyRulesTemplateTemplateArrayInput `pulumi:"templates"`
+	VarDefinitionFile pulumi.StringPtrInput                      `pulumi:"varDefinitionFile"`
+	VarValuesFile     pulumi.StringPtrInput                      `pulumi:"varValuesFile"`
+	Variables         GetPropertyRulesTemplateVariableArrayInput `pulumi:"variables"`
 }
 
 func (GetPropertyRulesTemplateOutputArgs) ElementType() reflect.Type {

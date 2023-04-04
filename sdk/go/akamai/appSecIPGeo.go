@@ -11,87 +11,20 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy
-//
-// Modifies the method used for firewall blocking, and manages the network lists used for IP/Geo firewall blocking.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/put-policy-ip-geo-firewall)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ipGeoBlock, err := akamai.NewAppSecIPGeo(ctx, "ipGeoBlock", &akamai.AppSecIPGeoArgs{
-//				ConfigId:         *pulumi.Int(configuration.ConfigId),
-//				SecurityPolicyId: pulumi.String("gms1_134637"),
-//				Mode:             pulumi.String("block"),
-//				GeoNetworkLists: pulumi.StringArray{
-//					pulumi.String("06038_GEO_TEST"),
-//				},
-//				IpNetworkLists: pulumi.StringArray{
-//					pulumi.String("56921_TEST"),
-//				},
-//				ExceptionIpNetworkLists: pulumi.StringArray{
-//					pulumi.String("07126_EXCEPTION_TEST"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			ipGeoAllow, err := akamai.NewAppSecIPGeo(ctx, "ipGeoAllow", &akamai.AppSecIPGeoArgs{
-//				ConfigId:         *pulumi.Int(configuration.ConfigId),
-//				SecurityPolicyId: pulumi.String("gms1-090334"),
-//				Mode:             pulumi.String("allow"),
-//				ExceptionIpNetworkLists: pulumi.StringArray{
-//					pulumi.String("07126_EXCEPTION_TEST"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("ipGeoModeBlock", ipGeoBlock.Mode)
-//			ctx.Export("blockGeoNetworkLists", ipGeoBlock.GeoNetworkLists)
-//			ctx.Export("blockIpNetworkLists", ipGeoBlock.IpNetworkLists)
-//			ctx.Export("blockExceptionIpNetworkLists", ipGeoBlock.ExceptionIpNetworkLists)
-//			ctx.Export("ipGeoModeAllow", ipGeoAllow.Mode)
-//			ctx.Export("allowExceptionIpNetworkLists", ipGeoAllow.ExceptionIpNetworkLists)
-//			return nil
-//		})
-//	}
-//
-// ```
 type AppSecIPGeo struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+	// List of IDs of network list that are always allowed
 	ExceptionIpNetworkLists pulumi.StringArrayOutput `pulumi:"exceptionIpNetworkLists"`
-	// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+	// List of IDs of geographic network list to be blocked
 	GeoNetworkLists pulumi.StringArrayOutput `pulumi:"geoNetworkLists"`
-	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+	// List of IDs of IP network list to be blocked
 	IpNetworkLists pulumi.StringArrayOutput `pulumi:"ipNetworkLists"`
-	// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+	// Protection mode (block or allow)
 	Mode pulumi.StringOutput `pulumi:"mode"`
-	// . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -133,32 +66,32 @@ func GetAppSecIPGeo(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecIPGeo resources.
 type appSecIPGeoState struct {
-	// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+	// List of IDs of network list that are always allowed
 	ExceptionIpNetworkLists []string `pulumi:"exceptionIpNetworkLists"`
-	// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+	// List of IDs of geographic network list to be blocked
 	GeoNetworkLists []string `pulumi:"geoNetworkLists"`
-	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+	// List of IDs of IP network list to be blocked
 	IpNetworkLists []string `pulumi:"ipNetworkLists"`
-	// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+	// Protection mode (block or allow)
 	Mode *string `pulumi:"mode"`
-	// . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecIPGeoState struct {
-	// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+	// List of IDs of network list that are always allowed
 	ExceptionIpNetworkLists pulumi.StringArrayInput
-	// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+	// List of IDs of geographic network list to be blocked
 	GeoNetworkLists pulumi.StringArrayInput
-	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+	// List of IDs of IP network list to be blocked
 	IpNetworkLists pulumi.StringArrayInput
-	// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+	// Protection mode (block or allow)
 	Mode pulumi.StringPtrInput
-	// . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -167,33 +100,33 @@ func (AppSecIPGeoState) ElementType() reflect.Type {
 }
 
 type appSecIPGeoArgs struct {
-	// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+	// List of IDs of network list that are always allowed
 	ExceptionIpNetworkLists []string `pulumi:"exceptionIpNetworkLists"`
-	// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+	// List of IDs of geographic network list to be blocked
 	GeoNetworkLists []string `pulumi:"geoNetworkLists"`
-	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+	// List of IDs of IP network list to be blocked
 	IpNetworkLists []string `pulumi:"ipNetworkLists"`
-	// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+	// Protection mode (block or allow)
 	Mode string `pulumi:"mode"`
-	// . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecIPGeo resource.
 type AppSecIPGeoArgs struct {
-	// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+	// List of IDs of network list that are always allowed
 	ExceptionIpNetworkLists pulumi.StringArrayInput
-	// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+	// List of IDs of geographic network list to be blocked
 	GeoNetworkLists pulumi.StringArrayInput
-	// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+	// List of IDs of IP network list to be blocked
 	IpNetworkLists pulumi.StringArrayInput
-	// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+	// Protection mode (block or allow)
 	Mode pulumi.StringInput
-	// . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringInput
 }
 
@@ -284,32 +217,32 @@ func (o AppSecIPGeoOutput) ToAppSecIPGeoOutputWithContext(ctx context.Context) A
 	return o
 }
 
-// . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+// Unique identifier of the security configuration
 func (o AppSecIPGeoOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecIPGeo) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+// List of IDs of network list that are always allowed
 func (o AppSecIPGeoOutput) ExceptionIpNetworkLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringArrayOutput { return v.ExceptionIpNetworkLists }).(pulumi.StringArrayOutput)
 }
 
-// . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+// List of IDs of geographic network list to be blocked
 func (o AppSecIPGeoOutput) GeoNetworkLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringArrayOutput { return v.GeoNetworkLists }).(pulumi.StringArrayOutput)
 }
 
-// . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+// List of IDs of IP network list to be blocked
 func (o AppSecIPGeoOutput) IpNetworkLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringArrayOutput { return v.IpNetworkLists }).(pulumi.StringArrayOutput)
 }
 
-// . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+// Protection mode (block or allow)
 func (o AppSecIPGeoOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringOutput { return v.Mode }).(pulumi.StringOutput)
 }
 
-// . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+// Unique identifier of the security policy
 func (o AppSecIPGeoOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }

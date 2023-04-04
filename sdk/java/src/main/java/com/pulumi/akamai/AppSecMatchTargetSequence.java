@@ -15,78 +15,31 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security configuration
- * 
- * Specifies the order in which match targets are applied within a security configuration. As a general rule, you should process broader and more-general match targets first, gradually working your way down to more granular and highly-specific targets.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecMatchTargetSequence;
- * import com.pulumi.akamai.AppSecMatchTargetSequenceArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var matchTargetSequence = new AppSecMatchTargetSequence(&#34;matchTargetSequence&#34;, AppSecMatchTargetSequenceArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .matchTargetSequence(Files.readString(Paths.get(String.format(&#34;%s/match_targets_sequence.json&#34;, path.module()))))
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecMatchTargetSequence:AppSecMatchTargetSequence")
 public class AppSecMatchTargetSequence extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the match target sequence being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the match target sequence being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+     * JSON-formatted definition of the processing sequence for all defined match targets
      * 
      */
     @Export(name="matchTargetSequence", type=String.class, parameters={})
     private Output</* @Nullable */ String> matchTargetSequence;
 
     /**
-     * @return . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+     * @return JSON-formatted definition of the processing sequence for all defined match targets
      * 
      */
     public Output<Optional<String>> matchTargetSequence() {

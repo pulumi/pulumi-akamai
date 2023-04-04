@@ -19,7 +19,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
     public static final AppSecActivationsState Empty = new AppSecActivationsState();
 
     /**
-     * . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
+     * Whether to activate or deactivate the specified security configuration and version
      * 
      * @deprecated
      * The setting activate has been deprecated; &#34;terraform apply&#34; will always perform activation. (Use &#34;terraform destroy&#34; for deactivation.)
@@ -30,7 +30,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
     private @Nullable Output<Boolean> activate;
 
     /**
-     * @return . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
+     * @return Whether to activate or deactivate the specified security configuration and version
      * 
      * @deprecated
      * The setting activate has been deprecated; &#34;terraform apply&#34; will always perform activation. (Use &#34;terraform destroy&#34; for deactivation.)
@@ -42,14 +42,14 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * . Unique identifier of the security configuration being activated. This is unchanged from previous versions.
+     * Unique identifier of the security configuration to be activated
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration being activated. This is unchanged from previous versions.
+     * @return Unique identifier of the security configuration to be activated
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -57,18 +57,14 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * . Network on which activation will occur; if not included, activation takes place on the staging network. Allowed values are:
-     * * **PRODUCTION**
-     * * **STAGING**
+     * Network on which to activate the configuration version (STAGING or PRODUCTION)
      * 
      */
     @Import(name="network")
     private @Nullable Output<String> network;
 
     /**
-     * @return . Network on which activation will occur; if not included, activation takes place on the staging network. Allowed values are:
-     * * **PRODUCTION**
-     * * **STAGING**
+     * @return Network on which to activate the configuration version (STAGING or PRODUCTION)
      * 
      */
     public Optional<Output<String>> network() {
@@ -76,14 +72,14 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That&#39;s because something must be different in order to trigger these processes. Because of that, it&#39;s recommended that you always update the **note** argument. That ensures that the resource is called and that activation or deactivation occurs.
+     * Note describing the activation. Will use timestamp if omitted.
      * 
      */
     @Import(name="note")
     private @Nullable Output<String> note;
 
     /**
-     * @return . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That&#39;s because something must be different in order to trigger these processes. Because of that, it&#39;s recommended that you always update the **note** argument. That ensures that the resource is called and that activation or deactivation occurs.
+     * @return Note describing the activation. Will use timestamp if omitted.
      * 
      */
     public Optional<Output<String>> note() {
@@ -91,7 +87,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That&#39;s because something must be different in order to trigger one of these processes. Because of that, it&#39;s recommended that you always update the `notes` argument. Doing so ensures that the resource is called and activation or deactivation occurs. This argument applies only to versions prior to 2.0.0.
+     * Note describing the activation
      * 
      * @deprecated
      * The setting notes has been deprecated. Use &#34;note&#34; instead.
@@ -102,7 +98,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> notes;
 
     /**
-     * @return . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That&#39;s because something must be different in order to trigger one of these processes. Because of that, it&#39;s recommended that you always update the `notes` argument. Doing so ensures that the resource is called and activation or deactivation occurs. This argument applies only to versions prior to 2.0.0.
+     * @return Note describing the activation
      * 
      * @deprecated
      * The setting notes has been deprecated. Use &#34;note&#34; instead.
@@ -114,14 +110,14 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * . JSON array containing the email addresses of the people to be notified when activation is complete. This is unchanged from previous versions.
+     * List of email addresses to be notified with the results of the activation
      * 
      */
     @Import(name="notificationEmails")
     private @Nullable Output<List<String>> notificationEmails;
 
     /**
-     * @return . JSON array containing the email addresses of the people to be notified when activation is complete. This is unchanged from previous versions.
+     * @return List of email addresses to be notified with the results of the activation
      * 
      */
     public Optional<Output<List<String>>> notificationEmails() {
@@ -144,14 +140,14 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * . Version number of the security configuration being activated. This can be a hard-coded version number (for example, **5**), or you can use the security configuration’s **latest_version** attribute (data.akamai_appsec_configuration.configuration.latest_version). If you do the latter, you’ll always activate the most recent version of the configuration. This argument applies only to versions 2.0.0 and later.
+     * Version of the security configuration to be activated
      * 
      */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
     /**
-     * @return . Version number of the security configuration being activated. This can be a hard-coded version number (for example, **5**), or you can use the security configuration’s **latest_version** attribute (data.akamai_appsec_configuration.configuration.latest_version). If you do the latter, you’ll always activate the most recent version of the configuration. This argument applies only to versions 2.0.0 and later.
+     * @return Version of the security configuration to be activated
      * 
      */
     public Optional<Output<Integer>> version() {
@@ -190,7 +186,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param activate . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
+         * @param activate Whether to activate or deactivate the specified security configuration and version
          * 
          * @return builder
          * 
@@ -205,7 +201,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param activate . Set to **true** to activate the specified security configuration or set to **false** to deactivate the configuration. If not included, the security configuration is activated. This argument applies only to versions prior to 2.0.0.
+         * @param activate Whether to activate or deactivate the specified security configuration and version
          * 
          * @return builder
          * 
@@ -219,7 +215,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration being activated. This is unchanged from previous versions.
+         * @param configId Unique identifier of the security configuration to be activated
          * 
          * @return builder
          * 
@@ -230,7 +226,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration being activated. This is unchanged from previous versions.
+         * @param configId Unique identifier of the security configuration to be activated
          * 
          * @return builder
          * 
@@ -240,9 +236,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param network . Network on which activation will occur; if not included, activation takes place on the staging network. Allowed values are:
-         * * **PRODUCTION**
-         * * **STAGING**
+         * @param network Network on which to activate the configuration version (STAGING or PRODUCTION)
          * 
          * @return builder
          * 
@@ -253,9 +247,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param network . Network on which activation will occur; if not included, activation takes place on the staging network. Allowed values are:
-         * * **PRODUCTION**
-         * * **STAGING**
+         * @param network Network on which to activate the configuration version (STAGING or PRODUCTION)
          * 
          * @return builder
          * 
@@ -265,7 +257,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param note . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That&#39;s because something must be different in order to trigger these processes. Because of that, it&#39;s recommended that you always update the **note** argument. That ensures that the resource is called and that activation or deactivation occurs.
+         * @param note Note describing the activation. Will use timestamp if omitted.
          * 
          * @return builder
          * 
@@ -276,7 +268,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param note . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That&#39;s because something must be different in order to trigger these processes. Because of that, it&#39;s recommended that you always update the **note** argument. That ensures that the resource is called and that activation or deactivation occurs.
+         * @param note Note describing the activation. Will use timestamp if omitted.
          * 
          * @return builder
          * 
@@ -286,7 +278,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param notes . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That&#39;s because something must be different in order to trigger one of these processes. Because of that, it&#39;s recommended that you always update the `notes` argument. Doing so ensures that the resource is called and activation or deactivation occurs. This argument applies only to versions prior to 2.0.0.
+         * @param notes Note describing the activation
          * 
          * @return builder
          * 
@@ -301,7 +293,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param notes . Brief description of the activation or deactivation process. If no attributes have changed since the last time you called the **akamai_appsec_activations** resource, neither activation nor deactivation takes place. That&#39;s because something must be different in order to trigger one of these processes. Because of that, it&#39;s recommended that you always update the `notes` argument. Doing so ensures that the resource is called and activation or deactivation occurs. This argument applies only to versions prior to 2.0.0.
+         * @param notes Note describing the activation
          * 
          * @return builder
          * 
@@ -315,7 +307,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param notificationEmails . JSON array containing the email addresses of the people to be notified when activation is complete. This is unchanged from previous versions.
+         * @param notificationEmails List of email addresses to be notified with the results of the activation
          * 
          * @return builder
          * 
@@ -326,7 +318,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param notificationEmails . JSON array containing the email addresses of the people to be notified when activation is complete. This is unchanged from previous versions.
+         * @param notificationEmails List of email addresses to be notified with the results of the activation
          * 
          * @return builder
          * 
@@ -336,7 +328,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param notificationEmails . JSON array containing the email addresses of the people to be notified when activation is complete. This is unchanged from previous versions.
+         * @param notificationEmails List of email addresses to be notified with the results of the activation
          * 
          * @return builder
          * 
@@ -367,7 +359,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param version . Version number of the security configuration being activated. This can be a hard-coded version number (for example, **5**), or you can use the security configuration’s **latest_version** attribute (data.akamai_appsec_configuration.configuration.latest_version). If you do the latter, you’ll always activate the most recent version of the configuration. This argument applies only to versions 2.0.0 and later.
+         * @param version Version of the security configuration to be activated
          * 
          * @return builder
          * 
@@ -378,7 +370,7 @@ public final class AppSecActivationsState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param version . Version number of the security configuration being activated. This can be a hard-coded version number (for example, **5**), or you can use the security configuration’s **latest_version** attribute (data.akamai_appsec_configuration.configuration.latest_version). If you do the latter, you’ll always activate the most recent version of the configuration. This argument applies only to versions 2.0.0 and later.
+         * @param version Version of the security configuration to be activated
          * 
          * @return builder
          * 

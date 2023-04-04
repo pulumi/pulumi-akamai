@@ -11,89 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetPropertyIncludeParents
     {
-        /// <summary>
-        /// Use the `akamai.getPropertyIncludeParents` data source to return a list of parent properties that use the given include. In your property's rule tree, you can reference an include by adding the `include` behavior and specifying the `include_id`.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns all active properties a specific include is referenced in, based on the contract, group, and include IDs.
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var myExamplePropertyIncludeParents = Akamai.GetPropertyIncludeParents.Invoke(new()
-        ///     {
-        ///         ContractId = "ctr_1-AB123",
-        ///         GroupId = "grp_12345",
-        ///         IncludeId = "inc_123456",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["myExample"] = myExamplePropertyIncludeParents,
-        ///     };
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `parents` - The list of include's parent properties.
-        ///  * `id` - The property's unique identifier.
-        ///  * `name` - The descriptive name for the property.
-        ///  * `staging_version` - The property version currently activated on the staging network.
-        ///  * `production_version` - The property version currently activated on the production network.
-        ///  * `is_include_used_in_staging_version` - Whether the specified include is active on the staging network and is referenced in parent's `staging_version`.
-        ///  * `is_include_used_in_production_version` - Whether the specified include is active on the production network and is referenced in parent's `production_version`.
-        /// </summary>
         public static Task<GetPropertyIncludeParentsResult> InvokeAsync(GetPropertyIncludeParentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyIncludeParentsResult>("akamai:index/getPropertyIncludeParents:getPropertyIncludeParents", args ?? new GetPropertyIncludeParentsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getPropertyIncludeParents` data source to return a list of parent properties that use the given include. In your property's rule tree, you can reference an include by adding the `include` behavior and specifying the `include_id`.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns all active properties a specific include is referenced in, based on the contract, group, and include IDs.
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var myExamplePropertyIncludeParents = Akamai.GetPropertyIncludeParents.Invoke(new()
-        ///     {
-        ///         ContractId = "ctr_1-AB123",
-        ///         GroupId = "grp_12345",
-        ///         IncludeId = "inc_123456",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["myExample"] = myExamplePropertyIncludeParents,
-        ///     };
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `parents` - The list of include's parent properties.
-        ///  * `id` - The property's unique identifier.
-        ///  * `name` - The descriptive name for the property.
-        ///  * `staging_version` - The property version currently activated on the staging network.
-        ///  * `production_version` - The property version currently activated on the production network.
-        ///  * `is_include_used_in_staging_version` - Whether the specified include is active on the staging network and is referenced in parent's `staging_version`.
-        ///  * `is_include_used_in_production_version` - Whether the specified include is active on the production network and is referenced in parent's `production_version`.
-        /// </summary>
         public static Output<GetPropertyIncludeParentsResult> Invoke(GetPropertyIncludeParentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertyIncludeParentsResult>("akamai:index/getPropertyIncludeParents:getPropertyIncludeParents", args ?? new GetPropertyIncludeParentsInvokeArgs(), options.WithDefaults());
     }
@@ -101,21 +21,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyIncludeParentsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A group's unique ID, including the optional `grp_` prefix.
-        /// </summary>
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) An include's unique ID with the optional `inc_` prefix.
-        /// </summary>
         [Input("includeId", required: true)]
         public string IncludeId { get; set; } = null!;
 
@@ -127,21 +38,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyIncludeParentsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A group's unique ID, including the optional `grp_` prefix.
-        /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) An include's unique ID with the optional `inc_` prefix.
-        /// </summary>
         [Input("includeId", required: true)]
         public Input<string> IncludeId { get; set; } = null!;
 

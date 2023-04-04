@@ -16,17 +16,9 @@ public final class GetGtmDefaultDatacenterArgs extends com.pulumi.resources.Invo
 
     public static final GetGtmDefaultDatacenterArgs Empty = new GetGtmDefaultDatacenterArgs();
 
-    /**
-     * The default is `5400`.
-     * 
-     */
     @Import(name="datacenter")
     private @Nullable Output<Integer> datacenter;
 
-    /**
-     * @return The default is `5400`.
-     * 
-     */
     public Optional<Output<Integer>> datacenter() {
         return Optional.ofNullable(this.datacenter);
     }
@@ -63,23 +55,11 @@ public final class GetGtmDefaultDatacenterArgs extends com.pulumi.resources.Invo
             $ = new GetGtmDefaultDatacenterArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param datacenter The default is `5400`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenter(@Nullable Output<Integer> datacenter) {
             $.datacenter = datacenter;
             return this;
         }
 
-        /**
-         * @param datacenter The default is `5400`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenter(Integer datacenter) {
             return datacenter(Output.of(datacenter));
         }

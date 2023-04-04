@@ -35,25 +35,25 @@ class IamUserArgs:
                  zip_code: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a IamUser resource.
-        :param pulumi.Input[str] auth_grants_json: A user's per-group role assignments, in JSON form.
-        :param pulumi.Input[str] country: As part of the user's location, the value can be any that are available from the view-supported-countries operation.
-        :param pulumi.Input[str] email: The user's email address.
-        :param pulumi.Input[bool] enable_tfa: Indicates whether two-factor authentication is allowed.
-        :param pulumi.Input[str] first_name: The user's first name.
-        :param pulumi.Input[str] last_name: The user's last name.
-        :param pulumi.Input[str] phone: The user's main phone number.
-        :param pulumi.Input[str] address: The user's street address.
-        :param pulumi.Input[str] city: The user's city.
-        :param pulumi.Input[str] contact_type: To help characterize the user, the value can be any that are available from the view-contact-types operation.
+        :param pulumi.Input[str] auth_grants_json: A user's per-group role assignments, in JSON form
+        :param pulumi.Input[str] country: As part of the user's location, the value can be any that are available from the view-supported-countries operation
+        :param pulumi.Input[str] email: The user's email address
+        :param pulumi.Input[bool] enable_tfa: Indicates whether two-factor authentication is allowed
+        :param pulumi.Input[str] first_name: The user's first name
+        :param pulumi.Input[str] last_name: The user's surname
+        :param pulumi.Input[str] phone: The user's main phone number
+        :param pulumi.Input[str] address: The user's street address
+        :param pulumi.Input[str] city: The user's city
+        :param pulumi.Input[str] contact_type: To help characterize the user, the value can be any that are available from the view-contact-types operation
         :param pulumi.Input[str] job_title: The user's position at your company
         :param pulumi.Input[bool] lock: Flag to block a user account
-        :param pulumi.Input[str] mobile_phone: The user's mobile phone number.
+        :param pulumi.Input[str] mobile_phone: The user's mobile phone number
         :param pulumi.Input[str] preferred_language: The value can be any that are available from the view-languages operation
-        :param pulumi.Input[str] secondary_email: The user's secondary email address.
+        :param pulumi.Input[str] secondary_email: The user's secondary email address
         :param pulumi.Input[int] session_timeout: The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
-        :param pulumi.Input[str] state: The user's state.
+        :param pulumi.Input[str] state: The user's state
         :param pulumi.Input[str] time_zone: The user's time zone. The value can be any that are available from the view-time-zones operation
-        :param pulumi.Input[str] zip_code: The user's five-digit ZIP code.
+        :param pulumi.Input[str] zip_code: The user's five-digit ZIP code
         """
         pulumi.set(__self__, "auth_grants_json", auth_grants_json)
         pulumi.set(__self__, "country", country)
@@ -91,7 +91,7 @@ class IamUserArgs:
     @pulumi.getter(name="authGrantsJson")
     def auth_grants_json(self) -> pulumi.Input[str]:
         """
-        A user's per-group role assignments, in JSON form.
+        A user's per-group role assignments, in JSON form
         """
         return pulumi.get(self, "auth_grants_json")
 
@@ -103,7 +103,7 @@ class IamUserArgs:
     @pulumi.getter
     def country(self) -> pulumi.Input[str]:
         """
-        As part of the user's location, the value can be any that are available from the view-supported-countries operation.
+        As part of the user's location, the value can be any that are available from the view-supported-countries operation
         """
         return pulumi.get(self, "country")
 
@@ -115,7 +115,7 @@ class IamUserArgs:
     @pulumi.getter
     def email(self) -> pulumi.Input[str]:
         """
-        The user's email address.
+        The user's email address
         """
         return pulumi.get(self, "email")
 
@@ -127,7 +127,7 @@ class IamUserArgs:
     @pulumi.getter(name="enableTfa")
     def enable_tfa(self) -> pulumi.Input[bool]:
         """
-        Indicates whether two-factor authentication is allowed.
+        Indicates whether two-factor authentication is allowed
         """
         return pulumi.get(self, "enable_tfa")
 
@@ -139,7 +139,7 @@ class IamUserArgs:
     @pulumi.getter(name="firstName")
     def first_name(self) -> pulumi.Input[str]:
         """
-        The user's first name.
+        The user's first name
         """
         return pulumi.get(self, "first_name")
 
@@ -151,7 +151,7 @@ class IamUserArgs:
     @pulumi.getter(name="lastName")
     def last_name(self) -> pulumi.Input[str]:
         """
-        The user's last name.
+        The user's surname
         """
         return pulumi.get(self, "last_name")
 
@@ -163,7 +163,7 @@ class IamUserArgs:
     @pulumi.getter
     def phone(self) -> pulumi.Input[str]:
         """
-        The user's main phone number.
+        The user's main phone number
         """
         return pulumi.get(self, "phone")
 
@@ -175,7 +175,7 @@ class IamUserArgs:
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's street address.
+        The user's street address
         """
         return pulumi.get(self, "address")
 
@@ -187,7 +187,7 @@ class IamUserArgs:
     @pulumi.getter
     def city(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's city.
+        The user's city
         """
         return pulumi.get(self, "city")
 
@@ -199,7 +199,7 @@ class IamUserArgs:
     @pulumi.getter(name="contactType")
     def contact_type(self) -> Optional[pulumi.Input[str]]:
         """
-        To help characterize the user, the value can be any that are available from the view-contact-types operation.
+        To help characterize the user, the value can be any that are available from the view-contact-types operation
         """
         return pulumi.get(self, "contact_type")
 
@@ -235,7 +235,7 @@ class IamUserArgs:
     @pulumi.getter(name="mobilePhone")
     def mobile_phone(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's mobile phone number.
+        The user's mobile phone number
         """
         return pulumi.get(self, "mobile_phone")
 
@@ -259,7 +259,7 @@ class IamUserArgs:
     @pulumi.getter(name="secondaryEmail")
     def secondary_email(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's secondary email address.
+        The user's secondary email address
         """
         return pulumi.get(self, "secondary_email")
 
@@ -283,7 +283,7 @@ class IamUserArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's state.
+        The user's state
         """
         return pulumi.get(self, "state")
 
@@ -307,7 +307,7 @@ class IamUserArgs:
     @pulumi.getter(name="zipCode")
     def zip_code(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's five-digit ZIP code.
+        The user's five-digit ZIP code
         """
         return pulumi.get(self, "zip_code")
 
@@ -346,31 +346,31 @@ class _IamUserState:
                  zip_code: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering IamUser resources.
-        :param pulumi.Input[str] address: The user's street address.
-        :param pulumi.Input[str] auth_grants_json: A user's per-group role assignments, in JSON form.
-        :param pulumi.Input[str] city: The user's city.
-        :param pulumi.Input[str] contact_type: To help characterize the user, the value can be any that are available from the view-contact-types operation.
-        :param pulumi.Input[str] country: As part of the user's location, the value can be any that are available from the view-supported-countries operation.
-        :param pulumi.Input[str] email: The user's email address.
+        :param pulumi.Input[str] address: The user's street address
+        :param pulumi.Input[str] auth_grants_json: A user's per-group role assignments, in JSON form
+        :param pulumi.Input[str] city: The user's city
+        :param pulumi.Input[str] contact_type: To help characterize the user, the value can be any that are available from the view-contact-types operation
+        :param pulumi.Input[str] country: As part of the user's location, the value can be any that are available from the view-supported-countries operation
+        :param pulumi.Input[str] email: The user's email address
         :param pulumi.Input[bool] email_update_pending: Indicates whether email update is pending
-        :param pulumi.Input[bool] enable_tfa: Indicates whether two-factor authentication is allowed.
-        :param pulumi.Input[str] first_name: The user's first name.
-        :param pulumi.Input[bool] is_locked: The user's lock status.
+        :param pulumi.Input[bool] enable_tfa: Indicates whether two-factor authentication is allowed
+        :param pulumi.Input[str] first_name: The user's first name
+        :param pulumi.Input[bool] is_locked: The user's lock status
         :param pulumi.Input[str] job_title: The user's position at your company
         :param pulumi.Input[str] last_login: ISO 8601 timestamp indicating when the user last logged in
-        :param pulumi.Input[str] last_name: The user's last name.
+        :param pulumi.Input[str] last_name: The user's surname
         :param pulumi.Input[bool] lock: Flag to block a user account
-        :param pulumi.Input[str] mobile_phone: The user's mobile phone number.
+        :param pulumi.Input[str] mobile_phone: The user's mobile phone number
         :param pulumi.Input[str] password_expired_after: The date a user's password expires
-        :param pulumi.Input[str] phone: The user's main phone number.
+        :param pulumi.Input[str] phone: The user's main phone number
         :param pulumi.Input[str] preferred_language: The value can be any that are available from the view-languages operation
-        :param pulumi.Input[str] secondary_email: The user's secondary email address.
+        :param pulumi.Input[str] secondary_email: The user's secondary email address
         :param pulumi.Input[int] session_timeout: The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
-        :param pulumi.Input[str] state: The user's state.
+        :param pulumi.Input[str] state: The user's state
         :param pulumi.Input[bool] tfa_configured: Indicates whether two-factor authentication is configured
         :param pulumi.Input[str] time_zone: The user's time zone. The value can be any that are available from the view-time-zones operation
         :param pulumi.Input[str] user_name: A user's `loginId`. Typically, a user's email address
-        :param pulumi.Input[str] zip_code: The user's five-digit ZIP code.
+        :param pulumi.Input[str] zip_code: The user's five-digit ZIP code
         """
         if address is not None:
             pulumi.set(__self__, "address", address)
@@ -430,7 +430,7 @@ class _IamUserState:
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's street address.
+        The user's street address
         """
         return pulumi.get(self, "address")
 
@@ -442,7 +442,7 @@ class _IamUserState:
     @pulumi.getter(name="authGrantsJson")
     def auth_grants_json(self) -> Optional[pulumi.Input[str]]:
         """
-        A user's per-group role assignments, in JSON form.
+        A user's per-group role assignments, in JSON form
         """
         return pulumi.get(self, "auth_grants_json")
 
@@ -454,7 +454,7 @@ class _IamUserState:
     @pulumi.getter
     def city(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's city.
+        The user's city
         """
         return pulumi.get(self, "city")
 
@@ -466,7 +466,7 @@ class _IamUserState:
     @pulumi.getter(name="contactType")
     def contact_type(self) -> Optional[pulumi.Input[str]]:
         """
-        To help characterize the user, the value can be any that are available from the view-contact-types operation.
+        To help characterize the user, the value can be any that are available from the view-contact-types operation
         """
         return pulumi.get(self, "contact_type")
 
@@ -478,7 +478,7 @@ class _IamUserState:
     @pulumi.getter
     def country(self) -> Optional[pulumi.Input[str]]:
         """
-        As part of the user's location, the value can be any that are available from the view-supported-countries operation.
+        As part of the user's location, the value can be any that are available from the view-supported-countries operation
         """
         return pulumi.get(self, "country")
 
@@ -490,7 +490,7 @@ class _IamUserState:
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's email address.
+        The user's email address
         """
         return pulumi.get(self, "email")
 
@@ -514,7 +514,7 @@ class _IamUserState:
     @pulumi.getter(name="enableTfa")
     def enable_tfa(self) -> Optional[pulumi.Input[bool]]:
         """
-        Indicates whether two-factor authentication is allowed.
+        Indicates whether two-factor authentication is allowed
         """
         return pulumi.get(self, "enable_tfa")
 
@@ -526,7 +526,7 @@ class _IamUserState:
     @pulumi.getter(name="firstName")
     def first_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's first name.
+        The user's first name
         """
         return pulumi.get(self, "first_name")
 
@@ -538,7 +538,7 @@ class _IamUserState:
     @pulumi.getter(name="isLocked")
     def is_locked(self) -> Optional[pulumi.Input[bool]]:
         """
-        The user's lock status.
+        The user's lock status
         """
         return pulumi.get(self, "is_locked")
 
@@ -574,7 +574,7 @@ class _IamUserState:
     @pulumi.getter(name="lastName")
     def last_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's last name.
+        The user's surname
         """
         return pulumi.get(self, "last_name")
 
@@ -598,7 +598,7 @@ class _IamUserState:
     @pulumi.getter(name="mobilePhone")
     def mobile_phone(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's mobile phone number.
+        The user's mobile phone number
         """
         return pulumi.get(self, "mobile_phone")
 
@@ -622,7 +622,7 @@ class _IamUserState:
     @pulumi.getter
     def phone(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's main phone number.
+        The user's main phone number
         """
         return pulumi.get(self, "phone")
 
@@ -646,7 +646,7 @@ class _IamUserState:
     @pulumi.getter(name="secondaryEmail")
     def secondary_email(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's secondary email address.
+        The user's secondary email address
         """
         return pulumi.get(self, "secondary_email")
 
@@ -670,7 +670,7 @@ class _IamUserState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's state.
+        The user's state
         """
         return pulumi.get(self, "state")
 
@@ -718,7 +718,7 @@ class _IamUserState:
     @pulumi.getter(name="zipCode")
     def zip_code(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's five-digit ZIP code.
+        The user's five-digit ZIP code
         """
         return pulumi.get(self, "zip_code")
 
@@ -753,60 +753,28 @@ class IamUser(pulumi.CustomResource):
                  zip_code: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        The `IamUser` resource represents a user on the Akamai platform.
-
-        ## Basic usage
-
-        This example shows how to set up a user:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example_user = akamai.IamUser("exampleUser",
-            auth_grants_json="[{\\"groupId\\":18451,\\"roleId\\":14},{\\"groupId\\":18453,\\"roleId\\":13}]",
-            country="Grenada",
-            email="jperez@example.com",
-            enable_tfa=False,
-            first_name="Juan",
-            last_name="Perez",
-            phone="+1 206-555-0100")
-        ```
-
-        ## Attributes reference
-
-        This resource returns these attributes:
-
-        * `session_timeout` - The number of seconds it takes for the user's session to time out if there hasn't been any activity.
-        * `user_name` - A user's `loginId`. Typically, a user's email address.
-        * `is_locked` - The user's lock status.
-        * `last_login` - ISO 8601 timestamp indicating when the user last logged in.
-        * `password_expired_after` - The date a user's password expires.
-        * `tfa_configured` - Indicates whether two-factor authentication is configured.
-        * `email_update_pending` - Indicates whether email update is pending.
-        * `lock` - (Optional) Flag to block as user account.
-
+        Create a IamUser resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] address: The user's street address.
-        :param pulumi.Input[str] auth_grants_json: A user's per-group role assignments, in JSON form.
-        :param pulumi.Input[str] city: The user's city.
-        :param pulumi.Input[str] contact_type: To help characterize the user, the value can be any that are available from the view-contact-types operation.
-        :param pulumi.Input[str] country: As part of the user's location, the value can be any that are available from the view-supported-countries operation.
-        :param pulumi.Input[str] email: The user's email address.
-        :param pulumi.Input[bool] enable_tfa: Indicates whether two-factor authentication is allowed.
-        :param pulumi.Input[str] first_name: The user's first name.
+        :param pulumi.Input[str] address: The user's street address
+        :param pulumi.Input[str] auth_grants_json: A user's per-group role assignments, in JSON form
+        :param pulumi.Input[str] city: The user's city
+        :param pulumi.Input[str] contact_type: To help characterize the user, the value can be any that are available from the view-contact-types operation
+        :param pulumi.Input[str] country: As part of the user's location, the value can be any that are available from the view-supported-countries operation
+        :param pulumi.Input[str] email: The user's email address
+        :param pulumi.Input[bool] enable_tfa: Indicates whether two-factor authentication is allowed
+        :param pulumi.Input[str] first_name: The user's first name
         :param pulumi.Input[str] job_title: The user's position at your company
-        :param pulumi.Input[str] last_name: The user's last name.
+        :param pulumi.Input[str] last_name: The user's surname
         :param pulumi.Input[bool] lock: Flag to block a user account
-        :param pulumi.Input[str] mobile_phone: The user's mobile phone number.
-        :param pulumi.Input[str] phone: The user's main phone number.
+        :param pulumi.Input[str] mobile_phone: The user's mobile phone number
+        :param pulumi.Input[str] phone: The user's main phone number
         :param pulumi.Input[str] preferred_language: The value can be any that are available from the view-languages operation
-        :param pulumi.Input[str] secondary_email: The user's secondary email address.
+        :param pulumi.Input[str] secondary_email: The user's secondary email address
         :param pulumi.Input[int] session_timeout: The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
-        :param pulumi.Input[str] state: The user's state.
+        :param pulumi.Input[str] state: The user's state
         :param pulumi.Input[str] time_zone: The user's time zone. The value can be any that are available from the view-time-zones operation
-        :param pulumi.Input[str] zip_code: The user's five-digit ZIP code.
+        :param pulumi.Input[str] zip_code: The user's five-digit ZIP code
         """
         ...
     @overload
@@ -815,39 +783,7 @@ class IamUser(pulumi.CustomResource):
                  args: IamUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `IamUser` resource represents a user on the Akamai platform.
-
-        ## Basic usage
-
-        This example shows how to set up a user:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example_user = akamai.IamUser("exampleUser",
-            auth_grants_json="[{\\"groupId\\":18451,\\"roleId\\":14},{\\"groupId\\":18453,\\"roleId\\":13}]",
-            country="Grenada",
-            email="jperez@example.com",
-            enable_tfa=False,
-            first_name="Juan",
-            last_name="Perez",
-            phone="+1 206-555-0100")
-        ```
-
-        ## Attributes reference
-
-        This resource returns these attributes:
-
-        * `session_timeout` - The number of seconds it takes for the user's session to time out if there hasn't been any activity.
-        * `user_name` - A user's `loginId`. Typically, a user's email address.
-        * `is_locked` - The user's lock status.
-        * `last_login` - ISO 8601 timestamp indicating when the user last logged in.
-        * `password_expired_after` - The date a user's password expires.
-        * `tfa_configured` - Indicates whether two-factor authentication is configured.
-        * `email_update_pending` - Indicates whether email update is pending.
-        * `lock` - (Optional) Flag to block as user account.
-
+        Create a IamUser resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param IamUserArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -972,31 +908,31 @@ class IamUser(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] address: The user's street address.
-        :param pulumi.Input[str] auth_grants_json: A user's per-group role assignments, in JSON form.
-        :param pulumi.Input[str] city: The user's city.
-        :param pulumi.Input[str] contact_type: To help characterize the user, the value can be any that are available from the view-contact-types operation.
-        :param pulumi.Input[str] country: As part of the user's location, the value can be any that are available from the view-supported-countries operation.
-        :param pulumi.Input[str] email: The user's email address.
+        :param pulumi.Input[str] address: The user's street address
+        :param pulumi.Input[str] auth_grants_json: A user's per-group role assignments, in JSON form
+        :param pulumi.Input[str] city: The user's city
+        :param pulumi.Input[str] contact_type: To help characterize the user, the value can be any that are available from the view-contact-types operation
+        :param pulumi.Input[str] country: As part of the user's location, the value can be any that are available from the view-supported-countries operation
+        :param pulumi.Input[str] email: The user's email address
         :param pulumi.Input[bool] email_update_pending: Indicates whether email update is pending
-        :param pulumi.Input[bool] enable_tfa: Indicates whether two-factor authentication is allowed.
-        :param pulumi.Input[str] first_name: The user's first name.
-        :param pulumi.Input[bool] is_locked: The user's lock status.
+        :param pulumi.Input[bool] enable_tfa: Indicates whether two-factor authentication is allowed
+        :param pulumi.Input[str] first_name: The user's first name
+        :param pulumi.Input[bool] is_locked: The user's lock status
         :param pulumi.Input[str] job_title: The user's position at your company
         :param pulumi.Input[str] last_login: ISO 8601 timestamp indicating when the user last logged in
-        :param pulumi.Input[str] last_name: The user's last name.
+        :param pulumi.Input[str] last_name: The user's surname
         :param pulumi.Input[bool] lock: Flag to block a user account
-        :param pulumi.Input[str] mobile_phone: The user's mobile phone number.
+        :param pulumi.Input[str] mobile_phone: The user's mobile phone number
         :param pulumi.Input[str] password_expired_after: The date a user's password expires
-        :param pulumi.Input[str] phone: The user's main phone number.
+        :param pulumi.Input[str] phone: The user's main phone number
         :param pulumi.Input[str] preferred_language: The value can be any that are available from the view-languages operation
-        :param pulumi.Input[str] secondary_email: The user's secondary email address.
+        :param pulumi.Input[str] secondary_email: The user's secondary email address
         :param pulumi.Input[int] session_timeout: The number of seconds it takes for the user's Control Center session to time out if there hasn't been any activity
-        :param pulumi.Input[str] state: The user's state.
+        :param pulumi.Input[str] state: The user's state
         :param pulumi.Input[bool] tfa_configured: Indicates whether two-factor authentication is configured
         :param pulumi.Input[str] time_zone: The user's time zone. The value can be any that are available from the view-time-zones operation
         :param pulumi.Input[str] user_name: A user's `loginId`. Typically, a user's email address
-        :param pulumi.Input[str] zip_code: The user's five-digit ZIP code.
+        :param pulumi.Input[str] zip_code: The user's five-digit ZIP code
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1033,7 +969,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter
     def address(self) -> pulumi.Output[str]:
         """
-        The user's street address.
+        The user's street address
         """
         return pulumi.get(self, "address")
 
@@ -1041,7 +977,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter(name="authGrantsJson")
     def auth_grants_json(self) -> pulumi.Output[str]:
         """
-        A user's per-group role assignments, in JSON form.
+        A user's per-group role assignments, in JSON form
         """
         return pulumi.get(self, "auth_grants_json")
 
@@ -1049,7 +985,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter
     def city(self) -> pulumi.Output[Optional[str]]:
         """
-        The user's city.
+        The user's city
         """
         return pulumi.get(self, "city")
 
@@ -1057,7 +993,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter(name="contactType")
     def contact_type(self) -> pulumi.Output[str]:
         """
-        To help characterize the user, the value can be any that are available from the view-contact-types operation.
+        To help characterize the user, the value can be any that are available from the view-contact-types operation
         """
         return pulumi.get(self, "contact_type")
 
@@ -1065,7 +1001,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter
     def country(self) -> pulumi.Output[str]:
         """
-        As part of the user's location, the value can be any that are available from the view-supported-countries operation.
+        As part of the user's location, the value can be any that are available from the view-supported-countries operation
         """
         return pulumi.get(self, "country")
 
@@ -1073,7 +1009,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter
     def email(self) -> pulumi.Output[str]:
         """
-        The user's email address.
+        The user's email address
         """
         return pulumi.get(self, "email")
 
@@ -1089,7 +1025,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter(name="enableTfa")
     def enable_tfa(self) -> pulumi.Output[bool]:
         """
-        Indicates whether two-factor authentication is allowed.
+        Indicates whether two-factor authentication is allowed
         """
         return pulumi.get(self, "enable_tfa")
 
@@ -1097,7 +1033,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter(name="firstName")
     def first_name(self) -> pulumi.Output[str]:
         """
-        The user's first name.
+        The user's first name
         """
         return pulumi.get(self, "first_name")
 
@@ -1105,7 +1041,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter(name="isLocked")
     def is_locked(self) -> pulumi.Output[bool]:
         """
-        The user's lock status.
+        The user's lock status
         """
         return pulumi.get(self, "is_locked")
 
@@ -1129,7 +1065,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter(name="lastName")
     def last_name(self) -> pulumi.Output[str]:
         """
-        The user's last name.
+        The user's surname
         """
         return pulumi.get(self, "last_name")
 
@@ -1145,7 +1081,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter(name="mobilePhone")
     def mobile_phone(self) -> pulumi.Output[Optional[str]]:
         """
-        The user's mobile phone number.
+        The user's mobile phone number
         """
         return pulumi.get(self, "mobile_phone")
 
@@ -1161,7 +1097,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter
     def phone(self) -> pulumi.Output[str]:
         """
-        The user's main phone number.
+        The user's main phone number
         """
         return pulumi.get(self, "phone")
 
@@ -1177,7 +1113,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter(name="secondaryEmail")
     def secondary_email(self) -> pulumi.Output[Optional[str]]:
         """
-        The user's secondary email address.
+        The user's secondary email address
         """
         return pulumi.get(self, "secondary_email")
 
@@ -1193,7 +1129,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[Optional[str]]:
         """
-        The user's state.
+        The user's state
         """
         return pulumi.get(self, "state")
 
@@ -1225,7 +1161,7 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter(name="zipCode")
     def zip_code(self) -> pulumi.Output[Optional[str]]:
         """
-        The user's five-digit ZIP code.
+        The user's five-digit ZIP code
         """
         return pulumi.get(self, "zip_code")
 

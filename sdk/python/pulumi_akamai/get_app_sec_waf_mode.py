@@ -129,46 +129,7 @@ def get_app_sec_waf_mode(config_id: Optional[int] = None,
                          security_policy_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecWafModeResult:
     """
-    **Scopes**: Security policy
-
-    Returns information about how the Kona Rule Set rules associated with a security configuration and security policy are updated. The WAF (Web Application Firewall) mode determines whether Kona Rule Sets are automatically updated as part of automated attack groups (`mode = AAG`) or whether you must periodically check for new rules and then manually update those rules yourself (`mode = KRS`).
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://techdocs.akamai.com/application-security/reference/get-policy-mode)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    waf_mode = akamai.get_app_sec_waf_mode(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("wafModeMode", waf_mode.mode)
-    pulumi.export("wafModeCurrentRuleset", waf_mode.current_ruleset)
-    pulumi.export("wafModeEvalStatus", waf_mode.eval_status)
-    pulumi.export("wafModeEvalRuleset", waf_mode.eval_ruleset)
-    pulumi.export("wafModeEvalExpirationDate", waf_mode.eval_expiration_date)
-    pulumi.export("wafModeText", waf_mode.output_text)
-    pulumi.export("wafModeJson", waf_mode.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `mode`. Security policy mode, either **KRS** (update manually) or **AAG** (update automatically), For organizations running the Adaptive Security Engine (ASE) beta, you'll get back **ASE_AUTO** for automatic updates or **ASE_MANUAL** for manual updates. Please contact your Akamai representative to learn more about ASE.
-    - `current_ruleset`. Current ruleset version and the ISO 8601 date the version was introduced.
-    - `eval_status`. Specifies whether evaluation mode is enabled or disabled.
-    - `eval_ruleset`. Evaluation ruleset version and the ISO 8601 date the evaluation began.
-    - `eval_expiration_date`. ISO 8601 timestamp indicating when evaluation mode expires. Valid only if `eval_status` is set to **enabled**.
-    - `output_text`. Tabular report of the mode information.
-    - `json`. JSON-formatted list of the mode information.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the Kona Rule Set rules.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the Kona Rule Set rules.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -194,45 +155,6 @@ def get_app_sec_waf_mode_output(config_id: Optional[pulumi.Input[int]] = None,
                                 security_policy_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecWafModeResult]:
     """
-    **Scopes**: Security policy
-
-    Returns information about how the Kona Rule Set rules associated with a security configuration and security policy are updated. The WAF (Web Application Firewall) mode determines whether Kona Rule Sets are automatically updated as part of automated attack groups (`mode = AAG`) or whether you must periodically check for new rules and then manually update those rules yourself (`mode = KRS`).
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://techdocs.akamai.com/application-security/reference/get-policy-mode)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    waf_mode = akamai.get_app_sec_waf_mode(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("wafModeMode", waf_mode.mode)
-    pulumi.export("wafModeCurrentRuleset", waf_mode.current_ruleset)
-    pulumi.export("wafModeEvalStatus", waf_mode.eval_status)
-    pulumi.export("wafModeEvalRuleset", waf_mode.eval_ruleset)
-    pulumi.export("wafModeEvalExpirationDate", waf_mode.eval_expiration_date)
-    pulumi.export("wafModeText", waf_mode.output_text)
-    pulumi.export("wafModeJson", waf_mode.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `mode`. Security policy mode, either **KRS** (update manually) or **AAG** (update automatically), For organizations running the Adaptive Security Engine (ASE) beta, you'll get back **ASE_AUTO** for automatic updates or **ASE_MANUAL** for manual updates. Please contact your Akamai representative to learn more about ASE.
-    - `current_ruleset`. Current ruleset version and the ISO 8601 date the version was introduced.
-    - `eval_status`. Specifies whether evaluation mode is enabled or disabled.
-    - `eval_ruleset`. Evaluation ruleset version and the ISO 8601 date the evaluation began.
-    - `eval_expiration_date`. ISO 8601 timestamp indicating when evaluation mode expires. Valid only if `eval_status` is set to **enabled**.
-    - `output_text`. Tabular report of the mode information.
-    - `json`. JSON-formatted list of the mode information.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the Kona Rule Set rules.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the Kona Rule Set rules.
+    Use this data source to access information about an existing resource.
     """
     ...

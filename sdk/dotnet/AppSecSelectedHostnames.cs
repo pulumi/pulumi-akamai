@@ -9,62 +9,23 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security configuration
-    /// 
-    /// Modifies the list of hostnames protected under by a security configuration.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://techdocs.akamai.com/application-security/reference/put-selected-hostnames-per-config)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var appsecselectedhostnames = new Akamai.AppSecSelectedHostnames("appsecselectedhostnames", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         Hostnames = new[]
-    ///         {
-    ///             "example.com",
-    ///         },
-    ///         Mode = "APPEND",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames")]
     public partial class AppSecSelectedHostnames : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the hostnames.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . JSON array of hostnames to be added or removed from the protected hosts list.
+        /// List of hostnames to be added or removed from the protected hosts list
         /// </summary>
         [Output("hostnames")]
         public Output<ImmutableArray<string>> Hostnames { get; private set; } = null!;
 
         /// <summary>
-        /// . Indicates how the `hostnames` array is to be applied. Allowed values are:
-        /// - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-        /// - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-        /// - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+        /// How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         /// </summary>
         [Output("mode")]
         public Output<string> Mode { get; private set; } = null!;
@@ -116,7 +77,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecSelectedHostnamesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the hostnames.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
@@ -125,7 +86,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _hostnames;
 
         /// <summary>
-        /// . JSON array of hostnames to be added or removed from the protected hosts list.
+        /// List of hostnames to be added or removed from the protected hosts list
         /// </summary>
         public InputList<string> Hostnames
         {
@@ -134,10 +95,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// . Indicates how the `hostnames` array is to be applied. Allowed values are:
-        /// - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-        /// - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-        /// - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+        /// How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         /// </summary>
         [Input("mode", required: true)]
         public Input<string> Mode { get; set; } = null!;
@@ -151,7 +109,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecSelectedHostnamesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the hostnames.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
@@ -160,7 +118,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _hostnames;
 
         /// <summary>
-        /// . JSON array of hostnames to be added or removed from the protected hosts list.
+        /// List of hostnames to be added or removed from the protected hosts list
         /// </summary>
         public InputList<string> Hostnames
         {
@@ -169,10 +127,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// . Indicates how the `hostnames` array is to be applied. Allowed values are:
-        /// - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-        /// - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-        /// - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+        /// How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }

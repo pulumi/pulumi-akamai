@@ -10,26 +10,14 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPropertyIncludesInclude {
-    /**
-     * @return (Required) The property&#39;s unique identifier.
-     * 
-     */
     private String id;
     private Integer latestVersion;
     private String name;
     private String productionVersion;
     private String stagingVersion;
-    /**
-     * @return (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-     * 
-     */
     private String type;
 
     private GetPropertyIncludesInclude() {}
-    /**
-     * @return (Required) The property&#39;s unique identifier.
-     * 
-     */
     public String id() {
         return this.id;
     }
@@ -45,10 +33,6 @@ public final class GetPropertyIncludesInclude {
     public String stagingVersion() {
         return this.stagingVersion;
     }
-    /**
-     * @return (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-     * 
-     */
     public String type() {
         return this.type;
     }

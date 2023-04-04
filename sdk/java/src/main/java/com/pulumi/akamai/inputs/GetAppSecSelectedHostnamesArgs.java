@@ -13,17 +13,9 @@ public final class GetAppSecSelectedHostnamesArgs extends com.pulumi.resources.I
 
     public static final GetAppSecSelectedHostnamesArgs Empty = new GetAppSecSelectedHostnamesArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the protected hosts.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the protected hosts.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
@@ -52,23 +44,11 @@ public final class GetAppSecSelectedHostnamesArgs extends com.pulumi.resources.I
             $ = new GetAppSecSelectedHostnamesArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the protected hosts.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the protected hosts.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }

@@ -17,14 +17,14 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
     public static final EdgeWorkersActivationState Empty = new EdgeWorkersActivationState();
 
     /**
-     * (Required) Unique identifier of the activation.
+     * A unique identifier of the activation
      * 
      */
     @Import(name="activationId")
     private @Nullable Output<Integer> activationId;
 
     /**
-     * @return (Required) Unique identifier of the activation.
+     * @return A unique identifier of the activation
      * 
      */
     public Optional<Output<Integer>> activationId() {
@@ -32,14 +32,14 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
     }
 
     /**
-     * A unique identifier for the EdgeWorker ID you want to activate.
+     * Id of the EdgeWorker to activate
      * 
      */
     @Import(name="edgeworkerId")
     private @Nullable Output<Integer> edgeworkerId;
 
     /**
-     * @return A unique identifier for the EdgeWorker ID you want to activate.
+     * @return Id of the EdgeWorker to activate
      * 
      */
     public Optional<Output<Integer>> edgeworkerId() {
@@ -47,14 +47,14 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
     }
 
     /**
-     * The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * The network on which the version will be activated
      * 
      */
     @Import(name="network")
     private @Nullable Output<String> network;
 
     /**
-     * @return The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * @return The network on which the version will be activated
      * 
      */
     public Optional<Output<String>> network() {
@@ -62,14 +62,14 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
     }
 
     /**
-     * The EdgeWorker version you want to activate.
+     * The version of EdgeWorker to activate
      * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
-     * @return The EdgeWorker version you want to activate.
+     * @return The version of EdgeWorker to activate
      * 
      */
     public Optional<Output<String>> version() {
@@ -104,7 +104,7 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param activationId (Required) Unique identifier of the activation.
+         * @param activationId A unique identifier of the activation
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param activationId (Required) Unique identifier of the activation.
+         * @param activationId A unique identifier of the activation
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param edgeworkerId A unique identifier for the EdgeWorker ID you want to activate.
+         * @param edgeworkerId Id of the EdgeWorker to activate
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param edgeworkerId A unique identifier for the EdgeWorker ID you want to activate.
+         * @param edgeworkerId Id of the EdgeWorker to activate
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param network The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+         * @param network The network on which the version will be activated
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param network The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+         * @param network The network on which the version will be activated
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param version The EdgeWorker version you want to activate.
+         * @param version The version of EdgeWorker to activate
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class EdgeWorkersActivationState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param version The EdgeWorker version you want to activate.
+         * @param version The version of EdgeWorker to activate
          * 
          * @return builder
          * 

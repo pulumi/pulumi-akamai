@@ -9,70 +9,23 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security configuration
-    /// 
-    /// Creates a new security policy. The resource enables you to:
-    /// 
-    /// - Create a new, “blank” security policy.
-    /// - Create a new policy preconfigured with the default security policy settings.
-    /// - Clone an existing security policy.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies](https://techdocs.akamai.com/application-security/reference/post-policy)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var securityPolicyCreateAppSecSecurityPolicy = new Akamai.AppSecSecurityPolicy("securityPolicyCreateAppSecSecurityPolicy", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         DefaultSettings = true,
-    ///         SecurityPolicyName = "Documentation Policy",
-    ///         SecurityPolicyPrefix = "gms1",
-    ///     });
-    /// 
-    ///     return new Dictionary&lt;string, object?&gt;
-    ///     {
-    ///         ["securityPolicyCreate"] = securityPolicyCreateAppSecSecurityPolicy.SecurityPolicyId,
-    ///     };
-    /// });
-    /// ```
-    /// ## Output Options
-    /// 
-    /// The following options can be used to determine the information returned, and how that returned information is formatted:
-    /// 
-    /// - `security_policy_id`. ID of the newly-created security policy.
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecSecurityPolicy:AppSecSecurityPolicy")]
     public partial class AppSecSecurityPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration to be associated with the new security policy.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the existing security policy that the new policy will be cloned from.
+        /// Unique identifier of the existing security policy being cloned
         /// </summary>
         [Output("createFromSecurityPolicyId")]
         public Output<string?> CreateFromSecurityPolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+        /// Whether to assign default settings to the new security policy
         /// </summary>
         [Output("defaultSettings")]
         public Output<bool?> DefaultSettings { get; private set; } = null!;
@@ -84,13 +37,13 @@ namespace Pulumi.Akamai
         public Output<string> SecurityPolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// . Name of the new security policy.
+        /// Name of the new security policy
         /// </summary>
         [Output("securityPolicyName")]
         public Output<string> SecurityPolicyName { get; private set; } = null!;
 
         /// <summary>
-        /// . Four-character alphanumeric string prefix used in creating the security policy ID.
+        /// Four-character alphanumeric string prefix used in creating the security policy ID
         /// </summary>
         [Output("securityPolicyPrefix")]
         public Output<string> SecurityPolicyPrefix { get; private set; } = null!;
@@ -142,31 +95,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecSecurityPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration to be associated with the new security policy.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the existing security policy that the new policy will be cloned from.
+        /// Unique identifier of the existing security policy being cloned
         /// </summary>
         [Input("createFromSecurityPolicyId")]
         public Input<string>? CreateFromSecurityPolicyId { get; set; }
 
         /// <summary>
-        /// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+        /// Whether to assign default settings to the new security policy
         /// </summary>
         [Input("defaultSettings")]
         public Input<bool>? DefaultSettings { get; set; }
 
         /// <summary>
-        /// . Name of the new security policy.
+        /// Name of the new security policy
         /// </summary>
         [Input("securityPolicyName", required: true)]
         public Input<string> SecurityPolicyName { get; set; } = null!;
 
         /// <summary>
-        /// . Four-character alphanumeric string prefix used in creating the security policy ID.
+        /// Four-character alphanumeric string prefix used in creating the security policy ID
         /// </summary>
         [Input("securityPolicyPrefix", required: true)]
         public Input<string> SecurityPolicyPrefix { get; set; } = null!;
@@ -180,19 +133,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecSecurityPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration to be associated with the new security policy.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the existing security policy that the new policy will be cloned from.
+        /// Unique identifier of the existing security policy being cloned
         /// </summary>
         [Input("createFromSecurityPolicyId")]
         public Input<string>? CreateFromSecurityPolicyId { get; set; }
 
         /// <summary>
-        /// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+        /// Whether to assign default settings to the new security policy
         /// </summary>
         [Input("defaultSettings")]
         public Input<bool>? DefaultSettings { get; set; }
@@ -204,13 +157,13 @@ namespace Pulumi.Akamai
         public Input<string>? SecurityPolicyId { get; set; }
 
         /// <summary>
-        /// . Name of the new security policy.
+        /// Name of the new security policy
         /// </summary>
         [Input("securityPolicyName")]
         public Input<string>? SecurityPolicyName { get; set; }
 
         /// <summary>
-        /// . Four-character alphanumeric string prefix used in creating the security policy ID.
+        /// Four-character alphanumeric string prefix used in creating the security policy ID
         /// </summary>
         [Input("securityPolicyPrefix")]
         public Input<string>? SecurityPolicyPrefix { get; set; }

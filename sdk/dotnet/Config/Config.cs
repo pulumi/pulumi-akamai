@@ -140,6 +140,16 @@ namespace Pulumi.Akamai
             set => _propertySection.Set(value);
         }
 
+        private static readonly __Value<int?> _requestLimit = new __Value<int?>(() => __config.GetInt32("requestLimit"));
+        /// <summary>
+        /// The maximum number of API requests to be made per second (0 for no limit)
+        /// </summary>
+        public static int? RequestLimit
+        {
+            get => _requestLimit.Get();
+            set => _requestLimit.Set(value);
+        }
+
         public static class Types
         {
 

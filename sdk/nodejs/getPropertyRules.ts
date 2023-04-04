@@ -4,36 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getPropertyRules` data source to query and retrieve the rule tree of
- * an existing property version. This data source lets you search across the contracts
- * and groups you have access to.
- *
- * ## Basic usage
- *
- * This example returns the rule tree for version 3 of a property based on the selected contract and group:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const my-example = akamai.getPropertyRules({
- *     propertyId: "prp_123",
- *     groupId: "grp_12345",
- *     contractId: "ctr_1-AB123",
- *     version: 3,
- * });
- * export const propertyMatch = my_example;
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `ruleFormat` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
- * * `rules` - A JSON-encoded rule tree for the property.
- * * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the Property Manager API documentation.
- */
 export function getPropertyRules(args: GetPropertyRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyRulesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -50,22 +20,10 @@ export function getPropertyRules(args: GetPropertyRulesArgs, opts?: pulumi.Invok
  * A collection of arguments for invoking getPropertyRules.
  */
 export interface GetPropertyRulesArgs {
-    /**
-     * (Required) A contract's unique ID, including the `ctr_` prefix.
-     */
     contractId?: string;
-    /**
-     * (Required) A group's unique ID, including the `grp_` prefix.
-     */
     groupId?: string;
-    /**
-     * (Required) A property's unique ID, including the `prp_` prefix.
-     */
     propertyId: string;
     ruleFormat?: string;
-    /**
-     * (Optional) The version to return. Returns the latest version by default.
-     */
     version?: number;
 }
 
@@ -85,36 +43,6 @@ export interface GetPropertyRulesResult {
     readonly rules: string;
     readonly version: number;
 }
-/**
- * Use the `akamai.getPropertyRules` data source to query and retrieve the rule tree of
- * an existing property version. This data source lets you search across the contracts
- * and groups you have access to.
- *
- * ## Basic usage
- *
- * This example returns the rule tree for version 3 of a property based on the selected contract and group:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const my-example = akamai.getPropertyRules({
- *     propertyId: "prp_123",
- *     groupId: "grp_12345",
- *     contractId: "ctr_1-AB123",
- *     version: 3,
- * });
- * export const propertyMatch = my_example;
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `ruleFormat` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
- * * `rules` - A JSON-encoded rule tree for the property.
- * * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the Property Manager API documentation.
- */
 export function getPropertyRulesOutput(args: GetPropertyRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesResult> {
     return pulumi.output(args).apply((a: any) => getPropertyRules(a, opts))
 }
@@ -123,21 +51,9 @@ export function getPropertyRulesOutput(args: GetPropertyRulesOutputArgs, opts?: 
  * A collection of arguments for invoking getPropertyRules.
  */
 export interface GetPropertyRulesOutputArgs {
-    /**
-     * (Required) A contract's unique ID, including the `ctr_` prefix.
-     */
     contractId?: pulumi.Input<string>;
-    /**
-     * (Required) A group's unique ID, including the `grp_` prefix.
-     */
     groupId?: pulumi.Input<string>;
-    /**
-     * (Required) A property's unique ID, including the `prp_` prefix.
-     */
     propertyId: pulumi.Input<string>;
     ruleFormat?: pulumi.Input<string>;
-    /**
-     * (Optional) The version to return. Returns the latest version by default.
-     */
     version?: pulumi.Input<number>;
 }

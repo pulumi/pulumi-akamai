@@ -11,64 +11,16 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy
-//
-// Enables or disables reputation protection for a security configuration and security policy.
-// Reputation profiles grade the security risk of an IP address based on previous activities associated with that address.
-// Depending on the reputation score and how your configuration has been set up, requests from a specific IP address can trigger an alert or even be blocked.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppSecReputationProtection(ctx, "protection", &akamai.AppSecReputationProtectionArgs{
-//				ConfigId:         *pulumi.Int(configuration.ConfigId),
-//				SecurityPolicyId: pulumi.String("gms1_134637"),
-//				Enabled:          pulumi.Bool(true),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `outputText`. Tabular report showing the current protection settings.
 type AppSecReputationProtection struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configuration associated with the reputation protection settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
+	// Whether to enable reputation protection
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Text representation
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
-	// . Unique identifier of the security policy associated with the reputation protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -110,24 +62,24 @@ func GetAppSecReputationProtection(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecReputationProtection resources.
 type appSecReputationProtectionState struct {
-	// . Unique identifier of the security configuration associated with the reputation protection settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
+	// Whether to enable reputation protection
 	Enabled *bool `pulumi:"enabled"`
 	// Text representation
 	OutputText *string `pulumi:"outputText"`
-	// . Unique identifier of the security policy associated with the reputation protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecReputationProtectionState struct {
-	// . Unique identifier of the security configuration associated with the reputation protection settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
+	// Whether to enable reputation protection
 	Enabled pulumi.BoolPtrInput
 	// Text representation
 	OutputText pulumi.StringPtrInput
-	// . Unique identifier of the security policy associated with the reputation protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -136,21 +88,21 @@ func (AppSecReputationProtectionState) ElementType() reflect.Type {
 }
 
 type appSecReputationProtectionArgs struct {
-	// . Unique identifier of the security configuration associated with the reputation protection settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
+	// Whether to enable reputation protection
 	Enabled bool `pulumi:"enabled"`
-	// . Unique identifier of the security policy associated with the reputation protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecReputationProtection resource.
 type AppSecReputationProtectionArgs struct {
-	// . Unique identifier of the security configuration associated with the reputation protection settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
+	// Whether to enable reputation protection
 	Enabled pulumi.BoolInput
-	// . Unique identifier of the security policy associated with the reputation protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringInput
 }
 
@@ -241,12 +193,12 @@ func (o AppSecReputationProtectionOutput) ToAppSecReputationProtectionOutputWith
 	return o
 }
 
-// . Unique identifier of the security configuration associated with the reputation protection settings being modified.
+// Unique identifier of the security configuration
 func (o AppSecReputationProtectionOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecReputationProtection) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
+// Whether to enable reputation protection
 func (o AppSecReputationProtectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecReputationProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
@@ -256,7 +208,7 @@ func (o AppSecReputationProtectionOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecReputationProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }
 
-// . Unique identifier of the security policy associated with the reputation protection settings being modified.
+// Unique identifier of the security policy
 func (o AppSecReputationProtectionOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecReputationProtection) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }

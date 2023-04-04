@@ -27,15 +27,15 @@ class PropertyIncludeActivationArgs:
                  note: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a PropertyIncludeActivation resource.
-        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-        :param pulumi.Input[str] include_id: (Required) An include's unique ID with the optional `inc_` prefix.
-        :param pulumi.Input[str] network: (Required) The network for which the activation will be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] notify_emails: (Required) The list of email addresses to notify when the activation status changes.
-        :param pulumi.Input[int] version: (Required) The version of the include you want to activate.
-        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: (Optional) Automatically acknowledge all rule warnings for activation and continue.
+        :param pulumi.Input[str] contract_id: The contract under which the include is activated
+        :param pulumi.Input[str] group_id: The group under which the include is activated
+        :param pulumi.Input[str] include_id: The unique identifier of the include
+        :param pulumi.Input[str] network: The network for which the activation will be performed
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] notify_emails: The list of email addresses to notify about an activation status
+        :param pulumi.Input[int] version: The unique identifier of the include
+        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation and continue
         :param pulumi.Input['PropertyIncludeActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
-        :param pulumi.Input[str] note: (Optional) A log message assigned to the activation request.
+        :param pulumi.Input[str] note: The note to assign to a log message of the activation request
         """
         pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "group_id", group_id)
@@ -54,7 +54,7 @@ class PropertyIncludeActivationArgs:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Input[str]:
         """
-        (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        The contract under which the include is activated
         """
         return pulumi.get(self, "contract_id")
 
@@ -66,7 +66,7 @@ class PropertyIncludeActivationArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[str]:
         """
-        (Required) A group's unique ID, including the optional `grp_` prefix.
+        The group under which the include is activated
         """
         return pulumi.get(self, "group_id")
 
@@ -78,7 +78,7 @@ class PropertyIncludeActivationArgs:
     @pulumi.getter(name="includeId")
     def include_id(self) -> pulumi.Input[str]:
         """
-        (Required) An include's unique ID with the optional `inc_` prefix.
+        The unique identifier of the include
         """
         return pulumi.get(self, "include_id")
 
@@ -90,7 +90,7 @@ class PropertyIncludeActivationArgs:
     @pulumi.getter
     def network(self) -> pulumi.Input[str]:
         """
-        (Required) The network for which the activation will be performed.
+        The network for which the activation will be performed
         """
         return pulumi.get(self, "network")
 
@@ -102,7 +102,7 @@ class PropertyIncludeActivationArgs:
     @pulumi.getter(name="notifyEmails")
     def notify_emails(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        (Required) The list of email addresses to notify when the activation status changes.
+        The list of email addresses to notify about an activation status
         """
         return pulumi.get(self, "notify_emails")
 
@@ -114,7 +114,7 @@ class PropertyIncludeActivationArgs:
     @pulumi.getter
     def version(self) -> pulumi.Input[int]:
         """
-        (Required) The version of the include you want to activate.
+        The unique identifier of the include
         """
         return pulumi.get(self, "version")
 
@@ -126,7 +126,7 @@ class PropertyIncludeActivationArgs:
     @pulumi.getter(name="autoAcknowledgeRuleWarnings")
     def auto_acknowledge_rule_warnings(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Optional) Automatically acknowledge all rule warnings for activation and continue.
+        Automatically acknowledge all rule warnings for activation and continue
         """
         return pulumi.get(self, "auto_acknowledge_rule_warnings")
 
@@ -150,7 +150,7 @@ class PropertyIncludeActivationArgs:
     @pulumi.getter
     def note(self) -> Optional[pulumi.Input[str]]:
         """
-        (Optional) A log message assigned to the activation request.
+        The note to assign to a log message of the activation request
         """
         return pulumi.get(self, "note")
 
@@ -174,16 +174,16 @@ class _PropertyIncludeActivationState:
                  version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering PropertyIncludeActivation resources.
-        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: (Optional) Automatically acknowledge all rule warnings for activation and continue.
+        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation and continue
         :param pulumi.Input['PropertyIncludeActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
-        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-        :param pulumi.Input[str] include_id: (Required) An include's unique ID with the optional `inc_` prefix.
-        :param pulumi.Input[str] network: (Required) The network for which the activation will be performed.
-        :param pulumi.Input[str] note: (Optional) A log message assigned to the activation request.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] notify_emails: (Required) The list of email addresses to notify when the activation status changes.
+        :param pulumi.Input[str] contract_id: The contract under which the include is activated
+        :param pulumi.Input[str] group_id: The group under which the include is activated
+        :param pulumi.Input[str] include_id: The unique identifier of the include
+        :param pulumi.Input[str] network: The network for which the activation will be performed
+        :param pulumi.Input[str] note: The note to assign to a log message of the activation request
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] notify_emails: The list of email addresses to notify about an activation status
         :param pulumi.Input[str] validations: The validation information in JSON format
-        :param pulumi.Input[int] version: (Required) The version of the include you want to activate.
+        :param pulumi.Input[int] version: The unique identifier of the include
         """
         if auto_acknowledge_rule_warnings is not None:
             pulumi.set(__self__, "auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
@@ -210,7 +210,7 @@ class _PropertyIncludeActivationState:
     @pulumi.getter(name="autoAcknowledgeRuleWarnings")
     def auto_acknowledge_rule_warnings(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Optional) Automatically acknowledge all rule warnings for activation and continue.
+        Automatically acknowledge all rule warnings for activation and continue
         """
         return pulumi.get(self, "auto_acknowledge_rule_warnings")
 
@@ -234,7 +234,7 @@ class _PropertyIncludeActivationState:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        The contract under which the include is activated
         """
         return pulumi.get(self, "contract_id")
 
@@ -246,7 +246,7 @@ class _PropertyIncludeActivationState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Required) A group's unique ID, including the optional `grp_` prefix.
+        The group under which the include is activated
         """
         return pulumi.get(self, "group_id")
 
@@ -258,7 +258,7 @@ class _PropertyIncludeActivationState:
     @pulumi.getter(name="includeId")
     def include_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Required) An include's unique ID with the optional `inc_` prefix.
+        The unique identifier of the include
         """
         return pulumi.get(self, "include_id")
 
@@ -270,7 +270,7 @@ class _PropertyIncludeActivationState:
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
         """
-        (Required) The network for which the activation will be performed.
+        The network for which the activation will be performed
         """
         return pulumi.get(self, "network")
 
@@ -282,7 +282,7 @@ class _PropertyIncludeActivationState:
     @pulumi.getter
     def note(self) -> Optional[pulumi.Input[str]]:
         """
-        (Optional) A log message assigned to the activation request.
+        The note to assign to a log message of the activation request
         """
         return pulumi.get(self, "note")
 
@@ -294,7 +294,7 @@ class _PropertyIncludeActivationState:
     @pulumi.getter(name="notifyEmails")
     def notify_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Required) The list of email addresses to notify when the activation status changes.
+        The list of email addresses to notify about an activation status
         """
         return pulumi.get(self, "notify_emails")
 
@@ -318,7 +318,7 @@ class _PropertyIncludeActivationState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
         """
-        (Required) The version of the include you want to activate.
+        The unique identifier of the include
         """
         return pulumi.get(self, "version")
 
@@ -343,26 +343,18 @@ class PropertyIncludeActivation(pulumi.CustomResource):
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        Use the `PropertyIncludeActivation` resource to activate your include and make available to a property.
-        You can also modify the activation time out with the `AKAMAI_ACTIVATION_TIMEOUT` environment variable, providing time in minutes. The default time out is 30 minutes.
-
-        ## Attributes reference
-
-        This resource returns this attribute:
-
-        * `validations` - The validation information in JSON format.
-
+        Create a PropertyIncludeActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: (Optional) Automatically acknowledge all rule warnings for activation and continue.
+        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation and continue
         :param pulumi.Input[pulumi.InputType['PropertyIncludeActivationComplianceRecordArgs']] compliance_record: Provides an audit record when activating on a production network
-        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-        :param pulumi.Input[str] include_id: (Required) An include's unique ID with the optional `inc_` prefix.
-        :param pulumi.Input[str] network: (Required) The network for which the activation will be performed.
-        :param pulumi.Input[str] note: (Optional) A log message assigned to the activation request.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] notify_emails: (Required) The list of email addresses to notify when the activation status changes.
-        :param pulumi.Input[int] version: (Required) The version of the include you want to activate.
+        :param pulumi.Input[str] contract_id: The contract under which the include is activated
+        :param pulumi.Input[str] group_id: The group under which the include is activated
+        :param pulumi.Input[str] include_id: The unique identifier of the include
+        :param pulumi.Input[str] network: The network for which the activation will be performed
+        :param pulumi.Input[str] note: The note to assign to a log message of the activation request
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] notify_emails: The list of email addresses to notify about an activation status
+        :param pulumi.Input[int] version: The unique identifier of the include
         """
         ...
     @overload
@@ -371,15 +363,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
                  args: PropertyIncludeActivationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `PropertyIncludeActivation` resource to activate your include and make available to a property.
-        You can also modify the activation time out with the `AKAMAI_ACTIVATION_TIMEOUT` environment variable, providing time in minutes. The default time out is 30 minutes.
-
-        ## Attributes reference
-
-        This resource returns this attribute:
-
-        * `validations` - The validation information in JSON format.
-
+        Create a PropertyIncludeActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PropertyIncludeActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -462,16 +446,16 @@ class PropertyIncludeActivation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: (Optional) Automatically acknowledge all rule warnings for activation and continue.
+        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Automatically acknowledge all rule warnings for activation and continue
         :param pulumi.Input[pulumi.InputType['PropertyIncludeActivationComplianceRecordArgs']] compliance_record: Provides an audit record when activating on a production network
-        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-        :param pulumi.Input[str] include_id: (Required) An include's unique ID with the optional `inc_` prefix.
-        :param pulumi.Input[str] network: (Required) The network for which the activation will be performed.
-        :param pulumi.Input[str] note: (Optional) A log message assigned to the activation request.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] notify_emails: (Required) The list of email addresses to notify when the activation status changes.
+        :param pulumi.Input[str] contract_id: The contract under which the include is activated
+        :param pulumi.Input[str] group_id: The group under which the include is activated
+        :param pulumi.Input[str] include_id: The unique identifier of the include
+        :param pulumi.Input[str] network: The network for which the activation will be performed
+        :param pulumi.Input[str] note: The note to assign to a log message of the activation request
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] notify_emails: The list of email addresses to notify about an activation status
         :param pulumi.Input[str] validations: The validation information in JSON format
-        :param pulumi.Input[int] version: (Required) The version of the include you want to activate.
+        :param pulumi.Input[int] version: The unique identifier of the include
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -493,7 +477,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
     @pulumi.getter(name="autoAcknowledgeRuleWarnings")
     def auto_acknowledge_rule_warnings(self) -> pulumi.Output[Optional[bool]]:
         """
-        (Optional) Automatically acknowledge all rule warnings for activation and continue.
+        Automatically acknowledge all rule warnings for activation and continue
         """
         return pulumi.get(self, "auto_acknowledge_rule_warnings")
 
@@ -509,7 +493,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[str]:
         """
-        (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        The contract under which the include is activated
         """
         return pulumi.get(self, "contract_id")
 
@@ -517,7 +501,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[str]:
         """
-        (Required) A group's unique ID, including the optional `grp_` prefix.
+        The group under which the include is activated
         """
         return pulumi.get(self, "group_id")
 
@@ -525,7 +509,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
     @pulumi.getter(name="includeId")
     def include_id(self) -> pulumi.Output[str]:
         """
-        (Required) An include's unique ID with the optional `inc_` prefix.
+        The unique identifier of the include
         """
         return pulumi.get(self, "include_id")
 
@@ -533,7 +517,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
     @pulumi.getter
     def network(self) -> pulumi.Output[str]:
         """
-        (Required) The network for which the activation will be performed.
+        The network for which the activation will be performed
         """
         return pulumi.get(self, "network")
 
@@ -541,7 +525,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
     @pulumi.getter
     def note(self) -> pulumi.Output[Optional[str]]:
         """
-        (Optional) A log message assigned to the activation request.
+        The note to assign to a log message of the activation request
         """
         return pulumi.get(self, "note")
 
@@ -549,7 +533,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
     @pulumi.getter(name="notifyEmails")
     def notify_emails(self) -> pulumi.Output[Sequence[str]]:
         """
-        (Required) The list of email addresses to notify when the activation status changes.
+        The list of email addresses to notify about an activation status
         """
         return pulumi.get(self, "notify_emails")
 
@@ -565,7 +549,7 @@ class PropertyIncludeActivation(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[int]:
         """
-        (Required) The version of the include you want to activate.
+        The unique identifier of the include
         """
         return pulumi.get(self, "version")
 

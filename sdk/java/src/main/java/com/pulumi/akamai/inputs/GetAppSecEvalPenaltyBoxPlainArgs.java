@@ -13,32 +13,16 @@ public final class GetAppSecEvalPenaltyBoxPlainArgs extends com.pulumi.resources
 
     public static final GetAppSecEvalPenaltyBoxPlainArgs Empty = new GetAppSecEvalPenaltyBoxPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the evaluation penalty box settings.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the evaluation penalty box settings.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the evaluation penalty box settings.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the evaluation penalty box settings.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -68,23 +52,11 @@ public final class GetAppSecEvalPenaltyBoxPlainArgs extends com.pulumi.resources
             $ = new GetAppSecEvalPenaltyBoxPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the evaluation penalty box settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the evaluation penalty box settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

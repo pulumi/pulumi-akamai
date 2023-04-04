@@ -4,34 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.IamBlockedUserProperties` resource to remove or grant access to properties. Administrators can block a user's access to any property, overriding any available role already assigned to that user.
- *
- * ## Basic usage
- *
- * This example returns the policy details based on the policy ID and optionally, a version:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = new akamai.IamBlockedUserProperties("example", {
- *     blockedProperties: [
- *         1,
- *         2,
- *         3,
- *         4,
- *         5,
- *     ],
- *     groupId: 12345,
- *     identityId: "A-B-123456",
- * });
- * ```
- *
- * ## Attributes reference
- *
- * This resource doesn't return any attributes.
- */
 export class IamBlockedUserProperties extends pulumi.CustomResource {
     /**
      * Get an existing IamBlockedUserProperties resource's state with the given name, ID, and optional extra
@@ -61,15 +33,15 @@ export class IamBlockedUserProperties extends pulumi.CustomResource {
     }
 
     /**
-     * List of properties to block for a user. The property IDs must be an integer.
+     * List of properties to block for a user
      */
     public readonly blockedProperties!: pulumi.Output<number[]>;
     /**
-     * A unique identifier for a group. Each identifier must be an integer.
+     * A unique identifier for a group
      */
     public readonly groupId!: pulumi.Output<number>;
     /**
-     * A unique identifier that corresponds to a user's actual profile or client ID. Each identifier must be a string.
+     * A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
      */
     public readonly identityId!: pulumi.Output<string>;
 
@@ -114,15 +86,15 @@ export class IamBlockedUserProperties extends pulumi.CustomResource {
  */
 export interface IamBlockedUserPropertiesState {
     /**
-     * List of properties to block for a user. The property IDs must be an integer.
+     * List of properties to block for a user
      */
     blockedProperties?: pulumi.Input<pulumi.Input<number>[]>;
     /**
-     * A unique identifier for a group. Each identifier must be an integer.
+     * A unique identifier for a group
      */
     groupId?: pulumi.Input<number>;
     /**
-     * A unique identifier that corresponds to a user's actual profile or client ID. Each identifier must be a string.
+     * A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
      */
     identityId?: pulumi.Input<string>;
 }
@@ -132,15 +104,15 @@ export interface IamBlockedUserPropertiesState {
  */
 export interface IamBlockedUserPropertiesArgs {
     /**
-     * List of properties to block for a user. The property IDs must be an integer.
+     * List of properties to block for a user
      */
     blockedProperties: pulumi.Input<pulumi.Input<number>[]>;
     /**
-     * A unique identifier for a group. Each identifier must be an integer.
+     * A unique identifier for a group
      */
     groupId: pulumi.Input<number>;
     /**
-     * A unique identifier that corresponds to a user's actual profile or client ID. Each identifier must be a string.
+     * A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
      */
     identityId: pulumi.Input<string>;
 }

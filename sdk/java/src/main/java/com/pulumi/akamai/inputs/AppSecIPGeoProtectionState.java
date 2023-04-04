@@ -18,14 +18,14 @@ public final class AppSecIPGeoProtectionState extends com.pulumi.resources.Resou
     public static final AppSecIPGeoProtectionState Empty = new AppSecIPGeoProtectionState();
 
     /**
-     * . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -33,14 +33,14 @@ public final class AppSecIPGeoProtectionState extends com.pulumi.resources.Resou
     }
 
     /**
-     * . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+     * Whether to enable IP/Geo protection
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+     * @return Whether to enable IP/Geo protection
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -63,14 +63,14 @@ public final class AppSecIPGeoProtectionState extends com.pulumi.resources.Resou
     }
 
     /**
-     * . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -105,7 +105,7 @@ public final class AppSecIPGeoProtectionState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class AppSecIPGeoProtectionState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class AppSecIPGeoProtectionState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param enabled . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+         * @param enabled Whether to enable IP/Geo protection
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class AppSecIPGeoProtectionState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param enabled . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+         * @param enabled Whether to enable IP/Geo protection
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class AppSecIPGeoProtectionState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class AppSecIPGeoProtectionState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

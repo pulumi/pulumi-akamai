@@ -11,40 +11,6 @@ namespace Pulumi.Akamai
 {
     public static class GetIamCountries
     {
-        /// <summary>
-        /// Use `akamai.getIamCountries` to retrieve all the possible countries that Akamai supports. Use the values from this data source to add or update a user's country information.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var countries = Akamai.GetIamCountries.Invoke();
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["supportedCountries"] = countries,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// These attributes are returned:
-        /// 
-        /// * `countries` — A list of countries.
-        /// 
-        /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-countries)
-        /// </summary>
         public static Task<GetIamCountriesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamCountriesResult>("akamai:index/getIamCountries:getIamCountries", InvokeArgs.Empty, options.WithDefaults());
     }

@@ -3,6 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
+import com.pulumi.akamai.inputs.PropertyActivationComplianceRecordArgs;
 import com.pulumi.akamai.inputs.PropertyActivationRuleErrorArgs;
 import com.pulumi.akamai.inputs.PropertyActivationRuleWarningArgs;
 import com.pulumi.core.Output;
@@ -20,30 +21,22 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
 
     public static final PropertyActivationState Empty = new PropertyActivationState();
 
-    /**
-     * The ID given to the activation event while it&#39;s in progress.
-     * 
-     */
     @Import(name="activationId")
     private @Nullable Output<String> activationId;
 
-    /**
-     * @return The ID given to the activation event while it&#39;s in progress.
-     * 
-     */
     public Optional<Output<String>> activationId() {
         return Optional.ofNullable(this.activationId);
     }
 
     /**
-     * Whether the activation should proceed despite any warnings. By default set to `true`.
+     * automatically acknowledge all rule warnings for activation to continue. default is true
      * 
      */
     @Import(name="autoAcknowledgeRuleWarnings")
     private @Nullable Output<Boolean> autoAcknowledgeRuleWarnings;
 
     /**
-     * @return Whether the activation should proceed despite any warnings. By default set to `true`.
+     * @return automatically acknowledge all rule warnings for activation to continue. default is true
      * 
      */
     public Optional<Output<Boolean>> autoAcknowledgeRuleWarnings() {
@@ -51,59 +44,50 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
     }
 
     /**
-     * One or more email addresses to send activation status changes to.
+     * Provides an audit record when activating on a production network
      * 
      */
+    @Import(name="complianceRecord")
+    private @Nullable Output<PropertyActivationComplianceRecordArgs> complianceRecord;
+
+    /**
+     * @return Provides an audit record when activating on a production network
+     * 
+     */
+    public Optional<Output<PropertyActivationComplianceRecordArgs>> complianceRecord() {
+        return Optional.ofNullable(this.complianceRecord);
+    }
+
     @Import(name="contacts")
     private @Nullable Output<List<String>> contacts;
 
-    /**
-     * @return One or more email addresses to send activation status changes to.
-     * 
-     */
     public Optional<Output<List<String>>> contacts() {
         return Optional.ofNullable(this.contacts);
     }
 
-    /**
-     * The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     @Import(name="errors")
     private @Nullable Output<String> errors;
 
-    /**
-     * @return The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     public Optional<Output<String>> errors() {
         return Optional.ofNullable(this.errors);
     }
 
-    /**
-     * Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-     * 
-     */
     @Import(name="network")
     private @Nullable Output<String> network;
 
-    /**
-     * @return Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-     * 
-     */
     public Optional<Output<String>> network() {
         return Optional.ofNullable(this.network);
     }
 
     /**
-     * A log message you can assign to the activation request.
+     * assigns a log message to the activation request
      * 
      */
     @Import(name="note")
     private @Nullable Output<String> note;
 
     /**
-     * @return A log message you can assign to the activation request.
+     * @return assigns a log message to the activation request
      * 
      */
     public Optional<Output<String>> note() {
@@ -111,8 +95,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;property&#34; has been deprecated.
      * 
@@ -122,8 +104,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
     private @Nullable Output<String> property;
 
     /**
-     * @return (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;property&#34; has been deprecated.
      * 
@@ -133,17 +113,9 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.property);
     }
 
-    /**
-     * (Required) The property&#39;s unique identifier, including the `prp_` prefix.
-     * 
-     */
     @Import(name="propertyId")
     private @Nullable Output<String> propertyId;
 
-    /**
-     * @return (Required) The property&#39;s unique identifier, including the `prp_` prefix.
-     * 
-     */
     public Optional<Output<String>> propertyId() {
         return Optional.ofNullable(this.propertyId);
     }
@@ -156,8 +128,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-     * 
      * @deprecated
      * Rule warnings will not be set in state anymore
      * 
@@ -167,8 +137,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
     private @Nullable Output<List<PropertyActivationRuleWarningArgs>> ruleWarnings;
 
     /**
-     * @return (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-     * 
      * @deprecated
      * Rule warnings will not be set in state anymore
      * 
@@ -178,47 +146,23 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.ruleWarnings);
     }
 
-    /**
-     * The property version&#39;s activation status on the selected network.
-     * 
-     */
     @Import(name="status")
     private @Nullable Output<String> status;
 
-    /**
-     * @return The property version&#39;s activation status on the selected network.
-     * 
-     */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
-    /**
-     * The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.
-     * 
-     */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
-    /**
-     * @return The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.
-     * 
-     */
     public Optional<Output<Integer>> version() {
         return Optional.ofNullable(this.version);
     }
 
-    /**
-     * The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     @Import(name="warnings")
     private @Nullable Output<String> warnings;
 
-    /**
-     * @return The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     public Optional<Output<String>> warnings() {
         return Optional.ofNullable(this.warnings);
     }
@@ -228,6 +172,7 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
     private PropertyActivationState(PropertyActivationState $) {
         this.activationId = $.activationId;
         this.autoAcknowledgeRuleWarnings = $.autoAcknowledgeRuleWarnings;
+        this.complianceRecord = $.complianceRecord;
         this.contacts = $.contacts;
         this.errors = $.errors;
         this.network = $.network;
@@ -259,29 +204,17 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
             $ = new PropertyActivationState(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param activationId The ID given to the activation event while it&#39;s in progress.
-         * 
-         * @return builder
-         * 
-         */
         public Builder activationId(@Nullable Output<String> activationId) {
             $.activationId = activationId;
             return this;
         }
 
-        /**
-         * @param activationId The ID given to the activation event while it&#39;s in progress.
-         * 
-         * @return builder
-         * 
-         */
         public Builder activationId(String activationId) {
             return activationId(Output.of(activationId));
         }
 
         /**
-         * @param autoAcknowledgeRuleWarnings Whether the activation should proceed despite any warnings. By default set to `true`.
+         * @param autoAcknowledgeRuleWarnings automatically acknowledge all rule warnings for activation to continue. default is true
          * 
          * @return builder
          * 
@@ -292,7 +225,7 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param autoAcknowledgeRuleWarnings Whether the activation should proceed despite any warnings. By default set to `true`.
+         * @param autoAcknowledgeRuleWarnings automatically acknowledge all rule warnings for activation to continue. default is true
          * 
          * @return builder
          * 
@@ -302,80 +235,59 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param contacts One or more email addresses to send activation status changes to.
+         * @param complianceRecord Provides an audit record when activating on a production network
          * 
          * @return builder
          * 
          */
+        public Builder complianceRecord(@Nullable Output<PropertyActivationComplianceRecordArgs> complianceRecord) {
+            $.complianceRecord = complianceRecord;
+            return this;
+        }
+
+        /**
+         * @param complianceRecord Provides an audit record when activating on a production network
+         * 
+         * @return builder
+         * 
+         */
+        public Builder complianceRecord(PropertyActivationComplianceRecordArgs complianceRecord) {
+            return complianceRecord(Output.of(complianceRecord));
+        }
+
         public Builder contacts(@Nullable Output<List<String>> contacts) {
             $.contacts = contacts;
             return this;
         }
 
-        /**
-         * @param contacts One or more email addresses to send activation status changes to.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contacts(List<String> contacts) {
             return contacts(Output.of(contacts));
         }
 
-        /**
-         * @param contacts One or more email addresses to send activation status changes to.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contacts(String... contacts) {
             return contacts(List.of(contacts));
         }
 
-        /**
-         * @param errors The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-         * 
-         * @return builder
-         * 
-         */
         public Builder errors(@Nullable Output<String> errors) {
             $.errors = errors;
             return this;
         }
 
-        /**
-         * @param errors The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-         * 
-         * @return builder
-         * 
-         */
         public Builder errors(String errors) {
             return errors(Output.of(errors));
         }
 
-        /**
-         * @param network Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-         * 
-         * @return builder
-         * 
-         */
         public Builder network(@Nullable Output<String> network) {
             $.network = network;
             return this;
         }
 
-        /**
-         * @param network Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-         * 
-         * @return builder
-         * 
-         */
         public Builder network(String network) {
             return network(Output.of(network));
         }
 
         /**
-         * @param note A log message you can assign to the activation request.
+         * @param note assigns a log message to the activation request
          * 
          * @return builder
          * 
@@ -386,7 +298,7 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param note A log message you can assign to the activation request.
+         * @param note assigns a log message to the activation request
          * 
          * @return builder
          * 
@@ -396,8 +308,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param property (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -411,8 +321,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param property (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -424,23 +332,11 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
             return property(Output.of(property));
         }
 
-        /**
-         * @param propertyId (Required) The property&#39;s unique identifier, including the `prp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder propertyId(@Nullable Output<String> propertyId) {
             $.propertyId = propertyId;
             return this;
         }
 
-        /**
-         * @param propertyId (Required) The property&#39;s unique identifier, including the `prp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder propertyId(String propertyId) {
             return propertyId(Output.of(propertyId));
         }
@@ -459,8 +355,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param ruleWarnings (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -474,8 +368,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param ruleWarnings (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -488,8 +380,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param ruleWarnings (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -501,65 +391,29 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
             return ruleWarnings(List.of(ruleWarnings));
         }
 
-        /**
-         * @param status The property version&#39;s activation status on the selected network.
-         * 
-         * @return builder
-         * 
-         */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
             return this;
         }
 
-        /**
-         * @param status The property version&#39;s activation status on the selected network.
-         * 
-         * @return builder
-         * 
-         */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
-        /**
-         * @param version The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(@Nullable Output<Integer> version) {
             $.version = version;
             return this;
         }
 
-        /**
-         * @param version The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Integer version) {
             return version(Output.of(version));
         }
 
-        /**
-         * @param warnings The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-         * 
-         * @return builder
-         * 
-         */
         public Builder warnings(@Nullable Output<String> warnings) {
             $.warnings = warnings;
             return this;
         }
 
-        /**
-         * @param warnings The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-         * 
-         * @return builder
-         * 
-         */
         public Builder warnings(String warnings) {
             return warnings(Output.of(warnings));
         }

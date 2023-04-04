@@ -75,28 +75,7 @@ def get_edge_workers_resource_tier(contract_id: Optional[str] = None,
                                    resource_tier_name: Optional[str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEdgeWorkersResourceTierResult:
     """
-    Use the _get_edge_workers_resource_tier_ data source to list the available resource tiers for a specific contract ID. The resource tier defines the resource consumption [limits](https://techdocs.akamai.com/edgeworkers/docs/resource-tier-limitations) for an EdgeWorker ID.
-
-    ## Example Usage
-
-    This example returns the resource tier fields for an EdgeWorker ID:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_edge_workers_resource_tier(contract_id="1-ABC",
-        resource_tier_name="Basic Compute")
-    ```
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `resource_tier_id` - Unique identifier of the resource tier.
-
-
-    :param str contract_id: Unique identifier of a contract.
-    :param str resource_tier_name: Unique name of the resource tier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -116,27 +95,6 @@ def get_edge_workers_resource_tier_output(contract_id: Optional[pulumi.Input[str
                                           resource_tier_name: Optional[pulumi.Input[str]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeWorkersResourceTierResult]:
     """
-    Use the _get_edge_workers_resource_tier_ data source to list the available resource tiers for a specific contract ID. The resource tier defines the resource consumption [limits](https://techdocs.akamai.com/edgeworkers/docs/resource-tier-limitations) for an EdgeWorker ID.
-
-    ## Example Usage
-
-    This example returns the resource tier fields for an EdgeWorker ID:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_edge_workers_resource_tier(contract_id="1-ABC",
-        resource_tier_name="Basic Compute")
-    ```
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `resource_tier_id` - Unique identifier of the resource tier.
-
-
-    :param str contract_id: Unique identifier of a contract.
-    :param str resource_tier_name: Unique name of the resource tier.
+    Use this data source to access information about an existing resource.
     """
     ...

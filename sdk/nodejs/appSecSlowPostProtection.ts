@@ -4,36 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security policy
- *
- * Enables or disables slow POST protection for a security configuration and security policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const protection = new akamai.AppSecSlowPostProtection("protection", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: "gms1_134637",
- *     enabled: true,
- * });
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `outputText`. Tabular report showing the current protection settings.
- */
 export class AppSecSlowPostProtection extends pulumi.CustomResource {
     /**
      * Get an existing AppSecSlowPostProtection resource's state with the given name, ID, and optional extra
@@ -63,11 +33,11 @@ export class AppSecSlowPostProtection extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
+     * Whether to enable slow POST protection
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
@@ -75,7 +45,7 @@ export class AppSecSlowPostProtection extends pulumi.CustomResource {
      */
     public /*out*/ readonly outputText!: pulumi.Output<string>;
     /**
-     * . Unique identifier of the security policy associated with the slow POST protection settings being modified.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -122,11 +92,11 @@ export class AppSecSlowPostProtection extends pulumi.CustomResource {
  */
 export interface AppSecSlowPostProtectionState {
     /**
-     * . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
+     * Whether to enable slow POST protection
      */
     enabled?: pulumi.Input<boolean>;
     /**
@@ -134,7 +104,7 @@ export interface AppSecSlowPostProtectionState {
      */
     outputText?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security policy associated with the slow POST protection settings being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -144,15 +114,15 @@ export interface AppSecSlowPostProtectionState {
  */
 export interface AppSecSlowPostProtectionArgs {
     /**
-     * . Unique identifier of the security configuration associated with the slow POST protection settings being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Set to **true** to enable slow POST protection; set to **false** to disable slow POST protection.
+     * Whether to enable slow POST protection
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * . Unique identifier of the security policy associated with the slow POST protection settings being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId: pulumi.Input<string>;
 }

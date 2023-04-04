@@ -18,14 +18,14 @@ public final class CpsDvValidationArgs extends com.pulumi.resources.ResourceArgs
     public static final CpsDvValidationArgs Empty = new CpsDvValidationArgs();
 
     /**
-     * Unique identifier for the DV certificate enrollment.
+     * The unique identifier of enrollment
      * 
      */
     @Import(name="enrollmentId", required=true)
     private Output<Integer> enrollmentId;
 
     /**
-     * @return Unique identifier for the DV certificate enrollment.
+     * @return The unique identifier of enrollment
      * 
      */
     public Output<Integer> enrollmentId() {
@@ -33,14 +33,14 @@ public final class CpsDvValidationArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+     * List of SANs
      * 
      */
     @Import(name="sans")
     private @Nullable Output<List<String>> sans;
 
     /**
-     * @return The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+     * @return List of SANs
      * 
      */
     public Optional<Output<List<String>>> sans() {
@@ -73,7 +73,7 @@ public final class CpsDvValidationArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param enrollmentId Unique identifier for the DV certificate enrollment.
+         * @param enrollmentId The unique identifier of enrollment
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class CpsDvValidationArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param enrollmentId Unique identifier for the DV certificate enrollment.
+         * @param enrollmentId The unique identifier of enrollment
          * 
          * @return builder
          * 
@@ -94,7 +94,7 @@ public final class CpsDvValidationArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sans The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+         * @param sans List of SANs
          * 
          * @return builder
          * 
@@ -105,7 +105,7 @@ public final class CpsDvValidationArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sans The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+         * @param sans List of SANs
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class CpsDvValidationArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param sans The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+         * @param sans List of SANs
          * 
          * @return builder
          * 

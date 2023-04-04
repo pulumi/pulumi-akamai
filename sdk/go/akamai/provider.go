@@ -76,6 +76,8 @@ type providerArgs struct {
 	Property *ProviderProperty `pulumi:"property"`
 	// Deprecated: The setting "property_section" has been deprecated.
 	PropertySection *string `pulumi:"propertySection"`
+	// The maximum number of API requests to be made per second (0 for no limit)
+	RequestLimit *int `pulumi:"requestLimit"`
 }
 
 // The set of arguments for constructing a Provider resource.
@@ -106,6 +108,8 @@ type ProviderArgs struct {
 	Property ProviderPropertyPtrInput
 	// Deprecated: The setting "property_section" has been deprecated.
 	PropertySection pulumi.StringPtrInput
+	// The maximum number of API requests to be made per second (0 for no limit)
+	RequestLimit pulumi.IntPtrInput
 }
 
 func (ProviderArgs) ElementType() reflect.Type {

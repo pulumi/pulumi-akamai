@@ -10,62 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration; custom deny
-//
-// Returns information about custom deny actions. Custom denies allow you to craft your own error messages or redirect pages to use when HTTP requests are denied.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://techdocs.akamai.com/application-security/reference/get-custom-deny-actions)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			customDenyList, err := akamai.LookupAppSecCustomDeny(ctx, &akamai.LookupAppSecCustomDenyArgs{
-//				ConfigId: configuration.ConfigId,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("customDenyListOutput", customDenyList.OutputText)
-//			ctx.Export("customDenyListJson", customDenyList.Json)
-//			customDeny, err := akamai.LookupAppSecCustomDeny(ctx, &akamai.LookupAppSecCustomDenyArgs{
-//				ConfigId:     configuration.ConfigId,
-//				CustomDenyId: pulumi.StringRef("deny_custom_64386"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("customDenyJson", customDeny.Json)
-//			ctx.Export("customDenyOutput", customDeny.OutputText)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `json`. JSON-formatted list of custom deny information.
-// - `outputText`. Tabular report of the custom deny information.
 func LookupAppSecCustomDeny(ctx *pulumi.Context, args *LookupAppSecCustomDenyArgs, opts ...pulumi.InvokeOption) (*LookupAppSecCustomDenyResult, error) {
 	var rv LookupAppSecCustomDenyResult
 	err := ctx.Invoke("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args, &rv, opts...)
@@ -77,9 +21,7 @@ func LookupAppSecCustomDeny(ctx *pulumi.Context, args *LookupAppSecCustomDenyArg
 
 // A collection of arguments for invoking getAppSecCustomDeny.
 type LookupAppSecCustomDenyArgs struct {
-	// . Unique identifier of the security configuration associated with the custom denies.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
+	ConfigId     int     `pulumi:"configId"`
 	CustomDenyId *string `pulumi:"customDenyId"`
 }
 
@@ -108,9 +50,7 @@ func LookupAppSecCustomDenyOutput(ctx *pulumi.Context, args LookupAppSecCustomDe
 
 // A collection of arguments for invoking getAppSecCustomDeny.
 type LookupAppSecCustomDenyOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the custom denies.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the custom deny you want to return information for. If not included. information is returned for all your custom denies.
+	ConfigId     pulumi.IntInput       `pulumi:"configId"`
 	CustomDenyId pulumi.StringPtrInput `pulumi:"customDenyId"`
 }
 

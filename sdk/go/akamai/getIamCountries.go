@@ -7,41 +7,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use `getIamCountries` to retrieve all the possible countries that Akamai supports. Use the values from this data source to add or update a user's country information.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			countries, err := akamai.GetIamCountries(ctx, nil, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("supportedCountries", countries)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// These attributes are returned:
-//
-// * `countries` — A list of countries.
-//
-// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-countries)
 func GetIamCountries(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamCountriesResult, error) {
 	var rv GetIamCountriesResult
 	err := ctx.Invoke("akamai:index/getIamCountries:getIamCountries", nil, &rv, opts...)

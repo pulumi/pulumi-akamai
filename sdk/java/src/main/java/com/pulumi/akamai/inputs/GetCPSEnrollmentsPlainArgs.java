@@ -12,17 +12,9 @@ public final class GetCPSEnrollmentsPlainArgs extends com.pulumi.resources.Invok
 
     public static final GetCPSEnrollmentsPlainArgs Empty = new GetCPSEnrollmentsPlainArgs();
 
-    /**
-     * A contract&#39;s ID, optionally with the `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId", required=true)
     private String contractId;
 
-    /**
-     * @return A contract&#39;s ID, optionally with the `ctr_` prefix.
-     * 
-     */
     public String contractId() {
         return this.contractId;
     }
@@ -51,12 +43,6 @@ public final class GetCPSEnrollmentsPlainArgs extends com.pulumi.resources.Invok
             $ = new GetCPSEnrollmentsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractId A contract&#39;s ID, optionally with the `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             $.contractId = contractId;
             return this;

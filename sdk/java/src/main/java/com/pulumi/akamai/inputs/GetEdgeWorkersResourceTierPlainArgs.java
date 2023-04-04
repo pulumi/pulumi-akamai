@@ -12,32 +12,16 @@ public final class GetEdgeWorkersResourceTierPlainArgs extends com.pulumi.resour
 
     public static final GetEdgeWorkersResourceTierPlainArgs Empty = new GetEdgeWorkersResourceTierPlainArgs();
 
-    /**
-     * Unique identifier of a contract.
-     * 
-     */
     @Import(name="contractId", required=true)
     private String contractId;
 
-    /**
-     * @return Unique identifier of a contract.
-     * 
-     */
     public String contractId() {
         return this.contractId;
     }
 
-    /**
-     * Unique name of the resource tier.
-     * 
-     */
     @Import(name="resourceTierName", required=true)
     private String resourceTierName;
 
-    /**
-     * @return Unique name of the resource tier.
-     * 
-     */
     public String resourceTierName() {
         return this.resourceTierName;
     }
@@ -67,23 +51,11 @@ public final class GetEdgeWorkersResourceTierPlainArgs extends com.pulumi.resour
             $ = new GetEdgeWorkersResourceTierPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractId Unique identifier of a contract.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @param resourceTierName Unique name of the resource tier.
-         * 
-         * @return builder
-         * 
-         */
         public Builder resourceTierName(String resourceTierName) {
             $.resourceTierName = resourceTierName;
             return this;

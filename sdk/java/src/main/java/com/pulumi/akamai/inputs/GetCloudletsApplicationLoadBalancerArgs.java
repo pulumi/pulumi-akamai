@@ -16,32 +16,16 @@ public final class GetCloudletsApplicationLoadBalancerArgs extends com.pulumi.re
 
     public static final GetCloudletsApplicationLoadBalancerArgs Empty = new GetCloudletsApplicationLoadBalancerArgs();
 
-    /**
-     * (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-     * 
-     */
     @Import(name="originId", required=true)
     private Output<String> originId;
 
-    /**
-     * @return (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-     * 
-     */
     public Output<String> originId() {
         return this.originId;
     }
 
-    /**
-     * (Optional) The version number of the load balancing configuration.
-     * 
-     */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
-    /**
-     * @return (Optional) The version number of the load balancing configuration.
-     * 
-     */
     public Optional<Output<Integer>> version() {
         return Optional.ofNullable(this.version);
     }
@@ -71,44 +55,20 @@ public final class GetCloudletsApplicationLoadBalancerArgs extends com.pulumi.re
             $ = new GetCloudletsApplicationLoadBalancerArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param originId (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-         * 
-         * @return builder
-         * 
-         */
         public Builder originId(Output<String> originId) {
             $.originId = originId;
             return this;
         }
 
-        /**
-         * @param originId (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-         * 
-         * @return builder
-         * 
-         */
         public Builder originId(String originId) {
             return originId(Output.of(originId));
         }
 
-        /**
-         * @param version (Optional) The version number of the load balancing configuration.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(@Nullable Output<Integer> version) {
             $.version = version;
             return this;
         }
 
-        /**
-         * @param version (Optional) The version number of the load balancing configuration.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Integer version) {
             return version(Output.of(version));
         }

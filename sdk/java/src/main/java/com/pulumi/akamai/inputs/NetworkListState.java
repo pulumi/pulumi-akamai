@@ -18,16 +18,14 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
     public static final NetworkListState Empty = new NetworkListState();
 
     /**
-     * The contract ID of the network list. If supplied, group_id must also be supplied. The
-     * contract_id value of an existing network list may not be modified.
+     * contract ID
      * 
      */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
     /**
-     * @return The contract ID of the network list. If supplied, group_id must also be supplied. The
-     * contract_id value of an existing network list may not be modified.
+     * @return contract ID
      * 
      */
     public Optional<Output<String>> contractId() {
@@ -35,14 +33,14 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The description to be assigned to the network list.
+     * A description of the network list
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The description to be assigned to the network list.
+     * @return A description of the network list
      * 
      */
     public Optional<Output<String>> description() {
@@ -50,16 +48,14 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The group ID of the network list. If supplied, contract_id must also be supplied. The
-     * group_id value of an existing network list may not be modified.
+     * group ID
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<Integer> groupId;
 
     /**
-     * @return The group ID of the network list. If supplied, contract_id must also be supplied. The
-     * group_id value of an existing network list may not be modified.
+     * @return group ID
      * 
      */
     public Optional<Output<Integer>> groupId() {
@@ -67,16 +63,16 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A list of IP addresses or locations to be included in the list, added to an existing list, or
-     * removed from an existing list.
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+     * list
      * 
      */
     @Import(name="lists")
     private @Nullable Output<List<String>> lists;
 
     /**
-     * @return A list of IP addresses or locations to be included in the list, added to an existing list, or
-     * removed from an existing list.
+     * @return A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+     * list
      * 
      */
     public Optional<Output<List<String>>> lists() {
@@ -84,14 +80,14 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A string specifying the interpretation of the `list` parameter. Must be one of the following:
+     * A string specifying the interpretation of the `list` parameter. Must be &#39;APPEND&#39;, &#39;REPLACE&#39;, or &#39;REMOVE&#39;
      * 
      */
     @Import(name="mode")
     private @Nullable Output<String> mode;
 
     /**
-     * @return A string specifying the interpretation of the `list` parameter. Must be one of the following:
+     * @return A string specifying the interpretation of the `list` parameter. Must be &#39;APPEND&#39;, &#39;REPLACE&#39;, or &#39;REMOVE&#39;
      * 
      */
     public Optional<Output<String>> mode() {
@@ -99,14 +95,14 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name to be assigned to the network list.
+     * The name to be assigned to the network list
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name to be assigned to the network list.
+     * @return The name to be assigned to the network list
      * 
      */
     public Optional<Output<String>> name() {
@@ -114,14 +110,14 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The ID of the network list.
+     * network list ID
      * 
      */
     @Import(name="networkListId")
     private @Nullable Output<String> networkListId;
 
     /**
-     * @return The ID of the network list.
+     * @return network list ID
      * 
      */
     public Optional<Output<String>> networkListId() {
@@ -129,16 +125,14 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * An integer that identifies the current version of the network list; this value is incremented each time
-     * the list is modified.
+     * sync point
      * 
      */
     @Import(name="syncPoint")
     private @Nullable Output<Integer> syncPoint;
 
     /**
-     * @return An integer that identifies the current version of the network list; this value is incremented each time
-     * the list is modified.
+     * @return sync point
      * 
      */
     public Optional<Output<Integer>> syncPoint() {
@@ -146,14 +140,14 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The type of the network list; must be either &#34;IP&#34; or &#34;GEO&#34;.
+     * The type of the network list; must be either &#39;IP&#39; or &#39;GEO&#39;
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return The type of the network list; must be either &#34;IP&#34; or &#34;GEO&#34;.
+     * @return The type of the network list; must be either &#39;IP&#39; or &#39;GEO&#39;
      * 
      */
     public Optional<Output<String>> type() {
@@ -209,8 +203,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId The contract ID of the network list. If supplied, group_id must also be supplied. The
-         * contract_id value of an existing network list may not be modified.
+         * @param contractId contract ID
          * 
          * @return builder
          * 
@@ -221,8 +214,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId The contract ID of the network list. If supplied, group_id must also be supplied. The
-         * contract_id value of an existing network list may not be modified.
+         * @param contractId contract ID
          * 
          * @return builder
          * 
@@ -232,7 +224,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The description to be assigned to the network list.
+         * @param description A description of the network list
          * 
          * @return builder
          * 
@@ -243,7 +235,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The description to be assigned to the network list.
+         * @param description A description of the network list
          * 
          * @return builder
          * 
@@ -253,8 +245,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId The group ID of the network list. If supplied, contract_id must also be supplied. The
-         * group_id value of an existing network list may not be modified.
+         * @param groupId group ID
          * 
          * @return builder
          * 
@@ -265,8 +256,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId The group ID of the network list. If supplied, contract_id must also be supplied. The
-         * group_id value of an existing network list may not be modified.
+         * @param groupId group ID
          * 
          * @return builder
          * 
@@ -276,8 +266,8 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lists A list of IP addresses or locations to be included in the list, added to an existing list, or
-         * removed from an existing list.
+         * @param lists A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+         * list
          * 
          * @return builder
          * 
@@ -288,8 +278,8 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lists A list of IP addresses or locations to be included in the list, added to an existing list, or
-         * removed from an existing list.
+         * @param lists A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+         * list
          * 
          * @return builder
          * 
@@ -299,8 +289,8 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lists A list of IP addresses or locations to be included in the list, added to an existing list, or
-         * removed from an existing list.
+         * @param lists A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+         * list
          * 
          * @return builder
          * 
@@ -310,7 +300,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mode A string specifying the interpretation of the `list` parameter. Must be one of the following:
+         * @param mode A string specifying the interpretation of the `list` parameter. Must be &#39;APPEND&#39;, &#39;REPLACE&#39;, or &#39;REMOVE&#39;
          * 
          * @return builder
          * 
@@ -321,7 +311,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mode A string specifying the interpretation of the `list` parameter. Must be one of the following:
+         * @param mode A string specifying the interpretation of the `list` parameter. Must be &#39;APPEND&#39;, &#39;REPLACE&#39;, or &#39;REMOVE&#39;
          * 
          * @return builder
          * 
@@ -331,7 +321,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The name to be assigned to the network list.
+         * @param name The name to be assigned to the network list
          * 
          * @return builder
          * 
@@ -342,7 +332,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The name to be assigned to the network list.
+         * @param name The name to be assigned to the network list
          * 
          * @return builder
          * 
@@ -352,7 +342,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkListId The ID of the network list.
+         * @param networkListId network list ID
          * 
          * @return builder
          * 
@@ -363,7 +353,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkListId The ID of the network list.
+         * @param networkListId network list ID
          * 
          * @return builder
          * 
@@ -373,8 +363,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param syncPoint An integer that identifies the current version of the network list; this value is incremented each time
-         * the list is modified.
+         * @param syncPoint sync point
          * 
          * @return builder
          * 
@@ -385,8 +374,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param syncPoint An integer that identifies the current version of the network list; this value is incremented each time
-         * the list is modified.
+         * @param syncPoint sync point
          * 
          * @return builder
          * 
@@ -396,7 +384,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type The type of the network list; must be either &#34;IP&#34; or &#34;GEO&#34;.
+         * @param type The type of the network list; must be either &#39;IP&#39; or &#39;GEO&#39;
          * 
          * @return builder
          * 
@@ -407,7 +395,7 @@ public final class NetworkListState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type The type of the network list; must be either &#34;IP&#34; or &#34;GEO&#34;.
+         * @param type The type of the network list; must be either &#39;IP&#39; or &#39;GEO&#39;
          * 
          * @return builder
          * 

@@ -30,47 +30,23 @@ public final class GetAppSecSelectableHostnamesPlainArgs extends com.pulumi.reso
         return Optional.ofNullable(this.activeInStaging);
     }
 
-    /**
-     * . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can&#39;t be used with either the `contractid` or the `groupid` arguments.
-     * 
-     */
     @Import(name="configId")
     private @Nullable Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can&#39;t be used with either the `contractid` or the `groupid` arguments.
-     * 
-     */
     public Optional<Integer> configId() {
         return Optional.ofNullable(this.configId);
     }
 
-    /**
-     * . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can&#39;t be used with the `config_id` argument.
-     * 
-     */
     @Import(name="contractid")
     private @Nullable String contractid;
 
-    /**
-     * @return . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can&#39;t be used with the `config_id` argument.
-     * 
-     */
     public Optional<String> contractid() {
         return Optional.ofNullable(this.contractid);
     }
 
-    /**
-     * . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can&#39;t be used with the `config_id` argument.
-     * 
-     */
     @Import(name="groupid")
     private @Nullable Integer groupid;
 
-    /**
-     * @return . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can&#39;t be used with the `config_id` argument.
-     * 
-     */
     public Optional<Integer> groupid() {
         return Optional.ofNullable(this.groupid);
     }
@@ -113,34 +89,16 @@ public final class GetAppSecSelectableHostnamesPlainArgs extends com.pulumi.reso
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can&#39;t be used with either the `contractid` or the `groupid` arguments.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(@Nullable Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param contractid . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can&#39;t be used with the `config_id` argument.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractid(@Nullable String contractid) {
             $.contractid = contractid;
             return this;
         }
 
-        /**
-         * @param groupid . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can&#39;t be used with the `config_id` argument.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupid(@Nullable Integer groupid) {
             $.groupid = groupid;
             return this;

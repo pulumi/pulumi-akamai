@@ -18,14 +18,14 @@ public final class AppSecAdvancedSettingsEvasivePathMatchArgs extends com.pulumi
     public static final AppSecAdvancedSettingsEvasivePathMatchArgs Empty = new AppSecAdvancedSettingsEvasivePathMatchArgs();
 
     /**
-     * The ID of the security configuration to use.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return The ID of the security configuration to use.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -33,14 +33,14 @@ public final class AppSecAdvancedSettingsEvasivePathMatchArgs extends com.pulumi
     }
 
     /**
-     * Whether to enable path match.
+     * Whether to enable the evasive path match setting
      * 
      */
     @Import(name="enablePathMatch", required=true)
     private Output<Boolean> enablePathMatch;
 
     /**
-     * @return Whether to enable path match.
+     * @return Whether to enable the evasive path match setting
      * 
      */
     public Output<Boolean> enablePathMatch() {
@@ -48,14 +48,14 @@ public final class AppSecAdvancedSettingsEvasivePathMatchArgs extends com.pulumi
     }
 
     /**
-     * The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -89,7 +89,7 @@ public final class AppSecAdvancedSettingsEvasivePathMatchArgs extends com.pulumi
         }
 
         /**
-         * @param configId The ID of the security configuration to use.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class AppSecAdvancedSettingsEvasivePathMatchArgs extends com.pulumi
         }
 
         /**
-         * @param configId The ID of the security configuration to use.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class AppSecAdvancedSettingsEvasivePathMatchArgs extends com.pulumi
         }
 
         /**
-         * @param enablePathMatch Whether to enable path match.
+         * @param enablePathMatch Whether to enable the evasive path match setting
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class AppSecAdvancedSettingsEvasivePathMatchArgs extends com.pulumi
         }
 
         /**
-         * @param enablePathMatch Whether to enable path match.
+         * @param enablePathMatch Whether to enable the evasive path match setting
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class AppSecAdvancedSettingsEvasivePathMatchArgs extends com.pulumi
         }
 
         /**
-         * @param securityPolicyId The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class AppSecAdvancedSettingsEvasivePathMatchArgs extends com.pulumi
         }
 
         /**
-         * @param securityPolicyId The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

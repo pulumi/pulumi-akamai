@@ -13,53 +13,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions {
-    /**
-     * @return (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
-     * 
-     */
     private @Nullable Boolean valueCaseSensitive;
-    /**
-     * @return (Optional) Whether the `value` argument should be compared in an escaped form.
-     * 
-     */
     private @Nullable Boolean valueEscaped;
-    /**
-     * @return (Optional) Whether the `value` argument includes wildcards.
-     * 
-     */
     private @Nullable Boolean valueHasWildcard;
-    /**
-     * @return (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     * 
-     */
     private @Nullable List<String> values;
 
     private GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions() {}
-    /**
-     * @return (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
-     * 
-     */
     public Optional<Boolean> valueCaseSensitive() {
         return Optional.ofNullable(this.valueCaseSensitive);
     }
-    /**
-     * @return (Optional) Whether the `value` argument should be compared in an escaped form.
-     * 
-     */
     public Optional<Boolean> valueEscaped() {
         return Optional.ofNullable(this.valueEscaped);
     }
-    /**
-     * @return (Optional) Whether the `value` argument includes wildcards.
-     * 
-     */
     public Optional<Boolean> valueHasWildcard() {
         return Optional.ofNullable(this.valueHasWildcard);
     }
-    /**
-     * @return (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     * 
-     */
     public List<String> values() {
         return this.values == null ? List.of() : this.values;
     }

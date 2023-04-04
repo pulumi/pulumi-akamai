@@ -11,133 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecReputationProfileActions
     {
-        /// <summary>
-        /// ## akamai.getAppSecReputationProfileActions
-        /// 
-        /// **Scopes**: Security policy; reputation profile
-        /// 
-        /// Returns action information for your reputation profiles. Actions specify what happens any time a profile is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/get-reputation-profiles-actions)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var reputationProfileActions = Akamai.GetAppSecReputationProfileActions.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     var reputationProfileActions2AppSecReputationProfileActions = Akamai.GetAppSecReputationProfileActions.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///         ReputationProfileId = 12345,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["reputationProfileActionsText"] = reputationProfileActions.Apply(getAppSecReputationProfileActionsResult =&gt; getAppSecReputationProfileActionsResult.OutputText),
-        ///         ["reputationProfileActionsJson"] = reputationProfileActions.Apply(getAppSecReputationProfileActionsResult =&gt; getAppSecReputationProfileActionsResult.Json),
-        ///         ["reputationProfileActions2"] = reputationProfileActions.Apply(getAppSecReputationProfileActionsResult =&gt; getAppSecReputationProfileActionsResult.Action),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `action`. Action taken any time the reputation profile is triggered. Valid values are:
-        ///   - **alert**. Record the event.
-        ///   - **deny**. Block the request.
-        ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-        ///   - **none**. Take no action.
-        /// - `json`. JSON-formatted report of the reputation profile action information.
-        /// - `output_text`. Tabular report of the reputation profile action information.
-        /// </summary>
         public static Task<GetAppSecReputationProfileActionsResult> InvokeAsync(GetAppSecReputationProfileActionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// ## akamai.getAppSecReputationProfileActions
-        /// 
-        /// **Scopes**: Security policy; reputation profile
-        /// 
-        /// Returns action information for your reputation profiles. Actions specify what happens any time a profile is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/get-reputation-profiles-actions)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var reputationProfileActions = Akamai.GetAppSecReputationProfileActions.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     var reputationProfileActions2AppSecReputationProfileActions = Akamai.GetAppSecReputationProfileActions.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///         ReputationProfileId = 12345,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["reputationProfileActionsText"] = reputationProfileActions.Apply(getAppSecReputationProfileActionsResult =&gt; getAppSecReputationProfileActionsResult.OutputText),
-        ///         ["reputationProfileActionsJson"] = reputationProfileActions.Apply(getAppSecReputationProfileActionsResult =&gt; getAppSecReputationProfileActionsResult.Json),
-        ///         ["reputationProfileActions2"] = reputationProfileActions.Apply(getAppSecReputationProfileActionsResult =&gt; getAppSecReputationProfileActionsResult.Action),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `action`. Action taken any time the reputation profile is triggered. Valid values are:
-        ///   - **alert**. Record the event.
-        ///   - **deny**. Block the request.
-        ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-        ///   - **none**. Take no action.
-        /// - `json`. JSON-formatted report of the reputation profile action information.
-        /// - `output_text`. Tabular report of the reputation profile action information.
-        /// </summary>
         public static Output<GetAppSecReputationProfileActionsResult> Invoke(GetAppSecReputationProfileActionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileActionsResult>("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args ?? new GetAppSecReputationProfileActionsInvokeArgs(), options.WithDefaults());
     }
@@ -145,21 +21,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecReputationProfileActionsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the reputation profiles.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-        /// </summary>
         [Input("reputationProfileId")]
         public int? ReputationProfileId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the reputation profiles.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -171,21 +38,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecReputationProfileActionsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the reputation profiles.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-        /// </summary>
         [Input("reputationProfileId")]
         public Input<int>? ReputationProfileId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the reputation profiles.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

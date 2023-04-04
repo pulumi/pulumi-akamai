@@ -102,8 +102,6 @@ def get_app_sec_configuration(name: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecConfigurationResult:
     """
     Use this data source to access information about an existing resource.
-
-    :param str name: . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -125,7 +123,5 @@ def get_app_sec_configuration_output(name: Optional[pulumi.Input[Optional[str]]]
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecConfigurationResult]:
     """
     Use this data source to access information about an existing resource.
-
-    :param str name: . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
     """
     ...

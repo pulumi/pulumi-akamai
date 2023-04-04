@@ -9,58 +9,11 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var ruleUpgrade = new Akamai.AppSecRuleUpgrade("ruleUpgrade", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///     });
-    /// 
-    ///     return new Dictionary&lt;string, object?&gt;
-    ///     {
-    ///         ["ruleUpgradeCurrentRuleset"] = ruleUpgrade.CurrentRuleset,
-    ///         ["ruleUpgradeMode"] = ruleUpgrade.Mode,
-    ///         ["ruleUpgradeEvalStatus"] = ruleUpgrade.EvalStatus,
-    ///     };
-    /// });
-    /// ```
-    /// ## Output Options
-    /// 
-    /// The following options can be used to determine the information returned and how that returned information is formatted:
-    /// 
-    /// - `current_ruleset`. Versioning information for your current KRS rule set.
-    /// - `mode`. Specifies the current upgrade mode type. Valid values are:
-    ///   - **KRS**. Rulesets must be manually upgraded.
-    ///   
-    ///   - **AAG**. Rulesets are automatically upgraded by Akamai.
-    ///   
-    ///   - **ASE_MANUAL**. Adaptive Security Engine rulesets must be manually upgraded.
-    ///   
-    ///   - **ASE_AUTO**. Adaptive Security Engine rulesets are automatically updated by Akamai.
-    /// 
-    /// - `eval_status`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecRuleUpgrade:AppSecRuleUpgrade")]
     public partial class AppSecRuleUpgrade : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the ruleset being upgraded.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
@@ -84,15 +37,13 @@ namespace Pulumi.Akamai
         public Output<string> Mode { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the ruleset being upgraded.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-        /// - **ASE_AUTO**. Akamai automatically updates your rulesets.
-        /// - **ASE_MANUAL**. Manually updates your rulesets.
+        /// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         /// </summary>
         [Output("upgradeMode")]
         public Output<string?> UpgradeMode { get; private set; } = null!;
@@ -144,21 +95,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecRuleUpgradeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the ruleset being upgraded.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the ruleset being upgraded.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
         /// <summary>
-        /// . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-        /// - **ASE_AUTO**. Akamai automatically updates your rulesets.
-        /// - **ASE_MANUAL**. Manually updates your rulesets.
+        /// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         /// </summary>
         [Input("upgradeMode")]
         public Input<string>? UpgradeMode { get; set; }
@@ -172,7 +121,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecRuleUpgradeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the ruleset being upgraded.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
@@ -196,15 +145,13 @@ namespace Pulumi.Akamai
         public Input<string>? Mode { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the ruleset being upgraded.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 
         /// <summary>
-        /// . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-        /// - **ASE_AUTO**. Akamai automatically updates your rulesets.
-        /// - **ASE_MANUAL**. Manually updates your rulesets.
+        /// Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         /// </summary>
         [Input("upgradeMode")]
         public Input<string>? UpgradeMode { get; set; }

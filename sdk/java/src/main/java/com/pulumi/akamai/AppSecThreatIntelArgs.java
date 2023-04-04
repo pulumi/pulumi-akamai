@@ -15,14 +15,14 @@ public final class AppSecThreatIntelArgs extends com.pulumi.resources.ResourceAr
     public static final AppSecThreatIntelArgs Empty = new AppSecThreatIntelArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -30,14 +30,14 @@ public final class AppSecThreatIntelArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -45,14 +45,14 @@ public final class AppSecThreatIntelArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
+     * Whether threat intelligence protection should be on or off
      * 
      */
     @Import(name="threatIntel", required=true)
     private Output<String> threatIntel;
 
     /**
-     * @return . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
+     * @return Whether threat intelligence protection should be on or off
      * 
      */
     public Output<String> threatIntel() {
@@ -86,7 +86,7 @@ public final class AppSecThreatIntelArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class AppSecThreatIntelArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class AppSecThreatIntelArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class AppSecThreatIntelArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class AppSecThreatIntelArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param threatIntel . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
+         * @param threatIntel Whether threat intelligence protection should be on or off
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class AppSecThreatIntelArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param threatIntel . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
+         * @param threatIntel Whether threat intelligence protection should be on or off
          * 
          * @return builder
          * 

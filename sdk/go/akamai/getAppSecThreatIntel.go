@@ -10,56 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy
-//
-// Returns threat intelligence settings for a security policy Note that this data source is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information on ASE, please contact your Akamai representative.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://techdocs.akamai.com/application-security/reference/get-rules-threat-intel)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			threatIntelAppSecThreatIntel, err := akamai.LookupAppSecThreatIntel(ctx, &akamai.LookupAppSecThreatIntelArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: "gms1_134637",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("threatIntel", threatIntelAppSecThreatIntel.ThreatIntel)
-//			ctx.Export("json", threatIntelAppSecThreatIntel.Json)
-//			ctx.Export("outputText", threatIntelAppSecThreatIntel.OutputText)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `threatIntel`. Reports the threat Intelligence setting, either **on** or **off**.
-// - `json`. JSON-formatted threat intelligence report.
-// - `outputText`. Tabular report of the threat intelligence information.
 func LookupAppSecThreatIntel(ctx *pulumi.Context, args *LookupAppSecThreatIntelArgs, opts ...pulumi.InvokeOption) (*LookupAppSecThreatIntelResult, error) {
 	var rv LookupAppSecThreatIntelResult
 	err := ctx.Invoke("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args, &rv, opts...)
@@ -71,9 +21,7 @@ func LookupAppSecThreatIntel(ctx *pulumi.Context, args *LookupAppSecThreatIntelA
 
 // A collection of arguments for invoking getAppSecThreatIntel.
 type LookupAppSecThreatIntelArgs struct {
-	// . Unique identifier of the security configuration associated with the threat intelligence settings.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the threat intelligence settings.
+	ConfigId         int    `pulumi:"configId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -103,9 +51,7 @@ func LookupAppSecThreatIntelOutput(ctx *pulumi.Context, args LookupAppSecThreatI
 
 // A collection of arguments for invoking getAppSecThreatIntel.
 type LookupAppSecThreatIntelOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the threat intelligence settings.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the threat intelligence settings.
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 

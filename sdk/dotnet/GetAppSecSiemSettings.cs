@@ -11,101 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecSiemSettings
     {
-        /// <summary>
-        /// **Scopes**: Security configuration
-        /// 
-        /// Returns the SIEM (Security Event and Information Management) settings for a security configuration. 
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://techdocs.akamai.com/application-security/reference/get-siem)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var siemSettings = Akamai.GetAppSecSiemSettings.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["siemSettingsJson"] = siemSettings.Apply(getAppSecSiemSettingsResult =&gt; getAppSecSiemSettingsResult.Json),
-        ///         ["siemSettingsOutput"] = siemSettings.Apply(getAppSecSiemSettingsResult =&gt; getAppSecSiemSettingsResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of the SIEM setting information.
-        /// - `output_text`. Tabular report showing the SIEM setting information.
-        /// </summary>
         public static Task<GetAppSecSiemSettingsResult> InvokeAsync(GetAppSecSiemSettingsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSiemSettingsResult>("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args ?? new GetAppSecSiemSettingsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security configuration
-        /// 
-        /// Returns the SIEM (Security Event and Information Management) settings for a security configuration. 
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://techdocs.akamai.com/application-security/reference/get-siem)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var siemSettings = Akamai.GetAppSecSiemSettings.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["siemSettingsJson"] = siemSettings.Apply(getAppSecSiemSettingsResult =&gt; getAppSecSiemSettingsResult.Json),
-        ///         ["siemSettingsOutput"] = siemSettings.Apply(getAppSecSiemSettingsResult =&gt; getAppSecSiemSettingsResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of the SIEM setting information.
-        /// - `output_text`. Tabular report showing the SIEM setting information.
-        /// </summary>
         public static Output<GetAppSecSiemSettingsResult> Invoke(GetAppSecSiemSettingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSiemSettingsResult>("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args ?? new GetAppSecSiemSettingsInvokeArgs(), options.WithDefaults());
     }
@@ -113,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecSiemSettingsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration you want to return information for.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
@@ -127,9 +32,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecSiemSettingsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration you want to return information for.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 

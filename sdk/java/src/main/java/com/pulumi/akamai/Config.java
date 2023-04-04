@@ -11,6 +11,7 @@ import com.pulumi.akamai.config.inputs.Property;
 import com.pulumi.core.TypeShape;
 import com.pulumi.core.internal.Codegen;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Optional;
@@ -66,5 +67,12 @@ public final class Config {
     }
     public Optional<String> propertySection() {
         return Codegen.stringProp("propertySection").config(config).get();
+    }
+/**
+ * The maximum number of API requests to be made per second (0 for no limit)
+ * 
+ */
+    public Optional<Integer> requestLimit() {
+        return Codegen.integerProp("requestLimit").config(config).get();
     }
 }

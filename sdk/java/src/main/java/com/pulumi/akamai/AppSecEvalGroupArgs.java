@@ -17,14 +17,14 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
     public static final AppSecEvalGroupArgs Empty = new AppSecEvalGroupArgs();
 
     /**
-     * . Unique identifier of the evaluation attack group being modified.
+     * Unique identifier of the evaluation attack group being modified
      * 
      */
     @Import(name="attackGroup", required=true)
     private Output<String> attackGroup;
 
     /**
-     * @return . Unique identifier of the evaluation attack group being modified.
+     * @return Unique identifier of the evaluation attack group being modified
      * 
      */
     public Output<String> attackGroup() {
@@ -32,22 +32,14 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * . Action to be taken any time the attack group is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the attack group is triggered
      * 
      */
     @Import(name="attackGroupAction", required=true)
     private Output<String> attackGroupAction;
 
     /**
-     * @return . Action to be taken any time the attack group is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * @return Action to be taken when the attack group is triggered
      * 
      */
     public Output<String> attackGroupAction() {
@@ -55,14 +47,14 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * . Path to a JSON file containing properties and property values for the attack group.
+     * JSON-formatted condition and exception information for the evaluation attack group
      * 
      */
     @Import(name="conditionException")
     private @Nullable Output<String> conditionException;
 
     /**
-     * @return . Path to a JSON file containing properties and property values for the attack group.
+     * @return JSON-formatted condition and exception information for the evaluation attack group
      * 
      */
     public Optional<Output<String>> conditionException() {
@@ -70,14 +62,14 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * . Unique identifier of the security configuration where evaluation is taking place.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration where evaluation is taking place.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -85,14 +77,14 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * . Unique identifier of the security policy associated with the evaluation process.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the evaluation process.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -128,7 +120,7 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param attackGroup . Unique identifier of the evaluation attack group being modified.
+         * @param attackGroup Unique identifier of the evaluation attack group being modified
          * 
          * @return builder
          * 
@@ -139,7 +131,7 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param attackGroup . Unique identifier of the evaluation attack group being modified.
+         * @param attackGroup Unique identifier of the evaluation attack group being modified
          * 
          * @return builder
          * 
@@ -149,11 +141,7 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param attackGroupAction . Action to be taken any time the attack group is triggered. Allowed values are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param attackGroupAction Action to be taken when the attack group is triggered
          * 
          * @return builder
          * 
@@ -164,11 +152,7 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param attackGroupAction . Action to be taken any time the attack group is triggered. Allowed values are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param attackGroupAction Action to be taken when the attack group is triggered
          * 
          * @return builder
          * 
@@ -178,7 +162,7 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param conditionException . Path to a JSON file containing properties and property values for the attack group.
+         * @param conditionException JSON-formatted condition and exception information for the evaluation attack group
          * 
          * @return builder
          * 
@@ -189,7 +173,7 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param conditionException . Path to a JSON file containing properties and property values for the attack group.
+         * @param conditionException JSON-formatted condition and exception information for the evaluation attack group
          * 
          * @return builder
          * 
@@ -199,7 +183,7 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration where evaluation is taking place.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -210,7 +194,7 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration where evaluation is taking place.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -220,7 +204,7 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the evaluation process.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -231,7 +215,7 @@ public final class AppSecEvalGroupArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the evaluation process.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

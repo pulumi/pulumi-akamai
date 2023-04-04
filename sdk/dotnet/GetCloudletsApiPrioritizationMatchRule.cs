@@ -11,33 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetCloudletsApiPrioritizationMatchRule
     {
-        /// <summary>
-        /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-        /// 
-        /// Use the `akamai.getCloudletsApiPrioritizationMatchRule` data source to build a match rule JSON object for the API Prioritization Cloudlet.
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `type` - The type of Cloudlet the rule is for.
-        /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
-        /// </summary>
         public static Task<GetCloudletsApiPrioritizationMatchRuleResult> InvokeAsync(GetCloudletsApiPrioritizationMatchRuleArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudletsApiPrioritizationMatchRuleResult>("akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule", args ?? new GetCloudletsApiPrioritizationMatchRuleArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-        /// 
-        /// Use the `akamai.getCloudletsApiPrioritizationMatchRule` data source to build a match rule JSON object for the API Prioritization Cloudlet.
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `type` - The type of Cloudlet the rule is for.
-        /// * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
-        /// </summary>
         public static Output<GetCloudletsApiPrioritizationMatchRuleResult> Invoke(GetCloudletsApiPrioritizationMatchRuleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudletsApiPrioritizationMatchRuleResult>("akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule", args ?? new GetCloudletsApiPrioritizationMatchRuleInvokeArgs(), options.WithDefaults());
     }
@@ -47,10 +23,6 @@ namespace Pulumi.Akamai
     {
         [Input("matchRules")]
         private List<Inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs>? _matchRules;
-
-        /// <summary>
-        /// (Optional) A list of Cloudlet-specific match rules for a policy.
-        /// </summary>
         public List<Inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs> MatchRules
         {
             get => _matchRules ?? (_matchRules = new List<Inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleArgs>());
@@ -67,10 +39,6 @@ namespace Pulumi.Akamai
     {
         [Input("matchRules")]
         private InputList<Inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleInputArgs>? _matchRules;
-
-        /// <summary>
-        /// (Optional) A list of Cloudlet-specific match rules for a policy.
-        /// </summary>
         public InputList<Inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleInputArgs> MatchRules
         {
             get => _matchRules ?? (_matchRules = new InputList<Inputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleInputArgs>());

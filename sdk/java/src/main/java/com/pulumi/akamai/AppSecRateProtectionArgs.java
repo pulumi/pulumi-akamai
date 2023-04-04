@@ -16,44 +16,36 @@ public final class AppSecRateProtectionArgs extends com.pulumi.resources.Resourc
     public static final AppSecRateProtectionArgs Empty = new AppSecRateProtectionArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the rate protection settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the rate protection settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-     * 
-     */
     @Import(name="enabled", required=true)
     private Output<Boolean> enabled;
 
-    /**
-     * @return . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-     * 
-     */
     public Output<Boolean> enabled() {
         return this.enabled;
     }
 
     /**
-     * . Unique identifier of the security policy associated with the rate protection settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the rate protection settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -87,7 +79,7 @@ public final class AppSecRateProtectionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the rate protection settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -98,7 +90,7 @@ public final class AppSecRateProtectionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the rate protection settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -107,29 +99,17 @@ public final class AppSecRateProtectionArgs extends com.pulumi.resources.Resourc
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param enabled . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-         * 
-         * @return builder
-         * 
-         */
         public Builder enabled(Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
-        /**
-         * @param enabled . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-         * 
-         * @return builder
-         * 
-         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the rate protection settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -140,7 +120,7 @@ public final class AppSecRateProtectionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the rate protection settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

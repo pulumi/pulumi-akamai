@@ -14,10 +14,6 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("accessKey", required: true)]
         private Input<string>? _accessKey;
-
-        /// <summary>
-        /// **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
-        /// </summary>
         public Input<string>? AccessKey
         {
             get => _accessKey;
@@ -28,45 +24,26 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
-        /// <summary>
-        /// The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-        /// </summary>
         [Input("bucket", required: true)]
         public Input<string> Bucket { get; set; } = null!;
 
-        /// <summary>
-        /// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-        /// </summary>
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
         [Input("connectorId")]
         public Input<int>? ConnectorId { get; set; }
 
-        /// <summary>
-        /// The name of the connector.
-        /// </summary>
         [Input("connectorName", required: true)]
         public Input<string> ConnectorName { get; set; } = null!;
 
-        /// <summary>
-        /// The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-        /// </summary>
         [Input("path", required: true)]
         public Input<string> Path { get; set; } = null!;
 
-        /// <summary>
-        /// The Oracle Cloud Storage region where your bucket resides. See [Regions and availability domains in OCS](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-        /// </summary>
         [Input("region", required: true)]
         public Input<string> Region { get; set; } = null!;
 
         [Input("secretAccessKey", required: true)]
         private Input<string>? _secretAccessKey;
-
-        /// <summary>
-        /// **Secret**. The secret access key identifier that you use to authenticate requests to your Oracle Cloud account.
-        /// </summary>
         public Input<string>? SecretAccessKey
         {
             get => _secretAccessKey;

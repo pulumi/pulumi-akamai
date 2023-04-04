@@ -4,30 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use `akamai.getIamStates` to list US states or Canadian provinces. If `country=USA` you may enter a value of `TBD` if you don't know a user's state. Administrators use this data source to set a user's state.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const states = akamai.getIamStates({
- *     country: "canada",
- * });
- * export const supportedStates = states;
- * ```
- * ## Attributes reference
- *
- * These attributes are returned:
- *
- * * `states` — A list of states.
- *
- * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
- */
 export function getIamStates(args: GetIamStatesArgs, opts?: pulumi.InvokeOptions): Promise<GetIamStatesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -40,9 +16,6 @@ export function getIamStates(args: GetIamStatesArgs, opts?: pulumi.InvokeOptions
  * A collection of arguments for invoking getIamStates.
  */
 export interface GetIamStatesArgs {
-    /**
-     * — (required, string) Specifies USA or Canada.
-     */
     country: string;
 }
 
@@ -57,30 +30,6 @@ export interface GetIamStatesResult {
     readonly id: string;
     readonly states: string[];
 }
-/**
- * Use `akamai.getIamStates` to list US states or Canadian provinces. If `country=USA` you may enter a value of `TBD` if you don't know a user's state. Administrators use this data source to set a user's state.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const states = akamai.getIamStates({
- *     country: "canada",
- * });
- * export const supportedStates = states;
- * ```
- * ## Attributes reference
- *
- * These attributes are returned:
- *
- * * `states` — A list of states.
- *
- * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
- */
 export function getIamStatesOutput(args: GetIamStatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamStatesResult> {
     return pulumi.output(args).apply((a: any) => getIamStates(a, opts))
 }
@@ -89,8 +38,5 @@ export function getIamStatesOutput(args: GetIamStatesOutputArgs, opts?: pulumi.I
  * A collection of arguments for invoking getIamStates.
  */
 export interface GetIamStatesOutputArgs {
-    /**
-     * — (required, string) Specifies USA or Canada.
-     */
     country: pulumi.Input<string>;
 }

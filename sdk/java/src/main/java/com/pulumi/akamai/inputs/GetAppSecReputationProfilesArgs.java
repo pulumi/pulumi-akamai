@@ -15,32 +15,16 @@ public final class GetAppSecReputationProfilesArgs extends com.pulumi.resources.
 
     public static final GetAppSecReputationProfilesArgs Empty = new GetAppSecReputationProfilesArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the reputation profiles.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the reputation profiles.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-     * 
-     */
     @Import(name="reputationProfileId")
     private @Nullable Output<Integer> reputationProfileId;
 
-    /**
-     * @return . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-     * 
-     */
     public Optional<Output<Integer>> reputationProfileId() {
         return Optional.ofNullable(this.reputationProfileId);
     }
@@ -70,44 +54,20 @@ public final class GetAppSecReputationProfilesArgs extends com.pulumi.resources.
             $ = new GetAppSecReputationProfilesArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param reputationProfileId . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder reputationProfileId(@Nullable Output<Integer> reputationProfileId) {
             $.reputationProfileId = reputationProfileId;
             return this;
         }
 
-        /**
-         * @param reputationProfileId . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder reputationProfileId(Integer reputationProfileId) {
             return reputationProfileId(Output.of(reputationProfileId));
         }

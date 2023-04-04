@@ -19,182 +19,86 @@ public final class GtmDatacenterState extends com.pulumi.resources.ResourceArgs 
 
     public static final GtmDatacenterState Empty = new GtmDatacenterState();
 
-    /**
-     * The name of the city where the data center is located.
-     * 
-     */
     @Import(name="city")
     private @Nullable Output<String> city;
 
-    /**
-     * @return The name of the city where the data center is located.
-     * 
-     */
     public Optional<Output<String>> city() {
         return Optional.ofNullable(this.city);
     }
 
-    /**
-     * Identifies the data center&#39;s `datacenter_id` of which this data center is a clone.
-     * 
-     */
     @Import(name="cloneOf")
     private @Nullable Output<Integer> cloneOf;
 
-    /**
-     * @return Identifies the data center&#39;s `datacenter_id` of which this data center is a clone.
-     * 
-     */
     public Optional<Output<Integer>> cloneOf() {
         return Optional.ofNullable(this.cloneOf);
     }
 
-    /**
-     * A boolean that, if set to `true`, Akamai&#39;s liveness test agents use the Host header configured in the liveness test.
-     * 
-     */
     @Import(name="cloudServerHostHeaderOverride")
     private @Nullable Output<Boolean> cloudServerHostHeaderOverride;
 
-    /**
-     * @return A boolean that, if set to `true`, Akamai&#39;s liveness test agents use the Host header configured in the liveness test.
-     * 
-     */
     public Optional<Output<Boolean>> cloudServerHostHeaderOverride() {
         return Optional.ofNullable(this.cloudServerHostHeaderOverride);
     }
 
-    /**
-     * A boolean indicating whether to balance load between two or more servers in a cloud environment.
-     * 
-     */
     @Import(name="cloudServerTargeting")
     private @Nullable Output<Boolean> cloudServerTargeting;
 
-    /**
-     * @return A boolean indicating whether to balance load between two or more servers in a cloud environment.
-     * 
-     */
     public Optional<Output<Boolean>> cloudServerTargeting() {
         return Optional.ofNullable(this.cloudServerTargeting);
     }
 
-    /**
-     * A two-letter code that specifies the continent where the data center maps to.
-     * 
-     */
     @Import(name="continent")
     private @Nullable Output<String> continent;
 
-    /**
-     * @return A two-letter code that specifies the continent where the data center maps to.
-     * 
-     */
     public Optional<Output<String>> continent() {
         return Optional.ofNullable(this.continent);
     }
 
-    /**
-     * A two-letter ISO 3166 country code that specifies the country where the data center maps to.
-     * 
-     */
     @Import(name="country")
     private @Nullable Output<String> country;
 
-    /**
-     * @return A two-letter ISO 3166 country code that specifies the country where the data center maps to.
-     * 
-     */
     public Optional<Output<String>> country() {
         return Optional.ofNullable(this.country);
     }
 
-    /**
-     * A unique identifier for an existing data center in the domain.
-     * 
-     */
     @Import(name="datacenterId")
     private @Nullable Output<Integer> datacenterId;
 
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Optional<Output<Integer>> datacenterId() {
         return Optional.ofNullable(this.datacenterId);
     }
 
-    /**
-     * Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
-     * 
-     */
     @Import(name="defaultLoadObject")
     private @Nullable Output<GtmDatacenterDefaultLoadObjectArgs> defaultLoadObject;
 
-    /**
-     * @return Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
-     * 
-     */
     public Optional<Output<GtmDatacenterDefaultLoadObjectArgs>> defaultLoadObject() {
         return Optional.ofNullable(this.defaultLoadObject);
     }
 
-    /**
-     * The GTM domain name for the data center.
-     * 
-     */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
-    /**
-     * @return The GTM domain name for the data center.
-     * 
-     */
     public Optional<Output<String>> domain() {
         return Optional.ofNullable(this.domain);
     }
 
-    /**
-     * Specifies the geographical latitude of the data center&#39;s position. See also longitude within this object.
-     * 
-     */
     @Import(name="latitude")
     private @Nullable Output<Double> latitude;
 
-    /**
-     * @return Specifies the geographical latitude of the data center&#39;s position. See also longitude within this object.
-     * 
-     */
     public Optional<Output<Double>> latitude() {
         return Optional.ofNullable(this.latitude);
     }
 
-    /**
-     * Specifies the geographic longitude of the data center&#39;s position. See also latitude within this object.
-     * 
-     */
     @Import(name="longitude")
     private @Nullable Output<Double> longitude;
 
-    /**
-     * @return Specifies the geographic longitude of the data center&#39;s position. See also latitude within this object.
-     * 
-     */
     public Optional<Output<Double>> longitude() {
         return Optional.ofNullable(this.longitude);
     }
 
-    /**
-     * A descriptive label for the data center.
-     * 
-     */
     @Import(name="nickname")
     private @Nullable Output<String> nickname;
 
-    /**
-     * @return A descriptive label for the data center.
-     * 
-     */
     public Optional<Output<String>> nickname() {
         return Optional.ofNullable(this.nickname);
     }
@@ -241,47 +145,23 @@ public final class GtmDatacenterState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.servermonitorPool);
     }
 
-    /**
-     * Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
-     * 
-     */
     @Import(name="stateOrProvince")
     private @Nullable Output<String> stateOrProvince;
 
-    /**
-     * @return Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
-     * 
-     */
     public Optional<Output<String>> stateOrProvince() {
         return Optional.ofNullable(this.stateOrProvince);
     }
 
-    /**
-     * A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
-     * 
-     */
     @Import(name="virtual")
     private @Nullable Output<Boolean> virtual;
 
-    /**
-     * @return A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
-     * 
-     */
     public Optional<Output<Boolean>> virtual() {
         return Optional.ofNullable(this.virtual);
     }
 
-    /**
-     * A boolean, that if set to `true`, waits for transaction to complete.
-     * 
-     */
     @Import(name="waitOnComplete")
     private @Nullable Output<Boolean> waitOnComplete;
 
-    /**
-     * @return A boolean, that if set to `true`, waits for transaction to complete.
-     * 
-     */
     public Optional<Output<Boolean>> waitOnComplete() {
         return Optional.ofNullable(this.waitOnComplete);
     }
@@ -330,254 +210,110 @@ public final class GtmDatacenterState extends com.pulumi.resources.ResourceArgs 
             $ = new GtmDatacenterState(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param city The name of the city where the data center is located.
-         * 
-         * @return builder
-         * 
-         */
         public Builder city(@Nullable Output<String> city) {
             $.city = city;
             return this;
         }
 
-        /**
-         * @param city The name of the city where the data center is located.
-         * 
-         * @return builder
-         * 
-         */
         public Builder city(String city) {
             return city(Output.of(city));
         }
 
-        /**
-         * @param cloneOf Identifies the data center&#39;s `datacenter_id` of which this data center is a clone.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cloneOf(@Nullable Output<Integer> cloneOf) {
             $.cloneOf = cloneOf;
             return this;
         }
 
-        /**
-         * @param cloneOf Identifies the data center&#39;s `datacenter_id` of which this data center is a clone.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cloneOf(Integer cloneOf) {
             return cloneOf(Output.of(cloneOf));
         }
 
-        /**
-         * @param cloudServerHostHeaderOverride A boolean that, if set to `true`, Akamai&#39;s liveness test agents use the Host header configured in the liveness test.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cloudServerHostHeaderOverride(@Nullable Output<Boolean> cloudServerHostHeaderOverride) {
             $.cloudServerHostHeaderOverride = cloudServerHostHeaderOverride;
             return this;
         }
 
-        /**
-         * @param cloudServerHostHeaderOverride A boolean that, if set to `true`, Akamai&#39;s liveness test agents use the Host header configured in the liveness test.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cloudServerHostHeaderOverride(Boolean cloudServerHostHeaderOverride) {
             return cloudServerHostHeaderOverride(Output.of(cloudServerHostHeaderOverride));
         }
 
-        /**
-         * @param cloudServerTargeting A boolean indicating whether to balance load between two or more servers in a cloud environment.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cloudServerTargeting(@Nullable Output<Boolean> cloudServerTargeting) {
             $.cloudServerTargeting = cloudServerTargeting;
             return this;
         }
 
-        /**
-         * @param cloudServerTargeting A boolean indicating whether to balance load between two or more servers in a cloud environment.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cloudServerTargeting(Boolean cloudServerTargeting) {
             return cloudServerTargeting(Output.of(cloudServerTargeting));
         }
 
-        /**
-         * @param continent A two-letter code that specifies the continent where the data center maps to.
-         * 
-         * @return builder
-         * 
-         */
         public Builder continent(@Nullable Output<String> continent) {
             $.continent = continent;
             return this;
         }
 
-        /**
-         * @param continent A two-letter code that specifies the continent where the data center maps to.
-         * 
-         * @return builder
-         * 
-         */
         public Builder continent(String continent) {
             return continent(Output.of(continent));
         }
 
-        /**
-         * @param country A two-letter ISO 3166 country code that specifies the country where the data center maps to.
-         * 
-         * @return builder
-         * 
-         */
         public Builder country(@Nullable Output<String> country) {
             $.country = country;
             return this;
         }
 
-        /**
-         * @param country A two-letter ISO 3166 country code that specifies the country where the data center maps to.
-         * 
-         * @return builder
-         * 
-         */
         public Builder country(String country) {
             return country(Output.of(country));
         }
 
-        /**
-         * @param datacenterId A unique identifier for an existing data center in the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenterId(@Nullable Output<Integer> datacenterId) {
             $.datacenterId = datacenterId;
             return this;
         }
 
-        /**
-         * @param datacenterId A unique identifier for an existing data center in the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenterId(Integer datacenterId) {
             return datacenterId(Output.of(datacenterId));
         }
 
-        /**
-         * @param defaultLoadObject Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultLoadObject(@Nullable Output<GtmDatacenterDefaultLoadObjectArgs> defaultLoadObject) {
             $.defaultLoadObject = defaultLoadObject;
             return this;
         }
 
-        /**
-         * @param defaultLoadObject Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultLoadObject(GtmDatacenterDefaultLoadObjectArgs defaultLoadObject) {
             return defaultLoadObject(Output.of(defaultLoadObject));
         }
 
-        /**
-         * @param domain The GTM domain name for the data center.
-         * 
-         * @return builder
-         * 
-         */
         public Builder domain(@Nullable Output<String> domain) {
             $.domain = domain;
             return this;
         }
 
-        /**
-         * @param domain The GTM domain name for the data center.
-         * 
-         * @return builder
-         * 
-         */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
         }
 
-        /**
-         * @param latitude Specifies the geographical latitude of the data center&#39;s position. See also longitude within this object.
-         * 
-         * @return builder
-         * 
-         */
         public Builder latitude(@Nullable Output<Double> latitude) {
             $.latitude = latitude;
             return this;
         }
 
-        /**
-         * @param latitude Specifies the geographical latitude of the data center&#39;s position. See also longitude within this object.
-         * 
-         * @return builder
-         * 
-         */
         public Builder latitude(Double latitude) {
             return latitude(Output.of(latitude));
         }
 
-        /**
-         * @param longitude Specifies the geographic longitude of the data center&#39;s position. See also latitude within this object.
-         * 
-         * @return builder
-         * 
-         */
         public Builder longitude(@Nullable Output<Double> longitude) {
             $.longitude = longitude;
             return this;
         }
 
-        /**
-         * @param longitude Specifies the geographic longitude of the data center&#39;s position. See also latitude within this object.
-         * 
-         * @return builder
-         * 
-         */
         public Builder longitude(Double longitude) {
             return longitude(Output.of(longitude));
         }
 
-        /**
-         * @param nickname A descriptive label for the data center.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nickname(@Nullable Output<String> nickname) {
             $.nickname = nickname;
             return this;
         }
 
-        /**
-         * @param nickname A descriptive label for the data center.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nickname(String nickname) {
             return nickname(Output.of(nickname));
         }
@@ -636,65 +372,29 @@ public final class GtmDatacenterState extends com.pulumi.resources.ResourceArgs 
             return servermonitorPool(Output.of(servermonitorPool));
         }
 
-        /**
-         * @param stateOrProvince Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
-         * 
-         * @return builder
-         * 
-         */
         public Builder stateOrProvince(@Nullable Output<String> stateOrProvince) {
             $.stateOrProvince = stateOrProvince;
             return this;
         }
 
-        /**
-         * @param stateOrProvince Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
-         * 
-         * @return builder
-         * 
-         */
         public Builder stateOrProvince(String stateOrProvince) {
             return stateOrProvince(Output.of(stateOrProvince));
         }
 
-        /**
-         * @param virtual A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
-         * 
-         * @return builder
-         * 
-         */
         public Builder virtual(@Nullable Output<Boolean> virtual) {
             $.virtual = virtual;
             return this;
         }
 
-        /**
-         * @param virtual A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
-         * 
-         * @return builder
-         * 
-         */
         public Builder virtual(Boolean virtual) {
             return virtual(Output.of(virtual));
         }
 
-        /**
-         * @param waitOnComplete A boolean, that if set to `true`, waits for transaction to complete.
-         * 
-         * @return builder
-         * 
-         */
         public Builder waitOnComplete(@Nullable Output<Boolean> waitOnComplete) {
             $.waitOnComplete = waitOnComplete;
             return this;
         }
 
-        /**
-         * @param waitOnComplete A boolean, that if set to `true`, waits for transaction to complete.
-         * 
-         * @return builder
-         * 
-         */
         public Builder waitOnComplete(Boolean waitOnComplete) {
             return waitOnComplete(Output.of(waitOnComplete));
         }

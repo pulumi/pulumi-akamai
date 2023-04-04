@@ -13,17 +13,9 @@ public final class GetAuthoritiesSetArgs extends com.pulumi.resources.InvokeArgs
 
     public static final GetAuthoritiesSetArgs Empty = new GetAuthoritiesSetArgs();
 
-    /**
-     * The contract ID.
-     * 
-     */
     @Import(name="contract", required=true)
     private Output<String> contract;
 
-    /**
-     * @return The contract ID.
-     * 
-     */
     public Output<String> contract() {
         return this.contract;
     }
@@ -52,23 +44,11 @@ public final class GetAuthoritiesSetArgs extends com.pulumi.resources.InvokeArgs
             $ = new GetAuthoritiesSetArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contract The contract ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contract(Output<String> contract) {
             $.contract = contract;
             return this;
         }
 
-        /**
-         * @param contract The contract ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contract(String contract) {
             return contract(Output.of(contract));
         }

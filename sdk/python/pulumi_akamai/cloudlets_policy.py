@@ -22,12 +22,12 @@ class CloudletsPolicyArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CloudletsPolicy resource.
-        :param pulumi.Input[str] cloudlet_code: The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
-        :param pulumi.Input[str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
-        :param pulumi.Input[str] description: The description of this specific policy.
-        :param pulumi.Input[str] match_rule_format: The version of the Cloudlet-specific `match_rules`.
+        :param pulumi.Input[str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+        :param pulumi.Input[str] group_id: Defines the group association for the policy. You must have edit privileges for the group
+        :param pulumi.Input[str] description: The description of this specific policy
+        :param pulumi.Input[str] match_rule_format: The version of the Cloudlet specific matchRules
         :param pulumi.Input[str] match_rules: A JSON structure that defines the rules for this policy
-        :param pulumi.Input[str] name: The unique name of the policy.
+        :param pulumi.Input[str] name: The name of the policy. The name must be unique
         """
         pulumi.set(__self__, "cloudlet_code", cloudlet_code)
         pulumi.set(__self__, "group_id", group_id)
@@ -44,7 +44,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter(name="cloudletCode")
     def cloudlet_code(self) -> pulumi.Input[str]:
         """
-        The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+        Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
         """
         return pulumi.get(self, "cloudlet_code")
 
@@ -56,7 +56,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[str]:
         """
-        Defines the group association for the policy. You must have edit privileges for the group.
+        Defines the group association for the policy. You must have edit privileges for the group
         """
         return pulumi.get(self, "group_id")
 
@@ -68,7 +68,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        The description of this specific policy.
+        The description of this specific policy
         """
         return pulumi.get(self, "description")
 
@@ -80,7 +80,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter(name="matchRuleFormat")
     def match_rule_format(self) -> Optional[pulumi.Input[str]]:
         """
-        The version of the Cloudlet-specific `match_rules`.
+        The version of the Cloudlet specific matchRules
         """
         return pulumi.get(self, "match_rule_format")
 
@@ -104,7 +104,7 @@ class CloudletsPolicyArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The unique name of the policy.
+        The name of the policy. The name must be unique
         """
         return pulumi.get(self, "name")
 
@@ -127,15 +127,15 @@ class _CloudletsPolicyState:
                  warnings: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CloudletsPolicy resources.
-        :param pulumi.Input[str] cloudlet_code: The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
-        :param pulumi.Input[int] cloudlet_id: A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
-        :param pulumi.Input[str] description: The description of this specific policy.
-        :param pulumi.Input[str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
-        :param pulumi.Input[str] match_rule_format: The version of the Cloudlet-specific `match_rules`.
+        :param pulumi.Input[str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+        :param pulumi.Input[int] cloudlet_id: An integer that corresponds to a Cloudlets policy type (0 or 9)
+        :param pulumi.Input[str] description: The description of this specific policy
+        :param pulumi.Input[str] group_id: Defines the group association for the policy. You must have edit privileges for the group
+        :param pulumi.Input[str] match_rule_format: The version of the Cloudlet specific matchRules
         :param pulumi.Input[str] match_rules: A JSON structure that defines the rules for this policy
-        :param pulumi.Input[str] name: The unique name of the policy.
-        :param pulumi.Input[int] version: The version number of the policy.
-        :param pulumi.Input[str] warnings: A JSON-encoded list of warnings.
+        :param pulumi.Input[str] name: The name of the policy. The name must be unique
+        :param pulumi.Input[int] version: The version number of the policy
+        :param pulumi.Input[str] warnings: A JSON encoded list of warnings
         """
         if cloudlet_code is not None:
             pulumi.set(__self__, "cloudlet_code", cloudlet_code)
@@ -160,7 +160,7 @@ class _CloudletsPolicyState:
     @pulumi.getter(name="cloudletCode")
     def cloudlet_code(self) -> Optional[pulumi.Input[str]]:
         """
-        The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+        Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
         """
         return pulumi.get(self, "cloudlet_code")
 
@@ -172,7 +172,7 @@ class _CloudletsPolicyState:
     @pulumi.getter(name="cloudletId")
     def cloudlet_id(self) -> Optional[pulumi.Input[int]]:
         """
-        A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+        An integer that corresponds to a Cloudlets policy type (0 or 9)
         """
         return pulumi.get(self, "cloudlet_id")
 
@@ -184,7 +184,7 @@ class _CloudletsPolicyState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        The description of this specific policy.
+        The description of this specific policy
         """
         return pulumi.get(self, "description")
 
@@ -196,7 +196,7 @@ class _CloudletsPolicyState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Defines the group association for the policy. You must have edit privileges for the group.
+        Defines the group association for the policy. You must have edit privileges for the group
         """
         return pulumi.get(self, "group_id")
 
@@ -208,7 +208,7 @@ class _CloudletsPolicyState:
     @pulumi.getter(name="matchRuleFormat")
     def match_rule_format(self) -> Optional[pulumi.Input[str]]:
         """
-        The version of the Cloudlet-specific `match_rules`.
+        The version of the Cloudlet specific matchRules
         """
         return pulumi.get(self, "match_rule_format")
 
@@ -232,7 +232,7 @@ class _CloudletsPolicyState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The unique name of the policy.
+        The name of the policy. The name must be unique
         """
         return pulumi.get(self, "name")
 
@@ -244,7 +244,7 @@ class _CloudletsPolicyState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
         """
-        The version number of the policy.
+        The version number of the policy
         """
         return pulumi.get(self, "version")
 
@@ -256,7 +256,7 @@ class _CloudletsPolicyState:
     @pulumi.getter
     def warnings(self) -> Optional[pulumi.Input[str]]:
         """
-        A JSON-encoded list of warnings.
+        A JSON encoded list of warnings
         """
         return pulumi.get(self, "warnings")
 
@@ -278,73 +278,15 @@ class CloudletsPolicy(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use the `CloudletsPolicy` resource to create and version a policy. For each Cloudlet instance on your contract, there can be any number of policies. A single policy is associated with a single property configuration. Within a policy version you define the rules that determine when the Cloudlet executes. You may want to create a new version of a policy to support a different business requirement, or to test new functionality.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example = akamai.CloudletsPolicy("example",
-            cloudlet_code="ER",
-            description="policy description",
-            group_id="grp_123",
-            match_rules=\"\"\"  [
-          {
-            "name": "rule1",
-            "type": "erMatchRule",
-            "useRelativeUrl": "none",
-            "statusCode": 301,
-            "redirectURL": "https://www.example.com",
-            "matchURL": "example.com",
-            "useIncomingQueryString": false,
-            "useIncomingSchemeAndHost": false
-          },
-          {
-            "name": "rule2",
-            "type": "erMatchRule",
-            "matches": [
-              {
-                "matchType": "path",
-                "matchValue": "/example/website.html",
-                "matchOperator": "equals",
-                "caseSensitive": false,
-                "negate": false
-              }
-            ],
-            "useRelativeUrl": "copy_scheme_hostname",
-            "statusCode": 301,
-            "redirectURL": "/website.html",
-            "useIncomingQueryString": false,
-            "useIncomingSchemeAndHost": true
-          }
-        ]
-        \"\"\")
-        ```
-
-        ## Import
-
-        Basic usagehcl resource "akamai_cloudlets_policy" "example" {
-
-        # (resource arguments)
-
-         } You can import your Akamai Cloudlets policy using a policy name. For example
-
-        ```sh
-         $ pulumi import akamai:index/cloudletsPolicy:CloudletsPolicy example policy1
-        ```
-
+        Create a CloudletsPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cloudlet_code: The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
-        :param pulumi.Input[str] description: The description of this specific policy.
-        :param pulumi.Input[str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
-        :param pulumi.Input[str] match_rule_format: The version of the Cloudlet-specific `match_rules`.
+        :param pulumi.Input[str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+        :param pulumi.Input[str] description: The description of this specific policy
+        :param pulumi.Input[str] group_id: Defines the group association for the policy. You must have edit privileges for the group
+        :param pulumi.Input[str] match_rule_format: The version of the Cloudlet specific matchRules
         :param pulumi.Input[str] match_rules: A JSON structure that defines the rules for this policy
-        :param pulumi.Input[str] name: The unique name of the policy.
+        :param pulumi.Input[str] name: The name of the policy. The name must be unique
         """
         ...
     @overload
@@ -353,65 +295,7 @@ class CloudletsPolicy(pulumi.CustomResource):
                  args: CloudletsPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `CloudletsPolicy` resource to create and version a policy. For each Cloudlet instance on your contract, there can be any number of policies. A single policy is associated with a single property configuration. Within a policy version you define the rules that determine when the Cloudlet executes. You may want to create a new version of a policy to support a different business requirement, or to test new functionality.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example = akamai.CloudletsPolicy("example",
-            cloudlet_code="ER",
-            description="policy description",
-            group_id="grp_123",
-            match_rules=\"\"\"  [
-          {
-            "name": "rule1",
-            "type": "erMatchRule",
-            "useRelativeUrl": "none",
-            "statusCode": 301,
-            "redirectURL": "https://www.example.com",
-            "matchURL": "example.com",
-            "useIncomingQueryString": false,
-            "useIncomingSchemeAndHost": false
-          },
-          {
-            "name": "rule2",
-            "type": "erMatchRule",
-            "matches": [
-              {
-                "matchType": "path",
-                "matchValue": "/example/website.html",
-                "matchOperator": "equals",
-                "caseSensitive": false,
-                "negate": false
-              }
-            ],
-            "useRelativeUrl": "copy_scheme_hostname",
-            "statusCode": 301,
-            "redirectURL": "/website.html",
-            "useIncomingQueryString": false,
-            "useIncomingSchemeAndHost": true
-          }
-        ]
-        \"\"\")
-        ```
-
-        ## Import
-
-        Basic usagehcl resource "akamai_cloudlets_policy" "example" {
-
-        # (resource arguments)
-
-         } You can import your Akamai Cloudlets policy using a policy name. For example
-
-        ```sh
-         $ pulumi import akamai:index/cloudletsPolicy:CloudletsPolicy example policy1
-        ```
-
+        Create a CloudletsPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CloudletsPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -481,15 +365,15 @@ class CloudletsPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] cloudlet_code: The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
-        :param pulumi.Input[int] cloudlet_id: A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
-        :param pulumi.Input[str] description: The description of this specific policy.
-        :param pulumi.Input[str] group_id: Defines the group association for the policy. You must have edit privileges for the group.
-        :param pulumi.Input[str] match_rule_format: The version of the Cloudlet-specific `match_rules`.
+        :param pulumi.Input[str] cloudlet_code: Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
+        :param pulumi.Input[int] cloudlet_id: An integer that corresponds to a Cloudlets policy type (0 or 9)
+        :param pulumi.Input[str] description: The description of this specific policy
+        :param pulumi.Input[str] group_id: Defines the group association for the policy. You must have edit privileges for the group
+        :param pulumi.Input[str] match_rule_format: The version of the Cloudlet specific matchRules
         :param pulumi.Input[str] match_rules: A JSON structure that defines the rules for this policy
-        :param pulumi.Input[str] name: The unique name of the policy.
-        :param pulumi.Input[int] version: The version number of the policy.
-        :param pulumi.Input[str] warnings: A JSON-encoded list of warnings.
+        :param pulumi.Input[str] name: The name of the policy. The name must be unique
+        :param pulumi.Input[int] version: The version number of the policy
+        :param pulumi.Input[str] warnings: A JSON encoded list of warnings
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -510,7 +394,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter(name="cloudletCode")
     def cloudlet_code(self) -> pulumi.Output[str]:
         """
-        The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+        Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
         """
         return pulumi.get(self, "cloudlet_code")
 
@@ -518,7 +402,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter(name="cloudletId")
     def cloudlet_id(self) -> pulumi.Output[int]:
         """
-        A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+        An integer that corresponds to a Cloudlets policy type (0 or 9)
         """
         return pulumi.get(self, "cloudlet_id")
 
@@ -526,7 +410,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
         """
-        The description of this specific policy.
+        The description of this specific policy
         """
         return pulumi.get(self, "description")
 
@@ -534,7 +418,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[str]:
         """
-        Defines the group association for the policy. You must have edit privileges for the group.
+        Defines the group association for the policy. You must have edit privileges for the group
         """
         return pulumi.get(self, "group_id")
 
@@ -542,7 +426,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter(name="matchRuleFormat")
     def match_rule_format(self) -> pulumi.Output[Optional[str]]:
         """
-        The version of the Cloudlet-specific `match_rules`.
+        The version of the Cloudlet specific matchRules
         """
         return pulumi.get(self, "match_rule_format")
 
@@ -558,7 +442,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The unique name of the policy.
+        The name of the policy. The name must be unique
         """
         return pulumi.get(self, "name")
 
@@ -566,7 +450,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[int]:
         """
-        The version number of the policy.
+        The version number of the policy
         """
         return pulumi.get(self, "version")
 
@@ -574,7 +458,7 @@ class CloudletsPolicy(pulumi.CustomResource):
     @pulumi.getter
     def warnings(self) -> pulumi.Output[str]:
         """
-        A JSON-encoded list of warnings.
+        A JSON encoded list of warnings
         """
         return pulumi.get(self, "warnings")
 

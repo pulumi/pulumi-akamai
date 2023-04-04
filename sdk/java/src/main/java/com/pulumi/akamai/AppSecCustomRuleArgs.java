@@ -15,14 +15,14 @@ public final class AppSecCustomRuleArgs extends com.pulumi.resources.ResourceArg
     public static final AppSecCustomRuleArgs Empty = new AppSecCustomRuleArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the custom rule being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the custom rule being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -30,14 +30,14 @@ public final class AppSecCustomRuleArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
+     * JSON-formatted definition of the custom rule
      * 
      */
     @Import(name="customRule", required=true)
     private Output<String> customRule;
 
     /**
-     * @return . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
+     * @return JSON-formatted definition of the custom rule
      * 
      */
     public Output<String> customRule() {
@@ -70,7 +70,7 @@ public final class AppSecCustomRuleArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the custom rule being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class AppSecCustomRuleArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the custom rule being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class AppSecCustomRuleArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param customRule . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
+         * @param customRule JSON-formatted definition of the custom rule
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class AppSecCustomRuleArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param customRule . Path to a JSON file containing the custom rule definition. To view a sample JSON file, see the [Create a custom rule](https://techdocs.akamai.com/application-security/reference/post-config-custom-rules) section of the Application Security API documentation.
+         * @param customRule JSON-formatted definition of the custom rule
          * 
          * @return builder
          * 

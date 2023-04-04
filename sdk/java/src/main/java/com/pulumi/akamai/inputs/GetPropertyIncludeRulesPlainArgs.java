@@ -13,62 +13,30 @@ public final class GetPropertyIncludeRulesPlainArgs extends com.pulumi.resources
 
     public static final GetPropertyIncludeRulesPlainArgs Empty = new GetPropertyIncludeRulesPlainArgs();
 
-    /**
-     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId", required=true)
     private String contractId;
 
-    /**
-     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-     * 
-     */
     public String contractId() {
         return this.contractId;
     }
 
-    /**
-     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-     * 
-     */
     @Import(name="groupId", required=true)
     private String groupId;
 
-    /**
-     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-     * 
-     */
     public String groupId() {
         return this.groupId;
     }
 
-    /**
-     * (Required) An include&#39;s unique ID with the optional `inc_` prefix.
-     * 
-     */
     @Import(name="includeId", required=true)
     private String includeId;
 
-    /**
-     * @return (Required) An include&#39;s unique ID with the optional `inc_` prefix.
-     * 
-     */
     public String includeId() {
         return this.includeId;
     }
 
-    /**
-     * (Required) The include version you want to view the rules for.
-     * 
-     */
     @Import(name="version", required=true)
     private Integer version;
 
-    /**
-     * @return (Required) The include version you want to view the rules for.
-     * 
-     */
     public Integer version() {
         return this.version;
     }
@@ -100,45 +68,21 @@ public final class GetPropertyIncludeRulesPlainArgs extends com.pulumi.resources
             $ = new GetPropertyIncludeRulesPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(String groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        /**
-         * @param includeId (Required) An include&#39;s unique ID with the optional `inc_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder includeId(String includeId) {
             $.includeId = includeId;
             return this;
         }
 
-        /**
-         * @param version (Required) The include version you want to view the rules for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Integer version) {
             $.version = version;
             return this;

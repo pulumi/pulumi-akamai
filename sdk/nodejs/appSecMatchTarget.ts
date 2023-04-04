@@ -4,36 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security configuration
- *
- * Creates a match target associated with a security configuration. Match targets determine which security policy should apply to an API, hostname or path.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets](https://techdocs.akamai.com/application-security/reference/post-match-targets)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- * import * as fs from "fs";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const matchTarget = new akamai.AppSecMatchTarget("matchTarget", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     matchTarget: fs.readFileSync(`${path.module}/match_targets.json`),
- * });
- * ```
- * ## Output Options
- *
- * In addition to the arguments above, the following attribute is exported:
- *
- * - `matchTargetId`. ID of the match target.
- */
 export class AppSecMatchTarget extends pulumi.CustomResource {
     /**
      * Get an existing AppSecMatchTarget resource's state with the given name, ID, and optional extra
@@ -63,11 +33,11 @@ export class AppSecMatchTarget extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the match target being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Path to a JSON file containing one or more match target definitions.
+     * JSON-formatted definition of the match target
      */
     public readonly matchTarget!: pulumi.Output<string>;
     /**
@@ -113,11 +83,11 @@ export class AppSecMatchTarget extends pulumi.CustomResource {
  */
 export interface AppSecMatchTargetState {
     /**
-     * . Unique identifier of the security configuration associated with the match target being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing one or more match target definitions.
+     * JSON-formatted definition of the match target
      */
     matchTarget?: pulumi.Input<string>;
     /**
@@ -131,11 +101,11 @@ export interface AppSecMatchTargetState {
  */
 export interface AppSecMatchTargetArgs {
     /**
-     * . Unique identifier of the security configuration associated with the match target being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing one or more match target definitions.
+     * JSON-formatted definition of the match target
      */
     matchTarget: pulumi.Input<string>;
 }

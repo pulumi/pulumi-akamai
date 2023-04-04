@@ -16,8 +16,6 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetGroupArgs Empty = new GetGroupArgs();
 
     /**
-     * Replaced by `contract_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;contract&#34; has been deprecated.
      * 
@@ -27,8 +25,6 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
     private @Nullable Output<String> contract;
 
     /**
-     * @return Replaced by `contract_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;contract&#34; has been deprecated.
      * 
@@ -38,39 +34,21 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.contract);
     }
 
-    /**
-     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
-    /**
-     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     public Optional<Output<String>> contractId() {
         return Optional.ofNullable(this.contractId);
     }
 
-    /**
-     * The group name.
-     * 
-     */
     @Import(name="groupName")
     private @Nullable Output<String> groupName;
 
-    /**
-     * @return The group name.
-     * 
-     */
     public Optional<Output<String>> groupName() {
         return Optional.ofNullable(this.groupName);
     }
 
     /**
-     * Replaced by `group_name`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;name&#34; has been deprecated.
      * 
@@ -80,8 +58,6 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
     private @Nullable Output<String> name;
 
     /**
-     * @return Replaced by `group_name`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;name&#34; has been deprecated.
      * 
@@ -119,8 +95,6 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param contract Replaced by `contract_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -134,8 +108,6 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param contract Replaced by `contract_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -147,51 +119,25 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
             return contract(Output.of(contract));
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(@Nullable Output<String> contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             return contractId(Output.of(contractId));
         }
 
-        /**
-         * @param groupName The group name.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupName(@Nullable Output<String> groupName) {
             $.groupName = groupName;
             return this;
         }
 
-        /**
-         * @param groupName The group name.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupName(String groupName) {
             return groupName(Output.of(groupName));
         }
 
         /**
-         * @param name Replaced by `group_name`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -205,8 +151,6 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param name Replaced by `group_name`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated

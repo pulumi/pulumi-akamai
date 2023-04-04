@@ -20,10 +20,10 @@ class CloudletsPolicyActivationArgs:
                  version: pulumi.Input[int]):
         """
         The set of arguments for constructing a CloudletsPolicyActivation resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
-        :param pulumi.Input[str] network: The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
-        :param pulumi.Input[int] policy_id: An identifier for the Cloudlet policy you want to activate.
-        :param pulumi.Input[int] version: The Cloudlet policy version you want to activate.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: Set of property IDs to link to this Cloudlets policy
+        :param pulumi.Input[str] network: The network you want to activate the policy version on (options are Staging and Production)
+        :param pulumi.Input[int] policy_id: ID of the Cloudlets policy you want to activate
+        :param pulumi.Input[int] version: Cloudlets policy version you want to activate
         """
         pulumi.set(__self__, "associated_properties", associated_properties)
         pulumi.set(__self__, "network", network)
@@ -34,7 +34,7 @@ class CloudletsPolicyActivationArgs:
     @pulumi.getter(name="associatedProperties")
     def associated_properties(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+        Set of property IDs to link to this Cloudlets policy
         """
         return pulumi.get(self, "associated_properties")
 
@@ -46,7 +46,7 @@ class CloudletsPolicyActivationArgs:
     @pulumi.getter
     def network(self) -> pulumi.Input[str]:
         """
-        The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+        The network you want to activate the policy version on (options are Staging and Production)
         """
         return pulumi.get(self, "network")
 
@@ -58,7 +58,7 @@ class CloudletsPolicyActivationArgs:
     @pulumi.getter(name="policyId")
     def policy_id(self) -> pulumi.Input[int]:
         """
-        An identifier for the Cloudlet policy you want to activate.
+        ID of the Cloudlets policy you want to activate
         """
         return pulumi.get(self, "policy_id")
 
@@ -70,7 +70,7 @@ class CloudletsPolicyActivationArgs:
     @pulumi.getter
     def version(self) -> pulumi.Input[int]:
         """
-        The Cloudlet policy version you want to activate.
+        Cloudlets policy version you want to activate
         """
         return pulumi.get(self, "version")
 
@@ -89,11 +89,11 @@ class _CloudletsPolicyActivationState:
                  version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering CloudletsPolicyActivation resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
-        :param pulumi.Input[str] network: The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
-        :param pulumi.Input[int] policy_id: An identifier for the Cloudlet policy you want to activate.
-        :param pulumi.Input[str] status: The activation status for this Cloudlet policy.
-        :param pulumi.Input[int] version: The Cloudlet policy version you want to activate.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: Set of property IDs to link to this Cloudlets policy
+        :param pulumi.Input[str] network: The network you want to activate the policy version on (options are Staging and Production)
+        :param pulumi.Input[int] policy_id: ID of the Cloudlets policy you want to activate
+        :param pulumi.Input[str] status: Activation status for this Cloudlets policy
+        :param pulumi.Input[int] version: Cloudlets policy version you want to activate
         """
         if associated_properties is not None:
             pulumi.set(__self__, "associated_properties", associated_properties)
@@ -110,7 +110,7 @@ class _CloudletsPolicyActivationState:
     @pulumi.getter(name="associatedProperties")
     def associated_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+        Set of property IDs to link to this Cloudlets policy
         """
         return pulumi.get(self, "associated_properties")
 
@@ -122,7 +122,7 @@ class _CloudletsPolicyActivationState:
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
         """
-        The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+        The network you want to activate the policy version on (options are Staging and Production)
         """
         return pulumi.get(self, "network")
 
@@ -134,7 +134,7 @@ class _CloudletsPolicyActivationState:
     @pulumi.getter(name="policyId")
     def policy_id(self) -> Optional[pulumi.Input[int]]:
         """
-        An identifier for the Cloudlet policy you want to activate.
+        ID of the Cloudlets policy you want to activate
         """
         return pulumi.get(self, "policy_id")
 
@@ -146,7 +146,7 @@ class _CloudletsPolicyActivationState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        The activation status for this Cloudlet policy.
+        Activation status for this Cloudlets policy
         """
         return pulumi.get(self, "status")
 
@@ -158,7 +158,7 @@ class _CloudletsPolicyActivationState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
         """
-        The Cloudlet policy version you want to activate.
+        Cloudlets policy version you want to activate
         """
         return pulumi.get(self, "version")
 
@@ -178,59 +178,13 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        Use the `CloudletsPolicyActivation` resource to activate a specific version of a Cloudlet policy. An activation deploys the version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
-
-        Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example = akamai.CloudletsPolicyActivation("example",
-            associated_properties=[
-                "Property_1",
-                "Property_2",
-                "Property_3",
-            ],
-            network="staging",
-            policy_id=1234,
-            version=1)
-        ```
-        If you're handling two `CloudletsPolicyActivation` resources in the same configuration file with the same `policy_id`, but different `network` arguments (for example, `production` and `staging`), you need to add `depends_on` to the production resource. See the example:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        stag = akamai.CloudletsPolicyActivation("stag",
-            policy_id=1234567,
-            network="staging",
-            version=1,
-            associated_properties=[
-                "Property_1",
-                "Property_2",
-            ])
-        prod = akamai.CloudletsPolicyActivation("prod",
-            policy_id=1234567,
-            network="production",
-            version=1,
-            associated_properties=[
-                "Property_1",
-                "Property_2",
-            ],
-            opts=pulumi.ResourceOptions(depends_on=[stag]))
-        ```
-
+        Create a CloudletsPolicyActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
-        :param pulumi.Input[str] network: The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
-        :param pulumi.Input[int] policy_id: An identifier for the Cloudlet policy you want to activate.
-        :param pulumi.Input[int] version: The Cloudlet policy version you want to activate.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: Set of property IDs to link to this Cloudlets policy
+        :param pulumi.Input[str] network: The network you want to activate the policy version on (options are Staging and Production)
+        :param pulumi.Input[int] policy_id: ID of the Cloudlets policy you want to activate
+        :param pulumi.Input[int] version: Cloudlets policy version you want to activate
         """
         ...
     @overload
@@ -239,53 +193,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
                  args: CloudletsPolicyActivationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `CloudletsPolicyActivation` resource to activate a specific version of a Cloudlet policy. An activation deploys the version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
-
-        Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example = akamai.CloudletsPolicyActivation("example",
-            associated_properties=[
-                "Property_1",
-                "Property_2",
-                "Property_3",
-            ],
-            network="staging",
-            policy_id=1234,
-            version=1)
-        ```
-        If you're handling two `CloudletsPolicyActivation` resources in the same configuration file with the same `policy_id`, but different `network` arguments (for example, `production` and `staging`), you need to add `depends_on` to the production resource. See the example:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        stag = akamai.CloudletsPolicyActivation("stag",
-            policy_id=1234567,
-            network="staging",
-            version=1,
-            associated_properties=[
-                "Property_1",
-                "Property_2",
-            ])
-        prod = akamai.CloudletsPolicyActivation("prod",
-            policy_id=1234567,
-            network="production",
-            version=1,
-            associated_properties=[
-                "Property_1",
-                "Property_2",
-            ],
-            opts=pulumi.ResourceOptions(depends_on=[stag]))
-        ```
-
+        Create a CloudletsPolicyActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CloudletsPolicyActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -349,11 +257,11 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
-        :param pulumi.Input[str] network: The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
-        :param pulumi.Input[int] policy_id: An identifier for the Cloudlet policy you want to activate.
-        :param pulumi.Input[str] status: The activation status for this Cloudlet policy.
-        :param pulumi.Input[int] version: The Cloudlet policy version you want to activate.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] associated_properties: Set of property IDs to link to this Cloudlets policy
+        :param pulumi.Input[str] network: The network you want to activate the policy version on (options are Staging and Production)
+        :param pulumi.Input[int] policy_id: ID of the Cloudlets policy you want to activate
+        :param pulumi.Input[str] status: Activation status for this Cloudlets policy
+        :param pulumi.Input[int] version: Cloudlets policy version you want to activate
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -370,7 +278,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
     @pulumi.getter(name="associatedProperties")
     def associated_properties(self) -> pulumi.Output[Sequence[str]]:
         """
-        A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+        Set of property IDs to link to this Cloudlets policy
         """
         return pulumi.get(self, "associated_properties")
 
@@ -378,7 +286,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
     @pulumi.getter
     def network(self) -> pulumi.Output[str]:
         """
-        The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+        The network you want to activate the policy version on (options are Staging and Production)
         """
         return pulumi.get(self, "network")
 
@@ -386,7 +294,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
     @pulumi.getter(name="policyId")
     def policy_id(self) -> pulumi.Output[int]:
         """
-        An identifier for the Cloudlet policy you want to activate.
+        ID of the Cloudlets policy you want to activate
         """
         return pulumi.get(self, "policy_id")
 
@@ -394,7 +302,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
         """
-        The activation status for this Cloudlet policy.
+        Activation status for this Cloudlets policy
         """
         return pulumi.get(self, "status")
 
@@ -402,7 +310,7 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[int]:
         """
-        The Cloudlet policy version you want to activate.
+        Cloudlets policy version you want to activate
         """
         return pulumi.get(self, "version")
 

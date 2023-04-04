@@ -11,41 +11,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GtmAsmapAssignment {
-    /**
-     * @return Specifies an array of AS numbers.
-     * 
-     */
     private List<Integer> asNumbers;
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     private Integer datacenterId;
-    /**
-     * @return A descriptive label for the group.
-     * 
-     */
     private String nickname;
 
     private GtmAsmapAssignment() {}
-    /**
-     * @return Specifies an array of AS numbers.
-     * 
-     */
     public List<Integer> asNumbers() {
         return this.asNumbers;
     }
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Integer datacenterId() {
         return this.datacenterId;
     }
-    /**
-     * @return A descriptive label for the group.
-     * 
-     */
     public String nickname() {
         return this.nickname;
     }

@@ -13,37 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudletsApiPrioritizationMatchRuleMatchRuleResult
     {
-        /// <summary>
-        /// (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-        /// </summary>
         public readonly bool? Disabled;
-        /// <summary>
-        /// (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-        /// </summary>
         public readonly int? End;
-        /// <summary>
-        /// (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-        /// </summary>
         public readonly string? MatchUrl;
-        /// <summary>
-        /// (Optional) A list of conditions to apply to a Cloudlet, including:
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchResult> Matches;
-        /// <summary>
-        /// (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-        /// </summary>
         public readonly string? Name;
-        /// <summary>
-        /// (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
-        /// </summary>
         public readonly double PassThroughPercent;
-        /// <summary>
-        /// (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-        /// </summary>
         public readonly int? Start;
-        /// <summary>
-        /// (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

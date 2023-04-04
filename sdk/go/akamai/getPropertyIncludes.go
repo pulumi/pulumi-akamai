@@ -10,49 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getPropertyIncludes` data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
-//
-// ## Basic usage
-//
-// This example returns all includes for the specified contract and group:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			myExamplePropertyIncludes, err := akamai.GetPropertyIncludes(ctx, &akamai.GetPropertyIncludesArgs{
-//				ContractId: "ctr_1-AB123",
-//				GroupId:    "grp_12345",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("myExample", myExamplePropertyIncludes)
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `includes` -  The small, reusable, configurable components for your properties.
-//   - `latestVersion` - Returns the most recent version of the include.
-//   - `stagingVersion` - The include version currently activated on the staging network.
-//   - `productionVersion` - The include version currently activated on the production network.
-//   - `id` - The include's unique identifier.
-//   - `name` - The descriptive name for the include.
-//   - `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
 func GetPropertyIncludes(ctx *pulumi.Context, args *GetPropertyIncludesArgs, opts ...pulumi.InvokeOption) (*GetPropertyIncludesResult, error) {
 	var rv GetPropertyIncludesResult
 	err := ctx.Invoke("akamai:index/getPropertyIncludes:getPropertyIncludes", args, &rv, opts...)
@@ -64,14 +21,10 @@ func GetPropertyIncludes(ctx *pulumi.Context, args *GetPropertyIncludesArgs, opt
 
 // A collection of arguments for invoking getPropertyIncludes.
 type GetPropertyIncludesArgs struct {
-	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
-	ContractId string `pulumi:"contractId"`
-	// (Required) A group's unique ID, including the optional `grp_` prefix.
-	GroupId string `pulumi:"groupId"`
-	// (Optional) The property that references the includes you want to list.
+	ContractId     string                             `pulumi:"contractId"`
+	GroupId        string                             `pulumi:"groupId"`
 	ParentProperty *GetPropertyIncludesParentProperty `pulumi:"parentProperty"`
-	// (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-	Type *string `pulumi:"type"`
+	Type           *string                            `pulumi:"type"`
 }
 
 // A collection of values returned by getPropertyIncludes.
@@ -100,14 +53,10 @@ func GetPropertyIncludesOutput(ctx *pulumi.Context, args GetPropertyIncludesOutp
 
 // A collection of arguments for invoking getPropertyIncludes.
 type GetPropertyIncludesOutputArgs struct {
-	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
-	ContractId pulumi.StringInput `pulumi:"contractId"`
-	// (Required) A group's unique ID, including the optional `grp_` prefix.
-	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// (Optional) The property that references the includes you want to list.
+	ContractId     pulumi.StringInput                        `pulumi:"contractId"`
+	GroupId        pulumi.StringInput                        `pulumi:"groupId"`
 	ParentProperty GetPropertyIncludesParentPropertyPtrInput `pulumi:"parentProperty"`
-	// (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-	Type pulumi.StringPtrInput `pulumi:"type"`
+	Type           pulumi.StringPtrInput                     `pulumi:"type"`
 }
 
 func (GetPropertyIncludesOutputArgs) ElementType() reflect.Type {

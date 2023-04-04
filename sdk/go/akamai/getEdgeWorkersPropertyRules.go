@@ -21,7 +21,6 @@ func GetEdgeWorkersPropertyRules(ctx *pulumi.Context, args *GetEdgeWorkersProper
 
 // A collection of arguments for invoking getEdgeWorkersPropertyRules.
 type GetEdgeWorkersPropertyRulesArgs struct {
-	// Unique identifier of an EdgeWorker ID.
 	EdgeworkerId int `pulumi:"edgeworkerId"`
 }
 
@@ -48,7 +47,6 @@ func GetEdgeWorkersPropertyRulesOutput(ctx *pulumi.Context, args GetEdgeWorkersP
 
 // A collection of arguments for invoking getEdgeWorkersPropertyRules.
 type GetEdgeWorkersPropertyRulesOutputArgs struct {
-	// Unique identifier of an EdgeWorker ID.
 	EdgeworkerId pulumi.IntInput `pulumi:"edgeworkerId"`
 }
 

@@ -14,80 +14,17 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security policy
- * 
- * Modifies the way your Kona Rule Set rules are updated.
- * Use **KRS** mode to update the rule sets manually or **AAG** to have those rule sets automatically updated.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://techdocs.akamai.com/application-security/reference/put-policy-mode)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecWafMode;
- * import com.pulumi.akamai.AppSecWafModeArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var wafMode = new AppSecWafMode(&#34;wafMode&#34;, AppSecWafModeArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .mode(&#34;KRS&#34;)
- *             .build());
- * 
- *         ctx.export(&#34;wafModeMode&#34;, wafMode.mode());
- *         ctx.export(&#34;wafModeCurrentRuleset&#34;, wafMode.currentRuleset());
- *         ctx.export(&#34;wafModeEvalStatus&#34;, wafMode.evalStatus());
- *         ctx.export(&#34;wafModeEvalRuleset&#34;, wafMode.evalRuleset());
- *         ctx.export(&#34;wafModeEvalExpirationDate&#34;, wafMode.evalExpirationDate());
- *     }
- * }
- * ```
- * ## Output Options
- * 
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- * 
- * - `current_ruleset` – Versioning information for the current Kona Rule Set.
- * - `eval_ruleset`. Versioning information for the Kona Rule Set being evaluated (if applicable).
- * - `eval_status`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
- * - `eval_expiration_date`. Date on which the evaluation period ends (if applicable).
- * - `output_text`. Tabular report showing the current rule set, WAF mode and evaluation status.
- * 
- */
 @ResourceType(type="akamai:index/appSecWafMode:AppSecWafMode")
 public class AppSecWafMode extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -150,14 +87,14 @@ public class AppSecWafMode extends com.pulumi.resources.CustomResource {
         return this.evalStatus;
     }
     /**
-     * . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+     * How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
      * 
      */
     @Export(name="mode", type=String.class, parameters={})
     private Output<String> mode;
 
     /**
-     * @return . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+     * @return How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
      * 
      */
     public Output<String> mode() {
@@ -178,14 +115,14 @@ public class AppSecWafMode extends com.pulumi.resources.CustomResource {
         return this.outputText;
     }
     /**
-     * . Unique identifier of the security policy associated with the WAF mode settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the WAF mode settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {

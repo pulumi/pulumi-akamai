@@ -4,33 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.EdgeWorker` data source to get an EdgeWorker for a given EdgeWorker ID.
- *
- * ## Example Usage
- *
- * This example returns the resource tier fields for the selected EdgeWorker ID:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const test = akamai.getEdgeWorker({
- *     edgeworkerId: 3,
- *     localBundle: "test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz",
- * });
- * ```
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `name` - The EdgeWorker name.
- * * `groupId` - Defines the group association for the EdgeWorker.
- * * `resourceTierId` - The unique identifier of a resource tier.
- * * `localBundleHash` - The local bundle hash for the EdgeWorker. It's used to identify content changes for the bundle.
- * * `version` - The bundle version.
- * * `warnings` - The list of warnings returned by EdgeWorker validation.
- */
 export function getEdgeWorker(args: GetEdgeWorkerArgs, opts?: pulumi.InvokeOptions): Promise<GetEdgeWorkerResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -44,13 +17,7 @@ export function getEdgeWorker(args: GetEdgeWorkerArgs, opts?: pulumi.InvokeOptio
  * A collection of arguments for invoking getEdgeWorker.
  */
 export interface GetEdgeWorkerArgs {
-    /**
-     * The unique identifier of the EdgeWorker.
-     */
     edgeworkerId: number;
-    /**
-     * The path where the EdgeWorkers `.tgz` code bundle will be stored.
-     */
     localBundle?: string;
 }
 
@@ -71,33 +38,6 @@ export interface GetEdgeWorkerResult {
     readonly version: string;
     readonly warnings: string[];
 }
-/**
- * Use the `akamai.EdgeWorker` data source to get an EdgeWorker for a given EdgeWorker ID.
- *
- * ## Example Usage
- *
- * This example returns the resource tier fields for the selected EdgeWorker ID:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const test = akamai.getEdgeWorker({
- *     edgeworkerId: 3,
- *     localBundle: "test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz",
- * });
- * ```
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `name` - The EdgeWorker name.
- * * `groupId` - Defines the group association for the EdgeWorker.
- * * `resourceTierId` - The unique identifier of a resource tier.
- * * `localBundleHash` - The local bundle hash for the EdgeWorker. It's used to identify content changes for the bundle.
- * * `version` - The bundle version.
- * * `warnings` - The list of warnings returned by EdgeWorker validation.
- */
 export function getEdgeWorkerOutput(args: GetEdgeWorkerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeWorkerResult> {
     return pulumi.output(args).apply((a: any) => getEdgeWorker(a, opts))
 }
@@ -106,12 +46,6 @@ export function getEdgeWorkerOutput(args: GetEdgeWorkerOutputArgs, opts?: pulumi
  * A collection of arguments for invoking getEdgeWorker.
  */
 export interface GetEdgeWorkerOutputArgs {
-    /**
-     * The unique identifier of the EdgeWorker.
-     */
     edgeworkerId: pulumi.Input<number>;
-    /**
-     * The path where the EdgeWorkers `.tgz` code bundle will be stored.
-     */
     localBundle?: pulumi.Input<string>;
 }

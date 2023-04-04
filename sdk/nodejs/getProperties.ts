@@ -6,25 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getProperties` data source to query and retrieve the list of properties for a group and contract
- * based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
- *
- * ## Example Usage
- *
- * Return properties associated with the EdgeGrid API client token currently used for authentication:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- *
- * export const myPropertyList = data.akamai_properties.example;
- * ```
- * ## Attributes reference
- *
- * This data source returns this attribute:
- *
- * * `properties` - A list of properties available for the contract and group IDs provided.
- */
 export function getProperties(args: GetPropertiesArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertiesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -38,13 +19,7 @@ export function getProperties(args: GetPropertiesArgs, opts?: pulumi.InvokeOptio
  * A collection of arguments for invoking getProperties.
  */
 export interface GetPropertiesArgs {
-    /**
-     * (Required) A contract's unique ID, including the `ctr_` prefix.
-     */
     contractId: string;
-    /**
-     * (Required) A group's unique ID, including the `grp_` prefix.
-     */
     groupId: string;
 }
 
@@ -60,25 +35,6 @@ export interface GetPropertiesResult {
     readonly id: string;
     readonly properties: outputs.GetPropertiesProperty[];
 }
-/**
- * Use the `akamai.getProperties` data source to query and retrieve the list of properties for a group and contract
- * based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
- *
- * ## Example Usage
- *
- * Return properties associated with the EdgeGrid API client token currently used for authentication:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- *
- * export const myPropertyList = data.akamai_properties.example;
- * ```
- * ## Attributes reference
- *
- * This data source returns this attribute:
- *
- * * `properties` - A list of properties available for the contract and group IDs provided.
- */
 export function getPropertiesOutput(args: GetPropertiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertiesResult> {
     return pulumi.output(args).apply((a: any) => getProperties(a, opts))
 }
@@ -87,12 +43,6 @@ export function getPropertiesOutput(args: GetPropertiesOutputArgs, opts?: pulumi
  * A collection of arguments for invoking getProperties.
  */
 export interface GetPropertiesOutputArgs {
-    /**
-     * (Required) A contract's unique ID, including the `ctr_` prefix.
-     */
     contractId: pulumi.Input<string>;
-    /**
-     * (Required) A group's unique ID, including the `grp_` prefix.
-     */
     groupId: pulumi.Input<string>;
 }

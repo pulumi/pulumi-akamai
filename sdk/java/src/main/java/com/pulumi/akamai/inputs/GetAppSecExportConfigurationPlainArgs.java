@@ -16,47 +16,23 @@ public final class GetAppSecExportConfigurationPlainArgs extends com.pulumi.reso
 
     public static final GetAppSecExportConfigurationPlainArgs Empty = new GetAppSecExportConfigurationPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration you want to return information for.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration you want to return information for.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-     * 
-     */
     @Import(name="searches")
     private @Nullable List<String> searches;
 
-    /**
-     * @return . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-     * 
-     */
     public Optional<List<String>> searches() {
         return Optional.ofNullable(this.searches);
     }
 
-    /**
-     * . Version number of the security configuration.
-     * 
-     */
     @Import(name="version", required=true)
     private Integer version;
 
-    /**
-     * @return . Version number of the security configuration.
-     * 
-     */
     public Integer version() {
         return this.version;
     }
@@ -87,44 +63,20 @@ public final class GetAppSecExportConfigurationPlainArgs extends com.pulumi.reso
             $ = new GetAppSecExportConfigurationPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param searches . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-         * 
-         * @return builder
-         * 
-         */
         public Builder searches(@Nullable List<String> searches) {
             $.searches = searches;
             return this;
         }
 
-        /**
-         * @param searches . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-         * 
-         * @return builder
-         * 
-         */
         public Builder searches(String... searches) {
             return searches(List.of(searches));
         }
 
-        /**
-         * @param version . Version number of the security configuration.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Integer version) {
             $.version = version;
             return this;

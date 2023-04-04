@@ -4,30 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.IamRole` resource to list and create roles for users. Roles are lists of permissions that are explicitly tied to both a user and a group. Users need roles to act on objects in a group.
- *
- * ## Basic usage
- *
- * This example returns information on available roles:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = new akamai.IamRole("example", {
- *     description: "This role will allow you to view",
- *     grantedRoles: 2051,
- *     type: "custom",
- * });
- * ```
- *
- * ## Attributes reference
- *
- * This resource returns this attribute:
- *
- * * `type` - The type indicates whether the role is `standard`, provided by Akamai, or `custom` for the account.
- */
 export class IamRole extends pulumi.CustomResource {
     /**
      * Get an existing IamRole resource's state with the given name, ID, and optional extra
@@ -57,15 +33,15 @@ export class IamRole extends pulumi.CustomResource {
     }
 
     /**
-     * The description for a role.
+     * The description for a role
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+     * The list of existing unique identifiers for the granted roles
      */
     public readonly grantedRoles!: pulumi.Output<number[]>;
     /**
-     * The name you supply for a role.
+     * The name you supply for a role
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -113,15 +89,15 @@ export class IamRole extends pulumi.CustomResource {
  */
 export interface IamRoleState {
     /**
-     * The description for a role.
+     * The description for a role
      */
     description?: pulumi.Input<string>;
     /**
-     * The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+     * The list of existing unique identifiers for the granted roles
      */
     grantedRoles?: pulumi.Input<pulumi.Input<number>[]>;
     /**
-     * The name you supply for a role.
+     * The name you supply for a role
      */
     name?: pulumi.Input<string>;
     /**
@@ -135,15 +111,15 @@ export interface IamRoleState {
  */
 export interface IamRoleArgs {
     /**
-     * The description for a role.
+     * The description for a role
      */
     description: pulumi.Input<string>;
     /**
-     * The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+     * The list of existing unique identifiers for the granted roles
      */
     grantedRoles: pulumi.Input<pulumi.Input<number>[]>;
     /**
-     * The name you supply for a role.
+     * The name you supply for a role
      */
     name?: pulumi.Input<string>;
     /**

@@ -10,29 +10,13 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings {
-    /**
-     * @return (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
-     * 
-     */
     private String originId;
-    /**
-     * @return (Required)
-     * 
-     */
     private Integer percent;
 
     private GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings() {}
-    /**
-     * @return (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
-     * 
-     */
     public String originId() {
         return this.originId;
     }
-    /**
-     * @return (Required)
-     * 
-     */
     public Integer percent() {
         return this.percent;
     }

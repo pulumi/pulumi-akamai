@@ -23,12 +23,6 @@ class CpCodeArgs:
                  product_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CpCode resource.
-        :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
-        :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the `grp_` prefix.
-        :param pulumi.Input[str] name: (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
-        :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
         """
         if contract is not None:
             warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
@@ -57,9 +51,6 @@ class CpCodeArgs:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
-        """
-        Replaced by `contract_id`. Maintained for legacy purposes.
-        """
         return pulumi.get(self, "contract")
 
     @contract.setter
@@ -69,9 +60,6 @@ class CpCodeArgs:
     @property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Required) A contract's unique ID, including the `ctr_` prefix.
-        """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
@@ -81,9 +69,6 @@ class CpCodeArgs:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
-        """
-        Replaced by `group_id`. Maintained for legacy purposes.
-        """
         return pulumi.get(self, "group")
 
     @group.setter
@@ -93,9 +78,6 @@ class CpCodeArgs:
     @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Required) A group's unique ID, including the `grp_` prefix.
-        """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
@@ -105,9 +87,6 @@ class CpCodeArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -117,9 +96,6 @@ class CpCodeArgs:
     @property
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
-        """
-        Replaced by `product_id`. Maintained for legacy purposes.
-        """
         return pulumi.get(self, "product")
 
     @product.setter
@@ -148,12 +124,6 @@ class _CpCodeState:
                  product_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CpCode resources.
-        :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
-        :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the `grp_` prefix.
-        :param pulumi.Input[str] name: (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
-        :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
         """
         if contract is not None:
             warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
@@ -182,9 +152,6 @@ class _CpCodeState:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
-        """
-        Replaced by `contract_id`. Maintained for legacy purposes.
-        """
         return pulumi.get(self, "contract")
 
     @contract.setter
@@ -194,9 +161,6 @@ class _CpCodeState:
     @property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Required) A contract's unique ID, including the `ctr_` prefix.
-        """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
@@ -206,9 +170,6 @@ class _CpCodeState:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
-        """
-        Replaced by `group_id`. Maintained for legacy purposes.
-        """
         return pulumi.get(self, "group")
 
     @group.setter
@@ -218,9 +179,6 @@ class _CpCodeState:
     @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Required) A group's unique ID, including the `grp_` prefix.
-        """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
@@ -230,9 +188,6 @@ class _CpCodeState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -242,9 +197,6 @@ class _CpCodeState:
     @property
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
-        """
-        Replaced by `product_id`. Maintained for legacy purposes.
-        """
         return pulumi.get(self, "product")
 
     @product.setter
@@ -275,66 +227,9 @@ class CpCode(pulumi.CustomResource):
                  product_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        The `CpCode` resource lets you create or reuse content provider (CP) codes.  CP codes track web traffic handled by Akamai servers. Akamai gives you a CP code when you purchase a product. You need this code when you activate associated properties.
-
-        You can create additional CP codes to support more detailed billing and reporting functions.
-
-        By default, the Akamai Provider uses your existing CP code instead of creating a new one.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        cp_code = akamai.CpCode("cpCode",
-            contract_id=akamai_contract["contract"]["id"],
-            group_id=akamai_group["group"]["id"],
-            product_id="prd_Object_Delivery")
-        ```
-
-        Here's a real-life example that includes other data sources as dependencies:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        group_name = "example group name"
-        cpcode_name = "My CP Code"
-        example_contract = akamai.get_contract(group_name=group_name)
-        example_group = akamai.get_group(name=group_name,
-            contract_id=example_contract.id)
-        example_cp = akamai.CpCode("exampleCp",
-            group_id=example_group.id,
-            contract_id=example_contract.id,
-            product_id="prd_Object_Delivery")
-        ```
-        ## Attributes reference
-
-        * `id` - The ID of the CP code.
-
-        ## Import
-
-        Basic Usagehcl resource "akamai_cp_code" "example" {
-
-        # (resource arguments)
-
-         } You can import your Akamai CP codes using a comma-delimited string of the CP code, contract, and group IDs. You have to enter the IDs in this order`cpcode_id,contract_id,group_id` For example
-
-        ```sh
-         $ pulumi import akamai:index/cpCode:CpCode example cpc_123,ctr_1-AB123,grp_123
-        ```
-
+        Create a CpCode resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
-        :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the `grp_` prefix.
-        :param pulumi.Input[str] name: (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
-        :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
         """
         ...
     @overload
@@ -343,58 +238,7 @@ class CpCode(pulumi.CustomResource):
                  args: Optional[CpCodeArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `CpCode` resource lets you create or reuse content provider (CP) codes.  CP codes track web traffic handled by Akamai servers. Akamai gives you a CP code when you purchase a product. You need this code when you activate associated properties.
-
-        You can create additional CP codes to support more detailed billing and reporting functions.
-
-        By default, the Akamai Provider uses your existing CP code instead of creating a new one.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        cp_code = akamai.CpCode("cpCode",
-            contract_id=akamai_contract["contract"]["id"],
-            group_id=akamai_group["group"]["id"],
-            product_id="prd_Object_Delivery")
-        ```
-
-        Here's a real-life example that includes other data sources as dependencies:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        group_name = "example group name"
-        cpcode_name = "My CP Code"
-        example_contract = akamai.get_contract(group_name=group_name)
-        example_group = akamai.get_group(name=group_name,
-            contract_id=example_contract.id)
-        example_cp = akamai.CpCode("exampleCp",
-            group_id=example_group.id,
-            contract_id=example_contract.id,
-            product_id="prd_Object_Delivery")
-        ```
-        ## Attributes reference
-
-        * `id` - The ID of the CP code.
-
-        ## Import
-
-        Basic Usagehcl resource "akamai_cp_code" "example" {
-
-        # (resource arguments)
-
-         } You can import your Akamai CP codes using a comma-delimited string of the CP code, contract, and group IDs. You have to enter the IDs in this order`cpcode_id,contract_id,group_id` For example
-
-        ```sh
-         $ pulumi import akamai:index/cpCode:CpCode example cpc_123,ctr_1-AB123,grp_123
-        ```
-
+        Create a CpCode resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CpCodeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -468,12 +312,6 @@ class CpCode(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contract: Replaced by `contract_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
-        :param pulumi.Input[str] group: Replaced by `group_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the `grp_` prefix.
-        :param pulumi.Input[str] name: (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
-        :param pulumi.Input[str] product: Replaced by `product_id`. Maintained for legacy purposes.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -491,49 +329,31 @@ class CpCode(pulumi.CustomResource):
     @property
     @pulumi.getter
     def contract(self) -> pulumi.Output[str]:
-        """
-        Replaced by `contract_id`. Maintained for legacy purposes.
-        """
         return pulumi.get(self, "contract")
 
     @property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[str]:
-        """
-        (Required) A contract's unique ID, including the `ctr_` prefix.
-        """
         return pulumi.get(self, "contract_id")
 
     @property
     @pulumi.getter
     def group(self) -> pulumi.Output[str]:
-        """
-        Replaced by `group_id`. Maintained for legacy purposes.
-        """
         return pulumi.get(self, "group")
 
     @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[str]:
-        """
-        (Required) A group's unique ID, including the `grp_` prefix.
-        """
         return pulumi.get(self, "group_id")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        (Required) A descriptive label for the CP code. If you're creating a new CP code, the name can't include commas, underscores, quotes, or any of these special characters: ^ # %.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def product(self) -> pulumi.Output[str]:
-        """
-        Replaced by `product_id`. Maintained for legacy purposes.
-        """
         return pulumi.get(self, "product")
 
     @property

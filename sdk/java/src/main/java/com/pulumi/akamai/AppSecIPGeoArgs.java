@@ -18,14 +18,14 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
     public static final AppSecIPGeoArgs Empty = new AppSecIPGeoArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -33,14 +33,14 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+     * List of IDs of network list that are always allowed
      * 
      */
     @Import(name="exceptionIpNetworkLists")
     private @Nullable Output<List<String>> exceptionIpNetworkLists;
 
     /**
-     * @return . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+     * @return List of IDs of network list that are always allowed
      * 
      */
     public Optional<Output<List<String>>> exceptionIpNetworkLists() {
@@ -48,14 +48,14 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+     * List of IDs of geographic network list to be blocked
      * 
      */
     @Import(name="geoNetworkLists")
     private @Nullable Output<List<String>> geoNetworkLists;
 
     /**
-     * @return . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+     * @return List of IDs of geographic network list to be blocked
      * 
      */
     public Optional<Output<List<String>>> geoNetworkLists() {
@@ -63,14 +63,14 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+     * List of IDs of IP network list to be blocked
      * 
      */
     @Import(name="ipNetworkLists")
     private @Nullable Output<List<String>> ipNetworkLists;
 
     /**
-     * @return . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+     * @return List of IDs of IP network list to be blocked
      * 
      */
     public Optional<Output<List<String>>> ipNetworkLists() {
@@ -78,14 +78,14 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+     * Protection mode (block or allow)
      * 
      */
     @Import(name="mode", required=true)
     private Output<String> mode;
 
     /**
-     * @return . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+     * @return Protection mode (block or allow)
      * 
      */
     public Output<String> mode() {
@@ -93,14 +93,14 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -137,7 +137,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param exceptionIpNetworkLists . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+         * @param exceptionIpNetworkLists List of IDs of network list that are always allowed
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param exceptionIpNetworkLists . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+         * @param exceptionIpNetworkLists List of IDs of network list that are always allowed
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param exceptionIpNetworkLists . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+         * @param exceptionIpNetworkLists List of IDs of network list that are always allowed
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param geoNetworkLists . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+         * @param geoNetworkLists List of IDs of geographic network list to be blocked
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param geoNetworkLists . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+         * @param geoNetworkLists List of IDs of geographic network list to be blocked
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param geoNetworkLists . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+         * @param geoNetworkLists List of IDs of geographic network list to be blocked
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipNetworkLists . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+         * @param ipNetworkLists List of IDs of IP network list to be blocked
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipNetworkLists . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+         * @param ipNetworkLists List of IDs of IP network list to be blocked
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipNetworkLists . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+         * @param ipNetworkLists List of IDs of IP network list to be blocked
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mode . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+         * @param mode Protection mode (block or allow)
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mode . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+         * @param mode Protection mode (block or allow)
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

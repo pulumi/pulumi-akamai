@@ -17,22 +17,14 @@ public final class AppSecApiRequestConstraintsState extends com.pulumi.resources
     public static final AppSecApiRequestConstraintsState Empty = new AppSecApiRequestConstraintsState();
 
     /**
-     * . Action to assign to the API request constraint. Allowed values are:
-     * - **alert**, Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the API request constraint is triggered
      * 
      */
     @Import(name="action")
     private @Nullable Output<String> action;
 
     /**
-     * @return . Action to assign to the API request constraint. Allowed values are:
-     * - **alert**, Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * @return Action to be taken when the API request constraint is triggered
      * 
      */
     public Optional<Output<String>> action() {
@@ -40,14 +32,14 @@ public final class AppSecApiRequestConstraintsState extends com.pulumi.resources
     }
 
     /**
-     * . ID of the API endpoint the constraint will be assigned to.
+     * Unique identifier of the API endpoint to which the constraint will be assigned
      * 
      */
     @Import(name="apiEndpointId")
     private @Nullable Output<Integer> apiEndpointId;
 
     /**
-     * @return . ID of the API endpoint the constraint will be assigned to.
+     * @return Unique identifier of the API endpoint to which the constraint will be assigned
      * 
      */
     public Optional<Output<Integer>> apiEndpointId() {
@@ -55,14 +47,14 @@ public final class AppSecApiRequestConstraintsState extends com.pulumi.resources
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -70,14 +62,14 @@ public final class AppSecApiRequestConstraintsState extends com.pulumi.resources
     }
 
     /**
-     * . Unique identifier of the security policy associated with the API request constraint settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the API request constraint settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -112,11 +104,7 @@ public final class AppSecApiRequestConstraintsState extends com.pulumi.resources
         }
 
         /**
-         * @param action . Action to assign to the API request constraint. Allowed values are:
-         * - **alert**, Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param action Action to be taken when the API request constraint is triggered
          * 
          * @return builder
          * 
@@ -127,11 +115,7 @@ public final class AppSecApiRequestConstraintsState extends com.pulumi.resources
         }
 
         /**
-         * @param action . Action to assign to the API request constraint. Allowed values are:
-         * - **alert**, Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param action Action to be taken when the API request constraint is triggered
          * 
          * @return builder
          * 
@@ -141,7 +125,7 @@ public final class AppSecApiRequestConstraintsState extends com.pulumi.resources
         }
 
         /**
-         * @param apiEndpointId . ID of the API endpoint the constraint will be assigned to.
+         * @param apiEndpointId Unique identifier of the API endpoint to which the constraint will be assigned
          * 
          * @return builder
          * 
@@ -152,7 +136,7 @@ public final class AppSecApiRequestConstraintsState extends com.pulumi.resources
         }
 
         /**
-         * @param apiEndpointId . ID of the API endpoint the constraint will be assigned to.
+         * @param apiEndpointId Unique identifier of the API endpoint to which the constraint will be assigned
          * 
          * @return builder
          * 
@@ -162,7 +146,7 @@ public final class AppSecApiRequestConstraintsState extends com.pulumi.resources
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -173,7 +157,7 @@ public final class AppSecApiRequestConstraintsState extends com.pulumi.resources
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -183,7 +167,7 @@ public final class AppSecApiRequestConstraintsState extends com.pulumi.resources
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the API request constraint settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -194,7 +178,7 @@ public final class AppSecApiRequestConstraintsState extends com.pulumi.resources
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the API request constraint settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

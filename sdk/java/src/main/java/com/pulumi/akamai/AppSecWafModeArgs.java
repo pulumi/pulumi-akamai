@@ -15,14 +15,14 @@ public final class AppSecWafModeArgs extends com.pulumi.resources.ResourceArgs {
     public static final AppSecWafModeArgs Empty = new AppSecWafModeArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -30,14 +30,14 @@ public final class AppSecWafModeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+     * How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
      * 
      */
     @Import(name="mode", required=true)
     private Output<String> mode;
 
     /**
-     * @return . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+     * @return How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
      * 
      */
     public Output<String> mode() {
@@ -45,14 +45,14 @@ public final class AppSecWafModeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * . Unique identifier of the security policy associated with the WAF mode settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the WAF mode settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -86,7 +86,7 @@ public final class AppSecWafModeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class AppSecWafModeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class AppSecWafModeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mode . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+         * @param mode How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class AppSecWafModeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mode . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+         * @param mode How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class AppSecWafModeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the WAF mode settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class AppSecWafModeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the WAF mode settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

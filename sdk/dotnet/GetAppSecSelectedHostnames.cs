@@ -11,105 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecSelectedHostnames
     {
-        /// <summary>
-        /// **Scopes**: Security configuration
-        /// 
-        /// Returns a list of the hostnames currently protected by the specified security configuration.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://techdocs.akamai.com/application-security/reference/get-selected-hostnames)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var selectedHostnamesAppSecSelectedHostnames = Akamai.GetAppSecSelectedHostnames.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["selectedHostnames"] = selectedHostnamesAppSecSelectedHostnames.Apply(getAppSecSelectedHostnamesResult =&gt; getAppSecSelectedHostnamesResult.Hostnames),
-        ///         ["selectedHostnamesJson"] = selectedHostnamesAppSecSelectedHostnames.Apply(getAppSecSelectedHostnamesResult =&gt; getAppSecSelectedHostnamesResult.HostnamesJson),
-        ///         ["selectedHostnamesOutputText"] = selectedHostnamesAppSecSelectedHostnames.Apply(getAppSecSelectedHostnamesResult =&gt; getAppSecSelectedHostnamesResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `hostnames`. List of selected hostnames.
-        /// - `hostnames_json`. JSON-formatted list of selected hostnames.
-        /// - `output_text`. Tabular report of the selected hostnames.
-        /// </summary>
         public static Task<GetAppSecSelectedHostnamesResult> InvokeAsync(GetAppSecSelectedHostnamesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSelectedHostnamesResult>("akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames", args ?? new GetAppSecSelectedHostnamesArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security configuration
-        /// 
-        /// Returns a list of the hostnames currently protected by the specified security configuration.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://techdocs.akamai.com/application-security/reference/get-selected-hostnames)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var selectedHostnamesAppSecSelectedHostnames = Akamai.GetAppSecSelectedHostnames.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["selectedHostnames"] = selectedHostnamesAppSecSelectedHostnames.Apply(getAppSecSelectedHostnamesResult =&gt; getAppSecSelectedHostnamesResult.Hostnames),
-        ///         ["selectedHostnamesJson"] = selectedHostnamesAppSecSelectedHostnames.Apply(getAppSecSelectedHostnamesResult =&gt; getAppSecSelectedHostnamesResult.HostnamesJson),
-        ///         ["selectedHostnamesOutputText"] = selectedHostnamesAppSecSelectedHostnames.Apply(getAppSecSelectedHostnamesResult =&gt; getAppSecSelectedHostnamesResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `hostnames`. List of selected hostnames.
-        /// - `hostnames_json`. JSON-formatted list of selected hostnames.
-        /// - `output_text`. Tabular report of the selected hostnames.
-        /// </summary>
         public static Output<GetAppSecSelectedHostnamesResult> Invoke(GetAppSecSelectedHostnamesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSelectedHostnamesResult>("akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames", args ?? new GetAppSecSelectedHostnamesInvokeArgs(), options.WithDefaults());
     }
@@ -117,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecSelectedHostnamesArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the protected hosts.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
@@ -131,9 +32,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecSelectedHostnamesInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the protected hosts.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 

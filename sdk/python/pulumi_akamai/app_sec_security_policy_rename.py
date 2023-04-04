@@ -19,9 +19,9 @@ class AppSecSecurityPolicyRenameArgs:
                  security_policy_name: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecSecurityPolicyRename resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the security policy being renamed.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy being renamed.
-        :param pulumi.Input[str] security_policy_name: . New name to be given to the security policy.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] security_policy_name: New name to be given to the security policy
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
@@ -31,7 +31,7 @@ class AppSecSecurityPolicyRenameArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the security policy being renamed.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -43,7 +43,7 @@ class AppSecSecurityPolicyRenameArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        . Unique identifier of the security policy being renamed.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -55,7 +55,7 @@ class AppSecSecurityPolicyRenameArgs:
     @pulumi.getter(name="securityPolicyName")
     def security_policy_name(self) -> pulumi.Input[str]:
         """
-        . New name to be given to the security policy.
+        New name to be given to the security policy
         """
         return pulumi.get(self, "security_policy_name")
 
@@ -72,9 +72,9 @@ class _AppSecSecurityPolicyRenameState:
                  security_policy_name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecSecurityPolicyRename resources.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the security policy being renamed.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy being renamed.
-        :param pulumi.Input[str] security_policy_name: . New name to be given to the security policy.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] security_policy_name: New name to be given to the security policy
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -87,7 +87,7 @@ class _AppSecSecurityPolicyRenameState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the security policy being renamed.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -99,7 +99,7 @@ class _AppSecSecurityPolicyRenameState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the security policy being renamed.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -111,7 +111,7 @@ class _AppSecSecurityPolicyRenameState:
     @pulumi.getter(name="securityPolicyName")
     def security_policy_name(self) -> Optional[pulumi.Input[str]]:
         """
-        . New name to be given to the security policy.
+        New name to be given to the security policy
         """
         return pulumi.get(self, "security_policy_name")
 
@@ -130,17 +130,12 @@ class AppSecSecurityPolicyRename(pulumi.CustomResource):
                  security_policy_name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        **Scopes**: Security policy
-
-        Renames an existing security policy. Note that you can only change the name of the policy: once issued, the security policy ID can't be modified.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}](https://techdocs.akamai.com/application-security/reference/put-policy)
-
+        Create a AppSecSecurityPolicyRename resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the security policy being renamed.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy being renamed.
-        :param pulumi.Input[str] security_policy_name: . New name to be given to the security policy.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] security_policy_name: New name to be given to the security policy
         """
         ...
     @overload
@@ -149,12 +144,7 @@ class AppSecSecurityPolicyRename(pulumi.CustomResource):
                  args: AppSecSecurityPolicyRenameArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Security policy
-
-        Renames an existing security policy. Note that you can only change the name of the policy: once issued, the security policy ID can't be modified.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}](https://techdocs.akamai.com/application-security/reference/put-policy)
-
+        Create a AppSecSecurityPolicyRename resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecSecurityPolicyRenameArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -211,9 +201,9 @@ class AppSecSecurityPolicyRename(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the security policy being renamed.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy being renamed.
-        :param pulumi.Input[str] security_policy_name: . New name to be given to the security policy.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] security_policy_name: New name to be given to the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -228,7 +218,7 @@ class AppSecSecurityPolicyRename(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the security policy being renamed.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -236,7 +226,7 @@ class AppSecSecurityPolicyRename(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        . Unique identifier of the security policy being renamed.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -244,7 +234,7 @@ class AppSecSecurityPolicyRename(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyName")
     def security_policy_name(self) -> pulumi.Output[str]:
         """
-        . New name to be given to the security policy.
+        New name to be given to the security policy
         """
         return pulumi.get(self, "security_policy_name")
 

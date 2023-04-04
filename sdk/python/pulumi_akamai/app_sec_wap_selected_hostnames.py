@@ -20,8 +20,8 @@ class AppSecWapSelectedHostnamesArgs:
                  protected_hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a AppSecWapSelectedHostnames resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[Sequence[pulumi.Input[str]]] evaluated_hosts: List of hostnames to be evaluated
         :param pulumi.Input[Sequence[pulumi.Input[str]]] protected_hosts: List of hostnames to be protected
         """
@@ -36,7 +36,7 @@ class AppSecWapSelectedHostnamesArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -48,7 +48,7 @@ class AppSecWapSelectedHostnamesArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -90,10 +90,10 @@ class _AppSecWapSelectedHostnamesState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecWapSelectedHostnames resources.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[Sequence[pulumi.Input[str]]] evaluated_hosts: List of hostnames to be evaluated
         :param pulumi.Input[Sequence[pulumi.Input[str]]] protected_hosts: List of hostnames to be protected
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -108,7 +108,7 @@ class _AppSecWapSelectedHostnamesState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -144,7 +144,7 @@ class _AppSecWapSelectedHostnamesState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -164,28 +164,13 @@ class AppSecWapSelectedHostnames(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        appsecwap_selectedhostnames = akamai.AppSecWapSelectedHostnames("appsecwapSelectedhostnames",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            protected_hosts=["documentation.akamai.com"],
-            evaluated_hosts=["training.akamai.com"])
-        ```
-
+        Create a AppSecWapSelectedHostnames resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[Sequence[pulumi.Input[str]]] evaluated_hosts: List of hostnames to be evaluated
         :param pulumi.Input[Sequence[pulumi.Input[str]]] protected_hosts: List of hostnames to be protected
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         ...
     @overload
@@ -194,22 +179,7 @@ class AppSecWapSelectedHostnames(pulumi.CustomResource):
                  args: AppSecWapSelectedHostnamesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        appsecwap_selectedhostnames = akamai.AppSecWapSelectedHostnames("appsecwapSelectedhostnames",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            protected_hosts=["documentation.akamai.com"],
-            evaluated_hosts=["training.akamai.com"])
-        ```
-
+        Create a AppSecWapSelectedHostnames resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecWapSelectedHostnamesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -267,10 +237,10 @@ class AppSecWapSelectedHostnames(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[Sequence[pulumi.Input[str]]] evaluated_hosts: List of hostnames to be evaluated
         :param pulumi.Input[Sequence[pulumi.Input[str]]] protected_hosts: List of hostnames to be protected
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -286,7 +256,7 @@ class AppSecWapSelectedHostnames(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -310,7 +280,7 @@ class AppSecWapSelectedHostnames(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 

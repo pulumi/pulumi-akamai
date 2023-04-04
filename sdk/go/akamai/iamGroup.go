@@ -11,47 +11,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `IamGroup` resource to list details about groups. Groups are organizational containers for the objects you use.  Groups can contain other groups, primary objects like properties, and secondary objects like edge hostnames or content provider (CP) codes.
-//
-// ## Basic usage
-//
-// This example returns the policy details based on the policy ID and optionally, a version:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewIamGroup(ctx, "example", &akamai.IamGroupArgs{
-//				ParentGroupId: pulumi.Int(12345),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Attributes reference
-//
-// This resource returns this attribute:
-//
-// * `subGroups` - Sub-groups that are related to this group. Each identifier must be an integer.
 type IamGroup struct {
 	pulumi.CustomResourceState
 
-	// Human readable name for a group.
+	// Human readable name for a group
 	Name pulumi.StringOutput `pulumi:"name"`
-	// A unique identifier for the parent group. Each identifier must be an integer.
+	// Unique identifier for the parent group
 	ParentGroupId pulumi.IntOutput `pulumi:"parentGroupId"`
 	// Subgroups IDs
 	SubGroups pulumi.IntArrayOutput `pulumi:"subGroups"`
@@ -89,18 +54,18 @@ func GetIamGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering IamGroup resources.
 type iamGroupState struct {
-	// Human readable name for a group.
+	// Human readable name for a group
 	Name *string `pulumi:"name"`
-	// A unique identifier for the parent group. Each identifier must be an integer.
+	// Unique identifier for the parent group
 	ParentGroupId *int `pulumi:"parentGroupId"`
 	// Subgroups IDs
 	SubGroups []int `pulumi:"subGroups"`
 }
 
 type IamGroupState struct {
-	// Human readable name for a group.
+	// Human readable name for a group
 	Name pulumi.StringPtrInput
-	// A unique identifier for the parent group. Each identifier must be an integer.
+	// Unique identifier for the parent group
 	ParentGroupId pulumi.IntPtrInput
 	// Subgroups IDs
 	SubGroups pulumi.IntArrayInput
@@ -111,17 +76,17 @@ func (IamGroupState) ElementType() reflect.Type {
 }
 
 type iamGroupArgs struct {
-	// Human readable name for a group.
+	// Human readable name for a group
 	Name *string `pulumi:"name"`
-	// A unique identifier for the parent group. Each identifier must be an integer.
+	// Unique identifier for the parent group
 	ParentGroupId int `pulumi:"parentGroupId"`
 }
 
 // The set of arguments for constructing a IamGroup resource.
 type IamGroupArgs struct {
-	// Human readable name for a group.
+	// Human readable name for a group
 	Name pulumi.StringPtrInput
-	// A unique identifier for the parent group. Each identifier must be an integer.
+	// Unique identifier for the parent group
 	ParentGroupId pulumi.IntInput
 }
 
@@ -212,12 +177,12 @@ func (o IamGroupOutput) ToIamGroupOutputWithContext(ctx context.Context) IamGrou
 	return o
 }
 
-// Human readable name for a group.
+// Human readable name for a group
 func (o IamGroupOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamGroup) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// A unique identifier for the parent group. Each identifier must be an integer.
+// Unique identifier for the parent group
 func (o IamGroupOutput) ParentGroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v *IamGroup) pulumi.IntOutput { return v.ParentGroupId }).(pulumi.IntOutput)
 }

@@ -10,44 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `Property` data source to query and list the property ID and rule tree based on the property name.
-//
-// ## Example Usage
-//
-// This example returns the property ID and rule tree based on the property name and optional version argument:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := akamai.LookupProperty(ctx, &akamai.LookupPropertyArgs{
-//				Name:    "terraform-demo",
-//				Version: pulumi.IntRef(1),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("myPropertyID", example)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `property_ID` - A property's unique identifier, including the `prp_` prefix.
-// * `rules` - A JSON-encoded rule tree for a given property.
-//
 // Deprecated: akamai.properties.getProperty has been deprecated in favor of akamai.getProperty
 func LookupProperty(ctx *pulumi.Context, args *LookupPropertyArgs, opts ...pulumi.InvokeOption) (*LookupPropertyResult, error) {
 	var rv LookupPropertyResult
@@ -60,10 +22,8 @@ func LookupProperty(ctx *pulumi.Context, args *LookupPropertyArgs, opts ...pulum
 
 // A collection of arguments for invoking getProperty.
 type LookupPropertyArgs struct {
-	// (Required) The property name.
-	Name string `pulumi:"name"`
-	// (Optional) The version of the property whose ID you want to list.
-	Version *int `pulumi:"version"`
+	Name    string `pulumi:"name"`
+	Version *int   `pulumi:"version"`
 }
 
 // A collection of values returned by getProperty.
@@ -90,9 +50,7 @@ func LookupPropertyOutput(ctx *pulumi.Context, args LookupPropertyOutputArgs, op
 
 // A collection of arguments for invoking getProperty.
 type LookupPropertyOutputArgs struct {
-	// (Required) The property name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Optional) The version of the property whose ID you want to list.
+	Name    pulumi.StringInput `pulumi:"name"`
 	Version pulumi.IntPtrInput `pulumi:"version"`
 }
 

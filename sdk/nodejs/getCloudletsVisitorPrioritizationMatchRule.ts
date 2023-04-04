@@ -6,45 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
- *
- * Use the `akamai.getCloudletsVisitorPrioritizationMatchRule` data source to build a match rule JSON object for the Visitor Prioritization Cloudlet.
- *
- * ## Basic usage
- *
- * This example returns the JSON-encoded rules for the Visitor Prioritization Cloudlet:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getCloudletsVisitorPrioritizationMatchRule({
- *     matchRules: [{
- *         end: 1645037845,
- *         matchUrl: "example.com",
- *         matches: [{
- *             caseSensitive: false,
- *             checkIps: "CONNECTING_IP",
- *             matchOperator: "equals",
- *             matchType: "protocol",
- *             matchValue: "http",
- *             negate: false,
- *         }],
- *         name: "rule",
- *         passThroughPercent: -1,
- *         start: 1644865045,
- *     }],
- * });
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `type` - The type of Cloudlet the rule is for.
- * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
- */
 export function getCloudletsVisitorPrioritizationMatchRule(args?: GetCloudletsVisitorPrioritizationMatchRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsVisitorPrioritizationMatchRuleResult> {
     args = args || {};
 
@@ -58,9 +19,6 @@ export function getCloudletsVisitorPrioritizationMatchRule(args?: GetCloudletsVi
  * A collection of arguments for invoking getCloudletsVisitorPrioritizationMatchRule.
  */
 export interface GetCloudletsVisitorPrioritizationMatchRuleArgs {
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     */
     matchRules?: inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRule[];
 }
 
@@ -75,45 +33,6 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRule[];
 }
-/**
- * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
- *
- * Use the `akamai.getCloudletsVisitorPrioritizationMatchRule` data source to build a match rule JSON object for the Visitor Prioritization Cloudlet.
- *
- * ## Basic usage
- *
- * This example returns the JSON-encoded rules for the Visitor Prioritization Cloudlet:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getCloudletsVisitorPrioritizationMatchRule({
- *     matchRules: [{
- *         end: 1645037845,
- *         matchUrl: "example.com",
- *         matches: [{
- *             caseSensitive: false,
- *             checkIps: "CONNECTING_IP",
- *             matchOperator: "equals",
- *             matchType: "protocol",
- *             matchValue: "http",
- *             negate: false,
- *         }],
- *         name: "rule",
- *         passThroughPercent: -1,
- *         start: 1644865045,
- *     }],
- * });
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `type` - The type of Cloudlet the rule is for.
- * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
- */
 export function getCloudletsVisitorPrioritizationMatchRuleOutput(args?: GetCloudletsVisitorPrioritizationMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsVisitorPrioritizationMatchRuleResult> {
     return pulumi.output(args).apply((a: any) => getCloudletsVisitorPrioritizationMatchRule(a, opts))
 }
@@ -122,8 +41,5 @@ export function getCloudletsVisitorPrioritizationMatchRuleOutput(args?: GetCloud
  * A collection of arguments for invoking getCloudletsVisitorPrioritizationMatchRule.
  */
 export interface GetCloudletsVisitorPrioritizationMatchRuleOutputArgs {
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs>[]>;
 }

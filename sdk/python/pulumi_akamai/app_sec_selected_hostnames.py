@@ -19,12 +19,9 @@ class AppSecSelectedHostnamesArgs:
                  mode: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecSelectedHostnames resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the hostnames.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: . JSON array of hostnames to be added or removed from the protected hosts list.
-        :param pulumi.Input[str] mode: . Indicates how the `hostnames` array is to be applied. Allowed values are:
-               - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-               - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-               - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: List of hostnames to be added or removed from the protected hosts list
+        :param pulumi.Input[str] mode: How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "hostnames", hostnames)
@@ -34,7 +31,7 @@ class AppSecSelectedHostnamesArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the hostnames.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -46,7 +43,7 @@ class AppSecSelectedHostnamesArgs:
     @pulumi.getter
     def hostnames(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        . JSON array of hostnames to be added or removed from the protected hosts list.
+        List of hostnames to be added or removed from the protected hosts list
         """
         return pulumi.get(self, "hostnames")
 
@@ -58,10 +55,7 @@ class AppSecSelectedHostnamesArgs:
     @pulumi.getter
     def mode(self) -> pulumi.Input[str]:
         """
-        . Indicates how the `hostnames` array is to be applied. Allowed values are:
-        - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-        - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-        - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+        How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         """
         return pulumi.get(self, "mode")
 
@@ -78,12 +72,9 @@ class _AppSecSelectedHostnamesState:
                  mode: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecSelectedHostnames resources.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the hostnames.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: . JSON array of hostnames to be added or removed from the protected hosts list.
-        :param pulumi.Input[str] mode: . Indicates how the `hostnames` array is to be applied. Allowed values are:
-               - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-               - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-               - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: List of hostnames to be added or removed from the protected hosts list
+        :param pulumi.Input[str] mode: How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -96,7 +87,7 @@ class _AppSecSelectedHostnamesState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the hostnames.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -108,7 +99,7 @@ class _AppSecSelectedHostnamesState:
     @pulumi.getter
     def hostnames(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        . JSON array of hostnames to be added or removed from the protected hosts list.
+        List of hostnames to be added or removed from the protected hosts list
         """
         return pulumi.get(self, "hostnames")
 
@@ -120,10 +111,7 @@ class _AppSecSelectedHostnamesState:
     @pulumi.getter
     def mode(self) -> Optional[pulumi.Input[str]]:
         """
-        . Indicates how the `hostnames` array is to be applied. Allowed values are:
-        - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-        - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-        - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+        How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         """
         return pulumi.get(self, "mode")
 
@@ -142,35 +130,12 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
                  mode: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        **Scopes**: Security configuration
-
-        Modifies the list of hostnames protected under by a security configuration.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://techdocs.akamai.com/application-security/reference/put-selected-hostnames-per-config)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        appsecselectedhostnames = akamai.AppSecSelectedHostnames("appsecselectedhostnames",
-            config_id=configuration.config_id,
-            hostnames=["example.com"],
-            mode="APPEND")
-        ```
-
+        Create a AppSecSelectedHostnames resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the hostnames.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: . JSON array of hostnames to be added or removed from the protected hosts list.
-        :param pulumi.Input[str] mode: . Indicates how the `hostnames` array is to be applied. Allowed values are:
-               - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-               - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-               - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: List of hostnames to be added or removed from the protected hosts list
+        :param pulumi.Input[str] mode: How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         """
         ...
     @overload
@@ -179,27 +144,7 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
                  args: AppSecSelectedHostnamesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Security configuration
-
-        Modifies the list of hostnames protected under by a security configuration.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://techdocs.akamai.com/application-security/reference/put-selected-hostnames-per-config)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        appsecselectedhostnames = akamai.AppSecSelectedHostnames("appsecselectedhostnames",
-            config_id=configuration.config_id,
-            hostnames=["example.com"],
-            mode="APPEND")
-        ```
-
+        Create a AppSecSelectedHostnames resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecSelectedHostnamesArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -256,12 +201,9 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the hostnames.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: . JSON array of hostnames to be added or removed from the protected hosts list.
-        :param pulumi.Input[str] mode: . Indicates how the `hostnames` array is to be applied. Allowed values are:
-               - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-               - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-               - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: List of hostnames to be added or removed from the protected hosts list
+        :param pulumi.Input[str] mode: How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -276,7 +218,7 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the hostnames.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -284,7 +226,7 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
     @pulumi.getter
     def hostnames(self) -> pulumi.Output[Sequence[str]]:
         """
-        . JSON array of hostnames to be added or removed from the protected hosts list.
+        List of hostnames to be added or removed from the protected hosts list
         """
         return pulumi.get(self, "hostnames")
 
@@ -292,10 +234,7 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
     @pulumi.getter
     def mode(self) -> pulumi.Output[str]:
         """
-        . Indicates how the `hostnames` array is to be applied. Allowed values are:
-        - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-        - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-        - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+        How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         """
         return pulumi.get(self, "mode")
 

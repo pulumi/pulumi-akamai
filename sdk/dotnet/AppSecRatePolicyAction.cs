@@ -9,86 +9,35 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Rate policy
-    /// 
-    /// Creates, modifies, or deletes the actions associated with a rate policy.
-    /// By default, rate policies take no action when triggered.
-    /// Note that you must set separate actions for requests originating from an IPv4 IP address and for requests originating from an IPv6 address.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies/{ratePolicyId}](https://techdocs.akamai.com/application-security/reference/put-rate-policy-action)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.IO;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var appsecRatePolicy = new Akamai.AppSecRatePolicy("appsecRatePolicy", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         RatePolicy = File.ReadAllText($"{path.Module}/rate_policy.json"),
-    ///     });
-    /// 
-    ///     var appsecRatePolicyAction = new Akamai.AppSecRatePolicyAction("appsecRatePolicyAction", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         RatePolicyId = appsecRatePolicy.RatePolicyId,
-    ///         Ipv4Action = "deny",
-    ///         Ipv6Action = "deny",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecRatePolicyAction:AppSecRatePolicyAction")]
     public partial class AppSecRatePolicyAction : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the rate policy action being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken for requests coming from an IPv4 address
         /// </summary>
         [Output("ipv4Action")]
         public Output<string> Ipv4Action { get; private set; } = null!;
 
         /// <summary>
-        /// . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+        /// Action to be taken for requests coming from an IPv6 address
         /// </summary>
         [Output("ipv6Action")]
         public Output<string> Ipv6Action { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the rate policy whose action is being modified.
+        /// Unique identifier of the rate policy
         /// </summary>
         [Output("ratePolicyId")]
         public Output<int> RatePolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -140,38 +89,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecRatePolicyActionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the rate policy action being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken for requests coming from an IPv4 address
         /// </summary>
         [Input("ipv4Action", required: true)]
         public Input<string> Ipv4Action { get; set; } = null!;
 
         /// <summary>
-        /// . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+        /// Action to be taken for requests coming from an IPv6 address
         /// </summary>
         [Input("ipv6Action", required: true)]
         public Input<string> Ipv6Action { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the rate policy whose action is being modified.
+        /// Unique identifier of the rate policy
         /// </summary>
         [Input("ratePolicyId", required: true)]
         public Input<int> RatePolicyId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -185,38 +127,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecRatePolicyActionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the rate policy action being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken for requests coming from an IPv4 address
         /// </summary>
         [Input("ipv4Action")]
         public Input<string>? Ipv4Action { get; set; }
 
         /// <summary>
-        /// . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+        /// Action to be taken for requests coming from an IPv6 address
         /// </summary>
         [Input("ipv6Action")]
         public Input<string>? Ipv6Action { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the rate policy whose action is being modified.
+        /// Unique identifier of the rate policy
         /// </summary>
         [Input("ratePolicyId")]
         public Input<int>? RatePolicyId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

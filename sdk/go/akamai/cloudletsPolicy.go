@@ -11,72 +11,26 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `CloudletsPolicy` resource to create and version a policy. For each Cloudlet instance on your contract, there can be any number of policies. A single policy is associated with a single property configuration. Within a policy version you define the rules that determine when the Cloudlet executes. You may want to create a new version of a policy to support a different business requirement, or to test new functionality.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewCloudletsPolicy(ctx, "example", &akamai.CloudletsPolicyArgs{
-//				CloudletCode: pulumi.String("ER"),
-//				Description:  pulumi.String("policy description"),
-//				GroupId:      pulumi.String("grp_123"),
-//				MatchRules:   pulumi.String("  [\n  {\n    \"name\": \"rule1\",\n    \"type\": \"erMatchRule\",\n    \"useRelativeUrl\": \"none\",\n    \"statusCode\": 301,\n    \"redirectURL\": \"https://www.example.com\",\n    \"matchURL\": \"example.com\",\n    \"useIncomingQueryString\": false,\n    \"useIncomingSchemeAndHost\": false\n  },\n  {\n    \"name\": \"rule2\",\n    \"type\": \"erMatchRule\",\n    \"matches\": [\n      {\n        \"matchType\": \"path\",\n        \"matchValue\": \"/example/website.html\",\n        \"matchOperator\": \"equals\",\n        \"caseSensitive\": false,\n        \"negate\": false\n      }\n    ],\n    \"useRelativeUrl\": \"copy_scheme_hostname\",\n    \"statusCode\": 301,\n    \"redirectURL\": \"/website.html\",\n    \"useIncomingQueryString\": false,\n    \"useIncomingSchemeAndHost\": true\n  }\n]\n"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Import
-//
-// Basic usagehcl resource "akamai_cloudlets_policy" "example" {
-//
-// # (resource arguments)
-//
-//	} You can import your Akamai Cloudlets policy using a policy name. For example
-//
-// ```sh
-//
-//	$ pulumi import akamai:index/cloudletsPolicy:CloudletsPolicy example policy1
-//
-// ```
 type CloudletsPolicy struct {
 	pulumi.CustomResourceState
 
-	// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
 	CloudletCode pulumi.StringOutput `pulumi:"cloudletCode"`
-	// A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+	// An integer that corresponds to a Cloudlets policy type (0 or 9)
 	CloudletId pulumi.IntOutput `pulumi:"cloudletId"`
-	// The description of this specific policy.
+	// The description of this specific policy
 	Description pulumi.StringPtrOutput `pulumi:"description"`
-	// Defines the group association for the policy. You must have edit privileges for the group.
+	// Defines the group association for the policy. You must have edit privileges for the group
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
-	// The version of the Cloudlet-specific `matchRules`.
+	// The version of the Cloudlet specific matchRules
 	MatchRuleFormat pulumi.StringPtrOutput `pulumi:"matchRuleFormat"`
 	// A JSON structure that defines the rules for this policy
 	MatchRules pulumi.StringPtrOutput `pulumi:"matchRules"`
-	// The unique name of the policy.
+	// The name of the policy. The name must be unique
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The version number of the policy.
+	// The version number of the policy
 	Version pulumi.IntOutput `pulumi:"version"`
-	// A JSON-encoded list of warnings.
+	// A JSON encoded list of warnings
 	Warnings pulumi.StringOutput `pulumi:"warnings"`
 }
 
@@ -115,44 +69,44 @@ func GetCloudletsPolicy(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudletsPolicy resources.
 type cloudletsPolicyState struct {
-	// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
 	CloudletCode *string `pulumi:"cloudletCode"`
-	// A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+	// An integer that corresponds to a Cloudlets policy type (0 or 9)
 	CloudletId *int `pulumi:"cloudletId"`
-	// The description of this specific policy.
+	// The description of this specific policy
 	Description *string `pulumi:"description"`
-	// Defines the group association for the policy. You must have edit privileges for the group.
+	// Defines the group association for the policy. You must have edit privileges for the group
 	GroupId *string `pulumi:"groupId"`
-	// The version of the Cloudlet-specific `matchRules`.
+	// The version of the Cloudlet specific matchRules
 	MatchRuleFormat *string `pulumi:"matchRuleFormat"`
 	// A JSON structure that defines the rules for this policy
 	MatchRules *string `pulumi:"matchRules"`
-	// The unique name of the policy.
+	// The name of the policy. The name must be unique
 	Name *string `pulumi:"name"`
-	// The version number of the policy.
+	// The version number of the policy
 	Version *int `pulumi:"version"`
-	// A JSON-encoded list of warnings.
+	// A JSON encoded list of warnings
 	Warnings *string `pulumi:"warnings"`
 }
 
 type CloudletsPolicyState struct {
-	// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
 	CloudletCode pulumi.StringPtrInput
-	// A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+	// An integer that corresponds to a Cloudlets policy type (0 or 9)
 	CloudletId pulumi.IntPtrInput
-	// The description of this specific policy.
+	// The description of this specific policy
 	Description pulumi.StringPtrInput
-	// Defines the group association for the policy. You must have edit privileges for the group.
+	// Defines the group association for the policy. You must have edit privileges for the group
 	GroupId pulumi.StringPtrInput
-	// The version of the Cloudlet-specific `matchRules`.
+	// The version of the Cloudlet specific matchRules
 	MatchRuleFormat pulumi.StringPtrInput
 	// A JSON structure that defines the rules for this policy
 	MatchRules pulumi.StringPtrInput
-	// The unique name of the policy.
+	// The name of the policy. The name must be unique
 	Name pulumi.StringPtrInput
-	// The version number of the policy.
+	// The version number of the policy
 	Version pulumi.IntPtrInput
-	// A JSON-encoded list of warnings.
+	// A JSON encoded list of warnings
 	Warnings pulumi.StringPtrInput
 }
 
@@ -161,33 +115,33 @@ func (CloudletsPolicyState) ElementType() reflect.Type {
 }
 
 type cloudletsPolicyArgs struct {
-	// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
 	CloudletCode string `pulumi:"cloudletCode"`
-	// The description of this specific policy.
+	// The description of this specific policy
 	Description *string `pulumi:"description"`
-	// Defines the group association for the policy. You must have edit privileges for the group.
+	// Defines the group association for the policy. You must have edit privileges for the group
 	GroupId string `pulumi:"groupId"`
-	// The version of the Cloudlet-specific `matchRules`.
+	// The version of the Cloudlet specific matchRules
 	MatchRuleFormat *string `pulumi:"matchRuleFormat"`
 	// A JSON structure that defines the rules for this policy
 	MatchRules *string `pulumi:"matchRules"`
-	// The unique name of the policy.
+	// The name of the policy. The name must be unique
 	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a CloudletsPolicy resource.
 type CloudletsPolicyArgs struct {
-	// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+	// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
 	CloudletCode pulumi.StringInput
-	// The description of this specific policy.
+	// The description of this specific policy
 	Description pulumi.StringPtrInput
-	// Defines the group association for the policy. You must have edit privileges for the group.
+	// Defines the group association for the policy. You must have edit privileges for the group
 	GroupId pulumi.StringInput
-	// The version of the Cloudlet-specific `matchRules`.
+	// The version of the Cloudlet specific matchRules
 	MatchRuleFormat pulumi.StringPtrInput
 	// A JSON structure that defines the rules for this policy
 	MatchRules pulumi.StringPtrInput
-	// The unique name of the policy.
+	// The name of the policy. The name must be unique
 	Name pulumi.StringPtrInput
 }
 
@@ -278,27 +232,27 @@ func (o CloudletsPolicyOutput) ToCloudletsPolicyOutputWithContext(ctx context.Co
 	return o
 }
 
-// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
 func (o CloudletsPolicyOutput) CloudletCode() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.CloudletCode }).(pulumi.StringOutput)
 }
 
-// A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+// An integer that corresponds to a Cloudlets policy type (0 or 9)
 func (o CloudletsPolicyOutput) CloudletId() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.IntOutput { return v.CloudletId }).(pulumi.IntOutput)
 }
 
-// The description of this specific policy.
+// The description of this specific policy
 func (o CloudletsPolicyOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// Defines the group association for the policy. You must have edit privileges for the group.
+// Defines the group association for the policy. You must have edit privileges for the group
 func (o CloudletsPolicyOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// The version of the Cloudlet-specific `matchRules`.
+// The version of the Cloudlet specific matchRules
 func (o CloudletsPolicyOutput) MatchRuleFormat() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringPtrOutput { return v.MatchRuleFormat }).(pulumi.StringPtrOutput)
 }
@@ -308,17 +262,17 @@ func (o CloudletsPolicyOutput) MatchRules() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringPtrOutput { return v.MatchRules }).(pulumi.StringPtrOutput)
 }
 
-// The unique name of the policy.
+// The name of the policy. The name must be unique
 func (o CloudletsPolicyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The version number of the policy.
+// The version number of the policy
 func (o CloudletsPolicyOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
 }
 
-// A JSON-encoded list of warnings.
+// A JSON encoded list of warnings
 func (o CloudletsPolicyOutput) Warnings() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicy) pulumi.StringOutput { return v.Warnings }).(pulumi.StringOutput)
 }

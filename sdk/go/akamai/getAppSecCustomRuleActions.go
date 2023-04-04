@@ -10,52 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy; custom rule
-//
-// Retrieve information about the actions defined for your custom rules. Custom rules are rules that you create yourself — these rules aren't part of Akamai's Kona Rule Set.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-custom-rules)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			customRuleActionsAppSecCustomRuleActions, err := akamai.GetAppSecCustomRuleActions(ctx, &akamai.GetAppSecCustomRuleActionsArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: "gms1_134637",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("customRuleActions", customRuleActionsAppSecCustomRuleActions.OutputText)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `outputText`. Tabular report showing the ID, name, and action of the custom rules.
 func GetAppSecCustomRuleActions(ctx *pulumi.Context, args *GetAppSecCustomRuleActionsArgs, opts ...pulumi.InvokeOption) (*GetAppSecCustomRuleActionsResult, error) {
 	var rv GetAppSecCustomRuleActionsResult
 	err := ctx.Invoke("akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions", args, &rv, opts...)
@@ -67,11 +21,8 @@ func GetAppSecCustomRuleActions(ctx *pulumi.Context, args *GetAppSecCustomRuleAc
 
 // A collection of arguments for invoking getAppSecCustomRuleActions.
 type GetAppSecCustomRuleActionsArgs struct {
-	// . Unique identifier of the security configuration associated with the custom rules.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the custom rule you want to return information for. If not included, action information is returned for all your custom rules.
-	CustomRuleId *int `pulumi:"customRuleId"`
-	// . Unique identifier of the security policy associated with the custom rules.
+	ConfigId         int    `pulumi:"configId"`
+	CustomRuleId     *int   `pulumi:"customRuleId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -100,11 +51,8 @@ func GetAppSecCustomRuleActionsOutput(ctx *pulumi.Context, args GetAppSecCustomR
 
 // A collection of arguments for invoking getAppSecCustomRuleActions.
 type GetAppSecCustomRuleActionsOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the custom rules.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the custom rule you want to return information for. If not included, action information is returned for all your custom rules.
-	CustomRuleId pulumi.IntPtrInput `pulumi:"customRuleId"`
-	// . Unique identifier of the security policy associated with the custom rules.
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
+	CustomRuleId     pulumi.IntPtrInput `pulumi:"customRuleId"`
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 

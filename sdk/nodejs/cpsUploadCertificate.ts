@@ -4,29 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.CpsUploadCertificate` resource to upload a third-party certificate and any other files that your CA sent you into CPS. The certificate and trust chain that your CA gives you must be in PEM format before you can use it in CPS. A PEM certificate is a base64 encoded ASCII file and contains `----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` statements.
- *
- * If your CA provides you with a certificate that is not in PEM format, you can convert it to PEM format using an SSL converter.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const uploadCert = new akamai.CpsUploadCertificate("uploadCert", {
- *     enrollmentId: 12345,
- *     certificateEcdsaPem: example_cert_ecdsa.pem,
- *     trustChainEcdsaPem: example_trust_chain_ecdsa.pem,
- *     acknowledgePostVerificationWarnings: true,
- *     acknowledgeChangeManagement: true,
- *     waitForDeployment: true,
- * });
- * ```
- */
 export class CpsUploadCertificate extends pulumi.CustomResource {
     /**
      * Get an existing CpsUploadCertificate resource's state with the given name, ID, and optional extra
@@ -56,36 +33,35 @@ export class CpsUploadCertificate extends pulumi.CustomResource {
     }
 
     /**
-     * Boolean. Use only if `changeManagement` is set to `true` in the `akamai.CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+     * Whether to acknowledge change management
      */
     public readonly acknowledgeChangeManagement!: pulumi.Output<boolean | undefined>;
     /**
-     * Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `autoApproveWarnings`.
+     * Whether to acknowledge post-verification warnings
      */
     public readonly acknowledgePostVerificationWarnings!: pulumi.Output<boolean | undefined>;
     /**
-     * The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+     * List of post-verification warnings to be automatically acknowledged
      */
     public readonly autoApproveWarnings!: pulumi.Output<string[] | undefined>;
     /**
-     * The ECDSA certificate in PEM format you want to upload.
+     * ECDSA certificate in pem format to be uploaded
      */
     public readonly certificateEcdsaPem!: pulumi.Output<string | undefined>;
     /**
-     * The RSA certificate in PEM format you want to upload.
+     * RSA certificate in pem format to be uploaded
      */
     public readonly certificateRsaPem!: pulumi.Output<string | undefined>;
     /**
-     * Unique identifier for the certificate enrollment.
-     * * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+     * The unique identifier of the enrollment
      */
     public readonly enrollmentId!: pulumi.Output<number>;
     /**
-     * The trust chain in PEM format for the ECDSA certificate you want to upload.
+     * Trust chain in pem format for provided ECDSA certificate
      */
     public readonly trustChainEcdsaPem!: pulumi.Output<string | undefined>;
     /**
-     * The trust chain in PEM format for the RSA certificate you want to upload.
+     * Trust chain in pem format for provided RSA certificate
      */
     public readonly trustChainRsaPem!: pulumi.Output<string | undefined>;
     /**
@@ -93,7 +69,7 @@ export class CpsUploadCertificate extends pulumi.CustomResource {
      */
     public /*out*/ readonly unacknowledgedWarnings!: pulumi.Output<boolean>;
     /**
-     * Boolean. Enter `true` to wait for certificate to be deployed.
+     * Whether to wait for certificate to be deployed
      */
     public readonly waitForDeployment!: pulumi.Output<boolean | undefined>;
 
@@ -146,36 +122,35 @@ export class CpsUploadCertificate extends pulumi.CustomResource {
  */
 export interface CpsUploadCertificateState {
     /**
-     * Boolean. Use only if `changeManagement` is set to `true` in the `akamai.CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+     * Whether to acknowledge change management
      */
     acknowledgeChangeManagement?: pulumi.Input<boolean>;
     /**
-     * Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `autoApproveWarnings`.
+     * Whether to acknowledge post-verification warnings
      */
     acknowledgePostVerificationWarnings?: pulumi.Input<boolean>;
     /**
-     * The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+     * List of post-verification warnings to be automatically acknowledged
      */
     autoApproveWarnings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The ECDSA certificate in PEM format you want to upload.
+     * ECDSA certificate in pem format to be uploaded
      */
     certificateEcdsaPem?: pulumi.Input<string>;
     /**
-     * The RSA certificate in PEM format you want to upload.
+     * RSA certificate in pem format to be uploaded
      */
     certificateRsaPem?: pulumi.Input<string>;
     /**
-     * Unique identifier for the certificate enrollment.
-     * * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+     * The unique identifier of the enrollment
      */
     enrollmentId?: pulumi.Input<number>;
     /**
-     * The trust chain in PEM format for the ECDSA certificate you want to upload.
+     * Trust chain in pem format for provided ECDSA certificate
      */
     trustChainEcdsaPem?: pulumi.Input<string>;
     /**
-     * The trust chain in PEM format for the RSA certificate you want to upload.
+     * Trust chain in pem format for provided RSA certificate
      */
     trustChainRsaPem?: pulumi.Input<string>;
     /**
@@ -183,7 +158,7 @@ export interface CpsUploadCertificateState {
      */
     unacknowledgedWarnings?: pulumi.Input<boolean>;
     /**
-     * Boolean. Enter `true` to wait for certificate to be deployed.
+     * Whether to wait for certificate to be deployed
      */
     waitForDeployment?: pulumi.Input<boolean>;
 }
@@ -193,40 +168,39 @@ export interface CpsUploadCertificateState {
  */
 export interface CpsUploadCertificateArgs {
     /**
-     * Boolean. Use only if `changeManagement` is set to `true` in the `akamai.CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+     * Whether to acknowledge change management
      */
     acknowledgeChangeManagement?: pulumi.Input<boolean>;
     /**
-     * Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `autoApproveWarnings`.
+     * Whether to acknowledge post-verification warnings
      */
     acknowledgePostVerificationWarnings?: pulumi.Input<boolean>;
     /**
-     * The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+     * List of post-verification warnings to be automatically acknowledged
      */
     autoApproveWarnings?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The ECDSA certificate in PEM format you want to upload.
+     * ECDSA certificate in pem format to be uploaded
      */
     certificateEcdsaPem?: pulumi.Input<string>;
     /**
-     * The RSA certificate in PEM format you want to upload.
+     * RSA certificate in pem format to be uploaded
      */
     certificateRsaPem?: pulumi.Input<string>;
     /**
-     * Unique identifier for the certificate enrollment.
-     * * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+     * The unique identifier of the enrollment
      */
     enrollmentId: pulumi.Input<number>;
     /**
-     * The trust chain in PEM format for the ECDSA certificate you want to upload.
+     * Trust chain in pem format for provided ECDSA certificate
      */
     trustChainEcdsaPem?: pulumi.Input<string>;
     /**
-     * The trust chain in PEM format for the RSA certificate you want to upload.
+     * Trust chain in pem format for provided RSA certificate
      */
     trustChainRsaPem?: pulumi.Input<string>;
     /**
-     * Boolean. Enter `true` to wait for certificate to be deployed.
+     * Whether to wait for certificate to be deployed
      */
     waitForDeployment?: pulumi.Input<boolean>;
 }

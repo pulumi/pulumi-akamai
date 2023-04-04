@@ -4,34 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Rule
- *
- * Modifies a Kona Rule Set rule's action, conditions, and exceptions.
- *
- * **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}](https://techdocs.akamai.com/application-security/reference/put-rule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-rule-condition-exception)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- * import * as fs from "fs";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const rule = new akamai.AppSecRule("rule", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: "gms1_134637",
- *     ruleId: 60029316,
- *     ruleAction: "deny",
- *     conditionException: fs.readFileSync(`${path.module}/condition_exception.json`),
- * });
- * ```
- */
 export class AppSecRule extends pulumi.CustomResource {
     /**
      * Get an existing AppSecRule resource's state with the given name, ID, and optional extra
@@ -61,27 +33,23 @@ export class AppSecRule extends pulumi.CustomResource {
     }
 
     /**
-     * . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+     * JSON-formatted condition and exception information for the rule
      */
     public readonly conditionException!: pulumi.Output<string | undefined>;
     /**
-     * . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action. or `none` to take no action.
+     * Action to be taken when the rule is triggered
      */
     public readonly ruleAction!: pulumi.Output<string>;
     /**
-     * . Unique identifier of the rule being modified.
+     * Unique identifier of the rule
      */
     public readonly ruleId!: pulumi.Output<number>;
     /**
-     * . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -130,27 +98,23 @@ export class AppSecRule extends pulumi.CustomResource {
  */
 export interface AppSecRuleState {
     /**
-     * . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+     * JSON-formatted condition and exception information for the rule
      */
     conditionException?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action. or `none` to take no action.
+     * Action to be taken when the rule is triggered
      */
     ruleAction?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the rule being modified.
+     * Unique identifier of the rule
      */
     ruleId?: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -160,27 +124,23 @@ export interface AppSecRuleState {
  */
 export interface AppSecRuleArgs {
     /**
-     * . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+     * JSON-formatted condition and exception information for the rule
      */
     conditionException?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action. or `none` to take no action.
+     * Action to be taken when the rule is triggered
      */
     ruleAction?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the rule being modified.
+     * Unique identifier of the rule
      */
     ruleId: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId: pulumi.Input<string>;
 }

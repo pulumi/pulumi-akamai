@@ -11,58 +11,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `GtmCidrmap` resource to create, configure, and import a GTM Classless Inter-Domain Routing (CIDR) map. CIDR mapping uses the IP addresses of the requesting name server to provide IP-specific CNAME entries. CNAMEs let you direct internal users to a specific environment or direct them to the origin. This lets you provide different responses to an internal corporate DNS infrastructure, such as internal test environments and another answer for all other name servers (`defaultDatacenter`).
-//
-//	CIDR maps split the Internet into multiple CIDR block zones. Properties that use a map can specify a handout CNAME for each zone on the property's editing page. To configure a property for CIDR mapping, your domain needs at least one CIDR map defined.
-//
-// > **Note** Import requires an ID with this format: `existingDomainName`:`existingMapName`.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewGtmCidrmap(ctx, "demoCidrmap", &akamai.GtmCidrmapArgs{
-//				DefaultDatacenter: &akamai.GtmCidrmapDefaultDatacenterArgs{
-//					DatacenterId: pulumi.Int(5400),
-//					Nickname:     pulumi.String("All Other CIDR Blocks"),
-//				},
-//				Domain: pulumi.String("demo_domain.akadns.net"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // Deprecated: akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap
 type GtmCidrmap struct {
 	pulumi.CustomResourceState
 
-	// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-	Assignments GtmCidrmapAssignmentArrayOutput `pulumi:"assignments"`
-	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+	Assignments       GtmCidrmapAssignmentArrayOutput   `pulumi:"assignments"`
 	DefaultDatacenter GtmCidrmapDefaultDatacenterOutput `pulumi:"defaultDatacenter"`
-	// GTM Domain name for the CIDR Map.
-	Domain pulumi.StringOutput `pulumi:"domain"`
-	// A descriptive label for the CIDR map, up to 255 characters.
-	Name pulumi.StringOutput `pulumi:"name"`
-	// A boolean that, if set to `true`, waits for transaction to complete.
-	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	Domain            pulumi.StringOutput               `pulumi:"domain"`
+	Name              pulumi.StringOutput               `pulumi:"name"`
+	WaitOnComplete    pulumi.BoolPtrOutput              `pulumi:"waitOnComplete"`
 }
 
 // NewGtmCidrmap registers a new resource with the given unique name, arguments, and options.
@@ -100,29 +57,19 @@ func GetGtmCidrmap(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmCidrmap resources.
 type gtmCidrmapState struct {
-	// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-	Assignments []GtmCidrmapAssignment `pulumi:"assignments"`
-	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+	Assignments       []GtmCidrmapAssignment       `pulumi:"assignments"`
 	DefaultDatacenter *GtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// GTM Domain name for the CIDR Map.
-	Domain *string `pulumi:"domain"`
-	// A descriptive label for the CIDR map, up to 255 characters.
-	Name *string `pulumi:"name"`
-	// A boolean that, if set to `true`, waits for transaction to complete.
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            *string                      `pulumi:"domain"`
+	Name              *string                      `pulumi:"name"`
+	WaitOnComplete    *bool                        `pulumi:"waitOnComplete"`
 }
 
 type GtmCidrmapState struct {
-	// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-	Assignments GtmCidrmapAssignmentArrayInput
-	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+	Assignments       GtmCidrmapAssignmentArrayInput
 	DefaultDatacenter GtmCidrmapDefaultDatacenterPtrInput
-	// GTM Domain name for the CIDR Map.
-	Domain pulumi.StringPtrInput
-	// A descriptive label for the CIDR map, up to 255 characters.
-	Name pulumi.StringPtrInput
-	// A boolean that, if set to `true`, waits for transaction to complete.
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringPtrInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmCidrmapState) ElementType() reflect.Type {
@@ -130,30 +77,20 @@ func (GtmCidrmapState) ElementType() reflect.Type {
 }
 
 type gtmCidrmapArgs struct {
-	// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-	Assignments []GtmCidrmapAssignment `pulumi:"assignments"`
-	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+	Assignments       []GtmCidrmapAssignment      `pulumi:"assignments"`
 	DefaultDatacenter GtmCidrmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// GTM Domain name for the CIDR Map.
-	Domain string `pulumi:"domain"`
-	// A descriptive label for the CIDR map, up to 255 characters.
-	Name *string `pulumi:"name"`
-	// A boolean that, if set to `true`, waits for transaction to complete.
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            string                      `pulumi:"domain"`
+	Name              *string                     `pulumi:"name"`
+	WaitOnComplete    *bool                       `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmCidrmap resource.
 type GtmCidrmapArgs struct {
-	// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-	Assignments GtmCidrmapAssignmentArrayInput
-	// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
+	Assignments       GtmCidrmapAssignmentArrayInput
 	DefaultDatacenter GtmCidrmapDefaultDatacenterInput
-	// GTM Domain name for the CIDR Map.
-	Domain pulumi.StringInput
-	// A descriptive label for the CIDR map, up to 255 characters.
-	Name pulumi.StringPtrInput
-	// A boolean that, if set to `true`, waits for transaction to complete.
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmCidrmapArgs) ElementType() reflect.Type {
@@ -243,27 +180,22 @@ func (o GtmCidrmapOutput) ToGtmCidrmapOutputWithContext(ctx context.Context) Gtm
 	return o
 }
 
-// Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
 func (o GtmCidrmapOutput) Assignments() GtmCidrmapAssignmentArrayOutput {
 	return o.ApplyT(func(v *GtmCidrmap) GtmCidrmapAssignmentArrayOutput { return v.Assignments }).(GtmCidrmapAssignmentArrayOutput)
 }
 
-// A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
 func (o GtmCidrmapOutput) DefaultDatacenter() GtmCidrmapDefaultDatacenterOutput {
 	return o.ApplyT(func(v *GtmCidrmap) GtmCidrmapDefaultDatacenterOutput { return v.DefaultDatacenter }).(GtmCidrmapDefaultDatacenterOutput)
 }
 
-// GTM Domain name for the CIDR Map.
 func (o GtmCidrmapOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *GtmCidrmap) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }
 
-// A descriptive label for the CIDR map, up to 255 characters.
 func (o GtmCidrmapOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *GtmCidrmap) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// A boolean that, if set to `true`, waits for transaction to complete.
 func (o GtmCidrmapOutput) WaitOnComplete() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GtmCidrmap) pulumi.BoolPtrOutput { return v.WaitOnComplete }).(pulumi.BoolPtrOutput)
 }

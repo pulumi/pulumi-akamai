@@ -4,67 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.CloudletsPolicy` resource to create and version a policy. For each Cloudlet instance on your contract, there can be any number of policies. A single policy is associated with a single property configuration. Within a policy version you define the rules that determine when the Cloudlet executes. You may want to create a new version of a policy to support a different business requirement, or to test new functionality.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = new akamai.CloudletsPolicy("example", {
- *     cloudletCode: "ER",
- *     description: "policy description",
- *     groupId: "grp_123",
- *     matchRules: `  [
- *   {
- *     "name": "rule1",
- *     "type": "erMatchRule",
- *     "useRelativeUrl": "none",
- *     "statusCode": 301,
- *     "redirectURL": "https://www.example.com",
- *     "matchURL": "example.com",
- *     "useIncomingQueryString": false,
- *     "useIncomingSchemeAndHost": false
- *   },
- *   {
- *     "name": "rule2",
- *     "type": "erMatchRule",
- *     "matches": [
- *       {
- *         "matchType": "path",
- *         "matchValue": "/example/website.html",
- *         "matchOperator": "equals",
- *         "caseSensitive": false,
- *         "negate": false
- *       }
- *     ],
- *     "useRelativeUrl": "copy_scheme_hostname",
- *     "statusCode": 301,
- *     "redirectURL": "/website.html",
- *     "useIncomingQueryString": false,
- *     "useIncomingSchemeAndHost": true
- *   }
- * ]
- * `,
- * });
- * ```
- *
- * ## Import
- *
- * Basic usagehcl resource "akamai_cloudlets_policy" "example" {
- *
- * # (resource arguments)
- *
- *  } You can import your Akamai Cloudlets policy using a policy name. For example
- *
- * ```sh
- *  $ pulumi import akamai:index/cloudletsPolicy:CloudletsPolicy example policy1
- * ```
- */
 export class CloudletsPolicy extends pulumi.CustomResource {
     /**
      * Get an existing CloudletsPolicy resource's state with the given name, ID, and optional extra
@@ -94,23 +33,23 @@ export class CloudletsPolicy extends pulumi.CustomResource {
     }
 
     /**
-     * The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
      */
     public readonly cloudletCode!: pulumi.Output<string>;
     /**
-     * A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+     * An integer that corresponds to a Cloudlets policy type (0 or 9)
      */
     public /*out*/ readonly cloudletId!: pulumi.Output<number>;
     /**
-     * The description of this specific policy.
+     * The description of this specific policy
      */
     public readonly description!: pulumi.Output<string | undefined>;
     /**
-     * Defines the group association for the policy. You must have edit privileges for the group.
+     * Defines the group association for the policy. You must have edit privileges for the group
      */
     public readonly groupId!: pulumi.Output<string>;
     /**
-     * The version of the Cloudlet-specific `matchRules`.
+     * The version of the Cloudlet specific matchRules
      */
     public readonly matchRuleFormat!: pulumi.Output<string | undefined>;
     /**
@@ -118,15 +57,15 @@ export class CloudletsPolicy extends pulumi.CustomResource {
      */
     public readonly matchRules!: pulumi.Output<string | undefined>;
     /**
-     * The unique name of the policy.
+     * The name of the policy. The name must be unique
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * The version number of the policy.
+     * The version number of the policy
      */
     public /*out*/ readonly version!: pulumi.Output<number>;
     /**
-     * A JSON-encoded list of warnings.
+     * A JSON encoded list of warnings
      */
     public /*out*/ readonly warnings!: pulumi.Output<string>;
 
@@ -180,23 +119,23 @@ export class CloudletsPolicy extends pulumi.CustomResource {
  */
 export interface CloudletsPolicyState {
     /**
-     * The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
      */
     cloudletCode?: pulumi.Input<string>;
     /**
-     * A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+     * An integer that corresponds to a Cloudlets policy type (0 or 9)
      */
     cloudletId?: pulumi.Input<number>;
     /**
-     * The description of this specific policy.
+     * The description of this specific policy
      */
     description?: pulumi.Input<string>;
     /**
-     * Defines the group association for the policy. You must have edit privileges for the group.
+     * Defines the group association for the policy. You must have edit privileges for the group
      */
     groupId?: pulumi.Input<string>;
     /**
-     * The version of the Cloudlet-specific `matchRules`.
+     * The version of the Cloudlet specific matchRules
      */
     matchRuleFormat?: pulumi.Input<string>;
     /**
@@ -204,15 +143,15 @@ export interface CloudletsPolicyState {
      */
     matchRules?: pulumi.Input<string>;
     /**
-     * The unique name of the policy.
+     * The name of the policy. The name must be unique
      */
     name?: pulumi.Input<string>;
     /**
-     * The version number of the policy.
+     * The version number of the policy
      */
     version?: pulumi.Input<number>;
     /**
-     * A JSON-encoded list of warnings.
+     * A JSON encoded list of warnings
      */
     warnings?: pulumi.Input<string>;
 }
@@ -222,19 +161,19 @@ export interface CloudletsPolicyState {
  */
 export interface CloudletsPolicyArgs {
     /**
-     * The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
      */
     cloudletCode: pulumi.Input<string>;
     /**
-     * The description of this specific policy.
+     * The description of this specific policy
      */
     description?: pulumi.Input<string>;
     /**
-     * Defines the group association for the policy. You must have edit privileges for the group.
+     * Defines the group association for the policy. You must have edit privileges for the group
      */
     groupId: pulumi.Input<string>;
     /**
-     * The version of the Cloudlet-specific `matchRules`.
+     * The version of the Cloudlet specific matchRules
      */
     matchRuleFormat?: pulumi.Input<string>;
     /**
@@ -242,7 +181,7 @@ export interface CloudletsPolicyArgs {
      */
     matchRules?: pulumi.Input<string>;
     /**
-     * The unique name of the policy.
+     * The name of the policy. The name must be unique
      */
     name?: pulumi.Input<string>;
 }

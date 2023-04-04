@@ -103,9 +103,6 @@ def get_app_sec_security_policy(config_id: Optional[int] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSecurityPolicyResult:
     """
     Use this data source to access information about an existing resource.
-
-    :param int config_id: . Unique identifier of the security configuration associated with the security policies.
-    :param str security_policy_name: . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -129,8 +126,5 @@ def get_app_sec_security_policy_output(config_id: Optional[pulumi.Input[int]] = 
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSecurityPolicyResult]:
     """
     Use this data source to access information about an existing resource.
-
-    :param int config_id: . Unique identifier of the security configuration associated with the security policies.
-    :param str security_policy_name: . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
     """
     ...

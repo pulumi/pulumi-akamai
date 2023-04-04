@@ -12,6 +12,7 @@ import com.pulumi.akamai.inputs.ProviderPropertyArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -256,6 +257,21 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.propertySection);
     }
 
+    /**
+     * The maximum number of API requests to be made per second (0 for no limit)
+     * 
+     */
+    @Import(name="requestLimit", json=true)
+    private @Nullable Output<Integer> requestLimit;
+
+    /**
+     * @return The maximum number of API requests to be made per second (0 for no limit)
+     * 
+     */
+    public Optional<Output<Integer>> requestLimit() {
+        return Optional.ofNullable(this.requestLimit);
+    }
+
     private ProviderArgs() {}
 
     private ProviderArgs(ProviderArgs $) {
@@ -274,6 +290,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         this.papiSection = $.papiSection;
         this.property = $.property;
         this.propertySection = $.propertySection;
+        this.requestLimit = $.requestLimit;
     }
 
     public static Builder builder() {
@@ -615,6 +632,27 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         @Deprecated /* The setting ""property_section"" has been deprecated. */
         public Builder propertySection(String propertySection) {
             return propertySection(Output.of(propertySection));
+        }
+
+        /**
+         * @param requestLimit The maximum number of API requests to be made per second (0 for no limit)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestLimit(@Nullable Output<Integer> requestLimit) {
+            $.requestLimit = requestLimit;
+            return this;
+        }
+
+        /**
+         * @param requestLimit The maximum number of API requests to be made per second (0 for no limit)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestLimit(Integer requestLimit) {
+            return requestLimit(Output.of(requestLimit));
         }
 
         public ProviderArgs build() {

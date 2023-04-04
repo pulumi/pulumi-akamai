@@ -18,14 +18,14 @@ public final class AppSecAdvancedSettingsEvasivePathMatchState extends com.pulum
     public static final AppSecAdvancedSettingsEvasivePathMatchState Empty = new AppSecAdvancedSettingsEvasivePathMatchState();
 
     /**
-     * The ID of the security configuration to use.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return The ID of the security configuration to use.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -33,14 +33,14 @@ public final class AppSecAdvancedSettingsEvasivePathMatchState extends com.pulum
     }
 
     /**
-     * Whether to enable path match.
+     * Whether to enable the evasive path match setting
      * 
      */
     @Import(name="enablePathMatch")
     private @Nullable Output<Boolean> enablePathMatch;
 
     /**
-     * @return Whether to enable path match.
+     * @return Whether to enable the evasive path match setting
      * 
      */
     public Optional<Output<Boolean>> enablePathMatch() {
@@ -48,14 +48,14 @@ public final class AppSecAdvancedSettingsEvasivePathMatchState extends com.pulum
     }
 
     /**
-     * The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -89,7 +89,7 @@ public final class AppSecAdvancedSettingsEvasivePathMatchState extends com.pulum
         }
 
         /**
-         * @param configId The ID of the security configuration to use.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class AppSecAdvancedSettingsEvasivePathMatchState extends com.pulum
         }
 
         /**
-         * @param configId The ID of the security configuration to use.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class AppSecAdvancedSettingsEvasivePathMatchState extends com.pulum
         }
 
         /**
-         * @param enablePathMatch Whether to enable path match.
+         * @param enablePathMatch Whether to enable the evasive path match setting
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class AppSecAdvancedSettingsEvasivePathMatchState extends com.pulum
         }
 
         /**
-         * @param enablePathMatch Whether to enable path match.
+         * @param enablePathMatch Whether to enable the evasive path match setting
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class AppSecAdvancedSettingsEvasivePathMatchState extends com.pulum
         }
 
         /**
-         * @param securityPolicyId The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class AppSecAdvancedSettingsEvasivePathMatchState extends com.pulum
         }
 
         /**
-         * @param securityPolicyId The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

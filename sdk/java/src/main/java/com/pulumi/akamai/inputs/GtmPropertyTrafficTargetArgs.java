@@ -19,92 +19,44 @@ public final class GtmPropertyTrafficTargetArgs extends com.pulumi.resources.Res
 
     public static final GtmPropertyTrafficTargetArgs Empty = new GtmPropertyTrafficTargetArgs();
 
-    /**
-     * A unique identifier for an existing data center in the domain.
-     * 
-     */
     @Import(name="datacenterId")
     private @Nullable Output<Integer> datacenterId;
 
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Optional<Output<Integer>> datacenterId() {
         return Optional.ofNullable(this.datacenterId);
     }
 
-    /**
-     * A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
-     * 
-     */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
-    /**
-     * @return A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
-     * 
-     */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
     }
 
-    /**
-     * Specifies an optional data center for the property. Used when there are no servers configured for the property.
-     * 
-     */
     @Import(name="handoutCname")
     private @Nullable Output<String> handoutCname;
 
-    /**
-     * @return Specifies an optional data center for the property. Used when there are no servers configured for the property.
-     * 
-     */
     public Optional<Output<String>> handoutCname() {
         return Optional.ofNullable(this.handoutCname);
     }
 
-    /**
-     * Name of HTTP header.
-     * 
-     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
-    /**
-     * @return Name of HTTP header.
-     * 
-     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * (List) Identifies the IP address or the hostnames of the servers.
-     * 
-     */
     @Import(name="servers")
     private @Nullable Output<List<String>> servers;
 
-    /**
-     * @return (List) Identifies the IP address or the hostnames of the servers.
-     * 
-     */
     public Optional<Output<List<String>>> servers() {
         return Optional.ofNullable(this.servers);
     }
 
-    /**
-     * Specifies the traffic weight for the target.
-     * 
-     */
     @Import(name="weight")
     private @Nullable Output<Double> weight;
 
-    /**
-     * @return Specifies the traffic weight for the target.
-     * 
-     */
     public Optional<Output<Double>> weight() {
         return Optional.ofNullable(this.weight);
     }
@@ -138,138 +90,60 @@ public final class GtmPropertyTrafficTargetArgs extends com.pulumi.resources.Res
             $ = new GtmPropertyTrafficTargetArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param datacenterId A unique identifier for an existing data center in the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenterId(@Nullable Output<Integer> datacenterId) {
             $.datacenterId = datacenterId;
             return this;
         }
 
-        /**
-         * @param datacenterId A unique identifier for an existing data center in the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenterId(Integer datacenterId) {
             return datacenterId(Output.of(datacenterId));
         }
 
-        /**
-         * @param enabled A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
-         * 
-         * @return builder
-         * 
-         */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
 
-        /**
-         * @param enabled A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
-         * 
-         * @return builder
-         * 
-         */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
         }
 
-        /**
-         * @param handoutCname Specifies an optional data center for the property. Used when there are no servers configured for the property.
-         * 
-         * @return builder
-         * 
-         */
         public Builder handoutCname(@Nullable Output<String> handoutCname) {
             $.handoutCname = handoutCname;
             return this;
         }
 
-        /**
-         * @param handoutCname Specifies an optional data center for the property. Used when there are no servers configured for the property.
-         * 
-         * @return builder
-         * 
-         */
         public Builder handoutCname(String handoutCname) {
             return handoutCname(Output.of(handoutCname));
         }
 
-        /**
-         * @param name Name of HTTP header.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param name Name of HTTP header.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
-        /**
-         * @param servers (List) Identifies the IP address or the hostnames of the servers.
-         * 
-         * @return builder
-         * 
-         */
         public Builder servers(@Nullable Output<List<String>> servers) {
             $.servers = servers;
             return this;
         }
 
-        /**
-         * @param servers (List) Identifies the IP address or the hostnames of the servers.
-         * 
-         * @return builder
-         * 
-         */
         public Builder servers(List<String> servers) {
             return servers(Output.of(servers));
         }
 
-        /**
-         * @param servers (List) Identifies the IP address or the hostnames of the servers.
-         * 
-         * @return builder
-         * 
-         */
         public Builder servers(String... servers) {
             return servers(List.of(servers));
         }
 
-        /**
-         * @param weight Specifies the traffic weight for the target.
-         * 
-         * @return builder
-         * 
-         */
         public Builder weight(@Nullable Output<Double> weight) {
             $.weight = weight;
             return this;
         }
 
-        /**
-         * @param weight Specifies the traffic weight for the target.
-         * 
-         * @return builder
-         * 
-         */
         public Builder weight(Double weight) {
             return weight(Output.of(weight));
         }

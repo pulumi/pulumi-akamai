@@ -4,28 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use `akamai.getIamTimeoutPolicies` to list all the possible session timeout policies that Akamai supports. Use the values from this data source to set the session timeout for a user. The name for each timeout period is in minutes, and the time value is in seconds.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const timeoutPolicies = akamai.getIamTimeoutPolicies({});
- * export const supportedTimeoutPolicies = timeoutPolicies;
- * ```
- * ## Attributes reference
- *
- * These attributes are returned:
- *
- * * `policies` — A map of session timeout policy names to their value in seconds.
- *
- * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-timeout-policies)
- */
 export function getIamTimeoutPolicies(opts?: pulumi.InvokeOptions): Promise<GetIamTimeoutPoliciesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

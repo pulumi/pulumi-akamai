@@ -19,45 +19,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * Use the `akamai.GtmDomain` resource to create, configure, and import a GTM Domain, which is a basic building block of a traffic management configuration.
- * 
- * &gt; **Note** Import requires an ID with this format: `existing_domain_name`.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.GtmDomain;
- * import com.pulumi.akamai.GtmDomainArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var demodomain = new GtmDomain(&#34;demodomain&#34;, GtmDomainArgs.builder()        
- *             .comment(&#34;some comment&#34;)
- *             .contract(&#34;XXX&#34;)
- *             .group(100)
- *             .type(&#34;basic&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
  * @deprecated
  * akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain
  * 
@@ -65,59 +26,27 @@ import javax.annotation.Nullable;
 @Deprecated /* akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain */
 @ResourceType(type="akamai:trafficmanagement/gtmDomain:GtmDomain")
 public class GtmDomain extends com.pulumi.resources.CustomResource {
-    /**
-     * A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-     * 
-     */
     @Export(name="cnameCoalescingEnabled", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> cnameCoalescingEnabled;
 
-    /**
-     * @return A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-     * 
-     */
     public Output<Optional<Boolean>> cnameCoalescingEnabled() {
         return Codegen.optional(this.cnameCoalescingEnabled);
     }
-    /**
-     * A descriptive note about changes to the domain. The maximum is 4000 characters.
-     * 
-     */
     @Export(name="comment", type=String.class, parameters={})
     private Output</* @Nullable */ String> comment;
 
-    /**
-     * @return A descriptive note about changes to the domain. The maximum is 4000 characters.
-     * 
-     */
     public Output<Optional<String>> comment() {
         return Codegen.optional(this.comment);
     }
-    /**
-     * If creating a domain, the contract ID.
-     * 
-     */
     @Export(name="contract", type=String.class, parameters={})
     private Output</* @Nullable */ String> contract;
 
-    /**
-     * @return If creating a domain, the contract ID.
-     * 
-     */
     public Output<Optional<String>> contract() {
         return Codegen.optional(this.contract);
     }
-    /**
-     * Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-     * 
-     */
     @Export(name="defaultErrorPenalty", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> defaultErrorPenalty;
 
-    /**
-     * @return Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-     * 
-     */
     public Output<Optional<Integer>> defaultErrorPenalty() {
         return Codegen.optional(this.defaultErrorPenalty);
     }
@@ -145,45 +74,21 @@ public class GtmDomain extends com.pulumi.resources.CustomResource {
     public Output<Integer> defaultMaxUnreachablePenalty() {
         return this.defaultMaxUnreachablePenalty;
     }
-    /**
-     * Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-     * 
-     */
     @Export(name="defaultSslClientCertificate", type=String.class, parameters={})
     private Output</* @Nullable */ String> defaultSslClientCertificate;
 
-    /**
-     * @return Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-     * 
-     */
     public Output<Optional<String>> defaultSslClientCertificate() {
         return Codegen.optional(this.defaultSslClientCertificate);
     }
-    /**
-     * Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-     * 
-     */
     @Export(name="defaultSslClientPrivateKey", type=String.class, parameters={})
     private Output</* @Nullable */ String> defaultSslClientPrivateKey;
 
-    /**
-     * @return Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-     * 
-     */
     public Output<Optional<String>> defaultSslClientPrivateKey() {
         return Codegen.optional(this.defaultSslClientPrivateKey);
     }
-    /**
-     * Specifies the timeout penalty score. Default is `25`.
-     * 
-     */
     @Export(name="defaultTimeoutPenalty", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> defaultTimeoutPenalty;
 
-    /**
-     * @return Specifies the timeout penalty score. Default is `25`.
-     * 
-     */
     public Output<Optional<Integer>> defaultTimeoutPenalty() {
         return Codegen.optional(this.defaultTimeoutPenalty);
     }
@@ -193,73 +98,33 @@ public class GtmDomain extends com.pulumi.resources.CustomResource {
     public Output<Double> defaultUnreachableThreshold() {
         return this.defaultUnreachableThreshold;
     }
-    /**
-     * A list of email addresses to notify when a change is made to the domain.
-     * 
-     */
     @Export(name="emailNotificationLists", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> emailNotificationLists;
 
-    /**
-     * @return A list of email addresses to notify when a change is made to the domain.
-     * 
-     */
     public Output<Optional<List<String>>> emailNotificationLists() {
         return Codegen.optional(this.emailNotificationLists);
     }
-    /**
-     * A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-     * 
-     */
     @Export(name="endUserMappingEnabled", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> endUserMappingEnabled;
 
-    /**
-     * @return A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-     * 
-     */
     public Output<Optional<Boolean>> endUserMappingEnabled() {
         return Codegen.optional(this.endUserMappingEnabled);
     }
-    /**
-     * If creating a domain, the currently selected group ID.
-     * 
-     */
     @Export(name="group", type=String.class, parameters={})
     private Output</* @Nullable */ String> group;
 
-    /**
-     * @return If creating a domain, the currently selected group ID.
-     * 
-     */
     public Output<Optional<String>> group() {
         return Codegen.optional(this.group);
     }
-    /**
-     * A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-     * 
-     */
     @Export(name="loadFeedback", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> loadFeedback;
 
-    /**
-     * @return A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-     * 
-     */
     public Output<Optional<Boolean>> loadFeedback() {
         return Codegen.optional(this.loadFeedback);
     }
-    /**
-     * Indicates the percentage of load imbalance factor (LIF) for the domain.
-     * 
-     */
     @Export(name="loadImbalancePercentage", type=Double.class, parameters={})
     private Output</* @Nullable */ Double> loadImbalancePercentage;
 
-    /**
-     * @return Indicates the percentage of load imbalance factor (LIF) for the domain.
-     * 
-     */
     public Output<Optional<Double>> loadImbalancePercentage() {
         return Codegen.optional(this.loadImbalancePercentage);
     }
@@ -311,17 +176,9 @@ public class GtmDomain extends com.pulumi.resources.CustomResource {
     public Output<Integer> minTtl() {
         return this.minTtl;
     }
-    /**
-     * The DNS name for a collection of GTM Properties.
-     * 
-     */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
-    /**
-     * @return The DNS name for a collection of GTM Properties.
-     * 
-     */
     public Output<String> name() {
         return this.name;
     }
@@ -361,31 +218,15 @@ public class GtmDomain extends com.pulumi.resources.CustomResource {
     public Output<String> servermonitorPool() {
         return this.servermonitorPool;
     }
-    /**
-     * Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-     * 
-     */
     @Export(name="type", type=String.class, parameters={})
     private Output<String> type;
 
-    /**
-     * @return Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-     * 
-     */
     public Output<String> type() {
         return this.type;
     }
-    /**
-     * A boolean that, if set to `true`, waits for transaction to complete.
-     * 
-     */
     @Export(name="waitOnComplete", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> waitOnComplete;
 
-    /**
-     * @return A boolean that, if set to `true`, waits for transaction to complete.
-     * 
-     */
     public Output<Optional<Boolean>> waitOnComplete() {
         return Codegen.optional(this.waitOnComplete);
     }

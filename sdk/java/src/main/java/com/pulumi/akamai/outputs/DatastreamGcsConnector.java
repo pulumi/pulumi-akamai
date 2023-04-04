@@ -13,93 +13,37 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamGcsConnector {
-    /**
-     * @return The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-     * 
-     */
     private String bucket;
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     private @Nullable Boolean compressLogs;
     private @Nullable Integer connectorId;
-    /**
-     * @return The name of the connector.
-     * 
-     */
     private String connectorName;
-    /**
-     * @return The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-     * 
-     */
     private @Nullable String path;
-    /**
-     * @return **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
-     * 
-     */
     private String privateKey;
-    /**
-     * @return The unique ID of your Google Cloud project.
-     * 
-     */
     private String projectId;
-    /**
-     * @return The name of the service account with the storage.object.create permission or Storage Object Creator role.
-     * 
-     */
     private String serviceAccountName;
 
     private DatastreamGcsConnector() {}
-    /**
-     * @return The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-     * 
-     */
     public String bucket() {
         return this.bucket;
     }
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
     public Optional<Integer> connectorId() {
         return Optional.ofNullable(this.connectorId);
     }
-    /**
-     * @return The name of the connector.
-     * 
-     */
     public String connectorName() {
         return this.connectorName;
     }
-    /**
-     * @return The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-     * 
-     */
     public Optional<String> path() {
         return Optional.ofNullable(this.path);
     }
-    /**
-     * @return **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
-     * 
-     */
     public String privateKey() {
         return this.privateKey;
     }
-    /**
-     * @return The unique ID of your Google Cloud project.
-     * 
-     */
     public String projectId() {
         return this.projectId;
     }
-    /**
-     * @return The name of the service account with the storage.object.create permission or Storage Object Creator role.
-     * 
-     */
     public String serviceAccountName() {
         return this.serviceAccountName;
     }

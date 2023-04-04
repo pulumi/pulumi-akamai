@@ -11,105 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecAdvancedSettingsEvasivePathMatch
     {
-        /// <summary>
-        /// **Scopes**: Security configuration; security policy
-        /// 
-        /// Use the `akamai.AppSecAdvancedSettingsEvasivePathMatch` data source to retrieve information about the evasive path match for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may retrieve these settings for a particular policy by specifying the policy using the `security_policy_id` parameter. For more information, see [Get evasive path match setting](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match).
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/advanced-settings/evasive-path-match](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = @var.Security_configuration,
-        ///     });
-        /// 
-        ///     var evasivePathMatch = Akamai.GetAppSecAdvancedSettingsEvasivePathMatch.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     var policyOverride = Akamai.GetAppSecAdvancedSettingsEvasivePathMatch.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = @var.Security_policy_id,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["advancedSettingsEvasivePathMatchOutput"] = evasivePathMatch.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.OutputText),
-        ///         ["advancedSettingsEvasivePathMatchJson"] = evasivePathMatch.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.Json),
-        ///         ["advancedSettingsPolicyEvasivePathMatchOutput"] = policyOverride.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.OutputText),
-        ///         ["advancedSettingsPolicyEvasivePathMatchJson"] = policyOverride.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetAppSecAdvancedSettingsEvasivePathMatchResult> InvokeAsync(GetAppSecAdvancedSettingsEvasivePathMatchArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsEvasivePathMatchResult>("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args ?? new GetAppSecAdvancedSettingsEvasivePathMatchArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security configuration; security policy
-        /// 
-        /// Use the `akamai.AppSecAdvancedSettingsEvasivePathMatch` data source to retrieve information about the evasive path match for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may retrieve these settings for a particular policy by specifying the policy using the `security_policy_id` parameter. For more information, see [Get evasive path match setting](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match).
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/advanced-settings/evasive-path-match](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = @var.Security_configuration,
-        ///     });
-        /// 
-        ///     var evasivePathMatch = Akamai.GetAppSecAdvancedSettingsEvasivePathMatch.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     var policyOverride = Akamai.GetAppSecAdvancedSettingsEvasivePathMatch.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = @var.Security_policy_id,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["advancedSettingsEvasivePathMatchOutput"] = evasivePathMatch.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.OutputText),
-        ///         ["advancedSettingsEvasivePathMatchJson"] = evasivePathMatch.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.Json),
-        ///         ["advancedSettingsPolicyEvasivePathMatchOutput"] = policyOverride.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.OutputText),
-        ///         ["advancedSettingsPolicyEvasivePathMatchJson"] = policyOverride.Apply(getAppSecAdvancedSettingsEvasivePathMatchResult =&gt; getAppSecAdvancedSettingsEvasivePathMatchResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Output<GetAppSecAdvancedSettingsEvasivePathMatchResult> Invoke(GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsEvasivePathMatchResult>("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args ?? new GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs(), options.WithDefaults());
     }
@@ -117,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecAdvancedSettingsEvasivePathMatchArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// The configuration ID.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// The ID of the security policy to use.
-        /// </summary>
         [Input("securityPolicyId")]
         public string? SecurityPolicyId { get; set; }
 
@@ -137,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecAdvancedSettingsEvasivePathMatchInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// The configuration ID.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// The ID of the security policy to use.
-        /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 
@@ -164,13 +56,7 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of information about the evasive path match settings.
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A tabular display showing the evasive path match settings.
-        /// </summary>
         public readonly string OutputText;
         public readonly string? SecurityPolicyId;
 

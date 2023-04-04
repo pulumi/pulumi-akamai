@@ -15,47 +15,23 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings e
 
     public static final GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings Empty = new GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings();
 
-    /**
-     * (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
-     * 
-     */
     @Import(name="originId")
     private @Nullable String originId;
 
-    /**
-     * @return (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
-     * 
-     */
     public Optional<String> originId() {
         return Optional.ofNullable(this.originId);
     }
 
-    /**
-     * (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
-     * 
-     */
     @Import(name="pathAndQs")
     private @Nullable String pathAndQs;
 
-    /**
-     * @return (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
-     * 
-     */
     public Optional<String> pathAndQs() {
         return Optional.ofNullable(this.pathAndQs);
     }
 
-    /**
-     * (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
-     * 
-     */
     @Import(name="useIncomingQueryString")
     private @Nullable Boolean useIncomingQueryString;
 
-    /**
-     * @return (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
-     * 
-     */
     public Optional<Boolean> useIncomingQueryString() {
         return Optional.ofNullable(this.useIncomingQueryString);
     }
@@ -86,34 +62,16 @@ public final class GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings e
             $ = new GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param originId (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
-         * 
-         * @return builder
-         * 
-         */
         public Builder originId(@Nullable String originId) {
             $.originId = originId;
             return this;
         }
 
-        /**
-         * @param pathAndQs (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
-         * 
-         * @return builder
-         * 
-         */
         public Builder pathAndQs(@Nullable String pathAndQs) {
             $.pathAndQs = pathAndQs;
             return this;
         }
 
-        /**
-         * @param useIncomingQueryString (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
-         * 
-         * @return builder
-         * 
-         */
         public Builder useIncomingQueryString(@Nullable Boolean useIncomingQueryString) {
             $.useIncomingQueryString = useIncomingQueryString;
             return this;

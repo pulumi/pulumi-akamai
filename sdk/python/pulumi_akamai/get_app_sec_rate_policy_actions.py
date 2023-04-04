@@ -85,35 +85,7 @@ def get_app_sec_rate_policy_actions(config_id: Optional[int] = None,
                                     security_policy_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecRatePolicyActionsResult:
     """
-    **Scopes**: Security policy; rate policy
-
-    Returns information about your rate policy actions. Actions specify what happens any time a rate policy is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
-
-    **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies](https://techdocs.akamai.com/application-security/reference/get-rate-policies-actions)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    rate_policy_actions_app_sec_rate_policy_actions = akamai.get_app_sec_rate_policy_actions(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("ratePolicyActions", rate_policy_actions_app_sec_rate_policy_actions.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `output_text`. Tabular report showing the ID, IPv4 action, and IPv6 action of the rate policies.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
-    :param int rate_policy_id: . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the rate policies and rate policy actions.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -136,34 +108,6 @@ def get_app_sec_rate_policy_actions_output(config_id: Optional[pulumi.Input[int]
                                            security_policy_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecRatePolicyActionsResult]:
     """
-    **Scopes**: Security policy; rate policy
-
-    Returns information about your rate policy actions. Actions specify what happens any time a rate policy is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
-
-    **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies](https://techdocs.akamai.com/application-security/reference/get-rate-policies-actions)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    rate_policy_actions_app_sec_rate_policy_actions = akamai.get_app_sec_rate_policy_actions(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("ratePolicyActions", rate_policy_actions_app_sec_rate_policy_actions.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `output_text`. Tabular report showing the ID, IPv4 action, and IPv6 action of the rate policies.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
-    :param int rate_policy_id: . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the rate policies and rate policy actions.
+    Use this data source to access information about an existing resource.
     """
     ...

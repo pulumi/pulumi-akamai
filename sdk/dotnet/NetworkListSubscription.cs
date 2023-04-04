@@ -9,52 +9,12 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// Use the `akamai.NetworkListSubscription` resource to specify a set of email addresses to be notified of changes to any
-    /// of a set of network lists.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var networkListsFilter = Akamai.GetNetworkLists.Invoke(new()
-    ///     {
-    ///         Name = @var.Network_list,
-    ///     });
-    /// 
-    ///     var subscribe = new Akamai.NetworkListSubscription("subscribe", new()
-    ///     {
-    ///         NetworkLists = networkListsFilter.Apply(getNetworkListsResult =&gt; getNetworkListsResult.Lists),
-    ///         Recipients = new[]
-    ///         {
-    ///             "user@example.com",
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/networkListSubscription:NetworkListSubscription")]
     public partial class NetworkListSubscription : global::Pulumi.CustomResource
     {
-        /// <summary>
-        /// A list containing one or more IDs of the network lists to which the indicated email
-        /// addresses should be subscribed.
-        /// </summary>
         [Output("networkLists")]
         public Output<ImmutableArray<string>> NetworkLists { get; private set; } = null!;
 
-        /// <summary>
-        /// A bracketed, comma-separated list of email addresses that will be notified of changes to any
-        /// of the specified network lists.
-        /// </summary>
         [Output("recipients")]
         public Output<ImmutableArray<string>> Recipients { get; private set; } = null!;
 
@@ -106,11 +66,6 @@ namespace Pulumi.Akamai
     {
         [Input("networkLists", required: true)]
         private InputList<string>? _networkLists;
-
-        /// <summary>
-        /// A list containing one or more IDs of the network lists to which the indicated email
-        /// addresses should be subscribed.
-        /// </summary>
         public InputList<string> NetworkLists
         {
             get => _networkLists ?? (_networkLists = new InputList<string>());
@@ -119,11 +74,6 @@ namespace Pulumi.Akamai
 
         [Input("recipients", required: true)]
         private InputList<string>? _recipients;
-
-        /// <summary>
-        /// A bracketed, comma-separated list of email addresses that will be notified of changes to any
-        /// of the specified network lists.
-        /// </summary>
         public InputList<string> Recipients
         {
             get => _recipients ?? (_recipients = new InputList<string>());
@@ -140,11 +90,6 @@ namespace Pulumi.Akamai
     {
         [Input("networkLists")]
         private InputList<string>? _networkLists;
-
-        /// <summary>
-        /// A list containing one or more IDs of the network lists to which the indicated email
-        /// addresses should be subscribed.
-        /// </summary>
         public InputList<string> NetworkLists
         {
             get => _networkLists ?? (_networkLists = new InputList<string>());
@@ -153,11 +98,6 @@ namespace Pulumi.Akamai
 
         [Input("recipients")]
         private InputList<string>? _recipients;
-
-        /// <summary>
-        /// A bracketed, comma-separated list of email addresses that will be notified of changes to any
-        /// of the specified network lists.
-        /// </summary>
         public InputList<string> Recipients
         {
             get => _recipients ?? (_recipients = new InputList<string>());

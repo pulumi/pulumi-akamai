@@ -15,62 +15,30 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
 
     public static final CpsThirdPartyEnrollmentCsrArgs Empty = new CpsThirdPartyEnrollmentCsrArgs();
 
-    /**
-     * The city where your organization resides.
-     * 
-     */
     @Import(name="city", required=true)
     private Output<String> city;
 
-    /**
-     * @return The city where your organization resides.
-     * 
-     */
     public Output<String> city() {
         return this.city;
     }
 
-    /**
-     * The code for the country where your organization resides.
-     * 
-     */
     @Import(name="countryCode", required=true)
     private Output<String> countryCode;
 
-    /**
-     * @return The code for the country where your organization resides.
-     * 
-     */
     public Output<String> countryCode() {
         return this.countryCode;
     }
 
-    /**
-     * Your organization information.
-     * 
-     */
     @Import(name="organization", required=true)
     private Output<String> organization;
 
-    /**
-     * @return Your organization information.
-     * 
-     */
     public Output<String> organization() {
         return this.organization;
     }
 
-    /**
-     * Your organizational unit.
-     * 
-     */
     @Import(name="organizationalUnit", required=true)
     private Output<String> organizationalUnit;
 
-    /**
-     * @return Your organizational unit.
-     * 
-     */
     public Output<String> organizationalUnit() {
         return this.organizationalUnit;
     }
@@ -82,17 +50,9 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.preferredTrustChain);
     }
 
-    /**
-     * Your state or province.
-     * 
-     */
     @Import(name="state", required=true)
     private Output<String> state;
 
-    /**
-     * @return Your state or province.
-     * 
-     */
     public Output<String> state() {
         return this.state;
     }
@@ -126,86 +86,38 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
             $ = new CpsThirdPartyEnrollmentCsrArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param city The city where your organization resides.
-         * 
-         * @return builder
-         * 
-         */
         public Builder city(Output<String> city) {
             $.city = city;
             return this;
         }
 
-        /**
-         * @param city The city where your organization resides.
-         * 
-         * @return builder
-         * 
-         */
         public Builder city(String city) {
             return city(Output.of(city));
         }
 
-        /**
-         * @param countryCode The code for the country where your organization resides.
-         * 
-         * @return builder
-         * 
-         */
         public Builder countryCode(Output<String> countryCode) {
             $.countryCode = countryCode;
             return this;
         }
 
-        /**
-         * @param countryCode The code for the country where your organization resides.
-         * 
-         * @return builder
-         * 
-         */
         public Builder countryCode(String countryCode) {
             return countryCode(Output.of(countryCode));
         }
 
-        /**
-         * @param organization Your organization information.
-         * 
-         * @return builder
-         * 
-         */
         public Builder organization(Output<String> organization) {
             $.organization = organization;
             return this;
         }
 
-        /**
-         * @param organization Your organization information.
-         * 
-         * @return builder
-         * 
-         */
         public Builder organization(String organization) {
             return organization(Output.of(organization));
         }
 
-        /**
-         * @param organizationalUnit Your organizational unit.
-         * 
-         * @return builder
-         * 
-         */
         public Builder organizationalUnit(Output<String> organizationalUnit) {
             $.organizationalUnit = organizationalUnit;
             return this;
         }
 
-        /**
-         * @param organizationalUnit Your organizational unit.
-         * 
-         * @return builder
-         * 
-         */
         public Builder organizationalUnit(String organizationalUnit) {
             return organizationalUnit(Output.of(organizationalUnit));
         }
@@ -219,23 +131,11 @@ public final class CpsThirdPartyEnrollmentCsrArgs extends com.pulumi.resources.R
             return preferredTrustChain(Output.of(preferredTrustChain));
         }
 
-        /**
-         * @param state Your state or province.
-         * 
-         * @return builder
-         * 
-         */
         public Builder state(Output<String> state) {
             $.state = state;
             return this;
         }
 
-        /**
-         * @param state Your state or province.
-         * 
-         * @return builder
-         * 
-         */
         public Builder state(String state) {
             return state(Output.of(state));
         }

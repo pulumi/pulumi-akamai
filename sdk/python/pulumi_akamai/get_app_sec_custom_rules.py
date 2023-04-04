@@ -84,39 +84,7 @@ def get_app_sec_custom_rules(config_id: Optional[int] = None,
                              custom_rule_id: Optional[int] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecCustomRulesResult:
     """
-    **Scopes**: Security configuration; custom rule
-
-    Returns a list of the custom rules defined for a security configuration; you can also use this resource to return information for an individual custom rule. Custom rules are rules you have created yourself and are not part of the Kona Rule Set.
-
-    **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-custom-rules)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    custom_rules = akamai.get_app_sec_custom_rules(config_id=configuration.config_id)
-    pulumi.export("customRulesOutputText", custom_rules.output_text)
-    pulumi.export("customRulesJson", custom_rules.json)
-    pulumi.export("customRulesConfigId", custom_rules.config_id)
-    specific_custom_rule = akamai.get_app_sec_custom_rules(config_id=configuration.config_id,
-        custom_rule_id=60029316)
-    pulumi.export("specificCustomRuleJson", specific_custom_rule.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `output_text`. Tabular report showing the ID and name of the custom rule information.
-    - `json`. JSON-formatted report of the custom rule information.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the custom rules.
-    :param int custom_rule_id: . Unique identifier of the custom rule you want to return information for. If not included, information is returned for all your custom rules.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -137,38 +105,6 @@ def get_app_sec_custom_rules_output(config_id: Optional[pulumi.Input[int]] = Non
                                     custom_rule_id: Optional[pulumi.Input[Optional[int]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecCustomRulesResult]:
     """
-    **Scopes**: Security configuration; custom rule
-
-    Returns a list of the custom rules defined for a security configuration; you can also use this resource to return information for an individual custom rule. Custom rules are rules you have created yourself and are not part of the Kona Rule Set.
-
-    **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-custom-rules)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    custom_rules = akamai.get_app_sec_custom_rules(config_id=configuration.config_id)
-    pulumi.export("customRulesOutputText", custom_rules.output_text)
-    pulumi.export("customRulesJson", custom_rules.json)
-    pulumi.export("customRulesConfigId", custom_rules.config_id)
-    specific_custom_rule = akamai.get_app_sec_custom_rules(config_id=configuration.config_id,
-        custom_rule_id=60029316)
-    pulumi.export("specificCustomRuleJson", specific_custom_rule.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `output_text`. Tabular report showing the ID and name of the custom rule information.
-    - `json`. JSON-formatted report of the custom rule information.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the custom rules.
-    :param int custom_rule_id: . Unique identifier of the custom rule you want to return information for. If not included, information is returned for all your custom rules.
+    Use this data source to access information about an existing resource.
     """
     ...

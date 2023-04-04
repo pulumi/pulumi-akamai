@@ -9,44 +9,6 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security policy
-    /// 
-    /// Enables or disables API constraints protection. These constraints specify the action to be taken when designated API endpoints are invoked.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var protection = new Akamai.AppSecApiConstraintsProtection("protection", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         Enabled = true,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// ## Output Options
-    /// 
-    /// The following options can be used to determine the information returned, and how that returned information is formatted:
-    /// 
-    /// - `output_text`. Tabular report showing the current protection settings.
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecApiConstraintsProtection:AppSecApiConstraintsProtection")]
     public partial class AppSecApiConstraintsProtection : global::Pulumi.CustomResource
     {

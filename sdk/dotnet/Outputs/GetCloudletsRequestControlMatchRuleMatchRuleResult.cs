@@ -13,37 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudletsRequestControlMatchRuleMatchRuleResult
     {
-        /// <summary>
-        /// (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
-        /// </summary>
         public readonly string AllowDeny;
-        /// <summary>
-        /// (Optional) Whether to disable a rule. When a rule is disabled it's not evaluated against incoming requests.
-        /// </summary>
         public readonly bool? Disabled;
-        /// <summary>
-        /// (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-        /// </summary>
         public readonly int? End;
-        /// <summary>
-        /// (Optional) A list of conditions to apply to a Cloudlet, including:
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchResult> Matches;
-        /// <summary>
-        /// (Optional) Match on all incoming requests.
-        /// </summary>
         public readonly bool? MatchesAlways;
-        /// <summary>
-        /// (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-        /// </summary>
         public readonly string? Name;
-        /// <summary>
-        /// (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-        /// </summary>
         public readonly int? Start;
-        /// <summary>
-        /// (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

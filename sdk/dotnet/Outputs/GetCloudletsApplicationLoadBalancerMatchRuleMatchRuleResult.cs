@@ -14,41 +14,14 @@ namespace Pulumi.Akamai.Outputs
     public sealed class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleResult
     {
         public readonly bool? Disabled;
-        /// <summary>
-        /// (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-        /// </summary>
         public readonly int? End;
-        /// <summary>
-        /// (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingResult> ForwardSettings;
-        /// <summary>
-        /// (Optional) An identifier for Akamai internal use only.
-        /// </summary>
         public readonly int? Id;
-        /// <summary>
-        /// (Optional) The URL that the Cloudlet uses to match the incoming request.
-        /// </summary>
         public readonly string? MatchUrl;
-        /// <summary>
-        /// (Optional) A list of conditions to apply to a Cloudlet, including:
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchResult> Matches;
-        /// <summary>
-        /// (Optional) Whether the match supports default rules that apply to all requests.
-        /// </summary>
         public readonly bool? MatchesAlways;
-        /// <summary>
-        /// (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-        /// </summary>
         public readonly string? Name;
-        /// <summary>
-        /// (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-        /// </summary>
         public readonly int? Start;
-        /// <summary>
-        /// (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
-        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

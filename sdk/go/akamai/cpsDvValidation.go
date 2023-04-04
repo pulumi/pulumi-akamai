@@ -11,45 +11,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Once you complete the Let's Encrypt challenges, optionally use the `CpsDvValidation` resource to send the acknowledgement to CPS and inform it that tokens are ready for validation. You can also wait for CPS to check for the tokens, which it does on a regular schedule. Next, CPS automatically deploys the certificate on Staging, and eventually on the Production network.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewCpsDvValidation(ctx, "example", &akamai.CpsDvValidationArgs{
-//				EnrollmentId: pulumi.Any(akamai_cps_dv_enrollment.Example.Id),
-//				Sans:         pulumi.Any(akamai_cps_dv_enrollment.Example.Sans),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// * `status` - The status of certificate validation.
 type CpsDvValidation struct {
 	pulumi.CustomResourceState
 
-	// Unique identifier for the DV certificate enrollment.
+	// The unique identifier of enrollment
 	EnrollmentId pulumi.IntOutput `pulumi:"enrollmentId"`
-	// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+	// List of SANs
 	Sans pulumi.StringArrayOutput `pulumi:"sans"`
 	// Status of validation
 	Status pulumi.StringOutput `pulumi:"status"`
@@ -87,18 +54,18 @@ func GetCpsDvValidation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CpsDvValidation resources.
 type cpsDvValidationState struct {
-	// Unique identifier for the DV certificate enrollment.
+	// The unique identifier of enrollment
 	EnrollmentId *int `pulumi:"enrollmentId"`
-	// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+	// List of SANs
 	Sans []string `pulumi:"sans"`
 	// Status of validation
 	Status *string `pulumi:"status"`
 }
 
 type CpsDvValidationState struct {
-	// Unique identifier for the DV certificate enrollment.
+	// The unique identifier of enrollment
 	EnrollmentId pulumi.IntPtrInput
-	// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+	// List of SANs
 	Sans pulumi.StringArrayInput
 	// Status of validation
 	Status pulumi.StringPtrInput
@@ -109,17 +76,17 @@ func (CpsDvValidationState) ElementType() reflect.Type {
 }
 
 type cpsDvValidationArgs struct {
-	// Unique identifier for the DV certificate enrollment.
+	// The unique identifier of enrollment
 	EnrollmentId int `pulumi:"enrollmentId"`
-	// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+	// List of SANs
 	Sans []string `pulumi:"sans"`
 }
 
 // The set of arguments for constructing a CpsDvValidation resource.
 type CpsDvValidationArgs struct {
-	// Unique identifier for the DV certificate enrollment.
+	// The unique identifier of enrollment
 	EnrollmentId pulumi.IntInput
-	// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+	// List of SANs
 	Sans pulumi.StringArrayInput
 }
 
@@ -210,12 +177,12 @@ func (o CpsDvValidationOutput) ToCpsDvValidationOutputWithContext(ctx context.Co
 	return o
 }
 
-// Unique identifier for the DV certificate enrollment.
+// The unique identifier of enrollment
 func (o CpsDvValidationOutput) EnrollmentId() pulumi.IntOutput {
 	return o.ApplyT(func(v *CpsDvValidation) pulumi.IntOutput { return v.EnrollmentId }).(pulumi.IntOutput)
 }
 
-// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+// List of SANs
 func (o CpsDvValidationOutput) Sans() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *CpsDvValidation) pulumi.StringArrayOutput { return v.Sans }).(pulumi.StringArrayOutput)
 }

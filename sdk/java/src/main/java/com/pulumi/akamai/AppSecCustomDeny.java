@@ -14,84 +14,31 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Custom deny
- * 
- * Modifies a custom deny action. Custom denies enable you to craft your own error message or redirect pages for use when HTTP requests are denied.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://techdocs.akamai.com/application-security/reference/get-custom-deny-actions)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecCustomDeny;
- * import com.pulumi.akamai.AppSecCustomDenyArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var customDeny = new AppSecCustomDeny(&#34;customDeny&#34;, AppSecCustomDenyArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .customDeny(Files.readString(Paths.get(String.format(&#34;%s/custom_deny.json&#34;, path.module()))))
- *             .build());
- * 
- *         ctx.export(&#34;customDenyId&#34;, customDeny.customDenyId());
- *     }
- * }
- * ```
- * ## Output Options
- * 
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- * 
- * - `custom_deny_id`. ID of the new custom deny action.
- * 
- */
 @ResourceType(type="akamai:index/appSecCustomDeny:AppSecCustomDeny")
 public class AppSecCustomDeny extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the custom deny.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the custom deny.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Path to a JSON file containing properties and property values for the custom deny.
+     * JSON-formatted information about the properties and property values for the custom deny
      * 
      */
     @Export(name="customDeny", type=String.class, parameters={})
     private Output<String> customDeny;
 
     /**
-     * @return . Path to a JSON file containing properties and property values for the custom deny.
+     * @return JSON-formatted information about the properties and property values for the custom deny
      * 
      */
     public Output<String> customDeny() {

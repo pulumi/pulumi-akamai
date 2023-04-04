@@ -12,29 +12,13 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GtmAsmapDefaultDatacenter {
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     private Integer datacenterId;
-    /**
-     * @return A descriptive label for the group.
-     * 
-     */
     private @Nullable String nickname;
 
     private GtmAsmapDefaultDatacenter() {}
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Integer datacenterId() {
         return this.datacenterId;
     }
-    /**
-     * @return A descriptive label for the group.
-     * 
-     */
     public Optional<String> nickname() {
         return Optional.ofNullable(this.nickname);
     }

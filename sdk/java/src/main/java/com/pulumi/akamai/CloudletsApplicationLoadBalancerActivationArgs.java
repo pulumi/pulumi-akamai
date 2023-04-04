@@ -15,14 +15,14 @@ public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pu
     public static final CloudletsApplicationLoadBalancerActivationArgs Empty = new CloudletsApplicationLoadBalancerActivationArgs();
 
     /**
-     * The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+     * The network you want to activate the application load balancer version on (options are Staging and Production)
      * 
      */
     @Import(name="network", required=true)
     private Output<String> network;
 
     /**
-     * @return The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+     * @return The network you want to activate the application load balancer version on (options are Staging and Production)
      * 
      */
     public Output<String> network() {
@@ -30,14 +30,14 @@ public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pu
     }
 
     /**
-     * The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * The conditional origin’s unique identifier
      * 
      */
     @Import(name="originId", required=true)
     private Output<String> originId;
 
     /**
-     * @return The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * @return The conditional origin’s unique identifier
      * 
      */
     public Output<String> originId() {
@@ -45,14 +45,14 @@ public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pu
     }
 
     /**
-     * The Application Load Balancer Cloudlet configuration version you want to activate.
+     * Cloudlets application load balancer version you want to activate
      * 
      */
     @Import(name="version", required=true)
     private Output<Integer> version;
 
     /**
-     * @return The Application Load Balancer Cloudlet configuration version you want to activate.
+     * @return Cloudlets application load balancer version you want to activate
      * 
      */
     public Output<Integer> version() {
@@ -86,7 +86,7 @@ public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pu
         }
 
         /**
-         * @param network The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+         * @param network The network you want to activate the application load balancer version on (options are Staging and Production)
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pu
         }
 
         /**
-         * @param network The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+         * @param network The network you want to activate the application load balancer version on (options are Staging and Production)
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pu
         }
 
         /**
-         * @param originId The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+         * @param originId The conditional origin’s unique identifier
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pu
         }
 
         /**
-         * @param originId The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+         * @param originId The conditional origin’s unique identifier
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pu
         }
 
         /**
-         * @param version The Application Load Balancer Cloudlet configuration version you want to activate.
+         * @param version Cloudlets application load balancer version you want to activate
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class CloudletsApplicationLoadBalancerActivationArgs extends com.pu
         }
 
         /**
-         * @param version The Application Load Balancer Cloudlet configuration version you want to activate.
+         * @param version Cloudlets application load balancer version you want to activate
          * 
          * @return builder
          * 

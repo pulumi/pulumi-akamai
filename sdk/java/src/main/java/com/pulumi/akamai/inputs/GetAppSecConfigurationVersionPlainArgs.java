@@ -14,32 +14,16 @@ public final class GetAppSecConfigurationVersionPlainArgs extends com.pulumi.res
 
     public static final GetAppSecConfigurationVersionPlainArgs Empty = new GetAppSecConfigurationVersionPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration you want to return version information for.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration you want to return version information for.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Version number of the security configuration you want to return information about. If not included, information about all the security configuration&#39;s versions is returned.
-     * 
-     */
     @Import(name="version")
     private @Nullable Integer version;
 
-    /**
-     * @return . Version number of the security configuration you want to return information about. If not included, information about all the security configuration&#39;s versions is returned.
-     * 
-     */
     public Optional<Integer> version() {
         return Optional.ofNullable(this.version);
     }
@@ -69,23 +53,11 @@ public final class GetAppSecConfigurationVersionPlainArgs extends com.pulumi.res
             $ = new GetAppSecConfigurationVersionPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return version information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param version . Version number of the security configuration you want to return information about. If not included, information about all the security configuration&#39;s versions is returned.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(@Nullable Integer version) {
             $.version = version;
             return this;

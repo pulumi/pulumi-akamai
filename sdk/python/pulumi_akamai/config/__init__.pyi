@@ -43,3 +43,8 @@ property: Optional[str]
 
 propertySection: Optional[str]
 
+requestLimit: Optional[int]
+"""
+The maximum number of API requests to be made per second (0 for no limit)
+"""
+

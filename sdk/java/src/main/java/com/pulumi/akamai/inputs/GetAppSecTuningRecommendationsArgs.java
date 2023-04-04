@@ -16,77 +16,37 @@ public final class GetAppSecTuningRecommendationsArgs extends com.pulumi.resourc
 
     public static final GetAppSecTuningRecommendationsArgs Empty = new GetAppSecTuningRecommendationsArgs();
 
-    /**
-     * . Unique name of the attack group you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
-     * 
-     */
     @Import(name="attackGroup")
     private @Nullable Output<String> attackGroup;
 
-    /**
-     * @return . Unique name of the attack group you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
-     * 
-     */
     public Optional<Output<String>> attackGroup() {
         return Optional.ofNullable(this.attackGroup);
     }
 
-    /**
-     * . Unique identifier of the security configuration you want tuning recommendations for.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration you want tuning recommendations for.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique id of the rule you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
-     * 
-     */
     @Import(name="ruleId")
     private @Nullable Output<Integer> ruleId;
 
-    /**
-     * @return . Unique id of the rule you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
-     * 
-     */
     public Optional<Output<Integer>> ruleId() {
         return Optional.ofNullable(this.ruleId);
     }
 
-    /**
-     * . Type of ruleset used by the security configuration you want tuning recommendations for. Supported values are `active` and `evaluation`. Defaults to `active`.
-     * 
-     */
     @Import(name="rulesetType")
     private @Nullable Output<String> rulesetType;
 
-    /**
-     * @return . Type of ruleset used by the security configuration you want tuning recommendations for. Supported values are `active` and `evaluation`. Defaults to `active`.
-     * 
-     */
     public Optional<Output<String>> rulesetType() {
         return Optional.ofNullable(this.rulesetType);
     }
 
-    /**
-     * . Unique identifier of the security policy you want tuning recommendations for.
-     * 
-     */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy you want tuning recommendations for.
-     * 
-     */
     public Optional<Output<String>> securityPolicyId() {
         return Optional.ofNullable(this.securityPolicyId);
     }
@@ -119,107 +79,47 @@ public final class GetAppSecTuningRecommendationsArgs extends com.pulumi.resourc
             $ = new GetAppSecTuningRecommendationsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param attackGroup . Unique name of the attack group you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
-         * 
-         * @return builder
-         * 
-         */
         public Builder attackGroup(@Nullable Output<String> attackGroup) {
             $.attackGroup = attackGroup;
             return this;
         }
 
-        /**
-         * @param attackGroup . Unique name of the attack group you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
-         * 
-         * @return builder
-         * 
-         */
         public Builder attackGroup(String attackGroup) {
             return attackGroup(Output.of(attackGroup));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want tuning recommendations for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want tuning recommendations for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param ruleId . Unique id of the rule you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ruleId(@Nullable Output<Integer> ruleId) {
             $.ruleId = ruleId;
             return this;
         }
 
-        /**
-         * @param ruleId . Unique id of the rule you want tuning recommendations for. If both `attack_group` and `rule_id` not included, recommendations are returned for all attack groups.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ruleId(Integer ruleId) {
             return ruleId(Output.of(ruleId));
         }
 
-        /**
-         * @param rulesetType . Type of ruleset used by the security configuration you want tuning recommendations for. Supported values are `active` and `evaluation`. Defaults to `active`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder rulesetType(@Nullable Output<String> rulesetType) {
             $.rulesetType = rulesetType;
             return this;
         }
 
-        /**
-         * @param rulesetType . Type of ruleset used by the security configuration you want tuning recommendations for. Supported values are `active` and `evaluation`. Defaults to `active`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder rulesetType(String rulesetType) {
             return rulesetType(Output.of(rulesetType));
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy you want tuning recommendations for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(@Nullable Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy you want tuning recommendations for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
         }

@@ -12,65 +12,25 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamConfig {
-    /**
-     * @return A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
-     * 
-     */
     private @Nullable String delimiter;
-    /**
-     * @return The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
-     * 
-     */
     private String format;
-    /**
-     * @return How often you want to collect logs from each uploader and send them to a destination.
-     * 
-     */
     private DatastreamConfigFrequency frequency;
-    /**
-     * @return The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
-     * 
-     */
     private @Nullable String uploadFilePrefix;
-    /**
-     * @return The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
-     * 
-     */
     private @Nullable String uploadFileSuffix;
 
     private DatastreamConfig() {}
-    /**
-     * @return A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
-     * 
-     */
     public Optional<String> delimiter() {
         return Optional.ofNullable(this.delimiter);
     }
-    /**
-     * @return The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
-     * 
-     */
     public String format() {
         return this.format;
     }
-    /**
-     * @return How often you want to collect logs from each uploader and send them to a destination.
-     * 
-     */
     public DatastreamConfigFrequency frequency() {
         return this.frequency;
     }
-    /**
-     * @return The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
-     * 
-     */
     public Optional<String> uploadFilePrefix() {
         return Optional.ofNullable(this.uploadFilePrefix);
     }
-    /**
-     * @return The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
-     * 
-     */
     public Optional<String> uploadFileSuffix() {
         return Optional.ofNullable(this.uploadFileSuffix);
     }

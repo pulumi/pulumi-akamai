@@ -31,21 +31,6 @@ class GtmDomainArgs:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a GtmDomain resource.
-        :param pulumi.Input[str] type: Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-        :param pulumi.Input[bool] cname_coalescing_enabled: A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-        :param pulumi.Input[str] comment: A descriptive note about changes to the domain. The maximum is 4000 characters.
-        :param pulumi.Input[str] contract: If creating a domain, the contract ID.
-        :param pulumi.Input[int] default_error_penalty: Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-        :param pulumi.Input[str] default_ssl_client_certificate: Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-        :param pulumi.Input[str] default_ssl_client_private_key: Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-        :param pulumi.Input[int] default_timeout_penalty: Specifies the timeout penalty score. Default is `25`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_notification_lists: A list of email addresses to notify when a change is made to the domain.
-        :param pulumi.Input[bool] end_user_mapping_enabled: A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-        :param pulumi.Input[str] group: If creating a domain, the currently selected group ID.
-        :param pulumi.Input[bool] load_feedback: A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-        :param pulumi.Input[float] load_imbalance_percentage: Indicates the percentage of load imbalance factor (LIF) for the domain.
-        :param pulumi.Input[str] name: The DNS name for a collection of GTM Properties.
-        :param pulumi.Input[bool] wait_on_complete: A boolean that, if set to `true`, waits for transaction to complete.
         """
         pulumi.set(__self__, "type", type)
         if cname_coalescing_enabled is not None:
@@ -80,9 +65,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
-        """
-        Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -92,9 +74,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter(name="cnameCoalescingEnabled")
     def cname_coalescing_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-        """
         return pulumi.get(self, "cname_coalescing_enabled")
 
     @cname_coalescing_enabled.setter
@@ -104,9 +83,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter
     def comment(self) -> Optional[pulumi.Input[str]]:
-        """
-        A descriptive note about changes to the domain. The maximum is 4000 characters.
-        """
         return pulumi.get(self, "comment")
 
     @comment.setter
@@ -116,9 +92,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
-        """
-        If creating a domain, the contract ID.
-        """
         return pulumi.get(self, "contract")
 
     @contract.setter
@@ -128,9 +101,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter(name="defaultErrorPenalty")
     def default_error_penalty(self) -> Optional[pulumi.Input[int]]:
-        """
-        Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-        """
         return pulumi.get(self, "default_error_penalty")
 
     @default_error_penalty.setter
@@ -140,9 +110,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter(name="defaultSslClientCertificate")
     def default_ssl_client_certificate(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-        """
         return pulumi.get(self, "default_ssl_client_certificate")
 
     @default_ssl_client_certificate.setter
@@ -152,9 +119,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter(name="defaultSslClientPrivateKey")
     def default_ssl_client_private_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-        """
         return pulumi.get(self, "default_ssl_client_private_key")
 
     @default_ssl_client_private_key.setter
@@ -164,9 +128,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter(name="defaultTimeoutPenalty")
     def default_timeout_penalty(self) -> Optional[pulumi.Input[int]]:
-        """
-        Specifies the timeout penalty score. Default is `25`.
-        """
         return pulumi.get(self, "default_timeout_penalty")
 
     @default_timeout_penalty.setter
@@ -176,9 +137,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter(name="emailNotificationLists")
     def email_notification_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of email addresses to notify when a change is made to the domain.
-        """
         return pulumi.get(self, "email_notification_lists")
 
     @email_notification_lists.setter
@@ -188,9 +146,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter(name="endUserMappingEnabled")
     def end_user_mapping_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-        """
         return pulumi.get(self, "end_user_mapping_enabled")
 
     @end_user_mapping_enabled.setter
@@ -200,9 +155,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
-        """
-        If creating a domain, the currently selected group ID.
-        """
         return pulumi.get(self, "group")
 
     @group.setter
@@ -212,9 +164,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter(name="loadFeedback")
     def load_feedback(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-        """
         return pulumi.get(self, "load_feedback")
 
     @load_feedback.setter
@@ -224,9 +173,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter(name="loadImbalancePercentage")
     def load_imbalance_percentage(self) -> Optional[pulumi.Input[float]]:
-        """
-        Indicates the percentage of load imbalance factor (LIF) for the domain.
-        """
         return pulumi.get(self, "load_imbalance_percentage")
 
     @load_imbalance_percentage.setter
@@ -236,9 +182,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The DNS name for a collection of GTM Properties.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -248,9 +191,6 @@ class GtmDomainArgs:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A boolean that, if set to `true`, waits for transaction to complete.
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -297,21 +237,6 @@ class _GtmDomainState:
                  wait_on_complete: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering GtmDomain resources.
-        :param pulumi.Input[bool] cname_coalescing_enabled: A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-        :param pulumi.Input[str] comment: A descriptive note about changes to the domain. The maximum is 4000 characters.
-        :param pulumi.Input[str] contract: If creating a domain, the contract ID.
-        :param pulumi.Input[int] default_error_penalty: Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-        :param pulumi.Input[str] default_ssl_client_certificate: Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-        :param pulumi.Input[str] default_ssl_client_private_key: Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-        :param pulumi.Input[int] default_timeout_penalty: Specifies the timeout penalty score. Default is `25`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_notification_lists: A list of email addresses to notify when a change is made to the domain.
-        :param pulumi.Input[bool] end_user_mapping_enabled: A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-        :param pulumi.Input[str] group: If creating a domain, the currently selected group ID.
-        :param pulumi.Input[bool] load_feedback: A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-        :param pulumi.Input[float] load_imbalance_percentage: Indicates the percentage of load imbalance factor (LIF) for the domain.
-        :param pulumi.Input[str] name: The DNS name for a collection of GTM Properties.
-        :param pulumi.Input[str] type: Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-        :param pulumi.Input[bool] wait_on_complete: A boolean that, if set to `true`, waits for transaction to complete.
         """
         if cname_coalescing_enabled is not None:
             pulumi.set(__self__, "cname_coalescing_enabled", cname_coalescing_enabled)
@@ -385,9 +310,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter(name="cnameCoalescingEnabled")
     def cname_coalescing_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-        """
         return pulumi.get(self, "cname_coalescing_enabled")
 
     @cname_coalescing_enabled.setter
@@ -397,9 +319,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter
     def comment(self) -> Optional[pulumi.Input[str]]:
-        """
-        A descriptive note about changes to the domain. The maximum is 4000 characters.
-        """
         return pulumi.get(self, "comment")
 
     @comment.setter
@@ -409,9 +328,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
-        """
-        If creating a domain, the contract ID.
-        """
         return pulumi.get(self, "contract")
 
     @contract.setter
@@ -421,9 +337,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter(name="defaultErrorPenalty")
     def default_error_penalty(self) -> Optional[pulumi.Input[int]]:
-        """
-        Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-        """
         return pulumi.get(self, "default_error_penalty")
 
     @default_error_penalty.setter
@@ -469,9 +382,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter(name="defaultSslClientCertificate")
     def default_ssl_client_certificate(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-        """
         return pulumi.get(self, "default_ssl_client_certificate")
 
     @default_ssl_client_certificate.setter
@@ -481,9 +391,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter(name="defaultSslClientPrivateKey")
     def default_ssl_client_private_key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-        """
         return pulumi.get(self, "default_ssl_client_private_key")
 
     @default_ssl_client_private_key.setter
@@ -493,9 +400,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter(name="defaultTimeoutPenalty")
     def default_timeout_penalty(self) -> Optional[pulumi.Input[int]]:
-        """
-        Specifies the timeout penalty score. Default is `25`.
-        """
         return pulumi.get(self, "default_timeout_penalty")
 
     @default_timeout_penalty.setter
@@ -514,9 +418,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter(name="emailNotificationLists")
     def email_notification_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of email addresses to notify when a change is made to the domain.
-        """
         return pulumi.get(self, "email_notification_lists")
 
     @email_notification_lists.setter
@@ -526,9 +427,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter(name="endUserMappingEnabled")
     def end_user_mapping_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-        """
         return pulumi.get(self, "end_user_mapping_enabled")
 
     @end_user_mapping_enabled.setter
@@ -538,9 +436,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
-        """
-        If creating a domain, the currently selected group ID.
-        """
         return pulumi.get(self, "group")
 
     @group.setter
@@ -550,9 +445,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter(name="loadFeedback")
     def load_feedback(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-        """
         return pulumi.get(self, "load_feedback")
 
     @load_feedback.setter
@@ -562,9 +454,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter(name="loadImbalancePercentage")
     def load_imbalance_percentage(self) -> Optional[pulumi.Input[float]]:
-        """
-        Indicates the percentage of load imbalance factor (LIF) for the domain.
-        """
         return pulumi.get(self, "load_imbalance_percentage")
 
     @load_imbalance_percentage.setter
@@ -646,9 +535,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The DNS name for a collection of GTM Properties.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -712,9 +598,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -724,9 +607,6 @@ class _GtmDomainState:
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        A boolean that, if set to `true`, waits for transaction to complete.
-        """
         return pulumi.get(self, "wait_on_complete")
 
     @wait_on_complete.setter
@@ -756,42 +636,9 @@ class GtmDomain(pulumi.CustomResource):
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        Use the `GtmDomain` resource to create, configure, and import a GTM Domain, which is a basic building block of a traffic management configuration.
-
-        > **Note** Import requires an ID with this format: `existing_domain_name`.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        demodomain = akamai.GtmDomain("demodomain",
-            comment="some comment",
-            contract="XXX",
-            group="100",
-            type="basic")
-        ```
-
+        Create a GtmDomain resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] cname_coalescing_enabled: A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-        :param pulumi.Input[str] comment: A descriptive note about changes to the domain. The maximum is 4000 characters.
-        :param pulumi.Input[str] contract: If creating a domain, the contract ID.
-        :param pulumi.Input[int] default_error_penalty: Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-        :param pulumi.Input[str] default_ssl_client_certificate: Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-        :param pulumi.Input[str] default_ssl_client_private_key: Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-        :param pulumi.Input[int] default_timeout_penalty: Specifies the timeout penalty score. Default is `25`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_notification_lists: A list of email addresses to notify when a change is made to the domain.
-        :param pulumi.Input[bool] end_user_mapping_enabled: A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-        :param pulumi.Input[str] group: If creating a domain, the currently selected group ID.
-        :param pulumi.Input[bool] load_feedback: A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-        :param pulumi.Input[float] load_imbalance_percentage: Indicates the percentage of load imbalance factor (LIF) for the domain.
-        :param pulumi.Input[str] name: The DNS name for a collection of GTM Properties.
-        :param pulumi.Input[str] type: Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-        :param pulumi.Input[bool] wait_on_complete: A boolean that, if set to `true`, waits for transaction to complete.
         """
         ...
     @overload
@@ -800,25 +647,7 @@ class GtmDomain(pulumi.CustomResource):
                  args: GtmDomainArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `GtmDomain` resource to create, configure, and import a GTM Domain, which is a basic building block of a traffic management configuration.
-
-        > **Note** Import requires an ID with this format: `existing_domain_name`.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        demodomain = akamai.GtmDomain("demodomain",
-            comment="some comment",
-            contract="XXX",
-            group="100",
-            type="basic")
-        ```
-
+        Create a GtmDomain resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param GtmDomainArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -947,21 +776,6 @@ class GtmDomain(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] cname_coalescing_enabled: A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-        :param pulumi.Input[str] comment: A descriptive note about changes to the domain. The maximum is 4000 characters.
-        :param pulumi.Input[str] contract: If creating a domain, the contract ID.
-        :param pulumi.Input[int] default_error_penalty: Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-        :param pulumi.Input[str] default_ssl_client_certificate: Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-        :param pulumi.Input[str] default_ssl_client_private_key: Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-        :param pulumi.Input[int] default_timeout_penalty: Specifies the timeout penalty score. Default is `25`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_notification_lists: A list of email addresses to notify when a change is made to the domain.
-        :param pulumi.Input[bool] end_user_mapping_enabled: A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-        :param pulumi.Input[str] group: If creating a domain, the currently selected group ID.
-        :param pulumi.Input[bool] load_feedback: A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-        :param pulumi.Input[float] load_imbalance_percentage: Indicates the percentage of load imbalance factor (LIF) for the domain.
-        :param pulumi.Input[str] name: The DNS name for a collection of GTM Properties.
-        :param pulumi.Input[str] type: Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-        :param pulumi.Input[bool] wait_on_complete: A boolean that, if set to `true`, waits for transaction to complete.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1006,33 +820,21 @@ class GtmDomain(pulumi.CustomResource):
     @property
     @pulumi.getter(name="cnameCoalescingEnabled")
     def cname_coalescing_enabled(self) -> pulumi.Output[Optional[bool]]:
-        """
-        A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-        """
         return pulumi.get(self, "cname_coalescing_enabled")
 
     @property
     @pulumi.getter
     def comment(self) -> pulumi.Output[Optional[str]]:
-        """
-        A descriptive note about changes to the domain. The maximum is 4000 characters.
-        """
         return pulumi.get(self, "comment")
 
     @property
     @pulumi.getter
     def contract(self) -> pulumi.Output[Optional[str]]:
-        """
-        If creating a domain, the contract ID.
-        """
         return pulumi.get(self, "contract")
 
     @property
     @pulumi.getter(name="defaultErrorPenalty")
     def default_error_penalty(self) -> pulumi.Output[Optional[int]]:
-        """
-        Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-        """
         return pulumi.get(self, "default_error_penalty")
 
     @property
@@ -1058,25 +860,16 @@ class GtmDomain(pulumi.CustomResource):
     @property
     @pulumi.getter(name="defaultSslClientCertificate")
     def default_ssl_client_certificate(self) -> pulumi.Output[Optional[str]]:
-        """
-        Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-        """
         return pulumi.get(self, "default_ssl_client_certificate")
 
     @property
     @pulumi.getter(name="defaultSslClientPrivateKey")
     def default_ssl_client_private_key(self) -> pulumi.Output[Optional[str]]:
-        """
-        Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-        """
         return pulumi.get(self, "default_ssl_client_private_key")
 
     @property
     @pulumi.getter(name="defaultTimeoutPenalty")
     def default_timeout_penalty(self) -> pulumi.Output[Optional[int]]:
-        """
-        Specifies the timeout penalty score. Default is `25`.
-        """
         return pulumi.get(self, "default_timeout_penalty")
 
     @property
@@ -1087,41 +880,26 @@ class GtmDomain(pulumi.CustomResource):
     @property
     @pulumi.getter(name="emailNotificationLists")
     def email_notification_lists(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        A list of email addresses to notify when a change is made to the domain.
-        """
         return pulumi.get(self, "email_notification_lists")
 
     @property
     @pulumi.getter(name="endUserMappingEnabled")
     def end_user_mapping_enabled(self) -> pulumi.Output[Optional[bool]]:
-        """
-        A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-        """
         return pulumi.get(self, "end_user_mapping_enabled")
 
     @property
     @pulumi.getter
     def group(self) -> pulumi.Output[Optional[str]]:
-        """
-        If creating a domain, the currently selected group ID.
-        """
         return pulumi.get(self, "group")
 
     @property
     @pulumi.getter(name="loadFeedback")
     def load_feedback(self) -> pulumi.Output[Optional[bool]]:
-        """
-        A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-        """
         return pulumi.get(self, "load_feedback")
 
     @property
     @pulumi.getter(name="loadImbalancePercentage")
     def load_imbalance_percentage(self) -> pulumi.Output[Optional[float]]:
-        """
-        Indicates the percentage of load imbalance factor (LIF) for the domain.
-        """
         return pulumi.get(self, "load_imbalance_percentage")
 
     @property
@@ -1167,9 +945,6 @@ class GtmDomain(pulumi.CustomResource):
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        The DNS name for a collection of GTM Properties.
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -1205,16 +980,10 @@ class GtmDomain(pulumi.CustomResource):
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
-        """
-        Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="waitOnComplete")
     def wait_on_complete(self) -> pulumi.Output[Optional[bool]]:
-        """
-        A boolean that, if set to `true`, waits for transaction to complete.
-        """
         return pulumi.get(self, "wait_on_complete")
 

@@ -11,88 +11,18 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Rate policy
-//
-// Creates, modifies, or deletes the actions associated with a rate policy.
-// By default, rate policies take no action when triggered.
-// Note that you must set separate actions for requests originating from an IPv4 IP address and for requests originating from an IPv6 address.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies/{ratePolicyId}](https://techdocs.akamai.com/application-security/reference/put-rate-policy-action)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func readFileOrPanic(path string) pulumi.StringPtrInput {
-//		data, err := os.ReadFile(path)
-//		if err != nil {
-//			panic(err.Error())
-//		}
-//		return pulumi.String(string(data))
-//	}
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			appsecRatePolicy, err := akamai.NewAppSecRatePolicy(ctx, "appsecRatePolicy", &akamai.AppSecRatePolicyArgs{
-//				ConfigId:   *pulumi.Int(configuration.ConfigId),
-//				RatePolicy: readFileOrPanic(fmt.Sprintf("%v/rate_policy.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppSecRatePolicyAction(ctx, "appsecRatePolicyAction", &akamai.AppSecRatePolicyActionArgs{
-//				ConfigId:         *pulumi.Int(configuration.ConfigId),
-//				SecurityPolicyId: pulumi.String("gms1_134637"),
-//				RatePolicyId:     appsecRatePolicy.RatePolicyId,
-//				Ipv4Action:       pulumi.String("deny"),
-//				Ipv6Action:       pulumi.String("deny"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type AppSecRatePolicyAction struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configuration associated with the rate policy action being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken for requests coming from an IPv4 address
 	Ipv4Action pulumi.StringOutput `pulumi:"ipv4Action"`
-	// . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+	// Action to be taken for requests coming from an IPv6 address
 	Ipv6Action pulumi.StringOutput `pulumi:"ipv6Action"`
-	// . Unique identifier of the rate policy whose action is being modified.
+	// Unique identifier of the rate policy
 	RatePolicyId pulumi.IntOutput `pulumi:"ratePolicyId"`
-	// . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -140,42 +70,28 @@ func GetAppSecRatePolicyAction(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecRatePolicyAction resources.
 type appSecRatePolicyActionState struct {
-	// . Unique identifier of the security configuration associated with the rate policy action being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken for requests coming from an IPv4 address
 	Ipv4Action *string `pulumi:"ipv4Action"`
-	// . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+	// Action to be taken for requests coming from an IPv6 address
 	Ipv6Action *string `pulumi:"ipv6Action"`
-	// . Unique identifier of the rate policy whose action is being modified.
+	// Unique identifier of the rate policy
 	RatePolicyId *int `pulumi:"ratePolicyId"`
-	// . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecRatePolicyActionState struct {
-	// . Unique identifier of the security configuration associated with the rate policy action being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken for requests coming from an IPv4 address
 	Ipv4Action pulumi.StringPtrInput
-	// . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+	// Action to be taken for requests coming from an IPv6 address
 	Ipv6Action pulumi.StringPtrInput
-	// . Unique identifier of the rate policy whose action is being modified.
+	// Unique identifier of the rate policy
 	RatePolicyId pulumi.IntPtrInput
-	// . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -184,43 +100,29 @@ func (AppSecRatePolicyActionState) ElementType() reflect.Type {
 }
 
 type appSecRatePolicyActionArgs struct {
-	// . Unique identifier of the security configuration associated with the rate policy action being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken for requests coming from an IPv4 address
 	Ipv4Action string `pulumi:"ipv4Action"`
-	// . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+	// Action to be taken for requests coming from an IPv6 address
 	Ipv6Action string `pulumi:"ipv6Action"`
-	// . Unique identifier of the rate policy whose action is being modified.
+	// Unique identifier of the rate policy
 	RatePolicyId int `pulumi:"ratePolicyId"`
-	// . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecRatePolicyAction resource.
 type AppSecRatePolicyActionArgs struct {
-	// . Unique identifier of the security configuration associated with the rate policy action being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken for requests coming from an IPv4 address
 	Ipv4Action pulumi.StringInput
-	// . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+	// Action to be taken for requests coming from an IPv6 address
 	Ipv6Action pulumi.StringInput
-	// . Unique identifier of the rate policy whose action is being modified.
+	// Unique identifier of the rate policy
 	RatePolicyId pulumi.IntInput
-	// . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringInput
 }
 
@@ -311,34 +213,27 @@ func (o AppSecRatePolicyActionOutput) ToAppSecRatePolicyActionOutputWithContext(
 	return o
 }
 
-// . Unique identifier of the security configuration associated with the rate policy action being modified.
+// Unique identifier of the security configuration
 func (o AppSecRatePolicyActionOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecRatePolicyAction) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-// - **alert**. Record the event.
-// - **deny**. Block the request.
-// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-// - **none**. Take no action.
+// Action to be taken for requests coming from an IPv4 address
 func (o AppSecRatePolicyActionOutput) Ipv4Action() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecRatePolicyAction) pulumi.StringOutput { return v.Ipv4Action }).(pulumi.StringOutput)
 }
 
-// . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-// - **alert**. Record the event.
-// - **deny**. Block the request.
-// - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+// Action to be taken for requests coming from an IPv6 address
 func (o AppSecRatePolicyActionOutput) Ipv6Action() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecRatePolicyAction) pulumi.StringOutput { return v.Ipv6Action }).(pulumi.StringOutput)
 }
 
-// . Unique identifier of the rate policy whose action is being modified.
+// Unique identifier of the rate policy
 func (o AppSecRatePolicyActionOutput) RatePolicyId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecRatePolicyAction) pulumi.IntOutput { return v.RatePolicyId }).(pulumi.IntOutput)
 }
 
-// . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+// Unique identifier of the security policy
 func (o AppSecRatePolicyActionOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecRatePolicyAction) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }

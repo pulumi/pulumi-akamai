@@ -4,37 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security configuration
- *
- * Returns the most recent version notes for a security configuration.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://techdocs.akamai.com/application-security/reference/get-version-notes)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const versionNotes = configuration.then(configuration => akamai.getAppSecVersionNotes({
- *     configId: configuration.configId,
- * }));
- * export const versionNotesText = versionNotes.then(versionNotes => versionNotes.outputText);
- * export const versionNotesJson = versionNotes.then(versionNotes => versionNotes.json);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `json`. JSON-formatted list showing the version notes.
- * - `outputText`. Tabular report showing the version notes.
- */
 export function getAppSecVersionNotes(args: GetAppSecVersionNotesArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecVersionNotesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -47,9 +16,6 @@ export function getAppSecVersionNotes(args: GetAppSecVersionNotesArgs, opts?: pu
  * A collection of arguments for invoking getAppSecVersionNotes.
  */
 export interface GetAppSecVersionNotesArgs {
-    /**
-     * . Unique identifier of the security configuration you want to return information for.
-     */
     configId: number;
 }
 
@@ -65,37 +31,6 @@ export interface GetAppSecVersionNotesResult {
     readonly json: string;
     readonly outputText: string;
 }
-/**
- * **Scopes**: Security configuration
- *
- * Returns the most recent version notes for a security configuration.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://techdocs.akamai.com/application-security/reference/get-version-notes)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const versionNotes = configuration.then(configuration => akamai.getAppSecVersionNotes({
- *     configId: configuration.configId,
- * }));
- * export const versionNotesText = versionNotes.then(versionNotes => versionNotes.outputText);
- * export const versionNotesJson = versionNotes.then(versionNotes => versionNotes.json);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `json`. JSON-formatted list showing the version notes.
- * - `outputText`. Tabular report showing the version notes.
- */
 export function getAppSecVersionNotesOutput(args: GetAppSecVersionNotesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecVersionNotesResult> {
     return pulumi.output(args).apply((a: any) => getAppSecVersionNotes(a, opts))
 }
@@ -104,8 +39,5 @@ export function getAppSecVersionNotesOutput(args: GetAppSecVersionNotesOutputArg
  * A collection of arguments for invoking getAppSecVersionNotes.
  */
 export interface GetAppSecVersionNotesOutputArgs {
-    /**
-     * . Unique identifier of the security configuration you want to return information for.
-     */
     configId: pulumi.Input<number>;
 }

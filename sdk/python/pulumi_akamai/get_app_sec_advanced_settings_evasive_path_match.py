@@ -54,17 +54,11 @@ class GetAppSecAdvancedSettingsEvasivePathMatchResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of information about the evasive path match settings.
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the evasive path match settings.
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -90,33 +84,7 @@ def get_app_sec_advanced_settings_evasive_path_match(config_id: Optional[int] = 
                                                      security_policy_id: Optional[str] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecAdvancedSettingsEvasivePathMatchResult:
     """
-    **Scopes**: Security configuration; security policy
-
-    Use the `AppSecAdvancedSettingsEvasivePathMatch` data source to retrieve information about the evasive path match for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may retrieve these settings for a particular policy by specifying the policy using the `security_policy_id` parameter. For more information, see [Get evasive path match setting](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match).
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/advanced-settings/evasive-path-match](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-    evasive_path_match = akamai.get_app_sec_advanced_settings_evasive_path_match(config_id=configuration.config_id)
-    pulumi.export("advancedSettingsEvasivePathMatchOutput", evasive_path_match.output_text)
-    pulumi.export("advancedSettingsEvasivePathMatchJson", evasive_path_match.json)
-    policy_override = akamai.get_app_sec_advanced_settings_evasive_path_match(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
-    pulumi.export("advancedSettingsPolicyEvasivePathMatchOutput", policy_override.output_text)
-    pulumi.export("advancedSettingsPolicyEvasivePathMatchJson", policy_override.json)
-    ```
-
-
-    :param int config_id: The configuration ID.
-    :param str security_policy_id: The ID of the security policy to use.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -137,32 +105,6 @@ def get_app_sec_advanced_settings_evasive_path_match_output(config_id: Optional[
                                                             security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecAdvancedSettingsEvasivePathMatchResult]:
     """
-    **Scopes**: Security configuration; security policy
-
-    Use the `AppSecAdvancedSettingsEvasivePathMatch` data source to retrieve information about the evasive path match for a configuration. This operation applies at the configuration level, and therefore applies to all policies within a configuration. You may retrieve these settings for a particular policy by specifying the policy using the `security_policy_id` parameter. For more information, see [Get evasive path match setting](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match).
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/advanced-settings/evasive-path-match](https://techdocs.akamai.com/application-security/reference/get-evasive-path-match)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name=var["security_configuration"])
-    evasive_path_match = akamai.get_app_sec_advanced_settings_evasive_path_match(config_id=configuration.config_id)
-    pulumi.export("advancedSettingsEvasivePathMatchOutput", evasive_path_match.output_text)
-    pulumi.export("advancedSettingsEvasivePathMatchJson", evasive_path_match.json)
-    policy_override = akamai.get_app_sec_advanced_settings_evasive_path_match(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
-    pulumi.export("advancedSettingsPolicyEvasivePathMatchOutput", policy_override.output_text)
-    pulumi.export("advancedSettingsPolicyEvasivePathMatchJson", policy_override.json)
-    ```
-
-
-    :param int config_id: The configuration ID.
-    :param str security_policy_id: The ID of the security policy to use.
+    Use this data source to access information about an existing resource.
     """
     ...

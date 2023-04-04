@@ -12,17 +12,9 @@ public final class GetPropertyProductsPlainArgs extends com.pulumi.resources.Inv
 
     public static final GetPropertyProductsPlainArgs Empty = new GetPropertyProductsPlainArgs();
 
-    /**
-     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId", required=true)
     private String contractId;
 
-    /**
-     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     public String contractId() {
         return this.contractId;
     }
@@ -51,12 +43,6 @@ public final class GetPropertyProductsPlainArgs extends com.pulumi.resources.Inv
             $ = new GetPropertyProductsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             $.contractId = contractId;
             return this;

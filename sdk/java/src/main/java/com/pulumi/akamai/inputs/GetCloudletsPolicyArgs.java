@@ -15,32 +15,16 @@ public final class GetCloudletsPolicyArgs extends com.pulumi.resources.InvokeArg
 
     public static final GetCloudletsPolicyArgs Empty = new GetCloudletsPolicyArgs();
 
-    /**
-     * (Required) An integer identifier that is associated with all versions of a policy.
-     * 
-     */
     @Import(name="policyId", required=true)
     private Output<Integer> policyId;
 
-    /**
-     * @return (Required) An integer identifier that is associated with all versions of a policy.
-     * 
-     */
     public Output<Integer> policyId() {
         return this.policyId;
     }
 
-    /**
-     * (Optional) The version number of a policy.
-     * 
-     */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
-    /**
-     * @return (Optional) The version number of a policy.
-     * 
-     */
     public Optional<Output<Integer>> version() {
         return Optional.ofNullable(this.version);
     }
@@ -70,44 +54,20 @@ public final class GetCloudletsPolicyArgs extends com.pulumi.resources.InvokeArg
             $ = new GetCloudletsPolicyArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param policyId (Required) An integer identifier that is associated with all versions of a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder policyId(Output<Integer> policyId) {
             $.policyId = policyId;
             return this;
         }
 
-        /**
-         * @param policyId (Required) An integer identifier that is associated with all versions of a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder policyId(Integer policyId) {
             return policyId(Output.of(policyId));
         }
 
-        /**
-         * @param version (Optional) The version number of a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(@Nullable Output<Integer> version) {
             $.version = version;
             return this;
         }
 
-        /**
-         * @param version (Optional) The version number of a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Integer version) {
             return version(Output.of(version));
         }

@@ -9,41 +9,17 @@ import java.util.Objects;
 
 @CustomType
 public final class DnsZoneTsigKey {
-    /**
-     * @return The hashing algorithm.
-     * 
-     */
     private String algorithm;
-    /**
-     * @return The key name.
-     * 
-     */
     private String name;
-    /**
-     * @return String known between transfer endpoints.
-     * 
-     */
     private String secret;
 
     private DnsZoneTsigKey() {}
-    /**
-     * @return The hashing algorithm.
-     * 
-     */
     public String algorithm() {
         return this.algorithm;
     }
-    /**
-     * @return The key name.
-     * 
-     */
     public String name() {
         return this.name;
     }
-    /**
-     * @return String known between transfer endpoints.
-     * 
-     */
     public String secret() {
         return this.secret;
     }

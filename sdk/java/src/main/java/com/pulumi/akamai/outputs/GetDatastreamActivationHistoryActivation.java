@@ -14,10 +14,6 @@ public final class GetDatastreamActivationHistoryActivation {
     private String createdBy;
     private String createdDate;
     private Boolean isActive;
-    /**
-     * @return (Required) A stream&#39;s unique identifier.
-     * 
-     */
     private Integer streamId;
     private Integer streamVersionId;
 
@@ -31,10 +27,6 @@ public final class GetDatastreamActivationHistoryActivation {
     public Boolean isActive() {
         return this.isActive;
     }
-    /**
-     * @return (Required) A stream&#39;s unique identifier.
-     * 
-     */
     public Integer streamId() {
         return this.streamId;
     }

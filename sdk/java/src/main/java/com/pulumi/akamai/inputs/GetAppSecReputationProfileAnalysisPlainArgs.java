@@ -13,32 +13,16 @@ public final class GetAppSecReputationProfileAnalysisPlainArgs extends com.pulum
 
     public static final GetAppSecReputationProfileAnalysisPlainArgs Empty = new GetAppSecReputationProfileAnalysisPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the reputation profile analysis settings.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the reputation profile analysis settings.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the reputation profile analysis settings.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the reputation profile analysis settings.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -68,23 +52,11 @@ public final class GetAppSecReputationProfileAnalysisPlainArgs extends com.pulum
             $ = new GetAppSecReputationProfileAnalysisPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profile analysis settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the reputation profile analysis settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

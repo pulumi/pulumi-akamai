@@ -21,15 +21,11 @@ class AppSecAttackGroupArgs:
                  condition_exception: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecAttackGroup resource.
-        :param pulumi.Input[str] attack_group: . Unique name of the attack group being modified.
-        :param pulumi.Input[str] attack_group_action: . Action taken any time the attack group is triggered. Allowed values are:
-               - **alert**. Record information about the request.
-               - **deny**. Block the request,
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the attack group being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the attack group being modified.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+        :param pulumi.Input[str] attack_group: Unique name of the attack group to be modified
+        :param pulumi.Input[str] attack_group_action: Action to be taken when the attack group is triggered
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] condition_exception: JSON-formatted condition and exception information for the attack group
         """
         pulumi.set(__self__, "attack_group", attack_group)
         pulumi.set(__self__, "attack_group_action", attack_group_action)
@@ -42,7 +38,7 @@ class AppSecAttackGroupArgs:
     @pulumi.getter(name="attackGroup")
     def attack_group(self) -> pulumi.Input[str]:
         """
-        . Unique name of the attack group being modified.
+        Unique name of the attack group to be modified
         """
         return pulumi.get(self, "attack_group")
 
@@ -54,11 +50,7 @@ class AppSecAttackGroupArgs:
     @pulumi.getter(name="attackGroupAction")
     def attack_group_action(self) -> pulumi.Input[str]:
         """
-        . Action taken any time the attack group is triggered. Allowed values are:
-        - **alert**. Record information about the request.
-        - **deny**. Block the request,
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action.
+        Action to be taken when the attack group is triggered
         """
         return pulumi.get(self, "attack_group_action")
 
@@ -70,7 +62,7 @@ class AppSecAttackGroupArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the attack group being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -82,7 +74,7 @@ class AppSecAttackGroupArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        . Unique identifier of the security policy associated with the attack group being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -94,7 +86,7 @@ class AppSecAttackGroupArgs:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+        JSON-formatted condition and exception information for the attack group
         """
         return pulumi.get(self, "condition_exception")
 
@@ -113,15 +105,11 @@ class _AppSecAttackGroupState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecAttackGroup resources.
-        :param pulumi.Input[str] attack_group: . Unique name of the attack group being modified.
-        :param pulumi.Input[str] attack_group_action: . Action taken any time the attack group is triggered. Allowed values are:
-               - **alert**. Record information about the request.
-               - **deny**. Block the request,
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the attack group being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the attack group being modified.
+        :param pulumi.Input[str] attack_group: Unique name of the attack group to be modified
+        :param pulumi.Input[str] attack_group_action: Action to be taken when the attack group is triggered
+        :param pulumi.Input[str] condition_exception: JSON-formatted condition and exception information for the attack group
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         if attack_group is not None:
             pulumi.set(__self__, "attack_group", attack_group)
@@ -138,7 +126,7 @@ class _AppSecAttackGroupState:
     @pulumi.getter(name="attackGroup")
     def attack_group(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique name of the attack group being modified.
+        Unique name of the attack group to be modified
         """
         return pulumi.get(self, "attack_group")
 
@@ -150,11 +138,7 @@ class _AppSecAttackGroupState:
     @pulumi.getter(name="attackGroupAction")
     def attack_group_action(self) -> Optional[pulumi.Input[str]]:
         """
-        . Action taken any time the attack group is triggered. Allowed values are:
-        - **alert**. Record information about the request.
-        - **deny**. Block the request,
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action.
+        Action to be taken when the attack group is triggered
         """
         return pulumi.get(self, "attack_group_action")
 
@@ -166,7 +150,7 @@ class _AppSecAttackGroupState:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+        JSON-formatted condition and exception information for the attack group
         """
         return pulumi.get(self, "condition_exception")
 
@@ -178,7 +162,7 @@ class _AppSecAttackGroupState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the attack group being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -190,7 +174,7 @@ class _AppSecAttackGroupState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the security policy associated with the attack group being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -211,40 +195,14 @@ class AppSecAttackGroup(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        **Scopes**: Attack group
-
-        Modify an attack group's action, conditions, and exceptions. Attack groups are collections of Kona Rule Set rules used to streamline the management of website protections.
-
-        **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups/{attackGroupId}](https://techdocs.akamai.com/application-security/reference/put-attack-group-condition-exception) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups/{attackGroupId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-attack-group-condition-exception)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        attack_group = akamai.AppSecAttackGroup("attackGroup",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            attack_group="SQL",
-            attack_group_action="deny",
-            condition_exception=(lambda path: open(path).read())(f"{path['module']}/condition_exception.json"))
-        ```
-
+        Create a AppSecAttackGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] attack_group: . Unique name of the attack group being modified.
-        :param pulumi.Input[str] attack_group_action: . Action taken any time the attack group is triggered. Allowed values are:
-               - **alert**. Record information about the request.
-               - **deny**. Block the request,
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the attack group being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the attack group being modified.
+        :param pulumi.Input[str] attack_group: Unique name of the attack group to be modified
+        :param pulumi.Input[str] attack_group_action: Action to be taken when the attack group is triggered
+        :param pulumi.Input[str] condition_exception: JSON-formatted condition and exception information for the attack group
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         ...
     @overload
@@ -253,29 +211,7 @@ class AppSecAttackGroup(pulumi.CustomResource):
                  args: AppSecAttackGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Attack group
-
-        Modify an attack group's action, conditions, and exceptions. Attack groups are collections of Kona Rule Set rules used to streamline the management of website protections.
-
-        **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups/{attackGroupId}](https://techdocs.akamai.com/application-security/reference/put-attack-group-condition-exception) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups/{attackGroupId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-attack-group-condition-exception)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        attack_group = akamai.AppSecAttackGroup("attackGroup",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            attack_group="SQL",
-            attack_group_action="deny",
-            condition_exception=(lambda path: open(path).read())(f"{path['module']}/condition_exception.json"))
-        ```
-
+        Create a AppSecAttackGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecAttackGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -340,15 +276,11 @@ class AppSecAttackGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] attack_group: . Unique name of the attack group being modified.
-        :param pulumi.Input[str] attack_group_action: . Action taken any time the attack group is triggered. Allowed values are:
-               - **alert**. Record information about the request.
-               - **deny**. Block the request,
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the attack group being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the attack group being modified.
+        :param pulumi.Input[str] attack_group: Unique name of the attack group to be modified
+        :param pulumi.Input[str] attack_group_action: Action to be taken when the attack group is triggered
+        :param pulumi.Input[str] condition_exception: JSON-formatted condition and exception information for the attack group
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -365,7 +297,7 @@ class AppSecAttackGroup(pulumi.CustomResource):
     @pulumi.getter(name="attackGroup")
     def attack_group(self) -> pulumi.Output[str]:
         """
-        . Unique name of the attack group being modified.
+        Unique name of the attack group to be modified
         """
         return pulumi.get(self, "attack_group")
 
@@ -373,11 +305,7 @@ class AppSecAttackGroup(pulumi.CustomResource):
     @pulumi.getter(name="attackGroupAction")
     def attack_group_action(self) -> pulumi.Output[str]:
         """
-        . Action taken any time the attack group is triggered. Allowed values are:
-        - **alert**. Record information about the request.
-        - **deny**. Block the request,
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action.
+        Action to be taken when the attack group is triggered
         """
         return pulumi.get(self, "attack_group_action")
 
@@ -385,7 +313,7 @@ class AppSecAttackGroup(pulumi.CustomResource):
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> pulumi.Output[Optional[str]]:
         """
-        . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+        JSON-formatted condition and exception information for the attack group
         """
         return pulumi.get(self, "condition_exception")
 
@@ -393,7 +321,7 @@ class AppSecAttackGroup(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the attack group being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -401,7 +329,7 @@ class AppSecAttackGroup(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        . Unique identifier of the security policy associated with the attack group being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 

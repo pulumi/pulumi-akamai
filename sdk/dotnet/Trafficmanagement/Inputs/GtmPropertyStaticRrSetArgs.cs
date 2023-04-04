@@ -14,25 +14,15 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
     {
         [Input("rdatas")]
         private InputList<string>? _rdatas;
-
-        /// <summary>
-        /// (List) An array of data strings, representing multiple records within a set.
-        /// </summary>
         public InputList<string> Rdatas
         {
             get => _rdatas ?? (_rdatas = new InputList<string>());
             set => _rdatas = value;
         }
 
-        /// <summary>
-        /// The number of seconds that this record should live in a resolver's cache before being refetched.
-        /// </summary>
         [Input("ttl")]
         public Input<int>? Ttl { get; set; }
 
-        /// <summary>
-        /// The record type.
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

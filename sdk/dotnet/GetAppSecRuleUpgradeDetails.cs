@@ -11,103 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecRuleUpgradeDetails
     {
-        /// <summary>
-        /// **Scopes**: Security policy
-        /// 
-        /// Returns information indicating which of your Kona Rule Sets, if any, need to be updated. A value of **false** indicates that no updates are required.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://techdocs.akamai.com/application-security/reference/get-rules-upgrade-details)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var upgradeDetails = Akamai.GetAppSecRuleUpgradeDetails.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["upgradeDetailsText"] = upgradeDetails.Apply(getAppSecRuleUpgradeDetailsResult =&gt; getAppSecRuleUpgradeDetailsResult.OutputText),
-        ///         ["upgradeDetailsJson"] = upgradeDetails.Apply(getAppSecRuleUpgradeDetailsResult =&gt; getAppSecRuleUpgradeDetailsResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `output_text`. Tabular report showing changes (additions and deletions) to the rules for the specified security policy.
-        /// - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
-        /// </summary>
         public static Task<GetAppSecRuleUpgradeDetailsResult> InvokeAsync(GetAppSecRuleUpgradeDetailsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRuleUpgradeDetailsResult>("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args ?? new GetAppSecRuleUpgradeDetailsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security policy
-        /// 
-        /// Returns information indicating which of your Kona Rule Sets, if any, need to be updated. A value of **false** indicates that no updates are required.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://techdocs.akamai.com/application-security/reference/get-rules-upgrade-details)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var upgradeDetails = Akamai.GetAppSecRuleUpgradeDetails.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["upgradeDetailsText"] = upgradeDetails.Apply(getAppSecRuleUpgradeDetailsResult =&gt; getAppSecRuleUpgradeDetailsResult.OutputText),
-        ///         ["upgradeDetailsJson"] = upgradeDetails.Apply(getAppSecRuleUpgradeDetailsResult =&gt; getAppSecRuleUpgradeDetailsResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `output_text`. Tabular report showing changes (additions and deletions) to the rules for the specified security policy.
-        /// - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
-        /// </summary>
         public static Output<GetAppSecRuleUpgradeDetailsResult> Invoke(GetAppSecRuleUpgradeDetailsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecRuleUpgradeDetailsResult>("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args ?? new GetAppSecRuleUpgradeDetailsInvokeArgs(), options.WithDefaults());
     }
@@ -115,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecRuleUpgradeDetailsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the Kona Rule Sets.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the Kona Rule Sets.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -135,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecRuleUpgradeDetailsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the Kona Rule Sets.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the Kona Rule Sets.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

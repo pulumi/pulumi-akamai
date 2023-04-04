@@ -15,102 +15,45 @@ import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security configuration
- * 
- * Specifies the networks that appear on the bypass network list. Networks on this list are allowed to bypass the Web Application Firewall.
- * 
- * Note that this resource is only applicable to WAP (Web Application Protector) configurations.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://techdocs.akamai.com/application-security/reference/put-bypass-network-lists)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecByPassNetworkList;
- * import com.pulumi.akamai.AppSecByPassNetworkListArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var bypassNetworkLists = new AppSecByPassNetworkList(&#34;bypassNetworkLists&#34;, AppSecByPassNetworkListArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .bypassNetworkLists(            
- *                 &#34;DocumentationNetworkList&#34;,
- *                 &#34;TrainingNetworkList&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * ## Output Options
- * 
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- * 
- * - `output_text`. Tabular report showing the updated list of bypass network IDs.
- * 
- */
 @ResourceType(type="akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList")
 public class AppSecByPassNetworkList extends com.pulumi.resources.CustomResource {
     /**
-     * . JSON array of network IDs that comprise the bypass list.
+     * List of network list IDs that compose the bypass list
      * 
      */
     @Export(name="bypassNetworkLists", type=List.class, parameters={String.class})
     private Output<List<String>> bypassNetworkLists;
 
     /**
-     * @return . JSON array of network IDs that comprise the bypass list.
+     * @return List of network list IDs that compose the bypass list
      * 
      */
     public Output<List<String>> bypassNetworkLists() {
         return this.bypassNetworkLists;
     }
     /**
-     * . Unique identifier of the security configuration associated with the bypass network lists being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the bypass network lists being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Unique identifier of the security policy associated with the bypass network lists.
+     * The unique identifier of the security policy governing the bypass network lists
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the bypass network lists.
+     * @return The unique identifier of the security policy governing the bypass network lists
      * 
      */
     public Output<String> securityPolicyId() {

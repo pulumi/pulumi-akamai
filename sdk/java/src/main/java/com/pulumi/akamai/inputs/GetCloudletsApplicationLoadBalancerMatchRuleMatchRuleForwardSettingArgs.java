@@ -13,17 +13,9 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardS
 
     public static final GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs Empty = new GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs();
 
-    /**
-     * (Required) The ID of the Conditional Origin the requests are forwarded to.
-     * 
-     */
     @Import(name="originId", required=true)
     private Output<String> originId;
 
-    /**
-     * @return (Required) The ID of the Conditional Origin the requests are forwarded to.
-     * 
-     */
     public Output<String> originId() {
         return this.originId;
     }
@@ -52,23 +44,11 @@ public final class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardS
             $ = new GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSettingArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param originId (Required) The ID of the Conditional Origin the requests are forwarded to.
-         * 
-         * @return builder
-         * 
-         */
         public Builder originId(Output<String> originId) {
             $.originId = originId;
             return this;
         }
 
-        /**
-         * @param originId (Required) The ID of the Conditional Origin the requests are forwarded to.
-         * 
-         * @return builder
-         * 
-         */
         public Builder originId(String originId) {
             return originId(Output.of(originId));
         }

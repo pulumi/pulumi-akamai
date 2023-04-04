@@ -10,16 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-//
-// Use the `getCloudletsApiPrioritizationMatchRule` data source to build a match rule JSON object for the API Prioritization Cloudlet.
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `type` - The type of Cloudlet the rule is for.
-// * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
 func GetCloudletsApiPrioritizationMatchRule(ctx *pulumi.Context, args *GetCloudletsApiPrioritizationMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsApiPrioritizationMatchRuleResult, error) {
 	var rv GetCloudletsApiPrioritizationMatchRuleResult
 	err := ctx.Invoke("akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule", args, &rv, opts...)
@@ -31,7 +21,6 @@ func GetCloudletsApiPrioritizationMatchRule(ctx *pulumi.Context, args *GetCloudl
 
 // A collection of arguments for invoking getCloudletsApiPrioritizationMatchRule.
 type GetCloudletsApiPrioritizationMatchRuleArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsApiPrioritizationMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -58,7 +47,6 @@ func GetCloudletsApiPrioritizationMatchRuleOutput(ctx *pulumi.Context, args GetC
 
 // A collection of arguments for invoking getCloudletsApiPrioritizationMatchRule.
 type GetCloudletsApiPrioritizationMatchRuleOutputArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsApiPrioritizationMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

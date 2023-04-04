@@ -13,32 +13,16 @@ public final class GetAppSecSlowPostPlainArgs extends com.pulumi.resources.Invok
 
     public static final GetAppSecSlowPostPlainArgs Empty = new GetAppSecSlowPostPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the slow POST settings.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the slow POST settings.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the slow POST settings.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the slow POST settings.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -68,23 +52,11 @@ public final class GetAppSecSlowPostPlainArgs extends com.pulumi.resources.Invok
             $ = new GetAppSecSlowPostPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the slow POST settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the slow POST settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

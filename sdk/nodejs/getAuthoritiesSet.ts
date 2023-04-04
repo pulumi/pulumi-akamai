@@ -4,27 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getAuthoritiesSet({
- *     contract: "ctr_1-AB123",
- * });
- * ```
- * ## Attributes reference
- *
- * This data source supports this attribute:
- *
- * * `authorities` - A list of authorities.
- */
 export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.InvokeOptions): Promise<GetAuthoritiesSetResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -37,9 +16,6 @@ export function getAuthoritiesSet(args: GetAuthoritiesSetArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getAuthoritiesSet.
  */
 export interface GetAuthoritiesSetArgs {
-    /**
-     * The contract ID.
-     */
     contract: string;
 }
 
@@ -54,27 +30,6 @@ export interface GetAuthoritiesSetResult {
      */
     readonly id: string;
 }
-/**
- * Use the `akamai.getAuthoritiesSet` data source to retrieve a contract's authorities set. You use the authorities set when creating new zones.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getAuthoritiesSet({
- *     contract: "ctr_1-AB123",
- * });
- * ```
- * ## Attributes reference
- *
- * This data source supports this attribute:
- *
- * * `authorities` - A list of authorities.
- */
 export function getAuthoritiesSetOutput(args: GetAuthoritiesSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthoritiesSetResult> {
     return pulumi.output(args).apply((a: any) => getAuthoritiesSet(a, opts))
 }
@@ -83,8 +38,5 @@ export function getAuthoritiesSetOutput(args: GetAuthoritiesSetOutputArgs, opts?
  * A collection of arguments for invoking getAuthoritiesSet.
  */
 export interface GetAuthoritiesSetOutputArgs {
-    /**
-     * The contract ID.
-     */
     contract: pulumi.Input<string>;
 }

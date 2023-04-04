@@ -14,86 +14,31 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security policy
- * 
- * Creates or modifies a reputation profile.
- * Reputation profiles grade the security risk of an IP address based on previous activities associated with that address.
- * Depending on the reputation score and how your configuration has been set up, requests from a specific IP address can trigger an alert or even be blocked.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/put-reputation-profile)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecReputationProfile;
- * import com.pulumi.akamai.AppSecReputationProfileArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var reputationProfile = new AppSecReputationProfile(&#34;reputationProfile&#34;, AppSecReputationProfileArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .reputationProfile(Files.readString(Paths.get(String.format(&#34;%s/reputation_profile.json&#34;, path.module()))))
- *             .build());
- * 
- *         ctx.export(&#34;reputationProfileId&#34;, reputationProfile.reputationProfileId());
- *     }
- * }
- * ```
- * ## Output Options
- * 
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- * 
- * - `reputation_profile_id`. ID of the newly-created or newly-modified reputation profile.
- * 
- */
 @ResourceType(type="akamai:index/appSecReputationProfile:AppSecReputationProfile")
 public class AppSecReputationProfile extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the reputation profile being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Path to a JSON file containing a definition of the reputation profile.
+     * JSON-formatted definition of the reputation profile
      * 
      */
     @Export(name="reputationProfile", type=String.class, parameters={})
     private Output<String> reputationProfile;
 
     /**
-     * @return . Path to a JSON file containing a definition of the reputation profile.
+     * @return JSON-formatted definition of the reputation profile
      * 
      */
     public Output<String> reputationProfile() {

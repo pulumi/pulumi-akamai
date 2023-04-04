@@ -15,89 +15,45 @@ import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.IamRole` resource to list and create roles for users. Roles are lists of permissions that are explicitly tied to both a user and a group. Users need roles to act on objects in a group.
- * 
- * ## Basic usage
- * 
- * This example returns information on available roles:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.IamRole;
- * import com.pulumi.akamai.IamRoleArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var example = new IamRole(&#34;example&#34;, IamRoleArgs.builder()        
- *             .description(&#34;This role will allow you to view&#34;)
- *             .grantedRoles(2051)
- *             .type(&#34;custom&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- * ## Attributes reference
- * 
- * This resource returns this attribute:
- * 
- * * `type` - The type indicates whether the role is `standard`, provided by Akamai, or `custom` for the account.
- * 
- */
 @ResourceType(type="akamai:index/iamRole:IamRole")
 public class IamRole extends com.pulumi.resources.CustomResource {
     /**
-     * The description for a role.
+     * The description for a role
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return The description for a role.
+     * @return The description for a role
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+     * The list of existing unique identifiers for the granted roles
      * 
      */
     @Export(name="grantedRoles", type=List.class, parameters={Integer.class})
     private Output<List<Integer>> grantedRoles;
 
     /**
-     * @return The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+     * @return The list of existing unique identifiers for the granted roles
      * 
      */
     public Output<List<Integer>> grantedRoles() {
         return this.grantedRoles;
     }
     /**
-     * The name you supply for a role.
+     * The name you supply for a role
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return The name you supply for a role.
+     * @return The name you supply for a role
      * 
      */
     public Output<String> name() {

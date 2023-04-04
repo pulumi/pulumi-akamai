@@ -29,10 +29,12 @@ class ProviderArgs:
                  networks: Optional[pulumi.Input[Sequence[pulumi.Input['ProviderNetworkArgs']]]] = None,
                  papi_section: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input['ProviderPropertyArgs']] = None,
-                 property_section: Optional[pulumi.Input[str]] = None):
+                 property_section: Optional[pulumi.Input[str]] = None,
+                 request_limit: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Provider resource.
         :param pulumi.Input[str] config_section: The section of the edgerc file to use for configuration
+        :param pulumi.Input[int] request_limit: The maximum number of API requests to be made per second (0 for no limit)
         """
         if appsec_section is not None:
             warnings.warn("""The setting \"appsec_section\" has been deprecated.""", DeprecationWarning)
@@ -94,6 +96,8 @@ class ProviderArgs:
             pulumi.log.warn("""property_section is deprecated: The setting \"property_section\" has been deprecated.""")
         if property_section is not None:
             pulumi.set(__self__, "property_section", property_section)
+        if request_limit is not None:
+            pulumi.set(__self__, "request_limit", request_limit)
 
     @property
     @pulumi.getter(name="appsecSection")
@@ -225,6 +229,18 @@ class ProviderArgs:
         pulumi.set(self, "property_section", value)
 
     @property
+    @pulumi.getter(name="requestLimit")
+    def request_limit(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum number of API requests to be made per second (0 for no limit)
+        """
+        return pulumi.get(self, "request_limit")
+
+    @request_limit.setter
+    def request_limit(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "request_limit", value)
+
+    @property
     @pulumi.getter
     def property(self) -> Optional[pulumi.Input['ProviderPropertyArgs']]:
         return pulumi.get(self, "property")
@@ -254,6 +270,7 @@ class Provider(pulumi.ProviderResource):
                  papi_section: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[pulumi.InputType['ProviderPropertyArgs']]] = None,
                  property_section: Optional[pulumi.Input[str]] = None,
+                 request_limit: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
         The provider type for the akamai package. By default, resources use package-wide configuration
@@ -264,6 +281,7 @@ class Provider(pulumi.ProviderResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] config_section: The section of the edgerc file to use for configuration
+        :param pulumi.Input[int] request_limit: The maximum number of API requests to be made per second (0 for no limit)
         """
         ...
     @overload
@@ -307,6 +325,7 @@ class Provider(pulumi.ProviderResource):
                  papi_section: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[pulumi.InputType['ProviderPropertyArgs']]] = None,
                  property_section: Optional[pulumi.Input[str]] = None,
+                 request_limit: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -361,6 +380,7 @@ class Provider(pulumi.ProviderResource):
                 warnings.warn("""The setting \"property_section\" has been deprecated.""", DeprecationWarning)
                 pulumi.log.warn("""property_section is deprecated: The setting \"property_section\" has been deprecated.""")
             __props__.__dict__["property_section"] = property_section
+            __props__.__dict__["request_limit"] = pulumi.Output.from_input(request_limit).apply(pulumi.runtime.to_json) if request_limit is not None else None
         super(Provider, __self__).__init__(
             'akamai',
             resource_name,

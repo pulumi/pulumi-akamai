@@ -17,47 +17,23 @@ public final class GtmGeomapAssignmentArgs extends com.pulumi.resources.Resource
 
     public static final GtmGeomapAssignmentArgs Empty = new GtmGeomapAssignmentArgs();
 
-    /**
-     * Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-     * 
-     */
     @Import(name="countries")
     private @Nullable Output<List<String>> countries;
 
-    /**
-     * @return Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-     * 
-     */
     public Optional<Output<List<String>>> countries() {
         return Optional.ofNullable(this.countries);
     }
 
-    /**
-     * A unique identifier for an existing data center in the domain.
-     * 
-     */
     @Import(name="datacenterId", required=true)
     private Output<Integer> datacenterId;
 
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Output<Integer> datacenterId() {
         return this.datacenterId;
     }
 
-    /**
-     * A descriptive label for the group.
-     * 
-     */
     @Import(name="nickname", required=true)
     private Output<String> nickname;
 
-    /**
-     * @return A descriptive label for the group.
-     * 
-     */
     public Output<String> nickname() {
         return this.nickname;
     }
@@ -88,75 +64,33 @@ public final class GtmGeomapAssignmentArgs extends com.pulumi.resources.Resource
             $ = new GtmGeomapAssignmentArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param countries Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-         * 
-         * @return builder
-         * 
-         */
         public Builder countries(@Nullable Output<List<String>> countries) {
             $.countries = countries;
             return this;
         }
 
-        /**
-         * @param countries Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-         * 
-         * @return builder
-         * 
-         */
         public Builder countries(List<String> countries) {
             return countries(Output.of(countries));
         }
 
-        /**
-         * @param countries Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-         * 
-         * @return builder
-         * 
-         */
         public Builder countries(String... countries) {
             return countries(List.of(countries));
         }
 
-        /**
-         * @param datacenterId A unique identifier for an existing data center in the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenterId(Output<Integer> datacenterId) {
             $.datacenterId = datacenterId;
             return this;
         }
 
-        /**
-         * @param datacenterId A unique identifier for an existing data center in the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenterId(Integer datacenterId) {
             return datacenterId(Output.of(datacenterId));
         }
 
-        /**
-         * @param nickname A descriptive label for the group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nickname(Output<String> nickname) {
             $.nickname = nickname;
             return this;
         }
 
-        /**
-         * @param nickname A descriptive label for the group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nickname(String nickname) {
             return nickname(Output.of(nickname));
         }

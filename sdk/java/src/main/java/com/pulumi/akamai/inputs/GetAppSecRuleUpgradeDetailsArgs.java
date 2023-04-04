@@ -14,32 +14,16 @@ public final class GetAppSecRuleUpgradeDetailsArgs extends com.pulumi.resources.
 
     public static final GetAppSecRuleUpgradeDetailsArgs Empty = new GetAppSecRuleUpgradeDetailsArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the Kona Rule Sets.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the Kona Rule Sets.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the Kona Rule Sets.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the Kona Rule Sets.
-     * 
-     */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -69,44 +53,20 @@ public final class GetAppSecRuleUpgradeDetailsArgs extends com.pulumi.resources.
             $ = new GetAppSecRuleUpgradeDetailsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the Kona Rule Sets.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the Kona Rule Sets.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the Kona Rule Sets.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the Kona Rule Sets.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
         }

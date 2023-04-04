@@ -10,62 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration; security policy
-//
-// Returns information about the network lists used in the IP/Geo Firewall settings; also returns the firewall `mode`, which indicates whether devices on the geographic or IP address lists are allowed through the firewall or are blocked by the firewall.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/get-policy-ip-geo-firewall)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ipGeo, err := akamai.LookupAppSecIPGeo(ctx, &akamai.LookupAppSecIPGeoArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: "gms1_134637",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("ipGeoMode", ipGeo.Mode)
-//			ctx.Export("geoNetworkLists", ipGeo.GeoNetworkLists)
-//			ctx.Export("ipNetworkLists", ipGeo.IpNetworkLists)
-//			ctx.Export("exceptionIpNetworkLists", ipGeo.ExceptionIpNetworkLists)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `mode`. Specifies the action taken by the IP/Geo firewall. Valid values are:
-//   - **block**. Networks on the IP and geographic network lists are prevented from passing through the firewall.
-//   - **allow**.  Networks on the IP and geographic network lists are allowed to pass through the firewall.
-//
-// - `geoNetworkLists`. Network lists blocked or allowed based on geographic location.
-// - `ipNetworkLists`. Network lists blocked or allowed based on IP address.
-// - `exceptionIpNetworkLists`. Network lists allowed through the firewall regardless of the values assigned to the `mode`, `geoNetworkLists`, and `ipNetworkLists` parameters.
-// - `outputText`. Tabular report of the IP/Geo firewall settings.
 func LookupAppSecIPGeo(ctx *pulumi.Context, args *LookupAppSecIPGeoArgs, opts ...pulumi.InvokeOption) (*LookupAppSecIPGeoResult, error) {
 	var rv LookupAppSecIPGeoResult
 	err := ctx.Invoke("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args, &rv, opts...)
@@ -77,9 +21,7 @@ func LookupAppSecIPGeo(ctx *pulumi.Context, args *LookupAppSecIPGeoArgs, opts ..
 
 // A collection of arguments for invoking getAppSecIPGeo.
 type LookupAppSecIPGeoArgs struct {
-	// . Unique identifier of the security configuration associated with the IP/Geo lists.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the IP/Geo lists. If not included, information is returned for all your security policies.
+	ConfigId         int    `pulumi:"configId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -111,9 +53,7 @@ func LookupAppSecIPGeoOutput(ctx *pulumi.Context, args LookupAppSecIPGeoOutputAr
 
 // A collection of arguments for invoking getAppSecIPGeo.
 type LookupAppSecIPGeoOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the IP/Geo lists.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the IP/Geo lists. If not included, information is returned for all your security policies.
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 

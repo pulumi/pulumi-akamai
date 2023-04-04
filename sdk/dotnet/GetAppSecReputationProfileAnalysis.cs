@@ -11,109 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecReputationProfileAnalysis
     {
-        /// <summary>
-        /// **Scopes**: Security policy
-        /// 
-        /// Returns information about the following two reputation analysis settings:
-        /// 
-        /// - `forwardToHTTPHeader`. When enabled, client reputation information associated with a request is forwarded to origin servers by using an HTTP header.
-        /// - `forwardSharedIPToHTTPHeaderAndSIEM`. When enabled, both the HTTP header and SIEM integration events include a value indicating that the IP addresses is shared address.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://techdocs.akamai.com/application-security/reference/get-reputation-analysis)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var reputationAnalysis = Akamai.GetAppSecReputationProfileAnalysis.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["reputationAnalysisText"] = reputationAnalysis.Apply(getAppSecReputationProfileAnalysisResult =&gt; getAppSecReputationProfileAnalysisResult.OutputText),
-        ///         ["reputationAnalysisJson"] = reputationAnalysis.Apply(getAppSecReputationProfileAnalysisResult =&gt; getAppSecReputationProfileAnalysisResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of the reputation analysis settings.
-        /// - `output_text`. Tabular report showing the reputation analysis settings.
-        /// </summary>
         public static Task<GetAppSecReputationProfileAnalysisResult> InvokeAsync(GetAppSecReputationProfileAnalysisArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfileAnalysisResult>("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args ?? new GetAppSecReputationProfileAnalysisArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security policy
-        /// 
-        /// Returns information about the following two reputation analysis settings:
-        /// 
-        /// - `forwardToHTTPHeader`. When enabled, client reputation information associated with a request is forwarded to origin servers by using an HTTP header.
-        /// - `forwardSharedIPToHTTPHeaderAndSIEM`. When enabled, both the HTTP header and SIEM integration events include a value indicating that the IP addresses is shared address.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://techdocs.akamai.com/application-security/reference/get-reputation-analysis)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var reputationAnalysis = Akamai.GetAppSecReputationProfileAnalysis.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["reputationAnalysisText"] = reputationAnalysis.Apply(getAppSecReputationProfileAnalysisResult =&gt; getAppSecReputationProfileAnalysisResult.OutputText),
-        ///         ["reputationAnalysisJson"] = reputationAnalysis.Apply(getAppSecReputationProfileAnalysisResult =&gt; getAppSecReputationProfileAnalysisResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of the reputation analysis settings.
-        /// - `output_text`. Tabular report showing the reputation analysis settings.
-        /// </summary>
         public static Output<GetAppSecReputationProfileAnalysisResult> Invoke(GetAppSecReputationProfileAnalysisInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfileAnalysisResult>("akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis", args ?? new GetAppSecReputationProfileAnalysisInvokeArgs(), options.WithDefaults());
     }
@@ -121,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecReputationProfileAnalysisArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the reputation profile analysis settings.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the reputation profile analysis settings.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -141,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecReputationProfileAnalysisInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the reputation profile analysis settings.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the reputation profile analysis settings.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

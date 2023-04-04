@@ -20,14 +20,10 @@ class AppSecApiRequestConstraintsArgs:
                  api_endpoint_id: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a AppSecApiRequestConstraints resource.
-        :param pulumi.Input[str] action: . Action to assign to the API request constraint. Allowed values are:
-               - **alert**, Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the API request constraint settings being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the API request constraint settings being modified.
-        :param pulumi.Input[int] api_endpoint_id: . ID of the API endpoint the constraint will be assigned to.
+        :param pulumi.Input[str] action: Action to be taken when the API request constraint is triggered
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[int] api_endpoint_id: Unique identifier of the API endpoint to which the constraint will be assigned
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "config_id", config_id)
@@ -39,11 +35,7 @@ class AppSecApiRequestConstraintsArgs:
     @pulumi.getter
     def action(self) -> pulumi.Input[str]:
         """
-        . Action to assign to the API request constraint. Allowed values are:
-        - **alert**, Record the event.
-        - **deny**. Block the request.
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action.
+        Action to be taken when the API request constraint is triggered
         """
         return pulumi.get(self, "action")
 
@@ -55,7 +47,7 @@ class AppSecApiRequestConstraintsArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -67,7 +59,7 @@ class AppSecApiRequestConstraintsArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        . Unique identifier of the security policy associated with the API request constraint settings being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -79,7 +71,7 @@ class AppSecApiRequestConstraintsArgs:
     @pulumi.getter(name="apiEndpointId")
     def api_endpoint_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . ID of the API endpoint the constraint will be assigned to.
+        Unique identifier of the API endpoint to which the constraint will be assigned
         """
         return pulumi.get(self, "api_endpoint_id")
 
@@ -97,14 +89,10 @@ class _AppSecApiRequestConstraintsState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecApiRequestConstraints resources.
-        :param pulumi.Input[str] action: . Action to assign to the API request constraint. Allowed values are:
-               - **alert**, Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[int] api_endpoint_id: . ID of the API endpoint the constraint will be assigned to.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the API request constraint settings being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the API request constraint settings being modified.
+        :param pulumi.Input[str] action: Action to be taken when the API request constraint is triggered
+        :param pulumi.Input[int] api_endpoint_id: Unique identifier of the API endpoint to which the constraint will be assigned
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -119,11 +107,7 @@ class _AppSecApiRequestConstraintsState:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
         """
-        . Action to assign to the API request constraint. Allowed values are:
-        - **alert**, Record the event.
-        - **deny**. Block the request.
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action.
+        Action to be taken when the API request constraint is triggered
         """
         return pulumi.get(self, "action")
 
@@ -135,7 +119,7 @@ class _AppSecApiRequestConstraintsState:
     @pulumi.getter(name="apiEndpointId")
     def api_endpoint_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . ID of the API endpoint the constraint will be assigned to.
+        Unique identifier of the API endpoint to which the constraint will be assigned
         """
         return pulumi.get(self, "api_endpoint_id")
 
@@ -147,7 +131,7 @@ class _AppSecApiRequestConstraintsState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -159,7 +143,7 @@ class _AppSecApiRequestConstraintsState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the security policy associated with the API request constraint settings being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -179,35 +163,13 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        api_endpoint = akamai.get_app_sec_api_endpoints(config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            api_name="Contracts")
-        api_request_constraints = akamai.AppSecApiRequestConstraints("apiRequestConstraints",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            api_endpoint_id=api_endpoint.id,
-            action="alert")
-        ```
-
+        Create a AppSecApiRequestConstraints resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: . Action to assign to the API request constraint. Allowed values are:
-               - **alert**, Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[int] api_endpoint_id: . ID of the API endpoint the constraint will be assigned to.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the API request constraint settings being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the API request constraint settings being modified.
+        :param pulumi.Input[str] action: Action to be taken when the API request constraint is triggered
+        :param pulumi.Input[int] api_endpoint_id: Unique identifier of the API endpoint to which the constraint will be assigned
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         ...
     @overload
@@ -216,25 +178,7 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
                  args: AppSecApiRequestConstraintsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        api_endpoint = akamai.get_app_sec_api_endpoints(config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            api_name="Contracts")
-        api_request_constraints = akamai.AppSecApiRequestConstraints("apiRequestConstraints",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            api_endpoint_id=api_endpoint.id,
-            action="alert")
-        ```
-
+        Create a AppSecApiRequestConstraints resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecApiRequestConstraintsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -294,14 +238,10 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: . Action to assign to the API request constraint. Allowed values are:
-               - **alert**, Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[int] api_endpoint_id: . ID of the API endpoint the constraint will be assigned to.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the API request constraint settings being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the API request constraint settings being modified.
+        :param pulumi.Input[str] action: Action to be taken when the API request constraint is triggered
+        :param pulumi.Input[int] api_endpoint_id: Unique identifier of the API endpoint to which the constraint will be assigned
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -317,11 +257,7 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
     @pulumi.getter
     def action(self) -> pulumi.Output[str]:
         """
-        . Action to assign to the API request constraint. Allowed values are:
-        - **alert**, Record the event.
-        - **deny**. Block the request.
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action.
+        Action to be taken when the API request constraint is triggered
         """
         return pulumi.get(self, "action")
 
@@ -329,7 +265,7 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
     @pulumi.getter(name="apiEndpointId")
     def api_endpoint_id(self) -> pulumi.Output[Optional[int]]:
         """
-        . ID of the API endpoint the constraint will be assigned to.
+        Unique identifier of the API endpoint to which the constraint will be assigned
         """
         return pulumi.get(self, "api_endpoint_id")
 
@@ -337,7 +273,7 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -345,7 +281,7 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        . Unique identifier of the security policy associated with the API request constraint settings being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 

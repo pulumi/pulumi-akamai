@@ -17,62 +17,30 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
 
     public static final DatastreamSplunkConnectorArgs Empty = new DatastreamSplunkConnectorArgs();
 
-    /**
-     * **Secret**. The certification authority (CA) certificate used to verify the origin server&#39;s certificate. It&#39;s needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-     * 
-     */
     @Import(name="caCert")
     private @Nullable Output<String> caCert;
 
-    /**
-     * @return **Secret**. The certification authority (CA) certificate used to verify the origin server&#39;s certificate. It&#39;s needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-     * 
-     */
     public Optional<Output<String>> caCert() {
         return Optional.ofNullable(this.caCert);
     }
 
-    /**
-     * **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     * 
-     */
     @Import(name="clientCert")
     private @Nullable Output<String> clientCert;
 
-    /**
-     * @return **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     * 
-     */
     public Optional<Output<String>> clientCert() {
         return Optional.ofNullable(this.clientCert);
     }
 
-    /**
-     * **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     * 
-     */
     @Import(name="clientKey")
     private @Nullable Output<String> clientKey;
 
-    /**
-     * @return **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     * 
-     */
     public Optional<Output<String>> clientKey() {
         return Optional.ofNullable(this.clientKey);
     }
 
-    /**
-     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     @Import(name="compressLogs")
     private @Nullable Output<Boolean> compressLogs;
 
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     public Optional<Output<Boolean>> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
@@ -84,62 +52,30 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.connectorId);
     }
 
-    /**
-     * The name of the connector.
-     * 
-     */
     @Import(name="connectorName", required=true)
     private Output<String> connectorName;
 
-    /**
-     * @return The name of the connector.
-     * 
-     */
     public Output<String> connectorName() {
         return this.connectorName;
     }
 
-    /**
-     * A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
-     * 
-     */
     @Import(name="customHeaderName")
     private @Nullable Output<String> customHeaderName;
 
-    /**
-     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
-     * 
-     */
     public Optional<Output<String>> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
 
-    /**
-     * The custom header&#39;s contents passed with the request that contains information about the client connection.
-     * 
-     */
     @Import(name="customHeaderValue")
     private @Nullable Output<String> customHeaderValue;
 
-    /**
-     * @return The custom header&#39;s contents passed with the request that contains information about the client connection.
-     * 
-     */
     public Optional<Output<String>> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
     }
 
-    /**
-     * **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
-     * 
-     */
     @Import(name="eventCollectorToken", required=true)
     private Output<String> eventCollectorToken;
 
-    /**
-     * @return **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
-     * 
-     */
     public Output<String> eventCollectorToken() {
         return this.eventCollectorToken;
     }
@@ -151,32 +87,16 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.mTls);
     }
 
-    /**
-     * The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-     * 
-     */
     @Import(name="tlsHostname")
     private @Nullable Output<String> tlsHostname;
 
-    /**
-     * @return The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-     * 
-     */
     public Optional<Output<String>> tlsHostname() {
         return Optional.ofNullable(this.tlsHostname);
     }
 
-    /**
-     * Enter the secure URL where you want to send and store your logs.
-     * 
-     */
     @Import(name="url", required=true)
     private Output<String> url;
 
-    /**
-     * @return Enter the secure URL where you want to send and store your logs.
-     * 
-     */
     public Output<String> url() {
         return this.url;
     }
@@ -216,86 +136,38 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
             $ = new DatastreamSplunkConnectorArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param caCert **Secret**. The certification authority (CA) certificate used to verify the origin server&#39;s certificate. It&#39;s needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-         * 
-         * @return builder
-         * 
-         */
         public Builder caCert(@Nullable Output<String> caCert) {
             $.caCert = caCert;
             return this;
         }
 
-        /**
-         * @param caCert **Secret**. The certification authority (CA) certificate used to verify the origin server&#39;s certificate. It&#39;s needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-         * 
-         * @return builder
-         * 
-         */
         public Builder caCert(String caCert) {
             return caCert(Output.of(caCert));
         }
 
-        /**
-         * @param clientCert **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-         * 
-         * @return builder
-         * 
-         */
         public Builder clientCert(@Nullable Output<String> clientCert) {
             $.clientCert = clientCert;
             return this;
         }
 
-        /**
-         * @param clientCert **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-         * 
-         * @return builder
-         * 
-         */
         public Builder clientCert(String clientCert) {
             return clientCert(Output.of(clientCert));
         }
 
-        /**
-         * @param clientKey **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-         * 
-         * @return builder
-         * 
-         */
         public Builder clientKey(@Nullable Output<String> clientKey) {
             $.clientKey = clientKey;
             return this;
         }
 
-        /**
-         * @param clientKey **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-         * 
-         * @return builder
-         * 
-         */
         public Builder clientKey(String clientKey) {
             return clientKey(Output.of(clientKey));
         }
 
-        /**
-         * @param compressLogs Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder compressLogs(@Nullable Output<Boolean> compressLogs) {
             $.compressLogs = compressLogs;
             return this;
         }
 
-        /**
-         * @param compressLogs Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder compressLogs(Boolean compressLogs) {
             return compressLogs(Output.of(compressLogs));
         }
@@ -309,86 +181,38 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
             return connectorId(Output.of(connectorId));
         }
 
-        /**
-         * @param connectorName The name of the connector.
-         * 
-         * @return builder
-         * 
-         */
         public Builder connectorName(Output<String> connectorName) {
             $.connectorName = connectorName;
             return this;
         }
 
-        /**
-         * @param connectorName The name of the connector.
-         * 
-         * @return builder
-         * 
-         */
         public Builder connectorName(String connectorName) {
             return connectorName(Output.of(connectorName));
         }
 
-        /**
-         * @param customHeaderName A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
-         * 
-         * @return builder
-         * 
-         */
         public Builder customHeaderName(@Nullable Output<String> customHeaderName) {
             $.customHeaderName = customHeaderName;
             return this;
         }
 
-        /**
-         * @param customHeaderName A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
-         * 
-         * @return builder
-         * 
-         */
         public Builder customHeaderName(String customHeaderName) {
             return customHeaderName(Output.of(customHeaderName));
         }
 
-        /**
-         * @param customHeaderValue The custom header&#39;s contents passed with the request that contains information about the client connection.
-         * 
-         * @return builder
-         * 
-         */
         public Builder customHeaderValue(@Nullable Output<String> customHeaderValue) {
             $.customHeaderValue = customHeaderValue;
             return this;
         }
 
-        /**
-         * @param customHeaderValue The custom header&#39;s contents passed with the request that contains information about the client connection.
-         * 
-         * @return builder
-         * 
-         */
         public Builder customHeaderValue(String customHeaderValue) {
             return customHeaderValue(Output.of(customHeaderValue));
         }
 
-        /**
-         * @param eventCollectorToken **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
-         * 
-         * @return builder
-         * 
-         */
         public Builder eventCollectorToken(Output<String> eventCollectorToken) {
             $.eventCollectorToken = eventCollectorToken;
             return this;
         }
 
-        /**
-         * @param eventCollectorToken **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
-         * 
-         * @return builder
-         * 
-         */
         public Builder eventCollectorToken(String eventCollectorToken) {
             return eventCollectorToken(Output.of(eventCollectorToken));
         }
@@ -402,44 +226,20 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
             return mTls(Output.of(mTls));
         }
 
-        /**
-         * @param tlsHostname The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-         * 
-         * @return builder
-         * 
-         */
         public Builder tlsHostname(@Nullable Output<String> tlsHostname) {
             $.tlsHostname = tlsHostname;
             return this;
         }
 
-        /**
-         * @param tlsHostname The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-         * 
-         * @return builder
-         * 
-         */
         public Builder tlsHostname(String tlsHostname) {
             return tlsHostname(Output.of(tlsHostname));
         }
 
-        /**
-         * @param url Enter the secure URL where you want to send and store your logs.
-         * 
-         * @return builder
-         * 
-         */
         public Builder url(Output<String> url) {
             $.url = url;
             return this;
         }
 
-        /**
-         * @param url Enter the secure URL where you want to send and store your logs.
-         * 
-         * @return builder
-         * 
-         */
         public Builder url(String url) {
             return url(Output.of(url));
         }

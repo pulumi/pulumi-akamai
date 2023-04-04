@@ -17,14 +17,14 @@ public final class AppsecAdvancedSettingsAttackPayloadLoggingState extends com.p
     public static final AppsecAdvancedSettingsAttackPayloadLoggingState Empty = new AppsecAdvancedSettingsAttackPayloadLoggingState();
 
     /**
-     * . JSON representation of the Attack Payload Logging settings to be configured.
+     * Whether to enable, disable, or update attack payload logging settings
      * 
      */
     @Import(name="attackPayloadLogging")
     private @Nullable Output<String> attackPayloadLogging;
 
     /**
-     * @return . JSON representation of the Attack Payload Logging settings to be configured.
+     * @return Whether to enable, disable, or update attack payload logging settings
      * 
      */
     public Optional<Output<String>> attackPayloadLogging() {
@@ -32,14 +32,14 @@ public final class AppsecAdvancedSettingsAttackPayloadLoggingState extends com.p
     }
 
     /**
-     * . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -47,14 +47,14 @@ public final class AppsecAdvancedSettingsAttackPayloadLoggingState extends com.p
     }
 
     /**
-     * . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -88,7 +88,7 @@ public final class AppsecAdvancedSettingsAttackPayloadLoggingState extends com.p
         }
 
         /**
-         * @param attackPayloadLogging . JSON representation of the Attack Payload Logging settings to be configured.
+         * @param attackPayloadLogging Whether to enable, disable, or update attack payload logging settings
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class AppsecAdvancedSettingsAttackPayloadLoggingState extends com.p
         }
 
         /**
-         * @param attackPayloadLogging . JSON representation of the Attack Payload Logging settings to be configured.
+         * @param attackPayloadLogging Whether to enable, disable, or update attack payload logging settings
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class AppsecAdvancedSettingsAttackPayloadLoggingState extends com.p
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class AppsecAdvancedSettingsAttackPayloadLoggingState extends com.p
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class AppsecAdvancedSettingsAttackPayloadLoggingState extends com.p
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AppsecAdvancedSettingsAttackPayloadLoggingState extends com.p
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

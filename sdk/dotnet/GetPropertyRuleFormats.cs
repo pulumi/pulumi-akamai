@@ -11,35 +11,6 @@ namespace Pulumi.Akamai
 {
     public static class GetPropertyRuleFormats
     {
-        /// <summary>
-        /// Use the `akamai.getPropertyRuleFormats` data source to query the list of
-        /// known rule formats.
-        /// You use rule formats to [freeze](https://techdocs.akamai.com/property-mgr/reference/modify-a-rule#freeze-a-feature-set-for-a-rule-tree) or
-        /// [update](https://techdocs.akamai.com/property-mgr/reference/modify-a-rule#update-rules-to-a-newer-set-of-features) the versioned set of behaviors
-        /// and criteria a rule tree invokes. Without this mechanism, behaviors and criteria
-        /// would update automatically and generate unexpected errors.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Use this example to list available property rule formats:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["propertyMatch"] = data.Akamai_property_rule_formats.My_example,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetPropertyRuleFormatsResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRuleFormatsResult>("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", InvokeArgs.Empty, options.WithDefaults());
     }

@@ -79,3 +79,10 @@ class _ExportableConfig(types.ModuleType):
     def property_section(self) -> Optional[str]:
         return __config__.get('propertySection')
 
+    @property
+    def request_limit(self) -> Optional[int]:
+        """
+        The maximum number of API requests to be made per second (0 for no limit)
+        """
+        return __config__.get_int('requestLimit')
+

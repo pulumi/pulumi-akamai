@@ -10,47 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getDatastreamActivationHistory` data source to list detailed information about the activation status changes for all versions of a stream.
-//
-// ## Example Usage
-//
-// This example returns the activation history for a provided stream ID:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			ds, err := akamai.GetDatastreamActivationHistory(ctx, &akamai.GetDatastreamActivationHistoryArgs{
-//				StreamId: 12345,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("dsHistoryStreamId", ds.StreamId)
-//			ctx.Export("dsHistoryActivations", ds.Activations)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `activations` - Detailed information about an activation status change for a version of a stream, including:
-//   - `createdBy` - The user who activated or deactivated the stream.
-//   - `createdDate` - The date and time of an activation status change.
-//   - `streamId` - A stream's unique identifier.
-//   - `streamVersionId` - A stream version's unique identifier.
-//   - `isActive` -	Whether the version of the stream is active.
 func GetDatastreamActivationHistory(ctx *pulumi.Context, args *GetDatastreamActivationHistoryArgs, opts ...pulumi.InvokeOption) (*GetDatastreamActivationHistoryResult, error) {
 	var rv GetDatastreamActivationHistoryResult
 	err := ctx.Invoke("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args, &rv, opts...)
@@ -62,7 +21,6 @@ func GetDatastreamActivationHistory(ctx *pulumi.Context, args *GetDatastreamActi
 
 // A collection of arguments for invoking getDatastreamActivationHistory.
 type GetDatastreamActivationHistoryArgs struct {
-	// (Required) A stream's unique identifier.
 	StreamId int `pulumi:"streamId"`
 }
 
@@ -89,7 +47,6 @@ func GetDatastreamActivationHistoryOutput(ctx *pulumi.Context, args GetDatastrea
 
 // A collection of arguments for invoking getDatastreamActivationHistory.
 type GetDatastreamActivationHistoryOutputArgs struct {
-	// (Required) A stream's unique identifier.
 	StreamId pulumi.IntInput `pulumi:"streamId"`
 }
 

@@ -13,17 +13,9 @@ public final class DatastreamConfigFrequencyArgs extends com.pulumi.resources.Re
 
     public static final DatastreamConfigFrequencyArgs Empty = new DatastreamConfigFrequencyArgs();
 
-    /**
-     * The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
-     * 
-     */
     @Import(name="timeInSec", required=true)
     private Output<Integer> timeInSec;
 
-    /**
-     * @return The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
-     * 
-     */
     public Output<Integer> timeInSec() {
         return this.timeInSec;
     }
@@ -52,23 +44,11 @@ public final class DatastreamConfigFrequencyArgs extends com.pulumi.resources.Re
             $ = new DatastreamConfigFrequencyArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param timeInSec The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
-         * 
-         * @return builder
-         * 
-         */
         public Builder timeInSec(Output<Integer> timeInSec) {
             $.timeInSec = timeInSec;
             return this;
         }
 
-        /**
-         * @param timeInSec The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
-         * 
-         * @return builder
-         * 
-         */
         public Builder timeInSec(Integer timeInSec) {
             return timeInSec(Output.of(timeInSec));
         }

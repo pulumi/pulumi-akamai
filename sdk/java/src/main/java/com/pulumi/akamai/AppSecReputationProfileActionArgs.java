@@ -15,22 +15,14 @@ public final class AppSecReputationProfileActionArgs extends com.pulumi.resource
     public static final AppSecReputationProfileActionArgs Empty = new AppSecReputationProfileActionArgs();
 
     /**
-     * . Action taken any time the reputation profile is triggered. Allows values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the reputation profile is triggered
      * 
      */
     @Import(name="action", required=true)
     private Output<String> action;
 
     /**
-     * @return . Action taken any time the reputation profile is triggered. Allows values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * @return Action to be taken when the reputation profile is triggered
      * 
      */
     public Output<String> action() {
@@ -38,14 +30,14 @@ public final class AppSecReputationProfileActionArgs extends com.pulumi.resource
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile action being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the reputation profile action being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -53,14 +45,14 @@ public final class AppSecReputationProfileActionArgs extends com.pulumi.resource
     }
 
     /**
-     * . Unique identifier of the reputation profile whose action is being modified.
+     * Unique identifier of the reputation profile
      * 
      */
     @Import(name="reputationProfileId", required=true)
     private Output<Integer> reputationProfileId;
 
     /**
-     * @return . Unique identifier of the reputation profile whose action is being modified.
+     * @return Unique identifier of the reputation profile
      * 
      */
     public Output<Integer> reputationProfileId() {
@@ -68,14 +60,14 @@ public final class AppSecReputationProfileActionArgs extends com.pulumi.resource
     }
 
     /**
-     * . Unique identifier of the security policy associated with the reputation profile action being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the reputation profile action being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -110,11 +102,7 @@ public final class AppSecReputationProfileActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param action . Action taken any time the reputation profile is triggered. Allows values are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param action Action to be taken when the reputation profile is triggered
          * 
          * @return builder
          * 
@@ -125,11 +113,7 @@ public final class AppSecReputationProfileActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param action . Action taken any time the reputation profile is triggered. Allows values are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param action Action to be taken when the reputation profile is triggered
          * 
          * @return builder
          * 
@@ -139,7 +123,7 @@ public final class AppSecReputationProfileActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profile action being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -150,7 +134,7 @@ public final class AppSecReputationProfileActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profile action being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -160,7 +144,7 @@ public final class AppSecReputationProfileActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param reputationProfileId . Unique identifier of the reputation profile whose action is being modified.
+         * @param reputationProfileId Unique identifier of the reputation profile
          * 
          * @return builder
          * 
@@ -171,7 +155,7 @@ public final class AppSecReputationProfileActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param reputationProfileId . Unique identifier of the reputation profile whose action is being modified.
+         * @param reputationProfileId Unique identifier of the reputation profile
          * 
          * @return builder
          * 
@@ -181,7 +165,7 @@ public final class AppSecReputationProfileActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the reputation profile action being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -192,7 +176,7 @@ public final class AppSecReputationProfileActionArgs extends com.pulumi.resource
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the reputation profile action being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

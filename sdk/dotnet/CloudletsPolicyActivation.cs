@@ -9,108 +9,35 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// Use the `akamai.CloudletsPolicyActivation` resource to activate a specific version of a Cloudlet policy. An activation deploys the version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
-    /// 
-    /// Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var example = new Akamai.CloudletsPolicyActivation("example", new()
-    ///     {
-    ///         AssociatedProperties = new[]
-    ///         {
-    ///             "Property_1",
-    ///             "Property_2",
-    ///             "Property_3",
-    ///         },
-    ///         Network = "staging",
-    ///         PolicyId = 1234,
-    ///         Version = 1,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// If you're handling two `akamai.CloudletsPolicyActivation` resources in the same configuration file with the same `policy_id`, but different `network` arguments (for example, `production` and `staging`), you need to add `depends_on` to the production resource. See the example:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var stag = new Akamai.CloudletsPolicyActivation("stag", new()
-    ///     {
-    ///         PolicyId = 1234567,
-    ///         Network = "staging",
-    ///         Version = 1,
-    ///         AssociatedProperties = new[]
-    ///         {
-    ///             "Property_1",
-    ///             "Property_2",
-    ///         },
-    ///     });
-    /// 
-    ///     var prod = new Akamai.CloudletsPolicyActivation("prod", new()
-    ///     {
-    ///         PolicyId = 1234567,
-    ///         Network = "production",
-    ///         Version = 1,
-    ///         AssociatedProperties = new[]
-    ///         {
-    ///             "Property_1",
-    ///             "Property_2",
-    ///         },
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         DependsOn = new[]
-    ///         {
-    ///             stag,
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation")]
     public partial class CloudletsPolicyActivation : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+        /// Set of property IDs to link to this Cloudlets policy
         /// </summary>
         [Output("associatedProperties")]
         public Output<ImmutableArray<string>> AssociatedProperties { get; private set; } = null!;
 
         /// <summary>
-        /// The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+        /// The network you want to activate the policy version on (options are Staging and Production)
         /// </summary>
         [Output("network")]
         public Output<string> Network { get; private set; } = null!;
 
         /// <summary>
-        /// An identifier for the Cloudlet policy you want to activate.
+        /// ID of the Cloudlets policy you want to activate
         /// </summary>
         [Output("policyId")]
         public Output<int> PolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// The activation status for this Cloudlet policy.
+        /// Activation status for this Cloudlets policy
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// The Cloudlet policy version you want to activate.
+        /// Cloudlets policy version you want to activate
         /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
@@ -165,7 +92,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _associatedProperties;
 
         /// <summary>
-        /// A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+        /// Set of property IDs to link to this Cloudlets policy
         /// </summary>
         public InputList<string> AssociatedProperties
         {
@@ -174,19 +101,19 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+        /// The network you want to activate the policy version on (options are Staging and Production)
         /// </summary>
         [Input("network", required: true)]
         public Input<string> Network { get; set; } = null!;
 
         /// <summary>
-        /// An identifier for the Cloudlet policy you want to activate.
+        /// ID of the Cloudlets policy you want to activate
         /// </summary>
         [Input("policyId", required: true)]
         public Input<int> PolicyId { get; set; } = null!;
 
         /// <summary>
-        /// The Cloudlet policy version you want to activate.
+        /// Cloudlets policy version you want to activate
         /// </summary>
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
@@ -203,7 +130,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _associatedProperties;
 
         /// <summary>
-        /// A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+        /// Set of property IDs to link to this Cloudlets policy
         /// </summary>
         public InputList<string> AssociatedProperties
         {
@@ -212,25 +139,25 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+        /// The network you want to activate the policy version on (options are Staging and Production)
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// An identifier for the Cloudlet policy you want to activate.
+        /// ID of the Cloudlets policy you want to activate
         /// </summary>
         [Input("policyId")]
         public Input<int>? PolicyId { get; set; }
 
         /// <summary>
-        /// The activation status for this Cloudlet policy.
+        /// Activation status for this Cloudlets policy
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// The Cloudlet policy version you want to activate.
+        /// Cloudlets policy version you want to activate
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }

@@ -9,45 +9,17 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// Use the `akamai.IamGroup` resource to list details about groups. Groups are organizational containers for the objects you use.  Groups can contain other groups, primary objects like properties, and secondary objects like edge hostnames or content provider (CP) codes.
-    /// 
-    /// ## Basic usage
-    /// 
-    /// This example returns the policy details based on the policy ID and optionally, a version:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var example = new Akamai.IamGroup("example", new()
-    ///     {
-    ///         ParentGroupId = 12345,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
-    /// ## Attributes reference
-    /// 
-    /// This resource returns this attribute:
-    /// 
-    /// * `sub_groups` - Sub-groups that are related to this group. Each identifier must be an integer.
-    /// </summary>
     [AkamaiResourceType("akamai:index/iamGroup:IamGroup")]
     public partial class IamGroup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Human readable name for a group.
+        /// Human readable name for a group
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// A unique identifier for the parent group. Each identifier must be an integer.
+        /// Unique identifier for the parent group
         /// </summary>
         [Output("parentGroupId")]
         public Output<int> ParentGroupId { get; private set; } = null!;
@@ -105,13 +77,13 @@ namespace Pulumi.Akamai
     public sealed class IamGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Human readable name for a group.
+        /// Human readable name for a group
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// A unique identifier for the parent group. Each identifier must be an integer.
+        /// Unique identifier for the parent group
         /// </summary>
         [Input("parentGroupId", required: true)]
         public Input<int> ParentGroupId { get; set; } = null!;
@@ -125,13 +97,13 @@ namespace Pulumi.Akamai
     public sealed class IamGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Human readable name for a group.
+        /// Human readable name for a group
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// A unique identifier for the parent group. Each identifier must be an integer.
+        /// Unique identifier for the parent group
         /// </summary>
         [Input("parentGroupId")]
         public Input<int>? ParentGroupId { get; set; }

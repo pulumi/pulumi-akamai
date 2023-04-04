@@ -18,14 +18,14 @@ public final class IamBlockedUserPropertiesState extends com.pulumi.resources.Re
     public static final IamBlockedUserPropertiesState Empty = new IamBlockedUserPropertiesState();
 
     /**
-     * List of properties to block for a user. The property IDs must be an integer.
+     * List of properties to block for a user
      * 
      */
     @Import(name="blockedProperties")
     private @Nullable Output<List<Integer>> blockedProperties;
 
     /**
-     * @return List of properties to block for a user. The property IDs must be an integer.
+     * @return List of properties to block for a user
      * 
      */
     public Optional<Output<List<Integer>>> blockedProperties() {
@@ -33,14 +33,14 @@ public final class IamBlockedUserPropertiesState extends com.pulumi.resources.Re
     }
 
     /**
-     * A unique identifier for a group. Each identifier must be an integer.
+     * A unique identifier for a group
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<Integer> groupId;
 
     /**
-     * @return A unique identifier for a group. Each identifier must be an integer.
+     * @return A unique identifier for a group
      * 
      */
     public Optional<Output<Integer>> groupId() {
@@ -48,14 +48,14 @@ public final class IamBlockedUserPropertiesState extends com.pulumi.resources.Re
     }
 
     /**
-     * A unique identifier that corresponds to a user&#39;s actual profile or client ID. Each identifier must be a string.
+     * A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID
      * 
      */
     @Import(name="identityId")
     private @Nullable Output<String> identityId;
 
     /**
-     * @return A unique identifier that corresponds to a user&#39;s actual profile or client ID. Each identifier must be a string.
+     * @return A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID
      * 
      */
     public Optional<Output<String>> identityId() {
@@ -89,7 +89,7 @@ public final class IamBlockedUserPropertiesState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockedProperties List of properties to block for a user. The property IDs must be an integer.
+         * @param blockedProperties List of properties to block for a user
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class IamBlockedUserPropertiesState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockedProperties List of properties to block for a user. The property IDs must be an integer.
+         * @param blockedProperties List of properties to block for a user
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class IamBlockedUserPropertiesState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockedProperties List of properties to block for a user. The property IDs must be an integer.
+         * @param blockedProperties List of properties to block for a user
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class IamBlockedUserPropertiesState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param groupId A unique identifier for a group. Each identifier must be an integer.
+         * @param groupId A unique identifier for a group
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class IamBlockedUserPropertiesState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param groupId A unique identifier for a group. Each identifier must be an integer.
+         * @param groupId A unique identifier for a group
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class IamBlockedUserPropertiesState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param identityId A unique identifier that corresponds to a user&#39;s actual profile or client ID. Each identifier must be a string.
+         * @param identityId A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class IamBlockedUserPropertiesState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param identityId A unique identifier that corresponds to a user&#39;s actual profile or client ID. Each identifier must be a string.
+         * @param identityId A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID
          * 
          * @return builder
          * 

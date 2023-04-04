@@ -67,19 +67,7 @@ class AwaitableGetCloudletsEdgeRedirectorMatchRuleResult(GetCloudletsEdgeRedirec
 def get_cloudlets_edge_redirector_match_rule(match_rules: Optional[Sequence[pulumi.InputType['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs']]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsEdgeRedirectorMatchRuleResult:
     """
-    Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-
-    Use the _get_cloudlets_edge_redirector_match_rule_ data source to build a match rule JSON object for the Edge Redirector Cloudlet.
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `type` - The type of Cloudlet the rule is for.
-    * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
-
-
-    :param Sequence[pulumi.InputType['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs']] match_rules: (Optional) A list of Cloudlet-specific match rules for a policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['matchRules'] = match_rules
@@ -96,18 +84,6 @@ def get_cloudlets_edge_redirector_match_rule(match_rules: Optional[Sequence[pulu
 def get_cloudlets_edge_redirector_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs']]]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsEdgeRedirectorMatchRuleResult]:
     """
-    Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-
-    Use the _get_cloudlets_edge_redirector_match_rule_ data source to build a match rule JSON object for the Edge Redirector Cloudlet.
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `type` - The type of Cloudlet the rule is for.
-    * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
-
-
-    :param Sequence[pulumi.InputType['GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs']] match_rules: (Optional) A list of Cloudlet-specific match rules for a policy.
+    Use this data source to access information about an existing resource.
     """
     ...

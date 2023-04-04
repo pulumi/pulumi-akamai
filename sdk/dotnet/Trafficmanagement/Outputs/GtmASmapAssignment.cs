@@ -13,17 +13,8 @@ namespace Pulumi.Akamai.Trafficmanagement.Outputs
     [OutputType]
     public sealed class GtmASmapAssignment
     {
-        /// <summary>
-        /// Specifies an array of AS numbers.
-        /// </summary>
         public readonly ImmutableArray<int> AsNumbers;
-        /// <summary>
-        /// A unique identifier for an existing data center in the domain.
-        /// </summary>
         public readonly int DatacenterId;
-        /// <summary>
-        /// A descriptive label for the group.
-        /// </summary>
         public readonly string Nickname;
 
         [OutputConstructor]

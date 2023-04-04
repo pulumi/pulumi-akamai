@@ -21,21 +21,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecRulesArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the rules.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
-        /// </summary>
         [Input("ruleId")]
         public int? RuleId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the rules.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -47,21 +38,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the rules.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
-        /// </summary>
         [Input("ruleId")]
         public Input<int>? RuleId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the rules.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

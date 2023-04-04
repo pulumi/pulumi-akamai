@@ -9,90 +9,60 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// Use the `akamai.NetworkList` resource to create a network list, or to modify an existing list.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var networkList = new Akamai.NetworkList("networkList", new()
-    ///     {
-    ///         Type = "IP",
-    ///         Description = "network list description",
-    ///         Lists = @var.List,
-    ///         Mode = "APPEND",
-    ///         ContractId = "ABC-123",
-    ///         GroupId = 12345,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/networkList:NetworkList")]
     public partial class NetworkList : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The contract ID of the network list. If supplied, group_id must also be supplied. The
-        /// contract_id value of an existing network list may not be modified.
+        /// contract ID
         /// </summary>
         [Output("contractId")]
         public Output<string?> ContractId { get; private set; } = null!;
 
         /// <summary>
-        /// The description to be assigned to the network list.
+        /// A description of the network list
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The group ID of the network list. If supplied, contract_id must also be supplied. The
-        /// group_id value of an existing network list may not be modified.
+        /// group ID
         /// </summary>
         [Output("groupId")]
         public Output<int?> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// A list of IP addresses or locations to be included in the list, added to an existing list, or
-        /// removed from an existing list.
+        /// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+        /// list
         /// </summary>
         [Output("lists")]
         public Output<ImmutableArray<string>> Lists { get; private set; } = null!;
 
         /// <summary>
-        /// A string specifying the interpretation of the `list` parameter. Must be one of the following:
+        /// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
         /// </summary>
         [Output("mode")]
         public Output<string> Mode { get; private set; } = null!;
 
         /// <summary>
-        /// The name to be assigned to the network list.
+        /// The name to be assigned to the network list
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the network list.
+        /// network list ID
         /// </summary>
         [Output("networkListId")]
         public Output<string> NetworkListId { get; private set; } = null!;
 
         /// <summary>
-        /// An integer that identifies the current version of the network list; this value is incremented each time
-        /// the list is modified.
+        /// sync point
         /// </summary>
         [Output("syncPoint")]
         public Output<int> SyncPoint { get; private set; } = null!;
 
         /// <summary>
-        /// The type of the network list; must be either "IP" or "GEO".
+        /// The type of the network list; must be either 'IP' or 'GEO'
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -150,21 +120,19 @@ namespace Pulumi.Akamai
     public sealed class NetworkListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The contract ID of the network list. If supplied, group_id must also be supplied. The
-        /// contract_id value of an existing network list may not be modified.
+        /// contract ID
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
         /// <summary>
-        /// The description to be assigned to the network list.
+        /// A description of the network list
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
-        /// The group ID of the network list. If supplied, contract_id must also be supplied. The
-        /// group_id value of an existing network list may not be modified.
+        /// group ID
         /// </summary>
         [Input("groupId")]
         public Input<int>? GroupId { get; set; }
@@ -173,8 +141,8 @@ namespace Pulumi.Akamai
         private InputList<string>? _lists;
 
         /// <summary>
-        /// A list of IP addresses or locations to be included in the list, added to an existing list, or
-        /// removed from an existing list.
+        /// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+        /// list
         /// </summary>
         public InputList<string> Lists
         {
@@ -183,19 +151,19 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// A string specifying the interpretation of the `list` parameter. Must be one of the following:
+        /// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
         /// </summary>
         [Input("mode", required: true)]
         public Input<string> Mode { get; set; } = null!;
 
         /// <summary>
-        /// The name to be assigned to the network list.
+        /// The name to be assigned to the network list
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The type of the network list; must be either "IP" or "GEO".
+        /// The type of the network list; must be either 'IP' or 'GEO'
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -209,21 +177,19 @@ namespace Pulumi.Akamai
     public sealed class NetworkListState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The contract ID of the network list. If supplied, group_id must also be supplied. The
-        /// contract_id value of an existing network list may not be modified.
+        /// contract ID
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
         /// <summary>
-        /// The description to be assigned to the network list.
+        /// A description of the network list
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The group ID of the network list. If supplied, contract_id must also be supplied. The
-        /// group_id value of an existing network list may not be modified.
+        /// group ID
         /// </summary>
         [Input("groupId")]
         public Input<int>? GroupId { get; set; }
@@ -232,8 +198,8 @@ namespace Pulumi.Akamai
         private InputList<string>? _lists;
 
         /// <summary>
-        /// A list of IP addresses or locations to be included in the list, added to an existing list, or
-        /// removed from an existing list.
+        /// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+        /// list
         /// </summary>
         public InputList<string> Lists
         {
@@ -242,32 +208,31 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// A string specifying the interpretation of the `list` parameter. Must be one of the following:
+        /// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
         /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }
 
         /// <summary>
-        /// The name to be assigned to the network list.
+        /// The name to be assigned to the network list
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The ID of the network list.
+        /// network list ID
         /// </summary>
         [Input("networkListId")]
         public Input<string>? NetworkListId { get; set; }
 
         /// <summary>
-        /// An integer that identifies the current version of the network list; this value is incremented each time
-        /// the list is modified.
+        /// sync point
         /// </summary>
         [Input("syncPoint")]
         public Input<int>? SyncPoint { get; set; }
 
         /// <summary>
-        /// The type of the network list; must be either "IP" or "GEO".
+        /// The type of the network list; must be either 'IP' or 'GEO'
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

@@ -13,32 +13,16 @@ public final class GetPropertyRulesTemplateTemplateArgs extends com.pulumi.resou
 
     public static final GetPropertyRulesTemplateTemplateArgs Empty = new GetPropertyRulesTemplateTemplateArgs();
 
-    /**
-     * The content of the JSON template as a string.
-     * 
-     */
     @Import(name="templateData", required=true)
     private Output<String> templateData;
 
-    /**
-     * @return The content of the JSON template as a string.
-     * 
-     */
     public Output<String> templateData() {
         return this.templateData;
     }
 
-    /**
-     * The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `template_dir = abspath(&#34;${path.root}/property-snippets/&#34;)`, or `template_dir = &#34;property-snippets/&#34;`.
-     * 
-     */
     @Import(name="templateDir", required=true)
     private Output<String> templateDir;
 
-    /**
-     * @return The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `template_dir = abspath(&#34;${path.root}/property-snippets/&#34;)`, or `template_dir = &#34;property-snippets/&#34;`.
-     * 
-     */
     public Output<String> templateDir() {
         return this.templateDir;
     }
@@ -68,44 +52,20 @@ public final class GetPropertyRulesTemplateTemplateArgs extends com.pulumi.resou
             $ = new GetPropertyRulesTemplateTemplateArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param templateData The content of the JSON template as a string.
-         * 
-         * @return builder
-         * 
-         */
         public Builder templateData(Output<String> templateData) {
             $.templateData = templateData;
             return this;
         }
 
-        /**
-         * @param templateData The content of the JSON template as a string.
-         * 
-         * @return builder
-         * 
-         */
         public Builder templateData(String templateData) {
             return templateData(Output.of(templateData));
         }
 
-        /**
-         * @param templateDir The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `template_dir = abspath(&#34;${path.root}/property-snippets/&#34;)`, or `template_dir = &#34;property-snippets/&#34;`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder templateDir(Output<String> templateDir) {
             $.templateDir = templateDir;
             return this;
         }
 
-        /**
-         * @param templateDir The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `template_dir = abspath(&#34;${path.root}/property-snippets/&#34;)`, or `template_dir = &#34;property-snippets/&#34;`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder templateDir(String templateDir) {
             return templateDir(Output.of(templateDir));
         }

@@ -77,30 +77,7 @@ def get_property(name: Optional[str] = None,
                  version: Optional[int] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyResult:
     """
-    Use the `Property` data source to query and list the property ID and rule tree based on the property name.
-
-    ## Example Usage
-
-    This example returns the property ID and rule tree based on the property name and optional version argument:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_property(name="terraform-demo",
-        version=1)
-    pulumi.export("myPropertyID", example)
-    ```
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `property_ID` - A property's unique identifier, including the `prp_` prefix.
-    * `rules` - A JSON-encoded rule tree for a given property.
-
-
-    :param str name: (Required) The property name.
-    :param int version: (Optional) The version of the property whose ID you want to list.
+    Use this data source to access information about an existing resource.
     """
     pulumi.log.warn("""get_property is deprecated: akamai.properties.getProperty has been deprecated in favor of akamai.getProperty""")
     __args__ = dict()
@@ -121,30 +98,7 @@ def get_property_output(name: Optional[pulumi.Input[str]] = None,
                         version: Optional[pulumi.Input[Optional[int]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyResult]:
     """
-    Use the `Property` data source to query and list the property ID and rule tree based on the property name.
-
-    ## Example Usage
-
-    This example returns the property ID and rule tree based on the property name and optional version argument:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_property(name="terraform-demo",
-        version=1)
-    pulumi.export("myPropertyID", example)
-    ```
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `property_ID` - A property's unique identifier, including the `prp_` prefix.
-    * `rules` - A JSON-encoded rule tree for a given property.
-
-
-    :param str name: (Required) The property name.
-    :param int version: (Optional) The version of the property whose ID you want to list.
+    Use this data source to access information about an existing resource.
     """
     pulumi.log.warn("""get_property is deprecated: akamai.properties.getProperty has been deprecated in favor of akamai.getProperty""")
     ...

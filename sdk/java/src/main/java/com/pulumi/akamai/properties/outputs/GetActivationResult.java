@@ -13,21 +13,8 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetActivationResult {
-    /**
-     * @return The activation&#39;s unique identifier, including optional `atv_` prefix.
-     * 
-     */
     private String activationId;
-    /**
-     * @return The email addresses to notify about the activation status changes.
-     * 
-     */
     private List<String> contacts;
-    /**
-     * @return The contents of `errors` field returned by the API. For more information
-     * see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     private String errors;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -35,45 +22,19 @@ public final class GetActivationResult {
      */
     private String id;
     private @Nullable String network;
-    /**
-     * @return Log message assigned to the activation request.
-     * 
-     */
     private String note;
     private String propertyId;
-    /**
-     * @return The property version&#39;s activation status on the selected network.
-     * 
-     */
     private String status;
     private Integer version;
-    /**
-     * @return The contents of `warnings` field returned by the API. For more information
-     * see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     private String warnings;
 
     private GetActivationResult() {}
-    /**
-     * @return The activation&#39;s unique identifier, including optional `atv_` prefix.
-     * 
-     */
     public String activationId() {
         return this.activationId;
     }
-    /**
-     * @return The email addresses to notify about the activation status changes.
-     * 
-     */
     public List<String> contacts() {
         return this.contacts;
     }
-    /**
-     * @return The contents of `errors` field returned by the API. For more information
-     * see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     public String errors() {
         return this.errors;
     }
@@ -87,31 +48,18 @@ public final class GetActivationResult {
     public Optional<String> network() {
         return Optional.ofNullable(this.network);
     }
-    /**
-     * @return Log message assigned to the activation request.
-     * 
-     */
     public String note() {
         return this.note;
     }
     public String propertyId() {
         return this.propertyId;
     }
-    /**
-     * @return The property version&#39;s activation status on the selected network.
-     * 
-     */
     public String status() {
         return this.status;
     }
     public Integer version() {
         return this.version;
     }
-    /**
-     * @return The contents of `warnings` field returned by the API. For more information
-     * see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     public String warnings() {
         return this.warnings;
     }

@@ -16,47 +16,23 @@ public final class GetAppSecCustomRuleActionsArgs extends com.pulumi.resources.I
 
     public static final GetAppSecCustomRuleActionsArgs Empty = new GetAppSecCustomRuleActionsArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the custom rules.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the custom rules.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the custom rule you want to return information for. If not included, action information is returned for all your custom rules.
-     * 
-     */
     @Import(name="customRuleId")
     private @Nullable Output<Integer> customRuleId;
 
-    /**
-     * @return . Unique identifier of the custom rule you want to return information for. If not included, action information is returned for all your custom rules.
-     * 
-     */
     public Optional<Output<Integer>> customRuleId() {
         return Optional.ofNullable(this.customRuleId);
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the custom rules.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the custom rules.
-     * 
-     */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -87,65 +63,29 @@ public final class GetAppSecCustomRuleActionsArgs extends com.pulumi.resources.I
             $ = new GetAppSecCustomRuleActionsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the custom rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the custom rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param customRuleId . Unique identifier of the custom rule you want to return information for. If not included, action information is returned for all your custom rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder customRuleId(@Nullable Output<Integer> customRuleId) {
             $.customRuleId = customRuleId;
             return this;
         }
 
-        /**
-         * @param customRuleId . Unique identifier of the custom rule you want to return information for. If not included, action information is returned for all your custom rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder customRuleId(Integer customRuleId) {
             return customRuleId(Output.of(customRuleId));
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the custom rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the custom rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
         }

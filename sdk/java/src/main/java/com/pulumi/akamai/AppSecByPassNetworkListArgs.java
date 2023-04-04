@@ -16,14 +16,14 @@ public final class AppSecByPassNetworkListArgs extends com.pulumi.resources.Reso
     public static final AppSecByPassNetworkListArgs Empty = new AppSecByPassNetworkListArgs();
 
     /**
-     * . JSON array of network IDs that comprise the bypass list.
+     * List of network list IDs that compose the bypass list
      * 
      */
     @Import(name="bypassNetworkLists", required=true)
     private Output<List<String>> bypassNetworkLists;
 
     /**
-     * @return . JSON array of network IDs that comprise the bypass list.
+     * @return List of network list IDs that compose the bypass list
      * 
      */
     public Output<List<String>> bypassNetworkLists() {
@@ -31,14 +31,14 @@ public final class AppSecByPassNetworkListArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the bypass network lists being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the bypass network lists being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -46,14 +46,14 @@ public final class AppSecByPassNetworkListArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * . Unique identifier of the security policy associated with the bypass network lists.
+     * The unique identifier of the security policy governing the bypass network lists
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the bypass network lists.
+     * @return The unique identifier of the security policy governing the bypass network lists
      * 
      */
     public Output<String> securityPolicyId() {
@@ -87,7 +87,7 @@ public final class AppSecByPassNetworkListArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param bypassNetworkLists . JSON array of network IDs that comprise the bypass list.
+         * @param bypassNetworkLists List of network list IDs that compose the bypass list
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class AppSecByPassNetworkListArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param bypassNetworkLists . JSON array of network IDs that comprise the bypass list.
+         * @param bypassNetworkLists List of network list IDs that compose the bypass list
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class AppSecByPassNetworkListArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param bypassNetworkLists . JSON array of network IDs that comprise the bypass list.
+         * @param bypassNetworkLists List of network list IDs that compose the bypass list
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class AppSecByPassNetworkListArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the bypass network lists being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class AppSecByPassNetworkListArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the bypass network lists being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class AppSecByPassNetworkListArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the bypass network lists.
+         * @param securityPolicyId The unique identifier of the security policy governing the bypass network lists
          * 
          * @return builder
          * 
@@ -150,7 +150,7 @@ public final class AppSecByPassNetworkListArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the bypass network lists.
+         * @param securityPolicyId The unique identifier of the security policy governing the bypass network lists
          * 
          * @return builder
          * 

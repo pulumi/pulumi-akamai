@@ -54,26 +54,7 @@ class AwaitableGetIamCountriesResult(GetIamCountriesResult):
 
 def get_iam_countries(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamCountriesResult:
     """
-    Use _get_iam_countries_ to retrieve all the possible countries that Akamai supports. Use the values from this data source to add or update a user's country information.
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    countries = akamai.get_iam_countries()
-    pulumi.export("supportedCountries", countries)
-    ```
-    ## Attributes reference
-
-    These attributes are returned:
-
-    * `countries` — A list of countries.
-
-    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-countries)
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

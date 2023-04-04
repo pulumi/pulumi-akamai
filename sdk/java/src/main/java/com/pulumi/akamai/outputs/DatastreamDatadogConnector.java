@@ -13,93 +13,37 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamDatadogConnector {
-    /**
-     * @return **Secret**. Your Log API token for your account in New Relic.
-     * 
-     */
     private String authToken;
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     private @Nullable Boolean compressLogs;
     private @Nullable Integer connectorId;
-    /**
-     * @return The name of the connector.
-     * 
-     */
     private String connectorName;
-    /**
-     * @return The service of the Datadog connector. A service groups together endpoints, queries, or jobs for the purposes of scaling instances. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes).
-     * 
-     */
     private @Nullable String service;
-    /**
-     * @return The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
-     * 
-     */
     private @Nullable String source;
-    /**
-     * @return The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
-     * 
-     */
     private @Nullable String tags;
-    /**
-     * @return Enter the secure URL where you want to send and store your logs.
-     * 
-     */
     private String url;
 
     private DatastreamDatadogConnector() {}
-    /**
-     * @return **Secret**. Your Log API token for your account in New Relic.
-     * 
-     */
     public String authToken() {
         return this.authToken;
     }
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
     public Optional<Integer> connectorId() {
         return Optional.ofNullable(this.connectorId);
     }
-    /**
-     * @return The name of the connector.
-     * 
-     */
     public String connectorName() {
         return this.connectorName;
     }
-    /**
-     * @return The service of the Datadog connector. A service groups together endpoints, queries, or jobs for the purposes of scaling instances. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes).
-     * 
-     */
     public Optional<String> service() {
         return Optional.ofNullable(this.service);
     }
-    /**
-     * @return The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
-     * 
-     */
     public Optional<String> source() {
         return Optional.ofNullable(this.source);
     }
-    /**
-     * @return The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
-     * 
-     */
     public Optional<String> tags() {
         return Optional.ofNullable(this.tags);
     }
-    /**
-     * @return Enter the secure URL where you want to send and store your logs.
-     * 
-     */
     public String url() {
         return this.url;
     }

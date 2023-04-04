@@ -17,92 +17,44 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchV
 
     public static final GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue Empty = new GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue();
 
-    /**
-     * (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     * 
-     */
     @Import(name="name")
     private @Nullable String name;
 
-    /**
-     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     * 
-     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     * 
-     */
     @Import(name="nameCaseSensitive")
     private @Nullable Boolean nameCaseSensitive;
 
-    /**
-     * @return (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     * 
-     */
     public Optional<Boolean> nameCaseSensitive() {
         return Optional.ofNullable(this.nameCaseSensitive);
     }
 
-    /**
-     * (Optional) Whether the `name` argument includes wildcards.
-     * 
-     */
     @Import(name="nameHasWildcard")
     private @Nullable Boolean nameHasWildcard;
 
-    /**
-     * @return (Optional) Whether the `name` argument includes wildcards.
-     * 
-     */
     public Optional<Boolean> nameHasWildcard() {
         return Optional.ofNullable(this.nameHasWildcard);
     }
 
-    /**
-     * (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     * 
-     */
     @Import(name="options")
     private @Nullable GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions options;
 
-    /**
-     * @return (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     * 
-     */
     public Optional<GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions> options() {
         return Optional.ofNullable(this.options);
     }
 
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     * 
-     */
     @Import(name="type", required=true)
     private String type;
 
-    /**
-     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     * 
-     */
     public String type() {
         return this.type;
     }
 
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     * 
-     */
     @Import(name="values")
     private @Nullable List<String> values;
 
-    /**
-     * @return (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     * 
-     */
     public Optional<List<String>> values() {
         return Optional.ofNullable(this.values);
     }
@@ -136,78 +88,36 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchV
             $ = new GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(@Nullable String name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param nameCaseSensitive (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nameCaseSensitive(@Nullable Boolean nameCaseSensitive) {
             $.nameCaseSensitive = nameCaseSensitive;
             return this;
         }
 
-        /**
-         * @param nameHasWildcard (Optional) Whether the `name` argument includes wildcards.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nameHasWildcard(@Nullable Boolean nameHasWildcard) {
             $.nameHasWildcard = nameHasWildcard;
             return this;
         }
 
-        /**
-         * @param options (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-         * 
-         * @return builder
-         * 
-         */
         public Builder options(@Nullable GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions options) {
             $.options = options;
             return this;
         }
 
-        /**
-         * @param type (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(String type) {
             $.type = type;
             return this;
         }
 
-        /**
-         * @param values (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-         * 
-         * @return builder
-         * 
-         */
         public Builder values(@Nullable List<String> values) {
             $.values = values;
             return this;
         }
 
-        /**
-         * @param values (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-         * 
-         * @return builder
-         * 
-         */
         public Builder values(String... values) {
             return values(List.of(values));
         }

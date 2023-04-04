@@ -18,28 +18,17 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.PropertyIncludeActivation` resource to activate your include and make available to a property.
- * You can also modify the activation time out with the `AKAMAI_ACTIVATION_TIMEOUT` environment variable, providing time in minutes. The default time out is 30 minutes.
- * 
- * ## Attributes reference
- * 
- * This resource returns this attribute:
- * 
- * * `validations` - The validation information in JSON format.
- * 
- */
 @ResourceType(type="akamai:index/propertyIncludeActivation:PropertyIncludeActivation")
 public class PropertyIncludeActivation extends com.pulumi.resources.CustomResource {
     /**
-     * (Optional) Automatically acknowledge all rule warnings for activation and continue.
+     * Automatically acknowledge all rule warnings for activation and continue
      * 
      */
     @Export(name="autoAcknowledgeRuleWarnings", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> autoAcknowledgeRuleWarnings;
 
     /**
-     * @return (Optional) Automatically acknowledge all rule warnings for activation and continue.
+     * @return Automatically acknowledge all rule warnings for activation and continue
      * 
      */
     public Output<Optional<Boolean>> autoAcknowledgeRuleWarnings() {
@@ -60,84 +49,84 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
         return Codegen.optional(this.complianceRecord);
     }
     /**
-     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * The contract under which the include is activated
      * 
      */
     @Export(name="contractId", type=String.class, parameters={})
     private Output<String> contractId;
 
     /**
-     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * @return The contract under which the include is activated
      * 
      */
     public Output<String> contractId() {
         return this.contractId;
     }
     /**
-     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * The group under which the include is activated
      * 
      */
     @Export(name="groupId", type=String.class, parameters={})
     private Output<String> groupId;
 
     /**
-     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * @return The group under which the include is activated
      * 
      */
     public Output<String> groupId() {
         return this.groupId;
     }
     /**
-     * (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+     * The unique identifier of the include
      * 
      */
     @Export(name="includeId", type=String.class, parameters={})
     private Output<String> includeId;
 
     /**
-     * @return (Required) An include&#39;s unique ID with the optional `inc_` prefix.
+     * @return The unique identifier of the include
      * 
      */
     public Output<String> includeId() {
         return this.includeId;
     }
     /**
-     * (Required) The network for which the activation will be performed.
+     * The network for which the activation will be performed
      * 
      */
     @Export(name="network", type=String.class, parameters={})
     private Output<String> network;
 
     /**
-     * @return (Required) The network for which the activation will be performed.
+     * @return The network for which the activation will be performed
      * 
      */
     public Output<String> network() {
         return this.network;
     }
     /**
-     * (Optional) A log message assigned to the activation request.
+     * The note to assign to a log message of the activation request
      * 
      */
     @Export(name="note", type=String.class, parameters={})
     private Output</* @Nullable */ String> note;
 
     /**
-     * @return (Optional) A log message assigned to the activation request.
+     * @return The note to assign to a log message of the activation request
      * 
      */
     public Output<Optional<String>> note() {
         return Codegen.optional(this.note);
     }
     /**
-     * (Required) The list of email addresses to notify when the activation status changes.
+     * The list of email addresses to notify about an activation status
      * 
      */
     @Export(name="notifyEmails", type=List.class, parameters={String.class})
     private Output<List<String>> notifyEmails;
 
     /**
-     * @return (Required) The list of email addresses to notify when the activation status changes.
+     * @return The list of email addresses to notify about an activation status
      * 
      */
     public Output<List<String>> notifyEmails() {
@@ -158,14 +147,14 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
         return this.validations;
     }
     /**
-     * (Required) The version of the include you want to activate.
+     * The unique identifier of the include
      * 
      */
     @Export(name="version", type=Integer.class, parameters={})
     private Output<Integer> version;
 
     /**
-     * @return (Required) The version of the include you want to activate.
+     * @return The unique identifier of the include
      * 
      */
     public Output<Integer> version() {

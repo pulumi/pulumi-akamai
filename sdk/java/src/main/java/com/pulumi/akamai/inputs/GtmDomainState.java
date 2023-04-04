@@ -19,62 +19,30 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
 
     public static final GtmDomainState Empty = new GtmDomainState();
 
-    /**
-     * A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-     * 
-     */
     @Import(name="cnameCoalescingEnabled")
     private @Nullable Output<Boolean> cnameCoalescingEnabled;
 
-    /**
-     * @return A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-     * 
-     */
     public Optional<Output<Boolean>> cnameCoalescingEnabled() {
         return Optional.ofNullable(this.cnameCoalescingEnabled);
     }
 
-    /**
-     * A descriptive note about changes to the domain. The maximum is 4000 characters.
-     * 
-     */
     @Import(name="comment")
     private @Nullable Output<String> comment;
 
-    /**
-     * @return A descriptive note about changes to the domain. The maximum is 4000 characters.
-     * 
-     */
     public Optional<Output<String>> comment() {
         return Optional.ofNullable(this.comment);
     }
 
-    /**
-     * If creating a domain, the contract ID.
-     * 
-     */
     @Import(name="contract")
     private @Nullable Output<String> contract;
 
-    /**
-     * @return If creating a domain, the contract ID.
-     * 
-     */
     public Optional<Output<String>> contract() {
         return Optional.ofNullable(this.contract);
     }
 
-    /**
-     * Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-     * 
-     */
     @Import(name="defaultErrorPenalty")
     private @Nullable Output<Integer> defaultErrorPenalty;
 
-    /**
-     * @return Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-     * 
-     */
     public Optional<Output<Integer>> defaultErrorPenalty() {
         return Optional.ofNullable(this.defaultErrorPenalty);
     }
@@ -107,47 +75,23 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.defaultMaxUnreachablePenalty);
     }
 
-    /**
-     * Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-     * 
-     */
     @Import(name="defaultSslClientCertificate")
     private @Nullable Output<String> defaultSslClientCertificate;
 
-    /**
-     * @return Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-     * 
-     */
     public Optional<Output<String>> defaultSslClientCertificate() {
         return Optional.ofNullable(this.defaultSslClientCertificate);
     }
 
-    /**
-     * Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-     * 
-     */
     @Import(name="defaultSslClientPrivateKey")
     private @Nullable Output<String> defaultSslClientPrivateKey;
 
-    /**
-     * @return Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-     * 
-     */
     public Optional<Output<String>> defaultSslClientPrivateKey() {
         return Optional.ofNullable(this.defaultSslClientPrivateKey);
     }
 
-    /**
-     * Specifies the timeout penalty score. Default is `25`.
-     * 
-     */
     @Import(name="defaultTimeoutPenalty")
     private @Nullable Output<Integer> defaultTimeoutPenalty;
 
-    /**
-     * @return Specifies the timeout penalty score. Default is `25`.
-     * 
-     */
     public Optional<Output<Integer>> defaultTimeoutPenalty() {
         return Optional.ofNullable(this.defaultTimeoutPenalty);
     }
@@ -159,77 +103,37 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.defaultUnreachableThreshold);
     }
 
-    /**
-     * A list of email addresses to notify when a change is made to the domain.
-     * 
-     */
     @Import(name="emailNotificationLists")
     private @Nullable Output<List<String>> emailNotificationLists;
 
-    /**
-     * @return A list of email addresses to notify when a change is made to the domain.
-     * 
-     */
     public Optional<Output<List<String>>> emailNotificationLists() {
         return Optional.ofNullable(this.emailNotificationLists);
     }
 
-    /**
-     * A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-     * 
-     */
     @Import(name="endUserMappingEnabled")
     private @Nullable Output<Boolean> endUserMappingEnabled;
 
-    /**
-     * @return A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-     * 
-     */
     public Optional<Output<Boolean>> endUserMappingEnabled() {
         return Optional.ofNullable(this.endUserMappingEnabled);
     }
 
-    /**
-     * If creating a domain, the currently selected group ID.
-     * 
-     */
     @Import(name="group")
     private @Nullable Output<String> group;
 
-    /**
-     * @return If creating a domain, the currently selected group ID.
-     * 
-     */
     public Optional<Output<String>> group() {
         return Optional.ofNullable(this.group);
     }
 
-    /**
-     * A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-     * 
-     */
     @Import(name="loadFeedback")
     private @Nullable Output<Boolean> loadFeedback;
 
-    /**
-     * @return A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-     * 
-     */
     public Optional<Output<Boolean>> loadFeedback() {
         return Optional.ofNullable(this.loadFeedback);
     }
 
-    /**
-     * Indicates the percentage of load imbalance factor (LIF) for the domain.
-     * 
-     */
     @Import(name="loadImbalancePercentage")
     private @Nullable Output<Double> loadImbalancePercentage;
 
-    /**
-     * @return Indicates the percentage of load imbalance factor (LIF) for the domain.
-     * 
-     */
     public Optional<Output<Double>> loadImbalancePercentage() {
         return Optional.ofNullable(this.loadImbalancePercentage);
     }
@@ -290,17 +194,9 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.minTtl);
     }
 
-    /**
-     * The DNS name for a collection of GTM Properties.
-     * 
-     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
-    /**
-     * @return The DNS name for a collection of GTM Properties.
-     * 
-     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
@@ -347,32 +243,16 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.servermonitorPool);
     }
 
-    /**
-     * Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-     * 
-     */
     @Import(name="type")
     private @Nullable Output<String> type;
 
-    /**
-     * @return Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-     * 
-     */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
     }
 
-    /**
-     * A boolean that, if set to `true`, waits for transaction to complete.
-     * 
-     */
     @Import(name="waitOnComplete")
     private @Nullable Output<Boolean> waitOnComplete;
 
-    /**
-     * @return A boolean that, if set to `true`, waits for transaction to complete.
-     * 
-     */
     public Optional<Output<Boolean>> waitOnComplete() {
         return Optional.ofNullable(this.waitOnComplete);
     }
@@ -434,86 +314,38 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
             $ = new GtmDomainState(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param cnameCoalescingEnabled A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cnameCoalescingEnabled(@Nullable Output<Boolean> cnameCoalescingEnabled) {
             $.cnameCoalescingEnabled = cnameCoalescingEnabled;
             return this;
         }
 
-        /**
-         * @param cnameCoalescingEnabled A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cnameCoalescingEnabled(Boolean cnameCoalescingEnabled) {
             return cnameCoalescingEnabled(Output.of(cnameCoalescingEnabled));
         }
 
-        /**
-         * @param comment A descriptive note about changes to the domain. The maximum is 4000 characters.
-         * 
-         * @return builder
-         * 
-         */
         public Builder comment(@Nullable Output<String> comment) {
             $.comment = comment;
             return this;
         }
 
-        /**
-         * @param comment A descriptive note about changes to the domain. The maximum is 4000 characters.
-         * 
-         * @return builder
-         * 
-         */
         public Builder comment(String comment) {
             return comment(Output.of(comment));
         }
 
-        /**
-         * @param contract If creating a domain, the contract ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contract(@Nullable Output<String> contract) {
             $.contract = contract;
             return this;
         }
 
-        /**
-         * @param contract If creating a domain, the contract ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contract(String contract) {
             return contract(Output.of(contract));
         }
 
-        /**
-         * @param defaultErrorPenalty Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultErrorPenalty(@Nullable Output<Integer> defaultErrorPenalty) {
             $.defaultErrorPenalty = defaultErrorPenalty;
             return this;
         }
 
-        /**
-         * @param defaultErrorPenalty Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultErrorPenalty(Integer defaultErrorPenalty) {
             return defaultErrorPenalty(Output.of(defaultErrorPenalty));
         }
@@ -554,65 +386,29 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
             return defaultMaxUnreachablePenalty(Output.of(defaultMaxUnreachablePenalty));
         }
 
-        /**
-         * @param defaultSslClientCertificate Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultSslClientCertificate(@Nullable Output<String> defaultSslClientCertificate) {
             $.defaultSslClientCertificate = defaultSslClientCertificate;
             return this;
         }
 
-        /**
-         * @param defaultSslClientCertificate Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultSslClientCertificate(String defaultSslClientCertificate) {
             return defaultSslClientCertificate(Output.of(defaultSslClientCertificate));
         }
 
-        /**
-         * @param defaultSslClientPrivateKey Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultSslClientPrivateKey(@Nullable Output<String> defaultSslClientPrivateKey) {
             $.defaultSslClientPrivateKey = defaultSslClientPrivateKey;
             return this;
         }
 
-        /**
-         * @param defaultSslClientPrivateKey Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultSslClientPrivateKey(String defaultSslClientPrivateKey) {
             return defaultSslClientPrivateKey(Output.of(defaultSslClientPrivateKey));
         }
 
-        /**
-         * @param defaultTimeoutPenalty Specifies the timeout penalty score. Default is `25`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultTimeoutPenalty(@Nullable Output<Integer> defaultTimeoutPenalty) {
             $.defaultTimeoutPenalty = defaultTimeoutPenalty;
             return this;
         }
 
-        /**
-         * @param defaultTimeoutPenalty Specifies the timeout penalty score. Default is `25`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultTimeoutPenalty(Integer defaultTimeoutPenalty) {
             return defaultTimeoutPenalty(Output.of(defaultTimeoutPenalty));
         }
@@ -626,117 +422,51 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
             return defaultUnreachableThreshold(Output.of(defaultUnreachableThreshold));
         }
 
-        /**
-         * @param emailNotificationLists A list of email addresses to notify when a change is made to the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder emailNotificationLists(@Nullable Output<List<String>> emailNotificationLists) {
             $.emailNotificationLists = emailNotificationLists;
             return this;
         }
 
-        /**
-         * @param emailNotificationLists A list of email addresses to notify when a change is made to the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder emailNotificationLists(List<String> emailNotificationLists) {
             return emailNotificationLists(Output.of(emailNotificationLists));
         }
 
-        /**
-         * @param emailNotificationLists A list of email addresses to notify when a change is made to the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder emailNotificationLists(String... emailNotificationLists) {
             return emailNotificationLists(List.of(emailNotificationLists));
         }
 
-        /**
-         * @param endUserMappingEnabled A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-         * 
-         * @return builder
-         * 
-         */
         public Builder endUserMappingEnabled(@Nullable Output<Boolean> endUserMappingEnabled) {
             $.endUserMappingEnabled = endUserMappingEnabled;
             return this;
         }
 
-        /**
-         * @param endUserMappingEnabled A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-         * 
-         * @return builder
-         * 
-         */
         public Builder endUserMappingEnabled(Boolean endUserMappingEnabled) {
             return endUserMappingEnabled(Output.of(endUserMappingEnabled));
         }
 
-        /**
-         * @param group If creating a domain, the currently selected group ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder group(@Nullable Output<String> group) {
             $.group = group;
             return this;
         }
 
-        /**
-         * @param group If creating a domain, the currently selected group ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder group(String group) {
             return group(Output.of(group));
         }
 
-        /**
-         * @param loadFeedback A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-         * 
-         * @return builder
-         * 
-         */
         public Builder loadFeedback(@Nullable Output<Boolean> loadFeedback) {
             $.loadFeedback = loadFeedback;
             return this;
         }
 
-        /**
-         * @param loadFeedback A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-         * 
-         * @return builder
-         * 
-         */
         public Builder loadFeedback(Boolean loadFeedback) {
             return loadFeedback(Output.of(loadFeedback));
         }
 
-        /**
-         * @param loadImbalancePercentage Indicates the percentage of load imbalance factor (LIF) for the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder loadImbalancePercentage(@Nullable Output<Double> loadImbalancePercentage) {
             $.loadImbalancePercentage = loadImbalancePercentage;
             return this;
         }
 
-        /**
-         * @param loadImbalancePercentage Indicates the percentage of load imbalance factor (LIF) for the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder loadImbalancePercentage(Double loadImbalancePercentage) {
             return loadImbalancePercentage(Output.of(loadImbalancePercentage));
         }
@@ -813,23 +543,11 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
             return minTtl(Output.of(minTtl));
         }
 
-        /**
-         * @param name The DNS name for a collection of GTM Properties.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param name The DNS name for a collection of GTM Properties.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
@@ -888,44 +606,20 @@ public final class GtmDomainState extends com.pulumi.resources.ResourceArgs {
             return servermonitorPool(Output.of(servermonitorPool));
         }
 
-        /**
-         * @param type Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
             return this;
         }
 
-        /**
-         * @param type Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(String type) {
             return type(Output.of(type));
         }
 
-        /**
-         * @param waitOnComplete A boolean that, if set to `true`, waits for transaction to complete.
-         * 
-         * @return builder
-         * 
-         */
         public Builder waitOnComplete(@Nullable Output<Boolean> waitOnComplete) {
             $.waitOnComplete = waitOnComplete;
             return this;
         }
 
-        /**
-         * @param waitOnComplete A boolean that, if set to `true`, waits for transaction to complete.
-         * 
-         * @return builder
-         * 
-         */
         public Builder waitOnComplete(Boolean waitOnComplete) {
             return waitOnComplete(Output.of(waitOnComplete));
         }

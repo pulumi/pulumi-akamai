@@ -17,153 +17,87 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security configuration
- * 
- * Modifies SIEM (Security Information and Event Management) integration settings for a security configuration.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://techdocs.akamai.com/application-security/reference/put-siem)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.inputs.GetAppSecSiemDefinitionsArgs;
- * import com.pulumi.akamai.inputs.GetAppSecSecurityPolicyArgs;
- * import com.pulumi.akamai.AppSecSiemSettings;
- * import com.pulumi.akamai.AppSecSiemSettingsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         final var siemDefinition = AkamaiFunctions.getAppSecSiemDefinitions(GetAppSecSiemDefinitionsArgs.builder()
- *             .siemDefinitionName(&#34;SIEM Version 01&#34;)
- *             .build());
- * 
- *         final var securityPolicies = AkamaiFunctions.getAppSecSecurityPolicy(GetAppSecSecurityPolicyArgs.builder()
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .build());
- * 
- *         var siem = new AppSecSiemSettings(&#34;siem&#34;, AppSecSiemSettingsArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .enableSiem(true)
- *             .enableForAllPolicies(false)
- *             .enableBotmanSiem(true)
- *             .siemId(siemDefinition.applyValue(getAppSecSiemDefinitionsResult -&gt; getAppSecSiemDefinitionsResult.id()))
- *             .securityPolicyIds(securityPolicies.applyValue(getAppSecSecurityPolicyResult -&gt; getAppSecSecurityPolicyResult.securityPolicyIdLists()))
- *             .build());
- * 
- *     }
- * }
- * ```
- * ## Output Options
- * 
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- * 
- * - `output_text`. Tabular report showing the updated SIEM integration settings.
- * 
- */
 @ResourceType(type="akamai:index/appSecSiemSettings:AppSecSiemSettings")
 public class AppSecSiemSettings extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the SIEM settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the SIEM settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
+     * Whether Bot Manager events should be included in SIEM events
      * 
      */
     @Export(name="enableBotmanSiem", type=Boolean.class, parameters={})
     private Output<Boolean> enableBotmanSiem;
 
     /**
-     * @return . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
+     * @return Whether Bot Manager events should be included in SIEM events
      * 
      */
     public Output<Boolean> enableBotmanSiem() {
         return this.enableBotmanSiem;
     }
     /**
-     * . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
+     * Whether to enable SIEM on all security policies in the security configuration
      * 
      */
     @Export(name="enableForAllPolicies", type=Boolean.class, parameters={})
     private Output<Boolean> enableForAllPolicies;
 
     /**
-     * @return . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
+     * @return Whether to enable SIEM on all security policies in the security configuration
      * 
      */
     public Output<Boolean> enableForAllPolicies() {
         return this.enableForAllPolicies;
     }
     /**
-     * . Set to **true** to enable SIEM; set to **false** to disable SIEM.
+     * Whether to enable SIEM
      * 
      */
     @Export(name="enableSiem", type=Boolean.class, parameters={})
     private Output<Boolean> enableSiem;
 
     /**
-     * @return . Set to **true** to enable SIEM; set to **false** to disable SIEM.
+     * @return Whether to enable SIEM
      * 
      */
     public Output<Boolean> enableSiem() {
         return this.enableSiem;
     }
     /**
-     * JSON array of IDs for the security policies where SIEM integration is to be enabled.
+     * List of IDs of security policy for which SIEM integration is to be enabled
      * 
      */
     @Export(name="securityPolicyIds", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> securityPolicyIds;
 
     /**
-     * @return JSON array of IDs for the security policies where SIEM integration is to be enabled.
+     * @return List of IDs of security policy for which SIEM integration is to be enabled
      * 
      */
     public Output<Optional<List<String>>> securityPolicyIds() {
         return Codegen.optional(this.securityPolicyIds);
     }
     /**
-     * . Unique identifier of the SIEM settings being modified.
+     * Unique identifier of the SIEM settings being modified
      * 
      */
     @Export(name="siemId", type=Integer.class, parameters={})
     private Output<Integer> siemId;
 
     /**
-     * @return . Unique identifier of the SIEM settings being modified.
+     * @return Unique identifier of the SIEM settings being modified
      * 
      */
     public Output<Integer> siemId() {

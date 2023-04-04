@@ -21,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetEdgeWorkersPropertyRulesArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Unique identifier of an EdgeWorker ID.
-        /// </summary>
         [Input("edgeworkerId", required: true)]
         public int EdgeworkerId { get; set; }
 
@@ -35,9 +32,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetEdgeWorkersPropertyRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Unique identifier of an EdgeWorker ID.
-        /// </summary>
         [Input("edgeworkerId", required: true)]
         public Input<int> EdgeworkerId { get; set; } = null!;
 

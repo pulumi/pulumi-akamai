@@ -11,62 +11,16 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy
-//
-// Enables or disables Web Application Firewall (WAF) protection for a security policy.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppSecWafProtection(ctx, "protection", &akamai.AppSecWafProtectionArgs{
-//				ConfigId:         *pulumi.Int(configuration.ConfigId),
-//				SecurityPolicyId: pulumi.String("gms1_134637"),
-//				Enabled:          pulumi.Bool(true),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `outputText`. Tabular report showing the current protection settings.
 type AppSecWafProtection struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+	// Whether to enable WAF protection
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Text representation
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
-	// . Unique identifier of the security policy associated with the WAF protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -108,24 +62,24 @@ func GetAppSecWafProtection(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecWafProtection resources.
 type appSecWafProtectionState struct {
-	// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+	// Whether to enable WAF protection
 	Enabled *bool `pulumi:"enabled"`
 	// Text representation
 	OutputText *string `pulumi:"outputText"`
-	// . Unique identifier of the security policy associated with the WAF protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecWafProtectionState struct {
-	// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+	// Whether to enable WAF protection
 	Enabled pulumi.BoolPtrInput
 	// Text representation
 	OutputText pulumi.StringPtrInput
-	// . Unique identifier of the security policy associated with the WAF protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -134,21 +88,21 @@ func (AppSecWafProtectionState) ElementType() reflect.Type {
 }
 
 type appSecWafProtectionArgs struct {
-	// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+	// Whether to enable WAF protection
 	Enabled bool `pulumi:"enabled"`
-	// . Unique identifier of the security policy associated with the WAF protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecWafProtection resource.
 type AppSecWafProtectionArgs struct {
-	// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+	// Whether to enable WAF protection
 	Enabled pulumi.BoolInput
-	// . Unique identifier of the security policy associated with the WAF protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringInput
 }
 
@@ -239,12 +193,12 @@ func (o AppSecWafProtectionOutput) ToAppSecWafProtectionOutputWithContext(ctx co
 	return o
 }
 
-// . Unique identifier of the security configuration associated with the WAF protection settings being modified.
+// Unique identifier of the security configuration
 func (o AppSecWafProtectionOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecWafProtection) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Set to **true** to enable WAF protection; set to **false** to disable WAF protection.
+// Whether to enable WAF protection
 func (o AppSecWafProtectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecWafProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
@@ -254,7 +208,7 @@ func (o AppSecWafProtectionOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecWafProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }
 
-// . Unique identifier of the security policy associated with the WAF protection settings being modified.
+// Unique identifier of the security policy
 func (o AppSecWafProtectionOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecWafProtection) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }

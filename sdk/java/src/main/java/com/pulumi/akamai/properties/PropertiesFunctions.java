@@ -23,283 +23,15 @@ import com.pulumi.deployment.InvokeOptions;
 import java.util.concurrent.CompletableFuture;
 
 public final class PropertiesFunctions {
-    /**
-     * Use the `akamai.PropertyActivation` data source to retrieve activation information for a property version on staging
-     * or production network.
-     * 
-     * ## Example Usage
-     * 
-     * Basic usage:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.Property;
-     * import com.pulumi.akamai.PropertyArgs;
-     * import com.pulumi.akamai.inputs.PropertyHostnameArgs;
-     * import com.pulumi.akamai.PropertyActivation;
-     * import com.pulumi.akamai.PropertyActivationArgs;
-     * import com.pulumi.akamai.properties.PropertiesFunctions;
-     * import com.pulumi.akamai.properties.inputs.GetActivationArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var email = &#34;user@example.org&#34;;
-     * 
-     *         final var ruleFormat = &#34;v2022-10-18&#34;;
-     * 
-     *         var example = new Property(&#34;example&#34;, PropertyArgs.builder()        
-     *             .productId(&#34;prd_SPM&#34;)
-     *             .contractId(var_.contractid())
-     *             .groupId(var_.groupid())
-     *             .hostnames(PropertyHostnameArgs.builder()
-     *                 .cnameTo(&#34;www.example.com.edgekey.net&#34;)
-     *                 .cnameFrom(&#34;www.example.com&#34;)
-     *                 .certProvisioningType(&#34;DEFAULT&#34;)
-     *                 .build())
-     *             .ruleFormat(ruleFormat)
-     *             .rules(Files.readString(Paths.get(String.format(&#34;%s/main.json&#34;, path.module()))))
-     *             .build());
-     * 
-     *         var exampleStagingPropertyActivation = new PropertyActivation(&#34;exampleStagingPropertyActivation&#34;, PropertyActivationArgs.builder()        
-     *             .propertyId(example.id())
-     *             .contacts(email)
-     *             .version(example.latestVersion())
-     *             .note(&#34;Sample activation&#34;)
-     *             .build());
-     * 
-     *         final var exampleStagingActivation = PropertiesFunctions.getActivation(GetActivationArgs.builder()
-     *             .propertyId(example.id())
-     *             .version(example.latestVersion())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
     public static Output<GetActivationResult> getActivation(GetActivationArgs args) {
         return getActivation(args, InvokeOptions.Empty);
     }
-    /**
-     * Use the `akamai.PropertyActivation` data source to retrieve activation information for a property version on staging
-     * or production network.
-     * 
-     * ## Example Usage
-     * 
-     * Basic usage:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.Property;
-     * import com.pulumi.akamai.PropertyArgs;
-     * import com.pulumi.akamai.inputs.PropertyHostnameArgs;
-     * import com.pulumi.akamai.PropertyActivation;
-     * import com.pulumi.akamai.PropertyActivationArgs;
-     * import com.pulumi.akamai.properties.PropertiesFunctions;
-     * import com.pulumi.akamai.properties.inputs.GetActivationArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var email = &#34;user@example.org&#34;;
-     * 
-     *         final var ruleFormat = &#34;v2022-10-18&#34;;
-     * 
-     *         var example = new Property(&#34;example&#34;, PropertyArgs.builder()        
-     *             .productId(&#34;prd_SPM&#34;)
-     *             .contractId(var_.contractid())
-     *             .groupId(var_.groupid())
-     *             .hostnames(PropertyHostnameArgs.builder()
-     *                 .cnameTo(&#34;www.example.com.edgekey.net&#34;)
-     *                 .cnameFrom(&#34;www.example.com&#34;)
-     *                 .certProvisioningType(&#34;DEFAULT&#34;)
-     *                 .build())
-     *             .ruleFormat(ruleFormat)
-     *             .rules(Files.readString(Paths.get(String.format(&#34;%s/main.json&#34;, path.module()))))
-     *             .build());
-     * 
-     *         var exampleStagingPropertyActivation = new PropertyActivation(&#34;exampleStagingPropertyActivation&#34;, PropertyActivationArgs.builder()        
-     *             .propertyId(example.id())
-     *             .contacts(email)
-     *             .version(example.latestVersion())
-     *             .note(&#34;Sample activation&#34;)
-     *             .build());
-     * 
-     *         final var exampleStagingActivation = PropertiesFunctions.getActivation(GetActivationArgs.builder()
-     *             .propertyId(example.id())
-     *             .version(example.latestVersion())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
     public static CompletableFuture<GetActivationResult> getActivationPlain(GetActivationPlainArgs args) {
         return getActivationPlain(args, InvokeOptions.Empty);
     }
-    /**
-     * Use the `akamai.PropertyActivation` data source to retrieve activation information for a property version on staging
-     * or production network.
-     * 
-     * ## Example Usage
-     * 
-     * Basic usage:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.Property;
-     * import com.pulumi.akamai.PropertyArgs;
-     * import com.pulumi.akamai.inputs.PropertyHostnameArgs;
-     * import com.pulumi.akamai.PropertyActivation;
-     * import com.pulumi.akamai.PropertyActivationArgs;
-     * import com.pulumi.akamai.properties.PropertiesFunctions;
-     * import com.pulumi.akamai.properties.inputs.GetActivationArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var email = &#34;user@example.org&#34;;
-     * 
-     *         final var ruleFormat = &#34;v2022-10-18&#34;;
-     * 
-     *         var example = new Property(&#34;example&#34;, PropertyArgs.builder()        
-     *             .productId(&#34;prd_SPM&#34;)
-     *             .contractId(var_.contractid())
-     *             .groupId(var_.groupid())
-     *             .hostnames(PropertyHostnameArgs.builder()
-     *                 .cnameTo(&#34;www.example.com.edgekey.net&#34;)
-     *                 .cnameFrom(&#34;www.example.com&#34;)
-     *                 .certProvisioningType(&#34;DEFAULT&#34;)
-     *                 .build())
-     *             .ruleFormat(ruleFormat)
-     *             .rules(Files.readString(Paths.get(String.format(&#34;%s/main.json&#34;, path.module()))))
-     *             .build());
-     * 
-     *         var exampleStagingPropertyActivation = new PropertyActivation(&#34;exampleStagingPropertyActivation&#34;, PropertyActivationArgs.builder()        
-     *             .propertyId(example.id())
-     *             .contacts(email)
-     *             .version(example.latestVersion())
-     *             .note(&#34;Sample activation&#34;)
-     *             .build());
-     * 
-     *         final var exampleStagingActivation = PropertiesFunctions.getActivation(GetActivationArgs.builder()
-     *             .propertyId(example.id())
-     *             .version(example.latestVersion())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
     public static Output<GetActivationResult> getActivation(GetActivationArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("akamai:properties/getActivation:getActivation", TypeShape.of(GetActivationResult.class), args, Utilities.withVersion(options));
     }
-    /**
-     * Use the `akamai.PropertyActivation` data source to retrieve activation information for a property version on staging
-     * or production network.
-     * 
-     * ## Example Usage
-     * 
-     * Basic usage:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.Property;
-     * import com.pulumi.akamai.PropertyArgs;
-     * import com.pulumi.akamai.inputs.PropertyHostnameArgs;
-     * import com.pulumi.akamai.PropertyActivation;
-     * import com.pulumi.akamai.PropertyActivationArgs;
-     * import com.pulumi.akamai.properties.PropertiesFunctions;
-     * import com.pulumi.akamai.properties.inputs.GetActivationArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var email = &#34;user@example.org&#34;;
-     * 
-     *         final var ruleFormat = &#34;v2022-10-18&#34;;
-     * 
-     *         var example = new Property(&#34;example&#34;, PropertyArgs.builder()        
-     *             .productId(&#34;prd_SPM&#34;)
-     *             .contractId(var_.contractid())
-     *             .groupId(var_.groupid())
-     *             .hostnames(PropertyHostnameArgs.builder()
-     *                 .cnameTo(&#34;www.example.com.edgekey.net&#34;)
-     *                 .cnameFrom(&#34;www.example.com&#34;)
-     *                 .certProvisioningType(&#34;DEFAULT&#34;)
-     *                 .build())
-     *             .ruleFormat(ruleFormat)
-     *             .rules(Files.readString(Paths.get(String.format(&#34;%s/main.json&#34;, path.module()))))
-     *             .build());
-     * 
-     *         var exampleStagingPropertyActivation = new PropertyActivation(&#34;exampleStagingPropertyActivation&#34;, PropertyActivationArgs.builder()        
-     *             .propertyId(example.id())
-     *             .contacts(email)
-     *             .version(example.latestVersion())
-     *             .note(&#34;Sample activation&#34;)
-     *             .build());
-     * 
-     *         final var exampleStagingActivation = PropertiesFunctions.getActivation(GetActivationArgs.builder()
-     *             .propertyId(example.id())
-     *             .version(example.latestVersion())
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * 
-     */
     public static CompletableFuture<GetActivationResult> getActivationPlain(GetActivationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:properties/getActivation:getActivation", TypeShape.of(GetActivationResult.class), args, Utilities.withVersion(options));
     }
@@ -344,47 +76,6 @@ public final class PropertiesFunctions {
         return Deployment.getInstance().invokeAsync("akamai:properties/getCpCode:getCpCode", TypeShape.of(GetCpCodeResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Use the `akamai.Property` data source to query and list the property ID and rule tree based on the property name.
-     * 
-     * ## Example Usage
-     * 
-     * This example returns the property ID and rule tree based on the property name and optional version argument:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.inputs.GetPropertyArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var example = AkamaiFunctions.getProperty(GetPropertyArgs.builder()
-     *             .name(&#34;terraform-demo&#34;)
-     *             .version(&#34;1&#34;)
-     *             .build());
-     * 
-     *         ctx.export(&#34;myPropertyID&#34;, example.applyValue(getPropertyResult -&gt; getPropertyResult));
-     *     }
-     * }
-     * ```
-     * ## Attributes reference
-     * 
-     * This data source returns these attributes:
-     * 
-     * * `property_ID` - A property&#39;s unique identifier, including the `prp_` prefix.
-     * * `rules` - A JSON-encoded rule tree for a given property.
      * 
      * @deprecated
      * akamai.properties.getProperty has been deprecated in favor of akamai.getProperty
@@ -395,47 +86,6 @@ public final class PropertiesFunctions {
         return getProperty(args, InvokeOptions.Empty);
     }
     /**
-     * Use the `akamai.Property` data source to query and list the property ID and rule tree based on the property name.
-     * 
-     * ## Example Usage
-     * 
-     * This example returns the property ID and rule tree based on the property name and optional version argument:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.inputs.GetPropertyArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var example = AkamaiFunctions.getProperty(GetPropertyArgs.builder()
-     *             .name(&#34;terraform-demo&#34;)
-     *             .version(&#34;1&#34;)
-     *             .build());
-     * 
-     *         ctx.export(&#34;myPropertyID&#34;, example.applyValue(getPropertyResult -&gt; getPropertyResult));
-     *     }
-     * }
-     * ```
-     * ## Attributes reference
-     * 
-     * This data source returns these attributes:
-     * 
-     * * `property_ID` - A property&#39;s unique identifier, including the `prp_` prefix.
-     * * `rules` - A JSON-encoded rule tree for a given property.
      * 
      * @deprecated
      * akamai.properties.getProperty has been deprecated in favor of akamai.getProperty
@@ -446,47 +96,6 @@ public final class PropertiesFunctions {
         return getPropertyPlain(args, InvokeOptions.Empty);
     }
     /**
-     * Use the `akamai.Property` data source to query and list the property ID and rule tree based on the property name.
-     * 
-     * ## Example Usage
-     * 
-     * This example returns the property ID and rule tree based on the property name and optional version argument:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.inputs.GetPropertyArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var example = AkamaiFunctions.getProperty(GetPropertyArgs.builder()
-     *             .name(&#34;terraform-demo&#34;)
-     *             .version(&#34;1&#34;)
-     *             .build());
-     * 
-     *         ctx.export(&#34;myPropertyID&#34;, example.applyValue(getPropertyResult -&gt; getPropertyResult));
-     *     }
-     * }
-     * ```
-     * ## Attributes reference
-     * 
-     * This data source returns these attributes:
-     * 
-     * * `property_ID` - A property&#39;s unique identifier, including the `prp_` prefix.
-     * * `rules` - A JSON-encoded rule tree for a given property.
      * 
      * @deprecated
      * akamai.properties.getProperty has been deprecated in favor of akamai.getProperty
@@ -497,47 +106,6 @@ public final class PropertiesFunctions {
         return Deployment.getInstance().invoke("akamai:properties/getProperty:getProperty", TypeShape.of(GetPropertyResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Use the `akamai.Property` data source to query and list the property ID and rule tree based on the property name.
-     * 
-     * ## Example Usage
-     * 
-     * This example returns the property ID and rule tree based on the property name and optional version argument:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.inputs.GetPropertyArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var example = AkamaiFunctions.getProperty(GetPropertyArgs.builder()
-     *             .name(&#34;terraform-demo&#34;)
-     *             .version(&#34;1&#34;)
-     *             .build());
-     * 
-     *         ctx.export(&#34;myPropertyID&#34;, example.applyValue(getPropertyResult -&gt; getPropertyResult));
-     *     }
-     * }
-     * ```
-     * ## Attributes reference
-     * 
-     * This data source returns these attributes:
-     * 
-     * * `property_ID` - A property&#39;s unique identifier, including the `prp_` prefix.
-     * * `rules` - A JSON-encoded rule tree for a given property.
      * 
      * @deprecated
      * akamai.properties.getProperty has been deprecated in favor of akamai.getProperty
@@ -548,53 +116,6 @@ public final class PropertiesFunctions {
         return Deployment.getInstance().invokeAsync("akamai:properties/getProperty:getProperty", TypeShape.of(GetPropertyResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Use the `akamai.getPropertyRules` data source to query and retrieve the rule tree of
-     * an existing property version. This data source lets you search across the contracts
-     * and groups you have access to.
-     * 
-     * ## Basic usage
-     * 
-     * This example returns the rule tree for version 3 of a property based on the selected contract and group:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.inputs.GetPropertyRulesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var my-example = AkamaiFunctions.getPropertyRules(GetPropertyRulesArgs.builder()
-     *             .propertyId(&#34;prp_123&#34;)
-     *             .groupId(&#34;grp_12345&#34;)
-     *             .contractId(&#34;ctr_1-AB123&#34;)
-     *             .version(3)
-     *             .build());
-     * 
-     *         ctx.export(&#34;propertyMatch&#34;, my_example);
-     *     }
-     * }
-     * ```
-     * 
-     * ## Attributes reference
-     * 
-     * This data source returns these attributes:
-     * 
-     * * `rule_format` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
-     * * `rules` - A JSON-encoded rule tree for the property.
-     * * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the Property Manager API documentation.
      * 
      * @deprecated
      * akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules
@@ -605,53 +126,6 @@ public final class PropertiesFunctions {
         return getPropertyRules(args, InvokeOptions.Empty);
     }
     /**
-     * Use the `akamai.getPropertyRules` data source to query and retrieve the rule tree of
-     * an existing property version. This data source lets you search across the contracts
-     * and groups you have access to.
-     * 
-     * ## Basic usage
-     * 
-     * This example returns the rule tree for version 3 of a property based on the selected contract and group:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.inputs.GetPropertyRulesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var my-example = AkamaiFunctions.getPropertyRules(GetPropertyRulesArgs.builder()
-     *             .propertyId(&#34;prp_123&#34;)
-     *             .groupId(&#34;grp_12345&#34;)
-     *             .contractId(&#34;ctr_1-AB123&#34;)
-     *             .version(3)
-     *             .build());
-     * 
-     *         ctx.export(&#34;propertyMatch&#34;, my_example);
-     *     }
-     * }
-     * ```
-     * 
-     * ## Attributes reference
-     * 
-     * This data source returns these attributes:
-     * 
-     * * `rule_format` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
-     * * `rules` - A JSON-encoded rule tree for the property.
-     * * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the Property Manager API documentation.
      * 
      * @deprecated
      * akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules
@@ -662,53 +136,6 @@ public final class PropertiesFunctions {
         return getPropertyRulesPlain(args, InvokeOptions.Empty);
     }
     /**
-     * Use the `akamai.getPropertyRules` data source to query and retrieve the rule tree of
-     * an existing property version. This data source lets you search across the contracts
-     * and groups you have access to.
-     * 
-     * ## Basic usage
-     * 
-     * This example returns the rule tree for version 3 of a property based on the selected contract and group:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.inputs.GetPropertyRulesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var my-example = AkamaiFunctions.getPropertyRules(GetPropertyRulesArgs.builder()
-     *             .propertyId(&#34;prp_123&#34;)
-     *             .groupId(&#34;grp_12345&#34;)
-     *             .contractId(&#34;ctr_1-AB123&#34;)
-     *             .version(3)
-     *             .build());
-     * 
-     *         ctx.export(&#34;propertyMatch&#34;, my_example);
-     *     }
-     * }
-     * ```
-     * 
-     * ## Attributes reference
-     * 
-     * This data source returns these attributes:
-     * 
-     * * `rule_format` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
-     * * `rules` - A JSON-encoded rule tree for the property.
-     * * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the Property Manager API documentation.
      * 
      * @deprecated
      * akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules
@@ -719,53 +146,6 @@ public final class PropertiesFunctions {
         return Deployment.getInstance().invoke("akamai:properties/getPropertyRules:getPropertyRules", TypeShape.of(GetPropertyRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Use the `akamai.getPropertyRules` data source to query and retrieve the rule tree of
-     * an existing property version. This data source lets you search across the contracts
-     * and groups you have access to.
-     * 
-     * ## Basic usage
-     * 
-     * This example returns the rule tree for version 3 of a property based on the selected contract and group:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.inputs.GetPropertyRulesArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var my-example = AkamaiFunctions.getPropertyRules(GetPropertyRulesArgs.builder()
-     *             .propertyId(&#34;prp_123&#34;)
-     *             .groupId(&#34;grp_12345&#34;)
-     *             .contractId(&#34;ctr_1-AB123&#34;)
-     *             .version(3)
-     *             .build());
-     * 
-     *         ctx.export(&#34;propertyMatch&#34;, my_example);
-     *     }
-     * }
-     * ```
-     * 
-     * ## Attributes reference
-     * 
-     * This data source returns these attributes:
-     * 
-     * * `rule_format` - The rule tree version used. Property rule objects are versioned infrequently, and are known as rule formats. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
-     * * `rules` - A JSON-encoded rule tree for the property.
-     * * `errors` - A list of validation errors for the rule tree object returned. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the Property Manager API documentation.
      * 
      * @deprecated
      * akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules

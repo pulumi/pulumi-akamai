@@ -15,8 +15,6 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetCpCodePlainArgs Empty = new GetCpCodePlainArgs();
 
     /**
-     * Replaced by `contract_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;contract&#34; has been deprecated.
      * 
@@ -26,8 +24,6 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
     private @Nullable String contract;
 
     /**
-     * @return Replaced by `contract_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;contract&#34; has been deprecated.
      * 
@@ -37,24 +33,14 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.contract);
     }
 
-    /**
-     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId")
     private @Nullable String contractId;
 
-    /**
-     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     public Optional<String> contractId() {
         return Optional.ofNullable(this.contractId);
     }
 
     /**
-     * Replaced by `group_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;group&#34; has been deprecated.
      * 
@@ -64,8 +50,6 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
     private @Nullable String group;
 
     /**
-     * @return Replaced by `group_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;group&#34; has been deprecated.
      * 
@@ -75,32 +59,16 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.group);
     }
 
-    /**
-     * The group&#39;s unique ID, including the `grp_` prefix.
-     * 
-     */
     @Import(name="groupId")
     private @Nullable String groupId;
 
-    /**
-     * @return The group&#39;s unique ID, including the `grp_` prefix.
-     * 
-     */
     public Optional<String> groupId() {
         return Optional.ofNullable(this.groupId);
     }
 
-    /**
-     * The name of the CP code.
-     * 
-     */
     @Import(name="name", required=true)
     private String name;
 
-    /**
-     * @return The name of the CP code.
-     * 
-     */
     public String name() {
         return this.name;
     }
@@ -134,8 +102,6 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param contract Replaced by `contract_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -148,20 +114,12 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
             return this;
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(@Nullable String contractId) {
             $.contractId = contractId;
             return this;
         }
 
         /**
-         * @param group Replaced by `group_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -174,23 +132,11 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
             return this;
         }
 
-        /**
-         * @param groupId The group&#39;s unique ID, including the `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(@Nullable String groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        /**
-         * @param name The name of the CP code.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             $.name = name;
             return this;

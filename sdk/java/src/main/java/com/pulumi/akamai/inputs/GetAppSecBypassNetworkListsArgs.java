@@ -14,32 +14,16 @@ public final class GetAppSecBypassNetworkListsArgs extends com.pulumi.resources.
 
     public static final GetAppSecBypassNetworkListsArgs Empty = new GetAppSecBypassNetworkListsArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the bypass network lists.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the bypass network lists.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the bypass network lists.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the bypass network lists.
-     * 
-     */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -69,44 +53,20 @@ public final class GetAppSecBypassNetworkListsArgs extends com.pulumi.resources.
             $ = new GetAppSecBypassNetworkListsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the bypass network lists.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the bypass network lists.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the bypass network lists.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the bypass network lists.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
         }

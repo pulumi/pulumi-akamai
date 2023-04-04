@@ -11,44 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `NetworkListDescription` resource to update the name or description of an existing network list.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewNetworkListDescription(ctx, "networkListDescription", &akamai.NetworkListDescriptionArgs{
-//				NetworkListId: pulumi.Any(_var.Network_list_id),
-//				Description:   pulumi.String("Test network list updated description"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type NetworkListDescription struct {
 	pulumi.CustomResourceState
 
-	// The description to be assigned to the network list.
-	Description pulumi.StringOutput `pulumi:"description"`
-	// The name to be assigned to the network list.
-	Name pulumi.StringOutput `pulumi:"name"`
-	// The unique ID of the network list to use.
+	Description   pulumi.StringOutput `pulumi:"description"`
+	Name          pulumi.StringOutput `pulumi:"name"`
 	NetworkListId pulumi.StringOutput `pulumi:"networkListId"`
 }
 
@@ -87,20 +54,14 @@ func GetNetworkListDescription(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkListDescription resources.
 type networkListDescriptionState struct {
-	// The description to be assigned to the network list.
-	Description *string `pulumi:"description"`
-	// The name to be assigned to the network list.
-	Name *string `pulumi:"name"`
-	// The unique ID of the network list to use.
+	Description   *string `pulumi:"description"`
+	Name          *string `pulumi:"name"`
 	NetworkListId *string `pulumi:"networkListId"`
 }
 
 type NetworkListDescriptionState struct {
-	// The description to be assigned to the network list.
-	Description pulumi.StringPtrInput
-	// The name to be assigned to the network list.
-	Name pulumi.StringPtrInput
-	// The unique ID of the network list to use.
+	Description   pulumi.StringPtrInput
+	Name          pulumi.StringPtrInput
 	NetworkListId pulumi.StringPtrInput
 }
 
@@ -109,21 +70,15 @@ func (NetworkListDescriptionState) ElementType() reflect.Type {
 }
 
 type networkListDescriptionArgs struct {
-	// The description to be assigned to the network list.
-	Description string `pulumi:"description"`
-	// The name to be assigned to the network list.
-	Name *string `pulumi:"name"`
-	// The unique ID of the network list to use.
-	NetworkListId string `pulumi:"networkListId"`
+	Description   string  `pulumi:"description"`
+	Name          *string `pulumi:"name"`
+	NetworkListId string  `pulumi:"networkListId"`
 }
 
 // The set of arguments for constructing a NetworkListDescription resource.
 type NetworkListDescriptionArgs struct {
-	// The description to be assigned to the network list.
-	Description pulumi.StringInput
-	// The name to be assigned to the network list.
-	Name pulumi.StringPtrInput
-	// The unique ID of the network list to use.
+	Description   pulumi.StringInput
+	Name          pulumi.StringPtrInput
 	NetworkListId pulumi.StringInput
 }
 
@@ -214,17 +169,14 @@ func (o NetworkListDescriptionOutput) ToNetworkListDescriptionOutputWithContext(
 	return o
 }
 
-// The description to be assigned to the network list.
 func (o NetworkListDescriptionOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkListDescription) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// The name to be assigned to the network list.
 func (o NetworkListDescriptionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkListDescription) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The unique ID of the network list to use.
 func (o NetworkListDescriptionOutput) NetworkListId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkListDescription) pulumi.StringOutput { return v.NetworkListId }).(pulumi.StringOutput)
 }

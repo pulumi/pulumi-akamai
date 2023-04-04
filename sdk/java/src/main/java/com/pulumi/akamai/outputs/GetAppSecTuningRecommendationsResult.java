@@ -19,10 +19,6 @@ public final class GetAppSecTuningRecommendationsResult {
      * 
      */
     private String id;
-    /**
-     * @return JSON-formatted list of the tuning recommendations for the security policy, the attack group or the rule. The exception block format in a recommendation conforms to the exception block format used in `condition_exception` element of `attack_group` or ASE rule resource.
-     * 
-     */
     private String json;
     private @Nullable Integer ruleId;
     private @Nullable String rulesetType;
@@ -42,10 +38,6 @@ public final class GetAppSecTuningRecommendationsResult {
     public String id() {
         return this.id;
     }
-    /**
-     * @return JSON-formatted list of the tuning recommendations for the security policy, the attack group or the rule. The exception block format in a recommendation conforms to the exception block format used in `condition_exception` element of `attack_group` or ASE rule resource.
-     * 
-     */
     public String json() {
         return this.json;
     }

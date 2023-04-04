@@ -10,71 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## getAppSecReputationProfileActions
-//
-// **Scopes**: Security policy; reputation profile
-//
-// Returns action information for your reputation profiles. Actions specify what happens any time a profile is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/get-reputation-profiles-actions)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			reputationProfileActions, err := akamai.GetAppSecReputationProfileActions(ctx, &akamai.GetAppSecReputationProfileActionsArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: "gms1_134637",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("reputationProfileActionsText", reputationProfileActions.OutputText)
-//			ctx.Export("reputationProfileActionsJson", reputationProfileActions.Json)
-//			_, err = akamai.GetAppSecReputationProfileActions(ctx, &akamai.GetAppSecReputationProfileActionsArgs{
-//				ConfigId:            configuration.ConfigId,
-//				SecurityPolicyId:    "gms1_134637",
-//				ReputationProfileId: pulumi.IntRef(12345),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("reputationProfileActions2", reputationProfileActions.Action)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `action`. Action taken any time the reputation profile is triggered. Valid values are:
-//   - **alert**. Record the event.
-//   - **deny**. Block the request.
-//   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-//   - **none**. Take no action.
-//
-// - `json`. JSON-formatted report of the reputation profile action information.
-// - `outputText`. Tabular report of the reputation profile action information.
 func GetAppSecReputationProfileActions(ctx *pulumi.Context, args *GetAppSecReputationProfileActionsArgs, opts ...pulumi.InvokeOption) (*GetAppSecReputationProfileActionsResult, error) {
 	var rv GetAppSecReputationProfileActionsResult
 	err := ctx.Invoke("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args, &rv, opts...)
@@ -86,12 +21,9 @@ func GetAppSecReputationProfileActions(ctx *pulumi.Context, args *GetAppSecReput
 
 // A collection of arguments for invoking getAppSecReputationProfileActions.
 type GetAppSecReputationProfileActionsArgs struct {
-	// . Unique identifier of the security configuration associated with the reputation profiles.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-	ReputationProfileId *int `pulumi:"reputationProfileId"`
-	// . Unique identifier of the security policy associated with the reputation profiles.
-	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	ConfigId            int    `pulumi:"configId"`
+	ReputationProfileId *int   `pulumi:"reputationProfileId"`
+	SecurityPolicyId    string `pulumi:"securityPolicyId"`
 }
 
 // A collection of values returned by getAppSecReputationProfileActions.
@@ -121,12 +53,9 @@ func GetAppSecReputationProfileActionsOutput(ctx *pulumi.Context, args GetAppSec
 
 // A collection of arguments for invoking getAppSecReputationProfileActions.
 type GetAppSecReputationProfileActionsOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the reputation profiles.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
+	ConfigId            pulumi.IntInput    `pulumi:"configId"`
 	ReputationProfileId pulumi.IntPtrInput `pulumi:"reputationProfileId"`
-	// . Unique identifier of the security policy associated with the reputation profiles.
-	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+	SecurityPolicyId    pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 
 func (GetAppSecReputationProfileActionsOutputArgs) ElementType() reflect.Type {

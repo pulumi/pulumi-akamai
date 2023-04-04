@@ -10,36 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getPropertyProducts` data source to list the products included on a contract.
-//
-// ## Example Usage
-//
-// This example returns products associated with the [EdgeGrid client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) for a given contract:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			ctx.Export("propertyMatch", data.Akamai_property_products.MyExample)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `products` - A list of supported products for the contract, including:
-//   - `productId` - The product's unique ID, including the `prd_` prefix.
-//   - `productName` - A string containing the product name.
 func GetPropertyProducts(ctx *pulumi.Context, args *GetPropertyProductsArgs, opts ...pulumi.InvokeOption) (*GetPropertyProductsResult, error) {
 	var rv GetPropertyProductsResult
 	err := ctx.Invoke("akamai:index/getPropertyProducts:getPropertyProducts", args, &rv, opts...)
@@ -51,7 +21,6 @@ func GetPropertyProducts(ctx *pulumi.Context, args *GetPropertyProductsArgs, opt
 
 // A collection of arguments for invoking getPropertyProducts.
 type GetPropertyProductsArgs struct {
-	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
 }
 
@@ -78,7 +47,6 @@ func GetPropertyProductsOutput(ctx *pulumi.Context, args GetPropertyProductsOutp
 
 // A collection of arguments for invoking getPropertyProducts.
 type GetPropertyProductsOutputArgs struct {
-	// (Required) A contract's unique ID, including the `ctr_` prefix.
 	ContractId pulumi.StringInput `pulumi:"contractId"`
 }
 

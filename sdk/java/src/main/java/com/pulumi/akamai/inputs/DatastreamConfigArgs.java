@@ -16,77 +16,37 @@ public final class DatastreamConfigArgs extends com.pulumi.resources.ResourceArg
 
     public static final DatastreamConfigArgs Empty = new DatastreamConfigArgs();
 
-    /**
-     * A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
-     * 
-     */
     @Import(name="delimiter")
     private @Nullable Output<String> delimiter;
 
-    /**
-     * @return A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
-     * 
-     */
     public Optional<Output<String>> delimiter() {
         return Optional.ofNullable(this.delimiter);
     }
 
-    /**
-     * The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
-     * 
-     */
     @Import(name="format", required=true)
     private Output<String> format;
 
-    /**
-     * @return The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
-     * 
-     */
     public Output<String> format() {
         return this.format;
     }
 
-    /**
-     * How often you want to collect logs from each uploader and send them to a destination.
-     * 
-     */
     @Import(name="frequency", required=true)
     private Output<DatastreamConfigFrequencyArgs> frequency;
 
-    /**
-     * @return How often you want to collect logs from each uploader and send them to a destination.
-     * 
-     */
     public Output<DatastreamConfigFrequencyArgs> frequency() {
         return this.frequency;
     }
 
-    /**
-     * The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
-     * 
-     */
     @Import(name="uploadFilePrefix")
     private @Nullable Output<String> uploadFilePrefix;
 
-    /**
-     * @return The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
-     * 
-     */
     public Optional<Output<String>> uploadFilePrefix() {
         return Optional.ofNullable(this.uploadFilePrefix);
     }
 
-    /**
-     * The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
-     * 
-     */
     @Import(name="uploadFileSuffix")
     private @Nullable Output<String> uploadFileSuffix;
 
-    /**
-     * @return The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
-     * 
-     */
     public Optional<Output<String>> uploadFileSuffix() {
         return Optional.ofNullable(this.uploadFileSuffix);
     }
@@ -119,107 +79,47 @@ public final class DatastreamConfigArgs extends com.pulumi.resources.ResourceArg
             $ = new DatastreamConfigArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param delimiter A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder delimiter(@Nullable Output<String> delimiter) {
             $.delimiter = delimiter;
             return this;
         }
 
-        /**
-         * @param delimiter A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder delimiter(String delimiter) {
             return delimiter(Output.of(delimiter));
         }
 
-        /**
-         * @param format The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
-         * 
-         * @return builder
-         * 
-         */
         public Builder format(Output<String> format) {
             $.format = format;
             return this;
         }
 
-        /**
-         * @param format The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
-         * 
-         * @return builder
-         * 
-         */
         public Builder format(String format) {
             return format(Output.of(format));
         }
 
-        /**
-         * @param frequency How often you want to collect logs from each uploader and send them to a destination.
-         * 
-         * @return builder
-         * 
-         */
         public Builder frequency(Output<DatastreamConfigFrequencyArgs> frequency) {
             $.frequency = frequency;
             return this;
         }
 
-        /**
-         * @param frequency How often you want to collect logs from each uploader and send them to a destination.
-         * 
-         * @return builder
-         * 
-         */
         public Builder frequency(DatastreamConfigFrequencyArgs frequency) {
             return frequency(Output.of(frequency));
         }
 
-        /**
-         * @param uploadFilePrefix The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder uploadFilePrefix(@Nullable Output<String> uploadFilePrefix) {
             $.uploadFilePrefix = uploadFilePrefix;
             return this;
         }
 
-        /**
-         * @param uploadFilePrefix The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder uploadFilePrefix(String uploadFilePrefix) {
             return uploadFilePrefix(Output.of(uploadFilePrefix));
         }
 
-        /**
-         * @param uploadFileSuffix The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder uploadFileSuffix(@Nullable Output<String> uploadFileSuffix) {
             $.uploadFileSuffix = uploadFileSuffix;
             return this;
         }
 
-        /**
-         * @param uploadFileSuffix The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder uploadFileSuffix(String uploadFileSuffix) {
             return uploadFileSuffix(Output.of(uploadFileSuffix));
         }

@@ -15,32 +15,16 @@ public final class GetPropertyPlainArgs extends com.pulumi.resources.InvokeArgs 
 
     public static final GetPropertyPlainArgs Empty = new GetPropertyPlainArgs();
 
-    /**
-     * (Required) The property name.
-     * 
-     */
     @Import(name="name", required=true)
     private String name;
 
-    /**
-     * @return (Required) The property name.
-     * 
-     */
     public String name() {
         return this.name;
     }
 
-    /**
-     * (Optional) The version of the property whose ID you want to list.
-     * 
-     */
     @Import(name="version")
     private @Nullable Integer version;
 
-    /**
-     * @return (Optional) The version of the property whose ID you want to list.
-     * 
-     */
     public Optional<Integer> version() {
         return Optional.ofNullable(this.version);
     }
@@ -70,23 +54,11 @@ public final class GetPropertyPlainArgs extends com.pulumi.resources.InvokeArgs 
             $ = new GetPropertyPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param name (Required) The property name.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param version (Optional) The version of the property whose ID you want to list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(@Nullable Integer version) {
             $.version = version;
             return this;

@@ -14,81 +14,17 @@ import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.NetworkListSubscription` resource to specify a set of email addresses to be notified of changes to any
- * of a set of network lists.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetNetworkListsArgs;
- * import com.pulumi.akamai.NetworkListSubscription;
- * import com.pulumi.akamai.NetworkListSubscriptionArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var networkListsFilter = AkamaiFunctions.getNetworkLists(GetNetworkListsArgs.builder()
- *             .name(var_.network_list())
- *             .build());
- * 
- *         var subscribe = new NetworkListSubscription(&#34;subscribe&#34;, NetworkListSubscriptionArgs.builder()        
- *             .networkLists(networkListsFilter.applyValue(getNetworkListsResult -&gt; getNetworkListsResult.lists()))
- *             .recipients(&#34;user@example.com&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/networkListSubscription:NetworkListSubscription")
 public class NetworkListSubscription extends com.pulumi.resources.CustomResource {
-    /**
-     * A list containing one or more IDs of the network lists to which the indicated email
-     * addresses should be subscribed.
-     * 
-     */
     @Export(name="networkLists", type=List.class, parameters={String.class})
     private Output<List<String>> networkLists;
 
-    /**
-     * @return A list containing one or more IDs of the network lists to which the indicated email
-     * addresses should be subscribed.
-     * 
-     */
     public Output<List<String>> networkLists() {
         return this.networkLists;
     }
-    /**
-     * A bracketed, comma-separated list of email addresses that will be notified of changes to any
-     * of the specified network lists.
-     * 
-     */
     @Export(name="recipients", type=List.class, parameters={String.class})
     private Output<List<String>> recipients;
 
-    /**
-     * @return A bracketed, comma-separated list of email addresses that will be notified of changes to any
-     * of the specified network lists.
-     * 
-     */
     public Output<List<String>> recipients() {
         return this.recipients;
     }

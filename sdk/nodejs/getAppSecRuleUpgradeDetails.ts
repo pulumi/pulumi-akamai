@@ -4,38 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security policy
- *
- * Returns information indicating which of your Kona Rule Sets, if any, need to be updated. A value of **false** indicates that no updates are required.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://techdocs.akamai.com/application-security/reference/get-rules-upgrade-details)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const upgradeDetails = configuration.then(configuration => akamai.getAppSecRuleUpgradeDetails({
- *     configId: configuration.configId,
- *     securityPolicyId: "gms1_134637",
- * }));
- * export const upgradeDetailsText = upgradeDetails.then(upgradeDetails => upgradeDetails.outputText);
- * export const upgradeDetailsJson = upgradeDetails.then(upgradeDetails => upgradeDetails.json);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `outputText`. Tabular report showing changes (additions and deletions) to the rules for the specified security policy.
- * - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
- */
 export function getAppSecRuleUpgradeDetails(args: GetAppSecRuleUpgradeDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecRuleUpgradeDetailsResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -49,13 +17,7 @@ export function getAppSecRuleUpgradeDetails(args: GetAppSecRuleUpgradeDetailsArg
  * A collection of arguments for invoking getAppSecRuleUpgradeDetails.
  */
 export interface GetAppSecRuleUpgradeDetailsArgs {
-    /**
-     * . Unique identifier of the security configuration associated with the Kona Rule Sets.
-     */
     configId: number;
-    /**
-     * . Unique identifier of the security policy associated with the Kona Rule Sets.
-     */
     securityPolicyId: string;
 }
 
@@ -72,38 +34,6 @@ export interface GetAppSecRuleUpgradeDetailsResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-/**
- * **Scopes**: Security policy
- *
- * Returns information indicating which of your Kona Rule Sets, if any, need to be updated. A value of **false** indicates that no updates are required.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://techdocs.akamai.com/application-security/reference/get-rules-upgrade-details)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const upgradeDetails = configuration.then(configuration => akamai.getAppSecRuleUpgradeDetails({
- *     configId: configuration.configId,
- *     securityPolicyId: "gms1_134637",
- * }));
- * export const upgradeDetailsText = upgradeDetails.then(upgradeDetails => upgradeDetails.outputText);
- * export const upgradeDetailsJson = upgradeDetails.then(upgradeDetails => upgradeDetails.json);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `outputText`. Tabular report showing changes (additions and deletions) to the rules for the specified security policy.
- * - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
- */
 export function getAppSecRuleUpgradeDetailsOutput(args: GetAppSecRuleUpgradeDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecRuleUpgradeDetailsResult> {
     return pulumi.output(args).apply((a: any) => getAppSecRuleUpgradeDetails(a, opts))
 }
@@ -112,12 +42,6 @@ export function getAppSecRuleUpgradeDetailsOutput(args: GetAppSecRuleUpgradeDeta
  * A collection of arguments for invoking getAppSecRuleUpgradeDetails.
  */
 export interface GetAppSecRuleUpgradeDetailsOutputArgs {
-    /**
-     * . Unique identifier of the security configuration associated with the Kona Rule Sets.
-     */
     configId: pulumi.Input<number>;
-    /**
-     * . Unique identifier of the security policy associated with the Kona Rule Sets.
-     */
     securityPolicyId: pulumi.Input<string>;
 }

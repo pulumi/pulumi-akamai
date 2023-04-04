@@ -4,28 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use `akamai.getIamContactTypes` to retrieve all the possible `contactTypes` that Akamai supports. Use the values from this data source to add or update a user's contact type.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const contactTypes = akamai.getIamContactTypes({});
- * export const supportedContactTypes = contactTypes;
- * ```
- * ## Attributes reference
- *
- * These attributes are returned:
- *
- * * `contactTypes` — A list of contact types.
- *
- * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-contact-types)
- */
 export function getIamContactTypes(opts?: pulumi.InvokeOptions): Promise<GetIamContactTypesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

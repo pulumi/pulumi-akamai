@@ -15,32 +15,16 @@ public final class GetAppSecContractsGroupsPlainArgs extends com.pulumi.resource
 
     public static final GetAppSecContractsGroupsPlainArgs Empty = new GetAppSecContractsGroupsPlainArgs();
 
-    /**
-     * . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
-     * 
-     */
     @Import(name="contractid")
     private @Nullable String contractid;
 
-    /**
-     * @return . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
-     * 
-     */
     public Optional<String> contractid() {
         return Optional.ofNullable(this.contractid);
     }
 
-    /**
-     * . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
-     * 
-     */
     @Import(name="groupid")
     private @Nullable Integer groupid;
 
-    /**
-     * @return . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
-     * 
-     */
     public Optional<Integer> groupid() {
         return Optional.ofNullable(this.groupid);
     }
@@ -70,23 +54,11 @@ public final class GetAppSecContractsGroupsPlainArgs extends com.pulumi.resource
             $ = new GetAppSecContractsGroupsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractid . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractid(@Nullable String contractid) {
             $.contractid = contractid;
             return this;
         }
 
-        /**
-         * @param groupid . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupid(@Nullable Integer groupid) {
             $.groupid = groupid;
             return this;

@@ -10,16 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-//
-// Use the `getCloudletsRequestControlMatchRule` data source to build a match rule JSON object for the Request Control Cloudlet.
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `type` - The type of Cloudlet the rule is for.
-// * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
 func GetCloudletsRequestControlMatchRule(ctx *pulumi.Context, args *GetCloudletsRequestControlMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsRequestControlMatchRuleResult, error) {
 	var rv GetCloudletsRequestControlMatchRuleResult
 	err := ctx.Invoke("akamai:index/getCloudletsRequestControlMatchRule:getCloudletsRequestControlMatchRule", args, &rv, opts...)
@@ -31,7 +21,6 @@ func GetCloudletsRequestControlMatchRule(ctx *pulumi.Context, args *GetCloudlets
 
 // A collection of arguments for invoking getCloudletsRequestControlMatchRule.
 type GetCloudletsRequestControlMatchRuleArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsRequestControlMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -58,7 +47,6 @@ func GetCloudletsRequestControlMatchRuleOutput(ctx *pulumi.Context, args GetClou
 
 // A collection of arguments for invoking getCloudletsRequestControlMatchRule.
 type GetCloudletsRequestControlMatchRuleOutputArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsRequestControlMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

@@ -22,12 +22,12 @@ class AppSecSiemSettingsArgs:
                  security_policy_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a AppSecSiemSettings resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the SIEM settings being modified.
-        :param pulumi.Input[bool] enable_botman_siem: . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
-        :param pulumi.Input[bool] enable_for_all_policies: . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
-        :param pulumi.Input[bool] enable_siem: . Set to **true** to enable SIEM; set to **false** to disable SIEM.
-        :param pulumi.Input[int] siem_id: . Unique identifier of the SIEM settings being modified.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: JSON array of IDs for the security policies where SIEM integration is to be enabled.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
+        :param pulumi.Input[bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
+        :param pulumi.Input[bool] enable_siem: Whether to enable SIEM
+        :param pulumi.Input[int] siem_id: Unique identifier of the SIEM settings being modified
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "enable_botman_siem", enable_botman_siem)
@@ -41,7 +41,7 @@ class AppSecSiemSettingsArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the SIEM settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -53,7 +53,7 @@ class AppSecSiemSettingsArgs:
     @pulumi.getter(name="enableBotmanSiem")
     def enable_botman_siem(self) -> pulumi.Input[bool]:
         """
-        . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
+        Whether Bot Manager events should be included in SIEM events
         """
         return pulumi.get(self, "enable_botman_siem")
 
@@ -65,7 +65,7 @@ class AppSecSiemSettingsArgs:
     @pulumi.getter(name="enableForAllPolicies")
     def enable_for_all_policies(self) -> pulumi.Input[bool]:
         """
-        . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
+        Whether to enable SIEM on all security policies in the security configuration
         """
         return pulumi.get(self, "enable_for_all_policies")
 
@@ -77,7 +77,7 @@ class AppSecSiemSettingsArgs:
     @pulumi.getter(name="enableSiem")
     def enable_siem(self) -> pulumi.Input[bool]:
         """
-        . Set to **true** to enable SIEM; set to **false** to disable SIEM.
+        Whether to enable SIEM
         """
         return pulumi.get(self, "enable_siem")
 
@@ -89,7 +89,7 @@ class AppSecSiemSettingsArgs:
     @pulumi.getter(name="siemId")
     def siem_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the SIEM settings being modified.
+        Unique identifier of the SIEM settings being modified
         """
         return pulumi.get(self, "siem_id")
 
@@ -101,7 +101,7 @@ class AppSecSiemSettingsArgs:
     @pulumi.getter(name="securityPolicyIds")
     def security_policy_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        JSON array of IDs for the security policies where SIEM integration is to be enabled.
+        List of IDs of security policy for which SIEM integration is to be enabled
         """
         return pulumi.get(self, "security_policy_ids")
 
@@ -121,12 +121,12 @@ class _AppSecSiemSettingsState:
                  siem_id: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecSiemSettings resources.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the SIEM settings being modified.
-        :param pulumi.Input[bool] enable_botman_siem: . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
-        :param pulumi.Input[bool] enable_for_all_policies: . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
-        :param pulumi.Input[bool] enable_siem: . Set to **true** to enable SIEM; set to **false** to disable SIEM.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: JSON array of IDs for the security policies where SIEM integration is to be enabled.
-        :param pulumi.Input[int] siem_id: . Unique identifier of the SIEM settings being modified.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
+        :param pulumi.Input[bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
+        :param pulumi.Input[bool] enable_siem: Whether to enable SIEM
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
+        :param pulumi.Input[int] siem_id: Unique identifier of the SIEM settings being modified
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -145,7 +145,7 @@ class _AppSecSiemSettingsState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the SIEM settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -157,7 +157,7 @@ class _AppSecSiemSettingsState:
     @pulumi.getter(name="enableBotmanSiem")
     def enable_botman_siem(self) -> Optional[pulumi.Input[bool]]:
         """
-        . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
+        Whether Bot Manager events should be included in SIEM events
         """
         return pulumi.get(self, "enable_botman_siem")
 
@@ -169,7 +169,7 @@ class _AppSecSiemSettingsState:
     @pulumi.getter(name="enableForAllPolicies")
     def enable_for_all_policies(self) -> Optional[pulumi.Input[bool]]:
         """
-        . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
+        Whether to enable SIEM on all security policies in the security configuration
         """
         return pulumi.get(self, "enable_for_all_policies")
 
@@ -181,7 +181,7 @@ class _AppSecSiemSettingsState:
     @pulumi.getter(name="enableSiem")
     def enable_siem(self) -> Optional[pulumi.Input[bool]]:
         """
-        . Set to **true** to enable SIEM; set to **false** to disable SIEM.
+        Whether to enable SIEM
         """
         return pulumi.get(self, "enable_siem")
 
@@ -193,7 +193,7 @@ class _AppSecSiemSettingsState:
     @pulumi.getter(name="securityPolicyIds")
     def security_policy_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        JSON array of IDs for the security policies where SIEM integration is to be enabled.
+        List of IDs of security policy for which SIEM integration is to be enabled
         """
         return pulumi.get(self, "security_policy_ids")
 
@@ -205,7 +205,7 @@ class _AppSecSiemSettingsState:
     @pulumi.getter(name="siemId")
     def siem_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the SIEM settings being modified.
+        Unique identifier of the SIEM settings being modified
         """
         return pulumi.get(self, "siem_id")
 
@@ -227,45 +227,15 @@ class AppSecSiemSettings(pulumi.CustomResource):
                  siem_id: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        **Scopes**: Security configuration
-
-        Modifies SIEM (Security Information and Event Management) integration settings for a security configuration.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://techdocs.akamai.com/application-security/reference/put-siem)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        siem_definition = akamai.get_app_sec_siem_definitions(siem_definition_name="SIEM Version 01")
-        security_policies = akamai.get_app_sec_security_policy(config_id=configuration.config_id)
-        siem = akamai.AppSecSiemSettings("siem",
-            config_id=configuration.config_id,
-            enable_siem=True,
-            enable_for_all_policies=False,
-            enable_botman_siem=True,
-            siem_id=siem_definition.id,
-            security_policy_ids=security_policies.security_policy_id_lists)
-        ```
-        ## Output Options
-
-        The following options can be used to determine the information returned, and how that returned information is formatted:
-
-        - `output_text`. Tabular report showing the updated SIEM integration settings.
-
+        Create a AppSecSiemSettings resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the SIEM settings being modified.
-        :param pulumi.Input[bool] enable_botman_siem: . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
-        :param pulumi.Input[bool] enable_for_all_policies: . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
-        :param pulumi.Input[bool] enable_siem: . Set to **true** to enable SIEM; set to **false** to disable SIEM.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: JSON array of IDs for the security policies where SIEM integration is to be enabled.
-        :param pulumi.Input[int] siem_id: . Unique identifier of the SIEM settings being modified.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
+        :param pulumi.Input[bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
+        :param pulumi.Input[bool] enable_siem: Whether to enable SIEM
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
+        :param pulumi.Input[int] siem_id: Unique identifier of the SIEM settings being modified
         """
         ...
     @overload
@@ -274,37 +244,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
                  args: AppSecSiemSettingsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Security configuration
-
-        Modifies SIEM (Security Information and Event Management) integration settings for a security configuration.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://techdocs.akamai.com/application-security/reference/put-siem)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        siem_definition = akamai.get_app_sec_siem_definitions(siem_definition_name="SIEM Version 01")
-        security_policies = akamai.get_app_sec_security_policy(config_id=configuration.config_id)
-        siem = akamai.AppSecSiemSettings("siem",
-            config_id=configuration.config_id,
-            enable_siem=True,
-            enable_for_all_policies=False,
-            enable_botman_siem=True,
-            siem_id=siem_definition.id,
-            security_policy_ids=security_policies.security_policy_id_lists)
-        ```
-        ## Output Options
-
-        The following options can be used to determine the information returned, and how that returned information is formatted:
-
-        - `output_text`. Tabular report showing the updated SIEM integration settings.
-
+        Create a AppSecSiemSettings resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecSiemSettingsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -374,12 +314,12 @@ class AppSecSiemSettings(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the SIEM settings being modified.
-        :param pulumi.Input[bool] enable_botman_siem: . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
-        :param pulumi.Input[bool] enable_for_all_policies: . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
-        :param pulumi.Input[bool] enable_siem: . Set to **true** to enable SIEM; set to **false** to disable SIEM.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: JSON array of IDs for the security policies where SIEM integration is to be enabled.
-        :param pulumi.Input[int] siem_id: . Unique identifier of the SIEM settings being modified.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enable_botman_siem: Whether Bot Manager events should be included in SIEM events
+        :param pulumi.Input[bool] enable_for_all_policies: Whether to enable SIEM on all security policies in the security configuration
+        :param pulumi.Input[bool] enable_siem: Whether to enable SIEM
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] security_policy_ids: List of IDs of security policy for which SIEM integration is to be enabled
+        :param pulumi.Input[int] siem_id: Unique identifier of the SIEM settings being modified
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -397,7 +337,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the SIEM settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -405,7 +345,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
     @pulumi.getter(name="enableBotmanSiem")
     def enable_botman_siem(self) -> pulumi.Output[bool]:
         """
-        . Set to **true** to include Bot Manager events in your SIEM events; set to **false** to exclude Bot Manager events from your SIEM events.
+        Whether Bot Manager events should be included in SIEM events
         """
         return pulumi.get(self, "enable_botman_siem")
 
@@ -413,7 +353,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
     @pulumi.getter(name="enableForAllPolicies")
     def enable_for_all_policies(self) -> pulumi.Output[bool]:
         """
-        . Set to **true** to enable SIEM on all security policies in the security configuration; set to **false** to only enable SIEM on the security policies specified by the `security_policy_ids` argument.
+        Whether to enable SIEM on all security policies in the security configuration
         """
         return pulumi.get(self, "enable_for_all_policies")
 
@@ -421,7 +361,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
     @pulumi.getter(name="enableSiem")
     def enable_siem(self) -> pulumi.Output[bool]:
         """
-        . Set to **true** to enable SIEM; set to **false** to disable SIEM.
+        Whether to enable SIEM
         """
         return pulumi.get(self, "enable_siem")
 
@@ -429,7 +369,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyIds")
     def security_policy_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        JSON array of IDs for the security policies where SIEM integration is to be enabled.
+        List of IDs of security policy for which SIEM integration is to be enabled
         """
         return pulumi.get(self, "security_policy_ids")
 
@@ -437,7 +377,7 @@ class AppSecSiemSettings(pulumi.CustomResource):
     @pulumi.getter(name="siemId")
     def siem_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the SIEM settings being modified.
+        Unique identifier of the SIEM settings being modified
         """
         return pulumi.get(self, "siem_id")
 

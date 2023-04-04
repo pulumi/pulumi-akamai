@@ -16,47 +16,23 @@ public final class GetActivationArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetActivationArgs Empty = new GetActivationArgs();
 
-    /**
-     * Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-     * 
-     */
     @Import(name="network")
     private @Nullable Output<String> network;
 
-    /**
-     * @return Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-     * 
-     */
     public Optional<Output<String>> network() {
         return Optional.ofNullable(this.network);
     }
 
-    /**
-     * The property&#39;s unique identifier, including optional `prp_` prefix.
-     * 
-     */
     @Import(name="propertyId", required=true)
     private Output<String> propertyId;
 
-    /**
-     * @return The property&#39;s unique identifier, including optional `prp_` prefix.
-     * 
-     */
     public Output<String> propertyId() {
         return this.propertyId;
     }
 
-    /**
-     * The activated property version. The value depends on the `akamai.Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
-     * 
-     */
     @Import(name="version", required=true)
     private Output<Integer> version;
 
-    /**
-     * @return The activated property version. The value depends on the `akamai.Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
-     * 
-     */
     public Output<Integer> version() {
         return this.version;
     }
@@ -87,65 +63,29 @@ public final class GetActivationArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetActivationArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param network Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder network(@Nullable Output<String> network) {
             $.network = network;
             return this;
         }
 
-        /**
-         * @param network Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder network(String network) {
             return network(Output.of(network));
         }
 
-        /**
-         * @param propertyId The property&#39;s unique identifier, including optional `prp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder propertyId(Output<String> propertyId) {
             $.propertyId = propertyId;
             return this;
         }
 
-        /**
-         * @param propertyId The property&#39;s unique identifier, including optional `prp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder propertyId(String propertyId) {
             return propertyId(Output.of(propertyId));
         }
 
-        /**
-         * @param version The activated property version. The value depends on the `akamai.Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Output<Integer> version) {
             $.version = version;
             return this;
         }
 
-        /**
-         * @param version The activated property version. The value depends on the `akamai.Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Integer version) {
             return version(Output.of(version));
         }

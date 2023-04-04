@@ -11,121 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecApiRequestConstraints
     {
-        /// <summary>
-        /// **Scopes**: Security policy; API endpoint
-        /// 
-        /// Returns information about API endpoint constraints and actions. 
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-request-constraints](https://techdocs.akamai.com/application-security/reference/get-api-request-constraints)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var apisRequestConstraints = Akamai.GetAppSecApiRequestConstraints.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     var apiRequestConstraints = Akamai.GetAppSecApiRequestConstraints.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///         ApiId = 624913,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["apisConstraintsText"] = apisRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.OutputText),
-        ///         ["apisConstraintsJson"] = apisRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.Json),
-        ///         ["apiConstraintsText"] = apiRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.OutputText),
-        ///         ["apiConstraintsJson"] = apiRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of information about the APIs, their constraints, and their actions.
-        /// - `output_text`. Tabular report of the APIs, their constraints, and their actions.
-        /// </summary>
         public static Task<GetAppSecApiRequestConstraintsResult> InvokeAsync(GetAppSecApiRequestConstraintsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecApiRequestConstraintsResult>("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args ?? new GetAppSecApiRequestConstraintsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security policy; API endpoint
-        /// 
-        /// Returns information about API endpoint constraints and actions. 
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-request-constraints](https://techdocs.akamai.com/application-security/reference/get-api-request-constraints)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var apisRequestConstraints = Akamai.GetAppSecApiRequestConstraints.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     var apiRequestConstraints = Akamai.GetAppSecApiRequestConstraints.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///         ApiId = 624913,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["apisConstraintsText"] = apisRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.OutputText),
-        ///         ["apisConstraintsJson"] = apisRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.Json),
-        ///         ["apiConstraintsText"] = apiRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.OutputText),
-        ///         ["apiConstraintsJson"] = apiRequestConstraints.Apply(getAppSecApiRequestConstraintsResult =&gt; getAppSecApiRequestConstraintsResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of information about the APIs, their constraints, and their actions.
-        /// - `output_text`. Tabular report of the APIs, their constraints, and their actions.
-        /// </summary>
         public static Output<GetAppSecApiRequestConstraintsResult> Invoke(GetAppSecApiRequestConstraintsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecApiRequestConstraintsResult>("akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints", args ?? new GetAppSecApiRequestConstraintsInvokeArgs(), options.WithDefaults());
     }
@@ -133,21 +21,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecApiRequestConstraintsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the API endpoint you want to return constraint information for.
-        /// </summary>
         [Input("apiId")]
         public int? ApiId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the API constraints.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the API constraints.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -159,21 +38,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecApiRequestConstraintsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the API endpoint you want to return constraint information for.
-        /// </summary>
         [Input("apiId")]
         public Input<int>? ApiId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the API constraints.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the API constraints.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

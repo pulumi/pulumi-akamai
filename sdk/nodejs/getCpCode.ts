@@ -21,28 +21,15 @@ export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Pro
  */
 export interface GetCpCodeArgs {
     /**
-     * Replaced by `contractId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: string;
-    /**
-     * (Required) A contract's unique ID, including the `ctr_` prefix.
-     */
     contractId?: string;
     /**
-     * Replaced by `groupId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: string;
-    /**
-     * The group's unique ID, including the `grp_` prefix.
-     */
     groupId?: string;
-    /**
-     * The name of the CP code.
-     */
     name: string;
 }
 
@@ -76,27 +63,14 @@ export function getCpCodeOutput(args: GetCpCodeOutputArgs, opts?: pulumi.InvokeO
  */
 export interface GetCpCodeOutputArgs {
     /**
-     * Replaced by `contractId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
-    /**
-     * (Required) A contract's unique ID, including the `ctr_` prefix.
-     */
     contractId?: pulumi.Input<string>;
     /**
-     * Replaced by `groupId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
-    /**
-     * The group's unique ID, including the `grp_` prefix.
-     */
     groupId?: pulumi.Input<string>;
-    /**
-     * The name of the CP code.
-     */
     name: pulumi.Input<string>;
 }

@@ -17,17 +17,9 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
 
     public static final PropertyHostnameArgs Empty = new PropertyHostnameArgs();
 
-    /**
-     * The certificate&#39;s provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-     * 
-     */
     @Import(name="certProvisioningType", required=true)
     private Output<String> certProvisioningType;
 
-    /**
-     * @return The certificate&#39;s provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-     * 
-     */
     public Output<String> certProvisioningType() {
         return this.certProvisioningType;
     }
@@ -39,32 +31,16 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.certStatuses);
     }
 
-    /**
-     * A string containing the original origin&#39;s hostname. For example, `&#34;example.org&#34;`.
-     * 
-     */
     @Import(name="cnameFrom", required=true)
     private Output<String> cnameFrom;
 
-    /**
-     * @return A string containing the original origin&#39;s hostname. For example, `&#34;example.org&#34;`.
-     * 
-     */
     public Output<String> cnameFrom() {
         return this.cnameFrom;
     }
 
-    /**
-     * A string containing the hostname for edge content. For example,  `&#34;example.org.edgesuite.net&#34;`.
-     * 
-     */
     @Import(name="cnameTo", required=true)
     private Output<String> cnameTo;
 
-    /**
-     * @return A string containing the hostname for edge content. For example,  `&#34;example.org.edgesuite.net&#34;`.
-     * 
-     */
     public Output<String> cnameTo() {
         return this.cnameTo;
     }
@@ -112,23 +88,11 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
             $ = new PropertyHostnameArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param certProvisioningType The certificate&#39;s provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-         * 
-         * @return builder
-         * 
-         */
         public Builder certProvisioningType(Output<String> certProvisioningType) {
             $.certProvisioningType = certProvisioningType;
             return this;
         }
 
-        /**
-         * @param certProvisioningType The certificate&#39;s provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-         * 
-         * @return builder
-         * 
-         */
         public Builder certProvisioningType(String certProvisioningType) {
             return certProvisioningType(Output.of(certProvisioningType));
         }
@@ -146,44 +110,20 @@ public final class PropertyHostnameArgs extends com.pulumi.resources.ResourceArg
             return certStatuses(List.of(certStatuses));
         }
 
-        /**
-         * @param cnameFrom A string containing the original origin&#39;s hostname. For example, `&#34;example.org&#34;`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cnameFrom(Output<String> cnameFrom) {
             $.cnameFrom = cnameFrom;
             return this;
         }
 
-        /**
-         * @param cnameFrom A string containing the original origin&#39;s hostname. For example, `&#34;example.org&#34;`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cnameFrom(String cnameFrom) {
             return cnameFrom(Output.of(cnameFrom));
         }
 
-        /**
-         * @param cnameTo A string containing the hostname for edge content. For example,  `&#34;example.org.edgesuite.net&#34;`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cnameTo(Output<String> cnameTo) {
             $.cnameTo = cnameTo;
             return this;
         }
 
-        /**
-         * @param cnameTo A string containing the hostname for edge content. For example,  `&#34;example.org.edgesuite.net&#34;`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cnameTo(String cnameTo) {
             return cnameTo(Output.of(cnameTo));
         }

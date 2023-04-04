@@ -6,37 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getPropertyIncludeParents` data source to return a list of parent properties that use the given include. In your property's rule tree, you can reference an include by adding the `include` behavior and specifying the `includeId`.
- *
- * ## Basic usage
- *
- * This example returns all active properties a specific include is referenced in, based on the contract, group, and include IDs.
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const myExamplePropertyIncludeParents = akamai.getPropertyIncludeParents({
- *     contractId: "ctr_1-AB123",
- *     groupId: "grp_12345",
- *     includeId: "inc_123456",
- * });
- * export const myExample = myExamplePropertyIncludeParents;
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `parents` - The list of include's parent properties.
- *  * `id` - The property's unique identifier.
- *  * `name` - The descriptive name for the property.
- *  * `stagingVersion` - The property version currently activated on the staging network.
- *  * `productionVersion` - The property version currently activated on the production network.
- *  * `isIncludeUsedInStagingVersion` - Whether the specified include is active on the staging network and is referenced in parent's `stagingVersion`.
- *  * `isIncludeUsedInProductionVersion` - Whether the specified include is active on the production network and is referenced in parent's `productionVersion`.
- */
 export function getPropertyIncludeParents(args: GetPropertyIncludeParentsArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyIncludeParentsResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -51,17 +20,8 @@ export function getPropertyIncludeParents(args: GetPropertyIncludeParentsArgs, o
  * A collection of arguments for invoking getPropertyIncludeParents.
  */
 export interface GetPropertyIncludeParentsArgs {
-    /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
-     */
     contractId: string;
-    /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
-     */
     groupId: string;
-    /**
-     * (Required) An include's unique ID with the optional `inc_` prefix.
-     */
     includeId: string;
 }
 
@@ -78,37 +38,6 @@ export interface GetPropertyIncludeParentsResult {
     readonly includeId: string;
     readonly parents: outputs.GetPropertyIncludeParentsParent[];
 }
-/**
- * Use the `akamai.getPropertyIncludeParents` data source to return a list of parent properties that use the given include. In your property's rule tree, you can reference an include by adding the `include` behavior and specifying the `includeId`.
- *
- * ## Basic usage
- *
- * This example returns all active properties a specific include is referenced in, based on the contract, group, and include IDs.
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const myExamplePropertyIncludeParents = akamai.getPropertyIncludeParents({
- *     contractId: "ctr_1-AB123",
- *     groupId: "grp_12345",
- *     includeId: "inc_123456",
- * });
- * export const myExample = myExamplePropertyIncludeParents;
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `parents` - The list of include's parent properties.
- *  * `id` - The property's unique identifier.
- *  * `name` - The descriptive name for the property.
- *  * `stagingVersion` - The property version currently activated on the staging network.
- *  * `productionVersion` - The property version currently activated on the production network.
- *  * `isIncludeUsedInStagingVersion` - Whether the specified include is active on the staging network and is referenced in parent's `stagingVersion`.
- *  * `isIncludeUsedInProductionVersion` - Whether the specified include is active on the production network and is referenced in parent's `productionVersion`.
- */
 export function getPropertyIncludeParentsOutput(args: GetPropertyIncludeParentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyIncludeParentsResult> {
     return pulumi.output(args).apply((a: any) => getPropertyIncludeParents(a, opts))
 }
@@ -117,16 +46,7 @@ export function getPropertyIncludeParentsOutput(args: GetPropertyIncludeParentsO
  * A collection of arguments for invoking getPropertyIncludeParents.
  */
 export interface GetPropertyIncludeParentsOutputArgs {
-    /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
-     */
     contractId: pulumi.Input<string>;
-    /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
-     */
     groupId: pulumi.Input<string>;
-    /**
-     * (Required) An include's unique ID with the optional `inc_` prefix.
-     */
     includeId: pulumi.Input<string>;
 }

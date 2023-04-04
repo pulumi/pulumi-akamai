@@ -10,76 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `PropertyActivation` data source to retrieve activation information for a property version on staging
-// or production network.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai/properties"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func readFileOrPanic(path string) pulumi.StringPtrInput {
-//		data, err := os.ReadFile(path)
-//		if err != nil {
-//			panic(err.Error())
-//		}
-//		return pulumi.String(string(data))
-//	}
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			email := "user@example.org"
-//			ruleFormat := "v2022-10-18"
-//			example, err := akamai.NewProperty(ctx, "example", &akamai.PropertyArgs{
-//				ProductId:  pulumi.String("prd_SPM"),
-//				ContractId: pulumi.Any(_var.Contractid),
-//				GroupId:    pulumi.Any(_var.Groupid),
-//				Hostnames: akamai.PropertyHostnameArray{
-//					&akamai.PropertyHostnameArgs{
-//						CnameTo:              pulumi.String("www.example.com.edgekey.net"),
-//						CnameFrom:            pulumi.String("www.example.com"),
-//						CertProvisioningType: pulumi.String("DEFAULT"),
-//					},
-//				},
-//				RuleFormat: pulumi.String(ruleFormat),
-//				Rules:      readFileOrPanic(fmt.Sprintf("%v/main.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewPropertyActivation(ctx, "exampleStagingPropertyActivation", &akamai.PropertyActivationArgs{
-//				PropertyId: example.ID(),
-//				Contacts: pulumi.StringArray{
-//					pulumi.String(email),
-//				},
-//				Version: example.LatestVersion,
-//				Note:    pulumi.String("Sample activation"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			_ = properties.GetActivationOutput(ctx, properties.GetActivationOutputArgs{
-//				PropertyId: example.ID(),
-//				Version:    example.LatestVersion,
-//			}, nil)
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetActivation(ctx *pulumi.Context, args *GetActivationArgs, opts ...pulumi.InvokeOption) (*GetActivationResult, error) {
 	var rv GetActivationResult
 	err := ctx.Invoke("akamai:properties/getActivation:getActivation", args, &rv, opts...)
@@ -91,35 +21,24 @@ func GetActivation(ctx *pulumi.Context, args *GetActivationArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getActivation.
 type GetActivationArgs struct {
-	// Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-	Network *string `pulumi:"network"`
-	// The property's unique identifier, including optional `prp_` prefix.
-	PropertyId string `pulumi:"propertyId"`
-	// The activated property version. The value depends on the `Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
-	Version int `pulumi:"version"`
+	Network    *string `pulumi:"network"`
+	PropertyId string  `pulumi:"propertyId"`
+	Version    int     `pulumi:"version"`
 }
 
 // A collection of values returned by getActivation.
 type GetActivationResult struct {
-	// The activation's unique identifier, including optional `atv_` prefix.
-	ActivationId string `pulumi:"activationId"`
-	// The email addresses to notify about the activation status changes.
-	Contacts []string `pulumi:"contacts"`
-	// The contents of `errors` field returned by the API. For more information
-	// see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-	Errors string `pulumi:"errors"`
+	ActivationId string   `pulumi:"activationId"`
+	Contacts     []string `pulumi:"contacts"`
+	Errors       string   `pulumi:"errors"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string  `pulumi:"id"`
-	Network *string `pulumi:"network"`
-	// Log message assigned to the activation request.
-	Note       string `pulumi:"note"`
-	PropertyId string `pulumi:"propertyId"`
-	// The property version's activation status on the selected network.
-	Status  string `pulumi:"status"`
-	Version int    `pulumi:"version"`
-	// The contents of `warnings` field returned by the API. For more information
-	// see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-	Warnings string `pulumi:"warnings"`
+	Id         string  `pulumi:"id"`
+	Network    *string `pulumi:"network"`
+	Note       string  `pulumi:"note"`
+	PropertyId string  `pulumi:"propertyId"`
+	Status     string  `pulumi:"status"`
+	Version    int     `pulumi:"version"`
+	Warnings   string  `pulumi:"warnings"`
 }
 
 func GetActivationOutput(ctx *pulumi.Context, args GetActivationOutputArgs, opts ...pulumi.InvokeOption) GetActivationResultOutput {
@@ -137,12 +56,9 @@ func GetActivationOutput(ctx *pulumi.Context, args GetActivationOutputArgs, opts
 
 // A collection of arguments for invoking getActivation.
 type GetActivationOutputArgs struct {
-	// Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-	Network pulumi.StringPtrInput `pulumi:"network"`
-	// The property's unique identifier, including optional `prp_` prefix.
-	PropertyId pulumi.StringInput `pulumi:"propertyId"`
-	// The activated property version. The value depends on the `Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
-	Version pulumi.IntInput `pulumi:"version"`
+	Network    pulumi.StringPtrInput `pulumi:"network"`
+	PropertyId pulumi.StringInput    `pulumi:"propertyId"`
+	Version    pulumi.IntInput       `pulumi:"version"`
 }
 
 func (GetActivationOutputArgs) ElementType() reflect.Type {
@@ -164,18 +80,14 @@ func (o GetActivationResultOutput) ToGetActivationResultOutputWithContext(ctx co
 	return o
 }
 
-// The activation's unique identifier, including optional `atv_` prefix.
 func (o GetActivationResultOutput) ActivationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetActivationResult) string { return v.ActivationId }).(pulumi.StringOutput)
 }
 
-// The email addresses to notify about the activation status changes.
 func (o GetActivationResultOutput) Contacts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetActivationResult) []string { return v.Contacts }).(pulumi.StringArrayOutput)
 }
 
-// The contents of `errors` field returned by the API. For more information
-// see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 func (o GetActivationResultOutput) Errors() pulumi.StringOutput {
 	return o.ApplyT(func(v GetActivationResult) string { return v.Errors }).(pulumi.StringOutput)
 }
@@ -189,7 +101,6 @@ func (o GetActivationResultOutput) Network() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetActivationResult) *string { return v.Network }).(pulumi.StringPtrOutput)
 }
 
-// Log message assigned to the activation request.
 func (o GetActivationResultOutput) Note() pulumi.StringOutput {
 	return o.ApplyT(func(v GetActivationResult) string { return v.Note }).(pulumi.StringOutput)
 }
@@ -198,7 +109,6 @@ func (o GetActivationResultOutput) PropertyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetActivationResult) string { return v.PropertyId }).(pulumi.StringOutput)
 }
 
-// The property version's activation status on the selected network.
 func (o GetActivationResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetActivationResult) string { return v.Status }).(pulumi.StringOutput)
 }
@@ -207,8 +117,6 @@ func (o GetActivationResultOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v GetActivationResult) int { return v.Version }).(pulumi.IntOutput)
 }
 
-// The contents of `warnings` field returned by the API. For more information
-// see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 func (o GetActivationResultOutput) Warnings() pulumi.StringOutput {
 	return o.ApplyT(func(v GetActivationResult) string { return v.Warnings }).(pulumi.StringOutput)
 }

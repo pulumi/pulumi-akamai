@@ -15,155 +15,73 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.CloudletsPolicy` resource to create and version a policy. For each Cloudlet instance on your contract, there can be any number of policies. A single policy is associated with a single property configuration. Within a policy version you define the rules that determine when the Cloudlet executes. You may want to create a new version of a policy to support a different business requirement, or to test new functionality.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.CloudletsPolicy;
- * import com.pulumi.akamai.CloudletsPolicyArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var example = new CloudletsPolicy(&#34;example&#34;, CloudletsPolicyArgs.builder()        
- *             .cloudletCode(&#34;ER&#34;)
- *             .description(&#34;policy description&#34;)
- *             .groupId(&#34;grp_123&#34;)
- *             .matchRules(&#34;&#34;&#34;
- *   [
- *   {
- *     &#34;name&#34;: &#34;rule1&#34;,
- *     &#34;type&#34;: &#34;erMatchRule&#34;,
- *     &#34;useRelativeUrl&#34;: &#34;none&#34;,
- *     &#34;statusCode&#34;: 301,
- *     &#34;redirectURL&#34;: &#34;https://www.example.com&#34;,
- *     &#34;matchURL&#34;: &#34;example.com&#34;,
- *     &#34;useIncomingQueryString&#34;: false,
- *     &#34;useIncomingSchemeAndHost&#34;: false
- *   },
- *   {
- *     &#34;name&#34;: &#34;rule2&#34;,
- *     &#34;type&#34;: &#34;erMatchRule&#34;,
- *     &#34;matches&#34;: [
- *       {
- *         &#34;matchType&#34;: &#34;path&#34;,
- *         &#34;matchValue&#34;: &#34;/example/website.html&#34;,
- *         &#34;matchOperator&#34;: &#34;equals&#34;,
- *         &#34;caseSensitive&#34;: false,
- *         &#34;negate&#34;: false
- *       }
- *     ],
- *     &#34;useRelativeUrl&#34;: &#34;copy_scheme_hostname&#34;,
- *     &#34;statusCode&#34;: 301,
- *     &#34;redirectURL&#34;: &#34;/website.html&#34;,
- *     &#34;useIncomingQueryString&#34;: false,
- *     &#34;useIncomingSchemeAndHost&#34;: true
- *   }
- * ]
- *             &#34;&#34;&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- * ## Import
- * 
- * Basic usagehcl resource &#34;akamai_cloudlets_policy&#34; &#34;example&#34; {
- * 
- * # (resource arguments)
- * 
- *  } You can import your Akamai Cloudlets policy using a policy name. For example
- * 
- * ```sh
- *  $ pulumi import akamai:index/cloudletsPolicy:CloudletsPolicy example policy1
- * ```
- * 
- */
 @ResourceType(type="akamai:index/cloudletsPolicy:CloudletsPolicy")
 public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
     /**
-     * The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
      * 
      */
     @Export(name="cloudletCode", type=String.class, parameters={})
     private Output<String> cloudletCode;
 
     /**
-     * @return The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+     * @return Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
      * 
      */
     public Output<String> cloudletCode() {
         return this.cloudletCode;
     }
     /**
-     * A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+     * An integer that corresponds to a Cloudlets policy type (0 or 9)
      * 
      */
     @Export(name="cloudletId", type=Integer.class, parameters={})
     private Output<Integer> cloudletId;
 
     /**
-     * @return A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+     * @return An integer that corresponds to a Cloudlets policy type (0 or 9)
      * 
      */
     public Output<Integer> cloudletId() {
         return this.cloudletId;
     }
     /**
-     * The description of this specific policy.
+     * The description of this specific policy
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output</* @Nullable */ String> description;
 
     /**
-     * @return The description of this specific policy.
+     * @return The description of this specific policy
      * 
      */
     public Output<Optional<String>> description() {
         return Codegen.optional(this.description);
     }
     /**
-     * Defines the group association for the policy. You must have edit privileges for the group.
+     * Defines the group association for the policy. You must have edit privileges for the group
      * 
      */
     @Export(name="groupId", type=String.class, parameters={})
     private Output<String> groupId;
 
     /**
-     * @return Defines the group association for the policy. You must have edit privileges for the group.
+     * @return Defines the group association for the policy. You must have edit privileges for the group
      * 
      */
     public Output<String> groupId() {
         return this.groupId;
     }
     /**
-     * The version of the Cloudlet-specific `match_rules`.
+     * The version of the Cloudlet specific matchRules
      * 
      */
     @Export(name="matchRuleFormat", type=String.class, parameters={})
     private Output</* @Nullable */ String> matchRuleFormat;
 
     /**
-     * @return The version of the Cloudlet-specific `match_rules`.
+     * @return The version of the Cloudlet specific matchRules
      * 
      */
     public Output<Optional<String>> matchRuleFormat() {
@@ -184,42 +102,42 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.matchRules);
     }
     /**
-     * The unique name of the policy.
+     * The name of the policy. The name must be unique
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return The unique name of the policy.
+     * @return The name of the policy. The name must be unique
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * The version number of the policy.
+     * The version number of the policy
      * 
      */
     @Export(name="version", type=Integer.class, parameters={})
     private Output<Integer> version;
 
     /**
-     * @return The version number of the policy.
+     * @return The version number of the policy
      * 
      */
     public Output<Integer> version() {
         return this.version;
     }
     /**
-     * A JSON-encoded list of warnings.
+     * A JSON encoded list of warnings
      * 
      */
     @Export(name="warnings", type=String.class, parameters={})
     private Output<String> warnings;
 
     /**
-     * @return A JSON-encoded list of warnings.
+     * @return A JSON encoded list of warnings
      * 
      */
     public Output<String> warnings() {

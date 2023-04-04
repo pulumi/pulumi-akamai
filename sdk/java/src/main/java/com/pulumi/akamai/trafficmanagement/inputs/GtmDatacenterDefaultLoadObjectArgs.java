@@ -17,47 +17,23 @@ public final class GtmDatacenterDefaultLoadObjectArgs extends com.pulumi.resourc
 
     public static final GtmDatacenterDefaultLoadObjectArgs Empty = new GtmDatacenterDefaultLoadObjectArgs();
 
-    /**
-     * A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
-     * 
-     */
     @Import(name="loadObject")
     private @Nullable Output<String> loadObject;
 
-    /**
-     * @return A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
-     * 
-     */
     public Optional<Output<String>> loadObject() {
         return Optional.ofNullable(this.loadObject);
     }
 
-    /**
-     * Specifies the TCP port to connect to when requesting the load object.
-     * 
-     */
     @Import(name="loadObjectPort")
     private @Nullable Output<Integer> loadObjectPort;
 
-    /**
-     * @return Specifies the TCP port to connect to when requesting the load object.
-     * 
-     */
     public Optional<Output<Integer>> loadObjectPort() {
         return Optional.ofNullable(this.loadObjectPort);
     }
 
-    /**
-     * Specifies a list of servers to request the load object from.
-     * 
-     */
     @Import(name="loadServers")
     private @Nullable Output<List<String>> loadServers;
 
-    /**
-     * @return Specifies a list of servers to request the load object from.
-     * 
-     */
     public Optional<Output<List<String>>> loadServers() {
         return Optional.ofNullable(this.loadServers);
     }
@@ -88,75 +64,33 @@ public final class GtmDatacenterDefaultLoadObjectArgs extends com.pulumi.resourc
             $ = new GtmDatacenterDefaultLoadObjectArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param loadObject A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
-         * 
-         * @return builder
-         * 
-         */
         public Builder loadObject(@Nullable Output<String> loadObject) {
             $.loadObject = loadObject;
             return this;
         }
 
-        /**
-         * @param loadObject A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
-         * 
-         * @return builder
-         * 
-         */
         public Builder loadObject(String loadObject) {
             return loadObject(Output.of(loadObject));
         }
 
-        /**
-         * @param loadObjectPort Specifies the TCP port to connect to when requesting the load object.
-         * 
-         * @return builder
-         * 
-         */
         public Builder loadObjectPort(@Nullable Output<Integer> loadObjectPort) {
             $.loadObjectPort = loadObjectPort;
             return this;
         }
 
-        /**
-         * @param loadObjectPort Specifies the TCP port to connect to when requesting the load object.
-         * 
-         * @return builder
-         * 
-         */
         public Builder loadObjectPort(Integer loadObjectPort) {
             return loadObjectPort(Output.of(loadObjectPort));
         }
 
-        /**
-         * @param loadServers Specifies a list of servers to request the load object from.
-         * 
-         * @return builder
-         * 
-         */
         public Builder loadServers(@Nullable Output<List<String>> loadServers) {
             $.loadServers = loadServers;
             return this;
         }
 
-        /**
-         * @param loadServers Specifies a list of servers to request the load object from.
-         * 
-         * @return builder
-         * 
-         */
         public Builder loadServers(List<String> loadServers) {
             return loadServers(Output.of(loadServers));
         }
 
-        /**
-         * @param loadServers Specifies a list of servers to request the load object from.
-         * 
-         * @return builder
-         * 
-         */
         public Builder loadServers(String... loadServers) {
             return loadServers(List.of(loadServers));
         }

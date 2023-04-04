@@ -16,47 +16,23 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
 
     public static final GetPropertyRulesArgs Empty = new GetPropertyRulesArgs();
 
-    /**
-     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
-    /**
-     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     public Optional<Output<String>> contractId() {
         return Optional.ofNullable(this.contractId);
     }
 
-    /**
-     * (Required) A group&#39;s unique ID, including the `grp_` prefix.
-     * 
-     */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
-    /**
-     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
-     * 
-     */
     public Optional<Output<String>> groupId() {
         return Optional.ofNullable(this.groupId);
     }
 
-    /**
-     * (Required) A property&#39;s unique ID, including the `prp_` prefix.
-     * 
-     */
     @Import(name="propertyId", required=true)
     private Output<String> propertyId;
 
-    /**
-     * @return (Required) A property&#39;s unique ID, including the `prp_` prefix.
-     * 
-     */
     public Output<String> propertyId() {
         return this.propertyId;
     }
@@ -68,17 +44,9 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
         return Optional.ofNullable(this.ruleFormat);
     }
 
-    /**
-     * (Optional) The version to return. Returns the latest version by default.
-     * 
-     */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
-    /**
-     * @return (Optional) The version to return. Returns the latest version by default.
-     * 
-     */
     public Optional<Output<Integer>> version() {
         return Optional.ofNullable(this.version);
     }
@@ -111,65 +79,29 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
             $ = new GetPropertyRulesArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(@Nullable Output<String> contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             return contractId(Output.of(contractId));
         }
 
-        /**
-         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(@Nullable Output<String> groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        /**
-         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
         }
 
-        /**
-         * @param propertyId (Required) A property&#39;s unique ID, including the `prp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder propertyId(Output<String> propertyId) {
             $.propertyId = propertyId;
             return this;
         }
 
-        /**
-         * @param propertyId (Required) A property&#39;s unique ID, including the `prp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder propertyId(String propertyId) {
             return propertyId(Output.of(propertyId));
         }
@@ -183,23 +115,11 @@ public final class GetPropertyRulesArgs extends com.pulumi.resources.InvokeArgs 
             return ruleFormat(Output.of(ruleFormat));
         }
 
-        /**
-         * @param version (Optional) The version to return. Returns the latest version by default.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(@Nullable Output<Integer> version) {
             $.version = version;
             return this;
         }
 
-        /**
-         * @param version (Optional) The version to return. Returns the latest version by default.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Integer version) {
             return version(Output.of(version));
         }

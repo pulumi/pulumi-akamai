@@ -16,14 +16,14 @@ public final class AppSecSelectedHostnamesArgs extends com.pulumi.resources.Reso
     public static final AppSecSelectedHostnamesArgs Empty = new AppSecSelectedHostnamesArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the hostnames.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the hostnames.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -31,14 +31,14 @@ public final class AppSecSelectedHostnamesArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * . JSON array of hostnames to be added or removed from the protected hosts list.
+     * List of hostnames to be added or removed from the protected hosts list
      * 
      */
     @Import(name="hostnames", required=true)
     private Output<List<String>> hostnames;
 
     /**
-     * @return . JSON array of hostnames to be added or removed from the protected hosts list.
+     * @return List of hostnames to be added or removed from the protected hosts list
      * 
      */
     public Output<List<String>> hostnames() {
@@ -46,20 +46,14 @@ public final class AppSecSelectedHostnamesArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * . Indicates how the `hostnames` array is to be applied. Allowed values are:
-     * - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-     * - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-     * - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+     * How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
      * 
      */
     @Import(name="mode", required=true)
     private Output<String> mode;
 
     /**
-     * @return . Indicates how the `hostnames` array is to be applied. Allowed values are:
-     * - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-     * - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-     * - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+     * @return How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
      * 
      */
     public Output<String> mode() {
@@ -93,7 +87,7 @@ public final class AppSecSelectedHostnamesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the hostnames.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -104,7 +98,7 @@ public final class AppSecSelectedHostnamesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the hostnames.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -114,7 +108,7 @@ public final class AppSecSelectedHostnamesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param hostnames . JSON array of hostnames to be added or removed from the protected hosts list.
+         * @param hostnames List of hostnames to be added or removed from the protected hosts list
          * 
          * @return builder
          * 
@@ -125,7 +119,7 @@ public final class AppSecSelectedHostnamesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param hostnames . JSON array of hostnames to be added or removed from the protected hosts list.
+         * @param hostnames List of hostnames to be added or removed from the protected hosts list
          * 
          * @return builder
          * 
@@ -135,7 +129,7 @@ public final class AppSecSelectedHostnamesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param hostnames . JSON array of hostnames to be added or removed from the protected hosts list.
+         * @param hostnames List of hostnames to be added or removed from the protected hosts list
          * 
          * @return builder
          * 
@@ -145,10 +139,7 @@ public final class AppSecSelectedHostnamesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param mode . Indicates how the `hostnames` array is to be applied. Allowed values are:
-         * - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-         * - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-         * - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+         * @param mode How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
          * 
          * @return builder
          * 
@@ -159,10 +150,7 @@ public final class AppSecSelectedHostnamesArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param mode . Indicates how the `hostnames` array is to be applied. Allowed values are:
-         * - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-         * - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-         * - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+         * @param mode How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
          * 
          * @return builder
          * 

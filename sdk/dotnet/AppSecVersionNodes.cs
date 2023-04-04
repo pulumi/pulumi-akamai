@@ -9,52 +9,11 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security configuration
-    /// 
-    /// Updates the version notes for a security configuration.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://techdocs.akamai.com/application-security/reference/put-version-notes)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var versionNotesAppSecVersionNodes = new Akamai.AppSecVersionNodes("versionNotesAppSecVersionNodes", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         VersionNotes = "This version enables reputation profiles.",
-    ///     });
-    /// 
-    ///     return new Dictionary&lt;string, object?&gt;
-    ///     {
-    ///         ["versionNotes"] = versionNotesAppSecVersionNodes.OutputText,
-    ///     };
-    /// });
-    /// ```
-    /// ## Output Options
-    /// 
-    /// The following options can be used to determine the information returned, and how that returned information is formatted:
-    /// 
-    /// - `output_text`. Tabular report showing the updated version notes.
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecVersionNodes:AppSecVersionNodes")]
     public partial class AppSecVersionNodes : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration whose version notes are being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
@@ -66,7 +25,7 @@ namespace Pulumi.Akamai
         public Output<string> OutputText { get; private set; } = null!;
 
         /// <summary>
-        /// . Brief description of the security configuration version.
+        /// Brief description of the security configuration version
         /// </summary>
         [Output("versionNotes")]
         public Output<string> VersionNotes { get; private set; } = null!;
@@ -118,13 +77,13 @@ namespace Pulumi.Akamai
     public sealed class AppSecVersionNodesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration whose version notes are being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Brief description of the security configuration version.
+        /// Brief description of the security configuration version
         /// </summary>
         [Input("versionNotes", required: true)]
         public Input<string> VersionNotes { get; set; } = null!;
@@ -138,7 +97,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecVersionNodesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration whose version notes are being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
@@ -150,7 +109,7 @@ namespace Pulumi.Akamai
         public Input<string>? OutputText { get; set; }
 
         /// <summary>
-        /// . Brief description of the security configuration version.
+        /// Brief description of the security configuration version
         /// </summary>
         [Input("versionNotes")]
         public Input<string>? VersionNotes { get; set; }

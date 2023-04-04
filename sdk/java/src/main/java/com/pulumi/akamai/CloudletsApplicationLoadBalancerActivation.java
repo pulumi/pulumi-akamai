@@ -14,100 +14,59 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.CloudletsApplicationLoadBalancerActivation` resource to activate the Application Load Balancer Cloudlet configuration. An activation deploys the configuration version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
- * 
- * Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.CloudletsApplicationLoadBalancerActivation;
- * import com.pulumi.akamai.CloudletsApplicationLoadBalancerActivationArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var example = new CloudletsApplicationLoadBalancerActivation(&#34;example&#34;, CloudletsApplicationLoadBalancerActivationArgs.builder()        
- *             .originId(&#34;alb_test_1&#34;)
- *             .network(&#34;staging&#34;)
- *             .version(1)
- *             .build());
- * 
- *         ctx.export(&#34;status&#34;, example.status());
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation")
 public class CloudletsApplicationLoadBalancerActivation extends com.pulumi.resources.CustomResource {
     /**
-     * The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+     * The network you want to activate the application load balancer version on (options are Staging and Production)
      * 
      */
     @Export(name="network", type=String.class, parameters={})
     private Output<String> network;
 
     /**
-     * @return The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+     * @return The network you want to activate the application load balancer version on (options are Staging and Production)
      * 
      */
     public Output<String> network() {
         return this.network;
     }
     /**
-     * The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * The conditional origin’s unique identifier
      * 
      */
     @Export(name="originId", type=String.class, parameters={})
     private Output<String> originId;
 
     /**
-     * @return The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * @return The conditional origin’s unique identifier
      * 
      */
     public Output<String> originId() {
         return this.originId;
     }
     /**
-     * The activation status for this load balancing configuration.
+     * Activation status for this application load balancer
      * 
      */
     @Export(name="status", type=String.class, parameters={})
     private Output<String> status;
 
     /**
-     * @return The activation status for this load balancing configuration.
+     * @return Activation status for this application load balancer
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * The Application Load Balancer Cloudlet configuration version you want to activate.
+     * Cloudlets application load balancer version you want to activate
      * 
      */
     @Export(name="version", type=Integer.class, parameters={})
     private Output<Integer> version;
 
     /**
-     * @return The Application Load Balancer Cloudlet configuration version you want to activate.
+     * @return Cloudlets application load balancer version you want to activate
      * 
      */
     public Output<Integer> version() {

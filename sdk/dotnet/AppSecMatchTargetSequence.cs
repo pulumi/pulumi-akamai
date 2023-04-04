@@ -9,50 +9,17 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security configuration
-    /// 
-    /// Specifies the order in which match targets are applied within a security configuration. As a general rule, you should process broader and more-general match targets first, gradually working your way down to more granular and highly-specific targets.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.IO;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var matchTargetSequence = new Akamai.AppSecMatchTargetSequence("matchTargetSequence", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         MatchTargetSequence = File.ReadAllText($"{path.Module}/match_targets_sequence.json"),
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecMatchTargetSequence:AppSecMatchTargetSequence")]
     public partial class AppSecMatchTargetSequence : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the match target sequence being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+        /// JSON-formatted definition of the processing sequence for all defined match targets
         /// </summary>
         [Output("matchTargetSequence")]
         public Output<string?> MatchTargetSequence { get; private set; } = null!;
@@ -104,13 +71,13 @@ namespace Pulumi.Akamai
     public sealed class AppSecMatchTargetSequenceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the match target sequence being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+        /// JSON-formatted definition of the processing sequence for all defined match targets
         /// </summary>
         [Input("matchTargetSequence")]
         public Input<string>? MatchTargetSequence { get; set; }
@@ -124,13 +91,13 @@ namespace Pulumi.Akamai
     public sealed class AppSecMatchTargetSequenceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the match target sequence being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+        /// JSON-formatted definition of the processing sequence for all defined match targets
         /// </summary>
         [Input("matchTargetSequence")]
         public Input<string>? MatchTargetSequence { get; set; }

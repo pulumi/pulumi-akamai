@@ -9,75 +9,35 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Rule
-    /// 
-    /// Modifies a Kona Rule Set rule's action, conditions, and exceptions.
-    /// 
-    /// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}](https://techdocs.akamai.com/application-security/reference/put-rule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-rule-condition-exception)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.IO;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var rule = new Akamai.AppSecRule("rule", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         RuleId = 60029316,
-    ///         RuleAction = "deny",
-    ///         ConditionException = File.ReadAllText($"{path.Module}/condition_exception.json"),
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecRule:AppSecRule")]
     public partial class AppSecRule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+        /// JSON-formatted condition and exception information for the rule
         /// </summary>
         [Output("conditionException")]
         public Output<string?> ConditionException { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// Allowed values are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action. or `none` to take no action.
+        /// Action to be taken when the rule is triggered
         /// </summary>
         [Output("ruleAction")]
         public Output<string> RuleAction { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the rule being modified.
+        /// Unique identifier of the rule
         /// </summary>
         [Output("ruleId")]
         public Output<int> RuleId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -129,35 +89,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+        /// JSON-formatted condition and exception information for the rule
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// Allowed values are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action. or `none` to take no action.
+        /// Action to be taken when the rule is triggered
         /// </summary>
         [Input("ruleAction")]
         public Input<string>? RuleAction { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the rule being modified.
+        /// Unique identifier of the rule
         /// </summary>
         [Input("ruleId", required: true)]
         public Input<int> RuleId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -171,35 +127,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+        /// JSON-formatted condition and exception information for the rule
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// Allowed values are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action. or `none` to take no action.
+        /// Action to be taken when the rule is triggered
         /// </summary>
         [Input("ruleAction")]
         public Input<string>? RuleAction { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the rule being modified.
+        /// Unique identifier of the rule
         /// </summary>
         [Input("ruleId")]
         public Input<int>? RuleId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

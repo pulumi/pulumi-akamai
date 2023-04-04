@@ -13,17 +13,9 @@ public final class GetEdgeWorkersPropertyRulesArgs extends com.pulumi.resources.
 
     public static final GetEdgeWorkersPropertyRulesArgs Empty = new GetEdgeWorkersPropertyRulesArgs();
 
-    /**
-     * Unique identifier of an EdgeWorker ID.
-     * 
-     */
     @Import(name="edgeworkerId", required=true)
     private Output<Integer> edgeworkerId;
 
-    /**
-     * @return Unique identifier of an EdgeWorker ID.
-     * 
-     */
     public Output<Integer> edgeworkerId() {
         return this.edgeworkerId;
     }
@@ -52,23 +44,11 @@ public final class GetEdgeWorkersPropertyRulesArgs extends com.pulumi.resources.
             $ = new GetEdgeWorkersPropertyRulesArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param edgeworkerId Unique identifier of an EdgeWorker ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder edgeworkerId(Output<Integer> edgeworkerId) {
             $.edgeworkerId = edgeworkerId;
             return this;
         }
 
-        /**
-         * @param edgeworkerId Unique identifier of an EdgeWorker ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder edgeworkerId(Integer edgeworkerId) {
             return edgeworkerId(Output.of(edgeworkerId));
         }

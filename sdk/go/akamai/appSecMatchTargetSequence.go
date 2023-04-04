@@ -11,63 +11,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration
-//
-// Specifies the order in which match targets are applied within a security configuration. As a general rule, you should process broader and more-general match targets first, gradually working your way down to more granular and highly-specific targets.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func readFileOrPanic(path string) pulumi.StringPtrInput {
-//		data, err := os.ReadFile(path)
-//		if err != nil {
-//			panic(err.Error())
-//		}
-//		return pulumi.String(string(data))
-//	}
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppSecMatchTargetSequence(ctx, "matchTargetSequence", &akamai.AppSecMatchTargetSequenceArgs{
-//				ConfigId:            *pulumi.Int(configuration.ConfigId),
-//				MatchTargetSequence: readFileOrPanic(fmt.Sprintf("%v/match_targets_sequence.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type AppSecMatchTargetSequence struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configuration associated with the match target sequence being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+	// JSON-formatted definition of the processing sequence for all defined match targets
 	MatchTargetSequence pulumi.StringPtrOutput `pulumi:"matchTargetSequence"`
 }
 
@@ -103,16 +52,16 @@ func GetAppSecMatchTargetSequence(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecMatchTargetSequence resources.
 type appSecMatchTargetSequenceState struct {
-	// . Unique identifier of the security configuration associated with the match target sequence being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+	// JSON-formatted definition of the processing sequence for all defined match targets
 	MatchTargetSequence *string `pulumi:"matchTargetSequence"`
 }
 
 type AppSecMatchTargetSequenceState struct {
-	// . Unique identifier of the security configuration associated with the match target sequence being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+	// JSON-formatted definition of the processing sequence for all defined match targets
 	MatchTargetSequence pulumi.StringPtrInput
 }
 
@@ -121,17 +70,17 @@ func (AppSecMatchTargetSequenceState) ElementType() reflect.Type {
 }
 
 type appSecMatchTargetSequenceArgs struct {
-	// . Unique identifier of the security configuration associated with the match target sequence being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+	// JSON-formatted definition of the processing sequence for all defined match targets
 	MatchTargetSequence *string `pulumi:"matchTargetSequence"`
 }
 
 // The set of arguments for constructing a AppSecMatchTargetSequence resource.
 type AppSecMatchTargetSequenceArgs struct {
-	// . Unique identifier of the security configuration associated with the match target sequence being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+	// JSON-formatted definition of the processing sequence for all defined match targets
 	MatchTargetSequence pulumi.StringPtrInput
 }
 
@@ -222,12 +171,12 @@ func (o AppSecMatchTargetSequenceOutput) ToAppSecMatchTargetSequenceOutputWithCo
 	return o
 }
 
-// . Unique identifier of the security configuration associated with the match target sequence being modified.
+// Unique identifier of the security configuration
 func (o AppSecMatchTargetSequenceOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecMatchTargetSequence) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+// JSON-formatted definition of the processing sequence for all defined match targets
 func (o AppSecMatchTargetSequenceOutput) MatchTargetSequence() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppSecMatchTargetSequence) pulumi.StringPtrOutput { return v.MatchTargetSequence }).(pulumi.StringPtrOutput)
 }

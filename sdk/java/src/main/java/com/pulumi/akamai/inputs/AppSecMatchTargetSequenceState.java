@@ -17,14 +17,14 @@ public final class AppSecMatchTargetSequenceState extends com.pulumi.resources.R
     public static final AppSecMatchTargetSequenceState Empty = new AppSecMatchTargetSequenceState();
 
     /**
-     * . Unique identifier of the security configuration associated with the match target sequence being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the match target sequence being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -32,14 +32,14 @@ public final class AppSecMatchTargetSequenceState extends com.pulumi.resources.R
     }
 
     /**
-     * . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+     * JSON-formatted definition of the processing sequence for all defined match targets
      * 
      */
     @Import(name="matchTargetSequence")
     private @Nullable Output<String> matchTargetSequence;
 
     /**
-     * @return . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+     * @return JSON-formatted definition of the processing sequence for all defined match targets
      * 
      */
     public Optional<Output<String>> matchTargetSequence() {
@@ -72,7 +72,7 @@ public final class AppSecMatchTargetSequenceState extends com.pulumi.resources.R
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the match target sequence being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class AppSecMatchTargetSequenceState extends com.pulumi.resources.R
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the match target sequence being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class AppSecMatchTargetSequenceState extends com.pulumi.resources.R
         }
 
         /**
-         * @param matchTargetSequence . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+         * @param matchTargetSequence JSON-formatted definition of the processing sequence for all defined match targets
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class AppSecMatchTargetSequenceState extends com.pulumi.resources.R
         }
 
         /**
-         * @param matchTargetSequence . Path to a JSON file containing the processing sequence for all the match targets defined for the security configuration. You can find a sample match target sequence JSON file in the [Modify match target order](https://techdocs.akamai.com/application-security/reference/put-match-targets-sequence) section of the Application Security API documentation.
+         * @param matchTargetSequence JSON-formatted definition of the processing sequence for all defined match targets
          * 
          * @return builder
          * 

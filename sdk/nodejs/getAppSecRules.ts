@@ -18,17 +18,8 @@ export function getAppSecRules(args: GetAppSecRulesArgs, opts?: pulumi.InvokeOpt
  * A collection of arguments for invoking getAppSecRules.
  */
 export interface GetAppSecRulesArgs {
-    /**
-     * . Unique identifier of the security configuration associated with the rules.
-     */
     configId: number;
-    /**
-     * . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
-     */
     ruleId?: number;
-    /**
-     * . Unique identifier of the security policy associated with the rules.
-     */
     securityPolicyId: string;
 }
 
@@ -56,16 +47,7 @@ export function getAppSecRulesOutput(args: GetAppSecRulesOutputArgs, opts?: pulu
  * A collection of arguments for invoking getAppSecRules.
  */
 export interface GetAppSecRulesOutputArgs {
-    /**
-     * . Unique identifier of the security configuration associated with the rules.
-     */
     configId: pulumi.Input<number>;
-    /**
-     * . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
-     */
     ruleId?: pulumi.Input<number>;
-    /**
-     * . Unique identifier of the security policy associated with the rules.
-     */
     securityPolicyId: pulumi.Input<string>;
 }

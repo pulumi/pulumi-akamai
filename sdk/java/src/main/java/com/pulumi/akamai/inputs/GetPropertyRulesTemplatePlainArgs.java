@@ -17,77 +17,37 @@ public final class GetPropertyRulesTemplatePlainArgs extends com.pulumi.resource
 
     public static final GetPropertyRulesTemplatePlainArgs Empty = new GetPropertyRulesTemplatePlainArgs();
 
-    /**
-     * The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
-     * 
-     */
     @Import(name="templateFile")
     private @Nullable String templateFile;
 
-    /**
-     * @return The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
-     * 
-     */
     public Optional<String> templateFile() {
         return Optional.ofNullable(this.templateFile);
     }
 
-    /**
-     * The template you use in your configuration. This argument conflicts with the `template_file` argument.
-     * 
-     */
     @Import(name="templates")
     private @Nullable List<GetPropertyRulesTemplateTemplate> templates;
 
-    /**
-     * @return The template you use in your configuration. This argument conflicts with the `template_file` argument.
-     * 
-     */
     public Optional<List<GetPropertyRulesTemplateTemplate>> templates() {
         return Optional.ofNullable(this.templates);
     }
 
-    /**
-     * Required when using `var_values_file`. The absolute path to the file containing variable definitions and defaults. This argument conflicts with the `variables` argument.
-     * 
-     */
     @Import(name="varDefinitionFile")
     private @Nullable String varDefinitionFile;
 
-    /**
-     * @return Required when using `var_values_file`. The absolute path to the file containing variable definitions and defaults. This argument conflicts with the `variables` argument.
-     * 
-     */
     public Optional<String> varDefinitionFile() {
         return Optional.ofNullable(this.varDefinitionFile);
     }
 
-    /**
-     * Required when using `var_definition_file`. The absolute path to the file containing variable values. This argument conflicts with the `variables` argument.
-     * 
-     */
     @Import(name="varValuesFile")
     private @Nullable String varValuesFile;
 
-    /**
-     * @return Required when using `var_definition_file`. The absolute path to the file containing variable values. This argument conflicts with the `variables` argument.
-     * 
-     */
     public Optional<String> varValuesFile() {
         return Optional.ofNullable(this.varValuesFile);
     }
 
-    /**
-     * The definition of one or more variables. This argument conflicts with the `var_definition_file` and `var_values_file` arguments. A `variables` block includes:
-     * 
-     */
     @Import(name="variables")
     private @Nullable List<GetPropertyRulesTemplateVariable> variables;
 
-    /**
-     * @return The definition of one or more variables. This argument conflicts with the `var_definition_file` and `var_values_file` arguments. A `variables` block includes:
-     * 
-     */
     public Optional<List<GetPropertyRulesTemplateVariable>> variables() {
         return Optional.ofNullable(this.variables);
     }
@@ -120,77 +80,35 @@ public final class GetPropertyRulesTemplatePlainArgs extends com.pulumi.resource
             $ = new GetPropertyRulesTemplatePlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param templateFile The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
-         * 
-         * @return builder
-         * 
-         */
         public Builder templateFile(@Nullable String templateFile) {
             $.templateFile = templateFile;
             return this;
         }
 
-        /**
-         * @param templates The template you use in your configuration. This argument conflicts with the `template_file` argument.
-         * 
-         * @return builder
-         * 
-         */
         public Builder templates(@Nullable List<GetPropertyRulesTemplateTemplate> templates) {
             $.templates = templates;
             return this;
         }
 
-        /**
-         * @param templates The template you use in your configuration. This argument conflicts with the `template_file` argument.
-         * 
-         * @return builder
-         * 
-         */
         public Builder templates(GetPropertyRulesTemplateTemplate... templates) {
             return templates(List.of(templates));
         }
 
-        /**
-         * @param varDefinitionFile Required when using `var_values_file`. The absolute path to the file containing variable definitions and defaults. This argument conflicts with the `variables` argument.
-         * 
-         * @return builder
-         * 
-         */
         public Builder varDefinitionFile(@Nullable String varDefinitionFile) {
             $.varDefinitionFile = varDefinitionFile;
             return this;
         }
 
-        /**
-         * @param varValuesFile Required when using `var_definition_file`. The absolute path to the file containing variable values. This argument conflicts with the `variables` argument.
-         * 
-         * @return builder
-         * 
-         */
         public Builder varValuesFile(@Nullable String varValuesFile) {
             $.varValuesFile = varValuesFile;
             return this;
         }
 
-        /**
-         * @param variables The definition of one or more variables. This argument conflicts with the `var_definition_file` and `var_values_file` arguments. A `variables` block includes:
-         * 
-         * @return builder
-         * 
-         */
         public Builder variables(@Nullable List<GetPropertyRulesTemplateVariable> variables) {
             $.variables = variables;
             return this;
         }
 
-        /**
-         * @param variables The definition of one or more variables. This argument conflicts with the `var_definition_file` and `var_values_file` arguments. A `variables` block includes:
-         * 
-         * @return builder
-         * 
-         */
         public Builder variables(GetPropertyRulesTemplateVariable... variables) {
             return variables(List.of(variables));
         }

@@ -21,12 +21,9 @@ func GetAppSecEvalGroups(ctx *pulumi.Context, args *GetAppSecEvalGroupsArgs, opt
 
 // A collection of arguments for invoking getAppSecEvalGroups.
 type GetAppSecEvalGroupsArgs struct {
-	// . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-	AttackGroup *string `pulumi:"attackGroup"`
-	// . Unique identifier of the security configuration associated with the evaluation attack group.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the evaluation attack group.
-	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	AttackGroup      *string `pulumi:"attackGroup"`
+	ConfigId         int     `pulumi:"configId"`
+	SecurityPolicyId string  `pulumi:"securityPolicyId"`
 }
 
 // A collection of values returned by getAppSecEvalGroups.
@@ -57,12 +54,9 @@ func GetAppSecEvalGroupsOutput(ctx *pulumi.Context, args GetAppSecEvalGroupsOutp
 
 // A collection of arguments for invoking getAppSecEvalGroups.
 type GetAppSecEvalGroupsOutputArgs struct {
-	// . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-	AttackGroup pulumi.StringPtrInput `pulumi:"attackGroup"`
-	// . Unique identifier of the security configuration associated with the evaluation attack group.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the evaluation attack group.
-	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+	AttackGroup      pulumi.StringPtrInput `pulumi:"attackGroup"`
+	ConfigId         pulumi.IntInput       `pulumi:"configId"`
+	SecurityPolicyId pulumi.StringInput    `pulumi:"securityPolicyId"`
 }
 
 func (GetAppSecEvalGroupsOutputArgs) ElementType() reflect.Type {

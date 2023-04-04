@@ -21,11 +21,8 @@ func GetAppSecRules(ctx *pulumi.Context, args *GetAppSecRulesArgs, opts ...pulum
 
 // A collection of arguments for invoking getAppSecRules.
 type GetAppSecRulesArgs struct {
-	// . Unique identifier of the security configuration associated with the rules.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
-	RuleId *int `pulumi:"ruleId"`
-	// . Unique identifier of the security policy associated with the rules.
+	ConfigId         int    `pulumi:"configId"`
+	RuleId           *int   `pulumi:"ruleId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -57,11 +54,8 @@ func GetAppSecRulesOutput(ctx *pulumi.Context, args GetAppSecRulesOutputArgs, op
 
 // A collection of arguments for invoking getAppSecRules.
 type GetAppSecRulesOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the rules.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
-	RuleId pulumi.IntPtrInput `pulumi:"ruleId"`
-	// . Unique identifier of the security policy associated with the rules.
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
+	RuleId           pulumi.IntPtrInput `pulumi:"ruleId"`
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 

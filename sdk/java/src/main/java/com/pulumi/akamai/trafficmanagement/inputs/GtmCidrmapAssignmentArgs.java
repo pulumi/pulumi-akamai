@@ -17,47 +17,23 @@ public final class GtmCidrmapAssignmentArgs extends com.pulumi.resources.Resourc
 
     public static final GtmCidrmapAssignmentArgs Empty = new GtmCidrmapAssignmentArgs();
 
-    /**
-     * Specifies an array of CIDR blocks.
-     * 
-     */
     @Import(name="blocks")
     private @Nullable Output<List<String>> blocks;
 
-    /**
-     * @return Specifies an array of CIDR blocks.
-     * 
-     */
     public Optional<Output<List<String>>> blocks() {
         return Optional.ofNullable(this.blocks);
     }
 
-    /**
-     * A unique identifier for an existing data center in the domain.
-     * 
-     */
     @Import(name="datacenterId", required=true)
     private Output<Integer> datacenterId;
 
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Output<Integer> datacenterId() {
         return this.datacenterId;
     }
 
-    /**
-     * A descriptive label for the CIDR zone group, up to 256 characters.
-     * 
-     */
     @Import(name="nickname", required=true)
     private Output<String> nickname;
 
-    /**
-     * @return A descriptive label for the CIDR zone group, up to 256 characters.
-     * 
-     */
     public Output<String> nickname() {
         return this.nickname;
     }
@@ -88,75 +64,33 @@ public final class GtmCidrmapAssignmentArgs extends com.pulumi.resources.Resourc
             $ = new GtmCidrmapAssignmentArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param blocks Specifies an array of CIDR blocks.
-         * 
-         * @return builder
-         * 
-         */
         public Builder blocks(@Nullable Output<List<String>> blocks) {
             $.blocks = blocks;
             return this;
         }
 
-        /**
-         * @param blocks Specifies an array of CIDR blocks.
-         * 
-         * @return builder
-         * 
-         */
         public Builder blocks(List<String> blocks) {
             return blocks(Output.of(blocks));
         }
 
-        /**
-         * @param blocks Specifies an array of CIDR blocks.
-         * 
-         * @return builder
-         * 
-         */
         public Builder blocks(String... blocks) {
             return blocks(List.of(blocks));
         }
 
-        /**
-         * @param datacenterId A unique identifier for an existing data center in the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenterId(Output<Integer> datacenterId) {
             $.datacenterId = datacenterId;
             return this;
         }
 
-        /**
-         * @param datacenterId A unique identifier for an existing data center in the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenterId(Integer datacenterId) {
             return datacenterId(Output.of(datacenterId));
         }
 
-        /**
-         * @param nickname A descriptive label for the CIDR zone group, up to 256 characters.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nickname(Output<String> nickname) {
             $.nickname = nickname;
             return this;
         }
 
-        /**
-         * @param nickname A descriptive label for the CIDR zone group, up to 256 characters.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nickname(String nickname) {
             return nickname(Output.of(nickname));
         }

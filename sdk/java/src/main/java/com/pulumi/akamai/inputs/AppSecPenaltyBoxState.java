@@ -18,14 +18,14 @@ public final class AppSecPenaltyBoxState extends com.pulumi.resources.ResourceAr
     public static final AppSecPenaltyBoxState Empty = new AppSecPenaltyBoxState();
 
     /**
-     * . Unique identifier of the security configuration associated with the penalty box settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the penalty box settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -33,22 +33,14 @@ public final class AppSecPenaltyBoxState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * . Action taken any time penalty box protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * The action to be taken when the penalty box is triggered
      * 
      */
     @Import(name="penaltyBoxAction")
     private @Nullable Output<String> penaltyBoxAction;
 
     /**
-     * @return . Action taken any time penalty box protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * @return The action to be taken when the penalty box is triggered
      * 
      */
     public Optional<Output<String>> penaltyBoxAction() {
@@ -56,14 +48,14 @@ public final class AppSecPenaltyBoxState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
+     * Whether to enable the penalty box for the specified security policy
      * 
      */
     @Import(name="penaltyBoxProtection")
     private @Nullable Output<Boolean> penaltyBoxProtection;
 
     /**
-     * @return . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
+     * @return Whether to enable the penalty box for the specified security policy
      * 
      */
     public Optional<Output<Boolean>> penaltyBoxProtection() {
@@ -71,14 +63,14 @@ public final class AppSecPenaltyBoxState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * . Unique identifier of the security policy associated with the penalty box settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the penalty box settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -113,7 +105,7 @@ public final class AppSecPenaltyBoxState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the penalty box settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -124,7 +116,7 @@ public final class AppSecPenaltyBoxState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the penalty box settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -134,11 +126,7 @@ public final class AppSecPenaltyBoxState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param penaltyBoxAction . Action taken any time penalty box protection is triggered. Allowed values are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param penaltyBoxAction The action to be taken when the penalty box is triggered
          * 
          * @return builder
          * 
@@ -149,11 +137,7 @@ public final class AppSecPenaltyBoxState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param penaltyBoxAction . Action taken any time penalty box protection is triggered. Allowed values are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param penaltyBoxAction The action to be taken when the penalty box is triggered
          * 
          * @return builder
          * 
@@ -163,7 +147,7 @@ public final class AppSecPenaltyBoxState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param penaltyBoxProtection . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
+         * @param penaltyBoxProtection Whether to enable the penalty box for the specified security policy
          * 
          * @return builder
          * 
@@ -174,7 +158,7 @@ public final class AppSecPenaltyBoxState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param penaltyBoxProtection . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
+         * @param penaltyBoxProtection Whether to enable the penalty box for the specified security policy
          * 
          * @return builder
          * 
@@ -184,7 +168,7 @@ public final class AppSecPenaltyBoxState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the penalty box settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -195,7 +179,7 @@ public final class AppSecPenaltyBoxState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the penalty box settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

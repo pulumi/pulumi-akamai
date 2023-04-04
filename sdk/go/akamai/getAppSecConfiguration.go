@@ -21,7 +21,6 @@ func LookupAppSecConfiguration(ctx *pulumi.Context, args *LookupAppSecConfigurat
 
 // A collection of arguments for invoking getAppSecConfiguration.
 type LookupAppSecConfigurationArgs struct {
-	// . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
 	Name *string `pulumi:"name"`
 }
 
@@ -52,7 +51,6 @@ func LookupAppSecConfigurationOutput(ctx *pulumi.Context, args LookupAppSecConfi
 
 // A collection of arguments for invoking getAppSecConfiguration.
 type LookupAppSecConfigurationOutputArgs struct {
-	// . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 

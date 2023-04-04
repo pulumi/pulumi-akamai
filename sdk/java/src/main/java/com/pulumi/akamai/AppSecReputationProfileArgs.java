@@ -15,14 +15,14 @@ public final class AppSecReputationProfileArgs extends com.pulumi.resources.Reso
     public static final AppSecReputationProfileArgs Empty = new AppSecReputationProfileArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the reputation profile being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -30,14 +30,14 @@ public final class AppSecReputationProfileArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * . Path to a JSON file containing a definition of the reputation profile.
+     * JSON-formatted definition of the reputation profile
      * 
      */
     @Import(name="reputationProfile", required=true)
     private Output<String> reputationProfile;
 
     /**
-     * @return . Path to a JSON file containing a definition of the reputation profile.
+     * @return JSON-formatted definition of the reputation profile
      * 
      */
     public Output<String> reputationProfile() {
@@ -70,7 +70,7 @@ public final class AppSecReputationProfileArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profile being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class AppSecReputationProfileArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profile being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class AppSecReputationProfileArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param reputationProfile . Path to a JSON file containing a definition of the reputation profile.
+         * @param reputationProfile JSON-formatted definition of the reputation profile
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class AppSecReputationProfileArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param reputationProfile . Path to a JSON file containing a definition of the reputation profile.
+         * @param reputationProfile JSON-formatted definition of the reputation profile
          * 
          * @return builder
          * 

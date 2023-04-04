@@ -13,41 +13,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GtmDatacenterDefaultLoadObject {
-    /**
-     * @return A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
-     * 
-     */
     private @Nullable String loadObject;
-    /**
-     * @return Specifies the TCP port to connect to when requesting the load object.
-     * 
-     */
     private @Nullable Integer loadObjectPort;
-    /**
-     * @return Specifies a list of servers to request the load object from.
-     * 
-     */
     private @Nullable List<String> loadServers;
 
     private GtmDatacenterDefaultLoadObject() {}
-    /**
-     * @return A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
-     * 
-     */
     public Optional<String> loadObject() {
         return Optional.ofNullable(this.loadObject);
     }
-    /**
-     * @return Specifies the TCP port to connect to when requesting the load object.
-     * 
-     */
     public Optional<Integer> loadObjectPort() {
         return Optional.ofNullable(this.loadObjectPort);
     }
-    /**
-     * @return Specifies a list of servers to request the load object from.
-     * 
-     */
     public List<String> loadServers() {
         return this.loadServers == null ? List.of() : this.loadServers;
     }

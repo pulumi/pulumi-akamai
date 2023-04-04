@@ -4,39 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security configuration; security policy
- *
- * Enables, disables, or updates HTTP header logging settings.
- * By default, this operation applies at the configuration level, which means that it applies to all the security policies within that configuration.
- * However, by using the `securityPolicyId` parameter you can specify custom settings for an individual security policy.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://techdocs.akamai.com/application-security/reference/put-policies-logging)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- * import * as fs from "fs";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const logging = new akamai.AppSecAdvancedSettingsLogging("logging", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     logging: fs.readFileSync(`${path.module}/logging.json`),
- * });
- * // USE CASE: User wants to configure logging settings for a security policy.
- * const policyLogging = new akamai.AppSecAdvancedSettingsLogging("policyLogging", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: "gms1_134637",
- *     logging: fs.readFileSync(`${path.module}/logging.json`),
- * });
- * ```
- */
 export class AppSecAdvancedSettingsLogging extends pulumi.CustomResource {
     /**
      * Get an existing AppSecAdvancedSettingsLogging resource's state with the given name, ID, and optional extra
@@ -66,15 +33,15 @@ export class AppSecAdvancedSettingsLogging extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configuration containing the logging settings being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Path to a JSON file containing the logging settings to be configured.
+     * Whether to enable, disable, or update HTTP header logging settings
      */
     public readonly logging!: pulumi.Output<string>;
     /**
-     * . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string | undefined>;
 
@@ -116,15 +83,15 @@ export class AppSecAdvancedSettingsLogging extends pulumi.CustomResource {
  */
 export interface AppSecAdvancedSettingsLoggingState {
     /**
-     * . Unique identifier of the security configuration containing the logging settings being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing the logging settings to be configured.
+     * Whether to enable, disable, or update HTTP header logging settings
      */
     logging?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -134,15 +101,15 @@ export interface AppSecAdvancedSettingsLoggingState {
  */
 export interface AppSecAdvancedSettingsLoggingArgs {
     /**
-     * . Unique identifier of the security configuration containing the logging settings being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing the logging settings to be configured.
+     * Whether to enable, disable, or update HTTP header logging settings
      */
     logging: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }

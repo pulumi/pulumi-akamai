@@ -33,14 +33,14 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * . Unique identifier of the Akamai contract associated with the new configuration.
+     * Unique identifier of the Akamai contract associated with the new configuration
      * 
      */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
     /**
-     * @return . Unique identifier of the Akamai contract associated with the new configuration.
+     * @return Unique identifier of the Akamai contract associated with the new configuration
      * 
      */
     public Optional<Output<String>> contractId() {
@@ -48,14 +48,14 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+     * Unique identifier of the existing configuration being cloned to create the new configuration
      * 
      */
     @Import(name="createFromConfigId")
     private @Nullable Output<Integer> createFromConfigId;
 
     /**
-     * @return . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+     * @return Unique identifier of the existing configuration being cloned to create the new configuration
      * 
      */
     public Optional<Output<Integer>> createFromConfigId() {
@@ -63,14 +63,14 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * . Version number of the security configuration being cloned.
+     * Version number of the existing configuration being cloned to create the new configuration
      * 
      */
     @Import(name="createFromVersion")
     private @Nullable Output<Integer> createFromVersion;
 
     /**
-     * @return . Version number of the security configuration being cloned.
+     * @return Version number of the existing configuration being cloned to create the new configuration
      * 
      */
     public Optional<Output<Integer>> createFromVersion() {
@@ -78,14 +78,14 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * . Brief description of the new configuration.
+     * Brief description of the new configuration
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return . Brief description of the new configuration.
+     * @return Brief description of the new configuration
      * 
      */
     public Optional<Output<String>> description() {
@@ -93,14 +93,14 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * . Unique identifier of the contract group associated with the new configuration.
+     * Unique identifier of the contract group associated with the new configuration
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<Integer> groupId;
 
     /**
-     * @return . Unique identifier of the contract group associated with the new configuration.
+     * @return Unique identifier of the contract group associated with the new configuration
      * 
      */
     public Optional<Output<Integer>> groupId() {
@@ -108,14 +108,14 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+     * Hostnames to be protected by the new configuration
      * 
      */
     @Import(name="hostNames")
     private @Nullable Output<List<String>> hostNames;
 
     /**
-     * @return . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+     * @return Hostnames to be protected by the new configuration
      * 
      */
     public Optional<Output<List<String>>> hostNames() {
@@ -123,14 +123,14 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * . Name of the new configuration.
+     * Name of the new configuration
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return . Name of the new configuration.
+     * @return Name of the new configuration
      * 
      */
     public Optional<Output<String>> name() {
@@ -190,7 +190,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param contractId . Unique identifier of the Akamai contract associated with the new configuration.
+         * @param contractId Unique identifier of the Akamai contract associated with the new configuration
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param contractId . Unique identifier of the Akamai contract associated with the new configuration.
+         * @param contractId Unique identifier of the Akamai contract associated with the new configuration
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param createFromConfigId . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+         * @param createFromConfigId Unique identifier of the existing configuration being cloned to create the new configuration
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param createFromConfigId . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+         * @param createFromConfigId Unique identifier of the existing configuration being cloned to create the new configuration
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param createFromVersion . Version number of the security configuration being cloned.
+         * @param createFromVersion Version number of the existing configuration being cloned to create the new configuration
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param createFromVersion . Version number of the security configuration being cloned.
+         * @param createFromVersion Version number of the existing configuration being cloned to create the new configuration
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description . Brief description of the new configuration.
+         * @param description Brief description of the new configuration
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description . Brief description of the new configuration.
+         * @param description Brief description of the new configuration
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param groupId . Unique identifier of the contract group associated with the new configuration.
+         * @param groupId Unique identifier of the contract group associated with the new configuration
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param groupId . Unique identifier of the contract group associated with the new configuration.
+         * @param groupId Unique identifier of the contract group associated with the new configuration
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param hostNames . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+         * @param hostNames Hostnames to be protected by the new configuration
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param hostNames . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+         * @param hostNames Hostnames to be protected by the new configuration
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param hostNames . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+         * @param hostNames Hostnames to be protected by the new configuration
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param name . Name of the new configuration.
+         * @param name Name of the new configuration
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class AppSecConfigurationState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param name . Name of the new configuration.
+         * @param name Name of the new configuration
          * 
          * @return builder
          * 

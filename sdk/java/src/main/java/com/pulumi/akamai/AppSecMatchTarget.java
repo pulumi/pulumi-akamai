@@ -14,83 +14,31 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security configuration
- * 
- * Creates a match target associated with a security configuration. Match targets determine which security policy should apply to an API, hostname or path.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets](https://techdocs.akamai.com/application-security/reference/post-match-targets)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecMatchTarget;
- * import com.pulumi.akamai.AppSecMatchTargetArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var matchTarget = new AppSecMatchTarget(&#34;matchTarget&#34;, AppSecMatchTargetArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .matchTarget(Files.readString(Paths.get(String.format(&#34;%s/match_targets.json&#34;, path.module()))))
- *             .build());
- * 
- *     }
- * }
- * ```
- * ## Output Options
- * 
- * In addition to the arguments above, the following attribute is exported:
- * 
- * - `match_target_id`. ID of the match target.
- * 
- */
 @ResourceType(type="akamai:index/appSecMatchTarget:AppSecMatchTarget")
 public class AppSecMatchTarget extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the match target being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the match target being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Path to a JSON file containing one or more match target definitions.
+     * JSON-formatted definition of the match target
      * 
      */
     @Export(name="matchTarget", type=String.class, parameters={})
     private Output<String> matchTarget;
 
     /**
-     * @return . Path to a JSON file containing one or more match target definitions.
+     * @return JSON-formatted definition of the match target
      * 
      */
     public Output<String> matchTarget() {

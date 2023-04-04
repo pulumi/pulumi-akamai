@@ -21,9 +21,6 @@ namespace Pulumi.Akamai.Outputs
         public readonly string CreatedDate;
         public readonly int CurrentVersionId;
         public readonly ImmutableArray<Outputs.GetDatastreamsStreamErrorResult> Errors;
-        /// <summary>
-        /// Unique identifier of the group that can access the product.
-        /// </summary>
         public readonly int GroupId;
         public readonly string GroupName;
         public readonly ImmutableArray<Outputs.GetDatastreamsStreamPropertyResult> Properties;

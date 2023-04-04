@@ -20,9 +20,9 @@ class IamRoleArgs:
                  type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a IamRole resource.
-        :param pulumi.Input[str] description: The description for a role.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] granted_roles: The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
-        :param pulumi.Input[str] name: The name you supply for a role.
+        :param pulumi.Input[str] description: The description for a role
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] granted_roles: The list of existing unique identifiers for the granted roles
+        :param pulumi.Input[str] name: The name you supply for a role
         :param pulumi.Input[str] type: The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
         """
         pulumi.set(__self__, "description", description)
@@ -36,7 +36,7 @@ class IamRoleArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[str]:
         """
-        The description for a role.
+        The description for a role
         """
         return pulumi.get(self, "description")
 
@@ -48,7 +48,7 @@ class IamRoleArgs:
     @pulumi.getter(name="grantedRoles")
     def granted_roles(self) -> pulumi.Input[Sequence[pulumi.Input[int]]]:
         """
-        The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+        The list of existing unique identifiers for the granted roles
         """
         return pulumi.get(self, "granted_roles")
 
@@ -60,7 +60,7 @@ class IamRoleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name you supply for a role.
+        The name you supply for a role
         """
         return pulumi.get(self, "name")
 
@@ -90,9 +90,9 @@ class _IamRoleState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering IamRole resources.
-        :param pulumi.Input[str] description: The description for a role.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] granted_roles: The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
-        :param pulumi.Input[str] name: The name you supply for a role.
+        :param pulumi.Input[str] description: The description for a role
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] granted_roles: The list of existing unique identifiers for the granted roles
+        :param pulumi.Input[str] name: The name you supply for a role
         :param pulumi.Input[str] type: The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
         """
         if description is not None:
@@ -108,7 +108,7 @@ class _IamRoleState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        The description for a role.
+        The description for a role
         """
         return pulumi.get(self, "description")
 
@@ -120,7 +120,7 @@ class _IamRoleState:
     @pulumi.getter(name="grantedRoles")
     def granted_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
         """
-        The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+        The list of existing unique identifiers for the granted roles
         """
         return pulumi.get(self, "granted_roles")
 
@@ -132,7 +132,7 @@ class _IamRoleState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name you supply for a role.
+        The name you supply for a role
         """
         return pulumi.get(self, "name")
 
@@ -164,33 +164,12 @@ class IamRole(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use the `IamRole` resource to list and create roles for users. Roles are lists of permissions that are explicitly tied to both a user and a group. Users need roles to act on objects in a group.
-
-        ## Basic usage
-
-        This example returns information on available roles:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example = akamai.IamRole("example",
-            description="This role will allow you to view",
-            granted_roles=2051,
-            type="custom")
-        ```
-
-        ## Attributes reference
-
-        This resource returns this attribute:
-
-        * `type` - The type indicates whether the role is `standard`, provided by Akamai, or `custom` for the account.
-
+        Create a IamRole resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: The description for a role.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] granted_roles: The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
-        :param pulumi.Input[str] name: The name you supply for a role.
+        :param pulumi.Input[str] description: The description for a role
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] granted_roles: The list of existing unique identifiers for the granted roles
+        :param pulumi.Input[str] name: The name you supply for a role
         :param pulumi.Input[str] type: The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
         """
         ...
@@ -200,28 +179,7 @@ class IamRole(pulumi.CustomResource):
                  args: IamRoleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `IamRole` resource to list and create roles for users. Roles are lists of permissions that are explicitly tied to both a user and a group. Users need roles to act on objects in a group.
-
-        ## Basic usage
-
-        This example returns information on available roles:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example = akamai.IamRole("example",
-            description="This role will allow you to view",
-            granted_roles=2051,
-            type="custom")
-        ```
-
-        ## Attributes reference
-
-        This resource returns this attribute:
-
-        * `type` - The type indicates whether the role is `standard`, provided by Akamai, or `custom` for the account.
-
+        Create a IamRole resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param IamRoleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -279,9 +237,9 @@ class IamRole(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] description: The description for a role.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] granted_roles: The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
-        :param pulumi.Input[str] name: The name you supply for a role.
+        :param pulumi.Input[str] description: The description for a role
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] granted_roles: The list of existing unique identifiers for the granted roles
+        :param pulumi.Input[str] name: The name you supply for a role
         :param pulumi.Input[str] type: The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -298,7 +256,7 @@ class IamRole(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        The description for a role.
+        The description for a role
         """
         return pulumi.get(self, "description")
 
@@ -306,7 +264,7 @@ class IamRole(pulumi.CustomResource):
     @pulumi.getter(name="grantedRoles")
     def granted_roles(self) -> pulumi.Output[Sequence[int]]:
         """
-        The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+        The list of existing unique identifiers for the granted roles
         """
         return pulumi.get(self, "granted_roles")
 
@@ -314,7 +272,7 @@ class IamRole(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The name you supply for a role.
+        The name you supply for a role
         """
         return pulumi.get(self, "name")
 

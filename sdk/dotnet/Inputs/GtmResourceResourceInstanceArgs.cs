@@ -12,39 +12,23 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GtmResourceResourceInstanceArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// A unique identifier for an existing data center in the domain.
-        /// </summary>
         [Input("datacenterId", required: true)]
         public Input<int> DatacenterId { get; set; } = null!;
 
-        /// <summary>
-        /// Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
-        /// </summary>
         [Input("loadObject")]
         public Input<string>? LoadObject { get; set; }
 
-        /// <summary>
-        /// Specifies the TCP port of the `load_object`.
-        /// </summary>
         [Input("loadObjectPort")]
         public Input<int>? LoadObjectPort { get; set; }
 
         [Input("loadServers")]
         private InputList<string>? _loadServers;
-
-        /// <summary>
-        /// (List) Specifies a list of servers from which to request the load object.
-        /// </summary>
         public InputList<string> LoadServers
         {
             get => _loadServers ?? (_loadServers = new InputList<string>());
             set => _loadServers = value;
         }
 
-        /// <summary>
-        /// A boolean that indicates whether a default `load_object` is used for the resources.
-        /// </summary>
         [Input("useDefaultLoadObject")]
         public Input<bool>? UseDefaultLoadObject { get; set; }
 

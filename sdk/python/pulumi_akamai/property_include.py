@@ -23,13 +23,13 @@ class PropertyIncludeArgs:
                  rules: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a PropertyInclude resource.
-        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-        :param pulumi.Input[str] rule_format: (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
-        :param pulumi.Input[str] type: (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-        :param pulumi.Input[str] name: (Required) The descriptive name for the include.
+        :param pulumi.Input[str] contract_id: Identifies the contract to which the include is assigned
+        :param pulumi.Input[str] group_id: Identifies the group to which the include is assigned
+        :param pulumi.Input[str] rule_format: Indicates the versioned set of features and criteria
+        :param pulumi.Input[str] type: Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
+        :param pulumi.Input[str] name: A descriptive name for the include
         :param pulumi.Input[str] product_id: The product assigned to the include
-        :param pulumi.Input[str] rules: (Optional) Include's rules as JSON.
+        :param pulumi.Input[str] rules: Property Rules as JSON
         """
         pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "group_id", group_id)
@@ -46,7 +46,7 @@ class PropertyIncludeArgs:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Input[str]:
         """
-        (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        Identifies the contract to which the include is assigned
         """
         return pulumi.get(self, "contract_id")
 
@@ -58,7 +58,7 @@ class PropertyIncludeArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[str]:
         """
-        (Required) A group's unique ID, including the optional `grp_` prefix.
+        Identifies the group to which the include is assigned
         """
         return pulumi.get(self, "group_id")
 
@@ -70,7 +70,7 @@ class PropertyIncludeArgs:
     @pulumi.getter(name="ruleFormat")
     def rule_format(self) -> pulumi.Input[str]:
         """
-        (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+        Indicates the versioned set of features and criteria
         """
         return pulumi.get(self, "rule_format")
 
@@ -82,7 +82,7 @@ class PropertyIncludeArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
         """
         return pulumi.get(self, "type")
 
@@ -94,7 +94,7 @@ class PropertyIncludeArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Required) The descriptive name for the include.
+        A descriptive name for the include
         """
         return pulumi.get(self, "name")
 
@@ -118,7 +118,7 @@ class PropertyIncludeArgs:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[str]]:
         """
-        (Optional) Include's rules as JSON.
+        Property Rules as JSON
         """
         return pulumi.get(self, "rules")
 
@@ -144,18 +144,18 @@ class _PropertyIncludeState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PropertyInclude resources.
-        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
+        :param pulumi.Input[str] contract_id: Identifies the contract to which the include is assigned
+        :param pulumi.Input[str] group_id: Identifies the group to which the include is assigned
         :param pulumi.Input[int] latest_version: Specifies the most recent version of the include
-        :param pulumi.Input[str] name: (Required) The descriptive name for the include.
+        :param pulumi.Input[str] name: A descriptive name for the include
         :param pulumi.Input[str] product_id: The product assigned to the include
         :param pulumi.Input[str] production_version: The most recent version to be activated to the production network
         :param pulumi.Input[str] rule_errors: Rule validation errors
-        :param pulumi.Input[str] rule_format: (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+        :param pulumi.Input[str] rule_format: Indicates the versioned set of features and criteria
         :param pulumi.Input[str] rule_warnings: Rule validation warnings
-        :param pulumi.Input[str] rules: (Optional) Include's rules as JSON.
+        :param pulumi.Input[str] rules: Property Rules as JSON
         :param pulumi.Input[str] staging_version: The most recent version to be activated to the staging network
-        :param pulumi.Input[str] type: (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        :param pulumi.Input[str] type: Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
         """
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
@@ -186,7 +186,7 @@ class _PropertyIncludeState:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        Identifies the contract to which the include is assigned
         """
         return pulumi.get(self, "contract_id")
 
@@ -198,7 +198,7 @@ class _PropertyIncludeState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Required) A group's unique ID, including the optional `grp_` prefix.
+        Identifies the group to which the include is assigned
         """
         return pulumi.get(self, "group_id")
 
@@ -222,7 +222,7 @@ class _PropertyIncludeState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Required) The descriptive name for the include.
+        A descriptive name for the include
         """
         return pulumi.get(self, "name")
 
@@ -270,7 +270,7 @@ class _PropertyIncludeState:
     @pulumi.getter(name="ruleFormat")
     def rule_format(self) -> Optional[pulumi.Input[str]]:
         """
-        (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+        Indicates the versioned set of features and criteria
         """
         return pulumi.get(self, "rule_format")
 
@@ -294,7 +294,7 @@ class _PropertyIncludeState:
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[str]]:
         """
-        (Optional) Include's rules as JSON.
+        Property Rules as JSON
         """
         return pulumi.get(self, "rules")
 
@@ -318,7 +318,7 @@ class _PropertyIncludeState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
         """
         return pulumi.get(self, "type")
 
@@ -341,41 +341,16 @@ class PropertyInclude(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use the `PropertyInclude` resource to create an include and its rule tree.
-
-        ## Basic usage
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        my_example = akamai.PropertyInclude("myExample",
-            contract_id="ctr_1-AB123",
-            group_id="grp_12345",
-            product_id="prd_123456",
-            rule_format="v2022-10-18",
-            type="MICROSERVICES")
-        ```
-
-        ## Attributes reference
-
-        This resource returns these attributes:
-
-        * `rule_errors` - Rule's validation errors. You need to resolve returned errors, as they block an activation.
-        * `rule_warnings` - Rule's validation warnings. You can activate a version that yields less severe warnings.
-        * `latest_version` - Returns the most recent version of the include.
-        * `staging_version` - The include version currently activated on the staging network.
-        * `production_version` - The include version currently activated on the production network.
-
+        Create a PropertyInclude resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-        :param pulumi.Input[str] name: (Required) The descriptive name for the include.
+        :param pulumi.Input[str] contract_id: Identifies the contract to which the include is assigned
+        :param pulumi.Input[str] group_id: Identifies the group to which the include is assigned
+        :param pulumi.Input[str] name: A descriptive name for the include
         :param pulumi.Input[str] product_id: The product assigned to the include
-        :param pulumi.Input[str] rule_format: (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
-        :param pulumi.Input[str] rules: (Optional) Include's rules as JSON.
-        :param pulumi.Input[str] type: (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        :param pulumi.Input[str] rule_format: Indicates the versioned set of features and criteria
+        :param pulumi.Input[str] rules: Property Rules as JSON
+        :param pulumi.Input[str] type: Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
         """
         ...
     @overload
@@ -384,32 +359,7 @@ class PropertyInclude(pulumi.CustomResource):
                  args: PropertyIncludeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `PropertyInclude` resource to create an include and its rule tree.
-
-        ## Basic usage
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        my_example = akamai.PropertyInclude("myExample",
-            contract_id="ctr_1-AB123",
-            group_id="grp_12345",
-            product_id="prd_123456",
-            rule_format="v2022-10-18",
-            type="MICROSERVICES")
-        ```
-
-        ## Attributes reference
-
-        This resource returns these attributes:
-
-        * `rule_errors` - Rule's validation errors. You need to resolve returned errors, as they block an activation.
-        * `rule_warnings` - Rule's validation warnings. You can activate a version that yields less severe warnings.
-        * `latest_version` - Returns the most recent version of the include.
-        * `staging_version` - The include version currently activated on the staging network.
-        * `production_version` - The include version currently activated on the production network.
-
+        Create a PropertyInclude resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PropertyIncludeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -490,18 +440,18 @@ class PropertyInclude(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        :param pulumi.Input[str] group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
+        :param pulumi.Input[str] contract_id: Identifies the contract to which the include is assigned
+        :param pulumi.Input[str] group_id: Identifies the group to which the include is assigned
         :param pulumi.Input[int] latest_version: Specifies the most recent version of the include
-        :param pulumi.Input[str] name: (Required) The descriptive name for the include.
+        :param pulumi.Input[str] name: A descriptive name for the include
         :param pulumi.Input[str] product_id: The product assigned to the include
         :param pulumi.Input[str] production_version: The most recent version to be activated to the production network
         :param pulumi.Input[str] rule_errors: Rule validation errors
-        :param pulumi.Input[str] rule_format: (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+        :param pulumi.Input[str] rule_format: Indicates the versioned set of features and criteria
         :param pulumi.Input[str] rule_warnings: Rule validation warnings
-        :param pulumi.Input[str] rules: (Optional) Include's rules as JSON.
+        :param pulumi.Input[str] rules: Property Rules as JSON
         :param pulumi.Input[str] staging_version: The most recent version to be activated to the staging network
-        :param pulumi.Input[str] type: (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        :param pulumi.Input[str] type: Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -525,7 +475,7 @@ class PropertyInclude(pulumi.CustomResource):
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[str]:
         """
-        (Required) A contract's unique ID, including the optional `ctr_` prefix.
+        Identifies the contract to which the include is assigned
         """
         return pulumi.get(self, "contract_id")
 
@@ -533,7 +483,7 @@ class PropertyInclude(pulumi.CustomResource):
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[str]:
         """
-        (Required) A group's unique ID, including the optional `grp_` prefix.
+        Identifies the group to which the include is assigned
         """
         return pulumi.get(self, "group_id")
 
@@ -549,7 +499,7 @@ class PropertyInclude(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Required) The descriptive name for the include.
+        A descriptive name for the include
         """
         return pulumi.get(self, "name")
 
@@ -581,7 +531,7 @@ class PropertyInclude(pulumi.CustomResource):
     @pulumi.getter(name="ruleFormat")
     def rule_format(self) -> pulumi.Output[str]:
         """
-        (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+        Indicates the versioned set of features and criteria
         """
         return pulumi.get(self, "rule_format")
 
@@ -597,7 +547,7 @@ class PropertyInclude(pulumi.CustomResource):
     @pulumi.getter
     def rules(self) -> pulumi.Output[str]:
         """
-        (Optional) Include's rules as JSON.
+        Property Rules as JSON
         """
         return pulumi.get(self, "rules")
 
@@ -613,7 +563,7 @@ class PropertyInclude(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
         """
-        (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+        Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
         """
         return pulumi.get(self, "type")
 

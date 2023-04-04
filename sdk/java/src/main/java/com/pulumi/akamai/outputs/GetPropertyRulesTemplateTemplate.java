@@ -9,29 +9,13 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPropertyRulesTemplateTemplate {
-    /**
-     * @return The content of the JSON template as a string.
-     * 
-     */
     private String templateData;
-    /**
-     * @return The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `template_dir = abspath(&#34;${path.root}/property-snippets/&#34;)`, or `template_dir = &#34;property-snippets/&#34;`.
-     * 
-     */
     private String templateDir;
 
     private GetPropertyRulesTemplateTemplate() {}
-    /**
-     * @return The content of the JSON template as a string.
-     * 
-     */
     public String templateData() {
         return this.templateData;
     }
-    /**
-     * @return The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `template_dir = abspath(&#34;${path.root}/property-snippets/&#34;)`, or `template_dir = &#34;property-snippets/&#34;`.
-     * 
-     */
     public String templateDir() {
         return this.templateDir;
     }

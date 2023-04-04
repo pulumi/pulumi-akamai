@@ -4,23 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.NetworkListDescription` resource to update the name or description of an existing network list.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const networkListDescription = new akamai.NetworkListDescription("networkListDescription", {
- *     networkListId: _var.network_list_id,
- *     description: "Test network list updated description",
- * });
- * ```
- */
 export class NetworkListDescription extends pulumi.CustomResource {
     /**
      * Get an existing NetworkListDescription resource's state with the given name, ID, and optional extra
@@ -49,17 +32,8 @@ export class NetworkListDescription extends pulumi.CustomResource {
         return obj['__pulumiType'] === NetworkListDescription.__pulumiType;
     }
 
-    /**
-     * The description to be assigned to the network list.
-     */
     public readonly description!: pulumi.Output<string>;
-    /**
-     * The name to be assigned to the network list.
-     */
     public readonly name!: pulumi.Output<string>;
-    /**
-     * The unique ID of the network list to use.
-     */
     public readonly networkListId!: pulumi.Output<string>;
 
     /**
@@ -99,17 +73,8 @@ export class NetworkListDescription extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NetworkListDescription resources.
  */
 export interface NetworkListDescriptionState {
-    /**
-     * The description to be assigned to the network list.
-     */
     description?: pulumi.Input<string>;
-    /**
-     * The name to be assigned to the network list.
-     */
     name?: pulumi.Input<string>;
-    /**
-     * The unique ID of the network list to use.
-     */
     networkListId?: pulumi.Input<string>;
 }
 
@@ -117,16 +82,7 @@ export interface NetworkListDescriptionState {
  * The set of arguments for constructing a NetworkListDescription resource.
  */
 export interface NetworkListDescriptionArgs {
-    /**
-     * The description to be assigned to the network list.
-     */
     description: pulumi.Input<string>;
-    /**
-     * The name to be assigned to the network list.
-     */
     name?: pulumi.Input<string>;
-    /**
-     * The unique ID of the network list to use.
-     */
     networkListId: pulumi.Input<string>;
 }

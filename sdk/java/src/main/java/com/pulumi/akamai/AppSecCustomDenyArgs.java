@@ -15,14 +15,14 @@ public final class AppSecCustomDenyArgs extends com.pulumi.resources.ResourceArg
     public static final AppSecCustomDenyArgs Empty = new AppSecCustomDenyArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the custom deny.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the custom deny.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -30,14 +30,14 @@ public final class AppSecCustomDenyArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * . Path to a JSON file containing properties and property values for the custom deny.
+     * JSON-formatted information about the properties and property values for the custom deny
      * 
      */
     @Import(name="customDeny", required=true)
     private Output<String> customDeny;
 
     /**
-     * @return . Path to a JSON file containing properties and property values for the custom deny.
+     * @return JSON-formatted information about the properties and property values for the custom deny
      * 
      */
     public Output<String> customDeny() {
@@ -70,7 +70,7 @@ public final class AppSecCustomDenyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the custom deny.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class AppSecCustomDenyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the custom deny.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class AppSecCustomDenyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param customDeny . Path to a JSON file containing properties and property values for the custom deny.
+         * @param customDeny JSON-formatted information about the properties and property values for the custom deny
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class AppSecCustomDenyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param customDeny . Path to a JSON file containing properties and property values for the custom deny.
+         * @param customDeny JSON-formatted information about the properties and property values for the custom deny
          * 
          * @return builder
          * 

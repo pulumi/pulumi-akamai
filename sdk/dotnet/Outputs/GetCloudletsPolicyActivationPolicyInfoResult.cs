@@ -16,15 +16,9 @@ namespace Pulumi.Akamai.Outputs
         public readonly string ActivatedBy;
         public readonly int ActivationDate;
         public readonly string Name;
-        /// <summary>
-        /// (Required) An integer identifier that is associated with all versions of a policy.
-        /// </summary>
         public readonly int PolicyId;
         public readonly string Status;
         public readonly string StatusDetail;
-        /// <summary>
-        /// (Optional) The version number of a policy.
-        /// </summary>
         public readonly int Version;
 
         [OutputConstructor]

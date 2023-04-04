@@ -11,23 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetContract
     {
-        /// <summary>
-        /// Use the `akamai.getContract` data source to find a contract ID.
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// * `id` - The contract's unique ID, including the `ctr_` prefix.
-        /// </summary>
         public static Task<GetContractResult> InvokeAsync(GetContractArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetContractResult>("akamai:index/getContract:getContract", args ?? new GetContractArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getContract` data source to find a contract ID.
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// * `id` - The contract's unique ID, including the `ctr_` prefix.
-        /// </summary>
         public static Output<GetContractResult> Invoke(GetContractInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetContractResult>("akamai:index/getContract:getContract", args ?? new GetContractInvokeArgs(), options.WithDefaults());
     }
@@ -35,21 +21,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetContractArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Either the group ID or the group name that includes the contract. You can't use this argument with `group_id` and `group_name`.
-        /// </summary>
         [Input("group")]
         public string? Group { get; set; }
 
-        /// <summary>
-        /// The unique ID of the group containing the contract, including the  `grp_` prefix.
-        /// </summary>
         [Input("groupId")]
         public string? GroupId { get; set; }
 
-        /// <summary>
-        /// The name of the group containing the contract.
-        /// </summary>
         [Input("groupName")]
         public string? GroupName { get; set; }
 
@@ -61,21 +38,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetContractInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Either the group ID or the group name that includes the contract. You can't use this argument with `group_id` and `group_name`.
-        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
-        /// <summary>
-        /// The unique ID of the group containing the contract, including the  `grp_` prefix.
-        /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
-        /// <summary>
-        /// The name of the group containing the contract.
-        /// </summary>
         [Input("groupName")]
         public Input<string>? GroupName { get; set; }
 

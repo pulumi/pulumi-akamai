@@ -83,35 +83,7 @@ class AwaitableGetAppSecFailoverHostnamesResult(GetAppSecFailoverHostnamesResult
 def get_app_sec_failover_hostnames(config_id: Optional[int] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecFailoverHostnamesResult:
     """
-    **Scopes**: Security configuration
-
-    Returns a list of the failover hostnames in a configuration.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/failover-hostnames](https://techdocs.akamai.com/application-security/reference/get-failover-hostnames)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    failover_hostnames_app_sec_failover_hostnames = akamai.get_app_sec_failover_hostnames(config_id=configuration.config_id)
-    pulumi.export("failoverHostnames", failover_hostnames_app_sec_failover_hostnames.hostnames)
-    pulumi.export("failoverHostnamesOutput", failover_hostnames_app_sec_failover_hostnames.output_text)
-    pulumi.export("failoverHostnamesJson", failover_hostnames_app_sec_failover_hostnames.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `hostnames`. List of the failover hostnames.
-    - `json`. JSON-formatted list of the failover hostnames.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the failover hosts.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -130,34 +102,6 @@ def get_app_sec_failover_hostnames(config_id: Optional[int] = None,
 def get_app_sec_failover_hostnames_output(config_id: Optional[pulumi.Input[int]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecFailoverHostnamesResult]:
     """
-    **Scopes**: Security configuration
-
-    Returns a list of the failover hostnames in a configuration.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/failover-hostnames](https://techdocs.akamai.com/application-security/reference/get-failover-hostnames)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    failover_hostnames_app_sec_failover_hostnames = akamai.get_app_sec_failover_hostnames(config_id=configuration.config_id)
-    pulumi.export("failoverHostnames", failover_hostnames_app_sec_failover_hostnames.hostnames)
-    pulumi.export("failoverHostnamesOutput", failover_hostnames_app_sec_failover_hostnames.output_text)
-    pulumi.export("failoverHostnamesJson", failover_hostnames_app_sec_failover_hostnames.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `hostnames`. List of the failover hostnames.
-    - `json`. JSON-formatted list of the failover hostnames.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the failover hosts.
+    Use this data source to access information about an existing resource.
     """
     ...

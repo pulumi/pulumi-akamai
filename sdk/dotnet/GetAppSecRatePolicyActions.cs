@@ -11,99 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecRatePolicyActions
     {
-        /// <summary>
-        /// **Scopes**: Security policy; rate policy
-        /// 
-        /// Returns information about your rate policy actions. Actions specify what happens any time a rate policy is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
-        /// 
-        /// **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies](https://techdocs.akamai.com/application-security/reference/get-rate-policies-actions)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var ratePolicyActionsAppSecRatePolicyActions = Akamai.GetAppSecRatePolicyActions.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["ratePolicyActions"] = ratePolicyActionsAppSecRatePolicyActions.Apply(getAppSecRatePolicyActionsResult =&gt; getAppSecRatePolicyActionsResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `output_text`. Tabular report showing the ID, IPv4 action, and IPv6 action of the rate policies.
-        /// </summary>
         public static Task<GetAppSecRatePolicyActionsResult> InvokeAsync(GetAppSecRatePolicyActionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecRatePolicyActionsResult>("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", args ?? new GetAppSecRatePolicyActionsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security policy; rate policy
-        /// 
-        /// Returns information about your rate policy actions. Actions specify what happens any time a rate policy is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
-        /// 
-        /// **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies](https://techdocs.akamai.com/application-security/reference/get-rate-policies-actions)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var ratePolicyActionsAppSecRatePolicyActions = Akamai.GetAppSecRatePolicyActions.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["ratePolicyActions"] = ratePolicyActionsAppSecRatePolicyActions.Apply(getAppSecRatePolicyActionsResult =&gt; getAppSecRatePolicyActionsResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `output_text`. Tabular report showing the ID, IPv4 action, and IPv6 action of the rate policies.
-        /// </summary>
         public static Output<GetAppSecRatePolicyActionsResult> Invoke(GetAppSecRatePolicyActionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecRatePolicyActionsResult>("akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions", args ?? new GetAppSecRatePolicyActionsInvokeArgs(), options.WithDefaults());
     }
@@ -111,21 +21,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecRatePolicyActionsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
-        /// </summary>
         [Input("ratePolicyId")]
         public int? RatePolicyId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the rate policies and rate policy actions.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -137,21 +38,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecRatePolicyActionsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
-        /// </summary>
         [Input("ratePolicyId")]
         public Input<int>? RatePolicyId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the rate policies and rate policy actions.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

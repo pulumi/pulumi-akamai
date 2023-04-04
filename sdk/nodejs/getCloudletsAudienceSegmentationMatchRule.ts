@@ -6,18 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
- *
- * Use the `akamai.getCloudletsAudienceSegmentationMatchRule` data source to build a match rule JSON object for the Audience Segmentation Cloudlet.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `type` - The type of Cloudlet the rule is for.
- * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
- */
 export function getCloudletsAudienceSegmentationMatchRule(args?: GetCloudletsAudienceSegmentationMatchRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsAudienceSegmentationMatchRuleResult> {
     args = args || {};
 
@@ -31,9 +19,6 @@ export function getCloudletsAudienceSegmentationMatchRule(args?: GetCloudletsAud
  * A collection of arguments for invoking getCloudletsAudienceSegmentationMatchRule.
  */
 export interface GetCloudletsAudienceSegmentationMatchRuleArgs {
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     */
     matchRules?: inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRule[];
 }
 
@@ -48,18 +33,6 @@ export interface GetCloudletsAudienceSegmentationMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRule[];
 }
-/**
- * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
- *
- * Use the `akamai.getCloudletsAudienceSegmentationMatchRule` data source to build a match rule JSON object for the Audience Segmentation Cloudlet.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `type` - The type of Cloudlet the rule is for.
- * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
- */
 export function getCloudletsAudienceSegmentationMatchRuleOutput(args?: GetCloudletsAudienceSegmentationMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsAudienceSegmentationMatchRuleResult> {
     return pulumi.output(args).apply((a: any) => getCloudletsAudienceSegmentationMatchRule(a, opts))
 }
@@ -68,8 +41,5 @@ export function getCloudletsAudienceSegmentationMatchRuleOutput(args?: GetCloudl
  * A collection of arguments for invoking getCloudletsAudienceSegmentationMatchRule.
  */
 export interface GetCloudletsAudienceSegmentationMatchRuleOutputArgs {
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs>[]>;
 }

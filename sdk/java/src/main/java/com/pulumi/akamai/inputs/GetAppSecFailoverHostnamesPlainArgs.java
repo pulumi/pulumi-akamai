@@ -12,17 +12,9 @@ public final class GetAppSecFailoverHostnamesPlainArgs extends com.pulumi.resour
 
     public static final GetAppSecFailoverHostnamesPlainArgs Empty = new GetAppSecFailoverHostnamesPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the failover hosts.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the failover hosts.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
@@ -51,12 +43,6 @@ public final class GetAppSecFailoverHostnamesPlainArgs extends com.pulumi.resour
             $ = new GetAppSecFailoverHostnamesPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the failover hosts.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;

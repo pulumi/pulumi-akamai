@@ -13,17 +13,8 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GtmDatacenterDefaultLoadObject
     {
-        /// <summary>
-        /// A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
-        /// </summary>
         public readonly string? LoadObject;
-        /// <summary>
-        /// Specifies the TCP port to connect to when requesting the load object.
-        /// </summary>
         public readonly int? LoadObjectPort;
-        /// <summary>
-        /// Specifies a list of servers to request the load object from.
-        /// </summary>
         public readonly ImmutableArray<string> LoadServers;
 
         [OutputConstructor]

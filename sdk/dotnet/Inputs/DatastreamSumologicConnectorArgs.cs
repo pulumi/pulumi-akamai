@@ -14,10 +14,6 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("collectorCode", required: true)]
         private Input<string>? _collectorCode;
-
-        /// <summary>
-        /// **Secret**. The unique HTTP collector code of your Sumo Logic `endpoint`.
-        /// </summary>
         public Input<string>? CollectorCode
         {
             get => _collectorCode;
@@ -28,43 +24,24 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
-        /// <summary>
-        /// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-        /// </summary>
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
         [Input("connectorId")]
         public Input<int>? ConnectorId { get; set; }
 
-        /// <summary>
-        /// The name of the connector.
-        /// </summary>
         [Input("connectorName", required: true)]
         public Input<string> ConnectorName { get; set; } = null!;
 
-        /// <summary>
-        /// Content type to pass in the log file header.
-        /// </summary>
         [Input("contentType")]
         public Input<string>? ContentType { get; set; }
 
-        /// <summary>
-        /// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
-        /// </summary>
         [Input("customHeaderName")]
         public Input<string>? CustomHeaderName { get; set; }
 
-        /// <summary>
-        /// The custom header's contents passed with the request that contains information about the client connection.
-        /// </summary>
         [Input("customHeaderValue")]
         public Input<string>? CustomHeaderValue { get; set; }
 
-        /// <summary>
-        /// The Elasticsearch bulk endpoint URL in the format: `https://&lt;hostname&gt;.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
-        /// &lt;br&gt;Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
-        /// </summary>
         [Input("endpoint", required: true)]
         public Input<string> Endpoint { get; set; } = null!;
 

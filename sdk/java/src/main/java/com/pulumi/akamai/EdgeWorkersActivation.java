@@ -14,99 +14,59 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.EdgeWorkersActivation` resource to activate a specific EdgeWorker version. An activation deploys the version to either the Akamai staging or production network.
- * 
- * Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.EdgeWorkersActivation;
- * import com.pulumi.akamai.EdgeWorkersActivationArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var test = new EdgeWorkersActivation(&#34;test&#34;, EdgeWorkersActivationArgs.builder()        
- *             .edgeworkerId(1234)
- *             .network(&#34;STAGING&#34;)
- *             .version(&#34;test1&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/edgeWorkersActivation:EdgeWorkersActivation")
 public class EdgeWorkersActivation extends com.pulumi.resources.CustomResource {
     /**
-     * (Required) Unique identifier of the activation.
+     * A unique identifier of the activation
      * 
      */
     @Export(name="activationId", type=Integer.class, parameters={})
     private Output<Integer> activationId;
 
     /**
-     * @return (Required) Unique identifier of the activation.
+     * @return A unique identifier of the activation
      * 
      */
     public Output<Integer> activationId() {
         return this.activationId;
     }
     /**
-     * A unique identifier for the EdgeWorker ID you want to activate.
+     * Id of the EdgeWorker to activate
      * 
      */
     @Export(name="edgeworkerId", type=Integer.class, parameters={})
     private Output<Integer> edgeworkerId;
 
     /**
-     * @return A unique identifier for the EdgeWorker ID you want to activate.
+     * @return Id of the EdgeWorker to activate
      * 
      */
     public Output<Integer> edgeworkerId() {
         return this.edgeworkerId;
     }
     /**
-     * The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * The network on which the version will be activated
      * 
      */
     @Export(name="network", type=String.class, parameters={})
     private Output<String> network;
 
     /**
-     * @return The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * @return The network on which the version will be activated
      * 
      */
     public Output<String> network() {
         return this.network;
     }
     /**
-     * The EdgeWorker version you want to activate.
+     * The version of EdgeWorker to activate
      * 
      */
     @Export(name="version", type=String.class, parameters={})
     private Output<String> version;
 
     /**
-     * @return The EdgeWorker version you want to activate.
+     * @return The version of EdgeWorker to activate
      * 
      */
     public Output<String> version() {

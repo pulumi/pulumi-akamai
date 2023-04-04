@@ -76,29 +76,7 @@ def get_properties_search(key: Optional[str] = None,
                           value: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertiesSearchResult:
     """
-    Use the _get_properties_search_ data source to retrieve the list of properties matching a specific hostname, edge hostname or property name based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
-
-    ## Example Usage
-
-    Return properties associated with the EdgeGrid API client token currently used for authentication:
-
-    ```python
-    import pulumi
-
-    pulumi.export("myPropertyList", data["akamai_properties_search"]["example"])
-    ```
-    ## Attributes reference
-
-    This data source returns this attribute:
-
-    * `properties` - A list of property version matching the given criteria.
-
-
-    :param str key: Key used for search. Valid values are:
-           * **hostname**
-           * **edgeHostname**
-           * **propertyName**
-    :param str value: (Required) Value to search for.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['key'] = key
@@ -118,28 +96,6 @@ def get_properties_search_output(key: Optional[pulumi.Input[str]] = None,
                                  value: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertiesSearchResult]:
     """
-    Use the _get_properties_search_ data source to retrieve the list of properties matching a specific hostname, edge hostname or property name based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
-
-    ## Example Usage
-
-    Return properties associated with the EdgeGrid API client token currently used for authentication:
-
-    ```python
-    import pulumi
-
-    pulumi.export("myPropertyList", data["akamai_properties_search"]["example"])
-    ```
-    ## Attributes reference
-
-    This data source returns this attribute:
-
-    * `properties` - A list of property version matching the given criteria.
-
-
-    :param str key: Key used for search. Valid values are:
-           * **hostname**
-           * **edgeHostname**
-           * **propertyName**
-    :param str value: (Required) Value to search for.
+    Use this data source to access information about an existing resource.
     """
     ...

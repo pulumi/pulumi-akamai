@@ -55,29 +55,7 @@ class AwaitableGetGroupsResult(GetGroupsResult):
 
 def get_groups(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGroupsResult:
     """
-    Use the _get_groups_ data source to list groups associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
-
-    ## Basic usage
-
-    Return groups associated with the EdgeGrid API client token you're using:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    my_example = akamai.get_groups()
-    pulumi.export("propertyMatch", my_example)
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `groups` - A list of supported groups, with the following attributes:
-      * `group_id` - A group's unique ID, including the `grp_` prefix.
-      * `group_name` - The name of the group.
-      * `parent_group_id` - The ID of the parent group, if applicable.
-      * `contract_ids` - An array of strings listing the contract IDs for each group.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

@@ -11,39 +11,6 @@ namespace Pulumi.Akamai
 {
     public static class GetIamGrantableRoles
     {
-        /// <summary>
-        /// List which grantable roles you can include in a new custom role or add to an existing custom role.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the available roles to grant to users:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var example = Akamai.GetIamGrantableRoles.Invoke();
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["akaGrantableRolesCount"] = data.Akamai_iam_grantable_roles.Test.Grantable_roles.Length,
-        ///         ["akaGrantableRoles"] = data.Akamai_iam_grantable_roles.Test,
-        ///     };
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This resource returns this attribute:
-        /// 
-        /// * `grantable_roles` - Lists which grantable roles you can include in a new custom role or add to an existing custom role.
-        ///   * `granted_role_id` - Granted role ID.
-        ///   * `name` - Granted role name.
-        ///   * `description` - Granted role description.
-        /// </summary>
         public static Task<GetIamGrantableRolesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamGrantableRolesResult>("akamai:index/getIamGrantableRoles:getIamGrantableRoles", InvokeArgs.Empty, options.WithDefaults());
     }

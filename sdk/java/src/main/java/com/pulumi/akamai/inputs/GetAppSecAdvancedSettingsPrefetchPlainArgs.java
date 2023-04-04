@@ -12,17 +12,9 @@ public final class GetAppSecAdvancedSettingsPrefetchPlainArgs extends com.pulumi
 
     public static final GetAppSecAdvancedSettingsPrefetchPlainArgs Empty = new GetAppSecAdvancedSettingsPrefetchPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the prefetch settings.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the prefetch settings.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
@@ -51,12 +43,6 @@ public final class GetAppSecAdvancedSettingsPrefetchPlainArgs extends com.pulumi
             $ = new GetAppSecAdvancedSettingsPrefetchPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the prefetch settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;

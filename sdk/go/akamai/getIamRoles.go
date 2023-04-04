@@ -7,41 +7,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use `getIamRoles` to list roles for the current account and contract type. The account and contract type are determined by the access tokens in your API client. Use the `roleId` from this data source to construct the `authGrantsJson` when creating or updating a user's auth grants.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			my_roles, err := akamai.GetIamRoles(ctx, nil, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("roles", my_roles)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// These attributes are returned:
-//
-// * `roles` — A list of roles.
-//
-// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-roles)
 func GetIamRoles(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamRolesResult, error) {
 	var rv GetIamRolesResult
 	err := ctx.Invoke("akamai:index/getIamRoles:getIamRoles", nil, &rv, opts...)

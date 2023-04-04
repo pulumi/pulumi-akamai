@@ -9,47 +9,15 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// Use the `akamai.NetworkListDescription` resource to update the name or description of an existing network list.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var networkListDescription = new Akamai.NetworkListDescription("networkListDescription", new()
-    ///     {
-    ///         NetworkListId = @var.Network_list_id,
-    ///         Description = "Test network list updated description",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/networkListDescription:NetworkListDescription")]
     public partial class NetworkListDescription : global::Pulumi.CustomResource
     {
-        /// <summary>
-        /// The description to be assigned to the network list.
-        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
-        /// <summary>
-        /// The name to be assigned to the network list.
-        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// The unique ID of the network list to use.
-        /// </summary>
         [Output("networkListId")]
         public Output<string> NetworkListId { get; private set; } = null!;
 
@@ -99,21 +67,12 @@ namespace Pulumi.Akamai
 
     public sealed class NetworkListDescriptionArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// The description to be assigned to the network list.
-        /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
-        /// <summary>
-        /// The name to be assigned to the network list.
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// The unique ID of the network list to use.
-        /// </summary>
         [Input("networkListId", required: true)]
         public Input<string> NetworkListId { get; set; } = null!;
 
@@ -125,21 +84,12 @@ namespace Pulumi.Akamai
 
     public sealed class NetworkListDescriptionState : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// The description to be assigned to the network list.
-        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
-        /// <summary>
-        /// The name to be assigned to the network list.
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// The unique ID of the network list to use.
-        /// </summary>
         [Input("networkListId")]
         public Input<string>? NetworkListId { get; set; }
 

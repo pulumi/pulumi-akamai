@@ -19,11 +19,9 @@ class AppSecRuleUpgradeArgs:
                  upgrade_mode: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecRuleUpgrade resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the ruleset being upgraded.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the ruleset being upgraded.
-        :param pulumi.Input[str] upgrade_mode: . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-               - **ASE_AUTO**. Akamai automatically updates your rulesets.
-               - **ASE_MANUAL**. Manually updates your rulesets.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] upgrade_mode: Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
@@ -34,7 +32,7 @@ class AppSecRuleUpgradeArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the ruleset being upgraded.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -46,7 +44,7 @@ class AppSecRuleUpgradeArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        . Unique identifier of the security policy associated with the ruleset being upgraded.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -58,9 +56,7 @@ class AppSecRuleUpgradeArgs:
     @pulumi.getter(name="upgradeMode")
     def upgrade_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-        - **ASE_AUTO**. Akamai automatically updates your rulesets.
-        - **ASE_MANUAL**. Manually updates your rulesets.
+        Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         """
         return pulumi.get(self, "upgrade_mode")
 
@@ -80,14 +76,12 @@ class _AppSecRuleUpgradeState:
                  upgrade_mode: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecRuleUpgrade resources.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the ruleset being upgraded.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] current_ruleset: Versioning information for the current KRS rule set
         :param pulumi.Input[str] eval_status: Whether an evaluation is currently in progress
         :param pulumi.Input[str] mode: Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the ruleset being upgraded.
-        :param pulumi.Input[str] upgrade_mode: . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-               - **ASE_AUTO**. Akamai automatically updates your rulesets.
-               - **ASE_MANUAL**. Manually updates your rulesets.
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] upgrade_mode: Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -106,7 +100,7 @@ class _AppSecRuleUpgradeState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the ruleset being upgraded.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -154,7 +148,7 @@ class _AppSecRuleUpgradeState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the security policy associated with the ruleset being upgraded.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -166,9 +160,7 @@ class _AppSecRuleUpgradeState:
     @pulumi.getter(name="upgradeMode")
     def upgrade_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-        - **ASE_AUTO**. Akamai automatically updates your rulesets.
-        - **ASE_MANUAL**. Manually updates your rulesets.
+        Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         """
         return pulumi.get(self, "upgrade_mode")
 
@@ -187,45 +179,12 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
                  upgrade_mode: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        rule_upgrade = akamai.AppSecRuleUpgrade("ruleUpgrade",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637")
-        pulumi.export("ruleUpgradeCurrentRuleset", rule_upgrade.current_ruleset)
-        pulumi.export("ruleUpgradeMode", rule_upgrade.mode)
-        pulumi.export("ruleUpgradeEvalStatus", rule_upgrade.eval_status)
-        ```
-        ## Output Options
-
-        The following options can be used to determine the information returned and how that returned information is formatted:
-
-        - `current_ruleset`. Versioning information for your current KRS rule set.
-        - `mode`. Specifies the current upgrade mode type. Valid values are:
-          - **KRS**. Rulesets must be manually upgraded.
-          
-          - **AAG**. Rulesets are automatically upgraded by Akamai.
-          
-          - **ASE_MANUAL**. Adaptive Security Engine rulesets must be manually upgraded.
-          
-          - **ASE_AUTO**. Adaptive Security Engine rulesets are automatically updated by Akamai.
-
-        - `eval_status`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
-
+        Create a AppSecRuleUpgrade resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the ruleset being upgraded.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the ruleset being upgraded.
-        :param pulumi.Input[str] upgrade_mode: . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-               - **ASE_AUTO**. Akamai automatically updates your rulesets.
-               - **ASE_MANUAL**. Manually updates your rulesets.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] upgrade_mode: Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         """
         ...
     @overload
@@ -234,38 +193,7 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
                  args: AppSecRuleUpgradeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        rule_upgrade = akamai.AppSecRuleUpgrade("ruleUpgrade",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637")
-        pulumi.export("ruleUpgradeCurrentRuleset", rule_upgrade.current_ruleset)
-        pulumi.export("ruleUpgradeMode", rule_upgrade.mode)
-        pulumi.export("ruleUpgradeEvalStatus", rule_upgrade.eval_status)
-        ```
-        ## Output Options
-
-        The following options can be used to determine the information returned and how that returned information is formatted:
-
-        - `current_ruleset`. Versioning information for your current KRS rule set.
-        - `mode`. Specifies the current upgrade mode type. Valid values are:
-          - **KRS**. Rulesets must be manually upgraded.
-          
-          - **AAG**. Rulesets are automatically upgraded by Akamai.
-          
-          - **ASE_MANUAL**. Adaptive Security Engine rulesets must be manually upgraded.
-          
-          - **ASE_AUTO**. Adaptive Security Engine rulesets are automatically updated by Akamai.
-
-        - `eval_status`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
-
+        Create a AppSecRuleUpgrade resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecRuleUpgradeArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -326,14 +254,12 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the ruleset being upgraded.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] current_ruleset: Versioning information for the current KRS rule set
         :param pulumi.Input[str] eval_status: Whether an evaluation is currently in progress
         :param pulumi.Input[str] mode: Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the ruleset being upgraded.
-        :param pulumi.Input[str] upgrade_mode: . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-               - **ASE_AUTO**. Akamai automatically updates your rulesets.
-               - **ASE_MANUAL**. Manually updates your rulesets.
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] upgrade_mode: Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -351,7 +277,7 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the ruleset being upgraded.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -383,7 +309,7 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        . Unique identifier of the security policy associated with the ruleset being upgraded.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -391,9 +317,7 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
     @pulumi.getter(name="upgradeMode")
     def upgrade_mode(self) -> pulumi.Output[Optional[str]]:
         """
-        . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-        - **ASE_AUTO**. Akamai automatically updates your rulesets.
-        - **ASE_MANUAL**. Manually updates your rulesets.
+        Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         """
         return pulumi.get(self, "upgrade_mode")
 

@@ -15,14 +15,14 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
     public static final EdgeWorkersActivationArgs Empty = new EdgeWorkersActivationArgs();
 
     /**
-     * A unique identifier for the EdgeWorker ID you want to activate.
+     * Id of the EdgeWorker to activate
      * 
      */
     @Import(name="edgeworkerId", required=true)
     private Output<Integer> edgeworkerId;
 
     /**
-     * @return A unique identifier for the EdgeWorker ID you want to activate.
+     * @return Id of the EdgeWorker to activate
      * 
      */
     public Output<Integer> edgeworkerId() {
@@ -30,14 +30,14 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * The network on which the version will be activated
      * 
      */
     @Import(name="network", required=true)
     private Output<String> network;
 
     /**
-     * @return The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * @return The network on which the version will be activated
      * 
      */
     public Output<String> network() {
@@ -45,14 +45,14 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * The EdgeWorker version you want to activate.
+     * The version of EdgeWorker to activate
      * 
      */
     @Import(name="version", required=true)
     private Output<String> version;
 
     /**
-     * @return The EdgeWorker version you want to activate.
+     * @return The version of EdgeWorker to activate
      * 
      */
     public Output<String> version() {
@@ -86,7 +86,7 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param edgeworkerId A unique identifier for the EdgeWorker ID you want to activate.
+         * @param edgeworkerId Id of the EdgeWorker to activate
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param edgeworkerId A unique identifier for the EdgeWorker ID you want to activate.
+         * @param edgeworkerId Id of the EdgeWorker to activate
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param network The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+         * @param network The network on which the version will be activated
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param network The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+         * @param network The network on which the version will be activated
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param version The EdgeWorker version you want to activate.
+         * @param version The version of EdgeWorker to activate
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class EdgeWorkersActivationArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param version The EdgeWorker version you want to activate.
+         * @param version The version of EdgeWorker to activate
          * 
          * @return builder
          * 

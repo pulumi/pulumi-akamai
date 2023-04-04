@@ -11,117 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecIPGeo
     {
-        /// <summary>
-        /// **Scopes**: Security configuration; security policy
-        /// 
-        /// Returns information about the network lists used in the IP/Geo Firewall settings; also returns the firewall `mode`, which indicates whether devices on the geographic or IP address lists are allowed through the firewall or are blocked by the firewall.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/get-policy-ip-geo-firewall)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var ipGeo = Akamai.GetAppSecIPGeo.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["ipGeoMode"] = ipGeo.Apply(getAppSecIPGeoResult =&gt; getAppSecIPGeoResult.Mode),
-        ///         ["geoNetworkLists"] = ipGeo.Apply(getAppSecIPGeoResult =&gt; getAppSecIPGeoResult.GeoNetworkLists),
-        ///         ["ipNetworkLists"] = ipGeo.Apply(getAppSecIPGeoResult =&gt; getAppSecIPGeoResult.IpNetworkLists),
-        ///         ["exceptionIpNetworkLists"] = ipGeo.Apply(getAppSecIPGeoResult =&gt; getAppSecIPGeoResult.ExceptionIpNetworkLists),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `mode`. Specifies the action taken by the IP/Geo firewall. Valid values are:
-        ///   - **block**. Networks on the IP and geographic network lists are prevented from passing through the firewall.
-        ///   - **allow**.  Networks on the IP and geographic network lists are allowed to pass through the firewall.
-        /// - `geo_network_lists`. Network lists blocked or allowed based on geographic location.
-        /// - `ip_network_lists`. Network lists blocked or allowed based on IP address.
-        /// - `exception_ip_network_lists`. Network lists allowed through the firewall regardless of the values assigned to the `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
-        /// - `output_text`. Tabular report of the IP/Geo firewall settings.
-        /// </summary>
         public static Task<GetAppSecIPGeoResult> InvokeAsync(GetAppSecIPGeoArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecIPGeoResult>("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args ?? new GetAppSecIPGeoArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security configuration; security policy
-        /// 
-        /// Returns information about the network lists used in the IP/Geo Firewall settings; also returns the firewall `mode`, which indicates whether devices on the geographic or IP address lists are allowed through the firewall or are blocked by the firewall.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/get-policy-ip-geo-firewall)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var ipGeo = Akamai.GetAppSecIPGeo.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["ipGeoMode"] = ipGeo.Apply(getAppSecIPGeoResult =&gt; getAppSecIPGeoResult.Mode),
-        ///         ["geoNetworkLists"] = ipGeo.Apply(getAppSecIPGeoResult =&gt; getAppSecIPGeoResult.GeoNetworkLists),
-        ///         ["ipNetworkLists"] = ipGeo.Apply(getAppSecIPGeoResult =&gt; getAppSecIPGeoResult.IpNetworkLists),
-        ///         ["exceptionIpNetworkLists"] = ipGeo.Apply(getAppSecIPGeoResult =&gt; getAppSecIPGeoResult.ExceptionIpNetworkLists),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `mode`. Specifies the action taken by the IP/Geo firewall. Valid values are:
-        ///   - **block**. Networks on the IP and geographic network lists are prevented from passing through the firewall.
-        ///   - **allow**.  Networks on the IP and geographic network lists are allowed to pass through the firewall.
-        /// - `geo_network_lists`. Network lists blocked or allowed based on geographic location.
-        /// - `ip_network_lists`. Network lists blocked or allowed based on IP address.
-        /// - `exception_ip_network_lists`. Network lists allowed through the firewall regardless of the values assigned to the `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
-        /// - `output_text`. Tabular report of the IP/Geo firewall settings.
-        /// </summary>
         public static Output<GetAppSecIPGeoResult> Invoke(GetAppSecIPGeoInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecIPGeoResult>("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args ?? new GetAppSecIPGeoInvokeArgs(), options.WithDefaults());
     }
@@ -129,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecIPGeoArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the IP/Geo lists.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the IP/Geo lists. If not included, information is returned for all your security policies.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -149,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecIPGeoInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the IP/Geo lists.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the IP/Geo lists. If not included, information is returned for all your security policies.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

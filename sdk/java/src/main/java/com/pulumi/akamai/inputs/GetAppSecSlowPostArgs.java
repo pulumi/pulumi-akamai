@@ -14,32 +14,16 @@ public final class GetAppSecSlowPostArgs extends com.pulumi.resources.InvokeArgs
 
     public static final GetAppSecSlowPostArgs Empty = new GetAppSecSlowPostArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the slow POST settings.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the slow POST settings.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the slow POST settings.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the slow POST settings.
-     * 
-     */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -69,44 +53,20 @@ public final class GetAppSecSlowPostArgs extends com.pulumi.resources.InvokeArgs
             $ = new GetAppSecSlowPostArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the slow POST settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the slow POST settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the slow POST settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the slow POST settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
         }

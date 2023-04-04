@@ -84,39 +84,7 @@ def get_app_sec_rate_policies(config_id: Optional[int] = None,
                               rate_policy_id: Optional[int] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecRatePoliciesResult:
     """
-    **Scopes**: Security configuration; rate policy
-
-    Returns information about your rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive; in turn, this helps you prevent your website from being overwhelmed by a dramatic, and unexpected, surge in traffic.
-
-    **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://techdocs.akamai.com/application-security/reference/get-rate-policies)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    rate_policies = akamai.get_app_sec_rate_policies(config_id=configuration.config_id)
-    pulumi.export("ratePoliciesOutput", rate_policies.output_text)
-    pulumi.export("ratePoliciesJson", rate_policies.json)
-    rate_policy = akamai.get_app_sec_rate_policies(config_id=configuration.config_id,
-        rate_policy_id=122149)
-    pulumi.export("ratePolicyJson", rate_policy.json)
-    pulumi.export("ratePolicyOutput", rate_policy.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `output_text`. Tabular report showing the ID and name of the rate policies.
-    - `json`. JSON-formatted list of the rate policy information.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the rate policies.
-    :param int rate_policy_id: . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -137,38 +105,6 @@ def get_app_sec_rate_policies_output(config_id: Optional[pulumi.Input[int]] = No
                                      rate_policy_id: Optional[pulumi.Input[Optional[int]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecRatePoliciesResult]:
     """
-    **Scopes**: Security configuration; rate policy
-
-    Returns information about your rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive; in turn, this helps you prevent your website from being overwhelmed by a dramatic, and unexpected, surge in traffic.
-
-    **Related API Endpoint:** [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://techdocs.akamai.com/application-security/reference/get-rate-policies)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    rate_policies = akamai.get_app_sec_rate_policies(config_id=configuration.config_id)
-    pulumi.export("ratePoliciesOutput", rate_policies.output_text)
-    pulumi.export("ratePoliciesJson", rate_policies.json)
-    rate_policy = akamai.get_app_sec_rate_policies(config_id=configuration.config_id,
-        rate_policy_id=122149)
-    pulumi.export("ratePolicyJson", rate_policy.json)
-    pulumi.export("ratePolicyOutput", rate_policy.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `output_text`. Tabular report showing the ID and name of the rate policies.
-    - `json`. JSON-formatted list of the rate policy information.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the rate policies.
-    :param int rate_policy_id: . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
+    Use this data source to access information about an existing resource.
     """
     ...

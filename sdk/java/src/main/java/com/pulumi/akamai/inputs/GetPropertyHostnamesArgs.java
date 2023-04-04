@@ -13,47 +13,23 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
 
     public static final GetPropertyHostnamesArgs Empty = new GetPropertyHostnamesArgs();
 
-    /**
-     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId", required=true)
     private Output<String> contractId;
 
-    /**
-     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     public Output<String> contractId() {
         return this.contractId;
     }
 
-    /**
-     * (Required) A group&#39;s unique ID, including the `grp_` prefix.
-     * 
-     */
     @Import(name="groupId", required=true)
     private Output<String> groupId;
 
-    /**
-     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
-     * 
-     */
     public Output<String> groupId() {
         return this.groupId;
     }
 
-    /**
-     * (Required) A property&#39;s unique ID, including the `prp_` prefix.
-     * 
-     */
     @Import(name="propertyId", required=true)
     private Output<String> propertyId;
 
-    /**
-     * @return (Required) A property&#39;s unique ID, including the `prp_` prefix.
-     * 
-     */
     public Output<String> propertyId() {
         return this.propertyId;
     }
@@ -84,65 +60,29 @@ public final class GetPropertyHostnamesArgs extends com.pulumi.resources.InvokeA
             $ = new GetPropertyHostnamesArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(Output<String> contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             return contractId(Output.of(contractId));
         }
 
-        /**
-         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(Output<String> groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        /**
-         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
         }
 
-        /**
-         * @param propertyId (Required) A property&#39;s unique ID, including the `prp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder propertyId(Output<String> propertyId) {
             $.propertyId = propertyId;
             return this;
         }
 
-        /**
-         * @param propertyId (Required) A property&#39;s unique ID, including the `prp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder propertyId(String propertyId) {
             return propertyId(Output.of(propertyId));
         }

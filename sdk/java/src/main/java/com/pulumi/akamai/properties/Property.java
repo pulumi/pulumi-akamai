@@ -22,110 +22,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * The `akamai.Property` resource represents an Akamai property configuration.
- * This resource lets you to create, update, and activate properties on the
- * Akamai platform.
- * 
- * Akamai&#39;s edge network caches your web assets near to servers that request them.
- * A property provides the main way to control how edge servers respond to various
- * kinds of requests for those assets. Properties apply rules to a set of hostnames,
- * and you can only apply one property at a time to any given hostname. Each property
- * is assigned to a product, which determines which behaviors you can use. Each
- * property&#39;s default rule needs a valid content provider (CP) code assigned to bill
- * and report for the service.
- * 
- * &gt; **Note** In version 0.10 and earlier of this resource, it also controlled content provider (CP) codes, origin settings, rules, and hostname associations. Starting with version 1.0.0, this logic is broken out into individual resources.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.Property;
- * import com.pulumi.akamai.PropertyArgs;
- * import com.pulumi.akamai.inputs.PropertyHostnameArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var example = new Property(&#34;example&#34;, PropertyArgs.builder()        
- *             .productId(&#34;prd_SPM&#34;)
- *             .contractId(var_.contractid())
- *             .groupId(var_.groupid())
- *             .hostnames(            
- *                 PropertyHostnameArgs.builder()
- *                     .cnameFrom(&#34;example.com&#34;)
- *                     .cnameTo(&#34;example.com.edgekey.net&#34;)
- *                     .certProvisioningType(&#34;DEFAULT&#34;)
- *                     .build(),
- *                 PropertyHostnameArgs.builder()
- *                     .cnameFrom(&#34;www.example.com&#34;)
- *                     .cnameTo(&#34;example.com.edgesuite.net&#34;)
- *                     .certProvisioningType(&#34;CPS_MANAGED&#34;)
- *                     .build())
- *             .ruleFormat(&#34;v2020-03-04&#34;)
- *             .rules(data.akamai_property_rules_template().example().json())
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- * ## Import
- * 
- * Basic Usagehcl resource &#34;akamai_property&#34; &#34;example&#34; {
- * 
- * # (resource arguments)
- * 
- *  } You can import the latest Akamai property version by using either the `property_id` or a comma-delimited string of the property, contract, and group IDs. You&#39;ll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` To import a specific property version, pass additional parameters, either* `LATEST` to import the latest version of the property, regardless of whether it&#39;s active or not. This works the same as providing just the `property_id` or a string of the property, contract, and group IDs, which is the default behavior. * `PRODUCTION`, `PROD`, or `P` to import the latest version activated on the production environment. * `STAGING`, `STAGE`, `STAG`, or `S` to import the latest version activated on the staging environment. * Version number or version number with the `ver_` prefix to import a specific property version. For example `3` and `ver_3` correspond to the same version number. Here are some examples for the latest property version
- * 
- * ```sh
- *  $ pulumi import akamai:properties/property:Property example prp_123
- * ```
- * 
- *  Or
- * 
- * ```sh
- *  $ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123
- * ```
- * 
- *  Here are some examples for the latest active property version on the production network
- * 
- * ```sh
- *  $ pulumi import akamai:properties/property:Property example prp_123,P
- * ```
- * 
- *  Or
- * 
- * ```sh
- *  $ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123,PROD
- * ```
- * 
- *  Here are some examples for the specific property version
- * 
- * ```sh
- *  $ pulumi import akamai:properties/property:Property example prp_123,3
- * ```
- * 
- *  Or
- * 
- * ```sh
- *  $ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123,ver_3
- * ```
- * 
  * @deprecated
  * akamai.properties.Property has been deprecated in favor of akamai.Property
  * 
@@ -146,8 +42,6 @@ public class Property extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.contacts);
     }
     /**
-     * Replaced by `contract_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;contract&#34; has been deprecated.
      * 
@@ -156,22 +50,18 @@ public class Property extends com.pulumi.resources.CustomResource {
     @Export(name="contract", type=String.class, parameters={})
     private Output<String> contract;
 
-    /**
-     * @return Replaced by `contract_id`. Maintained for legacy purposes.
-     * 
-     */
     public Output<String> contract() {
         return this.contract;
     }
     /**
-     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * Contract ID to be assigned to the Property
      * 
      */
     @Export(name="contractId", type=String.class, parameters={})
     private Output<String> contractId;
 
     /**
-     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * @return Contract ID to be assigned to the Property
      * 
      */
     public Output<String> contractId() {
@@ -190,8 +80,6 @@ public class Property extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.cpCode);
     }
     /**
-     * Replaced by `group_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;group&#34; has been deprecated.
      * 
@@ -200,38 +88,26 @@ public class Property extends com.pulumi.resources.CustomResource {
     @Export(name="group", type=String.class, parameters={})
     private Output<String> group;
 
-    /**
-     * @return Replaced by `group_id`. Maintained for legacy purposes.
-     * 
-     */
     public Output<String> group() {
         return this.group;
     }
     /**
-     * (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * Group ID to be assigned to the Property
      * 
      */
     @Export(name="groupId", type=String.class, parameters={})
     private Output<String> groupId;
 
     /**
-     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * @return Group ID to be assigned to the Property
      * 
      */
     public Output<String> groupId() {
         return this.groupId;
     }
-    /**
-     * A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
-     * 
-     */
     @Export(name="hostnames", type=List.class, parameters={PropertyHostname.class})
     private Output</* @Nullable */ List<PropertyHostname>> hostnames;
 
-    /**
-     * @return A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
-     * 
-     */
     public Output<Optional<List<PropertyHostname>>> hostnames() {
         return Codegen.optional(this.hostnames);
     }
@@ -248,28 +124,28 @@ public class Property extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.isSecure);
     }
     /**
-     * The version of the property you&#39;ve created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
+     * Property&#39;s current latest version number
      * 
      */
     @Export(name="latestVersion", type=Integer.class, parameters={})
     private Output<Integer> latestVersion;
 
     /**
-     * @return The version of the property you&#39;ve created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
+     * @return Property&#39;s current latest version number
      * 
      */
     public Output<Integer> latestVersion() {
         return this.latestVersion;
     }
     /**
-     * The property name.
+     * Name to give to the Property (must be unique)
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return The property name.
+     * @return Name to give to the Property (must be unique)
      * 
      */
     public Output<String> name() {
@@ -288,8 +164,6 @@ public class Property extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.origins);
     }
     /**
-     * Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;product&#34; has been deprecated.
      * 
@@ -298,10 +172,6 @@ public class Property extends com.pulumi.resources.CustomResource {
     @Export(name="product", type=String.class, parameters={})
     private Output<String> product;
 
-    /**
-     * @return Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-     * 
-     */
     public Output<String> product() {
         return this.product;
     }
@@ -320,14 +190,14 @@ public class Property extends com.pulumi.resources.CustomResource {
         return this.productId;
     }
     /**
-     * The current version of the property active on the Akamai production network.
+     * Property&#39;s version currently activated in production (zero when not active in production)
      * 
      */
     @Export(name="productionVersion", type=Integer.class, parameters={})
     private Output<Integer> productionVersion;
 
     /**
-     * @return The current version of the property active on the Akamai production network.
+     * @return Property&#39;s version currently activated in production (zero when not active in production)
      * 
      */
     public Output<Integer> productionVersion() {
@@ -347,37 +217,27 @@ public class Property extends com.pulumi.resources.CustomResource {
     public Output<Integer> readVersion() {
         return this.readVersion;
     }
-    /**
-     * The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     @Export(name="ruleErrors", type=List.class, parameters={PropertyRuleError.class})
     private Output<List<PropertyRuleError>> ruleErrors;
 
-    /**
-     * @return The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     public Output<List<PropertyRuleError>> ruleErrors() {
         return this.ruleErrors;
     }
     /**
-     * The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+     * Specify the rule format version (defaults to latest version available when created)
      * 
      */
     @Export(name="ruleFormat", type=String.class, parameters={})
     private Output<String> ruleFormat;
 
     /**
-     * @return The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+     * @return Specify the rule format version (defaults to latest version available when created)
      * 
      */
     public Output<String> ruleFormat() {
         return this.ruleFormat;
     }
     /**
-     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-     * 
      * @deprecated
      * Rule warnings will not be set in state anymore
      * 
@@ -386,36 +246,32 @@ public class Property extends com.pulumi.resources.CustomResource {
     @Export(name="ruleWarnings", type=List.class, parameters={PropertyRuleWarning.class})
     private Output<List<PropertyRuleWarning>> ruleWarnings;
 
-    /**
-     * @return (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-     * 
-     */
     public Output<List<PropertyRuleWarning>> ruleWarnings() {
         return this.ruleWarnings;
     }
     /**
-     * A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
+     * Property Rules as JSON
      * 
      */
     @Export(name="rules", type=String.class, parameters={})
     private Output<String> rules;
 
     /**
-     * @return A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
+     * @return Property Rules as JSON
      * 
      */
     public Output<String> rules() {
         return this.rules;
     }
     /**
-     * The current version of the property active on the Akamai staging network.
+     * Property&#39;s version currently activated in staging (zero when not active in staging)
      * 
      */
     @Export(name="stagingVersion", type=Integer.class, parameters={})
     private Output<Integer> stagingVersion;
 
     /**
-     * @return The current version of the property active on the Akamai staging network.
+     * @return Property&#39;s version currently activated in staging (zero when not active in staging)
      * 
      */
     public Output<Integer> stagingVersion() {

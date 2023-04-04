@@ -11,101 +11,18 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `CloudletsPolicyActivation` resource to activate a specific version of a Cloudlet policy. An activation deploys the version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
-//
-// Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewCloudletsPolicyActivation(ctx, "example", &akamai.CloudletsPolicyActivationArgs{
-//				AssociatedProperties: pulumi.StringArray{
-//					pulumi.String("Property_1"),
-//					pulumi.String("Property_2"),
-//					pulumi.String("Property_3"),
-//				},
-//				Network:  pulumi.String("staging"),
-//				PolicyId: pulumi.Int(1234),
-//				Version:  pulumi.Int(1),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// If you're handling two `CloudletsPolicyActivation` resources in the same configuration file with the same `policyId`, but different `network` arguments (for example, `production` and `staging`), you need to add `dependsOn` to the production resource. See the example:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			stag, err := akamai.NewCloudletsPolicyActivation(ctx, "stag", &akamai.CloudletsPolicyActivationArgs{
-//				PolicyId: pulumi.Int(1234567),
-//				Network:  pulumi.String("staging"),
-//				Version:  pulumi.Int(1),
-//				AssociatedProperties: pulumi.StringArray{
-//					pulumi.String("Property_1"),
-//					pulumi.String("Property_2"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewCloudletsPolicyActivation(ctx, "prod", &akamai.CloudletsPolicyActivationArgs{
-//				PolicyId: pulumi.Int(1234567),
-//				Network:  pulumi.String("production"),
-//				Version:  pulumi.Int(1),
-//				AssociatedProperties: pulumi.StringArray{
-//					pulumi.String("Property_1"),
-//					pulumi.String("Property_2"),
-//				},
-//			}, pulumi.DependsOn([]pulumi.Resource{
-//				stag,
-//			}))
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type CloudletsPolicyActivation struct {
 	pulumi.CustomResourceState
 
-	// A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+	// Set of property IDs to link to this Cloudlets policy
 	AssociatedProperties pulumi.StringArrayOutput `pulumi:"associatedProperties"`
-	// The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+	// The network you want to activate the policy version on (options are Staging and Production)
 	Network pulumi.StringOutput `pulumi:"network"`
-	// An identifier for the Cloudlet policy you want to activate.
+	// ID of the Cloudlets policy you want to activate
 	PolicyId pulumi.IntOutput `pulumi:"policyId"`
-	// The activation status for this Cloudlet policy.
+	// Activation status for this Cloudlets policy
 	Status pulumi.StringOutput `pulumi:"status"`
-	// The Cloudlet policy version you want to activate.
+	// Cloudlets policy version you want to activate
 	Version pulumi.IntOutput `pulumi:"version"`
 }
 
@@ -150,28 +67,28 @@ func GetCloudletsPolicyActivation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudletsPolicyActivation resources.
 type cloudletsPolicyActivationState struct {
-	// A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+	// Set of property IDs to link to this Cloudlets policy
 	AssociatedProperties []string `pulumi:"associatedProperties"`
-	// The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+	// The network you want to activate the policy version on (options are Staging and Production)
 	Network *string `pulumi:"network"`
-	// An identifier for the Cloudlet policy you want to activate.
+	// ID of the Cloudlets policy you want to activate
 	PolicyId *int `pulumi:"policyId"`
-	// The activation status for this Cloudlet policy.
+	// Activation status for this Cloudlets policy
 	Status *string `pulumi:"status"`
-	// The Cloudlet policy version you want to activate.
+	// Cloudlets policy version you want to activate
 	Version *int `pulumi:"version"`
 }
 
 type CloudletsPolicyActivationState struct {
-	// A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+	// Set of property IDs to link to this Cloudlets policy
 	AssociatedProperties pulumi.StringArrayInput
-	// The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+	// The network you want to activate the policy version on (options are Staging and Production)
 	Network pulumi.StringPtrInput
-	// An identifier for the Cloudlet policy you want to activate.
+	// ID of the Cloudlets policy you want to activate
 	PolicyId pulumi.IntPtrInput
-	// The activation status for this Cloudlet policy.
+	// Activation status for this Cloudlets policy
 	Status pulumi.StringPtrInput
-	// The Cloudlet policy version you want to activate.
+	// Cloudlets policy version you want to activate
 	Version pulumi.IntPtrInput
 }
 
@@ -180,25 +97,25 @@ func (CloudletsPolicyActivationState) ElementType() reflect.Type {
 }
 
 type cloudletsPolicyActivationArgs struct {
-	// A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+	// Set of property IDs to link to this Cloudlets policy
 	AssociatedProperties []string `pulumi:"associatedProperties"`
-	// The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+	// The network you want to activate the policy version on (options are Staging and Production)
 	Network string `pulumi:"network"`
-	// An identifier for the Cloudlet policy you want to activate.
+	// ID of the Cloudlets policy you want to activate
 	PolicyId int `pulumi:"policyId"`
-	// The Cloudlet policy version you want to activate.
+	// Cloudlets policy version you want to activate
 	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a CloudletsPolicyActivation resource.
 type CloudletsPolicyActivationArgs struct {
-	// A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+	// Set of property IDs to link to this Cloudlets policy
 	AssociatedProperties pulumi.StringArrayInput
-	// The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+	// The network you want to activate the policy version on (options are Staging and Production)
 	Network pulumi.StringInput
-	// An identifier for the Cloudlet policy you want to activate.
+	// ID of the Cloudlets policy you want to activate
 	PolicyId pulumi.IntInput
-	// The Cloudlet policy version you want to activate.
+	// Cloudlets policy version you want to activate
 	Version pulumi.IntInput
 }
 
@@ -289,27 +206,27 @@ func (o CloudletsPolicyActivationOutput) ToCloudletsPolicyActivationOutputWithCo
 	return o
 }
 
-// A set of property identifiers related to this Cloudlet policy. You can't activate a Cloudlet policy if it doesn't have any properties associated with it.
+// Set of property IDs to link to this Cloudlets policy
 func (o CloudletsPolicyActivationOutput) AssociatedProperties() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.StringArrayOutput { return v.AssociatedProperties }).(pulumi.StringArrayOutput)
 }
 
-// The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+// The network you want to activate the policy version on (options are Staging and Production)
 func (o CloudletsPolicyActivationOutput) Network() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.StringOutput { return v.Network }).(pulumi.StringOutput)
 }
 
-// An identifier for the Cloudlet policy you want to activate.
+// ID of the Cloudlets policy you want to activate
 func (o CloudletsPolicyActivationOutput) PolicyId() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.IntOutput { return v.PolicyId }).(pulumi.IntOutput)
 }
 
-// The activation status for this Cloudlet policy.
+// Activation status for this Cloudlets policy
 func (o CloudletsPolicyActivationOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// The Cloudlet policy version you want to activate.
+// Cloudlets policy version you want to activate
 func (o CloudletsPolicyActivationOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudletsPolicyActivation) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
 }

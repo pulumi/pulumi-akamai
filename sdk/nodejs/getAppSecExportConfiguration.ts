@@ -4,36 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const export = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecExportConfiguration({
- *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
- *     searches: [
- *         "securityPolicies",
- *         "selectedHosts",
- *     ],
- * }));
- * export const json = _export.then(_export => _export.json);
- * export const text = _export.then(_export => _export.outputText);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `json`. Complete set of information about the specified security configuration version in JSON format. When this option is included information is always returned for the _entire_ configuration. Among other things, that means that, if your command uses the `search` parameter, that parameter is ignored.
- * - `outputText`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
- */
 export function getAppSecExportConfiguration(args: GetAppSecExportConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecExportConfigurationResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -48,17 +18,8 @@ export function getAppSecExportConfiguration(args: GetAppSecExportConfigurationA
  * A collection of arguments for invoking getAppSecExportConfiguration.
  */
 export interface GetAppSecExportConfigurationArgs {
-    /**
-     * . Unique identifier of the security configuration you want to return information for.
-     */
     configId: number;
-    /**
-     * . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-     */
     searches?: string[];
-    /**
-     * . Version number of the security configuration.
-     */
     version: number;
 }
 
@@ -76,36 +37,6 @@ export interface GetAppSecExportConfigurationResult {
     readonly searches?: string[];
     readonly version: number;
 }
-/**
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const export = Promise.all([configuration, configuration]).then(([configuration, configuration1]) => akamai.getAppSecExportConfiguration({
- *     configId: configuration.configId,
- *     version: configuration1.latestVersion,
- *     searches: [
- *         "securityPolicies",
- *         "selectedHosts",
- *     ],
- * }));
- * export const json = _export.then(_export => _export.json);
- * export const text = _export.then(_export => _export.outputText);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `json`. Complete set of information about the specified security configuration version in JSON format. When this option is included information is always returned for the _entire_ configuration. Among other things, that means that, if your command uses the `search` parameter, that parameter is ignored.
- * - `outputText`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
- */
 export function getAppSecExportConfigurationOutput(args: GetAppSecExportConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecExportConfigurationResult> {
     return pulumi.output(args).apply((a: any) => getAppSecExportConfiguration(a, opts))
 }
@@ -114,16 +45,7 @@ export function getAppSecExportConfigurationOutput(args: GetAppSecExportConfigur
  * A collection of arguments for invoking getAppSecExportConfiguration.
  */
 export interface GetAppSecExportConfigurationOutputArgs {
-    /**
-     * . Unique identifier of the security configuration you want to return information for.
-     */
     configId: pulumi.Input<number>;
-    /**
-     * . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-     */
     searches?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * . Version number of the security configuration.
-     */
     version: pulumi.Input<number>;
 }

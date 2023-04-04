@@ -6,16 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.PropertyIncludeActivation` resource to activate your include and make available to a property.
- * You can also modify the activation time out with the `AKAMAI_ACTIVATION_TIMEOUT` environment variable, providing time in minutes. The default time out is 30 minutes.
- *
- * ## Attributes reference
- *
- * This resource returns this attribute:
- *
- * * `validations` - The validation information in JSON format.
- */
 export class PropertyIncludeActivation extends pulumi.CustomResource {
     /**
      * Get an existing PropertyIncludeActivation resource's state with the given name, ID, and optional extra
@@ -45,7 +35,7 @@ export class PropertyIncludeActivation extends pulumi.CustomResource {
     }
 
     /**
-     * (Optional) Automatically acknowledge all rule warnings for activation and continue.
+     * Automatically acknowledge all rule warnings for activation and continue
      */
     public readonly autoAcknowledgeRuleWarnings!: pulumi.Output<boolean | undefined>;
     /**
@@ -53,27 +43,27 @@ export class PropertyIncludeActivation extends pulumi.CustomResource {
      */
     public readonly complianceRecord!: pulumi.Output<outputs.PropertyIncludeActivationComplianceRecord | undefined>;
     /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
+     * The contract under which the include is activated
      */
     public readonly contractId!: pulumi.Output<string>;
     /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
+     * The group under which the include is activated
      */
     public readonly groupId!: pulumi.Output<string>;
     /**
-     * (Required) An include's unique ID with the optional `inc_` prefix.
+     * The unique identifier of the include
      */
     public readonly includeId!: pulumi.Output<string>;
     /**
-     * (Required) The network for which the activation will be performed.
+     * The network for which the activation will be performed
      */
     public readonly network!: pulumi.Output<string>;
     /**
-     * (Optional) A log message assigned to the activation request.
+     * The note to assign to a log message of the activation request
      */
     public readonly note!: pulumi.Output<string | undefined>;
     /**
-     * (Required) The list of email addresses to notify when the activation status changes.
+     * The list of email addresses to notify about an activation status
      */
     public readonly notifyEmails!: pulumi.Output<string[]>;
     /**
@@ -81,7 +71,7 @@ export class PropertyIncludeActivation extends pulumi.CustomResource {
      */
     public /*out*/ readonly validations!: pulumi.Output<string>;
     /**
-     * (Required) The version of the include you want to activate.
+     * The unique identifier of the include
      */
     public readonly version!: pulumi.Output<number>;
 
@@ -149,7 +139,7 @@ export class PropertyIncludeActivation extends pulumi.CustomResource {
  */
 export interface PropertyIncludeActivationState {
     /**
-     * (Optional) Automatically acknowledge all rule warnings for activation and continue.
+     * Automatically acknowledge all rule warnings for activation and continue
      */
     autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
     /**
@@ -157,27 +147,27 @@ export interface PropertyIncludeActivationState {
      */
     complianceRecord?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecord>;
     /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
+     * The contract under which the include is activated
      */
     contractId?: pulumi.Input<string>;
     /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
+     * The group under which the include is activated
      */
     groupId?: pulumi.Input<string>;
     /**
-     * (Required) An include's unique ID with the optional `inc_` prefix.
+     * The unique identifier of the include
      */
     includeId?: pulumi.Input<string>;
     /**
-     * (Required) The network for which the activation will be performed.
+     * The network for which the activation will be performed
      */
     network?: pulumi.Input<string>;
     /**
-     * (Optional) A log message assigned to the activation request.
+     * The note to assign to a log message of the activation request
      */
     note?: pulumi.Input<string>;
     /**
-     * (Required) The list of email addresses to notify when the activation status changes.
+     * The list of email addresses to notify about an activation status
      */
     notifyEmails?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -185,7 +175,7 @@ export interface PropertyIncludeActivationState {
      */
     validations?: pulumi.Input<string>;
     /**
-     * (Required) The version of the include you want to activate.
+     * The unique identifier of the include
      */
     version?: pulumi.Input<number>;
 }
@@ -195,7 +185,7 @@ export interface PropertyIncludeActivationState {
  */
 export interface PropertyIncludeActivationArgs {
     /**
-     * (Optional) Automatically acknowledge all rule warnings for activation and continue.
+     * Automatically acknowledge all rule warnings for activation and continue
      */
     autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
     /**
@@ -203,31 +193,31 @@ export interface PropertyIncludeActivationArgs {
      */
     complianceRecord?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecord>;
     /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
+     * The contract under which the include is activated
      */
     contractId: pulumi.Input<string>;
     /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
+     * The group under which the include is activated
      */
     groupId: pulumi.Input<string>;
     /**
-     * (Required) An include's unique ID with the optional `inc_` prefix.
+     * The unique identifier of the include
      */
     includeId: pulumi.Input<string>;
     /**
-     * (Required) The network for which the activation will be performed.
+     * The network for which the activation will be performed
      */
     network: pulumi.Input<string>;
     /**
-     * (Optional) A log message assigned to the activation request.
+     * The note to assign to a log message of the activation request
      */
     note?: pulumi.Input<string>;
     /**
-     * (Required) The list of email addresses to notify when the activation status changes.
+     * The list of email addresses to notify about an activation status
      */
     notifyEmails: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Required) The version of the include you want to activate.
+     * The unique identifier of the include
      */
     version: pulumi.Input<number>;
 }

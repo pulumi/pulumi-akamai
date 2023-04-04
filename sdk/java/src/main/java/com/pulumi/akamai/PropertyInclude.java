@@ -15,79 +15,31 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.PropertyInclude` resource to create an include and its rule tree.
- * 
- * ## Basic usage
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.PropertyInclude;
- * import com.pulumi.akamai.PropertyIncludeArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var myExample = new PropertyInclude(&#34;myExample&#34;, PropertyIncludeArgs.builder()        
- *             .contractId(&#34;ctr_1-AB123&#34;)
- *             .groupId(&#34;grp_12345&#34;)
- *             .productId(&#34;prd_123456&#34;)
- *             .ruleFormat(&#34;v2022-10-18&#34;)
- *             .type(&#34;MICROSERVICES&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- * ## Attributes reference
- * 
- * This resource returns these attributes:
- * 
- * * `rule_errors` - Rule&#39;s validation errors. You need to resolve returned errors, as they block an activation.
- * * `rule_warnings` - Rule&#39;s validation warnings. You can activate a version that yields less severe warnings.
- * * `latest_version` - Returns the most recent version of the include.
- * * `staging_version` - The include version currently activated on the staging network.
- * * `production_version` - The include version currently activated on the production network.
- * 
- */
 @ResourceType(type="akamai:index/propertyInclude:PropertyInclude")
 public class PropertyInclude extends com.pulumi.resources.CustomResource {
     /**
-     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * Identifies the contract to which the include is assigned
      * 
      */
     @Export(name="contractId", type=String.class, parameters={})
     private Output<String> contractId;
 
     /**
-     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
+     * @return Identifies the contract to which the include is assigned
      * 
      */
     public Output<String> contractId() {
         return this.contractId;
     }
     /**
-     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * Identifies the group to which the include is assigned
      * 
      */
     @Export(name="groupId", type=String.class, parameters={})
     private Output<String> groupId;
 
     /**
-     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
+     * @return Identifies the group to which the include is assigned
      * 
      */
     public Output<String> groupId() {
@@ -108,14 +60,14 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
         return this.latestVersion;
     }
     /**
-     * (Required) The descriptive name for the include.
+     * A descriptive name for the include
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return (Required) The descriptive name for the include.
+     * @return A descriptive name for the include
      * 
      */
     public Output<String> name() {
@@ -164,14 +116,14 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
         return this.ruleErrors;
     }
     /**
-     * (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+     * Indicates the versioned set of features and criteria
      * 
      */
     @Export(name="ruleFormat", type=String.class, parameters={})
     private Output<String> ruleFormat;
 
     /**
-     * @return (Required) Indicates the versioned set of features and criteria. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
+     * @return Indicates the versioned set of features and criteria
      * 
      */
     public Output<String> ruleFormat() {
@@ -192,14 +144,14 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
         return this.ruleWarnings;
     }
     /**
-     * (Optional) Include&#39;s rules as JSON.
+     * Property Rules as JSON
      * 
      */
     @Export(name="rules", type=String.class, parameters={})
     private Output<String> rules;
 
     /**
-     * @return (Optional) Include&#39;s rules as JSON.
+     * @return Property Rules as JSON
      * 
      */
     public Output<String> rules() {
@@ -220,14 +172,14 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
         return this.stagingVersion;
     }
     /**
-     * (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * Specifies the type of the include, either &#39;MICROSERVICES&#39; or &#39;COMMON_SETTINGS&#39;
      * 
      */
     @Export(name="type", type=String.class, parameters={})
     private Output<String> type;
 
     /**
-     * @return (Required) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+     * @return Specifies the type of the include, either &#39;MICROSERVICES&#39; or &#39;COMMON_SETTINGS&#39;
      * 
      */
     public Output<String> type() {

@@ -54,28 +54,7 @@ class AwaitableGetCpsWarningsResult(GetCpsWarningsResult):
 
 def get_cps_warnings(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpsWarningsResult:
     """
-    Use the _get_cps_warnings_ data source to return a map of all possible pre- and post-verification warnings. The map includes both the ID needed to acknowledge a warning and a brief description of the issue.
-
-    CPS produces warnings during enrollment creation or after a client uploads the certificate. CPS won't process a change until you acknowledge all warnings.
-
-    You can use the warning IDs returned by this data source to acknowledge or auto-approve warnings. The `CpsThirdPartyEnrollment` and `CpsUploadCertificate` resources include arguments to help you do this.
-
-    ## Basic usage
-
-    This example shows how to return a map of verification warnings:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_cps_warnings()
-    ```
-
-    ## Attributes reference
-
-    This data source returns this attribute:
-
-      * `warnings` - Validation warnings for the current change you're making. Warnings display with an ID and a short description. Unless you auto-approve warnings, you need the ID to acknowledge the change. CPS won't process the change until you acknowledge these warnings.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

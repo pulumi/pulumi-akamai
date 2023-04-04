@@ -14,32 +14,16 @@ public final class GetEdgeWorkerActivationArgs extends com.pulumi.resources.Invo
 
     public static final GetEdgeWorkerActivationArgs Empty = new GetEdgeWorkerActivationArgs();
 
-    /**
-     * The unique identifier of the EdgeWorker.
-     * 
-     */
     @Import(name="edgeworkerId", required=true)
     private Output<Integer> edgeworkerId;
 
-    /**
-     * @return The unique identifier of the EdgeWorker.
-     * 
-     */
     public Output<Integer> edgeworkerId() {
         return this.edgeworkerId;
     }
 
-    /**
-     * The network from where the activation information will be fetched.
-     * 
-     */
     @Import(name="network", required=true)
     private Output<String> network;
 
-    /**
-     * @return The network from where the activation information will be fetched.
-     * 
-     */
     public Output<String> network() {
         return this.network;
     }
@@ -69,44 +53,20 @@ public final class GetEdgeWorkerActivationArgs extends com.pulumi.resources.Invo
             $ = new GetEdgeWorkerActivationArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param edgeworkerId The unique identifier of the EdgeWorker.
-         * 
-         * @return builder
-         * 
-         */
         public Builder edgeworkerId(Output<Integer> edgeworkerId) {
             $.edgeworkerId = edgeworkerId;
             return this;
         }
 
-        /**
-         * @param edgeworkerId The unique identifier of the EdgeWorker.
-         * 
-         * @return builder
-         * 
-         */
         public Builder edgeworkerId(Integer edgeworkerId) {
             return edgeworkerId(Output.of(edgeworkerId));
         }
 
-        /**
-         * @param network The network from where the activation information will be fetched.
-         * 
-         * @return builder
-         * 
-         */
         public Builder network(Output<String> network) {
             $.network = network;
             return this;
         }
 
-        /**
-         * @param network The network from where the activation information will be fetched.
-         * 
-         * @return builder
-         * 
-         */
         public Builder network(String network) {
             return network(Output.of(network));
         }

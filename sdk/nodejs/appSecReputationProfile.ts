@@ -4,39 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security policy
- *
- * Creates or modifies a reputation profile.
- * Reputation profiles grade the security risk of an IP address based on previous activities associated with that address.
- * Depending on the reputation score and how your configuration has been set up, requests from a specific IP address can trigger an alert or even be blocked.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/put-reputation-profile)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- * import * as fs from "fs";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const reputationProfile = new akamai.AppSecReputationProfile("reputationProfile", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     reputationProfile: fs.readFileSync(`${path.module}/reputation_profile.json`),
- * });
- * export const reputationProfileId = reputationProfile.reputationProfileId;
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `reputationProfileId`. ID of the newly-created or newly-modified reputation profile.
- */
 export class AppSecReputationProfile extends pulumi.CustomResource {
     /**
      * Get an existing AppSecReputationProfile resource's state with the given name, ID, and optional extra
@@ -66,11 +33,11 @@ export class AppSecReputationProfile extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Path to a JSON file containing a definition of the reputation profile.
+     * JSON-formatted definition of the reputation profile
      */
     public readonly reputationProfile!: pulumi.Output<string>;
     /**
@@ -116,11 +83,11 @@ export class AppSecReputationProfile extends pulumi.CustomResource {
  */
 export interface AppSecReputationProfileState {
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing a definition of the reputation profile.
+     * JSON-formatted definition of the reputation profile
      */
     reputationProfile?: pulumi.Input<string>;
     /**
@@ -134,11 +101,11 @@ export interface AppSecReputationProfileState {
  */
 export interface AppSecReputationProfileArgs {
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing a definition of the reputation profile.
+     * JSON-formatted definition of the reputation profile
      */
     reputationProfile: pulumi.Input<string>;
 }

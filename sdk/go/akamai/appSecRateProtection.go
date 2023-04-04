@@ -11,62 +11,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy
-//
-// Enables or disables rate protection for a security policy.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppSecRateProtection(ctx, "protection", &akamai.AppSecRateProtectionArgs{
-//				ConfigId:         *pulumi.Int(configuration.ConfigId),
-//				SecurityPolicyId: pulumi.String("gms1_134637"),
-//				Enabled:          pulumi.Bool(true),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `outputText`. Tabular report showing the current protection settings.
 type AppSecRateProtection struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configuration associated with the rate protection settings being modified.
-	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Unique identifier of the security configuration
+	ConfigId pulumi.IntOutput  `pulumi:"configId"`
+	Enabled  pulumi.BoolOutput `pulumi:"enabled"`
 	// Text representation
 	OutputText pulumi.StringOutput `pulumi:"outputText"`
-	// . Unique identifier of the security policy associated with the rate protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -108,24 +61,22 @@ func GetAppSecRateProtection(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecRateProtection resources.
 type appSecRateProtectionState struct {
-	// . Unique identifier of the security configuration associated with the rate protection settings being modified.
-	ConfigId *int `pulumi:"configId"`
-	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-	Enabled *bool `pulumi:"enabled"`
+	// Unique identifier of the security configuration
+	ConfigId *int  `pulumi:"configId"`
+	Enabled  *bool `pulumi:"enabled"`
 	// Text representation
 	OutputText *string `pulumi:"outputText"`
-	// . Unique identifier of the security policy associated with the rate protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecRateProtectionState struct {
-	// . Unique identifier of the security configuration associated with the rate protection settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-	Enabled pulumi.BoolPtrInput
+	Enabled  pulumi.BoolPtrInput
 	// Text representation
 	OutputText pulumi.StringPtrInput
-	// . Unique identifier of the security policy associated with the rate protection settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -134,21 +85,19 @@ func (AppSecRateProtectionState) ElementType() reflect.Type {
 }
 
 type appSecRateProtectionArgs struct {
-	// . Unique identifier of the security configuration associated with the rate protection settings being modified.
-	ConfigId int `pulumi:"configId"`
-	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-	Enabled bool `pulumi:"enabled"`
-	// . Unique identifier of the security policy associated with the rate protection settings being modified.
+	// Unique identifier of the security configuration
+	ConfigId int  `pulumi:"configId"`
+	Enabled  bool `pulumi:"enabled"`
+	// Unique identifier of the security policy
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecRateProtection resource.
 type AppSecRateProtectionArgs struct {
-	// . Unique identifier of the security configuration associated with the rate protection settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-	Enabled pulumi.BoolInput
-	// . Unique identifier of the security policy associated with the rate protection settings being modified.
+	Enabled  pulumi.BoolInput
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringInput
 }
 
@@ -239,12 +188,11 @@ func (o AppSecRateProtectionOutput) ToAppSecRateProtectionOutputWithContext(ctx 
 	return o
 }
 
-// . Unique identifier of the security configuration associated with the rate protection settings being modified.
+// Unique identifier of the security configuration
 func (o AppSecRateProtectionOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecRateProtection) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
 func (o AppSecRateProtectionOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AppSecRateProtection) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
@@ -254,7 +202,7 @@ func (o AppSecRateProtectionOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecRateProtection) pulumi.StringOutput { return v.OutputText }).(pulumi.StringOutput)
 }
 
-// . Unique identifier of the security policy associated with the rate protection settings being modified.
+// Unique identifier of the security policy
 func (o AppSecRateProtectionOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecRateProtection) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }

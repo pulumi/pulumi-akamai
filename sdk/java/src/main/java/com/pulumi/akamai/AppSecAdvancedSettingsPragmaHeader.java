@@ -15,95 +15,45 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security configuration; security policy
- * 
- * Specifies the headers you can exclude from inspection when you are working with a Pragma debug header, a header that provides information about such things as: the edge routers used in a transaction; the Akamai IP addresses involved; whether a request was cached or not; etc. By default, pragma headers are removed from all responses.
- * 
- * This operation can be applied at the security configuration level (in which case it applies to all the security policies in the configuration), or can be customized for an individual security policy.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://techdocs.akamai.com/application-security/reference/put-policies-pragma-header)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecAdvancedSettingsPragmaHeader;
- * import com.pulumi.akamai.AppSecAdvancedSettingsPragmaHeaderArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var pragmaHeader = new AppSecAdvancedSettingsPragmaHeader(&#34;pragmaHeader&#34;, AppSecAdvancedSettingsPragmaHeaderArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .pragmaHeader(Files.readString(Paths.get(String.format(&#34;%s/pragma_header.json&#34;, path.module()))))
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader")
 public class AppSecAdvancedSettingsPragmaHeader extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the pragma header settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the pragma header settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation&#39;s response except in cases where you set `excludeCondition`.
+     * JSON-formatted information describing the conditions to exclude from the default remove action
      * 
      */
     @Export(name="pragmaHeader", type=String.class, parameters={})
     private Output<String> pragmaHeader;
 
     /**
-     * @return . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation&#39;s response except in cases where you set `excludeCondition`.
+     * @return JSON-formatted information describing the conditions to exclude from the default remove action
      * 
      */
     public Output<String> pragmaHeader() {
         return this.pragmaHeader;
     }
     /**
-     * . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output</* @Nullable */ String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<Optional<String>> securityPolicyId() {

@@ -6,6 +6,7 @@ package com.pulumi.akamai.properties;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.properties.PropertyActivationArgs;
 import com.pulumi.akamai.properties.inputs.PropertyActivationState;
+import com.pulumi.akamai.properties.outputs.PropertyActivationComplianceRecord;
 import com.pulumi.akamai.properties.outputs.PropertyActivationRuleError;
 import com.pulumi.akamai.properties.outputs.PropertyActivationRuleWarning;
 import com.pulumi.core.Output;
@@ -20,71 +21,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * The `akamai.PropertyActivation` resource lets you activate a property version. An activation deploys the version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
- * 
- * Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.Property;
- * import com.pulumi.akamai.PropertyArgs;
- * import com.pulumi.akamai.PropertyActivation;
- * import com.pulumi.akamai.PropertyActivationArgs;
- * import com.pulumi.resources.CustomResourceOptions;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var email = &#34;user@example.org&#34;;
- * 
- *         final var ruleFormat = &#34;v2020-03-04&#34;;
- * 
- *         var example = new Property(&#34;example&#34;, PropertyArgs.builder()        
- *             .productId(&#34;prd_SPM&#34;)
- *             .contractId(var_.contractid())
- *             .groupId(var_.groupid())
- *             .hostnames(PropertyHostnameArgs.builder()
- * %!v(PANIC=Format method: interface conversion: model.Expression is *model.TemplateExpression, not *model.LiteralValueExpression))
- *                 .ruleFormat(ruleFormat)
- *                 .rules(Files.readString(Paths.get(String.format(&#34;%s/main.json&#34;, path.module()))))
- *                 .build());
- * 
- *             var exampleStaging = new PropertyActivation(&#34;exampleStaging&#34;, PropertyActivationArgs.builder()            
- *                 .propertyId(example.id())
- *                 .contacts(email)
- *                 .version(example.latestVersion())
- *                 .note(&#34;Sample activation&#34;)
- *                 .build());
- * 
- *             var exampleProd = new PropertyActivation(&#34;exampleProd&#34;, PropertyActivationArgs.builder()            
- *                 .propertyId(example.id())
- *                 .network(&#34;PRODUCTION&#34;)
- *                 .version(3)
- *                 .contacts(email)
- *                 .build(), CustomResourceOptions.builder()
- *                     .dependsOn(exampleStaging)
- *                     .build());
- * 
- *         }
- * }
- * ```
- * 
  * @deprecated
  * akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation
  * 
@@ -92,93 +28,73 @@ import javax.annotation.Nullable;
 @Deprecated /* akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation */
 @ResourceType(type="akamai:properties/propertyActivation:PropertyActivation")
 public class PropertyActivation extends com.pulumi.resources.CustomResource {
-    /**
-     * The ID given to the activation event while it&#39;s in progress.
-     * 
-     */
     @Export(name="activationId", type=String.class, parameters={})
     private Output<String> activationId;
 
-    /**
-     * @return The ID given to the activation event while it&#39;s in progress.
-     * 
-     */
     public Output<String> activationId() {
         return this.activationId;
     }
     /**
-     * Whether the activation should proceed despite any warnings. By default set to `true`.
+     * automatically acknowledge all rule warnings for activation to continue. default is true
      * 
      */
     @Export(name="autoAcknowledgeRuleWarnings", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> autoAcknowledgeRuleWarnings;
 
     /**
-     * @return Whether the activation should proceed despite any warnings. By default set to `true`.
+     * @return automatically acknowledge all rule warnings for activation to continue. default is true
      * 
      */
     public Output<Optional<Boolean>> autoAcknowledgeRuleWarnings() {
         return Codegen.optional(this.autoAcknowledgeRuleWarnings);
     }
     /**
-     * One or more email addresses to send activation status changes to.
+     * Provides an audit record when activating on a production network
      * 
      */
+    @Export(name="complianceRecord", type=PropertyActivationComplianceRecord.class, parameters={})
+    private Output</* @Nullable */ PropertyActivationComplianceRecord> complianceRecord;
+
+    /**
+     * @return Provides an audit record when activating on a production network
+     * 
+     */
+    public Output<Optional<PropertyActivationComplianceRecord>> complianceRecord() {
+        return Codegen.optional(this.complianceRecord);
+    }
     @Export(name="contacts", type=List.class, parameters={String.class})
     private Output<List<String>> contacts;
 
-    /**
-     * @return One or more email addresses to send activation status changes to.
-     * 
-     */
     public Output<List<String>> contacts() {
         return this.contacts;
     }
-    /**
-     * The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     @Export(name="errors", type=String.class, parameters={})
     private Output<String> errors;
 
-    /**
-     * @return The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     public Output<String> errors() {
         return this.errors;
     }
-    /**
-     * Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-     * 
-     */
     @Export(name="network", type=String.class, parameters={})
     private Output</* @Nullable */ String> network;
 
-    /**
-     * @return Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-     * 
-     */
     public Output<Optional<String>> network() {
         return Codegen.optional(this.network);
     }
     /**
-     * A log message you can assign to the activation request.
+     * assigns a log message to the activation request
      * 
      */
     @Export(name="note", type=String.class, parameters={})
     private Output</* @Nullable */ String> note;
 
     /**
-     * @return A log message you can assign to the activation request.
+     * @return assigns a log message to the activation request
      * 
      */
     public Output<Optional<String>> note() {
         return Codegen.optional(this.note);
     }
     /**
-     * (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;property&#34; has been deprecated.
      * 
@@ -187,24 +103,12 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
     @Export(name="property", type=String.class, parameters={})
     private Output<String> property;
 
-    /**
-     * @return (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-     * 
-     */
     public Output<String> property() {
         return this.property;
     }
-    /**
-     * (Required) The property&#39;s unique identifier, including the `prp_` prefix.
-     * 
-     */
     @Export(name="propertyId", type=String.class, parameters={})
     private Output<String> propertyId;
 
-    /**
-     * @return (Required) The property&#39;s unique identifier, including the `prp_` prefix.
-     * 
-     */
     public Output<String> propertyId() {
         return this.propertyId;
     }
@@ -215,8 +119,6 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
         return this.ruleErrors;
     }
     /**
-     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-     * 
      * @deprecated
      * Rule warnings will not be set in state anymore
      * 
@@ -225,52 +127,24 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
     @Export(name="ruleWarnings", type=List.class, parameters={PropertyActivationRuleWarning.class})
     private Output<List<PropertyActivationRuleWarning>> ruleWarnings;
 
-    /**
-     * @return (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-     * 
-     */
     public Output<List<PropertyActivationRuleWarning>> ruleWarnings() {
         return this.ruleWarnings;
     }
-    /**
-     * The property version&#39;s activation status on the selected network.
-     * 
-     */
     @Export(name="status", type=String.class, parameters={})
     private Output<String> status;
 
-    /**
-     * @return The property version&#39;s activation status on the selected network.
-     * 
-     */
     public Output<String> status() {
         return this.status;
     }
-    /**
-     * The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.
-     * 
-     */
     @Export(name="version", type=Integer.class, parameters={})
     private Output<Integer> version;
 
-    /**
-     * @return The property version to activate. Previously this field was optional. It now depends on the `akamai.Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `akamai.Property` resource labeled `example`.
-     * 
-     */
     public Output<Integer> version() {
         return this.version;
     }
-    /**
-     * The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     @Export(name="warnings", type=String.class, parameters={})
     private Output<String> warnings;
 
-    /**
-     * @return The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-     * 
-     */
     public Output<String> warnings() {
         return this.warnings;
     }

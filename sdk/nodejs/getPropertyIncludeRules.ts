@@ -4,37 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getPropertyIncludeRules` data source to query and get an include's rules. This data source lets you search across the contracts and groups you have access to.
- *
- * ## Basic usage
- *
- * This example returns the include's rule tree based on the specified contract, group, and include IDs:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const myExamplePropertyIncludeRules = akamai.getPropertyIncludeRules({
- *     contractId: "ctr_1-AB123",
- *     groupId: "grp_12345",
- *     includeId: "inc_123456",
- *     version: 3,
- * });
- * export const myExample = myExamplePropertyIncludeRules;
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `rules` - Include's rules as JSON.
- * * `name` - The descriptive name for the include.
- * * `ruleErrors` - Rule's validation errors. You need to resolve returned errors, as they block an activation.
- * * `ruleWarnings` - Rule's validation warnings. You can activate a version that yields non-blocking warnings.
- * * `ruleFormat` - Indicates the versioned set of features and criteria that are currently applied to a rule tree. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
- * * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
- */
 export function getPropertyIncludeRules(args: GetPropertyIncludeRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyIncludeRulesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -50,21 +19,9 @@ export function getPropertyIncludeRules(args: GetPropertyIncludeRulesArgs, opts?
  * A collection of arguments for invoking getPropertyIncludeRules.
  */
 export interface GetPropertyIncludeRulesArgs {
-    /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
-     */
     contractId: string;
-    /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
-     */
     groupId: string;
-    /**
-     * (Required) An include's unique ID with the optional `inc_` prefix.
-     */
     includeId: string;
-    /**
-     * (Required) The include version you want to view the rules for.
-     */
     version: number;
 }
 
@@ -87,37 +44,6 @@ export interface GetPropertyIncludeRulesResult {
     readonly type: string;
     readonly version: number;
 }
-/**
- * Use the `akamai.getPropertyIncludeRules` data source to query and get an include's rules. This data source lets you search across the contracts and groups you have access to.
- *
- * ## Basic usage
- *
- * This example returns the include's rule tree based on the specified contract, group, and include IDs:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const myExamplePropertyIncludeRules = akamai.getPropertyIncludeRules({
- *     contractId: "ctr_1-AB123",
- *     groupId: "grp_12345",
- *     includeId: "inc_123456",
- *     version: 3,
- * });
- * export const myExample = myExamplePropertyIncludeRules;
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `rules` - Include's rules as JSON.
- * * `name` - The descriptive name for the include.
- * * `ruleErrors` - Rule's validation errors. You need to resolve returned errors, as they block an activation.
- * * `ruleWarnings` - Rule's validation warnings. You can activate a version that yields non-blocking warnings.
- * * `ruleFormat` - Indicates the versioned set of features and criteria that are currently applied to a rule tree. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
- * * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
- */
 export function getPropertyIncludeRulesOutput(args: GetPropertyIncludeRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyIncludeRulesResult> {
     return pulumi.output(args).apply((a: any) => getPropertyIncludeRules(a, opts))
 }
@@ -126,20 +52,8 @@ export function getPropertyIncludeRulesOutput(args: GetPropertyIncludeRulesOutpu
  * A collection of arguments for invoking getPropertyIncludeRules.
  */
 export interface GetPropertyIncludeRulesOutputArgs {
-    /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
-     */
     contractId: pulumi.Input<string>;
-    /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
-     */
     groupId: pulumi.Input<string>;
-    /**
-     * (Required) An include's unique ID with the optional `inc_` prefix.
-     */
     includeId: pulumi.Input<string>;
-    /**
-     * (Required) The include version you want to view the rules for.
-     */
     version: pulumi.Input<number>;
 }

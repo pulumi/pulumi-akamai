@@ -14,149 +14,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CloudletsApplicationLoadBalancerDataCenter {
-    /**
-     * @return The city in which the data center is located.
-     * 
-     */
     private @Nullable String city;
-    /**
-     * @return Whether to override the cloud server host header.
-     * 
-     */
     private @Nullable Boolean cloudServerHostHeaderOverride;
-    /**
-     * @return Whether this datacenter is a cloud service.
-     * 
-     */
     private @Nullable Boolean cloudService;
-    /**
-     * @return The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
-     * 
-     */
     private String continent;
-    /**
-     * @return The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
-     * 
-     */
     private String country;
-    /**
-     * @return The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
-     * 
-     */
     private @Nullable String hostname;
-    /**
-     * @return The latitude value for the data center. This member supports six decimal places of precision.
-     * 
-     */
     private Double latitude;
-    /**
-     * @return A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
-     * 
-     */
     private @Nullable List<String> livenessHosts;
-    /**
-     * @return The longitude value for the data center. This member supports six decimal places of precision.
-     * 
-     */
     private Double longitude;
-    /**
-     * @return The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
-     * 
-     */
     private String originId;
-    /**
-     * @return The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
-     * 
-     */
     private Double percent;
-    /**
-     * @return The state, province, or region where the data center is located.
-     * 
-     */
     private @Nullable String stateOrProvince;
 
     private CloudletsApplicationLoadBalancerDataCenter() {}
-    /**
-     * @return The city in which the data center is located.
-     * 
-     */
     public Optional<String> city() {
         return Optional.ofNullable(this.city);
     }
-    /**
-     * @return Whether to override the cloud server host header.
-     * 
-     */
     public Optional<Boolean> cloudServerHostHeaderOverride() {
         return Optional.ofNullable(this.cloudServerHostHeaderOverride);
     }
-    /**
-     * @return Whether this datacenter is a cloud service.
-     * 
-     */
     public Optional<Boolean> cloudService() {
         return Optional.ofNullable(this.cloudService);
     }
-    /**
-     * @return The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
-     * 
-     */
     public String continent() {
         return this.continent;
     }
-    /**
-     * @return The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
-     * 
-     */
     public String country() {
         return this.country;
     }
-    /**
-     * @return The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
-     * 
-     */
     public Optional<String> hostname() {
         return Optional.ofNullable(this.hostname);
     }
-    /**
-     * @return The latitude value for the data center. This member supports six decimal places of precision.
-     * 
-     */
     public Double latitude() {
         return this.latitude;
     }
-    /**
-     * @return A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
-     * 
-     */
     public List<String> livenessHosts() {
         return this.livenessHosts == null ? List.of() : this.livenessHosts;
     }
-    /**
-     * @return The longitude value for the data center. This member supports six decimal places of precision.
-     * 
-     */
     public Double longitude() {
         return this.longitude;
     }
-    /**
-     * @return The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
-     * 
-     */
     public String originId() {
         return this.originId;
     }
-    /**
-     * @return The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
-     * 
-     */
     public Double percent() {
         return this.percent;
     }
-    /**
-     * @return The state, province, or region where the data center is located.
-     * 
-     */
     public Optional<String> stateOrProvince() {
         return Optional.ofNullable(this.stateOrProvince);
     }

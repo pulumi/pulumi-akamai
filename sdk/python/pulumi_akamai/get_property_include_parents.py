@@ -86,38 +86,7 @@ def get_property_include_parents(contract_id: Optional[str] = None,
                                  include_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyIncludeParentsResult:
     """
-    Use the _get_property_include_parents_ data source to return a list of parent properties that use the given include. In your property's rule tree, you can reference an include by adding the `include` behavior and specifying the `include_id`.
-
-    ## Basic usage
-
-    This example returns all active properties a specific include is referenced in, based on the contract, group, and include IDs.
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    my_example_property_include_parents = akamai.get_property_include_parents(contract_id="ctr_1-AB123",
-        group_id="grp_12345",
-        include_id="inc_123456")
-    pulumi.export("myExample", my_example_property_include_parents)
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `parents` - The list of include's parent properties.
-     * `id` - The property's unique identifier.
-     * `name` - The descriptive name for the property.
-     * `staging_version` - The property version currently activated on the staging network.
-     * `production_version` - The property version currently activated on the production network.
-     * `is_include_used_in_staging_version` - Whether the specified include is active on the staging network and is referenced in parent's `staging_version`.
-     * `is_include_used_in_production_version` - Whether the specified include is active on the production network and is referenced in parent's `production_version`.
-
-
-    :param str contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-    :param str group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-    :param str include_id: (Required) An include's unique ID with the optional `inc_` prefix.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -140,37 +109,6 @@ def get_property_include_parents_output(contract_id: Optional[pulumi.Input[str]]
                                         include_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyIncludeParentsResult]:
     """
-    Use the _get_property_include_parents_ data source to return a list of parent properties that use the given include. In your property's rule tree, you can reference an include by adding the `include` behavior and specifying the `include_id`.
-
-    ## Basic usage
-
-    This example returns all active properties a specific include is referenced in, based on the contract, group, and include IDs.
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    my_example_property_include_parents = akamai.get_property_include_parents(contract_id="ctr_1-AB123",
-        group_id="grp_12345",
-        include_id="inc_123456")
-    pulumi.export("myExample", my_example_property_include_parents)
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `parents` - The list of include's parent properties.
-     * `id` - The property's unique identifier.
-     * `name` - The descriptive name for the property.
-     * `staging_version` - The property version currently activated on the staging network.
-     * `production_version` - The property version currently activated on the production network.
-     * `is_include_used_in_staging_version` - Whether the specified include is active on the staging network and is referenced in parent's `staging_version`.
-     * `is_include_used_in_production_version` - Whether the specified include is active on the production network and is referenced in parent's `production_version`.
-
-
-    :param str contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-    :param str group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-    :param str include_id: (Required) An include's unique ID with the optional `inc_` prefix.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,55 +9,17 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security policy
-    /// 
-    /// Enables or disables IP/Geo protection for the specified configuration and security policy. When enabled, this allows your firewall to allow (or to block) clients based on their IP address or their geographic location.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var protection = new Akamai.AppSecIPGeoProtection("protection", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         Enabled = true,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// ## Output Options
-    /// 
-    /// The following options can be used to determine the information returned, and how that returned information is formatted:
-    /// 
-    /// - `output_text`. Tabular report showing the current protection settings.
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecIPGeoProtection:AppSecIPGeoProtection")]
     public partial class AppSecIPGeoProtection : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+        /// Whether to enable IP/Geo protection
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
@@ -69,7 +31,7 @@ namespace Pulumi.Akamai
         public Output<string> OutputText { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -121,19 +83,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecIPGeoProtectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+        /// Whether to enable IP/Geo protection
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -147,13 +109,13 @@ namespace Pulumi.Akamai
     public sealed class AppSecIPGeoProtectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+        /// Whether to enable IP/Geo protection
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -165,7 +127,7 @@ namespace Pulumi.Akamai
         public Input<string>? OutputText { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

@@ -9,55 +9,17 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security configuration
-    /// 
-    /// Creates a match target associated with a security configuration. Match targets determine which security policy should apply to an API, hostname or path.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets](https://techdocs.akamai.com/application-security/reference/post-match-targets)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.IO;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var matchTarget = new Akamai.AppSecMatchTarget("matchTarget", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         MatchTarget = File.ReadAllText($"{path.Module}/match_targets.json"),
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// ## Output Options
-    /// 
-    /// In addition to the arguments above, the following attribute is exported:
-    /// 
-    /// - `match_target_id`. ID of the match target.
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecMatchTarget:AppSecMatchTarget")]
     public partial class AppSecMatchTarget : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the match target being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing one or more match target definitions.
+        /// JSON-formatted definition of the match target
         /// </summary>
         [Output("matchTarget")]
         public Output<string> MatchTarget { get; private set; } = null!;
@@ -115,13 +77,13 @@ namespace Pulumi.Akamai
     public sealed class AppSecMatchTargetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the match target being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing one or more match target definitions.
+        /// JSON-formatted definition of the match target
         /// </summary>
         [Input("matchTarget", required: true)]
         public Input<string> MatchTarget { get; set; } = null!;
@@ -135,13 +97,13 @@ namespace Pulumi.Akamai
     public sealed class AppSecMatchTargetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the match target being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Path to a JSON file containing one or more match target definitions.
+        /// JSON-formatted definition of the match target
         /// </summary>
         [Input("matchTarget")]
         public Input<string>? MatchTarget { get; set; }

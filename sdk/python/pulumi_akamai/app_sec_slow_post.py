@@ -22,14 +22,13 @@ class AppSecSlowPostArgs:
                  slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a AppSecSlowPost resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the slow POST settings being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the slow POST settings being modified.
-        :param pulumi.Input[str] slow_rate_action: . Action to be taken if slow POST protection is triggered. Allowed values are:
-               - **alert**. Record the event.
-               - **abort**. Block the request.
-        :param pulumi.Input[int] duration_threshold_timeout: . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
-        :param pulumi.Input[int] slow_rate_threshold_period: . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
-        :param pulumi.Input[int] slow_rate_threshold_rate: . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] slow_rate_action: Action to be taken when slow POST protection is triggered
+        :param pulumi.Input[int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+               specified action
+        :param pulumi.Input[int] slow_rate_threshold_period: Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
+        :param pulumi.Input[int] slow_rate_threshold_rate: Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "security_policy_id", security_policy_id)
@@ -45,7 +44,7 @@ class AppSecSlowPostArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the slow POST settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -57,7 +56,7 @@ class AppSecSlowPostArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        . Unique identifier of the security policy associated with the slow POST settings being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -69,9 +68,7 @@ class AppSecSlowPostArgs:
     @pulumi.getter(name="slowRateAction")
     def slow_rate_action(self) -> pulumi.Input[str]:
         """
-        . Action to be taken if slow POST protection is triggered. Allowed values are:
-        - **alert**. Record the event.
-        - **abort**. Block the request.
+        Action to be taken when slow POST protection is triggered
         """
         return pulumi.get(self, "slow_rate_action")
 
@@ -83,7 +80,8 @@ class AppSecSlowPostArgs:
     @pulumi.getter(name="durationThresholdTimeout")
     def duration_threshold_timeout(self) -> Optional[pulumi.Input[int]]:
         """
-        . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
+        Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+        specified action
         """
         return pulumi.get(self, "duration_threshold_timeout")
 
@@ -95,7 +93,7 @@ class AppSecSlowPostArgs:
     @pulumi.getter(name="slowRateThresholdPeriod")
     def slow_rate_threshold_period(self) -> Optional[pulumi.Input[int]]:
         """
-        . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
+        Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
         """
         return pulumi.get(self, "slow_rate_threshold_period")
 
@@ -107,7 +105,7 @@ class AppSecSlowPostArgs:
     @pulumi.getter(name="slowRateThresholdRate")
     def slow_rate_threshold_rate(self) -> Optional[pulumi.Input[int]]:
         """
-        . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+        Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
         """
         return pulumi.get(self, "slow_rate_threshold_rate")
 
@@ -127,14 +125,13 @@ class _AppSecSlowPostState:
                  slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecSlowPost resources.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the slow POST settings being modified.
-        :param pulumi.Input[int] duration_threshold_timeout: . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the slow POST settings being modified.
-        :param pulumi.Input[str] slow_rate_action: . Action to be taken if slow POST protection is triggered. Allowed values are:
-               - **alert**. Record the event.
-               - **abort**. Block the request.
-        :param pulumi.Input[int] slow_rate_threshold_period: . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
-        :param pulumi.Input[int] slow_rate_threshold_rate: . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+               specified action
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] slow_rate_action: Action to be taken when slow POST protection is triggered
+        :param pulumi.Input[int] slow_rate_threshold_period: Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
+        :param pulumi.Input[int] slow_rate_threshold_rate: Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -153,7 +150,7 @@ class _AppSecSlowPostState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the slow POST settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -165,7 +162,8 @@ class _AppSecSlowPostState:
     @pulumi.getter(name="durationThresholdTimeout")
     def duration_threshold_timeout(self) -> Optional[pulumi.Input[int]]:
         """
-        . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
+        Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+        specified action
         """
         return pulumi.get(self, "duration_threshold_timeout")
 
@@ -177,7 +175,7 @@ class _AppSecSlowPostState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the security policy associated with the slow POST settings being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -189,9 +187,7 @@ class _AppSecSlowPostState:
     @pulumi.getter(name="slowRateAction")
     def slow_rate_action(self) -> Optional[pulumi.Input[str]]:
         """
-        . Action to be taken if slow POST protection is triggered. Allowed values are:
-        - **alert**. Record the event.
-        - **abort**. Block the request.
+        Action to be taken when slow POST protection is triggered
         """
         return pulumi.get(self, "slow_rate_action")
 
@@ -203,7 +199,7 @@ class _AppSecSlowPostState:
     @pulumi.getter(name="slowRateThresholdPeriod")
     def slow_rate_threshold_period(self) -> Optional[pulumi.Input[int]]:
         """
-        . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
+        Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
         """
         return pulumi.get(self, "slow_rate_threshold_period")
 
@@ -215,7 +211,7 @@ class _AppSecSlowPostState:
     @pulumi.getter(name="slowRateThresholdRate")
     def slow_rate_threshold_rate(self) -> Optional[pulumi.Input[int]]:
         """
-        . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+        Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
         """
         return pulumi.get(self, "slow_rate_threshold_rate")
 
@@ -237,40 +233,16 @@ class AppSecSlowPost(pulumi.CustomResource):
                  slow_rate_threshold_rate: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        **Scopes**: Security policy
-
-        Modifies slow POST protection settings for a security configuration and security policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/slow-post](https://techdocs.akamai.com/application-security/reference/put-policy-slow-post)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        slow_post = akamai.AppSecSlowPost("slowPost",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            slow_rate_action="alert",
-            slow_rate_threshold_rate=10,
-            slow_rate_threshold_period=30,
-            duration_threshold_timeout=20)
-        ```
-
+        Create a AppSecSlowPost resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the slow POST settings being modified.
-        :param pulumi.Input[int] duration_threshold_timeout: . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the slow POST settings being modified.
-        :param pulumi.Input[str] slow_rate_action: . Action to be taken if slow POST protection is triggered. Allowed values are:
-               - **alert**. Record the event.
-               - **abort**. Block the request.
-        :param pulumi.Input[int] slow_rate_threshold_period: . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
-        :param pulumi.Input[int] slow_rate_threshold_rate: . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+               specified action
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] slow_rate_action: Action to be taken when slow POST protection is triggered
+        :param pulumi.Input[int] slow_rate_threshold_period: Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
+        :param pulumi.Input[int] slow_rate_threshold_rate: Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
         """
         ...
     @overload
@@ -279,30 +251,7 @@ class AppSecSlowPost(pulumi.CustomResource):
                  args: AppSecSlowPostArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Security policy
-
-        Modifies slow POST protection settings for a security configuration and security policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/slow-post](https://techdocs.akamai.com/application-security/reference/put-policy-slow-post)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        slow_post = akamai.AppSecSlowPost("slowPost",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            slow_rate_action="alert",
-            slow_rate_threshold_rate=10,
-            slow_rate_threshold_period=30,
-            duration_threshold_timeout=20)
-        ```
-
+        Create a AppSecSlowPost resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecSlowPostArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -368,14 +317,13 @@ class AppSecSlowPost(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the slow POST settings being modified.
-        :param pulumi.Input[int] duration_threshold_timeout: . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the slow POST settings being modified.
-        :param pulumi.Input[str] slow_rate_action: . Action to be taken if slow POST protection is triggered. Allowed values are:
-               - **alert**. Record the event.
-               - **abort**. Block the request.
-        :param pulumi.Input[int] slow_rate_threshold_period: . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
-        :param pulumi.Input[int] slow_rate_threshold_rate: . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[int] duration_threshold_timeout: Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+               specified action
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] slow_rate_action: Action to be taken when slow POST protection is triggered
+        :param pulumi.Input[int] slow_rate_threshold_period: Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
+        :param pulumi.Input[int] slow_rate_threshold_rate: Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -393,7 +341,7 @@ class AppSecSlowPost(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the slow POST settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -401,7 +349,8 @@ class AppSecSlowPost(pulumi.CustomResource):
     @pulumi.getter(name="durationThresholdTimeout")
     def duration_threshold_timeout(self) -> pulumi.Output[Optional[int]]:
         """
-        . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
+        Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+        specified action
         """
         return pulumi.get(self, "duration_threshold_timeout")
 
@@ -409,7 +358,7 @@ class AppSecSlowPost(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        . Unique identifier of the security policy associated with the slow POST settings being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -417,9 +366,7 @@ class AppSecSlowPost(pulumi.CustomResource):
     @pulumi.getter(name="slowRateAction")
     def slow_rate_action(self) -> pulumi.Output[str]:
         """
-        . Action to be taken if slow POST protection is triggered. Allowed values are:
-        - **alert**. Record the event.
-        - **abort**. Block the request.
+        Action to be taken when slow POST protection is triggered
         """
         return pulumi.get(self, "slow_rate_action")
 
@@ -427,7 +374,7 @@ class AppSecSlowPost(pulumi.CustomResource):
     @pulumi.getter(name="slowRateThresholdPeriod")
     def slow_rate_threshold_period(self) -> pulumi.Output[Optional[int]]:
         """
-        . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
+        Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
         """
         return pulumi.get(self, "slow_rate_threshold_period")
 
@@ -435,7 +382,7 @@ class AppSecSlowPost(pulumi.CustomResource):
     @pulumi.getter(name="slowRateThresholdRate")
     def slow_rate_threshold_rate(self) -> pulumi.Output[Optional[int]]:
         """
-        . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+        Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
         """
         return pulumi.get(self, "slow_rate_threshold_rate")
 

@@ -15,77 +15,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GtmPropertyTrafficTarget {
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     private @Nullable Integer datacenterId;
-    /**
-     * @return A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
-     * 
-     */
     private @Nullable Boolean enabled;
-    /**
-     * @return Specifies an optional data center for the property. Used when there are no servers configured for the property.
-     * 
-     */
     private @Nullable String handoutCname;
-    /**
-     * @return Name of HTTP header.
-     * 
-     */
     private @Nullable String name;
-    /**
-     * @return (List) Identifies the IP address or the hostnames of the servers.
-     * 
-     */
     private @Nullable List<String> servers;
-    /**
-     * @return Specifies the traffic weight for the target.
-     * 
-     */
     private @Nullable Double weight;
 
     private GtmPropertyTrafficTarget() {}
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Optional<Integer> datacenterId() {
         return Optional.ofNullable(this.datacenterId);
     }
-    /**
-     * @return A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
-     * 
-     */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
-    /**
-     * @return Specifies an optional data center for the property. Used when there are no servers configured for the property.
-     * 
-     */
     public Optional<String> handoutCname() {
         return Optional.ofNullable(this.handoutCname);
     }
-    /**
-     * @return Name of HTTP header.
-     * 
-     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
-    /**
-     * @return (List) Identifies the IP address or the hostnames of the servers.
-     * 
-     */
     public List<String> servers() {
         return this.servers == null ? List.of() : this.servers;
     }
-    /**
-     * @return Specifies the traffic weight for the target.
-     * 
-     */
     public Optional<Double> weight() {
         return Optional.ofNullable(this.weight);
     }

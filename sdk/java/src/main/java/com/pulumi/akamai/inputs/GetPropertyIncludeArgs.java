@@ -13,47 +13,23 @@ public final class GetPropertyIncludeArgs extends com.pulumi.resources.InvokeArg
 
     public static final GetPropertyIncludeArgs Empty = new GetPropertyIncludeArgs();
 
-    /**
-     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId", required=true)
     private Output<String> contractId;
 
-    /**
-     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-     * 
-     */
     public Output<String> contractId() {
         return this.contractId;
     }
 
-    /**
-     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-     * 
-     */
     @Import(name="groupId", required=true)
     private Output<String> groupId;
 
-    /**
-     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-     * 
-     */
     public Output<String> groupId() {
         return this.groupId;
     }
 
-    /**
-     * (Required) An include&#39;s unique ID with the optional `inc_` prefix.
-     * 
-     */
     @Import(name="includeId", required=true)
     private Output<String> includeId;
 
-    /**
-     * @return (Required) An include&#39;s unique ID with the optional `inc_` prefix.
-     * 
-     */
     public Output<String> includeId() {
         return this.includeId;
     }
@@ -84,65 +60,29 @@ public final class GetPropertyIncludeArgs extends com.pulumi.resources.InvokeArg
             $ = new GetPropertyIncludeArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(Output<String> contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             return contractId(Output.of(contractId));
         }
 
-        /**
-         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(Output<String> groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        /**
-         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
         }
 
-        /**
-         * @param includeId (Required) An include&#39;s unique ID with the optional `inc_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder includeId(Output<String> includeId) {
             $.includeId = includeId;
             return this;
         }
 
-        /**
-         * @param includeId (Required) An include&#39;s unique ID with the optional `inc_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder includeId(String includeId) {
             return includeId(Output.of(includeId));
         }

@@ -13,32 +13,16 @@ public final class GetAppSecIPGeoPlainArgs extends com.pulumi.resources.InvokeAr
 
     public static final GetAppSecIPGeoPlainArgs Empty = new GetAppSecIPGeoPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the IP/Geo lists.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the IP/Geo lists.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the IP/Geo lists. If not included, information is returned for all your security policies.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the IP/Geo lists. If not included, information is returned for all your security policies.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -68,23 +52,11 @@ public final class GetAppSecIPGeoPlainArgs extends com.pulumi.resources.InvokeAr
             $ = new GetAppSecIPGeoPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the IP/Geo lists.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the IP/Geo lists. If not included, information is returned for all your security policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

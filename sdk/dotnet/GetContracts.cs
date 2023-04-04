@@ -11,40 +11,6 @@ namespace Pulumi.Akamai
 {
     public static class GetContracts
     {
-        /// <summary>
-        /// Use the `akamai.getContracts` data source to list contracts associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Return contracts associated with the EdgeGrid API client token currently used for authentication:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var my_example = Akamai.GetContracts.Invoke();
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["propertyMatch"] = my_example,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `contracts` - A list of supported contracts, with the following properties:
-        ///   * `contract_id` - The contract's unique ID, including the `ctr_` prefix.
-        ///   * `contract_type_name` - The type of contract, either `DIRECT_CUSTOMER`, `INDIRECT_CUSTOMER`, `PARENT_CUSTOMER`, `REFERRAL_PARTNER`, `TIER_1_RESELLER`, `VAR_CUSTOMER`, `VALUE_ADDED_RESELLER`, `PARTNER`, `PORTAL_PARTNER`, `STREAMING_RESELLER`, `AKAMAI_INTERNAL`, or `UNKNOWN`.
-        /// </summary>
         public static Task<GetContractsResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetContractsResult>("akamai:index/getContracts:getContracts", InvokeArgs.Empty, options.WithDefaults());
     }

@@ -14,53 +14,45 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security policy
- * 
- * Renames an existing security policy. Note that you can only change the name of the policy: once issued, the security policy ID can&#39;t be modified.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}](https://techdocs.akamai.com/application-security/reference/put-policy)
- * 
- */
 @ResourceType(type="akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename")
 public class AppSecSecurityPolicyRename extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the security policy being renamed.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the security policy being renamed.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Unique identifier of the security policy being renamed.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy being renamed.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
     /**
-     * . New name to be given to the security policy.
+     * New name to be given to the security policy
      * 
      */
     @Export(name="securityPolicyName", type=String.class, parameters={})
     private Output<String> securityPolicyName;
 
     /**
-     * @return . New name to be given to the security policy.
+     * @return New name to be given to the security policy
      * 
      */
     public Output<String> securityPolicyName() {

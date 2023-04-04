@@ -9,120 +9,51 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// The `akamai.GtmResource` lets you create, configure, and import a GTM resource. In GTM, a resource is anything you can measure whose scarcity affects load balancing. Examples of resources include bandwidth, CPU load average, database queries per second, or disk operations per second.
-    /// 
-    /// &gt; **Note** Import requires an ID with this format: `existing_domain_name`:
-    /// `existing_resource_name`.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var demoResource = new Akamai.GtmResource("demoResource", new()
-    ///     {
-    ///         AggregationType = "latest",
-    ///         Domain = "demo_domain.akadns.net",
-    ///         Type = "XML load object via HTTP",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/gtmResource:GtmResource")]
     public partial class GtmResource : global::Pulumi.CustomResource
     {
-        /// <summary>
-        /// Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
-        /// </summary>
         [Output("aggregationType")]
         public Output<string> AggregationType { get; private set; } = null!;
 
-        /// <summary>
-        /// Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
-        /// </summary>
         [Output("constrainedProperty")]
         public Output<string?> ConstrainedProperty { get; private set; } = null!;
 
-        /// <summary>
-        /// For Akamai internal use only. You can omit the value or set it to `null`.
-        /// </summary>
         [Output("decayRate")]
         public Output<double?> DecayRate { get; private set; } = null!;
 
-        /// <summary>
-        /// A descriptive note to help you track what the resource constrains.
-        /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
-        /// <summary>
-        /// DNS name for the GTM Domain set that includes this property.
-        /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
-        /// <summary>
-        /// Optionally specifies the host header used when fetching the load object.
-        /// </summary>
         [Output("hostHeader")]
         public Output<string?> HostHeader { get; private set; } = null!;
 
-        /// <summary>
-        /// Specifies the text that comes before the `load_object`.
-        /// </summary>
         [Output("leaderString")]
         public Output<string?> LeaderString { get; private set; } = null!;
 
-        /// <summary>
-        /// For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
-        /// </summary>
         [Output("leastSquaresDecay")]
         public Output<double?> LeastSquaresDecay { get; private set; } = null!;
 
         [Output("loadImbalancePercentage")]
         public Output<double?> LoadImbalancePercentage { get; private set; } = null!;
 
-        /// <summary>
-        /// For Akamai internal use only. You can omit the value or set it to `null`.
-        /// </summary>
         [Output("maxUMultiplicativeIncrement")]
         public Output<double?> MaxUMultiplicativeIncrement { get; private set; } = null!;
 
-        /// <summary>
-        /// A descriptive label for the GTM resource.
-        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
-        /// </summary>
         [Output("resourceInstances")]
         public Output<ImmutableArray<Outputs.GtmResourceResourceInstance>> ResourceInstances { get; private set; } = null!;
 
-        /// <summary>
-        /// Indicates the kind of `load_object` format used to determine the load on the resource.
-        /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
-        /// <summary>
-        /// An optional sanity check that specifies the maximum allowed value for any component of the load object.
-        /// </summary>
         [Output("upperBound")]
         public Output<int?> UpperBound { get; private set; } = null!;
 
-        /// <summary>
-        /// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-        /// </summary>
         [Output("waitOnComplete")]
         public Output<bool?> WaitOnComplete { get; private set; } = null!;
 
@@ -176,96 +107,53 @@ namespace Pulumi.Akamai
 
     public sealed class GtmResourceArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
-        /// </summary>
         [Input("aggregationType", required: true)]
         public Input<string> AggregationType { get; set; } = null!;
 
-        /// <summary>
-        /// Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
-        /// </summary>
         [Input("constrainedProperty")]
         public Input<string>? ConstrainedProperty { get; set; }
 
-        /// <summary>
-        /// For Akamai internal use only. You can omit the value or set it to `null`.
-        /// </summary>
         [Input("decayRate")]
         public Input<double>? DecayRate { get; set; }
 
-        /// <summary>
-        /// A descriptive note to help you track what the resource constrains.
-        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
-        /// <summary>
-        /// DNS name for the GTM Domain set that includes this property.
-        /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
 
-        /// <summary>
-        /// Optionally specifies the host header used when fetching the load object.
-        /// </summary>
         [Input("hostHeader")]
         public Input<string>? HostHeader { get; set; }
 
-        /// <summary>
-        /// Specifies the text that comes before the `load_object`.
-        /// </summary>
         [Input("leaderString")]
         public Input<string>? LeaderString { get; set; }
 
-        /// <summary>
-        /// For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
-        /// </summary>
         [Input("leastSquaresDecay")]
         public Input<double>? LeastSquaresDecay { get; set; }
 
         [Input("loadImbalancePercentage")]
         public Input<double>? LoadImbalancePercentage { get; set; }
 
-        /// <summary>
-        /// For Akamai internal use only. You can omit the value or set it to `null`.
-        /// </summary>
         [Input("maxUMultiplicativeIncrement")]
         public Input<double>? MaxUMultiplicativeIncrement { get; set; }
 
-        /// <summary>
-        /// A descriptive label for the GTM resource.
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("resourceInstances")]
         private InputList<Inputs.GtmResourceResourceInstanceArgs>? _resourceInstances;
-
-        /// <summary>
-        /// (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
-        /// </summary>
         public InputList<Inputs.GtmResourceResourceInstanceArgs> ResourceInstances
         {
             get => _resourceInstances ?? (_resourceInstances = new InputList<Inputs.GtmResourceResourceInstanceArgs>());
             set => _resourceInstances = value;
         }
 
-        /// <summary>
-        /// Indicates the kind of `load_object` format used to determine the load on the resource.
-        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
-        /// <summary>
-        /// An optional sanity check that specifies the maximum allowed value for any component of the load object.
-        /// </summary>
         [Input("upperBound")]
         public Input<int>? UpperBound { get; set; }
 
-        /// <summary>
-        /// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 
@@ -277,96 +165,53 @@ namespace Pulumi.Akamai
 
     public sealed class GtmResourceState : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
-        /// </summary>
         [Input("aggregationType")]
         public Input<string>? AggregationType { get; set; }
 
-        /// <summary>
-        /// Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
-        /// </summary>
         [Input("constrainedProperty")]
         public Input<string>? ConstrainedProperty { get; set; }
 
-        /// <summary>
-        /// For Akamai internal use only. You can omit the value or set it to `null`.
-        /// </summary>
         [Input("decayRate")]
         public Input<double>? DecayRate { get; set; }
 
-        /// <summary>
-        /// A descriptive note to help you track what the resource constrains.
-        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
-        /// <summary>
-        /// DNS name for the GTM Domain set that includes this property.
-        /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
-        /// <summary>
-        /// Optionally specifies the host header used when fetching the load object.
-        /// </summary>
         [Input("hostHeader")]
         public Input<string>? HostHeader { get; set; }
 
-        /// <summary>
-        /// Specifies the text that comes before the `load_object`.
-        /// </summary>
         [Input("leaderString")]
         public Input<string>? LeaderString { get; set; }
 
-        /// <summary>
-        /// For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
-        /// </summary>
         [Input("leastSquaresDecay")]
         public Input<double>? LeastSquaresDecay { get; set; }
 
         [Input("loadImbalancePercentage")]
         public Input<double>? LoadImbalancePercentage { get; set; }
 
-        /// <summary>
-        /// For Akamai internal use only. You can omit the value or set it to `null`.
-        /// </summary>
         [Input("maxUMultiplicativeIncrement")]
         public Input<double>? MaxUMultiplicativeIncrement { get; set; }
 
-        /// <summary>
-        /// A descriptive label for the GTM resource.
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("resourceInstances")]
         private InputList<Inputs.GtmResourceResourceInstanceGetArgs>? _resourceInstances;
-
-        /// <summary>
-        /// (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
-        /// </summary>
         public InputList<Inputs.GtmResourceResourceInstanceGetArgs> ResourceInstances
         {
             get => _resourceInstances ?? (_resourceInstances = new InputList<Inputs.GtmResourceResourceInstanceGetArgs>());
             set => _resourceInstances = value;
         }
 
-        /// <summary>
-        /// Indicates the kind of `load_object` format used to determine the load on the resource.
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
-        /// <summary>
-        /// An optional sanity check that specifies the maximum allowed value for any component of the load object.
-        /// </summary>
         [Input("upperBound")]
         public Input<int>? UpperBound { get; set; }
 
-        /// <summary>
-        /// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-        /// </summary>
         [Input("waitOnComplete")]
         public Input<bool>? WaitOnComplete { get; set; }
 

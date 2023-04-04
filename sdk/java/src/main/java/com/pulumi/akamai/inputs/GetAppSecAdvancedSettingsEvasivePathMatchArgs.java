@@ -16,32 +16,16 @@ public final class GetAppSecAdvancedSettingsEvasivePathMatchArgs extends com.pul
 
     public static final GetAppSecAdvancedSettingsEvasivePathMatchArgs Empty = new GetAppSecAdvancedSettingsEvasivePathMatchArgs();
 
-    /**
-     * The configuration ID.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return The configuration ID.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * The ID of the security policy to use.
-     * 
-     */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
-    /**
-     * @return The ID of the security policy to use.
-     * 
-     */
     public Optional<Output<String>> securityPolicyId() {
         return Optional.ofNullable(this.securityPolicyId);
     }
@@ -71,44 +55,20 @@ public final class GetAppSecAdvancedSettingsEvasivePathMatchArgs extends com.pul
             $ = new GetAppSecAdvancedSettingsEvasivePathMatchArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId The configuration ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId The configuration ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param securityPolicyId The ID of the security policy to use.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(@Nullable Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId The ID of the security policy to use.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
         }

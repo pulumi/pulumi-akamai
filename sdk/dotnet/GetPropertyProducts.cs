@@ -11,71 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetPropertyProducts
     {
-        /// <summary>
-        /// Use the `akamai.getPropertyProducts` data source to list the products included on a contract.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// This example returns products associated with the [EdgeGrid client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) for a given contract:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["propertyMatch"] = data.Akamai_property_products.My_example,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `products` - A list of supported products for the contract, including:
-        ///   * `product_id` - The product's unique ID, including the `prd_` prefix.
-        ///   * `product_name` - A string containing the product name.
-        /// </summary>
         public static Task<GetPropertyProductsResult> InvokeAsync(GetPropertyProductsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyProductsResult>("akamai:index/getPropertyProducts:getPropertyProducts", args ?? new GetPropertyProductsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getPropertyProducts` data source to list the products included on a contract.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// This example returns products associated with the [EdgeGrid client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) for a given contract:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["propertyMatch"] = data.Akamai_property_products.My_example,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `products` - A list of supported products for the contract, including:
-        ///   * `product_id` - The product's unique ID, including the `prd_` prefix.
-        ///   * `product_name` - A string containing the product name.
-        /// </summary>
         public static Output<GetPropertyProductsResult> Invoke(GetPropertyProductsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertyProductsResult>("akamai:index/getPropertyProducts:getPropertyProducts", args ?? new GetPropertyProductsInvokeArgs(), options.WithDefaults());
     }
@@ -83,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyProductsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
@@ -97,9 +32,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyProductsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 

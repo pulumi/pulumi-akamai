@@ -6,64 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * ## Example Usage
- *
- * ### JSON Template Files
- *
- * Here are some examples of how you can set up your JSON template files for use with this data source.
- * ### Single JSON template that calls other templates
- *
- * Here's an example of a JSON template file with nested templates:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * ```
- * ### Individual JSON rule template file
- *
- * Here’s a simple default rule example that you can include inside the `templateData` argument:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * ```
- * ### Add Templates To The Data Source
- *
- * Here are some examples of how you can call your JSON template files with this data source.
- * ### Call individual template files with this data source
- *
- * This second example shows how to call a specific JSON template using the `templateData` field:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const examplePropertyRulesTemplate = akamai.getPropertyRulesTemplate({
- *     templates: [{
- *         templateData: JSON.stringify({
- *             rules: {
- *                 name: "default",
- *                 children: ["#include:rules.json"],
- *             },
- *         }),
- *         templateDir: "property-snippets/",
- *     }],
- * });
- * const exampleProperty = new akamai.Property("exampleProperty", {
- *     contractId: _var.contractid,
- *     groupId: _var.groupid,
- *     ruleFormat: "v2020-03-04",
- *     rules: examplePropertyRulesTemplate.then(examplePropertyRulesTemplate => examplePropertyRulesTemplate.json),
- * });
- * ```
- * ### Variables
- *
- * You can add variables individually or reference variable definition files.
- * ## Attributes reference
- *
- * This data source returns this attribute:
- *
- * * `json` - The fully expanded template with variables and all nested templates resolved.
- */
 export function getPropertyRulesTemplate(args?: GetPropertyRulesTemplateArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyRulesTemplateResult> {
     args = args || {};
 
@@ -81,25 +23,10 @@ export function getPropertyRulesTemplate(args?: GetPropertyRulesTemplateArgs, op
  * A collection of arguments for invoking getPropertyRulesTemplate.
  */
 export interface GetPropertyRulesTemplateArgs {
-    /**
-     * The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
-     */
     templateFile?: string;
-    /**
-     * The template you use in your configuration. This argument conflicts with the `templateFile` argument.
-     */
     templates?: inputs.GetPropertyRulesTemplateTemplate[];
-    /**
-     * Required when using `varValuesFile`. The absolute path to the file containing variable definitions and defaults. This argument conflicts with the `variables` argument.
-     */
     varDefinitionFile?: string;
-    /**
-     * Required when using `varDefinitionFile`. The absolute path to the file containing variable values. This argument conflicts with the `variables` argument.
-     */
     varValuesFile?: string;
-    /**
-     * The definition of one or more variables. This argument conflicts with the `varDefinitionFile` and `varValuesFile` arguments. A `variables` block includes:
-     */
     variables?: inputs.GetPropertyRulesTemplateVariable[];
 }
 
@@ -118,64 +45,6 @@ export interface GetPropertyRulesTemplateResult {
     readonly varValuesFile?: string;
     readonly variables?: outputs.GetPropertyRulesTemplateVariable[];
 }
-/**
- * ## Example Usage
- *
- * ### JSON Template Files
- *
- * Here are some examples of how you can set up your JSON template files for use with this data source.
- * ### Single JSON template that calls other templates
- *
- * Here's an example of a JSON template file with nested templates:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * ```
- * ### Individual JSON rule template file
- *
- * Here’s a simple default rule example that you can include inside the `templateData` argument:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * ```
- * ### Add Templates To The Data Source
- *
- * Here are some examples of how you can call your JSON template files with this data source.
- * ### Call individual template files with this data source
- *
- * This second example shows how to call a specific JSON template using the `templateData` field:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const examplePropertyRulesTemplate = akamai.getPropertyRulesTemplate({
- *     templates: [{
- *         templateData: JSON.stringify({
- *             rules: {
- *                 name: "default",
- *                 children: ["#include:rules.json"],
- *             },
- *         }),
- *         templateDir: "property-snippets/",
- *     }],
- * });
- * const exampleProperty = new akamai.Property("exampleProperty", {
- *     contractId: _var.contractid,
- *     groupId: _var.groupid,
- *     ruleFormat: "v2020-03-04",
- *     rules: examplePropertyRulesTemplate.then(examplePropertyRulesTemplate => examplePropertyRulesTemplate.json),
- * });
- * ```
- * ### Variables
- *
- * You can add variables individually or reference variable definition files.
- * ## Attributes reference
- *
- * This data source returns this attribute:
- *
- * * `json` - The fully expanded template with variables and all nested templates resolved.
- */
 export function getPropertyRulesTemplateOutput(args?: GetPropertyRulesTemplateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesTemplateResult> {
     return pulumi.output(args).apply((a: any) => getPropertyRulesTemplate(a, opts))
 }
@@ -184,24 +53,9 @@ export function getPropertyRulesTemplateOutput(args?: GetPropertyRulesTemplateOu
  * A collection of arguments for invoking getPropertyRulesTemplate.
  */
 export interface GetPropertyRulesTemplateOutputArgs {
-    /**
-     * The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
-     */
     templateFile?: pulumi.Input<string>;
-    /**
-     * The template you use in your configuration. This argument conflicts with the `templateFile` argument.
-     */
     templates?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateTemplateArgs>[]>;
-    /**
-     * Required when using `varValuesFile`. The absolute path to the file containing variable definitions and defaults. This argument conflicts with the `variables` argument.
-     */
     varDefinitionFile?: pulumi.Input<string>;
-    /**
-     * Required when using `varDefinitionFile`. The absolute path to the file containing variable values. This argument conflicts with the `variables` argument.
-     */
     varValuesFile?: pulumi.Input<string>;
-    /**
-     * The definition of one or more variables. This argument conflicts with the `varDefinitionFile` and `varValuesFile` arguments. A `variables` block includes:
-     */
     variables?: pulumi.Input<pulumi.Input<inputs.GetPropertyRulesTemplateVariableArgs>[]>;
 }

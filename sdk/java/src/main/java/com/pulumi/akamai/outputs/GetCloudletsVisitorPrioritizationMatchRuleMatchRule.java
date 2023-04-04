@@ -16,101 +16,37 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsVisitorPrioritizationMatchRuleMatchRule {
-    /**
-     * @return (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-     * 
-     */
     private @Nullable Boolean disabled;
-    /**
-     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     * 
-     */
     private @Nullable Integer end;
-    /**
-     * @return (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-     * 
-     */
     private @Nullable String matchUrl;
-    /**
-     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
-     * 
-     */
     private @Nullable List<GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch> matches;
-    /**
-     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     * 
-     */
     private @Nullable String name;
-    /**
-     * @return (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin. Enter `-1` to send everyone to the waiting room.
-     * 
-     */
     private Double passThroughPercent;
-    /**
-     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     * 
-     */
     private @Nullable Integer start;
-    /**
-     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     * 
-     */
     private String type;
 
     private GetCloudletsVisitorPrioritizationMatchRuleMatchRule() {}
-    /**
-     * @return (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-     * 
-     */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
-    /**
-     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     * 
-     */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
-    /**
-     * @return (Optional) If you&#39;re using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-     * 
-     */
     public Optional<String> matchUrl() {
         return Optional.ofNullable(this.matchUrl);
     }
-    /**
-     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
-     * 
-     */
     public List<GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch> matches() {
         return this.matches == null ? List.of() : this.matches;
     }
-    /**
-     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     * 
-     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
-    /**
-     * @return (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin. Enter `-1` to send everyone to the waiting room.
-     * 
-     */
     public Double passThroughPercent() {
         return this.passThroughPercent;
     }
-    /**
-     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     * 
-     */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
-    /**
-     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     * 
-     */
     public String type() {
         return this.type;
     }

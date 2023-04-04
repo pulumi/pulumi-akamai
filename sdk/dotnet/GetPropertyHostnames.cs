@@ -11,93 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetPropertyHostnames
     {
-        /// <summary>
-        /// Use the `akamai.getPropertyHostnames` data source to query and retrieve hostnames and their certificate statuses for an existing property. This data source lets you search across the contracts and groups you have access to.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the property's hostnames based on the selected contract and group:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["propertyHostnames"] = data.Akamai_property_hostnames.My_example.Hostnames,
-        ///     };
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `hostnames` - A list of hostnames for the property, including:
-        ///   * `cname_type` - A string containing the hostname's cname type value.
-        ///   * `edge_hostname_id` - The edge hostname's unique ID, including the `ehn_` prefix.
-        ///   * `cname_from` - A string containing the original origin's hostname.
-        ///   * `cname_to` - A string containing the hostname for edge content.
-        ///   * `cert_provisioning_type` - The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the Certificate Provisioning System (CPS), or `DEFAULT` for certificates provisioned automatically.
-        ///   * `cert_status` - If applicable, this shows a list of certificate statuses, including:
-        ///     * `target` - The destination part of the CNAME record used to validate the certificate's domain.
-        ///     * `hostname` - The hostname part of the CNAME record used to validate the certificate's domain.
-        ///     * `production_status` - A string containing the status of the certificate deployment on the production network.
-        ///     * `staging_status` - A string containing the status of the certificate deployment on the staging network.
-        /// 
-        /// ## Domain validation for DEFAULT certificates
-        /// 
-        /// If your `cert_provisioning_type = "DEFAULT"` and the value for `cert_status.production_status` or `cert_status.staging_status` is either `PENDING`, `EXPIRING_SOON_NEEDS_VALIDATION`, or `EXPIRED_NEEDS_VALIDATION`, you need to perform domain validation. This proves to the certificate authority that you control the domain and are authorized to create certificates for it.
-        /// 
-        /// In your DNS configuration, create a CNAME record and map the `cert_status.hostname` value to the `cert_status.target` value.
-        /// </summary>
         public static Task<GetPropertyHostnamesResult> InvokeAsync(GetPropertyHostnamesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getPropertyHostnames` data source to query and retrieve hostnames and their certificate statuses for an existing property. This data source lets you search across the contracts and groups you have access to.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the property's hostnames based on the selected contract and group:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["propertyHostnames"] = data.Akamai_property_hostnames.My_example.Hostnames,
-        ///     };
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `hostnames` - A list of hostnames for the property, including:
-        ///   * `cname_type` - A string containing the hostname's cname type value.
-        ///   * `edge_hostname_id` - The edge hostname's unique ID, including the `ehn_` prefix.
-        ///   * `cname_from` - A string containing the original origin's hostname.
-        ///   * `cname_to` - A string containing the hostname for edge content.
-        ///   * `cert_provisioning_type` - The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the Certificate Provisioning System (CPS), or `DEFAULT` for certificates provisioned automatically.
-        ///   * `cert_status` - If applicable, this shows a list of certificate statuses, including:
-        ///     * `target` - The destination part of the CNAME record used to validate the certificate's domain.
-        ///     * `hostname` - The hostname part of the CNAME record used to validate the certificate's domain.
-        ///     * `production_status` - A string containing the status of the certificate deployment on the production network.
-        ///     * `staging_status` - A string containing the status of the certificate deployment on the staging network.
-        /// 
-        /// ## Domain validation for DEFAULT certificates
-        /// 
-        /// If your `cert_provisioning_type = "DEFAULT"` and the value for `cert_status.production_status` or `cert_status.staging_status` is either `PENDING`, `EXPIRING_SOON_NEEDS_VALIDATION`, or `EXPIRED_NEEDS_VALIDATION`, you need to perform domain validation. This proves to the certificate authority that you control the domain and are authorized to create certificates for it.
-        /// 
-        /// In your DNS configuration, create a CNAME record and map the `cert_status.hostname` value to the `cert_status.target` value.
-        /// </summary>
         public static Output<GetPropertyHostnamesResult> Invoke(GetPropertyHostnamesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertyHostnamesResult>("akamai:index/getPropertyHostnames:getPropertyHostnames", args ?? new GetPropertyHostnamesInvokeArgs(), options.WithDefaults());
     }
@@ -105,21 +21,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyHostnamesArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A group's unique ID, including the `grp_` prefix.
-        /// </summary>
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A property's unique ID, including the `prp_` prefix.
-        /// </summary>
         [Input("propertyId", required: true)]
         public string PropertyId { get; set; } = null!;
 
@@ -131,21 +38,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyHostnamesInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A group's unique ID, including the `grp_` prefix.
-        /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A property's unique ID, including the `prp_` prefix.
-        /// </summary>
         [Input("propertyId", required: true)]
         public Input<string> PropertyId { get; set; } = null!;
 

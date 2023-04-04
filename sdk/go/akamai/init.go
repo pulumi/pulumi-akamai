@@ -116,6 +116,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecWapSelectedHostnames{}
 	case "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging":
 		r = &AppsecAdvancedSettingsAttackPayloadLogging{}
+	case "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody":
+		r = &AppsecAdvancedSettingsRequestBody{}
 	case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
 		r = &CloudletsApplicationLoadBalancer{}
 	case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -452,6 +454,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appsecAdvancedSettingsAttackPayloadLogging",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appsecAdvancedSettingsRequestBody",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

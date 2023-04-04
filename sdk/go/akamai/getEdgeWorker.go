@@ -10,46 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `EdgeWorker` data source to get an EdgeWorker for a given EdgeWorker ID.
-//
-// ## Example Usage
-//
-// This example returns the resource tier fields for the selected EdgeWorker ID:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.LookupEdgeWorker(ctx, &akamai.LookupEdgeWorkerArgs{
-//				EdgeworkerId: 3,
-//				LocalBundle:  pulumi.StringRef("test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `name` - The EdgeWorker name.
-// * `groupId` - Defines the group association for the EdgeWorker.
-// * `resourceTierId` - The unique identifier of a resource tier.
-// * `localBundleHash` - The local bundle hash for the EdgeWorker. It's used to identify content changes for the bundle.
-// * `version` - The bundle version.
-// * `warnings` - The list of warnings returned by EdgeWorker validation.
 func LookupEdgeWorker(ctx *pulumi.Context, args *LookupEdgeWorkerArgs, opts ...pulumi.InvokeOption) (*LookupEdgeWorkerResult, error) {
 	var rv LookupEdgeWorkerResult
 	err := ctx.Invoke("akamai:index/getEdgeWorker:getEdgeWorker", args, &rv, opts...)
@@ -61,10 +21,8 @@ func LookupEdgeWorker(ctx *pulumi.Context, args *LookupEdgeWorkerArgs, opts ...p
 
 // A collection of arguments for invoking getEdgeWorker.
 type LookupEdgeWorkerArgs struct {
-	// The unique identifier of the EdgeWorker.
-	EdgeworkerId int `pulumi:"edgeworkerId"`
-	// The path where the EdgeWorkers `.tgz` code bundle will be stored.
-	LocalBundle *string `pulumi:"localBundle"`
+	EdgeworkerId int     `pulumi:"edgeworkerId"`
+	LocalBundle  *string `pulumi:"localBundle"`
 }
 
 // A collection of values returned by getEdgeWorker.
@@ -96,10 +54,8 @@ func LookupEdgeWorkerOutput(ctx *pulumi.Context, args LookupEdgeWorkerOutputArgs
 
 // A collection of arguments for invoking getEdgeWorker.
 type LookupEdgeWorkerOutputArgs struct {
-	// The unique identifier of the EdgeWorker.
-	EdgeworkerId pulumi.IntInput `pulumi:"edgeworkerId"`
-	// The path where the EdgeWorkers `.tgz` code bundle will be stored.
-	LocalBundle pulumi.StringPtrInput `pulumi:"localBundle"`
+	EdgeworkerId pulumi.IntInput       `pulumi:"edgeworkerId"`
+	LocalBundle  pulumi.StringPtrInput `pulumi:"localBundle"`
 }
 
 func (LookupEdgeWorkerOutputArgs) ElementType() reflect.Type {

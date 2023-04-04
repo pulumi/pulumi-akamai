@@ -6,28 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getContracts` data source to list contracts associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
- *
- * ## Example Usage
- *
- * Return contracts associated with the EdgeGrid API client token currently used for authentication:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const my-example = akamai.getContracts({});
- * export const propertyMatch = my_example;
- * ```
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `contracts` - A list of supported contracts, with the following properties:
- *   * `contractId` - The contract's unique ID, including the `ctr_` prefix.
- *   * `contractTypeName` - The type of contract, either `DIRECT_CUSTOMER`, `INDIRECT_CUSTOMER`, `PARENT_CUSTOMER`, `REFERRAL_PARTNER`, `TIER_1_RESELLER`, `VAR_CUSTOMER`, `VALUE_ADDED_RESELLER`, `PARTNER`, `PORTAL_PARTNER`, `STREAMING_RESELLER`, `AKAMAI_INTERNAL`, or `UNKNOWN`.
- */
 export function getContracts(opts?: pulumi.InvokeOptions): Promise<GetContractsResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

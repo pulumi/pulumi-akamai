@@ -4,32 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Individual account
- *
- * Returns information about the hostnames associated with your account. The returned data includes the hostname's protections, activation status, and other summary information.
- *
- * **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const hostnameCoverage = akamai.getAppSecHostnameCoverage({});
- * export const hostnameCoverageListJson = hostnameCoverage.then(hostnameCoverage => hostnameCoverage.json);
- * export const hostnameCoverageListOutput = hostnameCoverage.then(hostnameCoverage => hostnameCoverage.outputText);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `json`. JSON-formatted list of the hostname coverage information.
- * - `outputText`. Tabular report of the hostname coverage information.
- */
 export function getAppSecHostnameCoverage(opts?: pulumi.InvokeOptions): Promise<GetAppSecHostnameCoverageResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -16,32 +16,16 @@ public final class GetAppSecAdvancedSettingsLoggingArgs extends com.pulumi.resou
 
     public static final GetAppSecAdvancedSettingsLoggingArgs Empty = new GetAppSecAdvancedSettingsLoggingArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the logging settings.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the logging settings.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
-     * 
-     */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
-     * 
-     */
     public Optional<Output<String>> securityPolicyId() {
         return Optional.ofNullable(this.securityPolicyId);
     }
@@ -71,44 +55,20 @@ public final class GetAppSecAdvancedSettingsLoggingArgs extends com.pulumi.resou
             $ = new GetAppSecAdvancedSettingsLoggingArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the logging settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the logging settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(@Nullable Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
         }

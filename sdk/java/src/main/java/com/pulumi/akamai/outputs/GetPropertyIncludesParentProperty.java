@@ -10,29 +10,13 @@ import java.util.Objects;
 
 @CustomType
 public final class GetPropertyIncludesParentProperty {
-    /**
-     * @return (Required) The property&#39;s unique identifier.
-     * 
-     */
     private String id;
-    /**
-     * @return (Required) The version of the activated parent property.
-     * 
-     */
     private Integer version;
 
     private GetPropertyIncludesParentProperty() {}
-    /**
-     * @return (Required) The property&#39;s unique identifier.
-     * 
-     */
     public String id() {
         return this.id;
     }
-    /**
-     * @return (Required) The version of the activated parent property.
-     * 
-     */
     public Integer version() {
         return this.version;
     }

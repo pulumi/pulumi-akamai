@@ -12,47 +12,23 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
 
     public static final GetPropertyHostnamesPlainArgs Empty = new GetPropertyHostnamesPlainArgs();
 
-    /**
-     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId", required=true)
     private String contractId;
 
-    /**
-     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-     * 
-     */
     public String contractId() {
         return this.contractId;
     }
 
-    /**
-     * (Required) A group&#39;s unique ID, including the `grp_` prefix.
-     * 
-     */
     @Import(name="groupId", required=true)
     private String groupId;
 
-    /**
-     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
-     * 
-     */
     public String groupId() {
         return this.groupId;
     }
 
-    /**
-     * (Required) A property&#39;s unique ID, including the `prp_` prefix.
-     * 
-     */
     @Import(name="propertyId", required=true)
     private String propertyId;
 
-    /**
-     * @return (Required) A property&#39;s unique ID, including the `prp_` prefix.
-     * 
-     */
     public String propertyId() {
         return this.propertyId;
     }
@@ -83,34 +59,16 @@ public final class GetPropertyHostnamesPlainArgs extends com.pulumi.resources.In
             $ = new GetPropertyHostnamesPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(String groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        /**
-         * @param propertyId (Required) A property&#39;s unique ID, including the `prp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder propertyId(String propertyId) {
             $.propertyId = propertyId;
             return this;

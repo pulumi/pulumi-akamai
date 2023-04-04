@@ -15,17 +15,9 @@ public final class GetCloudletsApplicationLoadBalancerMatchRulePlainArgs extends
 
     public static final GetCloudletsApplicationLoadBalancerMatchRulePlainArgs Empty = new GetCloudletsApplicationLoadBalancerMatchRulePlainArgs();
 
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     * 
-     */
     @Import(name="matchRules")
     private @Nullable List<GetCloudletsApplicationLoadBalancerMatchRuleMatchRule> matchRules;
 
-    /**
-     * @return (Optional) A list of Cloudlet-specific match rules for a policy.
-     * 
-     */
     public Optional<List<GetCloudletsApplicationLoadBalancerMatchRuleMatchRule>> matchRules() {
         return Optional.ofNullable(this.matchRules);
     }
@@ -54,23 +46,11 @@ public final class GetCloudletsApplicationLoadBalancerMatchRulePlainArgs extends
             $ = new GetCloudletsApplicationLoadBalancerMatchRulePlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchRules(@Nullable List<GetCloudletsApplicationLoadBalancerMatchRuleMatchRule> matchRules) {
             $.matchRules = matchRules;
             return this;
         }
 
-        /**
-         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchRules(GetCloudletsApplicationLoadBalancerMatchRuleMatchRule... matchRules) {
             return matchRules(List.of(matchRules));
         }

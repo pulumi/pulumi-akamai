@@ -29,75 +29,51 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * ## Import
- * 
- * Basic usagehcl resource &#34;akamai_datastream&#34; &#34;example&#34; {
- * 
- * # (resource arguments)
- * 
- *  } You can import your Akamai DataStream configuration using a stream version ID. For example
- * 
- * ```sh
- *  $ pulumi import akamai:index/datastream:Datastream example 1234
- * ```
- * 
- *  ~&gt; **IMPORTANT:** For security reasons, this command doesn&#39;t import any secrets you specify for your connector. To make sure the state file includes complete data, use this resource to manually add the arguments marked **Secret** above.
- * 
- */
 @ResourceType(type="akamai:index/datastream:Datastream")
 public class Datastream extends com.pulumi.resources.CustomResource {
     /**
-     * Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
+     * Defining if stream should be active or not
      * 
      */
     @Export(name="active", type=Boolean.class, parameters={})
     private Output<Boolean> active;
 
     /**
-     * @return Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
+     * @return Defining if stream should be active or not
      * 
      */
     public Output<Boolean> active() {
         return this.active;
     }
-    /**
-     * Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-     * 
-     */
     @Export(name="azureConnector", type=DatastreamAzureConnector.class, parameters={})
     private Output</* @Nullable */ DatastreamAzureConnector> azureConnector;
 
-    /**
-     * @return Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-     * 
-     */
     public Output<Optional<DatastreamAzureConnector>> azureConnector() {
         return Codegen.optional(this.azureConnector);
     }
     /**
-     * Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
+     * Provides information about the configuration related to logs (format, file names, delivery frequency)
      * 
      */
     @Export(name="config", type=DatastreamConfig.class, parameters={})
     private Output<DatastreamConfig> config;
 
     /**
-     * @return Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
+     * @return Provides information about the configuration related to logs (format, file names, delivery frequency)
      * 
      */
     public Output<DatastreamConfig> config() {
         return this.config;
     }
     /**
-     * Identifies the contract that has access to the product.
+     * Identifies the contract that has access to the product
      * 
      */
     @Export(name="contractId", type=String.class, parameters={})
     private Output<String> contractId;
 
     /**
-     * @return Identifies the contract that has access to the product.
+     * @return Identifies the contract that has access to the product
      * 
      */
     public Output<String> contractId() {
@@ -131,85 +107,63 @@ public class Datastream extends com.pulumi.resources.CustomResource {
     public Output<String> createdDate() {
         return this.createdDate;
     }
-    /**
-     * Specify details about the Datadog connector in a stream, including:
-     * 
-     */
     @Export(name="datadogConnector", type=DatastreamDatadogConnector.class, parameters={})
     private Output</* @Nullable */ DatastreamDatadogConnector> datadogConnector;
 
-    /**
-     * @return Specify details about the Datadog connector in a stream, including:
-     * 
-     */
     public Output<Optional<DatastreamDatadogConnector>> datadogConnector() {
         return Codegen.optional(this.datadogConnector);
     }
     /**
-     * Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+     * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+     * identifiers define how the value for these fields appear in the log lines
      * 
      */
     @Export(name="datasetFieldsIds", type=List.class, parameters={Integer.class})
     private Output<List<Integer>> datasetFieldsIds;
 
     /**
-     * @return Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+     * @return A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+     * identifiers define how the value for these fields appear in the log lines
      * 
      */
     public Output<List<Integer>> datasetFieldsIds() {
         return this.datasetFieldsIds;
     }
-    /**
-     * Specify details about the Elasticsearch connector you can use in a stream, including:
-     * 
-     */
     @Export(name="elasticsearchConnector", type=DatastreamElasticsearchConnector.class, parameters={})
     private Output</* @Nullable */ DatastreamElasticsearchConnector> elasticsearchConnector;
 
-    /**
-     * @return Specify details about the Elasticsearch connector you can use in a stream, including:
-     * 
-     */
     public Output<Optional<DatastreamElasticsearchConnector>> elasticsearchConnector() {
         return Codegen.optional(this.elasticsearchConnector);
     }
     /**
-     * A list of email addresses you want to notify about activations and deactivations of the stream.
+     * List of email addresses where the system sends notifications about activations and deactivations of the stream
      * 
      */
     @Export(name="emailIds", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> emailIds;
 
     /**
-     * @return A list of email addresses you want to notify about activations and deactivations of the stream.
+     * @return List of email addresses where the system sends notifications about activations and deactivations of the stream
      * 
      */
     public Output<Optional<List<String>>> emailIds() {
         return Codegen.optional(this.emailIds);
     }
-    /**
-     * Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_&lt;timestamp&gt;.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-     * 
-     */
     @Export(name="gcsConnector", type=DatastreamGcsConnector.class, parameters={})
     private Output</* @Nullable */ DatastreamGcsConnector> gcsConnector;
 
-    /**
-     * @return Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_&lt;timestamp&gt;.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-     * 
-     */
     public Output<Optional<DatastreamGcsConnector>> gcsConnector() {
         return Codegen.optional(this.gcsConnector);
     }
     /**
-     * Identifies the group that has access to the product and this stream configuration.
+     * Identifies the group that has access to the product and for which the stream configuration was created
      * 
      */
     @Export(name="groupId", type=String.class, parameters={})
     private Output<String> groupId;
 
     /**
-     * @return Identifies the group that has access to the product and this stream configuration.
+     * @return Identifies the group that has access to the product and for which the stream configuration was created
      * 
      */
     public Output<String> groupId() {
@@ -229,31 +183,15 @@ public class Datastream extends com.pulumi.resources.CustomResource {
     public Output<String> groupName() {
         return this.groupName;
     }
-    /**
-     * Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-     * 
-     */
     @Export(name="httpsConnector", type=DatastreamHttpsConnector.class, parameters={})
     private Output</* @Nullable */ DatastreamHttpsConnector> httpsConnector;
 
-    /**
-     * @return Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-     * 
-     */
     public Output<Optional<DatastreamHttpsConnector>> httpsConnector() {
         return Codegen.optional(this.httpsConnector);
     }
-    /**
-     * Specify details about the Loggly connector you can use in a stream, including:
-     * 
-     */
     @Export(name="logglyConnector", type=DatastreamLogglyConnector.class, parameters={})
     private Output</* @Nullable */ DatastreamLogglyConnector> logglyConnector;
 
-    /**
-     * @return Specify details about the Loggly connector you can use in a stream, including:
-     * 
-     */
     public Output<Optional<DatastreamLogglyConnector>> logglyConnector() {
         return Codegen.optional(this.logglyConnector);
     }
@@ -285,31 +223,15 @@ public class Datastream extends com.pulumi.resources.CustomResource {
     public Output<String> modifiedDate() {
         return this.modifiedDate;
     }
-    /**
-     * Specify details about the New Relic connector you can use in a stream, including:
-     * 
-     */
     @Export(name="newRelicConnector", type=DatastreamNewRelicConnector.class, parameters={})
     private Output</* @Nullable */ DatastreamNewRelicConnector> newRelicConnector;
 
-    /**
-     * @return Specify details about the New Relic connector you can use in a stream, including:
-     * 
-     */
     public Output<Optional<DatastreamNewRelicConnector>> newRelicConnector() {
         return Codegen.optional(this.newRelicConnector);
     }
-    /**
-     * Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_&lt;timestamp&gt;.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
-     * 
-     */
     @Export(name="oracleConnector", type=DatastreamOracleConnector.class, parameters={})
     private Output</* @Nullable */ DatastreamOracleConnector> oracleConnector;
 
-    /**
-     * @return Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_&lt;timestamp&gt;.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
-     * 
-     */
     public Output<Optional<DatastreamOracleConnector>> oracleConnector() {
         return Codegen.optional(this.oracleConnector);
     }
@@ -356,70 +278,54 @@ public class Datastream extends com.pulumi.resources.CustomResource {
         return this.productName;
     }
     /**
-     * Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+     * Identifies the properties monitored in the stream
      * 
      */
     @Export(name="propertyIds", type=List.class, parameters={String.class})
     private Output<List<String>> propertyIds;
 
     /**
-     * @return Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+     * @return Identifies the properties monitored in the stream
      * 
      */
     public Output<List<String>> propertyIds() {
         return this.propertyIds;
     }
-    /**
-     * Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-     * 
-     */
     @Export(name="s3Connector", type=DatastreamS3Connector.class, parameters={})
     private Output</* @Nullable */ DatastreamS3Connector> s3Connector;
 
-    /**
-     * @return Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-     * 
-     */
     public Output<Optional<DatastreamS3Connector>> s3Connector() {
         return Codegen.optional(this.s3Connector);
     }
-    /**
-     * Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-     * 
-     */
     @Export(name="splunkConnector", type=DatastreamSplunkConnector.class, parameters={})
     private Output</* @Nullable */ DatastreamSplunkConnector> splunkConnector;
 
-    /**
-     * @return Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-     * 
-     */
     public Output<Optional<DatastreamSplunkConnector>> splunkConnector() {
         return Codegen.optional(this.splunkConnector);
     }
     /**
-     * The name of the stream.
+     * The name of the stream
      * 
      */
     @Export(name="streamName", type=String.class, parameters={})
     private Output<String> streamName;
 
     /**
-     * @return The name of the stream.
+     * @return The name of the stream
      * 
      */
     public Output<String> streamName() {
         return this.streamName;
     }
     /**
-     * The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+     * Specifies the type of the data stream
      * 
      */
     @Export(name="streamType", type=String.class, parameters={})
     private Output<String> streamType;
 
     /**
-     * @return The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+     * @return Specifies the type of the data stream
      * 
      */
     public Output<String> streamType() {
@@ -439,29 +345,21 @@ public class Datastream extends com.pulumi.resources.CustomResource {
     public Output<Integer> streamVersionId() {
         return this.streamVersionId;
     }
-    /**
-     * Specify details about the Sumo Logic connector in a stream, including:
-     * 
-     */
     @Export(name="sumologicConnector", type=DatastreamSumologicConnector.class, parameters={})
     private Output</* @Nullable */ DatastreamSumologicConnector> sumologicConnector;
 
-    /**
-     * @return Specify details about the Sumo Logic connector in a stream, including:
-     * 
-     */
     public Output<Optional<DatastreamSumologicConnector>> sumologicConnector() {
         return Codegen.optional(this.sumologicConnector);
     }
     /**
-     * The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+     * The name of the template associated with the stream
      * 
      */
     @Export(name="templateName", type=String.class, parameters={})
     private Output<String> templateName;
 
     /**
-     * @return The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+     * @return The name of the template associated with the stream
      * 
      */
     public Output<String> templateName() {

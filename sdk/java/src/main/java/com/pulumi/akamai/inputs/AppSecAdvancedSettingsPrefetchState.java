@@ -19,14 +19,14 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
     public static final AppSecAdvancedSettingsPrefetchState Empty = new AppSecAdvancedSettingsPrefetchState();
 
     /**
-     * . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
+     * Whether to enable prefetch requests for all file extensions
      * 
      */
     @Import(name="allExtensions")
     private @Nullable Output<Boolean> allExtensions;
 
     /**
-     * @return . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
+     * @return Whether to enable prefetch requests for all file extensions
      * 
      */
     public Optional<Output<Boolean>> allExtensions() {
@@ -34,14 +34,14 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the prefetch settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the prefetch settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -49,14 +49,14 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
     }
 
     /**
-     * . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
+     * Whether to enable or disable prefetch requests
      * 
      */
     @Import(name="enableAppLayer")
     private @Nullable Output<Boolean> enableAppLayer;
 
     /**
-     * @return . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
+     * @return Whether to enable or disable prefetch requests
      * 
      */
     public Optional<Output<Boolean>> enableAppLayer() {
@@ -64,14 +64,14 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
     }
 
     /**
-     * . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
+     * Whether to enable prefetch requests for rate controls
      * 
      */
     @Import(name="enableRateControls")
     private @Nullable Output<Boolean> enableRateControls;
 
     /**
-     * @return . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
+     * @return Whether to enable prefetch requests for rate controls
      * 
      */
     public Optional<Output<Boolean>> enableRateControls() {
@@ -79,14 +79,14 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
     }
 
     /**
-     * . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won&#39;t be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
+     * List of file extensions
      * 
      */
     @Import(name="extensions")
     private @Nullable Output<List<String>> extensions;
 
     /**
-     * @return . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won&#39;t be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
+     * @return List of file extensions
      * 
      */
     public Optional<Output<List<String>>> extensions() {
@@ -122,7 +122,7 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
         }
 
         /**
-         * @param allExtensions . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
+         * @param allExtensions Whether to enable prefetch requests for all file extensions
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
         }
 
         /**
-         * @param allExtensions . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
+         * @param allExtensions Whether to enable prefetch requests for all file extensions
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the prefetch settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the prefetch settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
         }
 
         /**
-         * @param enableAppLayer . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
+         * @param enableAppLayer Whether to enable or disable prefetch requests
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
         }
 
         /**
-         * @param enableAppLayer . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
+         * @param enableAppLayer Whether to enable or disable prefetch requests
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
         }
 
         /**
-         * @param enableRateControls . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
+         * @param enableRateControls Whether to enable prefetch requests for rate controls
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
         }
 
         /**
-         * @param enableRateControls . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
+         * @param enableRateControls Whether to enable prefetch requests for rate controls
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
         }
 
         /**
-         * @param extensions . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won&#39;t be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
+         * @param extensions List of file extensions
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
         }
 
         /**
-         * @param extensions . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won&#39;t be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
+         * @param extensions List of file extensions
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class AppSecAdvancedSettingsPrefetchState extends com.pulumi.resour
         }
 
         /**
-         * @param extensions . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won&#39;t be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
+         * @param extensions List of file extensions
          * 
          * @return builder
          * 

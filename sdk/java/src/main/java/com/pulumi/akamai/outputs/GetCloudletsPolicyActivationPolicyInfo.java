@@ -13,17 +13,9 @@ public final class GetCloudletsPolicyActivationPolicyInfo {
     private String activatedBy;
     private Integer activationDate;
     private String name;
-    /**
-     * @return (Required) An integer identifier that is associated with all versions of a policy.
-     * 
-     */
     private Integer policyId;
     private String status;
     private String statusDetail;
-    /**
-     * @return (Optional) The version number of a policy.
-     * 
-     */
     private Integer version;
 
     private GetCloudletsPolicyActivationPolicyInfo() {}
@@ -36,10 +28,6 @@ public final class GetCloudletsPolicyActivationPolicyInfo {
     public String name() {
         return this.name;
     }
-    /**
-     * @return (Required) An integer identifier that is associated with all versions of a policy.
-     * 
-     */
     public Integer policyId() {
         return this.policyId;
     }
@@ -49,10 +37,6 @@ public final class GetCloudletsPolicyActivationPolicyInfo {
     public String statusDetail() {
         return this.statusDetail;
     }
-    /**
-     * @return (Optional) The version number of a policy.
-     * 
-     */
     public Integer version() {
         return this.version;
     }

@@ -18,14 +18,14 @@ public final class AppSecReputationProtectionState extends com.pulumi.resources.
     public static final AppSecReputationProtectionState Empty = new AppSecReputationProtectionState();
 
     /**
-     * . Unique identifier of the security configuration associated with the reputation protection settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the reputation protection settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -33,14 +33,14 @@ public final class AppSecReputationProtectionState extends com.pulumi.resources.
     }
 
     /**
-     * . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
+     * Whether to enable reputation protection
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
+     * @return Whether to enable reputation protection
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -63,14 +63,14 @@ public final class AppSecReputationProtectionState extends com.pulumi.resources.
     }
 
     /**
-     * . Unique identifier of the security policy associated with the reputation protection settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the reputation protection settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -105,7 +105,7 @@ public final class AppSecReputationProtectionState extends com.pulumi.resources.
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation protection settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class AppSecReputationProtectionState extends com.pulumi.resources.
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation protection settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class AppSecReputationProtectionState extends com.pulumi.resources.
         }
 
         /**
-         * @param enabled . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
+         * @param enabled Whether to enable reputation protection
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class AppSecReputationProtectionState extends com.pulumi.resources.
         }
 
         /**
-         * @param enabled . Set to **true** to enable reputation protection; set to **false** to disable reputation protection.
+         * @param enabled Whether to enable reputation protection
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class AppSecReputationProtectionState extends com.pulumi.resources.
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the reputation protection settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class AppSecReputationProtectionState extends com.pulumi.resources.
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the reputation protection settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

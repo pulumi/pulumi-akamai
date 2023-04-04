@@ -11,117 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecAdvancedSettingsLogging
     {
-        /// <summary>
-        /// **Scopes**: Security configuration; security policy
-        /// 
-        /// Returns information about your HTTP header logging controls. By default, information is returned for all the security policies in the configuration; however, you can return data for a single policy by using the `security_policy_id` parameter. The returned information is described in the [ConfigHeaderLog members](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-logging) section of the Application Security API.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-logging)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var customRules = Akamai.GetAppSecCustomRules.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     var specificCustomRule = Akamai.GetAppSecCustomRules.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         CustomRuleId = 60029316,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["customRulesOutputText"] = customRules.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.OutputText),
-        ///         ["customRulesJson"] = customRules.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.Json),
-        ///         ["customRulesConfigId"] = customRules.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.ConfigId),
-        ///         ["specificCustomRuleJson"] = specificCustomRule.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of information about the logging settings.
-        /// - `output_text`. Tabular report showing the logging settings.
-        /// </summary>
         public static Task<GetAppSecAdvancedSettingsLoggingResult> InvokeAsync(GetAppSecAdvancedSettingsLoggingArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAdvancedSettingsLoggingResult>("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", args ?? new GetAppSecAdvancedSettingsLoggingArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security configuration; security policy
-        /// 
-        /// Returns information about your HTTP header logging controls. By default, information is returned for all the security policies in the configuration; however, you can return data for a single policy by using the `security_policy_id` parameter. The returned information is described in the [ConfigHeaderLog members](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-logging) section of the Application Security API.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-logging)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var customRules = Akamai.GetAppSecCustomRules.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     var specificCustomRule = Akamai.GetAppSecCustomRules.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         CustomRuleId = 60029316,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["customRulesOutputText"] = customRules.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.OutputText),
-        ///         ["customRulesJson"] = customRules.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.Json),
-        ///         ["customRulesConfigId"] = customRules.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.ConfigId),
-        ///         ["specificCustomRuleJson"] = specificCustomRule.Apply(getAppSecCustomRulesResult =&gt; getAppSecCustomRulesResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of information about the logging settings.
-        /// - `output_text`. Tabular report showing the logging settings.
-        /// </summary>
         public static Output<GetAppSecAdvancedSettingsLoggingResult> Invoke(GetAppSecAdvancedSettingsLoggingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAdvancedSettingsLoggingResult>("akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging", args ?? new GetAppSecAdvancedSettingsLoggingInvokeArgs(), options.WithDefaults());
     }
@@ -129,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecAdvancedSettingsLoggingArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the logging settings.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
-        /// </summary>
         [Input("securityPolicyId")]
         public string? SecurityPolicyId { get; set; }
 
@@ -149,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecAdvancedSettingsLoggingInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the logging settings.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
-        /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 

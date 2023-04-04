@@ -9,56 +9,15 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security policy
-    /// 
-    /// Enables or disables rate protection for a security policy.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var protection = new Akamai.AppSecRateProtection("protection", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         Enabled = true,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// ## Output Options
-    /// 
-    /// The following options can be used to determine the information returned, and how that returned information is formatted:
-    /// 
-    /// - `output_text`. Tabular report showing the current protection settings.
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecRateProtection:AppSecRateProtection")]
     public partial class AppSecRateProtection : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the rate protection settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
-        /// <summary>
-        /// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-        /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
 
@@ -69,7 +28,7 @@ namespace Pulumi.Akamai
         public Output<string> OutputText { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the rate protection settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -121,19 +80,16 @@ namespace Pulumi.Akamai
     public sealed class AppSecRateProtectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the rate protection settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the rate protection settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -147,14 +103,11 @@ namespace Pulumi.Akamai
     public sealed class AppSecRateProtectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the rate protection settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
-        /// <summary>
-        /// . Set to **true** to enable rate protection; set to **false** to disable rate protection.
-        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
@@ -165,7 +118,7 @@ namespace Pulumi.Akamai
         public Input<string>? OutputText { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the rate protection settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

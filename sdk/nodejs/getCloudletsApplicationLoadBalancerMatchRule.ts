@@ -6,18 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
- *
- * Use the `akamai.getCloudletsApplicationLoadBalancerMatchRule` data source to build a match rule JSON object for the Application Load Balancer Cloudlet.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `type` - The type of Cloudlet the rule is for.
- * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
- */
 export function getCloudletsApplicationLoadBalancerMatchRule(args?: GetCloudletsApplicationLoadBalancerMatchRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsApplicationLoadBalancerMatchRuleResult> {
     args = args || {};
 
@@ -31,9 +19,6 @@ export function getCloudletsApplicationLoadBalancerMatchRule(args?: GetCloudlets
  * A collection of arguments for invoking getCloudletsApplicationLoadBalancerMatchRule.
  */
 export interface GetCloudletsApplicationLoadBalancerMatchRuleArgs {
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     */
     matchRules?: inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRule[];
 }
 
@@ -48,18 +33,6 @@ export interface GetCloudletsApplicationLoadBalancerMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRule[];
 }
-/**
- * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
- *
- * Use the `akamai.getCloudletsApplicationLoadBalancerMatchRule` data source to build a match rule JSON object for the Application Load Balancer Cloudlet.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `type` - The type of Cloudlet the rule is for.
- * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
- */
 export function getCloudletsApplicationLoadBalancerMatchRuleOutput(args?: GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsApplicationLoadBalancerMatchRuleResult> {
     return pulumi.output(args).apply((a: any) => getCloudletsApplicationLoadBalancerMatchRule(a, opts))
 }
@@ -68,8 +41,5 @@ export function getCloudletsApplicationLoadBalancerMatchRuleOutput(args?: GetClo
  * A collection of arguments for invoking getCloudletsApplicationLoadBalancerMatchRule.
  */
 export interface GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs {
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArgs>[]>;
 }

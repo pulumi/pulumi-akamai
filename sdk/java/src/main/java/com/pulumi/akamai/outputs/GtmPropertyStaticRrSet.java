@@ -13,41 +13,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GtmPropertyStaticRrSet {
-    /**
-     * @return (List) An array of data strings, representing multiple records within a set.
-     * 
-     */
     private @Nullable List<String> rdatas;
-    /**
-     * @return The number of seconds that this record should live in a resolver&#39;s cache before being refetched.
-     * 
-     */
     private @Nullable Integer ttl;
-    /**
-     * @return The record type.
-     * 
-     */
     private @Nullable String type;
 
     private GtmPropertyStaticRrSet() {}
-    /**
-     * @return (List) An array of data strings, representing multiple records within a set.
-     * 
-     */
     public List<String> rdatas() {
         return this.rdatas == null ? List.of() : this.rdatas;
     }
-    /**
-     * @return The number of seconds that this record should live in a resolver&#39;s cache before being refetched.
-     * 
-     */
     public Optional<Integer> ttl() {
         return Optional.ofNullable(this.ttl);
     }
-    /**
-     * @return The record type.
-     * 
-     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }

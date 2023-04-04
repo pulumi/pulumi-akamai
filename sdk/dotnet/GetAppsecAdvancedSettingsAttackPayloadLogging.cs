@@ -11,119 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppsecAdvancedSettingsAttackPayloadLogging
     {
-        /// <summary>
-        /// **Scopes**: Security configuration; security policy
-        /// 
-        /// Returns information about your Attack Payload Logging controls. By default, information is returned for all the security policies in the configuration.
-        /// However, you can return data for a single policy by using the `security_policy_id` parameter.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var attackPayloadLogging = Akamai.GetAppsecAdvancedSettingsAttackPayloadLogging.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     var policyOverride = Akamai.GetAppsecAdvancedSettingsAttackPayloadLogging.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = @var.Security_policy_id,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["advancedSettingsAttackPayloadLoggingJson"] = attackPayloadLogging.Apply(getAppsecAdvancedSettingsAttackPayloadLoggingResult =&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.Json),
-        ///         ["advancedSettingsAttackPayloadLoggingOutput"] = attackPayloadLogging.Apply(getAppsecAdvancedSettingsAttackPayloadLoggingResult =&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.OutputText),
-        ///         ["advancedSettingsPolicyAttackPayloadLoggingOutput"] = policyOverride.Apply(getAppsecAdvancedSettingsAttackPayloadLoggingResult =&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.OutputText),
-        ///         ["advancedSettingsPolicyAttackPayloadLoggingJson"] = policyOverride.Apply(getAppsecAdvancedSettingsAttackPayloadLoggingResult =&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of information about the Attack Payload Logging settings.
-        /// - `output_text`. Tabular report showing the Attack Payload Logging settings.
-        /// </summary>
         public static Task<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> InvokeAsync(GetAppsecAdvancedSettingsAttackPayloadLoggingArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppsecAdvancedSettingsAttackPayloadLoggingResult>("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", args ?? new GetAppsecAdvancedSettingsAttackPayloadLoggingArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security configuration; security policy
-        /// 
-        /// Returns information about your Attack Payload Logging controls. By default, information is returned for all the security policies in the configuration.
-        /// However, you can return data for a single policy by using the `security_policy_id` parameter.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var attackPayloadLogging = Akamai.GetAppsecAdvancedSettingsAttackPayloadLogging.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     var policyOverride = Akamai.GetAppsecAdvancedSettingsAttackPayloadLogging.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = @var.Security_policy_id,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["advancedSettingsAttackPayloadLoggingJson"] = attackPayloadLogging.Apply(getAppsecAdvancedSettingsAttackPayloadLoggingResult =&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.Json),
-        ///         ["advancedSettingsAttackPayloadLoggingOutput"] = attackPayloadLogging.Apply(getAppsecAdvancedSettingsAttackPayloadLoggingResult =&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.OutputText),
-        ///         ["advancedSettingsPolicyAttackPayloadLoggingOutput"] = policyOverride.Apply(getAppsecAdvancedSettingsAttackPayloadLoggingResult =&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.OutputText),
-        ///         ["advancedSettingsPolicyAttackPayloadLoggingJson"] = policyOverride.Apply(getAppsecAdvancedSettingsAttackPayloadLoggingResult =&gt; getAppsecAdvancedSettingsAttackPayloadLoggingResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of information about the Attack Payload Logging settings.
-        /// - `output_text`. Tabular report showing the Attack Payload Logging settings.
-        /// </summary>
         public static Output<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> Invoke(GetAppsecAdvancedSettingsAttackPayloadLoggingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppsecAdvancedSettingsAttackPayloadLoggingResult>("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", args ?? new GetAppsecAdvancedSettingsAttackPayloadLoggingInvokeArgs(), options.WithDefaults());
     }
@@ -131,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppsecAdvancedSettingsAttackPayloadLoggingArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the Attack Payload Logging settings.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the Attack Payload Logging settings. If not included, information is returned for all your security policies.
-        /// </summary>
         [Input("securityPolicyId")]
         public string? SecurityPolicyId { get; set; }
 
@@ -151,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppsecAdvancedSettingsAttackPayloadLoggingInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the Attack Payload Logging settings.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the Attack Payload Logging settings. If not included, information is returned for all your security policies.
-        /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 
