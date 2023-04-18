@@ -11,50 +11,16 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `CloudletsApplicationLoadBalancerActivation` resource to activate the Application Load Balancer Cloudlet configuration. An activation deploys the configuration version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
-//
-// Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := akamai.NewCloudletsApplicationLoadBalancerActivation(ctx, "example", &akamai.CloudletsApplicationLoadBalancerActivationArgs{
-//				OriginId: pulumi.String("alb_test_1"),
-//				Network:  pulumi.String("staging"),
-//				Version:  pulumi.Int(1),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("status", example.Status)
-//			return nil
-//		})
-//	}
-//
-// ```
 type CloudletsApplicationLoadBalancerActivation struct {
 	pulumi.CustomResourceState
 
-	// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+	// The network you want to activate the application load balancer version on (options are Staging and Production)
 	Network pulumi.StringOutput `pulumi:"network"`
-	// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+	// The conditional origin’s unique identifier
 	OriginId pulumi.StringOutput `pulumi:"originId"`
-	// The activation status for this load balancing configuration.
+	// Activation status for this application load balancer
 	Status pulumi.StringOutput `pulumi:"status"`
-	// The Application Load Balancer Cloudlet configuration version you want to activate.
+	// Cloudlets application load balancer version you want to activate
 	Version pulumi.IntOutput `pulumi:"version"`
 }
 
@@ -96,24 +62,24 @@ func GetCloudletsApplicationLoadBalancerActivation(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudletsApplicationLoadBalancerActivation resources.
 type cloudletsApplicationLoadBalancerActivationState struct {
-	// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+	// The network you want to activate the application load balancer version on (options are Staging and Production)
 	Network *string `pulumi:"network"`
-	// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+	// The conditional origin’s unique identifier
 	OriginId *string `pulumi:"originId"`
-	// The activation status for this load balancing configuration.
+	// Activation status for this application load balancer
 	Status *string `pulumi:"status"`
-	// The Application Load Balancer Cloudlet configuration version you want to activate.
+	// Cloudlets application load balancer version you want to activate
 	Version *int `pulumi:"version"`
 }
 
 type CloudletsApplicationLoadBalancerActivationState struct {
-	// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+	// The network you want to activate the application load balancer version on (options are Staging and Production)
 	Network pulumi.StringPtrInput
-	// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+	// The conditional origin’s unique identifier
 	OriginId pulumi.StringPtrInput
-	// The activation status for this load balancing configuration.
+	// Activation status for this application load balancer
 	Status pulumi.StringPtrInput
-	// The Application Load Balancer Cloudlet configuration version you want to activate.
+	// Cloudlets application load balancer version you want to activate
 	Version pulumi.IntPtrInput
 }
 
@@ -122,21 +88,21 @@ func (CloudletsApplicationLoadBalancerActivationState) ElementType() reflect.Typ
 }
 
 type cloudletsApplicationLoadBalancerActivationArgs struct {
-	// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+	// The network you want to activate the application load balancer version on (options are Staging and Production)
 	Network string `pulumi:"network"`
-	// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+	// The conditional origin’s unique identifier
 	OriginId string `pulumi:"originId"`
-	// The Application Load Balancer Cloudlet configuration version you want to activate.
+	// Cloudlets application load balancer version you want to activate
 	Version int `pulumi:"version"`
 }
 
 // The set of arguments for constructing a CloudletsApplicationLoadBalancerActivation resource.
 type CloudletsApplicationLoadBalancerActivationArgs struct {
-	// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+	// The network you want to activate the application load balancer version on (options are Staging and Production)
 	Network pulumi.StringInput
-	// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+	// The conditional origin’s unique identifier
 	OriginId pulumi.StringInput
-	// The Application Load Balancer Cloudlet configuration version you want to activate.
+	// Cloudlets application load balancer version you want to activate
 	Version pulumi.IntInput
 }
 
@@ -227,22 +193,22 @@ func (o CloudletsApplicationLoadBalancerActivationOutput) ToCloudletsApplication
 	return o
 }
 
-// The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+// The network you want to activate the application load balancer version on (options are Staging and Production)
 func (o CloudletsApplicationLoadBalancerActivationOutput) Network() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsApplicationLoadBalancerActivation) pulumi.StringOutput { return v.Network }).(pulumi.StringOutput)
 }
 
-// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+// The conditional origin’s unique identifier
 func (o CloudletsApplicationLoadBalancerActivationOutput) OriginId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsApplicationLoadBalancerActivation) pulumi.StringOutput { return v.OriginId }).(pulumi.StringOutput)
 }
 
-// The activation status for this load balancing configuration.
+// Activation status for this application load balancer
 func (o CloudletsApplicationLoadBalancerActivationOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudletsApplicationLoadBalancerActivation) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// The Application Load Balancer Cloudlet configuration version you want to activate.
+// Cloudlets application load balancer version you want to activate
 func (o CloudletsApplicationLoadBalancerActivationOutput) Version() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudletsApplicationLoadBalancerActivation) pulumi.IntOutput { return v.Version }).(pulumi.IntOutput)
 }

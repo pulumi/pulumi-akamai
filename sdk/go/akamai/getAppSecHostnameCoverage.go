@@ -7,45 +7,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Individual account
-//
-// Returns information about the hostnames associated with your account. The returned data includes the hostname's protections, activation status, and other summary information.
-//
-// **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			hostnameCoverage, err := akamai.GetAppSecHostnameCoverage(ctx, nil, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("hostnameCoverageListJson", hostnameCoverage.Json)
-//			ctx.Export("hostnameCoverageListOutput", hostnameCoverage.OutputText)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `json`. JSON-formatted list of the hostname coverage information.
-// - `outputText`. Tabular report of the hostname coverage information.
 func GetAppSecHostnameCoverage(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetAppSecHostnameCoverageResult, error) {
 	var rv GetAppSecHostnameCoverageResult
 	err := ctx.Invoke("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", nil, &rv, opts...)

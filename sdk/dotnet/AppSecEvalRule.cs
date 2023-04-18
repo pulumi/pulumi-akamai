@@ -9,77 +9,35 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Evaluation rule
-    /// 
-    /// Creates or modifies an evaluation rule's action, conditions, and exceptions.
-    /// Evaluation rules are Kona Rule Set rules used when running a security configuration in evaluation mode.
-    /// Changes to these rules do not affect the rules used on your production network.
-    /// 
-    /// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}](https://techdocs.akamai.com/application-security/reference/put-policy-eval-rule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-condition-exception)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.IO;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var evalRule = new Akamai.AppSecEvalRule("evalRule", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         RuleId = 60029316,
-    ///         RuleAction = "deny",
-    ///         ConditionException = File.ReadAllText($"{path.Module}/condition_exception.json"),
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecEvalRule:AppSecEvalRule")]
     public partial class AppSecEvalRule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+        /// JSON-formatted condition and exception information for the evaluation rule
         /// </summary>
         [Output("conditionException")]
         public Output<string?> ConditionException { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security configuration in evaluation mode.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken when the evaluation rule is triggered
         /// </summary>
         [Output("ruleAction")]
         public Output<string> RuleAction { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the evaluation rule being modified.
+        /// Unique identifier of the evaluation rule being modified
         /// </summary>
         [Output("ruleId")]
         public Output<int> RuleId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the evaluation process.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -131,35 +89,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecEvalRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+        /// JSON-formatted condition and exception information for the evaluation rule
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration in evaluation mode.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken when the evaluation rule is triggered
         /// </summary>
         [Input("ruleAction", required: true)]
         public Input<string> RuleAction { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the evaluation rule being modified.
+        /// Unique identifier of the evaluation rule being modified
         /// </summary>
         [Input("ruleId", required: true)]
         public Input<int> RuleId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the evaluation process.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -173,35 +127,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecEvalRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+        /// JSON-formatted condition and exception information for the evaluation rule
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration in evaluation mode.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken when the evaluation rule is triggered
         /// </summary>
         [Input("ruleAction")]
         public Input<string>? RuleAction { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the evaluation rule being modified.
+        /// Unique identifier of the evaluation rule being modified
         /// </summary>
         [Input("ruleId")]
         public Input<int>? RuleId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the evaluation process.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

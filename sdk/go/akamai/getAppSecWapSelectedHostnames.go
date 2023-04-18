@@ -10,57 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy
-//
-// Returns hostnames currently protected or being evaluated by a configuration and security policy.
-// This resource is available only to organizations running Web Application Protector (WAP).
-// Note that the WAP selected hostnames feature is currently in beta.
-// Please contact your Akamai representative for more information.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			wapSelectedHostnames, err := akamai.LookupAppSecWapSelectedHostnames(ctx, &akamai.LookupAppSecWapSelectedHostnamesArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: "gms1_134637",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("protectedHostnames", wapSelectedHostnames.ProtectedHosts)
-//			ctx.Export("evaluatedHostnames", wapSelectedHostnames.EvaluatedHosts)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned and how that returned information is formatted:
-//
-// - `protectedHostnames`. List of hostnames currently protected under the security configuration and security policy.
-// - `evaluatedHostnames`. List of hostnames currently being evaluated under the security configuration and security policy.
-// - `hostnamesJson`. JSON-formatted report of the protected and evaluated hostnames.
-// - `outputText`. Tabular reports of the protected and evaluated hostnames.
 func LookupAppSecWapSelectedHostnames(ctx *pulumi.Context, args *LookupAppSecWapSelectedHostnamesArgs, opts ...pulumi.InvokeOption) (*LookupAppSecWapSelectedHostnamesResult, error) {
 	var rv LookupAppSecWapSelectedHostnamesResult
 	err := ctx.Invoke("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", args, &rv, opts...)
@@ -72,9 +21,7 @@ func LookupAppSecWapSelectedHostnames(ctx *pulumi.Context, args *LookupAppSecWap
 
 // A collection of arguments for invoking getAppSecWapSelectedHostnames.
 type LookupAppSecWapSelectedHostnamesArgs struct {
-	// . Unique identifier of the security configuration associated with the hostnames.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the hostnames.
+	ConfigId         int    `pulumi:"configId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -107,9 +54,7 @@ func LookupAppSecWapSelectedHostnamesOutput(ctx *pulumi.Context, args LookupAppS
 
 // A collection of arguments for invoking getAppSecWapSelectedHostnames.
 type LookupAppSecWapSelectedHostnamesOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the hostnames.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the hostnames.
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 

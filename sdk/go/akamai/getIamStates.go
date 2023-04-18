@@ -10,43 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use `getIamStates` to list US states or Canadian provinces. If `country=USA` you may enter a value of `TBD` if you don't know a user's state. Administrators use this data source to set a user's state.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			states, err := akamai.GetIamStates(ctx, &akamai.GetIamStatesArgs{
-//				Country: "canada",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("supportedStates", states)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// These attributes are returned:
-//
-// * `states` — A list of states.
-//
-// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
 func GetIamStates(ctx *pulumi.Context, args *GetIamStatesArgs, opts ...pulumi.InvokeOption) (*GetIamStatesResult, error) {
 	var rv GetIamStatesResult
 	err := ctx.Invoke("akamai:index/getIamStates:getIamStates", args, &rv, opts...)
@@ -58,7 +21,6 @@ func GetIamStates(ctx *pulumi.Context, args *GetIamStatesArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getIamStates.
 type GetIamStatesArgs struct {
-	// — (required, string) Specifies USA or Canada.
 	Country string `pulumi:"country"`
 }
 
@@ -85,7 +47,6 @@ func GetIamStatesOutput(ctx *pulumi.Context, args GetIamStatesOutputArgs, opts .
 
 // A collection of arguments for invoking getIamStates.
 type GetIamStatesOutputArgs struct {
-	// — (required, string) Specifies USA or Canada.
 	Country pulumi.StringInput `pulumi:"country"`
 }
 

@@ -6,18 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
- *
- * Use the `akamai.getCloudletsRequestControlMatchRule` data source to build a match rule JSON object for the Request Control Cloudlet.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `type` - The type of Cloudlet the rule is for.
- * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
- */
 export function getCloudletsRequestControlMatchRule(args?: GetCloudletsRequestControlMatchRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsRequestControlMatchRuleResult> {
     args = args || {};
 
@@ -31,9 +19,6 @@ export function getCloudletsRequestControlMatchRule(args?: GetCloudletsRequestCo
  * A collection of arguments for invoking getCloudletsRequestControlMatchRule.
  */
 export interface GetCloudletsRequestControlMatchRuleArgs {
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     */
     matchRules?: inputs.GetCloudletsRequestControlMatchRuleMatchRule[];
 }
 
@@ -48,18 +33,6 @@ export interface GetCloudletsRequestControlMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsRequestControlMatchRuleMatchRule[];
 }
-/**
- * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
- *
- * Use the `akamai.getCloudletsRequestControlMatchRule` data source to build a match rule JSON object for the Request Control Cloudlet.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `type` - The type of Cloudlet the rule is for.
- * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
- */
 export function getCloudletsRequestControlMatchRuleOutput(args?: GetCloudletsRequestControlMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsRequestControlMatchRuleResult> {
     return pulumi.output(args).apply((a: any) => getCloudletsRequestControlMatchRule(a, opts))
 }
@@ -68,8 +41,5 @@ export function getCloudletsRequestControlMatchRuleOutput(args?: GetCloudletsReq
  * A collection of arguments for invoking getCloudletsRequestControlMatchRule.
  */
 export interface GetCloudletsRequestControlMatchRuleOutputArgs {
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsRequestControlMatchRuleMatchRuleArgs>[]>;
 }

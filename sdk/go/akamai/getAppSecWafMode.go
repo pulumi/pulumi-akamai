@@ -10,64 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy
-//
-// Returns information about how the Kona Rule Set rules associated with a security configuration and security policy are updated. The WAF (Web Application Firewall) mode determines whether Kona Rule Sets are automatically updated as part of automated attack groups (`mode = AAG`) or whether you must periodically check for new rules and then manually update those rules yourself (`mode = KRS`).
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://techdocs.akamai.com/application-security/reference/get-policy-mode)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			wafMode, err := akamai.LookupAppSecWafMode(ctx, &akamai.LookupAppSecWafModeArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: "gms1_134637",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("wafModeMode", wafMode.Mode)
-//			ctx.Export("wafModeCurrentRuleset", wafMode.CurrentRuleset)
-//			ctx.Export("wafModeEvalStatus", wafMode.EvalStatus)
-//			ctx.Export("wafModeEvalRuleset", wafMode.EvalRuleset)
-//			ctx.Export("wafModeEvalExpirationDate", wafMode.EvalExpirationDate)
-//			ctx.Export("wafModeText", wafMode.OutputText)
-//			ctx.Export("wafModeJson", wafMode.Json)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `mode`. Security policy mode, either **KRS** (update manually) or **AAG** (update automatically), For organizations running the Adaptive Security Engine (ASE) beta, you'll get back **ASE_AUTO** for automatic updates or **ASE_MANUAL** for manual updates. Please contact your Akamai representative to learn more about ASE.
-// - `currentRuleset`. Current ruleset version and the ISO 8601 date the version was introduced.
-// - `evalStatus`. Specifies whether evaluation mode is enabled or disabled.
-// - `evalRuleset`. Evaluation ruleset version and the ISO 8601 date the evaluation began.
-// - `evalExpirationDate`. ISO 8601 timestamp indicating when evaluation mode expires. Valid only if `evalStatus` is set to **enabled**.
-// - `outputText`. Tabular report of the mode information.
-// - `json`. JSON-formatted list of the mode information.
 func LookupAppSecWafMode(ctx *pulumi.Context, args *LookupAppSecWafModeArgs, opts ...pulumi.InvokeOption) (*LookupAppSecWafModeResult, error) {
 	var rv LookupAppSecWafModeResult
 	err := ctx.Invoke("akamai:index/getAppSecWafMode:getAppSecWafMode", args, &rv, opts...)
@@ -79,9 +21,7 @@ func LookupAppSecWafMode(ctx *pulumi.Context, args *LookupAppSecWafModeArgs, opt
 
 // A collection of arguments for invoking getAppSecWafMode.
 type LookupAppSecWafModeArgs struct {
-	// . Unique identifier of the security configuration associated with the Kona Rule Set rules.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the Kona Rule Set rules.
+	ConfigId         int    `pulumi:"configId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -115,9 +55,7 @@ func LookupAppSecWafModeOutput(ctx *pulumi.Context, args LookupAppSecWafModeOutp
 
 // A collection of arguments for invoking getAppSecWafMode.
 type LookupAppSecWafModeOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the Kona Rule Set rules.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the Kona Rule Set rules.
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 

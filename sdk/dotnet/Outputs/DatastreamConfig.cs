@@ -13,25 +13,10 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamConfig
     {
-        /// <summary>
-        /// A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
-        /// </summary>
         public readonly string? Delimiter;
-        /// <summary>
-        /// The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
-        /// </summary>
         public readonly string Format;
-        /// <summary>
-        /// How often you want to collect logs from each uploader and send them to a destination.
-        /// </summary>
         public readonly Outputs.DatastreamConfigFrequency Frequency;
-        /// <summary>
-        /// The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
-        /// </summary>
         public readonly string? UploadFilePrefix;
-        /// <summary>
-        /// The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
-        /// </summary>
         public readonly string? UploadFileSuffix;
 
         [OutputConstructor]

@@ -9,53 +9,23 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// Use the `akamai.IamRole` resource to list and create roles for users. Roles are lists of permissions that are explicitly tied to both a user and a group. Users need roles to act on objects in a group.
-    /// 
-    /// ## Basic usage
-    /// 
-    /// This example returns information on available roles:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var example = new Akamai.IamRole("example", new()
-    ///     {
-    ///         Description = "This role will allow you to view",
-    ///         GrantedRoles = 2051,
-    ///         Type = "custom",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
-    /// ## Attributes reference
-    /// 
-    /// This resource returns this attribute:
-    /// 
-    /// * `type` - The type indicates whether the role is `standard`, provided by Akamai, or `custom` for the account.
-    /// </summary>
     [AkamaiResourceType("akamai:index/iamRole:IamRole")]
     public partial class IamRole : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The description for a role.
+        /// The description for a role
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+        /// The list of existing unique identifiers for the granted roles
         /// </summary>
         [Output("grantedRoles")]
         public Output<ImmutableArray<int>> GrantedRoles { get; private set; } = null!;
 
         /// <summary>
-        /// The name you supply for a role.
+        /// The name you supply for a role
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -113,7 +83,7 @@ namespace Pulumi.Akamai
     public sealed class IamRoleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The description for a role.
+        /// The description for a role
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
@@ -122,7 +92,7 @@ namespace Pulumi.Akamai
         private InputList<int>? _grantedRoles;
 
         /// <summary>
-        /// The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+        /// The list of existing unique identifiers for the granted roles
         /// </summary>
         public InputList<int> GrantedRoles
         {
@@ -131,7 +101,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The name you supply for a role.
+        /// The name you supply for a role
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -151,7 +121,7 @@ namespace Pulumi.Akamai
     public sealed class IamRoleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The description for a role.
+        /// The description for a role
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -160,7 +130,7 @@ namespace Pulumi.Akamai
         private InputList<int>? _grantedRoles;
 
         /// <summary>
-        /// The list of existing unique identifiers for the granted roles. Each identifier must be a unique integer.
+        /// The list of existing unique identifiers for the granted roles
         /// </summary>
         public InputList<int> GrantedRoles
         {
@@ -169,7 +139,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The name you supply for a role.
+        /// The name you supply for a role
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

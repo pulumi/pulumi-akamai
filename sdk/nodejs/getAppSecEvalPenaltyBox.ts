@@ -4,47 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security policy
- *
- *  __ASE_Beta__.:
- * Returns the penalty box settings for a security policy in evaluation mode - evaluation penalty box.
- * When the penalty box is enabled for a policy in evaluation mode, clients that trigger a WAF Deny action are placed in the “penalty box”.
- * There, the action you select for the penalty box (either Alert or Deny) continues to apply to any requests from that client for the next 10 minutes.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval_penalty-box](https://techdocs.akamai.com/application-security/reference/get-policy-eval_penalty-box)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const evalPenaltyBox = configuration.then(configuration => akamai.getAppSecEvalPenaltyBox({
- *     configId: configuration.configId,
- *     securityPolicyId: "gms1_134637",
- * }));
- * export const evalPenaltyBoxAction = evalPenaltyBox.then(evalPenaltyBox => evalPenaltyBox.action);
- * export const evalPenaltyBoxEnabled = evalPenaltyBox.then(evalPenaltyBox => evalPenaltyBox.enabled);
- * export const evalPenaltyBoxText = evalPenaltyBox.then(evalPenaltyBox => evalPenaltyBox.outputText);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `action`. Action taken any time the penalty box is triggered. Valid values are:
- *   - **alert**. Record the event.
- *   - **deny**. The request is blocked.
- *   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
- *   - **none**. Take no action.
- * - `enabled`. If **true**, evaluation penalty box protection is enabled. If **false**, evaluation penalty box protection is disabled.
- * - `outputText`. Tabular report of evaluation penalty box protection settings.
- */
 export function getAppSecEvalPenaltyBox(args: GetAppSecEvalPenaltyBoxArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecEvalPenaltyBoxResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -58,13 +17,7 @@ export function getAppSecEvalPenaltyBox(args: GetAppSecEvalPenaltyBoxArgs, opts?
  * A collection of arguments for invoking getAppSecEvalPenaltyBox.
  */
 export interface GetAppSecEvalPenaltyBoxArgs {
-    /**
-     * . Unique identifier of the security configuration associated with the evaluation penalty box settings.
-     */
     configId: number;
-    /**
-     * . Unique identifier of the security policy associated with the evaluation penalty box settings.
-     */
     securityPolicyId: string;
 }
 
@@ -82,47 +35,6 @@ export interface GetAppSecEvalPenaltyBoxResult {
     readonly outputText: string;
     readonly securityPolicyId: string;
 }
-/**
- * **Scopes**: Security policy
- *
- *  __ASE_Beta__.:
- * Returns the penalty box settings for a security policy in evaluation mode - evaluation penalty box.
- * When the penalty box is enabled for a policy in evaluation mode, clients that trigger a WAF Deny action are placed in the “penalty box”.
- * There, the action you select for the penalty box (either Alert or Deny) continues to apply to any requests from that client for the next 10 minutes.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval_penalty-box](https://techdocs.akamai.com/application-security/reference/get-policy-eval_penalty-box)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const evalPenaltyBox = configuration.then(configuration => akamai.getAppSecEvalPenaltyBox({
- *     configId: configuration.configId,
- *     securityPolicyId: "gms1_134637",
- * }));
- * export const evalPenaltyBoxAction = evalPenaltyBox.then(evalPenaltyBox => evalPenaltyBox.action);
- * export const evalPenaltyBoxEnabled = evalPenaltyBox.then(evalPenaltyBox => evalPenaltyBox.enabled);
- * export const evalPenaltyBoxText = evalPenaltyBox.then(evalPenaltyBox => evalPenaltyBox.outputText);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `action`. Action taken any time the penalty box is triggered. Valid values are:
- *   - **alert**. Record the event.
- *   - **deny**. The request is blocked.
- *   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
- *   - **none**. Take no action.
- * - `enabled`. If **true**, evaluation penalty box protection is enabled. If **false**, evaluation penalty box protection is disabled.
- * - `outputText`. Tabular report of evaluation penalty box protection settings.
- */
 export function getAppSecEvalPenaltyBoxOutput(args: GetAppSecEvalPenaltyBoxOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecEvalPenaltyBoxResult> {
     return pulumi.output(args).apply((a: any) => getAppSecEvalPenaltyBox(a, opts))
 }
@@ -131,12 +43,6 @@ export function getAppSecEvalPenaltyBoxOutput(args: GetAppSecEvalPenaltyBoxOutpu
  * A collection of arguments for invoking getAppSecEvalPenaltyBox.
  */
 export interface GetAppSecEvalPenaltyBoxOutputArgs {
-    /**
-     * . Unique identifier of the security configuration associated with the evaluation penalty box settings.
-     */
     configId: pulumi.Input<number>;
-    /**
-     * . Unique identifier of the security policy associated with the evaluation penalty box settings.
-     */
     securityPolicyId: pulumi.Input<string>;
 }

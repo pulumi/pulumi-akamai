@@ -18,14 +18,14 @@ public final class AppSecWapSelectedHostnamesState extends com.pulumi.resources.
     public static final AppSecWapSelectedHostnamesState Empty = new AppSecWapSelectedHostnamesState();
 
     /**
-     * . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -63,14 +63,14 @@ public final class AppSecWapSelectedHostnamesState extends com.pulumi.resources.
     }
 
     /**
-     * . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -105,7 +105,7 @@ public final class AppSecWapSelectedHostnamesState extends com.pulumi.resources.
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class AppSecWapSelectedHostnamesState extends com.pulumi.resources.
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class AppSecWapSelectedHostnamesState extends com.pulumi.resources.
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class AppSecWapSelectedHostnamesState extends com.pulumi.resources.
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

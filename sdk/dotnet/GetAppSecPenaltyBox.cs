@@ -11,119 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecPenaltyBox
     {
-        /// <summary>
-        /// **Scopes**: Security policy
-        /// 
-        /// Returns penalty box settings for the specified security policy.
-        /// When the penalty box is enabled for a policy, clients that trigger a WAF Deny action are placed in the “penalty box”.
-        /// There, the action you select for penalty box (either Alert or Deny ) continues to apply to any requests from that client for the next 10 minutes.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/penalty-box](https://techdocs.akamai.com/application-security/reference/get-policy-penalty-box)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var penaltyBox = Akamai.GetAppSecPenaltyBox.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["penaltyBoxAction"] = penaltyBox.Apply(getAppSecPenaltyBoxResult =&gt; getAppSecPenaltyBoxResult.Action),
-        ///         ["penaltyBoxEnabled"] = penaltyBox.Apply(getAppSecPenaltyBoxResult =&gt; getAppSecPenaltyBoxResult.Enabled),
-        ///         ["penaltyBoxText"] = penaltyBox.Apply(getAppSecPenaltyBoxResult =&gt; getAppSecPenaltyBoxResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `action`. Action taken any time the penalty box is triggered. Valid values are:
-        ///   - **alert**. Record the event.
-        ///   - **deny**. The request is blocked.
-        ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-        ///   - **none**. Take no action.
-        /// - `enabled`. If **true**, penalty box protection is enabled. If **false**, penalty box protection is disabled.
-        /// - `output_text`. Tabular report of penalty box protection settings.
-        /// </summary>
         public static Task<GetAppSecPenaltyBoxResult> InvokeAsync(GetAppSecPenaltyBoxArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecPenaltyBoxResult>("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", args ?? new GetAppSecPenaltyBoxArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security policy
-        /// 
-        /// Returns penalty box settings for the specified security policy.
-        /// When the penalty box is enabled for a policy, clients that trigger a WAF Deny action are placed in the “penalty box”.
-        /// There, the action you select for penalty box (either Alert or Deny ) continues to apply to any requests from that client for the next 10 minutes.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/penalty-box](https://techdocs.akamai.com/application-security/reference/get-policy-penalty-box)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var penaltyBox = Akamai.GetAppSecPenaltyBox.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["penaltyBoxAction"] = penaltyBox.Apply(getAppSecPenaltyBoxResult =&gt; getAppSecPenaltyBoxResult.Action),
-        ///         ["penaltyBoxEnabled"] = penaltyBox.Apply(getAppSecPenaltyBoxResult =&gt; getAppSecPenaltyBoxResult.Enabled),
-        ///         ["penaltyBoxText"] = penaltyBox.Apply(getAppSecPenaltyBoxResult =&gt; getAppSecPenaltyBoxResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `action`. Action taken any time the penalty box is triggered. Valid values are:
-        ///   - **alert**. Record the event.
-        ///   - **deny**. The request is blocked.
-        ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-        ///   - **none**. Take no action.
-        /// - `enabled`. If **true**, penalty box protection is enabled. If **false**, penalty box protection is disabled.
-        /// - `output_text`. Tabular report of penalty box protection settings.
-        /// </summary>
         public static Output<GetAppSecPenaltyBoxResult> Invoke(GetAppSecPenaltyBoxInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecPenaltyBoxResult>("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", args ?? new GetAppSecPenaltyBoxInvokeArgs(), options.WithDefaults());
     }
@@ -131,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecPenaltyBoxArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the penalty box settings.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the penalty box settings.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -151,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecPenaltyBoxInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the penalty box settings.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the penalty box settings.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

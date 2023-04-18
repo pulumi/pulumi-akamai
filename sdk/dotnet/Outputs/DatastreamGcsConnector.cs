@@ -13,34 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamGcsConnector
     {
-        /// <summary>
-        /// The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-        /// </summary>
         public readonly string Bucket;
-        /// <summary>
-        /// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-        /// </summary>
         public readonly bool? CompressLogs;
         public readonly int? ConnectorId;
-        /// <summary>
-        /// The name of the connector.
-        /// </summary>
         public readonly string ConnectorName;
-        /// <summary>
-        /// The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-        /// </summary>
         public readonly string? Path;
-        /// <summary>
-        /// **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
-        /// </summary>
         public readonly string PrivateKey;
-        /// <summary>
-        /// The unique ID of your Google Cloud project.
-        /// </summary>
         public readonly string ProjectId;
-        /// <summary>
-        /// The name of the service account with the storage.object.create permission or Storage Object Creator role.
-        /// </summary>
         public readonly string ServiceAccountName;
 
         [OutputConstructor]

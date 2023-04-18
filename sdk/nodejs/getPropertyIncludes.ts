@@ -6,36 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getPropertyIncludes` data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
- *
- * ## Basic usage
- *
- * This example returns all includes for the specified contract and group:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const myExamplePropertyIncludes = akamai.getPropertyIncludes({
- *     contractId: "ctr_1-AB123",
- *     groupId: "grp_12345",
- * });
- * export const myExample = myExamplePropertyIncludes;
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `includes` -  The small, reusable, configurable components for your properties.
- *  * `latestVersion` - Returns the most recent version of the include.
- *  * `stagingVersion` - The include version currently activated on the staging network.
- *  * `productionVersion` - The include version currently activated on the production network.
- *  * `id` - The include's unique identifier.
- *  * `name` - The descriptive name for the include.
- *  * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
- */
 export function getPropertyIncludes(args: GetPropertyIncludesArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyIncludesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -51,21 +21,9 @@ export function getPropertyIncludes(args: GetPropertyIncludesArgs, opts?: pulumi
  * A collection of arguments for invoking getPropertyIncludes.
  */
 export interface GetPropertyIncludesArgs {
-    /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
-     */
     contractId: string;
-    /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
-     */
     groupId: string;
-    /**
-     * (Optional) The property that references the includes you want to list.
-     */
     parentProperty?: inputs.GetPropertyIncludesParentProperty;
-    /**
-     * (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-     */
     type?: string;
 }
 
@@ -83,36 +41,6 @@ export interface GetPropertyIncludesResult {
     readonly parentProperty?: outputs.GetPropertyIncludesParentProperty;
     readonly type?: string;
 }
-/**
- * Use the `akamai.getPropertyIncludes` data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
- *
- * ## Basic usage
- *
- * This example returns all includes for the specified contract and group:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const myExamplePropertyIncludes = akamai.getPropertyIncludes({
- *     contractId: "ctr_1-AB123",
- *     groupId: "grp_12345",
- * });
- * export const myExample = myExamplePropertyIncludes;
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `includes` -  The small, reusable, configurable components for your properties.
- *  * `latestVersion` - Returns the most recent version of the include.
- *  * `stagingVersion` - The include version currently activated on the staging network.
- *  * `productionVersion` - The include version currently activated on the production network.
- *  * `id` - The include's unique identifier.
- *  * `name` - The descriptive name for the include.
- *  * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
- */
 export function getPropertyIncludesOutput(args: GetPropertyIncludesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyIncludesResult> {
     return pulumi.output(args).apply((a: any) => getPropertyIncludes(a, opts))
 }
@@ -121,20 +49,8 @@ export function getPropertyIncludesOutput(args: GetPropertyIncludesOutputArgs, o
  * A collection of arguments for invoking getPropertyIncludes.
  */
 export interface GetPropertyIncludesOutputArgs {
-    /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
-     */
     contractId: pulumi.Input<string>;
-    /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
-     */
     groupId: pulumi.Input<string>;
-    /**
-     * (Optional) The property that references the includes you want to list.
-     */
     parentProperty?: pulumi.Input<inputs.GetPropertyIncludesParentPropertyArgs>;
-    /**
-     * (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-     */
     type?: pulumi.Input<string>;
 }

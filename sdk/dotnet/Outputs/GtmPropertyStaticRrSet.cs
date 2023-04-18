@@ -13,17 +13,8 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GtmPropertyStaticRrSet
     {
-        /// <summary>
-        /// (List) An array of data strings, representing multiple records within a set.
-        /// </summary>
         public readonly ImmutableArray<string> Rdatas;
-        /// <summary>
-        /// The number of seconds that this record should live in a resolver's cache before being refetched.
-        /// </summary>
         public readonly int? Ttl;
-        /// <summary>
-        /// The record type.
-        /// </summary>
         public readonly string? Type;
 
         [OutputConstructor]

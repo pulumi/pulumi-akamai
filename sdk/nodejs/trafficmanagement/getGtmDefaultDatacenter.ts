@@ -4,17 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
-/**
- * Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
- *
- * ## Attributes reference
- *
- * This data source supports these attributes:
- *
- * * `id` - The data resource ID. Enter in this format: `<domain>:default_datacenter:<datacenter_id>`.
- * * `datacenterId` - The default data center ID.
- * * `nickname` - The default data center nickname.
- */
 /** @deprecated akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter */
 export function getGtmDefaultDatacenter(args: GetGtmDefaultDatacenterArgs, opts?: pulumi.InvokeOptions): Promise<GetGtmDefaultDatacenterResult> {
     pulumi.log.warn("getGtmDefaultDatacenter is deprecated: akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter")
@@ -30,9 +19,6 @@ export function getGtmDefaultDatacenter(args: GetGtmDefaultDatacenterArgs, opts?
  * A collection of arguments for invoking getGtmDefaultDatacenter.
  */
 export interface GetGtmDefaultDatacenterArgs {
-    /**
-     * The default is `5400`.
-     */
     datacenter?: number;
     domain: string;
 }
@@ -50,17 +36,6 @@ export interface GetGtmDefaultDatacenterResult {
     readonly id: string;
     readonly nickname: string;
 }
-/**
- * Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
- *
- * ## Attributes reference
- *
- * This data source supports these attributes:
- *
- * * `id` - The data resource ID. Enter in this format: `<domain>:default_datacenter:<datacenter_id>`.
- * * `datacenterId` - The default data center ID.
- * * `nickname` - The default data center nickname.
- */
 /** @deprecated akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter */
 export function getGtmDefaultDatacenterOutput(args: GetGtmDefaultDatacenterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmDefaultDatacenterResult> {
     return pulumi.output(args).apply((a: any) => getGtmDefaultDatacenter(a, opts))
@@ -70,9 +45,6 @@ export function getGtmDefaultDatacenterOutput(args: GetGtmDefaultDatacenterOutpu
  * A collection of arguments for invoking getGtmDefaultDatacenter.
  */
 export interface GetGtmDefaultDatacenterOutputArgs {
-    /**
-     * The default is `5400`.
-     */
     datacenter?: pulumi.Input<number>;
     domain: pulumi.Input<string>;
 }

@@ -16,9 +16,6 @@ export function getEdgeWorkersPropertyRules(args: GetEdgeWorkersPropertyRulesArg
  * A collection of arguments for invoking getEdgeWorkersPropertyRules.
  */
 export interface GetEdgeWorkersPropertyRulesArgs {
-    /**
-     * Unique identifier of an EdgeWorker ID.
-     */
     edgeworkerId: number;
 }
 
@@ -41,8 +38,5 @@ export function getEdgeWorkersPropertyRulesOutput(args: GetEdgeWorkersPropertyRu
  * A collection of arguments for invoking getEdgeWorkersPropertyRules.
  */
 export interface GetEdgeWorkersPropertyRulesOutputArgs {
-    /**
-     * Unique identifier of an EdgeWorker ID.
-     */
     edgeworkerId: pulumi.Input<number>;
 }

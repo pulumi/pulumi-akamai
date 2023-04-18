@@ -11,83 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetEdgeWorker
     {
-        /// <summary>
-        /// Use the `akamai.EdgeWorker` data source to get an EdgeWorker for a given EdgeWorker ID.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// This example returns the resource tier fields for the selected EdgeWorker ID:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Akamai.GetEdgeWorker.Invoke(new()
-        ///     {
-        ///         EdgeworkerId = 3,
-        ///         LocalBundle = "test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz",
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `name` - The EdgeWorker name.
-        /// * `group_id` - Defines the group association for the EdgeWorker.
-        /// * `resource_tier_id` - The unique identifier of a resource tier.
-        /// * `local_bundle_hash` - The local bundle hash for the EdgeWorker. It's used to identify content changes for the bundle.
-        /// * `version` - The bundle version.
-        /// * `warnings` - The list of warnings returned by EdgeWorker validation.
-        /// </summary>
         public static Task<GetEdgeWorkerResult> InvokeAsync(GetEdgeWorkerArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEdgeWorkerResult>("akamai:index/getEdgeWorker:getEdgeWorker", args ?? new GetEdgeWorkerArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.EdgeWorker` data source to get an EdgeWorker for a given EdgeWorker ID.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// This example returns the resource tier fields for the selected EdgeWorker ID:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Akamai.GetEdgeWorker.Invoke(new()
-        ///     {
-        ///         EdgeworkerId = 3,
-        ///         LocalBundle = "test_tmp/TestDataEdgeWorkersEdgeWorker/bundles/edgeworker_one_warning.tgz",
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `name` - The EdgeWorker name.
-        /// * `group_id` - Defines the group association for the EdgeWorker.
-        /// * `resource_tier_id` - The unique identifier of a resource tier.
-        /// * `local_bundle_hash` - The local bundle hash for the EdgeWorker. It's used to identify content changes for the bundle.
-        /// * `version` - The bundle version.
-        /// * `warnings` - The list of warnings returned by EdgeWorker validation.
-        /// </summary>
         public static Output<GetEdgeWorkerResult> Invoke(GetEdgeWorkerInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkerResult>("akamai:index/getEdgeWorker:getEdgeWorker", args ?? new GetEdgeWorkerInvokeArgs(), options.WithDefaults());
     }
@@ -95,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetEdgeWorkerArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// The unique identifier of the EdgeWorker.
-        /// </summary>
         [Input("edgeworkerId", required: true)]
         public int EdgeworkerId { get; set; }
 
-        /// <summary>
-        /// The path where the EdgeWorkers `.tgz` code bundle will be stored.
-        /// </summary>
         [Input("localBundle")]
         public string? LocalBundle { get; set; }
 
@@ -115,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetEdgeWorkerInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// The unique identifier of the EdgeWorker.
-        /// </summary>
         [Input("edgeworkerId", required: true)]
         public Input<int> EdgeworkerId { get; set; } = null!;
 
-        /// <summary>
-        /// The path where the EdgeWorkers `.tgz` code bundle will be stored.
-        /// </summary>
         [Input("localBundle")]
         public Input<string>? LocalBundle { get; set; }
 

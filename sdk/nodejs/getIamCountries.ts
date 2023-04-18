@@ -4,28 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use `akamai.getIamCountries` to retrieve all the possible countries that Akamai supports. Use the values from this data source to add or update a user's country information.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const countries = akamai.getIamCountries({});
- * export const supportedCountries = countries;
- * ```
- * ## Attributes reference
- *
- * These attributes are returned:
- *
- * * `countries` — A list of countries.
- *
- * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-countries)
- */
 export function getIamCountries(opts?: pulumi.InvokeOptions): Promise<GetIamCountriesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

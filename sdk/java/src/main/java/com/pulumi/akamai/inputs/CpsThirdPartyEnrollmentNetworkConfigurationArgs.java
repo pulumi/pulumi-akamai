@@ -18,122 +18,58 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
 
     public static final CpsThirdPartyEnrollmentNetworkConfigurationArgs Empty = new CpsThirdPartyEnrollmentNetworkConfigurationArgs();
 
-    /**
-     * The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
-     * 
-     */
     @Import(name="clientMutualAuthentication")
     private @Nullable Output<CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs> clientMutualAuthentication;
 
-    /**
-     * @return The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
-     * 
-     */
     public Optional<Output<CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs>> clientMutualAuthentication() {
         return Optional.ofNullable(this.clientMutualAuthentication);
     }
 
-    /**
-     * Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
-     * 
-     */
     @Import(name="cloneDnsNames")
     private @Nullable Output<Boolean> cloneDnsNames;
 
-    /**
-     * @return Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
-     * 
-     */
     public Optional<Output<Boolean>> cloneDnsNames() {
         return Optional.ofNullable(this.cloneDnsNames);
     }
 
-    /**
-     * The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
-     * 
-     */
     @Import(name="disallowedTlsVersions")
     private @Nullable Output<List<String>> disallowedTlsVersions;
 
-    /**
-     * @return The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
-     * 
-     */
     public Optional<Output<List<String>>> disallowedTlsVersions() {
         return Optional.ofNullable(this.disallowedTlsVersions);
     }
 
-    /**
-     * Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
-     * 
-     */
     @Import(name="geography", required=true)
     private Output<String> geography;
 
-    /**
-     * @return Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
-     * 
-     */
     public Output<String> geography() {
         return this.geography;
     }
 
-    /**
-     * The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-     * 
-     */
     @Import(name="mustHaveCiphers")
     private @Nullable Output<String> mustHaveCiphers;
 
-    /**
-     * @return The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-     * 
-     */
     public Optional<Output<String>> mustHaveCiphers() {
         return Optional.ofNullable(this.mustHaveCiphers);
     }
 
-    /**
-     * Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
-     * 
-     */
     @Import(name="ocspStapling")
     private @Nullable Output<String> ocspStapling;
 
-    /**
-     * @return Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
-     * 
-     */
     public Optional<Output<String>> ocspStapling() {
         return Optional.ofNullable(this.ocspStapling);
     }
 
-    /**
-     * Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-     * 
-     */
     @Import(name="preferredCiphers")
     private @Nullable Output<String> preferredCiphers;
 
-    /**
-     * @return Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-     * 
-     */
     public Optional<Output<String>> preferredCiphers() {
         return Optional.ofNullable(this.preferredCiphers);
     }
 
-    /**
-     * Whether to use the QUIC transport layer network protocol.
-     * 
-     */
     @Import(name="quicEnabled")
     private @Nullable Output<Boolean> quicEnabled;
 
-    /**
-     * @return Whether to use the QUIC transport layer network protocol.
-     * 
-     */
     public Optional<Output<Boolean>> quicEnabled() {
         return Optional.ofNullable(this.quicEnabled);
     }
@@ -169,180 +105,78 @@ public final class CpsThirdPartyEnrollmentNetworkConfigurationArgs extends com.p
             $ = new CpsThirdPartyEnrollmentNetworkConfigurationArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param clientMutualAuthentication The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
-         * 
-         * @return builder
-         * 
-         */
         public Builder clientMutualAuthentication(@Nullable Output<CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs> clientMutualAuthentication) {
             $.clientMutualAuthentication = clientMutualAuthentication;
             return this;
         }
 
-        /**
-         * @param clientMutualAuthentication The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
-         * 
-         * @return builder
-         * 
-         */
         public Builder clientMutualAuthentication(CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthenticationArgs clientMutualAuthentication) {
             return clientMutualAuthentication(Output.of(clientMutualAuthentication));
         }
 
-        /**
-         * @param cloneDnsNames Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cloneDnsNames(@Nullable Output<Boolean> cloneDnsNames) {
             $.cloneDnsNames = cloneDnsNames;
             return this;
         }
 
-        /**
-         * @param cloneDnsNames Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cloneDnsNames(Boolean cloneDnsNames) {
             return cloneDnsNames(Output.of(cloneDnsNames));
         }
 
-        /**
-         * @param disallowedTlsVersions The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
-         * 
-         * @return builder
-         * 
-         */
         public Builder disallowedTlsVersions(@Nullable Output<List<String>> disallowedTlsVersions) {
             $.disallowedTlsVersions = disallowedTlsVersions;
             return this;
         }
 
-        /**
-         * @param disallowedTlsVersions The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
-         * 
-         * @return builder
-         * 
-         */
         public Builder disallowedTlsVersions(List<String> disallowedTlsVersions) {
             return disallowedTlsVersions(Output.of(disallowedTlsVersions));
         }
 
-        /**
-         * @param disallowedTlsVersions The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
-         * 
-         * @return builder
-         * 
-         */
         public Builder disallowedTlsVersions(String... disallowedTlsVersions) {
             return disallowedTlsVersions(List.of(disallowedTlsVersions));
         }
 
-        /**
-         * @param geography Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
-         * 
-         * @return builder
-         * 
-         */
         public Builder geography(Output<String> geography) {
             $.geography = geography;
             return this;
         }
 
-        /**
-         * @param geography Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
-         * 
-         * @return builder
-         * 
-         */
         public Builder geography(String geography) {
             return geography(Output.of(geography));
         }
 
-        /**
-         * @param mustHaveCiphers The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-         * 
-         * @return builder
-         * 
-         */
         public Builder mustHaveCiphers(@Nullable Output<String> mustHaveCiphers) {
             $.mustHaveCiphers = mustHaveCiphers;
             return this;
         }
 
-        /**
-         * @param mustHaveCiphers The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-         * 
-         * @return builder
-         * 
-         */
         public Builder mustHaveCiphers(String mustHaveCiphers) {
             return mustHaveCiphers(Output.of(mustHaveCiphers));
         }
 
-        /**
-         * @param ocspStapling Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ocspStapling(@Nullable Output<String> ocspStapling) {
             $.ocspStapling = ocspStapling;
             return this;
         }
 
-        /**
-         * @param ocspStapling Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ocspStapling(String ocspStapling) {
             return ocspStapling(Output.of(ocspStapling));
         }
 
-        /**
-         * @param preferredCiphers Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-         * 
-         * @return builder
-         * 
-         */
         public Builder preferredCiphers(@Nullable Output<String> preferredCiphers) {
             $.preferredCiphers = preferredCiphers;
             return this;
         }
 
-        /**
-         * @param preferredCiphers Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-         * 
-         * @return builder
-         * 
-         */
         public Builder preferredCiphers(String preferredCiphers) {
             return preferredCiphers(Output.of(preferredCiphers));
         }
 
-        /**
-         * @param quicEnabled Whether to use the QUIC transport layer network protocol.
-         * 
-         * @return builder
-         * 
-         */
         public Builder quicEnabled(@Nullable Output<Boolean> quicEnabled) {
             $.quicEnabled = quicEnabled;
             return this;
         }
 
-        /**
-         * @param quicEnabled Whether to use the QUIC transport layer network protocol.
-         * 
-         * @return builder
-         * 
-         */
         public Builder quicEnabled(Boolean quicEnabled) {
             return quicEnabled(Output.of(quicEnabled));
         }

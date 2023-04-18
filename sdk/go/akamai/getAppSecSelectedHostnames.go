@@ -10,55 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration
-//
-// Returns a list of the hostnames currently protected by the specified security configuration.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://techdocs.akamai.com/application-security/reference/get-selected-hostnames)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			selectedHostnamesAppSecSelectedHostnames, err := akamai.LookupAppSecSelectedHostnames(ctx, &akamai.LookupAppSecSelectedHostnamesArgs{
-//				ConfigId: configuration.ConfigId,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("selectedHostnames", selectedHostnamesAppSecSelectedHostnames.Hostnames)
-//			ctx.Export("selectedHostnamesJson", selectedHostnamesAppSecSelectedHostnames.HostnamesJson)
-//			ctx.Export("selectedHostnamesOutputText", selectedHostnamesAppSecSelectedHostnames.OutputText)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `hostnames`. List of selected hostnames.
-// - `hostnamesJson`. JSON-formatted list of selected hostnames.
-// - `outputText`. Tabular report of the selected hostnames.
 func LookupAppSecSelectedHostnames(ctx *pulumi.Context, args *LookupAppSecSelectedHostnamesArgs, opts ...pulumi.InvokeOption) (*LookupAppSecSelectedHostnamesResult, error) {
 	var rv LookupAppSecSelectedHostnamesResult
 	err := ctx.Invoke("akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames", args, &rv, opts...)
@@ -70,7 +21,6 @@ func LookupAppSecSelectedHostnames(ctx *pulumi.Context, args *LookupAppSecSelect
 
 // A collection of arguments for invoking getAppSecSelectedHostnames.
 type LookupAppSecSelectedHostnamesArgs struct {
-	// . Unique identifier of the security configuration associated with the protected hosts.
 	ConfigId int `pulumi:"configId"`
 }
 
@@ -99,7 +49,6 @@ func LookupAppSecSelectedHostnamesOutput(ctx *pulumi.Context, args LookupAppSecS
 
 // A collection of arguments for invoking getAppSecSelectedHostnames.
 type LookupAppSecSelectedHostnamesOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the protected hosts.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
 }
 

@@ -15,32 +15,16 @@ public final class GetAppSecSecurityPolicyPlainArgs extends com.pulumi.resources
 
     public static final GetAppSecSecurityPolicyPlainArgs Empty = new GetAppSecSecurityPolicyPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the security policies.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the security policies.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
-     * 
-     */
     @Import(name="securityPolicyName")
     private @Nullable String securityPolicyName;
 
-    /**
-     * @return . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
-     * 
-     */
     public Optional<String> securityPolicyName() {
         return Optional.ofNullable(this.securityPolicyName);
     }
@@ -70,23 +54,11 @@ public final class GetAppSecSecurityPolicyPlainArgs extends com.pulumi.resources
             $ = new GetAppSecSecurityPolicyPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the security policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyName . (Optional). Name of the security policy you want to return information for (be sure to reference the policy name and not the policy ID). If not included, information is returned for all your security policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyName(@Nullable String securityPolicyName) {
             $.securityPolicyName = securityPolicyName;
             return this;

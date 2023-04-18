@@ -19,45 +19,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * Use the `akamai.GtmDatacenter` resource to create, configure, and import a GTM data center. A GTM data center represents a customer data center and is also known as a traffic target, a location containing many servers GTM can direct traffic to.
- * 
- * GTM uses data centers to scale load balancing. For example, you might have data centers in both New York and Amsterdam and want to balance load between them. You can configure GTM to send US users to the New York data center and European users to the data center in Amsterdam.
- * 
- * &gt; **Note** Import requires an ID with this format: `existing_domain_name`:`existing_datacenter_id`.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.GtmDatacenter;
- * import com.pulumi.akamai.GtmDatacenterArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var demoDatacenter = new GtmDatacenter(&#34;demoDatacenter&#34;, GtmDatacenterArgs.builder()        
- *             .domain(&#34;demo_domain.akadns.net&#34;)
- *             .nickname(&#34;demo_datacenter&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
  * @deprecated
  * akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter
  * 
@@ -65,171 +26,75 @@ import javax.annotation.Nullable;
 @Deprecated /* akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter */
 @ResourceType(type="akamai:trafficmanagement/gtmDatacenter:GtmDatacenter")
 public class GtmDatacenter extends com.pulumi.resources.CustomResource {
-    /**
-     * The name of the city where the data center is located.
-     * 
-     */
     @Export(name="city", type=String.class, parameters={})
     private Output</* @Nullable */ String> city;
 
-    /**
-     * @return The name of the city where the data center is located.
-     * 
-     */
     public Output<Optional<String>> city() {
         return Codegen.optional(this.city);
     }
-    /**
-     * Identifies the data center&#39;s `datacenter_id` of which this data center is a clone.
-     * 
-     */
     @Export(name="cloneOf", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> cloneOf;
 
-    /**
-     * @return Identifies the data center&#39;s `datacenter_id` of which this data center is a clone.
-     * 
-     */
     public Output<Optional<Integer>> cloneOf() {
         return Codegen.optional(this.cloneOf);
     }
-    /**
-     * A boolean that, if set to `true`, Akamai&#39;s liveness test agents use the Host header configured in the liveness test.
-     * 
-     */
     @Export(name="cloudServerHostHeaderOverride", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> cloudServerHostHeaderOverride;
 
-    /**
-     * @return A boolean that, if set to `true`, Akamai&#39;s liveness test agents use the Host header configured in the liveness test.
-     * 
-     */
     public Output<Optional<Boolean>> cloudServerHostHeaderOverride() {
         return Codegen.optional(this.cloudServerHostHeaderOverride);
     }
-    /**
-     * A boolean indicating whether to balance load between two or more servers in a cloud environment.
-     * 
-     */
     @Export(name="cloudServerTargeting", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> cloudServerTargeting;
 
-    /**
-     * @return A boolean indicating whether to balance load between two or more servers in a cloud environment.
-     * 
-     */
     public Output<Optional<Boolean>> cloudServerTargeting() {
         return Codegen.optional(this.cloudServerTargeting);
     }
-    /**
-     * A two-letter code that specifies the continent where the data center maps to.
-     * 
-     */
     @Export(name="continent", type=String.class, parameters={})
     private Output</* @Nullable */ String> continent;
 
-    /**
-     * @return A two-letter code that specifies the continent where the data center maps to.
-     * 
-     */
     public Output<Optional<String>> continent() {
         return Codegen.optional(this.continent);
     }
-    /**
-     * A two-letter ISO 3166 country code that specifies the country where the data center maps to.
-     * 
-     */
     @Export(name="country", type=String.class, parameters={})
     private Output</* @Nullable */ String> country;
 
-    /**
-     * @return A two-letter ISO 3166 country code that specifies the country where the data center maps to.
-     * 
-     */
     public Output<Optional<String>> country() {
         return Codegen.optional(this.country);
     }
-    /**
-     * A unique identifier for an existing data center in the domain.
-     * 
-     */
     @Export(name="datacenterId", type=Integer.class, parameters={})
     private Output<Integer> datacenterId;
 
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Output<Integer> datacenterId() {
         return this.datacenterId;
     }
-    /**
-     * Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
-     * 
-     */
     @Export(name="defaultLoadObject", type=GtmDatacenterDefaultLoadObject.class, parameters={})
     private Output</* @Nullable */ GtmDatacenterDefaultLoadObject> defaultLoadObject;
 
-    /**
-     * @return Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
-     * 
-     */
     public Output<Optional<GtmDatacenterDefaultLoadObject>> defaultLoadObject() {
         return Codegen.optional(this.defaultLoadObject);
     }
-    /**
-     * The GTM domain name for the data center.
-     * 
-     */
     @Export(name="domain", type=String.class, parameters={})
     private Output<String> domain;
 
-    /**
-     * @return The GTM domain name for the data center.
-     * 
-     */
     public Output<String> domain() {
         return this.domain;
     }
-    /**
-     * Specifies the geographical latitude of the data center&#39;s position. See also longitude within this object.
-     * 
-     */
     @Export(name="latitude", type=Double.class, parameters={})
     private Output</* @Nullable */ Double> latitude;
 
-    /**
-     * @return Specifies the geographical latitude of the data center&#39;s position. See also longitude within this object.
-     * 
-     */
     public Output<Optional<Double>> latitude() {
         return Codegen.optional(this.latitude);
     }
-    /**
-     * Specifies the geographic longitude of the data center&#39;s position. See also latitude within this object.
-     * 
-     */
     @Export(name="longitude", type=Double.class, parameters={})
     private Output</* @Nullable */ Double> longitude;
 
-    /**
-     * @return Specifies the geographic longitude of the data center&#39;s position. See also latitude within this object.
-     * 
-     */
     public Output<Optional<Double>> longitude() {
         return Codegen.optional(this.longitude);
     }
-    /**
-     * A descriptive label for the data center.
-     * 
-     */
     @Export(name="nickname", type=String.class, parameters={})
     private Output</* @Nullable */ String> nickname;
 
-    /**
-     * @return A descriptive label for the data center.
-     * 
-     */
     public Output<Optional<String>> nickname() {
         return Codegen.optional(this.nickname);
     }
@@ -269,45 +134,21 @@ public class GtmDatacenter extends com.pulumi.resources.CustomResource {
     public Output<String> servermonitorPool() {
         return this.servermonitorPool;
     }
-    /**
-     * Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
-     * 
-     */
     @Export(name="stateOrProvince", type=String.class, parameters={})
     private Output</* @Nullable */ String> stateOrProvince;
 
-    /**
-     * @return Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
-     * 
-     */
     public Output<Optional<String>> stateOrProvince() {
         return Codegen.optional(this.stateOrProvince);
     }
-    /**
-     * A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
-     * 
-     */
     @Export(name="virtual", type=Boolean.class, parameters={})
     private Output<Boolean> virtual;
 
-    /**
-     * @return A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
-     * 
-     */
     public Output<Boolean> virtual() {
         return this.virtual;
     }
-    /**
-     * A boolean, that if set to `true`, waits for transaction to complete.
-     * 
-     */
     @Export(name="waitOnComplete", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> waitOnComplete;
 
-    /**
-     * @return A boolean, that if set to `true`, waits for transaction to complete.
-     * 
-     */
     public Output<Optional<Boolean>> waitOnComplete() {
         return Codegen.optional(this.waitOnComplete);
     }

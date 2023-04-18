@@ -13,169 +13,65 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamHttpsConnector {
-    /**
-     * @return Either `NONE` for no authentication, or `BASIC`. For basic authentication, provide the `user_name` and `password` you set in your custom HTTPS endpoint.
-     * 
-     */
     private String authenticationType;
-    /**
-     * @return **Secret**. The certification authority (CA) certificate used to verify the origin server&#39;s certificate. It&#39;s needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-     * 
-     */
     private @Nullable String caCert;
-    /**
-     * @return **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     * 
-     */
     private @Nullable String clientCert;
-    /**
-     * @return **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     * 
-     */
     private @Nullable String clientKey;
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     private @Nullable Boolean compressLogs;
     private @Nullable Integer connectorId;
-    /**
-     * @return The name of the connector.
-     * 
-     */
     private String connectorName;
-    /**
-     * @return Content type to pass in the log file header.
-     * 
-     */
     private @Nullable String contentType;
-    /**
-     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
-     * 
-     */
     private @Nullable String customHeaderName;
-    /**
-     * @return The custom header&#39;s contents passed with the request that contains information about the client connection.
-     * 
-     */
     private @Nullable String customHeaderValue;
     private @Nullable Boolean mTls;
-    /**
-     * @return **Secret**. The Elasticsearch basic access authentication password.
-     * 
-     */
     private @Nullable String password;
-    /**
-     * @return The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-     * 
-     */
     private @Nullable String tlsHostname;
-    /**
-     * @return Enter the secure URL where you want to send and store your logs.
-     * 
-     */
     private String url;
-    /**
-     * @return **Secret**. The Elasticsearch basic access authentication username.
-     * 
-     */
     private @Nullable String userName;
 
     private DatastreamHttpsConnector() {}
-    /**
-     * @return Either `NONE` for no authentication, or `BASIC`. For basic authentication, provide the `user_name` and `password` you set in your custom HTTPS endpoint.
-     * 
-     */
     public String authenticationType() {
         return this.authenticationType;
     }
-    /**
-     * @return **Secret**. The certification authority (CA) certificate used to verify the origin server&#39;s certificate. It&#39;s needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-     * 
-     */
     public Optional<String> caCert() {
         return Optional.ofNullable(this.caCert);
     }
-    /**
-     * @return **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     * 
-     */
     public Optional<String> clientCert() {
         return Optional.ofNullable(this.clientCert);
     }
-    /**
-     * @return **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     * 
-     */
     public Optional<String> clientKey() {
         return Optional.ofNullable(this.clientKey);
     }
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
     public Optional<Integer> connectorId() {
         return Optional.ofNullable(this.connectorId);
     }
-    /**
-     * @return The name of the connector.
-     * 
-     */
     public String connectorName() {
         return this.connectorName;
     }
-    /**
-     * @return Content type to pass in the log file header.
-     * 
-     */
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
     }
-    /**
-     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
-     * 
-     */
     public Optional<String> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
-    /**
-     * @return The custom header&#39;s contents passed with the request that contains information about the client connection.
-     * 
-     */
     public Optional<String> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
     }
     public Optional<Boolean> mTls() {
         return Optional.ofNullable(this.mTls);
     }
-    /**
-     * @return **Secret**. The Elasticsearch basic access authentication password.
-     * 
-     */
     public Optional<String> password() {
         return Optional.ofNullable(this.password);
     }
-    /**
-     * @return The hostname that verifies the server&#39;s certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-     * 
-     */
     public Optional<String> tlsHostname() {
         return Optional.ofNullable(this.tlsHostname);
     }
-    /**
-     * @return Enter the secure URL where you want to send and store your logs.
-     * 
-     */
     public String url() {
         return this.url;
     }
-    /**
-     * @return **Secret**. The Elasticsearch basic access authentication username.
-     * 
-     */
     public Optional<String> userName() {
         return Optional.ofNullable(this.userName);
     }

@@ -12,21 +12,12 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class CpsDvEnrollmentNetworkConfigurationClientMutualAuthenticationGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
-        /// </summary>
         [Input("ocspEnabled")]
         public Input<bool>? OcspEnabled { get; set; }
 
-        /// <summary>
-        /// Whether you want to enable the server to send the certificate authority (CA) list to the client.
-        /// </summary>
         [Input("sendCaListToClient")]
         public Input<bool>? SendCaListToClient { get; set; }
 
-        /// <summary>
-        /// The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
-        /// </summary>
         [Input("setId")]
         public Input<string>? SetId { get; set; }
 

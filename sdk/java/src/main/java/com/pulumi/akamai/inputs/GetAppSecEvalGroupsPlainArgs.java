@@ -15,47 +15,23 @@ public final class GetAppSecEvalGroupsPlainArgs extends com.pulumi.resources.Inv
 
     public static final GetAppSecEvalGroupsPlainArgs Empty = new GetAppSecEvalGroupsPlainArgs();
 
-    /**
-     * . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-     * 
-     */
     @Import(name="attackGroup")
     private @Nullable String attackGroup;
 
-    /**
-     * @return . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-     * 
-     */
     public Optional<String> attackGroup() {
         return Optional.ofNullable(this.attackGroup);
     }
 
-    /**
-     * . Unique identifier of the security configuration associated with the evaluation attack group.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the evaluation attack group.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the evaluation attack group.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the evaluation attack group.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -86,34 +62,16 @@ public final class GetAppSecEvalGroupsPlainArgs extends com.pulumi.resources.Inv
             $ = new GetAppSecEvalGroupsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param attackGroup . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-         * 
-         * @return builder
-         * 
-         */
         public Builder attackGroup(@Nullable String attackGroup) {
             $.attackGroup = attackGroup;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the evaluation attack group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the evaluation attack group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

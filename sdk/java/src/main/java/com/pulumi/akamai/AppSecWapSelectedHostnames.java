@@ -16,60 +16,17 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecWapSelectedHostnames;
- * import com.pulumi.akamai.AppSecWapSelectedHostnamesArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var appsecwapSelectedhostnames = new AppSecWapSelectedHostnames(&#34;appsecwapSelectedhostnames&#34;, AppSecWapSelectedHostnamesArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .protectedHosts(&#34;documentation.akamai.com&#34;)
- *             .evaluatedHosts(&#34;training.akamai.com&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames")
 public class AppSecWapSelectedHostnames extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the hostnames being protected or evaluated.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -104,14 +61,14 @@ public class AppSecWapSelectedHostnames extends com.pulumi.resources.CustomResou
         return Codegen.optional(this.protectedHosts);
     }
     /**
-     * . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy responsible for protecting or evaluating the specified hosts.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {

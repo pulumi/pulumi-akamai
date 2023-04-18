@@ -17,14 +17,14 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
     public static final CloudletsApplicationLoadBalancerActivationState Empty = new CloudletsApplicationLoadBalancerActivationState();
 
     /**
-     * The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+     * The network you want to activate the application load balancer version on (options are Staging and Production)
      * 
      */
     @Import(name="network")
     private @Nullable Output<String> network;
 
     /**
-     * @return The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+     * @return The network you want to activate the application load balancer version on (options are Staging and Production)
      * 
      */
     public Optional<Output<String>> network() {
@@ -32,14 +32,14 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
     }
 
     /**
-     * The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * The conditional origin’s unique identifier
      * 
      */
     @Import(name="originId")
     private @Nullable Output<String> originId;
 
     /**
-     * @return The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * @return The conditional origin’s unique identifier
      * 
      */
     public Optional<Output<String>> originId() {
@@ -47,14 +47,14 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
     }
 
     /**
-     * The activation status for this load balancing configuration.
+     * Activation status for this application load balancer
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return The activation status for this load balancing configuration.
+     * @return Activation status for this application load balancer
      * 
      */
     public Optional<Output<String>> status() {
@@ -62,14 +62,14 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
     }
 
     /**
-     * The Application Load Balancer Cloudlet configuration version you want to activate.
+     * Cloudlets application load balancer version you want to activate
      * 
      */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
     /**
-     * @return The Application Load Balancer Cloudlet configuration version you want to activate.
+     * @return Cloudlets application load balancer version you want to activate
      * 
      */
     public Optional<Output<Integer>> version() {
@@ -104,7 +104,7 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
         }
 
         /**
-         * @param network The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+         * @param network The network you want to activate the application load balancer version on (options are Staging and Production)
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
         }
 
         /**
-         * @param network The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+         * @param network The network you want to activate the application load balancer version on (options are Staging and Production)
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
         }
 
         /**
-         * @param originId The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+         * @param originId The conditional origin’s unique identifier
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
         }
 
         /**
-         * @param originId The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+         * @param originId The conditional origin’s unique identifier
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
         }
 
         /**
-         * @param status The activation status for this load balancing configuration.
+         * @param status Activation status for this application load balancer
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
         }
 
         /**
-         * @param status The activation status for this load balancing configuration.
+         * @param status Activation status for this application load balancer
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
         }
 
         /**
-         * @param version The Application Load Balancer Cloudlet configuration version you want to activate.
+         * @param version Cloudlets application load balancer version you want to activate
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class CloudletsApplicationLoadBalancerActivationState extends com.p
         }
 
         /**
-         * @param version The Application Load Balancer Cloudlet configuration version you want to activate.
+         * @param version Cloudlets application load balancer version you want to activate
          * 
          * @return builder
          * 

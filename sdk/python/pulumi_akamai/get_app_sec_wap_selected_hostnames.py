@@ -120,39 +120,7 @@ def get_app_sec_wap_selected_hostnames(config_id: Optional[int] = None,
                                        security_policy_id: Optional[str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecWapSelectedHostnamesResult:
     """
-    **Scopes**: Security policy
-
-    Returns hostnames currently protected or being evaluated by a configuration and security policy.
-    This resource is available only to organizations running Web Application Protector (WAP).
-    Note that the WAP selected hostnames feature is currently in beta.
-    Please contact your Akamai representative for more information.
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    wap_selected_hostnames = akamai.get_app_sec_wap_selected_hostnames(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("protectedHostnames", wap_selected_hostnames.protected_hosts)
-    pulumi.export("evaluatedHostnames", wap_selected_hostnames.evaluated_hosts)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned and how that returned information is formatted:
-
-    - `protected_hostnames`. List of hostnames currently protected under the security configuration and security policy.
-    - `evaluated_hostnames`. List of hostnames currently being evaluated under the security configuration and security policy.
-    - `hostnames_json`. JSON-formatted report of the protected and evaluated hostnames.
-    - `output_text`. Tabular reports of the protected and evaluated hostnames.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the hostnames.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the hostnames.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -177,38 +145,6 @@ def get_app_sec_wap_selected_hostnames_output(config_id: Optional[pulumi.Input[i
                                               security_policy_id: Optional[pulumi.Input[str]] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecWapSelectedHostnamesResult]:
     """
-    **Scopes**: Security policy
-
-    Returns hostnames currently protected or being evaluated by a configuration and security policy.
-    This resource is available only to organizations running Web Application Protector (WAP).
-    Note that the WAP selected hostnames feature is currently in beta.
-    Please contact your Akamai representative for more information.
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    wap_selected_hostnames = akamai.get_app_sec_wap_selected_hostnames(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("protectedHostnames", wap_selected_hostnames.protected_hosts)
-    pulumi.export("evaluatedHostnames", wap_selected_hostnames.evaluated_hosts)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned and how that returned information is formatted:
-
-    - `protected_hostnames`. List of hostnames currently protected under the security configuration and security policy.
-    - `evaluated_hostnames`. List of hostnames currently being evaluated under the security configuration and security policy.
-    - `hostnames_json`. JSON-formatted report of the protected and evaluated hostnames.
-    - `output_text`. Tabular reports of the protected and evaluated hostnames.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the hostnames.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the hostnames.
+    Use this data source to access information about an existing resource.
     """
     ...

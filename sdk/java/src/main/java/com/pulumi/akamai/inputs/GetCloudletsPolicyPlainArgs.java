@@ -14,32 +14,16 @@ public final class GetCloudletsPolicyPlainArgs extends com.pulumi.resources.Invo
 
     public static final GetCloudletsPolicyPlainArgs Empty = new GetCloudletsPolicyPlainArgs();
 
-    /**
-     * (Required) An integer identifier that is associated with all versions of a policy.
-     * 
-     */
     @Import(name="policyId", required=true)
     private Integer policyId;
 
-    /**
-     * @return (Required) An integer identifier that is associated with all versions of a policy.
-     * 
-     */
     public Integer policyId() {
         return this.policyId;
     }
 
-    /**
-     * (Optional) The version number of a policy.
-     * 
-     */
     @Import(name="version")
     private @Nullable Integer version;
 
-    /**
-     * @return (Optional) The version number of a policy.
-     * 
-     */
     public Optional<Integer> version() {
         return Optional.ofNullable(this.version);
     }
@@ -69,23 +53,11 @@ public final class GetCloudletsPolicyPlainArgs extends com.pulumi.resources.Invo
             $ = new GetCloudletsPolicyPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param policyId (Required) An integer identifier that is associated with all versions of a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder policyId(Integer policyId) {
             $.policyId = policyId;
             return this;
         }
 
-        /**
-         * @param version (Optional) The version number of a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(@Nullable Integer version) {
             $.version = version;
             return this;

@@ -15,161 +15,57 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CloudletsApplicationLoadBalancerLivenessSettings {
-    /**
-     * @return Maps additional case-insensitive HTTP header names included to the liveness testing requests.
-     * 
-     */
     private @Nullable Map<String,String> additionalHeaders;
-    /**
-     * @return The Host header for the liveness HTTP request.
-     * 
-     */
     private @Nullable String hostHeader;
-    /**
-     * @return The frequency of liveness tests. Defaults to 60 seconds, minimum is 10 seconds.
-     * 
-     */
     private @Nullable Integer interval;
-    /**
-     * @return The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
-     * 
-     */
     private String path;
-    /**
-     * @return Whether to validate the origin certificate for an HTTPS request.
-     * 
-     */
     private @Nullable Boolean peerCertificateVerification;
-    /**
-     * @return The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
-     * 
-     */
     private Integer port;
-    /**
-     * @return The protocol or scheme for the database, either `HTTP` or `HTTPS`.
-     * 
-     */
     private String protocol;
-    /**
-     * @return The request used for TCP and TCPS tests.
-     * 
-     */
     private @Nullable String requestString;
-    /**
-     * @return The response used for TCP and TCPS tests.
-     * 
-     */
     private @Nullable String responseString;
-    /**
-     * @return If set to `true`, marks the liveness test as failed when the request returns a 3xx (redirection) status code.
-     * 
-     */
     private @Nullable Boolean status3xxFailure;
-    /**
-     * @return If set to `true`, marks the liveness test as failed when the request returns a 4xx (client error) status code.
-     * 
-     */
     private @Nullable Boolean status4xxFailure;
-    /**
-     * @return If set to `true`, marks the liveness test as failed when the request returns a 5xx (server error) status code.
-     * 
-     */
     private @Nullable Boolean status5xxFailure;
-    /**
-     * @return The number of seconds the system waits before failing the liveness test.
-     * 
-     */
     private @Nullable Double timeout;
 
     private CloudletsApplicationLoadBalancerLivenessSettings() {}
-    /**
-     * @return Maps additional case-insensitive HTTP header names included to the liveness testing requests.
-     * 
-     */
     public Map<String,String> additionalHeaders() {
         return this.additionalHeaders == null ? Map.of() : this.additionalHeaders;
     }
-    /**
-     * @return The Host header for the liveness HTTP request.
-     * 
-     */
     public Optional<String> hostHeader() {
         return Optional.ofNullable(this.hostHeader);
     }
-    /**
-     * @return The frequency of liveness tests. Defaults to 60 seconds, minimum is 10 seconds.
-     * 
-     */
     public Optional<Integer> interval() {
         return Optional.ofNullable(this.interval);
     }
-    /**
-     * @return The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
-     * 
-     */
     public String path() {
         return this.path;
     }
-    /**
-     * @return Whether to validate the origin certificate for an HTTPS request.
-     * 
-     */
     public Optional<Boolean> peerCertificateVerification() {
         return Optional.ofNullable(this.peerCertificateVerification);
     }
-    /**
-     * @return The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
-     * 
-     */
     public Integer port() {
         return this.port;
     }
-    /**
-     * @return The protocol or scheme for the database, either `HTTP` or `HTTPS`.
-     * 
-     */
     public String protocol() {
         return this.protocol;
     }
-    /**
-     * @return The request used for TCP and TCPS tests.
-     * 
-     */
     public Optional<String> requestString() {
         return Optional.ofNullable(this.requestString);
     }
-    /**
-     * @return The response used for TCP and TCPS tests.
-     * 
-     */
     public Optional<String> responseString() {
         return Optional.ofNullable(this.responseString);
     }
-    /**
-     * @return If set to `true`, marks the liveness test as failed when the request returns a 3xx (redirection) status code.
-     * 
-     */
     public Optional<Boolean> status3xxFailure() {
         return Optional.ofNullable(this.status3xxFailure);
     }
-    /**
-     * @return If set to `true`, marks the liveness test as failed when the request returns a 4xx (client error) status code.
-     * 
-     */
     public Optional<Boolean> status4xxFailure() {
         return Optional.ofNullable(this.status4xxFailure);
     }
-    /**
-     * @return If set to `true`, marks the liveness test as failed when the request returns a 5xx (server error) status code.
-     * 
-     */
     public Optional<Boolean> status5xxFailure() {
         return Optional.ofNullable(this.status5xxFailure);
     }
-    /**
-     * @return The number of seconds the system waits before failing the liveness test.
-     * 
-     */
     public Optional<Double> timeout() {
         return Optional.ofNullable(this.timeout);
     }

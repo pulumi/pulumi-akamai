@@ -12,45 +12,26 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
 
     public sealed class GtmPropertyTrafficTargetGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// A unique identifier for an existing data center in the domain.
-        /// </summary>
         [Input("datacenterId")]
         public Input<int>? DatacenterId { get; set; }
 
-        /// <summary>
-        /// A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
-        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
-        /// <summary>
-        /// Specifies an optional data center for the property. Used when there are no servers configured for the property.
-        /// </summary>
         [Input("handoutCname")]
         public Input<string>? HandoutCname { get; set; }
 
-        /// <summary>
-        /// Name of HTTP header.
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("servers")]
         private InputList<string>? _servers;
-
-        /// <summary>
-        /// (List) Identifies the IP address or the hostnames of the servers.
-        /// </summary>
         public InputList<string> Servers
         {
             get => _servers ?? (_servers = new InputList<string>());
             set => _servers = value;
         }
 
-        /// <summary>
-        /// Specifies the traffic weight for the target.
-        /// </summary>
         [Input("weight")]
         public Input<double>? Weight { get; set; }
 

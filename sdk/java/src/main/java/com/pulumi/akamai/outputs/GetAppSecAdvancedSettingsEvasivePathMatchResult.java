@@ -18,15 +18,7 @@ public final class GetAppSecAdvancedSettingsEvasivePathMatchResult {
      * 
      */
     private String id;
-    /**
-     * @return A JSON-formatted list of information about the evasive path match settings.
-     * 
-     */
     private String json;
-    /**
-     * @return A tabular display showing the evasive path match settings.
-     * 
-     */
     private String outputText;
     private @Nullable String securityPolicyId;
 
@@ -41,17 +33,9 @@ public final class GetAppSecAdvancedSettingsEvasivePathMatchResult {
     public String id() {
         return this.id;
     }
-    /**
-     * @return A JSON-formatted list of information about the evasive path match settings.
-     * 
-     */
     public String json() {
         return this.json;
     }
-    /**
-     * @return A tabular display showing the evasive path match settings.
-     * 
-     */
     public String outputText() {
         return this.outputText;
     }

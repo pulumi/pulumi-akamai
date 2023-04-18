@@ -9,62 +9,11 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security policy
-    /// 
-    /// Modifies the way your Kona Rule Set rules are updated.
-    /// Use **KRS** mode to update the rule sets manually or **AAG** to have those rule sets automatically updated.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://techdocs.akamai.com/application-security/reference/put-policy-mode)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var wafMode = new Akamai.AppSecWafMode("wafMode", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         Mode = "KRS",
-    ///     });
-    /// 
-    ///     return new Dictionary&lt;string, object?&gt;
-    ///     {
-    ///         ["wafModeMode"] = wafMode.Mode,
-    ///         ["wafModeCurrentRuleset"] = wafMode.CurrentRuleset,
-    ///         ["wafModeEvalStatus"] = wafMode.EvalStatus,
-    ///         ["wafModeEvalRuleset"] = wafMode.EvalRuleset,
-    ///         ["wafModeEvalExpirationDate"] = wafMode.EvalExpirationDate,
-    ///     };
-    /// });
-    /// ```
-    /// ## Output Options
-    /// 
-    /// The following options can be used to determine the information returned, and how that returned information is formatted:
-    /// 
-    /// - `current_ruleset` – Versioning information for the current Kona Rule Set.
-    /// - `eval_ruleset`. Versioning information for the Kona Rule Set being evaluated (if applicable).
-    /// - `eval_status`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
-    /// - `eval_expiration_date`. Date on which the evaluation period ends (if applicable).
-    /// - `output_text`. Tabular report showing the current rule set, WAF mode and evaluation status.
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecWafMode:AppSecWafMode")]
     public partial class AppSecWafMode : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
@@ -94,7 +43,7 @@ namespace Pulumi.Akamai
         public Output<string> EvalStatus { get; private set; } = null!;
 
         /// <summary>
-        /// . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+        /// How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
         /// </summary>
         [Output("mode")]
         public Output<string> Mode { get; private set; } = null!;
@@ -106,7 +55,7 @@ namespace Pulumi.Akamai
         public Output<string> OutputText { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the WAF mode settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -158,19 +107,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecWafModeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+        /// How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
         /// </summary>
         [Input("mode", required: true)]
         public Input<string> Mode { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the WAF mode settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -184,7 +133,7 @@ namespace Pulumi.Akamai
     public sealed class AppSecWafModeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the WAF mode settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
@@ -214,7 +163,7 @@ namespace Pulumi.Akamai
         public Input<string>? EvalStatus { get; set; }
 
         /// <summary>
-        /// . Specifies how Kona Rule Set rules are upgraded. Allowed values are:
+        /// How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
         /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }
@@ -226,7 +175,7 @@ namespace Pulumi.Akamai
         public Input<string>? OutputText { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the WAF mode settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

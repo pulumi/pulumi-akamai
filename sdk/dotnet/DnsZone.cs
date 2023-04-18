@@ -18,72 +18,39 @@ namespace Pulumi.Akamai
         [Output("aliasCount")]
         public Output<int> AliasCount { get; private set; } = null!;
 
-        /// <summary>
-        /// A descriptive comment.
-        /// </summary>
         [Output("comment")]
         public Output<string?> Comment { get; private set; } = null!;
 
-        /// <summary>
-        /// The contract ID.
-        /// </summary>
         [Output("contract")]
         public Output<string> Contract { get; private set; } = null!;
 
-        /// <summary>
-        /// A free form identifier for the zone.
-        /// </summary>
         [Output("endCustomerId")]
         public Output<string?> EndCustomerId { get; private set; } = null!;
 
-        /// <summary>
-        /// The currently selected group ID.
-        /// </summary>
         [Output("group")]
         public Output<string?> Group { get; private set; } = null!;
 
-        /// <summary>
-        /// The names or IP addresses of the nameservers that the zone data should be retrieved from.
-        /// </summary>
         [Output("masters")]
         public Output<ImmutableArray<string>> Masters { get; private set; } = null!;
 
-        /// <summary>
-        /// Whether DNSSEC Sign and Serve is enabled.
-        /// </summary>
         [Output("signAndServe")]
         public Output<bool?> SignAndServe { get; private set; } = null!;
 
-        /// <summary>
-        /// The algorithm used by Sign and Serve.
-        /// </summary>
         [Output("signAndServeAlgorithm")]
         public Output<string?> SignAndServeAlgorithm { get; private set; } = null!;
 
-        /// <summary>
-        /// The name of the zone whose configuration this zone will copy.
-        /// </summary>
         [Output("target")]
         public Output<string?> Target { get; private set; } = null!;
 
-        /// <summary>
-        /// The TSIG Key used in secure zone transfers. If used, requires these arguments:
-        /// </summary>
         [Output("tsigKey")]
         public Output<Outputs.DnsZoneTsigKey?> TsigKey { get; private set; } = null!;
 
-        /// <summary>
-        /// Whether the zone is `primary`, `secondary`, or `alias`.
-        /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
         [Output("versionId")]
         public Output<string> VersionId { get; private set; } = null!;
 
-        /// <summary>
-        /// The domain zone, encapsulating any nested subdomains.
-        /// </summary>
         [Output("zone")]
         public Output<string> Zone { get; private set; } = null!;
 
@@ -137,75 +104,41 @@ namespace Pulumi.Akamai
 
     public sealed class DnsZoneArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// A descriptive comment.
-        /// </summary>
         [Input("comment")]
         public Input<string>? Comment { get; set; }
 
-        /// <summary>
-        /// The contract ID.
-        /// </summary>
         [Input("contract", required: true)]
         public Input<string> Contract { get; set; } = null!;
 
-        /// <summary>
-        /// A free form identifier for the zone.
-        /// </summary>
         [Input("endCustomerId")]
         public Input<string>? EndCustomerId { get; set; }
 
-        /// <summary>
-        /// The currently selected group ID.
-        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
         [Input("masters")]
         private InputList<string>? _masters;
-
-        /// <summary>
-        /// The names or IP addresses of the nameservers that the zone data should be retrieved from.
-        /// </summary>
         public InputList<string> Masters
         {
             get => _masters ?? (_masters = new InputList<string>());
             set => _masters = value;
         }
 
-        /// <summary>
-        /// Whether DNSSEC Sign and Serve is enabled.
-        /// </summary>
         [Input("signAndServe")]
         public Input<bool>? SignAndServe { get; set; }
 
-        /// <summary>
-        /// The algorithm used by Sign and Serve.
-        /// </summary>
         [Input("signAndServeAlgorithm")]
         public Input<string>? SignAndServeAlgorithm { get; set; }
 
-        /// <summary>
-        /// The name of the zone whose configuration this zone will copy.
-        /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }
 
-        /// <summary>
-        /// The TSIG Key used in secure zone transfers. If used, requires these arguments:
-        /// </summary>
         [Input("tsigKey")]
         public Input<Inputs.DnsZoneTsigKeyArgs>? TsigKey { get; set; }
 
-        /// <summary>
-        /// Whether the zone is `primary`, `secondary`, or `alias`.
-        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
-        /// <summary>
-        /// The domain zone, encapsulating any nested subdomains.
-        /// </summary>
         [Input("zone", required: true)]
         public Input<string> Zone { get; set; } = null!;
 
@@ -223,78 +156,44 @@ namespace Pulumi.Akamai
         [Input("aliasCount")]
         public Input<int>? AliasCount { get; set; }
 
-        /// <summary>
-        /// A descriptive comment.
-        /// </summary>
         [Input("comment")]
         public Input<string>? Comment { get; set; }
 
-        /// <summary>
-        /// The contract ID.
-        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
-        /// <summary>
-        /// A free form identifier for the zone.
-        /// </summary>
         [Input("endCustomerId")]
         public Input<string>? EndCustomerId { get; set; }
 
-        /// <summary>
-        /// The currently selected group ID.
-        /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
         [Input("masters")]
         private InputList<string>? _masters;
-
-        /// <summary>
-        /// The names or IP addresses of the nameservers that the zone data should be retrieved from.
-        /// </summary>
         public InputList<string> Masters
         {
             get => _masters ?? (_masters = new InputList<string>());
             set => _masters = value;
         }
 
-        /// <summary>
-        /// Whether DNSSEC Sign and Serve is enabled.
-        /// </summary>
         [Input("signAndServe")]
         public Input<bool>? SignAndServe { get; set; }
 
-        /// <summary>
-        /// The algorithm used by Sign and Serve.
-        /// </summary>
         [Input("signAndServeAlgorithm")]
         public Input<string>? SignAndServeAlgorithm { get; set; }
 
-        /// <summary>
-        /// The name of the zone whose configuration this zone will copy.
-        /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }
 
-        /// <summary>
-        /// The TSIG Key used in secure zone transfers. If used, requires these arguments:
-        /// </summary>
         [Input("tsigKey")]
         public Input<Inputs.DnsZoneTsigKeyGetArgs>? TsigKey { get; set; }
 
-        /// <summary>
-        /// Whether the zone is `primary`, `secondary`, or `alias`.
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         [Input("versionId")]
         public Input<string>? VersionId { get; set; }
 
-        /// <summary>
-        /// The domain zone, encapsulating any nested subdomains.
-        /// </summary>
         [Input("zone")]
         public Input<string>? Zone { get; set; }
 

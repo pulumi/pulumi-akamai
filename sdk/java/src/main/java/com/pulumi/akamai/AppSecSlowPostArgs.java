@@ -17,14 +17,14 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
     public static final AppSecSlowPostArgs Empty = new AppSecSlowPostArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the slow POST settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the slow POST settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -32,14 +32,16 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
+     * Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+     * specified action
      * 
      */
     @Import(name="durationThresholdTimeout")
     private @Nullable Output<Integer> durationThresholdTimeout;
 
     /**
-     * @return . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
+     * @return Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+     * specified action
      * 
      */
     public Optional<Output<Integer>> durationThresholdTimeout() {
@@ -47,14 +49,14 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * . Unique identifier of the security policy associated with the slow POST settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the slow POST settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -62,18 +64,14 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * . Action to be taken if slow POST protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **abort**. Block the request.
+     * Action to be taken when slow POST protection is triggered
      * 
      */
     @Import(name="slowRateAction", required=true)
     private Output<String> slowRateAction;
 
     /**
-     * @return . Action to be taken if slow POST protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **abort**. Block the request.
+     * @return Action to be taken when slow POST protection is triggered
      * 
      */
     public Output<String> slowRateAction() {
@@ -81,14 +79,14 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
+     * Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
      * 
      */
     @Import(name="slowRateThresholdPeriod")
     private @Nullable Output<Integer> slowRateThresholdPeriod;
 
     /**
-     * @return . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
+     * @return Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
      * 
      */
     public Optional<Output<Integer>> slowRateThresholdPeriod() {
@@ -96,14 +94,14 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+     * Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
      * 
      */
     @Import(name="slowRateThresholdRate")
     private @Nullable Output<Integer> slowRateThresholdRate;
 
     /**
-     * @return . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+     * @return Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
      * 
      */
     public Optional<Output<Integer>> slowRateThresholdRate() {
@@ -140,7 +138,7 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the slow POST settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -151,7 +149,7 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the slow POST settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -161,7 +159,8 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param durationThresholdTimeout . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
+         * @param durationThresholdTimeout Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+         * specified action
          * 
          * @return builder
          * 
@@ -172,7 +171,8 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param durationThresholdTimeout . Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in to avoid triggering the specified action.
+         * @param durationThresholdTimeout Maximum amount of time (in seconds) within which the first 8KB of the POST body must be received to avoid triggering the
+         * specified action
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the slow POST settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the slow POST settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -203,9 +203,7 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param slowRateAction . Action to be taken if slow POST protection is triggered. Allowed values are:
-         * - **alert**. Record the event.
-         * - **abort**. Block the request.
+         * @param slowRateAction Action to be taken when slow POST protection is triggered
          * 
          * @return builder
          * 
@@ -216,9 +214,7 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param slowRateAction . Action to be taken if slow POST protection is triggered. Allowed values are:
-         * - **alert**. Record the event.
-         * - **abort**. Block the request.
+         * @param slowRateAction Action to be taken when slow POST protection is triggered
          * 
          * @return builder
          * 
@@ -228,7 +224,7 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param slowRateThresholdPeriod . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
+         * @param slowRateThresholdPeriod Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
          * 
          * @return builder
          * 
@@ -239,7 +235,7 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param slowRateThresholdPeriod . Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
+         * @param slowRateThresholdPeriod Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
          * 
          * @return builder
          * 
@@ -249,7 +245,7 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param slowRateThresholdRate . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+         * @param slowRateThresholdRate Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
          * 
          * @return builder
          * 
@@ -260,7 +256,7 @@ public final class AppSecSlowPostArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param slowRateThresholdRate . Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
+         * @param slowRateThresholdRate Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
          * 
          * @return builder
          * 

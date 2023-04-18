@@ -10,16 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `PropertyIncludeActivation` data source to get activation details for an include on the provided network.
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `version` - The version of the activated include.
-// * `name` - The descriptive name for the property.
-// * `note` - A log message assigned to the activation request.
-// * `notifyEmails` - The list of email addresses notified when the activation status changes.
 func LookupPropertyIncludeActivation(ctx *pulumi.Context, args *LookupPropertyIncludeActivationArgs, opts ...pulumi.InvokeOption) (*LookupPropertyIncludeActivationResult, error) {
 	var rv LookupPropertyIncludeActivationResult
 	err := ctx.Invoke("akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation", args, &rv, opts...)
@@ -31,14 +21,10 @@ func LookupPropertyIncludeActivation(ctx *pulumi.Context, args *LookupPropertyIn
 
 // A collection of arguments for invoking getPropertyIncludeActivation.
 type LookupPropertyIncludeActivationArgs struct {
-	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
-	// (Required) A group's unique ID, including the optional `grp_` prefix.
-	GroupId string `pulumi:"groupId"`
-	// (Required) An include's unique ID with the optional `inc_` prefix.
-	IncludeId string `pulumi:"includeId"`
-	// (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-	Network string `pulumi:"network"`
+	GroupId    string `pulumi:"groupId"`
+	IncludeId  string `pulumi:"includeId"`
+	Network    string `pulumi:"network"`
 }
 
 // A collection of values returned by getPropertyIncludeActivation.
@@ -70,14 +56,10 @@ func LookupPropertyIncludeActivationOutput(ctx *pulumi.Context, args LookupPrope
 
 // A collection of arguments for invoking getPropertyIncludeActivation.
 type LookupPropertyIncludeActivationOutputArgs struct {
-	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId pulumi.StringInput `pulumi:"contractId"`
-	// (Required) A group's unique ID, including the optional `grp_` prefix.
-	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// (Required) An include's unique ID with the optional `inc_` prefix.
-	IncludeId pulumi.StringInput `pulumi:"includeId"`
-	// (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-	Network pulumi.StringInput `pulumi:"network"`
+	GroupId    pulumi.StringInput `pulumi:"groupId"`
+	IncludeId  pulumi.StringInput `pulumi:"includeId"`
+	Network    pulumi.StringInput `pulumi:"network"`
 }
 
 func (LookupPropertyIncludeActivationOutputArgs) ElementType() reflect.Type {

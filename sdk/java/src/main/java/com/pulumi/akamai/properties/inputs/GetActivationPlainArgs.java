@@ -15,47 +15,23 @@ public final class GetActivationPlainArgs extends com.pulumi.resources.InvokeArg
 
     public static final GetActivationPlainArgs Empty = new GetActivationPlainArgs();
 
-    /**
-     * Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-     * 
-     */
     @Import(name="network")
     private @Nullable String network;
 
-    /**
-     * @return Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-     * 
-     */
     public Optional<String> network() {
         return Optional.ofNullable(this.network);
     }
 
-    /**
-     * The property&#39;s unique identifier, including optional `prp_` prefix.
-     * 
-     */
     @Import(name="propertyId", required=true)
     private String propertyId;
 
-    /**
-     * @return The property&#39;s unique identifier, including optional `prp_` prefix.
-     * 
-     */
     public String propertyId() {
         return this.propertyId;
     }
 
-    /**
-     * The activated property version. The value depends on the `akamai.Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
-     * 
-     */
     @Import(name="version", required=true)
     private Integer version;
 
-    /**
-     * @return The activated property version. The value depends on the `akamai.Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
-     * 
-     */
     public Integer version() {
         return this.version;
     }
@@ -86,34 +62,16 @@ public final class GetActivationPlainArgs extends com.pulumi.resources.InvokeArg
             $ = new GetActivationPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param network Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder network(@Nullable String network) {
             $.network = network;
             return this;
         }
 
-        /**
-         * @param propertyId The property&#39;s unique identifier, including optional `prp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder propertyId(String propertyId) {
             $.propertyId = propertyId;
             return this;
         }
 
-        /**
-         * @param version The activated property version. The value depends on the `akamai.Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Integer version) {
             $.version = version;
             return this;

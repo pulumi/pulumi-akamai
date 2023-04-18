@@ -15,163 +15,73 @@ import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.CloudletsPolicyActivation` resource to activate a specific version of a Cloudlet policy. An activation deploys the version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
- * 
- * Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.CloudletsPolicyActivation;
- * import com.pulumi.akamai.CloudletsPolicyActivationArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var example = new CloudletsPolicyActivation(&#34;example&#34;, CloudletsPolicyActivationArgs.builder()        
- *             .associatedProperties(            
- *                 &#34;Property_1&#34;,
- *                 &#34;Property_2&#34;,
- *                 &#34;Property_3&#34;)
- *             .network(&#34;staging&#34;)
- *             .policyId(1234)
- *             .version(1)
- *             .build());
- * 
- *     }
- * }
- * ```
- * If you&#39;re handling two `akamai.CloudletsPolicyActivation` resources in the same configuration file with the same `policy_id`, but different `network` arguments (for example, `production` and `staging`), you need to add `depends_on` to the production resource. See the example:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.CloudletsPolicyActivation;
- * import com.pulumi.akamai.CloudletsPolicyActivationArgs;
- * import com.pulumi.resources.CustomResourceOptions;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var stag = new CloudletsPolicyActivation(&#34;stag&#34;, CloudletsPolicyActivationArgs.builder()        
- *             .policyId(1234567)
- *             .network(&#34;staging&#34;)
- *             .version(1)
- *             .associatedProperties(            
- *                 &#34;Property_1&#34;,
- *                 &#34;Property_2&#34;)
- *             .build());
- * 
- *         var prod = new CloudletsPolicyActivation(&#34;prod&#34;, CloudletsPolicyActivationArgs.builder()        
- *             .policyId(1234567)
- *             .network(&#34;production&#34;)
- *             .version(1)
- *             .associatedProperties(            
- *                 &#34;Property_1&#34;,
- *                 &#34;Property_2&#34;)
- *             .build(), CustomResourceOptions.builder()
- *                 .dependsOn(stag)
- *                 .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation")
 public class CloudletsPolicyActivation extends com.pulumi.resources.CustomResource {
     /**
-     * A set of property identifiers related to this Cloudlet policy. You can&#39;t activate a Cloudlet policy if it doesn&#39;t have any properties associated with it.
+     * Set of property IDs to link to this Cloudlets policy
      * 
      */
     @Export(name="associatedProperties", type=List.class, parameters={String.class})
     private Output<List<String>> associatedProperties;
 
     /**
-     * @return A set of property identifiers related to this Cloudlet policy. You can&#39;t activate a Cloudlet policy if it doesn&#39;t have any properties associated with it.
+     * @return Set of property IDs to link to this Cloudlets policy
      * 
      */
     public Output<List<String>> associatedProperties() {
         return this.associatedProperties;
     }
     /**
-     * The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+     * The network you want to activate the policy version on (options are Staging and Production)
      * 
      */
     @Export(name="network", type=String.class, parameters={})
     private Output<String> network;
 
     /**
-     * @return The network you want to activate the policy version on. For the Staging network, specify either `staging`, `stag`, or `s`. For the Production network, specify either `production`, `prod`, or `p`. All values are case insensitive.
+     * @return The network you want to activate the policy version on (options are Staging and Production)
      * 
      */
     public Output<String> network() {
         return this.network;
     }
     /**
-     * An identifier for the Cloudlet policy you want to activate.
+     * ID of the Cloudlets policy you want to activate
      * 
      */
     @Export(name="policyId", type=Integer.class, parameters={})
     private Output<Integer> policyId;
 
     /**
-     * @return An identifier for the Cloudlet policy you want to activate.
+     * @return ID of the Cloudlets policy you want to activate
      * 
      */
     public Output<Integer> policyId() {
         return this.policyId;
     }
     /**
-     * The activation status for this Cloudlet policy.
+     * Activation status for this Cloudlets policy
      * 
      */
     @Export(name="status", type=String.class, parameters={})
     private Output<String> status;
 
     /**
-     * @return The activation status for this Cloudlet policy.
+     * @return Activation status for this Cloudlets policy
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * The Cloudlet policy version you want to activate.
+     * Cloudlets policy version you want to activate
      * 
      */
     @Export(name="version", type=Integer.class, parameters={})
     private Output<Integer> version;
 
     /**
-     * @return The Cloudlet policy version you want to activate.
+     * @return Cloudlets policy version you want to activate
      * 
      */
     public Output<Integer> version() {

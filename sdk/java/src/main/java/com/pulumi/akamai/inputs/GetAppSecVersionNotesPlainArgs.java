@@ -12,17 +12,9 @@ public final class GetAppSecVersionNotesPlainArgs extends com.pulumi.resources.I
 
     public static final GetAppSecVersionNotesPlainArgs Empty = new GetAppSecVersionNotesPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration you want to return information for.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration you want to return information for.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
@@ -51,12 +43,6 @@ public final class GetAppSecVersionNotesPlainArgs extends com.pulumi.resources.I
             $ = new GetAppSecVersionNotesPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;

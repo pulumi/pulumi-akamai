@@ -10,48 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `PropertyInclude` data source to get details about a specific include.
-//
-// ## Basic usage
-//
-// This example returns details for an include based on contract, group, and include IDs.
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			myExamplePropertyInclude, err := akamai.LookupPropertyInclude(ctx, &akamai.LookupPropertyIncludeArgs{
-//				ContractId: "ctr_1234",
-//				GroupId:    "grp_5678",
-//				IncludeId:  "inc_9012",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("myExample", myExamplePropertyInclude)
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `name` - The descriptive name for the include.
-// * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-// * `latestVersion` - Returns the most recent version of the include.
-// * `stagingVersion` - The include version currently activated on the staging network.
-// * `productionVersion` - The include version currently activated on the production network.
 func LookupPropertyInclude(ctx *pulumi.Context, args *LookupPropertyIncludeArgs, opts ...pulumi.InvokeOption) (*LookupPropertyIncludeResult, error) {
 	var rv LookupPropertyIncludeResult
 	err := ctx.Invoke("akamai:index/getPropertyInclude:getPropertyInclude", args, &rv, opts...)
@@ -63,12 +21,9 @@ func LookupPropertyInclude(ctx *pulumi.Context, args *LookupPropertyIncludeArgs,
 
 // A collection of arguments for invoking getPropertyInclude.
 type LookupPropertyIncludeArgs struct {
-	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
-	// (Required) A group's unique ID, including the optional `grp_` prefix.
-	GroupId string `pulumi:"groupId"`
-	// (Required) An include's unique ID with the optional `inc_` prefix.
-	IncludeId string `pulumi:"includeId"`
+	GroupId    string `pulumi:"groupId"`
+	IncludeId  string `pulumi:"includeId"`
 }
 
 // A collection of values returned by getPropertyInclude.
@@ -100,12 +55,9 @@ func LookupPropertyIncludeOutput(ctx *pulumi.Context, args LookupPropertyInclude
 
 // A collection of arguments for invoking getPropertyInclude.
 type LookupPropertyIncludeOutputArgs struct {
-	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId pulumi.StringInput `pulumi:"contractId"`
-	// (Required) A group's unique ID, including the optional `grp_` prefix.
-	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// (Required) An include's unique ID with the optional `inc_` prefix.
-	IncludeId pulumi.StringInput `pulumi:"includeId"`
+	GroupId    pulumi.StringInput `pulumi:"groupId"`
+	IncludeId  pulumi.StringInput `pulumi:"includeId"`
 }
 
 func (LookupPropertyIncludeOutputArgs) ElementType() reflect.Type {

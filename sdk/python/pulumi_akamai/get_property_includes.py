@@ -97,38 +97,7 @@ def get_property_includes(contract_id: Optional[str] = None,
                           type: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyIncludesResult:
     """
-    Use the _get_property_includes_ data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
-
-    ## Basic usage
-
-    This example returns all includes for the specified contract and group:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    my_example_property_includes = akamai.get_property_includes(contract_id="ctr_1-AB123",
-        group_id="grp_12345")
-    pulumi.export("myExample", my_example_property_includes)
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `includes` -  The small, reusable, configurable components for your properties.
-     * `latest_version` - Returns the most recent version of the include.
-     * `staging_version` - The include version currently activated on the staging network.
-     * `production_version` - The include version currently activated on the production network.
-     * `id` - The include's unique identifier.
-     * `name` - The descriptive name for the include.
-     * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
-
-
-    :param str contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-    :param str group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-    :param pulumi.InputType['GetPropertyIncludesParentPropertyArgs'] parent_property: (Optional) The property that references the includes you want to list.
-    :param str type: (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -154,37 +123,6 @@ def get_property_includes_output(contract_id: Optional[pulumi.Input[str]] = None
                                  type: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyIncludesResult]:
     """
-    Use the _get_property_includes_ data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
-
-    ## Basic usage
-
-    This example returns all includes for the specified contract and group:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    my_example_property_includes = akamai.get_property_includes(contract_id="ctr_1-AB123",
-        group_id="grp_12345")
-    pulumi.export("myExample", my_example_property_includes)
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `includes` -  The small, reusable, configurable components for your properties.
-     * `latest_version` - Returns the most recent version of the include.
-     * `staging_version` - The include version currently activated on the staging network.
-     * `production_version` - The include version currently activated on the production network.
-     * `id` - The include's unique identifier.
-     * `name` - The descriptive name for the include.
-     * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
-
-
-    :param str contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-    :param str group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-    :param pulumi.InputType['GetPropertyIncludesParentPropertyArgs'] parent_property: (Optional) The property that references the includes you want to list.
-    :param str type: (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
+    Use this data source to access information about an existing resource.
     """
     ...

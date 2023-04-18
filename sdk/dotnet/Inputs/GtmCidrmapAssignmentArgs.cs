@@ -14,25 +14,15 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("blocks")]
         private InputList<string>? _blocks;
-
-        /// <summary>
-        /// Specifies an array of CIDR blocks.
-        /// </summary>
         public InputList<string> Blocks
         {
             get => _blocks ?? (_blocks = new InputList<string>());
             set => _blocks = value;
         }
 
-        /// <summary>
-        /// A unique identifier for an existing data center in the domain.
-        /// </summary>
         [Input("datacenterId", required: true)]
         public Input<int> DatacenterId { get; set; } = null!;
 
-        /// <summary>
-        /// A descriptive label for the CIDR zone group, up to 256 characters.
-        /// </summary>
         [Input("nickname", required: true)]
         public Input<string> Nickname { get; set; } = null!;
 

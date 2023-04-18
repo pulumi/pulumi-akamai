@@ -10,50 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getPropertyIncludeRules` data source to query and get an include's rules. This data source lets you search across the contracts and groups you have access to.
-//
-// ## Basic usage
-//
-// This example returns the include's rule tree based on the specified contract, group, and include IDs:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			myExamplePropertyIncludeRules, err := akamai.GetPropertyIncludeRules(ctx, &akamai.GetPropertyIncludeRulesArgs{
-//				ContractId: "ctr_1-AB123",
-//				GroupId:    "grp_12345",
-//				IncludeId:  "inc_123456",
-//				Version:    3,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("myExample", myExamplePropertyIncludeRules)
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `rules` - Include's rules as JSON.
-// * `name` - The descriptive name for the include.
-// * `ruleErrors` - Rule's validation errors. You need to resolve returned errors, as they block an activation.
-// * `ruleWarnings` - Rule's validation warnings. You can activate a version that yields non-blocking warnings.
-// * `ruleFormat` - Indicates the versioned set of features and criteria that are currently applied to a rule tree. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
-// * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
 func GetPropertyIncludeRules(ctx *pulumi.Context, args *GetPropertyIncludeRulesArgs, opts ...pulumi.InvokeOption) (*GetPropertyIncludeRulesResult, error) {
 	var rv GetPropertyIncludeRulesResult
 	err := ctx.Invoke("akamai:index/getPropertyIncludeRules:getPropertyIncludeRules", args, &rv, opts...)
@@ -65,14 +21,10 @@ func GetPropertyIncludeRules(ctx *pulumi.Context, args *GetPropertyIncludeRulesA
 
 // A collection of arguments for invoking getPropertyIncludeRules.
 type GetPropertyIncludeRulesArgs struct {
-	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
-	// (Required) A group's unique ID, including the optional `grp_` prefix.
-	GroupId string `pulumi:"groupId"`
-	// (Required) An include's unique ID with the optional `inc_` prefix.
-	IncludeId string `pulumi:"includeId"`
-	// (Required) The include version you want to view the rules for.
-	Version int `pulumi:"version"`
+	GroupId    string `pulumi:"groupId"`
+	IncludeId  string `pulumi:"includeId"`
+	Version    int    `pulumi:"version"`
 }
 
 // A collection of values returned by getPropertyIncludeRules.
@@ -106,14 +58,10 @@ func GetPropertyIncludeRulesOutput(ctx *pulumi.Context, args GetPropertyIncludeR
 
 // A collection of arguments for invoking getPropertyIncludeRules.
 type GetPropertyIncludeRulesOutputArgs struct {
-	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId pulumi.StringInput `pulumi:"contractId"`
-	// (Required) A group's unique ID, including the optional `grp_` prefix.
-	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// (Required) An include's unique ID with the optional `inc_` prefix.
-	IncludeId pulumi.StringInput `pulumi:"includeId"`
-	// (Required) The include version you want to view the rules for.
-	Version pulumi.IntInput `pulumi:"version"`
+	GroupId    pulumi.StringInput `pulumi:"groupId"`
+	IncludeId  pulumi.StringInput `pulumi:"includeId"`
+	Version    pulumi.IntInput    `pulumi:"version"`
 }
 
 func (GetPropertyIncludeRulesOutputArgs) ElementType() reflect.Type {

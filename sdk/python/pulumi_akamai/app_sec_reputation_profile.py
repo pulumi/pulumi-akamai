@@ -18,8 +18,8 @@ class AppSecReputationProfileArgs:
                  reputation_profile: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecReputationProfile resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile being modified.
-        :param pulumi.Input[str] reputation_profile: . Path to a JSON file containing a definition of the reputation profile.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] reputation_profile: JSON-formatted definition of the reputation profile
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "reputation_profile", reputation_profile)
@@ -28,7 +28,7 @@ class AppSecReputationProfileArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the reputation profile being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -40,7 +40,7 @@ class AppSecReputationProfileArgs:
     @pulumi.getter(name="reputationProfile")
     def reputation_profile(self) -> pulumi.Input[str]:
         """
-        . Path to a JSON file containing a definition of the reputation profile.
+        JSON-formatted definition of the reputation profile
         """
         return pulumi.get(self, "reputation_profile")
 
@@ -57,8 +57,8 @@ class _AppSecReputationProfileState:
                  reputation_profile_id: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecReputationProfile resources.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile being modified.
-        :param pulumi.Input[str] reputation_profile: . Path to a JSON file containing a definition of the reputation profile.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] reputation_profile: JSON-formatted definition of the reputation profile
         :param pulumi.Input[int] reputation_profile_id: Unique identifier of the reputation profile
         """
         if config_id is not None:
@@ -72,7 +72,7 @@ class _AppSecReputationProfileState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the reputation profile being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -84,7 +84,7 @@ class _AppSecReputationProfileState:
     @pulumi.getter(name="reputationProfile")
     def reputation_profile(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing a definition of the reputation profile.
+        JSON-formatted definition of the reputation profile
         """
         return pulumi.get(self, "reputation_profile")
 
@@ -114,38 +114,11 @@ class AppSecReputationProfile(pulumi.CustomResource):
                  reputation_profile: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        **Scopes**: Security policy
-
-        Creates or modifies a reputation profile.
-        Reputation profiles grade the security risk of an IP address based on previous activities associated with that address.
-        Depending on the reputation score and how your configuration has been set up, requests from a specific IP address can trigger an alert or even be blocked.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/put-reputation-profile)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        reputation_profile = akamai.AppSecReputationProfile("reputationProfile",
-            config_id=configuration.config_id,
-            reputation_profile=(lambda path: open(path).read())(f"{path['module']}/reputation_profile.json"))
-        pulumi.export("reputationProfileId", reputation_profile.reputation_profile_id)
-        ```
-        ## Output Options
-
-        The following options can be used to determine the information returned, and how that returned information is formatted:
-
-        - `reputation_profile_id`. ID of the newly-created or newly-modified reputation profile.
-
+        Create a AppSecReputationProfile resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile being modified.
-        :param pulumi.Input[str] reputation_profile: . Path to a JSON file containing a definition of the reputation profile.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] reputation_profile: JSON-formatted definition of the reputation profile
         """
         ...
     @overload
@@ -154,34 +127,7 @@ class AppSecReputationProfile(pulumi.CustomResource):
                  args: AppSecReputationProfileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Security policy
-
-        Creates or modifies a reputation profile.
-        Reputation profiles grade the security risk of an IP address based on previous activities associated with that address.
-        Depending on the reputation score and how your configuration has been set up, requests from a specific IP address can trigger an alert or even be blocked.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/put-reputation-profile)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        reputation_profile = akamai.AppSecReputationProfile("reputationProfile",
-            config_id=configuration.config_id,
-            reputation_profile=(lambda path: open(path).read())(f"{path['module']}/reputation_profile.json"))
-        pulumi.export("reputationProfileId", reputation_profile.reputation_profile_id)
-        ```
-        ## Output Options
-
-        The following options can be used to determine the information returned, and how that returned information is formatted:
-
-        - `reputation_profile_id`. ID of the newly-created or newly-modified reputation profile.
-
+        Create a AppSecReputationProfile resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecReputationProfileArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -235,8 +181,8 @@ class AppSecReputationProfile(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile being modified.
-        :param pulumi.Input[str] reputation_profile: . Path to a JSON file containing a definition of the reputation profile.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] reputation_profile: JSON-formatted definition of the reputation profile
         :param pulumi.Input[int] reputation_profile_id: Unique identifier of the reputation profile
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -252,7 +198,7 @@ class AppSecReputationProfile(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the reputation profile being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -260,7 +206,7 @@ class AppSecReputationProfile(pulumi.CustomResource):
     @pulumi.getter(name="reputationProfile")
     def reputation_profile(self) -> pulumi.Output[str]:
         """
-        . Path to a JSON file containing a definition of the reputation profile.
+        JSON-formatted definition of the reputation profile
         """
         return pulumi.get(self, "reputation_profile")
 

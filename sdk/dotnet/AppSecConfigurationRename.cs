@@ -9,56 +9,23 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security configuration
-    /// 
-    /// Renames an existing security configuration.
-    /// Note that you can change only the configuration name. You can't modify the ID assigned to a security configuration.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}](https://techdocs.akamai.com/application-security/reference/put-config)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configurationAppSecConfiguration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var configurationAppSecConfigurationRename = new Akamai.AppSecConfigurationRename("configurationAppSecConfigurationRename", new()
-    ///     {
-    ///         ConfigId = configurationAppSecConfiguration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         Description = "This configuration is by both the documentation team and the training team.",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecConfigurationRename:AppSecConfigurationRename")]
     public partial class AppSecConfigurationRename : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuring being renamed.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Brief description of the security configuration.
+        /// Brief description of the security configuration
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// . New name for the security configuration.
+        /// New name for the security configuration
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -110,19 +77,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecConfigurationRenameArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuring being renamed.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Brief description of the security configuration.
+        /// Brief description of the security configuration
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
-        /// . New name for the security configuration.
+        /// New name for the security configuration
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -136,19 +103,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecConfigurationRenameState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuring being renamed.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Brief description of the security configuration.
+        /// Brief description of the security configuration
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// . New name for the security configuration.
+        /// New name for the security configuration
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

@@ -13,17 +13,9 @@ public final class GetAppSecSiemSettingsArgs extends com.pulumi.resources.Invoke
 
     public static final GetAppSecSiemSettingsArgs Empty = new GetAppSecSiemSettingsArgs();
 
-    /**
-     * . Unique identifier of the security configuration you want to return information for.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration you want to return information for.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
@@ -52,23 +44,11 @@ public final class GetAppSecSiemSettingsArgs extends com.pulumi.resources.Invoke
             $ = new GetAppSecSiemSettingsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }

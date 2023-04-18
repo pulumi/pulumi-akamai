@@ -121,36 +121,7 @@ def get_property_include(contract_id: Optional[str] = None,
                          include_id: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyIncludeResult:
     """
-    Use the `PropertyInclude` data source to get details about a specific include.
-
-    ## Basic usage
-
-    This example returns details for an include based on contract, group, and include IDs.
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    my_example_property_include = akamai.get_property_include(contract_id="ctr_1234",
-        group_id="grp_5678",
-        include_id="inc_9012")
-    pulumi.export("myExample", my_example_property_include)
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `name` - The descriptive name for the include.
-    * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-    * `latest_version` - Returns the most recent version of the include.
-    * `staging_version` - The include version currently activated on the staging network.
-    * `production_version` - The include version currently activated on the production network.
-
-
-    :param str contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-    :param str group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-    :param str include_id: (Required) An include's unique ID with the optional `inc_` prefix.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -177,35 +148,6 @@ def get_property_include_output(contract_id: Optional[pulumi.Input[str]] = None,
                                 include_id: Optional[pulumi.Input[str]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyIncludeResult]:
     """
-    Use the `PropertyInclude` data source to get details about a specific include.
-
-    ## Basic usage
-
-    This example returns details for an include based on contract, group, and include IDs.
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    my_example_property_include = akamai.get_property_include(contract_id="ctr_1234",
-        group_id="grp_5678",
-        include_id="inc_9012")
-    pulumi.export("myExample", my_example_property_include)
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `name` - The descriptive name for the include.
-    * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-    * `latest_version` - Returns the most recent version of the include.
-    * `staging_version` - The include version currently activated on the staging network.
-    * `production_version` - The include version currently activated on the production network.
-
-
-    :param str contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-    :param str group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-    :param str include_id: (Required) An include's unique ID with the optional `inc_` prefix.
+    Use this data source to access information about an existing resource.
     """
     ...

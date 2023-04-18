@@ -4,28 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getEdgeWorkersResourceTier` data source to list the available resource tiers for a specific contract ID. The resource tier defines the resource consumption [limits](https://techdocs.akamai.com/edgeworkers/docs/resource-tier-limitations) for an EdgeWorker ID.
- *
- * ## Example Usage
- *
- * This example returns the resource tier fields for an EdgeWorker ID:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getEdgeWorkersResourceTier({
- *     contractId: "1-ABC",
- *     resourceTierName: "Basic Compute",
- * });
- * ```
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `resourceTierId` - Unique identifier of the resource tier.
- */
 export function getEdgeWorkersResourceTier(args: GetEdgeWorkersResourceTierArgs, opts?: pulumi.InvokeOptions): Promise<GetEdgeWorkersResourceTierResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -39,13 +17,7 @@ export function getEdgeWorkersResourceTier(args: GetEdgeWorkersResourceTierArgs,
  * A collection of arguments for invoking getEdgeWorkersResourceTier.
  */
 export interface GetEdgeWorkersResourceTierArgs {
-    /**
-     * Unique identifier of a contract.
-     */
     contractId: string;
-    /**
-     * Unique name of the resource tier.
-     */
     resourceTierName: string;
 }
 
@@ -61,28 +33,6 @@ export interface GetEdgeWorkersResourceTierResult {
     readonly resourceTierId: number;
     readonly resourceTierName: string;
 }
-/**
- * Use the `akamai.getEdgeWorkersResourceTier` data source to list the available resource tiers for a specific contract ID. The resource tier defines the resource consumption [limits](https://techdocs.akamai.com/edgeworkers/docs/resource-tier-limitations) for an EdgeWorker ID.
- *
- * ## Example Usage
- *
- * This example returns the resource tier fields for an EdgeWorker ID:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getEdgeWorkersResourceTier({
- *     contractId: "1-ABC",
- *     resourceTierName: "Basic Compute",
- * });
- * ```
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `resourceTierId` - Unique identifier of the resource tier.
- */
 export function getEdgeWorkersResourceTierOutput(args: GetEdgeWorkersResourceTierOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEdgeWorkersResourceTierResult> {
     return pulumi.output(args).apply((a: any) => getEdgeWorkersResourceTier(a, opts))
 }
@@ -91,12 +41,6 @@ export function getEdgeWorkersResourceTierOutput(args: GetEdgeWorkersResourceTie
  * A collection of arguments for invoking getEdgeWorkersResourceTier.
  */
 export interface GetEdgeWorkersResourceTierOutputArgs {
-    /**
-     * Unique identifier of a contract.
-     */
     contractId: pulumi.Input<string>;
-    /**
-     * Unique name of the resource tier.
-     */
     resourceTierName: pulumi.Input<string>;
 }

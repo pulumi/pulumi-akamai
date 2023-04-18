@@ -20,22 +20,10 @@ public final class GetNetworkListsResult {
      * 
      */
     private String id;
-    /**
-     * @return A JSON-formatted list of information about the specified network list(s).
-     * 
-     */
     private String json;
-    /**
-     * @return A list containing the IDs of the specified network lists(s).
-     * 
-     */
     private List<String> lists;
     private @Nullable String name;
     private String networkListId;
-    /**
-     * @return A tabular display showing the network list information.
-     * 
-     */
     private String outputText;
     private @Nullable String type;
 
@@ -53,17 +41,9 @@ public final class GetNetworkListsResult {
     public String id() {
         return this.id;
     }
-    /**
-     * @return A JSON-formatted list of information about the specified network list(s).
-     * 
-     */
     public String json() {
         return this.json;
     }
-    /**
-     * @return A list containing the IDs of the specified network lists(s).
-     * 
-     */
     public List<String> lists() {
         return this.lists;
     }
@@ -73,10 +53,6 @@ public final class GetNetworkListsResult {
     public String networkListId() {
         return this.networkListId;
     }
-    /**
-     * @return A tabular display showing the network list information.
-     * 
-     */
     public String outputText() {
         return this.outputText;
     }

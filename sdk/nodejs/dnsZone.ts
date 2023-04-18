@@ -36,50 +36,17 @@ export class DnsZone extends pulumi.CustomResource {
 
     public /*out*/ readonly activationState!: pulumi.Output<string>;
     public /*out*/ readonly aliasCount!: pulumi.Output<number>;
-    /**
-     * A descriptive comment.
-     */
     public readonly comment!: pulumi.Output<string | undefined>;
-    /**
-     * The contract ID.
-     */
     public readonly contract!: pulumi.Output<string>;
-    /**
-     * A free form identifier for the zone.
-     */
     public readonly endCustomerId!: pulumi.Output<string | undefined>;
-    /**
-     * The currently selected group ID.
-     */
     public readonly group!: pulumi.Output<string | undefined>;
-    /**
-     * The names or IP addresses of the nameservers that the zone data should be retrieved from.
-     */
     public readonly masters!: pulumi.Output<string[] | undefined>;
-    /**
-     * Whether DNSSEC Sign and Serve is enabled.
-     */
     public readonly signAndServe!: pulumi.Output<boolean | undefined>;
-    /**
-     * The algorithm used by Sign and Serve.
-     */
     public readonly signAndServeAlgorithm!: pulumi.Output<string | undefined>;
-    /**
-     * The name of the zone whose configuration this zone will copy.
-     */
     public readonly target!: pulumi.Output<string | undefined>;
-    /**
-     * The TSIG Key used in secure zone transfers. If used, requires these arguments:
-     */
     public readonly tsigKey!: pulumi.Output<outputs.DnsZoneTsigKey | undefined>;
-    /**
-     * Whether the zone is `primary`, `secondary`, or `alias`.
-     */
     public readonly type!: pulumi.Output<string>;
     public /*out*/ readonly versionId!: pulumi.Output<string>;
-    /**
-     * The domain zone, encapsulating any nested subdomains.
-     */
     public readonly zone!: pulumi.Output<string>;
 
     /**
@@ -148,50 +115,17 @@ export class DnsZone extends pulumi.CustomResource {
 export interface DnsZoneState {
     activationState?: pulumi.Input<string>;
     aliasCount?: pulumi.Input<number>;
-    /**
-     * A descriptive comment.
-     */
     comment?: pulumi.Input<string>;
-    /**
-     * The contract ID.
-     */
     contract?: pulumi.Input<string>;
-    /**
-     * A free form identifier for the zone.
-     */
     endCustomerId?: pulumi.Input<string>;
-    /**
-     * The currently selected group ID.
-     */
     group?: pulumi.Input<string>;
-    /**
-     * The names or IP addresses of the nameservers that the zone data should be retrieved from.
-     */
     masters?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * Whether DNSSEC Sign and Serve is enabled.
-     */
     signAndServe?: pulumi.Input<boolean>;
-    /**
-     * The algorithm used by Sign and Serve.
-     */
     signAndServeAlgorithm?: pulumi.Input<string>;
-    /**
-     * The name of the zone whose configuration this zone will copy.
-     */
     target?: pulumi.Input<string>;
-    /**
-     * The TSIG Key used in secure zone transfers. If used, requires these arguments:
-     */
     tsigKey?: pulumi.Input<inputs.DnsZoneTsigKey>;
-    /**
-     * Whether the zone is `primary`, `secondary`, or `alias`.
-     */
     type?: pulumi.Input<string>;
     versionId?: pulumi.Input<string>;
-    /**
-     * The domain zone, encapsulating any nested subdomains.
-     */
     zone?: pulumi.Input<string>;
 }
 
@@ -199,48 +133,15 @@ export interface DnsZoneState {
  * The set of arguments for constructing a DnsZone resource.
  */
 export interface DnsZoneArgs {
-    /**
-     * A descriptive comment.
-     */
     comment?: pulumi.Input<string>;
-    /**
-     * The contract ID.
-     */
     contract: pulumi.Input<string>;
-    /**
-     * A free form identifier for the zone.
-     */
     endCustomerId?: pulumi.Input<string>;
-    /**
-     * The currently selected group ID.
-     */
     group?: pulumi.Input<string>;
-    /**
-     * The names or IP addresses of the nameservers that the zone data should be retrieved from.
-     */
     masters?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * Whether DNSSEC Sign and Serve is enabled.
-     */
     signAndServe?: pulumi.Input<boolean>;
-    /**
-     * The algorithm used by Sign and Serve.
-     */
     signAndServeAlgorithm?: pulumi.Input<string>;
-    /**
-     * The name of the zone whose configuration this zone will copy.
-     */
     target?: pulumi.Input<string>;
-    /**
-     * The TSIG Key used in secure zone transfers. If used, requires these arguments:
-     */
     tsigKey?: pulumi.Input<inputs.DnsZoneTsigKey>;
-    /**
-     * Whether the zone is `primary`, `secondary`, or `alias`.
-     */
     type: pulumi.Input<string>;
-    /**
-     * The domain zone, encapsulating any nested subdomains.
-     */
     zone: pulumi.Input<string>;
 }

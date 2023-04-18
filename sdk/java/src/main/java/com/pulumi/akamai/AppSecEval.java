@@ -15,79 +15,17 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security policy
- * 
- * Issues an evaluation mode command (`Start`, `Stop`, `Restart`, `Update`, or `Complete`) to a security configuration.
- * Evaluation mode is used for testing and fine-tuning your Kona Rule Set rules and configuration settings.
- * In evaluation mode rules are triggered by events, but the only thing those rules do is record the actions they *would* have taken had the event occurred on the production network.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval](https://techdocs.akamai.com/application-security/reference/post-policy-eval)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecEval;
- * import com.pulumi.akamai.AppSecEvalArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var evalOperation = new AppSecEval(&#34;evalOperation&#34;, AppSecEvalArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .evalOperation(&#34;START&#34;)
- *             .build());
- * 
- *         ctx.export(&#34;evalModeEvaluatingRuleset&#34;, evalOperation.evaluatingRuleset());
- *         ctx.export(&#34;evalModeExpirationDate&#34;, evalOperation.expirationDate());
- *         ctx.export(&#34;evalModeCurrentRuleset&#34;, evalOperation.currentRuleset());
- *         ctx.export(&#34;evalModeStatus&#34;, evalOperation.evalStatus());
- *     }
- * }
- * ```
- * ## Output Options
- * 
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- * 
- * - `evaluating_ruleset`. Versioning information for the Kona Rule Set being evaluated.
- * - `expiration_date`. Date when the evaluation period ends.
- * - `current_ruleset`. Versioning information for the Kona Rule Set currently in use on the production network.
- * - `eval_status`. If **true**, an evaluation is currently in progress; if **false**, evaluation is either paused or is not running.
- * 
- */
 @ResourceType(type="akamai:index/appSecEval:AppSecEval")
 public class AppSecEval extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration where evaluation mode will take place (or is currently taking place).
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -108,38 +46,28 @@ public class AppSecEval extends com.pulumi.resources.CustomResource {
         return this.currentRuleset;
     }
     /**
-     * . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
+     * Evaluation mode (ASE_AUTO or ASE_MANUAL)
      * 
      */
     @Export(name="evalMode", type=String.class, parameters={})
     private Output</* @Nullable */ String> evalMode;
 
     /**
-     * @return . Set to **ASE_AUTO** to have your Kona Rule Set rules automatically updated during the evaluation period; set to **ASE_MANUAL** if you want to manually update your evaluation rules. Note that this option is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
+     * @return Evaluation mode (ASE_AUTO or ASE_MANUAL)
      * 
      */
     public Output<Optional<String>> evalMode() {
         return Codegen.optional(this.evalMode);
     }
     /**
-     * . Evaluation mode operation. Allowed values are:
-     * - **START**. Starts evaluation mode. By default, evaluation mode runs for four weeks.
-     * - **STOP**, Pauses evaluation mode without upgrading the Kona Rule Set on your production network.
-     * - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
-     * - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
-     * - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
+     * Evaluation mode operation (START, STOP, RESTART, UPDATE or COMPLETE)
      * 
      */
     @Export(name="evalOperation", type=String.class, parameters={})
     private Output<String> evalOperation;
 
     /**
-     * @return . Evaluation mode operation. Allowed values are:
-     * - **START**. Starts evaluation mode. By default, evaluation mode runs for four weeks.
-     * - **STOP**, Pauses evaluation mode without upgrading the Kona Rule Set on your production network.
-     * - **RESTART**. Resumes an evaluation trial that was paused by using the **STOP** command.
-     * - **UPDATE**. Upgrades the Kona Rule Set rules in the evaluation ruleset to their latest versions.
-     * - **COMPLETE**. Concludes the evaluation period (even if the four-week trial mode is not over) and automatically upgrades the Kona Rule Set on your production network to the same rule set you just finished evaluating.
+     * @return Evaluation mode operation (START, STOP, RESTART, UPDATE or COMPLETE)
      * 
      */
     public Output<String> evalOperation() {
@@ -188,14 +116,14 @@ public class AppSecEval extends com.pulumi.resources.CustomResource {
         return this.expirationDate;
     }
     /**
-     * . Unique identifier of the security policy associated with the evaluation process.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the evaluation process.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {

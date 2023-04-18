@@ -9,67 +9,23 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security configuration
-    /// 
-    /// Specifies the networks that appear on the bypass network list. Networks on this list are allowed to bypass the Web Application Firewall.
-    /// 
-    /// Note that this resource is only applicable to WAP (Web Application Protector) configurations.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://techdocs.akamai.com/application-security/reference/put-bypass-network-lists)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var bypassNetworkLists = new Akamai.AppSecByPassNetworkList("bypassNetworkLists", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         BypassNetworkLists = new[]
-    ///         {
-    ///             "DocumentationNetworkList",
-    ///             "TrainingNetworkList",
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// ## Output Options
-    /// 
-    /// The following options can be used to determine the information returned, and how that returned information is formatted:
-    /// 
-    /// - `output_text`. Tabular report showing the updated list of bypass network IDs.
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList")]
     public partial class AppSecByPassNetworkList : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . JSON array of network IDs that comprise the bypass list.
+        /// List of network list IDs that compose the bypass list
         /// </summary>
         [Output("bypassNetworkLists")]
         public Output<ImmutableArray<string>> BypassNetworkLists { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the bypass network lists being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the bypass network lists.
+        /// The unique identifier of the security policy governing the bypass network lists
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -124,7 +80,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _bypassNetworkLists;
 
         /// <summary>
-        /// . JSON array of network IDs that comprise the bypass list.
+        /// List of network list IDs that compose the bypass list
         /// </summary>
         public InputList<string> BypassNetworkLists
         {
@@ -133,13 +89,13 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the bypass network lists being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the bypass network lists.
+        /// The unique identifier of the security policy governing the bypass network lists
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -156,7 +112,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _bypassNetworkLists;
 
         /// <summary>
-        /// . JSON array of network IDs that comprise the bypass list.
+        /// List of network list IDs that compose the bypass list
         /// </summary>
         public InputList<string> BypassNetworkLists
         {
@@ -165,13 +121,13 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the bypass network lists being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the bypass network lists.
+        /// The unique identifier of the security policy governing the bypass network lists
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

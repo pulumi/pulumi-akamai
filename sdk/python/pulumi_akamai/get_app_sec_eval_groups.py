@@ -113,10 +113,6 @@ def get_app_sec_eval_groups(attack_group: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecEvalGroupsResult:
     """
     Use this data source to access information about an existing resource.
-
-    :param str attack_group: . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-    :param int config_id: . Unique identifier of the security configuration associated with the evaluation attack group.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the evaluation attack group.
     """
     __args__ = dict()
     __args__['attackGroup'] = attack_group
@@ -143,9 +139,5 @@ def get_app_sec_eval_groups_output(attack_group: Optional[pulumi.Input[Optional[
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecEvalGroupsResult]:
     """
     Use this data source to access information about an existing resource.
-
-    :param str attack_group: . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-    :param int config_id: . Unique identifier of the security configuration associated with the evaluation attack group.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the evaluation attack group.
     """
     ...

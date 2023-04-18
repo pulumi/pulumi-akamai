@@ -7,41 +7,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use `getIamSupportedLangs` to list all the possible languages Akamai supports. Use the values from this API to set the preferred language for a user. Users should see Control Center in the language you set for them. The default language is English.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			supportedLangs, err := akamai.GetIamSupportedLangs(ctx, nil, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("supportedSupportedLangs", supportedLangs)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// These attributes are returned:
-//
-// * `languages` — Languages supported by Akamai
-//
-// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-languages)
 func GetIamSupportedLangs(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamSupportedLangsResult, error) {
 	var rv GetIamSupportedLangsResult
 	err := ctx.Invoke("akamai:index/getIamSupportedLangs:getIamSupportedLangs", nil, &rv, opts...)

@@ -14,53 +14,23 @@ public final class GetNetworkListsPlainArgs extends com.pulumi.resources.InvokeA
 
     public static final GetNetworkListsPlainArgs Empty = new GetNetworkListsPlainArgs();
 
-    /**
-     * The name of a specific network list to retrieve. If not supplied, information about all network
-     * lists will be returned.
-     * 
-     */
     @Import(name="name")
     private @Nullable String name;
 
-    /**
-     * @return The name of a specific network list to retrieve. If not supplied, information about all network
-     * lists will be returned.
-     * 
-     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * The ID of a specific network list to retrieve.
-     * If not supplied, information about all network lists will be returned.
-     * 
-     */
     @Import(name="networkListId")
     private @Nullable String networkListId;
 
-    /**
-     * @return The ID of a specific network list to retrieve.
-     * If not supplied, information about all network lists will be returned.
-     * 
-     */
     public Optional<String> networkListId() {
         return Optional.ofNullable(this.networkListId);
     }
 
-    /**
-     * The type of network lists to be retrieved; must be either &#34;IP&#34; or &#34;GEO&#34;. If not supplied,
-     * information about both types will be returned.
-     * 
-     */
     @Import(name="type")
     private @Nullable String type;
 
-    /**
-     * @return The type of network lists to be retrieved; must be either &#34;IP&#34; or &#34;GEO&#34;. If not supplied,
-     * information about both types will be returned.
-     * 
-     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
@@ -91,37 +61,16 @@ public final class GetNetworkListsPlainArgs extends com.pulumi.resources.InvokeA
             $ = new GetNetworkListsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param name The name of a specific network list to retrieve. If not supplied, information about all network
-         * lists will be returned.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(@Nullable String name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param networkListId The ID of a specific network list to retrieve.
-         * If not supplied, information about all network lists will be returned.
-         * 
-         * @return builder
-         * 
-         */
         public Builder networkListId(@Nullable String networkListId) {
             $.networkListId = networkListId;
             return this;
         }
 
-        /**
-         * @param type The type of network lists to be retrieved; must be either &#34;IP&#34; or &#34;GEO&#34;. If not supplied,
-         * information about both types will be returned.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(@Nullable String type) {
             $.type = type;
             return this;

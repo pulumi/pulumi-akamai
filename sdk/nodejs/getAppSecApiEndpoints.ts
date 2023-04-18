@@ -4,34 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security configuration; security policy
- *
- * Returns information about the API endpoints associated with a security policy or configuration.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-endpoints](https://techdocs.akamai.com/application-security/reference/get-api-endpoints)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const apiEndpoints = akamai.getAppSecApiEndpoints({
- *     apiName: "Contracts",
- *     configId: 58843,
- * });
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `idList`. List of API endpoint IDs.
- * - `json`. JSON-formatted list of information about the API endpoints.
- * - `outputText`. Tabular report showing the ID and name of the API endpoints.
- */
 export function getAppSecApiEndpoints(args: GetAppSecApiEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecApiEndpointsResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -46,17 +18,8 @@ export function getAppSecApiEndpoints(args: GetAppSecApiEndpointsArgs, opts?: pu
  * A collection of arguments for invoking getAppSecApiEndpoints.
  */
 export interface GetAppSecApiEndpointsArgs {
-    /**
-     * . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
-     */
     apiName?: string;
-    /**
-     * . Unique identifier of the security configuration associated with the API endpoints.
-     */
     configId: number;
-    /**
-     * . Unique identifier of the security policy associated with the API endpoints. If not included, information is returned for all your security policies.
-     */
     securityPolicyId?: string;
 }
 
@@ -75,34 +38,6 @@ export interface GetAppSecApiEndpointsResult {
     readonly outputText: string;
     readonly securityPolicyId?: string;
 }
-/**
- * **Scopes**: Security configuration; security policy
- *
- * Returns information about the API endpoints associated with a security policy or configuration.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-endpoints](https://techdocs.akamai.com/application-security/reference/get-api-endpoints)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const apiEndpoints = akamai.getAppSecApiEndpoints({
- *     apiName: "Contracts",
- *     configId: 58843,
- * });
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `idList`. List of API endpoint IDs.
- * - `json`. JSON-formatted list of information about the API endpoints.
- * - `outputText`. Tabular report showing the ID and name of the API endpoints.
- */
 export function getAppSecApiEndpointsOutput(args: GetAppSecApiEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecApiEndpointsResult> {
     return pulumi.output(args).apply((a: any) => getAppSecApiEndpoints(a, opts))
 }
@@ -111,16 +46,7 @@ export function getAppSecApiEndpointsOutput(args: GetAppSecApiEndpointsOutputArg
  * A collection of arguments for invoking getAppSecApiEndpoints.
  */
 export interface GetAppSecApiEndpointsOutputArgs {
-    /**
-     * . Name of the API endpoint you want to return information for. If not included, information is returned for all your API endpoints.
-     */
     apiName?: pulumi.Input<string>;
-    /**
-     * . Unique identifier of the security configuration associated with the API endpoints.
-     */
     configId: pulumi.Input<number>;
-    /**
-     * . Unique identifier of the security policy associated with the API endpoints. If not included, information is returned for all your security policies.
-     */
     securityPolicyId?: pulumi.Input<string>;
 }

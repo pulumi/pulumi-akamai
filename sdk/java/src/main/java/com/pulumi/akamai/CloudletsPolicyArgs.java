@@ -16,14 +16,14 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
     public static final CloudletsPolicyArgs Empty = new CloudletsPolicyArgs();
 
     /**
-     * The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
      * 
      */
     @Import(name="cloudletCode", required=true)
     private Output<String> cloudletCode;
 
     /**
-     * @return The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+     * @return Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
      * 
      */
     public Output<String> cloudletCode() {
@@ -31,14 +31,14 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The description of this specific policy.
+     * The description of this specific policy
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The description of this specific policy.
+     * @return The description of this specific policy
      * 
      */
     public Optional<Output<String>> description() {
@@ -46,14 +46,14 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Defines the group association for the policy. You must have edit privileges for the group.
+     * Defines the group association for the policy. You must have edit privileges for the group
      * 
      */
     @Import(name="groupId", required=true)
     private Output<String> groupId;
 
     /**
-     * @return Defines the group association for the policy. You must have edit privileges for the group.
+     * @return Defines the group association for the policy. You must have edit privileges for the group
      * 
      */
     public Output<String> groupId() {
@@ -61,14 +61,14 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The version of the Cloudlet-specific `match_rules`.
+     * The version of the Cloudlet specific matchRules
      * 
      */
     @Import(name="matchRuleFormat")
     private @Nullable Output<String> matchRuleFormat;
 
     /**
-     * @return The version of the Cloudlet-specific `match_rules`.
+     * @return The version of the Cloudlet specific matchRules
      * 
      */
     public Optional<Output<String>> matchRuleFormat() {
@@ -91,14 +91,14 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The unique name of the policy.
+     * The name of the policy. The name must be unique
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The unique name of the policy.
+     * @return The name of the policy. The name must be unique
      * 
      */
     public Optional<Output<String>> name() {
@@ -135,7 +135,7 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param cloudletCode The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+         * @param cloudletCode Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param cloudletCode The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+         * @param cloudletCode Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description The description of this specific policy.
+         * @param description The description of this specific policy
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description The description of this specific policy.
+         * @param description The description of this specific policy
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param groupId Defines the group association for the policy. You must have edit privileges for the group.
+         * @param groupId Defines the group association for the policy. You must have edit privileges for the group
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param groupId Defines the group association for the policy. You must have edit privileges for the group.
+         * @param groupId Defines the group association for the policy. You must have edit privileges for the group
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param matchRuleFormat The version of the Cloudlet-specific `match_rules`.
+         * @param matchRuleFormat The version of the Cloudlet specific matchRules
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param matchRuleFormat The version of the Cloudlet-specific `match_rules`.
+         * @param matchRuleFormat The version of the Cloudlet specific matchRules
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param name The unique name of the policy.
+         * @param name The name of the policy. The name must be unique
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class CloudletsPolicyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param name The unique name of the policy.
+         * @param name The name of the policy. The name must be unique
          * 
          * @return builder
          * 

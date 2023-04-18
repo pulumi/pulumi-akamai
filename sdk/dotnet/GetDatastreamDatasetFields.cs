@@ -11,79 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetDatastreamDatasetFields
     {
-        /// <summary>
-        /// Use the `akamai.getDatastreamDatasetFields` data source to list groups of data set fields available in the template.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// This example returns data set fields for a default template:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var fields = Akamai.GetDatastreamDatasetFields.Invoke();
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `fields` - A group of data set fields available in a template, including:
-        ///   * `dataset_group_name` - The name of the data set group.
-        ///   * `dataset_group_description` - Additional information about the data set group.
-        ///   * `dataset_fields` - A list of data set fields available within the data set group, including:
-        ///       * `dataset_field_description` - Additional information about the data set field.
-        ///       * `dataset_field_id` - Unique identifier for the field.
-        ///       * `dataset_field_json_key` - The JSON key for the field in a log line.
-        ///       * `dataset_field_name` - The name of the data set field.
-        /// </summary>
         public static Task<GetDatastreamDatasetFieldsResult> InvokeAsync(GetDatastreamDatasetFieldsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatastreamDatasetFieldsResult>("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args ?? new GetDatastreamDatasetFieldsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getDatastreamDatasetFields` data source to list groups of data set fields available in the template.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// This example returns data set fields for a default template:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var fields = Akamai.GetDatastreamDatasetFields.Invoke();
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `fields` - A group of data set fields available in a template, including:
-        ///   * `dataset_group_name` - The name of the data set group.
-        ///   * `dataset_group_description` - Additional information about the data set group.
-        ///   * `dataset_fields` - A list of data set fields available within the data set group, including:
-        ///       * `dataset_field_description` - Additional information about the data set field.
-        ///       * `dataset_field_id` - Unique identifier for the field.
-        ///       * `dataset_field_json_key` - The JSON key for the field in a log line.
-        ///       * `dataset_field_name` - The name of the data set field.
-        /// </summary>
         public static Output<GetDatastreamDatasetFieldsResult> Invoke(GetDatastreamDatasetFieldsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatastreamDatasetFieldsResult>("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args ?? new GetDatastreamDatasetFieldsInvokeArgs(), options.WithDefaults());
     }
@@ -91,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetDatastreamDatasetFieldsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
-        /// </summary>
         [Input("templateName")]
         public string? TemplateName { get; set; }
 
@@ -105,9 +32,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetDatastreamDatasetFieldsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
-        /// </summary>
         [Input("templateName")]
         public Input<string>? TemplateName { get; set; }
 

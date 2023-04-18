@@ -114,12 +114,6 @@ def get_cp_code(contract: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpCodeResult:
     """
     Use this data source to access information about an existing resource.
-
-    :param str contract: Replaced by `contract_id`. Maintained for legacy purposes.
-    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
-    :param str group: Replaced by `group_id`. Maintained for legacy purposes.
-    :param str group_id: The group's unique ID, including the `grp_` prefix.
-    :param str name: The name of the CP code.
     """
     __args__ = dict()
     __args__['contract'] = contract
@@ -149,11 +143,5 @@ def get_cp_code_output(contract: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpCodeResult]:
     """
     Use this data source to access information about an existing resource.
-
-    :param str contract: Replaced by `contract_id`. Maintained for legacy purposes.
-    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
-    :param str group: Replaced by `group_id`. Maintained for legacy purposes.
-    :param str group_id: The group's unique ID, including the `grp_` prefix.
-    :param str name: The name of the CP code.
     """
     ...

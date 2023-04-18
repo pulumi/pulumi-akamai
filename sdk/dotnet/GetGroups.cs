@@ -11,39 +11,6 @@ namespace Pulumi.Akamai
 {
     public static class GetGroups
     {
-        /// <summary>
-        /// Use the `akamai.getGroups` data source to list groups associated with the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// Return groups associated with the EdgeGrid API client token you're using:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var my_example = Akamai.GetGroups.Invoke();
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["propertyMatch"] = my_example,
-        ///     };
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `groups` - A list of supported groups, with the following attributes:
-        ///   * `group_id` - A group's unique ID, including the `grp_` prefix.
-        ///   * `group_name` - The name of the group.
-        ///   * `parent_group_id` - The ID of the parent group, if applicable.
-        ///   * `contract_ids` - An array of strings listing the contract IDs for each group.
-        /// </summary>
         public static Task<GetGroupsResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetGroupsResult>("akamai:index/getGroups:getGroups", InvokeArgs.Empty, options.WithDefaults());
     }

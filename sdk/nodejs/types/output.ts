@@ -6,186 +6,57 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
 export interface CloudletsApplicationLoadBalancerDataCenter {
-    /**
-     * The city in which the data center is located.
-     */
     city?: string;
-    /**
-     * Whether to override the cloud server host header.
-     */
     cloudServerHostHeaderOverride?: boolean;
-    /**
-     * Whether this datacenter is a cloud service.
-     */
     cloudService?: boolean;
-    /**
-     * The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
-     */
     continent: string;
-    /**
-     * The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
-     */
     country: string;
-    /**
-     * The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
-     */
     hostname?: string;
-    /**
-     * The latitude value for the data center. This member supports six decimal places of precision.
-     */
     latitude: number;
-    /**
-     * A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
-     */
     livenessHosts?: string[];
-    /**
-     * The longitude value for the data center. This member supports six decimal places of precision.
-     */
     longitude: number;
-    /**
-     * The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
-     */
     originId: string;
-    /**
-     * The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
-     */
     percent: number;
-    /**
-     * The state, province, or region where the data center is located.
-     */
     stateOrProvince?: string;
 }
 
 export interface CloudletsApplicationLoadBalancerLivenessSettings {
-    /**
-     * Maps additional case-insensitive HTTP header names included to the liveness testing requests.
-     */
     additionalHeaders?: {[key: string]: string};
-    /**
-     * The Host header for the liveness HTTP request.
-     */
     hostHeader?: string;
-    /**
-     * The frequency of liveness tests. Defaults to 60 seconds, minimum is 10 seconds.
-     */
     interval?: number;
-    /**
-     * The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
-     */
     path: string;
-    /**
-     * Whether to validate the origin certificate for an HTTPS request.
-     */
     peerCertificateVerification?: boolean;
-    /**
-     * The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
-     */
     port: number;
-    /**
-     * The protocol or scheme for the database, either `HTTP` or `HTTPS`.
-     */
     protocol: string;
-    /**
-     * The request used for TCP and TCPS tests.
-     */
     requestString?: string;
-    /**
-     * The response used for TCP and TCPS tests.
-     */
     responseString?: string;
-    /**
-     * If set to `true`, marks the liveness test as failed when the request returns a 3xx (redirection) status code.
-     */
     status3xxFailure?: boolean;
-    /**
-     * If set to `true`, marks the liveness test as failed when the request returns a 4xx (client error) status code.
-     */
     status4xxFailure?: boolean;
-    /**
-     * If set to `true`, marks the liveness test as failed when the request returns a 5xx (server error) status code.
-     */
     status5xxFailure?: boolean;
-    /**
-     * The number of seconds the system waits before failing the liveness test.
-     */
     timeout?: number;
 }
 
 export interface CpsDvEnrollmentAdminContact {
-    /**
-     * The address of your organization.
-     */
     addressLineOne: string;
-    /**
-     * The address of your organization.
-     */
     addressLineTwo?: string;
-    /**
-     * The city where your organization resides.
-     */
     city: string;
-    /**
-     * The code for the country where your organization resides.
-     */
     countryCode: string;
-    /**
-     * The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
-     */
     email: string;
-    /**
-     * The first name of the technical contact at Akamai.
-     */
     firstName: string;
-    /**
-     * The last name of the technical contact at Akamai.
-     */
     lastName: string;
-    /**
-     * Your organization information.
-     */
     organization: string;
-    /**
-     * The phone number of the administrator who you want to use as a contact at your company.
-     */
     phone: string;
-    /**
-     * The postal code of your organization.
-     */
     postalCode: string;
-    /**
-     * The region of your organization, typically a state or province.
-     */
     region: string;
-    /**
-     * The title of the technical contact at Akamai.
-     */
     title?: string;
 }
 
 export interface CpsDvEnrollmentCsr {
-    /**
-     * The city where your organization resides.
-     */
     city: string;
-    /**
-     * The code for the country where your organization resides.
-     */
     countryCode: string;
-    /**
-     * Your organization information.
-     */
     organization: string;
-    /**
-     * Your organizational unit.
-     */
     organizationalUnit: string;
-    /**
-     * The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
-     */
     preferredTrustChain?: string;
-    /**
-     * Your state or province.
-     */
     state: string;
 }
 
@@ -202,802 +73,264 @@ export interface CpsDvEnrollmentHttpChallenge {
 }
 
 export interface CpsDvEnrollmentNetworkConfiguration {
-    /**
-     * The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
-     */
     clientMutualAuthentication?: outputs.CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication;
-    /**
-     * Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
-     */
     cloneDnsNames?: boolean;
-    /**
-     * The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
-     */
     disallowedTlsVersions?: string[];
-    /**
-     * Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
-     */
     geography: string;
-    /**
-     * The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-     */
     mustHaveCiphers?: string;
-    /**
-     * Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
-     */
     ocspStapling?: string;
-    /**
-     * Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-     */
     preferredCiphers?: string;
-    /**
-     * Whether to use the QUIC transport layer network protocol.
-     */
     quicEnabled?: boolean;
 }
 
 export interface CpsDvEnrollmentNetworkConfigurationClientMutualAuthentication {
-    /**
-     * Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
-     */
     ocspEnabled?: boolean;
-    /**
-     * Whether you want to enable the server to send the certificate authority (CA) list to the client.
-     */
     sendCaListToClient?: boolean;
-    /**
-     * The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
-     */
     setId?: string;
 }
 
 export interface CpsDvEnrollmentOrganization {
-    /**
-     * The address of your organization.
-     */
     addressLineOne: string;
-    /**
-     * The address of your organization.
-     */
     addressLineTwo?: string;
-    /**
-     * The city where your organization resides.
-     */
     city: string;
-    /**
-     * The code for the country where your organization resides.
-     */
     countryCode: string;
-    /**
-     * The name of your organization.
-     */
     name: string;
-    /**
-     * The phone number of the administrator who you want to use as a contact at your company.
-     */
     phone: string;
-    /**
-     * The postal code of your organization.
-     */
     postalCode: string;
-    /**
-     * The region of your organization, typically a state or province.
-     */
     region: string;
 }
 
 export interface CpsDvEnrollmentTechContact {
-    /**
-     * The address of your organization.
-     */
     addressLineOne: string;
-    /**
-     * The address of your organization.
-     */
     addressLineTwo?: string;
-    /**
-     * The city where your organization resides.
-     */
     city: string;
-    /**
-     * The code for the country where your organization resides.
-     */
     countryCode: string;
-    /**
-     * The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
-     */
     email: string;
-    /**
-     * The first name of the technical contact at Akamai.
-     */
     firstName: string;
-    /**
-     * The last name of the technical contact at Akamai.
-     */
     lastName: string;
-    /**
-     * Your organization information.
-     */
     organization: string;
-    /**
-     * The phone number of the administrator who you want to use as a contact at your company.
-     */
     phone: string;
-    /**
-     * The postal code of your organization.
-     */
     postalCode: string;
-    /**
-     * The region of your organization, typically a state or province.
-     */
     region: string;
-    /**
-     * The title of the technical contact at Akamai.
-     */
     title?: string;
 }
 
 export interface CpsThirdPartyEnrollmentAdminContact {
-    /**
-     * The address of your organization.
-     */
     addressLineOne: string;
-    /**
-     * The address of your organization.
-     */
     addressLineTwo?: string;
-    /**
-     * The city where your organization resides.
-     */
     city: string;
-    /**
-     * The code for the country where your organization resides.
-     */
     countryCode: string;
-    /**
-     * The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
-     */
     email: string;
-    /**
-     * The first name of the technical contact at Akamai.
-     */
     firstName: string;
-    /**
-     * The last name of the technical contact at Akamai.
-     */
     lastName: string;
-    /**
-     * Your organization information.
-     */
     organization: string;
-    /**
-     * The phone number of the administrator who you want to use as a contact at your company.
-     */
     phone: string;
-    /**
-     * The postal code of your organization.
-     */
     postalCode: string;
-    /**
-     * The region of your organization, typically a state or province.
-     */
     region: string;
-    /**
-     * The title of the technical contact at Akamai.
-     */
     title?: string;
 }
 
 export interface CpsThirdPartyEnrollmentCsr {
-    /**
-     * The city where your organization resides.
-     */
     city: string;
-    /**
-     * The code for the country where your organization resides.
-     */
     countryCode: string;
-    /**
-     * Your organization information.
-     */
     organization: string;
-    /**
-     * Your organizational unit.
-     */
     organizationalUnit: string;
     preferredTrustChain?: string;
-    /**
-     * Your state or province.
-     */
     state: string;
 }
 
 export interface CpsThirdPartyEnrollmentNetworkConfiguration {
-    /**
-     * The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
-     */
     clientMutualAuthentication?: outputs.CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication;
-    /**
-     * Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
-     */
     cloneDnsNames?: boolean;
-    /**
-     * The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
-     */
     disallowedTlsVersions?: string[];
-    /**
-     * Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
-     */
     geography: string;
-    /**
-     * The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-     */
     mustHaveCiphers?: string;
-    /**
-     * Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
-     */
     ocspStapling?: string;
-    /**
-     * Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-     */
     preferredCiphers?: string;
-    /**
-     * Whether to use the QUIC transport layer network protocol.
-     */
     quicEnabled?: boolean;
 }
 
 export interface CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication {
-    /**
-     * Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
-     */
     ocspEnabled?: boolean;
-    /**
-     * Whether you want to enable the server to send the certificate authority (CA) list to the client.
-     */
     sendCaListToClient?: boolean;
-    /**
-     * The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
-     */
     setId?: string;
 }
 
 export interface CpsThirdPartyEnrollmentOrganization {
-    /**
-     * The address of your organization.
-     */
     addressLineOne: string;
-    /**
-     * The address of your organization.
-     */
     addressLineTwo?: string;
-    /**
-     * The city where your organization resides.
-     */
     city: string;
-    /**
-     * The code for the country where your organization resides.
-     */
     countryCode: string;
-    /**
-     * The name of your organization.
-     */
     name: string;
-    /**
-     * The phone number of the administrator who you want to use as a contact at your company.
-     */
     phone: string;
-    /**
-     * The postal code of your organization.
-     */
     postalCode: string;
-    /**
-     * The region of your organization, typically a state or province.
-     */
     region: string;
 }
 
 export interface CpsThirdPartyEnrollmentTechContact {
-    /**
-     * The address of your organization.
-     */
     addressLineOne: string;
-    /**
-     * The address of your organization.
-     */
     addressLineTwo?: string;
-    /**
-     * The city where your organization resides.
-     */
     city: string;
-    /**
-     * The code for the country where your organization resides.
-     */
     countryCode: string;
-    /**
-     * The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
-     */
     email: string;
-    /**
-     * The first name of the technical contact at Akamai.
-     */
     firstName: string;
-    /**
-     * The last name of the technical contact at Akamai.
-     */
     lastName: string;
-    /**
-     * Your organization information.
-     */
     organization: string;
-    /**
-     * The phone number of the administrator who you want to use as a contact at your company.
-     */
     phone: string;
-    /**
-     * The postal code of your organization.
-     */
     postalCode: string;
-    /**
-     * The region of your organization, typically a state or province.
-     */
     region: string;
-    /**
-     * The title of the technical contact at Akamai.
-     */
     title?: string;
 }
 
 export interface DatastreamAzureConnector {
-    /**
-     * **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
-     */
     accessKey: string;
-    /**
-     * Specifies the Azure Storage account name.
-     */
     accountName: string;
-    /**
-     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     */
     compressLogs: boolean;
     connectorId: number;
-    /**
-     * The name of the connector.
-     */
     connectorName: string;
-    /**
-     * Specifies the Azure Storage container name.
-     */
     containerName: string;
-    /**
-     * The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-     */
     path: string;
 }
 
 export interface DatastreamConfig {
-    /**
-     * A delimiter that you want to use to separate data set fields in the log lines. Currently, `SPACE` is the only available delimiter. This field is required for the `STRUCTURED` log file `format`.
-     */
     delimiter?: string;
-    /**
-     * The format in which you want to receive log files, either `STRUCTURED` or `JSON`. When `delimiter` is present in the request, `STRUCTURED` is the mandatory format.
-     */
     format: string;
-    /**
-     * How often you want to collect logs from each uploader and send them to a destination.
-     */
     frequency: outputs.DatastreamConfigFrequency;
-    /**
-     * The prefix of the log file that you want to send to a destination. It’s a string of at most 200 characters. If unspecified, defaults to `ak`.
-     */
     uploadFilePrefix?: string;
-    /**
-     * The suffix of the log file that you want to send to a destination. It’s a static string of at most 10 characters. If unspecified, defaults to `ds`.
-     */
     uploadFileSuffix?: string;
 }
 
 export interface DatastreamConfigFrequency {
-    /**
-     * The time in seconds after which the system bundles log lines into a file and sends it to a destination. `30` or `60` are the possible values.
-     */
     timeInSec: number;
 }
 
 export interface DatastreamDatadogConnector {
-    /**
-     * **Secret**. Your Log API token for your account in New Relic.
-     */
     authToken: string;
-    /**
-     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     */
     compressLogs?: boolean;
     connectorId: number;
-    /**
-     * The name of the connector.
-     */
     connectorName: string;
-    /**
-     * The service of the Datadog connector. A service groups together endpoints, queries, or jobs for the purposes of scaling instances. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes).
-     */
     service?: string;
-    /**
-     * The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
-     */
     source?: string;
-    /**
-     * The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
-     */
     tags?: string;
-    /**
-     * Enter the secure URL where you want to send and store your logs.
-     */
     url: string;
 }
 
 export interface DatastreamElasticsearchConnector {
-    /**
-     * **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-     */
     caCert?: string;
-    /**
-     * **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     */
     clientCert?: string;
-    /**
-     * **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     */
     clientKey?: string;
-    /**
-     * The name of the connector.
-     */
     connectorName: string;
-    /**
-     * Content type to pass in the log file header.
-     */
     contentType?: string;
-    /**
-     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
-     */
     customHeaderName?: string;
-    /**
-     * The custom header's contents passed with the request that contains information about the client connection.
-     */
     customHeaderValue?: string;
-    /**
-     * The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
-     * <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
-     */
     endpoint: string;
-    /**
-     * **Secret**. The index name of the Elastic cloud where you want to store log files.
-     */
     indexName: string;
     mTls: boolean;
-    /**
-     * **Secret**. The Elasticsearch basic access authentication password.
-     */
     password: string;
-    /**
-     * The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-     */
     tlsHostname?: string;
-    /**
-     * **Secret**. The Elasticsearch basic access authentication username.
-     */
     userName: string;
 }
 
 export interface DatastreamGcsConnector {
-    /**
-     * The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-     */
     bucket: string;
-    /**
-     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     */
     compressLogs: boolean;
     connectorId: number;
-    /**
-     * The name of the connector.
-     */
     connectorName: string;
-    /**
-     * The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-     */
     path?: string;
-    /**
-     * **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
-     */
     privateKey: string;
-    /**
-     * The unique ID of your Google Cloud project.
-     */
     projectId: string;
-    /**
-     * The name of the service account with the storage.object.create permission or Storage Object Creator role.
-     */
     serviceAccountName: string;
 }
 
 export interface DatastreamHttpsConnector {
-    /**
-     * Either `NONE` for no authentication, or `BASIC`. For basic authentication, provide the `userName` and `password` you set in your custom HTTPS endpoint.
-     */
     authenticationType: string;
-    /**
-     * **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-     */
     caCert?: string;
-    /**
-     * **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     */
     clientCert?: string;
-    /**
-     * **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     */
     clientKey?: string;
-    /**
-     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     */
     compressLogs?: boolean;
     connectorId: number;
-    /**
-     * The name of the connector.
-     */
     connectorName: string;
-    /**
-     * Content type to pass in the log file header.
-     */
     contentType?: string;
-    /**
-     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
-     */
     customHeaderName?: string;
-    /**
-     * The custom header's contents passed with the request that contains information about the client connection.
-     */
     customHeaderValue?: string;
     mTls: boolean;
-    /**
-     * **Secret**. The Elasticsearch basic access authentication password.
-     */
     password?: string;
-    /**
-     * The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-     */
     tlsHostname?: string;
-    /**
-     * Enter the secure URL where you want to send and store your logs.
-     */
     url: string;
-    /**
-     * **Secret**. The Elasticsearch basic access authentication username.
-     */
     userName?: string;
 }
 
 export interface DatastreamLogglyConnector {
-    /**
-     * **Secret**. Your Log API token for your account in New Relic.
-     */
     authToken: string;
-    /**
-     * The name of the connector.
-     */
     connectorName: string;
-    /**
-     * Content type to pass in the log file header.
-     */
     contentType?: string;
-    /**
-     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
-     */
     customHeaderName?: string;
-    /**
-     * The custom header's contents passed with the request that contains information about the client connection.
-     */
     customHeaderValue?: string;
-    /**
-     * The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
-     * <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
-     */
     endpoint: string;
-    /**
-     * The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
-     */
     tags?: string;
 }
 
 export interface DatastreamNewRelicConnector {
-    /**
-     * **Secret**. Your Log API token for your account in New Relic.
-     */
     authToken: string;
-    /**
-     * The name of the connector.
-     */
     connectorName: string;
-    /**
-     * Content type to pass in the log file header.
-     */
     contentType?: string;
-    /**
-     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
-     */
     customHeaderName?: string;
-    /**
-     * The custom header's contents passed with the request that contains information about the client connection.
-     */
     customHeaderValue?: string;
-    /**
-     * The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
-     * <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
-     */
     endpoint: string;
 }
 
 export interface DatastreamOracleConnector {
-    /**
-     * **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
-     */
     accessKey: string;
-    /**
-     * The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-     */
     bucket: string;
-    /**
-     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     */
     compressLogs: boolean;
     connectorId: number;
-    /**
-     * The name of the connector.
-     */
     connectorName: string;
-    /**
-     * The namespace of your Oracle Cloud Storage account. See [Understanding Object Storage namespaces](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/understandingnamespaces.htm).
-     */
     namespace: string;
-    /**
-     * The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-     */
     path: string;
-    /**
-     * The Oracle Cloud Storage region where your bucket resides. See [Regions and availability domains in OCS](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-     */
     region: string;
-    /**
-     * **Secret**. The secret access key identifier that you use to authenticate requests to your Oracle Cloud account.
-     */
     secretAccessKey: string;
 }
 
 export interface DatastreamS3Connector {
-    /**
-     * **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
-     */
     accessKey: string;
-    /**
-     * The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-     */
     bucket: string;
-    /**
-     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     */
     compressLogs: boolean;
     connectorId: number;
-    /**
-     * The name of the connector.
-     */
     connectorName: string;
-    /**
-     * The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-     */
     path: string;
-    /**
-     * The Oracle Cloud Storage region where your bucket resides. See [Regions and availability domains in OCS](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-     */
     region: string;
-    /**
-     * **Secret**. The secret access key identifier that you use to authenticate requests to your Oracle Cloud account.
-     */
     secretAccessKey: string;
 }
 
 export interface DatastreamSplunkConnector {
-    /**
-     * **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `clientCert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-     */
     caCert?: string;
-    /**
-     * **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     */
     clientCert?: string;
-    /**
-     * **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-     */
     clientKey?: string;
-    /**
-     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     */
     compressLogs?: boolean;
     connectorId: number;
-    /**
-     * The name of the connector.
-     */
     connectorName: string;
-    /**
-     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
-     */
     customHeaderName?: string;
-    /**
-     * The custom header's contents passed with the request that contains information about the client connection.
-     */
     customHeaderValue?: string;
-    /**
-     * **Secret**. The Event Collector token associated with your Splunk account. See [View usage of Event Collector token in Splunk](https://docs.splunk.com/Documentation/Splunk/8.0.3/Data/UsetheHTTPEventCollector).
-     */
     eventCollectorToken: string;
     mTls: boolean;
-    /**
-     * The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-     */
     tlsHostname?: string;
-    /**
-     * Enter the secure URL where you want to send and store your logs.
-     */
     url: string;
 }
 
 export interface DatastreamSumologicConnector {
-    /**
-     * **Secret**. The unique HTTP collector code of your Sumo Logic `endpoint`.
-     */
     collectorCode: string;
-    /**
-     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     */
     compressLogs?: boolean;
     connectorId: number;
-    /**
-     * The name of the connector.
-     */
     connectorName: string;
-    /**
-     * Content type to pass in the log file header.
-     */
     contentType?: string;
-    /**
-     * A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
-     */
     customHeaderName?: string;
-    /**
-     * The custom header's contents passed with the request that contains information about the client connection.
-     */
     customHeaderValue?: string;
-    /**
-     * The Elasticsearch bulk endpoint URL in the format: `https://<hostname>.elastic-cloud.com:9243/_bulk/`. Set `indexName` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
-     * <br>Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
-     */
     endpoint: string;
 }
 
 export interface DnsZoneTsigKey {
-    /**
-     * The hashing algorithm.
-     */
     algorithm: string;
-    /**
-     * The key name.
-     */
     name: string;
-    /**
-     * String known between transfer endpoints.
-     */
     secret: string;
 }
 
@@ -1174,114 +507,39 @@ export interface GetCPSEnrollmentsEnrollmentTechContact {
 }
 
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRule {
-    /**
-     * (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-     */
     disabled?: boolean;
-    /**
-     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     end?: number;
-    /**
-     * (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-     */
     matchUrl?: string;
-    /**
-     * (Optional) A list of conditions to apply to a Cloudlet, including:
-     */
     matches?: outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch[];
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin.
-     */
     passThroughPercent: number;
-    /**
-     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     start?: number;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
 }
 
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatch {
-    /**
-     * (Optional) Whether the match is case sensitive.
-     */
     caseSensitive?: boolean;
-    /**
-     * (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
-     */
     checkIps?: string;
-    /**
-     * (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
-     */
     matchOperator?: string;
-    /**
-     * (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
-     */
     matchType?: string;
-    /**
-     * (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
-     */
     matchValue?: string;
-    /**
-     * (Optional) Whether to negate the match.
-     */
     negate?: boolean;
-    /**
-     * (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
-     */
     objectMatchValues?: outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValue[];
 }
 
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValue {
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     */
     nameCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `name` argument includes wildcards.
-     */
     nameHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     */
     options?: outputs.GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions {
-    /**
-     * (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
-     */
     valueCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `value` argument should be compared in an escaped form.
-     */
     valueEscaped?: boolean;
-    /**
-     * (Optional) Whether the `value` argument includes wildcards.
-     */
     valueHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
@@ -1295,9 +553,6 @@ export interface GetCloudletsApplicationLoadBalancerDataCenter {
     latitude: number;
     livenessHosts: string[];
     longitude: number;
-    /**
-     * (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-     */
     originId: string;
     percent: number;
     stateOrProvince: string;
@@ -1321,630 +576,213 @@ export interface GetCloudletsApplicationLoadBalancerLivenessSetting {
 
 export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRule {
     disabled?: boolean;
-    /**
-     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     end?: number;
-    /**
-     * (Required) Defines data used to construct a new request URL if all conditions are met. If all of the conditions you set are true, the Edge Server returns an HTTP response from the rewritten URL.
-     */
     forwardSettings: outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting[];
-    /**
-     * (Optional) An identifier for Akamai internal use only.
-     */
     id?: number;
-    /**
-     * (Optional) The URL that the Cloudlet uses to match the incoming request.
-     */
     matchUrl?: string;
-    /**
-     * (Optional) A list of conditions to apply to a Cloudlet, including:
-     */
     matches?: outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatch[];
-    /**
-     * (Optional) Whether the match supports default rules that apply to all requests.
-     */
     matchesAlways?: boolean;
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     start?: number;
-    /**
-     * (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
 }
 
 export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleForwardSetting {
-    /**
-     * (Required) The ID of the Conditional Origin the requests are forwarded to.
-     */
     originId: string;
 }
 
 export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatch {
-    /**
-     * (Optional) Whether the match is case sensitive.
-     */
     caseSensitive?: boolean;
-    /**
-     * (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
-     */
     checkIps?: string;
-    /**
-     * (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
-     */
     matchOperator?: string;
-    /**
-     * (Optional) The type of match used, either `clientip`, `continent`, `cookie`, `countrycode`, `deviceCharacteristics`, `extension`, `header`, `hostname`, `method`, `path`, `protocol`, `proxy`, `query`, `regioncode`, or `range`.
-     */
     matchType?: string;
-    /**
-     * (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
-     */
     matchValue?: string;
-    /**
-     * (Optional) Whether to negate the match.
-     */
     negate?: boolean;
-    /**
-     * (Optional) If `matchValue` is empty, this argument is required. An object used when a rule either includes more complex match criteria, like multiple value attributes, or a range match. Includes these sub-arguments:
-     */
     objectMatchValues?: outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue[];
 }
 
 export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValue {
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     */
     nameCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `name` argument includes wildcards.
-     */
     nameHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     */
     options?: outputs.GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptions;
-    /**
-     * (Required) The type of the array, either `object`, `range`, or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
-    /**
-     * (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptions {
-    /**
-     * (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
-     */
     valueCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `value` argument should be compared in an escaped form.
-     */
     valueEscaped?: boolean;
-    /**
-     * (Optional) Whether the `value` argument includes wildcards.
-     */
     valueHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRule {
-    /**
-     * (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-     */
     disabled?: boolean;
-    /**
-     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     end?: number;
-    /**
-     * (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
-     */
     forwardSettings: outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings;
-    /**
-     * (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-     */
     matchUrl?: string;
-    /**
-     * (Optional) A list of conditions to apply to a Cloudlet, including:
-     */
     matches?: outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatch[];
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     start?: number;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleForwardSettings {
-    /**
-     * (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
-     */
     originId?: string;
-    /**
-     * (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
-     */
     pathAndQs?: string;
-    /**
-     * (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
-     */
     useIncomingQueryString?: boolean;
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatch {
-    /**
-     * (Optional) Whether the match is case sensitive.
-     */
     caseSensitive?: boolean;
-    /**
-     * (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
-     */
     checkIps?: string;
-    /**
-     * (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
-     */
     matchOperator?: string;
-    /**
-     * (Optional) The type of match used, either header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
-     */
     matchType?: string;
-    /**
-     * (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
-     */
     matchValue?: string;
-    /**
-     * (Optional) Whether to negate the match.
-     */
     negate?: boolean;
-    /**
-     * (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
-     */
     objectMatchValues?: outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValue[];
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValue {
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     */
     nameCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `name` argument includes wildcards.
-     */
     nameHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     */
     options?: outputs.GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions {
-    /**
-     * (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
-     */
     valueCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `value` argument should be compared in an escaped form.
-     */
     valueEscaped?: boolean;
-    /**
-     * (Optional) Whether the `value` argument includes wildcards.
-     */
     valueHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsEdgeRedirectorMatchRuleMatchRule {
-    /**
-     * (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-     */
     disabled?: boolean;
-    /**
-     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     end?: number;
-    /**
-     * (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-     */
     matchUrl?: string;
-    /**
-     * (Optional) A list of conditions to apply to a Cloudlet, including:
-     */
     matches?: outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch[];
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Required) The URL Edge Redirector redirects the request to. If you're using `useRelativeUrl`, you can enter a path for the value.
-     */
     redirectUrl: string;
-    /**
-     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     start?: number;
-    /**
-     * (Required) The HTTP response status code, which is either `301` (permanent redirect) or `302` (temporary redirect).
-     */
     statusCode: number;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
-    /**
-     * (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
-     */
     useIncomingQueryString?: boolean;
-    /**
-     * (Optional) If set to `relativeUrl`, takes the path you specify in the `redirectUrl` argument and sets it in the response’s Location header. The client or browser receiving the request decides which protocol and hostname to use. If set to `copySchemeHostname`, creates an absolute path by taking the protocol and hostname from the incoming request and combining them with path information you specify in the `redirectUrl` argument. This absolute path is set in the response’s Location header. If you do not specify useRelativeUrl or set to `none`, then specify the `redirectUrl` argument as a fully-qualified URL.
-     */
     useRelativeUrl?: string;
 }
 
 export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatch {
-    /**
-     * (Optional) Whether the match is case sensitive.
-     */
     caseSensitive?: boolean;
-    /**
-     * (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
-     */
     checkIps?: string;
-    /**
-     * (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
-     */
     matchOperator?: string;
-    /**
-     * (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
-     */
     matchType?: string;
-    /**
-     * (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
-     */
     matchValue?: string;
-    /**
-     * (Optional) Whether to negate the match.
-     */
     negate?: boolean;
-    /**
-     * (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
-     */
     objectMatchValues?: outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue[];
 }
 
 export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValue {
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     */
     nameCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `name` argument includes wildcards.
-     */
     nameHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     */
     options?: outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptions;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsEdgeRedirectorMatchRuleMatchRuleMatchObjectMatchValueOptions {
-    /**
-     * (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
-     */
     valueCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `value` argument should be compared in an escaped form.
-     */
     valueEscaped?: boolean;
-    /**
-     * (Optional) Whether the `value` argument includes wildcards.
-     */
     valueHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsForwardRewriteMatchRuleMatchRule {
-    /**
-     * (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-     */
     disabled?: boolean;
-    /**
-     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     end?: number;
-    /**
-     * (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
-     */
     forwardSettings: outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings;
-    /**
-     * (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-     */
     matchUrl?: string;
-    /**
-     * (Optional) A list of conditions to apply to a Cloudlet, including:
-     */
     matches?: outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatch[];
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     start?: number;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
 }
 
 export interface GetCloudletsForwardRewriteMatchRuleMatchRuleForwardSettings {
-    /**
-     * (Optional) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
-     */
     originId?: string;
-    /**
-     * (Optional) When match conditions are met, this value defines the path, resource, or query string added to the rewritten URL.
-     */
     pathAndQs?: string;
-    /**
-     * (Optional) Whether the Cloudlet should include the query string from the request in the rewritten or forwarded URL.
-     */
     useIncomingQueryString?: boolean;
 }
 
 export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatch {
-    /**
-     * (Optional) Whether the match is case sensitive.
-     */
     caseSensitive?: boolean;
-    /**
-     * (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
-     */
     checkIps?: string;
-    /**
-     * (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
-     */
     matchOperator?: string;
-    /**
-     * (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `regex`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
-     */
     matchType?: string;
-    /**
-     * (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
-     */
     matchValue?: string;
-    /**
-     * (Optional) Whether to negate the match.
-     */
     negate?: boolean;
-    /**
-     * (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
-     */
     objectMatchValues?: outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValue[];
 }
 
 export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValue {
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     */
     nameCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `name` argument includes wildcards.
-     */
     nameHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     */
     options?: outputs.GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsForwardRewriteMatchRuleMatchRuleMatchObjectMatchValueOptions {
-    /**
-     * (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
-     */
     valueCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `value` argument should be compared in an escaped form.
-     */
     valueEscaped?: boolean;
-    /**
-     * (Optional) Whether the `value` argument includes wildcards.
-     */
     valueHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRule {
-    /**
-     * (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-     */
     disabled?: boolean;
-    /**
-     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     end?: number;
-    /**
-     * (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
-     */
     forwardSettings: outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings;
-    /**
-     * (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-     */
     matchUrl?: string;
-    /**
-     * (Optional) A list of conditions to apply to a Cloudlet, including:
-     */
     matches?: outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch[];
-    /**
-     * (Optional) Whether the match supports default rules that apply to all requests.
-     */
     matchesAlways?: boolean;
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     start?: number;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
 }
 
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettings {
-    /**
-     * (Required) The ID of the new origin requests are forwarded to. This type of origin is known as a Conditional Origin. See Property requirements for Cloudlets that forward requests to learn more.
-     */
     originId: string;
-    /**
-     * (Required)
-     */
     percent: number;
 }
 
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatch {
-    /**
-     * (Optional) Whether the match is case sensitive.
-     */
     caseSensitive?: boolean;
-    /**
-     * (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
-     */
     checkIps?: string;
-    /**
-     * (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
-     */
     matchOperator?: string;
-    /**
-     * (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
-     */
     matchType?: string;
-    /**
-     * (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
-     */
     matchValue?: string;
-    /**
-     * (Optional) Whether to negate the match.
-     */
     negate?: boolean;
-    /**
-     * (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
-     */
     objectMatchValues?: outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValue[];
 }
 
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValue {
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     */
     nameCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `name` argument includes wildcards.
-     */
     nameHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     */
     options?: outputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchObjectMatchValueOptions {
-    /**
-     * (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
-     */
     valueCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `value` argument should be compared in an escaped form.
-     */
     valueEscaped?: boolean;
-    /**
-     * (Optional) Whether the `value` argument includes wildcards.
-     */
     valueHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
@@ -1959,15 +797,9 @@ export interface GetCloudletsPolicyActivationPolicyInfo {
     activatedBy: string;
     activationDate: number;
     name: string;
-    /**
-     * (Required) An integer identifier that is associated with all versions of a policy.
-     */
     policyId: number;
     status: string;
     statusDetail: string;
-    /**
-     * (Optional) The version number of a policy.
-     */
     version: number;
 }
 
@@ -1977,233 +809,80 @@ export interface GetCloudletsPolicyActivationPropertyInfo {
     groupId: number;
     name: string;
     status: string;
-    /**
-     * (Optional) The version number of a policy.
-     */
     version: number;
 }
 
 export interface GetCloudletsRequestControlMatchRuleMatchRule {
-    /**
-     * (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
-     */
     allowDeny: string;
-    /**
-     * (Optional) Whether to disable a rule. When a rule is disabled it's not evaluated against incoming requests.
-     */
     disabled?: boolean;
-    /**
-     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     end?: number;
-    /**
-     * (Optional) A list of conditions to apply to a Cloudlet, including:
-     */
     matches?: outputs.GetCloudletsRequestControlMatchRuleMatchRuleMatch[];
-    /**
-     * (Optional) Match on all incoming requests.
-     */
     matchesAlways?: boolean;
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     start?: number;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
 }
 
 export interface GetCloudletsRequestControlMatchRuleMatchRuleMatch {
-    /**
-     * (Optional) Whether the match is case sensitive.
-     */
     caseSensitive?: boolean;
-    /**
-     * (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
-     */
     checkIps?: string;
-    /**
-     * (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
-     */
     matchOperator?: string;
-    /**
-     * (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
-     */
     matchType?: string;
-    /**
-     * (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
-     */
     matchValue?: string;
-    /**
-     * (Optional) Whether to negate the match.
-     */
     negate?: boolean;
-    /**
-     * (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
-     */
     objectMatchValues?: outputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue[];
 }
 
 export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValue {
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     */
     nameCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `name` argument includes wildcards.
-     */
     nameHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     */
     options?: outputs.GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsRequestControlMatchRuleMatchRuleMatchObjectMatchValueOptions {
-    /**
-     * (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
-     */
     valueCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `value` argument should be compared in an escaped form.
-     */
     valueEscaped?: boolean;
-    /**
-     * (Optional) Whether the `value` argument includes wildcards.
-     */
     valueHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRule {
-    /**
-     * (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-     */
     disabled?: boolean;
-    /**
-     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     end?: number;
-    /**
-     * (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-     */
     matchUrl?: string;
-    /**
-     * (Optional) A list of conditions to apply to a Cloudlet, including:
-     */
     matches?: outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch[];
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin. Enter `-1` to send everyone to the waiting room.
-     */
     passThroughPercent: number;
-    /**
-     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     */
     start?: number;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
 }
 
 export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch {
-    /**
-     * (Optional) Whether the match is case sensitive.
-     */
     caseSensitive?: boolean;
-    /**
-     * (Optional) For `clientip`, `continent`, `countrycode`, `proxy`, and `regioncode` match types, this defines the part of the request that determines the IP address to use. Values include the connecting IP address (`CONNECTING_IP`) and the X_Forwarded_For header (`XFF_HEADERS`). To select both, enter the two values separated by a space delimiter. When both values are included, the connecting IP address is evaluated first.
-     */
     checkIps?: string;
-    /**
-     * (Optional) Compares a string expression with a pattern, either `contains`, `exists`, or `equals`.
-     */
     matchOperator?: string;
-    /**
-     * (Optional) The type of match used, either `header`, `hostname`, `path`, `extension`, `query`, `cookie`, `deviceCharacteristics`, `clientip`, `continent`, `countrycode`, `regioncode`, `protocol`, `method`, or `proxy`.
-     */
     matchType?: string;
-    /**
-     * (Optional) This depends on the `matchType`. If the `matchType` is `hostname`, then `matchValue` is the fully qualified domain name, like `www.akamai.com`.
-     */
     matchValue?: string;
-    /**
-     * (Optional) Whether to negate the match.
-     */
     negate?: boolean;
-    /**
-     * (Optional) If `matchValue` is empty, this argument is required. An object used when a rule includes more complex match criteria, like multiple value attributes. Includes these sub-arguments:
-     */
     objectMatchValues?: outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue[];
 }
 
 export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValue {
-    /**
-     * (Optional) If you're using a `matchType` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     */
     name?: string;
-    /**
-     * (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     */
     nameCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `name` argument includes wildcards.
-     */
     nameHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     */
     options?: outputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions;
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     */
     type: string;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
 export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptions {
-    /**
-     * (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
-     */
     valueCaseSensitive?: boolean;
-    /**
-     * (Optional) Whether the `value` argument should be compared in an escaped form.
-     */
     valueEscaped?: boolean;
-    /**
-     * (Optional) Whether the `value` argument includes wildcards.
-     */
     valueHasWildcard?: boolean;
-    /**
-     * (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     */
     values?: string[];
 }
 
@@ -2216,9 +895,6 @@ export interface GetDatastreamActivationHistoryActivation {
     createdBy: string;
     createdDate: string;
     isActive: boolean;
-    /**
-     * (Required) A stream's unique identifier.
-     */
     streamId: number;
     streamVersionId: number;
 }
@@ -2245,9 +921,6 @@ export interface GetDatastreamsStream {
     createdDate: string;
     currentVersionId: number;
     errors: outputs.GetDatastreamsStreamError[];
-    /**
-     * Unique identifier of the group that can access the product.
-     */
     groupId: number;
     groupName: string;
     properties: outputs.GetDatastreamsStreamProperty[];
@@ -2300,13 +973,7 @@ export interface GetIamTimezonesTimezone {
 }
 
 export interface GetPropertiesProperty {
-    /**
-     * (Required) A contract's unique ID, including the `ctr_` prefix.
-     */
     contractId: string;
-    /**
-     * (Required) A group's unique ID, including the `grp_` prefix.
-     */
     groupId: string;
     latestVersion: number;
     note: string;
@@ -2360,28 +1027,16 @@ export interface GetPropertyIncludeParentsParent {
 }
 
 export interface GetPropertyIncludesInclude {
-    /**
-     * (Required) The property's unique identifier.
-     */
     id: string;
     latestVersion: number;
     name: string;
     productionVersion: string;
     stagingVersion: string;
-    /**
-     * (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-     */
     type: string;
 }
 
 export interface GetPropertyIncludesParentProperty {
-    /**
-     * (Required) The property's unique identifier.
-     */
     id: string;
-    /**
-     * (Required) The version of the activated parent property.
-     */
     version: number;
 }
 
@@ -2390,298 +1045,3720 @@ export interface GetPropertyProductsProduct {
     productName: string;
 }
 
+export interface GetPropertyRulesBuilderRulesV20230105 {
+    advancedOverride?: string;
+    behaviors?: outputs.GetPropertyRulesBuilderRulesV20230105Behavior[];
+    childrens?: string[];
+    comments?: string;
+    criteriaLocked?: boolean;
+    criteriaMustSatisfy?: string;
+    criterions?: outputs.GetPropertyRulesBuilderRulesV20230105Criterion[];
+    customOverride?: outputs.GetPropertyRulesBuilderRulesV20230105CustomOverride;
+    isSecure?: boolean;
+    name: string;
+    templateLink?: string;
+    templateUuid?: string;
+    uuid?: string;
+    variables?: outputs.GetPropertyRulesBuilderRulesV20230105Variable[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105Behavior {
+    adScalerCircuitBreaker?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitBreaker;
+    adaptiveAcceleration?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveAcceleration;
+    adaptiveImageCompression?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveImageCompression;
+    advanced?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAdvanced;
+    aggregatedReporting?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAggregatedReporting;
+    akamaizer?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizer;
+    akamaizerTag?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizerTag;
+    allHttpInCacheHierarchy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAllHttpInCacheHierarchy;
+    allowCloudletsOrigins?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAllowCloudletsOrigins;
+    allowDelete?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAllowDelete;
+    allowHttpsCacheKeySharing?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAllowHttpsCacheKeySharing;
+    allowHttpsDowngrade?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAllowHttpsDowngrade;
+    allowOptions?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAllowOptions;
+    allowPatch?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAllowPatch;
+    allowPost?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAllowPost;
+    allowPut?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAllowPut;
+    allowTransferEncoding?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAllowTransferEncoding;
+    altSvcHeader?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAltSvcHeader;
+    apiPrioritization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritization;
+    applicationLoadBalancer?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancer;
+    audienceSegmentation?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAudienceSegmentation;
+    autoDomainValidation?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAutoDomainValidation;
+    baseDirectory?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorBaseDirectory;
+    bossBeaconing?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorBossBeaconing;
+    breadcrumbs?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorBreadcrumbs;
+    breakConnection?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorBreakConnection;
+    brotli?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorBrotli;
+    cacheError?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCacheError;
+    cacheId?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCacheId;
+    cacheKeyIgnoreCase?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyIgnoreCase;
+    cacheKeyQueryParams?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyQueryParams;
+    cacheKeyRewrite?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyRewrite;
+    cachePost?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCachePost;
+    cacheRedirect?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCacheRedirect;
+    cacheTag?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCacheTag;
+    cacheTagVisible?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCacheTagVisible;
+    caching?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCaching;
+    centralAuthorization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCentralAuthorization;
+    chaseRedirects?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorChaseRedirects;
+    clientCharacteristics?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorClientCharacteristics;
+    cloudInterconnects?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCloudInterconnects;
+    cloudWrapper?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapper;
+    cloudWrapperAdvanced?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdvanced;
+    conditionalOrigin?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorConditionalOrigin;
+    constructResponse?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponse;
+    contentCharacteristics?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristics;
+    contentCharacteristicsAmd?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsAmd;
+    contentCharacteristicsDd?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsDd;
+    contentCharacteristicsWsdLargeFile?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLargeFile;
+    contentCharacteristicsWsdLive?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLive;
+    contentCharacteristicsWsdVod?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdVod;
+    contentPrePosition?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorContentPrePosition;
+    contentTargetingProtection?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorContentTargetingProtection;
+    corsSupport?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCorsSupport;
+    cpCode?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCpCode;
+    customBehavior?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCustomBehavior;
+    datastream?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDatastream;
+    dcp?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDcp;
+    dcpAuthHmacTransformation?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthHmacTransformation;
+    dcpAuthRegexTransformation?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthRegexTransformation;
+    dcpAuthSubstringTransformation?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthSubstringTransformation;
+    dcpAuthVariableExtractor?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthVariableExtractor;
+    dcpDefaultAuthzGroups?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDcpDefaultAuthzGroups;
+    dcpDevRelations?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelations;
+    dcpRealTimeAuth?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDcpRealTimeAuth;
+    deliveryReceipt?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDeliveryReceipt;
+    denyAccess?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDenyAccess;
+    denyDirectFailoverAccess?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDenyDirectFailoverAccess;
+    deviceCharacteristicCacheId?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDeviceCharacteristicCacheId;
+    deviceCharacteristicHeader?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDeviceCharacteristicHeader;
+    dnsAsyncRefresh?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDnsAsyncRefresh;
+    dnsPrefresh?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDnsPrefresh;
+    downgradeProtocol?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDowngradeProtocol;
+    downloadCompleteMarker?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDownloadCompleteMarker;
+    downloadNotification?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDownloadNotification;
+    downstreamCache?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDownstreamCache;
+    dynamicThroughtputOptimization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDynamicThroughtputOptimization;
+    dynamicThroughtputOptimizationOverride?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDynamicThroughtputOptimizationOverride;
+    dynamicWebContent?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorDynamicWebContent;
+    ecmsBulkUpload?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEcmsBulkUpload;
+    ecmsDatabase?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatabase;
+    ecmsDataset?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDataset;
+    ecmsObjectKey?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEcmsObjectKey;
+    edgeConnect?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeConnect;
+    edgeLoadBalancingAdvanced?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingAdvanced;
+    edgeLoadBalancingDataCenter?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenter;
+    edgeLoadBalancingOrigin?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingOrigin;
+    edgeOriginAuthorization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeOriginAuthorization;
+    edgeRedirector?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirector;
+    edgeScape?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeScape;
+    edgeSideIncludes?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeSideIncludes;
+    edgeWorker?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeWorker;
+    enhancedAkamaiProtocol?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEnhancedAkamaiProtocol;
+    enhancedProxyDetection?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEnhancedProxyDetection;
+    epdForwardHeaderEnrichment?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEpdForwardHeaderEnrichment;
+    failAction?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFailAction;
+    failoverBotManagerFeatureCompatibility?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFailoverBotManagerFeatureCompatibility;
+    fastInvalidate?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFastInvalidate;
+    firstPartyMarketing?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketing;
+    firstPartyMarketingPlus?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlus;
+    forwardRewrite?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewrite;
+    frontEndOptimization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFrontEndOptimization;
+    g2oheader?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorG2oheader;
+    globalRequestNumber?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorGlobalRequestNumber;
+    graphqlCaching?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorGraphqlCaching;
+    gzipResponse?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorGzipResponse;
+    hdDataAdvanced?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorHdDataAdvanced;
+    healthDetection?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorHealthDetection;
+    hsafEipBinding?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorHsafEipBinding;
+    http2?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorHttp2;
+    http3?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorHttp3;
+    httpStrictTransportSecurity?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransportSecurity;
+    httpToHttpsUpgrade?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorHttpToHttpsUpgrade;
+    imOverride?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImOverride;
+    imageAndVideoManager?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManager;
+    imageManager?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManager;
+    imageManagerVideo?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideo;
+    include?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorInclude;
+    inputValidation?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation;
+    instant?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorInstant;
+    instantConfig?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorInstantConfig;
+    largeFileOptimization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimization;
+    largeFileOptimizationAdvanced?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimizationAdvanced;
+    limitBitRate?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRate;
+    logCustom?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorLogCustom;
+    mPulse?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorMPulse;
+    manifestPersonalization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorManifestPersonalization;
+    manifestRerouting?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorManifestRerouting;
+    manualServerPush?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorManualServerPush;
+    mediaAcceleration?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaAcceleration;
+    mediaAccelerationQuicOptout?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaAccelerationQuicOptout;
+    mediaClient?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaClient;
+    mediaFileRetrievalOptimization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaFileRetrievalOptimization;
+    mediaOriginFailover?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailover;
+    metadataCaching?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorMetadataCaching;
+    mobileSdkPerformance?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorMobileSdkPerformance;
+    modifyIncomingRequestHeader?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeader;
+    modifyIncomingResponseHeader?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingResponseHeader;
+    modifyOutgoingRequestHeader?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingRequestHeader;
+    modifyOutgoingResponseHeader?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingResponseHeader;
+    modifyViaHeader?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorModifyViaHeader;
+    origin?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOrigin;
+    originCharacteristics?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristics;
+    originCharacteristicsWsd?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsd;
+    originFailureRecoveryMethod?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethod;
+    originFailureRecoveryPolicy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicy;
+    originIpAcl?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginIpAcl;
+    persistentClientConnection?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorPersistentClientConnection;
+    persistentConnection?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorPersistentConnection;
+    personallyIdentifiableInformation?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorPersonallyIdentifiableInformation;
+    phasedRelease?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorPhasedRelease;
+    preconnect?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorPreconnect;
+    predictiveContentDelivery?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorPredictiveContentDelivery;
+    predictivePrefetching?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorPredictivePrefetching;
+    prefetch?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorPrefetch;
+    prefetchable?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchable;
+    prefreshCache?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorPrefreshCache;
+    quality?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorQuality;
+    quicBeta?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorQuicBeta;
+    randomSeek?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek;
+    rapid?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRapid;
+    readTimeout?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorReadTimeout;
+    realTimeReporting?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting;
+    realUserMonitoring?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRealUserMonitoring;
+    redirect?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRedirect;
+    redirectplus?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplus;
+    refererChecking?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRefererChecking;
+    removeQueryParameter?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRemoveQueryParameter;
+    removeVary?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRemoveVary;
+    report?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorReport;
+    requestControl?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControl;
+    requestTypeMarker?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestTypeMarker;
+    resourceOptimizer?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizer;
+    resourceOptimizerExtendedCompatibility?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerExtendedCompatibility;
+    responseCode?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorResponseCode;
+    responseCookie?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie;
+    restrictObjectCaching?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCaching;
+    returnCacheStatus?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorReturnCacheStatus;
+    rewriteUrl?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRewriteUrl;
+    rumCustom?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRumCustom;
+    saasDefinitions?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions;
+    salesForceCommerceCloudClient?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClient;
+    salesForceCommerceCloudProvider?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProvider;
+    salesForceCommerceCloudProviderHostHeader?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderHostHeader;
+    savePostDcaProcessing?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSavePostDcaProcessing;
+    scheduleInvalidation?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation;
+    scriptManagement?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagement;
+    segmentedContentProtection?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedContentProtection;
+    segmentedMediaOptimization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimization;
+    segmentedMediaStreamingPrefetch?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaStreamingPrefetch;
+    setVariable?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable;
+    shutr?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorShutr;
+    simulateErrorCode?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCode;
+    siteShield?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSiteShield;
+    standardTlsMigration?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigration;
+    standardTlsMigrationOverride?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationOverride;
+    strictHeaderParsing?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsing;
+    subCustomer?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomer;
+    sureRoute?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSureRoute;
+    tcpOptimization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorTcpOptimization;
+    teaLeaf?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorTeaLeaf;
+    tieredDistribution?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistribution;
+    tieredDistributionAdvanced?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvanced;
+    tieredDistributionCustomization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomization;
+    timeout?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorTimeout;
+    uidConfiguration?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorUidConfiguration;
+    validateEntityTag?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTag;
+    verifyJsonWebToken?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebToken;
+    verifyJsonWebTokenForDcp?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcp;
+    verifyTokenAuthorization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVerifyTokenAuthorization;
+    virtualWaitingRoom?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoom;
+    virtualWaitingRoomWithEdgeWorkers?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomWithEdgeWorkers;
+    visitorPrioritization?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritization;
+    visitorPrioritizationFifo?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifo;
+    visitorPrioritizationFifoStandalone?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoStandalone;
+    watermarking?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorWatermarking;
+    webApplicationFirewall?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewall;
+    webSockets?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebSockets;
+    webdav?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebdav;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAdScalerCircuitBreaker {
+    fallbackActionResponseCodeBased?: string;
+    locked?: boolean;
+    responseCodeBased?: boolean;
+    responseCodes?: string;
+    responseDelayBased?: boolean;
+    responseDelayThreshold?: string;
+    returnErrorResponseCodeBased?: string;
+    specifyYourOwnResponseCodeBased?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveAcceleration {
+    abLogic?: string;
+    abTesting?: string;
+    compression?: string;
+    cookieName?: string;
+    enableBrotliCompression?: boolean;
+    enableForNoncacheable?: boolean;
+    enablePreconnect?: boolean;
+    enablePush?: boolean;
+    enableRo?: boolean;
+    locked?: boolean;
+    preloadEnable?: boolean;
+    source?: string;
+    templateUuid?: string;
+    titleBrotli?: string;
+    titleHttp2ServerPush?: string;
+    titlePreconnect?: string;
+    titlePreload?: string;
+    titleRo?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAdaptiveImageCompression {
+    compressMobile?: boolean;
+    compressStandard?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    tier1MobileCompressionMethod?: string;
+    tier1MobileCompressionValue?: number;
+    tier1StandardCompressionMethod?: string;
+    tier1StandardCompressionValue?: number;
+    tier2MobileCompressionMethod?: string;
+    tier2MobileCompressionValue?: number;
+    tier2StandardCompressionMethod?: string;
+    tier2StandardCompressionValue?: number;
+    tier3MobileCompressionMethod?: string;
+    tier3MobileCompressionValue?: number;
+    tier3StandardCompressionMethod?: string;
+    tier3StandardCompressionValue?: number;
+    titleAicMobile?: string;
+    titleAicNonmobile?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAdvanced {
+    description?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    xml?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAggregatedReporting {
+    attribute1?: string;
+    attribute2?: string;
+    attribute3?: string;
+    attribute4?: string;
+    attributesCount?: number;
+    enabled?: boolean;
+    locked?: boolean;
+    reportName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizer {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAkamaizerTag {
+    includeTagsAttribute?: boolean;
+    locked?: boolean;
+    matchHostname?: string;
+    replaceAll?: boolean;
+    replacementHostname?: string;
+    scope?: string;
+    tagsAttribute?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAllHttpInCacheHierarchy {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAllowCloudletsOrigins {
+    enabled?: boolean;
+    honorBaseDirectory?: boolean;
+    locked?: boolean;
+    purgeOriginQueryParameter?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAllowDelete {
+    allowBody?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAllowHttpsCacheKeySharing {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAllowHttpsDowngrade {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAllowOptions {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAllowPatch {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAllowPost {
+    allowWithoutContentLength?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAllowPut {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAllowTransferEncoding {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAltSvcHeader {
+    locked?: boolean;
+    maxAge?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritization {
+    alternateResponseCacheTtl?: number;
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationCloudletPolicy;
+    enabled?: boolean;
+    label?: string;
+    locked?: boolean;
+    netStorage?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationNetStorage;
+    netStoragePath?: string;
+    templateUuid?: string;
+    throttledCpCode?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationThrottledCpCode;
+    throttledStatusCode?: number;
+    useThrottledCpCode?: boolean;
+    useThrottledStatusCode?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationThrottledCpCode {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationThrottledCpCodeCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorApiPrioritizationThrottledCpCodeCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancer {
+    allDownNetStorage?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerAllDownNetStorage;
+    allDownNetStorageFile?: string;
+    allDownStatusCode?: string;
+    allDownTitle?: string;
+    allowCachePrefresh?: boolean;
+    cachedContentTitle?: string;
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerCloudletPolicy;
+    enabled?: boolean;
+    failoverAttemptsThreshold?: number;
+    failoverMode?: string;
+    failoverOriginMaps?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerFailoverOriginMap[];
+    failoverStatusCodes?: string[];
+    failoverTitle?: string;
+    label?: string;
+    locked?: boolean;
+    originCookieName?: string;
+    specifyStickinessCookieDomain?: boolean;
+    stickinessCookieAutomaticSalt?: boolean;
+    stickinessCookieDomain?: string;
+    stickinessCookieSalt?: string;
+    stickinessCookieSetHttpOnlyFlag?: boolean;
+    stickinessCookieType?: string;
+    stickinessDuration?: string;
+    stickinessExpirationDate?: string;
+    stickinessRefresh?: boolean;
+    stickinessTitle?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerAllDownNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorApplicationLoadBalancerFailoverOriginMap {
+    fromOriginId?: string;
+    toOriginIds?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAudienceSegmentation {
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorAudienceSegmentationCloudletPolicy;
+    cloudletSharedPolicy?: number;
+    enabled?: boolean;
+    isSharedPolicy?: boolean;
+    label?: string;
+    locked?: boolean;
+    populationCookieAutomaticSalt?: boolean;
+    populationCookieDomain?: string;
+    populationCookieIncludeRuleName?: boolean;
+    populationCookieSalt?: string;
+    populationCookieType?: string;
+    populationDuration?: string;
+    populationRefresh?: boolean;
+    populationTitle?: string;
+    segmentTrackingCookieName?: string;
+    segmentTrackingCustomHeader?: string;
+    segmentTrackingMethod?: string;
+    segmentTrackingQueryParam?: string;
+    segmentTrackingTitle?: string;
+    specifyPopulationCookieDomain?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAudienceSegmentationCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorAutoDomainValidation {
+    autodv?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorBaseDirectory {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorBossBeaconing {
+    conditionalErrorPattern?: string;
+    conditionalHttpStatuses?: string[];
+    conditionalSamplingFrequency?: string;
+    cpcodes?: string;
+    enabled?: boolean;
+    forwardType?: string;
+    locked?: boolean;
+    requestType?: string;
+    samplingFrequency?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorBreadcrumbs {
+    enabled?: boolean;
+    locked?: boolean;
+    loggingEnabled?: boolean;
+    optMode?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorBreakConnection {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorBrotli {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCacheError {
+    enabled?: boolean;
+    locked?: boolean;
+    preserveStale?: boolean;
+    templateUuid?: string;
+    ttl?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCacheId {
+    elements?: string[];
+    includeValue?: boolean;
+    locked?: boolean;
+    optional?: boolean;
+    rule?: string;
+    templateUuid?: string;
+    uuid?: string;
+    variableName?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyIgnoreCase {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyQueryParams {
+    behavior?: string;
+    exactMatch?: boolean;
+    locked?: boolean;
+    parameters?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCacheKeyRewrite {
+    locked?: boolean;
+    purgeKey?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCachePost {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    useBody?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCacheRedirect {
+    enabled?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCacheTag {
+    locked?: boolean;
+    tag?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCacheTagVisible {
+    behavior?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCaching {
+    behavior?: string;
+    cacheControlDirectives?: string;
+    cacheabilitySettings?: string;
+    defaultTtl?: string;
+    enhancedRfcSupport?: boolean;
+    expirationSettings?: string;
+    honorMaxAge?: boolean;
+    honorMustRevalidate?: boolean;
+    honorNoCache?: boolean;
+    honorNoStore?: boolean;
+    honorPrivate?: boolean;
+    honorProxyRevalidate?: boolean;
+    honorSMaxage?: boolean;
+    locked?: boolean;
+    mustRevalidate?: boolean;
+    revalidationSettings?: string;
+    templateUuid?: string;
+    ttl?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCentralAuthorization {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorChaseRedirects {
+    enabled?: boolean;
+    limit?: string;
+    locked?: boolean;
+    serve404?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorClientCharacteristics {
+    country?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCloudInterconnects {
+    cloudLocations?: string[];
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapper {
+    enabled?: boolean;
+    location?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCloudWrapperAdvanced {
+    customFailoverMap?: string;
+    enabled?: boolean;
+    failoverMap?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorConditionalOrigin {
+    locked?: boolean;
+    originId?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorConstructResponse {
+    body?: string;
+    enabled?: boolean;
+    forceEviction?: boolean;
+    ignorePurge?: boolean;
+    locked?: boolean;
+    responseCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristics {
+    catalogSize?: string;
+    contentType?: string;
+    locked?: boolean;
+    objectSize?: string;
+    popularityDistribution?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsAmd {
+    catalogSize?: string;
+    contentType?: string;
+    dash?: boolean;
+    hds?: boolean;
+    hls?: boolean;
+    locked?: boolean;
+    popularityDistribution?: string;
+    segmentDurationDash?: string;
+    segmentDurationDashCustom?: number;
+    segmentDurationHds?: string;
+    segmentDurationHdsCustom?: number;
+    segmentDurationHls?: string;
+    segmentDurationHlsCustom?: number;
+    segmentDurationSmooth?: string;
+    segmentDurationSmoothCustom?: number;
+    segmentSizeDash?: string;
+    segmentSizeHds?: string;
+    segmentSizeHls?: string;
+    segmentSizeSmooth?: string;
+    smooth?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsDd {
+    catalogSize?: string;
+    contentType?: string;
+    locked?: boolean;
+    objectSize?: string;
+    optimizeOption?: boolean;
+    popularityDistribution?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLargeFile {
+    catalogSize?: string;
+    contentType?: string;
+    locked?: boolean;
+    objectSize?: string;
+    popularityDistribution?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdLive {
+    catalogSize?: string;
+    contentType?: string;
+    dash?: boolean;
+    hds?: boolean;
+    hls?: boolean;
+    locked?: boolean;
+    popularityDistribution?: string;
+    segmentDurationDash?: string;
+    segmentDurationHds?: string;
+    segmentDurationHls?: string;
+    segmentDurationSmooth?: string;
+    segmentSizeDash?: string;
+    segmentSizeHds?: string;
+    segmentSizeHls?: string;
+    segmentSizeSmooth?: string;
+    smooth?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorContentCharacteristicsWsdVod {
+    catalogSize?: string;
+    contentType?: string;
+    dash?: boolean;
+    hds?: boolean;
+    hls?: boolean;
+    locked?: boolean;
+    popularityDistribution?: string;
+    segmentDurationDash?: string;
+    segmentDurationHds?: string;
+    segmentDurationHls?: string;
+    segmentDurationSmooth?: string;
+    segmentSizeDash?: string;
+    segmentSizeHds?: string;
+    segmentSizeHls?: string;
+    segmentSizeSmooth?: string;
+    smooth?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorContentPrePosition {
+    enabled?: boolean;
+    firstLocation?: string;
+    locked?: boolean;
+    secondLocation?: string;
+    sourceType?: string;
+    targets?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorContentTargetingProtection {
+    countries?: string[];
+    dmas?: string[];
+    enableGeoProtection?: boolean;
+    enableGeoRedirectOnDeny?: boolean;
+    enableIpProtection?: boolean;
+    enableIpRedirectOnDeny?: boolean;
+    enableReferrerProtection?: boolean;
+    enableReferrerRedirectOnDeny?: boolean;
+    enabled?: boolean;
+    geoProtectionMode?: string;
+    geoProtectionTitle?: string;
+    geoRedirectUrl?: string;
+    ipAddresses?: string[];
+    ipProtectionMode?: string;
+    ipProtectionTitle?: string;
+    ipRedirectUrl?: string;
+    locked?: boolean;
+    overrideIpAddresses?: string[];
+    referrerDomains?: string[];
+    referrerProtectionMode?: string;
+    referrerProtectionTitle?: string;
+    referrerRedirectUrl?: string;
+    regions?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCorsSupport {
+    allowCredentials?: boolean;
+    allowHeaders?: string;
+    allowOrigins?: string;
+    enabled?: boolean;
+    exposeHeaders?: string[];
+    headers?: string[];
+    locked?: boolean;
+    methods?: string[];
+    origins?: string[];
+    preflightMaxAge?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCpCode {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeValue;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeValue {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeValueCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCpCodeValueCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorCustomBehavior {
+    behaviorId?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDatastream {
+    beaconStreamTitle?: string;
+    collectMidgressTraffic?: boolean;
+    datastreamIds?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    logEnabled?: boolean;
+    logStreamName?: number;
+    logStreamTitle?: string;
+    samplingPercentage?: number;
+    streamType?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDcp {
+    anonymous?: boolean;
+    enabled?: boolean;
+    gwenabled?: boolean;
+    locked?: boolean;
+    namespaceId?: string;
+    templateUuid?: string;
+    tlsenabled?: boolean;
+    uuid?: string;
+    wsenabled?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthHmacTransformation {
+    hashConversionAlgorithm?: string;
+    hashConversionKey?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthRegexTransformation {
+    locked?: boolean;
+    regexPattern?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthSubstringTransformation {
+    locked?: boolean;
+    substringEnd?: string;
+    substringStart?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDcpAuthVariableExtractor {
+    certificateField?: string;
+    dcpMutualAuthProcessingVariableId?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDcpDefaultAuthzGroups {
+    groupNames?: string[];
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDcpDevRelations {
+    customValues?: boolean;
+    enabled?: boolean;
+    hostname?: string;
+    locked?: boolean;
+    path?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDcpRealTimeAuth {
+    extractHostname?: boolean;
+    extractJurisdiction?: boolean;
+    extractNamespace?: boolean;
+    hostnameClaim?: string;
+    jurisdictionClaim?: string;
+    locked?: boolean;
+    namespaceClaim?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDeliveryReceipt {
+    enabled?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDenyAccess {
+    enabled?: boolean;
+    locked?: boolean;
+    reason?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDenyDirectFailoverAccess {
+    enabled?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDeviceCharacteristicCacheId {
+    elements?: string[];
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDeviceCharacteristicHeader {
+    elements?: string[];
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDnsAsyncRefresh {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDnsPrefresh {
+    delay?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDowngradeProtocol {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDownloadCompleteMarker {
+    enabled?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDownloadNotification {
+    enabled?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDownstreamCache {
+    allowBehavior?: string;
+    behavior?: string;
+    locked?: boolean;
+    sendHeaders?: string;
+    sendPrivate?: boolean;
+    templateUuid?: string;
+    ttl?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDynamicThroughtputOptimization {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDynamicThroughtputOptimizationOverride {
+    locked?: boolean;
+    templateUuid?: string;
+    throughput?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorDynamicWebContent {
+    imageCompression?: boolean;
+    locked?: boolean;
+    prefetch?: boolean;
+    realUserMonitoring?: boolean;
+    sureRoute?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEcmsBulkUpload {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDatabase {
+    database?: string;
+    extractLocation?: string;
+    headerName?: string;
+    locked?: boolean;
+    queryParameterName?: string;
+    regexPattern?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEcmsDataset {
+    dataset?: string;
+    extractLocation?: string;
+    headerName?: string;
+    locked?: boolean;
+    queryParameterName?: string;
+    regexPattern?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEcmsObjectKey {
+    locked?: boolean;
+    regex?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEdgeConnect {
+    aggregateLines?: string;
+    aggregateSize?: string;
+    aggregateTime?: string;
+    apiConnector?: string;
+    apiDataElements?: string[];
+    destinationHostname?: string;
+    destinationPath?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    overrideAggregateSettings?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingAdvanced {
+    description?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    xml?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenter {
+    cookieName?: string;
+    description?: string;
+    enableFailover?: boolean;
+    failoverRules?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenterFailoverRule[];
+    failoverTitle?: string;
+    hostname?: string;
+    ip?: string;
+    locked?: boolean;
+    originId?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingDataCenterFailoverRule {
+    absolutePath?: boolean;
+    contextRoot?: string;
+    failoverHostname?: string;
+    modifyRequest?: boolean;
+    overrideHostname?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEdgeLoadBalancingOrigin {
+    cookieName?: string;
+    description?: string;
+    enableSessionPersistence?: boolean;
+    hostname?: string;
+    id?: string;
+    locked?: boolean;
+    sessionPersistenceTitle?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEdgeOriginAuthorization {
+    cookieName?: string;
+    domain?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirector {
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorCloudletPolicy;
+    cloudletSharedPolicy?: number;
+    enabled?: boolean;
+    isSharedPolicy?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEdgeRedirectorCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEdgeScape {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEdgeSideIncludes {
+    detectInjection?: boolean;
+    enableViaHttp?: boolean;
+    enabled?: boolean;
+    i18nCharsets?: string[];
+    i18nStatus?: boolean;
+    locked?: boolean;
+    passClientIp?: boolean;
+    passSetCookie?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEdgeWorker {
+    createEdgeWorker?: string;
+    edgeWorkerId?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    resourceTier?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEnhancedAkamaiProtocol {
+    display?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEnhancedProxyDetection {
+    anonymousVpn?: string;
+    bestPracticeAction?: string;
+    bestPracticeRedirecturl?: string;
+    detectAnonymousVpn?: boolean;
+    detectAnonymousVpnAction?: string;
+    detectAnonymousVpnRedirecturl?: string;
+    detectHostingProvider?: boolean;
+    detectHostingProviderAction?: string;
+    detectHostingProviderRedirecturl?: string;
+    detectPublicProxy?: boolean;
+    detectPublicProxyAction?: string;
+    detectPublicProxyRedirecturl?: string;
+    detectResidentialProxy?: boolean;
+    detectResidentialProxyAction?: string;
+    detectResidentialProxyRedirecturl?: string;
+    detectSmartDnsProxy?: boolean;
+    detectSmartDnsProxyAction?: string;
+    detectSmartDnsProxyRedirecturl?: string;
+    detectTorExitNode?: boolean;
+    detectTorExitNodeAction?: string;
+    detectTorExitNodeRedirecturl?: string;
+    detectVpnDataCenter?: boolean;
+    detectVpnDataCenterAction?: string;
+    detectVpnDataCenterRedirecturl?: string;
+    enableConfigurationMode?: string;
+    enabled?: boolean;
+    forwardHeaderEnrichment?: boolean;
+    hostingProvider?: string;
+    locked?: boolean;
+    publicProxy?: string;
+    residentialProxy?: string;
+    smartDnsProxy?: string;
+    templateUuid?: string;
+    torExitNode?: string;
+    uuid?: string;
+    vpnDataCenter?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorEpdForwardHeaderEnrichment {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorFailAction {
+    actionType?: string;
+    allowFcmParentOverride?: boolean;
+    cexCustomPath?: boolean;
+    cexHostname?: string;
+    cexPath?: string;
+    contentCustomPath?: boolean;
+    contentHostname?: string;
+    contentPath?: string;
+    cpCode?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCode;
+    dynamicCustomPath?: boolean;
+    dynamicMethod?: string;
+    dynamicPath?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    modifyProtocol?: boolean;
+    netStorageHostname?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFailActionNetStorageHostname;
+    netStoragePath?: string;
+    preserveQueryString?: boolean;
+    protocol?: string;
+    redirectCustomPath?: boolean;
+    redirectHostname?: string;
+    redirectHostnameType?: string;
+    redirectMethod?: number;
+    redirectPath?: string;
+    saasCnameEnabled?: boolean;
+    saasCnameLevel?: number;
+    saasCookie?: string;
+    saasQueryString?: string;
+    saasRegex?: string;
+    saasReplace?: string;
+    saasSuffix?: string;
+    saasType?: string;
+    statusCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCode {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorFailActionCpCodeCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorFailActionNetStorageHostname {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorFailoverBotManagerFeatureCompatibility {
+    compatibility?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorFastInvalidate {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketing {
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingCloudletPolicy;
+    enabled?: boolean;
+    javaScriptInsertionRule?: string;
+    locked?: boolean;
+    mediaMathPrefix?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlus {
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlusCloudletPolicy;
+    enabled?: boolean;
+    javaScriptInsertionRule?: string;
+    locked?: boolean;
+    mediaMathPrefix?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorFirstPartyMarketingPlusCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewrite {
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewriteCloudletPolicy;
+    cloudletSharedPolicy?: number;
+    enabled?: boolean;
+    isSharedPolicy?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorForwardRewriteCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorFrontEndOptimization {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorG2oheader {
+    customSignStrings?: string[];
+    dataHeader?: string;
+    enabled?: boolean;
+    encodingVersion?: number;
+    locked?: boolean;
+    nonce?: string;
+    secretKey?: string;
+    signedHeader?: string;
+    templateUuid?: string;
+    useCustomSignString?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorGlobalRequestNumber {
+    headerName?: string;
+    locked?: boolean;
+    outputOption?: string;
+    templateUuid?: string;
+    uuid?: string;
+    variableName?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorGraphqlCaching {
+    advanced?: string;
+    cacheResponsesWithErrors?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    operationsJsonBodyParameterName?: string;
+    operationsUrlQueryParameterName?: string;
+    postRequestProcessingErrorHandling?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorGzipResponse {
+    behavior?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorHdDataAdvanced {
+    description?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    xml?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorHealthDetection {
+    locked?: boolean;
+    maximumReconnects?: number;
+    retryCount?: number;
+    retryInterval?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorHsafEipBinding {
+    customExtractedSerial?: boolean;
+    enabled?: boolean;
+    hashMaxValue?: number;
+    hashMinValue?: number;
+    locked?: boolean;
+    templateUuid?: string;
+    tier?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorHttp2 {
+    enabled?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorHttp3 {
+    enable?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorHttpStrictTransportSecurity {
+    enable?: boolean;
+    includeSubDomains?: boolean;
+    locked?: boolean;
+    maxAge?: string;
+    preload?: boolean;
+    redirect?: boolean;
+    redirectStatusCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorHttpToHttpsUpgrade {
+    locked?: boolean;
+    templateUuid?: string;
+    upgrade?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImOverride {
+    dpr?: number;
+    dprvar?: string;
+    excludeAllQueryParameters?: boolean;
+    excludedQueryParameters?: string[];
+    format?: string;
+    formatvar?: string;
+    locked?: boolean;
+    override?: string;
+    policy?: string;
+    policyvar?: string;
+    policyvarIMvar?: string;
+    policyvarName?: string;
+    templateUuid?: string;
+    typesel?: string;
+    uuid?: string;
+    width?: number;
+    widthvar?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManager {
+    applyBestFileType?: boolean;
+    cpCodeOriginal?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerCpCodeOriginal;
+    cpCodeTransformed?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerCpCodeTransformed;
+    enabled?: boolean;
+    imageSet?: string;
+    locked?: boolean;
+    policySetType?: string;
+    resize?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    videoSet?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerCpCodeOriginal {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerCpCodeOriginalCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerCpCodeOriginalCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerCpCodeTransformed {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerCpCodeTransformedCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageAndVideoManagerCpCodeTransformedCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageManager {
+    advanced?: boolean;
+    apiReferenceTitle?: string;
+    applyBestFileType?: boolean;
+    cpCodeOriginal?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginal;
+    cpCodeTransformed?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeTransformed;
+    enabled?: boolean;
+    locked?: boolean;
+    policySet?: string;
+    policyToken?: string;
+    policyTokenDefault?: string;
+    resize?: boolean;
+    settingsTitle?: string;
+    superCacheRegion?: string;
+    templateUuid?: string;
+    trafficTitle?: string;
+    useExistingPolicySet?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginal {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginalCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeOriginalCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeTransformed {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeTransformedCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerCpCodeTransformedCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideo {
+    advanced?: boolean;
+    apiReferenceTitle?: string;
+    applyBestFileType?: boolean;
+    cpCodeOriginal?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeOriginal;
+    cpCodeTransformed?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeTransformed;
+    enabled?: boolean;
+    locked?: boolean;
+    policySet?: string;
+    policyToken?: string;
+    policyTokenDefault?: string;
+    resize?: boolean;
+    settingsTitle?: string;
+    superCacheRegion?: string;
+    templateUuid?: string;
+    trafficTitle?: string;
+    useExistingPolicySet?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeOriginal {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeOriginalCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeOriginalCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeTransformed {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeTransformedCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorImageManagerVideoCpCodeTransformedCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorInclude {
+    id?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorInputValidation {
+    allowLargePostBody?: boolean;
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationCloudletPolicy;
+    enabled?: boolean;
+    failure302Uri?: string;
+    label?: string;
+    locked?: boolean;
+    penalty302Uri?: string;
+    penalty403NetStoragePath?: string;
+    penaltyAction?: string;
+    penaltyBrandedDenyCacheTtl?: number;
+    penaltyNetStorage?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationPenaltyNetStorage;
+    penaltyThreshold?: number;
+    penaltyTitle?: string;
+    resetOnValid?: boolean;
+    templateUuid?: string;
+    userIdentificationByCookie?: boolean;
+    userIdentificationByHeaders?: boolean;
+    userIdentificationByIp?: boolean;
+    userIdentificationByParams?: boolean;
+    userIdentificationKeyCookie?: string;
+    userIdentificationKeyHeaders?: string[];
+    userIdentificationKeyParams?: string[];
+    userIdentificationTitle?: string;
+    uuid?: string;
+    validateOnOriginHeaderName?: string;
+    validateOnOriginHeaderValue?: string;
+    validateOnOriginResponseCode?: number;
+    validateOnOriginWith?: string;
+    validationTitle?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorInputValidationPenaltyNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorInstant {
+    customLinkRelations?: string[];
+    locked?: boolean;
+    prefetchCacheable?: boolean;
+    prefetchHtml?: boolean;
+    prefetchNoStore?: boolean;
+    prefetchNoStoreExtensions?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorInstantConfig {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimization {
+    enablePartialObjectCaching?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    maximumSize?: string;
+    minimumSize?: string;
+    templateUuid?: string;
+    useVersioning?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorLargeFileOptimizationAdvanced {
+    enabled?: boolean;
+    fragmentSize?: string;
+    locked?: boolean;
+    objectSize?: string;
+    prefetchAfterRequest?: number;
+    prefetchDuringRequest?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRate {
+    bitrateTables?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTable[];
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    thresholdTables?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTable[];
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateBitrateTable {
+    bitrateUnit?: string;
+    bitrateValue?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorLimitBitRateThresholdTable {
+    thresholdUnit?: string;
+    thresholdValue?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorLogCustom {
+    customLogField?: string;
+    locked?: boolean;
+    logCustomLogField?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorMPulse {
+    apiKey?: string;
+    bufferSize?: string;
+    configOverride?: string;
+    enabled?: boolean;
+    loaderVersion?: string;
+    locked?: boolean;
+    requirePci?: boolean;
+    templateUuid?: string;
+    titleOptional?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorManifestPersonalization {
+    enabled?: boolean;
+    hlsEnableDebugHeaders?: boolean;
+    hlsEnabled?: boolean;
+    hlsFilterInBitrateRanges?: string;
+    hlsFilterInBitrates?: string;
+    hlsMode?: string;
+    hlsPreferredBitrate?: string;
+    hlsQueryParamEnabled?: boolean;
+    hlsQueryParamSecretKey?: string;
+    hlsQueryParamTransitionKey?: string;
+    hlsShowAdvanced?: boolean;
+    hlsTitle?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorManifestRerouting {
+    locked?: boolean;
+    partner?: string;
+    templateUuid?: string;
+    username?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorManualServerPush {
+    locked?: boolean;
+    serverpushlists?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorMediaAcceleration {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorMediaAccelerationQuicOptout {
+    locked?: boolean;
+    optout?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorMediaClient {
+    beaconId?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    useHybridHttpUdp?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorMediaFileRetrievalOptimization {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorMediaOriginFailover {
+    cacheErrorResponse?: boolean;
+    cacheWindow?: string;
+    clientResponseCode?: string;
+    detectObjectUnavailable?: boolean;
+    detectObjectUnavailableTitle?: string;
+    detectOriginUnavailable?: boolean;
+    detectOriginUnavailableTitle?: string;
+    detectOriginUnresponsive?: boolean;
+    detectOriginUnresponsiveTitle?: string;
+    locked?: boolean;
+    objectUnavailableAlternateHost?: string;
+    objectUnavailableBackupHost?: string;
+    objectUnavailableBlacklistOriginIp?: boolean;
+    objectUnavailableBlacklistWindow?: string;
+    objectUnavailableChangeProtocol?: boolean;
+    objectUnavailableDetectionLevel?: string;
+    objectUnavailableIncludeQueryString?: boolean;
+    objectUnavailableModifiedPath?: string;
+    objectUnavailableModifyRequestPath?: boolean;
+    objectUnavailableProtocol?: string;
+    objectUnavailableRecovery?: string;
+    objectUnavailableRedirectMethod?: number;
+    objectUnavailableResponseCodes?: string[];
+    objectUnavailableRetryLimit?: string;
+    originUnavailableAlternateHost?: string;
+    originUnavailableBackupHost?: string;
+    originUnavailableBlacklistOriginIp?: boolean;
+    originUnavailableBlacklistWindow?: string;
+    originUnavailableChangeProtocol?: boolean;
+    originUnavailableDetectionLevel?: string;
+    originUnavailableIncludeQueryString?: boolean;
+    originUnavailableModifiedPath?: string;
+    originUnavailableModifyRequestPath?: boolean;
+    originUnavailableProtocol?: string;
+    originUnavailableRecovery?: string;
+    originUnavailableRedirectMethod?: number;
+    originUnavailableResponseCodes?: string[];
+    originUnavailableRetryLimit?: string;
+    originUnresponsiveAlternateHost?: string;
+    originUnresponsiveBackupHost?: string;
+    originUnresponsiveBlacklistOriginIp?: boolean;
+    originUnresponsiveBlacklistWindow?: string;
+    originUnresponsiveChangeProtocol?: boolean;
+    originUnresponsiveDetectionLevel?: string;
+    originUnresponsiveIncludeQueryString?: boolean;
+    originUnresponsiveModifiedPath?: string;
+    originUnresponsiveModifyRequestPath?: boolean;
+    originUnresponsiveProtocol?: string;
+    originUnresponsiveRecovery?: string;
+    originUnresponsiveRedirectMethod?: number;
+    originUnresponsiveRetryLimit?: string;
+    otherOptions?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorMetadataCaching {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorMobileSdkPerformance {
+    enabled?: boolean;
+    locked?: boolean;
+    secondaryMultipathToOrigin?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingRequestHeader {
+    action?: string;
+    avoidDuplicateHeaders?: boolean;
+    customHeaderName?: string;
+    headerValue?: string;
+    locked?: boolean;
+    newHeaderValue?: string;
+    standardAddHeaderName?: string;
+    standardDeleteHeaderName?: string;
+    standardModifyHeaderName?: string;
+    standardPassHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyIncomingResponseHeader {
+    action?: string;
+    avoidDuplicateHeaders?: boolean;
+    customHeaderName?: string;
+    headerValue?: string;
+    locked?: boolean;
+    newHeaderValue?: string;
+    standardAddHeaderName?: string;
+    standardDeleteHeaderName?: string;
+    standardModifyHeaderName?: string;
+    standardPassHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingRequestHeader {
+    action?: string;
+    avoidDuplicateHeaders?: boolean;
+    customHeaderName?: string;
+    headerValue?: string;
+    locked?: boolean;
+    matchMultiple?: boolean;
+    newHeaderValue?: string;
+    regexHeaderMatch?: string;
+    regexHeaderReplace?: string;
+    standardAddHeaderName?: string;
+    standardDeleteHeaderName?: string;
+    standardModifyHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyOutgoingResponseHeader {
+    action?: string;
+    avoidDuplicateHeaders?: boolean;
+    customHeaderName?: string;
+    headerValue?: string;
+    locked?: boolean;
+    matchMultiple?: boolean;
+    newHeaderValue?: string;
+    regexHeaderMatch?: string;
+    regexHeaderReplace?: string;
+    standardAddHeaderName?: string;
+    standardDeleteHeaderName?: string;
+    standardModifyHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorModifyViaHeader {
+    enabled?: boolean;
+    locked?: boolean;
+    modificationOption?: string;
+    renameHeaderTo?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOrigin {
+    cacheKeyHostname?: string;
+    compress?: boolean;
+    customCertificateAuthorities?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthority[];
+    customCertificates?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificate[];
+    customForwardHostHeader?: string;
+    customValidCnValues?: string[];
+    enableTrueClientIp?: boolean;
+    forwardHostHeader?: string;
+    hostname?: string;
+    httpPort?: number;
+    httpsPort?: number;
+    ipVersion?: string;
+    locked?: boolean;
+    mslorigin?: string;
+    netStorage?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginNetStorage;
+    originCertificate?: string;
+    originCertsToHonor?: string;
+    originId?: string;
+    originSni?: boolean;
+    originType?: string;
+    ports?: string;
+    saasCnameEnabled?: boolean;
+    saasCnameLevel?: number;
+    saasCookie?: string;
+    saasQueryString?: string;
+    saasRegex?: string;
+    saasReplace?: string;
+    saasSuffix?: string;
+    saasType?: string;
+    secondHostname?: string;
+    secondHostnameEnabled?: boolean;
+    standardCertificateAuthorities?: string[];
+    templateUuid?: string;
+    trueClientIpClientSetting?: boolean;
+    trueClientIpHeader?: string;
+    useUniqueCacheKey?: boolean;
+    uuid?: string;
+    verificationMode?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristics {
+    accessKeyEncryptedStorage?: boolean;
+    adcTitle?: string;
+    authenticationMethod?: string;
+    authenticationMethodTitle?: string;
+    awsAccessKeyId?: string;
+    awsAccessKeyVersionGuid?: string;
+    awsHost?: string;
+    awsRegion?: string;
+    awsSecretAccessKey?: string;
+    awsService?: string;
+    country?: string;
+    customSignStrings?: string[];
+    directConnectGeo?: string;
+    encodingVersion?: number;
+    gcsAccessKeyVersionGuid?: string;
+    gcsHmacKeyAccessId?: string;
+    gcsHmacKeySecret?: string;
+    locked?: boolean;
+    mslkey?: string;
+    mslname?: string;
+    nonce?: string;
+    secretKey?: string;
+    templateUuid?: string;
+    useCustomSignString?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacteristicsWsd {
+    locked?: boolean;
+    origintype?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificate {
+    pemEncodedCert?: string;
+    sha1Fingerprint?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthority {
+    pemEncodedCert?: string;
+    sha1Fingerprint?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethod {
+    customStatusCode?: string;
+    locked?: boolean;
+    recoveryMethod?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryPolicy {
+    binaryEquivalentContent?: boolean;
+    enableIpAvoidance?: boolean;
+    enabled?: boolean;
+    ipAvoidanceErrorThreshold?: number;
+    ipAvoidanceRetryInterval?: number;
+    locked?: boolean;
+    monitorOriginResponsiveness?: boolean;
+    monitorResponseCodes1s?: string[];
+    monitorResponseCodes2s?: string[];
+    monitorResponseCodes3s?: string[];
+    monitorStatusCodes1?: boolean;
+    monitorStatusCodes1EnableRecovery?: boolean;
+    monitorStatusCodes1EnableRetry?: boolean;
+    monitorStatusCodes1RecoveryConfigName?: string;
+    monitorStatusCodes2?: boolean;
+    monitorStatusCodes2EnableRecovery?: boolean;
+    monitorStatusCodes2EnableRetry?: boolean;
+    monitorStatusCodes2RecoveryConfigName?: string;
+    monitorStatusCodes3?: boolean;
+    monitorStatusCodes3EnableRecovery?: boolean;
+    monitorStatusCodes3EnableRetry?: boolean;
+    monitorStatusCodes3RecoveryConfigName?: string;
+    originResponsivenessCustomTimeout?: number;
+    originResponsivenessEnableRecovery?: boolean;
+    originResponsivenessEnableRetry?: boolean;
+    originResponsivenessMonitoring?: string;
+    originResponsivenessRecoveryConfigName?: string;
+    originResponsivenessTimeout?: string;
+    statusCodeMonitoring1?: string;
+    statusCodeMonitoring2?: string;
+    statusCodeMonitoring3?: string;
+    templateUuid?: string;
+    tuningParameters?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginIpAcl {
+    enable?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorPersistentClientConnection {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorPersistentConnection {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorPersonallyIdentifiableInformation {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorPhasedRelease {
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorPhasedReleaseCloudletPolicy;
+    enabled?: boolean;
+    failoverDuration?: number;
+    failoverEnabled?: boolean;
+    failoverResponseCodes?: string[];
+    failoverTitle?: string;
+    label?: string;
+    locked?: boolean;
+    populationCookieType?: string;
+    populationDuration?: string;
+    populationExpirationDate?: string;
+    populationRefresh?: boolean;
+    populationTitle?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorPhasedReleaseCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorPreconnect {
+    locked?: boolean;
+    preconnectlists?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorPredictiveContentDelivery {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorPredictivePrefetching {
+    accuracyTarget?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorPrefetch {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorPrefetchable {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorPrefreshCache {
+    enabled?: boolean;
+    locked?: boolean;
+    prefreshval?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorQuality {
+    audienceSettings?: string;
+    catalogSize?: string;
+    contentSettings?: string;
+    contentType?: string;
+    country?: string;
+    deliveryFormat?: string;
+    deliveryType?: string;
+    downloadType?: string;
+    endUserLocation?: string;
+    locked?: boolean;
+    maximumConcurrentUsers?: string;
+    objectSize?: string;
+    optimizeFor?: string;
+    originSettings?: string;
+    popularityDistribution?: string;
+    refreshRate?: string;
+    segmentDuration?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorQuicBeta {
+    enabled?: boolean;
+    locked?: boolean;
+    quicOfferPercentage?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRandomSeek {
+    flv?: boolean;
+    locked?: boolean;
+    maximumSize?: string;
+    mp4?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRapid {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorReadTimeout {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRealTimeReporting {
+    advanced?: boolean;
+    beaconSamplingPercentage?: number;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRealUserMonitoring {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRedirect {
+    destinationHostname?: string;
+    destinationHostnameOther?: string;
+    destinationHostnameSibling?: string;
+    destinationHostnameSubdomain?: string;
+    destinationPath?: string;
+    destinationPathOther?: string;
+    destinationPathPrefix?: string;
+    destinationPathSuffix?: string;
+    destinationPathSuffixStatus?: string;
+    destinationProtocol?: string;
+    locked?: boolean;
+    mobileDefaultChoice?: string;
+    queryString?: string;
+    responseCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRedirectplus {
+    destination?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    responseCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRefererChecking {
+    allowChildren?: boolean;
+    domains?: string[];
+    enabled?: boolean;
+    locked?: boolean;
+    strict?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRemoveQueryParameter {
+    locked?: boolean;
+    parameters?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRemoveVary {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorReport {
+    cookies?: string[];
+    customLogField?: string;
+    locked?: boolean;
+    logAcceptLanguage?: boolean;
+    logCookies?: string;
+    logCustomLogField?: boolean;
+    logEdgeIp?: boolean;
+    logHost?: boolean;
+    logReferer?: boolean;
+    logUserAgent?: boolean;
+    logXForwardedFor?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRequestControl {
+    branded403File?: string;
+    branded403StatusCode?: number;
+    branded403Url?: string;
+    brandedDenyCacheTtl?: number;
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlCloudletPolicy;
+    enableBranded403?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    netStorage?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorage;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRequestControlNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRequestTypeMarker {
+    locked?: boolean;
+    requestType?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizer {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorResourceOptimizerExtendedCompatibility {
+    enableAllFeatures?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorResponseCode {
+    locked?: boolean;
+    override206?: boolean;
+    statusCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorResponseCookie {
+    cookieName?: string;
+    defaultDomain?: boolean;
+    defaultPath?: boolean;
+    domain?: string;
+    duration?: string;
+    enabled?: boolean;
+    expirationDate?: string;
+    expires?: string;
+    format?: string;
+    httpOnly?: boolean;
+    locked?: boolean;
+    path?: string;
+    sameSite?: string;
+    secure?: boolean;
+    templateUuid?: string;
+    type?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRestrictObjectCaching {
+    locked?: boolean;
+    maximumSize?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorReturnCacheStatus {
+    locked?: boolean;
+    responseHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRewriteUrl {
+    behavior?: string;
+    keepQueryString?: boolean;
+    locked?: boolean;
+    match?: string;
+    matchMultiple?: boolean;
+    matchRegex?: string;
+    targetPath?: string;
+    targetPathPrepend?: string;
+    targetRegex?: string;
+    targetUrl?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorRumCustom {
+    locked?: boolean;
+    rumGroupName?: string;
+    rumSampleRate?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSaasDefinitions {
+    applicationAction?: string;
+    applicationCnameEnabled?: boolean;
+    applicationCnameLevel?: number;
+    applicationCookie?: string;
+    applicationQueryString?: string;
+    applicationRegex?: string;
+    applicationReplace?: string;
+    applicationTitle?: string;
+    customerAction?: string;
+    customerCnameEnabled?: boolean;
+    customerCnameLevel?: number;
+    customerCookie?: string;
+    customerQueryString?: string;
+    customerRegex?: string;
+    customerReplace?: string;
+    customerTitle?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    usersAction?: string;
+    usersCnameEnabled?: boolean;
+    usersCnameLevel?: number;
+    usersCookie?: string;
+    usersQueryString?: string;
+    usersRegex?: string;
+    usersReplace?: string;
+    usersTitle?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudClient {
+    allowOverrideOriginCacheKey?: boolean;
+    connectorId?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    originHostHeader?: string;
+    originType?: string;
+    sf3cOriginHost?: string;
+    sf3cOriginHostHeader?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProvider {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSalesForceCommerceCloudProviderHostHeader {
+    hostHeaderSource?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSavePostDcaProcessing {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorScheduleInvalidation {
+    locked?: boolean;
+    refreshMethod?: string;
+    repeat?: boolean;
+    repeatInterval?: string;
+    start?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorScriptManagement {
+    enabled?: boolean;
+    locked?: boolean;
+    serviceworker?: string;
+    templateUuid?: string;
+    timestamp?: number;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedContentProtection {
+    acl?: boolean;
+    dashMediaEncryption?: boolean;
+    dataPayload?: boolean;
+    enableTokenInUri?: boolean;
+    enabled?: boolean;
+    fieldCarryOver?: string;
+    headerForSalts?: string[];
+    hlsMasterManifestFiles?: string[];
+    hlsMediaEncryption?: boolean;
+    ip?: boolean;
+    key?: string;
+    locked?: boolean;
+    mediaEncryptionTitle?: string;
+    revokedListId?: number;
+    salt?: string;
+    sessionId?: boolean;
+    templateUuid?: string;
+    tokenAuthHlsTitle?: string;
+    tokenAuthenticationTitle?: string;
+    tokenRevocationEnabled?: boolean;
+    tokenRevocationTitle?: string;
+    transitionKey?: string;
+    useAdvanced?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaOptimization {
+    behavior?: string;
+    dvrType?: string;
+    dvrWindow?: string;
+    enableUllStreaming?: boolean;
+    endTime?: string;
+    liveType?: string;
+    locked?: boolean;
+    showAdvanced?: boolean;
+    startTime?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSegmentedMediaStreamingPrefetch {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSetVariable {
+    algorithm?: string;
+    caseSensitive?: boolean;
+    certificateFieldName?: string;
+    cookieName?: string;
+    deviceProfile?: string;
+    encryptionKey?: string;
+    encryptionMode?: string;
+    endIndex?: string;
+    exceptChars?: string;
+    extractLocation?: string;
+    forceChars?: string;
+    formatString?: string;
+    generator?: string;
+    globalSubstitution?: boolean;
+    headerName?: string;
+    hmacAlgorithm?: string;
+    hmacKey?: string;
+    initializationVector?: string;
+    ipVersion?: string;
+    ipv4Prefix?: number;
+    ipv6Prefix?: number;
+    locationId?: string;
+    locked?: boolean;
+    max?: number;
+    maxRandomNumber?: string;
+    min?: number;
+    minRandomNumber?: string;
+    nonce?: string;
+    numberOfBytes?: number;
+    operandOne?: string;
+    paramName?: string;
+    pathComponentOffset?: string;
+    prependBytes?: boolean;
+    queryParameterName?: string;
+    regex?: string;
+    replacement?: string;
+    responseHeaderName?: string;
+    separator?: string;
+    setCookieName?: string;
+    startIndex?: string;
+    subString?: string;
+    templateUuid?: string;
+    transform?: string;
+    uuid?: string;
+    valueSource?: string;
+    variableName?: string;
+    variableValue?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorShutr {
+    locked?: boolean;
+    status?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSimulateErrorCode {
+    errorType?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSiteShield {
+    locked?: boolean;
+    nossmap?: string;
+    ssmap?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap {
+    name?: string;
+    srmap?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigration {
+    allowHttpsDowngrade?: boolean;
+    allowHttpsUpgrade?: boolean;
+    cacheSharingDuration?: number;
+    cacheSharingStartTime?: string;
+    enabled?: boolean;
+    isCertificateSniOnly?: boolean;
+    isTieredDistributionUsed?: boolean;
+    locked?: boolean;
+    migrationDuration?: number;
+    migrationFrom?: string;
+    migrationStartTime?: string;
+    tdLocation?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorStandardTlsMigrationOverride {
+    info?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorStrictHeaderParsing {
+    locked?: boolean;
+    strictMode?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    validMode?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSubCustomer {
+    accessControl?: boolean;
+    cacheKey?: boolean;
+    caching?: boolean;
+    contentCompressor?: boolean;
+    dynamicWebContent?: boolean;
+    enabled?: boolean;
+    geoLocation?: boolean;
+    ip?: boolean;
+    largeFileDelivery?: boolean;
+    liveVideoDelivery?: boolean;
+    locked?: boolean;
+    modifyPath?: boolean;
+    onDemandVideoDelivery?: boolean;
+    origin?: boolean;
+    partnerDomainSuffix?: string;
+    referrer?: boolean;
+    refreshContent?: boolean;
+    siteFailover?: boolean;
+    templateUuid?: string;
+    tokenAuthorization?: boolean;
+    uuid?: string;
+    webApplicationFirewall?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorSureRoute {
+    allowFcmParentOverride?: boolean;
+    customMap?: string;
+    customStatKey?: string;
+    enableCustomKey?: boolean;
+    enabled?: boolean;
+    forceSslForward?: boolean;
+    locked?: boolean;
+    raceStatTtl?: string;
+    srDownloadLinkTitle?: string;
+    templateUuid?: string;
+    testObjectUrl?: string;
+    toHost?: string;
+    toHostStatus?: string;
+    type?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorTcpOptimization {
+    display?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorTeaLeaf {
+    enabled?: boolean;
+    ibmCustomerId?: number;
+    limitToDynamic?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistribution {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    tieredDistributionMap?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionAdvanced {
+    allowall?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    method?: string;
+    policy?: string;
+    templateUuid?: string;
+    tieredDistributionMap?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorTieredDistributionCustomization {
+    cloudwrapperMapMigrationTitle?: string;
+    customMapEnabled?: boolean;
+    customMapName?: string;
+    hashAlgorithm?: string;
+    location?: string;
+    locked?: boolean;
+    mapMigrationEnabled?: boolean;
+    migrationEndDate?: string;
+    migrationStartDate?: string;
+    migrationWithinCwMapsEnabled?: boolean;
+    serialEnd?: string;
+    serialStart?: string;
+    templateUuid?: string;
+    tier1Title?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorTimeout {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorUidConfiguration {
+    enabled?: boolean;
+    extractLocation?: string;
+    headerName?: string;
+    legalText?: string;
+    locked?: boolean;
+    queryParameterName?: string;
+    templateUuid?: string;
+    uuid?: string;
+    variableName?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorValidateEntityTag {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebToken {
+    enableEs256?: boolean;
+    enableRs256?: boolean;
+    extractLocation?: string;
+    headerName?: string;
+    jwt?: string;
+    locked?: boolean;
+    queryParameterName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorVerifyJsonWebTokenForDcp {
+    authorizations?: string;
+    clientId?: string;
+    customHeader?: boolean;
+    enableEs256?: boolean;
+    enableRs256?: boolean;
+    extractAuthorizations?: boolean;
+    extractClientId?: boolean;
+    extractLocation?: string;
+    extractUserName?: boolean;
+    headerName?: string;
+    jwt?: string;
+    locked?: boolean;
+    primaryLocation?: string;
+    queryParameterName?: string;
+    templateUuid?: string;
+    userName?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorVerifyTokenAuthorization {
+    algorithm?: string;
+    escapeHmacInputs?: boolean;
+    failureResponse?: boolean;
+    ignoreQueryString?: boolean;
+    key?: string;
+    location?: string;
+    locationId?: string;
+    locked?: boolean;
+    salt?: string;
+    templateUuid?: string;
+    transitionKey?: string;
+    useAdvanced?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoom {
+    accessTitle?: string;
+    cloudletSharedPolicy?: number;
+    customCookieDomain?: string;
+    domainConfig?: string;
+    locked?: boolean;
+    sessionAutoProlong?: boolean;
+    sessionDuration?: number;
+    templateUuid?: string;
+    uuid?: string;
+    waitingRoomAssetsPaths?: string[];
+    waitingRoomPath?: string;
+    waitingRoomTitle?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorVirtualWaitingRoomWithEdgeWorkers {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritization {
+    allowedUserCookieAdvanced?: boolean;
+    allowedUserCookieAutomaticSalt?: boolean;
+    allowedUserCookieDomain?: string;
+    allowedUserCookieDomainType?: string;
+    allowedUserCookieDuration?: number;
+    allowedUserCookieEnabled?: boolean;
+    allowedUserCookieHttpOnly?: boolean;
+    allowedUserCookieLabel?: string;
+    allowedUserCookieManagementTitle?: string;
+    allowedUserCookieRefresh?: boolean;
+    allowedUserCookieSalt?: string;
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationCloudletPolicy;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    userIdentificationByCookie?: boolean;
+    userIdentificationByHeaders?: boolean;
+    userIdentificationByIp?: boolean;
+    userIdentificationByParams?: boolean;
+    userIdentificationKeyCookie?: string;
+    userIdentificationKeyHeaders?: string[];
+    userIdentificationKeyParams?: string[];
+    userIdentificationTitle?: string;
+    uuid?: string;
+    waitingRoomCacheTtl?: number;
+    waitingRoomCookieAdvanced?: boolean;
+    waitingRoomCookieAutomaticSalt?: boolean;
+    waitingRoomCookieDomain?: string;
+    waitingRoomCookieDomainType?: string;
+    waitingRoomCookieDuration?: number;
+    waitingRoomCookieEnabled?: boolean;
+    waitingRoomCookieHttpOnly?: boolean;
+    waitingRoomCookieLabel?: string;
+    waitingRoomCookieManagementTitle?: string;
+    waitingRoomCookieSalt?: string;
+    waitingRoomCookieShareLabel?: boolean;
+    waitingRoomCpCode?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCode;
+    waitingRoomDirectory?: string;
+    waitingRoomManagementTitle?: string;
+    waitingRoomNetStorage?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorage;
+    waitingRoomStatusCode?: number;
+    waitingRoomUseCpCode?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifo {
+    accessTitle?: string;
+    cloudletSharedPolicy?: number;
+    customCookieDomain?: string;
+    domainConfig?: string;
+    locked?: boolean;
+    sessionAutoProlong?: boolean;
+    sessionDuration?: number;
+    templateUuid?: string;
+    uuid?: string;
+    waitingRoomAssetsPaths?: string[];
+    waitingRoomPath?: string;
+    waitingRoomTitle?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationFifoStandalone {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCode {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorVisitorPrioritizationWaitingRoomNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorWatermarking {
+    abVariantLocation?: string;
+    decryptionPassword1?: string;
+    decryptionPassword2?: string;
+    decryptionPasswordId1?: string;
+    decryptionPasswordId2?: string;
+    enable?: boolean;
+    locked?: boolean;
+    miscellaneousSettingsTitle?: string;
+    patternDecryptionEnable?: boolean;
+    patternEncryptionTitle?: string;
+    signatureVerificationEnable?: boolean;
+    templateUuid?: string;
+    tokenSigningTitle?: string;
+    useOriginalAsA?: boolean;
+    uuid?: string;
+    verificationKeyId1?: string;
+    verificationKeyId2?: string;
+    verificationPublicKey1?: string;
+    verificationPublicKey2?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewall {
+    firewallConfiguration?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallFirewallConfiguration;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorWebApplicationFirewallFirewallConfiguration {
+    configId?: number;
+    fileName?: string;
+    productionStatus?: string;
+    productionVersion?: number;
+    stagingStatus?: string;
+    stagingVersion?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorWebSockets {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorWebdav {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105Criterion {
+    advancedImMatch?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionAdvancedImMatch;
+    bucket?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionBucket;
+    cacheability?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionCacheability;
+    chinaCdnRegion?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionChinaCdnRegion;
+    clientCertificate?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionClientCertificate;
+    clientIp?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionClientIp;
+    clientIpVersion?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionClientIpVersion;
+    cloudletsOrigin?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionCloudletsOrigin;
+    contentDeliveryNetwork?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionContentDeliveryNetwork;
+    contentType?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionContentType;
+    deviceCharacteristic?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionDeviceCharacteristic;
+    ecmdAuthGroups?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionEcmdAuthGroups;
+    ecmdAuthScheme?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionEcmdAuthScheme;
+    ecmdIsAuthenticated?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionEcmdIsAuthenticated;
+    ecmdUsername?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionEcmdUsername;
+    edgeWorkersFailure?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionEdgeWorkersFailure;
+    fileExtension?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionFileExtension;
+    filename?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionFilename;
+    hostname?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionHostname;
+    matchAdvanced?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionMatchAdvanced;
+    matchCpCode?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCode;
+    matchResponseCode?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionMatchResponseCode;
+    matchVariable?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionMatchVariable;
+    metadataStage?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionMetadataStage;
+    originTimeout?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionOriginTimeout;
+    path?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionPath;
+    queryStringParameter?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionQueryStringParameter;
+    random?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionRandom;
+    recoveryConfig?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionRecoveryConfig;
+    regularExpression?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionRegularExpression;
+    requestCookie?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionRequestCookie;
+    requestHeader?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionRequestHeader;
+    requestMethod?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionRequestMethod;
+    requestProtocol?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionRequestProtocol;
+    requestType?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionRequestType;
+    responseHeader?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionResponseHeader;
+    time?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionTime;
+    tokenAuthorization?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionTokenAuthorization;
+    userAgent?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionUserAgent;
+    userLocation?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionUserLocation;
+    userNetwork?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionUserNetwork;
+    variableError?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionVariableError;
+    virtualWaitingRoomRequest?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionVirtualWaitingRoomRequest;
+    visitorPrioritizationRequest?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionVisitorPrioritizationRequest;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionAdvancedImMatch {
+    locked?: boolean;
+    matchOn?: string;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionBucket {
+    locked?: boolean;
+    percentage?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionCacheability {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionChinaCdnRegion {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionClientCertificate {
+    isCertificatePresent?: boolean;
+    isCertificateValid?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionClientIp {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    useHeaders?: boolean;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionClientIpVersion {
+    locked?: boolean;
+    templateUuid?: string;
+    useXForwardedFor?: boolean;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionCloudletsOrigin {
+    locked?: boolean;
+    originId?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionContentDeliveryNetwork {
+    locked?: boolean;
+    matchOperator?: string;
+    network?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionContentType {
+    locked?: boolean;
+    matchCaseSensitive?: boolean;
+    matchOperator?: string;
+    matchWildcard?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionDeviceCharacteristic {
+    booleanValue?: boolean;
+    characteristic?: string;
+    locked?: boolean;
+    matchCaseSensitive?: boolean;
+    matchWildcard?: boolean;
+    numericMatchOperator?: string;
+    numericValue?: number;
+    stringMatchOperator?: string;
+    stringValues?: string[];
+    templateUuid?: string;
+    uuid?: string;
+    versionMatchOperator?: string;
+    versionValue?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionEcmdAuthGroups {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionEcmdAuthScheme {
+    authScheme?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionEcmdIsAuthenticated {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionEcmdUsername {
+    length?: string;
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionEdgeWorkersFailure {
+    execStatus?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionFileExtension {
+    locked?: boolean;
+    matchCaseSensitive?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionFilename {
+    locked?: boolean;
+    matchCaseSensitive?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionHostname {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionMatchAdvanced {
+    closeXml?: string;
+    description?: string;
+    locked?: boolean;
+    openXml?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCode {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValue;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValue {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValueCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionMatchCpCodeValueCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionMatchResponseCode {
+    locked?: boolean;
+    lowerBound?: number;
+    matchOperator?: string;
+    templateUuid?: string;
+    upperBound?: number;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionMatchVariable {
+    locked?: boolean;
+    lowerBound?: string;
+    matchCaseSensitive?: boolean;
+    matchOperator?: string;
+    matchWildcard?: boolean;
+    templateUuid?: string;
+    upperBound?: string;
+    uuid?: string;
+    variableExpression?: string;
+    variableName?: string;
+    variableValues?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionMetadataStage {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionOriginTimeout {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionPath {
+    locked?: boolean;
+    matchCaseSensitive?: boolean;
+    matchOperator?: string;
+    normalize?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionQueryStringParameter {
+    escapeValue?: boolean;
+    locked?: boolean;
+    lowerBound?: number;
+    matchCaseSensitiveName?: boolean;
+    matchCaseSensitiveValue?: boolean;
+    matchOperator?: string;
+    matchWildcardName?: boolean;
+    matchWildcardValue?: boolean;
+    parameterName?: string;
+    templateUuid?: string;
+    upperBound?: number;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionRandom {
+    bucket?: number;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionRecoveryConfig {
+    configName?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionRegularExpression {
+    caseSensitive?: boolean;
+    locked?: boolean;
+    matchString?: string;
+    regex?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionRequestCookie {
+    cookieName?: string;
+    locked?: boolean;
+    lowerBound?: number;
+    matchCaseSensitiveName?: boolean;
+    matchCaseSensitiveValue?: boolean;
+    matchOperator?: string;
+    matchWildcardName?: boolean;
+    matchWildcardValue?: boolean;
+    templateUuid?: string;
+    upperBound?: number;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionRequestHeader {
+    headerName?: string;
+    locked?: boolean;
+    matchCaseSensitiveValue?: boolean;
+    matchOperator?: string;
+    matchWildcardName?: boolean;
+    matchWildcardValue?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionRequestMethod {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionRequestProtocol {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionRequestType {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionResponseHeader {
+    headerName?: string;
+    locked?: boolean;
+    lowerBound?: number;
+    matchCaseSensitiveValue?: boolean;
+    matchOperator?: string;
+    matchWildcardName?: boolean;
+    matchWildcardValue?: boolean;
+    templateUuid?: string;
+    upperBound?: number;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionTime {
+    applyDaylightSavingsTime?: boolean;
+    beginDate?: string;
+    endDate?: string;
+    lastingDate?: string;
+    lastingDuration?: string;
+    locked?: boolean;
+    matchOperator?: string;
+    repeatBeginDate?: string;
+    repeatDuration?: string;
+    repeatInterval?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionTokenAuthorization {
+    locked?: boolean;
+    matchOperator?: string;
+    statusLists?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionUserAgent {
+    locked?: boolean;
+    matchCaseSensitive?: boolean;
+    matchOperator?: string;
+    matchWildcard?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionUserLocation {
+    checkIps?: string;
+    continentValues?: string[];
+    countryValues?: string[];
+    field?: string;
+    locked?: boolean;
+    matchOperator?: string;
+    regionValues?: string[];
+    templateUuid?: string;
+    useOnlyFirstXForwardedForIp?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionUserNetwork {
+    bandwidthValues?: string[];
+    checkIps?: string;
+    field?: string;
+    locked?: boolean;
+    matchOperator?: string;
+    networkTypeValues?: string[];
+    networkValues?: string[];
+    templateUuid?: string;
+    useOnlyFirstXForwardedForIp?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionVariableError {
+    locked?: boolean;
+    result?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    variableNames?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionVirtualWaitingRoomRequest {
+    locked?: boolean;
+    matchOn?: string;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CriterionVisitorPrioritizationRequest {
+    locked?: boolean;
+    matchOn?: string;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105CustomOverride {
+    name?: string;
+    overrideId?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105Variable {
+    description: string;
+    hidden: boolean;
+    name: string;
+    sensitive: boolean;
+    value: string;
+}
+
 export interface GetPropertyRulesTemplateTemplate {
-    /**
-     * The content of the JSON template as a string.
-     */
     templateData: string;
-    /**
-     * The absolute or relative path to the directory containing the template files. The path must end with `property-snippets`, the required directory name. For example: `templateDir = abspath("${path.root}/property-snippets/")`, or `templateDir = "property-snippets/"`.
-     */
     templateDir: string;
 }
 
 export interface GetPropertyRulesTemplateVariable {
-    /**
-     * The name of the variable used in the template.
-     */
     name: string;
-    /**
-     * The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-     */
     type?: string;
-    /**
-     * The value of the variable passed as a string.
-     */
     value: string;
 }
 
 export interface GtmAsmapAssignment {
-    /**
-     * Specifies an array of AS numbers.
-     */
     asNumbers: number[];
-    /**
-     * A unique identifier for an existing data center in the domain.
-     */
     datacenterId: number;
-    /**
-     * A descriptive label for the group.
-     */
     nickname: string;
 }
 
 export interface GtmAsmapDefaultDatacenter {
-    /**
-     * A unique identifier for an existing data center in the domain.
-     */
     datacenterId: number;
-    /**
-     * A descriptive label for the group.
-     */
     nickname?: string;
 }
 
 export interface GtmCidrmapAssignment {
-    /**
-     * Specifies an array of CIDR blocks.
-     */
     blocks?: string[];
-    /**
-     * A unique identifier for an existing data center in the domain.
-     */
     datacenterId: number;
-    /**
-     * A descriptive label for the CIDR zone group, up to 256 characters.
-     */
     nickname: string;
 }
 
 export interface GtmCidrmapDefaultDatacenter {
-    /**
-     * A unique identifier for an existing data center in the domain.
-     */
     datacenterId: number;
-    /**
-     * A descriptive label for the CIDR zone group, up to 256 characters.
-     */
     nickname?: string;
 }
 
 export interface GtmDatacenterDefaultLoadObject {
-    /**
-     * A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
-     */
     loadObject?: string;
-    /**
-     * Specifies the TCP port to connect to when requesting the load object.
-     */
     loadObjectPort?: number;
-    /**
-     * Specifies a list of servers to request the load object from.
-     */
     loadServers?: string[];
 }
 
 export interface GtmGeomapAssignment {
-    /**
-     * Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-     */
     countries?: string[];
-    /**
-     * A unique identifier for an existing data center in the domain.
-     */
     datacenterId: number;
-    /**
-     * A descriptive label for the group.
-     */
     nickname: string;
 }
 
 export interface GtmGeomapDefaultDatacenter {
-    /**
-     * A unique identifier for an existing data center in the domain.
-     */
     datacenterId: number;
-    /**
-     * A descriptive label for the group.
-     */
     nickname?: string;
 }
 
 export interface GtmPropertyLivenessTest {
-    /**
-     * If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
-     */
     answersRequired?: boolean;
-    /**
-     * A boolean that if set to `true`, disables warnings when non-standard ports are used.
-     */
     disableNonstandardPortWarning?: boolean;
-    /**
-     * A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
-     */
     disabled?: boolean;
-    /**
-     * Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
-     */
     errorPenalty?: number;
-    /**
-     * A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
-     */
     httpError3xx?: boolean;
-    /**
-     * A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
-     */
     httpError4xx?: boolean;
-    /**
-     * A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
-     */
     httpError5xx?: boolean;
-    /**
-     * Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
-     */
     httpHeaders?: outputs.GtmPropertyLivenessTestHttpHeader[];
-    /**
-     * Name of HTTP header.
-     */
     name: string;
-    /**
-     * A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `testObjectProtocol` of https.
-     */
     peerCertificateVerification?: boolean;
-    /**
-     * A boolean indicating whether the `testObjectProtocol` is DNS. The DNS query is recursive.
-     */
     recursionRequested?: boolean;
-    /**
-     * Specifies a request string.
-     */
     requestString?: string;
-    /**
-     * Specifies the query type, if `testObjectProtocol` is DNS.
-     */
     resourceType?: string;
-    /**
-     * Specifies a response string.
-     */
     responseString?: string;
-    /**
-     * Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
-     */
     sslClientCertificate?: string;
-    /**
-     * Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
-     */
     sslClientPrivateKey?: string;
-    /**
-     * Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
-     */
     testInterval: number;
-    /**
-     * Specifies the static text that acts as a stand-in for the data that you're sending on the network.
-     */
     testObject: string;
-    /**
-     * Specifies the test object's password. It is required if testObjectProtocol is ftp.
-     */
     testObjectPassword?: string;
-    /**
-     * Specifies the port number for the testObject.
-     */
     testObjectPort?: number;
-    /**
-     * Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
-     */
     testObjectProtocol: string;
-    /**
-     * A descriptive name for the testObject.
-     */
     testObjectUsername?: string;
-    /**
-     * Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
-     */
     testTimeout: number;
-    /**
-     * Specifies the score to be reported if the liveness test times out.
-     */
     timeoutPenalty?: number;
 }
 
 export interface GtmPropertyLivenessTestHttpHeader {
-    /**
-     * Name of HTTP header.
-     */
     name?: string;
-    /**
-     * Value of HTTP header.
-     */
     value?: string;
 }
 
 export interface GtmPropertyStaticRrSet {
-    /**
-     * (List) An array of data strings, representing multiple records within a set.
-     */
     rdatas?: string[];
-    /**
-     * The number of seconds that this record should live in a resolver's cache before being refetched.
-     */
     ttl?: number;
-    /**
-     * The record type.
-     */
     type?: string;
 }
 
 export interface GtmPropertyTrafficTarget {
-    /**
-     * A unique identifier for an existing data center in the domain.
-     */
     datacenterId?: number;
-    /**
-     * A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
-     */
     enabled?: boolean;
-    /**
-     * Specifies an optional data center for the property. Used when there are no servers configured for the property.
-     */
     handoutCname?: string;
-    /**
-     * Name of HTTP header.
-     */
     name?: string;
-    /**
-     * (List) Identifies the IP address or the hostnames of the servers.
-     */
     servers?: string[];
-    /**
-     * Specifies the traffic weight for the target.
-     */
     weight?: number;
 }
 
 export interface GtmResourceResourceInstance {
-    /**
-     * A unique identifier for an existing data center in the domain.
-     */
     datacenterId: number;
-    /**
-     * Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
-     */
     loadObject?: string;
-    /**
-     * Specifies the TCP port of the `loadObject`.
-     */
     loadObjectPort?: number;
-    /**
-     * (List) Specifies a list of servers from which to request the load object.
-     */
     loadServers?: string[];
-    /**
-     * A boolean that indicates whether a default `loadObject` is used for the resources.
-     */
     useDefaultLoadObject?: boolean;
+}
+
+export interface PropertyActivationComplianceRecord {
+    customerEmail?: string;
+    noncomplianceReason: string;
+    otherNoncomplianceReason?: string;
+    peerReviewedBy?: string;
+    ticketId?: string;
+    unitTested?: boolean;
 }
 
 export interface PropertyActivationRuleError {
@@ -2705,18 +4782,9 @@ export interface PropertyActivationRuleWarning {
 }
 
 export interface PropertyHostname {
-    /**
-     * The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-     */
     certProvisioningType: string;
     certStatuses: outputs.PropertyHostnameCertStatus[];
-    /**
-     * A string containing the original origin's hostname. For example, `"example.org"`.
-     */
     cnameFrom: string;
-    /**
-     * A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
-     */
     cnameTo: string;
     cnameType: string;
     edgeHostnameId: string;
@@ -2826,23 +4894,23 @@ export namespace config {
 
 export namespace edgedns {
     export interface DnsZoneTsigKey {
-        /**
-         * The hashing algorithm.
-         */
         algorithm: string;
-        /**
-         * The key name.
-         */
         name: string;
-        /**
-         * String known between transfer endpoints.
-         */
         secret: string;
     }
 
 }
 
 export namespace properties {
+    export interface PropertyActivationComplianceRecord {
+        customerEmail?: string;
+        noncomplianceReason: string;
+        otherNoncomplianceReason?: string;
+        peerReviewedBy?: string;
+        ticketId?: string;
+        unitTested?: boolean;
+    }
+
     export interface PropertyActivationRuleError {
         behaviorName?: string;
         detail?: string;
@@ -2864,18 +4932,9 @@ export namespace properties {
     }
 
     export interface PropertyHostname {
-        /**
-         * The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-         */
         certProvisioningType: string;
         certStatuses: outputs.properties.PropertyHostnameCertStatus[];
-        /**
-         * A string containing the original origin's hostname. For example, `"example.org"`.
-         */
         cnameFrom: string;
-        /**
-         * A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
-         */
         cnameTo: string;
         cnameType: string;
         edgeHostnameId: string;
@@ -2921,270 +4980,96 @@ export namespace properties {
 
 export namespace trafficmanagement {
     export interface GtmASmapAssignment {
-        /**
-         * Specifies an array of AS numbers.
-         */
         asNumbers: number[];
-        /**
-         * A unique identifier for an existing data center in the domain.
-         */
         datacenterId: number;
-        /**
-         * A descriptive label for the group.
-         */
         nickname: string;
     }
 
     export interface GtmASmapDefaultDatacenter {
-        /**
-         * A unique identifier for an existing data center in the domain.
-         */
         datacenterId: number;
-        /**
-         * A descriptive label for the group.
-         */
         nickname?: string;
     }
 
     export interface GtmCidrmapAssignment {
-        /**
-         * Specifies an array of CIDR blocks.
-         */
         blocks?: string[];
-        /**
-         * A unique identifier for an existing data center in the domain.
-         */
         datacenterId: number;
-        /**
-         * A descriptive label for the CIDR zone group, up to 256 characters.
-         */
         nickname: string;
     }
 
     export interface GtmCidrmapDefaultDatacenter {
-        /**
-         * A unique identifier for an existing data center in the domain.
-         */
         datacenterId: number;
-        /**
-         * A descriptive label for the CIDR zone group, up to 256 characters.
-         */
         nickname?: string;
     }
 
     export interface GtmDatacenterDefaultLoadObject {
-        /**
-         * A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
-         */
         loadObject?: string;
-        /**
-         * Specifies the TCP port to connect to when requesting the load object.
-         */
         loadObjectPort?: number;
-        /**
-         * Specifies a list of servers to request the load object from.
-         */
         loadServers?: string[];
     }
 
     export interface GtmGeomapAssignment {
-        /**
-         * Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-         */
         countries?: string[];
-        /**
-         * A unique identifier for an existing data center in the domain.
-         */
         datacenterId: number;
-        /**
-         * A descriptive label for the group.
-         */
         nickname: string;
     }
 
     export interface GtmGeomapDefaultDatacenter {
-        /**
-         * A unique identifier for an existing data center in the domain.
-         */
         datacenterId: number;
-        /**
-         * A descriptive label for the group.
-         */
         nickname?: string;
     }
 
     export interface GtmPropertyLivenessTest {
-        /**
-         * If `testObjectProtocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
-         */
         answersRequired?: boolean;
-        /**
-         * A boolean that if set to `true`, disables warnings when non-standard ports are used.
-         */
         disableNonstandardPortWarning?: boolean;
-        /**
-         * A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
-         */
         disabled?: boolean;
-        /**
-         * Specifies the score that's reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
-         */
         errorPenalty?: number;
-        /**
-         * A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
-         */
         httpError3xx?: boolean;
-        /**
-         * A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
-         */
         httpError4xx?: boolean;
-        /**
-         * A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `testObjectProtocol` is `http`, `https`, or `ftp`.
-         */
         httpError5xx?: boolean;
-        /**
-         * Contains HTTP headers to send if the `testObjectProtocol` is `http` or `https`. You can have multiple `httpHeader` entries. Requires these arguments:
-         */
         httpHeaders?: outputs.trafficmanagement.GtmPropertyLivenessTestHttpHeader[];
-        /**
-         * Name of HTTP header.
-         */
         name: string;
-        /**
-         * A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `testObjectProtocol` of https.
-         */
         peerCertificateVerification?: boolean;
-        /**
-         * A boolean indicating whether the `testObjectProtocol` is DNS. The DNS query is recursive.
-         */
         recursionRequested?: boolean;
-        /**
-         * Specifies a request string.
-         */
         requestString?: string;
-        /**
-         * Specifies the query type, if `testObjectProtocol` is DNS.
-         */
         resourceType?: string;
-        /**
-         * Specifies a response string.
-         */
         responseString?: string;
-        /**
-         * Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
-         */
         sslClientCertificate?: string;
-        /**
-         * Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can't have a passphrase nor be used for any other purpose.
-         */
         sslClientPrivateKey?: string;
-        /**
-         * Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
-         */
         testInterval: number;
-        /**
-         * Specifies the static text that acts as a stand-in for the data that you're sending on the network.
-         */
         testObject: string;
-        /**
-         * Specifies the test object's password. It is required if testObjectProtocol is ftp.
-         */
         testObjectPassword?: string;
-        /**
-         * Specifies the port number for the testObject.
-         */
         testObjectPort?: number;
-        /**
-         * Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
-         */
         testObjectProtocol: string;
-        /**
-         * A descriptive name for the testObject.
-         */
         testObjectUsername?: string;
-        /**
-         * Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
-         */
         testTimeout: number;
-        /**
-         * Specifies the score to be reported if the liveness test times out.
-         */
         timeoutPenalty?: number;
     }
 
     export interface GtmPropertyLivenessTestHttpHeader {
-        /**
-         * Name of HTTP header.
-         */
         name?: string;
-        /**
-         * Value of HTTP header.
-         */
         value?: string;
     }
 
     export interface GtmPropertyStaticRrSet {
-        /**
-         * (List) An array of data strings, representing multiple records within a set.
-         */
         rdatas?: string[];
-        /**
-         * The number of seconds that this record should live in a resolver's cache before being refetched.
-         */
         ttl?: number;
-        /**
-         * The record type.
-         */
         type?: string;
     }
 
     export interface GtmPropertyTrafficTarget {
-        /**
-         * A unique identifier for an existing data center in the domain.
-         */
         datacenterId?: number;
-        /**
-         * A boolean indicating whether the traffic target is used. You can also omit the traffic target, which has the same result as the false value.
-         */
         enabled?: boolean;
-        /**
-         * Specifies an optional data center for the property. Used when there are no servers configured for the property.
-         */
         handoutCname?: string;
-        /**
-         * Name of HTTP header.
-         */
         name?: string;
-        /**
-         * (List) Identifies the IP address or the hostnames of the servers.
-         */
         servers?: string[];
-        /**
-         * Specifies the traffic weight for the target.
-         */
         weight?: number;
     }
 
     export interface GtmResourceResourceInstance {
-        /**
-         * A unique identifier for an existing data center in the domain.
-         */
         datacenterId: number;
-        /**
-         * Identifies the load object file used to report real-time information about the current load, maximum allowable load, and target load on each resource.
-         */
         loadObject?: string;
-        /**
-         * Specifies the TCP port of the `loadObject`.
-         */
         loadObjectPort?: number;
-        /**
-         * (List) Specifies a list of servers from which to request the load object.
-         */
         loadServers?: string[];
-        /**
-         * A boolean that indicates whether a default `loadObject` is used for the resources.
-         */
         useDefaultLoadObject?: boolean;
     }
 

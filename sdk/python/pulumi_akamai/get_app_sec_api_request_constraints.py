@@ -94,42 +94,7 @@ def get_app_sec_api_request_constraints(api_id: Optional[int] = None,
                                         security_policy_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecApiRequestConstraintsResult:
     """
-    **Scopes**: Security policy; API endpoint
-
-    Returns information about API endpoint constraints and actions.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-request-constraints](https://techdocs.akamai.com/application-security/reference/get-api-request-constraints)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    apis_request_constraints = akamai.get_app_sec_api_request_constraints(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("apisConstraintsText", apis_request_constraints.output_text)
-    pulumi.export("apisConstraintsJson", apis_request_constraints.json)
-    api_request_constraints = akamai.get_app_sec_api_request_constraints(config_id=configuration.config_id,
-        security_policy_id="gms1_134637",
-        api_id=624913)
-    pulumi.export("apiConstraintsText", api_request_constraints.output_text)
-    pulumi.export("apiConstraintsJson", api_request_constraints.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list of information about the APIs, their constraints, and their actions.
-    - `output_text`. Tabular report of the APIs, their constraints, and their actions.
-
-
-    :param int api_id: . Unique identifier of the API endpoint you want to return constraint information for.
-    :param int config_id: . Unique identifier of the security configuration associated with the API constraints.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the API constraints.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apiId'] = api_id
@@ -153,41 +118,6 @@ def get_app_sec_api_request_constraints_output(api_id: Optional[pulumi.Input[Opt
                                                security_policy_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecApiRequestConstraintsResult]:
     """
-    **Scopes**: Security policy; API endpoint
-
-    Returns information about API endpoint constraints and actions.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/api-request-constraints](https://techdocs.akamai.com/application-security/reference/get-api-request-constraints)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    apis_request_constraints = akamai.get_app_sec_api_request_constraints(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("apisConstraintsText", apis_request_constraints.output_text)
-    pulumi.export("apisConstraintsJson", apis_request_constraints.json)
-    api_request_constraints = akamai.get_app_sec_api_request_constraints(config_id=configuration.config_id,
-        security_policy_id="gms1_134637",
-        api_id=624913)
-    pulumi.export("apiConstraintsText", api_request_constraints.output_text)
-    pulumi.export("apiConstraintsJson", api_request_constraints.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list of information about the APIs, their constraints, and their actions.
-    - `output_text`. Tabular report of the APIs, their constraints, and their actions.
-
-
-    :param int api_id: . Unique identifier of the API endpoint you want to return constraint information for.
-    :param int config_id: . Unique identifier of the security configuration associated with the API constraints.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the API constraints.
+    Use this data source to access information about an existing resource.
     """
     ...

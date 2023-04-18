@@ -10,48 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getNetworkLists` data source to retrieve information about the available network lists,
-// optionally filtered by list type or based on a search string. The information available is described in
-// [List network lists](https://techdocs.akamai.com/network-lists/reference/get-network-lists).
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			networkLists, err := akamai.GetNetworkLists(ctx, nil, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("networkListsText", networkLists.OutputText)
-//			ctx.Export("networkListsJson", networkLists.Json)
-//			ctx.Export("networkListsList", networkLists.Lists)
-//			networkListsFilter, err := akamai.GetNetworkLists(ctx, &akamai.GetNetworkListsArgs{
-//				Name: pulumi.StringRef("Test Whitelist"),
-//				Type: pulumi.StringRef("IP"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("networkListsFilterText", networkListsFilter.OutputText)
-//			ctx.Export("networkListsFilterJson", networkListsFilter.Json)
-//			ctx.Export("networkListsFilterList", networkListsFilter.Lists)
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetNetworkLists(ctx *pulumi.Context, args *GetNetworkListsArgs, opts ...pulumi.InvokeOption) (*GetNetworkListsResult, error) {
 	var rv GetNetworkListsResult
 	err := ctx.Invoke("akamai:index/getNetworkLists:getNetworkLists", args, &rv, opts...)
@@ -63,15 +21,9 @@ func GetNetworkLists(ctx *pulumi.Context, args *GetNetworkListsArgs, opts ...pul
 
 // A collection of arguments for invoking getNetworkLists.
 type GetNetworkListsArgs struct {
-	// The name of a specific network list to retrieve. If not supplied, information about all network
-	// lists will be returned.
-	Name *string `pulumi:"name"`
-	// The ID of a specific network list to retrieve.
-	// If not supplied, information about all network lists will be returned.
+	Name          *string `pulumi:"name"`
 	NetworkListId *string `pulumi:"networkListId"`
-	// The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
-	// information about both types will be returned.
-	Type *string `pulumi:"type"`
+	Type          *string `pulumi:"type"`
 }
 
 // A collection of values returned by getNetworkLists.
@@ -79,16 +31,13 @@ type GetNetworkListsResult struct {
 	ContractId string `pulumi:"contractId"`
 	GroupId    int    `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
-	// A JSON-formatted list of information about the specified network list(s).
-	Json string `pulumi:"json"`
-	// A list containing the IDs of the specified network lists(s).
+	Id            string   `pulumi:"id"`
+	Json          string   `pulumi:"json"`
 	Lists         []string `pulumi:"lists"`
 	Name          *string  `pulumi:"name"`
 	NetworkListId string   `pulumi:"networkListId"`
-	// A tabular display showing the network list information.
-	OutputText string  `pulumi:"outputText"`
-	Type       *string `pulumi:"type"`
+	OutputText    string   `pulumi:"outputText"`
+	Type          *string  `pulumi:"type"`
 }
 
 func GetNetworkListsOutput(ctx *pulumi.Context, args GetNetworkListsOutputArgs, opts ...pulumi.InvokeOption) GetNetworkListsResultOutput {
@@ -106,15 +55,9 @@ func GetNetworkListsOutput(ctx *pulumi.Context, args GetNetworkListsOutputArgs, 
 
 // A collection of arguments for invoking getNetworkLists.
 type GetNetworkListsOutputArgs struct {
-	// The name of a specific network list to retrieve. If not supplied, information about all network
-	// lists will be returned.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The ID of a specific network list to retrieve.
-	// If not supplied, information about all network lists will be returned.
+	Name          pulumi.StringPtrInput `pulumi:"name"`
 	NetworkListId pulumi.StringPtrInput `pulumi:"networkListId"`
-	// The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
-	// information about both types will be returned.
-	Type pulumi.StringPtrInput `pulumi:"type"`
+	Type          pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetNetworkListsOutputArgs) ElementType() reflect.Type {
@@ -149,12 +92,10 @@ func (o GetNetworkListsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkListsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A JSON-formatted list of information about the specified network list(s).
 func (o GetNetworkListsResultOutput) Json() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkListsResult) string { return v.Json }).(pulumi.StringOutput)
 }
 
-// A list containing the IDs of the specified network lists(s).
 func (o GetNetworkListsResultOutput) Lists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNetworkListsResult) []string { return v.Lists }).(pulumi.StringArrayOutput)
 }
@@ -167,7 +108,6 @@ func (o GetNetworkListsResultOutput) NetworkListId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkListsResult) string { return v.NetworkListId }).(pulumi.StringOutput)
 }
 
-// A tabular display showing the network list information.
 func (o GetNetworkListsResultOutput) OutputText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkListsResult) string { return v.OutputText }).(pulumi.StringOutput)
 }

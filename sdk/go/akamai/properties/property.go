@@ -10,169 +10,47 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `Property` resource represents an Akamai property configuration.
-// This resource lets you to create, update, and activate properties on the
-// Akamai platform.
-//
-// Akamai's edge network caches your web assets near to servers that request them.
-// A property provides the main way to control how edge servers respond to various
-// kinds of requests for those assets. Properties apply rules to a set of hostnames,
-// and you can only apply one property at a time to any given hostname. Each property
-// is assigned to a product, which determines which behaviors you can use. Each
-// property's default rule needs a valid content provider (CP) code assigned to bill
-// and report for the service.
-//
-// > **Note** In version 0.10 and earlier of this resource, it also controlled content provider (CP) codes, origin settings, rules, and hostname associations. Starting with version 1.0.0, this logic is broken out into individual resources.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewProperty(ctx, "example", &akamai.PropertyArgs{
-//				ProductId:  pulumi.String("prd_SPM"),
-//				ContractId: pulumi.Any(_var.Contractid),
-//				GroupId:    pulumi.Any(_var.Groupid),
-//				Hostnames: akamai.PropertyHostnameArray{
-//					&akamai.PropertyHostnameArgs{
-//						CnameFrom:            pulumi.String("example.com"),
-//						CnameTo:              pulumi.String("example.com.edgekey.net"),
-//						CertProvisioningType: pulumi.String("DEFAULT"),
-//					},
-//					&akamai.PropertyHostnameArgs{
-//						CnameFrom:            pulumi.String("www.example.com"),
-//						CnameTo:              pulumi.String("example.com.edgesuite.net"),
-//						CertProvisioningType: pulumi.String("CPS_MANAGED"),
-//					},
-//				},
-//				RuleFormat: pulumi.String("v2020-03-04"),
-//				Rules:      pulumi.Any(data.Akamai_property_rules_template.Example.Json),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Import
-//
-// Basic Usagehcl resource "akamai_property" "example" {
-//
-// # (resource arguments)
-//
-//	} You can import the latest Akamai property version by using either the `property_id` or a comma-delimited string of the property, contract, and group IDs. You'll need to enter the string of IDs if the property belongs to multiple groups or contracts. If using the string of IDs, you need to enter them in this order`property_id,contract_id,group_id` To import a specific property version, pass additional parameters, either* `LATEST` to import the latest version of the property, regardless of whether it's active or not. This works the same as providing just the `property_id` or a string of the property, contract, and group IDs, which is the default behavior. * `PRODUCTION`, `PROD`, or `P` to import the latest version activated on the production environment. * `STAGING`, `STAGE`, `STAG`, or `S` to import the latest version activated on the staging environment. * Version number or version number with the `ver_` prefix to import a specific property version. For example `3` and `ver_3` correspond to the same version number. Here are some examples for the latest property version
-//
-// ```sh
-//
-//	$ pulumi import akamai:properties/property:Property example prp_123
-//
-// ```
-//
-//	Or
-//
-// ```sh
-//
-//	$ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123
-//
-// ```
-//
-//	Here are some examples for the latest active property version on the production network
-//
-// ```sh
-//
-//	$ pulumi import akamai:properties/property:Property example prp_123,P
-//
-// ```
-//
-//	Or
-//
-// ```sh
-//
-//	$ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123,PROD
-//
-// ```
-//
-//	Here are some examples for the specific property version
-//
-// ```sh
-//
-//	$ pulumi import akamai:properties/property:Property example prp_123,3
-//
-// ```
-//
-//	Or
-//
-// ```sh
-//
-//	$ pulumi import akamai:properties/property:Property example prp_123,ctr_1-AB123,grp_123,ver_3
-//
-// ```
-//
 // Deprecated: akamai.properties.Property has been deprecated in favor of akamai.Property
 type Property struct {
 	pulumi.CustomResourceState
 
 	// Deprecated: The setting "contact" has been deprecated.
 	Contacts pulumi.StringArrayOutput `pulumi:"contacts"`
-	// Replaced by `contractId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringOutput `pulumi:"contract"`
-	// (Required) A contract's unique ID, including the `ctr_` prefix.
+	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
 	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode pulumi.StringPtrOutput `pulumi:"cpCode"`
-	// Replaced by `groupId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringOutput `pulumi:"group"`
-	// (Required) A group's unique ID, including the `grp_` prefix.
-	GroupId pulumi.StringOutput `pulumi:"groupId"`
-	// A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
+	// Group ID to be assigned to the Property
+	GroupId   pulumi.StringOutput         `pulumi:"groupId"`
 	Hostnames PropertyHostnameArrayOutput `pulumi:"hostnames"`
 	// Deprecated: The setting "is_secure" has been deprecated.
 	IsSecure pulumi.BoolPtrOutput `pulumi:"isSecure"`
-	// The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
+	// Property's current latest version number
 	LatestVersion pulumi.IntOutput `pulumi:"latestVersion"`
-	// The property name.
+	// Name to give to the Property (must be unique)
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Deprecated: The setting "origin" has been deprecated.
 	Origins PropertyOriginArrayOutput `pulumi:"origins"`
-	// Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product pulumi.StringOutput `pulumi:"product"`
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringOutput `pulumi:"productId"`
-	// The current version of the property active on the Akamai production network.
+	// Property's version currently activated in production (zero when not active in production)
 	ProductionVersion pulumi.IntOutput `pulumi:"productionVersion"`
 	// Required property's version to be read
-	ReadVersion pulumi.IntOutput `pulumi:"readVersion"`
-	// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-	RuleErrors PropertyRuleErrorArrayOutput `pulumi:"ruleErrors"`
-	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+	ReadVersion pulumi.IntOutput             `pulumi:"readVersion"`
+	RuleErrors  PropertyRuleErrorArrayOutput `pulumi:"ruleErrors"`
+	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringOutput `pulumi:"ruleFormat"`
-	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyRuleWarningArrayOutput `pulumi:"ruleWarnings"`
-	// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
+	// Property Rules as JSON
 	Rules pulumi.StringOutput `pulumi:"rules"`
-	// The current version of the property active on the Akamai staging network.
+	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion pulumi.IntOutput `pulumi:"stagingVersion"`
 	// Deprecated: The setting "variables" has been deprecated.
 	Variables pulumi.StringPtrOutput `pulumi:"variables"`
@@ -209,51 +87,41 @@ func GetProperty(ctx *pulumi.Context,
 type propertyState struct {
 	// Deprecated: The setting "contact" has been deprecated.
 	Contacts []string `pulumi:"contacts"`
-	// Replaced by `contractId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract *string `pulumi:"contract"`
-	// (Required) A contract's unique ID, including the `ctr_` prefix.
+	// Contract ID to be assigned to the Property
 	ContractId *string `pulumi:"contractId"`
 	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode *string `pulumi:"cpCode"`
-	// Replaced by `groupId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group *string `pulumi:"group"`
-	// (Required) A group's unique ID, including the `grp_` prefix.
-	GroupId *string `pulumi:"groupId"`
-	// A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
+	// Group ID to be assigned to the Property
+	GroupId   *string            `pulumi:"groupId"`
 	Hostnames []PropertyHostname `pulumi:"hostnames"`
 	// Deprecated: The setting "is_secure" has been deprecated.
 	IsSecure *bool `pulumi:"isSecure"`
-	// The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
+	// Property's current latest version number
 	LatestVersion *int `pulumi:"latestVersion"`
-	// The property name.
+	// Name to give to the Property (must be unique)
 	Name *string `pulumi:"name"`
 	// Deprecated: The setting "origin" has been deprecated.
 	Origins []PropertyOrigin `pulumi:"origins"`
-	// Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product *string `pulumi:"product"`
 	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
-	// The current version of the property active on the Akamai production network.
+	// Property's version currently activated in production (zero when not active in production)
 	ProductionVersion *int `pulumi:"productionVersion"`
 	// Required property's version to be read
-	ReadVersion *int `pulumi:"readVersion"`
-	// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-	RuleErrors []PropertyRuleError `pulumi:"ruleErrors"`
-	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+	ReadVersion *int                `pulumi:"readVersion"`
+	RuleErrors  []PropertyRuleError `pulumi:"ruleErrors"`
+	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat *string `pulumi:"ruleFormat"`
-	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings []PropertyRuleWarning `pulumi:"ruleWarnings"`
-	// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
+	// Property Rules as JSON
 	Rules *string `pulumi:"rules"`
-	// The current version of the property active on the Akamai staging network.
+	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion *int `pulumi:"stagingVersion"`
 	// Deprecated: The setting "variables" has been deprecated.
 	Variables *string `pulumi:"variables"`
@@ -262,51 +130,41 @@ type propertyState struct {
 type PropertyState struct {
 	// Deprecated: The setting "contact" has been deprecated.
 	Contacts pulumi.StringArrayInput
-	// Replaced by `contractId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringPtrInput
-	// (Required) A contract's unique ID, including the `ctr_` prefix.
+	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringPtrInput
 	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode pulumi.StringPtrInput
-	// Replaced by `groupId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringPtrInput
-	// (Required) A group's unique ID, including the `grp_` prefix.
-	GroupId pulumi.StringPtrInput
-	// A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
+	// Group ID to be assigned to the Property
+	GroupId   pulumi.StringPtrInput
 	Hostnames PropertyHostnameArrayInput
 	// Deprecated: The setting "is_secure" has been deprecated.
 	IsSecure pulumi.BoolPtrInput
-	// The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
+	// Property's current latest version number
 	LatestVersion pulumi.IntPtrInput
-	// The property name.
+	// Name to give to the Property (must be unique)
 	Name pulumi.StringPtrInput
 	// Deprecated: The setting "origin" has been deprecated.
 	Origins PropertyOriginArrayInput
-	// Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringPtrInput
-	// The current version of the property active on the Akamai production network.
+	// Property's version currently activated in production (zero when not active in production)
 	ProductionVersion pulumi.IntPtrInput
 	// Required property's version to be read
 	ReadVersion pulumi.IntPtrInput
-	// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-	RuleErrors PropertyRuleErrorArrayInput
-	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+	RuleErrors  PropertyRuleErrorArrayInput
+	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringPtrInput
-	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyRuleWarningArrayInput
-	// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
+	// Property Rules as JSON
 	Rules pulumi.StringPtrInput
-	// The current version of the property active on the Akamai staging network.
+	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion pulumi.IntPtrInput
 	// Deprecated: The setting "variables" has been deprecated.
 	Variables pulumi.StringPtrInput
@@ -319,41 +177,32 @@ func (PropertyState) ElementType() reflect.Type {
 type propertyArgs struct {
 	// Deprecated: The setting "contact" has been deprecated.
 	Contacts []string `pulumi:"contacts"`
-	// Replaced by `contractId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract *string `pulumi:"contract"`
-	// (Required) A contract's unique ID, including the `ctr_` prefix.
+	// Contract ID to be assigned to the Property
 	ContractId *string `pulumi:"contractId"`
 	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode *string `pulumi:"cpCode"`
-	// Replaced by `groupId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group *string `pulumi:"group"`
-	// (Required) A group's unique ID, including the `grp_` prefix.
-	GroupId *string `pulumi:"groupId"`
-	// A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
+	// Group ID to be assigned to the Property
+	GroupId   *string            `pulumi:"groupId"`
 	Hostnames []PropertyHostname `pulumi:"hostnames"`
 	// Deprecated: The setting "is_secure" has been deprecated.
 	IsSecure *bool `pulumi:"isSecure"`
-	// The property name.
+	// Name to give to the Property (must be unique)
 	Name *string `pulumi:"name"`
 	// Deprecated: The setting "origin" has been deprecated.
 	Origins []PropertyOrigin `pulumi:"origins"`
-	// Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product *string `pulumi:"product"`
 	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
-	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat *string `pulumi:"ruleFormat"`
-	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings []PropertyRuleWarning `pulumi:"ruleWarnings"`
-	// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
+	// Property Rules as JSON
 	Rules *string `pulumi:"rules"`
 	// Deprecated: The setting "variables" has been deprecated.
 	Variables *string `pulumi:"variables"`
@@ -363,41 +212,32 @@ type propertyArgs struct {
 type PropertyArgs struct {
 	// Deprecated: The setting "contact" has been deprecated.
 	Contacts pulumi.StringArrayInput
-	// Replaced by `contractId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "contract" has been deprecated.
 	Contract pulumi.StringPtrInput
-	// (Required) A contract's unique ID, including the `ctr_` prefix.
+	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringPtrInput
 	// Deprecated: The setting "cp_code" has been deprecated.
 	CpCode pulumi.StringPtrInput
-	// Replaced by `groupId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "group" has been deprecated.
 	Group pulumi.StringPtrInput
-	// (Required) A group's unique ID, including the `grp_` prefix.
-	GroupId pulumi.StringPtrInput
-	// A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
+	// Group ID to be assigned to the Property
+	GroupId   pulumi.StringPtrInput
 	Hostnames PropertyHostnameArrayInput
 	// Deprecated: The setting "is_secure" has been deprecated.
 	IsSecure pulumi.BoolPtrInput
-	// The property name.
+	// Name to give to the Property (must be unique)
 	Name pulumi.StringPtrInput
 	// Deprecated: The setting "origin" has been deprecated.
 	Origins PropertyOriginArrayInput
-	// Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "product" has been deprecated.
 	Product pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringPtrInput
-	// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringPtrInput
-	// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-	//
 	// Deprecated: Rule warnings will not be set in state anymore
 	RuleWarnings PropertyRuleWarningArrayInput
-	// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
+	// Property Rules as JSON
 	Rules pulumi.StringPtrInput
 	// Deprecated: The setting "variables" has been deprecated.
 	Variables pulumi.StringPtrInput
@@ -495,14 +335,12 @@ func (o PropertyOutput) Contacts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringArrayOutput { return v.Contacts }).(pulumi.StringArrayOutput)
 }
 
-// Replaced by `contractId`. Maintained for legacy purposes.
-//
 // Deprecated: The setting "contract" has been deprecated.
 func (o PropertyOutput) Contract() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Contract }).(pulumi.StringOutput)
 }
 
-// (Required) A contract's unique ID, including the `ctr_` prefix.
+// Contract ID to be assigned to the Property
 func (o PropertyOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }
@@ -512,19 +350,16 @@ func (o PropertyOutput) CpCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringPtrOutput { return v.CpCode }).(pulumi.StringPtrOutput)
 }
 
-// Replaced by `groupId`. Maintained for legacy purposes.
-//
 // Deprecated: The setting "group" has been deprecated.
 func (o PropertyOutput) Group() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
 }
 
-// (Required) A group's unique ID, including the `grp_` prefix.
+// Group ID to be assigned to the Property
 func (o PropertyOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// A mapping of public hostnames to edge hostnames. See the `getPropertyHostnames` data source for details on the necessary DNS configuration.
 func (o PropertyOutput) Hostnames() PropertyHostnameArrayOutput {
 	return o.ApplyT(func(v *Property) PropertyHostnameArrayOutput { return v.Hostnames }).(PropertyHostnameArrayOutput)
 }
@@ -534,12 +369,12 @@ func (o PropertyOutput) IsSecure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Property) pulumi.BoolPtrOutput { return v.IsSecure }).(pulumi.BoolPtrOutput)
 }
 
-// The version of the property you've created or updated rules for. The Akamai Provider always uses the latest version or creates a new version if latest is not editable.
+// Property's current latest version number
 func (o PropertyOutput) LatestVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Property) pulumi.IntOutput { return v.LatestVersion }).(pulumi.IntOutput)
 }
 
-// The property name.
+// Name to give to the Property (must be unique)
 func (o PropertyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -549,8 +384,6 @@ func (o PropertyOutput) Origins() PropertyOriginArrayOutput {
 	return o.ApplyT(func(v *Property) PropertyOriginArrayOutput { return v.Origins }).(PropertyOriginArrayOutput)
 }
 
-// Optional argument replaced by the now required `productId`. Maintained for legacy purposes.
-//
 // Deprecated: The setting "product" has been deprecated.
 func (o PropertyOutput) Product() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Product }).(pulumi.StringOutput)
@@ -561,7 +394,7 @@ func (o PropertyOutput) ProductId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.ProductId }).(pulumi.StringOutput)
 }
 
-// The current version of the property active on the Akamai production network.
+// Property's version currently activated in production (zero when not active in production)
 func (o PropertyOutput) ProductionVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Property) pulumi.IntOutput { return v.ProductionVersion }).(pulumi.IntOutput)
 }
@@ -571,29 +404,26 @@ func (o PropertyOutput) ReadVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Property) pulumi.IntOutput { return v.ReadVersion }).(pulumi.IntOutput)
 }
 
-// The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
 func (o PropertyOutput) RuleErrors() PropertyRuleErrorArrayOutput {
 	return o.ApplyT(func(v *Property) PropertyRuleErrorArrayOutput { return v.RuleErrors }).(PropertyRuleErrorArrayOutput)
 }
 
-// The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+// Specify the rule format version (defaults to latest version available when created)
 func (o PropertyOutput) RuleFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.RuleFormat }).(pulumi.StringOutput)
 }
 
-// (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-//
 // Deprecated: Rule warnings will not be set in state anymore
 func (o PropertyOutput) RuleWarnings() PropertyRuleWarningArrayOutput {
 	return o.ApplyT(func(v *Property) PropertyRuleWarningArrayOutput { return v.RuleWarnings }).(PropertyRuleWarningArrayOutput)
 }
 
-// A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `getPropertyRules` data source.
+// Property Rules as JSON
 func (o PropertyOutput) Rules() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Rules }).(pulumi.StringOutput)
 }
 
-// The current version of the property active on the Akamai staging network.
+// Property's version currently activated in staging (zero when not active in staging)
 func (o PropertyOutput) StagingVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Property) pulumi.IntOutput { return v.StagingVersion }).(pulumi.IntOutput)
 }

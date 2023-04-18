@@ -63,30 +63,7 @@ class AwaitableGetAppSecHostnameCoverageResult(GetAppSecHostnameCoverageResult):
 
 def get_app_sec_hostname_coverage(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecHostnameCoverageResult:
     """
-    **Scopes**: Individual account
-
-    Returns information about the hostnames associated with your account. The returned data includes the hostname's protections, activation status, and other summary information.
-
-    **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    hostname_coverage = akamai.get_app_sec_hostname_coverage()
-    pulumi.export("hostnameCoverageListJson", hostname_coverage.json)
-    pulumi.export("hostnameCoverageListOutput", hostname_coverage.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list of the hostname coverage information.
-    - `output_text`. Tabular report of the hostname coverage information.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

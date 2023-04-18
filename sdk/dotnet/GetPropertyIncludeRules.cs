@@ -11,89 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetPropertyIncludeRules
     {
-        /// <summary>
-        /// Use the `akamai.getPropertyIncludeRules` data source to query and get an include's rules. This data source lets you search across the contracts and groups you have access to.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the include's rule tree based on the specified contract, group, and include IDs:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var myExamplePropertyIncludeRules = Akamai.GetPropertyIncludeRules.Invoke(new()
-        ///     {
-        ///         ContractId = "ctr_1-AB123",
-        ///         GroupId = "grp_12345",
-        ///         IncludeId = "inc_123456",
-        ///         Version = 3,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["myExample"] = myExamplePropertyIncludeRules,
-        ///     };
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `rules` - Include's rules as JSON.
-        /// * `name` - The descriptive name for the include.
-        /// * `rule_errors` - Rule's validation errors. You need to resolve returned errors, as they block an activation.
-        /// * `rule_warnings` - Rule's validation warnings. You can activate a version that yields non-blocking warnings.
-        /// * `rule_format` - Indicates the versioned set of features and criteria that are currently applied to a rule tree. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
-        /// * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-        /// </summary>
         public static Task<GetPropertyIncludeRulesResult> InvokeAsync(GetPropertyIncludeRulesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyIncludeRulesResult>("akamai:index/getPropertyIncludeRules:getPropertyIncludeRules", args ?? new GetPropertyIncludeRulesArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getPropertyIncludeRules` data source to query and get an include's rules. This data source lets you search across the contracts and groups you have access to.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns the include's rule tree based on the specified contract, group, and include IDs:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var myExamplePropertyIncludeRules = Akamai.GetPropertyIncludeRules.Invoke(new()
-        ///     {
-        ///         ContractId = "ctr_1-AB123",
-        ///         GroupId = "grp_12345",
-        ///         IncludeId = "inc_123456",
-        ///         Version = 3,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["myExample"] = myExamplePropertyIncludeRules,
-        ///     };
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `rules` - Include's rules as JSON.
-        /// * `name` - The descriptive name for the include.
-        /// * `rule_errors` - Rule's validation errors. You need to resolve returned errors, as they block an activation.
-        /// * `rule_warnings` - Rule's validation warnings. You can activate a version that yields non-blocking warnings.
-        /// * `rule_format` - Indicates the versioned set of features and criteria that are currently applied to a rule tree. See [Rule format schemas](https://techdocs.akamai.com/property-mgr/reference/rule-format-schemas) to learn more.
-        /// * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-        /// </summary>
         public static Output<GetPropertyIncludeRulesResult> Invoke(GetPropertyIncludeRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertyIncludeRulesResult>("akamai:index/getPropertyIncludeRules:getPropertyIncludeRules", args ?? new GetPropertyIncludeRulesInvokeArgs(), options.WithDefaults());
     }
@@ -101,27 +21,15 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyIncludeRulesArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A group's unique ID, including the optional `grp_` prefix.
-        /// </summary>
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) An include's unique ID with the optional `inc_` prefix.
-        /// </summary>
         [Input("includeId", required: true)]
         public string IncludeId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) The include version you want to view the rules for.
-        /// </summary>
         [Input("version", required: true)]
         public int Version { get; set; }
 
@@ -133,27 +41,15 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyIncludeRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A group's unique ID, including the optional `grp_` prefix.
-        /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) An include's unique ID with the optional `inc_` prefix.
-        /// </summary>
         [Input("includeId", required: true)]
         public Input<string> IncludeId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) The include version you want to view the rules for.
-        /// </summary>
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
 

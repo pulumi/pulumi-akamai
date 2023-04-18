@@ -11,70 +11,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration; rate policy
-//
-// Creates, modifies, or deletes rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive.
-// In turn, this helps you prevent your website from being overwhelmed by a dramatic and unexpected surge in traffic.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://techdocs.akamai.com/application-security/reference/post-rate-policies)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func readFileOrPanic(path string) pulumi.StringPtrInput {
-//		data, err := os.ReadFile(path)
-//		if err != nil {
-//			panic(err.Error())
-//		}
-//		return pulumi.String(string(data))
-//	}
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ratePolicy, err := akamai.NewAppSecRatePolicy(ctx, "ratePolicy", &akamai.AppSecRatePolicyArgs{
-//				ConfigId:   *pulumi.Int(configuration.ConfigId),
-//				RatePolicy: readFileOrPanic(fmt.Sprintf("%v/rate_policy.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("ratePolicyId", ratePolicy.RatePolicyId)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `ratePolicyId`. ID of the modified or newly-created rate policy.
 type AppSecRatePolicy struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configuration associated with the rate policy being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Path to a JSON file containing a rate policy definition.
+	// JSON-formatted definition of the rate policy
 	RatePolicy pulumi.StringOutput `pulumi:"ratePolicy"`
 	// Unique identifier of the rate policy
 	RatePolicyId pulumi.IntOutput `pulumi:"ratePolicyId"`
@@ -115,18 +57,18 @@ func GetAppSecRatePolicy(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecRatePolicy resources.
 type appSecRatePolicyState struct {
-	// . Unique identifier of the security configuration associated with the rate policy being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Path to a JSON file containing a rate policy definition.
+	// JSON-formatted definition of the rate policy
 	RatePolicy *string `pulumi:"ratePolicy"`
 	// Unique identifier of the rate policy
 	RatePolicyId *int `pulumi:"ratePolicyId"`
 }
 
 type AppSecRatePolicyState struct {
-	// . Unique identifier of the security configuration associated with the rate policy being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Path to a JSON file containing a rate policy definition.
+	// JSON-formatted definition of the rate policy
 	RatePolicy pulumi.StringPtrInput
 	// Unique identifier of the rate policy
 	RatePolicyId pulumi.IntPtrInput
@@ -137,17 +79,17 @@ func (AppSecRatePolicyState) ElementType() reflect.Type {
 }
 
 type appSecRatePolicyArgs struct {
-	// . Unique identifier of the security configuration associated with the rate policy being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Path to a JSON file containing a rate policy definition.
+	// JSON-formatted definition of the rate policy
 	RatePolicy string `pulumi:"ratePolicy"`
 }
 
 // The set of arguments for constructing a AppSecRatePolicy resource.
 type AppSecRatePolicyArgs struct {
-	// . Unique identifier of the security configuration associated with the rate policy being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Path to a JSON file containing a rate policy definition.
+	// JSON-formatted definition of the rate policy
 	RatePolicy pulumi.StringInput
 }
 
@@ -238,12 +180,12 @@ func (o AppSecRatePolicyOutput) ToAppSecRatePolicyOutputWithContext(ctx context.
 	return o
 }
 
-// . Unique identifier of the security configuration associated with the rate policy being modified.
+// Unique identifier of the security configuration
 func (o AppSecRatePolicyOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecRatePolicy) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Path to a JSON file containing a rate policy definition.
+// JSON-formatted definition of the rate policy
 func (o AppSecRatePolicyOutput) RatePolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecRatePolicy) pulumi.StringOutput { return v.RatePolicy }).(pulumi.StringOutput)
 }

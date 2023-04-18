@@ -11,73 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetEdgeWorkersResourceTier
     {
-        /// <summary>
-        /// Use the `akamai.getEdgeWorkersResourceTier` data source to list the available resource tiers for a specific contract ID. The resource tier defines the resource consumption [limits](https://techdocs.akamai.com/edgeworkers/docs/resource-tier-limitations) for an EdgeWorker ID.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// This example returns the resource tier fields for an EdgeWorker ID:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var example = Akamai.GetEdgeWorkersResourceTier.Invoke(new()
-        ///     {
-        ///         ContractId = "1-ABC",
-        ///         ResourceTierName = "Basic Compute",
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `resource_tier_id` - Unique identifier of the resource tier.
-        /// </summary>
         public static Task<GetEdgeWorkersResourceTierResult> InvokeAsync(GetEdgeWorkersResourceTierArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEdgeWorkersResourceTierResult>("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", args ?? new GetEdgeWorkersResourceTierArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getEdgeWorkersResourceTier` data source to list the available resource tiers for a specific contract ID. The resource tier defines the resource consumption [limits](https://techdocs.akamai.com/edgeworkers/docs/resource-tier-limitations) for an EdgeWorker ID.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// This example returns the resource tier fields for an EdgeWorker ID:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var example = Akamai.GetEdgeWorkersResourceTier.Invoke(new()
-        ///     {
-        ///         ContractId = "1-ABC",
-        ///         ResourceTierName = "Basic Compute",
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `resource_tier_id` - Unique identifier of the resource tier.
-        /// </summary>
         public static Output<GetEdgeWorkersResourceTierResult> Invoke(GetEdgeWorkersResourceTierInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEdgeWorkersResourceTierResult>("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", args ?? new GetEdgeWorkersResourceTierInvokeArgs(), options.WithDefaults());
     }
@@ -85,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetEdgeWorkersResourceTierArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Unique identifier of a contract.
-        /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// Unique name of the resource tier.
-        /// </summary>
         [Input("resourceTierName", required: true)]
         public string ResourceTierName { get; set; } = null!;
 
@@ -105,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetEdgeWorkersResourceTierInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Unique identifier of a contract.
-        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// Unique name of the resource tier.
-        /// </summary>
         [Input("resourceTierName", required: true)]
         public Input<string> ResourceTierName { get; set; } = null!;
 

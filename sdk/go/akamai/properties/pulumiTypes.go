@@ -10,6 +10,214 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type PropertyActivationComplianceRecord struct {
+	CustomerEmail            *string `pulumi:"customerEmail"`
+	NoncomplianceReason      string  `pulumi:"noncomplianceReason"`
+	OtherNoncomplianceReason *string `pulumi:"otherNoncomplianceReason"`
+	PeerReviewedBy           *string `pulumi:"peerReviewedBy"`
+	TicketId                 *string `pulumi:"ticketId"`
+	UnitTested               *bool   `pulumi:"unitTested"`
+}
+
+// PropertyActivationComplianceRecordInput is an input type that accepts PropertyActivationComplianceRecordArgs and PropertyActivationComplianceRecordOutput values.
+// You can construct a concrete instance of `PropertyActivationComplianceRecordInput` via:
+//
+//	PropertyActivationComplianceRecordArgs{...}
+type PropertyActivationComplianceRecordInput interface {
+	pulumi.Input
+
+	ToPropertyActivationComplianceRecordOutput() PropertyActivationComplianceRecordOutput
+	ToPropertyActivationComplianceRecordOutputWithContext(context.Context) PropertyActivationComplianceRecordOutput
+}
+
+type PropertyActivationComplianceRecordArgs struct {
+	CustomerEmail            pulumi.StringPtrInput `pulumi:"customerEmail"`
+	NoncomplianceReason      pulumi.StringInput    `pulumi:"noncomplianceReason"`
+	OtherNoncomplianceReason pulumi.StringPtrInput `pulumi:"otherNoncomplianceReason"`
+	PeerReviewedBy           pulumi.StringPtrInput `pulumi:"peerReviewedBy"`
+	TicketId                 pulumi.StringPtrInput `pulumi:"ticketId"`
+	UnitTested               pulumi.BoolPtrInput   `pulumi:"unitTested"`
+}
+
+func (PropertyActivationComplianceRecordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationComplianceRecord)(nil)).Elem()
+}
+
+func (i PropertyActivationComplianceRecordArgs) ToPropertyActivationComplianceRecordOutput() PropertyActivationComplianceRecordOutput {
+	return i.ToPropertyActivationComplianceRecordOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationComplianceRecordArgs) ToPropertyActivationComplianceRecordOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordOutput)
+}
+
+func (i PropertyActivationComplianceRecordArgs) ToPropertyActivationComplianceRecordPtrOutput() PropertyActivationComplianceRecordPtrOutput {
+	return i.ToPropertyActivationComplianceRecordPtrOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationComplianceRecordArgs) ToPropertyActivationComplianceRecordPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordOutput).ToPropertyActivationComplianceRecordPtrOutputWithContext(ctx)
+}
+
+// PropertyActivationComplianceRecordPtrInput is an input type that accepts PropertyActivationComplianceRecordArgs, PropertyActivationComplianceRecordPtr and PropertyActivationComplianceRecordPtrOutput values.
+// You can construct a concrete instance of `PropertyActivationComplianceRecordPtrInput` via:
+//
+//	        PropertyActivationComplianceRecordArgs{...}
+//
+//	or:
+//
+//	        nil
+type PropertyActivationComplianceRecordPtrInput interface {
+	pulumi.Input
+
+	ToPropertyActivationComplianceRecordPtrOutput() PropertyActivationComplianceRecordPtrOutput
+	ToPropertyActivationComplianceRecordPtrOutputWithContext(context.Context) PropertyActivationComplianceRecordPtrOutput
+}
+
+type propertyActivationComplianceRecordPtrType PropertyActivationComplianceRecordArgs
+
+func PropertyActivationComplianceRecordPtr(v *PropertyActivationComplianceRecordArgs) PropertyActivationComplianceRecordPtrInput {
+	return (*propertyActivationComplianceRecordPtrType)(v)
+}
+
+func (*propertyActivationComplianceRecordPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyActivationComplianceRecord)(nil)).Elem()
+}
+
+func (i *propertyActivationComplianceRecordPtrType) ToPropertyActivationComplianceRecordPtrOutput() PropertyActivationComplianceRecordPtrOutput {
+	return i.ToPropertyActivationComplianceRecordPtrOutputWithContext(context.Background())
+}
+
+func (i *propertyActivationComplianceRecordPtrType) ToPropertyActivationComplianceRecordPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordPtrOutput)
+}
+
+type PropertyActivationComplianceRecordOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationComplianceRecordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationComplianceRecord)(nil)).Elem()
+}
+
+func (o PropertyActivationComplianceRecordOutput) ToPropertyActivationComplianceRecordOutput() PropertyActivationComplianceRecordOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordOutput) ToPropertyActivationComplianceRecordOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordOutput) ToPropertyActivationComplianceRecordPtrOutput() PropertyActivationComplianceRecordPtrOutput {
+	return o.ToPropertyActivationComplianceRecordPtrOutputWithContext(context.Background())
+}
+
+func (o PropertyActivationComplianceRecordOutput) ToPropertyActivationComplianceRecordPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PropertyActivationComplianceRecord) *PropertyActivationComplianceRecord {
+		return &v
+	}).(PropertyActivationComplianceRecordPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordOutput) CustomerEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecord) *string { return v.CustomerEmail }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordOutput) NoncomplianceReason() pulumi.StringOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecord) string { return v.NoncomplianceReason }).(pulumi.StringOutput)
+}
+
+func (o PropertyActivationComplianceRecordOutput) OtherNoncomplianceReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecord) *string { return v.OtherNoncomplianceReason }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordOutput) PeerReviewedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecord) *string { return v.PeerReviewedBy }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordOutput) TicketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecord) *string { return v.TicketId }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordOutput) UnitTested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecord) *bool { return v.UnitTested }).(pulumi.BoolPtrOutput)
+}
+
+type PropertyActivationComplianceRecordPtrOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationComplianceRecordPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyActivationComplianceRecord)(nil)).Elem()
+}
+
+func (o PropertyActivationComplianceRecordPtrOutput) ToPropertyActivationComplianceRecordPtrOutput() PropertyActivationComplianceRecordPtrOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordPtrOutput) ToPropertyActivationComplianceRecordPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordPtrOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordPtrOutput) Elem() PropertyActivationComplianceRecordOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecord) PropertyActivationComplianceRecord {
+		if v != nil {
+			return *v
+		}
+		var ret PropertyActivationComplianceRecord
+		return ret
+	}).(PropertyActivationComplianceRecordOutput)
+}
+
+func (o PropertyActivationComplianceRecordPtrOutput) CustomerEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomerEmail
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordPtrOutput) NoncomplianceReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NoncomplianceReason
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordPtrOutput) OtherNoncomplianceReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OtherNoncomplianceReason
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordPtrOutput) PeerReviewedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PeerReviewedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordPtrOutput) TicketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TicketId
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordPtrOutput) UnitTested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.UnitTested
+	}).(pulumi.BoolPtrOutput)
+}
+
 type PropertyActivationRuleError struct {
 	BehaviorName  *string `pulumi:"behaviorName"`
 	Detail        *string `pulumi:"detail"`
@@ -271,15 +479,12 @@ func (o PropertyActivationRuleWarningArrayOutput) Index(i pulumi.IntInput) Prope
 }
 
 type PropertyHostname struct {
-	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
 	CertProvisioningType string                       `pulumi:"certProvisioningType"`
 	CertStatuses         []PropertyHostnameCertStatus `pulumi:"certStatuses"`
-	// A string containing the original origin's hostname. For example, `"example.org"`.
-	CnameFrom string `pulumi:"cnameFrom"`
-	// A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
-	CnameTo        string  `pulumi:"cnameTo"`
-	CnameType      *string `pulumi:"cnameType"`
-	EdgeHostnameId *string `pulumi:"edgeHostnameId"`
+	CnameFrom            string                       `pulumi:"cnameFrom"`
+	CnameTo              string                       `pulumi:"cnameTo"`
+	CnameType            *string                      `pulumi:"cnameType"`
+	EdgeHostnameId       *string                      `pulumi:"edgeHostnameId"`
 }
 
 // PropertyHostnameInput is an input type that accepts PropertyHostnameArgs and PropertyHostnameOutput values.
@@ -294,15 +499,12 @@ type PropertyHostnameInput interface {
 }
 
 type PropertyHostnameArgs struct {
-	// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
 	CertProvisioningType pulumi.StringInput                   `pulumi:"certProvisioningType"`
 	CertStatuses         PropertyHostnameCertStatusArrayInput `pulumi:"certStatuses"`
-	// A string containing the original origin's hostname. For example, `"example.org"`.
-	CnameFrom pulumi.StringInput `pulumi:"cnameFrom"`
-	// A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
-	CnameTo        pulumi.StringInput    `pulumi:"cnameTo"`
-	CnameType      pulumi.StringPtrInput `pulumi:"cnameType"`
-	EdgeHostnameId pulumi.StringPtrInput `pulumi:"edgeHostnameId"`
+	CnameFrom            pulumi.StringInput                   `pulumi:"cnameFrom"`
+	CnameTo              pulumi.StringInput                   `pulumi:"cnameTo"`
+	CnameType            pulumi.StringPtrInput                `pulumi:"cnameType"`
+	EdgeHostnameId       pulumi.StringPtrInput                `pulumi:"edgeHostnameId"`
 }
 
 func (PropertyHostnameArgs) ElementType() reflect.Type {
@@ -356,7 +558,6 @@ func (o PropertyHostnameOutput) ToPropertyHostnameOutputWithContext(ctx context.
 	return o
 }
 
-// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
 func (o PropertyHostnameOutput) CertProvisioningType() pulumi.StringOutput {
 	return o.ApplyT(func(v PropertyHostname) string { return v.CertProvisioningType }).(pulumi.StringOutput)
 }
@@ -365,12 +566,10 @@ func (o PropertyHostnameOutput) CertStatuses() PropertyHostnameCertStatusArrayOu
 	return o.ApplyT(func(v PropertyHostname) []PropertyHostnameCertStatus { return v.CertStatuses }).(PropertyHostnameCertStatusArrayOutput)
 }
 
-// A string containing the original origin's hostname. For example, `"example.org"`.
 func (o PropertyHostnameOutput) CnameFrom() pulumi.StringOutput {
 	return o.ApplyT(func(v PropertyHostname) string { return v.CnameFrom }).(pulumi.StringOutput)
 }
 
-// A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
 func (o PropertyHostnameOutput) CnameTo() pulumi.StringOutput {
 	return o.ApplyT(func(v PropertyHostname) string { return v.CnameTo }).(pulumi.StringOutput)
 }
@@ -900,6 +1099,8 @@ func (o PropertyRuleWarningArrayOutput) Index(i pulumi.IntInput) PropertyRuleWar
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordInput)(nil)).Elem(), PropertyActivationComplianceRecordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordPtrInput)(nil)).Elem(), PropertyActivationComplianceRecordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationRuleErrorInput)(nil)).Elem(), PropertyActivationRuleErrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationRuleErrorArrayInput)(nil)).Elem(), PropertyActivationRuleErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationRuleWarningInput)(nil)).Elem(), PropertyActivationRuleWarningArgs{})
@@ -914,6 +1115,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleErrorArrayInput)(nil)).Elem(), PropertyRuleErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleWarningInput)(nil)).Elem(), PropertyRuleWarningArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleWarningArrayInput)(nil)).Elem(), PropertyRuleWarningArray{})
+	pulumi.RegisterOutputType(PropertyActivationComplianceRecordOutput{})
+	pulumi.RegisterOutputType(PropertyActivationComplianceRecordPtrOutput{})
 	pulumi.RegisterOutputType(PropertyActivationRuleErrorOutput{})
 	pulumi.RegisterOutputType(PropertyActivationRuleErrorArrayOutput{})
 	pulumi.RegisterOutputType(PropertyActivationRuleWarningOutput{})

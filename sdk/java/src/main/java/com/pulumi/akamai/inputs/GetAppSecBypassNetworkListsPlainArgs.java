@@ -13,32 +13,16 @@ public final class GetAppSecBypassNetworkListsPlainArgs extends com.pulumi.resou
 
     public static final GetAppSecBypassNetworkListsPlainArgs Empty = new GetAppSecBypassNetworkListsPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the bypass network lists.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the bypass network lists.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the bypass network lists.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the bypass network lists.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -68,23 +52,11 @@ public final class GetAppSecBypassNetworkListsPlainArgs extends com.pulumi.resou
             $ = new GetAppSecBypassNetworkListsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the bypass network lists.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the bypass network lists.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

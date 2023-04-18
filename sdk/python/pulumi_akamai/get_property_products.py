@@ -66,27 +66,7 @@ class AwaitableGetPropertyProductsResult(GetPropertyProductsResult):
 def get_property_products(contract_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyProductsResult:
     """
-    Use the _get_property_products_ data source to list the products included on a contract.
-
-    ## Example Usage
-
-    This example returns products associated with the [EdgeGrid client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) for a given contract:
-
-    ```python
-    import pulumi
-
-    pulumi.export("propertyMatch", data["akamai_property_products"]["my-example"])
-    ```
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `products` - A list of supported products for the contract, including:
-      * `product_id` - The product's unique ID, including the `prd_` prefix.
-      * `product_name` - A string containing the product name.
-
-
-    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -103,26 +83,6 @@ def get_property_products(contract_id: Optional[str] = None,
 def get_property_products_output(contract_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyProductsResult]:
     """
-    Use the _get_property_products_ data source to list the products included on a contract.
-
-    ## Example Usage
-
-    This example returns products associated with the [EdgeGrid client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) for a given contract:
-
-    ```python
-    import pulumi
-
-    pulumi.export("propertyMatch", data["akamai_property_products"]["my-example"])
-    ```
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `products` - A list of supported products for the contract, including:
-      * `product_id` - The product's unique ID, including the `prd_` prefix.
-      * `product_name` - A string containing the product name.
-
-
-    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
+    Use this data source to access information about an existing resource.
     """
     ...

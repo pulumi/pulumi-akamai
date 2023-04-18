@@ -12,17 +12,9 @@ public final class GetAuthoritiesSetPlainArgs extends com.pulumi.resources.Invok
 
     public static final GetAuthoritiesSetPlainArgs Empty = new GetAuthoritiesSetPlainArgs();
 
-    /**
-     * The contract ID.
-     * 
-     */
     @Import(name="contract", required=true)
     private String contract;
 
-    /**
-     * @return The contract ID.
-     * 
-     */
     public String contract() {
         return this.contract;
     }
@@ -51,12 +43,6 @@ public final class GetAuthoritiesSetPlainArgs extends com.pulumi.resources.Invok
             $ = new GetAuthoritiesSetPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contract The contract ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contract(String contract) {
             $.contract = contract;
             return this;

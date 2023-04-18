@@ -18,14 +18,14 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
     public static final AppSecSecurityPolicyState Empty = new AppSecSecurityPolicyState();
 
     /**
-     * . Unique identifier of the security configuration to be associated with the new security policy.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration to be associated with the new security policy.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -33,14 +33,14 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
     }
 
     /**
-     * . Unique identifier of the existing security policy that the new policy will be cloned from.
+     * Unique identifier of the existing security policy being cloned
      * 
      */
     @Import(name="createFromSecurityPolicyId")
     private @Nullable Output<String> createFromSecurityPolicyId;
 
     /**
-     * @return . Unique identifier of the existing security policy that the new policy will be cloned from.
+     * @return Unique identifier of the existing security policy being cloned
      * 
      */
     public Optional<Output<String>> createFromSecurityPolicyId() {
@@ -48,14 +48,14 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
     }
 
     /**
-     * . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+     * Whether to assign default settings to the new security policy
      * 
      */
     @Import(name="defaultSettings")
     private @Nullable Output<Boolean> defaultSettings;
 
     /**
-     * @return . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+     * @return Whether to assign default settings to the new security policy
      * 
      */
     public Optional<Output<Boolean>> defaultSettings() {
@@ -78,14 +78,14 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
     }
 
     /**
-     * . Name of the new security policy.
+     * Name of the new security policy
      * 
      */
     @Import(name="securityPolicyName")
     private @Nullable Output<String> securityPolicyName;
 
     /**
-     * @return . Name of the new security policy.
+     * @return Name of the new security policy
      * 
      */
     public Optional<Output<String>> securityPolicyName() {
@@ -93,14 +93,14 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
     }
 
     /**
-     * . Four-character alphanumeric string prefix used in creating the security policy ID.
+     * Four-character alphanumeric string prefix used in creating the security policy ID
      * 
      */
     @Import(name="securityPolicyPrefix")
     private @Nullable Output<String> securityPolicyPrefix;
 
     /**
-     * @return . Four-character alphanumeric string prefix used in creating the security policy ID.
+     * @return Four-character alphanumeric string prefix used in creating the security policy ID
      * 
      */
     public Optional<Output<String>> securityPolicyPrefix() {
@@ -137,7 +137,7 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration to be associated with the new security policy.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration to be associated with the new security policy.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param createFromSecurityPolicyId . Unique identifier of the existing security policy that the new policy will be cloned from.
+         * @param createFromSecurityPolicyId Unique identifier of the existing security policy being cloned
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param createFromSecurityPolicyId . Unique identifier of the existing security policy that the new policy will be cloned from.
+         * @param createFromSecurityPolicyId Unique identifier of the existing security policy being cloned
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param defaultSettings . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+         * @param defaultSettings Whether to assign default settings to the new security policy
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param defaultSettings . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+         * @param defaultSettings Whether to assign default settings to the new security policy
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param securityPolicyName . Name of the new security policy.
+         * @param securityPolicyName Name of the new security policy
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param securityPolicyName . Name of the new security policy.
+         * @param securityPolicyName Name of the new security policy
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param securityPolicyPrefix . Four-character alphanumeric string prefix used in creating the security policy ID.
+         * @param securityPolicyPrefix Four-character alphanumeric string prefix used in creating the security policy ID
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class AppSecSecurityPolicyState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param securityPolicyPrefix . Four-character alphanumeric string prefix used in creating the security policy ID.
+         * @param securityPolicyPrefix Four-character alphanumeric string prefix used in creating the security policy ID
          * 
          * @return builder
          * 

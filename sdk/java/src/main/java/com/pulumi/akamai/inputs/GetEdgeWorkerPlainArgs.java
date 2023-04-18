@@ -15,32 +15,16 @@ public final class GetEdgeWorkerPlainArgs extends com.pulumi.resources.InvokeArg
 
     public static final GetEdgeWorkerPlainArgs Empty = new GetEdgeWorkerPlainArgs();
 
-    /**
-     * The unique identifier of the EdgeWorker.
-     * 
-     */
     @Import(name="edgeworkerId", required=true)
     private Integer edgeworkerId;
 
-    /**
-     * @return The unique identifier of the EdgeWorker.
-     * 
-     */
     public Integer edgeworkerId() {
         return this.edgeworkerId;
     }
 
-    /**
-     * The path where the EdgeWorkers `.tgz` code bundle will be stored.
-     * 
-     */
     @Import(name="localBundle")
     private @Nullable String localBundle;
 
-    /**
-     * @return The path where the EdgeWorkers `.tgz` code bundle will be stored.
-     * 
-     */
     public Optional<String> localBundle() {
         return Optional.ofNullable(this.localBundle);
     }
@@ -70,23 +54,11 @@ public final class GetEdgeWorkerPlainArgs extends com.pulumi.resources.InvokeArg
             $ = new GetEdgeWorkerPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param edgeworkerId The unique identifier of the EdgeWorker.
-         * 
-         * @return builder
-         * 
-         */
         public Builder edgeworkerId(Integer edgeworkerId) {
             $.edgeworkerId = edgeworkerId;
             return this;
         }
 
-        /**
-         * @param localBundle The path where the EdgeWorkers `.tgz` code bundle will be stored.
-         * 
-         * @return builder
-         * 
-         */
         public Builder localBundle(@Nullable String localBundle) {
             $.localBundle = localBundle;
             return this;

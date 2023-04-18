@@ -111,43 +111,7 @@ def get_app_sec_ip_geo(config_id: Optional[int] = None,
                        security_policy_id: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecIPGeoResult:
     """
-    **Scopes**: Security configuration; security policy
-
-    Returns information about the network lists used in the IP/Geo Firewall settings; also returns the firewall `mode`, which indicates whether devices on the geographic or IP address lists are allowed through the firewall or are blocked by the firewall.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/get-policy-ip-geo-firewall)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    ip_geo = akamai.get_app_sec_ip_geo(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("ipGeoMode", ip_geo.mode)
-    pulumi.export("geoNetworkLists", ip_geo.geo_network_lists)
-    pulumi.export("ipNetworkLists", ip_geo.ip_network_lists)
-    pulumi.export("exceptionIpNetworkLists", ip_geo.exception_ip_network_lists)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `mode`. Specifies the action taken by the IP/Geo firewall. Valid values are:
-      - **block**. Networks on the IP and geographic network lists are prevented from passing through the firewall.
-      - **allow**.  Networks on the IP and geographic network lists are allowed to pass through the firewall.
-    - `geo_network_lists`. Network lists blocked or allowed based on geographic location.
-    - `ip_network_lists`. Network lists blocked or allowed based on IP address.
-    - `exception_ip_network_lists`. Network lists allowed through the firewall regardless of the values assigned to the `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
-    - `output_text`. Tabular report of the IP/Geo firewall settings.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the IP/Geo lists.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the IP/Geo lists. If not included, information is returned for all your security policies.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -171,42 +135,6 @@ def get_app_sec_ip_geo_output(config_id: Optional[pulumi.Input[int]] = None,
                               security_policy_id: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecIPGeoResult]:
     """
-    **Scopes**: Security configuration; security policy
-
-    Returns information about the network lists used in the IP/Geo Firewall settings; also returns the firewall `mode`, which indicates whether devices on the geographic or IP address lists are allowed through the firewall or are blocked by the firewall.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/get-policy-ip-geo-firewall)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    ip_geo = akamai.get_app_sec_ip_geo(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("ipGeoMode", ip_geo.mode)
-    pulumi.export("geoNetworkLists", ip_geo.geo_network_lists)
-    pulumi.export("ipNetworkLists", ip_geo.ip_network_lists)
-    pulumi.export("exceptionIpNetworkLists", ip_geo.exception_ip_network_lists)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `mode`. Specifies the action taken by the IP/Geo firewall. Valid values are:
-      - **block**. Networks on the IP and geographic network lists are prevented from passing through the firewall.
-      - **allow**.  Networks on the IP and geographic network lists are allowed to pass through the firewall.
-    - `geo_network_lists`. Network lists blocked or allowed based on geographic location.
-    - `ip_network_lists`. Network lists blocked or allowed based on IP address.
-    - `exception_ip_network_lists`. Network lists allowed through the firewall regardless of the values assigned to the `mode`, `geo_network_lists`, and `ip_network_lists` parameters.
-    - `output_text`. Tabular report of the IP/Geo firewall settings.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the IP/Geo lists.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the IP/Geo lists. If not included, information is returned for all your security policies.
+    Use this data source to access information about an existing resource.
     """
     ...

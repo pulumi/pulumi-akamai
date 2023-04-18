@@ -19,120 +19,35 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.GtmAsmap` resource to create, configure, and import a GTM Autonomous System (AS) map. AS mapping lets you configure a GTM property that returns a CNAME based on the AS number associated with the requester&#39;s IP address.
- * 
- * You can reuse maps for multiple properties or create new ones. AS maps split the Internet into multiple AS block zones. Properties that use AS maps can specify handout integers for each zone. AS mapping lets you configure a property that directs users to a specific environment or to the origin.
- * 
- * &gt; **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.GtmAsmap;
- * import com.pulumi.akamai.GtmAsmapArgs;
- * import com.pulumi.akamai.inputs.GtmAsmapDefaultDatacenterArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var demoAsmap = new GtmAsmap(&#34;demoAsmap&#34;, GtmAsmapArgs.builder()        
- *             .defaultDatacenter(GtmAsmapDefaultDatacenterArgs.builder()
- *                 .datacenterId(5400)
- *                 .nickname(&#34;All Other AS numbers&#34;)
- *                 .build())
- *             .domain(&#34;demo_domain.akadns.net&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/gtmAsmap:GtmAsmap")
 public class GtmAsmap extends com.pulumi.resources.CustomResource {
-    /**
-     * Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-     * 
-     */
     @Export(name="assignments", type=List.class, parameters={GtmAsmapAssignment.class})
     private Output</* @Nullable */ List<GtmAsmapAssignment>> assignments;
 
-    /**
-     * @return Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-     * 
-     */
     public Output<Optional<List<GtmAsmapAssignment>>> assignments() {
         return Codegen.optional(this.assignments);
     }
-    /**
-     * A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
-     * 
-     */
     @Export(name="defaultDatacenter", type=GtmAsmapDefaultDatacenter.class, parameters={})
     private Output<GtmAsmapDefaultDatacenter> defaultDatacenter;
 
-    /**
-     * @return A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
-     * 
-     */
     public Output<GtmAsmapDefaultDatacenter> defaultDatacenter() {
         return this.defaultDatacenter;
     }
-    /**
-     * The GTM Domain name for the AS map.
-     * 
-     */
     @Export(name="domain", type=String.class, parameters={})
     private Output<String> domain;
 
-    /**
-     * @return The GTM Domain name for the AS map.
-     * 
-     */
     public Output<String> domain() {
         return this.domain;
     }
-    /**
-     * A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-     * 
-     */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
-    /**
-     * @return A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-     * 
-     */
     public Output<String> name() {
         return this.name;
     }
-    /**
-     * A boolean that, if `true`, waits for transaction to complete.
-     * 
-     */
     @Export(name="waitOnComplete", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> waitOnComplete;
 
-    /**
-     * @return A boolean that, if `true`, waits for transaction to complete.
-     * 
-     */
     public Output<Optional<Boolean>> waitOnComplete() {
         return Codegen.optional(this.waitOnComplete);
     }

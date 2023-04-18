@@ -15,17 +15,9 @@ public final class GetCloudletsApiPrioritizationMatchRulePlainArgs extends com.p
 
     public static final GetCloudletsApiPrioritizationMatchRulePlainArgs Empty = new GetCloudletsApiPrioritizationMatchRulePlainArgs();
 
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     * 
-     */
     @Import(name="matchRules")
     private @Nullable List<GetCloudletsApiPrioritizationMatchRuleMatchRule> matchRules;
 
-    /**
-     * @return (Optional) A list of Cloudlet-specific match rules for a policy.
-     * 
-     */
     public Optional<List<GetCloudletsApiPrioritizationMatchRuleMatchRule>> matchRules() {
         return Optional.ofNullable(this.matchRules);
     }
@@ -54,23 +46,11 @@ public final class GetCloudletsApiPrioritizationMatchRulePlainArgs extends com.p
             $ = new GetCloudletsApiPrioritizationMatchRulePlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchRules(@Nullable List<GetCloudletsApiPrioritizationMatchRuleMatchRule> matchRules) {
             $.matchRules = matchRules;
             return this;
         }
 
-        /**
-         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchRules(GetCloudletsApiPrioritizationMatchRuleMatchRule... matchRules) {
             return matchRules(List.of(matchRules));
         }

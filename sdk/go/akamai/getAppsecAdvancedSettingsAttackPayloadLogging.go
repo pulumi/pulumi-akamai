@@ -10,63 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration; security policy
-//
-// Returns information about your Attack Payload Logging controls. By default, information is returned for all the security policies in the configuration.
-// However, you can return data for a single policy by using the `securityPolicyId` parameter.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			attackPayloadLogging, err := akamai.LookupAppsecAdvancedSettingsAttackPayloadLogging(ctx, &akamai.LookupAppsecAdvancedSettingsAttackPayloadLoggingArgs{
-//				ConfigId: configuration.ConfigId,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("advancedSettingsAttackPayloadLoggingJson", attackPayloadLogging.Json)
-//			ctx.Export("advancedSettingsAttackPayloadLoggingOutput", attackPayloadLogging.OutputText)
-//			policyOverride, err := akamai.LookupAppsecAdvancedSettingsAttackPayloadLogging(ctx, &akamai.LookupAppsecAdvancedSettingsAttackPayloadLoggingArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: pulumi.StringRef(_var.Security_policy_id),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("advancedSettingsPolicyAttackPayloadLoggingOutput", policyOverride.OutputText)
-//			ctx.Export("advancedSettingsPolicyAttackPayloadLoggingJson", policyOverride.Json)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `json`. JSON-formatted list of information about the Attack Payload Logging settings.
-// - `outputText`. Tabular report showing the Attack Payload Logging settings.
 func LookupAppsecAdvancedSettingsAttackPayloadLogging(ctx *pulumi.Context, args *LookupAppsecAdvancedSettingsAttackPayloadLoggingArgs, opts ...pulumi.InvokeOption) (*LookupAppsecAdvancedSettingsAttackPayloadLoggingResult, error) {
 	var rv LookupAppsecAdvancedSettingsAttackPayloadLoggingResult
 	err := ctx.Invoke("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", args, &rv, opts...)
@@ -78,9 +21,7 @@ func LookupAppsecAdvancedSettingsAttackPayloadLogging(ctx *pulumi.Context, args 
 
 // A collection of arguments for invoking getAppsecAdvancedSettingsAttackPayloadLogging.
 type LookupAppsecAdvancedSettingsAttackPayloadLoggingArgs struct {
-	// . Unique identifier of the security configuration associated with the Attack Payload Logging settings.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the Attack Payload Logging settings. If not included, information is returned for all your security policies.
+	ConfigId         int     `pulumi:"configId"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
@@ -109,9 +50,7 @@ func LookupAppsecAdvancedSettingsAttackPayloadLoggingOutput(ctx *pulumi.Context,
 
 // A collection of arguments for invoking getAppsecAdvancedSettingsAttackPayloadLogging.
 type LookupAppsecAdvancedSettingsAttackPayloadLoggingOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the Attack Payload Logging settings.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the Attack Payload Logging settings. If not included, information is returned for all your security policies.
+	ConfigId         pulumi.IntInput       `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringPtrInput `pulumi:"securityPolicyId"`
 }
 

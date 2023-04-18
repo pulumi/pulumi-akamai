@@ -10,62 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration; security policy
-//
-// Returns pragma header settings information. This HTTP header provides information about such things as: the edge routers used in a transaction; the Akamai IP addresses involved; information about whether a request was cached or not; and so on. By default, pragma headers are removed from all responses.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/pragma-header](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-pragma-header)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			pragmaHeader, err := akamai.LookupAppSecAdvancedSettingsPragmaHeader(ctx, &akamai.LookupAppSecAdvancedSettingsPragmaHeaderArgs{
-//				ConfigId: configuration.ConfigId,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("advancedSettingsPragmaHeaderOutput", pragmaHeader.OutputText)
-//			ctx.Export("advancedSettingsPragmaHeaderJson", pragmaHeader.Json)
-//			policyPragmaHeader, err := akamai.LookupAppSecAdvancedSettingsPragmaHeader(ctx, &akamai.LookupAppSecAdvancedSettingsPragmaHeaderArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: pulumi.StringRef("gms1_134637"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("advancedSettingsPolicyPragmaHeaderOutput", policyPragmaHeader.OutputText)
-//			ctx.Export("advancedSettingsPolicyPragmaHeaderJson", policyPragmaHeader.Json)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `json`. JSON-formatted list of information about the pragma header settings.
-// - `outputText`. Tabular report showing the pragma header settings.
 func LookupAppSecAdvancedSettingsPragmaHeader(ctx *pulumi.Context, args *LookupAppSecAdvancedSettingsPragmaHeaderArgs, opts ...pulumi.InvokeOption) (*LookupAppSecAdvancedSettingsPragmaHeaderResult, error) {
 	var rv LookupAppSecAdvancedSettingsPragmaHeaderResult
 	err := ctx.Invoke("akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader", args, &rv, opts...)
@@ -77,9 +21,7 @@ func LookupAppSecAdvancedSettingsPragmaHeader(ctx *pulumi.Context, args *LookupA
 
 // A collection of arguments for invoking getAppSecAdvancedSettingsPragmaHeader.
 type LookupAppSecAdvancedSettingsPragmaHeaderArgs struct {
-	// . Unique identifier of the security configuration associated with the pragma header settings.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the pragma header settings. If not included, information is returned for all your security policies.
+	ConfigId         int     `pulumi:"configId"`
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
@@ -108,9 +50,7 @@ func LookupAppSecAdvancedSettingsPragmaHeaderOutput(ctx *pulumi.Context, args Lo
 
 // A collection of arguments for invoking getAppSecAdvancedSettingsPragmaHeader.
 type LookupAppSecAdvancedSettingsPragmaHeaderOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the pragma header settings.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the pragma header settings. If not included, information is returned for all your security policies.
+	ConfigId         pulumi.IntInput       `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringPtrInput `pulumi:"securityPolicyId"`
 }
 

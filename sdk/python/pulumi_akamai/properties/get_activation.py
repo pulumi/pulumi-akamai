@@ -56,26 +56,16 @@ class GetActivationResult:
     @property
     @pulumi.getter(name="activationId")
     def activation_id(self) -> str:
-        """
-        The activation's unique identifier, including optional `atv_` prefix.
-        """
         return pulumi.get(self, "activation_id")
 
     @property
     @pulumi.getter
     def contacts(self) -> Sequence[str]:
-        """
-        The email addresses to notify about the activation status changes.
-        """
         return pulumi.get(self, "contacts")
 
     @property
     @pulumi.getter
     def errors(self) -> str:
-        """
-        The contents of `errors` field returned by the API. For more information
-        see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-        """
         return pulumi.get(self, "errors")
 
     @property
@@ -94,9 +84,6 @@ class GetActivationResult:
     @property
     @pulumi.getter
     def note(self) -> str:
-        """
-        Log message assigned to the activation request.
-        """
         return pulumi.get(self, "note")
 
     @property
@@ -107,9 +94,6 @@ class GetActivationResult:
     @property
     @pulumi.getter
     def status(self) -> str:
-        """
-        The property version's activation status on the selected network.
-        """
         return pulumi.get(self, "status")
 
     @property
@@ -120,10 +104,6 @@ class GetActivationResult:
     @property
     @pulumi.getter
     def warnings(self) -> str:
-        """
-        The contents of `warnings` field returned by the API. For more information
-        see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-        """
         return pulumi.get(self, "warnings")
 
 
@@ -150,43 +130,7 @@ def get_activation(network: Optional[str] = None,
                    version: Optional[int] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetActivationResult:
     """
-    Use the `PropertyActivation` data source to retrieve activation information for a property version on staging
-    or production network.
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    email = "user@example.org"
-    rule_format = "v2022-10-18"
-    example = akamai.Property("example",
-        product_id="prd_SPM",
-        contract_id=var["contractid"],
-        group_id=var["groupid"],
-        hostnames=[akamai.PropertyHostnameArgs(
-            cname_to="www.example.com.edgekey.net",
-            cname_from="www.example.com",
-            cert_provisioning_type="DEFAULT",
-        )],
-        rule_format=rule_format,
-        rules=(lambda path: open(path).read())(f"{path['module']}/main.json"))
-    example_staging_property_activation = akamai.PropertyActivation("exampleStagingPropertyActivation",
-        property_id=example.id,
-        contacts=[email],
-        version=example.latest_version,
-        note="Sample activation")
-    example_staging_activation = akamai.properties.get_activation_output(property_id=example.id,
-        version=example.latest_version)
-    ```
-
-
-    :param str network: Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-    :param str property_id: The property's unique identifier, including optional `prp_` prefix.
-    :param int version: The activated property version. The value depends on the `Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['network'] = network
@@ -214,42 +158,6 @@ def get_activation_output(network: Optional[pulumi.Input[Optional[str]]] = None,
                           version: Optional[pulumi.Input[int]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetActivationResult]:
     """
-    Use the `PropertyActivation` data source to retrieve activation information for a property version on staging
-    or production network.
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    email = "user@example.org"
-    rule_format = "v2022-10-18"
-    example = akamai.Property("example",
-        product_id="prd_SPM",
-        contract_id=var["contractid"],
-        group_id=var["groupid"],
-        hostnames=[akamai.PropertyHostnameArgs(
-            cname_to="www.example.com.edgekey.net",
-            cname_from="www.example.com",
-            cert_provisioning_type="DEFAULT",
-        )],
-        rule_format=rule_format,
-        rules=(lambda path: open(path).read())(f"{path['module']}/main.json"))
-    example_staging_property_activation = akamai.PropertyActivation("exampleStagingPropertyActivation",
-        property_id=example.id,
-        contacts=[email],
-        version=example.latest_version,
-        note="Sample activation")
-    example_staging_activation = akamai.properties.get_activation_output(property_id=example.id,
-        version=example.latest_version)
-    ```
-
-
-    :param str network: Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-    :param str property_id: The property's unique identifier, including optional `prp_` prefix.
-    :param int version: The activated property version. The value depends on the `Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
+    Use this data source to access information about an existing resource.
     """
     ...

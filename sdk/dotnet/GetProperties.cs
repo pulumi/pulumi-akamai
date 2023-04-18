@@ -11,71 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetProperties
     {
-        /// <summary>
-        /// Use the `akamai.getProperties` data source to query and retrieve the list of properties for a group and contract
-        /// based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Return properties associated with the EdgeGrid API client token currently used for authentication:
-        /// 
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["myPropertyList"] = data.Akamai_properties.Example,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns this attribute:
-        /// 
-        /// * `properties` - A list of properties available for the contract and group IDs provided.
-        /// </summary>
         public static Task<GetPropertiesResult> InvokeAsync(GetPropertiesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertiesResult>("akamai:index/getProperties:getProperties", args ?? new GetPropertiesArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getProperties` data source to query and retrieve the list of properties for a group and contract
-        /// based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Return properties associated with the EdgeGrid API client token currently used for authentication:
-        /// 
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["myPropertyList"] = data.Akamai_properties.Example,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns this attribute:
-        /// 
-        /// * `properties` - A list of properties available for the contract and group IDs provided.
-        /// </summary>
         public static Output<GetPropertiesResult> Invoke(GetPropertiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertiesResult>("akamai:index/getProperties:getProperties", args ?? new GetPropertiesInvokeArgs(), options.WithDefaults());
     }
@@ -83,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertiesArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A group's unique ID, including the `grp_` prefix.
-        /// </summary>
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
 
@@ -103,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertiesInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A group's unique ID, including the `grp_` prefix.
-        /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 

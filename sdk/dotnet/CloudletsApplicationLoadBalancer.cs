@@ -9,119 +9,46 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// Use the `akamai.CloudletsApplicationLoadBalancer` resource to create the Application Load Balancer Cloudlet configuration. The Application Load Balancer Cloudlet provides intelligent, scalable traffic management across physical, virtual, and cloud-hosted data centers without requiring the origin to send load feedback. This Cloudlet can automatically detect load conditions and route traffic to the optimal data source while maintaining custom routing policies and consistent visitor session behavior for your visitors.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var example = new Akamai.CloudletsApplicationLoadBalancer("example", new()
-    ///     {
-    ///         BalancingType = "WEIGHTED",
-    ///         DataCenters = new[]
-    ///         {
-    ///             new Akamai.Inputs.CloudletsApplicationLoadBalancerDataCenterArgs
-    ///             {
-    ///                 City = "Boston",
-    ///                 CloudServerHostHeaderOverride = false,
-    ///                 CloudService = true,
-    ///                 Continent = "NA",
-    ///                 Country = "US",
-    ///                 Hostname = "example-hostname",
-    ///                 Latitude = 102.78108,
-    ///                 LivenessHosts = new[]
-    ///                 {
-    ///                     "example",
-    ///                 },
-    ///                 Longitude = -116.07064,
-    ///                 OriginId = "alb_test_1",
-    ///                 Percent = 100,
-    ///                 StateOrProvince = "MA",
-    ///             },
-    ///         },
-    ///         Description = "application_load_balancer description",
-    ///         LivenessSettings = new Akamai.Inputs.CloudletsApplicationLoadBalancerLivenessSettingsArgs
-    ///         {
-    ///             AdditionalHeaders = 
-    ///             {
-    ///                 { "additionalHeaders", "123" },
-    ///             },
-    ///             HostHeader = "header",
-    ///             Interval = 10,
-    ///             Path = "/status",
-    ///             Port = 1234,
-    ///             Protocol = "HTTP",
-    ///             RequestString = "test_request_string",
-    ///             ResponseString = "test_response_string",
-    ///             Timeout = 60,
-    ///         },
-    ///         OriginId = "alb_test_1",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
-    /// ## Import
-    /// 
-    /// Basic usagehcl resource "akamai_cloudlets_application_load_balancer" "example" {
-    /// 
-    /// # (resource arguments)
-    /// 
-    ///  } You can import your Akamai Application Load Balancer configuration using an origin ID. For example
-    /// 
-    /// ```sh
-    ///  $ pulumi import akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer example alb_test_1
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer")]
     public partial class CloudletsApplicationLoadBalancer : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+        /// The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
         /// </summary>
         [Output("balancingType")]
         public Output<string?> BalancingType { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+        /// The object containing information on conditional origins being used as data centers for an Application Load Balancer
+        /// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+        /// application load balancer configuration.
         /// </summary>
         [Output("dataCenters")]
         public Output<ImmutableArray<Outputs.CloudletsApplicationLoadBalancerDataCenter>> DataCenters { get; private set; } = null!;
 
         /// <summary>
-        /// The description of the load balancing configuration.
+        /// The load balancer configuration description
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
-        /// <summary>
-        /// Specifies the health of each load balanced data center defined in the data center list.
-        /// </summary>
         [Output("livenessSettings")]
         public Output<Outputs.CloudletsApplicationLoadBalancerLivenessSettings?> LivenessSettings { get; private set; } = null!;
 
         /// <summary>
-        /// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+        /// The conditional origin’s unique identifier
         /// </summary>
         [Output("originId")]
         public Output<string> OriginId { get; private set; } = null!;
 
         /// <summary>
-        /// The version number of the load balancing configuration.
+        /// The load balancer configuration version
         /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
 
         /// <summary>
-        /// A list of warnings that occurred during the activation of the load balancing configuration.
+        /// Describes warnings during activation of load balancer configuration
         /// </summary>
         [Output("warnings")]
         public Output<string> Warnings { get; private set; } = null!;
@@ -173,7 +100,7 @@ namespace Pulumi.Akamai
     public sealed class CloudletsApplicationLoadBalancerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+        /// The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
         /// </summary>
         [Input("balancingType")]
         public Input<string>? BalancingType { get; set; }
@@ -182,7 +109,9 @@ namespace Pulumi.Akamai
         private InputList<Inputs.CloudletsApplicationLoadBalancerDataCenterArgs>? _dataCenters;
 
         /// <summary>
-        /// Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+        /// The object containing information on conditional origins being used as data centers for an Application Load Balancer
+        /// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+        /// application load balancer configuration.
         /// </summary>
         public InputList<Inputs.CloudletsApplicationLoadBalancerDataCenterArgs> DataCenters
         {
@@ -191,19 +120,16 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The description of the load balancing configuration.
+        /// The load balancer configuration description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
-        /// <summary>
-        /// Specifies the health of each load balanced data center defined in the data center list.
-        /// </summary>
         [Input("livenessSettings")]
         public Input<Inputs.CloudletsApplicationLoadBalancerLivenessSettingsArgs>? LivenessSettings { get; set; }
 
         /// <summary>
-        /// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+        /// The conditional origin’s unique identifier
         /// </summary>
         [Input("originId", required: true)]
         public Input<string> OriginId { get; set; } = null!;
@@ -217,7 +143,7 @@ namespace Pulumi.Akamai
     public sealed class CloudletsApplicationLoadBalancerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+        /// The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
         /// </summary>
         [Input("balancingType")]
         public Input<string>? BalancingType { get; set; }
@@ -226,7 +152,9 @@ namespace Pulumi.Akamai
         private InputList<Inputs.CloudletsApplicationLoadBalancerDataCenterGetArgs>? _dataCenters;
 
         /// <summary>
-        /// Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+        /// The object containing information on conditional origins being used as data centers for an Application Load Balancer
+        /// implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+        /// application load balancer configuration.
         /// </summary>
         public InputList<Inputs.CloudletsApplicationLoadBalancerDataCenterGetArgs> DataCenters
         {
@@ -235,31 +163,28 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The description of the load balancing configuration.
+        /// The load balancer configuration description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
-        /// <summary>
-        /// Specifies the health of each load balanced data center defined in the data center list.
-        /// </summary>
         [Input("livenessSettings")]
         public Input<Inputs.CloudletsApplicationLoadBalancerLivenessSettingsGetArgs>? LivenessSettings { get; set; }
 
         /// <summary>
-        /// The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+        /// The conditional origin’s unique identifier
         /// </summary>
         [Input("originId")]
         public Input<string>? OriginId { get; set; }
 
         /// <summary>
-        /// The version number of the load balancing configuration.
+        /// The load balancer configuration version
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
 
         /// <summary>
-        /// A list of warnings that occurred during the activation of the load balancing configuration.
+        /// Describes warnings during activation of load balancer configuration
         /// </summary>
         [Input("warnings")]
         public Input<string>? Warnings { get; set; }

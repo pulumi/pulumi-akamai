@@ -4,37 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Custom deny
- *
- * Modifies a custom deny action. Custom denies enable you to craft your own error message or redirect pages for use when HTTP requests are denied.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://techdocs.akamai.com/application-security/reference/get-custom-deny-actions)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- * import * as fs from "fs";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const customDeny = new akamai.AppSecCustomDeny("customDeny", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     customDeny: fs.readFileSync(`${path.module}/custom_deny.json`),
- * });
- * export const customDenyId = customDeny.customDenyId;
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `customDenyId`. ID of the new custom deny action.
- */
 export class AppSecCustomDeny extends pulumi.CustomResource {
     /**
      * Get an existing AppSecCustomDeny resource's state with the given name, ID, and optional extra
@@ -64,11 +33,11 @@ export class AppSecCustomDeny extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the custom deny.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Path to a JSON file containing properties and property values for the custom deny.
+     * JSON-formatted information about the properties and property values for the custom deny
      */
     public readonly customDeny!: pulumi.Output<string>;
     /**
@@ -114,11 +83,11 @@ export class AppSecCustomDeny extends pulumi.CustomResource {
  */
 export interface AppSecCustomDenyState {
     /**
-     * . Unique identifier of the security configuration associated with the custom deny.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing properties and property values for the custom deny.
+     * JSON-formatted information about the properties and property values for the custom deny
      */
     customDeny?: pulumi.Input<string>;
     /**
@@ -132,11 +101,11 @@ export interface AppSecCustomDenyState {
  */
 export interface AppSecCustomDenyArgs {
     /**
-     * . Unique identifier of the security configuration associated with the custom deny.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing properties and property values for the custom deny.
+     * JSON-formatted information about the properties and property values for the custom deny
      */
     customDeny: pulumi.Input<string>;
 }

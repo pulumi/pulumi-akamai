@@ -4,37 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security configuration
- *
- * Returns the SIEM (Security Event and Information Management) settings for a security configuration.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://techdocs.akamai.com/application-security/reference/get-siem)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const siemSettings = configuration.then(configuration => akamai.getAppSecSiemSettings({
- *     configId: configuration.configId,
- * }));
- * export const siemSettingsJson = siemSettings.then(siemSettings => siemSettings.json);
- * export const siemSettingsOutput = siemSettings.then(siemSettings => siemSettings.outputText);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `json`. JSON-formatted list of the SIEM setting information.
- * - `outputText`. Tabular report showing the SIEM setting information.
- */
 export function getAppSecSiemSettings(args: GetAppSecSiemSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecSiemSettingsResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -47,9 +16,6 @@ export function getAppSecSiemSettings(args: GetAppSecSiemSettingsArgs, opts?: pu
  * A collection of arguments for invoking getAppSecSiemSettings.
  */
 export interface GetAppSecSiemSettingsArgs {
-    /**
-     * . Unique identifier of the security configuration you want to return information for.
-     */
     configId: number;
 }
 
@@ -65,37 +31,6 @@ export interface GetAppSecSiemSettingsResult {
     readonly json: string;
     readonly outputText: string;
 }
-/**
- * **Scopes**: Security configuration
- *
- * Returns the SIEM (Security Event and Information Management) settings for a security configuration.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://techdocs.akamai.com/application-security/reference/get-siem)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const siemSettings = configuration.then(configuration => akamai.getAppSecSiemSettings({
- *     configId: configuration.configId,
- * }));
- * export const siemSettingsJson = siemSettings.then(siemSettings => siemSettings.json);
- * export const siemSettingsOutput = siemSettings.then(siemSettings => siemSettings.outputText);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `json`. JSON-formatted list of the SIEM setting information.
- * - `outputText`. Tabular report showing the SIEM setting information.
- */
 export function getAppSecSiemSettingsOutput(args: GetAppSecSiemSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecSiemSettingsResult> {
     return pulumi.output(args).apply((a: any) => getAppSecSiemSettings(a, opts))
 }
@@ -104,8 +39,5 @@ export function getAppSecSiemSettingsOutput(args: GetAppSecSiemSettingsOutputArg
  * A collection of arguments for invoking getAppSecSiemSettings.
  */
 export interface GetAppSecSiemSettingsOutputArgs {
-    /**
-     * . Unique identifier of the security configuration you want to return information for.
-     */
     configId: pulumi.Input<number>;
 }

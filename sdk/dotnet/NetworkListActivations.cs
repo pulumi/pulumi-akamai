@@ -9,10 +9,6 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// Use the `akamai.NetworkListActivations` resource to activate a network list in either the STAGING or PRODUCTION
-    /// environment.
-    /// </summary>
     [AkamaiResourceType("akamai:index/networkListActivations:NetworkListActivations")]
     public partial class NetworkListActivations : global::Pulumi.CustomResource
     {
@@ -20,41 +16,37 @@ namespace Pulumi.Akamai
         public Output<bool?> Activate { get; private set; } = null!;
 
         /// <summary>
-        /// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-        /// `STAGING`.
+        /// The Akamai network on which the list is activated: STAGING or PRODUCTION
         /// </summary>
         [Output("network")]
         public Output<string?> Network { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the network list to be activated
+        /// Unique identifier of the network list
         /// </summary>
         [Output("networkListId")]
         public Output<string> NetworkListId { get; private set; } = null!;
 
         /// <summary>
-        /// A comment describing the activation.
+        /// Descriptive text to accompany the activation
         /// </summary>
         [Output("notes")]
         public Output<string?> Notes { get; private set; } = null!;
 
         /// <summary>
-        /// A bracketed, comma-separated list of email addresses that will be notified when the
-        /// operation is complete.
+        /// List of email addresses of Control Center users who receive an email when activation of this list is complete
         /// </summary>
         [Output("notificationEmails")]
         public Output<ImmutableArray<string>> NotificationEmails { get; private set; } = null!;
 
         /// <summary>
-        /// The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-        /// list was not activated.
+        /// This network list's current activation status in the environment specified by the "network" attribute
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// An integer that identifies the current version of the network list; this value is incremented each time
-        /// the list is modified.
+        /// Identifies the sync point of the network list to be activated
         /// </summary>
         [Output("syncPoint")]
         public Output<int> SyncPoint { get; private set; } = null!;
@@ -109,20 +101,19 @@ namespace Pulumi.Akamai
         public Input<bool>? Activate { get; set; }
 
         /// <summary>
-        /// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-        /// `STAGING`.
+        /// The Akamai network on which the list is activated: STAGING or PRODUCTION
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// The ID of the network list to be activated
+        /// Unique identifier of the network list
         /// </summary>
         [Input("networkListId", required: true)]
         public Input<string> NetworkListId { get; set; } = null!;
 
         /// <summary>
-        /// A comment describing the activation.
+        /// Descriptive text to accompany the activation
         /// </summary>
         [Input("notes")]
         public Input<string>? Notes { get; set; }
@@ -131,8 +122,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _notificationEmails;
 
         /// <summary>
-        /// A bracketed, comma-separated list of email addresses that will be notified when the
-        /// operation is complete.
+        /// List of email addresses of Control Center users who receive an email when activation of this list is complete
         /// </summary>
         public InputList<string> NotificationEmails
         {
@@ -141,8 +131,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// An integer that identifies the current version of the network list; this value is incremented each time
-        /// the list is modified.
+        /// Identifies the sync point of the network list to be activated
         /// </summary>
         [Input("syncPoint", required: true)]
         public Input<int> SyncPoint { get; set; } = null!;
@@ -159,20 +148,19 @@ namespace Pulumi.Akamai
         public Input<bool>? Activate { get; set; }
 
         /// <summary>
-        /// The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-        /// `STAGING`.
+        /// The Akamai network on which the list is activated: STAGING or PRODUCTION
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// The ID of the network list to be activated
+        /// Unique identifier of the network list
         /// </summary>
         [Input("networkListId")]
         public Input<string>? NetworkListId { get; set; }
 
         /// <summary>
-        /// A comment describing the activation.
+        /// Descriptive text to accompany the activation
         /// </summary>
         [Input("notes")]
         public Input<string>? Notes { get; set; }
@@ -181,8 +169,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _notificationEmails;
 
         /// <summary>
-        /// A bracketed, comma-separated list of email addresses that will be notified when the
-        /// operation is complete.
+        /// List of email addresses of Control Center users who receive an email when activation of this list is complete
         /// </summary>
         public InputList<string> NotificationEmails
         {
@@ -191,15 +178,13 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-        /// list was not activated.
+        /// This network list's current activation status in the environment specified by the "network" attribute
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// An integer that identifies the current version of the network list; this value is incremented each time
-        /// the list is modified.
+        /// Identifies the sync point of the network list to be activated
         /// </summary>
         [Input("syncPoint")]
         public Input<int>? SyncPoint { get; set; }

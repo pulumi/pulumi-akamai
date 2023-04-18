@@ -13,32 +13,16 @@ public final class GetAppSecHostnameCoverageMatchTargetsPlainArgs extends com.pu
 
     public static final GetAppSecHostnameCoverageMatchTargetsPlainArgs Empty = new GetAppSecHostnameCoverageMatchTargetsPlainArgs();
 
-    /**
-     * . (Required). Unique identifier of the security configuration associated with the hostname.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . (Required). Unique identifier of the security configuration associated with the hostname.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
-     * 
-     */
     @Import(name="hostname", required=true)
     private String hostname;
 
-    /**
-     * @return . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
-     * 
-     */
     public String hostname() {
         return this.hostname;
     }
@@ -68,23 +52,11 @@ public final class GetAppSecHostnameCoverageMatchTargetsPlainArgs extends com.pu
             $ = new GetAppSecHostnameCoverageMatchTargetsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . (Required). Unique identifier of the security configuration associated with the hostname.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param hostname . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
-         * 
-         * @return builder
-         * 
-         */
         public Builder hostname(String hostname) {
             $.hostname = hostname;
             return this;

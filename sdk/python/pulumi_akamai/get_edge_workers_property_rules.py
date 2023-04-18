@@ -66,8 +66,6 @@ def get_edge_workers_property_rules(edgeworker_id: Optional[int] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEdgeWorkersPropertyRulesResult:
     """
     Use this data source to access information about an existing resource.
-
-    :param int edgeworker_id: Unique identifier of an EdgeWorker ID.
     """
     __args__ = dict()
     __args__['edgeworkerId'] = edgeworker_id
@@ -85,7 +83,5 @@ def get_edge_workers_property_rules_output(edgeworker_id: Optional[pulumi.Input[
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEdgeWorkersPropertyRulesResult]:
     """
     Use this data source to access information about an existing resource.
-
-    :param int edgeworker_id: Unique identifier of an EdgeWorker ID.
     """
     ...

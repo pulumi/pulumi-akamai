@@ -6,28 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Use `akamai.getIamRoles` to list roles for the current account and contract type. The account and contract type are determined by the access tokens in your API client. Use the `roleId` from this data source to construct the `authGrantsJson` when creating or updating a user's auth grants.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const my-roles = akamai.getIamRoles({});
- * export const roles = my_roles;
- * ```
- * ## Attributes reference
- *
- * These attributes are returned:
- *
- * * `roles` — A list of roles.
- *
- * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-roles)
- */
 export function getIamRoles(opts?: pulumi.InvokeOptions): Promise<GetIamRolesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

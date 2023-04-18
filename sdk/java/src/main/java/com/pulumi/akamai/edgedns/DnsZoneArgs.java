@@ -18,167 +18,79 @@ public final class DnsZoneArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DnsZoneArgs Empty = new DnsZoneArgs();
 
-    /**
-     * A descriptive comment.
-     * 
-     */
     @Import(name="comment")
     private @Nullable Output<String> comment;
 
-    /**
-     * @return A descriptive comment.
-     * 
-     */
     public Optional<Output<String>> comment() {
         return Optional.ofNullable(this.comment);
     }
 
-    /**
-     * The contract ID.
-     * 
-     */
     @Import(name="contract", required=true)
     private Output<String> contract;
 
-    /**
-     * @return The contract ID.
-     * 
-     */
     public Output<String> contract() {
         return this.contract;
     }
 
-    /**
-     * A free form identifier for the zone.
-     * 
-     */
     @Import(name="endCustomerId")
     private @Nullable Output<String> endCustomerId;
 
-    /**
-     * @return A free form identifier for the zone.
-     * 
-     */
     public Optional<Output<String>> endCustomerId() {
         return Optional.ofNullable(this.endCustomerId);
     }
 
-    /**
-     * The currently selected group ID.
-     * 
-     */
     @Import(name="group")
     private @Nullable Output<String> group;
 
-    /**
-     * @return The currently selected group ID.
-     * 
-     */
     public Optional<Output<String>> group() {
         return Optional.ofNullable(this.group);
     }
 
-    /**
-     * The names or IP addresses of the nameservers that the zone data should be retrieved from.
-     * 
-     */
     @Import(name="masters")
     private @Nullable Output<List<String>> masters;
 
-    /**
-     * @return The names or IP addresses of the nameservers that the zone data should be retrieved from.
-     * 
-     */
     public Optional<Output<List<String>>> masters() {
         return Optional.ofNullable(this.masters);
     }
 
-    /**
-     * Whether DNSSEC Sign and Serve is enabled.
-     * 
-     */
     @Import(name="signAndServe")
     private @Nullable Output<Boolean> signAndServe;
 
-    /**
-     * @return Whether DNSSEC Sign and Serve is enabled.
-     * 
-     */
     public Optional<Output<Boolean>> signAndServe() {
         return Optional.ofNullable(this.signAndServe);
     }
 
-    /**
-     * The algorithm used by Sign and Serve.
-     * 
-     */
     @Import(name="signAndServeAlgorithm")
     private @Nullable Output<String> signAndServeAlgorithm;
 
-    /**
-     * @return The algorithm used by Sign and Serve.
-     * 
-     */
     public Optional<Output<String>> signAndServeAlgorithm() {
         return Optional.ofNullable(this.signAndServeAlgorithm);
     }
 
-    /**
-     * The name of the zone whose configuration this zone will copy.
-     * 
-     */
     @Import(name="target")
     private @Nullable Output<String> target;
 
-    /**
-     * @return The name of the zone whose configuration this zone will copy.
-     * 
-     */
     public Optional<Output<String>> target() {
         return Optional.ofNullable(this.target);
     }
 
-    /**
-     * The TSIG Key used in secure zone transfers. If used, requires these arguments:
-     * 
-     */
     @Import(name="tsigKey")
     private @Nullable Output<DnsZoneTsigKeyArgs> tsigKey;
 
-    /**
-     * @return The TSIG Key used in secure zone transfers. If used, requires these arguments:
-     * 
-     */
     public Optional<Output<DnsZoneTsigKeyArgs>> tsigKey() {
         return Optional.ofNullable(this.tsigKey);
     }
 
-    /**
-     * Whether the zone is `primary`, `secondary`, or `alias`.
-     * 
-     */
     @Import(name="type", required=true)
     private Output<String> type;
 
-    /**
-     * @return Whether the zone is `primary`, `secondary`, or `alias`.
-     * 
-     */
     public Output<String> type() {
         return this.type;
     }
 
-    /**
-     * The domain zone, encapsulating any nested subdomains.
-     * 
-     */
     @Import(name="zone", required=true)
     private Output<String> zone;
 
-    /**
-     * @return The domain zone, encapsulating any nested subdomains.
-     * 
-     */
     public Output<String> zone() {
         return this.zone;
     }
@@ -217,243 +129,105 @@ public final class DnsZoneArgs extends com.pulumi.resources.ResourceArgs {
             $ = new DnsZoneArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param comment A descriptive comment.
-         * 
-         * @return builder
-         * 
-         */
         public Builder comment(@Nullable Output<String> comment) {
             $.comment = comment;
             return this;
         }
 
-        /**
-         * @param comment A descriptive comment.
-         * 
-         * @return builder
-         * 
-         */
         public Builder comment(String comment) {
             return comment(Output.of(comment));
         }
 
-        /**
-         * @param contract The contract ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contract(Output<String> contract) {
             $.contract = contract;
             return this;
         }
 
-        /**
-         * @param contract The contract ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contract(String contract) {
             return contract(Output.of(contract));
         }
 
-        /**
-         * @param endCustomerId A free form identifier for the zone.
-         * 
-         * @return builder
-         * 
-         */
         public Builder endCustomerId(@Nullable Output<String> endCustomerId) {
             $.endCustomerId = endCustomerId;
             return this;
         }
 
-        /**
-         * @param endCustomerId A free form identifier for the zone.
-         * 
-         * @return builder
-         * 
-         */
         public Builder endCustomerId(String endCustomerId) {
             return endCustomerId(Output.of(endCustomerId));
         }
 
-        /**
-         * @param group The currently selected group ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder group(@Nullable Output<String> group) {
             $.group = group;
             return this;
         }
 
-        /**
-         * @param group The currently selected group ID.
-         * 
-         * @return builder
-         * 
-         */
         public Builder group(String group) {
             return group(Output.of(group));
         }
 
-        /**
-         * @param masters The names or IP addresses of the nameservers that the zone data should be retrieved from.
-         * 
-         * @return builder
-         * 
-         */
         public Builder masters(@Nullable Output<List<String>> masters) {
             $.masters = masters;
             return this;
         }
 
-        /**
-         * @param masters The names or IP addresses of the nameservers that the zone data should be retrieved from.
-         * 
-         * @return builder
-         * 
-         */
         public Builder masters(List<String> masters) {
             return masters(Output.of(masters));
         }
 
-        /**
-         * @param masters The names or IP addresses of the nameservers that the zone data should be retrieved from.
-         * 
-         * @return builder
-         * 
-         */
         public Builder masters(String... masters) {
             return masters(List.of(masters));
         }
 
-        /**
-         * @param signAndServe Whether DNSSEC Sign and Serve is enabled.
-         * 
-         * @return builder
-         * 
-         */
         public Builder signAndServe(@Nullable Output<Boolean> signAndServe) {
             $.signAndServe = signAndServe;
             return this;
         }
 
-        /**
-         * @param signAndServe Whether DNSSEC Sign and Serve is enabled.
-         * 
-         * @return builder
-         * 
-         */
         public Builder signAndServe(Boolean signAndServe) {
             return signAndServe(Output.of(signAndServe));
         }
 
-        /**
-         * @param signAndServeAlgorithm The algorithm used by Sign and Serve.
-         * 
-         * @return builder
-         * 
-         */
         public Builder signAndServeAlgorithm(@Nullable Output<String> signAndServeAlgorithm) {
             $.signAndServeAlgorithm = signAndServeAlgorithm;
             return this;
         }
 
-        /**
-         * @param signAndServeAlgorithm The algorithm used by Sign and Serve.
-         * 
-         * @return builder
-         * 
-         */
         public Builder signAndServeAlgorithm(String signAndServeAlgorithm) {
             return signAndServeAlgorithm(Output.of(signAndServeAlgorithm));
         }
 
-        /**
-         * @param target The name of the zone whose configuration this zone will copy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder target(@Nullable Output<String> target) {
             $.target = target;
             return this;
         }
 
-        /**
-         * @param target The name of the zone whose configuration this zone will copy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder target(String target) {
             return target(Output.of(target));
         }
 
-        /**
-         * @param tsigKey The TSIG Key used in secure zone transfers. If used, requires these arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder tsigKey(@Nullable Output<DnsZoneTsigKeyArgs> tsigKey) {
             $.tsigKey = tsigKey;
             return this;
         }
 
-        /**
-         * @param tsigKey The TSIG Key used in secure zone transfers. If used, requires these arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder tsigKey(DnsZoneTsigKeyArgs tsigKey) {
             return tsigKey(Output.of(tsigKey));
         }
 
-        /**
-         * @param type Whether the zone is `primary`, `secondary`, or `alias`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(Output<String> type) {
             $.type = type;
             return this;
         }
 
-        /**
-         * @param type Whether the zone is `primary`, `secondary`, or `alias`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(String type) {
             return type(Output.of(type));
         }
 
-        /**
-         * @param zone The domain zone, encapsulating any nested subdomains.
-         * 
-         * @return builder
-         * 
-         */
         public Builder zone(Output<String> zone) {
             $.zone = zone;
             return this;
         }
 
-        /**
-         * @param zone The domain zone, encapsulating any nested subdomains.
-         * 
-         * @return builder
-         * 
-         */
         public Builder zone(String zone) {
             return zone(Output.of(zone));
         }

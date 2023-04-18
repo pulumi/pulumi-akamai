@@ -10,65 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration; contract; group
-//
-// Returns the list of hostnames that can be (but aren't yet) protected by a security configuration. You can specify the set of hostnames to be retrieved either by supplying the name of a security configuration or by supplying an Akamai group ID and contract ID.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://techdocs.akamai.com/application-security/reference/get-selectable-hostnames)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			selectableHostnamesAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &akamai.GetAppSecSelectableHostnamesArgs{
-//				ConfigId: pulumi.IntRef(configuration.ConfigId),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("selectableHostnames", selectableHostnamesAppSecSelectableHostnames.Hostnames)
-//			ctx.Export("selectableHostnamesJson", selectableHostnamesAppSecSelectableHostnames.HostnamesJson)
-//			ctx.Export("selectableHostnamesOutputText", selectableHostnamesAppSecSelectableHostnames.OutputText)
-//			selectableHostnamesForCreateConfigurationAppSecSelectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &akamai.GetAppSecSelectableHostnamesArgs{
-//				ContractId: "5-2WA382",
-//				GroupId:    12198,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("selectableHostnamesForCreateConfiguration", selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.Hostnames)
-//			ctx.Export("selectableHostnamesForCreateConfigurationJson", selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.HostnamesJson)
-//			ctx.Export("selectableHostnamesForCreateConfigurationOutputText", selectableHostnamesForCreateConfigurationAppSecSelectableHostnames.OutputText)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `hostnames`. List of selectable hostnames.
-// - `hostnamesJson`. JSON-formatted list of selectable hostnames.
-// - `outputText`. Tabular report of the selectable hostnames showing the name and configId of the security configuration under which the host is protected in production.
 func GetAppSecSelectableHostnames(ctx *pulumi.Context, args *GetAppSecSelectableHostnamesArgs, opts ...pulumi.InvokeOption) (*GetAppSecSelectableHostnamesResult, error) {
 	var rv GetAppSecSelectableHostnamesResult
 	err := ctx.Invoke("akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames", args, &rv, opts...)
@@ -80,14 +21,11 @@ func GetAppSecSelectableHostnames(ctx *pulumi.Context, args *GetAppSecSelectable
 
 // A collection of arguments for invoking getAppSecSelectableHostnames.
 type GetAppSecSelectableHostnamesArgs struct {
-	ActiveInProduction *bool `pulumi:"activeInProduction"`
-	ActiveInStaging    *bool `pulumi:"activeInStaging"`
-	// . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can't be used with either the `contractid` or the `groupid` arguments.
-	ConfigId *int `pulumi:"configId"`
-	// . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can't be used with the `configId` argument.
-	Contractid *string `pulumi:"contractid"`
-	// . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can't be used with the `configId` argument.
-	Groupid *int `pulumi:"groupid"`
+	ActiveInProduction *bool   `pulumi:"activeInProduction"`
+	ActiveInStaging    *bool   `pulumi:"activeInStaging"`
+	ConfigId           *int    `pulumi:"configId"`
+	Contractid         *string `pulumi:"contractid"`
+	Groupid            *int    `pulumi:"groupid"`
 }
 
 // A collection of values returned by getAppSecSelectableHostnames.
@@ -119,14 +57,11 @@ func GetAppSecSelectableHostnamesOutput(ctx *pulumi.Context, args GetAppSecSelec
 
 // A collection of arguments for invoking getAppSecSelectableHostnames.
 type GetAppSecSelectableHostnamesOutputArgs struct {
-	ActiveInProduction pulumi.BoolPtrInput `pulumi:"activeInProduction"`
-	ActiveInStaging    pulumi.BoolPtrInput `pulumi:"activeInStaging"`
-	// . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can't be used with either the `contractid` or the `groupid` arguments.
-	ConfigId pulumi.IntPtrInput `pulumi:"configId"`
-	// . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can't be used with the `configId` argument.
-	Contractid pulumi.StringPtrInput `pulumi:"contractid"`
-	// . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can't be used with the `configId` argument.
-	Groupid pulumi.IntPtrInput `pulumi:"groupid"`
+	ActiveInProduction pulumi.BoolPtrInput   `pulumi:"activeInProduction"`
+	ActiveInStaging    pulumi.BoolPtrInput   `pulumi:"activeInStaging"`
+	ConfigId           pulumi.IntPtrInput    `pulumi:"configId"`
+	Contractid         pulumi.StringPtrInput `pulumi:"contractid"`
+	Groupid            pulumi.IntPtrInput    `pulumi:"groupid"`
 }
 
 func (GetAppSecSelectableHostnamesOutputArgs) ElementType() reflect.Type {

@@ -15,62 +15,30 @@ public final class GetPropertyIncludesPlainArgs extends com.pulumi.resources.Inv
 
     public static final GetPropertyIncludesPlainArgs Empty = new GetPropertyIncludesPlainArgs();
 
-    /**
-     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId", required=true)
     private String contractId;
 
-    /**
-     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-     * 
-     */
     public String contractId() {
         return this.contractId;
     }
 
-    /**
-     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-     * 
-     */
     @Import(name="groupId", required=true)
     private String groupId;
 
-    /**
-     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-     * 
-     */
     public String groupId() {
         return this.groupId;
     }
 
-    /**
-     * (Optional) The property that references the includes you want to list.
-     * 
-     */
     @Import(name="parentProperty")
     private @Nullable GetPropertyIncludesParentProperty parentProperty;
 
-    /**
-     * @return (Optional) The property that references the includes you want to list.
-     * 
-     */
     public Optional<GetPropertyIncludesParentProperty> parentProperty() {
         return Optional.ofNullable(this.parentProperty);
     }
 
-    /**
-     * (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-     * 
-     */
     @Import(name="type")
     private @Nullable String type;
 
-    /**
-     * @return (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-     * 
-     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
@@ -102,45 +70,21 @@ public final class GetPropertyIncludesPlainArgs extends com.pulumi.resources.Inv
             $ = new GetPropertyIncludesPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(String groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        /**
-         * @param parentProperty (Optional) The property that references the includes you want to list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder parentProperty(@Nullable GetPropertyIncludesParentProperty parentProperty) {
             $.parentProperty = parentProperty;
             return this;
         }
 
-        /**
-         * @param type (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(@Nullable String type) {
             $.type = type;
             return this;

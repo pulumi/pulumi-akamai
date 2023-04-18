@@ -71,17 +71,11 @@ class GetNetworkListsResult:
     @property
     @pulumi.getter
     def json(self) -> str:
-        """
-        A JSON-formatted list of information about the specified network list(s).
-        """
         return pulumi.get(self, "json")
 
     @property
     @pulumi.getter
     def lists(self) -> Sequence[str]:
-        """
-        A list containing the IDs of the specified network lists(s).
-        """
         return pulumi.get(self, "lists")
 
     @property
@@ -97,9 +91,6 @@ class GetNetworkListsResult:
     @property
     @pulumi.getter(name="outputText")
     def output_text(self) -> str:
-        """
-        A tabular display showing the network list information.
-        """
         return pulumi.get(self, "output_text")
 
     @property
@@ -130,36 +121,7 @@ def get_network_lists(name: Optional[str] = None,
                       type: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkListsResult:
     """
-    Use the _get_network_lists_ data source to retrieve information about the available network lists,
-    optionally filtered by list type or based on a search string. The information available is described in
-    [List network lists](https://techdocs.akamai.com/network-lists/reference/get-network-lists).
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    network_lists = akamai.get_network_lists()
-    pulumi.export("networkListsText", network_lists.output_text)
-    pulumi.export("networkListsJson", network_lists.json)
-    pulumi.export("networkListsList", network_lists.lists)
-    network_lists_filter = akamai.get_network_lists(name="Test Whitelist",
-        type="IP")
-    pulumi.export("networkListsFilterText", network_lists_filter.output_text)
-    pulumi.export("networkListsFilterJson", network_lists_filter.json)
-    pulumi.export("networkListsFilterList", network_lists_filter.lists)
-    ```
-
-
-    :param str name: The name of a specific network list to retrieve. If not supplied, information about all network
-           lists will be returned.
-    :param str network_list_id: The ID of a specific network list to retrieve.
-           If not supplied, information about all network lists will be returned.
-    :param str type: The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
-           information about both types will be returned.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -186,35 +148,6 @@ def get_network_lists_output(name: Optional[pulumi.Input[Optional[str]]] = None,
                              type: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkListsResult]:
     """
-    Use the _get_network_lists_ data source to retrieve information about the available network lists,
-    optionally filtered by list type or based on a search string. The information available is described in
-    [List network lists](https://techdocs.akamai.com/network-lists/reference/get-network-lists).
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    network_lists = akamai.get_network_lists()
-    pulumi.export("networkListsText", network_lists.output_text)
-    pulumi.export("networkListsJson", network_lists.json)
-    pulumi.export("networkListsList", network_lists.lists)
-    network_lists_filter = akamai.get_network_lists(name="Test Whitelist",
-        type="IP")
-    pulumi.export("networkListsFilterText", network_lists_filter.output_text)
-    pulumi.export("networkListsFilterJson", network_lists_filter.json)
-    pulumi.export("networkListsFilterList", network_lists_filter.lists)
-    ```
-
-
-    :param str name: The name of a specific network list to retrieve. If not supplied, information about all network
-           lists will be returned.
-    :param str network_list_id: The ID of a specific network list to retrieve.
-           If not supplied, information about all network lists will be returned.
-    :param str type: The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
-           information about both types will be returned.
+    Use this data source to access information about an existing resource.
     """
     ...

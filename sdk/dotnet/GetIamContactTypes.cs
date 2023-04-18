@@ -11,40 +11,6 @@ namespace Pulumi.Akamai
 {
     public static class GetIamContactTypes
     {
-        /// <summary>
-        /// Use `akamai.getIamContactTypes` to retrieve all the possible `contact_types` that Akamai supports. Use the values from this data source to add or update a user's contact type.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var contactTypes = Akamai.GetIamContactTypes.Invoke();
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["supportedContactTypes"] = contactTypes,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// These attributes are returned:
-        /// 
-        /// * `contact_types` — A list of contact types.
-        /// 
-        /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-contact-types)
-        /// </summary>
         public static Task<GetIamContactTypesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamContactTypesResult>("akamai:index/getIamContactTypes:getIamContactTypes", InvokeArgs.Empty, options.WithDefaults());
     }

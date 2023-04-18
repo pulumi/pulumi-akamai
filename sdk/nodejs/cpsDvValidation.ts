@@ -4,26 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Once you complete the Let's Encrypt challenges, optionally use the `akamai.CpsDvValidation` resource to send the acknowledgement to CPS and inform it that tokens are ready for validation. You can also wait for CPS to check for the tokens, which it does on a regular schedule. Next, CPS automatically deploys the certificate on Staging, and eventually on the Production network.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = new akamai.CpsDvValidation("example", {
- *     enrollmentId: akamai_cps_dv_enrollment.example.id,
- *     sans: akamai_cps_dv_enrollment.example.sans,
- * });
- * ```
- * ## Attributes reference
- *
- * * `status` - The status of certificate validation.
- */
 export class CpsDvValidation extends pulumi.CustomResource {
     /**
      * Get an existing CpsDvValidation resource's state with the given name, ID, and optional extra
@@ -53,11 +33,11 @@ export class CpsDvValidation extends pulumi.CustomResource {
     }
 
     /**
-     * Unique identifier for the DV certificate enrollment.
+     * The unique identifier of enrollment
      */
     public readonly enrollmentId!: pulumi.Output<number>;
     /**
-     * The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+     * List of SANs
      */
     public readonly sans!: pulumi.Output<string[] | undefined>;
     /**
@@ -100,11 +80,11 @@ export class CpsDvValidation extends pulumi.CustomResource {
  */
 export interface CpsDvValidationState {
     /**
-     * Unique identifier for the DV certificate enrollment.
+     * The unique identifier of enrollment
      */
     enrollmentId?: pulumi.Input<number>;
     /**
-     * The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+     * List of SANs
      */
     sans?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -118,11 +98,11 @@ export interface CpsDvValidationState {
  */
 export interface CpsDvValidationArgs {
     /**
-     * Unique identifier for the DV certificate enrollment.
+     * The unique identifier of enrollment
      */
     enrollmentId: pulumi.Input<number>;
     /**
-     * The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+     * List of SANs
      */
     sans?: pulumi.Input<pulumi.Input<string>[]>;
 }

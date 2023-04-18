@@ -13,95 +13,37 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamSumologicConnector {
-    /**
-     * @return **Secret**. The unique HTTP collector code of your Sumo Logic `endpoint`.
-     * 
-     */
     private String collectorCode;
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     private @Nullable Boolean compressLogs;
     private @Nullable Integer connectorId;
-    /**
-     * @return The name of the connector.
-     * 
-     */
     private String connectorName;
-    /**
-     * @return Content type to pass in the log file header.
-     * 
-     */
     private @Nullable String contentType;
-    /**
-     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
-     * 
-     */
     private @Nullable String customHeaderName;
-    /**
-     * @return The custom header&#39;s contents passed with the request that contains information about the client connection.
-     * 
-     */
     private @Nullable String customHeaderValue;
-    /**
-     * @return The Elasticsearch bulk endpoint URL in the format: `https://&lt;hostname&gt;.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
-     * &lt;br&gt;Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
-     * 
-     */
     private String endpoint;
 
     private DatastreamSumologicConnector() {}
-    /**
-     * @return **Secret**. The unique HTTP collector code of your Sumo Logic `endpoint`.
-     * 
-     */
     public String collectorCode() {
         return this.collectorCode;
     }
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
     public Optional<Integer> connectorId() {
         return Optional.ofNullable(this.connectorId);
     }
-    /**
-     * @return The name of the connector.
-     * 
-     */
     public String connectorName() {
         return this.connectorName;
     }
-    /**
-     * @return Content type to pass in the log file header.
-     * 
-     */
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
     }
-    /**
-     * @return A human-readable name for the request&#39;s custom header, containing only alphanumeric, dash, and underscore characters.
-     * 
-     */
     public Optional<String> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
-    /**
-     * @return The custom header&#39;s contents passed with the request that contains information about the client connection.
-     * 
-     */
     public Optional<String> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
     }
-    /**
-     * @return The Elasticsearch bulk endpoint URL in the format: `https://&lt;hostname&gt;.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs.
-     * &lt;br&gt;Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
-     * 
-     */
     public String endpoint() {
         return this.endpoint;
     }

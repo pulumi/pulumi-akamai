@@ -4,41 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security configuration
- *
- * Specifies the networks that appear on the bypass network list. Networks on this list are allowed to bypass the Web Application Firewall.
- *
- * Note that this resource is only applicable to WAP (Web Application Protector) configurations.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/bypass-network-lists](https://techdocs.akamai.com/application-security/reference/put-bypass-network-lists)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const bypassNetworkLists = new akamai.AppSecByPassNetworkList("bypassNetworkLists", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: "gms1_134637",
- *     bypassNetworkLists: [
- *         "DocumentationNetworkList",
- *         "TrainingNetworkList",
- *     ],
- * });
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `outputText`. Tabular report showing the updated list of bypass network IDs.
- */
 export class AppSecByPassNetworkList extends pulumi.CustomResource {
     /**
      * Get an existing AppSecByPassNetworkList resource's state with the given name, ID, and optional extra
@@ -68,15 +33,15 @@ export class AppSecByPassNetworkList extends pulumi.CustomResource {
     }
 
     /**
-     * . JSON array of network IDs that comprise the bypass list.
+     * List of network list IDs that compose the bypass list
      */
     public readonly bypassNetworkLists!: pulumi.Output<string[]>;
     /**
-     * . Unique identifier of the security configuration associated with the bypass network lists being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Unique identifier of the security policy associated with the bypass network lists.
+     * The unique identifier of the security policy governing the bypass network lists
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -121,15 +86,15 @@ export class AppSecByPassNetworkList extends pulumi.CustomResource {
  */
 export interface AppSecByPassNetworkListState {
     /**
-     * . JSON array of network IDs that comprise the bypass list.
+     * List of network list IDs that compose the bypass list
      */
     bypassNetworkLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * . Unique identifier of the security configuration associated with the bypass network lists being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy associated with the bypass network lists.
+     * The unique identifier of the security policy governing the bypass network lists
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -139,15 +104,15 @@ export interface AppSecByPassNetworkListState {
  */
 export interface AppSecByPassNetworkListArgs {
     /**
-     * . JSON array of network IDs that comprise the bypass list.
+     * List of network list IDs that compose the bypass list
      */
     bypassNetworkLists: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * . Unique identifier of the security configuration associated with the bypass network lists being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy associated with the bypass network lists.
+     * The unique identifier of the security policy governing the bypass network lists
      */
     securityPolicyId: pulumi.Input<string>;
 }

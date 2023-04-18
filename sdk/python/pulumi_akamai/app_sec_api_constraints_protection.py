@@ -146,32 +146,7 @@ class AppSecApiConstraintsProtection(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        **Scopes**: Security policy
-
-        Enables or disables API constraints protection. These constraints specify the action to be taken when designated API endpoints are invoked.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        protection = akamai.AppSecApiConstraintsProtection("protection",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            enabled=True)
-        ```
-        ## Output Options
-
-        The following options can be used to determine the information returned, and how that returned information is formatted:
-
-        - `output_text`. Tabular report showing the current protection settings.
-
+        Create a AppSecApiConstraintsProtection resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
@@ -185,32 +160,7 @@ class AppSecApiConstraintsProtection(pulumi.CustomResource):
                  args: AppSecApiConstraintsProtectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Security policy
-
-        Enables or disables API constraints protection. These constraints specify the action to be taken when designated API endpoints are invoked.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/protections](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        protection = akamai.AppSecApiConstraintsProtection("protection",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            enabled=True)
-        ```
-        ## Output Options
-
-        The following options can be used to determine the information returned, and how that returned information is formatted:
-
-        - `output_text`. Tabular report showing the current protection settings.
-
+        Create a AppSecApiConstraintsProtection resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecApiConstraintsProtectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

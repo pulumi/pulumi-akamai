@@ -11,89 +11,24 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Contract and group
-//
-// Creates a new WAP (Web Application Protector) or KSD (Kona Site Defender) security configuration. KSD security configurations start out empty (i.e., unconfigured), while WAP configurations are created using preset values. The contract referenced in the request body determines the type of configuration you can create.
-//
-// In addition to manually creating a new configuration, you can use the `createFromConfigId` argument to clone an existing configuration.
-//
-// **Related API Endpoint**: [/appsec/v1/configs](https://techdocs.akamai.com/application-security/reference/post-config)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			selectableHostnames, err := akamai.GetAppSecSelectableHostnames(ctx, &akamai.GetAppSecSelectableHostnamesArgs{
-//				ConfigId: pulumi.IntRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			createConfig, err := akamai.NewAppSecConfiguration(ctx, "createConfig", &akamai.AppSecConfigurationArgs{
-//				Description: pulumi.String("This configuration is used as a testing environment for the documentation team."),
-//				ContractId:  pulumi.String("5-2WA382"),
-//				GroupId:     pulumi.Int(12198),
-//				HostNames: pulumi.StringArray{
-//					pulumi.String("documentation.akamai.com"),
-//					pulumi.String("training.akamai.com"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("createConfigId", createConfig.ConfigId)
-//			cloneConfig, err := akamai.NewAppSecConfiguration(ctx, "cloneConfig", &akamai.AppSecConfigurationArgs{
-//				Description:        pulumi.String("This configuration is used as a testing environment for the documentation team."),
-//				CreateFromConfigId: pulumi.Any(data.Akamai_appsec_configuration.Configuration.Config_id),
-//				CreateFromVersion:  pulumi.Any(data.Akamai_appsec_configuration.Configuration.Latest_version),
-//				ContractId:         pulumi.String("5-2WA382"),
-//				GroupId:            pulumi.Int(12198),
-//				HostNames:          interface{}(selectableHostnames.Hostnames),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("cloneConfigId", cloneConfig.ConfigId)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `configId`. ID of the new security configuration.
 type AppSecConfiguration struct {
 	pulumi.CustomResourceState
 
 	// Unique identifier of the new security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Unique identifier of the Akamai contract associated with the new configuration.
+	// Unique identifier of the Akamai contract associated with the new configuration
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
-	// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+	// Unique identifier of the existing configuration being cloned to create the new configuration
 	CreateFromConfigId pulumi.IntPtrOutput `pulumi:"createFromConfigId"`
-	// . Version number of the security configuration being cloned.
+	// Version number of the existing configuration being cloned to create the new configuration
 	CreateFromVersion pulumi.IntPtrOutput `pulumi:"createFromVersion"`
-	// . Brief description of the new configuration.
+	// Brief description of the new configuration
 	Description pulumi.StringOutput `pulumi:"description"`
-	// . Unique identifier of the contract group associated with the new configuration.
+	// Unique identifier of the contract group associated with the new configuration
 	GroupId pulumi.IntOutput `pulumi:"groupId"`
-	// . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+	// Hostnames to be protected by the new configuration
 	HostNames pulumi.StringArrayOutput `pulumi:"hostNames"`
-	// . Name of the new configuration.
+	// Name of the new configuration
 	Name pulumi.StringOutput `pulumi:"name"`
 }
 
@@ -140,38 +75,38 @@ func GetAppSecConfiguration(ctx *pulumi.Context,
 type appSecConfigurationState struct {
 	// Unique identifier of the new security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Unique identifier of the Akamai contract associated with the new configuration.
+	// Unique identifier of the Akamai contract associated with the new configuration
 	ContractId *string `pulumi:"contractId"`
-	// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+	// Unique identifier of the existing configuration being cloned to create the new configuration
 	CreateFromConfigId *int `pulumi:"createFromConfigId"`
-	// . Version number of the security configuration being cloned.
+	// Version number of the existing configuration being cloned to create the new configuration
 	CreateFromVersion *int `pulumi:"createFromVersion"`
-	// . Brief description of the new configuration.
+	// Brief description of the new configuration
 	Description *string `pulumi:"description"`
-	// . Unique identifier of the contract group associated with the new configuration.
+	// Unique identifier of the contract group associated with the new configuration
 	GroupId *int `pulumi:"groupId"`
-	// . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+	// Hostnames to be protected by the new configuration
 	HostNames []string `pulumi:"hostNames"`
-	// . Name of the new configuration.
+	// Name of the new configuration
 	Name *string `pulumi:"name"`
 }
 
 type AppSecConfigurationState struct {
 	// Unique identifier of the new security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Unique identifier of the Akamai contract associated with the new configuration.
+	// Unique identifier of the Akamai contract associated with the new configuration
 	ContractId pulumi.StringPtrInput
-	// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+	// Unique identifier of the existing configuration being cloned to create the new configuration
 	CreateFromConfigId pulumi.IntPtrInput
-	// . Version number of the security configuration being cloned.
+	// Version number of the existing configuration being cloned to create the new configuration
 	CreateFromVersion pulumi.IntPtrInput
-	// . Brief description of the new configuration.
+	// Brief description of the new configuration
 	Description pulumi.StringPtrInput
-	// . Unique identifier of the contract group associated with the new configuration.
+	// Unique identifier of the contract group associated with the new configuration
 	GroupId pulumi.IntPtrInput
-	// . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+	// Hostnames to be protected by the new configuration
 	HostNames pulumi.StringArrayInput
-	// . Name of the new configuration.
+	// Name of the new configuration
 	Name pulumi.StringPtrInput
 }
 
@@ -180,37 +115,37 @@ func (AppSecConfigurationState) ElementType() reflect.Type {
 }
 
 type appSecConfigurationArgs struct {
-	// . Unique identifier of the Akamai contract associated with the new configuration.
+	// Unique identifier of the Akamai contract associated with the new configuration
 	ContractId string `pulumi:"contractId"`
-	// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+	// Unique identifier of the existing configuration being cloned to create the new configuration
 	CreateFromConfigId *int `pulumi:"createFromConfigId"`
-	// . Version number of the security configuration being cloned.
+	// Version number of the existing configuration being cloned to create the new configuration
 	CreateFromVersion *int `pulumi:"createFromVersion"`
-	// . Brief description of the new configuration.
+	// Brief description of the new configuration
 	Description string `pulumi:"description"`
-	// . Unique identifier of the contract group associated with the new configuration.
+	// Unique identifier of the contract group associated with the new configuration
 	GroupId int `pulumi:"groupId"`
-	// . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+	// Hostnames to be protected by the new configuration
 	HostNames []string `pulumi:"hostNames"`
-	// . Name of the new configuration.
+	// Name of the new configuration
 	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a AppSecConfiguration resource.
 type AppSecConfigurationArgs struct {
-	// . Unique identifier of the Akamai contract associated with the new configuration.
+	// Unique identifier of the Akamai contract associated with the new configuration
 	ContractId pulumi.StringInput
-	// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+	// Unique identifier of the existing configuration being cloned to create the new configuration
 	CreateFromConfigId pulumi.IntPtrInput
-	// . Version number of the security configuration being cloned.
+	// Version number of the existing configuration being cloned to create the new configuration
 	CreateFromVersion pulumi.IntPtrInput
-	// . Brief description of the new configuration.
+	// Brief description of the new configuration
 	Description pulumi.StringInput
-	// . Unique identifier of the contract group associated with the new configuration.
+	// Unique identifier of the contract group associated with the new configuration
 	GroupId pulumi.IntInput
-	// . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+	// Hostnames to be protected by the new configuration
 	HostNames pulumi.StringArrayInput
-	// . Name of the new configuration.
+	// Name of the new configuration
 	Name pulumi.StringPtrInput
 }
 
@@ -306,37 +241,37 @@ func (o AppSecConfigurationOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecConfiguration) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Unique identifier of the Akamai contract associated with the new configuration.
+// Unique identifier of the Akamai contract associated with the new configuration
 func (o AppSecConfigurationOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecConfiguration) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }
 
-// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+// Unique identifier of the existing configuration being cloned to create the new configuration
 func (o AppSecConfigurationOutput) CreateFromConfigId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AppSecConfiguration) pulumi.IntPtrOutput { return v.CreateFromConfigId }).(pulumi.IntPtrOutput)
 }
 
-// . Version number of the security configuration being cloned.
+// Version number of the existing configuration being cloned to create the new configuration
 func (o AppSecConfigurationOutput) CreateFromVersion() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AppSecConfiguration) pulumi.IntPtrOutput { return v.CreateFromVersion }).(pulumi.IntPtrOutput)
 }
 
-// . Brief description of the new configuration.
+// Brief description of the new configuration
 func (o AppSecConfigurationOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecConfiguration) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// . Unique identifier of the contract group associated with the new configuration.
+// Unique identifier of the contract group associated with the new configuration
 func (o AppSecConfigurationOutput) GroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecConfiguration) pulumi.IntOutput { return v.GroupId }).(pulumi.IntOutput)
 }
 
-// . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+// Hostnames to be protected by the new configuration
 func (o AppSecConfigurationOutput) HostNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AppSecConfiguration) pulumi.StringArrayOutput { return v.HostNames }).(pulumi.StringArrayOutput)
 }
 
-// . Name of the new configuration.
+// Name of the new configuration
 func (o AppSecConfigurationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecConfiguration) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

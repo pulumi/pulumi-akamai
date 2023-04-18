@@ -15,76 +15,17 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecRuleUpgrade;
- * import com.pulumi.akamai.AppSecRuleUpgradeArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var ruleUpgrade = new AppSecRuleUpgrade(&#34;ruleUpgrade&#34;, AppSecRuleUpgradeArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .build());
- * 
- *         ctx.export(&#34;ruleUpgradeCurrentRuleset&#34;, ruleUpgrade.currentRuleset());
- *         ctx.export(&#34;ruleUpgradeMode&#34;, ruleUpgrade.mode());
- *         ctx.export(&#34;ruleUpgradeEvalStatus&#34;, ruleUpgrade.evalStatus());
- *     }
- * }
- * ```
- * ## Output Options
- * 
- * The following options can be used to determine the information returned and how that returned information is formatted:
- * 
- * - `current_ruleset`. Versioning information for your current KRS rule set.
- * - `mode`. Specifies the current upgrade mode type. Valid values are:
- *   - **KRS**. Rulesets must be manually upgraded.
- *   
- *   - **AAG**. Rulesets are automatically upgraded by Akamai.
- *   
- *   - **ASE_MANUAL**. Adaptive Security Engine rulesets must be manually upgraded.
- *   
- *   - **ASE_AUTO**. Adaptive Security Engine rulesets are automatically updated by Akamai.
- * 
- * - `eval_status`. Returns **enabled** if an evaluation is currently in progress; otherwise returns **disabled**.
- * 
- */
 @ResourceType(type="akamai:index/appSecRuleUpgrade:AppSecRuleUpgrade")
 public class AppSecRuleUpgrade extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the ruleset being upgraded.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the ruleset being upgraded.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -133,32 +74,28 @@ public class AppSecRuleUpgrade extends com.pulumi.resources.CustomResource {
         return this.mode;
     }
     /**
-     * . Unique identifier of the security policy associated with the ruleset being upgraded.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the ruleset being upgraded.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
     /**
-     * . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
-     * - **ASE_MANUAL**. Manually updates your rulesets.
+     * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
      * 
      */
     @Export(name="upgradeMode", type=String.class, parameters={})
     private Output</* @Nullable */ String> upgradeMode;
 
     /**
-     * @return . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
-     * - **ASE_MANUAL**. Manually updates your rulesets.
+     * @return Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
      * 
      */
     public Output<Optional<String>> upgradeMode() {

@@ -13,84 +13,23 @@ import com.pulumi.core.internal.Codegen;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.NetworkListDescription` resource to update the name or description of an existing network list.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.NetworkListDescription;
- * import com.pulumi.akamai.NetworkListDescriptionArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var networkListDescription = new NetworkListDescription(&#34;networkListDescription&#34;, NetworkListDescriptionArgs.builder()        
- *             .networkListId(var_.network_list_id())
- *             .description(&#34;Test network list updated description&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/networkListDescription:NetworkListDescription")
 public class NetworkListDescription extends com.pulumi.resources.CustomResource {
-    /**
-     * The description to be assigned to the network list.
-     * 
-     */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
-    /**
-     * @return The description to be assigned to the network list.
-     * 
-     */
     public Output<String> description() {
         return this.description;
     }
-    /**
-     * The name to be assigned to the network list.
-     * 
-     */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
-    /**
-     * @return The name to be assigned to the network list.
-     * 
-     */
     public Output<String> name() {
         return this.name;
     }
-    /**
-     * The unique ID of the network list to use.
-     * 
-     */
     @Export(name="networkListId", type=String.class, parameters={})
     private Output<String> networkListId;
 
-    /**
-     * @return The unique ID of the network list to use.
-     * 
-     */
     public Output<String> networkListId() {
         return this.networkListId;
     }

@@ -11,40 +11,6 @@ namespace Pulumi.Akamai
 {
     public static class GetIamTimeoutPolicies
     {
-        /// <summary>
-        /// Use `akamai.getIamTimeoutPolicies` to list all the possible session timeout policies that Akamai supports. Use the values from this data source to set the session timeout for a user. The name for each timeout period is in minutes, and the time value is in seconds.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var timeoutPolicies = Akamai.GetIamTimeoutPolicies.Invoke();
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["supportedTimeoutPolicies"] = timeoutPolicies,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// These attributes are returned:
-        /// 
-        /// * `policies` — A map of session timeout policy names to their value in seconds.
-        /// 
-        /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-timeout-policies)
-        /// </summary>
         public static Task<GetIamTimeoutPoliciesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamTimeoutPoliciesResult>("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", InvokeArgs.Empty, options.WithDefaults());
     }

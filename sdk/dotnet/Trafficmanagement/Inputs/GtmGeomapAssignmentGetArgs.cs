@@ -14,25 +14,15 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
     {
         [Input("countries")]
         private InputList<string>? _countries;
-
-        /// <summary>
-        /// Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-        /// </summary>
         public InputList<string> Countries
         {
             get => _countries ?? (_countries = new InputList<string>());
             set => _countries = value;
         }
 
-        /// <summary>
-        /// A unique identifier for an existing data center in the domain.
-        /// </summary>
         [Input("datacenterId", required: true)]
         public Input<int> DatacenterId { get; set; } = null!;
 
-        /// <summary>
-        /// A descriptive label for the group.
-        /// </summary>
         [Input("nickname", required: true)]
         public Input<string> Nickname { get; set; } = null!;
 

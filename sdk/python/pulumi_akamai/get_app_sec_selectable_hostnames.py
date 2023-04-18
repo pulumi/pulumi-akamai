@@ -123,43 +123,7 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[bool] = None
                                      groupid: Optional[int] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSelectableHostnamesResult:
     """
-    **Scopes**: Security configuration; contract; group
-
-    Returns the list of hostnames that can be (but aren't yet) protected by a security configuration. You can specify the set of hostnames to be retrieved either by supplying the name of a security configuration or by supplying an Akamai group ID and contract ID.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://techdocs.akamai.com/application-security/reference/get-selectable-hostnames)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    selectable_hostnames_app_sec_selectable_hostnames = akamai.get_app_sec_selectable_hostnames(config_id=configuration.config_id)
-    pulumi.export("selectableHostnames", selectable_hostnames_app_sec_selectable_hostnames.hostnames)
-    pulumi.export("selectableHostnamesJson", selectable_hostnames_app_sec_selectable_hostnames.hostnames_json)
-    pulumi.export("selectableHostnamesOutputText", selectable_hostnames_app_sec_selectable_hostnames.output_text)
-    selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames = akamai.get_app_sec_selectable_hostnames(contract_id="5-2WA382",
-        group_id=12198)
-    pulumi.export("selectableHostnamesForCreateConfiguration", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.hostnames)
-    pulumi.export("selectableHostnamesForCreateConfigurationJson", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.hostnames_json)
-    pulumi.export("selectableHostnamesForCreateConfigurationOutputText", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `hostnames`. List of selectable hostnames.
-    - `hostnames_json`. JSON-formatted list of selectable hostnames.
-    - `output_text`. Tabular report of the selectable hostnames showing the name and config_id of the security configuration under which the host is protected in production.
-
-
-    :param int config_id: . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can't be used with either the `contractid` or the `groupid` arguments.
-    :param str contractid: . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can't be used with the `config_id` argument.
-    :param int groupid: . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can't be used with the `config_id` argument.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['activeInProduction'] = active_in_production
@@ -190,42 +154,6 @@ def get_app_sec_selectable_hostnames_output(active_in_production: Optional[pulum
                                             groupid: Optional[pulumi.Input[Optional[int]]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSelectableHostnamesResult]:
     """
-    **Scopes**: Security configuration; contract; group
-
-    Returns the list of hostnames that can be (but aren't yet) protected by a security configuration. You can specify the set of hostnames to be retrieved either by supplying the name of a security configuration or by supplying an Akamai group ID and contract ID.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selectable-hostnames](https://techdocs.akamai.com/application-security/reference/get-selectable-hostnames)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    selectable_hostnames_app_sec_selectable_hostnames = akamai.get_app_sec_selectable_hostnames(config_id=configuration.config_id)
-    pulumi.export("selectableHostnames", selectable_hostnames_app_sec_selectable_hostnames.hostnames)
-    pulumi.export("selectableHostnamesJson", selectable_hostnames_app_sec_selectable_hostnames.hostnames_json)
-    pulumi.export("selectableHostnamesOutputText", selectable_hostnames_app_sec_selectable_hostnames.output_text)
-    selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames = akamai.get_app_sec_selectable_hostnames(contract_id="5-2WA382",
-        group_id=12198)
-    pulumi.export("selectableHostnamesForCreateConfiguration", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.hostnames)
-    pulumi.export("selectableHostnamesForCreateConfigurationJson", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.hostnames_json)
-    pulumi.export("selectableHostnamesForCreateConfigurationOutputText", selectable_hostnames_for_create_configuration_app_sec_selectable_hostnames.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `hostnames`. List of selectable hostnames.
-    - `hostnames_json`. JSON-formatted list of selectable hostnames.
-    - `output_text`. Tabular report of the selectable hostnames showing the name and config_id of the security configuration under which the host is protected in production.
-
-
-    :param int config_id: . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can't be used with either the `contractid` or the `groupid` arguments.
-    :param str contractid: . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can't be used with the `config_id` argument.
-    :param int groupid: . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can't be used with the `config_id` argument.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -15,14 +15,14 @@ public final class AppSecSecurityPolicyRenameArgs extends com.pulumi.resources.R
     public static final AppSecSecurityPolicyRenameArgs Empty = new AppSecSecurityPolicyRenameArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the security policy being renamed.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the security policy being renamed.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -30,14 +30,14 @@ public final class AppSecSecurityPolicyRenameArgs extends com.pulumi.resources.R
     }
 
     /**
-     * . Unique identifier of the security policy being renamed.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy being renamed.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -45,14 +45,14 @@ public final class AppSecSecurityPolicyRenameArgs extends com.pulumi.resources.R
     }
 
     /**
-     * . New name to be given to the security policy.
+     * New name to be given to the security policy
      * 
      */
     @Import(name="securityPolicyName", required=true)
     private Output<String> securityPolicyName;
 
     /**
-     * @return . New name to be given to the security policy.
+     * @return New name to be given to the security policy
      * 
      */
     public Output<String> securityPolicyName() {
@@ -86,7 +86,7 @@ public final class AppSecSecurityPolicyRenameArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the security policy being renamed.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class AppSecSecurityPolicyRenameArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the security policy being renamed.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class AppSecSecurityPolicyRenameArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy being renamed.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class AppSecSecurityPolicyRenameArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy being renamed.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class AppSecSecurityPolicyRenameArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param securityPolicyName . New name to be given to the security policy.
+         * @param securityPolicyName New name to be given to the security policy
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class AppSecSecurityPolicyRenameArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param securityPolicyName . New name to be given to the security policy.
+         * @param securityPolicyName New name to be given to the security policy
          * 
          * @return builder
          * 

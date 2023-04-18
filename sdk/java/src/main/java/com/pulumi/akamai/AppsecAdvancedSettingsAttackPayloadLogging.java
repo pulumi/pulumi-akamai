@@ -15,100 +15,45 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security configuration; security policy
- * 
- * Enables, disables, or updates Attack Payload Logging settings.
- * By default, this operation is applied at the configuration level, which means that it is applied to all the security policies within that configuration.
- * However, by using the `security_policy_id` parameter you can specify custom settings for an individual security policy.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppsecAdvancedSettingsAttackPayloadLogging;
- * import com.pulumi.akamai.AppsecAdvancedSettingsAttackPayloadLoggingArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var attackPayloadLogging = new AppsecAdvancedSettingsAttackPayloadLogging(&#34;attackPayloadLogging&#34;, AppsecAdvancedSettingsAttackPayloadLoggingArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .attackPayloadLogging(Files.readString(Paths.get(String.format(&#34;%s/attack-payload-logging.json&#34;, path.module()))))
- *             .build());
- * 
- *         var policyLogging = new AppsecAdvancedSettingsAttackPayloadLogging(&#34;policyLogging&#34;, AppsecAdvancedSettingsAttackPayloadLoggingArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .attackPayloadLogging(Files.readString(Paths.get(String.format(&#34;%s/attack-payload-logging.json&#34;, path.module()))))
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging")
 public class AppsecAdvancedSettingsAttackPayloadLogging extends com.pulumi.resources.CustomResource {
     /**
-     * . JSON representation of the Attack Payload Logging settings to be configured.
+     * Whether to enable, disable, or update attack payload logging settings
      * 
      */
     @Export(name="attackPayloadLogging", type=String.class, parameters={})
     private Output<String> attackPayloadLogging;
 
     /**
-     * @return . JSON representation of the Attack Payload Logging settings to be configured.
+     * @return Whether to enable, disable, or update attack payload logging settings
      * 
      */
     public Output<String> attackPayloadLogging() {
         return this.attackPayloadLogging;
     }
     /**
-     * . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output</* @Nullable */ String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<Optional<String>> securityPolicyId() {

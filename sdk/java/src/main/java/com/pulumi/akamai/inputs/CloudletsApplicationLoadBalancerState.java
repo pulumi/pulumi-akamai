@@ -20,14 +20,14 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
     public static final CloudletsApplicationLoadBalancerState Empty = new CloudletsApplicationLoadBalancerState();
 
     /**
-     * The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+     * The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
      * 
      */
     @Import(name="balancingType")
     private @Nullable Output<String> balancingType;
 
     /**
-     * @return The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+     * @return The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
      * 
      */
     public Optional<Output<String>> balancingType() {
@@ -35,14 +35,18 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
     }
 
     /**
-     * Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+     * The object containing information on conditional origins being used as data centers for an Application Load Balancer
+     * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+     * application load balancer configuration.
      * 
      */
     @Import(name="dataCenters")
     private @Nullable Output<List<CloudletsApplicationLoadBalancerDataCenterArgs>> dataCenters;
 
     /**
-     * @return Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+     * @return The object containing information on conditional origins being used as data centers for an Application Load Balancer
+     * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+     * application load balancer configuration.
      * 
      */
     public Optional<Output<List<CloudletsApplicationLoadBalancerDataCenterArgs>>> dataCenters() {
@@ -50,44 +54,36 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
     }
 
     /**
-     * The description of the load balancing configuration.
+     * The load balancer configuration description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The description of the load balancing configuration.
+     * @return The load balancer configuration description
      * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
-    /**
-     * Specifies the health of each load balanced data center defined in the data center list.
-     * 
-     */
     @Import(name="livenessSettings")
     private @Nullable Output<CloudletsApplicationLoadBalancerLivenessSettingsArgs> livenessSettings;
 
-    /**
-     * @return Specifies the health of each load balanced data center defined in the data center list.
-     * 
-     */
     public Optional<Output<CloudletsApplicationLoadBalancerLivenessSettingsArgs>> livenessSettings() {
         return Optional.ofNullable(this.livenessSettings);
     }
 
     /**
-     * The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * The conditional origin’s unique identifier
      * 
      */
     @Import(name="originId")
     private @Nullable Output<String> originId;
 
     /**
-     * @return The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * @return The conditional origin’s unique identifier
      * 
      */
     public Optional<Output<String>> originId() {
@@ -95,14 +91,14 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
     }
 
     /**
-     * The version number of the load balancing configuration.
+     * The load balancer configuration version
      * 
      */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
     /**
-     * @return The version number of the load balancing configuration.
+     * @return The load balancer configuration version
      * 
      */
     public Optional<Output<Integer>> version() {
@@ -110,14 +106,14 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
     }
 
     /**
-     * A list of warnings that occurred during the activation of the load balancing configuration.
+     * Describes warnings during activation of load balancer configuration
      * 
      */
     @Import(name="warnings")
     private @Nullable Output<String> warnings;
 
     /**
-     * @return A list of warnings that occurred during the activation of the load balancing configuration.
+     * @return Describes warnings during activation of load balancer configuration
      * 
      */
     public Optional<Output<String>> warnings() {
@@ -155,7 +151,7 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
         }
 
         /**
-         * @param balancingType The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+         * @param balancingType The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
          * 
          * @return builder
          * 
@@ -166,7 +162,7 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
         }
 
         /**
-         * @param balancingType The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
+         * @param balancingType The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
          * 
          * @return builder
          * 
@@ -176,7 +172,9 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
         }
 
         /**
-         * @param dataCenters Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+         * @param dataCenters The object containing information on conditional origins being used as data centers for an Application Load Balancer
+         * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+         * application load balancer configuration.
          * 
          * @return builder
          * 
@@ -187,7 +185,9 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
         }
 
         /**
-         * @param dataCenters Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+         * @param dataCenters The object containing information on conditional origins being used as data centers for an Application Load Balancer
+         * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+         * application load balancer configuration.
          * 
          * @return builder
          * 
@@ -197,7 +197,9 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
         }
 
         /**
-         * @param dataCenters Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
+         * @param dataCenters The object containing information on conditional origins being used as data centers for an Application Load Balancer
+         * implementation. Only Conditional Origins with an originType of CUSTOMER or NETSTORAGE can be used as data centers in an
+         * application load balancer configuration.
          * 
          * @return builder
          * 
@@ -207,7 +209,7 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
         }
 
         /**
-         * @param description The description of the load balancing configuration.
+         * @param description The load balancer configuration description
          * 
          * @return builder
          * 
@@ -218,7 +220,7 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
         }
 
         /**
-         * @param description The description of the load balancing configuration.
+         * @param description The load balancer configuration description
          * 
          * @return builder
          * 
@@ -227,29 +229,17 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
             return description(Output.of(description));
         }
 
-        /**
-         * @param livenessSettings Specifies the health of each load balanced data center defined in the data center list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder livenessSettings(@Nullable Output<CloudletsApplicationLoadBalancerLivenessSettingsArgs> livenessSettings) {
             $.livenessSettings = livenessSettings;
             return this;
         }
 
-        /**
-         * @param livenessSettings Specifies the health of each load balanced data center defined in the data center list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder livenessSettings(CloudletsApplicationLoadBalancerLivenessSettingsArgs livenessSettings) {
             return livenessSettings(Output.of(livenessSettings));
         }
 
         /**
-         * @param originId The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+         * @param originId The conditional origin’s unique identifier
          * 
          * @return builder
          * 
@@ -260,7 +250,7 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
         }
 
         /**
-         * @param originId The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+         * @param originId The conditional origin’s unique identifier
          * 
          * @return builder
          * 
@@ -270,7 +260,7 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
         }
 
         /**
-         * @param version The version number of the load balancing configuration.
+         * @param version The load balancer configuration version
          * 
          * @return builder
          * 
@@ -281,7 +271,7 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
         }
 
         /**
-         * @param version The version number of the load balancing configuration.
+         * @param version The load balancer configuration version
          * 
          * @return builder
          * 
@@ -291,7 +281,7 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
         }
 
         /**
-         * @param warnings A list of warnings that occurred during the activation of the load balancing configuration.
+         * @param warnings Describes warnings during activation of load balancer configuration
          * 
          * @return builder
          * 
@@ -302,7 +292,7 @@ public final class CloudletsApplicationLoadBalancerState extends com.pulumi.reso
         }
 
         /**
-         * @param warnings A list of warnings that occurred during the activation of the load balancing configuration.
+         * @param warnings Describes warnings during activation of load balancer configuration
          * 
          * @return builder
          * 

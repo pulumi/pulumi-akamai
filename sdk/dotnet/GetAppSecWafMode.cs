@@ -11,123 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecWafMode
     {
-        /// <summary>
-        /// **Scopes**: Security policy
-        /// 
-        /// Returns information about how the Kona Rule Set rules associated with a security configuration and security policy are updated. The WAF (Web Application Firewall) mode determines whether Kona Rule Sets are automatically updated as part of automated attack groups (`mode = AAG`) or whether you must periodically check for new rules and then manually update those rules yourself (`mode = KRS`).
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://techdocs.akamai.com/application-security/reference/get-policy-mode)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var wafMode = Akamai.GetAppSecWafMode.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["wafModeMode"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.Mode),
-        ///         ["wafModeCurrentRuleset"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.CurrentRuleset),
-        ///         ["wafModeEvalStatus"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.EvalStatus),
-        ///         ["wafModeEvalRuleset"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.EvalRuleset),
-        ///         ["wafModeEvalExpirationDate"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.EvalExpirationDate),
-        ///         ["wafModeText"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.OutputText),
-        ///         ["wafModeJson"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `mode`. Security policy mode, either **KRS** (update manually) or **AAG** (update automatically), For organizations running the Adaptive Security Engine (ASE) beta, you'll get back **ASE_AUTO** for automatic updates or **ASE_MANUAL** for manual updates. Please contact your Akamai representative to learn more about ASE.
-        /// - `current_ruleset`. Current ruleset version and the ISO 8601 date the version was introduced.
-        /// - `eval_status`. Specifies whether evaluation mode is enabled or disabled.
-        /// - `eval_ruleset`. Evaluation ruleset version and the ISO 8601 date the evaluation began.
-        /// - `eval_expiration_date`. ISO 8601 timestamp indicating when evaluation mode expires. Valid only if `eval_status` is set to **enabled**.
-        /// - `output_text`. Tabular report of the mode information.
-        /// - `json`. JSON-formatted list of the mode information.
-        /// </summary>
         public static Task<GetAppSecWafModeResult> InvokeAsync(GetAppSecWafModeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security policy
-        /// 
-        /// Returns information about how the Kona Rule Set rules associated with a security configuration and security policy are updated. The WAF (Web Application Firewall) mode determines whether Kona Rule Sets are automatically updated as part of automated attack groups (`mode = AAG`) or whether you must periodically check for new rules and then manually update those rules yourself (`mode = KRS`).
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/mode](https://techdocs.akamai.com/application-security/reference/get-policy-mode)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var wafMode = Akamai.GetAppSecWafMode.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["wafModeMode"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.Mode),
-        ///         ["wafModeCurrentRuleset"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.CurrentRuleset),
-        ///         ["wafModeEvalStatus"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.EvalStatus),
-        ///         ["wafModeEvalRuleset"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.EvalRuleset),
-        ///         ["wafModeEvalExpirationDate"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.EvalExpirationDate),
-        ///         ["wafModeText"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.OutputText),
-        ///         ["wafModeJson"] = wafMode.Apply(getAppSecWafModeResult =&gt; getAppSecWafModeResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `mode`. Security policy mode, either **KRS** (update manually) or **AAG** (update automatically), For organizations running the Adaptive Security Engine (ASE) beta, you'll get back **ASE_AUTO** for automatic updates or **ASE_MANUAL** for manual updates. Please contact your Akamai representative to learn more about ASE.
-        /// - `current_ruleset`. Current ruleset version and the ISO 8601 date the version was introduced.
-        /// - `eval_status`. Specifies whether evaluation mode is enabled or disabled.
-        /// - `eval_ruleset`. Evaluation ruleset version and the ISO 8601 date the evaluation began.
-        /// - `eval_expiration_date`. ISO 8601 timestamp indicating when evaluation mode expires. Valid only if `eval_status` is set to **enabled**.
-        /// - `output_text`. Tabular report of the mode information.
-        /// - `json`. JSON-formatted list of the mode information.
-        /// </summary>
         public static Output<GetAppSecWafModeResult> Invoke(GetAppSecWafModeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecWafModeResult>("akamai:index/getAppSecWafMode:getAppSecWafMode", args ?? new GetAppSecWafModeInvokeArgs(), options.WithDefaults());
     }
@@ -135,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecWafModeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the Kona Rule Set rules.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the Kona Rule Set rules.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -155,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecWafModeInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the Kona Rule Set rules.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the Kona Rule Set rules.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

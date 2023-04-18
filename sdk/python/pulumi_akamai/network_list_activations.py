@@ -22,14 +22,11 @@ class NetworkListActivationsArgs:
                  notes: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NetworkListActivations resource.
-        :param pulumi.Input[str] network_list_id: The ID of the network list to be activated
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the
-               operation is complete.
-        :param pulumi.Input[int] sync_point: An integer that identifies the current version of the network list; this value is incremented each time
-               the list is modified.
-        :param pulumi.Input[str] network: The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-               `STAGING`.
-        :param pulumi.Input[str] notes: A comment describing the activation.
+        :param pulumi.Input[str] network_list_id: Unique identifier of the network list
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: List of email addresses of Control Center users who receive an email when activation of this list is complete
+        :param pulumi.Input[int] sync_point: Identifies the sync point of the network list to be activated
+        :param pulumi.Input[str] network: The Akamai network on which the list is activated: STAGING or PRODUCTION
+        :param pulumi.Input[str] notes: Descriptive text to accompany the activation
         """
         pulumi.set(__self__, "network_list_id", network_list_id)
         pulumi.set(__self__, "notification_emails", notification_emails)
@@ -48,7 +45,7 @@ class NetworkListActivationsArgs:
     @pulumi.getter(name="networkListId")
     def network_list_id(self) -> pulumi.Input[str]:
         """
-        The ID of the network list to be activated
+        Unique identifier of the network list
         """
         return pulumi.get(self, "network_list_id")
 
@@ -60,8 +57,7 @@ class NetworkListActivationsArgs:
     @pulumi.getter(name="notificationEmails")
     def notification_emails(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        A bracketed, comma-separated list of email addresses that will be notified when the
-        operation is complete.
+        List of email addresses of Control Center users who receive an email when activation of this list is complete
         """
         return pulumi.get(self, "notification_emails")
 
@@ -73,8 +69,7 @@ class NetworkListActivationsArgs:
     @pulumi.getter(name="syncPoint")
     def sync_point(self) -> pulumi.Input[int]:
         """
-        An integer that identifies the current version of the network list; this value is incremented each time
-        the list is modified.
+        Identifies the sync point of the network list to be activated
         """
         return pulumi.get(self, "sync_point")
 
@@ -95,8 +90,7 @@ class NetworkListActivationsArgs:
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
         """
-        The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-        `STAGING`.
+        The Akamai network on which the list is activated: STAGING or PRODUCTION
         """
         return pulumi.get(self, "network")
 
@@ -108,7 +102,7 @@ class NetworkListActivationsArgs:
     @pulumi.getter
     def notes(self) -> Optional[pulumi.Input[str]]:
         """
-        A comment describing the activation.
+        Descriptive text to accompany the activation
         """
         return pulumi.get(self, "notes")
 
@@ -129,16 +123,12 @@ class _NetworkListActivationsState:
                  sync_point: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering NetworkListActivations resources.
-        :param pulumi.Input[str] network: The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-               `STAGING`.
-        :param pulumi.Input[str] network_list_id: The ID of the network list to be activated
-        :param pulumi.Input[str] notes: A comment describing the activation.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the
-               operation is complete.
-        :param pulumi.Input[str] status: The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-               list was not activated.
-        :param pulumi.Input[int] sync_point: An integer that identifies the current version of the network list; this value is incremented each time
-               the list is modified.
+        :param pulumi.Input[str] network: The Akamai network on which the list is activated: STAGING or PRODUCTION
+        :param pulumi.Input[str] network_list_id: Unique identifier of the network list
+        :param pulumi.Input[str] notes: Descriptive text to accompany the activation
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: List of email addresses of Control Center users who receive an email when activation of this list is complete
+        :param pulumi.Input[str] status: This network list's current activation status in the environment specified by the "network" attribute
+        :param pulumi.Input[int] sync_point: Identifies the sync point of the network list to be activated
         """
         if activate is not None:
             warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
@@ -171,8 +161,7 @@ class _NetworkListActivationsState:
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
         """
-        The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-        `STAGING`.
+        The Akamai network on which the list is activated: STAGING or PRODUCTION
         """
         return pulumi.get(self, "network")
 
@@ -184,7 +173,7 @@ class _NetworkListActivationsState:
     @pulumi.getter(name="networkListId")
     def network_list_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the network list to be activated
+        Unique identifier of the network list
         """
         return pulumi.get(self, "network_list_id")
 
@@ -196,7 +185,7 @@ class _NetworkListActivationsState:
     @pulumi.getter
     def notes(self) -> Optional[pulumi.Input[str]]:
         """
-        A comment describing the activation.
+        Descriptive text to accompany the activation
         """
         return pulumi.get(self, "notes")
 
@@ -208,8 +197,7 @@ class _NetworkListActivationsState:
     @pulumi.getter(name="notificationEmails")
     def notification_emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A bracketed, comma-separated list of email addresses that will be notified when the
-        operation is complete.
+        List of email addresses of Control Center users who receive an email when activation of this list is complete
         """
         return pulumi.get(self, "notification_emails")
 
@@ -221,8 +209,7 @@ class _NetworkListActivationsState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-        list was not activated.
+        This network list's current activation status in the environment specified by the "network" attribute
         """
         return pulumi.get(self, "status")
 
@@ -234,8 +221,7 @@ class _NetworkListActivationsState:
     @pulumi.getter(name="syncPoint")
     def sync_point(self) -> Optional[pulumi.Input[int]]:
         """
-        An integer that identifies the current version of the network list; this value is incremented each time
-        the list is modified.
+        Identifies the sync point of the network list to be activated
         """
         return pulumi.get(self, "sync_point")
 
@@ -257,19 +243,14 @@ class NetworkListActivations(pulumi.CustomResource):
                  sync_point: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        Use the `NetworkListActivations` resource to activate a network list in either the STAGING or PRODUCTION
-        environment.
-
+        Create a NetworkListActivations resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] network: The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-               `STAGING`.
-        :param pulumi.Input[str] network_list_id: The ID of the network list to be activated
-        :param pulumi.Input[str] notes: A comment describing the activation.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the
-               operation is complete.
-        :param pulumi.Input[int] sync_point: An integer that identifies the current version of the network list; this value is incremented each time
-               the list is modified.
+        :param pulumi.Input[str] network: The Akamai network on which the list is activated: STAGING or PRODUCTION
+        :param pulumi.Input[str] network_list_id: Unique identifier of the network list
+        :param pulumi.Input[str] notes: Descriptive text to accompany the activation
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: List of email addresses of Control Center users who receive an email when activation of this list is complete
+        :param pulumi.Input[int] sync_point: Identifies the sync point of the network list to be activated
         """
         ...
     @overload
@@ -278,9 +259,7 @@ class NetworkListActivations(pulumi.CustomResource):
                  args: NetworkListActivationsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `NetworkListActivations` resource to activate a network list in either the STAGING or PRODUCTION
-        environment.
-
+        Create a NetworkListActivations resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NetworkListActivationsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -351,16 +330,12 @@ class NetworkListActivations(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] network: The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-               `STAGING`.
-        :param pulumi.Input[str] network_list_id: The ID of the network list to be activated
-        :param pulumi.Input[str] notes: A comment describing the activation.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: A bracketed, comma-separated list of email addresses that will be notified when the
-               operation is complete.
-        :param pulumi.Input[str] status: The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-               list was not activated.
-        :param pulumi.Input[int] sync_point: An integer that identifies the current version of the network list; this value is incremented each time
-               the list is modified.
+        :param pulumi.Input[str] network: The Akamai network on which the list is activated: STAGING or PRODUCTION
+        :param pulumi.Input[str] network_list_id: Unique identifier of the network list
+        :param pulumi.Input[str] notes: Descriptive text to accompany the activation
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: List of email addresses of Control Center users who receive an email when activation of this list is complete
+        :param pulumi.Input[str] status: This network list's current activation status in the environment specified by the "network" attribute
+        :param pulumi.Input[int] sync_point: Identifies the sync point of the network list to be activated
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -384,8 +359,7 @@ class NetworkListActivations(pulumi.CustomResource):
     @pulumi.getter
     def network(self) -> pulumi.Output[Optional[str]]:
         """
-        The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-        `STAGING`.
+        The Akamai network on which the list is activated: STAGING or PRODUCTION
         """
         return pulumi.get(self, "network")
 
@@ -393,7 +367,7 @@ class NetworkListActivations(pulumi.CustomResource):
     @pulumi.getter(name="networkListId")
     def network_list_id(self) -> pulumi.Output[str]:
         """
-        The ID of the network list to be activated
+        Unique identifier of the network list
         """
         return pulumi.get(self, "network_list_id")
 
@@ -401,7 +375,7 @@ class NetworkListActivations(pulumi.CustomResource):
     @pulumi.getter
     def notes(self) -> pulumi.Output[Optional[str]]:
         """
-        A comment describing the activation.
+        Descriptive text to accompany the activation
         """
         return pulumi.get(self, "notes")
 
@@ -409,8 +383,7 @@ class NetworkListActivations(pulumi.CustomResource):
     @pulumi.getter(name="notificationEmails")
     def notification_emails(self) -> pulumi.Output[Sequence[str]]:
         """
-        A bracketed, comma-separated list of email addresses that will be notified when the
-        operation is complete.
+        List of email addresses of Control Center users who receive an email when activation of this list is complete
         """
         return pulumi.get(self, "notification_emails")
 
@@ -418,8 +391,7 @@ class NetworkListActivations(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
         """
-        The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-        list was not activated.
+        This network list's current activation status in the environment specified by the "network" attribute
         """
         return pulumi.get(self, "status")
 
@@ -427,8 +399,7 @@ class NetworkListActivations(pulumi.CustomResource):
     @pulumi.getter(name="syncPoint")
     def sync_point(self) -> pulumi.Output[int]:
         """
-        An integer that identifies the current version of the network list; this value is incremented each time
-        the list is modified.
+        Identifies the sync point of the network list to be activated
         """
         return pulumi.get(self, "sync_point")
 

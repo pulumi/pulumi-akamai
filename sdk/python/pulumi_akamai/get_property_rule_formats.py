@@ -54,22 +54,7 @@ class AwaitableGetPropertyRuleFormatsResult(GetPropertyRuleFormatsResult):
 
 def get_property_rule_formats(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyRuleFormatsResult:
     """
-    Use the _get_property_rule_formats_ data source to query the list of
-    known rule formats.
-    You use rule formats to [freeze](https://techdocs.akamai.com/property-mgr/reference/modify-a-rule#freeze-a-feature-set-for-a-rule-tree) or
-    [update](https://techdocs.akamai.com/property-mgr/reference/modify-a-rule#update-rules-to-a-newer-set-of-features) the versioned set of behaviors
-    and criteria a rule tree invokes. Without this mechanism, behaviors and criteria
-    would update automatically and generate unexpected errors.
-
-    ## Example Usage
-
-    Use this example to list available property rule formats:
-
-    ```python
-    import pulumi
-
-    pulumi.export("propertyMatch", data["akamai_property_rule_formats"]["my-example"])
-    ```
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

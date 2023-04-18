@@ -15,32 +15,16 @@ public final class GetAppSecAdvancedSettingsLoggingPlainArgs extends com.pulumi.
 
     public static final GetAppSecAdvancedSettingsLoggingPlainArgs Empty = new GetAppSecAdvancedSettingsLoggingPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the logging settings.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the logging settings.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
-     * 
-     */
     @Import(name="securityPolicyId")
     private @Nullable String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
-     * 
-     */
     public Optional<String> securityPolicyId() {
         return Optional.ofNullable(this.securityPolicyId);
     }
@@ -70,23 +54,11 @@ public final class GetAppSecAdvancedSettingsLoggingPlainArgs extends com.pulumi.
             $ = new GetAppSecAdvancedSettingsLoggingPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the logging settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(@Nullable String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

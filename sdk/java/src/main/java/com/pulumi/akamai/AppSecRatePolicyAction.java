@@ -14,146 +14,73 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Rate policy
- * 
- * Creates, modifies, or deletes the actions associated with a rate policy.
- * By default, rate policies take no action when triggered.
- * Note that you must set separate actions for requests originating from an IPv4 IP address and for requests originating from an IPv6 address.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rate-policies/{ratePolicyId}](https://techdocs.akamai.com/application-security/reference/put-rate-policy-action)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecRatePolicy;
- * import com.pulumi.akamai.AppSecRatePolicyArgs;
- * import com.pulumi.akamai.AppSecRatePolicyAction;
- * import com.pulumi.akamai.AppSecRatePolicyActionArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var appsecRatePolicy = new AppSecRatePolicy(&#34;appsecRatePolicy&#34;, AppSecRatePolicyArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .ratePolicy(Files.readString(Paths.get(String.format(&#34;%s/rate_policy.json&#34;, path.module()))))
- *             .build());
- * 
- *         var appsecRatePolicyAction = new AppSecRatePolicyAction(&#34;appsecRatePolicyAction&#34;, AppSecRatePolicyActionArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .ratePolicyId(appsecRatePolicy.ratePolicyId())
- *             .ipv4Action(&#34;deny&#34;)
- *             .ipv6Action(&#34;deny&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecRatePolicyAction:AppSecRatePolicyAction")
 public class AppSecRatePolicyAction extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the rate policy action being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the rate policy action being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken for requests coming from an IPv4 address
      * 
      */
     @Export(name="ipv4Action", type=String.class, parameters={})
     private Output<String> ipv4Action;
 
     /**
-     * @return . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * @return Action to be taken for requests coming from an IPv4 address
      * 
      */
     public Output<String> ipv4Action() {
         return this.ipv4Action;
     }
     /**
-     * . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+     * Action to be taken for requests coming from an IPv6 address
      * 
      */
     @Export(name="ipv6Action", type=String.class, parameters={})
     private Output<String> ipv6Action;
 
     /**
-     * @return . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+     * @return Action to be taken for requests coming from an IPv6 address
      * 
      */
     public Output<String> ipv6Action() {
         return this.ipv6Action;
     }
     /**
-     * . Unique identifier of the rate policy whose action is being modified.
+     * Unique identifier of the rate policy
      * 
      */
     @Export(name="ratePolicyId", type=Integer.class, parameters={})
     private Output<Integer> ratePolicyId;
 
     /**
-     * @return . Unique identifier of the rate policy whose action is being modified.
+     * @return Unique identifier of the rate policy
      * 
      */
     public Output<Integer> ratePolicyId() {
         return this.ratePolicyId;
     }
     /**
-     * . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {

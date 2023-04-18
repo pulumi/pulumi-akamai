@@ -11,121 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecAttackGroups
     {
-        /// <summary>
-        /// **Scopes**: Security policy; attack group
-        /// 
-        /// Returns the action and the condition-exception information for an attack group or set of attack groups. Attack groups are collections of Kona Rule Set rules used to streamline the management of website protections.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups](https://techdocs.akamai.com/application-security/reference/get-policy-attack-groups)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var attackGroup = Akamai.GetAppSecAttackGroups.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///         AttackGroup = "SQL",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["attackGroupAction"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.AttackGroupAction),
-        ///         ["conditionException"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.ConditionException),
-        ///         ["json"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.Json),
-        ///         ["outputText"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `attack_group_action`. Action taken anytime the attack group is triggered. This information is returned only when a single attack group is retrieved. Valid values are:
-        ///   - **alert**. The event is recorded.
-        ///   - **deny**. The request is blocked.
-        ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-        ///   - **none**. No action is taken.
-        /// - `condition_exception`. Conditions and exceptions assigned to the attack group. This information is returned only when a single attack group is retrieved.
-        /// - `json`. JSON-formatted list of the action and the condition-exception information for the attack group. This information is returned only when a single attack group is retrieved.
-        /// - `output_text`. Tabular report showing the attack group's action as well as Boolean values indicating whether conditions and exceptions have been configured for the group.
-        /// </summary>
         public static Task<GetAppSecAttackGroupsResult> InvokeAsync(GetAppSecAttackGroupsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security policy; attack group
-        /// 
-        /// Returns the action and the condition-exception information for an attack group or set of attack groups. Attack groups are collections of Kona Rule Set rules used to streamline the management of website protections.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups](https://techdocs.akamai.com/application-security/reference/get-policy-attack-groups)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var attackGroup = Akamai.GetAppSecAttackGroups.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///         AttackGroup = "SQL",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["attackGroupAction"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.AttackGroupAction),
-        ///         ["conditionException"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.ConditionException),
-        ///         ["json"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.Json),
-        ///         ["outputText"] = attackGroup.Apply(getAppSecAttackGroupsResult =&gt; getAppSecAttackGroupsResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `attack_group_action`. Action taken anytime the attack group is triggered. This information is returned only when a single attack group is retrieved. Valid values are:
-        ///   - **alert**. The event is recorded.
-        ///   - **deny**. The request is blocked.
-        ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-        ///   - **none**. No action is taken.
-        /// - `condition_exception`. Conditions and exceptions assigned to the attack group. This information is returned only when a single attack group is retrieved.
-        /// - `json`. JSON-formatted list of the action and the condition-exception information for the attack group. This information is returned only when a single attack group is retrieved.
-        /// - `output_text`. Tabular report showing the attack group's action as well as Boolean values indicating whether conditions and exceptions have been configured for the group.
-        /// </summary>
         public static Output<GetAppSecAttackGroupsResult> Invoke(GetAppSecAttackGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecAttackGroupsResult>("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args ?? new GetAppSecAttackGroupsInvokeArgs(), options.WithDefaults());
     }
@@ -133,21 +21,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecAttackGroupsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
-        /// </summary>
         [Input("attackGroup")]
         public string? AttackGroup { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the attack group.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the attack group.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -159,21 +38,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecAttackGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
-        /// </summary>
         [Input("attackGroup")]
         public Input<string>? AttackGroup { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the attack group.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the attack group.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

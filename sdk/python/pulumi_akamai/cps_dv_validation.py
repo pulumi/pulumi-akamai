@@ -18,8 +18,8 @@ class CpsDvValidationArgs:
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a CpsDvValidation resource.
-        :param pulumi.Input[int] enrollment_id: Unique identifier for the DV certificate enrollment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         """
         pulumi.set(__self__, "enrollment_id", enrollment_id)
         if sans is not None:
@@ -29,7 +29,7 @@ class CpsDvValidationArgs:
     @pulumi.getter(name="enrollmentId")
     def enrollment_id(self) -> pulumi.Input[int]:
         """
-        Unique identifier for the DV certificate enrollment.
+        The unique identifier of enrollment
         """
         return pulumi.get(self, "enrollment_id")
 
@@ -41,7 +41,7 @@ class CpsDvValidationArgs:
     @pulumi.getter
     def sans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        List of SANs
         """
         return pulumi.get(self, "sans")
 
@@ -58,8 +58,8 @@ class _CpsDvValidationState:
                  status: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CpsDvValidation resources.
-        :param pulumi.Input[int] enrollment_id: Unique identifier for the DV certificate enrollment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] status: Status of validation
         """
         if enrollment_id is not None:
@@ -73,7 +73,7 @@ class _CpsDvValidationState:
     @pulumi.getter(name="enrollmentId")
     def enrollment_id(self) -> Optional[pulumi.Input[int]]:
         """
-        Unique identifier for the DV certificate enrollment.
+        The unique identifier of enrollment
         """
         return pulumi.get(self, "enrollment_id")
 
@@ -85,7 +85,7 @@ class _CpsDvValidationState:
     @pulumi.getter
     def sans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        List of SANs
         """
         return pulumi.get(self, "sans")
 
@@ -115,28 +115,11 @@ class CpsDvValidation(pulumi.CustomResource):
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        Once you complete the Let's Encrypt challenges, optionally use the `CpsDvValidation` resource to send the acknowledgement to CPS and inform it that tokens are ready for validation. You can also wait for CPS to check for the tokens, which it does on a regular schedule. Next, CPS automatically deploys the certificate on Staging, and eventually on the Production network.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example = akamai.CpsDvValidation("example",
-            enrollment_id=akamai_cps_dv_enrollment["example"]["id"],
-            sans=akamai_cps_dv_enrollment["example"]["sans"])
-        ```
-        ## Attributes reference
-
-        * `status` - The status of certificate validation.
-
+        Create a CpsDvValidation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] enrollment_id: Unique identifier for the DV certificate enrollment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         """
         ...
     @overload
@@ -145,24 +128,7 @@ class CpsDvValidation(pulumi.CustomResource):
                  args: CpsDvValidationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Once you complete the Let's Encrypt challenges, optionally use the `CpsDvValidation` resource to send the acknowledgement to CPS and inform it that tokens are ready for validation. You can also wait for CPS to check for the tokens, which it does on a regular schedule. Next, CPS automatically deploys the certificate on Staging, and eventually on the Production network.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example = akamai.CpsDvValidation("example",
-            enrollment_id=akamai_cps_dv_enrollment["example"]["id"],
-            sans=akamai_cps_dv_enrollment["example"]["sans"])
-        ```
-        ## Attributes reference
-
-        * `status` - The status of certificate validation.
-
+        Create a CpsDvValidation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CpsDvValidationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -214,8 +180,8 @@ class CpsDvValidation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] enrollment_id: Unique identifier for the DV certificate enrollment.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        :param pulumi.Input[int] enrollment_id: The unique identifier of enrollment
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] status: Status of validation
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -231,7 +197,7 @@ class CpsDvValidation(pulumi.CustomResource):
     @pulumi.getter(name="enrollmentId")
     def enrollment_id(self) -> pulumi.Output[int]:
         """
-        Unique identifier for the DV certificate enrollment.
+        The unique identifier of enrollment
         """
         return pulumi.get(self, "enrollment_id")
 
@@ -239,7 +205,7 @@ class CpsDvValidation(pulumi.CustomResource):
     @pulumi.getter
     def sans(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        List of SANs
         """
         return pulumi.get(self, "sans")
 

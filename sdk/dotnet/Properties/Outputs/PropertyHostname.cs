@@ -13,18 +13,9 @@ namespace Pulumi.Akamai.Properties.Outputs
     [OutputType]
     public sealed class PropertyHostname
     {
-        /// <summary>
-        /// The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-        /// </summary>
         public readonly string CertProvisioningType;
         public readonly ImmutableArray<Outputs.PropertyHostnameCertStatus> CertStatuses;
-        /// <summary>
-        /// A string containing the original origin's hostname. For example, `"example.org"`.
-        /// </summary>
         public readonly string CnameFrom;
-        /// <summary>
-        /// A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
-        /// </summary>
         public readonly string CnameTo;
         public readonly string? CnameType;
         public readonly string? EdgeHostnameId;

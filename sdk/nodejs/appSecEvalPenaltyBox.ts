@@ -4,34 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security policy
- *
- *  __ASE_Beta__.:
- * Modifies the penalty box settings for a security policy in evaluation mode - evaluation penalty box.
- * When the penalty box is enabled for a policy in evaluation mode, clients that trigger a WAF Deny action are placed in the “penalty box”.
- * There, the action you select for the penalty box (either Alert or Deny) continues to apply to any requests from that client for the next 10 minutes.
- *
- * **Related API Endpoint**:  [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval_penalty-box](https://techdocs.akamai.com/application-security/reference/put-policy-eval_penalty-box)
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const evalPenaltyBox = new akamai.AppSecEvalPenaltyBox("evalPenaltyBox", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: "gms1_134637",
- *     penaltyBoxProtection: true,
- *     penaltyBoxAction: "deny",
- * });
- * ```
- */
 export class AppSecEvalPenaltyBox extends pulumi.CustomResource {
     /**
      * Get an existing AppSecEvalPenaltyBox resource's state with the given name, ID, and optional extra
@@ -61,23 +33,19 @@ export class AppSecEvalPenaltyBox extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the evaluation penalty box settings being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Action taken any time evaluation penalty box protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action applied to requests from clients in the penalty box
      */
     public readonly penaltyBoxAction!: pulumi.Output<string>;
     /**
-     * . Set to **true** to enable evaluation penalty box protection; set to **false** to disable evaluation penalty box protection.
+     * Whether to enable the penalty box for the specified security policy
      */
     public readonly penaltyBoxProtection!: pulumi.Output<boolean>;
     /**
-     * . Unique identifier of the security policy associated with the evaluation penalty box settings being modified.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -127,23 +95,19 @@ export class AppSecEvalPenaltyBox extends pulumi.CustomResource {
  */
 export interface AppSecEvalPenaltyBoxState {
     /**
-     * . Unique identifier of the security configuration associated with the evaluation penalty box settings being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Action taken any time evaluation penalty box protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action applied to requests from clients in the penalty box
      */
     penaltyBoxAction?: pulumi.Input<string>;
     /**
-     * . Set to **true** to enable evaluation penalty box protection; set to **false** to disable evaluation penalty box protection.
+     * Whether to enable the penalty box for the specified security policy
      */
     penaltyBoxProtection?: pulumi.Input<boolean>;
     /**
-     * . Unique identifier of the security policy associated with the evaluation penalty box settings being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -153,23 +117,19 @@ export interface AppSecEvalPenaltyBoxState {
  */
 export interface AppSecEvalPenaltyBoxArgs {
     /**
-     * . Unique identifier of the security configuration associated with the evaluation penalty box settings being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Action taken any time evaluation penalty box protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action applied to requests from clients in the penalty box
      */
     penaltyBoxAction: pulumi.Input<string>;
     /**
-     * . Set to **true** to enable evaluation penalty box protection; set to **false** to disable evaluation penalty box protection.
+     * Whether to enable the penalty box for the specified security policy
      */
     penaltyBoxProtection: pulumi.Input<boolean>;
     /**
-     * . Unique identifier of the security policy associated with the evaluation penalty box settings being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId: pulumi.Input<string>;
 }

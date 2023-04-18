@@ -15,47 +15,23 @@ public final class GetAppSecAttackGroupsPlainArgs extends com.pulumi.resources.I
 
     public static final GetAppSecAttackGroupsPlainArgs Empty = new GetAppSecAttackGroupsPlainArgs();
 
-    /**
-     * . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
-     * 
-     */
     @Import(name="attackGroup")
     private @Nullable String attackGroup;
 
-    /**
-     * @return . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
-     * 
-     */
     public Optional<String> attackGroup() {
         return Optional.ofNullable(this.attackGroup);
     }
 
-    /**
-     * . Unique identifier of the security configuration associated with the attack group.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the attack group.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the attack group.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the attack group.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -86,34 +62,16 @@ public final class GetAppSecAttackGroupsPlainArgs extends com.pulumi.resources.I
             $ = new GetAppSecAttackGroupsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param attackGroup . Unique name of the attack group you want to return information for. If not included, information is returned for all your attack groups.
-         * 
-         * @return builder
-         * 
-         */
         public Builder attackGroup(@Nullable String attackGroup) {
             $.attackGroup = attackGroup;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the attack group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the attack group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

@@ -17,160 +17,115 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.CpsUploadCertificate` resource to upload a third-party certificate and any other files that your CA sent you into CPS. The certificate and trust chain that your CA gives you must be in PEM format before you can use it in CPS. A PEM certificate is a base64 encoded ASCII file and contains `----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` statements.
- * 
- * If your CA provides you with a certificate that is not in PEM format, you can convert it to PEM format using an SSL converter.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.CpsUploadCertificate;
- * import com.pulumi.akamai.CpsUploadCertificateArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var uploadCert = new CpsUploadCertificate(&#34;uploadCert&#34;, CpsUploadCertificateArgs.builder()        
- *             .enrollmentId(12345)
- *             .certificateEcdsaPem(example_cert_ecdsa.pem())
- *             .trustChainEcdsaPem(example_trust_chain_ecdsa.pem())
- *             .acknowledgePostVerificationWarnings(true)
- *             .acknowledgeChangeManagement(true)
- *             .waitForDeployment(true)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/cpsUploadCertificate:CpsUploadCertificate")
 public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
     /**
-     * Boolean. Use only if `change_management` is set to `true` in the `akamai.CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+     * Whether to acknowledge change management
      * 
      */
     @Export(name="acknowledgeChangeManagement", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> acknowledgeChangeManagement;
 
     /**
-     * @return Boolean. Use only if `change_management` is set to `true` in the `akamai.CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+     * @return Whether to acknowledge change management
      * 
      */
     public Output<Optional<Boolean>> acknowledgeChangeManagement() {
         return Codegen.optional(this.acknowledgeChangeManagement);
     }
     /**
-     * Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `auto_approve_warnings`.
+     * Whether to acknowledge post-verification warnings
      * 
      */
     @Export(name="acknowledgePostVerificationWarnings", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> acknowledgePostVerificationWarnings;
 
     /**
-     * @return Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `auto_approve_warnings`.
+     * @return Whether to acknowledge post-verification warnings
      * 
      */
     public Output<Optional<Boolean>> acknowledgePostVerificationWarnings() {
         return Codegen.optional(this.acknowledgePostVerificationWarnings);
     }
     /**
-     * The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+     * List of post-verification warnings to be automatically acknowledged
      * 
      */
     @Export(name="autoApproveWarnings", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> autoApproveWarnings;
 
     /**
-     * @return The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+     * @return List of post-verification warnings to be automatically acknowledged
      * 
      */
     public Output<Optional<List<String>>> autoApproveWarnings() {
         return Codegen.optional(this.autoApproveWarnings);
     }
     /**
-     * The ECDSA certificate in PEM format you want to upload.
+     * ECDSA certificate in pem format to be uploaded
      * 
      */
     @Export(name="certificateEcdsaPem", type=String.class, parameters={})
     private Output</* @Nullable */ String> certificateEcdsaPem;
 
     /**
-     * @return The ECDSA certificate in PEM format you want to upload.
+     * @return ECDSA certificate in pem format to be uploaded
      * 
      */
     public Output<Optional<String>> certificateEcdsaPem() {
         return Codegen.optional(this.certificateEcdsaPem);
     }
     /**
-     * The RSA certificate in PEM format you want to upload.
+     * RSA certificate in pem format to be uploaded
      * 
      */
     @Export(name="certificateRsaPem", type=String.class, parameters={})
     private Output</* @Nullable */ String> certificateRsaPem;
 
     /**
-     * @return The RSA certificate in PEM format you want to upload.
+     * @return RSA certificate in pem format to be uploaded
      * 
      */
     public Output<Optional<String>> certificateRsaPem() {
         return Codegen.optional(this.certificateRsaPem);
     }
     /**
-     * Unique identifier for the certificate enrollment.
-     * * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+     * The unique identifier of the enrollment
      * 
      */
     @Export(name="enrollmentId", type=Integer.class, parameters={})
     private Output<Integer> enrollmentId;
 
     /**
-     * @return Unique identifier for the certificate enrollment.
-     * * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+     * @return The unique identifier of the enrollment
      * 
      */
     public Output<Integer> enrollmentId() {
         return this.enrollmentId;
     }
     /**
-     * The trust chain in PEM format for the ECDSA certificate you want to upload.
+     * Trust chain in pem format for provided ECDSA certificate
      * 
      */
     @Export(name="trustChainEcdsaPem", type=String.class, parameters={})
     private Output</* @Nullable */ String> trustChainEcdsaPem;
 
     /**
-     * @return The trust chain in PEM format for the ECDSA certificate you want to upload.
+     * @return Trust chain in pem format for provided ECDSA certificate
      * 
      */
     public Output<Optional<String>> trustChainEcdsaPem() {
         return Codegen.optional(this.trustChainEcdsaPem);
     }
     /**
-     * The trust chain in PEM format for the RSA certificate you want to upload.
+     * Trust chain in pem format for provided RSA certificate
      * 
      */
     @Export(name="trustChainRsaPem", type=String.class, parameters={})
     private Output</* @Nullable */ String> trustChainRsaPem;
 
     /**
-     * @return The trust chain in PEM format for the RSA certificate you want to upload.
+     * @return Trust chain in pem format for provided RSA certificate
      * 
      */
     public Output<Optional<String>> trustChainRsaPem() {
@@ -191,14 +146,14 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
         return this.unacknowledgedWarnings;
     }
     /**
-     * Boolean. Enter `true` to wait for certificate to be deployed.
+     * Whether to wait for certificate to be deployed
      * 
      */
     @Export(name="waitForDeployment", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> waitForDeployment;
 
     /**
-     * @return Boolean. Enter `true` to wait for certificate to be deployed.
+     * @return Whether to wait for certificate to be deployed
      * 
      */
     public Output<Optional<Boolean>> waitForDeployment() {

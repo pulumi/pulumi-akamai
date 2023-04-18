@@ -12,39 +12,23 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class DatastreamGcsConnectorArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-        /// </summary>
         [Input("bucket", required: true)]
         public Input<string> Bucket { get; set; } = null!;
 
-        /// <summary>
-        /// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-        /// </summary>
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
         [Input("connectorId")]
         public Input<int>? ConnectorId { get; set; }
 
-        /// <summary>
-        /// The name of the connector.
-        /// </summary>
         [Input("connectorName", required: true)]
         public Input<string> ConnectorName { get; set; } = null!;
 
-        /// <summary>
-        /// The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-        /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }
 
         [Input("privateKey", required: true)]
         private Input<string>? _privateKey;
-
-        /// <summary>
-        /// **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
-        /// </summary>
         public Input<string>? PrivateKey
         {
             get => _privateKey;
@@ -55,15 +39,9 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
-        /// <summary>
-        /// The unique ID of your Google Cloud project.
-        /// </summary>
         [Input("projectId", required: true)]
         public Input<string> ProjectId { get; set; } = null!;
 
-        /// <summary>
-        /// The name of the service account with the storage.object.create permission or Storage Object Creator role.
-        /// </summary>
         [Input("serviceAccountName", required: true)]
         public Input<string> ServiceAccountName { get; set; } = null!;
 

@@ -16,47 +16,23 @@ public final class GetAppSecEvalGroupsArgs extends com.pulumi.resources.InvokeAr
 
     public static final GetAppSecEvalGroupsArgs Empty = new GetAppSecEvalGroupsArgs();
 
-    /**
-     * . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-     * 
-     */
     @Import(name="attackGroup")
     private @Nullable Output<String> attackGroup;
 
-    /**
-     * @return . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-     * 
-     */
     public Optional<Output<String>> attackGroup() {
         return Optional.ofNullable(this.attackGroup);
     }
 
-    /**
-     * . Unique identifier of the security configuration associated with the evaluation attack group.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the evaluation attack group.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the evaluation attack group.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the evaluation attack group.
-     * 
-     */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -87,65 +63,29 @@ public final class GetAppSecEvalGroupsArgs extends com.pulumi.resources.InvokeAr
             $ = new GetAppSecEvalGroupsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param attackGroup . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-         * 
-         * @return builder
-         * 
-         */
         public Builder attackGroup(@Nullable Output<String> attackGroup) {
             $.attackGroup = attackGroup;
             return this;
         }
 
-        /**
-         * @param attackGroup . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-         * 
-         * @return builder
-         * 
-         */
         public Builder attackGroup(String attackGroup) {
             return attackGroup(Output.of(attackGroup));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the evaluation attack group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the evaluation attack group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the evaluation attack group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the evaluation attack group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
         }

@@ -6,18 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
- *
- * Use the `akamai.getCloudletsEdgeRedirectorMatchRule` data source to build a match rule JSON object for the Edge Redirector Cloudlet.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `type` - The type of Cloudlet the rule is for.
- * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
- */
 export function getCloudletsEdgeRedirectorMatchRule(args?: GetCloudletsEdgeRedirectorMatchRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsEdgeRedirectorMatchRuleResult> {
     args = args || {};
 
@@ -31,9 +19,6 @@ export function getCloudletsEdgeRedirectorMatchRule(args?: GetCloudletsEdgeRedir
  * A collection of arguments for invoking getCloudletsEdgeRedirectorMatchRule.
  */
 export interface GetCloudletsEdgeRedirectorMatchRuleArgs {
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     */
     matchRules?: inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRule[];
 }
 
@@ -48,18 +33,6 @@ export interface GetCloudletsEdgeRedirectorMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsEdgeRedirectorMatchRuleMatchRule[];
 }
-/**
- * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
- *
- * Use the `akamai.getCloudletsEdgeRedirectorMatchRule` data source to build a match rule JSON object for the Edge Redirector Cloudlet.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `type` - The type of Cloudlet the rule is for.
- * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
- */
 export function getCloudletsEdgeRedirectorMatchRuleOutput(args?: GetCloudletsEdgeRedirectorMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsEdgeRedirectorMatchRuleResult> {
     return pulumi.output(args).apply((a: any) => getCloudletsEdgeRedirectorMatchRule(a, opts))
 }
@@ -68,8 +41,5 @@ export function getCloudletsEdgeRedirectorMatchRuleOutput(args?: GetCloudletsEdg
  * A collection of arguments for invoking getCloudletsEdgeRedirectorMatchRule.
  */
 export interface GetCloudletsEdgeRedirectorMatchRuleOutputArgs {
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsEdgeRedirectorMatchRuleMatchRuleArgs>[]>;
 }

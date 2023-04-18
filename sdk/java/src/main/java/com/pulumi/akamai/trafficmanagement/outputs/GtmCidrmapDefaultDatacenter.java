@@ -12,29 +12,13 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GtmCidrmapDefaultDatacenter {
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     private Integer datacenterId;
-    /**
-     * @return A descriptive label for the CIDR zone group, up to 256 characters.
-     * 
-     */
     private @Nullable String nickname;
 
     private GtmCidrmapDefaultDatacenter() {}
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Integer datacenterId() {
         return this.datacenterId;
     }
-    /**
-     * @return A descriptive label for the CIDR zone group, up to 256 characters.
-     * 
-     */
     public Optional<String> nickname() {
         return Optional.ofNullable(this.nickname);
     }

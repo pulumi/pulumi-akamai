@@ -14,101 +14,37 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CpsThirdPartyEnrollmentNetworkConfiguration {
-    /**
-     * @return The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
-     * 
-     */
     private @Nullable CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication clientMutualAuthentication;
-    /**
-     * @return Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
-     * 
-     */
     private @Nullable Boolean cloneDnsNames;
-    /**
-     * @return The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
-     * 
-     */
     private @Nullable List<String> disallowedTlsVersions;
-    /**
-     * @return Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
-     * 
-     */
     private String geography;
-    /**
-     * @return The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-     * 
-     */
     private @Nullable String mustHaveCiphers;
-    /**
-     * @return Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
-     * 
-     */
     private @Nullable String ocspStapling;
-    /**
-     * @return Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-     * 
-     */
     private @Nullable String preferredCiphers;
-    /**
-     * @return Whether to use the QUIC transport layer network protocol.
-     * 
-     */
     private @Nullable Boolean quicEnabled;
 
     private CpsThirdPartyEnrollmentNetworkConfiguration() {}
-    /**
-     * @return The configuration for client mutual authentication. Specifies the trust chain that is used to verify client certificates and some configuration options.
-     * 
-     */
     public Optional<CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication> clientMutualAuthentication() {
         return Optional.ofNullable(this.clientMutualAuthentication);
     }
-    /**
-     * @return Whether CPS should direct traffic using all the SANs you listed in the SANs parameter when you created your enrollment.
-     * 
-     */
     public Optional<Boolean> cloneDnsNames() {
         return Optional.ofNullable(this.cloneDnsNames);
     }
-    /**
-     * @return The TLS protocol version to disallow. CPS uses the TLS protocols that Akamai currently supports as a best practice.
-     * 
-     */
     public List<String> disallowedTlsVersions() {
         return this.disallowedTlsVersions == null ? List.of() : this.disallowedTlsVersions;
     }
-    /**
-     * @return Lists where you can deploy the certificate. Either `core` to specify worldwide deployment (including China and Russia), `china+core` to specify worldwide deployment and China, or `russia+core` to specify worldwide deployment and Russia. You can only use the setting to include China and Russia if your Akamai contract specifies your ability to do so and you have approval from the Chinese and Russian government.
-     * 
-     */
     public String geography() {
         return this.geography;
     }
-    /**
-     * @return The ciphers to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-     * 
-     */
     public Optional<String> mustHaveCiphers() {
         return Optional.ofNullable(this.mustHaveCiphers);
     }
-    /**
-     * @return Whether to use OCSP stapling for the enrollment, either `on`, `off` or `not-set`. OCSP Stapling improves performance by including a valid OCSP response in every TLS handshake. This option allows the visitors on your site to query the Online Certificate Status Protocol (OCSP) server at regular intervals to obtain a signed time-stamped OCSP response. This response must be signed by the CA, not the server, therefore ensuring security. Disable OSCP Stapling if you want visitors to your site to contact the CA directly for an OSCP response. OCSP allows you to obtain the revocation status of a certificate.
-     * 
-     */
     public Optional<String> ocspStapling() {
         return Optional.ofNullable(this.ocspStapling);
     }
-    /**
-     * @return Ciphers that you preferably want to include for the enrollment while deploying it on the network. Defaults to `ak-akamai-2020q1` when it is not set. For more information on cipher profiles, see [Akamai community](https://community.akamai.com/customers/s/article/SSL-TLS-Cipher-Profiles-for-Akamai-Secure-CDNrxdxm).
-     * 
-     */
     public Optional<String> preferredCiphers() {
         return Optional.ofNullable(this.preferredCiphers);
     }
-    /**
-     * @return Whether to use the QUIC transport layer network protocol.
-     * 
-     */
     public Optional<Boolean> quicEnabled() {
         return Optional.ofNullable(this.quicEnabled);
     }

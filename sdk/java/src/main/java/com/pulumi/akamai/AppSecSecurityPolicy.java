@@ -16,104 +16,45 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security configuration
- * 
- * Creates a new security policy. The resource enables you to:
- * 
- * - Create a new, “blank” security policy.
- * - Create a new policy preconfigured with the default security policy settings.
- * - Clone an existing security policy.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies](https://techdocs.akamai.com/application-security/reference/post-policy)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecSecurityPolicy;
- * import com.pulumi.akamai.AppSecSecurityPolicyArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var securityPolicyCreateAppSecSecurityPolicy = new AppSecSecurityPolicy(&#34;securityPolicyCreateAppSecSecurityPolicy&#34;, AppSecSecurityPolicyArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .defaultSettings(true)
- *             .securityPolicyName(&#34;Documentation Policy&#34;)
- *             .securityPolicyPrefix(&#34;gms1&#34;)
- *             .build());
- * 
- *         ctx.export(&#34;securityPolicyCreate&#34;, securityPolicyCreateAppSecSecurityPolicy.securityPolicyId());
- *     }
- * }
- * ```
- * ## Output Options
- * 
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- * 
- * - `security_policy_id`. ID of the newly-created security policy.
- * 
- */
 @ResourceType(type="akamai:index/appSecSecurityPolicy:AppSecSecurityPolicy")
 public class AppSecSecurityPolicy extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration to be associated with the new security policy.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration to be associated with the new security policy.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Unique identifier of the existing security policy that the new policy will be cloned from.
+     * Unique identifier of the existing security policy being cloned
      * 
      */
     @Export(name="createFromSecurityPolicyId", type=String.class, parameters={})
     private Output</* @Nullable */ String> createFromSecurityPolicyId;
 
     /**
-     * @return . Unique identifier of the existing security policy that the new policy will be cloned from.
+     * @return Unique identifier of the existing security policy being cloned
      * 
      */
     public Output<Optional<String>> createFromSecurityPolicyId() {
         return Codegen.optional(this.createFromSecurityPolicyId);
     }
     /**
-     * . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+     * Whether to assign default settings to the new security policy
      * 
      */
     @Export(name="defaultSettings", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> defaultSettings;
 
     /**
-     * @return . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+     * @return Whether to assign default settings to the new security policy
      * 
      */
     public Output<Optional<Boolean>> defaultSettings() {
@@ -134,28 +75,28 @@ public class AppSecSecurityPolicy extends com.pulumi.resources.CustomResource {
         return this.securityPolicyId;
     }
     /**
-     * . Name of the new security policy.
+     * Name of the new security policy
      * 
      */
     @Export(name="securityPolicyName", type=String.class, parameters={})
     private Output<String> securityPolicyName;
 
     /**
-     * @return . Name of the new security policy.
+     * @return Name of the new security policy
      * 
      */
     public Output<String> securityPolicyName() {
         return this.securityPolicyName;
     }
     /**
-     * . Four-character alphanumeric string prefix used in creating the security policy ID.
+     * Four-character alphanumeric string prefix used in creating the security policy ID
      * 
      */
     @Export(name="securityPolicyPrefix", type=String.class, parameters={})
     private Output<String> securityPolicyPrefix;
 
     /**
-     * @return . Four-character alphanumeric string prefix used in creating the security policy ID.
+     * @return Four-character alphanumeric string prefix used in creating the security policy ID
      * 
      */
     public Output<String> securityPolicyPrefix() {

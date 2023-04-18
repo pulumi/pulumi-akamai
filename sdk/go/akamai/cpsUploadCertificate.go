@@ -11,65 +11,28 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `CpsUploadCertificate` resource to upload a third-party certificate and any other files that your CA sent you into CPS. The certificate and trust chain that your CA gives you must be in PEM format before you can use it in CPS. A PEM certificate is a base64 encoded ASCII file and contains `----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` statements.
-//
-// If your CA provides you with a certificate that is not in PEM format, you can convert it to PEM format using an SSL converter.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewCpsUploadCertificate(ctx, "uploadCert", &akamai.CpsUploadCertificateArgs{
-//				EnrollmentId:                        pulumi.Int(12345),
-//				CertificateEcdsaPem:                 pulumi.Any(example_cert_ecdsa.Pem),
-//				TrustChainEcdsaPem:                  pulumi.Any(example_trust_chain_ecdsa.Pem),
-//				AcknowledgePostVerificationWarnings: pulumi.Bool(true),
-//				AcknowledgeChangeManagement:         pulumi.Bool(true),
-//				WaitForDeployment:                   pulumi.Bool(true),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type CpsUploadCertificate struct {
 	pulumi.CustomResourceState
 
-	// Boolean. Use only if `changeManagement` is set to `true` in the `CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+	// Whether to acknowledge change management
 	AcknowledgeChangeManagement pulumi.BoolPtrOutput `pulumi:"acknowledgeChangeManagement"`
-	// Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `autoApproveWarnings`.
+	// Whether to acknowledge post-verification warnings
 	AcknowledgePostVerificationWarnings pulumi.BoolPtrOutput `pulumi:"acknowledgePostVerificationWarnings"`
-	// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `getCpsWarnings` data source.
+	// List of post-verification warnings to be automatically acknowledged
 	AutoApproveWarnings pulumi.StringArrayOutput `pulumi:"autoApproveWarnings"`
-	// The ECDSA certificate in PEM format you want to upload.
+	// ECDSA certificate in pem format to be uploaded
 	CertificateEcdsaPem pulumi.StringPtrOutput `pulumi:"certificateEcdsaPem"`
-	// The RSA certificate in PEM format you want to upload.
+	// RSA certificate in pem format to be uploaded
 	CertificateRsaPem pulumi.StringPtrOutput `pulumi:"certificateRsaPem"`
-	// Unique identifier for the certificate enrollment.
-	// * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+	// The unique identifier of the enrollment
 	EnrollmentId pulumi.IntOutput `pulumi:"enrollmentId"`
-	// The trust chain in PEM format for the ECDSA certificate you want to upload.
+	// Trust chain in pem format for provided ECDSA certificate
 	TrustChainEcdsaPem pulumi.StringPtrOutput `pulumi:"trustChainEcdsaPem"`
-	// The trust chain in PEM format for the RSA certificate you want to upload.
+	// Trust chain in pem format for provided RSA certificate
 	TrustChainRsaPem pulumi.StringPtrOutput `pulumi:"trustChainRsaPem"`
 	// Used to distinguish whether there are unacknowledged warnings for a certificate
 	UnacknowledgedWarnings pulumi.BoolOutput `pulumi:"unacknowledgedWarnings"`
-	// Boolean. Enter `true` to wait for certificate to be deployed.
+	// Whether to wait for certificate to be deployed
 	WaitForDeployment pulumi.BoolPtrOutput `pulumi:"waitForDeployment"`
 }
 
@@ -105,50 +68,48 @@ func GetCpsUploadCertificate(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CpsUploadCertificate resources.
 type cpsUploadCertificateState struct {
-	// Boolean. Use only if `changeManagement` is set to `true` in the `CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+	// Whether to acknowledge change management
 	AcknowledgeChangeManagement *bool `pulumi:"acknowledgeChangeManagement"`
-	// Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `autoApproveWarnings`.
+	// Whether to acknowledge post-verification warnings
 	AcknowledgePostVerificationWarnings *bool `pulumi:"acknowledgePostVerificationWarnings"`
-	// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `getCpsWarnings` data source.
+	// List of post-verification warnings to be automatically acknowledged
 	AutoApproveWarnings []string `pulumi:"autoApproveWarnings"`
-	// The ECDSA certificate in PEM format you want to upload.
+	// ECDSA certificate in pem format to be uploaded
 	CertificateEcdsaPem *string `pulumi:"certificateEcdsaPem"`
-	// The RSA certificate in PEM format you want to upload.
+	// RSA certificate in pem format to be uploaded
 	CertificateRsaPem *string `pulumi:"certificateRsaPem"`
-	// Unique identifier for the certificate enrollment.
-	// * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+	// The unique identifier of the enrollment
 	EnrollmentId *int `pulumi:"enrollmentId"`
-	// The trust chain in PEM format for the ECDSA certificate you want to upload.
+	// Trust chain in pem format for provided ECDSA certificate
 	TrustChainEcdsaPem *string `pulumi:"trustChainEcdsaPem"`
-	// The trust chain in PEM format for the RSA certificate you want to upload.
+	// Trust chain in pem format for provided RSA certificate
 	TrustChainRsaPem *string `pulumi:"trustChainRsaPem"`
 	// Used to distinguish whether there are unacknowledged warnings for a certificate
 	UnacknowledgedWarnings *bool `pulumi:"unacknowledgedWarnings"`
-	// Boolean. Enter `true` to wait for certificate to be deployed.
+	// Whether to wait for certificate to be deployed
 	WaitForDeployment *bool `pulumi:"waitForDeployment"`
 }
 
 type CpsUploadCertificateState struct {
-	// Boolean. Use only if `changeManagement` is set to `true` in the `CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+	// Whether to acknowledge change management
 	AcknowledgeChangeManagement pulumi.BoolPtrInput
-	// Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `autoApproveWarnings`.
+	// Whether to acknowledge post-verification warnings
 	AcknowledgePostVerificationWarnings pulumi.BoolPtrInput
-	// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `getCpsWarnings` data source.
+	// List of post-verification warnings to be automatically acknowledged
 	AutoApproveWarnings pulumi.StringArrayInput
-	// The ECDSA certificate in PEM format you want to upload.
+	// ECDSA certificate in pem format to be uploaded
 	CertificateEcdsaPem pulumi.StringPtrInput
-	// The RSA certificate in PEM format you want to upload.
+	// RSA certificate in pem format to be uploaded
 	CertificateRsaPem pulumi.StringPtrInput
-	// Unique identifier for the certificate enrollment.
-	// * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+	// The unique identifier of the enrollment
 	EnrollmentId pulumi.IntPtrInput
-	// The trust chain in PEM format for the ECDSA certificate you want to upload.
+	// Trust chain in pem format for provided ECDSA certificate
 	TrustChainEcdsaPem pulumi.StringPtrInput
-	// The trust chain in PEM format for the RSA certificate you want to upload.
+	// Trust chain in pem format for provided RSA certificate
 	TrustChainRsaPem pulumi.StringPtrInput
 	// Used to distinguish whether there are unacknowledged warnings for a certificate
 	UnacknowledgedWarnings pulumi.BoolPtrInput
-	// Boolean. Enter `true` to wait for certificate to be deployed.
+	// Whether to wait for certificate to be deployed
 	WaitForDeployment pulumi.BoolPtrInput
 }
 
@@ -157,47 +118,45 @@ func (CpsUploadCertificateState) ElementType() reflect.Type {
 }
 
 type cpsUploadCertificateArgs struct {
-	// Boolean. Use only if `changeManagement` is set to `true` in the `CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+	// Whether to acknowledge change management
 	AcknowledgeChangeManagement *bool `pulumi:"acknowledgeChangeManagement"`
-	// Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `autoApproveWarnings`.
+	// Whether to acknowledge post-verification warnings
 	AcknowledgePostVerificationWarnings *bool `pulumi:"acknowledgePostVerificationWarnings"`
-	// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `getCpsWarnings` data source.
+	// List of post-verification warnings to be automatically acknowledged
 	AutoApproveWarnings []string `pulumi:"autoApproveWarnings"`
-	// The ECDSA certificate in PEM format you want to upload.
+	// ECDSA certificate in pem format to be uploaded
 	CertificateEcdsaPem *string `pulumi:"certificateEcdsaPem"`
-	// The RSA certificate in PEM format you want to upload.
+	// RSA certificate in pem format to be uploaded
 	CertificateRsaPem *string `pulumi:"certificateRsaPem"`
-	// Unique identifier for the certificate enrollment.
-	// * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+	// The unique identifier of the enrollment
 	EnrollmentId int `pulumi:"enrollmentId"`
-	// The trust chain in PEM format for the ECDSA certificate you want to upload.
+	// Trust chain in pem format for provided ECDSA certificate
 	TrustChainEcdsaPem *string `pulumi:"trustChainEcdsaPem"`
-	// The trust chain in PEM format for the RSA certificate you want to upload.
+	// Trust chain in pem format for provided RSA certificate
 	TrustChainRsaPem *string `pulumi:"trustChainRsaPem"`
-	// Boolean. Enter `true` to wait for certificate to be deployed.
+	// Whether to wait for certificate to be deployed
 	WaitForDeployment *bool `pulumi:"waitForDeployment"`
 }
 
 // The set of arguments for constructing a CpsUploadCertificate resource.
 type CpsUploadCertificateArgs struct {
-	// Boolean. Use only if `changeManagement` is set to `true` in the `CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+	// Whether to acknowledge change management
 	AcknowledgeChangeManagement pulumi.BoolPtrInput
-	// Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `autoApproveWarnings`.
+	// Whether to acknowledge post-verification warnings
 	AcknowledgePostVerificationWarnings pulumi.BoolPtrInput
-	// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `getCpsWarnings` data source.
+	// List of post-verification warnings to be automatically acknowledged
 	AutoApproveWarnings pulumi.StringArrayInput
-	// The ECDSA certificate in PEM format you want to upload.
+	// ECDSA certificate in pem format to be uploaded
 	CertificateEcdsaPem pulumi.StringPtrInput
-	// The RSA certificate in PEM format you want to upload.
+	// RSA certificate in pem format to be uploaded
 	CertificateRsaPem pulumi.StringPtrInput
-	// Unique identifier for the certificate enrollment.
-	// * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+	// The unique identifier of the enrollment
 	EnrollmentId pulumi.IntInput
-	// The trust chain in PEM format for the ECDSA certificate you want to upload.
+	// Trust chain in pem format for provided ECDSA certificate
 	TrustChainEcdsaPem pulumi.StringPtrInput
-	// The trust chain in PEM format for the RSA certificate you want to upload.
+	// Trust chain in pem format for provided RSA certificate
 	TrustChainRsaPem pulumi.StringPtrInput
-	// Boolean. Enter `true` to wait for certificate to be deployed.
+	// Whether to wait for certificate to be deployed
 	WaitForDeployment pulumi.BoolPtrInput
 }
 
@@ -288,43 +247,42 @@ func (o CpsUploadCertificateOutput) ToCpsUploadCertificateOutputWithContext(ctx 
 	return o
 }
 
-// Boolean. Use only if `changeManagement` is set to `true` in the `CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+// Whether to acknowledge change management
 func (o CpsUploadCertificateOutput) AcknowledgeChangeManagement() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.BoolPtrOutput { return v.AcknowledgeChangeManagement }).(pulumi.BoolPtrOutput)
 }
 
-// Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `autoApproveWarnings`.
+// Whether to acknowledge post-verification warnings
 func (o CpsUploadCertificateOutput) AcknowledgePostVerificationWarnings() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.BoolPtrOutput { return v.AcknowledgePostVerificationWarnings }).(pulumi.BoolPtrOutput)
 }
 
-// The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `getCpsWarnings` data source.
+// List of post-verification warnings to be automatically acknowledged
 func (o CpsUploadCertificateOutput) AutoApproveWarnings() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.StringArrayOutput { return v.AutoApproveWarnings }).(pulumi.StringArrayOutput)
 }
 
-// The ECDSA certificate in PEM format you want to upload.
+// ECDSA certificate in pem format to be uploaded
 func (o CpsUploadCertificateOutput) CertificateEcdsaPem() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.StringPtrOutput { return v.CertificateEcdsaPem }).(pulumi.StringPtrOutput)
 }
 
-// The RSA certificate in PEM format you want to upload.
+// RSA certificate in pem format to be uploaded
 func (o CpsUploadCertificateOutput) CertificateRsaPem() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.StringPtrOutput { return v.CertificateRsaPem }).(pulumi.StringPtrOutput)
 }
 
-// Unique identifier for the certificate enrollment.
-// * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+// The unique identifier of the enrollment
 func (o CpsUploadCertificateOutput) EnrollmentId() pulumi.IntOutput {
 	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.IntOutput { return v.EnrollmentId }).(pulumi.IntOutput)
 }
 
-// The trust chain in PEM format for the ECDSA certificate you want to upload.
+// Trust chain in pem format for provided ECDSA certificate
 func (o CpsUploadCertificateOutput) TrustChainEcdsaPem() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.StringPtrOutput { return v.TrustChainEcdsaPem }).(pulumi.StringPtrOutput)
 }
 
-// The trust chain in PEM format for the RSA certificate you want to upload.
+// Trust chain in pem format for provided RSA certificate
 func (o CpsUploadCertificateOutput) TrustChainRsaPem() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.StringPtrOutput { return v.TrustChainRsaPem }).(pulumi.StringPtrOutput)
 }
@@ -334,7 +292,7 @@ func (o CpsUploadCertificateOutput) UnacknowledgedWarnings() pulumi.BoolOutput {
 	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.BoolOutput { return v.UnacknowledgedWarnings }).(pulumi.BoolOutput)
 }
 
-// Boolean. Enter `true` to wait for certificate to be deployed.
+// Whether to wait for certificate to be deployed
 func (o CpsUploadCertificateOutput) WaitForDeployment() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsUploadCertificate) pulumi.BoolPtrOutput { return v.WaitForDeployment }).(pulumi.BoolPtrOutput)
 }

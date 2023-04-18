@@ -122,22 +122,7 @@ def get_property_include_activation(contract_id: Optional[str] = None,
                                     network: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyIncludeActivationResult:
     """
-    Use the `PropertyIncludeActivation` data source to get activation details for an include on the provided network.
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `version` - The version of the activated include.
-    * `name` - The descriptive name for the property.
-    * `note` - A log message assigned to the activation request.
-    * `notify_emails` - The list of email addresses notified when the activation status changes.
-
-
-    :param str contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-    :param str group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-    :param str include_id: (Required) An include's unique ID with the optional `inc_` prefix.
-    :param str network: (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contractId'] = contract_id
@@ -166,21 +151,6 @@ def get_property_include_activation_output(contract_id: Optional[pulumi.Input[st
                                            network: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyIncludeActivationResult]:
     """
-    Use the `PropertyIncludeActivation` data source to get activation details for an include on the provided network.
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `version` - The version of the activated include.
-    * `name` - The descriptive name for the property.
-    * `note` - A log message assigned to the activation request.
-    * `notify_emails` - The list of email addresses notified when the activation status changes.
-
-
-    :param str contract_id: (Required) A contract's unique ID, including the optional `ctr_` prefix.
-    :param str group_id: (Required) A group's unique ID, including the optional `grp_` prefix.
-    :param str include_id: (Required) An include's unique ID with the optional `inc_` prefix.
-    :param str network: (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
+    Use this data source to access information about an existing resource.
     """
     ...

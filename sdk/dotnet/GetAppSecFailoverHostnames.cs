@@ -11,103 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecFailoverHostnames
     {
-        /// <summary>
-        /// **Scopes**: Security configuration
-        /// 
-        /// Returns a list of the failover hostnames in a configuration. 
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/failover-hostnames](https://techdocs.akamai.com/application-security/reference/get-failover-hostnames)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var failoverHostnamesAppSecFailoverHostnames = Akamai.GetAppSecFailoverHostnames.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["failoverHostnames"] = failoverHostnamesAppSecFailoverHostnames.Apply(getAppSecFailoverHostnamesResult =&gt; getAppSecFailoverHostnamesResult.Hostnames),
-        ///         ["failoverHostnamesOutput"] = failoverHostnamesAppSecFailoverHostnames.Apply(getAppSecFailoverHostnamesResult =&gt; getAppSecFailoverHostnamesResult.OutputText),
-        ///         ["failoverHostnamesJson"] = failoverHostnamesAppSecFailoverHostnames.Apply(getAppSecFailoverHostnamesResult =&gt; getAppSecFailoverHostnamesResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `hostnames`. List of the failover hostnames.
-        /// - `json`. JSON-formatted list of the failover hostnames.
-        /// </summary>
         public static Task<GetAppSecFailoverHostnamesResult> InvokeAsync(GetAppSecFailoverHostnamesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security configuration
-        /// 
-        /// Returns a list of the failover hostnames in a configuration. 
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/failover-hostnames](https://techdocs.akamai.com/application-security/reference/get-failover-hostnames)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var failoverHostnamesAppSecFailoverHostnames = Akamai.GetAppSecFailoverHostnames.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["failoverHostnames"] = failoverHostnamesAppSecFailoverHostnames.Apply(getAppSecFailoverHostnamesResult =&gt; getAppSecFailoverHostnamesResult.Hostnames),
-        ///         ["failoverHostnamesOutput"] = failoverHostnamesAppSecFailoverHostnames.Apply(getAppSecFailoverHostnamesResult =&gt; getAppSecFailoverHostnamesResult.OutputText),
-        ///         ["failoverHostnamesJson"] = failoverHostnamesAppSecFailoverHostnames.Apply(getAppSecFailoverHostnamesResult =&gt; getAppSecFailoverHostnamesResult.Json),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `hostnames`. List of the failover hostnames.
-        /// - `json`. JSON-formatted list of the failover hostnames.
-        /// </summary>
         public static Output<GetAppSecFailoverHostnamesResult> Invoke(GetAppSecFailoverHostnamesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecFailoverHostnamesResult>("akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames", args ?? new GetAppSecFailoverHostnamesInvokeArgs(), options.WithDefaults());
     }
@@ -115,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecFailoverHostnamesArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the failover hosts.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
@@ -129,9 +32,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecFailoverHostnamesInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the failover hosts.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 

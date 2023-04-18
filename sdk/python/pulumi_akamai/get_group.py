@@ -94,26 +94,7 @@ def get_group(contract: Optional[str] = None,
               name: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGroupResult:
     """
-    Use the _get_group_ data source to get a group by name.
-
-    Each account features a hierarchy of groups, which control access to your
-    Akamai configurations and help consolidate reporting functions, typically
-    mapping to an organizational hierarchy. Using either Control Center or the
-    [Identity Management: User Administration API](https://techdocs.akamai.com/iam-api/reference/api),
-    account administrators can assign properties to specific groups, each with
-    its own set of users and accompanying roles.
-
-    ## Attributes reference
-
-    This data source returns this attribute:
-
-    * `id` - The group's unique ID, including the `grp_` prefix.
-
-
-    :param str contract: Replaced by `contract_id`. Maintained for legacy purposes.
-    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
-    :param str group_name: The group name.
-    :param str name: Replaced by `group_name`. Maintained for legacy purposes.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contract'] = contract
@@ -138,25 +119,6 @@ def get_group_output(contract: Optional[pulumi.Input[Optional[str]]] = None,
                      name: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGroupResult]:
     """
-    Use the _get_group_ data source to get a group by name.
-
-    Each account features a hierarchy of groups, which control access to your
-    Akamai configurations and help consolidate reporting functions, typically
-    mapping to an organizational hierarchy. Using either Control Center or the
-    [Identity Management: User Administration API](https://techdocs.akamai.com/iam-api/reference/api),
-    account administrators can assign properties to specific groups, each with
-    its own set of users and accompanying roles.
-
-    ## Attributes reference
-
-    This data source returns this attribute:
-
-    * `id` - The group's unique ID, including the `grp_` prefix.
-
-
-    :param str contract: Replaced by `contract_id`. Maintained for legacy purposes.
-    :param str contract_id: (Required) A contract's unique ID, including the `ctr_` prefix.
-    :param str group_name: The group name.
-    :param str name: Replaced by `group_name`. Maintained for legacy purposes.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -11,99 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecCustomRuleActions
     {
-        /// <summary>
-        /// **Scopes**: Security policy; custom rule
-        /// 
-        /// Retrieve information about the actions defined for your custom rules. Custom rules are rules that you create yourself — these rules aren't part of Akamai's Kona Rule Set.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-custom-rules)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var customRuleActionsAppSecCustomRuleActions = Akamai.GetAppSecCustomRuleActions.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["customRuleActions"] = customRuleActionsAppSecCustomRuleActions.Apply(getAppSecCustomRuleActionsResult =&gt; getAppSecCustomRuleActionsResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `output_text`. Tabular report showing the ID, name, and action of the custom rules.
-        /// </summary>
         public static Task<GetAppSecCustomRuleActionsResult> InvokeAsync(GetAppSecCustomRuleActionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecCustomRuleActionsResult>("akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions", args ?? new GetAppSecCustomRuleActionsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security policy; custom rule
-        /// 
-        /// Retrieve information about the actions defined for your custom rules. Custom rules are rules that you create yourself — these rules aren't part of Akamai's Kona Rule Set.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/custom-rules](https://techdocs.akamai.com/application-security/reference/get-custom-rules)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var customRuleActionsAppSecCustomRuleActions = Akamai.GetAppSecCustomRuleActions.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["customRuleActions"] = customRuleActionsAppSecCustomRuleActions.Apply(getAppSecCustomRuleActionsResult =&gt; getAppSecCustomRuleActionsResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `output_text`. Tabular report showing the ID, name, and action of the custom rules.
-        /// </summary>
         public static Output<GetAppSecCustomRuleActionsResult> Invoke(GetAppSecCustomRuleActionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecCustomRuleActionsResult>("akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions", args ?? new GetAppSecCustomRuleActionsInvokeArgs(), options.WithDefaults());
     }
@@ -111,21 +21,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecCustomRuleActionsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the custom rules.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the custom rule you want to return information for. If not included, action information is returned for all your custom rules.
-        /// </summary>
         [Input("customRuleId")]
         public int? CustomRuleId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the custom rules.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -137,21 +38,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecCustomRuleActionsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the custom rules.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the custom rule you want to return information for. If not included, action information is returned for all your custom rules.
-        /// </summary>
         [Input("customRuleId")]
         public Input<int>? CustomRuleId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the custom rules.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

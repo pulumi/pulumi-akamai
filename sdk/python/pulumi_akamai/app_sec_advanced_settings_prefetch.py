@@ -21,11 +21,11 @@ class AppSecAdvancedSettingsPrefetchArgs:
                  extensions: pulumi.Input[Sequence[pulumi.Input[str]]]):
         """
         The set of arguments for constructing a AppSecAdvancedSettingsPrefetch resource.
-        :param pulumi.Input[bool] all_extensions: . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the prefetch settings being modified.
-        :param pulumi.Input[bool] enable_app_layer: . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
-        :param pulumi.Input[bool] enable_rate_controls: . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
+        :param pulumi.Input[bool] all_extensions: Whether to enable prefetch requests for all file extensions
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enable_app_layer: Whether to enable or disable prefetch requests
+        :param pulumi.Input[bool] enable_rate_controls: Whether to enable prefetch requests for rate controls
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: List of file extensions
         """
         pulumi.set(__self__, "all_extensions", all_extensions)
         pulumi.set(__self__, "config_id", config_id)
@@ -37,7 +37,7 @@ class AppSecAdvancedSettingsPrefetchArgs:
     @pulumi.getter(name="allExtensions")
     def all_extensions(self) -> pulumi.Input[bool]:
         """
-        . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
+        Whether to enable prefetch requests for all file extensions
         """
         return pulumi.get(self, "all_extensions")
 
@@ -49,7 +49,7 @@ class AppSecAdvancedSettingsPrefetchArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the prefetch settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -61,7 +61,7 @@ class AppSecAdvancedSettingsPrefetchArgs:
     @pulumi.getter(name="enableAppLayer")
     def enable_app_layer(self) -> pulumi.Input[bool]:
         """
-        . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
+        Whether to enable or disable prefetch requests
         """
         return pulumi.get(self, "enable_app_layer")
 
@@ -73,7 +73,7 @@ class AppSecAdvancedSettingsPrefetchArgs:
     @pulumi.getter(name="enableRateControls")
     def enable_rate_controls(self) -> pulumi.Input[bool]:
         """
-        . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
+        Whether to enable prefetch requests for rate controls
         """
         return pulumi.get(self, "enable_rate_controls")
 
@@ -85,7 +85,7 @@ class AppSecAdvancedSettingsPrefetchArgs:
     @pulumi.getter
     def extensions(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
+        List of file extensions
         """
         return pulumi.get(self, "extensions")
 
@@ -104,11 +104,11 @@ class _AppSecAdvancedSettingsPrefetchState:
                  extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering AppSecAdvancedSettingsPrefetch resources.
-        :param pulumi.Input[bool] all_extensions: . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the prefetch settings being modified.
-        :param pulumi.Input[bool] enable_app_layer: . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
-        :param pulumi.Input[bool] enable_rate_controls: . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
+        :param pulumi.Input[bool] all_extensions: Whether to enable prefetch requests for all file extensions
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enable_app_layer: Whether to enable or disable prefetch requests
+        :param pulumi.Input[bool] enable_rate_controls: Whether to enable prefetch requests for rate controls
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: List of file extensions
         """
         if all_extensions is not None:
             pulumi.set(__self__, "all_extensions", all_extensions)
@@ -125,7 +125,7 @@ class _AppSecAdvancedSettingsPrefetchState:
     @pulumi.getter(name="allExtensions")
     def all_extensions(self) -> Optional[pulumi.Input[bool]]:
         """
-        . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
+        Whether to enable prefetch requests for all file extensions
         """
         return pulumi.get(self, "all_extensions")
 
@@ -137,7 +137,7 @@ class _AppSecAdvancedSettingsPrefetchState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the prefetch settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -149,7 +149,7 @@ class _AppSecAdvancedSettingsPrefetchState:
     @pulumi.getter(name="enableAppLayer")
     def enable_app_layer(self) -> Optional[pulumi.Input[bool]]:
         """
-        . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
+        Whether to enable or disable prefetch requests
         """
         return pulumi.get(self, "enable_app_layer")
 
@@ -161,7 +161,7 @@ class _AppSecAdvancedSettingsPrefetchState:
     @pulumi.getter(name="enableRateControls")
     def enable_rate_controls(self) -> Optional[pulumi.Input[bool]]:
         """
-        . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
+        Whether to enable prefetch requests for rate controls
         """
         return pulumi.get(self, "enable_rate_controls")
 
@@ -173,7 +173,7 @@ class _AppSecAdvancedSettingsPrefetchState:
     @pulumi.getter
     def extensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
+        List of file extensions
         """
         return pulumi.get(self, "extensions")
 
@@ -194,46 +194,14 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
                  extensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        **Scopes**: Security configuration
-
-        Enables inspection of internal requests (that is, requests between your origin servers and Akamai's edge servers). You can also use this resource to apply rate controls to prefetch requests.
-
-        When prefetch is enabled, internal requests are inspected by your firewall the same way that external requests (requests that originate outside the firewall and outside Akamai's edge servers) are inspected.
-
-        This operation applies at the security configuration level, meaning that the settings affect all the security policies in that configuration.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://techdocs.akamai.com/application-security/reference/put-advanced-settings-prefetch)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        prefetch = akamai.AppSecAdvancedSettingsPrefetch("prefetch",
-            config_id=configuration.config_id,
-            enable_app_layer=False,
-            all_extensions=True,
-            enable_rate_controls=False,
-            extensions=[
-                ".tiff",
-                ".bmp",
-                ".jpg",
-                ".gif",
-                ".png",
-            ])
-        ```
-
+        Create a AppSecAdvancedSettingsPrefetch resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] all_extensions: . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the prefetch settings being modified.
-        :param pulumi.Input[bool] enable_app_layer: . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
-        :param pulumi.Input[bool] enable_rate_controls: . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
+        :param pulumi.Input[bool] all_extensions: Whether to enable prefetch requests for all file extensions
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enable_app_layer: Whether to enable or disable prefetch requests
+        :param pulumi.Input[bool] enable_rate_controls: Whether to enable prefetch requests for rate controls
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: List of file extensions
         """
         ...
     @overload
@@ -242,39 +210,7 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
                  args: AppSecAdvancedSettingsPrefetchArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Security configuration
-
-        Enables inspection of internal requests (that is, requests between your origin servers and Akamai's edge servers). You can also use this resource to apply rate controls to prefetch requests.
-
-        When prefetch is enabled, internal requests are inspected by your firewall the same way that external requests (requests that originate outside the firewall and outside Akamai's edge servers) are inspected.
-
-        This operation applies at the security configuration level, meaning that the settings affect all the security policies in that configuration.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/prefetch](https://techdocs.akamai.com/application-security/reference/put-advanced-settings-prefetch)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        prefetch = akamai.AppSecAdvancedSettingsPrefetch("prefetch",
-            config_id=configuration.config_id,
-            enable_app_layer=False,
-            all_extensions=True,
-            enable_rate_controls=False,
-            extensions=[
-                ".tiff",
-                ".bmp",
-                ".jpg",
-                ".gif",
-                ".png",
-            ])
-        ```
-
+        Create a AppSecAdvancedSettingsPrefetch resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecAdvancedSettingsPrefetchArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -341,11 +277,11 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] all_extensions: . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the prefetch settings being modified.
-        :param pulumi.Input[bool] enable_app_layer: . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
-        :param pulumi.Input[bool] enable_rate_controls: . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
+        :param pulumi.Input[bool] all_extensions: Whether to enable prefetch requests for all file extensions
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enable_app_layer: Whether to enable or disable prefetch requests
+        :param pulumi.Input[bool] enable_rate_controls: Whether to enable prefetch requests for rate controls
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] extensions: List of file extensions
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -362,7 +298,7 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
     @pulumi.getter(name="allExtensions")
     def all_extensions(self) -> pulumi.Output[bool]:
         """
-        . Set to **true** to enable prefetch requests for all file extensions; set to **false** to enable prefetch requests on only a specified set of file extensions. If set to false you must include the `extensions` argument.
+        Whether to enable prefetch requests for all file extensions
         """
         return pulumi.get(self, "all_extensions")
 
@@ -370,7 +306,7 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the prefetch settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -378,7 +314,7 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
     @pulumi.getter(name="enableAppLayer")
     def enable_app_layer(self) -> pulumi.Output[bool]:
         """
-        . Set to **true** to enable prefetch requests; set to **false** to disable prefetch requests.
+        Whether to enable or disable prefetch requests
         """
         return pulumi.get(self, "enable_app_layer")
 
@@ -386,7 +322,7 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
     @pulumi.getter(name="enableRateControls")
     def enable_rate_controls(self) -> pulumi.Output[bool]:
         """
-        . Set to **true** to enable prefetch requests for rate controls; set to **false** to disable prefetch requests for rate controls.
+        Whether to enable prefetch requests for rate controls
         """
         return pulumi.get(self, "enable_rate_controls")
 
@@ -394,7 +330,7 @@ class AppSecAdvancedSettingsPrefetch(pulumi.CustomResource):
     @pulumi.getter
     def extensions(self) -> pulumi.Output[Sequence[str]]:
         """
-        . If `all_extensions` is **false**, this must be a JSON array of all the file extensions for which prefetch requests are enabled: prefetch requests won't be used with any file extensions not included in the array. If `all_extensions` is **true**, then this argument must be set to an empty array: **[]**.
+        List of file extensions
         """
         return pulumi.get(self, "extensions")
 

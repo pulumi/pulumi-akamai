@@ -16,47 +16,23 @@ public final class GetAppSecRatePolicyActionsArgs extends com.pulumi.resources.I
 
     public static final GetAppSecRatePolicyActionsArgs Empty = new GetAppSecRatePolicyActionsArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
-     * 
-     */
     @Import(name="ratePolicyId")
     private @Nullable Output<Integer> ratePolicyId;
 
-    /**
-     * @return . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
-     * 
-     */
     public Optional<Output<Integer>> ratePolicyId() {
         return Optional.ofNullable(this.ratePolicyId);
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the rate policies and rate policy actions.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the rate policies and rate policy actions.
-     * 
-     */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -87,65 +63,29 @@ public final class GetAppSecRatePolicyActionsArgs extends com.pulumi.resources.I
             $ = new GetAppSecRatePolicyActionsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param ratePolicyId . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ratePolicyId(@Nullable Output<Integer> ratePolicyId) {
             $.ratePolicyId = ratePolicyId;
             return this;
         }
 
-        /**
-         * @param ratePolicyId . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ratePolicyId(Integer ratePolicyId) {
             return ratePolicyId(Output.of(ratePolicyId));
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the rate policies and rate policy actions.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the rate policies and rate policy actions.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
         }

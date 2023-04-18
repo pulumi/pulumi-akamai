@@ -11,94 +11,44 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `GtmDomain` resource to create, configure, and import a GTM Domain, which is a basic building block of a traffic management configuration.
-//
-// > **Note** Import requires an ID with this format: `existingDomainName`.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewGtmDomain(ctx, "demodomain", &akamai.GtmDomainArgs{
-//				Comment:  pulumi.String("some comment"),
-//				Contract: pulumi.String("XXX"),
-//				Group:    pulumi.String("100"),
-//				Type:     pulumi.String("basic"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // Deprecated: akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain
 type GtmDomain struct {
 	pulumi.CustomResourceState
 
-	// A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-	CnameCoalescingEnabled pulumi.BoolPtrOutput `pulumi:"cnameCoalescingEnabled"`
-	// A descriptive note about changes to the domain. The maximum is 4000 characters.
-	Comment pulumi.StringPtrOutput `pulumi:"comment"`
-	// If creating a domain, the contract ID.
-	Contract pulumi.StringPtrOutput `pulumi:"contract"`
-	// Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-	DefaultErrorPenalty          pulumi.IntPtrOutput  `pulumi:"defaultErrorPenalty"`
-	DefaultHealthMax             pulumi.Float64Output `pulumi:"defaultHealthMax"`
-	DefaultHealthMultiplier      pulumi.Float64Output `pulumi:"defaultHealthMultiplier"`
-	DefaultHealthThreshold       pulumi.Float64Output `pulumi:"defaultHealthThreshold"`
-	DefaultMaxUnreachablePenalty pulumi.IntOutput     `pulumi:"defaultMaxUnreachablePenalty"`
-	// Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-	DefaultSslClientCertificate pulumi.StringPtrOutput `pulumi:"defaultSslClientCertificate"`
-	// Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-	DefaultSslClientPrivateKey pulumi.StringPtrOutput `pulumi:"defaultSslClientPrivateKey"`
-	// Specifies the timeout penalty score. Default is `25`.
-	DefaultTimeoutPenalty       pulumi.IntPtrOutput  `pulumi:"defaultTimeoutPenalty"`
-	DefaultUnreachableThreshold pulumi.Float64Output `pulumi:"defaultUnreachableThreshold"`
-	// A list of email addresses to notify when a change is made to the domain.
-	EmailNotificationLists pulumi.StringArrayOutput `pulumi:"emailNotificationLists"`
-	// A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-	EndUserMappingEnabled pulumi.BoolPtrOutput `pulumi:"endUserMappingEnabled"`
-	// If creating a domain, the currently selected group ID.
-	Group pulumi.StringPtrOutput `pulumi:"group"`
-	// A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-	LoadFeedback pulumi.BoolPtrOutput `pulumi:"loadFeedback"`
-	// Indicates the percentage of load imbalance factor (LIF) for the domain.
-	LoadImbalancePercentage   pulumi.Float64PtrOutput `pulumi:"loadImbalancePercentage"`
-	MapUpdateInterval         pulumi.IntOutput        `pulumi:"mapUpdateInterval"`
-	MaxProperties             pulumi.IntOutput        `pulumi:"maxProperties"`
-	MaxResources              pulumi.IntOutput        `pulumi:"maxResources"`
-	MaxTestTimeout            pulumi.Float64Output    `pulumi:"maxTestTimeout"`
-	MaxTtl                    pulumi.IntOutput        `pulumi:"maxTtl"`
-	MinPingableRegionFraction pulumi.Float64Output    `pulumi:"minPingableRegionFraction"`
-	MinTestInterval           pulumi.IntOutput        `pulumi:"minTestInterval"`
-	MinTtl                    pulumi.IntOutput        `pulumi:"minTtl"`
-	// The DNS name for a collection of GTM Properties.
-	Name                       pulumi.StringOutput `pulumi:"name"`
-	PingInterval               pulumi.IntOutput    `pulumi:"pingInterval"`
-	PingPacketSize             pulumi.IntOutput    `pulumi:"pingPacketSize"`
-	RoundRobinPrefix           pulumi.StringOutput `pulumi:"roundRobinPrefix"`
-	ServermonitorLivenessCount pulumi.IntOutput    `pulumi:"servermonitorLivenessCount"`
-	ServermonitorLoadCount     pulumi.IntOutput    `pulumi:"servermonitorLoadCount"`
-	ServermonitorPool          pulumi.StringOutput `pulumi:"servermonitorPool"`
-	// Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-	Type pulumi.StringOutput `pulumi:"type"`
-	// A boolean that, if set to `true`, waits for transaction to complete.
-	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	CnameCoalescingEnabled       pulumi.BoolPtrOutput     `pulumi:"cnameCoalescingEnabled"`
+	Comment                      pulumi.StringPtrOutput   `pulumi:"comment"`
+	Contract                     pulumi.StringPtrOutput   `pulumi:"contract"`
+	DefaultErrorPenalty          pulumi.IntPtrOutput      `pulumi:"defaultErrorPenalty"`
+	DefaultHealthMax             pulumi.Float64Output     `pulumi:"defaultHealthMax"`
+	DefaultHealthMultiplier      pulumi.Float64Output     `pulumi:"defaultHealthMultiplier"`
+	DefaultHealthThreshold       pulumi.Float64Output     `pulumi:"defaultHealthThreshold"`
+	DefaultMaxUnreachablePenalty pulumi.IntOutput         `pulumi:"defaultMaxUnreachablePenalty"`
+	DefaultSslClientCertificate  pulumi.StringPtrOutput   `pulumi:"defaultSslClientCertificate"`
+	DefaultSslClientPrivateKey   pulumi.StringPtrOutput   `pulumi:"defaultSslClientPrivateKey"`
+	DefaultTimeoutPenalty        pulumi.IntPtrOutput      `pulumi:"defaultTimeoutPenalty"`
+	DefaultUnreachableThreshold  pulumi.Float64Output     `pulumi:"defaultUnreachableThreshold"`
+	EmailNotificationLists       pulumi.StringArrayOutput `pulumi:"emailNotificationLists"`
+	EndUserMappingEnabled        pulumi.BoolPtrOutput     `pulumi:"endUserMappingEnabled"`
+	Group                        pulumi.StringPtrOutput   `pulumi:"group"`
+	LoadFeedback                 pulumi.BoolPtrOutput     `pulumi:"loadFeedback"`
+	LoadImbalancePercentage      pulumi.Float64PtrOutput  `pulumi:"loadImbalancePercentage"`
+	MapUpdateInterval            pulumi.IntOutput         `pulumi:"mapUpdateInterval"`
+	MaxProperties                pulumi.IntOutput         `pulumi:"maxProperties"`
+	MaxResources                 pulumi.IntOutput         `pulumi:"maxResources"`
+	MaxTestTimeout               pulumi.Float64Output     `pulumi:"maxTestTimeout"`
+	MaxTtl                       pulumi.IntOutput         `pulumi:"maxTtl"`
+	MinPingableRegionFraction    pulumi.Float64Output     `pulumi:"minPingableRegionFraction"`
+	MinTestInterval              pulumi.IntOutput         `pulumi:"minTestInterval"`
+	MinTtl                       pulumi.IntOutput         `pulumi:"minTtl"`
+	Name                         pulumi.StringOutput      `pulumi:"name"`
+	PingInterval                 pulumi.IntOutput         `pulumi:"pingInterval"`
+	PingPacketSize               pulumi.IntOutput         `pulumi:"pingPacketSize"`
+	RoundRobinPrefix             pulumi.StringOutput      `pulumi:"roundRobinPrefix"`
+	ServermonitorLivenessCount   pulumi.IntOutput         `pulumi:"servermonitorLivenessCount"`
+	ServermonitorLoadCount       pulumi.IntOutput         `pulumi:"servermonitorLoadCount"`
+	ServermonitorPool            pulumi.StringOutput      `pulumi:"servermonitorPool"`
+	Type                         pulumi.StringOutput      `pulumi:"type"`
+	WaitOnComplete               pulumi.BoolPtrOutput     `pulumi:"waitOnComplete"`
 }
 
 // NewGtmDomain registers a new resource with the given unique name, arguments, and options.
@@ -133,107 +83,77 @@ func GetGtmDomain(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmDomain resources.
 type gtmDomainState struct {
-	// A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-	CnameCoalescingEnabled *bool `pulumi:"cnameCoalescingEnabled"`
-	// A descriptive note about changes to the domain. The maximum is 4000 characters.
-	Comment *string `pulumi:"comment"`
-	// If creating a domain, the contract ID.
-	Contract *string `pulumi:"contract"`
-	// Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
+	CnameCoalescingEnabled       *bool    `pulumi:"cnameCoalescingEnabled"`
+	Comment                      *string  `pulumi:"comment"`
+	Contract                     *string  `pulumi:"contract"`
 	DefaultErrorPenalty          *int     `pulumi:"defaultErrorPenalty"`
 	DefaultHealthMax             *float64 `pulumi:"defaultHealthMax"`
 	DefaultHealthMultiplier      *float64 `pulumi:"defaultHealthMultiplier"`
 	DefaultHealthThreshold       *float64 `pulumi:"defaultHealthThreshold"`
 	DefaultMaxUnreachablePenalty *int     `pulumi:"defaultMaxUnreachablePenalty"`
-	// Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-	DefaultSslClientCertificate *string `pulumi:"defaultSslClientCertificate"`
-	// Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-	DefaultSslClientPrivateKey *string `pulumi:"defaultSslClientPrivateKey"`
-	// Specifies the timeout penalty score. Default is `25`.
-	DefaultTimeoutPenalty       *int     `pulumi:"defaultTimeoutPenalty"`
-	DefaultUnreachableThreshold *float64 `pulumi:"defaultUnreachableThreshold"`
-	// A list of email addresses to notify when a change is made to the domain.
-	EmailNotificationLists []string `pulumi:"emailNotificationLists"`
-	// A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-	EndUserMappingEnabled *bool `pulumi:"endUserMappingEnabled"`
-	// If creating a domain, the currently selected group ID.
-	Group *string `pulumi:"group"`
-	// A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-	LoadFeedback *bool `pulumi:"loadFeedback"`
-	// Indicates the percentage of load imbalance factor (LIF) for the domain.
-	LoadImbalancePercentage   *float64 `pulumi:"loadImbalancePercentage"`
-	MapUpdateInterval         *int     `pulumi:"mapUpdateInterval"`
-	MaxProperties             *int     `pulumi:"maxProperties"`
-	MaxResources              *int     `pulumi:"maxResources"`
-	MaxTestTimeout            *float64 `pulumi:"maxTestTimeout"`
-	MaxTtl                    *int     `pulumi:"maxTtl"`
-	MinPingableRegionFraction *float64 `pulumi:"minPingableRegionFraction"`
-	MinTestInterval           *int     `pulumi:"minTestInterval"`
-	MinTtl                    *int     `pulumi:"minTtl"`
-	// The DNS name for a collection of GTM Properties.
-	Name                       *string `pulumi:"name"`
-	PingInterval               *int    `pulumi:"pingInterval"`
-	PingPacketSize             *int    `pulumi:"pingPacketSize"`
-	RoundRobinPrefix           *string `pulumi:"roundRobinPrefix"`
-	ServermonitorLivenessCount *int    `pulumi:"servermonitorLivenessCount"`
-	ServermonitorLoadCount     *int    `pulumi:"servermonitorLoadCount"`
-	ServermonitorPool          *string `pulumi:"servermonitorPool"`
-	// Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-	Type *string `pulumi:"type"`
-	// A boolean that, if set to `true`, waits for transaction to complete.
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	DefaultSslClientCertificate  *string  `pulumi:"defaultSslClientCertificate"`
+	DefaultSslClientPrivateKey   *string  `pulumi:"defaultSslClientPrivateKey"`
+	DefaultTimeoutPenalty        *int     `pulumi:"defaultTimeoutPenalty"`
+	DefaultUnreachableThreshold  *float64 `pulumi:"defaultUnreachableThreshold"`
+	EmailNotificationLists       []string `pulumi:"emailNotificationLists"`
+	EndUserMappingEnabled        *bool    `pulumi:"endUserMappingEnabled"`
+	Group                        *string  `pulumi:"group"`
+	LoadFeedback                 *bool    `pulumi:"loadFeedback"`
+	LoadImbalancePercentage      *float64 `pulumi:"loadImbalancePercentage"`
+	MapUpdateInterval            *int     `pulumi:"mapUpdateInterval"`
+	MaxProperties                *int     `pulumi:"maxProperties"`
+	MaxResources                 *int     `pulumi:"maxResources"`
+	MaxTestTimeout               *float64 `pulumi:"maxTestTimeout"`
+	MaxTtl                       *int     `pulumi:"maxTtl"`
+	MinPingableRegionFraction    *float64 `pulumi:"minPingableRegionFraction"`
+	MinTestInterval              *int     `pulumi:"minTestInterval"`
+	MinTtl                       *int     `pulumi:"minTtl"`
+	Name                         *string  `pulumi:"name"`
+	PingInterval                 *int     `pulumi:"pingInterval"`
+	PingPacketSize               *int     `pulumi:"pingPacketSize"`
+	RoundRobinPrefix             *string  `pulumi:"roundRobinPrefix"`
+	ServermonitorLivenessCount   *int     `pulumi:"servermonitorLivenessCount"`
+	ServermonitorLoadCount       *int     `pulumi:"servermonitorLoadCount"`
+	ServermonitorPool            *string  `pulumi:"servermonitorPool"`
+	Type                         *string  `pulumi:"type"`
+	WaitOnComplete               *bool    `pulumi:"waitOnComplete"`
 }
 
 type GtmDomainState struct {
-	// A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-	CnameCoalescingEnabled pulumi.BoolPtrInput
-	// A descriptive note about changes to the domain. The maximum is 4000 characters.
-	Comment pulumi.StringPtrInput
-	// If creating a domain, the contract ID.
-	Contract pulumi.StringPtrInput
-	// Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
+	CnameCoalescingEnabled       pulumi.BoolPtrInput
+	Comment                      pulumi.StringPtrInput
+	Contract                     pulumi.StringPtrInput
 	DefaultErrorPenalty          pulumi.IntPtrInput
 	DefaultHealthMax             pulumi.Float64PtrInput
 	DefaultHealthMultiplier      pulumi.Float64PtrInput
 	DefaultHealthThreshold       pulumi.Float64PtrInput
 	DefaultMaxUnreachablePenalty pulumi.IntPtrInput
-	// Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-	DefaultSslClientCertificate pulumi.StringPtrInput
-	// Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-	DefaultSslClientPrivateKey pulumi.StringPtrInput
-	// Specifies the timeout penalty score. Default is `25`.
-	DefaultTimeoutPenalty       pulumi.IntPtrInput
-	DefaultUnreachableThreshold pulumi.Float64PtrInput
-	// A list of email addresses to notify when a change is made to the domain.
-	EmailNotificationLists pulumi.StringArrayInput
-	// A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-	EndUserMappingEnabled pulumi.BoolPtrInput
-	// If creating a domain, the currently selected group ID.
-	Group pulumi.StringPtrInput
-	// A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-	LoadFeedback pulumi.BoolPtrInput
-	// Indicates the percentage of load imbalance factor (LIF) for the domain.
-	LoadImbalancePercentage   pulumi.Float64PtrInput
-	MapUpdateInterval         pulumi.IntPtrInput
-	MaxProperties             pulumi.IntPtrInput
-	MaxResources              pulumi.IntPtrInput
-	MaxTestTimeout            pulumi.Float64PtrInput
-	MaxTtl                    pulumi.IntPtrInput
-	MinPingableRegionFraction pulumi.Float64PtrInput
-	MinTestInterval           pulumi.IntPtrInput
-	MinTtl                    pulumi.IntPtrInput
-	// The DNS name for a collection of GTM Properties.
-	Name                       pulumi.StringPtrInput
-	PingInterval               pulumi.IntPtrInput
-	PingPacketSize             pulumi.IntPtrInput
-	RoundRobinPrefix           pulumi.StringPtrInput
-	ServermonitorLivenessCount pulumi.IntPtrInput
-	ServermonitorLoadCount     pulumi.IntPtrInput
-	ServermonitorPool          pulumi.StringPtrInput
-	// Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-	Type pulumi.StringPtrInput
-	// A boolean that, if set to `true`, waits for transaction to complete.
-	WaitOnComplete pulumi.BoolPtrInput
+	DefaultSslClientCertificate  pulumi.StringPtrInput
+	DefaultSslClientPrivateKey   pulumi.StringPtrInput
+	DefaultTimeoutPenalty        pulumi.IntPtrInput
+	DefaultUnreachableThreshold  pulumi.Float64PtrInput
+	EmailNotificationLists       pulumi.StringArrayInput
+	EndUserMappingEnabled        pulumi.BoolPtrInput
+	Group                        pulumi.StringPtrInput
+	LoadFeedback                 pulumi.BoolPtrInput
+	LoadImbalancePercentage      pulumi.Float64PtrInput
+	MapUpdateInterval            pulumi.IntPtrInput
+	MaxProperties                pulumi.IntPtrInput
+	MaxResources                 pulumi.IntPtrInput
+	MaxTestTimeout               pulumi.Float64PtrInput
+	MaxTtl                       pulumi.IntPtrInput
+	MinPingableRegionFraction    pulumi.Float64PtrInput
+	MinTestInterval              pulumi.IntPtrInput
+	MinTtl                       pulumi.IntPtrInput
+	Name                         pulumi.StringPtrInput
+	PingInterval                 pulumi.IntPtrInput
+	PingPacketSize               pulumi.IntPtrInput
+	RoundRobinPrefix             pulumi.StringPtrInput
+	ServermonitorLivenessCount   pulumi.IntPtrInput
+	ServermonitorLoadCount       pulumi.IntPtrInput
+	ServermonitorPool            pulumi.StringPtrInput
+	Type                         pulumi.StringPtrInput
+	WaitOnComplete               pulumi.BoolPtrInput
 }
 
 func (GtmDomainState) ElementType() reflect.Type {
@@ -241,70 +161,40 @@ func (GtmDomainState) ElementType() reflect.Type {
 }
 
 type gtmDomainArgs struct {
-	// A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-	CnameCoalescingEnabled *bool `pulumi:"cnameCoalescingEnabled"`
-	// A descriptive note about changes to the domain. The maximum is 4000 characters.
-	Comment *string `pulumi:"comment"`
-	// If creating a domain, the contract ID.
-	Contract *string `pulumi:"contract"`
-	// Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-	DefaultErrorPenalty *int `pulumi:"defaultErrorPenalty"`
-	// Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
-	DefaultSslClientCertificate *string `pulumi:"defaultSslClientCertificate"`
-	// Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-	DefaultSslClientPrivateKey *string `pulumi:"defaultSslClientPrivateKey"`
-	// Specifies the timeout penalty score. Default is `25`.
-	DefaultTimeoutPenalty *int `pulumi:"defaultTimeoutPenalty"`
-	// A list of email addresses to notify when a change is made to the domain.
-	EmailNotificationLists []string `pulumi:"emailNotificationLists"`
-	// A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-	EndUserMappingEnabled *bool `pulumi:"endUserMappingEnabled"`
-	// If creating a domain, the currently selected group ID.
-	Group *string `pulumi:"group"`
-	// A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-	LoadFeedback *bool `pulumi:"loadFeedback"`
-	// Indicates the percentage of load imbalance factor (LIF) for the domain.
-	LoadImbalancePercentage *float64 `pulumi:"loadImbalancePercentage"`
-	// The DNS name for a collection of GTM Properties.
-	Name *string `pulumi:"name"`
-	// Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-	Type string `pulumi:"type"`
-	// A boolean that, if set to `true`, waits for transaction to complete.
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	CnameCoalescingEnabled      *bool    `pulumi:"cnameCoalescingEnabled"`
+	Comment                     *string  `pulumi:"comment"`
+	Contract                    *string  `pulumi:"contract"`
+	DefaultErrorPenalty         *int     `pulumi:"defaultErrorPenalty"`
+	DefaultSslClientCertificate *string  `pulumi:"defaultSslClientCertificate"`
+	DefaultSslClientPrivateKey  *string  `pulumi:"defaultSslClientPrivateKey"`
+	DefaultTimeoutPenalty       *int     `pulumi:"defaultTimeoutPenalty"`
+	EmailNotificationLists      []string `pulumi:"emailNotificationLists"`
+	EndUserMappingEnabled       *bool    `pulumi:"endUserMappingEnabled"`
+	Group                       *string  `pulumi:"group"`
+	LoadFeedback                *bool    `pulumi:"loadFeedback"`
+	LoadImbalancePercentage     *float64 `pulumi:"loadImbalancePercentage"`
+	Name                        *string  `pulumi:"name"`
+	Type                        string   `pulumi:"type"`
+	WaitOnComplete              *bool    `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmDomain resource.
 type GtmDomainArgs struct {
-	// A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
-	CnameCoalescingEnabled pulumi.BoolPtrInput
-	// A descriptive note about changes to the domain. The maximum is 4000 characters.
-	Comment pulumi.StringPtrInput
-	// If creating a domain, the contract ID.
-	Contract pulumi.StringPtrInput
-	// Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
-	DefaultErrorPenalty pulumi.IntPtrInput
-	// Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
+	CnameCoalescingEnabled      pulumi.BoolPtrInput
+	Comment                     pulumi.StringPtrInput
+	Contract                    pulumi.StringPtrInput
+	DefaultErrorPenalty         pulumi.IntPtrInput
 	DefaultSslClientCertificate pulumi.StringPtrInput
-	// Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
-	DefaultSslClientPrivateKey pulumi.StringPtrInput
-	// Specifies the timeout penalty score. Default is `25`.
-	DefaultTimeoutPenalty pulumi.IntPtrInput
-	// A list of email addresses to notify when a change is made to the domain.
-	EmailNotificationLists pulumi.StringArrayInput
-	// A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
-	EndUserMappingEnabled pulumi.BoolPtrInput
-	// If creating a domain, the currently selected group ID.
-	Group pulumi.StringPtrInput
-	// A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
-	LoadFeedback pulumi.BoolPtrInput
-	// Indicates the percentage of load imbalance factor (LIF) for the domain.
-	LoadImbalancePercentage pulumi.Float64PtrInput
-	// The DNS name for a collection of GTM Properties.
-	Name pulumi.StringPtrInput
-	// Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
-	Type pulumi.StringInput
-	// A boolean that, if set to `true`, waits for transaction to complete.
-	WaitOnComplete pulumi.BoolPtrInput
+	DefaultSslClientPrivateKey  pulumi.StringPtrInput
+	DefaultTimeoutPenalty       pulumi.IntPtrInput
+	EmailNotificationLists      pulumi.StringArrayInput
+	EndUserMappingEnabled       pulumi.BoolPtrInput
+	Group                       pulumi.StringPtrInput
+	LoadFeedback                pulumi.BoolPtrInput
+	LoadImbalancePercentage     pulumi.Float64PtrInput
+	Name                        pulumi.StringPtrInput
+	Type                        pulumi.StringInput
+	WaitOnComplete              pulumi.BoolPtrInput
 }
 
 func (GtmDomainArgs) ElementType() reflect.Type {
@@ -394,22 +284,18 @@ func (o GtmDomainOutput) ToGtmDomainOutputWithContext(ctx context.Context) GtmDo
 	return o
 }
 
-// A boolean that if set to `true`, GTM collapses CNAME redirections in DNS answers when it knows the target of the CNAME.
 func (o GtmDomainOutput) CnameCoalescingEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.BoolPtrOutput { return v.CnameCoalescingEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// A descriptive note about changes to the domain. The maximum is 4000 characters.
 func (o GtmDomainOutput) Comment() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.StringPtrOutput { return v.Comment }).(pulumi.StringPtrOutput)
 }
 
-// If creating a domain, the contract ID.
 func (o GtmDomainOutput) Contract() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.StringPtrOutput { return v.Contract }).(pulumi.StringPtrOutput)
 }
 
-// Specifies the download penalty score. The default is `75`. If the download encounters an error, the web agent computes a score that is either the download time in seconds or a penalty score.
 func (o GtmDomainOutput) DefaultErrorPenalty() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.IntPtrOutput { return v.DefaultErrorPenalty }).(pulumi.IntPtrOutput)
 }
@@ -430,17 +316,14 @@ func (o GtmDomainOutput) DefaultMaxUnreachablePenalty() pulumi.IntOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.DefaultMaxUnreachablePenalty }).(pulumi.IntOutput)
 }
 
-// Specifies an optional Base64-encoded certificate that corresponds with the private key for TLS-based liveness tests (HTTPS, SMTPS, POPS, and TCPS).
 func (o GtmDomainOutput) DefaultSslClientCertificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.StringPtrOutput { return v.DefaultSslClientCertificate }).(pulumi.StringPtrOutput)
 }
 
-// Specifies a Base64-encoded private key that corresponds with the TLS certificate for HTTPS, SMTPS, POPS, and TCPS liveness tests.
 func (o GtmDomainOutput) DefaultSslClientPrivateKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.StringPtrOutput { return v.DefaultSslClientPrivateKey }).(pulumi.StringPtrOutput)
 }
 
-// Specifies the timeout penalty score. Default is `25`.
 func (o GtmDomainOutput) DefaultTimeoutPenalty() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.IntPtrOutput { return v.DefaultTimeoutPenalty }).(pulumi.IntPtrOutput)
 }
@@ -449,27 +332,22 @@ func (o GtmDomainOutput) DefaultUnreachableThreshold() pulumi.Float64Output {
 	return o.ApplyT(func(v *GtmDomain) pulumi.Float64Output { return v.DefaultUnreachableThreshold }).(pulumi.Float64Output)
 }
 
-// A list of email addresses to notify when a change is made to the domain.
 func (o GtmDomainOutput) EmailNotificationLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.StringArrayOutput { return v.EmailNotificationLists }).(pulumi.StringArrayOutput)
 }
 
-// A boolean indicating whether whether the GTM Domain is using end user client subnet mapping.
 func (o GtmDomainOutput) EndUserMappingEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.BoolPtrOutput { return v.EndUserMappingEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// If creating a domain, the currently selected group ID.
 func (o GtmDomainOutput) Group() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.StringPtrOutput { return v.Group }).(pulumi.StringPtrOutput)
 }
 
-// A boolean indicating whether one or more measurements of load (resources) are defined by you and supplied by each data center in real time to balance load.
 func (o GtmDomainOutput) LoadFeedback() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.BoolPtrOutput { return v.LoadFeedback }).(pulumi.BoolPtrOutput)
 }
 
-// Indicates the percentage of load imbalance factor (LIF) for the domain.
 func (o GtmDomainOutput) LoadImbalancePercentage() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.Float64PtrOutput { return v.LoadImbalancePercentage }).(pulumi.Float64PtrOutput)
 }
@@ -506,7 +384,6 @@ func (o GtmDomainOutput) MinTtl() pulumi.IntOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.IntOutput { return v.MinTtl }).(pulumi.IntOutput)
 }
 
-// The DNS name for a collection of GTM Properties.
 func (o GtmDomainOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -535,12 +412,10 @@ func (o GtmDomainOutput) ServermonitorPool() pulumi.StringOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.StringOutput { return v.ServermonitorPool }).(pulumi.StringOutput)
 }
 
-// Th type of GTM domain. Options include `failover-only`, `static`, `weighted`, `basic`, or `full`.
 func (o GtmDomainOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// A boolean that, if set to `true`, waits for transaction to complete.
 func (o GtmDomainOutput) WaitOnComplete() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GtmDomain) pulumi.BoolPtrOutput { return v.WaitOnComplete }).(pulumi.BoolPtrOutput)
 }

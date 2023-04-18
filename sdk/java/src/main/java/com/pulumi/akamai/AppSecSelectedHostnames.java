@@ -15,99 +15,45 @@ import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security configuration
- * 
- * Modifies the list of hostnames protected under by a security configuration.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/selected-hostnames](https://techdocs.akamai.com/application-security/reference/put-selected-hostnames-per-config)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecSelectedHostnames;
- * import com.pulumi.akamai.AppSecSelectedHostnamesArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var appsecselectedhostnames = new AppSecSelectedHostnames(&#34;appsecselectedhostnames&#34;, AppSecSelectedHostnamesArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .hostnames(&#34;example.com&#34;)
- *             .mode(&#34;APPEND&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames")
 public class AppSecSelectedHostnames extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the hostnames.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the hostnames.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . JSON array of hostnames to be added or removed from the protected hosts list.
+     * List of hostnames to be added or removed from the protected hosts list
      * 
      */
     @Export(name="hostnames", type=List.class, parameters={String.class})
     private Output<List<String>> hostnames;
 
     /**
-     * @return . JSON array of hostnames to be added or removed from the protected hosts list.
+     * @return List of hostnames to be added or removed from the protected hosts list
      * 
      */
     public Output<List<String>> hostnames() {
         return this.hostnames;
     }
     /**
-     * . Indicates how the `hostnames` array is to be applied. Allowed values are:
-     * - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-     * - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-     * - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+     * How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
      * 
      */
     @Export(name="mode", type=String.class, parameters={})
     private Output<String> mode;
 
     /**
-     * @return . Indicates how the `hostnames` array is to be applied. Allowed values are:
-     * - **APPEND**. Hosts listed in the `hostnames` array are added to the current list of selected hostnames.
-     * - **REPLACE**. Hosts listed in the `hostnames`  array overwrite the current list of selected hostnames: the “old” hostnames are replaced by the specified set of hostnames.
-     * - **REMOVE**, Hosts listed in the `hostnames` array are removed from the current list of select hostnames.
+     * @return How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
      * 
      */
     public Output<String> mode() {

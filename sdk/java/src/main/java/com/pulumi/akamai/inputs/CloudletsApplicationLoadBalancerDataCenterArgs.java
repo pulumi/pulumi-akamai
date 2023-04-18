@@ -18,182 +18,86 @@ public final class CloudletsApplicationLoadBalancerDataCenterArgs extends com.pu
 
     public static final CloudletsApplicationLoadBalancerDataCenterArgs Empty = new CloudletsApplicationLoadBalancerDataCenterArgs();
 
-    /**
-     * The city in which the data center is located.
-     * 
-     */
     @Import(name="city")
     private @Nullable Output<String> city;
 
-    /**
-     * @return The city in which the data center is located.
-     * 
-     */
     public Optional<Output<String>> city() {
         return Optional.ofNullable(this.city);
     }
 
-    /**
-     * Whether to override the cloud server host header.
-     * 
-     */
     @Import(name="cloudServerHostHeaderOverride")
     private @Nullable Output<Boolean> cloudServerHostHeaderOverride;
 
-    /**
-     * @return Whether to override the cloud server host header.
-     * 
-     */
     public Optional<Output<Boolean>> cloudServerHostHeaderOverride() {
         return Optional.ofNullable(this.cloudServerHostHeaderOverride);
     }
 
-    /**
-     * Whether this datacenter is a cloud service.
-     * 
-     */
     @Import(name="cloudService")
     private @Nullable Output<Boolean> cloudService;
 
-    /**
-     * @return Whether this datacenter is a cloud service.
-     * 
-     */
     public Optional<Output<Boolean>> cloudService() {
         return Optional.ofNullable(this.cloudService);
     }
 
-    /**
-     * The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
-     * 
-     */
     @Import(name="continent", required=true)
     private Output<String> continent;
 
-    /**
-     * @return The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
-     * 
-     */
     public Output<String> continent() {
         return this.continent;
     }
 
-    /**
-     * The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
-     * 
-     */
     @Import(name="country", required=true)
     private Output<String> country;
 
-    /**
-     * @return The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
-     * 
-     */
     public Output<String> country() {
         return this.country;
     }
 
-    /**
-     * The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
-     * 
-     */
     @Import(name="hostname")
     private @Nullable Output<String> hostname;
 
-    /**
-     * @return The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
-     * 
-     */
     public Optional<Output<String>> hostname() {
         return Optional.ofNullable(this.hostname);
     }
 
-    /**
-     * The latitude value for the data center. This member supports six decimal places of precision.
-     * 
-     */
     @Import(name="latitude", required=true)
     private Output<Double> latitude;
 
-    /**
-     * @return The latitude value for the data center. This member supports six decimal places of precision.
-     * 
-     */
     public Output<Double> latitude() {
         return this.latitude;
     }
 
-    /**
-     * A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
-     * 
-     */
     @Import(name="livenessHosts")
     private @Nullable Output<List<String>> livenessHosts;
 
-    /**
-     * @return A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
-     * 
-     */
     public Optional<Output<List<String>>> livenessHosts() {
         return Optional.ofNullable(this.livenessHosts);
     }
 
-    /**
-     * The longitude value for the data center. This member supports six decimal places of precision.
-     * 
-     */
     @Import(name="longitude", required=true)
     private Output<Double> longitude;
 
-    /**
-     * @return The longitude value for the data center. This member supports six decimal places of precision.
-     * 
-     */
     public Output<Double> longitude() {
         return this.longitude;
     }
 
-    /**
-     * The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
-     * 
-     */
     @Import(name="originId", required=true)
     private Output<String> originId;
 
-    /**
-     * @return The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
-     * 
-     */
     public Output<String> originId() {
         return this.originId;
     }
 
-    /**
-     * The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
-     * 
-     */
     @Import(name="percent", required=true)
     private Output<Double> percent;
 
-    /**
-     * @return The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
-     * 
-     */
     public Output<Double> percent() {
         return this.percent;
     }
 
-    /**
-     * The state, province, or region where the data center is located.
-     * 
-     */
     @Import(name="stateOrProvince")
     private @Nullable Output<String> stateOrProvince;
 
-    /**
-     * @return The state, province, or region where the data center is located.
-     * 
-     */
     public Optional<Output<String>> stateOrProvince() {
         return Optional.ofNullable(this.stateOrProvince);
     }
@@ -233,264 +137,114 @@ public final class CloudletsApplicationLoadBalancerDataCenterArgs extends com.pu
             $ = new CloudletsApplicationLoadBalancerDataCenterArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param city The city in which the data center is located.
-         * 
-         * @return builder
-         * 
-         */
         public Builder city(@Nullable Output<String> city) {
             $.city = city;
             return this;
         }
 
-        /**
-         * @param city The city in which the data center is located.
-         * 
-         * @return builder
-         * 
-         */
         public Builder city(String city) {
             return city(Output.of(city));
         }
 
-        /**
-         * @param cloudServerHostHeaderOverride Whether to override the cloud server host header.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cloudServerHostHeaderOverride(@Nullable Output<Boolean> cloudServerHostHeaderOverride) {
             $.cloudServerHostHeaderOverride = cloudServerHostHeaderOverride;
             return this;
         }
 
-        /**
-         * @param cloudServerHostHeaderOverride Whether to override the cloud server host header.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cloudServerHostHeaderOverride(Boolean cloudServerHostHeaderOverride) {
             return cloudServerHostHeaderOverride(Output.of(cloudServerHostHeaderOverride));
         }
 
-        /**
-         * @param cloudService Whether this datacenter is a cloud service.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cloudService(@Nullable Output<Boolean> cloudService) {
             $.cloudService = cloudService;
             return this;
         }
 
-        /**
-         * @param cloudService Whether this datacenter is a cloud service.
-         * 
-         * @return builder
-         * 
-         */
         public Builder cloudService(Boolean cloudService) {
             return cloudService(Output.of(cloudService));
         }
 
-        /**
-         * @param continent The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
-         * 
-         * @return builder
-         * 
-         */
         public Builder continent(Output<String> continent) {
             $.continent = continent;
             return this;
         }
 
-        /**
-         * @param continent The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
-         * 
-         * @return builder
-         * 
-         */
         public Builder continent(String continent) {
             return continent(Output.of(continent));
         }
 
-        /**
-         * @param country The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
-         * 
-         * @return builder
-         * 
-         */
         public Builder country(Output<String> country) {
             $.country = country;
             return this;
         }
 
-        /**
-         * @param country The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
-         * 
-         * @return builder
-         * 
-         */
         public Builder country(String country) {
             return country(Output.of(country));
         }
 
-        /**
-         * @param hostname The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
-         * 
-         * @return builder
-         * 
-         */
         public Builder hostname(@Nullable Output<String> hostname) {
             $.hostname = hostname;
             return this;
         }
 
-        /**
-         * @param hostname The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
-         * 
-         * @return builder
-         * 
-         */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
         }
 
-        /**
-         * @param latitude The latitude value for the data center. This member supports six decimal places of precision.
-         * 
-         * @return builder
-         * 
-         */
         public Builder latitude(Output<Double> latitude) {
             $.latitude = latitude;
             return this;
         }
 
-        /**
-         * @param latitude The latitude value for the data center. This member supports six decimal places of precision.
-         * 
-         * @return builder
-         * 
-         */
         public Builder latitude(Double latitude) {
             return latitude(Output.of(latitude));
         }
 
-        /**
-         * @param livenessHosts A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
-         * 
-         * @return builder
-         * 
-         */
         public Builder livenessHosts(@Nullable Output<List<String>> livenessHosts) {
             $.livenessHosts = livenessHosts;
             return this;
         }
 
-        /**
-         * @param livenessHosts A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
-         * 
-         * @return builder
-         * 
-         */
         public Builder livenessHosts(List<String> livenessHosts) {
             return livenessHosts(Output.of(livenessHosts));
         }
 
-        /**
-         * @param livenessHosts A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
-         * 
-         * @return builder
-         * 
-         */
         public Builder livenessHosts(String... livenessHosts) {
             return livenessHosts(List.of(livenessHosts));
         }
 
-        /**
-         * @param longitude The longitude value for the data center. This member supports six decimal places of precision.
-         * 
-         * @return builder
-         * 
-         */
         public Builder longitude(Output<Double> longitude) {
             $.longitude = longitude;
             return this;
         }
 
-        /**
-         * @param longitude The longitude value for the data center. This member supports six decimal places of precision.
-         * 
-         * @return builder
-         * 
-         */
         public Builder longitude(Double longitude) {
             return longitude(Output.of(longitude));
         }
 
-        /**
-         * @param originId The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
-         * 
-         * @return builder
-         * 
-         */
         public Builder originId(Output<String> originId) {
             $.originId = originId;
             return this;
         }
 
-        /**
-         * @param originId The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
-         * 
-         * @return builder
-         * 
-         */
         public Builder originId(String originId) {
             return originId(Output.of(originId));
         }
 
-        /**
-         * @param percent The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
-         * 
-         * @return builder
-         * 
-         */
         public Builder percent(Output<Double> percent) {
             $.percent = percent;
             return this;
         }
 
-        /**
-         * @param percent The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
-         * 
-         * @return builder
-         * 
-         */
         public Builder percent(Double percent) {
             return percent(Output.of(percent));
         }
 
-        /**
-         * @param stateOrProvince The state, province, or region where the data center is located.
-         * 
-         * @return builder
-         * 
-         */
         public Builder stateOrProvince(@Nullable Output<String> stateOrProvince) {
             $.stateOrProvince = stateOrProvince;
             return this;
         }
 
-        /**
-         * @param stateOrProvince The state, province, or region where the data center is located.
-         * 
-         * @return builder
-         * 
-         */
         public Builder stateOrProvince(String stateOrProvince) {
             return stateOrProvince(Output.of(stateOrProvince));
         }

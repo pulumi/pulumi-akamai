@@ -13,32 +13,16 @@ public final class GetEdgeWorkersResourceTierArgs extends com.pulumi.resources.I
 
     public static final GetEdgeWorkersResourceTierArgs Empty = new GetEdgeWorkersResourceTierArgs();
 
-    /**
-     * Unique identifier of a contract.
-     * 
-     */
     @Import(name="contractId", required=true)
     private Output<String> contractId;
 
-    /**
-     * @return Unique identifier of a contract.
-     * 
-     */
     public Output<String> contractId() {
         return this.contractId;
     }
 
-    /**
-     * Unique name of the resource tier.
-     * 
-     */
     @Import(name="resourceTierName", required=true)
     private Output<String> resourceTierName;
 
-    /**
-     * @return Unique name of the resource tier.
-     * 
-     */
     public Output<String> resourceTierName() {
         return this.resourceTierName;
     }
@@ -68,44 +52,20 @@ public final class GetEdgeWorkersResourceTierArgs extends com.pulumi.resources.I
             $ = new GetEdgeWorkersResourceTierArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractId Unique identifier of a contract.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(Output<String> contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @param contractId Unique identifier of a contract.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             return contractId(Output.of(contractId));
         }
 
-        /**
-         * @param resourceTierName Unique name of the resource tier.
-         * 
-         * @return builder
-         * 
-         */
         public Builder resourceTierName(Output<String> resourceTierName) {
             $.resourceTierName = resourceTierName;
             return this;
         }
 
-        /**
-         * @param resourceTierName Unique name of the resource tier.
-         * 
-         * @return builder
-         * 
-         */
         public Builder resourceTierName(String resourceTierName) {
             return resourceTierName(Output.of(resourceTierName));
         }

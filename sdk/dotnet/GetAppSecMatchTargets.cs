@@ -11,113 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecMatchTargets
     {
-        /// <summary>
-        /// **Scopes**: Security configuration; match target
-        /// 
-        /// Returns information about your match targets. Match targets determine which security policy should apply to an API, hostname, or path.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets{?policyId,includeChildObjectName}](https://techdocs.akamai.com/application-security/reference/get-match-targets)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var matchTargetsAppSecMatchTargets = Akamai.GetAppSecMatchTargets.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     var matchTarget = Akamai.GetAppSecMatchTargets.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         MatchTargetId = 2712938,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["matchTargets"] = matchTargetsAppSecMatchTargets.Apply(getAppSecMatchTargetsResult =&gt; getAppSecMatchTargetsResult.OutputText),
-        ///         ["matchTargetOutput"] = matchTarget.Apply(getAppSecMatchTargetsResult =&gt; getAppSecMatchTargetsResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `output_text`. Tabular report showing the ID and security policy ID of your match targets.
-        /// - `json`. JSON-formatted list of the match target information.
-        /// </summary>
         public static Task<GetAppSecMatchTargetsResult> InvokeAsync(GetAppSecMatchTargetsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecMatchTargetsResult>("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args ?? new GetAppSecMatchTargetsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security configuration; match target
-        /// 
-        /// Returns information about your match targets. Match targets determine which security policy should apply to an API, hostname, or path.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets{?policyId,includeChildObjectName}](https://techdocs.akamai.com/application-security/reference/get-match-targets)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var matchTargetsAppSecMatchTargets = Akamai.GetAppSecMatchTargets.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     var matchTarget = Akamai.GetAppSecMatchTargets.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         MatchTargetId = 2712938,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["matchTargets"] = matchTargetsAppSecMatchTargets.Apply(getAppSecMatchTargetsResult =&gt; getAppSecMatchTargetsResult.OutputText),
-        ///         ["matchTargetOutput"] = matchTarget.Apply(getAppSecMatchTargetsResult =&gt; getAppSecMatchTargetsResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `output_text`. Tabular report showing the ID and security policy ID of your match targets.
-        /// - `json`. JSON-formatted list of the match target information.
-        /// </summary>
         public static Output<GetAppSecMatchTargetsResult> Invoke(GetAppSecMatchTargetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecMatchTargetsResult>("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args ?? new GetAppSecMatchTargetsInvokeArgs(), options.WithDefaults());
     }
@@ -125,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecMatchTargetsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the match targets.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
-        /// </summary>
         [Input("matchTargetId")]
         public int? MatchTargetId { get; set; }
 
@@ -145,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecMatchTargetsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the match targets.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
-        /// </summary>
         [Input("matchTargetId")]
         public Input<int>? MatchTargetId { get; set; }
 

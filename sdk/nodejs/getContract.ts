@@ -4,13 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getContract` data source to find a contract ID.
- *
- * ## Attributes reference
- *
- * * `id` - The contract's unique ID, including the `ctr_` prefix.
- */
 export function getContract(args?: GetContractArgs, opts?: pulumi.InvokeOptions): Promise<GetContractResult> {
     args = args || {};
 
@@ -27,18 +20,10 @@ export function getContract(args?: GetContractArgs, opts?: pulumi.InvokeOptions)
  */
 export interface GetContractArgs {
     /**
-     * Either the group ID or the group name that includes the contract. You can't use this argument with `groupId` and `groupName`.
-     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: string;
-    /**
-     * The unique ID of the group containing the contract, including the  `grp_` prefix.
-     */
     groupId?: string;
-    /**
-     * The name of the group containing the contract.
-     */
     groupName?: string;
 }
 
@@ -57,13 +42,6 @@ export interface GetContractResult {
      */
     readonly id: string;
 }
-/**
- * Use the `akamai.getContract` data source to find a contract ID.
- *
- * ## Attributes reference
- *
- * * `id` - The contract's unique ID, including the `ctr_` prefix.
- */
 export function getContractOutput(args?: GetContractOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContractResult> {
     return pulumi.output(args).apply((a: any) => getContract(a, opts))
 }
@@ -73,17 +51,9 @@ export function getContractOutput(args?: GetContractOutputArgs, opts?: pulumi.In
  */
 export interface GetContractOutputArgs {
     /**
-     * Either the group ID or the group name that includes the contract. You can't use this argument with `groupId` and `groupName`.
-     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
-    /**
-     * The unique ID of the group containing the contract, including the  `grp_` prefix.
-     */
     groupId?: pulumi.Input<string>;
-    /**
-     * The name of the group containing the contract.
-     */
     groupName?: pulumi.Input<string>;
 }

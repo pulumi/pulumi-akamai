@@ -18,9 +18,6 @@ namespace Pulumi.Akamai.Outputs
         public readonly int GroupId;
         public readonly string Name;
         public readonly string Status;
-        /// <summary>
-        /// (Optional) The version number of a policy.
-        /// </summary>
         public readonly int Version;
 
         [OutputConstructor]

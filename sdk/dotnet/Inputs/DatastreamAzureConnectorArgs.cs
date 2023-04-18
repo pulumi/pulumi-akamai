@@ -14,10 +14,6 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("accessKey", required: true)]
         private Input<string>? _accessKey;
-
-        /// <summary>
-        /// **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
-        /// </summary>
         public Input<string>? AccessKey
         {
             get => _accessKey;
@@ -28,36 +24,21 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
-        /// <summary>
-        /// Specifies the Azure Storage account name.
-        /// </summary>
         [Input("accountName", required: true)]
         public Input<string> AccountName { get; set; } = null!;
 
-        /// <summary>
-        /// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-        /// </summary>
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
         [Input("connectorId")]
         public Input<int>? ConnectorId { get; set; }
 
-        /// <summary>
-        /// The name of the connector.
-        /// </summary>
         [Input("connectorName", required: true)]
         public Input<string> ConnectorName { get; set; } = null!;
 
-        /// <summary>
-        /// Specifies the Azure Storage container name.
-        /// </summary>
         [Input("containerName", required: true)]
         public Input<string> ContainerName { get; set; } = null!;
 
-        /// <summary>
-        /// The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-        /// </summary>
         [Input("path", required: true)]
         public Input<string> Path { get; set; } = null!;
 

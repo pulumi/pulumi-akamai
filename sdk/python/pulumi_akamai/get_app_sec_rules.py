@@ -113,10 +113,6 @@ def get_app_sec_rules(config_id: Optional[int] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecRulesResult:
     """
     Use this data source to access information about an existing resource.
-
-    :param int config_id: . Unique identifier of the security configuration associated with the rules.
-    :param int rule_id: . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the rules.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -143,9 +139,5 @@ def get_app_sec_rules_output(config_id: Optional[pulumi.Input[int]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecRulesResult]:
     """
     Use this data source to access information about an existing resource.
-
-    :param int config_id: . Unique identifier of the security configuration associated with the rules.
-    :param int rule_id: . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the rules.
     """
     ...

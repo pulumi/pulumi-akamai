@@ -13,17 +13,8 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GtmCidrmapAssignment
     {
-        /// <summary>
-        /// Specifies an array of CIDR blocks.
-        /// </summary>
         public readonly ImmutableArray<string> Blocks;
-        /// <summary>
-        /// A unique identifier for an existing data center in the domain.
-        /// </summary>
         public readonly int DatacenterId;
-        /// <summary>
-        /// A descriptive label for the CIDR zone group, up to 256 characters.
-        /// </summary>
         public readonly string Nickname;
 
         [OutputConstructor]

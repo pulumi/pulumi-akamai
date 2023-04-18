@@ -19,9 +19,9 @@ class AppSecIPGeoProtectionArgs:
                  security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecIPGeoProtection resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
-        :param pulumi.Input[bool] enabled: . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enabled: Whether to enable IP/Geo protection
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "enabled", enabled)
@@ -31,7 +31,7 @@ class AppSecIPGeoProtectionArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -43,7 +43,7 @@ class AppSecIPGeoProtectionArgs:
     @pulumi.getter
     def enabled(self) -> pulumi.Input[bool]:
         """
-        . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+        Whether to enable IP/Geo protection
         """
         return pulumi.get(self, "enabled")
 
@@ -55,7 +55,7 @@ class AppSecIPGeoProtectionArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -73,10 +73,10 @@ class _AppSecIPGeoProtectionState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecIPGeoProtection resources.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
-        :param pulumi.Input[bool] enabled: . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enabled: Whether to enable IP/Geo protection
         :param pulumi.Input[str] output_text: Text representation
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -91,7 +91,7 @@ class _AppSecIPGeoProtectionState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -103,7 +103,7 @@ class _AppSecIPGeoProtectionState:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+        Whether to enable IP/Geo protection
         """
         return pulumi.get(self, "enabled")
 
@@ -127,7 +127,7 @@ class _AppSecIPGeoProtectionState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -146,37 +146,12 @@ class AppSecIPGeoProtection(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        **Scopes**: Security policy
-
-        Enables or disables IP/Geo protection for the specified configuration and security policy. When enabled, this allows your firewall to allow (or to block) clients based on their IP address or their geographic location.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        protection = akamai.AppSecIPGeoProtection("protection",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            enabled=True)
-        ```
-        ## Output Options
-
-        The following options can be used to determine the information returned, and how that returned information is formatted:
-
-        - `output_text`. Tabular report showing the current protection settings.
-
+        Create a AppSecIPGeoProtection resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
-        :param pulumi.Input[bool] enabled: . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enabled: Whether to enable IP/Geo protection
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         ...
     @overload
@@ -185,32 +160,7 @@ class AppSecIPGeoProtection(pulumi.CustomResource):
                  args: AppSecIPGeoProtectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Security policy
-
-        Enables or disables IP/Geo protection for the specified configuration and security policy. When enabled, this allows your firewall to allow (or to block) clients based on their IP address or their geographic location.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        protection = akamai.AppSecIPGeoProtection("protection",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            enabled=True)
-        ```
-        ## Output Options
-
-        The following options can be used to determine the information returned, and how that returned information is formatted:
-
-        - `output_text`. Tabular report showing the current protection settings.
-
+        Create a AppSecIPGeoProtection resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecIPGeoProtectionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -269,10 +219,10 @@ class AppSecIPGeoProtection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
-        :param pulumi.Input[bool] enabled: . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[bool] enabled: Whether to enable IP/Geo protection
         :param pulumi.Input[str] output_text: Text representation
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -288,7 +238,7 @@ class AppSecIPGeoProtection(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -296,7 +246,7 @@ class AppSecIPGeoProtection(pulumi.CustomResource):
     @pulumi.getter
     def enabled(self) -> pulumi.Output[bool]:
         """
-        . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+        Whether to enable IP/Geo protection
         """
         return pulumi.get(self, "enabled")
 
@@ -312,7 +262,7 @@ class AppSecIPGeoProtection(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 

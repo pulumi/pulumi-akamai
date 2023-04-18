@@ -17,13 +17,7 @@ export function getAppSecConfigurationVersion(args: GetAppSecConfigurationVersio
  * A collection of arguments for invoking getAppSecConfigurationVersion.
  */
 export interface GetAppSecConfigurationVersionArgs {
-    /**
-     * . Unique identifier of the security configuration you want to return version information for.
-     */
     configId: number;
-    /**
-     * . Version number of the security configuration you want to return information about. If not included, information about all the security configuration's versions is returned.
-     */
     version?: number;
 }
 
@@ -50,12 +44,6 @@ export function getAppSecConfigurationVersionOutput(args: GetAppSecConfiguration
  * A collection of arguments for invoking getAppSecConfigurationVersion.
  */
 export interface GetAppSecConfigurationVersionOutputArgs {
-    /**
-     * . Unique identifier of the security configuration you want to return version information for.
-     */
     configId: pulumi.Input<number>;
-    /**
-     * . Version number of the security configuration you want to return information about. If not included, information about all the security configuration's versions is returned.
-     */
     version?: pulumi.Input<number>;
 }

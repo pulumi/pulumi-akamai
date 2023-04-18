@@ -4,36 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Evaluation rule
- *
- * Creates or modifies an evaluation rule's action, conditions, and exceptions.
- * Evaluation rules are Kona Rule Set rules used when running a security configuration in evaluation mode.
- * Changes to these rules do not affect the rules used on your production network.
- *
- * **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}](https://techdocs.akamai.com/application-security/reference/put-policy-eval-rule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-condition-exception)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- * import * as fs from "fs";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const evalRule = new akamai.AppSecEvalRule("evalRule", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: "gms1_134637",
- *     ruleId: 60029316,
- *     ruleAction: "deny",
- *     conditionException: fs.readFileSync(`${path.module}/condition_exception.json`),
- * });
- * ```
- */
 export class AppSecEvalRule extends pulumi.CustomResource {
     /**
      * Get an existing AppSecEvalRule resource's state with the given name, ID, and optional extra
@@ -63,27 +33,23 @@ export class AppSecEvalRule extends pulumi.CustomResource {
     }
 
     /**
-     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+     * JSON-formatted condition and exception information for the evaluation rule
      */
     public readonly conditionException!: pulumi.Output<string | undefined>;
     /**
-     * . Unique identifier of the security configuration in evaluation mode.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the evaluation rule is triggered
      */
     public readonly ruleAction!: pulumi.Output<string>;
     /**
-     * . Unique identifier of the evaluation rule being modified.
+     * Unique identifier of the evaluation rule being modified
      */
     public readonly ruleId!: pulumi.Output<number>;
     /**
-     * . Unique identifier of the security policy associated with the evaluation process.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -135,27 +101,23 @@ export class AppSecEvalRule extends pulumi.CustomResource {
  */
 export interface AppSecEvalRuleState {
     /**
-     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+     * JSON-formatted condition and exception information for the evaluation rule
      */
     conditionException?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security configuration in evaluation mode.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the evaluation rule is triggered
      */
     ruleAction?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the evaluation rule being modified.
+     * Unique identifier of the evaluation rule being modified
      */
     ruleId?: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy associated with the evaluation process.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -165,27 +127,23 @@ export interface AppSecEvalRuleState {
  */
 export interface AppSecEvalRuleArgs {
     /**
-     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+     * JSON-formatted condition and exception information for the evaluation rule
      */
     conditionException?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security configuration in evaluation mode.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the evaluation rule is triggered
      */
     ruleAction: pulumi.Input<string>;
     /**
-     * . Unique identifier of the evaluation rule being modified.
+     * Unique identifier of the evaluation rule being modified
      */
     ruleId: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy associated with the evaluation process.
+     * Unique identifier of the security policy
      */
     securityPolicyId: pulumi.Input<string>;
 }

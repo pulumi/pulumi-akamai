@@ -6,32 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getDatastreamDatasetFields` data source to list groups of data set fields available in the template.
- *
- * ## Example Usage
- *
- * This example returns data set fields for a default template:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const fields = akamai.getDatastreamDatasetFields({});
- * ```
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `fields` - A group of data set fields available in a template, including:
- *   * `datasetGroupName` - The name of the data set group.
- *   * `datasetGroupDescription` - Additional information about the data set group.
- *   * `datasetFields` - A list of data set fields available within the data set group, including:
- *       * `datasetFieldDescription` - Additional information about the data set field.
- *       * `datasetFieldId` - Unique identifier for the field.
- *       * `datasetFieldJsonKey` - The JSON key for the field in a log line.
- *       * `datasetFieldName` - The name of the data set field.
- */
 export function getDatastreamDatasetFields(args?: GetDatastreamDatasetFieldsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatastreamDatasetFieldsResult> {
     args = args || {};
 
@@ -45,9 +19,6 @@ export function getDatastreamDatasetFields(args?: GetDatastreamDatasetFieldsArgs
  * A collection of arguments for invoking getDatastreamDatasetFields.
  */
 export interface GetDatastreamDatasetFieldsArgs {
-    /**
-     * (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
-     */
     templateName?: string;
 }
 
@@ -62,32 +33,6 @@ export interface GetDatastreamDatasetFieldsResult {
     readonly id: string;
     readonly templateName?: string;
 }
-/**
- * Use the `akamai.getDatastreamDatasetFields` data source to list groups of data set fields available in the template.
- *
- * ## Example Usage
- *
- * This example returns data set fields for a default template:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const fields = akamai.getDatastreamDatasetFields({});
- * ```
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `fields` - A group of data set fields available in a template, including:
- *   * `datasetGroupName` - The name of the data set group.
- *   * `datasetGroupDescription` - Additional information about the data set group.
- *   * `datasetFields` - A list of data set fields available within the data set group, including:
- *       * `datasetFieldDescription` - Additional information about the data set field.
- *       * `datasetFieldId` - Unique identifier for the field.
- *       * `datasetFieldJsonKey` - The JSON key for the field in a log line.
- *       * `datasetFieldName` - The name of the data set field.
- */
 export function getDatastreamDatasetFieldsOutput(args?: GetDatastreamDatasetFieldsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatastreamDatasetFieldsResult> {
     return pulumi.output(args).apply((a: any) => getDatastreamDatasetFields(a, opts))
 }
@@ -96,8 +41,5 @@ export function getDatastreamDatasetFieldsOutput(args?: GetDatastreamDatasetFiel
  * A collection of arguments for invoking getDatastreamDatasetFields.
  */
 export interface GetDatastreamDatasetFieldsOutputArgs {
-    /**
-     * (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
-     */
     templateName?: pulumi.Input<string>;
 }

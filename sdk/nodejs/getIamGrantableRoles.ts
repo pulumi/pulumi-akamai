@@ -6,31 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * List which grantable roles you can include in a new custom role or add to an existing custom role.
- *
- * ## Basic usage
- *
- * This example returns the available roles to grant to users:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getIamGrantableRoles({});
- * export const akaGrantableRolesCount = data.akamai_iam_grantable_roles.test.grantable_roles.length;
- * export const akaGrantableRoles = data.akamai_iam_grantable_roles.test;
- * ```
- *
- * ## Attributes reference
- *
- * This resource returns this attribute:
- *
- * * `grantableRoles` - Lists which grantable roles you can include in a new custom role or add to an existing custom role.
- *   * `grantedRoleId` - Granted role ID.
- *   * `name` - Granted role name.
- *   * `description` - Granted role description.
- */
 export function getIamGrantableRoles(opts?: pulumi.InvokeOptions): Promise<GetIamGrantableRolesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

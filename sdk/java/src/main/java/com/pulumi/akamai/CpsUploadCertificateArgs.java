@@ -19,14 +19,14 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
     public static final CpsUploadCertificateArgs Empty = new CpsUploadCertificateArgs();
 
     /**
-     * Boolean. Use only if `change_management` is set to `true` in the `akamai.CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+     * Whether to acknowledge change management
      * 
      */
     @Import(name="acknowledgeChangeManagement")
     private @Nullable Output<Boolean> acknowledgeChangeManagement;
 
     /**
-     * @return Boolean. Use only if `change_management` is set to `true` in the `akamai.CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+     * @return Whether to acknowledge change management
      * 
      */
     public Optional<Output<Boolean>> acknowledgeChangeManagement() {
@@ -34,14 +34,14 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `auto_approve_warnings`.
+     * Whether to acknowledge post-verification warnings
      * 
      */
     @Import(name="acknowledgePostVerificationWarnings")
     private @Nullable Output<Boolean> acknowledgePostVerificationWarnings;
 
     /**
-     * @return Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `auto_approve_warnings`.
+     * @return Whether to acknowledge post-verification warnings
      * 
      */
     public Optional<Output<Boolean>> acknowledgePostVerificationWarnings() {
@@ -49,14 +49,14 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+     * List of post-verification warnings to be automatically acknowledged
      * 
      */
     @Import(name="autoApproveWarnings")
     private @Nullable Output<List<String>> autoApproveWarnings;
 
     /**
-     * @return The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+     * @return List of post-verification warnings to be automatically acknowledged
      * 
      */
     public Optional<Output<List<String>>> autoApproveWarnings() {
@@ -64,14 +64,14 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The ECDSA certificate in PEM format you want to upload.
+     * ECDSA certificate in pem format to be uploaded
      * 
      */
     @Import(name="certificateEcdsaPem")
     private @Nullable Output<String> certificateEcdsaPem;
 
     /**
-     * @return The ECDSA certificate in PEM format you want to upload.
+     * @return ECDSA certificate in pem format to be uploaded
      * 
      */
     public Optional<Output<String>> certificateEcdsaPem() {
@@ -79,14 +79,14 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The RSA certificate in PEM format you want to upload.
+     * RSA certificate in pem format to be uploaded
      * 
      */
     @Import(name="certificateRsaPem")
     private @Nullable Output<String> certificateRsaPem;
 
     /**
-     * @return The RSA certificate in PEM format you want to upload.
+     * @return RSA certificate in pem format to be uploaded
      * 
      */
     public Optional<Output<String>> certificateRsaPem() {
@@ -94,16 +94,14 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * Unique identifier for the certificate enrollment.
-     * * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+     * The unique identifier of the enrollment
      * 
      */
     @Import(name="enrollmentId", required=true)
     private Output<Integer> enrollmentId;
 
     /**
-     * @return Unique identifier for the certificate enrollment.
-     * * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+     * @return The unique identifier of the enrollment
      * 
      */
     public Output<Integer> enrollmentId() {
@@ -111,14 +109,14 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The trust chain in PEM format for the ECDSA certificate you want to upload.
+     * Trust chain in pem format for provided ECDSA certificate
      * 
      */
     @Import(name="trustChainEcdsaPem")
     private @Nullable Output<String> trustChainEcdsaPem;
 
     /**
-     * @return The trust chain in PEM format for the ECDSA certificate you want to upload.
+     * @return Trust chain in pem format for provided ECDSA certificate
      * 
      */
     public Optional<Output<String>> trustChainEcdsaPem() {
@@ -126,14 +124,14 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The trust chain in PEM format for the RSA certificate you want to upload.
+     * Trust chain in pem format for provided RSA certificate
      * 
      */
     @Import(name="trustChainRsaPem")
     private @Nullable Output<String> trustChainRsaPem;
 
     /**
-     * @return The trust chain in PEM format for the RSA certificate you want to upload.
+     * @return Trust chain in pem format for provided RSA certificate
      * 
      */
     public Optional<Output<String>> trustChainRsaPem() {
@@ -141,14 +139,14 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * Boolean. Enter `true` to wait for certificate to be deployed.
+     * Whether to wait for certificate to be deployed
      * 
      */
     @Import(name="waitForDeployment")
     private @Nullable Output<Boolean> waitForDeployment;
 
     /**
-     * @return Boolean. Enter `true` to wait for certificate to be deployed.
+     * @return Whether to wait for certificate to be deployed
      * 
      */
     public Optional<Output<Boolean>> waitForDeployment() {
@@ -188,7 +186,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param acknowledgeChangeManagement Boolean. Use only if `change_management` is set to `true` in the `akamai.CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+         * @param acknowledgeChangeManagement Whether to acknowledge change management
          * 
          * @return builder
          * 
@@ -199,7 +197,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param acknowledgeChangeManagement Boolean. Use only if `change_management` is set to `true` in the `akamai.CpsThirdPartyEnrollment` resource. Enter `true` to acknowledge that testing on staging is complete and to deploy the certificate to production.
+         * @param acknowledgeChangeManagement Whether to acknowledge change management
          * 
          * @return builder
          * 
@@ -209,7 +207,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param acknowledgePostVerificationWarnings Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `auto_approve_warnings`.
+         * @param acknowledgePostVerificationWarnings Whether to acknowledge post-verification warnings
          * 
          * @return builder
          * 
@@ -220,7 +218,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param acknowledgePostVerificationWarnings Boolean. Enter `true` if you want to acknowledge the post-verification warnings defined in `auto_approve_warnings`.
+         * @param acknowledgePostVerificationWarnings Whether to acknowledge post-verification warnings
          * 
          * @return builder
          * 
@@ -230,7 +228,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param autoApproveWarnings The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+         * @param autoApproveWarnings List of post-verification warnings to be automatically acknowledged
          * 
          * @return builder
          * 
@@ -241,7 +239,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param autoApproveWarnings The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+         * @param autoApproveWarnings List of post-verification warnings to be automatically acknowledged
          * 
          * @return builder
          * 
@@ -251,7 +249,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param autoApproveWarnings The list of post-verification warning IDs you want to automatically acknowledge. To retrieve the list of warnings, use the `akamai.getCpsWarnings` data source.
+         * @param autoApproveWarnings List of post-verification warnings to be automatically acknowledged
          * 
          * @return builder
          * 
@@ -261,7 +259,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param certificateEcdsaPem The ECDSA certificate in PEM format you want to upload.
+         * @param certificateEcdsaPem ECDSA certificate in pem format to be uploaded
          * 
          * @return builder
          * 
@@ -272,7 +270,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param certificateEcdsaPem The ECDSA certificate in PEM format you want to upload.
+         * @param certificateEcdsaPem ECDSA certificate in pem format to be uploaded
          * 
          * @return builder
          * 
@@ -282,7 +280,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param certificateRsaPem The RSA certificate in PEM format you want to upload.
+         * @param certificateRsaPem RSA certificate in pem format to be uploaded
          * 
          * @return builder
          * 
@@ -293,7 +291,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param certificateRsaPem The RSA certificate in PEM format you want to upload.
+         * @param certificateRsaPem RSA certificate in pem format to be uploaded
          * 
          * @return builder
          * 
@@ -303,8 +301,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param enrollmentId Unique identifier for the certificate enrollment.
-         * * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+         * @param enrollmentId The unique identifier of the enrollment
          * 
          * @return builder
          * 
@@ -315,8 +312,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param enrollmentId Unique identifier for the certificate enrollment.
-         * * certificate PEM file (Required) - Include at least one of the following arguments for the PEM file to upload. You can upload an ECDSA certificate, an RSA certificate, or both.
+         * @param enrollmentId The unique identifier of the enrollment
          * 
          * @return builder
          * 
@@ -326,7 +322,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trustChainEcdsaPem The trust chain in PEM format for the ECDSA certificate you want to upload.
+         * @param trustChainEcdsaPem Trust chain in pem format for provided ECDSA certificate
          * 
          * @return builder
          * 
@@ -337,7 +333,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trustChainEcdsaPem The trust chain in PEM format for the ECDSA certificate you want to upload.
+         * @param trustChainEcdsaPem Trust chain in pem format for provided ECDSA certificate
          * 
          * @return builder
          * 
@@ -347,7 +343,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trustChainRsaPem The trust chain in PEM format for the RSA certificate you want to upload.
+         * @param trustChainRsaPem Trust chain in pem format for provided RSA certificate
          * 
          * @return builder
          * 
@@ -358,7 +354,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trustChainRsaPem The trust chain in PEM format for the RSA certificate you want to upload.
+         * @param trustChainRsaPem Trust chain in pem format for provided RSA certificate
          * 
          * @return builder
          * 
@@ -368,7 +364,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param waitForDeployment Boolean. Enter `true` to wait for certificate to be deployed.
+         * @param waitForDeployment Whether to wait for certificate to be deployed
          * 
          * @return builder
          * 
@@ -379,7 +375,7 @@ public final class CpsUploadCertificateArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param waitForDeployment Boolean. Enter `true` to wait for certificate to be deployed.
+         * @param waitForDeployment Whether to wait for certificate to be deployed
          * 
          * @return builder
          * 

@@ -84,40 +84,7 @@ def get_appsec_advanced_settings_attack_payload_logging(config_id: Optional[int]
                                                         security_policy_id: Optional[str] = None,
                                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppsecAdvancedSettingsAttackPayloadLoggingResult:
     """
-    **Scopes**: Security configuration; security policy
-
-    Returns information about your Attack Payload Logging controls. By default, information is returned for all the security policies in the configuration.
-    However, you can return data for a single policy by using the `security_policy_id` parameter.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    attack_payload_logging = akamai.get_appsec_advanced_settings_attack_payload_logging(config_id=configuration.config_id)
-    pulumi.export("advancedSettingsAttackPayloadLoggingJson", attack_payload_logging.json)
-    pulumi.export("advancedSettingsAttackPayloadLoggingOutput", attack_payload_logging.output_text)
-    policy_override = akamai.get_appsec_advanced_settings_attack_payload_logging(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
-    pulumi.export("advancedSettingsPolicyAttackPayloadLoggingOutput", policy_override.output_text)
-    pulumi.export("advancedSettingsPolicyAttackPayloadLoggingJson", policy_override.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list of information about the Attack Payload Logging settings.
-    - `output_text`. Tabular report showing the Attack Payload Logging settings.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the Attack Payload Logging settings.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the Attack Payload Logging settings. If not included, information is returned for all your security policies.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -138,39 +105,6 @@ def get_appsec_advanced_settings_attack_payload_logging_output(config_id: Option
                                                                security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppsecAdvancedSettingsAttackPayloadLoggingResult]:
     """
-    **Scopes**: Security configuration; security policy
-
-    Returns information about your Attack Payload Logging controls. By default, information is returned for all the security policies in the configuration.
-    However, you can return data for a single policy by using the `security_policy_id` parameter.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    attack_payload_logging = akamai.get_appsec_advanced_settings_attack_payload_logging(config_id=configuration.config_id)
-    pulumi.export("advancedSettingsAttackPayloadLoggingJson", attack_payload_logging.json)
-    pulumi.export("advancedSettingsAttackPayloadLoggingOutput", attack_payload_logging.output_text)
-    policy_override = akamai.get_appsec_advanced_settings_attack_payload_logging(config_id=configuration.config_id,
-        security_policy_id=var["security_policy_id"])
-    pulumi.export("advancedSettingsPolicyAttackPayloadLoggingOutput", policy_override.output_text)
-    pulumi.export("advancedSettingsPolicyAttackPayloadLoggingJson", policy_override.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list of information about the Attack Payload Logging settings.
-    - `output_text`. Tabular report showing the Attack Payload Logging settings.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the Attack Payload Logging settings.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the Attack Payload Logging settings. If not included, information is returned for all your security policies.
+    Use this data source to access information about an existing resource.
     """
     ...

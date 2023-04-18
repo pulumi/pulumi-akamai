@@ -4,36 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security policy
- *
- * Enables or disables IP/Geo protection for the specified configuration and security policy. When enabled, this allows your firewall to allow (or to block) clients based on their IP address or their geographic location.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/put-policy-protections)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const protection = new akamai.AppSecIPGeoProtection("protection", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: "gms1_134637",
- *     enabled: true,
- * });
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `outputText`. Tabular report showing the current protection settings.
- */
 export class AppSecIPGeoProtection extends pulumi.CustomResource {
     /**
      * Get an existing AppSecIPGeoProtection resource's state with the given name, ID, and optional extra
@@ -63,11 +33,11 @@ export class AppSecIPGeoProtection extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+     * Whether to enable IP/Geo protection
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
@@ -75,7 +45,7 @@ export class AppSecIPGeoProtection extends pulumi.CustomResource {
      */
     public /*out*/ readonly outputText!: pulumi.Output<string>;
     /**
-     * . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -122,11 +92,11 @@ export class AppSecIPGeoProtection extends pulumi.CustomResource {
  */
 export interface AppSecIPGeoProtectionState {
     /**
-     * . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+     * Whether to enable IP/Geo protection
      */
     enabled?: pulumi.Input<boolean>;
     /**
@@ -134,7 +104,7 @@ export interface AppSecIPGeoProtectionState {
      */
     outputText?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -144,15 +114,15 @@ export interface AppSecIPGeoProtectionState {
  */
 export interface AppSecIPGeoProtectionArgs {
     /**
-     * . Unique identifier of the security configuration associated with the IP/Geo protection settings being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Set to **true** to enable IP/Geo protection; set to **false** to disable IP/Geo protection.
+     * Whether to enable IP/Geo protection
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * . Unique identifier of the security policy associated with the IP/Geo protection settings being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId: pulumi.Input<string>;
 }

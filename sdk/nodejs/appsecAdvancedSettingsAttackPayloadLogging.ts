@@ -4,39 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security configuration; security policy
- *
- * Enables, disables, or updates Attack Payload Logging settings.
- * By default, this operation is applied at the configuration level, which means that it is applied to all the security policies within that configuration.
- * However, by using the `securityPolicyId` parameter you can specify custom settings for an individual security policy.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- * import * as fs from "fs";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const attackPayloadLogging = new akamai.AppsecAdvancedSettingsAttackPayloadLogging("attackPayloadLogging", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     attackPayloadLogging: fs.readFileSync(`${path.module}/attack-payload-logging.json`),
- * });
- * // USE CASE: User wants to configure Attack Payload Logging settings for a security policy.
- * const policyLogging = new akamai.AppsecAdvancedSettingsAttackPayloadLogging("policyLogging", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: "gms1_134637",
- *     attackPayloadLogging: fs.readFileSync(`${path.module}/attack-payload-logging.json`),
- * });
- * ```
- */
 export class AppsecAdvancedSettingsAttackPayloadLogging extends pulumi.CustomResource {
     /**
      * Get an existing AppsecAdvancedSettingsAttackPayloadLogging resource's state with the given name, ID, and optional extra
@@ -66,15 +33,15 @@ export class AppsecAdvancedSettingsAttackPayloadLogging extends pulumi.CustomRes
     }
 
     /**
-     * . JSON representation of the Attack Payload Logging settings to be configured.
+     * Whether to enable, disable, or update attack payload logging settings
      */
     public readonly attackPayloadLogging!: pulumi.Output<string>;
     /**
-     * . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string | undefined>;
 
@@ -116,15 +83,15 @@ export class AppsecAdvancedSettingsAttackPayloadLogging extends pulumi.CustomRes
  */
 export interface AppsecAdvancedSettingsAttackPayloadLoggingState {
     /**
-     * . JSON representation of the Attack Payload Logging settings to be configured.
+     * Whether to enable, disable, or update attack payload logging settings
      */
     attackPayloadLogging?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -134,15 +101,15 @@ export interface AppsecAdvancedSettingsAttackPayloadLoggingState {
  */
 export interface AppsecAdvancedSettingsAttackPayloadLoggingArgs {
     /**
-     * . JSON representation of the Attack Payload Logging settings to be configured.
+     * Whether to enable, disable, or update attack payload logging settings
      */
     attackPayloadLogging: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }

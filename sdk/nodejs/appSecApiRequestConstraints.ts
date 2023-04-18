@@ -4,31 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const apiEndpoint = configuration.then(configuration => akamai.getAppSecApiEndpoints({
- *     configId: configuration.configId,
- *     securityPolicyId: "gms1_134637",
- *     apiName: "Contracts",
- * }));
- * const apiRequestConstraints = new akamai.AppSecApiRequestConstraints("apiRequestConstraints", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: "gms1_134637",
- *     apiEndpointId: apiEndpoint.then(apiEndpoint => apiEndpoint.id),
- *     action: "alert",
- * });
- * ```
- */
 export class AppSecApiRequestConstraints extends pulumi.CustomResource {
     /**
      * Get an existing AppSecApiRequestConstraints resource's state with the given name, ID, and optional extra
@@ -58,23 +33,19 @@ export class AppSecApiRequestConstraints extends pulumi.CustomResource {
     }
 
     /**
-     * . Action to assign to the API request constraint. Allowed values are:
-     * - **alert**, Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the API request constraint is triggered
      */
     public readonly action!: pulumi.Output<string>;
     /**
-     * . ID of the API endpoint the constraint will be assigned to.
+     * Unique identifier of the API endpoint to which the constraint will be assigned
      */
     public readonly apiEndpointId!: pulumi.Output<number | undefined>;
     /**
-     * . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Unique identifier of the security policy associated with the API request constraint settings being modified.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -121,23 +92,19 @@ export class AppSecApiRequestConstraints extends pulumi.CustomResource {
  */
 export interface AppSecApiRequestConstraintsState {
     /**
-     * . Action to assign to the API request constraint. Allowed values are:
-     * - **alert**, Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the API request constraint is triggered
      */
     action?: pulumi.Input<string>;
     /**
-     * . ID of the API endpoint the constraint will be assigned to.
+     * Unique identifier of the API endpoint to which the constraint will be assigned
      */
     apiEndpointId?: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy associated with the API request constraint settings being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -147,23 +114,19 @@ export interface AppSecApiRequestConstraintsState {
  */
 export interface AppSecApiRequestConstraintsArgs {
     /**
-     * . Action to assign to the API request constraint. Allowed values are:
-     * - **alert**, Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the API request constraint is triggered
      */
     action: pulumi.Input<string>;
     /**
-     * . ID of the API endpoint the constraint will be assigned to.
+     * Unique identifier of the API endpoint to which the constraint will be assigned
      */
     apiEndpointId?: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy associated with the API request constraint settings being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId: pulumi.Input<string>;
 }

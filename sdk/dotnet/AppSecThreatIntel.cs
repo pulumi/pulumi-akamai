@@ -9,56 +9,23 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security policy
-    /// 
-    /// Enables or disables threat intelligence for a security policy. This resource is only available to organizations running the Adaptive Security Engine (ASE) beta Please contact your Akamai representative for more information.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/threat-intel](https://techdocs.akamai.com/application-security/reference/put-rules-threat-intel)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var threatIntel = new Akamai.AppSecThreatIntel("threatIntel", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         ThreatIntel = "on",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecThreatIntel:AppSecThreatIntel")]
     public partial class AppSecThreatIntel : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
+        /// Whether threat intelligence protection should be on or off
         /// </summary>
         [Output("threatIntel")]
         public Output<string> ThreatIntel { get; private set; } = null!;
@@ -110,19 +77,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecThreatIntelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
         /// <summary>
-        /// . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
+        /// Whether threat intelligence protection should be on or off
         /// </summary>
         [Input("threatIntel", required: true)]
         public Input<string> ThreatIntel { get; set; } = null!;
@@ -136,19 +103,19 @@ namespace Pulumi.Akamai
     public sealed class AppSecThreatIntelState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the threat intelligence protection settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the threat intelligence protection settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 
         /// <summary>
-        /// . Set to `on` to enable threat intelligence protection; set to **off** to disable threat intelligence protection.
+        /// Whether threat intelligence protection should be on or off
         /// </summary>
         [Input("threatIntel")]
         public Input<string>? ThreatIntel { get; set; }

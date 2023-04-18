@@ -11,75 +11,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration; security policy
-//
-// Enables, disables, or updates Attack Payload Logging settings.
-// By default, this operation is applied at the configuration level, which means that it is applied to all the security policies within that configuration.
-// However, by using the `securityPolicyId` parameter you can specify custom settings for an individual security policy.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func readFileOrPanic(path string) pulumi.StringPtrInput {
-//		data, err := os.ReadFile(path)
-//		if err != nil {
-//			panic(err.Error())
-//		}
-//		return pulumi.String(string(data))
-//	}
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppsecAdvancedSettingsAttackPayloadLogging(ctx, "attackPayloadLogging", &akamai.AppsecAdvancedSettingsAttackPayloadLoggingArgs{
-//				ConfigId:             *pulumi.Int(configuration.ConfigId),
-//				AttackPayloadLogging: readFileOrPanic(fmt.Sprintf("%v/attack-payload-logging.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppsecAdvancedSettingsAttackPayloadLogging(ctx, "policyLogging", &akamai.AppsecAdvancedSettingsAttackPayloadLoggingArgs{
-//				ConfigId:             *pulumi.Int(configuration.ConfigId),
-//				SecurityPolicyId:     pulumi.String("gms1_134637"),
-//				AttackPayloadLogging: readFileOrPanic(fmt.Sprintf("%v/attack-payload-logging.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type AppsecAdvancedSettingsAttackPayloadLogging struct {
 	pulumi.CustomResourceState
 
-	// . JSON representation of the Attack Payload Logging settings to be configured.
+	// Whether to enable, disable, or update attack payload logging settings
 	AttackPayloadLogging pulumi.StringOutput `pulumi:"attackPayloadLogging"`
-	// . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrOutput `pulumi:"securityPolicyId"`
 }
 
@@ -118,20 +57,20 @@ func GetAppsecAdvancedSettingsAttackPayloadLogging(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppsecAdvancedSettingsAttackPayloadLogging resources.
 type appsecAdvancedSettingsAttackPayloadLoggingState struct {
-	// . JSON representation of the Attack Payload Logging settings to be configured.
+	// Whether to enable, disable, or update attack payload logging settings
 	AttackPayloadLogging *string `pulumi:"attackPayloadLogging"`
-	// . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppsecAdvancedSettingsAttackPayloadLoggingState struct {
-	// . JSON representation of the Attack Payload Logging settings to be configured.
+	// Whether to enable, disable, or update attack payload logging settings
 	AttackPayloadLogging pulumi.StringPtrInput
-	// . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -140,21 +79,21 @@ func (AppsecAdvancedSettingsAttackPayloadLoggingState) ElementType() reflect.Typ
 }
 
 type appsecAdvancedSettingsAttackPayloadLoggingArgs struct {
-	// . JSON representation of the Attack Payload Logging settings to be configured.
+	// Whether to enable, disable, or update attack payload logging settings
 	AttackPayloadLogging string `pulumi:"attackPayloadLogging"`
-	// . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppsecAdvancedSettingsAttackPayloadLogging resource.
 type AppsecAdvancedSettingsAttackPayloadLoggingArgs struct {
-	// . JSON representation of the Attack Payload Logging settings to be configured.
+	// Whether to enable, disable, or update attack payload logging settings
 	AttackPayloadLogging pulumi.StringInput
-	// . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -245,17 +184,17 @@ func (o AppsecAdvancedSettingsAttackPayloadLoggingOutput) ToAppsecAdvancedSettin
 	return o
 }
 
-// . JSON representation of the Attack Payload Logging settings to be configured.
+// Whether to enable, disable, or update attack payload logging settings
 func (o AppsecAdvancedSettingsAttackPayloadLoggingOutput) AttackPayloadLogging() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppsecAdvancedSettingsAttackPayloadLogging) pulumi.StringOutput { return v.AttackPayloadLogging }).(pulumi.StringOutput)
 }
 
-// . Unique identifier of the security configuration containing the Attack Payload Logging settings being modified.
+// Unique identifier of the security configuration
 func (o AppsecAdvancedSettingsAttackPayloadLoggingOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppsecAdvancedSettingsAttackPayloadLogging) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Unique identifier of the security policies whose settings are being modified. If not included, the Attack Payload Logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+// Unique identifier of the security policy
 func (o AppsecAdvancedSettingsAttackPayloadLoggingOutput) SecurityPolicyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppsecAdvancedSettingsAttackPayloadLogging) pulumi.StringPtrOutput { return v.SecurityPolicyId }).(pulumi.StringPtrOutput)
 }

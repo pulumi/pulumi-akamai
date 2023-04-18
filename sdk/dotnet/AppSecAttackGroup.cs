@@ -9,75 +9,35 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Attack group
-    /// 
-    /// Modify an attack group's action, conditions, and exceptions. Attack groups are collections of Kona Rule Set rules used to streamline the management of website protections.
-    /// 
-    /// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups/{attackGroupId}](https://techdocs.akamai.com/application-security/reference/put-attack-group-condition-exception) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups/{attackGroupId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-attack-group-condition-exception)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.IO;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var attackGroup = new Akamai.AppSecAttackGroup("attackGroup", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         AttackGroup = "SQL",
-    ///         AttackGroupAction = "deny",
-    ///         ConditionException = File.ReadAllText($"{path.Module}/condition_exception.json"),
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecAttackGroup:AppSecAttackGroup")]
     public partial class AppSecAttackGroup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique name of the attack group being modified.
+        /// Unique name of the attack group to be modified
         /// </summary>
         [Output("attackGroup")]
         public Output<string> AttackGroup { get; private set; } = null!;
 
         /// <summary>
-        /// . Action taken any time the attack group is triggered. Allowed values are:
-        /// - **alert**. Record information about the request.
-        /// - **deny**. Block the request,
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken when the attack group is triggered
         /// </summary>
         [Output("attackGroupAction")]
         public Output<string> AttackGroupAction { get; private set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+        /// JSON-formatted condition and exception information for the attack group
         /// </summary>
         [Output("conditionException")]
         public Output<string?> ConditionException { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the attack group being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the attack group being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -129,35 +89,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecAttackGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique name of the attack group being modified.
+        /// Unique name of the attack group to be modified
         /// </summary>
         [Input("attackGroup", required: true)]
         public Input<string> AttackGroup { get; set; } = null!;
 
         /// <summary>
-        /// . Action taken any time the attack group is triggered. Allowed values are:
-        /// - **alert**. Record information about the request.
-        /// - **deny**. Block the request,
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken when the attack group is triggered
         /// </summary>
         [Input("attackGroupAction", required: true)]
         public Input<string> AttackGroupAction { get; set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+        /// JSON-formatted condition and exception information for the attack group
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the attack group being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the attack group being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -171,35 +127,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecAttackGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique name of the attack group being modified.
+        /// Unique name of the attack group to be modified
         /// </summary>
         [Input("attackGroup")]
         public Input<string>? AttackGroup { get; set; }
 
         /// <summary>
-        /// . Action taken any time the attack group is triggered. Allowed values are:
-        /// - **alert**. Record information about the request.
-        /// - **deny**. Block the request,
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken when the attack group is triggered
         /// </summary>
         [Input("attackGroupAction")]
         public Input<string>? AttackGroupAction { get; set; }
 
         /// <summary>
-        /// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+        /// JSON-formatted condition and exception information for the attack group
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the attack group being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the attack group being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

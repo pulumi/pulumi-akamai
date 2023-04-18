@@ -11,68 +11,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration
-//
-// Creates a match target associated with a security configuration. Match targets determine which security policy should apply to an API, hostname or path.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets](https://techdocs.akamai.com/application-security/reference/post-match-targets)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func readFileOrPanic(path string) pulumi.StringPtrInput {
-//		data, err := os.ReadFile(path)
-//		if err != nil {
-//			panic(err.Error())
-//		}
-//		return pulumi.String(string(data))
-//	}
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppSecMatchTarget(ctx, "matchTarget", &akamai.AppSecMatchTargetArgs{
-//				ConfigId:    *pulumi.Int(configuration.ConfigId),
-//				MatchTarget: readFileOrPanic(fmt.Sprintf("%v/match_targets.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// In addition to the arguments above, the following attribute is exported:
-//
-// - `matchTargetId`. ID of the match target.
 type AppSecMatchTarget struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configuration associated with the match target being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Path to a JSON file containing one or more match target definitions.
+	// JSON-formatted definition of the match target
 	MatchTarget pulumi.StringOutput `pulumi:"matchTarget"`
 	// Unique identifier of the match target
 	MatchTargetId pulumi.IntOutput `pulumi:"matchTargetId"`
@@ -113,18 +57,18 @@ func GetAppSecMatchTarget(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecMatchTarget resources.
 type appSecMatchTargetState struct {
-	// . Unique identifier of the security configuration associated with the match target being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Path to a JSON file containing one or more match target definitions.
+	// JSON-formatted definition of the match target
 	MatchTarget *string `pulumi:"matchTarget"`
 	// Unique identifier of the match target
 	MatchTargetId *int `pulumi:"matchTargetId"`
 }
 
 type AppSecMatchTargetState struct {
-	// . Unique identifier of the security configuration associated with the match target being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Path to a JSON file containing one or more match target definitions.
+	// JSON-formatted definition of the match target
 	MatchTarget pulumi.StringPtrInput
 	// Unique identifier of the match target
 	MatchTargetId pulumi.IntPtrInput
@@ -135,17 +79,17 @@ func (AppSecMatchTargetState) ElementType() reflect.Type {
 }
 
 type appSecMatchTargetArgs struct {
-	// . Unique identifier of the security configuration associated with the match target being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Path to a JSON file containing one or more match target definitions.
+	// JSON-formatted definition of the match target
 	MatchTarget string `pulumi:"matchTarget"`
 }
 
 // The set of arguments for constructing a AppSecMatchTarget resource.
 type AppSecMatchTargetArgs struct {
-	// . Unique identifier of the security configuration associated with the match target being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Path to a JSON file containing one or more match target definitions.
+	// JSON-formatted definition of the match target
 	MatchTarget pulumi.StringInput
 }
 
@@ -236,12 +180,12 @@ func (o AppSecMatchTargetOutput) ToAppSecMatchTargetOutputWithContext(ctx contex
 	return o
 }
 
-// . Unique identifier of the security configuration associated with the match target being modified.
+// Unique identifier of the security configuration
 func (o AppSecMatchTargetOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecMatchTarget) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Path to a JSON file containing one or more match target definitions.
+// JSON-formatted definition of the match target
 func (o AppSecMatchTargetOutput) MatchTarget() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecMatchTarget) pulumi.StringOutput { return v.MatchTarget }).(pulumi.StringOutput)
 }

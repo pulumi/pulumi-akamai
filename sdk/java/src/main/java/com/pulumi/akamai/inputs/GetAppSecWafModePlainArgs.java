@@ -13,32 +13,16 @@ public final class GetAppSecWafModePlainArgs extends com.pulumi.resources.Invoke
 
     public static final GetAppSecWafModePlainArgs Empty = new GetAppSecWafModePlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the Kona Rule Set rules.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the Kona Rule Set rules.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the Kona Rule Set rules.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the Kona Rule Set rules.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -68,23 +52,11 @@ public final class GetAppSecWafModePlainArgs extends com.pulumi.resources.Invoke
             $ = new GetAppSecWafModePlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the Kona Rule Set rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the Kona Rule Set rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

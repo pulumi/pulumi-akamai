@@ -107,67 +107,7 @@ def get_property_rules_template(template_file: Optional[str] = None,
                                 variables: Optional[Sequence[pulumi.InputType['GetPropertyRulesTemplateVariableArgs']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyRulesTemplateResult:
     """
-    ## Example Usage
-
-    ### JSON Template Files
-
-    Here are some examples of how you can set up your JSON template files for use with this data source.
-    ### Single JSON template that calls other templates
-
-    Here's an example of a JSON template file with nested templates:
-
-    ```python
-    import pulumi
-    ```
-    ### Individual JSON rule template file
-
-    Here’s a simple default rule example that you can include inside the `template_data` argument:
-
-    ```python
-    import pulumi
-    ```
-    ### Add Templates To The Data Source
-
-    Here are some examples of how you can call your JSON template files with this data source.
-    ### Call individual template files with this data source
-
-    This second example shows how to call a specific JSON template using the `template_data` field:
-
-    ```python
-    import pulumi
-    import json
-    import pulumi_akamai as akamai
-
-    example_property_rules_template = akamai.get_property_rules_template(templates=[akamai.GetPropertyRulesTemplateTemplateArgs(
-        template_data=json.dumps({
-            "rules": {
-                "name": "default",
-                "children": ["#include:rules.json"],
-            },
-        }),
-        template_dir="property-snippets/",
-    )])
-    example_property = akamai.Property("exampleProperty",
-        contract_id=var["contractid"],
-        group_id=var["groupid"],
-        rule_format="v2020-03-04",
-        rules=example_property_rules_template.json)
-    ```
-    ### Variables
-
-    You can add variables individually or reference variable definition files.
-    ## Attributes reference
-
-    This data source returns this attribute:
-
-    * `json` - The fully expanded template with variables and all nested templates resolved.
-
-
-    :param str template_file: The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
-    :param Sequence[pulumi.InputType['GetPropertyRulesTemplateTemplateArgs']] templates: The template you use in your configuration. This argument conflicts with the `template_file` argument.
-    :param str var_definition_file: Required when using `var_values_file`. The absolute path to the file containing variable definitions and defaults. This argument conflicts with the `variables` argument.
-    :param str var_values_file: Required when using `var_definition_file`. The absolute path to the file containing variable values. This argument conflicts with the `variables` argument.
-    :param Sequence[pulumi.InputType['GetPropertyRulesTemplateVariableArgs']] variables: The definition of one or more variables. This argument conflicts with the `var_definition_file` and `var_values_file` arguments. A `variables` block includes:
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['templateFile'] = template_file
@@ -196,66 +136,6 @@ def get_property_rules_template_output(template_file: Optional[pulumi.Input[Opti
                                        variables: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPropertyRulesTemplateVariableArgs']]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyRulesTemplateResult]:
     """
-    ## Example Usage
-
-    ### JSON Template Files
-
-    Here are some examples of how you can set up your JSON template files for use with this data source.
-    ### Single JSON template that calls other templates
-
-    Here's an example of a JSON template file with nested templates:
-
-    ```python
-    import pulumi
-    ```
-    ### Individual JSON rule template file
-
-    Here’s a simple default rule example that you can include inside the `template_data` argument:
-
-    ```python
-    import pulumi
-    ```
-    ### Add Templates To The Data Source
-
-    Here are some examples of how you can call your JSON template files with this data source.
-    ### Call individual template files with this data source
-
-    This second example shows how to call a specific JSON template using the `template_data` field:
-
-    ```python
-    import pulumi
-    import json
-    import pulumi_akamai as akamai
-
-    example_property_rules_template = akamai.get_property_rules_template(templates=[akamai.GetPropertyRulesTemplateTemplateArgs(
-        template_data=json.dumps({
-            "rules": {
-                "name": "default",
-                "children": ["#include:rules.json"],
-            },
-        }),
-        template_dir="property-snippets/",
-    )])
-    example_property = akamai.Property("exampleProperty",
-        contract_id=var["contractid"],
-        group_id=var["groupid"],
-        rule_format="v2020-03-04",
-        rules=example_property_rules_template.json)
-    ```
-    ### Variables
-
-    You can add variables individually or reference variable definition files.
-    ## Attributes reference
-
-    This data source returns this attribute:
-
-    * `json` - The fully expanded template with variables and all nested templates resolved.
-
-
-    :param str template_file: The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
-    :param Sequence[pulumi.InputType['GetPropertyRulesTemplateTemplateArgs']] templates: The template you use in your configuration. This argument conflicts with the `template_file` argument.
-    :param str var_definition_file: Required when using `var_values_file`. The absolute path to the file containing variable definitions and defaults. This argument conflicts with the `variables` argument.
-    :param str var_values_file: Required when using `var_definition_file`. The absolute path to the file containing variable values. This argument conflicts with the `variables` argument.
-    :param Sequence[pulumi.InputType['GetPropertyRulesTemplateVariableArgs']] variables: The definition of one or more variables. This argument conflicts with the `var_definition_file` and `var_values_file` arguments. A `variables` block includes:
+    Use this data source to access information about an existing resource.
     """
     ...

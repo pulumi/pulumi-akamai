@@ -19,9 +19,9 @@ class CloudletsApplicationLoadBalancerActivationArgs:
                  version: pulumi.Input[int]):
         """
         The set of arguments for constructing a CloudletsApplicationLoadBalancerActivation resource.
-        :param pulumi.Input[str] network: The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
-        :param pulumi.Input[str] origin_id: The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
-        :param pulumi.Input[int] version: The Application Load Balancer Cloudlet configuration version you want to activate.
+        :param pulumi.Input[str] network: The network you want to activate the application load balancer version on (options are Staging and Production)
+        :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
+        :param pulumi.Input[int] version: Cloudlets application load balancer version you want to activate
         """
         pulumi.set(__self__, "network", network)
         pulumi.set(__self__, "origin_id", origin_id)
@@ -31,7 +31,7 @@ class CloudletsApplicationLoadBalancerActivationArgs:
     @pulumi.getter
     def network(self) -> pulumi.Input[str]:
         """
-        The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+        The network you want to activate the application load balancer version on (options are Staging and Production)
         """
         return pulumi.get(self, "network")
 
@@ -43,7 +43,7 @@ class CloudletsApplicationLoadBalancerActivationArgs:
     @pulumi.getter(name="originId")
     def origin_id(self) -> pulumi.Input[str]:
         """
-        The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+        The conditional origin’s unique identifier
         """
         return pulumi.get(self, "origin_id")
 
@@ -55,7 +55,7 @@ class CloudletsApplicationLoadBalancerActivationArgs:
     @pulumi.getter
     def version(self) -> pulumi.Input[int]:
         """
-        The Application Load Balancer Cloudlet configuration version you want to activate.
+        Cloudlets application load balancer version you want to activate
         """
         return pulumi.get(self, "version")
 
@@ -73,10 +73,10 @@ class _CloudletsApplicationLoadBalancerActivationState:
                  version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering CloudletsApplicationLoadBalancerActivation resources.
-        :param pulumi.Input[str] network: The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
-        :param pulumi.Input[str] origin_id: The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
-        :param pulumi.Input[str] status: The activation status for this load balancing configuration.
-        :param pulumi.Input[int] version: The Application Load Balancer Cloudlet configuration version you want to activate.
+        :param pulumi.Input[str] network: The network you want to activate the application load balancer version on (options are Staging and Production)
+        :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
+        :param pulumi.Input[str] status: Activation status for this application load balancer
+        :param pulumi.Input[int] version: Cloudlets application load balancer version you want to activate
         """
         if network is not None:
             pulumi.set(__self__, "network", network)
@@ -91,7 +91,7 @@ class _CloudletsApplicationLoadBalancerActivationState:
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
         """
-        The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+        The network you want to activate the application load balancer version on (options are Staging and Production)
         """
         return pulumi.get(self, "network")
 
@@ -103,7 +103,7 @@ class _CloudletsApplicationLoadBalancerActivationState:
     @pulumi.getter(name="originId")
     def origin_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+        The conditional origin’s unique identifier
         """
         return pulumi.get(self, "origin_id")
 
@@ -115,7 +115,7 @@ class _CloudletsApplicationLoadBalancerActivationState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        The activation status for this load balancing configuration.
+        Activation status for this application load balancer
         """
         return pulumi.get(self, "status")
 
@@ -127,7 +127,7 @@ class _CloudletsApplicationLoadBalancerActivationState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
         """
-        The Application Load Balancer Cloudlet configuration version you want to activate.
+        Cloudlets application load balancer version you want to activate
         """
         return pulumi.get(self, "version")
 
@@ -146,30 +146,12 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        Use the `CloudletsApplicationLoadBalancerActivation` resource to activate the Application Load Balancer Cloudlet configuration. An activation deploys the configuration version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
-
-        Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example = akamai.CloudletsApplicationLoadBalancerActivation("example",
-            origin_id="alb_test_1",
-            network="staging",
-            version=1)
-        pulumi.export("status", example.status)
-        ```
-
+        Create a CloudletsApplicationLoadBalancerActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] network: The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
-        :param pulumi.Input[str] origin_id: The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
-        :param pulumi.Input[int] version: The Application Load Balancer Cloudlet configuration version you want to activate.
+        :param pulumi.Input[str] network: The network you want to activate the application load balancer version on (options are Staging and Production)
+        :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
+        :param pulumi.Input[int] version: Cloudlets application load balancer version you want to activate
         """
         ...
     @overload
@@ -178,25 +160,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
                  args: CloudletsApplicationLoadBalancerActivationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `CloudletsApplicationLoadBalancerActivation` resource to activate the Application Load Balancer Cloudlet configuration. An activation deploys the configuration version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
-
-        Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        example = akamai.CloudletsApplicationLoadBalancerActivation("example",
-            origin_id="alb_test_1",
-            network="staging",
-            version=1)
-        pulumi.export("status", example.status)
-        ```
-
+        Create a CloudletsApplicationLoadBalancerActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CloudletsApplicationLoadBalancerActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -255,10 +219,10 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] network: The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
-        :param pulumi.Input[str] origin_id: The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
-        :param pulumi.Input[str] status: The activation status for this load balancing configuration.
-        :param pulumi.Input[int] version: The Application Load Balancer Cloudlet configuration version you want to activate.
+        :param pulumi.Input[str] network: The network you want to activate the application load balancer version on (options are Staging and Production)
+        :param pulumi.Input[str] origin_id: The conditional origin’s unique identifier
+        :param pulumi.Input[str] status: Activation status for this application load balancer
+        :param pulumi.Input[int] version: Cloudlets application load balancer version you want to activate
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -274,7 +238,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
     @pulumi.getter
     def network(self) -> pulumi.Output[str]:
         """
-        The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+        The network you want to activate the application load balancer version on (options are Staging and Production)
         """
         return pulumi.get(self, "network")
 
@@ -282,7 +246,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
     @pulumi.getter(name="originId")
     def origin_id(self) -> pulumi.Output[str]:
         """
-        The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+        The conditional origin’s unique identifier
         """
         return pulumi.get(self, "origin_id")
 
@@ -290,7 +254,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
         """
-        The activation status for this load balancing configuration.
+        Activation status for this application load balancer
         """
         return pulumi.get(self, "status")
 
@@ -298,7 +262,7 @@ class CloudletsApplicationLoadBalancerActivation(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[int]:
         """
-        The Application Load Balancer Cloudlet configuration version you want to activate.
+        Cloudlets application load balancer version you want to activate
         """
         return pulumi.get(self, "version")
 

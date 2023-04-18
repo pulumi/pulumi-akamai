@@ -4,18 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.PropertyIncludeActivation` data source to get activation details for an include on the provided network.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `version` - The version of the activated include.
- * * `name` - The descriptive name for the property.
- * * `note` - A log message assigned to the activation request.
- * * `notifyEmails` - The list of email addresses notified when the activation status changes.
- */
 export function getPropertyIncludeActivation(args: GetPropertyIncludeActivationArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyIncludeActivationResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -31,21 +19,9 @@ export function getPropertyIncludeActivation(args: GetPropertyIncludeActivationA
  * A collection of arguments for invoking getPropertyIncludeActivation.
  */
 export interface GetPropertyIncludeActivationArgs {
-    /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
-     */
     contractId: string;
-    /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
-     */
     groupId: string;
-    /**
-     * (Required) An include's unique ID with the optional `inc_` prefix.
-     */
     includeId: string;
-    /**
-     * (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-     */
     network: string;
 }
 
@@ -66,18 +42,6 @@ export interface GetPropertyIncludeActivationResult {
     readonly notifyEmails: string[];
     readonly version: string;
 }
-/**
- * Use the `akamai.PropertyIncludeActivation` data source to get activation details for an include on the provided network.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `version` - The version of the activated include.
- * * `name` - The descriptive name for the property.
- * * `note` - A log message assigned to the activation request.
- * * `notifyEmails` - The list of email addresses notified when the activation status changes.
- */
 export function getPropertyIncludeActivationOutput(args: GetPropertyIncludeActivationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyIncludeActivationResult> {
     return pulumi.output(args).apply((a: any) => getPropertyIncludeActivation(a, opts))
 }
@@ -86,20 +50,8 @@ export function getPropertyIncludeActivationOutput(args: GetPropertyIncludeActiv
  * A collection of arguments for invoking getPropertyIncludeActivation.
  */
 export interface GetPropertyIncludeActivationOutputArgs {
-    /**
-     * (Required) A contract's unique ID, including the optional `ctr_` prefix.
-     */
     contractId: pulumi.Input<string>;
-    /**
-     * (Required) A group's unique ID, including the optional `grp_` prefix.
-     */
     groupId: pulumi.Input<string>;
-    /**
-     * (Required) An include's unique ID with the optional `inc_` prefix.
-     */
     includeId: pulumi.Input<string>;
-    /**
-     * (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-     */
     network: pulumi.Input<string>;
 }

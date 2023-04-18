@@ -4,39 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security configuration; security policy
- *
- * The `resourceAkamaiAppsecAdvancedSettingsEvasivePathMatch` resource allows you to enable, disable, or update the evasive path match setting for a configuration.
- * This setting determines whether fuzzy matching is used to make URL matching more inclusive.
- * This operation applies at the configuration level, and therefore applies to all policies within a configuration.
- * You may override this setting for a particular policy by specifying the policy using the securityPolicyId parameter.
- *
- * **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/advanced-settings/evasive-path-match](https://techdocs.akamai.com/application-security/reference/put-evasive-path-match)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: _var.security_configuration,
- * });
- * const configEvasivePathMatch = new akamai.AppSecAdvancedSettingsEvasivePathMatch("configEvasivePathMatch", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     enablePathMatch: true,
- * });
- * // USE CASE: user wants to override the evasive path match setting for a security policy
- * const policyOverride = new akamai.AppSecAdvancedSettingsEvasivePathMatch("policyOverride", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: _var.security_policy_id,
- *     enablePathMatch: true,
- * });
- * ```
- */
 export class AppSecAdvancedSettingsEvasivePathMatch extends pulumi.CustomResource {
     /**
      * Get an existing AppSecAdvancedSettingsEvasivePathMatch resource's state with the given name, ID, and optional extra
@@ -66,15 +33,15 @@ export class AppSecAdvancedSettingsEvasivePathMatch extends pulumi.CustomResourc
     }
 
     /**
-     * The ID of the security configuration to use.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * Whether to enable path match.
+     * Whether to enable the evasive path match setting
      */
     public readonly enablePathMatch!: pulumi.Output<boolean>;
     /**
-     * The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string | undefined>;
 
@@ -116,15 +83,15 @@ export class AppSecAdvancedSettingsEvasivePathMatch extends pulumi.CustomResourc
  */
 export interface AppSecAdvancedSettingsEvasivePathMatchState {
     /**
-     * The ID of the security configuration to use.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * Whether to enable path match.
+     * Whether to enable the evasive path match setting
      */
     enablePathMatch?: pulumi.Input<boolean>;
     /**
-     * The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -134,15 +101,15 @@ export interface AppSecAdvancedSettingsEvasivePathMatchState {
  */
 export interface AppSecAdvancedSettingsEvasivePathMatchArgs {
     /**
-     * The ID of the security configuration to use.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * Whether to enable path match.
+     * Whether to enable the evasive path match setting
      */
     enablePathMatch: pulumi.Input<boolean>;
     /**
-     * The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }

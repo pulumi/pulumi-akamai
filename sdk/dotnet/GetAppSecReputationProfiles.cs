@@ -11,117 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecReputationProfiles
     {
-        /// <summary>
-        /// **Scopes**: Security configuration; reputation profile
-        /// 
-        /// Returns information about your reputation profiles. Reputation profiles grade the security risk of an IP address based on previous activities associated with that address. Depending on the reputation score, and depending on how your configuration has been set up, requests from a specific IP address can trigger an alert, or even be blocked.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/get-reputation-profiles)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var reputationProfiles = Akamai.GetAppSecReputationProfiles.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     var reputationProfile = Akamai.GetAppSecReputationProfiles.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         ReputationProfileId = 12345,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["reputationProfilesOutput"] = reputationProfiles.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.OutputText),
-        ///         ["reputationProfilesJson"] = reputationProfiles.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.Json),
-        ///         ["reputationProfileJson"] = reputationProfile.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.Json),
-        ///         ["reputationProfileOutput"] = reputationProfile.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `output_text`. Tabular report of the details about the specified reputation profile or profiles.
-        /// - `json`. JSON-formatted report of the details about the specified reputation profile or profiles.
-        /// </summary>
         public static Task<GetAppSecReputationProfilesResult> InvokeAsync(GetAppSecReputationProfilesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security configuration; reputation profile
-        /// 
-        /// Returns information about your reputation profiles. Reputation profiles grade the security risk of an IP address based on previous activities associated with that address. Depending on the reputation score, and depending on how your configuration has been set up, requests from a specific IP address can trigger an alert, or even be blocked.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/get-reputation-profiles)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var reputationProfiles = Akamai.GetAppSecReputationProfiles.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///     });
-        /// 
-        ///     var reputationProfile = Akamai.GetAppSecReputationProfiles.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         ReputationProfileId = 12345,
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["reputationProfilesOutput"] = reputationProfiles.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.OutputText),
-        ///         ["reputationProfilesJson"] = reputationProfiles.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.Json),
-        ///         ["reputationProfileJson"] = reputationProfile.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.Json),
-        ///         ["reputationProfileOutput"] = reputationProfile.Apply(getAppSecReputationProfilesResult =&gt; getAppSecReputationProfilesResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `output_text`. Tabular report of the details about the specified reputation profile or profiles.
-        /// - `json`. JSON-formatted report of the details about the specified reputation profile or profiles.
-        /// </summary>
         public static Output<GetAppSecReputationProfilesResult> Invoke(GetAppSecReputationProfilesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecReputationProfilesResult>("akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles", args ?? new GetAppSecReputationProfilesInvokeArgs(), options.WithDefaults());
     }
@@ -129,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecReputationProfilesArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the reputation profiles.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-        /// </summary>
         [Input("reputationProfileId")]
         public int? ReputationProfileId { get; set; }
 
@@ -149,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecReputationProfilesInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the reputation profiles.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-        /// </summary>
         [Input("reputationProfileId")]
         public Input<int>? ReputationProfileId { get; set; }
 

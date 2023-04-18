@@ -14,93 +14,45 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security configuration
- * 
- * Renames an existing security configuration.
- * Note that you can change only the configuration name. You can&#39;t modify the ID assigned to a security configuration.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}](https://techdocs.akamai.com/application-security/reference/put-config)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecConfigurationRename;
- * import com.pulumi.akamai.AppSecConfigurationRenameArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configurationAppSecConfiguration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var configurationAppSecConfigurationRename = new AppSecConfigurationRename(&#34;configurationAppSecConfigurationRename&#34;, AppSecConfigurationRenameArgs.builder()        
- *             .configId(configurationAppSecConfiguration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .description(&#34;This configuration is by both the documentation team and the training team.&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecConfigurationRename:AppSecConfigurationRename")
 public class AppSecConfigurationRename extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuring being renamed.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuring being renamed.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Brief description of the security configuration.
+     * Brief description of the security configuration
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return . Brief description of the security configuration.
+     * @return Brief description of the security configuration
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * . New name for the security configuration.
+     * New name for the security configuration
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return . New name for the security configuration.
+     * @return New name for the security configuration
      * 
      */
     public Output<String> name() {

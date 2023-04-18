@@ -16,293 +16,101 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GtmPropertyLivenessTest {
-    /**
-     * @return If `test_object_protocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
-     * 
-     */
     private @Nullable Boolean answersRequired;
-    /**
-     * @return A boolean that if set to `true`, disables warnings when non-standard ports are used.
-     * 
-     */
     private @Nullable Boolean disableNonstandardPortWarning;
-    /**
-     * @return A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
-     * 
-     */
     private @Nullable Boolean disabled;
-    /**
-     * @return Specifies the score that&#39;s reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
-     * 
-     */
     private @Nullable Double errorPenalty;
-    /**
-     * @return A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
-     * 
-     */
     private @Nullable Boolean httpError3xx;
-    /**
-     * @return A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
-     * 
-     */
     private @Nullable Boolean httpError4xx;
-    /**
-     * @return A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
-     * 
-     */
     private @Nullable Boolean httpError5xx;
-    /**
-     * @return Contains HTTP headers to send if the `test_object_protocol` is `http` or `https`. You can have multiple `http_header` entries. Requires these arguments:
-     * 
-     */
     private @Nullable List<GtmPropertyLivenessTestHttpHeader> httpHeaders;
-    /**
-     * @return Name of HTTP header.
-     * 
-     */
     private String name;
-    /**
-     * @return A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `test_object_protocol` of https.
-     * 
-     */
     private @Nullable Boolean peerCertificateVerification;
-    /**
-     * @return A boolean indicating whether the `test_object_protocol` is DNS. The DNS query is recursive.
-     * 
-     */
     private @Nullable Boolean recursionRequested;
-    /**
-     * @return Specifies a request string.
-     * 
-     */
     private @Nullable String requestString;
-    /**
-     * @return Specifies the query type, if `test_object_protocol` is DNS.
-     * 
-     */
     private @Nullable String resourceType;
-    /**
-     * @return Specifies a response string.
-     * 
-     */
     private @Nullable String responseString;
-    /**
-     * @return Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
-     * 
-     */
     private @Nullable String sslClientCertificate;
-    /**
-     * @return Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can&#39;t have a passphrase nor be used for any other purpose.
-     * 
-     */
     private @Nullable String sslClientPrivateKey;
-    /**
-     * @return Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
-     * 
-     */
     private Integer testInterval;
-    /**
-     * @return Specifies the static text that acts as a stand-in for the data that you&#39;re sending on the network.
-     * 
-     */
     private String testObject;
-    /**
-     * @return Specifies the test object&#39;s password. It is required if testObjectProtocol is ftp.
-     * 
-     */
     private @Nullable String testObjectPassword;
-    /**
-     * @return Specifies the port number for the testObject.
-     * 
-     */
     private @Nullable Integer testObjectPort;
-    /**
-     * @return Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
-     * 
-     */
     private String testObjectProtocol;
-    /**
-     * @return A descriptive name for the testObject.
-     * 
-     */
     private @Nullable String testObjectUsername;
-    /**
-     * @return Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
-     * 
-     */
     private Double testTimeout;
-    /**
-     * @return Specifies the score to be reported if the liveness test times out.
-     * 
-     */
     private @Nullable Double timeoutPenalty;
 
     private GtmPropertyLivenessTest() {}
-    /**
-     * @return If `test_object_protocol` is DNS, enter a boolean value if an answer is needed for the DNS query to be successful.
-     * 
-     */
     public Optional<Boolean> answersRequired() {
         return Optional.ofNullable(this.answersRequired);
     }
-    /**
-     * @return A boolean that if set to `true`, disables warnings when non-standard ports are used.
-     * 
-     */
     public Optional<Boolean> disableNonstandardPortWarning() {
         return Optional.ofNullable(this.disableNonstandardPortWarning);
     }
-    /**
-     * @return A boolean indicating whether the liveness test is disabled. When disabled, GTM stops running the test, effectively treating it as if it no longer exists.
-     * 
-     */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
-    /**
-     * @return Specifies the score that&#39;s reported if the liveness test encounters an error other than timeout, such as connection refused, and 404.
-     * 
-     */
     public Optional<Double> errorPenalty() {
         return Optional.ofNullable(this.errorPenalty);
     }
-    /**
-     * @return A boolean that if set to `true`, treats a 3xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
-     * 
-     */
     public Optional<Boolean> httpError3xx() {
         return Optional.ofNullable(this.httpError3xx);
     }
-    /**
-     * @return A boolean that if set to `true`, treats a 4xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
-     * 
-     */
     public Optional<Boolean> httpError4xx() {
         return Optional.ofNullable(this.httpError4xx);
     }
-    /**
-     * @return A boolean that if set to `true`, treats a 5xx HTTP response as a failure if the `test_object_protocol` is `http`, `https`, or `ftp`.
-     * 
-     */
     public Optional<Boolean> httpError5xx() {
         return Optional.ofNullable(this.httpError5xx);
     }
-    /**
-     * @return Contains HTTP headers to send if the `test_object_protocol` is `http` or `https`. You can have multiple `http_header` entries. Requires these arguments:
-     * 
-     */
     public List<GtmPropertyLivenessTestHttpHeader> httpHeaders() {
         return this.httpHeaders == null ? List.of() : this.httpHeaders;
     }
-    /**
-     * @return Name of HTTP header.
-     * 
-     */
     public String name() {
         return this.name;
     }
-    /**
-     * @return A boolean that if set to `true`, validates the origin certificate. Applies only to tests with `test_object_protocol` of https.
-     * 
-     */
     public Optional<Boolean> peerCertificateVerification() {
         return Optional.ofNullable(this.peerCertificateVerification);
     }
-    /**
-     * @return A boolean indicating whether the `test_object_protocol` is DNS. The DNS query is recursive.
-     * 
-     */
     public Optional<Boolean> recursionRequested() {
         return Optional.ofNullable(this.recursionRequested);
     }
-    /**
-     * @return Specifies a request string.
-     * 
-     */
     public Optional<String> requestString() {
         return Optional.ofNullable(this.requestString);
     }
-    /**
-     * @return Specifies the query type, if `test_object_protocol` is DNS.
-     * 
-     */
     public Optional<String> resourceType() {
         return Optional.ofNullable(this.resourceType);
     }
-    /**
-     * @return Specifies a response string.
-     * 
-     */
     public Optional<String> responseString() {
         return Optional.ofNullable(this.responseString);
     }
-    /**
-     * @return Indicates a Base64-encoded certificate. SSL client certificates are available for livenessTests that use secure protocols.
-     * 
-     */
     public Optional<String> sslClientCertificate() {
         return Optional.ofNullable(this.sslClientCertificate);
     }
-    /**
-     * @return Indicates a Base64-encoded private key. The private key used to generate or request a certificate for livenessTests can&#39;t have a passphrase nor be used for any other purpose.
-     * 
-     */
     public Optional<String> sslClientPrivateKey() {
         return Optional.ofNullable(this.sslClientPrivateKey);
     }
-    /**
-     * @return Indicates the interval at which the liveness test is run, in seconds. Requires a minimum of 10 seconds.
-     * 
-     */
     public Integer testInterval() {
         return this.testInterval;
     }
-    /**
-     * @return Specifies the static text that acts as a stand-in for the data that you&#39;re sending on the network.
-     * 
-     */
     public String testObject() {
         return this.testObject;
     }
-    /**
-     * @return Specifies the test object&#39;s password. It is required if testObjectProtocol is ftp.
-     * 
-     */
     public Optional<String> testObjectPassword() {
         return Optional.ofNullable(this.testObjectPassword);
     }
-    /**
-     * @return Specifies the port number for the testObject.
-     * 
-     */
     public Optional<Integer> testObjectPort() {
         return Optional.ofNullable(this.testObjectPort);
     }
-    /**
-     * @return Specifies the test protocol. Possible values include `DNS`, `HTTP`, `HTTPS`, `FTP`, `POP`, `POPS`, `SMTP`, `SMTPS`, `TCP`, or `TCPS`.
-     * 
-     */
     public String testObjectProtocol() {
         return this.testObjectProtocol;
     }
-    /**
-     * @return A descriptive name for the testObject.
-     * 
-     */
     public Optional<String> testObjectUsername() {
         return Optional.ofNullable(this.testObjectUsername);
     }
-    /**
-     * @return Specifies the duration of the liveness test before it fails. The range is from 0.001 to 60 seconds.
-     * 
-     */
     public Double testTimeout() {
         return this.testTimeout;
     }
-    /**
-     * @return Specifies the score to be reported if the liveness test times out.
-     * 
-     */
     public Optional<Double> timeoutPenalty() {
         return Optional.ofNullable(this.timeoutPenalty);
     }

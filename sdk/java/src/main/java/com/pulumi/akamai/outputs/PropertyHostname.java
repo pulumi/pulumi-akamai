@@ -13,47 +13,23 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class PropertyHostname {
-    /**
-     * @return The certificate&#39;s provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-     * 
-     */
     private String certProvisioningType;
     private @Nullable List<PropertyHostnameCertStatus> certStatuses;
-    /**
-     * @return A string containing the original origin&#39;s hostname. For example, `&#34;example.org&#34;`.
-     * 
-     */
     private String cnameFrom;
-    /**
-     * @return A string containing the hostname for edge content. For example,  `&#34;example.org.edgesuite.net&#34;`.
-     * 
-     */
     private String cnameTo;
     private @Nullable String cnameType;
     private @Nullable String edgeHostnameId;
 
     private PropertyHostname() {}
-    /**
-     * @return The certificate&#39;s provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-     * 
-     */
     public String certProvisioningType() {
         return this.certProvisioningType;
     }
     public List<PropertyHostnameCertStatus> certStatuses() {
         return this.certStatuses == null ? List.of() : this.certStatuses;
     }
-    /**
-     * @return A string containing the original origin&#39;s hostname. For example, `&#34;example.org&#34;`.
-     * 
-     */
     public String cnameFrom() {
         return this.cnameFrom;
     }
-    /**
-     * @return A string containing the hostname for edge content. For example,  `&#34;example.org.edgesuite.net&#34;`.
-     * 
-     */
     public String cnameTo() {
         return this.cnameTo;
     }

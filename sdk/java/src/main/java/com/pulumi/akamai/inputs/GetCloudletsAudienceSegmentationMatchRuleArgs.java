@@ -16,17 +16,9 @@ public final class GetCloudletsAudienceSegmentationMatchRuleArgs extends com.pul
 
     public static final GetCloudletsAudienceSegmentationMatchRuleArgs Empty = new GetCloudletsAudienceSegmentationMatchRuleArgs();
 
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     * 
-     */
     @Import(name="matchRules")
     private @Nullable Output<List<GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs>> matchRules;
 
-    /**
-     * @return (Optional) A list of Cloudlet-specific match rules for a policy.
-     * 
-     */
     public Optional<Output<List<GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs>>> matchRules() {
         return Optional.ofNullable(this.matchRules);
     }
@@ -55,33 +47,15 @@ public final class GetCloudletsAudienceSegmentationMatchRuleArgs extends com.pul
             $ = new GetCloudletsAudienceSegmentationMatchRuleArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchRules(@Nullable Output<List<GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs>> matchRules) {
             $.matchRules = matchRules;
             return this;
         }
 
-        /**
-         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchRules(List<GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs> matchRules) {
             return matchRules(Output.of(matchRules));
         }
 
-        /**
-         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchRules(GetCloudletsAudienceSegmentationMatchRuleMatchRuleArgs... matchRules) {
             return matchRules(List.of(matchRules));
         }

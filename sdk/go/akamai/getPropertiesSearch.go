@@ -10,34 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getPropertiesSearch` data source to retrieve the list of properties matching a specific hostname, edge hostname or property name based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
-//
-// ## Example Usage
-//
-// Return properties associated with the EdgeGrid API client token currently used for authentication:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			ctx.Export("myPropertyList", data.Akamai_properties_search.Example)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// This data source returns this attribute:
-//
-// * `properties` - A list of property version matching the given criteria.
 func GetPropertiesSearch(ctx *pulumi.Context, args *GetPropertiesSearchArgs, opts ...pulumi.InvokeOption) (*GetPropertiesSearchResult, error) {
 	var rv GetPropertiesSearchResult
 	err := ctx.Invoke("akamai:index/getPropertiesSearch:getPropertiesSearch", args, &rv, opts...)
@@ -49,12 +21,7 @@ func GetPropertiesSearch(ctx *pulumi.Context, args *GetPropertiesSearchArgs, opt
 
 // A collection of arguments for invoking getPropertiesSearch.
 type GetPropertiesSearchArgs struct {
-	// Key used for search. Valid values are:
-	// * **hostname**
-	// * **edgeHostname**
-	// * **propertyName**
-	Key string `pulumi:"key"`
-	// (Required) Value to search for.
+	Key   string `pulumi:"key"`
 	Value string `pulumi:"value"`
 }
 
@@ -82,12 +49,7 @@ func GetPropertiesSearchOutput(ctx *pulumi.Context, args GetPropertiesSearchOutp
 
 // A collection of arguments for invoking getPropertiesSearch.
 type GetPropertiesSearchOutputArgs struct {
-	// Key used for search. Valid values are:
-	// * **hostname**
-	// * **edgeHostname**
-	// * **propertyName**
-	Key pulumi.StringInput `pulumi:"key"`
-	// (Required) Value to search for.
+	Key   pulumi.StringInput `pulumi:"key"`
 	Value pulumi.StringInput `pulumi:"value"`
 }
 

@@ -10,20 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getGroup` data source to get a group by name.
-//
-// Each account features a hierarchy of groups, which control access to your
-// Akamai configurations and help consolidate reporting functions, typically
-// mapping to an organizational hierarchy. Using either Control Center or the
-// [Identity Management: User Administration API](https://techdocs.akamai.com/iam-api/reference/api),
-// account administrators can assign properties to specific groups, each with
-// its own set of users and accompanying roles.
-//
-// ## Attributes reference
-//
-// This data source returns this attribute:
-//
-// * `id` - The group's unique ID, including the `grp_` prefix.
 func GetGroup(ctx *pulumi.Context, args *GetGroupArgs, opts ...pulumi.InvokeOption) (*GetGroupResult, error) {
 	var rv GetGroupResult
 	err := ctx.Invoke("akamai:index/getGroup:getGroup", args, &rv, opts...)
@@ -35,16 +21,10 @@ func GetGroup(ctx *pulumi.Context, args *GetGroupArgs, opts ...pulumi.InvokeOpti
 
 // A collection of arguments for invoking getGroup.
 type GetGroupArgs struct {
-	// Replaced by `contractId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract *string `pulumi:"contract"`
-	// (Required) A contract's unique ID, including the `ctr_` prefix.
+	Contract   *string `pulumi:"contract"`
 	ContractId *string `pulumi:"contractId"`
-	// The group name.
-	GroupName *string `pulumi:"groupName"`
-	// Replaced by `groupName`. Maintained for legacy purposes.
-	//
+	GroupName  *string `pulumi:"groupName"`
 	// Deprecated: The setting "name" has been deprecated.
 	Name *string `pulumi:"name"`
 }
@@ -76,16 +56,10 @@ func GetGroupOutput(ctx *pulumi.Context, args GetGroupOutputArgs, opts ...pulumi
 
 // A collection of arguments for invoking getGroup.
 type GetGroupOutputArgs struct {
-	// Replaced by `contractId`. Maintained for legacy purposes.
-	//
 	// Deprecated: The setting "contract" has been deprecated.
-	Contract pulumi.StringPtrInput `pulumi:"contract"`
-	// (Required) A contract's unique ID, including the `ctr_` prefix.
+	Contract   pulumi.StringPtrInput `pulumi:"contract"`
 	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
-	// The group name.
-	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
-	// Replaced by `groupName`. Maintained for legacy purposes.
-	//
+	GroupName  pulumi.StringPtrInput `pulumi:"groupName"`
 	// Deprecated: The setting "name" has been deprecated.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }

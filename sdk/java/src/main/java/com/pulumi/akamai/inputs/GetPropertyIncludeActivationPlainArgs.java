@@ -12,62 +12,30 @@ public final class GetPropertyIncludeActivationPlainArgs extends com.pulumi.reso
 
     public static final GetPropertyIncludeActivationPlainArgs Empty = new GetPropertyIncludeActivationPlainArgs();
 
-    /**
-     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId", required=true)
     private String contractId;
 
-    /**
-     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-     * 
-     */
     public String contractId() {
         return this.contractId;
     }
 
-    /**
-     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-     * 
-     */
     @Import(name="groupId", required=true)
     private String groupId;
 
-    /**
-     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-     * 
-     */
     public String groupId() {
         return this.groupId;
     }
 
-    /**
-     * (Required) An include&#39;s unique ID with the optional `inc_` prefix.
-     * 
-     */
     @Import(name="includeId", required=true)
     private String includeId;
 
-    /**
-     * @return (Required) An include&#39;s unique ID with the optional `inc_` prefix.
-     * 
-     */
     public String includeId() {
         return this.includeId;
     }
 
-    /**
-     * (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-     * 
-     */
     @Import(name="network", required=true)
     private String network;
 
-    /**
-     * @return (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-     * 
-     */
     public String network() {
         return this.network;
     }
@@ -99,45 +67,21 @@ public final class GetPropertyIncludeActivationPlainArgs extends com.pulumi.reso
             $ = new GetPropertyIncludeActivationPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(String groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        /**
-         * @param includeId (Required) An include&#39;s unique ID with the optional `inc_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder includeId(String includeId) {
             $.includeId = includeId;
             return this;
         }
 
-        /**
-         * @param network (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-         * 
-         * @return builder
-         * 
-         */
         public Builder network(String network) {
             $.network = network;
             return this;

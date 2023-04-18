@@ -13,17 +13,9 @@ public final class GetIamStatesArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetIamStatesArgs Empty = new GetIamStatesArgs();
 
-    /**
-     * — (required, string) Specifies USA or Canada.
-     * 
-     */
     @Import(name="country", required=true)
     private Output<String> country;
 
-    /**
-     * @return — (required, string) Specifies USA or Canada.
-     * 
-     */
     public Output<String> country() {
         return this.country;
     }
@@ -52,23 +44,11 @@ public final class GetIamStatesArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetIamStatesArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param country — (required, string) Specifies USA or Canada.
-         * 
-         * @return builder
-         * 
-         */
         public Builder country(Output<String> country) {
             $.country = country;
             return this;
         }
 
-        /**
-         * @param country — (required, string) Specifies USA or Canada.
-         * 
-         * @return builder
-         * 
-         */
         public Builder country(String country) {
             return country(Output.of(country));
         }

@@ -11,121 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecEvalPenaltyBox
     {
-        /// <summary>
-        /// **Scopes**: Security policy
-        /// 
-        ///  __ASE_Beta__.:
-        /// Returns the penalty box settings for a security policy in evaluation mode - evaluation penalty box.
-        /// When the penalty box is enabled for a policy in evaluation mode, clients that trigger a WAF Deny action are placed in the “penalty box”.
-        /// There, the action you select for the penalty box (either Alert or Deny) continues to apply to any requests from that client for the next 10 minutes.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval_penalty-box](https://techdocs.akamai.com/application-security/reference/get-policy-eval_penalty-box)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var evalPenaltyBox = Akamai.GetAppSecEvalPenaltyBox.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["evalPenaltyBoxAction"] = evalPenaltyBox.Apply(getAppSecEvalPenaltyBoxResult =&gt; getAppSecEvalPenaltyBoxResult.Action),
-        ///         ["evalPenaltyBoxEnabled"] = evalPenaltyBox.Apply(getAppSecEvalPenaltyBoxResult =&gt; getAppSecEvalPenaltyBoxResult.Enabled),
-        ///         ["evalPenaltyBoxText"] = evalPenaltyBox.Apply(getAppSecEvalPenaltyBoxResult =&gt; getAppSecEvalPenaltyBoxResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `action`. Action taken any time the penalty box is triggered. Valid values are:
-        ///   - **alert**. Record the event.
-        ///   - **deny**. The request is blocked.
-        ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-        ///   - **none**. Take no action.
-        /// - `enabled`. If **true**, evaluation penalty box protection is enabled. If **false**, evaluation penalty box protection is disabled.
-        /// - `output_text`. Tabular report of evaluation penalty box protection settings.
-        /// </summary>
         public static Task<GetAppSecEvalPenaltyBoxResult> InvokeAsync(GetAppSecEvalPenaltyBoxArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecEvalPenaltyBoxResult>("akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox", args ?? new GetAppSecEvalPenaltyBoxArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: Security policy
-        /// 
-        ///  __ASE_Beta__.:
-        /// Returns the penalty box settings for a security policy in evaluation mode - evaluation penalty box.
-        /// When the penalty box is enabled for a policy in evaluation mode, clients that trigger a WAF Deny action are placed in the “penalty box”.
-        /// There, the action you select for the penalty box (either Alert or Deny) continues to apply to any requests from that client for the next 10 minutes.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval_penalty-box](https://techdocs.akamai.com/application-security/reference/get-policy-eval_penalty-box)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var evalPenaltyBox = Akamai.GetAppSecEvalPenaltyBox.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         SecurityPolicyId = "gms1_134637",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["evalPenaltyBoxAction"] = evalPenaltyBox.Apply(getAppSecEvalPenaltyBoxResult =&gt; getAppSecEvalPenaltyBoxResult.Action),
-        ///         ["evalPenaltyBoxEnabled"] = evalPenaltyBox.Apply(getAppSecEvalPenaltyBoxResult =&gt; getAppSecEvalPenaltyBoxResult.Enabled),
-        ///         ["evalPenaltyBoxText"] = evalPenaltyBox.Apply(getAppSecEvalPenaltyBoxResult =&gt; getAppSecEvalPenaltyBoxResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `action`. Action taken any time the penalty box is triggered. Valid values are:
-        ///   - **alert**. Record the event.
-        ///   - **deny**. The request is blocked.
-        ///   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-        ///   - **none**. Take no action.
-        /// - `enabled`. If **true**, evaluation penalty box protection is enabled. If **false**, evaluation penalty box protection is disabled.
-        /// - `output_text`. Tabular report of evaluation penalty box protection settings.
-        /// </summary>
         public static Output<GetAppSecEvalPenaltyBoxResult> Invoke(GetAppSecEvalPenaltyBoxInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecEvalPenaltyBoxResult>("akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox", args ?? new GetAppSecEvalPenaltyBoxInvokeArgs(), options.WithDefaults());
     }
@@ -133,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecEvalPenaltyBoxArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the evaluation penalty box settings.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the evaluation penalty box settings.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -153,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecEvalPenaltyBoxInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the evaluation penalty box settings.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the evaluation penalty box settings.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

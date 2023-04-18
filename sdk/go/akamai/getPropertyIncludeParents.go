@@ -10,50 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getPropertyIncludeParents` data source to return a list of parent properties that use the given include. In your property's rule tree, you can reference an include by adding the `include` behavior and specifying the `includeId`.
-//
-// ## Basic usage
-//
-// This example returns all active properties a specific include is referenced in, based on the contract, group, and include IDs.
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			myExamplePropertyIncludeParents, err := akamai.GetPropertyIncludeParents(ctx, &akamai.GetPropertyIncludeParentsArgs{
-//				ContractId: "ctr_1-AB123",
-//				GroupId:    "grp_12345",
-//				IncludeId:  "inc_123456",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("myExample", myExamplePropertyIncludeParents)
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `parents` - The list of include's parent properties.
-//   - `id` - The property's unique identifier.
-//   - `name` - The descriptive name for the property.
-//   - `stagingVersion` - The property version currently activated on the staging network.
-//   - `productionVersion` - The property version currently activated on the production network.
-//   - `isIncludeUsedInStagingVersion` - Whether the specified include is active on the staging network and is referenced in parent's `stagingVersion`.
-//   - `isIncludeUsedInProductionVersion` - Whether the specified include is active on the production network and is referenced in parent's `productionVersion`.
 func GetPropertyIncludeParents(ctx *pulumi.Context, args *GetPropertyIncludeParentsArgs, opts ...pulumi.InvokeOption) (*GetPropertyIncludeParentsResult, error) {
 	var rv GetPropertyIncludeParentsResult
 	err := ctx.Invoke("akamai:index/getPropertyIncludeParents:getPropertyIncludeParents", args, &rv, opts...)
@@ -65,12 +21,9 @@ func GetPropertyIncludeParents(ctx *pulumi.Context, args *GetPropertyIncludePare
 
 // A collection of arguments for invoking getPropertyIncludeParents.
 type GetPropertyIncludeParentsArgs struct {
-	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId string `pulumi:"contractId"`
-	// (Required) A group's unique ID, including the optional `grp_` prefix.
-	GroupId string `pulumi:"groupId"`
-	// (Required) An include's unique ID with the optional `inc_` prefix.
-	IncludeId string `pulumi:"includeId"`
+	GroupId    string `pulumi:"groupId"`
+	IncludeId  string `pulumi:"includeId"`
 }
 
 // A collection of values returned by getPropertyIncludeParents.
@@ -98,12 +51,9 @@ func GetPropertyIncludeParentsOutput(ctx *pulumi.Context, args GetPropertyInclud
 
 // A collection of arguments for invoking getPropertyIncludeParents.
 type GetPropertyIncludeParentsOutputArgs struct {
-	// (Required) A contract's unique ID, including the optional `ctr_` prefix.
 	ContractId pulumi.StringInput `pulumi:"contractId"`
-	// (Required) A group's unique ID, including the optional `grp_` prefix.
-	GroupId pulumi.StringInput `pulumi:"groupId"`
-	// (Required) An include's unique ID with the optional `inc_` prefix.
-	IncludeId pulumi.StringInput `pulumi:"includeId"`
+	GroupId    pulumi.StringInput `pulumi:"groupId"`
+	IncludeId  pulumi.StringInput `pulumi:"includeId"`
 }
 
 func (GetPropertyIncludeParentsOutputArgs) ElementType() reflect.Type {

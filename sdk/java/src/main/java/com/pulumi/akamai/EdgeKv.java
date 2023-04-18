@@ -17,136 +17,87 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * The `akamai.EdgeKv` resource lets you control EdgeKV database functions outside EdgeWorkers JavaScript code. Refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/welcome-to-edgekv) for more information.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.EdgeKv;
- * import com.pulumi.akamai.EdgeKvArgs;
- * import com.pulumi.akamai.inputs.EdgeKvInitialDataArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testStaging = new EdgeKv(&#34;testStaging&#34;, EdgeKvArgs.builder()        
- *             .geoLocation(&#34;US&#34;)
- *             .groupId(4284)
- *             .initialDatas(EdgeKvInitialDataArgs.builder()
- *                 .group(&#34;translations&#34;)
- *                 .key(&#34;lang&#34;)
- *                 .value(&#34;English&#34;)
- *                 .build())
- *             .namespaceName(&#34;Marketing&#34;)
- *             .network(&#34;staging&#34;)
- *             .retentionInSeconds(15724800)
- *             .build());
- * 
- *     }
- * }
- * ```
- * ## Attributes reference
- * 
- * There are no supported arguments for this resource.
- * 
- */
 @ResourceType(type="akamai:index/edgeKv:EdgeKv")
 public class EdgeKv extends com.pulumi.resources.CustomResource {
     /**
-     * Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
+     * Storage location for data
      * 
      */
     @Export(name="geoLocation", type=String.class, parameters={})
     private Output</* @Nullable */ String> geoLocation;
 
     /**
-     * @return Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
+     * @return Storage location for data
      * 
      */
     public Output<Optional<String>> geoLocation() {
         return Codegen.optional(this.geoLocation);
     }
     /**
-     * (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+     * Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
      * 
      */
     @Export(name="groupId", type=Integer.class, parameters={})
     private Output<Integer> groupId;
 
     /**
-     * @return (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+     * @return Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
      * 
      */
     public Output<Integer> groupId() {
         return this.groupId;
     }
     /**
-     * List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
+     * List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
      * 
      */
     @Export(name="initialDatas", type=List.class, parameters={EdgeKvInitialData.class})
     private Output</* @Nullable */ List<EdgeKvInitialData>> initialDatas;
 
     /**
-     * @return List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
+     * @return List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
      * 
      */
     public Output<Optional<List<EdgeKvInitialData>>> initialDatas() {
         return Codegen.optional(this.initialDatas);
     }
     /**
-     * (Required) The name of the namespace.
+     * Name for the EKV namespace
      * 
      */
     @Export(name="namespaceName", type=String.class, parameters={})
     private Output<String> namespaceName;
 
     /**
-     * @return (Required) The name of the namespace.
+     * @return Name for the EKV namespace
      * 
      */
     public Output<String> namespaceName() {
         return this.namespaceName;
     }
     /**
-     * The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * The network on which the namespace will be activated
      * 
      */
     @Export(name="network", type=String.class, parameters={})
     private Output<String> network;
 
     /**
-     * @return The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+     * @return The network on which the namespace will be activated
      * 
      */
     public Output<String> network() {
         return this.network;
     }
     /**
-     * (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+     * Retention period for data in this namespace. An update of this value will just affect new EKV items.
      * 
      */
     @Export(name="retentionInSeconds", type=Integer.class, parameters={})
     private Output<Integer> retentionInSeconds;
 
     /**
-     * @return (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+     * @return Retention period for data in this namespace. An update of this value will just affect new EKV items.
      * 
      */
     public Output<Integer> retentionInSeconds() {

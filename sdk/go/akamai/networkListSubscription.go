@@ -11,54 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `NetworkListSubscription` resource to specify a set of email addresses to be notified of changes to any
-// of a set of network lists.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			networkListsFilter, err := akamai.GetNetworkLists(ctx, &akamai.GetNetworkListsArgs{
-//				Name: pulumi.StringRef(_var.Network_list),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewNetworkListSubscription(ctx, "subscribe", &akamai.NetworkListSubscriptionArgs{
-//				NetworkLists: interface{}(networkListsFilter.Lists),
-//				Recipients: pulumi.StringArray{
-//					pulumi.String("user@example.com"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type NetworkListSubscription struct {
 	pulumi.CustomResourceState
 
-	// A list containing one or more IDs of the network lists to which the indicated email
-	// addresses should be subscribed.
 	NetworkLists pulumi.StringArrayOutput `pulumi:"networkLists"`
-	// A bracketed, comma-separated list of email addresses that will be notified of changes to any
-	// of the specified network lists.
-	Recipients pulumi.StringArrayOutput `pulumi:"recipients"`
+	Recipients   pulumi.StringArrayOutput `pulumi:"recipients"`
 }
 
 // NewNetworkListSubscription registers a new resource with the given unique name, arguments, and options.
@@ -96,21 +53,13 @@ func GetNetworkListSubscription(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkListSubscription resources.
 type networkListSubscriptionState struct {
-	// A list containing one or more IDs of the network lists to which the indicated email
-	// addresses should be subscribed.
 	NetworkLists []string `pulumi:"networkLists"`
-	// A bracketed, comma-separated list of email addresses that will be notified of changes to any
-	// of the specified network lists.
-	Recipients []string `pulumi:"recipients"`
+	Recipients   []string `pulumi:"recipients"`
 }
 
 type NetworkListSubscriptionState struct {
-	// A list containing one or more IDs of the network lists to which the indicated email
-	// addresses should be subscribed.
 	NetworkLists pulumi.StringArrayInput
-	// A bracketed, comma-separated list of email addresses that will be notified of changes to any
-	// of the specified network lists.
-	Recipients pulumi.StringArrayInput
+	Recipients   pulumi.StringArrayInput
 }
 
 func (NetworkListSubscriptionState) ElementType() reflect.Type {
@@ -118,22 +67,14 @@ func (NetworkListSubscriptionState) ElementType() reflect.Type {
 }
 
 type networkListSubscriptionArgs struct {
-	// A list containing one or more IDs of the network lists to which the indicated email
-	// addresses should be subscribed.
 	NetworkLists []string `pulumi:"networkLists"`
-	// A bracketed, comma-separated list of email addresses that will be notified of changes to any
-	// of the specified network lists.
-	Recipients []string `pulumi:"recipients"`
+	Recipients   []string `pulumi:"recipients"`
 }
 
 // The set of arguments for constructing a NetworkListSubscription resource.
 type NetworkListSubscriptionArgs struct {
-	// A list containing one or more IDs of the network lists to which the indicated email
-	// addresses should be subscribed.
 	NetworkLists pulumi.StringArrayInput
-	// A bracketed, comma-separated list of email addresses that will be notified of changes to any
-	// of the specified network lists.
-	Recipients pulumi.StringArrayInput
+	Recipients   pulumi.StringArrayInput
 }
 
 func (NetworkListSubscriptionArgs) ElementType() reflect.Type {
@@ -223,14 +164,10 @@ func (o NetworkListSubscriptionOutput) ToNetworkListSubscriptionOutputWithContex
 	return o
 }
 
-// A list containing one or more IDs of the network lists to which the indicated email
-// addresses should be subscribed.
 func (o NetworkListSubscriptionOutput) NetworkLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkListSubscription) pulumi.StringArrayOutput { return v.NetworkLists }).(pulumi.StringArrayOutput)
 }
 
-// A bracketed, comma-separated list of email addresses that will be notified of changes to any
-// of the specified network lists.
 func (o NetworkListSubscriptionOutput) Recipients() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkListSubscription) pulumi.StringArrayOutput { return v.Recipients }).(pulumi.StringArrayOutput)
 }

@@ -18,122 +18,58 @@ public final class GetCloudletsRequestControlMatchRuleMatchRule extends com.pulu
 
     public static final GetCloudletsRequestControlMatchRuleMatchRule Empty = new GetCloudletsRequestControlMatchRuleMatchRule();
 
-    /**
-     * (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
-     * 
-     */
     @Import(name="allowDeny", required=true)
     private String allowDeny;
 
-    /**
-     * @return (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
-     * 
-     */
     public String allowDeny() {
         return this.allowDeny;
     }
 
-    /**
-     * (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
-     * 
-     */
     @Import(name="disabled")
     private @Nullable Boolean disabled;
 
-    /**
-     * @return (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
-     * 
-     */
     public Optional<Boolean> disabled() {
         return Optional.ofNullable(this.disabled);
     }
 
-    /**
-     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     * 
-     */
     @Import(name="end")
     private @Nullable Integer end;
 
-    /**
-     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     * 
-     */
     public Optional<Integer> end() {
         return Optional.ofNullable(this.end);
     }
 
-    /**
-     * (Optional) A list of conditions to apply to a Cloudlet, including:
-     * 
-     */
     @Import(name="matches")
     private @Nullable List<GetCloudletsRequestControlMatchRuleMatchRuleMatch> matches;
 
-    /**
-     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
-     * 
-     */
     public Optional<List<GetCloudletsRequestControlMatchRuleMatchRuleMatch>> matches() {
         return Optional.ofNullable(this.matches);
     }
 
-    /**
-     * (Optional) Match on all incoming requests.
-     * 
-     */
     @Import(name="matchesAlways")
     private @Nullable Boolean matchesAlways;
 
-    /**
-     * @return (Optional) Match on all incoming requests.
-     * 
-     */
     public Optional<Boolean> matchesAlways() {
         return Optional.ofNullable(this.matchesAlways);
     }
 
-    /**
-     * (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     * 
-     */
     @Import(name="name")
     private @Nullable String name;
 
-    /**
-     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     * 
-     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     * 
-     */
     @Import(name="start")
     private @Nullable Integer start;
 
-    /**
-     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     * 
-     */
     public Optional<Integer> start() {
         return Optional.ofNullable(this.start);
     }
 
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     * 
-     */
     @Import(name="type", required=true)
     private String type;
 
-    /**
-     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     * 
-     */
     public String type() {
         return this.type;
     }
@@ -169,99 +105,45 @@ public final class GetCloudletsRequestControlMatchRuleMatchRule extends com.pulu
             $ = new GetCloudletsRequestControlMatchRuleMatchRule(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param allowDeny (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder allowDeny(String allowDeny) {
             $.allowDeny = allowDeny;
             return this;
         }
 
-        /**
-         * @param disabled (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
-         * 
-         * @return builder
-         * 
-         */
         public Builder disabled(@Nullable Boolean disabled) {
             $.disabled = disabled;
             return this;
         }
 
-        /**
-         * @param end (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-         * 
-         * @return builder
-         * 
-         */
         public Builder end(@Nullable Integer end) {
             $.end = end;
             return this;
         }
 
-        /**
-         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder matches(@Nullable List<GetCloudletsRequestControlMatchRuleMatchRuleMatch> matches) {
             $.matches = matches;
             return this;
         }
 
-        /**
-         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder matches(GetCloudletsRequestControlMatchRuleMatchRuleMatch... matches) {
             return matches(List.of(matches));
         }
 
-        /**
-         * @param matchesAlways (Optional) Match on all incoming requests.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchesAlways(@Nullable Boolean matchesAlways) {
             $.matchesAlways = matchesAlways;
             return this;
         }
 
-        /**
-         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(@Nullable String name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param start (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-         * 
-         * @return builder
-         * 
-         */
         public Builder start(@Nullable Integer start) {
             $.start = start;
             return this;
         }
 
-        /**
-         * @param type (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(String type) {
             $.type = type;
             return this;

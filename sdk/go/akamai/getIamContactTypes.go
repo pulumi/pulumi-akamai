@@ -7,41 +7,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use `getIamContactTypes` to retrieve all the possible `contactTypes` that Akamai supports. Use the values from this data source to add or update a user's contact type.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			contactTypes, err := akamai.GetIamContactTypes(ctx, nil, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("supportedContactTypes", contactTypes)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// These attributes are returned:
-//
-// * `contactTypes` — A list of contact types.
-//
-// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-contact-types)
 func GetIamContactTypes(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamContactTypesResult, error) {
 	var rv GetIamContactTypesResult
 	err := ctx.Invoke("akamai:index/getIamContactTypes:getIamContactTypes", nil, &rv, opts...)

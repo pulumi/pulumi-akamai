@@ -11,35 +11,6 @@ namespace Pulumi.Akamai
 {
     public static class GetCpsWarnings
     {
-        /// <summary>
-        /// Use the `akamai.getCpsWarnings` data source to return a map of all possible pre- and post-verification warnings. The map includes both the ID needed to acknowledge a warning and a brief description of the issue. 
-        /// 
-        /// CPS produces warnings during enrollment creation or after a client uploads the certificate. CPS won't process a change until you acknowledge all warnings.
-        /// 
-        /// You can use the warning IDs returned by this data source to acknowledge or auto-approve warnings. The `akamai.CpsThirdPartyEnrollment` and `akamai.CpsUploadCertificate` resources include arguments to help you do this.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example shows how to return a map of verification warnings:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var example = Akamai.GetCpsWarnings.Invoke();
-        /// 
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns this attribute:
-        /// 
-        ///   * `warnings` - Validation warnings for the current change you're making. Warnings display with an ID and a short description. Unless you auto-approve warnings, you need the ID to acknowledge the change. CPS won't process the change until you acknowledge these warnings.
-        /// </summary>
         public static Task<GetCpsWarningsResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCpsWarningsResult>("akamai:index/getCpsWarnings:getCpsWarnings", InvokeArgs.Empty, options.WithDefaults());
     }

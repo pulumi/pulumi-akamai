@@ -94,35 +94,7 @@ def get_app_sec_export_configuration(config_id: Optional[int] = None,
                                      version: Optional[int] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecExportConfigurationResult:
     """
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    export = akamai.get_app_sec_export_configuration(config_id=configuration.config_id,
-        version=configuration.latest_version,
-        searches=[
-            "securityPolicies",
-            "selectedHosts",
-        ])
-    pulumi.export("json", export.json)
-    pulumi.export("text", export.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. Complete set of information about the specified security configuration version in JSON format. When this option is included information is always returned for the _entire_ configuration. Among other things, that means that, if your command uses the `search` parameter, that parameter is ignored.
-    - `output_text`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
-
-
-    :param int config_id: . Unique identifier of the security configuration you want to return information for.
-    :param Sequence[str] searches: . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-    :param int version: . Version number of the security configuration.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -146,34 +118,6 @@ def get_app_sec_export_configuration_output(config_id: Optional[pulumi.Input[int
                                             version: Optional[pulumi.Input[int]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecExportConfigurationResult]:
     """
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    export = akamai.get_app_sec_export_configuration(config_id=configuration.config_id,
-        version=configuration.latest_version,
-        searches=[
-            "securityPolicies",
-            "selectedHosts",
-        ])
-    pulumi.export("json", export.json)
-    pulumi.export("text", export.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. Complete set of information about the specified security configuration version in JSON format. When this option is included information is always returned for the _entire_ configuration. Among other things, that means that, if your command uses the `search` parameter, that parameter is ignored.
-    - `output_text`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
-
-
-    :param int config_id: . Unique identifier of the security configuration you want to return information for.
-    :param Sequence[str] searches: . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-    :param int version: . Version number of the security configuration.
+    Use this data source to access information about an existing resource.
     """
     ...

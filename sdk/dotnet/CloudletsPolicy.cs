@@ -9,102 +9,35 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// Use the `akamai.CloudletsPolicy` resource to create and version a policy. For each Cloudlet instance on your contract, there can be any number of policies. A single policy is associated with a single property configuration. Within a policy version you define the rules that determine when the Cloudlet executes. You may want to create a new version of a policy to support a different business requirement, or to test new functionality.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var example = new Akamai.CloudletsPolicy("example", new()
-    ///     {
-    ///         CloudletCode = "ER",
-    ///         Description = "policy description",
-    ///         GroupId = "grp_123",
-    ///         MatchRules = @"  [
-    ///   {
-    ///     ""name"": ""rule1"",
-    ///     ""type"": ""erMatchRule"",
-    ///     ""useRelativeUrl"": ""none"",
-    ///     ""statusCode"": 301,
-    ///     ""redirectURL"": ""https://www.example.com"",
-    ///     ""matchURL"": ""example.com"",
-    ///     ""useIncomingQueryString"": false,
-    ///     ""useIncomingSchemeAndHost"": false
-    ///   },
-    ///   {
-    ///     ""name"": ""rule2"",
-    ///     ""type"": ""erMatchRule"",
-    ///     ""matches"": [
-    ///       {
-    ///         ""matchType"": ""path"",
-    ///         ""matchValue"": ""/example/website.html"",
-    ///         ""matchOperator"": ""equals"",
-    ///         ""caseSensitive"": false,
-    ///         ""negate"": false
-    ///       }
-    ///     ],
-    ///     ""useRelativeUrl"": ""copy_scheme_hostname"",
-    ///     ""statusCode"": 301,
-    ///     ""redirectURL"": ""/website.html"",
-    ///     ""useIncomingQueryString"": false,
-    ///     ""useIncomingSchemeAndHost"": true
-    ///   }
-    /// ]
-    /// ",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
-    /// ## Import
-    /// 
-    /// Basic usagehcl resource "akamai_cloudlets_policy" "example" {
-    /// 
-    /// # (resource arguments)
-    /// 
-    ///  } You can import your Akamai Cloudlets policy using a policy name. For example
-    /// 
-    /// ```sh
-    ///  $ pulumi import akamai:index/cloudletsPolicy:CloudletsPolicy example policy1
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/cloudletsPolicy:CloudletsPolicy")]
     public partial class CloudletsPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+        /// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
         /// </summary>
         [Output("cloudletCode")]
         public Output<string> CloudletCode { get; private set; } = null!;
 
         /// <summary>
-        /// A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+        /// An integer that corresponds to a Cloudlets policy type (0 or 9)
         /// </summary>
         [Output("cloudletId")]
         public Output<int> CloudletId { get; private set; } = null!;
 
         /// <summary>
-        /// The description of this specific policy.
+        /// The description of this specific policy
         /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Defines the group association for the policy. You must have edit privileges for the group.
+        /// Defines the group association for the policy. You must have edit privileges for the group
         /// </summary>
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// The version of the Cloudlet-specific `match_rules`.
+        /// The version of the Cloudlet specific matchRules
         /// </summary>
         [Output("matchRuleFormat")]
         public Output<string?> MatchRuleFormat { get; private set; } = null!;
@@ -116,19 +49,19 @@ namespace Pulumi.Akamai
         public Output<string?> MatchRules { get; private set; } = null!;
 
         /// <summary>
-        /// The unique name of the policy.
+        /// The name of the policy. The name must be unique
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The version number of the policy.
+        /// The version number of the policy
         /// </summary>
         [Output("version")]
         public Output<int> Version { get; private set; } = null!;
 
         /// <summary>
-        /// A JSON-encoded list of warnings.
+        /// A JSON encoded list of warnings
         /// </summary>
         [Output("warnings")]
         public Output<string> Warnings { get; private set; } = null!;
@@ -180,25 +113,25 @@ namespace Pulumi.Akamai
     public sealed class CloudletsPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+        /// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
         /// </summary>
         [Input("cloudletCode", required: true)]
         public Input<string> CloudletCode { get; set; } = null!;
 
         /// <summary>
-        /// The description of this specific policy.
+        /// The description of this specific policy
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Defines the group association for the policy. You must have edit privileges for the group.
+        /// Defines the group association for the policy. You must have edit privileges for the group
         /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
         /// <summary>
-        /// The version of the Cloudlet-specific `match_rules`.
+        /// The version of the Cloudlet specific matchRules
         /// </summary>
         [Input("matchRuleFormat")]
         public Input<string>? MatchRuleFormat { get; set; }
@@ -210,7 +143,7 @@ namespace Pulumi.Akamai
         public Input<string>? MatchRules { get; set; }
 
         /// <summary>
-        /// The unique name of the policy.
+        /// The name of the policy. The name must be unique
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -224,31 +157,31 @@ namespace Pulumi.Akamai
     public sealed class CloudletsPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+        /// Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
         /// </summary>
         [Input("cloudletCode")]
         public Input<string>? CloudletCode { get; set; }
 
         /// <summary>
-        /// A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+        /// An integer that corresponds to a Cloudlets policy type (0 or 9)
         /// </summary>
         [Input("cloudletId")]
         public Input<int>? CloudletId { get; set; }
 
         /// <summary>
-        /// The description of this specific policy.
+        /// The description of this specific policy
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Defines the group association for the policy. You must have edit privileges for the group.
+        /// Defines the group association for the policy. You must have edit privileges for the group
         /// </summary>
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         /// <summary>
-        /// The version of the Cloudlet-specific `match_rules`.
+        /// The version of the Cloudlet specific matchRules
         /// </summary>
         [Input("matchRuleFormat")]
         public Input<string>? MatchRuleFormat { get; set; }
@@ -260,19 +193,19 @@ namespace Pulumi.Akamai
         public Input<string>? MatchRules { get; set; }
 
         /// <summary>
-        /// The unique name of the policy.
+        /// The name of the policy. The name must be unique
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The version number of the policy.
+        /// The version number of the policy
         /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
 
         /// <summary>
-        /// A JSON-encoded list of warnings.
+        /// A JSON encoded list of warnings
         /// </summary>
         [Input("warnings")]
         public Input<string>? Warnings { get; set; }

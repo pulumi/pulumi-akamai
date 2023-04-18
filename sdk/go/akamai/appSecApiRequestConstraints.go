@@ -11,64 +11,16 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			apiEndpoint, err := akamai.GetAppSecApiEndpoints(ctx, &akamai.GetAppSecApiEndpointsArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: pulumi.StringRef("gms1_134637"),
-//				ApiName:          pulumi.StringRef("Contracts"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppSecApiRequestConstraints(ctx, "apiRequestConstraints", &akamai.AppSecApiRequestConstraintsArgs{
-//				ConfigId:         *pulumi.Int(configuration.ConfigId),
-//				SecurityPolicyId: pulumi.String("gms1_134637"),
-//				ApiEndpointId:    *pulumi.String(apiEndpoint.Id),
-//				Action:           pulumi.String("alert"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type AppSecApiRequestConstraints struct {
 	pulumi.CustomResourceState
 
-	// . Action to assign to the API request constraint. Allowed values are:
-	// - **alert**, Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the API request constraint is triggered
 	Action pulumi.StringOutput `pulumi:"action"`
-	// . ID of the API endpoint the constraint will be assigned to.
+	// Unique identifier of the API endpoint to which the constraint will be assigned
 	ApiEndpointId pulumi.IntPtrOutput `pulumi:"apiEndpointId"`
-	// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the API request constraint settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -110,32 +62,24 @@ func GetAppSecApiRequestConstraints(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecApiRequestConstraints resources.
 type appSecApiRequestConstraintsState struct {
-	// . Action to assign to the API request constraint. Allowed values are:
-	// - **alert**, Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the API request constraint is triggered
 	Action *string `pulumi:"action"`
-	// . ID of the API endpoint the constraint will be assigned to.
+	// Unique identifier of the API endpoint to which the constraint will be assigned
 	ApiEndpointId *int `pulumi:"apiEndpointId"`
-	// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the API request constraint settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecApiRequestConstraintsState struct {
-	// . Action to assign to the API request constraint. Allowed values are:
-	// - **alert**, Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the API request constraint is triggered
 	Action pulumi.StringPtrInput
-	// . ID of the API endpoint the constraint will be assigned to.
+	// Unique identifier of the API endpoint to which the constraint will be assigned
 	ApiEndpointId pulumi.IntPtrInput
-	// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Unique identifier of the security policy associated with the API request constraint settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -144,33 +88,25 @@ func (AppSecApiRequestConstraintsState) ElementType() reflect.Type {
 }
 
 type appSecApiRequestConstraintsArgs struct {
-	// . Action to assign to the API request constraint. Allowed values are:
-	// - **alert**, Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the API request constraint is triggered
 	Action string `pulumi:"action"`
-	// . ID of the API endpoint the constraint will be assigned to.
+	// Unique identifier of the API endpoint to which the constraint will be assigned
 	ApiEndpointId *int `pulumi:"apiEndpointId"`
-	// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the API request constraint settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecApiRequestConstraints resource.
 type AppSecApiRequestConstraintsArgs struct {
-	// . Action to assign to the API request constraint. Allowed values are:
-	// - **alert**, Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the API request constraint is triggered
 	Action pulumi.StringInput
-	// . ID of the API endpoint the constraint will be assigned to.
+	// Unique identifier of the API endpoint to which the constraint will be assigned
 	ApiEndpointId pulumi.IntPtrInput
-	// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Unique identifier of the security policy associated with the API request constraint settings being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringInput
 }
 
@@ -261,26 +197,22 @@ func (o AppSecApiRequestConstraintsOutput) ToAppSecApiRequestConstraintsOutputWi
 	return o
 }
 
-// . Action to assign to the API request constraint. Allowed values are:
-// - **alert**, Record the event.
-// - **deny**. Block the request.
-// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-// - **none**. Take no action.
+// Action to be taken when the API request constraint is triggered
 func (o AppSecApiRequestConstraintsOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecApiRequestConstraints) pulumi.StringOutput { return v.Action }).(pulumi.StringOutput)
 }
 
-// . ID of the API endpoint the constraint will be assigned to.
+// Unique identifier of the API endpoint to which the constraint will be assigned
 func (o AppSecApiRequestConstraintsOutput) ApiEndpointId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AppSecApiRequestConstraints) pulumi.IntPtrOutput { return v.ApiEndpointId }).(pulumi.IntPtrOutput)
 }
 
-// . Unique identifier of the security configuration associated with the API request constraint settings being modified.
+// Unique identifier of the security configuration
 func (o AppSecApiRequestConstraintsOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecApiRequestConstraints) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Unique identifier of the security policy associated with the API request constraint settings being modified.
+// Unique identifier of the security policy
 func (o AppSecApiRequestConstraintsOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecApiRequestConstraints) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }

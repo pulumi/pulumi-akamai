@@ -17,14 +17,14 @@ public final class AppSecMatchTargetState extends com.pulumi.resources.ResourceA
     public static final AppSecMatchTargetState Empty = new AppSecMatchTargetState();
 
     /**
-     * . Unique identifier of the security configuration associated with the match target being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the match target being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -32,14 +32,14 @@ public final class AppSecMatchTargetState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * . Path to a JSON file containing one or more match target definitions.
+     * JSON-formatted definition of the match target
      * 
      */
     @Import(name="matchTarget")
     private @Nullable Output<String> matchTarget;
 
     /**
-     * @return . Path to a JSON file containing one or more match target definitions.
+     * @return JSON-formatted definition of the match target
      * 
      */
     public Optional<Output<String>> matchTarget() {
@@ -88,7 +88,7 @@ public final class AppSecMatchTargetState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the match target being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class AppSecMatchTargetState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the match target being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class AppSecMatchTargetState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param matchTarget . Path to a JSON file containing one or more match target definitions.
+         * @param matchTarget JSON-formatted definition of the match target
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class AppSecMatchTargetState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param matchTarget . Path to a JSON file containing one or more match target definitions.
+         * @param matchTarget JSON-formatted definition of the match target
          * 
          * @return builder
          * 

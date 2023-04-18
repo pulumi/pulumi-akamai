@@ -103,47 +103,7 @@ def get_app_sec_reputation_profile_actions(config_id: Optional[int] = None,
                                            security_policy_id: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecReputationProfileActionsResult:
     """
-    ##_get_app_sec_reputation_profile_actions_
-    **Scopes**: Security policy; reputation profile
-
-    Returns action information for your reputation profiles. Actions specify what happens any time a profile is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/get-reputation-profiles-actions)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    reputation_profile_actions = akamai.get_app_sec_reputation_profile_actions(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("reputationProfileActionsText", reputation_profile_actions.output_text)
-    pulumi.export("reputationProfileActionsJson", reputation_profile_actions.json)
-    reputation_profile_actions2_app_sec_reputation_profile_actions = akamai.get_app_sec_reputation_profile_actions(config_id=configuration.config_id,
-        security_policy_id="gms1_134637",
-        reputation_profile_id=12345)
-    pulumi.export("reputationProfileActions2", reputation_profile_actions.action)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `action`. Action taken any time the reputation profile is triggered. Valid values are:
-      - **alert**. Record the event.
-      - **deny**. Block the request.
-      - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-      - **none**. Take no action.
-    - `json`. JSON-formatted report of the reputation profile action information.
-    - `output_text`. Tabular report of the reputation profile action information.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the reputation profiles.
-    :param int reputation_profile_id: . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the reputation profiles.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -168,46 +128,6 @@ def get_app_sec_reputation_profile_actions_output(config_id: Optional[pulumi.Inp
                                                   security_policy_id: Optional[pulumi.Input[str]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecReputationProfileActionsResult]:
     """
-    ##_get_app_sec_reputation_profile_actions_
-    **Scopes**: Security policy; reputation profile
-
-    Returns action information for your reputation profiles. Actions specify what happens any time a profile is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/get-reputation-profiles-actions)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    reputation_profile_actions = akamai.get_app_sec_reputation_profile_actions(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("reputationProfileActionsText", reputation_profile_actions.output_text)
-    pulumi.export("reputationProfileActionsJson", reputation_profile_actions.json)
-    reputation_profile_actions2_app_sec_reputation_profile_actions = akamai.get_app_sec_reputation_profile_actions(config_id=configuration.config_id,
-        security_policy_id="gms1_134637",
-        reputation_profile_id=12345)
-    pulumi.export("reputationProfileActions2", reputation_profile_actions.action)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `action`. Action taken any time the reputation profile is triggered. Valid values are:
-      - **alert**. Record the event.
-      - **deny**. Block the request.
-      - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-      - **none**. Take no action.
-    - `json`. JSON-formatted report of the reputation profile action information.
-    - `output_text`. Tabular report of the reputation profile action information.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the reputation profiles.
-    :param int reputation_profile_id: . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the reputation profiles.
+    Use this data source to access information about an existing resource.
     """
     ...

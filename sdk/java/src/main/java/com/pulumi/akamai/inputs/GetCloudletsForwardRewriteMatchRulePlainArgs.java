@@ -15,17 +15,9 @@ public final class GetCloudletsForwardRewriteMatchRulePlainArgs extends com.pulu
 
     public static final GetCloudletsForwardRewriteMatchRulePlainArgs Empty = new GetCloudletsForwardRewriteMatchRulePlainArgs();
 
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     * 
-     */
     @Import(name="matchRules")
     private @Nullable List<GetCloudletsForwardRewriteMatchRuleMatchRule> matchRules;
 
-    /**
-     * @return (Optional) A list of Cloudlet-specific match rules for a policy.
-     * 
-     */
     public Optional<List<GetCloudletsForwardRewriteMatchRuleMatchRule>> matchRules() {
         return Optional.ofNullable(this.matchRules);
     }
@@ -54,23 +46,11 @@ public final class GetCloudletsForwardRewriteMatchRulePlainArgs extends com.pulu
             $ = new GetCloudletsForwardRewriteMatchRulePlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchRules(@Nullable List<GetCloudletsForwardRewriteMatchRuleMatchRule> matchRules) {
             $.matchRules = matchRules;
             return this;
         }
 
-        /**
-         * @param matchRules (Optional) A list of Cloudlet-specific match rules for a policy.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchRules(GetCloudletsForwardRewriteMatchRuleMatchRule... matchRules) {
             return matchRules(List.of(matchRules));
         }

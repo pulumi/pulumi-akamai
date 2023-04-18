@@ -40,8 +40,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Replaced by `contract_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;contract&#34; has been deprecated.
      * 
@@ -51,8 +49,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> contract;
 
     /**
-     * @return Replaced by `contract_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;contract&#34; has been deprecated.
      * 
@@ -63,14 +59,14 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * Contract ID to be assigned to the Property
      * 
      */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
     /**
-     * @return (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+     * @return Contract ID to be assigned to the Property
      * 
      */
     public Optional<Output<String>> contractId() {
@@ -97,8 +93,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Replaced by `group_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;group&#34; has been deprecated.
      * 
@@ -108,8 +102,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> group;
 
     /**
-     * @return Replaced by `group_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;group&#34; has been deprecated.
      * 
@@ -120,31 +112,23 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * Group ID to be assigned to the Property
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return (Required) A group&#39;s unique ID, including the `grp_` prefix.
+     * @return Group ID to be assigned to the Property
      * 
      */
     public Optional<Output<String>> groupId() {
         return Optional.ofNullable(this.groupId);
     }
 
-    /**
-     * A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
-     * 
-     */
     @Import(name="hostnames")
     private @Nullable Output<List<PropertyHostnameArgs>> hostnames;
 
-    /**
-     * @return A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
-     * 
-     */
     public Optional<Output<List<PropertyHostnameArgs>>> hostnames() {
         return Optional.ofNullable(this.hostnames);
     }
@@ -169,14 +153,14 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The property name.
+     * Name to give to the Property (must be unique)
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The property name.
+     * @return Name to give to the Property (must be unique)
      * 
      */
     public Optional<Output<String>> name() {
@@ -203,8 +187,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;product&#34; has been deprecated.
      * 
@@ -214,8 +196,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> product;
 
     /**
-     * @return Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-     * 
      * @deprecated
      * The setting &#34;product&#34; has been deprecated.
      * 
@@ -241,14 +221,14 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+     * Specify the rule format version (defaults to latest version available when created)
      * 
      */
     @Import(name="ruleFormat")
     private @Nullable Output<String> ruleFormat;
 
     /**
-     * @return The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+     * @return Specify the rule format version (defaults to latest version available when created)
      * 
      */
     public Optional<Output<String>> ruleFormat() {
@@ -256,8 +236,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-     * 
      * @deprecated
      * Rule warnings will not be set in state anymore
      * 
@@ -267,8 +245,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<List<PropertyRuleWarningArgs>> ruleWarnings;
 
     /**
-     * @return (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-     * 
      * @deprecated
      * Rule warnings will not be set in state anymore
      * 
@@ -279,14 +255,14 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
+     * Property Rules as JSON
      * 
      */
     @Import(name="rules")
     private @Nullable Output<String> rules;
 
     /**
-     * @return A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
+     * @return Property Rules as JSON
      * 
      */
     public Optional<Output<String>> rules() {
@@ -389,8 +365,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contract Replaced by `contract_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -404,8 +378,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contract Replaced by `contract_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -418,7 +390,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+         * @param contractId Contract ID to be assigned to the Property
          * 
          * @return builder
          * 
@@ -429,7 +401,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the `ctr_` prefix.
+         * @param contractId Contract ID to be assigned to the Property
          * 
          * @return builder
          * 
@@ -464,8 +436,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param group Replaced by `group_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -479,8 +449,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param group Replaced by `group_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -493,7 +461,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
+         * @param groupId Group ID to be assigned to the Property
          * 
          * @return builder
          * 
@@ -504,7 +472,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId (Required) A group&#39;s unique ID, including the `grp_` prefix.
+         * @param groupId Group ID to be assigned to the Property
          * 
          * @return builder
          * 
@@ -513,33 +481,15 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
             return groupId(Output.of(groupId));
         }
 
-        /**
-         * @param hostnames A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
-         * 
-         * @return builder
-         * 
-         */
         public Builder hostnames(@Nullable Output<List<PropertyHostnameArgs>> hostnames) {
             $.hostnames = hostnames;
             return this;
         }
 
-        /**
-         * @param hostnames A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
-         * 
-         * @return builder
-         * 
-         */
         public Builder hostnames(List<PropertyHostnameArgs> hostnames) {
             return hostnames(Output.of(hostnames));
         }
 
-        /**
-         * @param hostnames A mapping of public hostnames to edge hostnames. See the `akamai.getPropertyHostnames` data source for details on the necessary DNS configuration.
-         * 
-         * @return builder
-         * 
-         */
         public Builder hostnames(PropertyHostnameArgs... hostnames) {
             return hostnames(List.of(hostnames));
         }
@@ -570,7 +520,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The property name.
+         * @param name Name to give to the Property (must be unique)
          * 
          * @return builder
          * 
@@ -581,7 +531,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The property name.
+         * @param name Name to give to the Property (must be unique)
          * 
          * @return builder
          * 
@@ -628,8 +578,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param product Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -643,8 +591,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param product Optional argument replaced by the now required `product_id`. Maintained for legacy purposes.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -678,7 +624,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleFormat The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+         * @param ruleFormat Specify the rule format version (defaults to latest version available when created)
          * 
          * @return builder
          * 
@@ -689,7 +635,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleFormat The [rule format](https://techdocs.akamai.com/property-mgr/reference/get-rule-formats) to use. Uses the latest rule format by default.
+         * @param ruleFormat Specify the rule format version (defaults to latest version available when created)
          * 
          * @return builder
          * 
@@ -699,8 +645,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleWarnings (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -714,8 +658,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleWarnings (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -728,8 +670,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleWarnings (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-         * 
          * @return builder
          * 
          * @deprecated
@@ -742,7 +682,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rules A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
+         * @param rules Property Rules as JSON
          * 
          * @return builder
          * 
@@ -753,7 +693,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rules A JSON-encoded rule tree for a given property. For this argument, you need to enter a complete JSON rule tree, unless you set up a series of JSON templates. See the `akamai.getPropertyRules` data source.
+         * @param rules Property Rules as JSON
          * 
          * @return builder
          * 

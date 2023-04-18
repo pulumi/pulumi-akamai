@@ -15,14 +15,14 @@ public final class AppSecVersionNodesArgs extends com.pulumi.resources.ResourceA
     public static final AppSecVersionNodesArgs Empty = new AppSecVersionNodesArgs();
 
     /**
-     * . Unique identifier of the security configuration whose version notes are being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration whose version notes are being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -30,14 +30,14 @@ public final class AppSecVersionNodesArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * . Brief description of the security configuration version.
+     * Brief description of the security configuration version
      * 
      */
     @Import(name="versionNotes", required=true)
     private Output<String> versionNotes;
 
     /**
-     * @return . Brief description of the security configuration version.
+     * @return Brief description of the security configuration version
      * 
      */
     public Output<String> versionNotes() {
@@ -70,7 +70,7 @@ public final class AppSecVersionNodesArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration whose version notes are being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class AppSecVersionNodesArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration whose version notes are being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class AppSecVersionNodesArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param versionNotes . Brief description of the security configuration version.
+         * @param versionNotes Brief description of the security configuration version
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class AppSecVersionNodesArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param versionNotes . Brief description of the security configuration version.
+         * @param versionNotes Brief description of the security configuration version
          * 
          * @return builder
          * 

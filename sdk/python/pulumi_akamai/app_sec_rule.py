@@ -21,15 +21,11 @@ class AppSecRuleArgs:
                  rule_action: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecRule resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
-        :param pulumi.Input[int] rule_id: . Unique identifier of the rule being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
-        :param pulumi.Input[str] rule_action: Allowed values are:
-               - **alert**. Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action. or `none` to take no action.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[int] rule_id: Unique identifier of the rule
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
+        :param pulumi.Input[str] condition_exception: JSON-formatted condition and exception information for the rule
+        :param pulumi.Input[str] rule_action: Action to be taken when the rule is triggered
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "rule_id", rule_id)
@@ -43,7 +39,7 @@ class AppSecRuleArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -55,7 +51,7 @@ class AppSecRuleArgs:
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the rule being modified.
+        Unique identifier of the rule
         """
         return pulumi.get(self, "rule_id")
 
@@ -67,7 +63,7 @@ class AppSecRuleArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -79,7 +75,7 @@ class AppSecRuleArgs:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+        JSON-formatted condition and exception information for the rule
         """
         return pulumi.get(self, "condition_exception")
 
@@ -91,11 +87,7 @@ class AppSecRuleArgs:
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> Optional[pulumi.Input[str]]:
         """
-        Allowed values are:
-        - **alert**. Record the event.
-        - **deny**. Block the request.
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action. or `none` to take no action.
+        Action to be taken when the rule is triggered
         """
         return pulumi.get(self, "rule_action")
 
@@ -114,15 +106,11 @@ class _AppSecRuleState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecRule resources.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
-        :param pulumi.Input[str] rule_action: Allowed values are:
-               - **alert**. Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action. or `none` to take no action.
-        :param pulumi.Input[int] rule_id: . Unique identifier of the rule being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+        :param pulumi.Input[str] condition_exception: JSON-formatted condition and exception information for the rule
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] rule_action: Action to be taken when the rule is triggered
+        :param pulumi.Input[int] rule_id: Unique identifier of the rule
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         if condition_exception is not None:
             pulumi.set(__self__, "condition_exception", condition_exception)
@@ -139,7 +127,7 @@ class _AppSecRuleState:
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> Optional[pulumi.Input[str]]:
         """
-        . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+        JSON-formatted condition and exception information for the rule
         """
         return pulumi.get(self, "condition_exception")
 
@@ -151,7 +139,7 @@ class _AppSecRuleState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -163,11 +151,7 @@ class _AppSecRuleState:
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> Optional[pulumi.Input[str]]:
         """
-        Allowed values are:
-        - **alert**. Record the event.
-        - **deny**. Block the request.
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action. or `none` to take no action.
+        Action to be taken when the rule is triggered
         """
         return pulumi.get(self, "rule_action")
 
@@ -179,7 +163,7 @@ class _AppSecRuleState:
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the rule being modified.
+        Unique identifier of the rule
         """
         return pulumi.get(self, "rule_id")
 
@@ -191,7 +175,7 @@ class _AppSecRuleState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -212,40 +196,14 @@ class AppSecRule(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        **Scopes**: Rule
-
-        Modifies a Kona Rule Set rule's action, conditions, and exceptions.
-
-        **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}](https://techdocs.akamai.com/application-security/reference/put-rule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-rule-condition-exception)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        rule = akamai.AppSecRule("rule",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            rule_id=60029316,
-            rule_action="deny",
-            condition_exception=(lambda path: open(path).read())(f"{path['module']}/condition_exception.json"))
-        ```
-
+        Create a AppSecRule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
-        :param pulumi.Input[str] rule_action: Allowed values are:
-               - **alert**. Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action. or `none` to take no action.
-        :param pulumi.Input[int] rule_id: . Unique identifier of the rule being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+        :param pulumi.Input[str] condition_exception: JSON-formatted condition and exception information for the rule
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] rule_action: Action to be taken when the rule is triggered
+        :param pulumi.Input[int] rule_id: Unique identifier of the rule
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         ...
     @overload
@@ -254,29 +212,7 @@ class AppSecRule(pulumi.CustomResource):
                  args: AppSecRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Rule
-
-        Modifies a Kona Rule Set rule's action, conditions, and exceptions.
-
-        **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}](https://techdocs.akamai.com/application-security/reference/put-rule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-rule-condition-exception)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        rule = akamai.AppSecRule("rule",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            rule_id=60029316,
-            rule_action="deny",
-            condition_exception=(lambda path: open(path).read())(f"{path['module']}/condition_exception.json"))
-        ```
-
+        Create a AppSecRule resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecRuleArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -339,15 +275,11 @@ class AppSecRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] condition_exception: . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
-        :param pulumi.Input[str] rule_action: Allowed values are:
-               - **alert**. Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action. or `none` to take no action.
-        :param pulumi.Input[int] rule_id: . Unique identifier of the rule being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+        :param pulumi.Input[str] condition_exception: JSON-formatted condition and exception information for the rule
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] rule_action: Action to be taken when the rule is triggered
+        :param pulumi.Input[int] rule_id: Unique identifier of the rule
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -364,7 +296,7 @@ class AppSecRule(pulumi.CustomResource):
     @pulumi.getter(name="conditionException")
     def condition_exception(self) -> pulumi.Output[Optional[str]]:
         """
-        . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+        JSON-formatted condition and exception information for the rule
         """
         return pulumi.get(self, "condition_exception")
 
@@ -372,7 +304,7 @@ class AppSecRule(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -380,11 +312,7 @@ class AppSecRule(pulumi.CustomResource):
     @pulumi.getter(name="ruleAction")
     def rule_action(self) -> pulumi.Output[str]:
         """
-        Allowed values are:
-        - **alert**. Record the event.
-        - **deny**. Block the request.
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action. or `none` to take no action.
+        Action to be taken when the rule is triggered
         """
         return pulumi.get(self, "rule_action")
 
@@ -392,7 +320,7 @@ class AppSecRule(pulumi.CustomResource):
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the rule being modified.
+        Unique identifier of the rule
         """
         return pulumi.get(self, "rule_id")
 
@@ -400,7 +328,7 @@ class AppSecRule(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 

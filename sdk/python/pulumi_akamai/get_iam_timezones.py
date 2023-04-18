@@ -55,19 +55,7 @@ class AwaitableGetIamTimezonesResult(GetIamTimezonesResult):
 
 def get_iam_timezones(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamTimezonesResult:
     """
-    Use _get_iam_timezones_ to list all time zones Akamai supports. Time zones are in ISO 8601 format. Use the values from this data source to set the time zone for a user. Administrators use this data source to set a user's time zone. The default time zone is GMT.
-
-    ## Attributes reference
-
-    These attributes are returned:
-
-    * `timezones` — Supported timezones.
-      * `timezone` - The time zone ID.
-      * `description` - The description of a time zone, including the GMT +/-.
-      * `offset` - The time zone offset from GMT.
-      * `posix` - The time zone posix.
-
-    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-timezones)
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

@@ -4,44 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security configuration; security policy
- *
- * Returns information about your Attack Payload Logging controls. By default, information is returned for all the security policies in the configuration.
- * However, you can return data for a single policy by using the `securityPolicyId` parameter.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const attackPayloadLogging = configuration.then(configuration => akamai.getAppsecAdvancedSettingsAttackPayloadLogging({
- *     configId: configuration.configId,
- * }));
- * export const advancedSettingsAttackPayloadLoggingJson = attackPayloadLogging.then(attackPayloadLogging => attackPayloadLogging.json);
- * export const advancedSettingsAttackPayloadLoggingOutput = attackPayloadLogging.then(attackPayloadLogging => attackPayloadLogging.outputText);
- * const policyOverride = configuration.then(configuration => akamai.getAppsecAdvancedSettingsAttackPayloadLogging({
- *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
- * }));
- * export const advancedSettingsPolicyAttackPayloadLoggingOutput = policyOverride.then(policyOverride => policyOverride.outputText);
- * export const advancedSettingsPolicyAttackPayloadLoggingJson = policyOverride.then(policyOverride => policyOverride.json);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `json`. JSON-formatted list of information about the Attack Payload Logging settings.
- * - `outputText`. Tabular report showing the Attack Payload Logging settings.
- */
 export function getAppsecAdvancedSettingsAttackPayloadLogging(args: GetAppsecAdvancedSettingsAttackPayloadLoggingArgs, opts?: pulumi.InvokeOptions): Promise<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -55,13 +17,7 @@ export function getAppsecAdvancedSettingsAttackPayloadLogging(args: GetAppsecAdv
  * A collection of arguments for invoking getAppsecAdvancedSettingsAttackPayloadLogging.
  */
 export interface GetAppsecAdvancedSettingsAttackPayloadLoggingArgs {
-    /**
-     * . Unique identifier of the security configuration associated with the Attack Payload Logging settings.
-     */
     configId: number;
-    /**
-     * . Unique identifier of the security policy associated with the Attack Payload Logging settings. If not included, information is returned for all your security policies.
-     */
     securityPolicyId?: string;
 }
 
@@ -78,44 +34,6 @@ export interface GetAppsecAdvancedSettingsAttackPayloadLoggingResult {
     readonly outputText: string;
     readonly securityPolicyId?: string;
 }
-/**
- * **Scopes**: Security configuration; security policy
- *
- * Returns information about your Attack Payload Logging controls. By default, information is returned for all the security policies in the configuration.
- * However, you can return data for a single policy by using the `securityPolicyId` parameter.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging/attack-payload]
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const attackPayloadLogging = configuration.then(configuration => akamai.getAppsecAdvancedSettingsAttackPayloadLogging({
- *     configId: configuration.configId,
- * }));
- * export const advancedSettingsAttackPayloadLoggingJson = attackPayloadLogging.then(attackPayloadLogging => attackPayloadLogging.json);
- * export const advancedSettingsAttackPayloadLoggingOutput = attackPayloadLogging.then(attackPayloadLogging => attackPayloadLogging.outputText);
- * const policyOverride = configuration.then(configuration => akamai.getAppsecAdvancedSettingsAttackPayloadLogging({
- *     configId: configuration.configId,
- *     securityPolicyId: _var.security_policy_id,
- * }));
- * export const advancedSettingsPolicyAttackPayloadLoggingOutput = policyOverride.then(policyOverride => policyOverride.outputText);
- * export const advancedSettingsPolicyAttackPayloadLoggingJson = policyOverride.then(policyOverride => policyOverride.json);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `json`. JSON-formatted list of information about the Attack Payload Logging settings.
- * - `outputText`. Tabular report showing the Attack Payload Logging settings.
- */
 export function getAppsecAdvancedSettingsAttackPayloadLoggingOutput(args: GetAppsecAdvancedSettingsAttackPayloadLoggingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppsecAdvancedSettingsAttackPayloadLoggingResult> {
     return pulumi.output(args).apply((a: any) => getAppsecAdvancedSettingsAttackPayloadLogging(a, opts))
 }
@@ -124,12 +42,6 @@ export function getAppsecAdvancedSettingsAttackPayloadLoggingOutput(args: GetApp
  * A collection of arguments for invoking getAppsecAdvancedSettingsAttackPayloadLogging.
  */
 export interface GetAppsecAdvancedSettingsAttackPayloadLoggingOutputArgs {
-    /**
-     * . Unique identifier of the security configuration associated with the Attack Payload Logging settings.
-     */
     configId: pulumi.Input<number>;
-    /**
-     * . Unique identifier of the security policy associated with the Attack Payload Logging settings. If not included, information is returned for all your security policies.
-     */
     securityPolicyId?: pulumi.Input<string>;
 }

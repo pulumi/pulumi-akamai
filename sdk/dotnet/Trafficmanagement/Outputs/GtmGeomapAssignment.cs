@@ -13,17 +13,8 @@ namespace Pulumi.Akamai.Trafficmanagement.Outputs
     [OutputType]
     public sealed class GtmGeomapAssignment
     {
-        /// <summary>
-        /// Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-        /// </summary>
         public readonly ImmutableArray<string> Countries;
-        /// <summary>
-        /// A unique identifier for an existing data center in the domain.
-        /// </summary>
         public readonly int DatacenterId;
-        /// <summary>
-        /// A descriptive label for the group.
-        /// </summary>
         public readonly string Nickname;
 
         [OutputConstructor]

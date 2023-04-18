@@ -11,40 +11,6 @@ namespace Pulumi.Akamai
 {
     public static class GetIamRoles
     {
-        /// <summary>
-        /// Use `akamai.getIamRoles` to list roles for the current account and contract type. The account and contract type are determined by the access tokens in your API client. Use the `roleId` from this data source to construct the `auth_grants_json` when creating or updating a user's auth grants.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var my_roles = Akamai.GetIamRoles.Invoke();
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["roles"] = my_roles,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// These attributes are returned:
-        /// 
-        /// * `roles` — A list of roles.
-        /// 
-        /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-roles)
-        /// </summary>
         public static Task<GetIamRolesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamRolesResult>("akamai:index/getIamRoles:getIamRoles", InvokeArgs.Empty, options.WithDefaults());
     }

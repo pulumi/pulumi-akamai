@@ -12,17 +12,9 @@ public final class GetDatastreamActivationHistoryPlainArgs extends com.pulumi.re
 
     public static final GetDatastreamActivationHistoryPlainArgs Empty = new GetDatastreamActivationHistoryPlainArgs();
 
-    /**
-     * (Required) A stream&#39;s unique identifier.
-     * 
-     */
     @Import(name="streamId", required=true)
     private Integer streamId;
 
-    /**
-     * @return (Required) A stream&#39;s unique identifier.
-     * 
-     */
     public Integer streamId() {
         return this.streamId;
     }
@@ -51,12 +43,6 @@ public final class GetDatastreamActivationHistoryPlainArgs extends com.pulumi.re
             $ = new GetDatastreamActivationHistoryPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param streamId (Required) A stream&#39;s unique identifier.
-         * 
-         * @return builder
-         * 
-         */
         public Builder streamId(Integer streamId) {
             $.streamId = streamId;
             return this;

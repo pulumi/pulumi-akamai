@@ -18,14 +18,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     public static final IamUserArgs Empty = new IamUserArgs();
 
     /**
-     * The user&#39;s street address.
+     * The user&#39;s street address
      * 
      */
     @Import(name="address")
     private @Nullable Output<String> address;
 
     /**
-     * @return The user&#39;s street address.
+     * @return The user&#39;s street address
      * 
      */
     public Optional<Output<String>> address() {
@@ -33,14 +33,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A user&#39;s per-group role assignments, in JSON form.
+     * A user&#39;s per-group role assignments, in JSON form
      * 
      */
     @Import(name="authGrantsJson", required=true)
     private Output<String> authGrantsJson;
 
     /**
-     * @return A user&#39;s per-group role assignments, in JSON form.
+     * @return A user&#39;s per-group role assignments, in JSON form
      * 
      */
     public Output<String> authGrantsJson() {
@@ -48,14 +48,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s city.
+     * The user&#39;s city
      * 
      */
     @Import(name="city")
     private @Nullable Output<String> city;
 
     /**
-     * @return The user&#39;s city.
+     * @return The user&#39;s city
      * 
      */
     public Optional<Output<String>> city() {
@@ -63,14 +63,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * To help characterize the user, the value can be any that are available from the view-contact-types operation.
+     * To help characterize the user, the value can be any that are available from the view-contact-types operation
      * 
      */
     @Import(name="contactType")
     private @Nullable Output<String> contactType;
 
     /**
-     * @return To help characterize the user, the value can be any that are available from the view-contact-types operation.
+     * @return To help characterize the user, the value can be any that are available from the view-contact-types operation
      * 
      */
     public Optional<Output<String>> contactType() {
@@ -78,14 +78,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation.
+     * As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation
      * 
      */
     @Import(name="country", required=true)
     private Output<String> country;
 
     /**
-     * @return As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation.
+     * @return As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation
      * 
      */
     public Output<String> country() {
@@ -93,14 +93,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s email address.
+     * The user&#39;s email address
      * 
      */
     @Import(name="email", required=true)
     private Output<String> email;
 
     /**
-     * @return The user&#39;s email address.
+     * @return The user&#39;s email address
      * 
      */
     public Output<String> email() {
@@ -108,14 +108,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Indicates whether two-factor authentication is allowed.
+     * Indicates whether two-factor authentication is allowed
      * 
      */
     @Import(name="enableTfa", required=true)
     private Output<Boolean> enableTfa;
 
     /**
-     * @return Indicates whether two-factor authentication is allowed.
+     * @return Indicates whether two-factor authentication is allowed
      * 
      */
     public Output<Boolean> enableTfa() {
@@ -123,14 +123,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s first name.
+     * The user&#39;s first name
      * 
      */
     @Import(name="firstName", required=true)
     private Output<String> firstName;
 
     /**
-     * @return The user&#39;s first name.
+     * @return The user&#39;s first name
      * 
      */
     public Output<String> firstName() {
@@ -153,14 +153,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s last name.
+     * The user&#39;s surname
      * 
      */
     @Import(name="lastName", required=true)
     private Output<String> lastName;
 
     /**
-     * @return The user&#39;s last name.
+     * @return The user&#39;s surname
      * 
      */
     public Output<String> lastName() {
@@ -183,14 +183,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s mobile phone number.
+     * The user&#39;s mobile phone number
      * 
      */
     @Import(name="mobilePhone")
     private @Nullable Output<String> mobilePhone;
 
     /**
-     * @return The user&#39;s mobile phone number.
+     * @return The user&#39;s mobile phone number
      * 
      */
     public Optional<Output<String>> mobilePhone() {
@@ -198,14 +198,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s main phone number.
+     * The user&#39;s main phone number
      * 
      */
     @Import(name="phone", required=true)
     private Output<String> phone;
 
     /**
-     * @return The user&#39;s main phone number.
+     * @return The user&#39;s main phone number
      * 
      */
     public Output<String> phone() {
@@ -228,14 +228,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s secondary email address.
+     * The user&#39;s secondary email address
      * 
      */
     @Import(name="secondaryEmail")
     private @Nullable Output<String> secondaryEmail;
 
     /**
-     * @return The user&#39;s secondary email address.
+     * @return The user&#39;s secondary email address
      * 
      */
     public Optional<Output<String>> secondaryEmail() {
@@ -258,14 +258,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s state.
+     * The user&#39;s state
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The user&#39;s state.
+     * @return The user&#39;s state
      * 
      */
     public Optional<Output<String>> state() {
@@ -288,14 +288,14 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s five-digit ZIP code.
+     * The user&#39;s five-digit ZIP code
      * 
      */
     @Import(name="zipCode")
     private @Nullable Output<String> zipCode;
 
     /**
-     * @return The user&#39;s five-digit ZIP code.
+     * @return The user&#39;s five-digit ZIP code
      * 
      */
     public Optional<Output<String>> zipCode() {
@@ -345,7 +345,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param address The user&#39;s street address.
+         * @param address The user&#39;s street address
          * 
          * @return builder
          * 
@@ -356,7 +356,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param address The user&#39;s street address.
+         * @param address The user&#39;s street address
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authGrantsJson A user&#39;s per-group role assignments, in JSON form.
+         * @param authGrantsJson A user&#39;s per-group role assignments, in JSON form
          * 
          * @return builder
          * 
@@ -377,7 +377,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authGrantsJson A user&#39;s per-group role assignments, in JSON form.
+         * @param authGrantsJson A user&#39;s per-group role assignments, in JSON form
          * 
          * @return builder
          * 
@@ -387,7 +387,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param city The user&#39;s city.
+         * @param city The user&#39;s city
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param city The user&#39;s city.
+         * @param city The user&#39;s city
          * 
          * @return builder
          * 
@@ -408,7 +408,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contactType To help characterize the user, the value can be any that are available from the view-contact-types operation.
+         * @param contactType To help characterize the user, the value can be any that are available from the view-contact-types operation
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contactType To help characterize the user, the value can be any that are available from the view-contact-types operation.
+         * @param contactType To help characterize the user, the value can be any that are available from the view-contact-types operation
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param country As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation.
+         * @param country As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param country As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation.
+         * @param country As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param email The user&#39;s email address.
+         * @param email The user&#39;s email address
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param email The user&#39;s email address.
+         * @param email The user&#39;s email address
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableTfa Indicates whether two-factor authentication is allowed.
+         * @param enableTfa Indicates whether two-factor authentication is allowed
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableTfa Indicates whether two-factor authentication is allowed.
+         * @param enableTfa Indicates whether two-factor authentication is allowed
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param firstName The user&#39;s first name.
+         * @param firstName The user&#39;s first name
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param firstName The user&#39;s first name.
+         * @param firstName The user&#39;s first name
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lastName The user&#39;s last name.
+         * @param lastName The user&#39;s surname
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lastName The user&#39;s last name.
+         * @param lastName The user&#39;s surname
          * 
          * @return builder
          * 
@@ -576,7 +576,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mobilePhone The user&#39;s mobile phone number.
+         * @param mobilePhone The user&#39;s mobile phone number
          * 
          * @return builder
          * 
@@ -587,7 +587,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mobilePhone The user&#39;s mobile phone number.
+         * @param mobilePhone The user&#39;s mobile phone number
          * 
          * @return builder
          * 
@@ -597,7 +597,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phone The user&#39;s main phone number.
+         * @param phone The user&#39;s main phone number
          * 
          * @return builder
          * 
@@ -608,7 +608,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phone The user&#39;s main phone number.
+         * @param phone The user&#39;s main phone number
          * 
          * @return builder
          * 
@@ -639,7 +639,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondaryEmail The user&#39;s secondary email address.
+         * @param secondaryEmail The user&#39;s secondary email address
          * 
          * @return builder
          * 
@@ -650,7 +650,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondaryEmail The user&#39;s secondary email address.
+         * @param secondaryEmail The user&#39;s secondary email address
          * 
          * @return builder
          * 
@@ -681,7 +681,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The user&#39;s state.
+         * @param state The user&#39;s state
          * 
          * @return builder
          * 
@@ -692,7 +692,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The user&#39;s state.
+         * @param state The user&#39;s state
          * 
          * @return builder
          * 
@@ -723,7 +723,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zipCode The user&#39;s five-digit ZIP code.
+         * @param zipCode The user&#39;s five-digit ZIP code
          * 
          * @return builder
          * 
@@ -734,7 +734,7 @@ public final class IamUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zipCode The user&#39;s five-digit ZIP code.
+         * @param zipCode The user&#39;s five-digit ZIP code
          * 
          * @return builder
          * 

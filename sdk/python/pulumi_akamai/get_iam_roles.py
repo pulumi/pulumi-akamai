@@ -55,26 +55,7 @@ class AwaitableGetIamRolesResult(GetIamRolesResult):
 
 def get_iam_roles(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamRolesResult:
     """
-    Use _get_iam_roles_ to list roles for the current account and contract type. The account and contract type are determined by the access tokens in your API client. Use the `roleId` from this data source to construct the `auth_grants_json` when creating or updating a user's auth grants.
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    my_roles = akamai.get_iam_roles()
-    pulumi.export("roles", my_roles)
-    ```
-    ## Attributes reference
-
-    These attributes are returned:
-
-    * `roles` — A list of roles.
-
-    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-roles)
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

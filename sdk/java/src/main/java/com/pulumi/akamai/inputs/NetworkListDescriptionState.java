@@ -15,47 +15,23 @@ public final class NetworkListDescriptionState extends com.pulumi.resources.Reso
 
     public static final NetworkListDescriptionState Empty = new NetworkListDescriptionState();
 
-    /**
-     * The description to be assigned to the network list.
-     * 
-     */
     @Import(name="description")
     private @Nullable Output<String> description;
 
-    /**
-     * @return The description to be assigned to the network list.
-     * 
-     */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
-    /**
-     * The name to be assigned to the network list.
-     * 
-     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
-    /**
-     * @return The name to be assigned to the network list.
-     * 
-     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * The unique ID of the network list to use.
-     * 
-     */
     @Import(name="networkListId")
     private @Nullable Output<String> networkListId;
 
-    /**
-     * @return The unique ID of the network list to use.
-     * 
-     */
     public Optional<Output<String>> networkListId() {
         return Optional.ofNullable(this.networkListId);
     }
@@ -86,65 +62,29 @@ public final class NetworkListDescriptionState extends com.pulumi.resources.Reso
             $ = new NetworkListDescriptionState(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param description The description to be assigned to the network list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
             return this;
         }
 
-        /**
-         * @param description The description to be assigned to the network list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
-        /**
-         * @param name The name to be assigned to the network list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param name The name to be assigned to the network list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
-        /**
-         * @param networkListId The unique ID of the network list to use.
-         * 
-         * @return builder
-         * 
-         */
         public Builder networkListId(@Nullable Output<String> networkListId) {
             $.networkListId = networkListId;
             return this;
         }
 
-        /**
-         * @param networkListId The unique ID of the network list to use.
-         * 
-         * @return builder
-         * 
-         */
         public Builder networkListId(String networkListId) {
             return networkListId(Output.of(networkListId));
         }

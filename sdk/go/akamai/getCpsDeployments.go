@@ -10,48 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getCpsDeployments` data source to retrieve deployed certificates for a specific enrollment.
-//
-// You'll see data for ECDSA, RSA, or both depending on the type and number of certificates you uploaded.
-//
-// ## Basic usage
-//
-// This example shows how to return information about deployed certificates for enrollment ID 12345.
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.GetCpsDeployments(ctx, &akamai.GetCpsDeploymentsArgs{
-//				EnrollmentId: 12345,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `productionCertificateRsa` - The RSA certificate deployed on the production network.
-// * `productionCertificateEcdsa` - The ECDSA certificate deployed on the production network.
-// * `stagingCertificateRsa` - The RSA certificate deployed on the staging network.
-// * `stagingCertificateEcdsa` - The ECDSA certificate deployed on the staging network.
-// * `expiryDate` - The expiration date for the certificate in ISO-8601 format.
-// * `autoRenewalStartTime` - The specific date the automatic renewal will start on. The date is in ISO-8601 format. <br> For DV certificates, CPS automatically starts the renewal process 90 days before the current certificate expires. It then automatically deploys the renewed certificate when it receives it from the CA. <br> For third-party certificates, CPS creates a change. This change is needed to get a new CSR and upload the new certificate. Use the `getCPSEnrollments` data source to view pending changes.
 func GetCpsDeployments(ctx *pulumi.Context, args *GetCpsDeploymentsArgs, opts ...pulumi.InvokeOption) (*GetCpsDeploymentsResult, error) {
 	var rv GetCpsDeploymentsResult
 	err := ctx.Invoke("akamai:index/getCpsDeployments:getCpsDeployments", args, &rv, opts...)
@@ -63,7 +21,6 @@ func GetCpsDeployments(ctx *pulumi.Context, args *GetCpsDeploymentsArgs, opts ..
 
 // A collection of arguments for invoking getCpsDeployments.
 type GetCpsDeploymentsArgs struct {
-	// Unique identifier of the enrollment.
 	EnrollmentId int `pulumi:"enrollmentId"`
 }
 
@@ -95,7 +52,6 @@ func GetCpsDeploymentsOutput(ctx *pulumi.Context, args GetCpsDeploymentsOutputAr
 
 // A collection of arguments for invoking getCpsDeployments.
 type GetCpsDeploymentsOutputArgs struct {
-	// Unique identifier of the enrollment.
 	EnrollmentId pulumi.IntInput `pulumi:"enrollmentId"`
 }
 

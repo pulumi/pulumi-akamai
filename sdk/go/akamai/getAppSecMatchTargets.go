@@ -10,60 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration; match target
-//
-// Returns information about your match targets. Match targets determine which security policy should apply to an API, hostname, or path.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets{?policyId,includeChildObjectName}](https://techdocs.akamai.com/application-security/reference/get-match-targets)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			matchTargetsAppSecMatchTargets, err := akamai.GetAppSecMatchTargets(ctx, &akamai.GetAppSecMatchTargetsArgs{
-//				ConfigId: configuration.ConfigId,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("matchTargets", matchTargetsAppSecMatchTargets.OutputText)
-//			matchTarget, err := akamai.GetAppSecMatchTargets(ctx, &akamai.GetAppSecMatchTargetsArgs{
-//				ConfigId:      configuration.ConfigId,
-//				MatchTargetId: pulumi.IntRef(2712938),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("matchTargetOutput", matchTarget.OutputText)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `outputText`. Tabular report showing the ID and security policy ID of your match targets.
-// - `json`. JSON-formatted list of the match target information.
 func GetAppSecMatchTargets(ctx *pulumi.Context, args *GetAppSecMatchTargetsArgs, opts ...pulumi.InvokeOption) (*GetAppSecMatchTargetsResult, error) {
 	var rv GetAppSecMatchTargetsResult
 	err := ctx.Invoke("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args, &rv, opts...)
@@ -75,9 +21,7 @@ func GetAppSecMatchTargets(ctx *pulumi.Context, args *GetAppSecMatchTargetsArgs,
 
 // A collection of arguments for invoking getAppSecMatchTargets.
 type GetAppSecMatchTargetsArgs struct {
-	// . Unique identifier of the security configuration associated with the match targets.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
+	ConfigId      int  `pulumi:"configId"`
 	MatchTargetId *int `pulumi:"matchTargetId"`
 }
 
@@ -106,9 +50,7 @@ func GetAppSecMatchTargetsOutput(ctx *pulumi.Context, args GetAppSecMatchTargets
 
 // A collection of arguments for invoking getAppSecMatchTargets.
 type GetAppSecMatchTargetsOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the match targets.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
+	ConfigId      pulumi.IntInput    `pulumi:"configId"`
 	MatchTargetId pulumi.IntPtrInput `pulumi:"matchTargetId"`
 }
 

@@ -67,44 +67,7 @@ class AwaitableGetCloudletsVisitorPrioritizationMatchRuleResult(GetCloudletsVisi
 def get_cloudlets_visitor_prioritization_match_rule(match_rules: Optional[Sequence[pulumi.InputType['GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs']]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudletsVisitorPrioritizationMatchRuleResult:
     """
-    Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-
-    Use the _get_cloudlets_visitor_prioritization_match_rule_ data source to build a match rule JSON object for the Visitor Prioritization Cloudlet.
-
-    ## Basic usage
-
-    This example returns the JSON-encoded rules for the Visitor Prioritization Cloudlet:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_cloudlets_visitor_prioritization_match_rule(match_rules=[akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs(
-        end=1645037845,
-        match_url="example.com",
-        matches=[akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs(
-            case_sensitive=False,
-            check_ips="CONNECTING_IP",
-            match_operator="equals",
-            match_type="protocol",
-            match_value="http",
-            negate=False,
-        )],
-        name="rule",
-        pass_through_percent=-1,
-        start=1644865045,
-    )])
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `type` - The type of Cloudlet the rule is for.
-    * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
-
-
-    :param Sequence[pulumi.InputType['GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs']] match_rules: (Optional) A list of Cloudlet-specific match rules for a policy.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['matchRules'] = match_rules
@@ -121,43 +84,6 @@ def get_cloudlets_visitor_prioritization_match_rule(match_rules: Optional[Sequen
 def get_cloudlets_visitor_prioritization_match_rule_output(match_rules: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs']]]]] = None,
                                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudletsVisitorPrioritizationMatchRuleResult]:
     """
-    Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-
-    Use the _get_cloudlets_visitor_prioritization_match_rule_ data source to build a match rule JSON object for the Visitor Prioritization Cloudlet.
-
-    ## Basic usage
-
-    This example returns the JSON-encoded rules for the Visitor Prioritization Cloudlet:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_cloudlets_visitor_prioritization_match_rule(match_rules=[akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs(
-        end=1645037845,
-        match_url="example.com",
-        matches=[akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs(
-            case_sensitive=False,
-            check_ips="CONNECTING_IP",
-            match_operator="equals",
-            match_type="protocol",
-            match_value="http",
-            negate=False,
-        )],
-        name="rule",
-        pass_through_percent=-1,
-        start=1644865045,
-    )])
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `type` - The type of Cloudlet the rule is for.
-    * `json` - A `match_rules` JSON structure generated from the API schema that defines the rules for this policy.
-
-
-    :param Sequence[pulumi.InputType['GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs']] match_rules: (Optional) A list of Cloudlet-specific match rules for a policy.
+    Use this data source to access information about an existing resource.
     """
     ...

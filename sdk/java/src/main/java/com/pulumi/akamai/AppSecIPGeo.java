@@ -16,151 +16,87 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security policy
- * 
- * Modifies the method used for firewall blocking, and manages the network lists used for IP/Geo firewall blocking.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/ip-geo-firewall](https://techdocs.akamai.com/application-security/reference/put-policy-ip-geo-firewall)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecIPGeo;
- * import com.pulumi.akamai.AppSecIPGeoArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var ipGeoBlock = new AppSecIPGeo(&#34;ipGeoBlock&#34;, AppSecIPGeoArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .mode(&#34;block&#34;)
- *             .geoNetworkLists(&#34;06038_GEO_TEST&#34;)
- *             .ipNetworkLists(&#34;56921_TEST&#34;)
- *             .exceptionIpNetworkLists(&#34;07126_EXCEPTION_TEST&#34;)
- *             .build());
- * 
- *         var ipGeoAllow = new AppSecIPGeo(&#34;ipGeoAllow&#34;, AppSecIPGeoArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1-090334&#34;)
- *             .mode(&#34;allow&#34;)
- *             .exceptionIpNetworkLists(&#34;07126_EXCEPTION_TEST&#34;)
- *             .build());
- * 
- *         ctx.export(&#34;ipGeoModeBlock&#34;, ipGeoBlock.mode());
- *         ctx.export(&#34;blockGeoNetworkLists&#34;, ipGeoBlock.geoNetworkLists());
- *         ctx.export(&#34;blockIpNetworkLists&#34;, ipGeoBlock.ipNetworkLists());
- *         ctx.export(&#34;blockExceptionIpNetworkLists&#34;, ipGeoBlock.exceptionIpNetworkLists());
- *         ctx.export(&#34;ipGeoModeAllow&#34;, ipGeoAllow.mode());
- *         ctx.export(&#34;allowExceptionIpNetworkLists&#34;, ipGeoAllow.exceptionIpNetworkLists());
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecIPGeo:AppSecIPGeo")
 public class AppSecIPGeo extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the IP/Geo lists being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+     * List of IDs of network list that are always allowed
      * 
      */
     @Export(name="exceptionIpNetworkLists", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> exceptionIpNetworkLists;
 
     /**
-     * @return . JSON array of network lists that are always allowed to pass through the firewall, regardless of the value of any other setting.
+     * @return List of IDs of network list that are always allowed
      * 
      */
     public Output<Optional<List<String>>> exceptionIpNetworkLists() {
         return Codegen.optional(this.exceptionIpNetworkLists);
     }
     /**
-     * . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+     * List of IDs of geographic network list to be blocked
      * 
      */
     @Export(name="geoNetworkLists", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> geoNetworkLists;
 
     /**
-     * @return . JSON array of geographic network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+     * @return List of IDs of geographic network list to be blocked
      * 
      */
     public Output<Optional<List<String>>> geoNetworkLists() {
         return Codegen.optional(this.geoNetworkLists);
     }
     /**
-     * . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+     * List of IDs of IP network list to be blocked
      * 
      */
     @Export(name="ipNetworkLists", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> ipNetworkLists;
 
     /**
-     * @return . JSON array of IP network lists that, depending on the value of the `mode` argument, will be blocked or allowed through the firewall.
+     * @return List of IDs of IP network list to be blocked
      * 
      */
     public Output<Optional<List<String>>> ipNetworkLists() {
         return Codegen.optional(this.ipNetworkLists);
     }
     /**
-     * . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+     * Protection mode (block or allow)
      * 
      */
     @Export(name="mode", type=String.class, parameters={})
     private Output<String> mode;
 
     /**
-     * @return . Set to **block** to prevent the specified network lists from being allowed through the firewall: all other entities will be allowed to pass through the firewall. Set to **allow** to allow the specified network lists to pass through the firewall; all other entities will be prevented from passing through the firewall.
+     * @return Protection mode (block or allow)
      * 
      */
     public Output<String> mode() {
         return this.mode;
     }
     /**
-     * . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the IP/Geo lists being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {

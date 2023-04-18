@@ -14,10 +14,6 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("authToken", required: true)]
         private Input<string>? _authToken;
-
-        /// <summary>
-        /// **Secret**. Your Log API token for your account in New Relic.
-        /// </summary>
         public Input<string>? AuthToken
         {
             get => _authToken;
@@ -28,42 +24,24 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
-        /// <summary>
-        /// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-        /// </summary>
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
         [Input("connectorId")]
         public Input<int>? ConnectorId { get; set; }
 
-        /// <summary>
-        /// The name of the connector.
-        /// </summary>
         [Input("connectorName", required: true)]
         public Input<string> ConnectorName { get; set; } = null!;
 
-        /// <summary>
-        /// The service of the Datadog connector. A service groups together endpoints, queries, or jobs for the purposes of scaling instances. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_configuration/attributes_naming_convention/#reserved-attributes).
-        /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }
 
-        /// <summary>
-        /// The source of the Datadog connector. See [View Datadog reserved attribute list](https://docs.datadoghq.com/logs/log_collection/?tab=http#reserved-attributes).
-        /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }
 
-        /// <summary>
-        /// The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
-        /// </summary>
         [Input("tags")]
         public Input<string>? Tags { get; set; }
 
-        /// <summary>
-        /// Enter the secure URL where you want to send and store your logs.
-        /// </summary>
         [Input("url", required: true)]
         public Input<string> Url { get; set; } = null!;
 

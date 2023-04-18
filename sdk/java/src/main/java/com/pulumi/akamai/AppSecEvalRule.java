@@ -15,133 +15,73 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Evaluation rule
- * 
- * Creates or modifies an evaluation rule&#39;s action, conditions, and exceptions.
- * Evaluation rules are Kona Rule Set rules used when running a security configuration in evaluation mode.
- * Changes to these rules do not affect the rules used on your production network.
- * 
- * **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}](https://techdocs.akamai.com/application-security/reference/put-policy-eval-rule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-condition-exception)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecEvalRule;
- * import com.pulumi.akamai.AppSecEvalRuleArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var evalRule = new AppSecEvalRule(&#34;evalRule&#34;, AppSecEvalRuleArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .ruleId(60029316)
- *             .ruleAction(&#34;deny&#34;)
- *             .conditionException(Files.readString(Paths.get(String.format(&#34;%s/condition_exception.json&#34;, path.module()))))
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecEvalRule:AppSecEvalRule")
 public class AppSecEvalRule extends com.pulumi.resources.CustomResource {
     /**
-     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+     * JSON-formatted condition and exception information for the evaluation rule
      * 
      */
     @Export(name="conditionException", type=String.class, parameters={})
     private Output</* @Nullable */ String> conditionException;
 
     /**
-     * @return . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+     * @return JSON-formatted condition and exception information for the evaluation rule
      * 
      */
     public Output<Optional<String>> conditionException() {
         return Codegen.optional(this.conditionException);
     }
     /**
-     * . Unique identifier of the security configuration in evaluation mode.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration in evaluation mode.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the evaluation rule is triggered
      * 
      */
     @Export(name="ruleAction", type=String.class, parameters={})
     private Output<String> ruleAction;
 
     /**
-     * @return . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * @return Action to be taken when the evaluation rule is triggered
      * 
      */
     public Output<String> ruleAction() {
         return this.ruleAction;
     }
     /**
-     * . Unique identifier of the evaluation rule being modified.
+     * Unique identifier of the evaluation rule being modified
      * 
      */
     @Export(name="ruleId", type=Integer.class, parameters={})
     private Output<Integer> ruleId;
 
     /**
-     * @return . Unique identifier of the evaluation rule being modified.
+     * @return Unique identifier of the evaluation rule being modified
      * 
      */
     public Output<Integer> ruleId() {
         return this.ruleId;
     }
     /**
-     * . Unique identifier of the security policy associated with the evaluation process.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the evaluation process.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {

@@ -12,57 +12,32 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-        /// </summary>
         [Input("disabled")]
         public bool? Disabled { get; set; }
 
-        /// <summary>
-        /// (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-        /// </summary>
         [Input("end")]
         public int? End { get; set; }
 
-        /// <summary>
-        /// (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-        /// </summary>
         [Input("matchUrl")]
         public string? MatchUrl { get; set; }
 
         [Input("matches")]
         private List<Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs>? _matches;
-
-        /// <summary>
-        /// (Optional) A list of conditions to apply to a Cloudlet, including:
-        /// </summary>
         public List<Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs> Matches
         {
             get => _matches ?? (_matches = new List<Inputs.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs>());
             set => _matches = value;
         }
 
-        /// <summary>
-        /// (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-        /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
-        /// <summary>
-        /// (Required) Entering a value in the range of `0.0` to `99.0` specifies the percent of requests that pass through to the origin. Enter `100` to always have the request pass through to the origin. Enter `-1` to send everyone to the waiting room.
-        /// </summary>
         [Input("passThroughPercent", required: true)]
         public double PassThroughPercent { get; set; }
 
-        /// <summary>
-        /// (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-        /// </summary>
         [Input("start")]
         public int? Start { get; set; }
 
-        /// <summary>
-        /// (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-        /// </summary>
         [Input("type", required: true)]
         public string Type { get; set; } = null!;
 

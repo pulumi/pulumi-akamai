@@ -11,44 +11,6 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecHostnameCoverage
     {
-        /// <summary>
-        /// **Scopes**: Individual account
-        /// 
-        /// Returns information about the hostnames associated with your account. The returned data includes the hostname's protections, activation status, and other summary information. 
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/hostname-coverage](https://techdocs.akamai.com/application-security/reference/get-hostname-coverage)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var hostnameCoverage = Akamai.GetAppSecHostnameCoverage.Invoke();
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["hostnameCoverageListJson"] = hostnameCoverage.Apply(getAppSecHostnameCoverageResult =&gt; getAppSecHostnameCoverageResult.Json),
-        ///         ["hostnameCoverageListOutput"] = hostnameCoverage.Apply(getAppSecHostnameCoverageResult =&gt; getAppSecHostnameCoverageResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of the hostname coverage information.
-        /// - `output_text`. Tabular report of the hostname coverage information.
-        /// </summary>
         public static Task<GetAppSecHostnameCoverageResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecHostnameCoverageResult>("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", InvokeArgs.Empty, options.WithDefaults());
     }

@@ -12,41 +12,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GtmCidrmapAssignment {
-    /**
-     * @return Specifies an array of CIDR blocks.
-     * 
-     */
     private @Nullable List<String> blocks;
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     private Integer datacenterId;
-    /**
-     * @return A descriptive label for the CIDR zone group, up to 256 characters.
-     * 
-     */
     private String nickname;
 
     private GtmCidrmapAssignment() {}
-    /**
-     * @return Specifies an array of CIDR blocks.
-     * 
-     */
     public List<String> blocks() {
         return this.blocks == null ? List.of() : this.blocks;
     }
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Integer datacenterId() {
         return this.datacenterId;
     }
-    /**
-     * @return A descriptive label for the CIDR zone group, up to 256 characters.
-     * 
-     */
     public String nickname() {
         return this.nickname;
     }

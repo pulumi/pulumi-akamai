@@ -4,27 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.CloudletsApplicationLoadBalancerActivation` resource to activate the Application Load Balancer Cloudlet configuration. An activation deploys the configuration version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
- *
- * Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = new akamai.CloudletsApplicationLoadBalancerActivation("example", {
- *     originId: "alb_test_1",
- *     network: "staging",
- *     version: 1,
- * });
- * export const status = example.status;
- * ```
- */
 export class CloudletsApplicationLoadBalancerActivation extends pulumi.CustomResource {
     /**
      * Get an existing CloudletsApplicationLoadBalancerActivation resource's state with the given name, ID, and optional extra
@@ -54,19 +33,19 @@ export class CloudletsApplicationLoadBalancerActivation extends pulumi.CustomRes
     }
 
     /**
-     * The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+     * The network you want to activate the application load balancer version on (options are Staging and Production)
      */
     public readonly network!: pulumi.Output<string>;
     /**
-     * The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * The conditional origin’s unique identifier
      */
     public readonly originId!: pulumi.Output<string>;
     /**
-     * The activation status for this load balancing configuration.
+     * Activation status for this application load balancer
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * The Application Load Balancer Cloudlet configuration version you want to activate.
+     * Cloudlets application load balancer version you want to activate
      */
     public readonly version!: pulumi.Output<number>;
 
@@ -113,19 +92,19 @@ export class CloudletsApplicationLoadBalancerActivation extends pulumi.CustomRes
  */
 export interface CloudletsApplicationLoadBalancerActivationState {
     /**
-     * The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+     * The network you want to activate the application load balancer version on (options are Staging and Production)
      */
     network?: pulumi.Input<string>;
     /**
-     * The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * The conditional origin’s unique identifier
      */
     originId?: pulumi.Input<string>;
     /**
-     * The activation status for this load balancing configuration.
+     * Activation status for this application load balancer
      */
     status?: pulumi.Input<string>;
     /**
-     * The Application Load Balancer Cloudlet configuration version you want to activate.
+     * Cloudlets application load balancer version you want to activate
      */
     version?: pulumi.Input<number>;
 }
@@ -135,15 +114,15 @@ export interface CloudletsApplicationLoadBalancerActivationState {
  */
 export interface CloudletsApplicationLoadBalancerActivationArgs {
     /**
-     * The network you want to activate the policy version on, either `staging`, `stag`,  and `s` for the Staging network, or `production`, `prod`, and `p` for the Production network. All values are case insensitive.
+     * The network you want to activate the application load balancer version on (options are Staging and Production)
      */
     network: pulumi.Input<string>;
     /**
-     * The identifier of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
+     * The conditional origin’s unique identifier
      */
     originId: pulumi.Input<string>;
     /**
-     * The Application Load Balancer Cloudlet configuration version you want to activate.
+     * Cloudlets application load balancer version you want to activate
      */
     version: pulumi.Input<number>;
 }

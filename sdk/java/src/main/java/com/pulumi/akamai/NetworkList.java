@@ -16,178 +16,131 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.NetworkList` resource to create a network list, or to modify an existing list.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.NetworkList;
- * import com.pulumi.akamai.NetworkListArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var networkList = new NetworkList(&#34;networkList&#34;, NetworkListArgs.builder()        
- *             .type(&#34;IP&#34;)
- *             .description(&#34;network list description&#34;)
- *             .lists(var_.list())
- *             .mode(&#34;APPEND&#34;)
- *             .contractId(&#34;ABC-123&#34;)
- *             .groupId(12345)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/networkList:NetworkList")
 public class NetworkList extends com.pulumi.resources.CustomResource {
     /**
-     * The contract ID of the network list. If supplied, group_id must also be supplied. The
-     * contract_id value of an existing network list may not be modified.
+     * contract ID
      * 
      */
     @Export(name="contractId", type=String.class, parameters={})
     private Output</* @Nullable */ String> contractId;
 
     /**
-     * @return The contract ID of the network list. If supplied, group_id must also be supplied. The
-     * contract_id value of an existing network list may not be modified.
+     * @return contract ID
      * 
      */
     public Output<Optional<String>> contractId() {
         return Codegen.optional(this.contractId);
     }
     /**
-     * The description to be assigned to the network list.
+     * A description of the network list
      * 
      */
     @Export(name="description", type=String.class, parameters={})
     private Output<String> description;
 
     /**
-     * @return The description to be assigned to the network list.
+     * @return A description of the network list
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * The group ID of the network list. If supplied, contract_id must also be supplied. The
-     * group_id value of an existing network list may not be modified.
+     * group ID
      * 
      */
     @Export(name="groupId", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> groupId;
 
     /**
-     * @return The group ID of the network list. If supplied, contract_id must also be supplied. The
-     * group_id value of an existing network list may not be modified.
+     * @return group ID
      * 
      */
     public Output<Optional<Integer>> groupId() {
         return Codegen.optional(this.groupId);
     }
     /**
-     * A list of IP addresses or locations to be included in the list, added to an existing list, or
-     * removed from an existing list.
+     * A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+     * list
      * 
      */
     @Export(name="lists", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> lists;
 
     /**
-     * @return A list of IP addresses or locations to be included in the list, added to an existing list, or
-     * removed from an existing list.
+     * @return A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+     * list
      * 
      */
     public Output<Optional<List<String>>> lists() {
         return Codegen.optional(this.lists);
     }
     /**
-     * A string specifying the interpretation of the `list` parameter. Must be one of the following:
+     * A string specifying the interpretation of the `list` parameter. Must be &#39;APPEND&#39;, &#39;REPLACE&#39;, or &#39;REMOVE&#39;
      * 
      */
     @Export(name="mode", type=String.class, parameters={})
     private Output<String> mode;
 
     /**
-     * @return A string specifying the interpretation of the `list` parameter. Must be one of the following:
+     * @return A string specifying the interpretation of the `list` parameter. Must be &#39;APPEND&#39;, &#39;REPLACE&#39;, or &#39;REMOVE&#39;
      * 
      */
     public Output<String> mode() {
         return this.mode;
     }
     /**
-     * The name to be assigned to the network list.
+     * The name to be assigned to the network list
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return The name to be assigned to the network list.
+     * @return The name to be assigned to the network list
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * The ID of the network list.
+     * network list ID
      * 
      */
     @Export(name="networkListId", type=String.class, parameters={})
     private Output<String> networkListId;
 
     /**
-     * @return The ID of the network list.
+     * @return network list ID
      * 
      */
     public Output<String> networkListId() {
         return this.networkListId;
     }
     /**
-     * An integer that identifies the current version of the network list; this value is incremented each time
-     * the list is modified.
+     * sync point
      * 
      */
     @Export(name="syncPoint", type=Integer.class, parameters={})
     private Output<Integer> syncPoint;
 
     /**
-     * @return An integer that identifies the current version of the network list; this value is incremented each time
-     * the list is modified.
+     * @return sync point
      * 
      */
     public Output<Integer> syncPoint() {
         return this.syncPoint;
     }
     /**
-     * The type of the network list; must be either &#34;IP&#34; or &#34;GEO&#34;.
+     * The type of the network list; must be either &#39;IP&#39; or &#39;GEO&#39;
      * 
      */
     @Export(name="type", type=String.class, parameters={})
     private Output<String> type;
 
     /**
-     * @return The type of the network list; must be either &#34;IP&#34; or &#34;GEO&#34;.
+     * @return The type of the network list; must be either &#39;IP&#39; or &#39;GEO&#39;
      * 
      */
     public Output<String> type() {

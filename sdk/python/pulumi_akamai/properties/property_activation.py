@@ -20,6 +20,7 @@ class PropertyActivationArgs:
                  version: pulumi.Input[int],
                  activation_id: Optional[pulumi.Input[str]] = None,
                  auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
+                 compliance_record: Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[str]] = None,
@@ -28,15 +29,9 @@ class PropertyActivationArgs:
                  rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]] = None):
         """
         The set of arguments for constructing a PropertyActivation resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: One or more email addresses to send activation status changes to.
-        :param pulumi.Input[int] version: The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `Property` resource labeled `example`.
-        :param pulumi.Input[str] activation_id: The ID given to the activation event while it's in progress.
-        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Whether the activation should proceed despite any warnings. By default set to `true`.
-        :param pulumi.Input[str] network: Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-        :param pulumi.Input[str] note: A log message you can assign to the activation request.
-        :param pulumi.Input[str] property: (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] property_id: (Required) The property's unique identifier, including the `prp_` prefix.
-        :param pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
+        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: automatically acknowledge all rule warnings for activation to continue. default is true
+        :param pulumi.Input['PropertyActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
+        :param pulumi.Input[str] note: assigns a log message to the activation request
         """
         pulumi.set(__self__, "contacts", contacts)
         pulumi.set(__self__, "version", version)
@@ -44,6 +39,8 @@ class PropertyActivationArgs:
             pulumi.set(__self__, "activation_id", activation_id)
         if auto_acknowledge_rule_warnings is not None:
             pulumi.set(__self__, "auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
+        if compliance_record is not None:
+            pulumi.set(__self__, "compliance_record", compliance_record)
         if network is not None:
             pulumi.set(__self__, "network", network)
         if note is not None:
@@ -66,9 +63,6 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter
     def contacts(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        One or more email addresses to send activation status changes to.
-        """
         return pulumi.get(self, "contacts")
 
     @contacts.setter
@@ -78,9 +72,6 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter
     def version(self) -> pulumi.Input[int]:
-        """
-        The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `Property` resource labeled `example`.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -90,9 +81,6 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter(name="activationId")
     def activation_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The ID given to the activation event while it's in progress.
-        """
         return pulumi.get(self, "activation_id")
 
     @activation_id.setter
@@ -103,7 +91,7 @@ class PropertyActivationArgs:
     @pulumi.getter(name="autoAcknowledgeRuleWarnings")
     def auto_acknowledge_rule_warnings(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether the activation should proceed despite any warnings. By default set to `true`.
+        automatically acknowledge all rule warnings for activation to continue. default is true
         """
         return pulumi.get(self, "auto_acknowledge_rule_warnings")
 
@@ -112,11 +100,20 @@ class PropertyActivationArgs:
         pulumi.set(self, "auto_acknowledge_rule_warnings", value)
 
     @property
+    @pulumi.getter(name="complianceRecord")
+    def compliance_record(self) -> Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']]:
+        """
+        Provides an audit record when activating on a production network
+        """
+        return pulumi.get(self, "compliance_record")
+
+    @compliance_record.setter
+    def compliance_record(self, value: Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']]):
+        pulumi.set(self, "compliance_record", value)
+
+    @property
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
-        """
-        Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-        """
         return pulumi.get(self, "network")
 
     @network.setter
@@ -127,7 +124,7 @@ class PropertyActivationArgs:
     @pulumi.getter
     def note(self) -> Optional[pulumi.Input[str]]:
         """
-        A log message you can assign to the activation request.
+        assigns a log message to the activation request
         """
         return pulumi.get(self, "note")
 
@@ -138,9 +135,6 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter(name="propertyId")
     def property_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Required) The property's unique identifier, including the `prp_` prefix.
-        """
         return pulumi.get(self, "property_id")
 
     @property_id.setter
@@ -159,9 +153,6 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter(name="ruleWarnings")
     def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]]:
-        """
-        (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-        """
         return pulumi.get(self, "rule_warnings")
 
     @rule_warnings.setter
@@ -171,9 +162,6 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter
     def property(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-        """
         return pulumi.get(self, "property")
 
     @property.setter
@@ -186,6 +174,7 @@ class _PropertyActivationState:
     def __init__(__self__, *,
                  activation_id: Optional[pulumi.Input[str]] = None,
                  auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
+                 compliance_record: Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  errors: Optional[pulumi.Input[str]] = None,
                  network: Optional[pulumi.Input[str]] = None,
@@ -199,23 +188,16 @@ class _PropertyActivationState:
                  warnings: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PropertyActivation resources.
-        :param pulumi.Input[str] activation_id: The ID given to the activation event while it's in progress.
-        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Whether the activation should proceed despite any warnings. By default set to `true`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: One or more email addresses to send activation status changes to.
-        :param pulumi.Input[str] errors: The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-        :param pulumi.Input[str] network: Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-        :param pulumi.Input[str] note: A log message you can assign to the activation request.
-        :param pulumi.Input[str] property: (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] property_id: (Required) The property's unique identifier, including the `prp_` prefix.
-        :param pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-        :param pulumi.Input[str] status: The property version's activation status on the selected network.
-        :param pulumi.Input[int] version: The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `Property` resource labeled `example`.
-        :param pulumi.Input[str] warnings: The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
+        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: automatically acknowledge all rule warnings for activation to continue. default is true
+        :param pulumi.Input['PropertyActivationComplianceRecordArgs'] compliance_record: Provides an audit record when activating on a production network
+        :param pulumi.Input[str] note: assigns a log message to the activation request
         """
         if activation_id is not None:
             pulumi.set(__self__, "activation_id", activation_id)
         if auto_acknowledge_rule_warnings is not None:
             pulumi.set(__self__, "auto_acknowledge_rule_warnings", auto_acknowledge_rule_warnings)
+        if compliance_record is not None:
+            pulumi.set(__self__, "compliance_record", compliance_record)
         if contacts is not None:
             pulumi.set(__self__, "contacts", contacts)
         if errors is not None:
@@ -248,9 +230,6 @@ class _PropertyActivationState:
     @property
     @pulumi.getter(name="activationId")
     def activation_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The ID given to the activation event while it's in progress.
-        """
         return pulumi.get(self, "activation_id")
 
     @activation_id.setter
@@ -261,7 +240,7 @@ class _PropertyActivationState:
     @pulumi.getter(name="autoAcknowledgeRuleWarnings")
     def auto_acknowledge_rule_warnings(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether the activation should proceed despite any warnings. By default set to `true`.
+        automatically acknowledge all rule warnings for activation to continue. default is true
         """
         return pulumi.get(self, "auto_acknowledge_rule_warnings")
 
@@ -270,11 +249,20 @@ class _PropertyActivationState:
         pulumi.set(self, "auto_acknowledge_rule_warnings", value)
 
     @property
+    @pulumi.getter(name="complianceRecord")
+    def compliance_record(self) -> Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']]:
+        """
+        Provides an audit record when activating on a production network
+        """
+        return pulumi.get(self, "compliance_record")
+
+    @compliance_record.setter
+    def compliance_record(self, value: Optional[pulumi.Input['PropertyActivationComplianceRecordArgs']]):
+        pulumi.set(self, "compliance_record", value)
+
+    @property
     @pulumi.getter
     def contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        One or more email addresses to send activation status changes to.
-        """
         return pulumi.get(self, "contacts")
 
     @contacts.setter
@@ -284,9 +272,6 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def errors(self) -> Optional[pulumi.Input[str]]:
-        """
-        The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-        """
         return pulumi.get(self, "errors")
 
     @errors.setter
@@ -296,9 +281,6 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
-        """
-        Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-        """
         return pulumi.get(self, "network")
 
     @network.setter
@@ -309,7 +291,7 @@ class _PropertyActivationState:
     @pulumi.getter
     def note(self) -> Optional[pulumi.Input[str]]:
         """
-        A log message you can assign to the activation request.
+        assigns a log message to the activation request
         """
         return pulumi.get(self, "note")
 
@@ -320,9 +302,6 @@ class _PropertyActivationState:
     @property
     @pulumi.getter(name="propertyId")
     def property_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Required) The property's unique identifier, including the `prp_` prefix.
-        """
         return pulumi.get(self, "property_id")
 
     @property_id.setter
@@ -341,9 +320,6 @@ class _PropertyActivationState:
     @property
     @pulumi.getter(name="ruleWarnings")
     def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]]:
-        """
-        (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-        """
         return pulumi.get(self, "rule_warnings")
 
     @rule_warnings.setter
@@ -353,9 +329,6 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The property version's activation status on the selected network.
-        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -365,9 +338,6 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[int]]:
-        """
-        The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `Property` resource labeled `example`.
-        """
         return pulumi.get(self, "version")
 
     @version.setter
@@ -377,9 +347,6 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def warnings(self) -> Optional[pulumi.Input[str]]:
-        """
-        The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-        """
         return pulumi.get(self, "warnings")
 
     @warnings.setter
@@ -389,9 +356,6 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def property(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-        """
         return pulumi.get(self, "property")
 
     @property.setter
@@ -411,6 +375,7 @@ class PropertyActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  activation_id: Optional[pulumi.Input[str]] = None,
                  auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
+                 compliance_record: Optional[pulumi.Input[pulumi.InputType['PropertyActivationComplianceRecordArgs']]] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
@@ -421,55 +386,12 @@ class PropertyActivation(pulumi.CustomResource):
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
-        The `PropertyActivation` resource lets you activate a property version. An activation deploys the version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
-
-        Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        email = "user@example.org"
-        rule_format = "v2020-03-04"
-        example = akamai.Property("example",
-            product_id="prd_SPM",
-            contract_id=var["contractid"],
-            group_id=var["groupid"],
-            hostnames={
-                "example.org": "example.org.edgesuite.net",
-                "www.example.org": "example.org.edgesuite.net",
-                "sub.example.org": "sub.example.org.edgesuite.net",
-            },
-            rule_format=rule_format,
-            rules=(lambda path: open(path).read())(f"{path['module']}/main.json"))
-        example_staging = akamai.PropertyActivation("exampleStaging",
-            property_id=example.id,
-            contacts=[email],
-            version=example.latest_version,
-            note="Sample activation")
-        example_prod = akamai.PropertyActivation("exampleProd",
-            property_id=example.id,
-            network="PRODUCTION",
-            version=3,
-            contacts=[email],
-            opts=pulumi.ResourceOptions(depends_on=[example_staging]))
-        ```
-
+        Create a PropertyActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] activation_id: The ID given to the activation event while it's in progress.
-        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Whether the activation should proceed despite any warnings. By default set to `true`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: One or more email addresses to send activation status changes to.
-        :param pulumi.Input[str] network: Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-        :param pulumi.Input[str] note: A log message you can assign to the activation request.
-        :param pulumi.Input[str] property: (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] property_id: (Required) The property's unique identifier, including the `prp_` prefix.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleWarningArgs']]]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-        :param pulumi.Input[int] version: The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `Property` resource labeled `example`.
+        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: automatically acknowledge all rule warnings for activation to continue. default is true
+        :param pulumi.Input[pulumi.InputType['PropertyActivationComplianceRecordArgs']] compliance_record: Provides an audit record when activating on a production network
+        :param pulumi.Input[str] note: assigns a log message to the activation request
         """
         ...
     @overload
@@ -478,44 +400,7 @@ class PropertyActivation(pulumi.CustomResource):
                  args: PropertyActivationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The `PropertyActivation` resource lets you activate a property version. An activation deploys the version to either the Akamai staging or production network. You can activate a specific version multiple times if you need to.
-
-        Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        email = "user@example.org"
-        rule_format = "v2020-03-04"
-        example = akamai.Property("example",
-            product_id="prd_SPM",
-            contract_id=var["contractid"],
-            group_id=var["groupid"],
-            hostnames={
-                "example.org": "example.org.edgesuite.net",
-                "www.example.org": "example.org.edgesuite.net",
-                "sub.example.org": "sub.example.org.edgesuite.net",
-            },
-            rule_format=rule_format,
-            rules=(lambda path: open(path).read())(f"{path['module']}/main.json"))
-        example_staging = akamai.PropertyActivation("exampleStaging",
-            property_id=example.id,
-            contacts=[email],
-            version=example.latest_version,
-            note="Sample activation")
-        example_prod = akamai.PropertyActivation("exampleProd",
-            property_id=example.id,
-            network="PRODUCTION",
-            version=3,
-            contacts=[email],
-            opts=pulumi.ResourceOptions(depends_on=[example_staging]))
-        ```
-
+        Create a PropertyActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PropertyActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -533,6 +418,7 @@ class PropertyActivation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  activation_id: Optional[pulumi.Input[str]] = None,
                  auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
+                 compliance_record: Optional[pulumi.Input[pulumi.InputType['PropertyActivationComplianceRecordArgs']]] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
@@ -553,6 +439,7 @@ class PropertyActivation(pulumi.CustomResource):
 
             __props__.__dict__["activation_id"] = activation_id
             __props__.__dict__["auto_acknowledge_rule_warnings"] = auto_acknowledge_rule_warnings
+            __props__.__dict__["compliance_record"] = compliance_record
             if contacts is None and not opts.urn:
                 raise TypeError("Missing required property 'contacts'")
             __props__.__dict__["contacts"] = contacts
@@ -586,6 +473,7 @@ class PropertyActivation(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             activation_id: Optional[pulumi.Input[str]] = None,
             auto_acknowledge_rule_warnings: Optional[pulumi.Input[bool]] = None,
+            compliance_record: Optional[pulumi.Input[pulumi.InputType['PropertyActivationComplianceRecordArgs']]] = None,
             contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             errors: Optional[pulumi.Input[str]] = None,
             network: Optional[pulumi.Input[str]] = None,
@@ -604,18 +492,9 @@ class PropertyActivation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] activation_id: The ID given to the activation event while it's in progress.
-        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: Whether the activation should proceed despite any warnings. By default set to `true`.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] contacts: One or more email addresses to send activation status changes to.
-        :param pulumi.Input[str] errors: The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-        :param pulumi.Input[str] network: Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-        :param pulumi.Input[str] note: A log message you can assign to the activation request.
-        :param pulumi.Input[str] property: (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-        :param pulumi.Input[str] property_id: (Required) The property's unique identifier, including the `prp_` prefix.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleWarningArgs']]]] rule_warnings: (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-        :param pulumi.Input[str] status: The property version's activation status on the selected network.
-        :param pulumi.Input[int] version: The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `Property` resource labeled `example`.
-        :param pulumi.Input[str] warnings: The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
+        :param pulumi.Input[bool] auto_acknowledge_rule_warnings: automatically acknowledge all rule warnings for activation to continue. default is true
+        :param pulumi.Input[pulumi.InputType['PropertyActivationComplianceRecordArgs']] compliance_record: Provides an audit record when activating on a production network
+        :param pulumi.Input[str] note: assigns a log message to the activation request
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -623,6 +502,7 @@ class PropertyActivation(pulumi.CustomResource):
 
         __props__.__dict__["activation_id"] = activation_id
         __props__.__dict__["auto_acknowledge_rule_warnings"] = auto_acknowledge_rule_warnings
+        __props__.__dict__["compliance_record"] = compliance_record
         __props__.__dict__["contacts"] = contacts
         __props__.__dict__["errors"] = errors
         __props__.__dict__["network"] = network
@@ -639,57 +519,50 @@ class PropertyActivation(pulumi.CustomResource):
     @property
     @pulumi.getter(name="activationId")
     def activation_id(self) -> pulumi.Output[str]:
-        """
-        The ID given to the activation event while it's in progress.
-        """
         return pulumi.get(self, "activation_id")
 
     @property
     @pulumi.getter(name="autoAcknowledgeRuleWarnings")
     def auto_acknowledge_rule_warnings(self) -> pulumi.Output[Optional[bool]]:
         """
-        Whether the activation should proceed despite any warnings. By default set to `true`.
+        automatically acknowledge all rule warnings for activation to continue. default is true
         """
         return pulumi.get(self, "auto_acknowledge_rule_warnings")
 
     @property
+    @pulumi.getter(name="complianceRecord")
+    def compliance_record(self) -> pulumi.Output[Optional['outputs.PropertyActivationComplianceRecord']]:
+        """
+        Provides an audit record when activating on a production network
+        """
+        return pulumi.get(self, "compliance_record")
+
+    @property
     @pulumi.getter
     def contacts(self) -> pulumi.Output[Sequence[str]]:
-        """
-        One or more email addresses to send activation status changes to.
-        """
         return pulumi.get(self, "contacts")
 
     @property
     @pulumi.getter
     def errors(self) -> pulumi.Output[str]:
-        """
-        The contents of `errors` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-        """
         return pulumi.get(self, "errors")
 
     @property
     @pulumi.getter
     def network(self) -> pulumi.Output[Optional[str]]:
-        """
-        Akamai network to activate on, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-        """
         return pulumi.get(self, "network")
 
     @property
     @pulumi.getter
     def note(self) -> pulumi.Output[Optional[str]]:
         """
-        A log message you can assign to the activation request.
+        assigns a log message to the activation request
         """
         return pulumi.get(self, "note")
 
     @property
     @pulumi.getter(name="propertyId")
     def property_id(self) -> pulumi.Output[str]:
-        """
-        (Required) The property's unique identifier, including the `prp_` prefix.
-        """
         return pulumi.get(self, "property_id")
 
     @property
@@ -700,40 +573,25 @@ class PropertyActivation(pulumi.CustomResource):
     @property
     @pulumi.getter(name="ruleWarnings")
     def rule_warnings(self) -> pulumi.Output[Sequence['outputs.PropertyActivationRuleWarning']]:
-        """
-        (Deprecated) Rule warnings are no longer maintained in the state file. You can still see the warnings in logs.
-        """
         return pulumi.get(self, "rule_warnings")
 
     @property
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
-        """
-        The property version's activation status on the selected network.
-        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
     def version(self) -> pulumi.Output[int]:
-        """
-        The property version to activate. Previously this field was optional. It now depends on the `Property` resource to identify latest instead of calculating it locally.  This association helps keep the dependency tree properly aligned. To always use the latest version, enter this value `{resource}.{resource identifier}.{field name}`. Using the example code above, the entry would be `akamai_property.example.latest_version` since we want the value of the `latest_version` attribute in the `Property` resource labeled `example`.
-        """
         return pulumi.get(self, "version")
 
     @property
     @pulumi.getter
     def warnings(self) -> pulumi.Output[str]:
-        """
-        The contents of `warnings` field returned by the API. For more information see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-        """
         return pulumi.get(self, "warnings")
 
     @property
     @pulumi.getter
     def property(self) -> pulumi.Output[str]:
-        """
-        (Deprecated) Replaced by `property_id`. Maintained for legacy purposes.
-        """
         return pulumi.get(self, "property")
 

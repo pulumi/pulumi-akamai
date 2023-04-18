@@ -38,16 +38,14 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
     }
 
     /**
-     * The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-     * `STAGING`.
+     * The Akamai network on which the list is activated: STAGING or PRODUCTION
      * 
      */
     @Import(name="network")
     private @Nullable Output<String> network;
 
     /**
-     * @return The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-     * `STAGING`.
+     * @return The Akamai network on which the list is activated: STAGING or PRODUCTION
      * 
      */
     public Optional<Output<String>> network() {
@@ -55,14 +53,14 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
     }
 
     /**
-     * The ID of the network list to be activated
+     * Unique identifier of the network list
      * 
      */
     @Import(name="networkListId")
     private @Nullable Output<String> networkListId;
 
     /**
-     * @return The ID of the network list to be activated
+     * @return Unique identifier of the network list
      * 
      */
     public Optional<Output<String>> networkListId() {
@@ -70,14 +68,14 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
     }
 
     /**
-     * A comment describing the activation.
+     * Descriptive text to accompany the activation
      * 
      */
     @Import(name="notes")
     private @Nullable Output<String> notes;
 
     /**
-     * @return A comment describing the activation.
+     * @return Descriptive text to accompany the activation
      * 
      */
     public Optional<Output<String>> notes() {
@@ -85,16 +83,14 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
     }
 
     /**
-     * A bracketed, comma-separated list of email addresses that will be notified when the
-     * operation is complete.
+     * List of email addresses of Control Center users who receive an email when activation of this list is complete
      * 
      */
     @Import(name="notificationEmails")
     private @Nullable Output<List<String>> notificationEmails;
 
     /**
-     * @return A bracketed, comma-separated list of email addresses that will be notified when the
-     * operation is complete.
+     * @return List of email addresses of Control Center users who receive an email when activation of this list is complete
      * 
      */
     public Optional<Output<List<String>>> notificationEmails() {
@@ -102,16 +98,14 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
     }
 
     /**
-     * The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-     * list was not activated.
+     * This network list&#39;s current activation status in the environment specified by the &#34;network&#34; attribute
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-     * list was not activated.
+     * @return This network list&#39;s current activation status in the environment specified by the &#34;network&#34; attribute
      * 
      */
     public Optional<Output<String>> status() {
@@ -119,16 +113,14 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
     }
 
     /**
-     * An integer that identifies the current version of the network list; this value is incremented each time
-     * the list is modified.
+     * Identifies the sync point of the network list to be activated
      * 
      */
     @Import(name="syncPoint")
     private @Nullable Output<Integer> syncPoint;
 
     /**
-     * @return An integer that identifies the current version of the network list; this value is incremented each time
-     * the list is modified.
+     * @return Identifies the sync point of the network list to be activated
      * 
      */
     public Optional<Output<Integer>> syncPoint() {
@@ -191,8 +183,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param network The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-         * `STAGING`.
+         * @param network The Akamai network on which the list is activated: STAGING or PRODUCTION
          * 
          * @return builder
          * 
@@ -203,8 +194,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param network The network to be used, either `STAGING` or `PRODUCTION`. If not supplied, defaults to
-         * `STAGING`.
+         * @param network The Akamai network on which the list is activated: STAGING or PRODUCTION
          * 
          * @return builder
          * 
@@ -214,7 +204,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param networkListId The ID of the network list to be activated
+         * @param networkListId Unique identifier of the network list
          * 
          * @return builder
          * 
@@ -225,7 +215,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param networkListId The ID of the network list to be activated
+         * @param networkListId Unique identifier of the network list
          * 
          * @return builder
          * 
@@ -235,7 +225,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param notes A comment describing the activation.
+         * @param notes Descriptive text to accompany the activation
          * 
          * @return builder
          * 
@@ -246,7 +236,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param notes A comment describing the activation.
+         * @param notes Descriptive text to accompany the activation
          * 
          * @return builder
          * 
@@ -256,8 +246,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param notificationEmails A bracketed, comma-separated list of email addresses that will be notified when the
-         * operation is complete.
+         * @param notificationEmails List of email addresses of Control Center users who receive an email when activation of this list is complete
          * 
          * @return builder
          * 
@@ -268,8 +257,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param notificationEmails A bracketed, comma-separated list of email addresses that will be notified when the
-         * operation is complete.
+         * @param notificationEmails List of email addresses of Control Center users who receive an email when activation of this list is complete
          * 
          * @return builder
          * 
@@ -279,8 +267,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param notificationEmails A bracketed, comma-separated list of email addresses that will be notified when the
-         * operation is complete.
+         * @param notificationEmails List of email addresses of Control Center users who receive an email when activation of this list is complete
          * 
          * @return builder
          * 
@@ -290,8 +277,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param status The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-         * list was not activated.
+         * @param status This network list&#39;s current activation status in the environment specified by the &#34;network&#34; attribute
          * 
          * @return builder
          * 
@@ -302,8 +288,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param status The string `ACTIVATED` if the activation was successful, or a string identifying the reason why the network
-         * list was not activated.
+         * @param status This network list&#39;s current activation status in the environment specified by the &#34;network&#34; attribute
          * 
          * @return builder
          * 
@@ -313,8 +298,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param syncPoint An integer that identifies the current version of the network list; this value is incremented each time
-         * the list is modified.
+         * @param syncPoint Identifies the sync point of the network list to be activated
          * 
          * @return builder
          * 
@@ -325,8 +309,7 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param syncPoint An integer that identifies the current version of the network list; this value is incremented each time
-         * the list is modified.
+         * @param syncPoint Identifies the sync point of the network list to be activated
          * 
          * @return builder
          * 

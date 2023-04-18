@@ -16,101 +16,45 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security configuration; security policy
- * 
- * The `resource_akamai_appsec_advanced_settings_evasive_path_match` resource allows you to enable, disable, or update the evasive path match setting for a configuration.
- * This setting determines whether fuzzy matching is used to make URL matching more inclusive.
- * This operation applies at the configuration level, and therefore applies to all policies within a configuration.
- * You may override this setting for a particular policy by specifying the policy using the security_policy_id parameter.
- * 
- * **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/advanced-settings/evasive-path-match](https://techdocs.akamai.com/application-security/reference/put-evasive-path-match)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecAdvancedSettingsEvasivePathMatch;
- * import com.pulumi.akamai.AppSecAdvancedSettingsEvasivePathMatchArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(var_.security_configuration())
- *             .build());
- * 
- *         var configEvasivePathMatch = new AppSecAdvancedSettingsEvasivePathMatch(&#34;configEvasivePathMatch&#34;, AppSecAdvancedSettingsEvasivePathMatchArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .enablePathMatch(true)
- *             .build());
- * 
- *         var policyOverride = new AppSecAdvancedSettingsEvasivePathMatch(&#34;policyOverride&#34;, AppSecAdvancedSettingsEvasivePathMatchArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(var_.security_policy_id())
- *             .enablePathMatch(true)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecAdvancedSettingsEvasivePathMatch:AppSecAdvancedSettingsEvasivePathMatch")
 public class AppSecAdvancedSettingsEvasivePathMatch extends com.pulumi.resources.CustomResource {
     /**
-     * The ID of the security configuration to use.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return The ID of the security configuration to use.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * Whether to enable path match.
+     * Whether to enable the evasive path match setting
      * 
      */
     @Export(name="enablePathMatch", type=Boolean.class, parameters={})
     private Output<Boolean> enablePathMatch;
 
     /**
-     * @return Whether to enable path match.
+     * @return Whether to enable the evasive path match setting
      * 
      */
     public Output<Boolean> enablePathMatch() {
         return this.enablePathMatch;
     }
     /**
-     * The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output</* @Nullable */ String> securityPolicyId;
 
     /**
-     * @return The ID of a specific security policy to which the evasive path match setting should be applied. If not supplied, the indicated setting will be applied to all policies within the configuration.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<Optional<String>> securityPolicyId() {

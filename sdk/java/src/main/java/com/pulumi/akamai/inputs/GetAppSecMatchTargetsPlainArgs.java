@@ -14,32 +14,16 @@ public final class GetAppSecMatchTargetsPlainArgs extends com.pulumi.resources.I
 
     public static final GetAppSecMatchTargetsPlainArgs Empty = new GetAppSecMatchTargetsPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the match targets.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the match targets.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
-     * 
-     */
     @Import(name="matchTargetId")
     private @Nullable Integer matchTargetId;
 
-    /**
-     * @return . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
-     * 
-     */
     public Optional<Integer> matchTargetId() {
         return Optional.ofNullable(this.matchTargetId);
     }
@@ -69,23 +53,11 @@ public final class GetAppSecMatchTargetsPlainArgs extends com.pulumi.resources.I
             $ = new GetAppSecMatchTargetsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the match targets.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param matchTargetId . Unique identifier of the match target you want to return information for. If not included, information is returned for all your match targets.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchTargetId(@Nullable Integer matchTargetId) {
             $.matchTargetId = matchTargetId;
             return this;

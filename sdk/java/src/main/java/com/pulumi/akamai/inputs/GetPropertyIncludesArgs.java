@@ -16,62 +16,30 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
 
     public static final GetPropertyIncludesArgs Empty = new GetPropertyIncludesArgs();
 
-    /**
-     * (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-     * 
-     */
     @Import(name="contractId", required=true)
     private Output<String> contractId;
 
-    /**
-     * @return (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-     * 
-     */
     public Output<String> contractId() {
         return this.contractId;
     }
 
-    /**
-     * (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-     * 
-     */
     @Import(name="groupId", required=true)
     private Output<String> groupId;
 
-    /**
-     * @return (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-     * 
-     */
     public Output<String> groupId() {
         return this.groupId;
     }
 
-    /**
-     * (Optional) The property that references the includes you want to list.
-     * 
-     */
     @Import(name="parentProperty")
     private @Nullable Output<GetPropertyIncludesParentPropertyArgs> parentProperty;
 
-    /**
-     * @return (Optional) The property that references the includes you want to list.
-     * 
-     */
     public Optional<Output<GetPropertyIncludesParentPropertyArgs>> parentProperty() {
         return Optional.ofNullable(this.parentProperty);
     }
 
-    /**
-     * (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-     * 
-     */
     @Import(name="type")
     private @Nullable Output<String> type;
 
-    /**
-     * @return (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-     * 
-     */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
     }
@@ -103,86 +71,38 @@ public final class GetPropertyIncludesArgs extends com.pulumi.resources.InvokeAr
             $ = new GetPropertyIncludesArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(Output<String> contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @param contractId (Required) A contract&#39;s unique ID, including the optional `ctr_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractId(String contractId) {
             return contractId(Output.of(contractId));
         }
 
-        /**
-         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(Output<String> groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        /**
-         * @param groupId (Required) A group&#39;s unique ID, including the optional `grp_` prefix.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
         }
 
-        /**
-         * @param parentProperty (Optional) The property that references the includes you want to list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder parentProperty(@Nullable Output<GetPropertyIncludesParentPropertyArgs> parentProperty) {
             $.parentProperty = parentProperty;
             return this;
         }
 
-        /**
-         * @param parentProperty (Optional) The property that references the includes you want to list.
-         * 
-         * @return builder
-         * 
-         */
         public Builder parentProperty(GetPropertyIncludesParentPropertyArgs parentProperty) {
             return parentProperty(Output.of(parentProperty));
         }
 
-        /**
-         * @param type (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
             return this;
         }
 
-        /**
-         * @param type (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(String type) {
             return type(Output.of(type));
         }

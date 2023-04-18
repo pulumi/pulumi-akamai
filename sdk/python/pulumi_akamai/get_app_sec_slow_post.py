@@ -84,40 +84,7 @@ def get_app_sec_slow_post(config_id: Optional[int] = None,
                           security_policy_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecSlowPostResult:
     """
-    **Scopes**: Security policy
-
-    Returns the slow POST protection settings for the specified security configuration and policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/slow-post](https://techdocs.akamai.com/application-security/reference/get-policy-slow-post)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    slow_post = akamai.get_app_sec_slow_post(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("slowPostOutputText", slow_post.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `output_text`. Tabular report including the following:
-      - **ACTION**. Action taken any time slow POST protection is triggered. Valid values are:
-        - **alert**. Record the event.
-        - **abort**. Block the request.
-      - **SLOW_RATE_THRESHOLD RATE**. Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
-      - **SLOW_RATE_THRESHOLD PERIOD**. Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
-      - **DURATION_THRESHOLD TIMEOUT**. Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in order to avoid triggering the specified action.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the slow POST settings.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the slow POST settings.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -138,39 +105,6 @@ def get_app_sec_slow_post_output(config_id: Optional[pulumi.Input[int]] = None,
                                  security_policy_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecSlowPostResult]:
     """
-    **Scopes**: Security policy
-
-    Returns the slow POST protection settings for the specified security configuration and policy. Slow POST protections help defend a site against attacks that try to tie up the site by using extremely slow requests and responses.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/slow-post](https://techdocs.akamai.com/application-security/reference/get-policy-slow-post)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    slow_post = akamai.get_app_sec_slow_post(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("slowPostOutputText", slow_post.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `output_text`. Tabular report including the following:
-      - **ACTION**. Action taken any time slow POST protection is triggered. Valid values are:
-        - **alert**. Record the event.
-        - **abort**. Block the request.
-      - **SLOW_RATE_THRESHOLD RATE**. Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered.
-      - **SLOW_RATE_THRESHOLD PERIOD**. Amount of time (in seconds) that the server should allow a request before marking the request as being too slow.
-      - **DURATION_THRESHOLD TIMEOUT**. Maximum amount of time (in seconds) that the first eight kilobytes of the POST body must be received in order to avoid triggering the specified action.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the slow POST settings.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the slow POST settings.
+    Use this data source to access information about an existing resource.
     """
     ...

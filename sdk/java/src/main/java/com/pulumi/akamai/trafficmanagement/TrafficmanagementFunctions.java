@@ -15,15 +15,6 @@ import java.util.concurrent.CompletableFuture;
 
 public final class TrafficmanagementFunctions {
     /**
-     * Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
-     * 
-     * ## Attributes reference
-     * 
-     * This data source supports these attributes:
-     * 
-     * * `id` - The data resource ID. Enter in this format: `&lt;domain&gt;:default_datacenter:&lt;datacenter_id&gt;`.
-     * * `datacenter_id` - The default data center ID.
-     * * `nickname` - The default data center nickname.
      * 
      * @deprecated
      * akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter
@@ -34,15 +25,6 @@ public final class TrafficmanagementFunctions {
         return getGtmDefaultDatacenter(args, InvokeOptions.Empty);
     }
     /**
-     * Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
-     * 
-     * ## Attributes reference
-     * 
-     * This data source supports these attributes:
-     * 
-     * * `id` - The data resource ID. Enter in this format: `&lt;domain&gt;:default_datacenter:&lt;datacenter_id&gt;`.
-     * * `datacenter_id` - The default data center ID.
-     * * `nickname` - The default data center nickname.
      * 
      * @deprecated
      * akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter
@@ -53,15 +35,6 @@ public final class TrafficmanagementFunctions {
         return getGtmDefaultDatacenterPlain(args, InvokeOptions.Empty);
     }
     /**
-     * Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
-     * 
-     * ## Attributes reference
-     * 
-     * This data source supports these attributes:
-     * 
-     * * `id` - The data resource ID. Enter in this format: `&lt;domain&gt;:default_datacenter:&lt;datacenter_id&gt;`.
-     * * `datacenter_id` - The default data center ID.
-     * * `nickname` - The default data center nickname.
      * 
      * @deprecated
      * akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter
@@ -72,15 +45,6 @@ public final class TrafficmanagementFunctions {
         return Deployment.getInstance().invoke("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", TypeShape.of(GetGtmDefaultDatacenterResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Use the `akamai.getGtmDefaultDatacenter` data source to retrieve the default data center, ID, and nickname.
-     * 
-     * ## Attributes reference
-     * 
-     * This data source supports these attributes:
-     * 
-     * * `id` - The data resource ID. Enter in this format: `&lt;domain&gt;:default_datacenter:&lt;datacenter_id&gt;`.
-     * * `datacenter_id` - The default data center ID.
-     * * `nickname` - The default data center nickname.
      * 
      * @deprecated
      * akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter

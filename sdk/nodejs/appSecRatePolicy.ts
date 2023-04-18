@@ -4,38 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security configuration; rate policy
- *
- * Creates, modifies, or deletes rate policies. Rate polices help you monitor and moderate the number and rate of all the requests you receive.
- * In turn, this helps you prevent your website from being overwhelmed by a dramatic and unexpected surge in traffic.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/rate-policies](https://techdocs.akamai.com/application-security/reference/post-rate-policies)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- * import * as fs from "fs";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const ratePolicy = new akamai.AppSecRatePolicy("ratePolicy", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     ratePolicy: fs.readFileSync(`${path.module}/rate_policy.json`),
- * });
- * export const ratePolicyId = ratePolicy.ratePolicyId;
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `ratePolicyId`. ID of the modified or newly-created rate policy.
- */
 export class AppSecRatePolicy extends pulumi.CustomResource {
     /**
      * Get an existing AppSecRatePolicy resource's state with the given name, ID, and optional extra
@@ -65,11 +33,11 @@ export class AppSecRatePolicy extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the rate policy being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Path to a JSON file containing a rate policy definition.
+     * JSON-formatted definition of the rate policy
      */
     public readonly ratePolicy!: pulumi.Output<string>;
     /**
@@ -115,11 +83,11 @@ export class AppSecRatePolicy extends pulumi.CustomResource {
  */
 export interface AppSecRatePolicyState {
     /**
-     * . Unique identifier of the security configuration associated with the rate policy being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing a rate policy definition.
+     * JSON-formatted definition of the rate policy
      */
     ratePolicy?: pulumi.Input<string>;
     /**
@@ -133,11 +101,11 @@ export interface AppSecRatePolicyState {
  */
 export interface AppSecRatePolicyArgs {
     /**
-     * . Unique identifier of the security configuration associated with the rate policy being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Path to a JSON file containing a rate policy definition.
+     * JSON-formatted definition of the rate policy
      */
     ratePolicy: pulumi.Input<string>;
 }

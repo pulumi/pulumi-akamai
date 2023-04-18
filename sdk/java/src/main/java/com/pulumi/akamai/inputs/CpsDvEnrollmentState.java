@@ -25,14 +25,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     public static final CpsDvEnrollmentState Empty = new CpsDvEnrollmentState();
 
     /**
-     * Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+     * Whether acknowledge warnings before certificate verification
      * 
      */
     @Import(name="acknowledgePreVerificationWarnings")
     private @Nullable Output<Boolean> acknowledgePreVerificationWarnings;
 
     /**
-     * @return Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+     * @return Whether acknowledge warnings before certificate verification
      * 
      */
     public Optional<Output<Boolean>> acknowledgePreVerificationWarnings() {
@@ -40,14 +40,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Contact information for the certificate administrator at your company.
+     * Contact information for the certificate administrator to use at organization
      * 
      */
     @Import(name="adminContact")
     private @Nullable Output<CpsDvEnrollmentAdminContactArgs> adminContact;
 
     /**
-     * @return Contact information for the certificate administrator at your company.
+     * @return Contact information for the certificate administrator to use at organization
      * 
      */
     public Optional<Output<CpsDvEnrollmentAdminContactArgs>> adminContact() {
@@ -55,14 +55,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * Allow to duplicate common name
      * 
      */
     @Import(name="allowDuplicateCommonName")
     private @Nullable Output<Boolean> allowDuplicateCommonName;
 
     /**
-     * @return (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+     * @return Allow to duplicate common name
      * 
      */
     public Optional<Output<Boolean>> allowDuplicateCommonName() {
@@ -70,14 +70,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Certificate trust chain type.
+     * Certificate trust chain type
      * 
      */
     @Import(name="certificateChainType")
     private @Nullable Output<String> certificateChainType;
 
     /**
-     * @return Certificate trust chain type.
+     * @return Certificate trust chain type
      * 
      */
     public Optional<Output<String>> certificateChainType() {
@@ -100,14 +100,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+     * Common name used for enrollment
      * 
      */
     @Import(name="commonName")
     private @Nullable Output<String> commonName;
 
     /**
-     * @return (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+     * @return Common name used for enrollment
      * 
      */
     public Optional<Output<String>> commonName() {
@@ -115,14 +115,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
+     * Contract ID for which enrollment is retrieved
      * 
      */
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
     /**
-     * @return (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
+     * @return Contract ID for which enrollment is retrieved
      * 
      */
     public Optional<Output<String>> contractId() {
@@ -130,14 +130,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+     * Certificate signing request generated during enrollment creation
      * 
      */
     @Import(name="csr")
     private @Nullable Output<CpsDvEnrollmentCsrArgs> csr;
 
     /**
-     * @return When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+     * @return Certificate signing request generated during enrollment creation
      * 
      */
     public Optional<Output<CpsDvEnrollmentCsrArgs>> csr() {
@@ -160,7 +160,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+     * Enable Dual-Stacked certificate deployment for enrollment
      * 
      * @deprecated
      * Deprecated, don&#39;t use; always false
@@ -171,7 +171,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     private @Nullable Output<Boolean> enableMultiStackedCertificates;
 
     /**
-     * @return Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+     * @return Enable Dual-Stacked certificate deployment for enrollment
      * 
      * @deprecated
      * Deprecated, don&#39;t use; always false
@@ -198,14 +198,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+     * Settings containing network information and TLS Metadata used by CPS
      * 
      */
     @Import(name="networkConfiguration")
     private @Nullable Output<CpsDvEnrollmentNetworkConfigurationArgs> networkConfiguration;
 
     /**
-     * @return The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+     * @return Settings containing network information and TLS Metadata used by CPS
      * 
      */
     public Optional<Output<CpsDvEnrollmentNetworkConfigurationArgs>> networkConfiguration() {
@@ -213,14 +213,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Your organization information.
+     * Organization information
      * 
      */
     @Import(name="organization")
     private @Nullable Output<CpsDvEnrollmentOrganizationArgs> organization;
 
     /**
-     * @return Your organization information.
+     * @return Organization information
      * 
      */
     public Optional<Output<CpsDvEnrollmentOrganizationArgs>> organization() {
@@ -243,14 +243,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Additional common names to create a Subject Alternative Names (SAN) list.
+     * List of SANs
      * 
      */
     @Import(name="sans")
     private @Nullable Output<List<String>> sans;
 
     /**
-     * @return Additional common names to create a Subject Alternative Names (SAN) list.
+     * @return List of SANs
      * 
      */
     public Optional<Output<List<String>>> sans() {
@@ -258,14 +258,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai&#39;s standard secure network, but it isn&#39;t PCI compliant. `enhanced-tls` deploys your certificate to Akamai&#39;s more secure network with PCI compliance capability.
+     * Type of TLS deployment network
      * 
      */
     @Import(name="secureNetwork")
     private @Nullable Output<String> secureNetwork;
 
     /**
-     * @return The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai&#39;s standard secure network, but it isn&#39;t PCI compliant. `enhanced-tls` deploys your certificate to Akamai&#39;s more secure network with PCI compliance capability.
+     * @return Type of TLS deployment network
      * 
      */
     public Optional<Output<String>> secureNetwork() {
@@ -273,14 +273,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+     * SHA algorithm type
      * 
      */
     @Import(name="signatureAlgorithm")
     private @Nullable Output<String> signatureAlgorithm;
 
     /**
-     * @return The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+     * @return SHA algorithm type
      * 
      */
     public Optional<Output<String>> signatureAlgorithm() {
@@ -288,14 +288,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can&#39;t change this setting once an enrollment is created.
+     * Whether Server Name Indication is used for enrollment
      * 
      */
     @Import(name="sniOnly")
     private @Nullable Output<Boolean> sniOnly;
 
     /**
-     * @return Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can&#39;t change this setting once an enrollment is created.
+     * @return Whether Server Name Indication is used for enrollment
      * 
      */
     public Optional<Output<Boolean>> sniOnly() {
@@ -303,14 +303,14 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
+     * Contact information for an administrator at Akamai
      * 
      */
     @Import(name="techContact")
     private @Nullable Output<CpsDvEnrollmentTechContactArgs> techContact;
 
     /**
-     * @return The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
+     * @return Contact information for an administrator at Akamai
      * 
      */
     public Optional<Output<CpsDvEnrollmentTechContactArgs>> techContact() {
@@ -376,7 +376,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param acknowledgePreVerificationWarnings Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+         * @param acknowledgePreVerificationWarnings Whether acknowledge warnings before certificate verification
          * 
          * @return builder
          * 
@@ -387,7 +387,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param acknowledgePreVerificationWarnings Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+         * @param acknowledgePreVerificationWarnings Whether acknowledge warnings before certificate verification
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param adminContact Contact information for the certificate administrator at your company.
+         * @param adminContact Contact information for the certificate administrator to use at organization
          * 
          * @return builder
          * 
@@ -408,7 +408,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param adminContact Contact information for the certificate administrator at your company.
+         * @param adminContact Contact information for the certificate administrator to use at organization
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param allowDuplicateCommonName (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+         * @param allowDuplicateCommonName Allow to duplicate common name
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param allowDuplicateCommonName (Optional) Boolean. Set to `true` if you want to reuse a common name that&#39;s part of an existing enrollment.
+         * @param allowDuplicateCommonName Allow to duplicate common name
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param certificateChainType Certificate trust chain type.
+         * @param certificateChainType Certificate trust chain type
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param certificateChainType Certificate trust chain type.
+         * @param certificateChainType Certificate trust chain type
          * 
          * @return builder
          * 
@@ -481,7 +481,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param commonName (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+         * @param commonName Common name used for enrollment
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param commonName (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+         * @param commonName Common name used for enrollment
          * 
          * @return builder
          * 
@@ -502,7 +502,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param contractId (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
+         * @param contractId Contract ID for which enrollment is retrieved
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param contractId (Required) A contract&#39;s ID, optionally with the `ctr_` prefix.
+         * @param contractId Contract ID for which enrollment is retrieved
          * 
          * @return builder
          * 
@@ -523,7 +523,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param csr When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+         * @param csr Certificate signing request generated during enrollment creation
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param csr When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+         * @param csr Certificate signing request generated during enrollment creation
          * 
          * @return builder
          * 
@@ -575,7 +575,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param enableMultiStackedCertificates Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+         * @param enableMultiStackedCertificates Enable Dual-Stacked certificate deployment for enrollment
          * 
          * @return builder
          * 
@@ -590,7 +590,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param enableMultiStackedCertificates Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+         * @param enableMultiStackedCertificates Enable Dual-Stacked certificate deployment for enrollment
          * 
          * @return builder
          * 
@@ -635,7 +635,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param networkConfiguration The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+         * @param networkConfiguration Settings containing network information and TLS Metadata used by CPS
          * 
          * @return builder
          * 
@@ -646,7 +646,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param networkConfiguration The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+         * @param networkConfiguration Settings containing network information and TLS Metadata used by CPS
          * 
          * @return builder
          * 
@@ -656,7 +656,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param organization Your organization information.
+         * @param organization Organization information
          * 
          * @return builder
          * 
@@ -667,7 +667,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param organization Your organization information.
+         * @param organization Organization information
          * 
          * @return builder
          * 
@@ -698,7 +698,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sans Additional common names to create a Subject Alternative Names (SAN) list.
+         * @param sans List of SANs
          * 
          * @return builder
          * 
@@ -709,7 +709,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sans Additional common names to create a Subject Alternative Names (SAN) list.
+         * @param sans List of SANs
          * 
          * @return builder
          * 
@@ -719,7 +719,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sans Additional common names to create a Subject Alternative Names (SAN) list.
+         * @param sans List of SANs
          * 
          * @return builder
          * 
@@ -729,7 +729,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param secureNetwork The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai&#39;s standard secure network, but it isn&#39;t PCI compliant. `enhanced-tls` deploys your certificate to Akamai&#39;s more secure network with PCI compliance capability.
+         * @param secureNetwork Type of TLS deployment network
          * 
          * @return builder
          * 
@@ -740,7 +740,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param secureNetwork The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai&#39;s standard secure network, but it isn&#39;t PCI compliant. `enhanced-tls` deploys your certificate to Akamai&#39;s more secure network with PCI compliance capability.
+         * @param secureNetwork Type of TLS deployment network
          * 
          * @return builder
          * 
@@ -750,7 +750,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param signatureAlgorithm The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+         * @param signatureAlgorithm SHA algorithm type
          * 
          * @return builder
          * 
@@ -761,7 +761,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param signatureAlgorithm The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+         * @param signatureAlgorithm SHA algorithm type
          * 
          * @return builder
          * 
@@ -771,7 +771,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sniOnly Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can&#39;t change this setting once an enrollment is created.
+         * @param sniOnly Whether Server Name Indication is used for enrollment
          * 
          * @return builder
          * 
@@ -782,7 +782,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sniOnly Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can&#39;t change this setting once an enrollment is created.
+         * @param sniOnly Whether Server Name Indication is used for enrollment
          * 
          * @return builder
          * 
@@ -792,7 +792,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param techContact The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
+         * @param techContact Contact information for an administrator at Akamai
          * 
          * @return builder
          * 
@@ -803,7 +803,7 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param techContact The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can&#39;t reach the `admin_contact`.
+         * @param techContact Contact information for an administrator at Akamai
          * 
          * @return builder
          * 

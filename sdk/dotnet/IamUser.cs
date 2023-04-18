@@ -9,82 +9,41 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// The `akamai.IamUser` resource represents a user on the Akamai platform.
-    /// 
-    /// ## Basic usage
-    /// 
-    /// This example shows how to set up a user:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var exampleUser = new Akamai.IamUser("exampleUser", new()
-    ///     {
-    ///         AuthGrantsJson = "[{\"groupId\":18451,\"roleId\":14},{\"groupId\":18453,\"roleId\":13}]",
-    ///         Country = "Grenada",
-    ///         Email = "jperez@example.com",
-    ///         EnableTfa = false,
-    ///         FirstName = "Juan",
-    ///         LastName = "Perez",
-    ///         Phone = "+1 206-555-0100",
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
-    /// ## Attributes reference
-    /// 
-    /// This resource returns these attributes:
-    /// 
-    /// * `session_timeout` - The number of seconds it takes for the user's session to time out if there hasn't been any activity.
-    /// * `user_name` - A user's `loginId`. Typically, a user's email address.
-    /// * `is_locked` - The user's lock status.
-    /// * `last_login` - ISO 8601 timestamp indicating when the user last logged in.
-    /// * `password_expired_after` - The date a user's password expires.
-    /// * `tfa_configured` - Indicates whether two-factor authentication is configured.
-    /// * `email_update_pending` - Indicates whether email update is pending.
-    /// * `lock` - (Optional) Flag to block as user account.
-    /// </summary>
     [AkamaiResourceType("akamai:index/iamUser:IamUser")]
     public partial class IamUser : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The user's street address.
+        /// The user's street address
         /// </summary>
         [Output("address")]
         public Output<string> Address { get; private set; } = null!;
 
         /// <summary>
-        /// A user's per-group role assignments, in JSON form.
+        /// A user's per-group role assignments, in JSON form
         /// </summary>
         [Output("authGrantsJson")]
         public Output<string> AuthGrantsJson { get; private set; } = null!;
 
         /// <summary>
-        /// The user's city.
+        /// The user's city
         /// </summary>
         [Output("city")]
         public Output<string?> City { get; private set; } = null!;
 
         /// <summary>
-        /// To help characterize the user, the value can be any that are available from the view-contact-types operation.
+        /// To help characterize the user, the value can be any that are available from the view-contact-types operation
         /// </summary>
         [Output("contactType")]
         public Output<string> ContactType { get; private set; } = null!;
 
         /// <summary>
-        /// As part of the user's location, the value can be any that are available from the view-supported-countries operation.
+        /// As part of the user's location, the value can be any that are available from the view-supported-countries operation
         /// </summary>
         [Output("country")]
         public Output<string> Country { get; private set; } = null!;
 
         /// <summary>
-        /// The user's email address.
+        /// The user's email address
         /// </summary>
         [Output("email")]
         public Output<string> Email { get; private set; } = null!;
@@ -96,19 +55,19 @@ namespace Pulumi.Akamai
         public Output<bool> EmailUpdatePending { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether two-factor authentication is allowed.
+        /// Indicates whether two-factor authentication is allowed
         /// </summary>
         [Output("enableTfa")]
         public Output<bool> EnableTfa { get; private set; } = null!;
 
         /// <summary>
-        /// The user's first name.
+        /// The user's first name
         /// </summary>
         [Output("firstName")]
         public Output<string> FirstName { get; private set; } = null!;
 
         /// <summary>
-        /// The user's lock status.
+        /// The user's lock status
         /// </summary>
         [Output("isLocked")]
         public Output<bool> IsLocked { get; private set; } = null!;
@@ -126,7 +85,7 @@ namespace Pulumi.Akamai
         public Output<string> LastLogin { get; private set; } = null!;
 
         /// <summary>
-        /// The user's last name.
+        /// The user's surname
         /// </summary>
         [Output("lastName")]
         public Output<string> LastName { get; private set; } = null!;
@@ -138,7 +97,7 @@ namespace Pulumi.Akamai
         public Output<bool?> Lock { get; private set; } = null!;
 
         /// <summary>
-        /// The user's mobile phone number.
+        /// The user's mobile phone number
         /// </summary>
         [Output("mobilePhone")]
         public Output<string?> MobilePhone { get; private set; } = null!;
@@ -150,7 +109,7 @@ namespace Pulumi.Akamai
         public Output<string> PasswordExpiredAfter { get; private set; } = null!;
 
         /// <summary>
-        /// The user's main phone number.
+        /// The user's main phone number
         /// </summary>
         [Output("phone")]
         public Output<string> Phone { get; private set; } = null!;
@@ -162,7 +121,7 @@ namespace Pulumi.Akamai
         public Output<string> PreferredLanguage { get; private set; } = null!;
 
         /// <summary>
-        /// The user's secondary email address.
+        /// The user's secondary email address
         /// </summary>
         [Output("secondaryEmail")]
         public Output<string?> SecondaryEmail { get; private set; } = null!;
@@ -174,7 +133,7 @@ namespace Pulumi.Akamai
         public Output<int> SessionTimeout { get; private set; } = null!;
 
         /// <summary>
-        /// The user's state.
+        /// The user's state
         /// </summary>
         [Output("state")]
         public Output<string?> State { get; private set; } = null!;
@@ -198,7 +157,7 @@ namespace Pulumi.Akamai
         public Output<string> UserName { get; private set; } = null!;
 
         /// <summary>
-        /// The user's five-digit ZIP code.
+        /// The user's five-digit ZIP code
         /// </summary>
         [Output("zipCode")]
         public Output<string?> ZipCode { get; private set; } = null!;
@@ -250,49 +209,49 @@ namespace Pulumi.Akamai
     public sealed class IamUserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The user's street address.
+        /// The user's street address
         /// </summary>
         [Input("address")]
         public Input<string>? Address { get; set; }
 
         /// <summary>
-        /// A user's per-group role assignments, in JSON form.
+        /// A user's per-group role assignments, in JSON form
         /// </summary>
         [Input("authGrantsJson", required: true)]
         public Input<string> AuthGrantsJson { get; set; } = null!;
 
         /// <summary>
-        /// The user's city.
+        /// The user's city
         /// </summary>
         [Input("city")]
         public Input<string>? City { get; set; }
 
         /// <summary>
-        /// To help characterize the user, the value can be any that are available from the view-contact-types operation.
+        /// To help characterize the user, the value can be any that are available from the view-contact-types operation
         /// </summary>
         [Input("contactType")]
         public Input<string>? ContactType { get; set; }
 
         /// <summary>
-        /// As part of the user's location, the value can be any that are available from the view-supported-countries operation.
+        /// As part of the user's location, the value can be any that are available from the view-supported-countries operation
         /// </summary>
         [Input("country", required: true)]
         public Input<string> Country { get; set; } = null!;
 
         /// <summary>
-        /// The user's email address.
+        /// The user's email address
         /// </summary>
         [Input("email", required: true)]
         public Input<string> Email { get; set; } = null!;
 
         /// <summary>
-        /// Indicates whether two-factor authentication is allowed.
+        /// Indicates whether two-factor authentication is allowed
         /// </summary>
         [Input("enableTfa", required: true)]
         public Input<bool> EnableTfa { get; set; } = null!;
 
         /// <summary>
-        /// The user's first name.
+        /// The user's first name
         /// </summary>
         [Input("firstName", required: true)]
         public Input<string> FirstName { get; set; } = null!;
@@ -304,7 +263,7 @@ namespace Pulumi.Akamai
         public Input<string>? JobTitle { get; set; }
 
         /// <summary>
-        /// The user's last name.
+        /// The user's surname
         /// </summary>
         [Input("lastName", required: true)]
         public Input<string> LastName { get; set; } = null!;
@@ -316,13 +275,13 @@ namespace Pulumi.Akamai
         public Input<bool>? Lock { get; set; }
 
         /// <summary>
-        /// The user's mobile phone number.
+        /// The user's mobile phone number
         /// </summary>
         [Input("mobilePhone")]
         public Input<string>? MobilePhone { get; set; }
 
         /// <summary>
-        /// The user's main phone number.
+        /// The user's main phone number
         /// </summary>
         [Input("phone", required: true)]
         public Input<string> Phone { get; set; } = null!;
@@ -334,7 +293,7 @@ namespace Pulumi.Akamai
         public Input<string>? PreferredLanguage { get; set; }
 
         /// <summary>
-        /// The user's secondary email address.
+        /// The user's secondary email address
         /// </summary>
         [Input("secondaryEmail")]
         public Input<string>? SecondaryEmail { get; set; }
@@ -346,7 +305,7 @@ namespace Pulumi.Akamai
         public Input<int>? SessionTimeout { get; set; }
 
         /// <summary>
-        /// The user's state.
+        /// The user's state
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -358,7 +317,7 @@ namespace Pulumi.Akamai
         public Input<string>? TimeZone { get; set; }
 
         /// <summary>
-        /// The user's five-digit ZIP code.
+        /// The user's five-digit ZIP code
         /// </summary>
         [Input("zipCode")]
         public Input<string>? ZipCode { get; set; }
@@ -372,37 +331,37 @@ namespace Pulumi.Akamai
     public sealed class IamUserState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The user's street address.
+        /// The user's street address
         /// </summary>
         [Input("address")]
         public Input<string>? Address { get; set; }
 
         /// <summary>
-        /// A user's per-group role assignments, in JSON form.
+        /// A user's per-group role assignments, in JSON form
         /// </summary>
         [Input("authGrantsJson")]
         public Input<string>? AuthGrantsJson { get; set; }
 
         /// <summary>
-        /// The user's city.
+        /// The user's city
         /// </summary>
         [Input("city")]
         public Input<string>? City { get; set; }
 
         /// <summary>
-        /// To help characterize the user, the value can be any that are available from the view-contact-types operation.
+        /// To help characterize the user, the value can be any that are available from the view-contact-types operation
         /// </summary>
         [Input("contactType")]
         public Input<string>? ContactType { get; set; }
 
         /// <summary>
-        /// As part of the user's location, the value can be any that are available from the view-supported-countries operation.
+        /// As part of the user's location, the value can be any that are available from the view-supported-countries operation
         /// </summary>
         [Input("country")]
         public Input<string>? Country { get; set; }
 
         /// <summary>
-        /// The user's email address.
+        /// The user's email address
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
@@ -414,19 +373,19 @@ namespace Pulumi.Akamai
         public Input<bool>? EmailUpdatePending { get; set; }
 
         /// <summary>
-        /// Indicates whether two-factor authentication is allowed.
+        /// Indicates whether two-factor authentication is allowed
         /// </summary>
         [Input("enableTfa")]
         public Input<bool>? EnableTfa { get; set; }
 
         /// <summary>
-        /// The user's first name.
+        /// The user's first name
         /// </summary>
         [Input("firstName")]
         public Input<string>? FirstName { get; set; }
 
         /// <summary>
-        /// The user's lock status.
+        /// The user's lock status
         /// </summary>
         [Input("isLocked")]
         public Input<bool>? IsLocked { get; set; }
@@ -444,7 +403,7 @@ namespace Pulumi.Akamai
         public Input<string>? LastLogin { get; set; }
 
         /// <summary>
-        /// The user's last name.
+        /// The user's surname
         /// </summary>
         [Input("lastName")]
         public Input<string>? LastName { get; set; }
@@ -456,7 +415,7 @@ namespace Pulumi.Akamai
         public Input<bool>? Lock { get; set; }
 
         /// <summary>
-        /// The user's mobile phone number.
+        /// The user's mobile phone number
         /// </summary>
         [Input("mobilePhone")]
         public Input<string>? MobilePhone { get; set; }
@@ -468,7 +427,7 @@ namespace Pulumi.Akamai
         public Input<string>? PasswordExpiredAfter { get; set; }
 
         /// <summary>
-        /// The user's main phone number.
+        /// The user's main phone number
         /// </summary>
         [Input("phone")]
         public Input<string>? Phone { get; set; }
@@ -480,7 +439,7 @@ namespace Pulumi.Akamai
         public Input<string>? PreferredLanguage { get; set; }
 
         /// <summary>
-        /// The user's secondary email address.
+        /// The user's secondary email address
         /// </summary>
         [Input("secondaryEmail")]
         public Input<string>? SecondaryEmail { get; set; }
@@ -492,7 +451,7 @@ namespace Pulumi.Akamai
         public Input<int>? SessionTimeout { get; set; }
 
         /// <summary>
-        /// The user's state.
+        /// The user's state
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -516,7 +475,7 @@ namespace Pulumi.Akamai
         public Input<string>? UserName { get; set; }
 
         /// <summary>
-        /// The user's five-digit ZIP code.
+        /// The user's five-digit ZIP code
         /// </summary>
         [Input("zipCode")]
         public Input<string>? ZipCode { get; set; }

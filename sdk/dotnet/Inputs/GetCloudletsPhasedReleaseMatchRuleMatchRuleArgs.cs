@@ -12,63 +12,35 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetCloudletsPhasedReleaseMatchRuleMatchRuleInputArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// (Optional) Whether to disable a rule so it is not evaluated against incoming requests.
-        /// </summary>
         [Input("disabled")]
         public Input<bool>? Disabled { get; set; }
 
-        /// <summary>
-        /// (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-        /// </summary>
         [Input("end")]
         public Input<int>? End { get; set; }
 
-        /// <summary>
-        /// (Required) The data used to construct a new request URL if all match conditions are met. If all conditions are met, the edge server returns an HTTP response from the rewritten URL.
-        /// </summary>
         [Input("forwardSettings", required: true)]
         public Input<Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleForwardSettingsInputArgs> ForwardSettings { get; set; } = null!;
 
-        /// <summary>
-        /// (Optional) If you're using a URL match, this specifies the URL that the Cloudlet uses to match the incoming request.
-        /// </summary>
         [Input("matchUrl")]
         public Input<string>? MatchUrl { get; set; }
 
         [Input("matches")]
         private InputList<Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchInputArgs>? _matches;
-
-        /// <summary>
-        /// (Optional) A list of conditions to apply to a Cloudlet, including:
-        /// </summary>
         public InputList<Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchInputArgs> Matches
         {
             get => _matches ?? (_matches = new InputList<Inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleMatchInputArgs>());
             set => _matches = value;
         }
 
-        /// <summary>
-        /// (Optional) Whether the match supports default rules that apply to all requests.
-        /// </summary>
         [Input("matchesAlways")]
         public Input<bool>? MatchesAlways { get; set; }
 
-        /// <summary>
-        /// (Optional) If you're using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-        /// </summary>
         [Input("start")]
         public Input<int>? Start { get; set; }
 
-        /// <summary>
-        /// (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 

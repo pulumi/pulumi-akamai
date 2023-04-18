@@ -12,38 +12,16 @@ public final class GetPropertiesSearchPlainArgs extends com.pulumi.resources.Inv
 
     public static final GetPropertiesSearchPlainArgs Empty = new GetPropertiesSearchPlainArgs();
 
-    /**
-     * Key used for search. Valid values are:
-     * * **hostname**
-     * * **edgeHostname**
-     * * **propertyName**
-     * 
-     */
     @Import(name="key", required=true)
     private String key;
 
-    /**
-     * @return Key used for search. Valid values are:
-     * * **hostname**
-     * * **edgeHostname**
-     * * **propertyName**
-     * 
-     */
     public String key() {
         return this.key;
     }
 
-    /**
-     * (Required) Value to search for.
-     * 
-     */
     @Import(name="value", required=true)
     private String value;
 
-    /**
-     * @return (Required) Value to search for.
-     * 
-     */
     public String value() {
         return this.value;
     }
@@ -73,26 +51,11 @@ public final class GetPropertiesSearchPlainArgs extends com.pulumi.resources.Inv
             $ = new GetPropertiesSearchPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param key Key used for search. Valid values are:
-         * * **hostname**
-         * * **edgeHostname**
-         * * **propertyName**
-         * 
-         * @return builder
-         * 
-         */
         public Builder key(String key) {
             $.key = key;
             return this;
         }
 
-        /**
-         * @param value (Required) Value to search for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder value(String value) {
             $.value = value;
             return this;

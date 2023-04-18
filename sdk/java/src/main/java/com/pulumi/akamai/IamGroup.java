@@ -15,73 +15,31 @@ import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.IamGroup` resource to list details about groups. Groups are organizational containers for the objects you use.  Groups can contain other groups, primary objects like properties, and secondary objects like edge hostnames or content provider (CP) codes.
- * 
- * ## Basic usage
- * 
- * This example returns the policy details based on the policy ID and optionally, a version:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.IamGroup;
- * import com.pulumi.akamai.IamGroupArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var example = new IamGroup(&#34;example&#34;, IamGroupArgs.builder()        
- *             .parentGroupId(12345)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- * ## Attributes reference
- * 
- * This resource returns this attribute:
- * 
- * * `sub_groups` - Sub-groups that are related to this group. Each identifier must be an integer.
- * 
- */
 @ResourceType(type="akamai:index/iamGroup:IamGroup")
 public class IamGroup extends com.pulumi.resources.CustomResource {
     /**
-     * Human readable name for a group.
+     * Human readable name for a group
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return Human readable name for a group.
+     * @return Human readable name for a group
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * A unique identifier for the parent group. Each identifier must be an integer.
+     * Unique identifier for the parent group
      * 
      */
     @Export(name="parentGroupId", type=Integer.class, parameters={})
     private Output<Integer> parentGroupId;
 
     /**
-     * @return A unique identifier for the parent group. Each identifier must be an integer.
+     * @return Unique identifier for the parent group
      * 
      */
     public Output<Integer> parentGroupId() {

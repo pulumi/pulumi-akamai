@@ -15,47 +15,23 @@ public final class GetAppSecReputationProfileActionsPlainArgs extends com.pulumi
 
     public static final GetAppSecReputationProfileActionsPlainArgs Empty = new GetAppSecReputationProfileActionsPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the reputation profiles.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the reputation profiles.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-     * 
-     */
     @Import(name="reputationProfileId")
     private @Nullable Integer reputationProfileId;
 
-    /**
-     * @return . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-     * 
-     */
     public Optional<Integer> reputationProfileId() {
         return Optional.ofNullable(this.reputationProfileId);
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the reputation profiles.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the reputation profiles.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -86,34 +62,16 @@ public final class GetAppSecReputationProfileActionsPlainArgs extends com.pulumi
             $ = new GetAppSecReputationProfileActionsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param reputationProfileId . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder reputationProfileId(@Nullable Integer reputationProfileId) {
             $.reputationProfileId = reputationProfileId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

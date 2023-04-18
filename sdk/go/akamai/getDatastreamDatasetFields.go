@@ -10,45 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `getDatastreamDatasetFields` data source to list groups of data set fields available in the template.
-//
-// ## Example Usage
-//
-// This example returns data set fields for a default template:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.GetDatastreamDatasetFields(ctx, nil, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `fields` - A group of data set fields available in a template, including:
-//   - `datasetGroupName` - The name of the data set group.
-//   - `datasetGroupDescription` - Additional information about the data set group.
-//   - `datasetFields` - A list of data set fields available within the data set group, including:
-//   - `datasetFieldDescription` - Additional information about the data set field.
-//   - `datasetFieldId` - Unique identifier for the field.
-//   - `datasetFieldJsonKey` - The JSON key for the field in a log line.
-//   - `datasetFieldName` - The name of the data set field.
 func GetDatastreamDatasetFields(ctx *pulumi.Context, args *GetDatastreamDatasetFieldsArgs, opts ...pulumi.InvokeOption) (*GetDatastreamDatasetFieldsResult, error) {
 	var rv GetDatastreamDatasetFieldsResult
 	err := ctx.Invoke("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args, &rv, opts...)
@@ -60,7 +21,6 @@ func GetDatastreamDatasetFields(ctx *pulumi.Context, args *GetDatastreamDatasetF
 
 // A collection of arguments for invoking getDatastreamDatasetFields.
 type GetDatastreamDatasetFieldsArgs struct {
-	// (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
 	TemplateName *string `pulumi:"templateName"`
 }
 
@@ -87,7 +47,6 @@ func GetDatastreamDatasetFieldsOutput(ctx *pulumi.Context, args GetDatastreamDat
 
 // A collection of arguments for invoking getDatastreamDatasetFields.
 type GetDatastreamDatasetFieldsOutputArgs struct {
-	// (Optional) The name of the data set template you use in your stream configuration. Currently, `EDGE_LOGS` is the only available data set template and the default value for this argument.
 	TemplateName pulumi.StringPtrInput `pulumi:"templateName"`
 }
 

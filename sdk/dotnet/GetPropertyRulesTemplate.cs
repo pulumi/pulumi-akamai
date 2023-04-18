@@ -11,201 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetPropertyRulesTemplate
     {
-        /// <summary>
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// 
-        /// ### JSON Template Files
-        /// 
-        /// Here are some examples of how you can set up your JSON template files for use with this data source.
-        /// {{% example %}}
-        /// ### Single JSON template that calls other templates
-        /// 
-        /// Here's an example of a JSON template file with nested templates:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% example %}}
-        /// ### Individual JSON rule template file
-        /// 
-        /// Here’s a simple default rule example that you can include inside the `template_data` argument:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        /// });
-        /// ```
-        /// 
-        /// {{% /example %}}
-        /// ### Add Templates To The Data Source
-        /// 
-        /// Here are some examples of how you can call your JSON template files with this data source.
-        /// {{% example %}}
-        /// ### Call individual template files with this data source
-        /// 
-        /// This second example shows how to call a specific JSON template using the `template_data` field:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Text.Json;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var examplePropertyRulesTemplate = Akamai.GetPropertyRulesTemplate.Invoke(new()
-        ///     {
-        ///         Templates = new[]
-        ///         {
-        ///             new Akamai.Inputs.GetPropertyRulesTemplateTemplateInputArgs
-        ///             {
-        ///                 TemplateData = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
-        ///                 {
-        ///                     ["rules"] = new Dictionary&lt;string, object?&gt;
-        ///                     {
-        ///                         ["name"] = "default",
-        ///                         ["children"] = new[]
-        ///                         {
-        ///                             "#include:rules.json",
-        ///                         },
-        ///                     },
-        ///                 }),
-        ///                 TemplateDir = "property-snippets/",
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        ///     var exampleProperty = new Akamai.Property("exampleProperty", new()
-        ///     {
-        ///         ContractId = @var.Contractid,
-        ///         GroupId = @var.Groupid,
-        ///         RuleFormat = "v2020-03-04",
-        ///         Rules = examplePropertyRulesTemplate.Apply(getPropertyRulesTemplateResult =&gt; getPropertyRulesTemplateResult.Json),
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// 
-        /// {{% /example %}}
-        /// ### Variables
-        /// 
-        /// You can add variables individually or reference variable definition files.
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns this attribute:
-        /// 
-        /// * `json` - The fully expanded template with variables and all nested templates resolved.
-        /// </summary>
         public static Task<GetPropertyRulesTemplateResult> InvokeAsync(GetPropertyRulesTemplateArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRulesTemplateResult>("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args ?? new GetPropertyRulesTemplateArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// 
-        /// ### JSON Template Files
-        /// 
-        /// Here are some examples of how you can set up your JSON template files for use with this data source.
-        /// {{% example %}}
-        /// ### Single JSON template that calls other templates
-        /// 
-        /// Here's an example of a JSON template file with nested templates:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% example %}}
-        /// ### Individual JSON rule template file
-        /// 
-        /// Here’s a simple default rule example that you can include inside the `template_data` argument:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        /// });
-        /// ```
-        /// 
-        /// {{% /example %}}
-        /// ### Add Templates To The Data Source
-        /// 
-        /// Here are some examples of how you can call your JSON template files with this data source.
-        /// {{% example %}}
-        /// ### Call individual template files with this data source
-        /// 
-        /// This second example shows how to call a specific JSON template using the `template_data` field:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Text.Json;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var examplePropertyRulesTemplate = Akamai.GetPropertyRulesTemplate.Invoke(new()
-        ///     {
-        ///         Templates = new[]
-        ///         {
-        ///             new Akamai.Inputs.GetPropertyRulesTemplateTemplateInputArgs
-        ///             {
-        ///                 TemplateData = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
-        ///                 {
-        ///                     ["rules"] = new Dictionary&lt;string, object?&gt;
-        ///                     {
-        ///                         ["name"] = "default",
-        ///                         ["children"] = new[]
-        ///                         {
-        ///                             "#include:rules.json",
-        ///                         },
-        ///                     },
-        ///                 }),
-        ///                 TemplateDir = "property-snippets/",
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        ///     var exampleProperty = new Akamai.Property("exampleProperty", new()
-        ///     {
-        ///         ContractId = @var.Contractid,
-        ///         GroupId = @var.Groupid,
-        ///         RuleFormat = "v2020-03-04",
-        ///         Rules = examplePropertyRulesTemplate.Apply(getPropertyRulesTemplateResult =&gt; getPropertyRulesTemplateResult.Json),
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// 
-        /// {{% /example %}}
-        /// ### Variables
-        /// 
-        /// You can add variables individually or reference variable definition files.
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// This data source returns this attribute:
-        /// 
-        /// * `json` - The fully expanded template with variables and all nested templates resolved.
-        /// </summary>
         public static Output<GetPropertyRulesTemplateResult> Invoke(GetPropertyRulesTemplateInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertyRulesTemplateResult>("akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate", args ?? new GetPropertyRulesTemplateInvokeArgs(), options.WithDefaults());
     }
@@ -213,42 +21,25 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyRulesTemplateArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
-        /// </summary>
         [Input("templateFile")]
         public string? TemplateFile { get; set; }
 
         [Input("templates")]
         private List<Inputs.GetPropertyRulesTemplateTemplateArgs>? _templates;
-
-        /// <summary>
-        /// The template you use in your configuration. This argument conflicts with the `template_file` argument.
-        /// </summary>
         public List<Inputs.GetPropertyRulesTemplateTemplateArgs> Templates
         {
             get => _templates ?? (_templates = new List<Inputs.GetPropertyRulesTemplateTemplateArgs>());
             set => _templates = value;
         }
 
-        /// <summary>
-        /// Required when using `var_values_file`. The absolute path to the file containing variable definitions and defaults. This argument conflicts with the `variables` argument.
-        /// </summary>
         [Input("varDefinitionFile")]
         public string? VarDefinitionFile { get; set; }
 
-        /// <summary>
-        /// Required when using `var_definition_file`. The absolute path to the file containing variable values. This argument conflicts with the `variables` argument.
-        /// </summary>
         [Input("varValuesFile")]
         public string? VarValuesFile { get; set; }
 
         [Input("variables")]
         private List<Inputs.GetPropertyRulesTemplateVariableArgs>? _variables;
-
-        /// <summary>
-        /// The definition of one or more variables. This argument conflicts with the `var_definition_file` and `var_values_file` arguments. A `variables` block includes:
-        /// </summary>
         public List<Inputs.GetPropertyRulesTemplateVariableArgs> Variables
         {
             get => _variables ?? (_variables = new List<Inputs.GetPropertyRulesTemplateVariableArgs>());
@@ -263,42 +54,25 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyRulesTemplateInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// The absolute path to your top-level JSON template file. The top-level template combines smaller, nested JSON templates to form your property rule tree. This argument conflicts with the `template` argument.
-        /// </summary>
         [Input("templateFile")]
         public Input<string>? TemplateFile { get; set; }
 
         [Input("templates")]
         private InputList<Inputs.GetPropertyRulesTemplateTemplateInputArgs>? _templates;
-
-        /// <summary>
-        /// The template you use in your configuration. This argument conflicts with the `template_file` argument.
-        /// </summary>
         public InputList<Inputs.GetPropertyRulesTemplateTemplateInputArgs> Templates
         {
             get => _templates ?? (_templates = new InputList<Inputs.GetPropertyRulesTemplateTemplateInputArgs>());
             set => _templates = value;
         }
 
-        /// <summary>
-        /// Required when using `var_values_file`. The absolute path to the file containing variable definitions and defaults. This argument conflicts with the `variables` argument.
-        /// </summary>
         [Input("varDefinitionFile")]
         public Input<string>? VarDefinitionFile { get; set; }
 
-        /// <summary>
-        /// Required when using `var_definition_file`. The absolute path to the file containing variable values. This argument conflicts with the `variables` argument.
-        /// </summary>
         [Input("varValuesFile")]
         public Input<string>? VarValuesFile { get; set; }
 
         [Input("variables")]
         private InputList<Inputs.GetPropertyRulesTemplateVariableInputArgs>? _variables;
-
-        /// <summary>
-        /// The definition of one or more variables. This argument conflicts with the `var_definition_file` and `var_values_file` arguments. A `variables` block includes:
-        /// </summary>
         public InputList<Inputs.GetPropertyRulesTemplateVariableInputArgs> Variables
         {
             get => _variables ?? (_variables = new InputList<Inputs.GetPropertyRulesTemplateVariableInputArgs>());

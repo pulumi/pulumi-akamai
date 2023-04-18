@@ -245,6 +245,11 @@ export type AppsecAdvancedSettingsAttackPayloadLogging = import("./appsecAdvance
 export const AppsecAdvancedSettingsAttackPayloadLogging: typeof import("./appsecAdvancedSettingsAttackPayloadLogging").AppsecAdvancedSettingsAttackPayloadLogging = null as any;
 utilities.lazyLoad(exports, ["AppsecAdvancedSettingsAttackPayloadLogging"], () => require("./appsecAdvancedSettingsAttackPayloadLogging"));
 
+export { AppsecAdvancedSettingsRequestBodyArgs, AppsecAdvancedSettingsRequestBodyState } from "./appsecAdvancedSettingsRequestBody";
+export type AppsecAdvancedSettingsRequestBody = import("./appsecAdvancedSettingsRequestBody").AppsecAdvancedSettingsRequestBody;
+export const AppsecAdvancedSettingsRequestBody: typeof import("./appsecAdvancedSettingsRequestBody").AppsecAdvancedSettingsRequestBody = null as any;
+utilities.lazyLoad(exports, ["AppsecAdvancedSettingsRequestBody"], () => require("./appsecAdvancedSettingsRequestBody"));
+
 export { CloudletsApplicationLoadBalancerArgs, CloudletsApplicationLoadBalancerState } from "./cloudletsApplicationLoadBalancer";
 export type CloudletsApplicationLoadBalancer = import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer;
 export const CloudletsApplicationLoadBalancer: typeof import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer = null as any;
@@ -569,6 +574,11 @@ export const getAppsecAdvancedSettingsAttackPayloadLogging: typeof import("./get
 export const getAppsecAdvancedSettingsAttackPayloadLoggingOutput: typeof import("./getAppsecAdvancedSettingsAttackPayloadLogging").getAppsecAdvancedSettingsAttackPayloadLoggingOutput = null as any;
 utilities.lazyLoad(exports, ["getAppsecAdvancedSettingsAttackPayloadLogging","getAppsecAdvancedSettingsAttackPayloadLoggingOutput"], () => require("./getAppsecAdvancedSettingsAttackPayloadLogging"));
 
+export { GetAppsecAdvancedSettingsRequestBodyArgs, GetAppsecAdvancedSettingsRequestBodyResult, GetAppsecAdvancedSettingsRequestBodyOutputArgs } from "./getAppsecAdvancedSettingsRequestBody";
+export const getAppsecAdvancedSettingsRequestBody: typeof import("./getAppsecAdvancedSettingsRequestBody").getAppsecAdvancedSettingsRequestBody = null as any;
+export const getAppsecAdvancedSettingsRequestBodyOutput: typeof import("./getAppsecAdvancedSettingsRequestBody").getAppsecAdvancedSettingsRequestBodyOutput = null as any;
+utilities.lazyLoad(exports, ["getAppsecAdvancedSettingsRequestBody","getAppsecAdvancedSettingsRequestBodyOutput"], () => require("./getAppsecAdvancedSettingsRequestBody"));
+
 export { GetAuthoritiesSetArgs, GetAuthoritiesSetResult, GetAuthoritiesSetOutputArgs } from "./getAuthoritiesSet";
 export const getAuthoritiesSet: typeof import("./getAuthoritiesSet").getAuthoritiesSet = null as any;
 export const getAuthoritiesSetOutput: typeof import("./getAuthoritiesSet").getAuthoritiesSetOutput = null as any;
@@ -813,6 +823,11 @@ export const getPropertyRules: typeof import("./getPropertyRules").getPropertyRu
 export const getPropertyRulesOutput: typeof import("./getPropertyRules").getPropertyRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getPropertyRules","getPropertyRulesOutput"], () => require("./getPropertyRules"));
 
+export { GetPropertyRulesBuilderArgs, GetPropertyRulesBuilderResult, GetPropertyRulesBuilderOutputArgs } from "./getPropertyRulesBuilder";
+export const getPropertyRulesBuilder: typeof import("./getPropertyRulesBuilder").getPropertyRulesBuilder = null as any;
+export const getPropertyRulesBuilderOutput: typeof import("./getPropertyRulesBuilder").getPropertyRulesBuilderOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyRulesBuilder","getPropertyRulesBuilderOutput"], () => require("./getPropertyRulesBuilder"));
+
 export { GetPropertyRulesTemplateArgs, GetPropertyRulesTemplateResult, GetPropertyRulesTemplateOutputArgs } from "./getPropertyRulesTemplate";
 export const getPropertyRulesTemplate: typeof import("./getPropertyRulesTemplate").getPropertyRulesTemplate = null as any;
 export const getPropertyRulesTemplateOutput: typeof import("./getPropertyRulesTemplate").getPropertyRulesTemplateOutput = null as any;
@@ -1034,6 +1049,8 @@ const _module = {
                 return new AppSecWapSelectedHostnames(name, <any>undefined, { urn })
             case "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging":
                 return new AppsecAdvancedSettingsAttackPayloadLogging(name, <any>undefined, { urn })
+            case "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody":
+                return new AppsecAdvancedSettingsRequestBody(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
                 return new CloudletsApplicationLoadBalancer(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -1157,6 +1174,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecWafMode", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWafProtection", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWapSelectedHostnames", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsAttackPayloadLogging", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsRequestBody", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancer", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancerActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsPolicy", _module)

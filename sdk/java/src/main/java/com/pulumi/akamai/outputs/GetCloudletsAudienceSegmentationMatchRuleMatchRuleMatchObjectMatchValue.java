@@ -14,77 +14,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValue {
-    /**
-     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     * 
-     */
     private @Nullable String name;
-    /**
-     * @return (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     * 
-     */
     private @Nullable Boolean nameCaseSensitive;
-    /**
-     * @return (Optional) Whether the `name` argument includes wildcards.
-     * 
-     */
     private @Nullable Boolean nameHasWildcard;
-    /**
-     * @return (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     * 
-     */
     private @Nullable GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions options;
-    /**
-     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     * 
-     */
     private String type;
-    /**
-     * @return (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     * 
-     */
     private @Nullable List<String> values;
 
     private GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValue() {}
-    /**
-     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     * 
-     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
-    /**
-     * @return (Optional) Whether the `name` argument should be evaluated based on case sensitivity.
-     * 
-     */
     public Optional<Boolean> nameCaseSensitive() {
         return Optional.ofNullable(this.nameCaseSensitive);
     }
-    /**
-     * @return (Optional) Whether the `name` argument includes wildcards.
-     * 
-     */
     public Optional<Boolean> nameHasWildcard() {
         return Optional.ofNullable(this.nameHasWildcard);
     }
-    /**
-     * @return (Optional) If you set the `type` argument to `object`, use this array to list the values to match on.
-     * 
-     */
     public Optional<GetCloudletsAudienceSegmentationMatchRuleMatchRuleMatchObjectMatchValueOptions> options() {
         return Optional.ofNullable(this.options);
     }
-    /**
-     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     * 
-     */
     public String type() {
         return this.type;
     }
-    /**
-     * @return (Optional) If you set the `type` argument to `simple`, specify the values in the incoming request to match on.
-     * 
-     */
     public List<String> values() {
         return this.values == null ? List.of() : this.values;
     }

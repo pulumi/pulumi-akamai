@@ -17,14 +17,14 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
     public static final AppSecEvalRuleArgs Empty = new AppSecEvalRuleArgs();
 
     /**
-     * . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+     * JSON-formatted condition and exception information for the evaluation rule
      * 
      */
     @Import(name="conditionException")
     private @Nullable Output<String> conditionException;
 
     /**
-     * @return . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+     * @return JSON-formatted condition and exception information for the evaluation rule
      * 
      */
     public Optional<Output<String>> conditionException() {
@@ -32,14 +32,14 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * . Unique identifier of the security configuration in evaluation mode.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration in evaluation mode.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -47,22 +47,14 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the evaluation rule is triggered
      * 
      */
     @Import(name="ruleAction", required=true)
     private Output<String> ruleAction;
 
     /**
-     * @return . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * @return Action to be taken when the evaluation rule is triggered
      * 
      */
     public Output<String> ruleAction() {
@@ -70,14 +62,14 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * . Unique identifier of the evaluation rule being modified.
+     * Unique identifier of the evaluation rule being modified
      * 
      */
     @Import(name="ruleId", required=true)
     private Output<Integer> ruleId;
 
     /**
-     * @return . Unique identifier of the evaluation rule being modified.
+     * @return Unique identifier of the evaluation rule being modified
      * 
      */
     public Output<Integer> ruleId() {
@@ -85,14 +77,14 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * . Unique identifier of the security policy associated with the evaluation process.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the evaluation process.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -128,7 +120,7 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param conditionException . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+         * @param conditionException JSON-formatted condition and exception information for the evaluation rule
          * 
          * @return builder
          * 
@@ -139,7 +131,7 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param conditionException . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+         * @param conditionException JSON-formatted condition and exception information for the evaluation rule
          * 
          * @return builder
          * 
@@ -149,7 +141,7 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration in evaluation mode.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -160,7 +152,7 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration in evaluation mode.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -170,11 +162,7 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ruleAction . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param ruleAction Action to be taken when the evaluation rule is triggered
          * 
          * @return builder
          * 
@@ -185,11 +173,7 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ruleAction . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param ruleAction Action to be taken when the evaluation rule is triggered
          * 
          * @return builder
          * 
@@ -199,7 +183,7 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ruleId . Unique identifier of the evaluation rule being modified.
+         * @param ruleId Unique identifier of the evaluation rule being modified
          * 
          * @return builder
          * 
@@ -210,7 +194,7 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ruleId . Unique identifier of the evaluation rule being modified.
+         * @param ruleId Unique identifier of the evaluation rule being modified
          * 
          * @return builder
          * 
@@ -220,7 +204,7 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the evaluation process.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -231,7 +215,7 @@ public final class AppSecEvalRuleArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the evaluation process.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

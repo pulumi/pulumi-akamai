@@ -21,21 +21,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecEvalGroupsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-        /// </summary>
         [Input("attackGroup")]
         public string? AttackGroup { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the evaluation attack group.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the evaluation attack group.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
 
@@ -47,21 +38,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecEvalGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the evaluation attack group you want to return information for. If not included, information is returned for all your evaluation attack groups.
-        /// </summary>
         [Input("attackGroup")]
         public Input<string>? AttackGroup { get; set; }
 
-        /// <summary>
-        /// . Unique identifier of the security configuration associated with the evaluation attack group.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Unique identifier of the security policy associated with the evaluation attack group.
-        /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 

@@ -17,14 +17,14 @@ public final class AppSecRuleUpgradeArgs extends com.pulumi.resources.ResourceAr
     public static final AppSecRuleUpgradeArgs Empty = new AppSecRuleUpgradeArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the ruleset being upgraded.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the ruleset being upgraded.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -32,14 +32,14 @@ public final class AppSecRuleUpgradeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * . Unique identifier of the security policy associated with the ruleset being upgraded.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the ruleset being upgraded.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -47,18 +47,14 @@ public final class AppSecRuleUpgradeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
-     * - **ASE_MANUAL**. Manually updates your rulesets.
+     * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
      * 
      */
     @Import(name="upgradeMode")
     private @Nullable Output<String> upgradeMode;
 
     /**
-     * @return . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-     * - **ASE_AUTO**. Akamai automatically updates your rulesets.
-     * - **ASE_MANUAL**. Manually updates your rulesets.
+     * @return Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
      * 
      */
     public Optional<Output<String>> upgradeMode() {
@@ -92,7 +88,7 @@ public final class AppSecRuleUpgradeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the ruleset being upgraded.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -103,7 +99,7 @@ public final class AppSecRuleUpgradeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the ruleset being upgraded.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -113,7 +109,7 @@ public final class AppSecRuleUpgradeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the ruleset being upgraded.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -124,7 +120,7 @@ public final class AppSecRuleUpgradeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the ruleset being upgraded.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -134,9 +130,7 @@ public final class AppSecRuleUpgradeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param upgradeMode . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-         * - **ASE_AUTO**. Akamai automatically updates your rulesets.
-         * - **ASE_MANUAL**. Manually updates your rulesets.
+         * @param upgradeMode Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
          * 
          * @return builder
          * 
@@ -147,9 +141,7 @@ public final class AppSecRuleUpgradeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param upgradeMode . (Optional). Modifies the upgrade type for organizations running the ASE beta. Allowed values are:
-         * - **ASE_AUTO**. Akamai automatically updates your rulesets.
-         * - **ASE_MANUAL**. Manually updates your rulesets.
+         * @param upgradeMode Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
          * 
          * @return builder
          * 

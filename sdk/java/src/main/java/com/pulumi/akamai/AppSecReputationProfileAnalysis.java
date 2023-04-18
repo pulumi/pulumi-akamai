@@ -15,112 +15,59 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security policy
- * 
- * Modifies the reputation analysis settings for a security policy. These settings include the following:
- * 
- * - The `forward_to_http_header` parameter, which indicates whether client reputation details are added to requests forwarded to origin in an HTTP header.
- * - The `forward_shared_ip_to_http_header_siem` parameter, which specifies whether a value is added indicating that shared IPs addresses are included in HTTP headers and in SIEM integration events.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://techdocs.akamai.com/application-security/reference/put-reputation-analysis)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * 
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.inputs.GetAppSecReputationProfileAnalysisArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         final var reputationAnalysis = AkamaiFunctions.getAppSecReputationProfileAnalysis(GetAppSecReputationProfileAnalysisArgs.builder()
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .forwardToHttpHeader(true)
- *             .build());
- * 
- *         ctx.export(&#34;reputationAnalysisText&#34;, reputationAnalysis.applyValue(getAppSecReputationProfileAnalysisResult -&gt; getAppSecReputationProfileAnalysisResult.outputText()));
- *         ctx.export(&#34;reputationAnalysisJson&#34;, reputationAnalysis.applyValue(getAppSecReputationProfileAnalysisResult -&gt; getAppSecReputationProfileAnalysisResult.json()));
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecReputationProfileAnalysis:AppSecReputationProfileAnalysis")
 public class AppSecReputationProfileAnalysis extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+     * Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
      * 
      */
     @Export(name="forwardSharedIpToHttpHeaderSiem", type=Boolean.class, parameters={})
     private Output<Boolean> forwardSharedIpToHttpHeaderSiem;
 
     /**
-     * @return . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+     * @return Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
      * 
      */
     public Output<Boolean> forwardSharedIpToHttpHeaderSiem() {
         return this.forwardSharedIpToHttpHeaderSiem;
     }
     /**
-     * . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+     * Whether to add client reputation details to requests forwarded to the origin server
      * 
      */
     @Export(name="forwardToHttpHeader", type=Boolean.class, parameters={})
     private Output<Boolean> forwardToHttpHeader;
 
     /**
-     * @return . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+     * @return Whether to add client reputation details to requests forwarded to the origin server
      * 
      */
     public Output<Boolean> forwardToHttpHeader() {
         return this.forwardToHttpHeader;
     }
     /**
-     * . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {

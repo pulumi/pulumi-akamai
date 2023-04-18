@@ -10,16 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-//
-// Use the `getCloudletsApplicationLoadBalancerMatchRule` data source to build a match rule JSON object for the Application Load Balancer Cloudlet.
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `type` - The type of Cloudlet the rule is for.
-// * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
 func GetCloudletsApplicationLoadBalancerMatchRule(ctx *pulumi.Context, args *GetCloudletsApplicationLoadBalancerMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsApplicationLoadBalancerMatchRuleResult, error) {
 	var rv GetCloudletsApplicationLoadBalancerMatchRuleResult
 	err := ctx.Invoke("akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule", args, &rv, opts...)
@@ -31,7 +21,6 @@ func GetCloudletsApplicationLoadBalancerMatchRule(ctx *pulumi.Context, args *Get
 
 // A collection of arguments for invoking getCloudletsApplicationLoadBalancerMatchRule.
 type GetCloudletsApplicationLoadBalancerMatchRuleArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsApplicationLoadBalancerMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -58,7 +47,6 @@ func GetCloudletsApplicationLoadBalancerMatchRuleOutput(ctx *pulumi.Context, arg
 
 // A collection of arguments for invoking getCloudletsApplicationLoadBalancerMatchRule.
 type GetCloudletsApplicationLoadBalancerMatchRuleOutputArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

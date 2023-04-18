@@ -20,14 +20,10 @@ class AppSecReputationProfileActionArgs:
                  security_policy_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a AppSecReputationProfileAction resource.
-        :param pulumi.Input[str] action: . Action taken any time the reputation profile is triggered. Allows values are:
-               - **alert**. Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile action being modified.
-        :param pulumi.Input[int] reputation_profile_id: . Unique identifier of the reputation profile whose action is being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the reputation profile action being modified.
+        :param pulumi.Input[str] action: Action to be taken when the reputation profile is triggered
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[int] reputation_profile_id: Unique identifier of the reputation profile
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "config_id", config_id)
@@ -38,11 +34,7 @@ class AppSecReputationProfileActionArgs:
     @pulumi.getter
     def action(self) -> pulumi.Input[str]:
         """
-        . Action taken any time the reputation profile is triggered. Allows values are:
-        - **alert**. Record the event.
-        - **deny**. Block the request.
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action.
+        Action to be taken when the reputation profile is triggered
         """
         return pulumi.get(self, "action")
 
@@ -54,7 +46,7 @@ class AppSecReputationProfileActionArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration associated with the reputation profile action being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -66,7 +58,7 @@ class AppSecReputationProfileActionArgs:
     @pulumi.getter(name="reputationProfileId")
     def reputation_profile_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the reputation profile whose action is being modified.
+        Unique identifier of the reputation profile
         """
         return pulumi.get(self, "reputation_profile_id")
 
@@ -78,7 +70,7 @@ class AppSecReputationProfileActionArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Input[str]:
         """
-        . Unique identifier of the security policy associated with the reputation profile action being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -96,14 +88,10 @@ class _AppSecReputationProfileActionState:
                  security_policy_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecReputationProfileAction resources.
-        :param pulumi.Input[str] action: . Action taken any time the reputation profile is triggered. Allows values are:
-               - **alert**. Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile action being modified.
-        :param pulumi.Input[int] reputation_profile_id: . Unique identifier of the reputation profile whose action is being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the reputation profile action being modified.
+        :param pulumi.Input[str] action: Action to be taken when the reputation profile is triggered
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[int] reputation_profile_id: Unique identifier of the reputation profile
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
@@ -118,11 +106,7 @@ class _AppSecReputationProfileActionState:
     @pulumi.getter
     def action(self) -> Optional[pulumi.Input[str]]:
         """
-        . Action taken any time the reputation profile is triggered. Allows values are:
-        - **alert**. Record the event.
-        - **deny**. Block the request.
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action.
+        Action to be taken when the reputation profile is triggered
         """
         return pulumi.get(self, "action")
 
@@ -134,7 +118,7 @@ class _AppSecReputationProfileActionState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration associated with the reputation profile action being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -146,7 +130,7 @@ class _AppSecReputationProfileActionState:
     @pulumi.getter(name="reputationProfileId")
     def reputation_profile_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the reputation profile whose action is being modified.
+        Unique identifier of the reputation profile
         """
         return pulumi.get(self, "reputation_profile_id")
 
@@ -158,7 +142,7 @@ class _AppSecReputationProfileActionState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the security policy associated with the reputation profile action being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -178,40 +162,13 @@ class AppSecReputationProfileAction(pulumi.CustomResource):
                  security_policy_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        **Scopes**: Reputation profile
-
-        Modifies the action taken when a reputation profile is triggered.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles/{reputationProfileId}](https://techdocs.akamai.com/application-security/reference/put-reputation-profile-action)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        appsec_reputation_profile_action = akamai.AppSecReputationProfileAction("appsecReputationProfileAction",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            reputation_profile_id=130713,
-            action="alert")
-        pulumi.export("reputationProfileId", appsec_reputation_profile_action.reputation_profile_id)
-        pulumi.export("reputationProfileAction", appsec_reputation_profile_action.action)
-        ```
-
+        Create a AppSecReputationProfileAction resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: . Action taken any time the reputation profile is triggered. Allows values are:
-               - **alert**. Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile action being modified.
-        :param pulumi.Input[int] reputation_profile_id: . Unique identifier of the reputation profile whose action is being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the reputation profile action being modified.
+        :param pulumi.Input[str] action: Action to be taken when the reputation profile is triggered
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[int] reputation_profile_id: Unique identifier of the reputation profile
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         ...
     @overload
@@ -220,30 +177,7 @@ class AppSecReputationProfileAction(pulumi.CustomResource):
                  args: AppSecReputationProfileActionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Reputation profile
-
-        Modifies the action taken when a reputation profile is triggered.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles/{reputationProfileId}](https://techdocs.akamai.com/application-security/reference/put-reputation-profile-action)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        appsec_reputation_profile_action = akamai.AppSecReputationProfileAction("appsecReputationProfileAction",
-            config_id=configuration.config_id,
-            security_policy_id="gms1_134637",
-            reputation_profile_id=130713,
-            action="alert")
-        pulumi.export("reputationProfileId", appsec_reputation_profile_action.reputation_profile_id)
-        pulumi.export("reputationProfileAction", appsec_reputation_profile_action.action)
-        ```
-
+        Create a AppSecReputationProfileAction resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecReputationProfileActionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -305,14 +239,10 @@ class AppSecReputationProfileAction(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action: . Action taken any time the reputation profile is triggered. Allows values are:
-               - **alert**. Record the event.
-               - **deny**. Block the request.
-               - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-               - **none**. Take no action.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration associated with the reputation profile action being modified.
-        :param pulumi.Input[int] reputation_profile_id: . Unique identifier of the reputation profile whose action is being modified.
-        :param pulumi.Input[str] security_policy_id: . Unique identifier of the security policy associated with the reputation profile action being modified.
+        :param pulumi.Input[str] action: Action to be taken when the reputation profile is triggered
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[int] reputation_profile_id: Unique identifier of the reputation profile
+        :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -328,11 +258,7 @@ class AppSecReputationProfileAction(pulumi.CustomResource):
     @pulumi.getter
     def action(self) -> pulumi.Output[str]:
         """
-        . Action taken any time the reputation profile is triggered. Allows values are:
-        - **alert**. Record the event.
-        - **deny**. Block the request.
-        - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        - **none**. Take no action.
+        Action to be taken when the reputation profile is triggered
         """
         return pulumi.get(self, "action")
 
@@ -340,7 +266,7 @@ class AppSecReputationProfileAction(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration associated with the reputation profile action being modified.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -348,7 +274,7 @@ class AppSecReputationProfileAction(pulumi.CustomResource):
     @pulumi.getter(name="reputationProfileId")
     def reputation_profile_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the reputation profile whose action is being modified.
+        Unique identifier of the reputation profile
         """
         return pulumi.get(self, "reputation_profile_id")
 
@@ -356,7 +282,7 @@ class AppSecReputationProfileAction(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[str]:
         """
-        . Unique identifier of the security policy associated with the reputation profile action being modified.
+        Unique identifier of the security policy
         """
         return pulumi.get(self, "security_policy_id")
 

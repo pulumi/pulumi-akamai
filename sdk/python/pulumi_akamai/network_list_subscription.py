@@ -18,10 +18,6 @@ class NetworkListSubscriptionArgs:
                  recipients: pulumi.Input[Sequence[pulumi.Input[str]]]):
         """
         The set of arguments for constructing a NetworkListSubscription resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_lists: A list containing one or more IDs of the network lists to which the indicated email
-               addresses should be subscribed.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] recipients: A bracketed, comma-separated list of email addresses that will be notified of changes to any
-               of the specified network lists.
         """
         pulumi.set(__self__, "network_lists", network_lists)
         pulumi.set(__self__, "recipients", recipients)
@@ -29,10 +25,6 @@ class NetworkListSubscriptionArgs:
     @property
     @pulumi.getter(name="networkLists")
     def network_lists(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        A list containing one or more IDs of the network lists to which the indicated email
-        addresses should be subscribed.
-        """
         return pulumi.get(self, "network_lists")
 
     @network_lists.setter
@@ -42,10 +34,6 @@ class NetworkListSubscriptionArgs:
     @property
     @pulumi.getter
     def recipients(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        A bracketed, comma-separated list of email addresses that will be notified of changes to any
-        of the specified network lists.
-        """
         return pulumi.get(self, "recipients")
 
     @recipients.setter
@@ -60,10 +48,6 @@ class _NetworkListSubscriptionState:
                  recipients: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering NetworkListSubscription resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_lists: A list containing one or more IDs of the network lists to which the indicated email
-               addresses should be subscribed.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] recipients: A bracketed, comma-separated list of email addresses that will be notified of changes to any
-               of the specified network lists.
         """
         if network_lists is not None:
             pulumi.set(__self__, "network_lists", network_lists)
@@ -73,10 +57,6 @@ class _NetworkListSubscriptionState:
     @property
     @pulumi.getter(name="networkLists")
     def network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list containing one or more IDs of the network lists to which the indicated email
-        addresses should be subscribed.
-        """
         return pulumi.get(self, "network_lists")
 
     @network_lists.setter
@@ -86,10 +66,6 @@ class _NetworkListSubscriptionState:
     @property
     @pulumi.getter
     def recipients(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A bracketed, comma-separated list of email addresses that will be notified of changes to any
-        of the specified network lists.
-        """
         return pulumi.get(self, "recipients")
 
     @recipients.setter
@@ -106,29 +82,9 @@ class NetworkListSubscription(pulumi.CustomResource):
                  recipients: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        Use the `NetworkListSubscription` resource to specify a set of email addresses to be notified of changes to any
-        of a set of network lists.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        network_lists_filter = akamai.get_network_lists(name=var["network_list"])
-        subscribe = akamai.NetworkListSubscription("subscribe",
-            network_lists=network_lists_filter.lists,
-            recipients=["user@example.com"])
-        ```
-
+        Create a NetworkListSubscription resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_lists: A list containing one or more IDs of the network lists to which the indicated email
-               addresses should be subscribed.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] recipients: A bracketed, comma-separated list of email addresses that will be notified of changes to any
-               of the specified network lists.
         """
         ...
     @overload
@@ -137,23 +93,7 @@ class NetworkListSubscription(pulumi.CustomResource):
                  args: NetworkListSubscriptionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `NetworkListSubscription` resource to specify a set of email addresses to be notified of changes to any
-        of a set of network lists.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        network_lists_filter = akamai.get_network_lists(name=var["network_list"])
-        subscribe = akamai.NetworkListSubscription("subscribe",
-            network_lists=network_lists_filter.lists,
-            recipients=["user@example.com"])
-        ```
-
+        Create a NetworkListSubscription resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param NetworkListSubscriptionArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -205,10 +145,6 @@ class NetworkListSubscription(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] network_lists: A list containing one or more IDs of the network lists to which the indicated email
-               addresses should be subscribed.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] recipients: A bracketed, comma-separated list of email addresses that will be notified of changes to any
-               of the specified network lists.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -221,18 +157,10 @@ class NetworkListSubscription(pulumi.CustomResource):
     @property
     @pulumi.getter(name="networkLists")
     def network_lists(self) -> pulumi.Output[Sequence[str]]:
-        """
-        A list containing one or more IDs of the network lists to which the indicated email
-        addresses should be subscribed.
-        """
         return pulumi.get(self, "network_lists")
 
     @property
     @pulumi.getter
     def recipients(self) -> pulumi.Output[Sequence[str]]:
-        """
-        A bracketed, comma-separated list of email addresses that will be notified of changes to any
-        of the specified network lists.
-        """
         return pulumi.get(self, "recipients")
 

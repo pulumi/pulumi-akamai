@@ -10,54 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy
-//
-// Returns information indicating which of your Kona Rule Sets, if any, need to be updated. A value of **false** indicates that no updates are required.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/upgrade-details](https://techdocs.akamai.com/application-security/reference/get-rules-upgrade-details)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			upgradeDetails, err := akamai.GetAppSecRuleUpgradeDetails(ctx, &akamai.GetAppSecRuleUpgradeDetailsArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: "gms1_134637",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("upgradeDetailsText", upgradeDetails.OutputText)
-//			ctx.Export("upgradeDetailsJson", upgradeDetails.Json)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `outputText`. Tabular report showing changes (additions and deletions) to the rules for the specified security policy.
-// - `json`. JSON-formatted list of the changes (additions and deletions) to the rules for the specified security policy.
 func GetAppSecRuleUpgradeDetails(ctx *pulumi.Context, args *GetAppSecRuleUpgradeDetailsArgs, opts ...pulumi.InvokeOption) (*GetAppSecRuleUpgradeDetailsResult, error) {
 	var rv GetAppSecRuleUpgradeDetailsResult
 	err := ctx.Invoke("akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails", args, &rv, opts...)
@@ -69,9 +21,7 @@ func GetAppSecRuleUpgradeDetails(ctx *pulumi.Context, args *GetAppSecRuleUpgrade
 
 // A collection of arguments for invoking getAppSecRuleUpgradeDetails.
 type GetAppSecRuleUpgradeDetailsArgs struct {
-	// . Unique identifier of the security configuration associated with the Kona Rule Sets.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the Kona Rule Sets.
+	ConfigId         int    `pulumi:"configId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -100,9 +50,7 @@ func GetAppSecRuleUpgradeDetailsOutput(ctx *pulumi.Context, args GetAppSecRuleUp
 
 // A collection of arguments for invoking getAppSecRuleUpgradeDetails.
 type GetAppSecRuleUpgradeDetailsOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the Kona Rule Sets.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the Kona Rule Sets.
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 

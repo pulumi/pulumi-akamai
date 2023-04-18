@@ -15,47 +15,23 @@ public final class GtmASmapAssignmentArgs extends com.pulumi.resources.ResourceA
 
     public static final GtmASmapAssignmentArgs Empty = new GtmASmapAssignmentArgs();
 
-    /**
-     * Specifies an array of AS numbers.
-     * 
-     */
     @Import(name="asNumbers", required=true)
     private Output<List<Integer>> asNumbers;
 
-    /**
-     * @return Specifies an array of AS numbers.
-     * 
-     */
     public Output<List<Integer>> asNumbers() {
         return this.asNumbers;
     }
 
-    /**
-     * A unique identifier for an existing data center in the domain.
-     * 
-     */
     @Import(name="datacenterId", required=true)
     private Output<Integer> datacenterId;
 
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Output<Integer> datacenterId() {
         return this.datacenterId;
     }
 
-    /**
-     * A descriptive label for the group.
-     * 
-     */
     @Import(name="nickname", required=true)
     private Output<String> nickname;
 
-    /**
-     * @return A descriptive label for the group.
-     * 
-     */
     public Output<String> nickname() {
         return this.nickname;
     }
@@ -86,75 +62,33 @@ public final class GtmASmapAssignmentArgs extends com.pulumi.resources.ResourceA
             $ = new GtmASmapAssignmentArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param asNumbers Specifies an array of AS numbers.
-         * 
-         * @return builder
-         * 
-         */
         public Builder asNumbers(Output<List<Integer>> asNumbers) {
             $.asNumbers = asNumbers;
             return this;
         }
 
-        /**
-         * @param asNumbers Specifies an array of AS numbers.
-         * 
-         * @return builder
-         * 
-         */
         public Builder asNumbers(List<Integer> asNumbers) {
             return asNumbers(Output.of(asNumbers));
         }
 
-        /**
-         * @param asNumbers Specifies an array of AS numbers.
-         * 
-         * @return builder
-         * 
-         */
         public Builder asNumbers(Integer... asNumbers) {
             return asNumbers(List.of(asNumbers));
         }
 
-        /**
-         * @param datacenterId A unique identifier for an existing data center in the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenterId(Output<Integer> datacenterId) {
             $.datacenterId = datacenterId;
             return this;
         }
 
-        /**
-         * @param datacenterId A unique identifier for an existing data center in the domain.
-         * 
-         * @return builder
-         * 
-         */
         public Builder datacenterId(Integer datacenterId) {
             return datacenterId(Output.of(datacenterId));
         }
 
-        /**
-         * @param nickname A descriptive label for the group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nickname(Output<String> nickname) {
             $.nickname = nickname;
             return this;
         }
 
-        /**
-         * @param nickname A descriptive label for the group.
-         * 
-         * @return builder
-         * 
-         */
         public Builder nickname(String nickname) {
             return nickname(Output.of(nickname));
         }

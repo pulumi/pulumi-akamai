@@ -13,59 +13,20 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamHttpsConnector
     {
-        /// <summary>
-        /// Either `NONE` for no authentication, or `BASIC`. For basic authentication, provide the `user_name` and `password` you set in your custom HTTPS endpoint.
-        /// </summary>
         public readonly string AuthenticationType;
-        /// <summary>
-        /// **Secret**. The certification authority (CA) certificate used to verify the origin server's certificate. It's needed if the certificate stored in `client_cert` is not signed by a well-known certification authority, enter the CA certificate in the PEM format for verification.
-        /// </summary>
         public readonly string? CaCert;
-        /// <summary>
-        /// **Secret**. The PEM-formatted digital certificate you want to authenticate requests to your destination with. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-        /// </summary>
         public readonly string? ClientCert;
-        /// <summary>
-        /// **Secret**. The private key in the non-encrypted PKCS8 format you want to use to authenticate with the backend server. If you want to use mutual authentication, you need to provide both the client certificate and the client key.
-        /// </summary>
         public readonly string? ClientKey;
-        /// <summary>
-        /// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-        /// </summary>
         public readonly bool? CompressLogs;
         public readonly int? ConnectorId;
-        /// <summary>
-        /// The name of the connector.
-        /// </summary>
         public readonly string ConnectorName;
-        /// <summary>
-        /// Content type to pass in the log file header.
-        /// </summary>
         public readonly string? ContentType;
-        /// <summary>
-        /// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
-        /// </summary>
         public readonly string? CustomHeaderName;
-        /// <summary>
-        /// The custom header's contents passed with the request that contains information about the client connection.
-        /// </summary>
         public readonly string? CustomHeaderValue;
         public readonly bool? MTls;
-        /// <summary>
-        /// **Secret**. The Elasticsearch basic access authentication password.
-        /// </summary>
         public readonly string? Password;
-        /// <summary>
-        /// The hostname that verifies the server's certificate and matches the Subject Alternative Names (SANs) in the certificate. If not provided, DataStream fetches the hostname from the endpoint URL.
-        /// </summary>
         public readonly string? TlsHostname;
-        /// <summary>
-        /// Enter the secure URL where you want to send and store your logs.
-        /// </summary>
         public readonly string Url;
-        /// <summary>
-        /// **Secret**. The Elasticsearch basic access authentication username.
-        /// </summary>
         public readonly string? UserName;
 
         [OutputConstructor]

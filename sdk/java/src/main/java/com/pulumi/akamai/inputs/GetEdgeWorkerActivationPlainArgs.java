@@ -13,32 +13,16 @@ public final class GetEdgeWorkerActivationPlainArgs extends com.pulumi.resources
 
     public static final GetEdgeWorkerActivationPlainArgs Empty = new GetEdgeWorkerActivationPlainArgs();
 
-    /**
-     * The unique identifier of the EdgeWorker.
-     * 
-     */
     @Import(name="edgeworkerId", required=true)
     private Integer edgeworkerId;
 
-    /**
-     * @return The unique identifier of the EdgeWorker.
-     * 
-     */
     public Integer edgeworkerId() {
         return this.edgeworkerId;
     }
 
-    /**
-     * The network from where the activation information will be fetched.
-     * 
-     */
     @Import(name="network", required=true)
     private String network;
 
-    /**
-     * @return The network from where the activation information will be fetched.
-     * 
-     */
     public String network() {
         return this.network;
     }
@@ -68,23 +52,11 @@ public final class GetEdgeWorkerActivationPlainArgs extends com.pulumi.resources
             $ = new GetEdgeWorkerActivationPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param edgeworkerId The unique identifier of the EdgeWorker.
-         * 
-         * @return builder
-         * 
-         */
         public Builder edgeworkerId(Integer edgeworkerId) {
             $.edgeworkerId = edgeworkerId;
             return this;
         }
 
-        /**
-         * @param network The network from where the activation information will be fetched.
-         * 
-         * @return builder
-         * 
-         */
         public Builder network(String network) {
             $.network = network;
             return this;

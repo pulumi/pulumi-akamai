@@ -12,15 +12,9 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
 
     public sealed class GtmPropertyLivenessTestHttpHeaderGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Name of HTTP header.
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// Value of HTTP header.
-        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

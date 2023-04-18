@@ -7,26 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * Use the `akamai.GtmDatacenter` resource to create, configure, and import a GTM data center. A GTM data center represents a customer data center and is also known as a traffic target, a location containing many servers GTM can direct traffic to.
- *
- * GTM uses data centers to scale load balancing. For example, you might have data centers in both New York and Amsterdam and want to balance load between them. You can configure GTM to send US users to the New York data center and European users to the data center in Amsterdam.
- *
- * > **Note** Import requires an ID with this format: `existingDomainName`:`existingDatacenterId`.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const demoDatacenter = new akamai.GtmDatacenter("demoDatacenter", {
- *     domain: "demo_domain.akadns.net",
- *     nickname: "demo_datacenter",
- * });
- * ```
- *
  * @deprecated akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter
  */
 export class GtmDatacenter extends pulumi.CustomResource {
@@ -58,53 +38,17 @@ export class GtmDatacenter extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmDatacenter.__pulumiType;
     }
 
-    /**
-     * The name of the city where the data center is located.
-     */
     public readonly city!: pulumi.Output<string | undefined>;
-    /**
-     * Identifies the data center's `datacenterId` of which this data center is a clone.
-     */
     public readonly cloneOf!: pulumi.Output<number | undefined>;
-    /**
-     * A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
-     */
     public readonly cloudServerHostHeaderOverride!: pulumi.Output<boolean | undefined>;
-    /**
-     * A boolean indicating whether to balance load between two or more servers in a cloud environment.
-     */
     public readonly cloudServerTargeting!: pulumi.Output<boolean | undefined>;
-    /**
-     * A two-letter code that specifies the continent where the data center maps to.
-     */
     public readonly continent!: pulumi.Output<string | undefined>;
-    /**
-     * A two-letter ISO 3166 country code that specifies the country where the data center maps to.
-     */
     public readonly country!: pulumi.Output<string | undefined>;
-    /**
-     * A unique identifier for an existing data center in the domain.
-     */
     public /*out*/ readonly datacenterId!: pulumi.Output<number>;
-    /**
-     * Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
-     */
     public readonly defaultLoadObject!: pulumi.Output<outputs.trafficmanagement.GtmDatacenterDefaultLoadObject | undefined>;
-    /**
-     * The GTM domain name for the data center.
-     */
     public readonly domain!: pulumi.Output<string>;
-    /**
-     * Specifies the geographical latitude of the data center's position. See also longitude within this object.
-     */
     public readonly latitude!: pulumi.Output<number | undefined>;
-    /**
-     * Specifies the geographic longitude of the data center's position. See also latitude within this object.
-     */
     public readonly longitude!: pulumi.Output<number | undefined>;
-    /**
-     * A descriptive label for the data center.
-     */
     public readonly nickname!: pulumi.Output<string | undefined>;
     public /*out*/ readonly pingInterval!: pulumi.Output<number>;
     public /*out*/ readonly pingPacketSize!: pulumi.Output<number>;
@@ -112,17 +56,8 @@ export class GtmDatacenter extends pulumi.CustomResource {
     public /*out*/ readonly servermonitorLivenessCount!: pulumi.Output<number>;
     public /*out*/ readonly servermonitorLoadCount!: pulumi.Output<number>;
     public /*out*/ readonly servermonitorPool!: pulumi.Output<string>;
-    /**
-     * Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
-     */
     public readonly stateOrProvince!: pulumi.Output<string | undefined>;
-    /**
-     * A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
-     */
     public /*out*/ readonly virtual!: pulumi.Output<boolean>;
-    /**
-     * A boolean, that if set to `true`, waits for transaction to complete.
-     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -198,53 +133,17 @@ export class GtmDatacenter extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmDatacenter resources.
  */
 export interface GtmDatacenterState {
-    /**
-     * The name of the city where the data center is located.
-     */
     city?: pulumi.Input<string>;
-    /**
-     * Identifies the data center's `datacenterId` of which this data center is a clone.
-     */
     cloneOf?: pulumi.Input<number>;
-    /**
-     * A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
-     */
     cloudServerHostHeaderOverride?: pulumi.Input<boolean>;
-    /**
-     * A boolean indicating whether to balance load between two or more servers in a cloud environment.
-     */
     cloudServerTargeting?: pulumi.Input<boolean>;
-    /**
-     * A two-letter code that specifies the continent where the data center maps to.
-     */
     continent?: pulumi.Input<string>;
-    /**
-     * A two-letter ISO 3166 country code that specifies the country where the data center maps to.
-     */
     country?: pulumi.Input<string>;
-    /**
-     * A unique identifier for an existing data center in the domain.
-     */
     datacenterId?: pulumi.Input<number>;
-    /**
-     * Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
-     */
     defaultLoadObject?: pulumi.Input<inputs.trafficmanagement.GtmDatacenterDefaultLoadObject>;
-    /**
-     * The GTM domain name for the data center.
-     */
     domain?: pulumi.Input<string>;
-    /**
-     * Specifies the geographical latitude of the data center's position. See also longitude within this object.
-     */
     latitude?: pulumi.Input<number>;
-    /**
-     * Specifies the geographic longitude of the data center's position. See also latitude within this object.
-     */
     longitude?: pulumi.Input<number>;
-    /**
-     * A descriptive label for the data center.
-     */
     nickname?: pulumi.Input<string>;
     pingInterval?: pulumi.Input<number>;
     pingPacketSize?: pulumi.Input<number>;
@@ -252,17 +151,8 @@ export interface GtmDatacenterState {
     servermonitorLivenessCount?: pulumi.Input<number>;
     servermonitorLoadCount?: pulumi.Input<number>;
     servermonitorPool?: pulumi.Input<string>;
-    /**
-     * Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
-     */
     stateOrProvince?: pulumi.Input<string>;
-    /**
-     * A boolean indicating whether the data center is virtual or physical, the latter meaning the data center has an Akamai Network Agent installed, and its physical location (`latitude`, `longitude`) is fixed. Either `true` if virtual or `false` if physical.
-     */
     virtual?: pulumi.Input<boolean>;
-    /**
-     * A boolean, that if set to `true`, waits for transaction to complete.
-     */
     waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -270,56 +160,17 @@ export interface GtmDatacenterState {
  * The set of arguments for constructing a GtmDatacenter resource.
  */
 export interface GtmDatacenterArgs {
-    /**
-     * The name of the city where the data center is located.
-     */
     city?: pulumi.Input<string>;
-    /**
-     * Identifies the data center's `datacenterId` of which this data center is a clone.
-     */
     cloneOf?: pulumi.Input<number>;
-    /**
-     * A boolean that, if set to `true`, Akamai's liveness test agents use the Host header configured in the liveness test.
-     */
     cloudServerHostHeaderOverride?: pulumi.Input<boolean>;
-    /**
-     * A boolean indicating whether to balance load between two or more servers in a cloud environment.
-     */
     cloudServerTargeting?: pulumi.Input<boolean>;
-    /**
-     * A two-letter code that specifies the continent where the data center maps to.
-     */
     continent?: pulumi.Input<string>;
-    /**
-     * A two-letter ISO 3166 country code that specifies the country where the data center maps to.
-     */
     country?: pulumi.Input<string>;
-    /**
-     * Specifies the load reporting interface between you and the GTM system. If used, requires these additional arguments:
-     */
     defaultLoadObject?: pulumi.Input<inputs.trafficmanagement.GtmDatacenterDefaultLoadObject>;
-    /**
-     * The GTM domain name for the data center.
-     */
     domain: pulumi.Input<string>;
-    /**
-     * Specifies the geographical latitude of the data center's position. See also longitude within this object.
-     */
     latitude?: pulumi.Input<number>;
-    /**
-     * Specifies the geographic longitude of the data center's position. See also latitude within this object.
-     */
     longitude?: pulumi.Input<number>;
-    /**
-     * A descriptive label for the data center.
-     */
     nickname?: pulumi.Input<string>;
-    /**
-     * Specifies a two-letter ISO 3166 country code for the state or province where the data center is located.
-     */
     stateOrProvince?: pulumi.Input<string>;
-    /**
-     * A boolean, that if set to `true`, waits for transaction to complete.
-     */
     waitOnComplete?: pulumi.Input<boolean>;
 }

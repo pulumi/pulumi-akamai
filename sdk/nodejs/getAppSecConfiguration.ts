@@ -17,9 +17,6 @@ export function getAppSecConfiguration(args?: GetAppSecConfigurationArgs, opts?:
  * A collection of arguments for invoking getAppSecConfiguration.
  */
 export interface GetAppSecConfigurationArgs {
-    /**
-     * . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
-     */
     name?: string;
 }
 
@@ -46,8 +43,5 @@ export function getAppSecConfigurationOutput(args?: GetAppSecConfigurationOutput
  * A collection of arguments for invoking getAppSecConfiguration.
  */
 export interface GetAppSecConfigurationOutputArgs {
-    /**
-     * . Name of the security configuration you want to return information for. If not included, information is returned for all your security configurations.
-     */
     name?: pulumi.Input<string>;
 }

@@ -11,73 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetCpsCsr
     {
-        /// <summary>
-        /// When setting up a third-party enrollment, use the `akamai.getCpsCsr` data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
-        /// 
-        /// If you're using dual-stacked certificates, you'll see data for both ECDSA and RSA keys. 
-        /// 
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example shows how to return CSR information for enrollment ID 12345:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var example = Akamai.GetCpsCsr.Invoke(new()
-        ///     {
-        ///         EnrollmentId = 12345,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        ///   * `csr_rsa` - Returns CSR information for a certificate that uses the RSA algorithm. 
-        ///   * `csr_ecdsa` - Returns CSR information for a certificate that uses the ECDSA algorithm.
-        /// </summary>
         public static Task<GetCpsCsrResult> InvokeAsync(GetCpsCsrArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCpsCsrResult>("akamai:index/getCpsCsr:getCpsCsr", args ?? new GetCpsCsrArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// When setting up a third-party enrollment, use the `akamai.getCpsCsr` data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
-        /// 
-        /// If you're using dual-stacked certificates, you'll see data for both ECDSA and RSA keys. 
-        /// 
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example shows how to return CSR information for enrollment ID 12345:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var example = Akamai.GetCpsCsr.Invoke(new()
-        ///     {
-        ///         EnrollmentId = 12345,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        ///   * `csr_rsa` - Returns CSR information for a certificate that uses the RSA algorithm. 
-        ///   * `csr_ecdsa` - Returns CSR information for a certificate that uses the ECDSA algorithm.
-        /// </summary>
         public static Output<GetCpsCsrResult> Invoke(GetCpsCsrInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCpsCsrResult>("akamai:index/getCpsCsr:getCpsCsr", args ?? new GetCpsCsrInvokeArgs(), options.WithDefaults());
     }
@@ -85,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetCpsCsrArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Unique identifier of the enrollment.
-        /// </summary>
         [Input("enrollmentId", required: true)]
         public int EnrollmentId { get; set; }
 
@@ -99,9 +32,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetCpsCsrInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Unique identifier of the enrollment.
-        /// </summary>
         [Input("enrollmentId", required: true)]
         public Input<int> EnrollmentId { get; set; } = null!;
 

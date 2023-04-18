@@ -31,44 +31,36 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
     public static final DatastreamArgs Empty = new DatastreamArgs();
 
     /**
-     * Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
+     * Defining if stream should be active or not
      * 
      */
     @Import(name="active", required=true)
     private Output<Boolean> active;
 
     /**
-     * @return Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
+     * @return Defining if stream should be active or not
      * 
      */
     public Output<Boolean> active() {
         return this.active;
     }
 
-    /**
-     * Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-     * 
-     */
     @Import(name="azureConnector")
     private @Nullable Output<DatastreamAzureConnectorArgs> azureConnector;
 
-    /**
-     * @return Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-     * 
-     */
     public Optional<Output<DatastreamAzureConnectorArgs>> azureConnector() {
         return Optional.ofNullable(this.azureConnector);
     }
 
     /**
-     * Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
+     * Provides information about the configuration related to logs (format, file names, delivery frequency)
      * 
      */
     @Import(name="config", required=true)
     private Output<DatastreamConfigArgs> config;
 
     /**
-     * @return Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
+     * @return Provides information about the configuration related to logs (format, file names, delivery frequency)
      * 
      */
     public Output<DatastreamConfigArgs> config() {
@@ -76,224 +68,154 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Identifies the contract that has access to the product.
+     * Identifies the contract that has access to the product
      * 
      */
     @Import(name="contractId", required=true)
     private Output<String> contractId;
 
     /**
-     * @return Identifies the contract that has access to the product.
+     * @return Identifies the contract that has access to the product
      * 
      */
     public Output<String> contractId() {
         return this.contractId;
     }
 
-    /**
-     * Specify details about the Datadog connector in a stream, including:
-     * 
-     */
     @Import(name="datadogConnector")
     private @Nullable Output<DatastreamDatadogConnectorArgs> datadogConnector;
 
-    /**
-     * @return Specify details about the Datadog connector in a stream, including:
-     * 
-     */
     public Optional<Output<DatastreamDatadogConnectorArgs>> datadogConnector() {
         return Optional.ofNullable(this.datadogConnector);
     }
 
     /**
-     * Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+     * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+     * identifiers define how the value for these fields appear in the log lines
      * 
      */
     @Import(name="datasetFieldsIds", required=true)
     private Output<List<Integer>> datasetFieldsIds;
 
     /**
-     * @return Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+     * @return A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+     * identifiers define how the value for these fields appear in the log lines
      * 
      */
     public Output<List<Integer>> datasetFieldsIds() {
         return this.datasetFieldsIds;
     }
 
-    /**
-     * Specify details about the Elasticsearch connector you can use in a stream, including:
-     * 
-     */
     @Import(name="elasticsearchConnector")
     private @Nullable Output<DatastreamElasticsearchConnectorArgs> elasticsearchConnector;
 
-    /**
-     * @return Specify details about the Elasticsearch connector you can use in a stream, including:
-     * 
-     */
     public Optional<Output<DatastreamElasticsearchConnectorArgs>> elasticsearchConnector() {
         return Optional.ofNullable(this.elasticsearchConnector);
     }
 
     /**
-     * A list of email addresses you want to notify about activations and deactivations of the stream.
+     * List of email addresses where the system sends notifications about activations and deactivations of the stream
      * 
      */
     @Import(name="emailIds")
     private @Nullable Output<List<String>> emailIds;
 
     /**
-     * @return A list of email addresses you want to notify about activations and deactivations of the stream.
+     * @return List of email addresses where the system sends notifications about activations and deactivations of the stream
      * 
      */
     public Optional<Output<List<String>>> emailIds() {
         return Optional.ofNullable(this.emailIds);
     }
 
-    /**
-     * Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_&lt;timestamp&gt;.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-     * 
-     */
     @Import(name="gcsConnector")
     private @Nullable Output<DatastreamGcsConnectorArgs> gcsConnector;
 
-    /**
-     * @return Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_&lt;timestamp&gt;.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-     * 
-     */
     public Optional<Output<DatastreamGcsConnectorArgs>> gcsConnector() {
         return Optional.ofNullable(this.gcsConnector);
     }
 
     /**
-     * Identifies the group that has access to the product and this stream configuration.
+     * Identifies the group that has access to the product and for which the stream configuration was created
      * 
      */
     @Import(name="groupId", required=true)
     private Output<String> groupId;
 
     /**
-     * @return Identifies the group that has access to the product and this stream configuration.
+     * @return Identifies the group that has access to the product and for which the stream configuration was created
      * 
      */
     public Output<String> groupId() {
         return this.groupId;
     }
 
-    /**
-     * Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-     * 
-     */
     @Import(name="httpsConnector")
     private @Nullable Output<DatastreamHttpsConnectorArgs> httpsConnector;
 
-    /**
-     * @return Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-     * 
-     */
     public Optional<Output<DatastreamHttpsConnectorArgs>> httpsConnector() {
         return Optional.ofNullable(this.httpsConnector);
     }
 
-    /**
-     * Specify details about the Loggly connector you can use in a stream, including:
-     * 
-     */
     @Import(name="logglyConnector")
     private @Nullable Output<DatastreamLogglyConnectorArgs> logglyConnector;
 
-    /**
-     * @return Specify details about the Loggly connector you can use in a stream, including:
-     * 
-     */
     public Optional<Output<DatastreamLogglyConnectorArgs>> logglyConnector() {
         return Optional.ofNullable(this.logglyConnector);
     }
 
-    /**
-     * Specify details about the New Relic connector you can use in a stream, including:
-     * 
-     */
     @Import(name="newRelicConnector")
     private @Nullable Output<DatastreamNewRelicConnectorArgs> newRelicConnector;
 
-    /**
-     * @return Specify details about the New Relic connector you can use in a stream, including:
-     * 
-     */
     public Optional<Output<DatastreamNewRelicConnectorArgs>> newRelicConnector() {
         return Optional.ofNullable(this.newRelicConnector);
     }
 
-    /**
-     * Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_&lt;timestamp&gt;.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
-     * 
-     */
     @Import(name="oracleConnector")
     private @Nullable Output<DatastreamOracleConnectorArgs> oracleConnector;
 
-    /**
-     * @return Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_&lt;timestamp&gt;.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
-     * 
-     */
     public Optional<Output<DatastreamOracleConnectorArgs>> oracleConnector() {
         return Optional.ofNullable(this.oracleConnector);
     }
 
     /**
-     * Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+     * Identifies the properties monitored in the stream
      * 
      */
     @Import(name="propertyIds", required=true)
     private Output<List<String>> propertyIds;
 
     /**
-     * @return Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+     * @return Identifies the properties monitored in the stream
      * 
      */
     public Output<List<String>> propertyIds() {
         return this.propertyIds;
     }
 
-    /**
-     * Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-     * 
-     */
     @Import(name="s3Connector")
     private @Nullable Output<DatastreamS3ConnectorArgs> s3Connector;
 
-    /**
-     * @return Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-     * 
-     */
     public Optional<Output<DatastreamS3ConnectorArgs>> s3Connector() {
         return Optional.ofNullable(this.s3Connector);
     }
 
-    /**
-     * Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-     * 
-     */
     @Import(name="splunkConnector")
     private @Nullable Output<DatastreamSplunkConnectorArgs> splunkConnector;
 
-    /**
-     * @return Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-     * 
-     */
     public Optional<Output<DatastreamSplunkConnectorArgs>> splunkConnector() {
         return Optional.ofNullable(this.splunkConnector);
     }
 
     /**
-     * The name of the stream.
+     * The name of the stream
      * 
      */
     @Import(name="streamName", required=true)
     private Output<String> streamName;
 
     /**
-     * @return The name of the stream.
+     * @return The name of the stream
      * 
      */
     public Output<String> streamName() {
@@ -301,44 +223,36 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+     * Specifies the type of the data stream
      * 
      */
     @Import(name="streamType", required=true)
     private Output<String> streamType;
 
     /**
-     * @return The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+     * @return Specifies the type of the data stream
      * 
      */
     public Output<String> streamType() {
         return this.streamType;
     }
 
-    /**
-     * Specify details about the Sumo Logic connector in a stream, including:
-     * 
-     */
     @Import(name="sumologicConnector")
     private @Nullable Output<DatastreamSumologicConnectorArgs> sumologicConnector;
 
-    /**
-     * @return Specify details about the Sumo Logic connector in a stream, including:
-     * 
-     */
     public Optional<Output<DatastreamSumologicConnectorArgs>> sumologicConnector() {
         return Optional.ofNullable(this.sumologicConnector);
     }
 
     /**
-     * The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+     * The name of the template associated with the stream
      * 
      */
     @Import(name="templateName", required=true)
     private Output<String> templateName;
 
     /**
-     * @return The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+     * @return The name of the template associated with the stream
      * 
      */
     public Output<String> templateName() {
@@ -390,7 +304,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param active Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
+         * @param active Defining if stream should be active or not
          * 
          * @return builder
          * 
@@ -401,7 +315,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param active Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
+         * @param active Defining if stream should be active or not
          * 
          * @return builder
          * 
@@ -410,29 +324,17 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
             return active(Output.of(active));
         }
 
-        /**
-         * @param azureConnector Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder azureConnector(@Nullable Output<DatastreamAzureConnectorArgs> azureConnector) {
             $.azureConnector = azureConnector;
             return this;
         }
 
-        /**
-         * @param azureConnector Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder azureConnector(DatastreamAzureConnectorArgs azureConnector) {
             return azureConnector(Output.of(azureConnector));
         }
 
         /**
-         * @param config Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
+         * @param config Provides information about the configuration related to logs (format, file names, delivery frequency)
          * 
          * @return builder
          * 
@@ -443,7 +345,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param config Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
+         * @param config Provides information about the configuration related to logs (format, file names, delivery frequency)
          * 
          * @return builder
          * 
@@ -453,7 +355,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId Identifies the contract that has access to the product.
+         * @param contractId Identifies the contract that has access to the product
          * 
          * @return builder
          * 
@@ -464,7 +366,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contractId Identifies the contract that has access to the product.
+         * @param contractId Identifies the contract that has access to the product
          * 
          * @return builder
          * 
@@ -473,29 +375,18 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
             return contractId(Output.of(contractId));
         }
 
-        /**
-         * @param datadogConnector Specify details about the Datadog connector in a stream, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder datadogConnector(@Nullable Output<DatastreamDatadogConnectorArgs> datadogConnector) {
             $.datadogConnector = datadogConnector;
             return this;
         }
 
-        /**
-         * @param datadogConnector Specify details about the Datadog connector in a stream, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder datadogConnector(DatastreamDatadogConnectorArgs datadogConnector) {
             return datadogConnector(Output.of(datadogConnector));
         }
 
         /**
-         * @param datasetFieldsIds Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+         * @param datasetFieldsIds A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+         * identifiers define how the value for these fields appear in the log lines
          * 
          * @return builder
          * 
@@ -506,7 +397,8 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param datasetFieldsIds Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+         * @param datasetFieldsIds A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+         * identifiers define how the value for these fields appear in the log lines
          * 
          * @return builder
          * 
@@ -516,7 +408,8 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param datasetFieldsIds Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+         * @param datasetFieldsIds A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+         * identifiers define how the value for these fields appear in the log lines
          * 
          * @return builder
          * 
@@ -525,29 +418,17 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
             return datasetFieldsIds(List.of(datasetFieldsIds));
         }
 
-        /**
-         * @param elasticsearchConnector Specify details about the Elasticsearch connector you can use in a stream, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder elasticsearchConnector(@Nullable Output<DatastreamElasticsearchConnectorArgs> elasticsearchConnector) {
             $.elasticsearchConnector = elasticsearchConnector;
             return this;
         }
 
-        /**
-         * @param elasticsearchConnector Specify details about the Elasticsearch connector you can use in a stream, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder elasticsearchConnector(DatastreamElasticsearchConnectorArgs elasticsearchConnector) {
             return elasticsearchConnector(Output.of(elasticsearchConnector));
         }
 
         /**
-         * @param emailIds A list of email addresses you want to notify about activations and deactivations of the stream.
+         * @param emailIds List of email addresses where the system sends notifications about activations and deactivations of the stream
          * 
          * @return builder
          * 
@@ -558,7 +439,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param emailIds A list of email addresses you want to notify about activations and deactivations of the stream.
+         * @param emailIds List of email addresses where the system sends notifications about activations and deactivations of the stream
          * 
          * @return builder
          * 
@@ -568,7 +449,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param emailIds A list of email addresses you want to notify about activations and deactivations of the stream.
+         * @param emailIds List of email addresses where the system sends notifications about activations and deactivations of the stream
          * 
          * @return builder
          * 
@@ -577,29 +458,17 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
             return emailIds(List.of(emailIds));
         }
 
-        /**
-         * @param gcsConnector Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_&lt;timestamp&gt;.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder gcsConnector(@Nullable Output<DatastreamGcsConnectorArgs> gcsConnector) {
             $.gcsConnector = gcsConnector;
             return this;
         }
 
-        /**
-         * @param gcsConnector Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_&lt;timestamp&gt;.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder gcsConnector(DatastreamGcsConnectorArgs gcsConnector) {
             return gcsConnector(Output.of(gcsConnector));
         }
 
         /**
-         * @param groupId Identifies the group that has access to the product and this stream configuration.
+         * @param groupId Identifies the group that has access to the product and for which the stream configuration was created
          * 
          * @return builder
          * 
@@ -610,7 +479,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId Identifies the group that has access to the product and this stream configuration.
+         * @param groupId Identifies the group that has access to the product and for which the stream configuration was created
          * 
          * @return builder
          * 
@@ -619,92 +488,44 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
             return groupId(Output.of(groupId));
         }
 
-        /**
-         * @param httpsConnector Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder httpsConnector(@Nullable Output<DatastreamHttpsConnectorArgs> httpsConnector) {
             $.httpsConnector = httpsConnector;
             return this;
         }
 
-        /**
-         * @param httpsConnector Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder httpsConnector(DatastreamHttpsConnectorArgs httpsConnector) {
             return httpsConnector(Output.of(httpsConnector));
         }
 
-        /**
-         * @param logglyConnector Specify details about the Loggly connector you can use in a stream, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder logglyConnector(@Nullable Output<DatastreamLogglyConnectorArgs> logglyConnector) {
             $.logglyConnector = logglyConnector;
             return this;
         }
 
-        /**
-         * @param logglyConnector Specify details about the Loggly connector you can use in a stream, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder logglyConnector(DatastreamLogglyConnectorArgs logglyConnector) {
             return logglyConnector(Output.of(logglyConnector));
         }
 
-        /**
-         * @param newRelicConnector Specify details about the New Relic connector you can use in a stream, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder newRelicConnector(@Nullable Output<DatastreamNewRelicConnectorArgs> newRelicConnector) {
             $.newRelicConnector = newRelicConnector;
             return this;
         }
 
-        /**
-         * @param newRelicConnector Specify details about the New Relic connector you can use in a stream, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder newRelicConnector(DatastreamNewRelicConnectorArgs newRelicConnector) {
             return newRelicConnector(Output.of(newRelicConnector));
         }
 
-        /**
-         * @param oracleConnector Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_&lt;timestamp&gt;.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
-         * 
-         * @return builder
-         * 
-         */
         public Builder oracleConnector(@Nullable Output<DatastreamOracleConnectorArgs> oracleConnector) {
             $.oracleConnector = oracleConnector;
             return this;
         }
 
-        /**
-         * @param oracleConnector Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_&lt;timestamp&gt;.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
-         * 
-         * @return builder
-         * 
-         */
         public Builder oracleConnector(DatastreamOracleConnectorArgs oracleConnector) {
             return oracleConnector(Output.of(oracleConnector));
         }
 
         /**
-         * @param propertyIds Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+         * @param propertyIds Identifies the properties monitored in the stream
          * 
          * @return builder
          * 
@@ -715,7 +536,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param propertyIds Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+         * @param propertyIds Identifies the properties monitored in the stream
          * 
          * @return builder
          * 
@@ -725,7 +546,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param propertyIds Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+         * @param propertyIds Identifies the properties monitored in the stream
          * 
          * @return builder
          * 
@@ -734,50 +555,26 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
             return propertyIds(List.of(propertyIds));
         }
 
-        /**
-         * @param s3Connector Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder s3Connector(@Nullable Output<DatastreamS3ConnectorArgs> s3Connector) {
             $.s3Connector = s3Connector;
             return this;
         }
 
-        /**
-         * @param s3Connector Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder s3Connector(DatastreamS3ConnectorArgs s3Connector) {
             return s3Connector(Output.of(s3Connector));
         }
 
-        /**
-         * @param splunkConnector Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder splunkConnector(@Nullable Output<DatastreamSplunkConnectorArgs> splunkConnector) {
             $.splunkConnector = splunkConnector;
             return this;
         }
 
-        /**
-         * @param splunkConnector Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder splunkConnector(DatastreamSplunkConnectorArgs splunkConnector) {
             return splunkConnector(Output.of(splunkConnector));
         }
 
         /**
-         * @param streamName The name of the stream.
+         * @param streamName The name of the stream
          * 
          * @return builder
          * 
@@ -788,7 +585,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param streamName The name of the stream.
+         * @param streamName The name of the stream
          * 
          * @return builder
          * 
@@ -798,7 +595,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param streamType The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+         * @param streamType Specifies the type of the data stream
          * 
          * @return builder
          * 
@@ -809,7 +606,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param streamType The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+         * @param streamType Specifies the type of the data stream
          * 
          * @return builder
          * 
@@ -818,29 +615,17 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
             return streamType(Output.of(streamType));
         }
 
-        /**
-         * @param sumologicConnector Specify details about the Sumo Logic connector in a stream, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder sumologicConnector(@Nullable Output<DatastreamSumologicConnectorArgs> sumologicConnector) {
             $.sumologicConnector = sumologicConnector;
             return this;
         }
 
-        /**
-         * @param sumologicConnector Specify details about the Sumo Logic connector in a stream, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder sumologicConnector(DatastreamSumologicConnectorArgs sumologicConnector) {
             return sumologicConnector(Output.of(sumologicConnector));
         }
 
         /**
-         * @param templateName The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+         * @param templateName The name of the template associated with the stream
          * 
          * @return builder
          * 
@@ -851,7 +636,7 @@ public final class DatastreamArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param templateName The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+         * @param templateName The name of the template associated with the stream
          * 
          * @return builder
          * 

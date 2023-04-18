@@ -6,24 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getPropertiesSearch` data source to retrieve the list of properties matching a specific hostname, edge hostname or property name based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
- *
- * ## Example Usage
- *
- * Return properties associated with the EdgeGrid API client token currently used for authentication:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- *
- * export const myPropertyList = data.akamai_properties_search.example;
- * ```
- * ## Attributes reference
- *
- * This data source returns this attribute:
- *
- * * `properties` - A list of property version matching the given criteria.
- */
 export function getPropertiesSearch(args: GetPropertiesSearchArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertiesSearchResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -37,16 +19,7 @@ export function getPropertiesSearch(args: GetPropertiesSearchArgs, opts?: pulumi
  * A collection of arguments for invoking getPropertiesSearch.
  */
 export interface GetPropertiesSearchArgs {
-    /**
-     * Key used for search. Valid values are:
-     * * **hostname**
-     * * **edgeHostname**
-     * * **propertyName**
-     */
     key: string;
-    /**
-     * (Required) Value to search for.
-     */
     value: string;
 }
 
@@ -62,24 +35,6 @@ export interface GetPropertiesSearchResult {
     readonly properties: outputs.GetPropertiesSearchProperty[];
     readonly value: string;
 }
-/**
- * Use the `akamai.getPropertiesSearch` data source to retrieve the list of properties matching a specific hostname, edge hostname or property name based on the [EdgeGrid API client token](https://techdocs.akamai.com/developer/docs/authenticate-with-edgegrid) you're using.
- *
- * ## Example Usage
- *
- * Return properties associated with the EdgeGrid API client token currently used for authentication:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- *
- * export const myPropertyList = data.akamai_properties_search.example;
- * ```
- * ## Attributes reference
- *
- * This data source returns this attribute:
- *
- * * `properties` - A list of property version matching the given criteria.
- */
 export function getPropertiesSearchOutput(args: GetPropertiesSearchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertiesSearchResult> {
     return pulumi.output(args).apply((a: any) => getPropertiesSearch(a, opts))
 }
@@ -88,15 +43,6 @@ export function getPropertiesSearchOutput(args: GetPropertiesSearchOutputArgs, o
  * A collection of arguments for invoking getPropertiesSearch.
  */
 export interface GetPropertiesSearchOutputArgs {
-    /**
-     * Key used for search. Valid values are:
-     * * **hostname**
-     * * **edgeHostname**
-     * * **propertyName**
-     */
     key: pulumi.Input<string>;
-    /**
-     * (Required) Value to search for.
-     */
     value: pulumi.Input<string>;
 }

@@ -16,14 +16,14 @@ public final class AppSecEvalPenaltyBoxArgs extends com.pulumi.resources.Resourc
     public static final AppSecEvalPenaltyBoxArgs Empty = new AppSecEvalPenaltyBoxArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the evaluation penalty box settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the evaluation penalty box settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -31,22 +31,14 @@ public final class AppSecEvalPenaltyBoxArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * . Action taken any time evaluation penalty box protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action applied to requests from clients in the penalty box
      * 
      */
     @Import(name="penaltyBoxAction", required=true)
     private Output<String> penaltyBoxAction;
 
     /**
-     * @return . Action taken any time evaluation penalty box protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * @return Action applied to requests from clients in the penalty box
      * 
      */
     public Output<String> penaltyBoxAction() {
@@ -54,14 +46,14 @@ public final class AppSecEvalPenaltyBoxArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * . Set to **true** to enable evaluation penalty box protection; set to **false** to disable evaluation penalty box protection.
+     * Whether to enable the penalty box for the specified security policy
      * 
      */
     @Import(name="penaltyBoxProtection", required=true)
     private Output<Boolean> penaltyBoxProtection;
 
     /**
-     * @return . Set to **true** to enable evaluation penalty box protection; set to **false** to disable evaluation penalty box protection.
+     * @return Whether to enable the penalty box for the specified security policy
      * 
      */
     public Output<Boolean> penaltyBoxProtection() {
@@ -69,14 +61,14 @@ public final class AppSecEvalPenaltyBoxArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * . Unique identifier of the security policy associated with the evaluation penalty box settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the evaluation penalty box settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -111,7 +103,7 @@ public final class AppSecEvalPenaltyBoxArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the evaluation penalty box settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -122,7 +114,7 @@ public final class AppSecEvalPenaltyBoxArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the evaluation penalty box settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -132,11 +124,7 @@ public final class AppSecEvalPenaltyBoxArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param penaltyBoxAction . Action taken any time evaluation penalty box protection is triggered. Allowed values are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param penaltyBoxAction Action applied to requests from clients in the penalty box
          * 
          * @return builder
          * 
@@ -147,11 +135,7 @@ public final class AppSecEvalPenaltyBoxArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param penaltyBoxAction . Action taken any time evaluation penalty box protection is triggered. Allowed values are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param penaltyBoxAction Action applied to requests from clients in the penalty box
          * 
          * @return builder
          * 
@@ -161,7 +145,7 @@ public final class AppSecEvalPenaltyBoxArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param penaltyBoxProtection . Set to **true** to enable evaluation penalty box protection; set to **false** to disable evaluation penalty box protection.
+         * @param penaltyBoxProtection Whether to enable the penalty box for the specified security policy
          * 
          * @return builder
          * 
@@ -172,7 +156,7 @@ public final class AppSecEvalPenaltyBoxArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param penaltyBoxProtection . Set to **true** to enable evaluation penalty box protection; set to **false** to disable evaluation penalty box protection.
+         * @param penaltyBoxProtection Whether to enable the penalty box for the specified security policy
          * 
          * @return builder
          * 
@@ -182,7 +166,7 @@ public final class AppSecEvalPenaltyBoxArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the evaluation penalty box settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -193,7 +177,7 @@ public final class AppSecEvalPenaltyBoxArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the evaluation penalty box settings being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

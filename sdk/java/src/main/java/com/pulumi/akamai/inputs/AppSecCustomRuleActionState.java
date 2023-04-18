@@ -17,14 +17,14 @@ public final class AppSecCustomRuleActionState extends com.pulumi.resources.Reso
     public static final AppSecCustomRuleActionState Empty = new AppSecCustomRuleActionState();
 
     /**
-     * . Unique identifier of the security configuration associated with the custom rule action being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the custom rule action being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -32,22 +32,14 @@ public final class AppSecCustomRuleActionState extends com.pulumi.resources.Reso
     }
 
     /**
-     * . Action to be taken when the custom rule is invoked. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the custom rule is invoked
      * 
      */
     @Import(name="customRuleAction")
     private @Nullable Output<String> customRuleAction;
 
     /**
-     * @return . Action to be taken when the custom rule is invoked. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * @return Action to be taken when the custom rule is invoked
      * 
      */
     public Optional<Output<String>> customRuleAction() {
@@ -55,14 +47,14 @@ public final class AppSecCustomRuleActionState extends com.pulumi.resources.Reso
     }
 
     /**
-     * . Unique identifier of the custom rule whose action is being modified.
+     * Unique identifier of the custom rule whose action is being modified
      * 
      */
     @Import(name="customRuleId")
     private @Nullable Output<Integer> customRuleId;
 
     /**
-     * @return . Unique identifier of the custom rule whose action is being modified.
+     * @return Unique identifier of the custom rule whose action is being modified
      * 
      */
     public Optional<Output<Integer>> customRuleId() {
@@ -70,14 +62,14 @@ public final class AppSecCustomRuleActionState extends com.pulumi.resources.Reso
     }
 
     /**
-     * . Unique identifier of the security policy associated with the custom rule action being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the custom rule action being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -112,7 +104,7 @@ public final class AppSecCustomRuleActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the custom rule action being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -123,7 +115,7 @@ public final class AppSecCustomRuleActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the custom rule action being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -133,11 +125,7 @@ public final class AppSecCustomRuleActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param customRuleAction . Action to be taken when the custom rule is invoked. Allowed values are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param customRuleAction Action to be taken when the custom rule is invoked
          * 
          * @return builder
          * 
@@ -148,11 +136,7 @@ public final class AppSecCustomRuleActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param customRuleAction . Action to be taken when the custom rule is invoked. Allowed values are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param customRuleAction Action to be taken when the custom rule is invoked
          * 
          * @return builder
          * 
@@ -162,7 +146,7 @@ public final class AppSecCustomRuleActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param customRuleId . Unique identifier of the custom rule whose action is being modified.
+         * @param customRuleId Unique identifier of the custom rule whose action is being modified
          * 
          * @return builder
          * 
@@ -173,7 +157,7 @@ public final class AppSecCustomRuleActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param customRuleId . Unique identifier of the custom rule whose action is being modified.
+         * @param customRuleId Unique identifier of the custom rule whose action is being modified
          * 
          * @return builder
          * 
@@ -183,7 +167,7 @@ public final class AppSecCustomRuleActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the custom rule action being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -194,7 +178,7 @@ public final class AppSecCustomRuleActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the custom rule action being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

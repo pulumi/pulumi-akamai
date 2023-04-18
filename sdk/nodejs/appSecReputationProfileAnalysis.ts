@@ -4,16 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Security policy
- *
- * Modifies the reputation analysis settings for a security policy. These settings include the following:
- *
- * - The `forwardToHttpHeader` parameter, which indicates whether client reputation details are added to requests forwarded to origin in an HTTP header.
- * - The `forwardSharedIpToHttpHeaderSiem` parameter, which specifies whether a value is added indicating that shared IPs addresses are included in HTTP headers and in SIEM integration events.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://techdocs.akamai.com/application-security/reference/put-reputation-analysis)
- */
 export class AppSecReputationProfileAnalysis extends pulumi.CustomResource {
     /**
      * Get an existing AppSecReputationProfileAnalysis resource's state with the given name, ID, and optional extra
@@ -43,19 +33,19 @@ export class AppSecReputationProfileAnalysis extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+     * Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
      */
     public readonly forwardSharedIpToHttpHeaderSiem!: pulumi.Output<boolean>;
     /**
-     * . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+     * Whether to add client reputation details to requests forwarded to the origin server
      */
     public readonly forwardToHttpHeader!: pulumi.Output<boolean>;
     /**
-     * . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -105,19 +95,19 @@ export class AppSecReputationProfileAnalysis extends pulumi.CustomResource {
  */
 export interface AppSecReputationProfileAnalysisState {
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+     * Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
      */
     forwardSharedIpToHttpHeaderSiem?: pulumi.Input<boolean>;
     /**
-     * . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+     * Whether to add client reputation details to requests forwarded to the origin server
      */
     forwardToHttpHeader?: pulumi.Input<boolean>;
     /**
-     * . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -127,19 +117,19 @@ export interface AppSecReputationProfileAnalysisState {
  */
 export interface AppSecReputationProfileAnalysisArgs {
     /**
-     * . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+     * Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
      */
     forwardSharedIpToHttpHeaderSiem: pulumi.Input<boolean>;
     /**
-     * . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+     * Whether to add client reputation details to requests forwarded to the origin server
      */
     forwardToHttpHeader: pulumi.Input<boolean>;
     /**
-     * . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+     * Unique identifier of the security policy
      */
     securityPolicyId: pulumi.Input<string>;
 }

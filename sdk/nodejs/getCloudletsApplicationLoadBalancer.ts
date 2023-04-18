@@ -6,65 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.CloudletsApplicationLoadBalancer` data source to list details about the Application Load Balancer configuration with a specified policy version, or latest if not specified.
- *
- * ## Basic usage
- *
- * This example returns the load balancing configuration details based on the origin ID and optionally, a version:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getCloudletsApplicationLoadBalancer({
- *     originId: "alb_test_1",
- *     version: 1,
- * });
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `description` - The description of the load balancing configuration.
- * * `type` - The type of Conditional Origin. `APPLICATION_LOAD_BALANCER` is the only supported value.
- * * `balancingType` - The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
- * * `createdBy` - The name of the user who created this load balancing configuration.
- * * `createdDate` - The date, in ISO 8601 format, when this load balancing configuration was created.
- * * `deleted` - Whether the Conditional Origin version has been deleted. If `false`, you can use this version again.
- * * `immutable` - Whether you can edit the load balancing version. The default setting for this member is false. It automatically becomes true when the load balancing version is activated for the first time.
- * * `lastModifiedBy` - The user who last modified the load balancing configuration.
- * * `lastModifiedDate` - The date, in ISO 8601 format, when the initial load balancing configuration was last modified.
- * * `warnings` - A list of warnings that occurred during the activation of the load balancing configuration.
- * * `dataCenters` - Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
- *   * `city` - The city in which the data center is located.
- *   * `cloudServerHostHeaderOverride` - Whether the cloud server host header is overridden.
- *   * `cloudService` - Whether this datacenter is a cloud service.
- *   * `continent` - The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
- *   * `country` - The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
- *   * `hostname` - The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
- *   * `latitude` - The latitude value for the data center. This member supports six decimal places of precision.
- *   * `livenessHosts` - A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
- *   * `longitude` - The longitude value for the data center. This member supports six decimal places of precision.
- *   * `originId` - The ID of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
- *   * `percent` - The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
- *   * `stateOrProvince` - The state, province, or region where the data center is located.
- * * `livenessSettings` - Specifies the health of each load balanced data center defined in the data center list.
- *   * `hostHeader` - The Host header for the liveness HTTP request.
- *   * `additionalHeaders` - Maps additional case-insensitive HTTP header names included to the liveness testing requests.
- *   * `interval` - The frequency of liveness tests. Defaults to 60 seconds, minimum is 10 seconds.
- *   * `path` - The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
- *   * `peerCertificateVerification` - Whether to validate the origin certificate for an HTTPS request.
- *   * `port` - The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
- *   * `protocol` - The protocol or scheme for the database, either `HTTP` or `HTTPS`.
- *   * `requestString` - The request used for TCP and TCPS tests.
- *   * `responseString` - The response used for TCP and TCPS tests.
- *   * `status3xxFailure` - If `true`, marks the liveness test as failed when the request returns a 3xx (redirection) status code.
- *   * `status4xxFailure` - If `true`, marks the liveness test as failed when the request returns a 4xx (client error) status code.
- *   * `status5xxFailure` - If `true`, marks the liveness test as failed when the request returns a 5xx (server error) status code.
- *   * `timeout` - The number of seconds the system waits before failing the liveness test.
- */
 export function getCloudletsApplicationLoadBalancer(args: GetCloudletsApplicationLoadBalancerArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsApplicationLoadBalancerResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -78,13 +19,7 @@ export function getCloudletsApplicationLoadBalancer(args: GetCloudletsApplicatio
  * A collection of arguments for invoking getCloudletsApplicationLoadBalancer.
  */
 export interface GetCloudletsApplicationLoadBalancerArgs {
-    /**
-     * (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-     */
     originId: string;
-    /**
-     * (Optional) The version number of the load balancing configuration.
-     */
     version?: number;
 }
 
@@ -111,65 +46,6 @@ export interface GetCloudletsApplicationLoadBalancerResult {
     readonly version?: number;
     readonly warnings: string;
 }
-/**
- * Use the `akamai.CloudletsApplicationLoadBalancer` data source to list details about the Application Load Balancer configuration with a specified policy version, or latest if not specified.
- *
- * ## Basic usage
- *
- * This example returns the load balancing configuration details based on the origin ID and optionally, a version:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = akamai.getCloudletsApplicationLoadBalancer({
- *     originId: "alb_test_1",
- *     version: 1,
- * });
- * ```
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `description` - The description of the load balancing configuration.
- * * `type` - The type of Conditional Origin. `APPLICATION_LOAD_BALANCER` is the only supported value.
- * * `balancingType` - The type of load balancing being performed, either `WEIGHTED` or `PERFORMANCE`.
- * * `createdBy` - The name of the user who created this load balancing configuration.
- * * `createdDate` - The date, in ISO 8601 format, when this load balancing configuration was created.
- * * `deleted` - Whether the Conditional Origin version has been deleted. If `false`, you can use this version again.
- * * `immutable` - Whether you can edit the load balancing version. The default setting for this member is false. It automatically becomes true when the load balancing version is activated for the first time.
- * * `lastModifiedBy` - The user who last modified the load balancing configuration.
- * * `lastModifiedDate` - The date, in ISO 8601 format, when the initial load balancing configuration was last modified.
- * * `warnings` - A list of warnings that occurred during the activation of the load balancing configuration.
- * * `dataCenters` - Specifies the Conditional Origins being used as data centers for an Application Load Balancer implementation. Only Conditional Origins with an origin type of `CUSTOMER` or `NETSTORAGE` can be used as data centers in an Application Load Balancer configuration.
- *   * `city` - The city in which the data center is located.
- *   * `cloudServerHostHeaderOverride` - Whether the cloud server host header is overridden.
- *   * `cloudService` - Whether this datacenter is a cloud service.
- *   * `continent` - The code of the continent on which the data center is located. See [Continent Codes](https://control.akamai.com/dl/edgescape/continentCodes.csv) for a list of valid codes.
- *   * `country` - The country in which the data center is located. See [Country Codes](https://control.akamai.com/dl/edgescape/cc2continent.csv) for a list of valid codes.
- *   * `hostname` - The name of the host that can be used as a Conditional Origin. This should match the `hostname` value defined for this datacenter in Property Manager.
- *   * `latitude` - The latitude value for the data center. This member supports six decimal places of precision.
- *   * `livenessHosts` - A list of the origin servers used to poll the data centers in an Application Load Balancer configuration. These servers support basic HTTP polling.
- *   * `longitude` - The longitude value for the data center. This member supports six decimal places of precision.
- *   * `originId` - The ID of an origin that represents the data center. The Conditional Origin, which is defined in Property Manager, must have an origin type of either `CUSTOMER` or `NET_STORAGE` set in the `origin` behavior. See property rules for more information.
- *   * `percent` - The percent of traffic that is sent to the data center. The total for all data centers must equal 100%.
- *   * `stateOrProvince` - The state, province, or region where the data center is located.
- * * `livenessSettings` - Specifies the health of each load balanced data center defined in the data center list.
- *   * `hostHeader` - The Host header for the liveness HTTP request.
- *   * `additionalHeaders` - Maps additional case-insensitive HTTP header names included to the liveness testing requests.
- *   * `interval` - The frequency of liveness tests. Defaults to 60 seconds, minimum is 10 seconds.
- *   * `path` - The path to the test object used for liveness testing. The function of the test object is to help determine whether the data center is functioning.
- *   * `peerCertificateVerification` - Whether to validate the origin certificate for an HTTPS request.
- *   * `port` - The port for the test object. The default port is 80, which is standard for HTTP. Enter 443 if you are using HTTPS.
- *   * `protocol` - The protocol or scheme for the database, either `HTTP` or `HTTPS`.
- *   * `requestString` - The request used for TCP and TCPS tests.
- *   * `responseString` - The response used for TCP and TCPS tests.
- *   * `status3xxFailure` - If `true`, marks the liveness test as failed when the request returns a 3xx (redirection) status code.
- *   * `status4xxFailure` - If `true`, marks the liveness test as failed when the request returns a 4xx (client error) status code.
- *   * `status5xxFailure` - If `true`, marks the liveness test as failed when the request returns a 5xx (server error) status code.
- *   * `timeout` - The number of seconds the system waits before failing the liveness test.
- */
 export function getCloudletsApplicationLoadBalancerOutput(args: GetCloudletsApplicationLoadBalancerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsApplicationLoadBalancerResult> {
     return pulumi.output(args).apply((a: any) => getCloudletsApplicationLoadBalancer(a, opts))
 }
@@ -178,12 +54,6 @@ export function getCloudletsApplicationLoadBalancerOutput(args: GetCloudletsAppl
  * A collection of arguments for invoking getCloudletsApplicationLoadBalancer.
  */
 export interface GetCloudletsApplicationLoadBalancerOutputArgs {
-    /**
-     * (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-     */
     originId: pulumi.Input<string>;
-    /**
-     * (Optional) The version number of the load balancing configuration.
-     */
     version?: pulumi.Input<number>;
 }

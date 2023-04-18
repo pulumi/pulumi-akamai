@@ -17,14 +17,14 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
     public static final AppSecRatePolicyActionState Empty = new AppSecRatePolicyActionState();
 
     /**
-     * . Unique identifier of the security configuration associated with the rate policy action being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the rate policy action being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -32,22 +32,14 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
     }
 
     /**
-     * . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken for requests coming from an IPv4 address
      * 
      */
     @Import(name="ipv4Action")
     private @Nullable Output<String> ipv4Action;
 
     /**
-     * @return . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * @return Action to be taken for requests coming from an IPv4 address
      * 
      */
     public Optional<Output<String>> ipv4Action() {
@@ -55,20 +47,14 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
     }
 
     /**
-     * . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+     * Action to be taken for requests coming from an IPv6 address
      * 
      */
     @Import(name="ipv6Action")
     private @Nullable Output<String> ipv6Action;
 
     /**
-     * @return . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+     * @return Action to be taken for requests coming from an IPv6 address
      * 
      */
     public Optional<Output<String>> ipv6Action() {
@@ -76,14 +62,14 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
     }
 
     /**
-     * . Unique identifier of the rate policy whose action is being modified.
+     * Unique identifier of the rate policy
      * 
      */
     @Import(name="ratePolicyId")
     private @Nullable Output<Integer> ratePolicyId;
 
     /**
-     * @return . Unique identifier of the rate policy whose action is being modified.
+     * @return Unique identifier of the rate policy
      * 
      */
     public Optional<Output<Integer>> ratePolicyId() {
@@ -91,14 +77,14 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
     }
 
     /**
-     * . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -134,7 +120,7 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the rate policy action being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -145,7 +131,7 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the rate policy action being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -155,11 +141,7 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ipv4Action . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param ipv4Action Action to be taken for requests coming from an IPv4 address
          * 
          * @return builder
          * 
@@ -170,11 +152,7 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ipv4Action . Rate policy action for requests coming from an IPv4 IP address. Allowed actions are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action.
+         * @param ipv4Action Action to be taken for requests coming from an IPv4 address
          * 
          * @return builder
          * 
@@ -184,10 +162,7 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ipv6Action . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+         * @param ipv6Action Action to be taken for requests coming from an IPv6 address
          * 
          * @return builder
          * 
@@ -198,10 +173,7 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ipv6Action . Rate policy action for requests coming from an IPv6 IP address. Allowed actions are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom{custom_deny_id}**. Take the action specified by the custom deny.
+         * @param ipv6Action Action to be taken for requests coming from an IPv6 address
          * 
          * @return builder
          * 
@@ -211,7 +183,7 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ratePolicyId . Unique identifier of the rate policy whose action is being modified.
+         * @param ratePolicyId Unique identifier of the rate policy
          * 
          * @return builder
          * 
@@ -222,7 +194,7 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ratePolicyId . Unique identifier of the rate policy whose action is being modified.
+         * @param ratePolicyId Unique identifier of the rate policy
          * 
          * @return builder
          * 
@@ -232,7 +204,7 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -243,7 +215,7 @@ public final class AppSecRatePolicyActionState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the rate policy whose action is being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

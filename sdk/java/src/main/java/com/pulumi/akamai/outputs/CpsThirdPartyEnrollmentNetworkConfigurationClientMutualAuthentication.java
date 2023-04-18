@@ -12,41 +12,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication {
-    /**
-     * @return Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
-     * 
-     */
     private @Nullable Boolean ocspEnabled;
-    /**
-     * @return Whether you want to enable the server to send the certificate authority (CA) list to the client.
-     * 
-     */
     private @Nullable Boolean sendCaListToClient;
-    /**
-     * @return The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
-     * 
-     */
     private @Nullable String setId;
 
     private CpsThirdPartyEnrollmentNetworkConfigurationClientMutualAuthentication() {}
-    /**
-     * @return Whether you want to enable the Online Certificate Status Protocol (OCSP) stapling for client certificates.
-     * 
-     */
     public Optional<Boolean> ocspEnabled() {
         return Optional.ofNullable(this.ocspEnabled);
     }
-    /**
-     * @return Whether you want to enable the server to send the certificate authority (CA) list to the client.
-     * 
-     */
     public Optional<Boolean> sendCaListToClient() {
         return Optional.ofNullable(this.sendCaListToClient);
     }
-    /**
-     * @return The identifier of the set of trust chains, created in [Trust Chain Manager](https://techdocs.akamai.com/trust-chain-mgr/docs/welcome-trust-chain-manager).
-     * 
-     */
     public Optional<String> setId() {
         return Optional.ofNullable(this.setId);
     }

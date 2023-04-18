@@ -19,120 +19,35 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * Use the `akamai.GtmGeomap` resource to create, configure, and import a GTM Geographic map. Geographic mapping lets you configure a property that returns a CNAME based on the geographic location of the request.
- * 
- * You can reuse maps for multiple properties or create new ones. To configure a property for geographic mapping, you need to define at least one geographic map for your domain. Each map needs at least two definitions. For example, you can have one definition that maps a set of countries to a specific data center, and a second definition that routes all other traffic.
- * 
- * &gt; **Note** Import requires an ID with this format: `existing_domain_name`:`existing_map_name`.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.GtmGeomap;
- * import com.pulumi.akamai.GtmGeomapArgs;
- * import com.pulumi.akamai.inputs.GtmGeomapDefaultDatacenterArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var demoGeomap = new GtmGeomap(&#34;demoGeomap&#34;, GtmGeomapArgs.builder()        
- *             .defaultDatacenter(GtmGeomapDefaultDatacenterArgs.builder()
- *                 .datacenterId(5400)
- *                 .nickname(&#34;All Others&#34;)
- *                 .build())
- *             .domain(&#34;demo_domain.akadns.net&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/gtmGeomap:GtmGeomap")
 public class GtmGeomap extends com.pulumi.resources.CustomResource {
-    /**
-     * Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-     * 
-     */
     @Export(name="assignments", type=List.class, parameters={GtmGeomapAssignment.class})
     private Output</* @Nullable */ List<GtmGeomapAssignment>> assignments;
 
-    /**
-     * @return Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-     * 
-     */
     public Output<Optional<List<GtmGeomapAssignment>>> assignments() {
         return Codegen.optional(this.assignments);
     }
-    /**
-     * A placeholder for all other geographic zones. Requires these additional arguments:
-     * 
-     */
     @Export(name="defaultDatacenter", type=GtmGeomapDefaultDatacenter.class, parameters={})
     private Output<GtmGeomapDefaultDatacenter> defaultDatacenter;
 
-    /**
-     * @return A placeholder for all other geographic zones. Requires these additional arguments:
-     * 
-     */
     public Output<GtmGeomapDefaultDatacenter> defaultDatacenter() {
         return this.defaultDatacenter;
     }
-    /**
-     * GTM Domain name for the Geographic Map.
-     * 
-     */
     @Export(name="domain", type=String.class, parameters={})
     private Output<String> domain;
 
-    /**
-     * @return GTM Domain name for the Geographic Map.
-     * 
-     */
     public Output<String> domain() {
         return this.domain;
     }
-    /**
-     * A descriptive label for the Geographic map.
-     * 
-     */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
-    /**
-     * @return A descriptive label for the Geographic map.
-     * 
-     */
     public Output<String> name() {
         return this.name;
     }
-    /**
-     * A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-     * 
-     */
     @Export(name="waitOnComplete", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> waitOnComplete;
 
-    /**
-     * @return A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-     * 
-     */
     public Output<Optional<Boolean>> waitOnComplete() {
         return Codegen.optional(this.waitOnComplete);
     }

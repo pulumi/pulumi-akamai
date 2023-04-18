@@ -10,63 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-//
-// Use the `getCloudletsForwardRewriteMatchRule` data source to build a match rule JSON object for the Forward Rewrite Cloudlet.
-//
-// ## Basic usage
-//
-// This example returns the JSON-encoded rules for the Forward Rewrite Cloudlet:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.GetCloudletsForwardRewriteMatchRule(ctx, &akamai.GetCloudletsForwardRewriteMatchRuleArgs{
-//				MatchRules: []akamai.GetCloudletsForwardRewriteMatchRuleMatchRule{
-//					{
-//						ForwardSettings: {
-//							OriginId:               pulumi.StringRef("1234"),
-//							PathAndQs:              pulumi.StringRef("/path"),
-//							UseIncomingQueryString: pulumi.BoolRef(true),
-//						},
-//						Matches: []akamai.GetCloudletsForwardRewriteMatchRuleMatchRuleMatch{
-//							{
-//								CaseSensitive: pulumi.BoolRef(false),
-//								CheckIps:      pulumi.StringRef("CONNECTING_IP XFF_HEADERS"),
-//								MatchOperator: pulumi.StringRef("equals"),
-//								MatchType:     pulumi.StringRef("clientip"),
-//								MatchValue:    pulumi.StringRef("192.0.2.0"),
-//								Negate:        pulumi.BoolRef(false),
-//							},
-//						},
-//						Name: pulumi.StringRef("rule"),
-//					},
-//				},
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `type` - The type of Cloudlet the rule is for.
-// * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
 func GetCloudletsForwardRewriteMatchRule(ctx *pulumi.Context, args *GetCloudletsForwardRewriteMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsForwardRewriteMatchRuleResult, error) {
 	var rv GetCloudletsForwardRewriteMatchRuleResult
 	err := ctx.Invoke("akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule", args, &rv, opts...)
@@ -78,7 +21,6 @@ func GetCloudletsForwardRewriteMatchRule(ctx *pulumi.Context, args *GetCloudlets
 
 // A collection of arguments for invoking getCloudletsForwardRewriteMatchRule.
 type GetCloudletsForwardRewriteMatchRuleArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsForwardRewriteMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -105,7 +47,6 @@ func GetCloudletsForwardRewriteMatchRuleOutput(ctx *pulumi.Context, args GetClou
 
 // A collection of arguments for invoking getCloudletsForwardRewriteMatchRule.
 type GetCloudletsForwardRewriteMatchRuleOutputArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsForwardRewriteMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

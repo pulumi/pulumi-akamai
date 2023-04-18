@@ -112,46 +112,7 @@ def get_app_sec_eval_rules(config_id: Optional[int] = None,
                            security_policy_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecEvalRulesResult:
     """
-    **Scopes**: Security policy; evaluation rule
-
-    Returns the action and the condition-exception information for a rule or set of rules being used in evaluation mode.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules](https://techdocs.akamai.com/application-security/reference/get-policy-eval-rules)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    eval_rule = akamai.get_app_sec_eval_rules(config_id=configuration.config_id,
-        security_policy_id="gms1_134637",
-        rule_id=60029316)
-    pulumi.export("evalRuleAction", eval_rule.eval_rule_action)
-    pulumi.export("conditionException", eval_rule.condition_exception)
-    pulumi.export("json", eval_rule.json)
-    pulumi.export("outputText", eval_rule.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `eval_rule_action`. Action taken anytime the evaluation rule is triggered. This information is returned only when a single rule is retrieved. Valid values are:
-      - **alert**. Record the event.
-      - **deny**. Reject the request.
-      - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-      - **none**. Take no action.
-    - `condition_exception`. Conditions and exceptions associated with the rule. This information is returned only when a single rule is retrieved.
-    - `json`. JSON-formatted list of the action and the condition-exception information for the rule. This information is returned only when a single rule is retrieved.
-    - `output_text`. Tabular report showing the rule action as well as Boolean values indicating whether conditions and exceptions have been configured for the rule.
-
-
-    :param int config_id: . Unique identifier of the security configuration running in evaluation mode.
-    :param int rule_id: . Unique identifier of the evaluation rule you want to return information for. If not included, information is returned for all your evaluation rules.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the evaluation rule.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -177,45 +138,6 @@ def get_app_sec_eval_rules_output(config_id: Optional[pulumi.Input[int]] = None,
                                   security_policy_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecEvalRulesResult]:
     """
-    **Scopes**: Security policy; evaluation rule
-
-    Returns the action and the condition-exception information for a rule or set of rules being used in evaluation mode.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules](https://techdocs.akamai.com/application-security/reference/get-policy-eval-rules)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    eval_rule = akamai.get_app_sec_eval_rules(config_id=configuration.config_id,
-        security_policy_id="gms1_134637",
-        rule_id=60029316)
-    pulumi.export("evalRuleAction", eval_rule.eval_rule_action)
-    pulumi.export("conditionException", eval_rule.condition_exception)
-    pulumi.export("json", eval_rule.json)
-    pulumi.export("outputText", eval_rule.output_text)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `eval_rule_action`. Action taken anytime the evaluation rule is triggered. This information is returned only when a single rule is retrieved. Valid values are:
-      - **alert**. Record the event.
-      - **deny**. Reject the request.
-      - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-      - **none**. Take no action.
-    - `condition_exception`. Conditions and exceptions associated with the rule. This information is returned only when a single rule is retrieved.
-    - `json`. JSON-formatted list of the action and the condition-exception information for the rule. This information is returned only when a single rule is retrieved.
-    - `output_text`. Tabular report showing the rule action as well as Boolean values indicating whether conditions and exceptions have been configured for the rule.
-
-
-    :param int config_id: . Unique identifier of the security configuration running in evaluation mode.
-    :param int rule_id: . Unique identifier of the evaluation rule you want to return information for. If not included, information is returned for all your evaluation rules.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the evaluation rule.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -15,118 +15,59 @@ import java.lang.Integer;
 import java.lang.String;
 import javax.annotation.Nullable;
 
-/**
- * **Scopes**: Security policy
- * 
- * Modifies the penalty box settings for a security policy.
- * When the penalty box is enabled for a policy, clients that trigger a WAF Deny action are placed in the “penalty box”.
- * There, the action you select for penalty box (either Alert or Deny ) continues to apply to any requests from that client for the next 10 minutes.
- * 
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/match-targets/sequence](https://techdocs.akamai.com/application-security/reference/put-policy-penalty-box)
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.AkamaiFunctions;
- * import com.pulumi.akamai.inputs.GetAppSecConfigurationArgs;
- * import com.pulumi.akamai.AppSecPenaltyBox;
- * import com.pulumi.akamai.AppSecPenaltyBoxArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var configuration = AkamaiFunctions.getAppSecConfiguration(GetAppSecConfigurationArgs.builder()
- *             .name(&#34;Documentation&#34;)
- *             .build());
- * 
- *         var penaltyBox = new AppSecPenaltyBox(&#34;penaltyBox&#34;, AppSecPenaltyBoxArgs.builder()        
- *             .configId(configuration.applyValue(getAppSecConfigurationResult -&gt; getAppSecConfigurationResult.configId()))
- *             .securityPolicyId(&#34;gms1_134637&#34;)
- *             .penaltyBoxProtection(true)
- *             .penaltyBoxAction(&#34;deny&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
- */
 @ResourceType(type="akamai:index/appSecPenaltyBox:AppSecPenaltyBox")
 public class AppSecPenaltyBox extends com.pulumi.resources.CustomResource {
     /**
-     * . Unique identifier of the security configuration associated with the penalty box settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Export(name="configId", type=Integer.class, parameters={})
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the penalty box settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
         return this.configId;
     }
     /**
-     * . Action taken any time penalty box protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * The action to be taken when the penalty box is triggered
      * 
      */
     @Export(name="penaltyBoxAction", type=String.class, parameters={})
     private Output<String> penaltyBoxAction;
 
     /**
-     * @return . Action taken any time penalty box protection is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * @return The action to be taken when the penalty box is triggered
      * 
      */
     public Output<String> penaltyBoxAction() {
         return this.penaltyBoxAction;
     }
     /**
-     * . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
+     * Whether to enable the penalty box for the specified security policy
      * 
      */
     @Export(name="penaltyBoxProtection", type=Boolean.class, parameters={})
     private Output<Boolean> penaltyBoxProtection;
 
     /**
-     * @return . Set to **true** to enable penalty box protection; set to **false** to disable penalty box protection.
+     * @return Whether to enable the penalty box for the specified security policy
      * 
      */
     public Output<Boolean> penaltyBoxProtection() {
         return this.penaltyBoxProtection;
     }
     /**
-     * . Unique identifier of the security policy associated with the penalty box settings being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Export(name="securityPolicyId", type=String.class, parameters={})
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the penalty box settings being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {

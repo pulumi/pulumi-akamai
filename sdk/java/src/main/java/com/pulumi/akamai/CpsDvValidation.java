@@ -16,71 +16,31 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * Once you complete the Let&#39;s Encrypt challenges, optionally use the `akamai.CpsDvValidation` resource to send the acknowledgement to CPS and inform it that tokens are ready for validation. You can also wait for CPS to check for the tokens, which it does on a regular schedule. Next, CPS automatically deploys the certificate on Staging, and eventually on the Production network.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.CpsDvValidation;
- * import com.pulumi.akamai.CpsDvValidationArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var example = new CpsDvValidation(&#34;example&#34;, CpsDvValidationArgs.builder()        
- *             .enrollmentId(akamai_cps_dv_enrollment.example().id())
- *             .sans(akamai_cps_dv_enrollment.example().sans())
- *             .build());
- * 
- *     }
- * }
- * ```
- * ## Attributes reference
- * 
- * * `status` - The status of certificate validation.
- * 
- */
 @ResourceType(type="akamai:index/cpsDvValidation:CpsDvValidation")
 public class CpsDvValidation extends com.pulumi.resources.CustomResource {
     /**
-     * Unique identifier for the DV certificate enrollment.
+     * The unique identifier of enrollment
      * 
      */
     @Export(name="enrollmentId", type=Integer.class, parameters={})
     private Output<Integer> enrollmentId;
 
     /**
-     * @return Unique identifier for the DV certificate enrollment.
+     * @return The unique identifier of enrollment
      * 
      */
     public Output<Integer> enrollmentId() {
         return this.enrollmentId;
     }
     /**
-     * The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+     * List of SANs
      * 
      */
     @Export(name="sans", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> sans;
 
     /**
-     * @return The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+     * @return List of SANs
      * 
      */
     public Output<Optional<List<String>>> sans() {

@@ -13,81 +13,33 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamAzureConnector {
-    /**
-     * @return **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
-     * 
-     */
     private String accessKey;
-    /**
-     * @return Specifies the Azure Storage account name.
-     * 
-     */
     private String accountName;
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     private @Nullable Boolean compressLogs;
     private @Nullable Integer connectorId;
-    /**
-     * @return The name of the connector.
-     * 
-     */
     private String connectorName;
-    /**
-     * @return Specifies the Azure Storage container name.
-     * 
-     */
     private String containerName;
-    /**
-     * @return The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-     * 
-     */
     private String path;
 
     private DatastreamAzureConnector() {}
-    /**
-     * @return **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
-     * 
-     */
     public String accessKey() {
         return this.accessKey;
     }
-    /**
-     * @return Specifies the Azure Storage account name.
-     * 
-     */
     public String accountName() {
         return this.accountName;
     }
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
     public Optional<Integer> connectorId() {
         return Optional.ofNullable(this.connectorId);
     }
-    /**
-     * @return The name of the connector.
-     * 
-     */
     public String connectorName() {
         return this.connectorName;
     }
-    /**
-     * @return Specifies the Azure Storage container name.
-     * 
-     */
     public String containerName() {
         return this.containerName;
     }
-    /**
-     * @return The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-     * 
-     */
     public String path() {
         return this.path;
     }

@@ -74,3 +74,8 @@ func GetProperty(ctx *pulumi.Context) string {
 func GetPropertySection(ctx *pulumi.Context) string {
 	return config.Get(ctx, "akamai:propertySection")
 }
+
+// The maximum number of API requests to be made per second (0 for no limit)
+func GetRequestLimit(ctx *pulumi.Context) int {
+	return config.GetInt(ctx, "akamai:requestLimit")
+}

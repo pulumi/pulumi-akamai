@@ -10,58 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration
-//
-// Returns information about the network lists assigned to the bypass network list; networks on this list are not subject to firewall checking.
-//
-// Note that this data source is only applicable to WAP (Web Application Protector) configurations.
-//
-// **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/bypass-network-lists](https://techdocs.akamai.com/application-security/reference/get-bypass-network-lists-per-policy)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			bypassNetworkLists, err := akamai.GetAppSecBypassNetworkLists(ctx, &akamai.GetAppSecBypassNetworkListsArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: "gms1_134637",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("bypassNetworkListsOutput", bypassNetworkLists.OutputText)
-//			ctx.Export("bypassNetworkListsJson", bypassNetworkLists.Json)
-//			ctx.Export("bypassNetworkListsIdList", bypassNetworkLists.BypassNetworkLists)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `bypassNetworkList`. List of network IDs.
-// - `json`. JSON-formatted list of information about the bypass networks.
-// - `outputText`. Tabular report showing the bypass network list information.
 func GetAppSecBypassNetworkLists(ctx *pulumi.Context, args *GetAppSecBypassNetworkListsArgs, opts ...pulumi.InvokeOption) (*GetAppSecBypassNetworkListsResult, error) {
 	var rv GetAppSecBypassNetworkListsResult
 	err := ctx.Invoke("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", args, &rv, opts...)
@@ -73,9 +21,7 @@ func GetAppSecBypassNetworkLists(ctx *pulumi.Context, args *GetAppSecBypassNetwo
 
 // A collection of arguments for invoking getAppSecBypassNetworkLists.
 type GetAppSecBypassNetworkListsArgs struct {
-	// . Unique identifier of the security configuration associated with the bypass network lists.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the bypass network lists.
+	ConfigId         int    `pulumi:"configId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -105,9 +51,7 @@ func GetAppSecBypassNetworkListsOutput(ctx *pulumi.Context, args GetAppSecBypass
 
 // A collection of arguments for invoking getAppSecBypassNetworkLists.
 type GetAppSecBypassNetworkListsOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the bypass network lists.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the bypass network lists.
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 

@@ -9,79 +9,41 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// The `akamai.EdgeKv` resource lets you control EdgeKV database functions outside EdgeWorkers JavaScript code. Refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/welcome-to-edgekv) for more information.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testStaging = new Akamai.EdgeKv("testStaging", new()
-    ///     {
-    ///         GeoLocation = "US",
-    ///         GroupId = 4284,
-    ///         InitialDatas = new[]
-    ///         {
-    ///             new Akamai.Inputs.EdgeKvInitialDataArgs
-    ///             {
-    ///                 Group = "translations",
-    ///                 Key = "lang",
-    ///                 Value = "English",
-    ///             },
-    ///         },
-    ///         NamespaceName = "Marketing",
-    ///         Network = "staging",
-    ///         RetentionInSeconds = 15724800,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// ## Attributes reference
-    /// 
-    /// There are no supported arguments for this resource.
-    /// </summary>
     [AkamaiResourceType("akamai:index/edgeKv:EdgeKv")]
     public partial class EdgeKv : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
+        /// Storage location for data
         /// </summary>
         [Output("geoLocation")]
         public Output<string?> GeoLocation { get; private set; } = null!;
 
         /// <summary>
-        /// (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        /// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
         /// </summary>
         [Output("groupId")]
         public Output<int> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
+        /// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         /// </summary>
         [Output("initialDatas")]
         public Output<ImmutableArray<Outputs.EdgeKvInitialData>> InitialDatas { get; private set; } = null!;
 
         /// <summary>
-        /// (Required) The name of the namespace.
+        /// Name for the EKV namespace
         /// </summary>
         [Output("namespaceName")]
         public Output<string> NamespaceName { get; private set; } = null!;
 
         /// <summary>
-        /// The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+        /// The network on which the namespace will be activated
         /// </summary>
         [Output("network")]
         public Output<string> Network { get; private set; } = null!;
 
         /// <summary>
-        /// (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        /// Retention period for data in this namespace. An update of this value will just affect new EKV items.
         /// </summary>
         [Output("retentionInSeconds")]
         public Output<int> RetentionInSeconds { get; private set; } = null!;
@@ -133,13 +95,13 @@ namespace Pulumi.Akamai
     public sealed class EdgeKvArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
+        /// Storage location for data
         /// </summary>
         [Input("geoLocation")]
         public Input<string>? GeoLocation { get; set; }
 
         /// <summary>
-        /// (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        /// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
         /// </summary>
         [Input("groupId", required: true)]
         public Input<int> GroupId { get; set; } = null!;
@@ -148,7 +110,7 @@ namespace Pulumi.Akamai
         private InputList<Inputs.EdgeKvInitialDataArgs>? _initialDatas;
 
         /// <summary>
-        /// List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
+        /// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         /// </summary>
         public InputList<Inputs.EdgeKvInitialDataArgs> InitialDatas
         {
@@ -157,19 +119,19 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// (Required) The name of the namespace.
+        /// Name for the EKV namespace
         /// </summary>
         [Input("namespaceName", required: true)]
         public Input<string> NamespaceName { get; set; } = null!;
 
         /// <summary>
-        /// The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+        /// The network on which the namespace will be activated
         /// </summary>
         [Input("network", required: true)]
         public Input<string> Network { get; set; } = null!;
 
         /// <summary>
-        /// (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        /// Retention period for data in this namespace. An update of this value will just affect new EKV items.
         /// </summary>
         [Input("retentionInSeconds", required: true)]
         public Input<int> RetentionInSeconds { get; set; } = null!;
@@ -183,13 +145,13 @@ namespace Pulumi.Akamai
     public sealed class EdgeKvState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Storage location for data when creating a namespace on the production network. This can help optimize performance by storing data where most or all of your users are located. The value defaults to `US` on the `STAGING` and `PRODUCTION` networks. For a list of supported geoLocations on the `PRODUCTION` network refer to the [EdgeKV documentation](https://techdocs.akamai.com/edgekv/docs/edgekv-data-model#namespace).
+        /// Storage location for data
         /// </summary>
         [Input("geoLocation")]
         public Input<string>? GeoLocation { get; set; }
 
         /// <summary>
-        /// (Required) The `group ID` for the EdgeKV namespace. This numeric value will be required in the next EdgeKV API version.
+        /// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
         /// </summary>
         [Input("groupId")]
         public Input<int>? GroupId { get; set; }
@@ -198,7 +160,7 @@ namespace Pulumi.Akamai
         private InputList<Inputs.EdgeKvInitialDataGetArgs>? _initialDatas;
 
         /// <summary>
-        /// List of key-value pairs called items to initialize the namespace. These items are valid only for database creation, updates are ignored.
+        /// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         /// </summary>
         public InputList<Inputs.EdgeKvInitialDataGetArgs> InitialDatas
         {
@@ -207,19 +169,19 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// (Required) The name of the namespace.
+        /// Name for the EKV namespace
         /// </summary>
         [Input("namespaceName")]
         public Input<string>? NamespaceName { get; set; }
 
         /// <summary>
-        /// The network you want to activate the EdgeKV database on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+        /// The network on which the namespace will be activated
         /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
         /// <summary>
-        /// (Required) Retention period for data in this namespace, or 0 for indefinite. An update of this value will just affect new EdgeKV items.
+        /// Retention period for data in this namespace. An update of this value will just affect new EKV items.
         /// </summary>
         [Input("retentionInSeconds")]
         public Input<int>? RetentionInSeconds { get; set; }

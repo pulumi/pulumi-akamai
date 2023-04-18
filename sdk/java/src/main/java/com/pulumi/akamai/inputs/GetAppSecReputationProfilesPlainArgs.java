@@ -14,32 +14,16 @@ public final class GetAppSecReputationProfilesPlainArgs extends com.pulumi.resou
 
     public static final GetAppSecReputationProfilesPlainArgs Empty = new GetAppSecReputationProfilesPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the reputation profiles.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the reputation profiles.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-     * 
-     */
     @Import(name="reputationProfileId")
     private @Nullable Integer reputationProfileId;
 
-    /**
-     * @return . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-     * 
-     */
     public Optional<Integer> reputationProfileId() {
         return Optional.ofNullable(this.reputationProfileId);
     }
@@ -69,23 +53,11 @@ public final class GetAppSecReputationProfilesPlainArgs extends com.pulumi.resou
             $ = new GetAppSecReputationProfilesPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param reputationProfileId . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-         * 
-         * @return builder
-         * 
-         */
         public Builder reputationProfileId(@Nullable Integer reputationProfileId) {
             $.reputationProfileId = reputationProfileId;
             return this;

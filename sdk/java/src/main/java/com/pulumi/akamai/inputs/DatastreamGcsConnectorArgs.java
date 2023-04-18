@@ -17,32 +17,16 @@ public final class DatastreamGcsConnectorArgs extends com.pulumi.resources.Resou
 
     public static final DatastreamGcsConnectorArgs Empty = new DatastreamGcsConnectorArgs();
 
-    /**
-     * The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-     * 
-     */
     @Import(name="bucket", required=true)
     private Output<String> bucket;
 
-    /**
-     * @return The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-     * 
-     */
     public Output<String> bucket() {
         return this.bucket;
     }
 
-    /**
-     * Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     @Import(name="compressLogs")
     private @Nullable Output<Boolean> compressLogs;
 
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     public Optional<Output<Boolean>> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
@@ -54,77 +38,37 @@ public final class DatastreamGcsConnectorArgs extends com.pulumi.resources.Resou
         return Optional.ofNullable(this.connectorId);
     }
 
-    /**
-     * The name of the connector.
-     * 
-     */
     @Import(name="connectorName", required=true)
     private Output<String> connectorName;
 
-    /**
-     * @return The name of the connector.
-     * 
-     */
     public Output<String> connectorName() {
         return this.connectorName;
     }
 
-    /**
-     * The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-     * 
-     */
     @Import(name="path")
     private @Nullable Output<String> path;
 
-    /**
-     * @return The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-     * 
-     */
     public Optional<Output<String>> path() {
         return Optional.ofNullable(this.path);
     }
 
-    /**
-     * **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
-     * 
-     */
     @Import(name="privateKey", required=true)
     private Output<String> privateKey;
 
-    /**
-     * @return **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
-     * 
-     */
     public Output<String> privateKey() {
         return this.privateKey;
     }
 
-    /**
-     * The unique ID of your Google Cloud project.
-     * 
-     */
     @Import(name="projectId", required=true)
     private Output<String> projectId;
 
-    /**
-     * @return The unique ID of your Google Cloud project.
-     * 
-     */
     public Output<String> projectId() {
         return this.projectId;
     }
 
-    /**
-     * The name of the service account with the storage.object.create permission or Storage Object Creator role.
-     * 
-     */
     @Import(name="serviceAccountName", required=true)
     private Output<String> serviceAccountName;
 
-    /**
-     * @return The name of the service account with the storage.object.create permission or Storage Object Creator role.
-     * 
-     */
     public Output<String> serviceAccountName() {
         return this.serviceAccountName;
     }
@@ -160,44 +104,20 @@ public final class DatastreamGcsConnectorArgs extends com.pulumi.resources.Resou
             $ = new DatastreamGcsConnectorArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param bucket The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-         * 
-         * @return builder
-         * 
-         */
         public Builder bucket(Output<String> bucket) {
             $.bucket = bucket;
             return this;
         }
 
-        /**
-         * @param bucket The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-         * 
-         * @return builder
-         * 
-         */
         public Builder bucket(String bucket) {
             return bucket(Output.of(bucket));
         }
 
-        /**
-         * @param compressLogs Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder compressLogs(@Nullable Output<Boolean> compressLogs) {
             $.compressLogs = compressLogs;
             return this;
         }
 
-        /**
-         * @param compressLogs Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder compressLogs(Boolean compressLogs) {
             return compressLogs(Output.of(compressLogs));
         }
@@ -211,107 +131,47 @@ public final class DatastreamGcsConnectorArgs extends com.pulumi.resources.Resou
             return connectorId(Output.of(connectorId));
         }
 
-        /**
-         * @param connectorName The name of the connector.
-         * 
-         * @return builder
-         * 
-         */
         public Builder connectorName(Output<String> connectorName) {
             $.connectorName = connectorName;
             return this;
         }
 
-        /**
-         * @param connectorName The name of the connector.
-         * 
-         * @return builder
-         * 
-         */
         public Builder connectorName(String connectorName) {
             return connectorName(Output.of(connectorName));
         }
 
-        /**
-         * @param path The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-         * 
-         * @return builder
-         * 
-         */
         public Builder path(@Nullable Output<String> path) {
             $.path = path;
             return this;
         }
 
-        /**
-         * @param path The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-         * 
-         * @return builder
-         * 
-         */
         public Builder path(String path) {
             return path(Output.of(path));
         }
 
-        /**
-         * @param privateKey **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
-         * 
-         * @return builder
-         * 
-         */
         public Builder privateKey(Output<String> privateKey) {
             $.privateKey = privateKey;
             return this;
         }
 
-        /**
-         * @param privateKey **Secret**. The contents of the JSON private key you generated and downloaded in your Google Cloud Storage account.
-         * 
-         * @return builder
-         * 
-         */
         public Builder privateKey(String privateKey) {
             return privateKey(Output.of(privateKey));
         }
 
-        /**
-         * @param projectId The unique ID of your Google Cloud project.
-         * 
-         * @return builder
-         * 
-         */
         public Builder projectId(Output<String> projectId) {
             $.projectId = projectId;
             return this;
         }
 
-        /**
-         * @param projectId The unique ID of your Google Cloud project.
-         * 
-         * @return builder
-         * 
-         */
         public Builder projectId(String projectId) {
             return projectId(Output.of(projectId));
         }
 
-        /**
-         * @param serviceAccountName The name of the service account with the storage.object.create permission or Storage Object Creator role.
-         * 
-         * @return builder
-         * 
-         */
         public Builder serviceAccountName(Output<String> serviceAccountName) {
             $.serviceAccountName = serviceAccountName;
             return this;
         }
 
-        /**
-         * @param serviceAccountName The name of the service account with the storage.object.create permission or Storage Object Creator role.
-         * 
-         * @return builder
-         * 
-         */
         public Builder serviceAccountName(String serviceAccountName) {
             return serviceAccountName(Output.of(serviceAccountName));
         }

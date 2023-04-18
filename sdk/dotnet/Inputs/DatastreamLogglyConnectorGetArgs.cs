@@ -14,10 +14,6 @@ namespace Pulumi.Akamai.Inputs
     {
         [Input("authToken", required: true)]
         private Input<string>? _authToken;
-
-        /// <summary>
-        /// **Secret**. Your Log API token for your account in New Relic.
-        /// </summary>
         public Input<string>? AuthToken
         {
             get => _authToken;
@@ -28,40 +24,21 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
-        /// <summary>
-        /// The name of the connector.
-        /// </summary>
         [Input("connectorName", required: true)]
         public Input<string> ConnectorName { get; set; } = null!;
 
-        /// <summary>
-        /// Content type to pass in the log file header.
-        /// </summary>
         [Input("contentType")]
         public Input<string>? ContentType { get; set; }
 
-        /// <summary>
-        /// A human-readable name for the request's custom header, containing only alphanumeric, dash, and underscore characters.
-        /// </summary>
         [Input("customHeaderName")]
         public Input<string>? CustomHeaderName { get; set; }
 
-        /// <summary>
-        /// The custom header's contents passed with the request that contains information about the client connection.
-        /// </summary>
         [Input("customHeaderValue")]
         public Input<string>? CustomHeaderValue { get; set; }
 
-        /// <summary>
-        /// The Elasticsearch bulk endpoint URL in the format: `https://&lt;hostname&gt;.elastic-cloud.com:9243/_bulk/`. Set `index_name` in the appropriate field instead of providing it in the URL. You can use Akamaized property hostnames as endpoint URLs. 
-        /// &lt;br&gt;Learn more about how to [Stream logs to Elasticsearch](https://techdocs.akamai.com/datastream2/docs/stream-elasticsearch).
-        /// </summary>
         [Input("endpoint", required: true)]
         public Input<string> Endpoint { get; set; } = null!;
 
-        /// <summary>
-        /// The tags you can use to segment and filter log events in Loggly. Learn more about [Tags](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/tags.htm).
-        /// </summary>
         [Input("tags")]
         public Input<string>? Tags { get; set; }
 

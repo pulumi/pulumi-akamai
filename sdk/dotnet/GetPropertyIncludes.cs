@@ -11,87 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetPropertyIncludes
     {
-        /// <summary>
-        /// Use the `akamai.getPropertyIncludes` data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns all includes for the specified contract and group:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var myExamplePropertyIncludes = Akamai.GetPropertyIncludes.Invoke(new()
-        ///     {
-        ///         ContractId = "ctr_1-AB123",
-        ///         GroupId = "grp_12345",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["myExample"] = myExamplePropertyIncludes,
-        ///     };
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `includes` -  The small, reusable, configurable components for your properties.
-        ///  * `latest_version` - Returns the most recent version of the include.
-        ///  * `staging_version` - The include version currently activated on the staging network.
-        ///  * `production_version` - The include version currently activated on the production network.
-        ///  * `id` - The include's unique identifier.
-        ///  * `name` - The descriptive name for the include.
-        ///  * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
-        /// </summary>
         public static Task<GetPropertyIncludesResult> InvokeAsync(GetPropertyIncludesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyIncludesResult>("akamai:index/getPropertyIncludes:getPropertyIncludes", args ?? new GetPropertyIncludesArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getPropertyIncludes` data source to get all includes available for the current contract and group. Includes are small, reusable, and configurable components for your properties.
-        /// 
-        /// ## Basic usage
-        /// 
-        /// This example returns all includes for the specified contract and group:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var myExamplePropertyIncludes = Akamai.GetPropertyIncludes.Invoke(new()
-        ///     {
-        ///         ContractId = "ctr_1-AB123",
-        ///         GroupId = "grp_12345",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["myExample"] = myExamplePropertyIncludes,
-        ///     };
-        /// });
-        /// ```
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `includes` -  The small, reusable, configurable components for your properties.
-        ///  * `latest_version` - Returns the most recent version of the include.
-        ///  * `staging_version` - The include version currently activated on the staging network.
-        ///  * `production_version` - The include version currently activated on the production network.
-        ///  * `id` - The include's unique identifier.
-        ///  * `name` - The descriptive name for the include.
-        ///  * `type` - Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`.
-        /// </summary>
         public static Output<GetPropertyIncludesResult> Invoke(GetPropertyIncludesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertyIncludesResult>("akamai:index/getPropertyIncludes:getPropertyIncludes", args ?? new GetPropertyIncludesInvokeArgs(), options.WithDefaults());
     }
@@ -99,27 +21,15 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyIncludesArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A group's unique ID, including the optional `grp_` prefix.
-        /// </summary>
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
 
-        /// <summary>
-        /// (Optional) The property that references the includes you want to list.
-        /// </summary>
         [Input("parentProperty")]
         public Inputs.GetPropertyIncludesParentPropertyArgs? ParentProperty { get; set; }
 
-        /// <summary>
-        /// (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-        /// </summary>
         [Input("type")]
         public string? Type { get; set; }
 
@@ -131,27 +41,15 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyIncludesInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A group's unique ID, including the optional `grp_` prefix.
-        /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
-        /// <summary>
-        /// (Optional) The property that references the includes you want to list.
-        /// </summary>
         [Input("parentProperty")]
         public Input<Inputs.GetPropertyIncludesParentPropertyInputArgs>? ParentProperty { get; set; }
 
-        /// <summary>
-        /// (Optional) Specifies the type of the include, either `MICROSERVICES` or `COMMON_SETTINGS`. Use this field for filtering. `MICROSERVICES` allow different teams to work independently on different parts of a single site. `COMMON_SETTINGS` includes are useful for configurations that share a large number of settings, often managed by a central team.
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

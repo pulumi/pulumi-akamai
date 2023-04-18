@@ -10,62 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-//
-// Use the `getCloudletsVisitorPrioritizationMatchRule` data source to build a match rule JSON object for the Visitor Prioritization Cloudlet.
-//
-// ## Basic usage
-//
-// This example returns the JSON-encoded rules for the Visitor Prioritization Cloudlet:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.GetCloudletsVisitorPrioritizationMatchRule(ctx, &akamai.GetCloudletsVisitorPrioritizationMatchRuleArgs{
-//				MatchRules: []akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRule{
-//					{
-//						End:      pulumi.IntRef(1645037845),
-//						MatchUrl: pulumi.StringRef("example.com"),
-//						Matches: []akamai.GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatch{
-//							{
-//								CaseSensitive: pulumi.BoolRef(false),
-//								CheckIps:      pulumi.StringRef("CONNECTING_IP"),
-//								MatchOperator: pulumi.StringRef("equals"),
-//								MatchType:     pulumi.StringRef("protocol"),
-//								MatchValue:    pulumi.StringRef("http"),
-//								Negate:        pulumi.BoolRef(false),
-//							},
-//						},
-//						Name:               pulumi.StringRef("rule"),
-//						PassThroughPercent: -1,
-//						Start:              pulumi.IntRef(1644865045),
-//					},
-//				},
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `type` - The type of Cloudlet the rule is for.
-// * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
 func GetCloudletsVisitorPrioritizationMatchRule(ctx *pulumi.Context, args *GetCloudletsVisitorPrioritizationMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsVisitorPrioritizationMatchRuleResult, error) {
 	var rv GetCloudletsVisitorPrioritizationMatchRuleResult
 	err := ctx.Invoke("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", args, &rv, opts...)
@@ -77,7 +21,6 @@ func GetCloudletsVisitorPrioritizationMatchRule(ctx *pulumi.Context, args *GetCl
 
 // A collection of arguments for invoking getCloudletsVisitorPrioritizationMatchRule.
 type GetCloudletsVisitorPrioritizationMatchRuleArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsVisitorPrioritizationMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -104,7 +47,6 @@ func GetCloudletsVisitorPrioritizationMatchRuleOutput(ctx *pulumi.Context, args 
 
 // A collection of arguments for invoking getCloudletsVisitorPrioritizationMatchRule.
 type GetCloudletsVisitorPrioritizationMatchRuleOutputArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsVisitorPrioritizationMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

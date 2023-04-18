@@ -74,34 +74,7 @@ class AwaitableGetAppSecVersionNotesResult(GetAppSecVersionNotesResult):
 def get_app_sec_version_notes(config_id: Optional[int] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecVersionNotesResult:
     """
-    **Scopes**: Security configuration
-
-    Returns the most recent version notes for a security configuration.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://techdocs.akamai.com/application-security/reference/get-version-notes)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    version_notes = akamai.get_app_sec_version_notes(config_id=configuration.config_id)
-    pulumi.export("versionNotesText", version_notes.output_text)
-    pulumi.export("versionNotesJson", version_notes.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list showing the version notes.
-    - `output_text`. Tabular report showing the version notes.
-
-
-    :param int config_id: . Unique identifier of the security configuration you want to return information for.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -119,33 +92,6 @@ def get_app_sec_version_notes(config_id: Optional[int] = None,
 def get_app_sec_version_notes_output(config_id: Optional[pulumi.Input[int]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecVersionNotesResult]:
     """
-    **Scopes**: Security configuration
-
-    Returns the most recent version notes for a security configuration.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/version-notes](https://techdocs.akamai.com/application-security/reference/get-version-notes)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    version_notes = akamai.get_app_sec_version_notes(config_id=configuration.config_id)
-    pulumi.export("versionNotesText", version_notes.output_text)
-    pulumi.export("versionNotesJson", version_notes.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list showing the version notes.
-    - `output_text`. Tabular report showing the version notes.
-
-
-    :param int config_id: . Unique identifier of the security configuration you want to return information for.
+    Use this data source to access information about an existing resource.
     """
     ...

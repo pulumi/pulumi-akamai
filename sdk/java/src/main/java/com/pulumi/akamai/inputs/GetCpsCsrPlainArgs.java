@@ -12,17 +12,9 @@ public final class GetCpsCsrPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetCpsCsrPlainArgs Empty = new GetCpsCsrPlainArgs();
 
-    /**
-     * Unique identifier of the enrollment.
-     * 
-     */
     @Import(name="enrollmentId", required=true)
     private Integer enrollmentId;
 
-    /**
-     * @return Unique identifier of the enrollment.
-     * 
-     */
     public Integer enrollmentId() {
         return this.enrollmentId;
     }
@@ -51,12 +43,6 @@ public final class GetCpsCsrPlainArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetCpsCsrPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param enrollmentId Unique identifier of the enrollment.
-         * 
-         * @return builder
-         * 
-         */
         public Builder enrollmentId(Integer enrollmentId) {
             $.enrollmentId = enrollmentId;
             return this;

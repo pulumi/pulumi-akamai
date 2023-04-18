@@ -4,22 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.getGroup` data source to get a group by name.
- *
- * Each account features a hierarchy of groups, which control access to your
- * Akamai configurations and help consolidate reporting functions, typically
- * mapping to an organizational hierarchy. Using either Control Center or the
- * [Identity Management: User Administration API](https://techdocs.akamai.com/iam-api/reference/api),
- * account administrators can assign properties to specific groups, each with
- * its own set of users and accompanying roles.
- *
- * ## Attributes reference
- *
- * This data source returns this attribute:
- *
- * * `id` - The group's unique ID, including the `grp_` prefix.
- */
 export function getGroup(args?: GetGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetGroupResult> {
     args = args || {};
 
@@ -37,22 +21,12 @@ export function getGroup(args?: GetGroupArgs, opts?: pulumi.InvokeOptions): Prom
  */
 export interface GetGroupArgs {
     /**
-     * Replaced by `contractId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: string;
-    /**
-     * (Required) A contract's unique ID, including the `ctr_` prefix.
-     */
     contractId?: string;
-    /**
-     * The group name.
-     */
     groupName?: string;
     /**
-     * Replaced by `groupName`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "name" has been deprecated.
      */
     name?: string;
@@ -77,22 +51,6 @@ export interface GetGroupResult {
      */
     readonly name: string;
 }
-/**
- * Use the `akamai.getGroup` data source to get a group by name.
- *
- * Each account features a hierarchy of groups, which control access to your
- * Akamai configurations and help consolidate reporting functions, typically
- * mapping to an organizational hierarchy. Using either Control Center or the
- * [Identity Management: User Administration API](https://techdocs.akamai.com/iam-api/reference/api),
- * account administrators can assign properties to specific groups, each with
- * its own set of users and accompanying roles.
- *
- * ## Attributes reference
- *
- * This data source returns this attribute:
- *
- * * `id` - The group's unique ID, including the `grp_` prefix.
- */
 export function getGroupOutput(args?: GetGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGroupResult> {
     return pulumi.output(args).apply((a: any) => getGroup(a, opts))
 }
@@ -102,22 +60,12 @@ export function getGroupOutput(args?: GetGroupOutputArgs, opts?: pulumi.InvokeOp
  */
 export interface GetGroupOutputArgs {
     /**
-     * Replaced by `contractId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
-    /**
-     * (Required) A contract's unique ID, including the `ctr_` prefix.
-     */
     contractId?: pulumi.Input<string>;
-    /**
-     * The group name.
-     */
     groupName?: pulumi.Input<string>;
     /**
-     * Replaced by `groupName`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "name" has been deprecated.
      */
     name?: pulumi.Input<string>;

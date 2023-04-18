@@ -9,75 +9,35 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Evaluation attack group
-    /// 
-    /// Modifies the action and the conditions and exceptions for an evaluation mode attack group.
-    /// 
-    /// Note that this resource is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.IO;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-    ///     {
-    ///         Name = "Documentation",
-    ///     });
-    /// 
-    ///     var evalAttackGroup = new Akamai.AppSecEvalGroup("evalAttackGroup", new()
-    ///     {
-    ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-    ///         SecurityPolicyId = "gms1_134637",
-    ///         AttackGroup = "SQL",
-    ///         AttackGroupAction = "deny",
-    ///         ConditionException = File.ReadAllText($"{path.Module}/condition_exception.json"),
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecEvalGroup:AppSecEvalGroup")]
     public partial class AppSecEvalGroup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the evaluation attack group being modified.
+        /// Unique identifier of the evaluation attack group being modified
         /// </summary>
         [Output("attackGroup")]
         public Output<string> AttackGroup { get; private set; } = null!;
 
         /// <summary>
-        /// . Action to be taken any time the attack group is triggered. Allowed values are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken when the attack group is triggered
         /// </summary>
         [Output("attackGroupAction")]
         public Output<string> AttackGroupAction { get; private set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing properties and property values for the attack group.
+        /// JSON-formatted condition and exception information for the evaluation attack group
         /// </summary>
         [Output("conditionException")]
         public Output<string?> ConditionException { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security configuration where evaluation is taking place.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the evaluation process.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -129,35 +89,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecEvalGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the evaluation attack group being modified.
+        /// Unique identifier of the evaluation attack group being modified
         /// </summary>
         [Input("attackGroup", required: true)]
         public Input<string> AttackGroup { get; set; } = null!;
 
         /// <summary>
-        /// . Action to be taken any time the attack group is triggered. Allowed values are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken when the attack group is triggered
         /// </summary>
         [Input("attackGroupAction", required: true)]
         public Input<string> AttackGroupAction { get; set; } = null!;
 
         /// <summary>
-        /// . Path to a JSON file containing properties and property values for the attack group.
+        /// JSON-formatted condition and exception information for the evaluation attack group
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration where evaluation is taking place.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the evaluation process.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -171,35 +127,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecEvalGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the evaluation attack group being modified.
+        /// Unique identifier of the evaluation attack group being modified
         /// </summary>
         [Input("attackGroup")]
         public Input<string>? AttackGroup { get; set; }
 
         /// <summary>
-        /// . Action to be taken any time the attack group is triggered. Allowed values are:
-        /// - **alert**. Record the event.
-        /// - **deny**. Block the request.
-        /// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-        /// - **none**. Take no action.
+        /// Action to be taken when the attack group is triggered
         /// </summary>
         [Input("attackGroupAction")]
         public Input<string>? AttackGroupAction { get; set; }
 
         /// <summary>
-        /// . Path to a JSON file containing properties and property values for the attack group.
+        /// JSON-formatted condition and exception information for the evaluation attack group
         /// </summary>
         [Input("conditionException")]
         public Input<string>? ConditionException { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security configuration where evaluation is taking place.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the evaluation process.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

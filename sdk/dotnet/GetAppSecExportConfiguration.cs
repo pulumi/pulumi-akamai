@@ -11,101 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecExportConfiguration
     {
-        /// <summary>
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var export = Akamai.GetAppSecExportConfiguration.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         Version = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.LatestVersion),
-        ///         Searches = new[]
-        ///         {
-        ///             "securityPolicies",
-        ///             "selectedHosts",
-        ///         },
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["json"] = export.Apply(getAppSecExportConfigurationResult =&gt; getAppSecExportConfigurationResult.Json),
-        ///         ["text"] = export.Apply(getAppSecExportConfigurationResult =&gt; getAppSecExportConfigurationResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. Complete set of information about the specified security configuration version in JSON format. When this option is included information is always returned for the _entire_ configuration. Among other things, that means that, if your command uses the `search` parameter, that parameter is ignored.
-        /// - `output_text`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
-        /// </summary>
         public static Task<GetAppSecExportConfigurationResult> InvokeAsync(GetAppSecExportConfigurationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var configuration = Akamai.GetAppSecConfiguration.Invoke(new()
-        ///     {
-        ///         Name = "Documentation",
-        ///     });
-        /// 
-        ///     var export = Akamai.GetAppSecExportConfiguration.Invoke(new()
-        ///     {
-        ///         ConfigId = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.ConfigId),
-        ///         Version = configuration.Apply(getAppSecConfigurationResult =&gt; getAppSecConfigurationResult.LatestVersion),
-        ///         Searches = new[]
-        ///         {
-        ///             "securityPolicies",
-        ///             "selectedHosts",
-        ///         },
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["json"] = export.Apply(getAppSecExportConfigurationResult =&gt; getAppSecExportConfigurationResult.Json),
-        ///         ["text"] = export.Apply(getAppSecExportConfigurationResult =&gt; getAppSecExportConfigurationResult.OutputText),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. Complete set of information about the specified security configuration version in JSON format. When this option is included information is always returned for the _entire_ configuration. Among other things, that means that, if your command uses the `search` parameter, that parameter is ignored.
-        /// - `output_text`. Tabular report showing the types of data specified in the `search` parameter. Valid only if the `search` parameter references at least one type.
-        /// </summary>
         public static Output<GetAppSecExportConfigurationResult> Invoke(GetAppSecExportConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecExportConfigurationResult>("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args ?? new GetAppSecExportConfigurationInvokeArgs(), options.WithDefaults());
     }
@@ -113,27 +21,17 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecExportConfigurationArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration you want to return information for.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
         [Input("searches")]
         private List<string>? _searches;
-
-        /// <summary>
-        /// . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-        /// </summary>
         public List<string> Searches
         {
             get => _searches ?? (_searches = new List<string>());
             set => _searches = value;
         }
 
-        /// <summary>
-        /// . Version number of the security configuration.
-        /// </summary>
         [Input("version", required: true)]
         public int Version { get; set; }
 
@@ -145,27 +43,17 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecExportConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration you want to return information for.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         [Input("searches")]
         private InputList<string>? _searches;
-
-        /// <summary>
-        /// . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-        /// </summary>
         public InputList<string> Searches
         {
             get => _searches ?? (_searches = new InputList<string>());
             set => _searches = value;
         }
 
-        /// <summary>
-        /// . Version number of the security configuration.
-        /// </summary>
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
 

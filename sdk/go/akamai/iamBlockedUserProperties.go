@@ -11,55 +11,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `IamBlockedUserProperties` resource to remove or grant access to properties. Administrators can block a user's access to any property, overriding any available role already assigned to that user.
-//
-// ## Basic usage
-//
-// This example returns the policy details based on the policy ID and optionally, a version:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewIamBlockedUserProperties(ctx, "example", &akamai.IamBlockedUserPropertiesArgs{
-//				BlockedProperties: pulumi.IntArray{
-//					pulumi.Int(1),
-//					pulumi.Int(2),
-//					pulumi.Int(3),
-//					pulumi.Int(4),
-//					pulumi.Int(5),
-//				},
-//				GroupId:    pulumi.Int(12345),
-//				IdentityId: pulumi.String("A-B-123456"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Attributes reference
-//
-// This resource doesn't return any attributes.
 type IamBlockedUserProperties struct {
 	pulumi.CustomResourceState
 
-	// List of properties to block for a user. The property IDs must be an integer.
+	// List of properties to block for a user
 	BlockedProperties pulumi.IntArrayOutput `pulumi:"blockedProperties"`
-	// A unique identifier for a group. Each identifier must be an integer.
+	// A unique identifier for a group
 	GroupId pulumi.IntOutput `pulumi:"groupId"`
-	// A unique identifier that corresponds to a user's actual profile or client ID. Each identifier must be a string.
+	// A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
 	IdentityId pulumi.StringOutput `pulumi:"identityId"`
 }
 
@@ -101,20 +60,20 @@ func GetIamBlockedUserProperties(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering IamBlockedUserProperties resources.
 type iamBlockedUserPropertiesState struct {
-	// List of properties to block for a user. The property IDs must be an integer.
+	// List of properties to block for a user
 	BlockedProperties []int `pulumi:"blockedProperties"`
-	// A unique identifier for a group. Each identifier must be an integer.
+	// A unique identifier for a group
 	GroupId *int `pulumi:"groupId"`
-	// A unique identifier that corresponds to a user's actual profile or client ID. Each identifier must be a string.
+	// A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
 	IdentityId *string `pulumi:"identityId"`
 }
 
 type IamBlockedUserPropertiesState struct {
-	// List of properties to block for a user. The property IDs must be an integer.
+	// List of properties to block for a user
 	BlockedProperties pulumi.IntArrayInput
-	// A unique identifier for a group. Each identifier must be an integer.
+	// A unique identifier for a group
 	GroupId pulumi.IntPtrInput
-	// A unique identifier that corresponds to a user's actual profile or client ID. Each identifier must be a string.
+	// A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
 	IdentityId pulumi.StringPtrInput
 }
 
@@ -123,21 +82,21 @@ func (IamBlockedUserPropertiesState) ElementType() reflect.Type {
 }
 
 type iamBlockedUserPropertiesArgs struct {
-	// List of properties to block for a user. The property IDs must be an integer.
+	// List of properties to block for a user
 	BlockedProperties []int `pulumi:"blockedProperties"`
-	// A unique identifier for a group. Each identifier must be an integer.
+	// A unique identifier for a group
 	GroupId int `pulumi:"groupId"`
-	// A unique identifier that corresponds to a user's actual profile or client ID. Each identifier must be a string.
+	// A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
 	IdentityId string `pulumi:"identityId"`
 }
 
 // The set of arguments for constructing a IamBlockedUserProperties resource.
 type IamBlockedUserPropertiesArgs struct {
-	// List of properties to block for a user. The property IDs must be an integer.
+	// List of properties to block for a user
 	BlockedProperties pulumi.IntArrayInput
-	// A unique identifier for a group. Each identifier must be an integer.
+	// A unique identifier for a group
 	GroupId pulumi.IntInput
-	// A unique identifier that corresponds to a user's actual profile or client ID. Each identifier must be a string.
+	// A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
 	IdentityId pulumi.StringInput
 }
 
@@ -228,17 +187,17 @@ func (o IamBlockedUserPropertiesOutput) ToIamBlockedUserPropertiesOutputWithCont
 	return o
 }
 
-// List of properties to block for a user. The property IDs must be an integer.
+// List of properties to block for a user
 func (o IamBlockedUserPropertiesOutput) BlockedProperties() pulumi.IntArrayOutput {
 	return o.ApplyT(func(v *IamBlockedUserProperties) pulumi.IntArrayOutput { return v.BlockedProperties }).(pulumi.IntArrayOutput)
 }
 
-// A unique identifier for a group. Each identifier must be an integer.
+// A unique identifier for a group
 func (o IamBlockedUserPropertiesOutput) GroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v *IamBlockedUserProperties) pulumi.IntOutput { return v.GroupId }).(pulumi.IntOutput)
 }
 
-// A unique identifier that corresponds to a user's actual profile or client ID. Each identifier must be a string.
+// A unique identifier for a user's profile, which corresponds to a user's actual profile or client ID
 func (o IamBlockedUserPropertiesOutput) IdentityId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamBlockedUserProperties) pulumi.StringOutput { return v.IdentityId }).(pulumi.StringOutput)
 }

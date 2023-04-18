@@ -15,32 +15,16 @@ public final class GetAppSecConfigurationVersionArgs extends com.pulumi.resource
 
     public static final GetAppSecConfigurationVersionArgs Empty = new GetAppSecConfigurationVersionArgs();
 
-    /**
-     * . Unique identifier of the security configuration you want to return version information for.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration you want to return version information for.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Version number of the security configuration you want to return information about. If not included, information about all the security configuration&#39;s versions is returned.
-     * 
-     */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
-    /**
-     * @return . Version number of the security configuration you want to return information about. If not included, information about all the security configuration&#39;s versions is returned.
-     * 
-     */
     public Optional<Output<Integer>> version() {
         return Optional.ofNullable(this.version);
     }
@@ -70,44 +54,20 @@ public final class GetAppSecConfigurationVersionArgs extends com.pulumi.resource
             $ = new GetAppSecConfigurationVersionArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return version information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return version information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param version . Version number of the security configuration you want to return information about. If not included, information about all the security configuration&#39;s versions is returned.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(@Nullable Output<Integer> version) {
             $.version = version;
             return this;
         }
 
-        /**
-         * @param version . Version number of the security configuration you want to return information about. If not included, information about all the security configuration&#39;s versions is returned.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Integer version) {
             return version(Output.of(version));
         }

@@ -22,9 +22,6 @@ namespace Pulumi.Akamai.Outputs
         public readonly double Latitude;
         public readonly ImmutableArray<string> LivenessHosts;
         public readonly double Longitude;
-        /// <summary>
-        /// (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-        /// </summary>
         public readonly string OriginId;
         public readonly double Percent;
         public readonly string StateOrProvince;

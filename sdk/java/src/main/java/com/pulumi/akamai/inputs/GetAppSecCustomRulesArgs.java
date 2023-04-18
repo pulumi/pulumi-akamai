@@ -15,32 +15,16 @@ public final class GetAppSecCustomRulesArgs extends com.pulumi.resources.InvokeA
 
     public static final GetAppSecCustomRulesArgs Empty = new GetAppSecCustomRulesArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the custom rules.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the custom rules.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the custom rule you want to return information for. If not included, information is returned for all your custom rules.
-     * 
-     */
     @Import(name="customRuleId")
     private @Nullable Output<Integer> customRuleId;
 
-    /**
-     * @return . Unique identifier of the custom rule you want to return information for. If not included, information is returned for all your custom rules.
-     * 
-     */
     public Optional<Output<Integer>> customRuleId() {
         return Optional.ofNullable(this.customRuleId);
     }
@@ -70,44 +54,20 @@ public final class GetAppSecCustomRulesArgs extends com.pulumi.resources.InvokeA
             $ = new GetAppSecCustomRulesArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the custom rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the custom rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param customRuleId . Unique identifier of the custom rule you want to return information for. If not included, information is returned for all your custom rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder customRuleId(@Nullable Output<Integer> customRuleId) {
             $.customRuleId = customRuleId;
             return this;
         }
 
-        /**
-         * @param customRuleId . Unique identifier of the custom rule you want to return information for. If not included, information is returned for all your custom rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder customRuleId(Integer customRuleId) {
             return customRuleId(Output.of(customRuleId));
         }

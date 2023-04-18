@@ -12,15 +12,9 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class GetPropertyIncludesParentPropertyArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) The property's unique identifier.
-        /// </summary>
         [Input("id", required: true)]
         public string Id { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) The version of the activated parent property.
-        /// </summary>
         [Input("version", required: true)]
         public int Version { get; set; }
 

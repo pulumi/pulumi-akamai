@@ -15,32 +15,16 @@ public final class GetCloudletsApplicationLoadBalancerPlainArgs extends com.pulu
 
     public static final GetCloudletsApplicationLoadBalancerPlainArgs Empty = new GetCloudletsApplicationLoadBalancerPlainArgs();
 
-    /**
-     * (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-     * 
-     */
     @Import(name="originId", required=true)
     private String originId;
 
-    /**
-     * @return (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-     * 
-     */
     public String originId() {
         return this.originId;
     }
 
-    /**
-     * (Optional) The version number of the load balancing configuration.
-     * 
-     */
     @Import(name="version")
     private @Nullable Integer version;
 
-    /**
-     * @return (Optional) The version number of the load balancing configuration.
-     * 
-     */
     public Optional<Integer> version() {
         return Optional.ofNullable(this.version);
     }
@@ -70,23 +54,11 @@ public final class GetCloudletsApplicationLoadBalancerPlainArgs extends com.pulu
             $ = new GetCloudletsApplicationLoadBalancerPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param originId (Required) A unique identifier for the Conditional Origin that supports the load balancing configuration. The Conditional Origin type must be set to `APPLICATION_LOAD_BALANCER` in the `origin` behavior. See property rules for more information.
-         * 
-         * @return builder
-         * 
-         */
         public Builder originId(String originId) {
             $.originId = originId;
             return this;
         }
 
-        /**
-         * @param version (Optional) The version number of the load balancing configuration.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(@Nullable Integer version) {
             $.version = version;
             return this;

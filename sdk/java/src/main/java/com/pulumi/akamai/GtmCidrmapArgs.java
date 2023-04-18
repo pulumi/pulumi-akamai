@@ -19,77 +19,37 @@ public final class GtmCidrmapArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final GtmCidrmapArgs Empty = new GtmCidrmapArgs();
 
-    /**
-     * Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-     * 
-     */
     @Import(name="assignments")
     private @Nullable Output<List<GtmCidrmapAssignmentArgs>> assignments;
 
-    /**
-     * @return Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-     * 
-     */
     public Optional<Output<List<GtmCidrmapAssignmentArgs>>> assignments() {
         return Optional.ofNullable(this.assignments);
     }
 
-    /**
-     * A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
-     * 
-     */
     @Import(name="defaultDatacenter", required=true)
     private Output<GtmCidrmapDefaultDatacenterArgs> defaultDatacenter;
 
-    /**
-     * @return A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
-     * 
-     */
     public Output<GtmCidrmapDefaultDatacenterArgs> defaultDatacenter() {
         return this.defaultDatacenter;
     }
 
-    /**
-     * GTM Domain name for the CIDR Map.
-     * 
-     */
     @Import(name="domain", required=true)
     private Output<String> domain;
 
-    /**
-     * @return GTM Domain name for the CIDR Map.
-     * 
-     */
     public Output<String> domain() {
         return this.domain;
     }
 
-    /**
-     * A descriptive label for the CIDR map, up to 255 characters.
-     * 
-     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
-    /**
-     * @return A descriptive label for the CIDR map, up to 255 characters.
-     * 
-     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * A boolean that, if set to `true`, waits for transaction to complete.
-     * 
-     */
     @Import(name="waitOnComplete")
     private @Nullable Output<Boolean> waitOnComplete;
 
-    /**
-     * @return A boolean that, if set to `true`, waits for transaction to complete.
-     * 
-     */
     public Optional<Output<Boolean>> waitOnComplete() {
         return Optional.ofNullable(this.waitOnComplete);
     }
@@ -122,117 +82,51 @@ public final class GtmCidrmapArgs extends com.pulumi.resources.ResourceArgs {
             $ = new GtmCidrmapArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param assignments Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder assignments(@Nullable Output<List<GtmCidrmapAssignmentArgs>> assignments) {
             $.assignments = assignments;
             return this;
         }
 
-        /**
-         * @param assignments Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder assignments(List<GtmCidrmapAssignmentArgs> assignments) {
             return assignments(Output.of(assignments));
         }
 
-        /**
-         * @param assignments Contains information about the CIDR zone groupings of CIDR blocks. You can have multiple entries with this argument. If used, requires these additional arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder assignments(GtmCidrmapAssignmentArgs... assignments) {
             return assignments(List.of(assignments));
         }
 
-        /**
-         * @param defaultDatacenter A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultDatacenter(Output<GtmCidrmapDefaultDatacenterArgs> defaultDatacenter) {
             $.defaultDatacenter = defaultDatacenter;
             return this;
         }
 
-        /**
-         * @param defaultDatacenter A placeholder for all other CIDR zones not found in these CIDR zones. Requires these additional arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultDatacenter(GtmCidrmapDefaultDatacenterArgs defaultDatacenter) {
             return defaultDatacenter(Output.of(defaultDatacenter));
         }
 
-        /**
-         * @param domain GTM Domain name for the CIDR Map.
-         * 
-         * @return builder
-         * 
-         */
         public Builder domain(Output<String> domain) {
             $.domain = domain;
             return this;
         }
 
-        /**
-         * @param domain GTM Domain name for the CIDR Map.
-         * 
-         * @return builder
-         * 
-         */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
         }
 
-        /**
-         * @param name A descriptive label for the CIDR map, up to 255 characters.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param name A descriptive label for the CIDR map, up to 255 characters.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
-        /**
-         * @param waitOnComplete A boolean that, if set to `true`, waits for transaction to complete.
-         * 
-         * @return builder
-         * 
-         */
         public Builder waitOnComplete(@Nullable Output<Boolean> waitOnComplete) {
             $.waitOnComplete = waitOnComplete;
             return this;
         }
 
-        /**
-         * @param waitOnComplete A boolean that, if set to `true`, waits for transaction to complete.
-         * 
-         * @return builder
-         * 
-         */
         public Builder waitOnComplete(Boolean waitOnComplete) {
             return waitOnComplete(Output.of(waitOnComplete));
         }

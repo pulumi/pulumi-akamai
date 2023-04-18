@@ -17,14 +17,14 @@ public final class AppSecConfigurationRenameArgs extends com.pulumi.resources.Re
     public static final AppSecConfigurationRenameArgs Empty = new AppSecConfigurationRenameArgs();
 
     /**
-     * . Unique identifier of the security configuring being renamed.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuring being renamed.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -32,14 +32,14 @@ public final class AppSecConfigurationRenameArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * . Brief description of the security configuration.
+     * Brief description of the security configuration
      * 
      */
     @Import(name="description", required=true)
     private Output<String> description;
 
     /**
-     * @return . Brief description of the security configuration.
+     * @return Brief description of the security configuration
      * 
      */
     public Output<String> description() {
@@ -47,14 +47,14 @@ public final class AppSecConfigurationRenameArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * . New name for the security configuration.
+     * New name for the security configuration
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return . New name for the security configuration.
+     * @return New name for the security configuration
      * 
      */
     public Optional<Output<String>> name() {
@@ -88,7 +88,7 @@ public final class AppSecConfigurationRenameArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param configId . Unique identifier of the security configuring being renamed.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class AppSecConfigurationRenameArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param configId . Unique identifier of the security configuring being renamed.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class AppSecConfigurationRenameArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param description . Brief description of the security configuration.
+         * @param description Brief description of the security configuration
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class AppSecConfigurationRenameArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param description . Brief description of the security configuration.
+         * @param description Brief description of the security configuration
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class AppSecConfigurationRenameArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name . New name for the security configuration.
+         * @param name New name for the security configuration
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AppSecConfigurationRenameArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name . New name for the security configuration.
+         * @param name New name for the security configuration
          * 
          * @return builder
          * 

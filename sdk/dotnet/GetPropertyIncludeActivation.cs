@@ -11,33 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetPropertyIncludeActivation
     {
-        /// <summary>
-        /// Use the `akamai.PropertyIncludeActivation` data source to get activation details for an include on the provided network.
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `version` - The version of the activated include.
-        /// * `name` - The descriptive name for the property.
-        /// * `note` - A log message assigned to the activation request.
-        /// * `notify_emails` - The list of email addresses notified when the activation status changes.
-        /// </summary>
         public static Task<GetPropertyIncludeActivationResult> InvokeAsync(GetPropertyIncludeActivationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyIncludeActivationResult>("akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation", args ?? new GetPropertyIncludeActivationArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.PropertyIncludeActivation` data source to get activation details for an include on the provided network.
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns these attributes:
-        /// 
-        /// * `version` - The version of the activated include.
-        /// * `name` - The descriptive name for the property.
-        /// * `note` - A log message assigned to the activation request.
-        /// * `notify_emails` - The list of email addresses notified when the activation status changes.
-        /// </summary>
         public static Output<GetPropertyIncludeActivationResult> Invoke(GetPropertyIncludeActivationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPropertyIncludeActivationResult>("akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation", args ?? new GetPropertyIncludeActivationInvokeArgs(), options.WithDefaults());
     }
@@ -45,27 +21,15 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyIncludeActivationArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public string ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A group's unique ID, including the optional `grp_` prefix.
-        /// </summary>
         [Input("groupId", required: true)]
         public string GroupId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) An include's unique ID with the optional `inc_` prefix.
-        /// </summary>
         [Input("includeId", required: true)]
         public string IncludeId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-        /// </summary>
         [Input("network", required: true)]
         public string Network { get; set; } = null!;
 
@@ -77,27 +41,15 @@ namespace Pulumi.Akamai
 
     public sealed class GetPropertyIncludeActivationInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// (Required) A contract's unique ID, including the optional `ctr_` prefix.
-        /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) A group's unique ID, including the optional `grp_` prefix.
-        /// </summary>
         [Input("groupId", required: true)]
         public Input<string> GroupId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) An include's unique ID with the optional `inc_` prefix.
-        /// </summary>
         [Input("includeId", required: true)]
         public Input<string> IncludeId { get; set; } = null!;
 
-        /// <summary>
-        /// (Required) The Akamai network where you want to check the activation details, either `STAGING` or `PRODUCTION`. `STAGING` is the default.
-        /// </summary>
         [Input("network", required: true)]
         public Input<string> Network { get; set; } = null!;
 

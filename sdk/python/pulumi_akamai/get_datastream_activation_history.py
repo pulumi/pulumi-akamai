@@ -66,33 +66,7 @@ class AwaitableGetDatastreamActivationHistoryResult(GetDatastreamActivationHisto
 def get_datastream_activation_history(stream_id: Optional[int] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatastreamActivationHistoryResult:
     """
-    Use the _get_datastream_activation_history_ data source to list detailed information about the activation status changes for all versions of a stream.
-
-    ## Example Usage
-
-    This example returns the activation history for a provided stream ID:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    ds = akamai.get_datastream_activation_history(stream_id=12345)
-    pulumi.export("dsHistoryStreamId", ds.stream_id)
-    pulumi.export("dsHistoryActivations", ds.activations)
-    ```
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `activations` - Detailed information about an activation status change for a version of a stream, including:
-      * `created_by` - The user who activated or deactivated the stream.
-      * `created_date` - The date and time of an activation status change.
-      * `stream_id` - A stream's unique identifier.
-      * `stream_version_id` - A stream version's unique identifier.
-      * `is_active` -	Whether the version of the stream is active.
-
-
-    :param int stream_id: (Required) A stream's unique identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['streamId'] = stream_id
@@ -109,32 +83,6 @@ def get_datastream_activation_history(stream_id: Optional[int] = None,
 def get_datastream_activation_history_output(stream_id: Optional[pulumi.Input[int]] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatastreamActivationHistoryResult]:
     """
-    Use the _get_datastream_activation_history_ data source to list detailed information about the activation status changes for all versions of a stream.
-
-    ## Example Usage
-
-    This example returns the activation history for a provided stream ID:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    ds = akamai.get_datastream_activation_history(stream_id=12345)
-    pulumi.export("dsHistoryStreamId", ds.stream_id)
-    pulumi.export("dsHistoryActivations", ds.activations)
-    ```
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `activations` - Detailed information about an activation status change for a version of a stream, including:
-      * `created_by` - The user who activated or deactivated the stream.
-      * `created_date` - The date and time of an activation status change.
-      * `stream_id` - A stream's unique identifier.
-      * `stream_version_id` - A stream version's unique identifier.
-      * `is_active` -	Whether the version of the stream is active.
-
-
-    :param int stream_id: (Required) A stream's unique identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -13,93 +13,37 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DatastreamS3Connector {
-    /**
-     * @return **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
-     * 
-     */
     private String accessKey;
-    /**
-     * @return The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-     * 
-     */
     private String bucket;
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     private @Nullable Boolean compressLogs;
     private @Nullable Integer connectorId;
-    /**
-     * @return The name of the connector.
-     * 
-     */
     private String connectorName;
-    /**
-     * @return The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-     * 
-     */
     private String path;
-    /**
-     * @return The Oracle Cloud Storage region where your bucket resides. See [Regions and availability domains in OCS](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-     * 
-     */
     private String region;
-    /**
-     * @return **Secret**. The secret access key identifier that you use to authenticate requests to your Oracle Cloud account.
-     * 
-     */
     private String secretAccessKey;
 
     private DatastreamS3Connector() {}
-    /**
-     * @return **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
-     * 
-     */
     public String accessKey() {
         return this.accessKey;
     }
-    /**
-     * @return The name of the Oracle Cloud Storage bucket. See [Working with Oracle Cloud Storage buckets](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/managingbuckets.htm).
-     * 
-     */
     public String bucket() {
         return this.bucket;
     }
-    /**
-     * @return Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-     * 
-     */
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
     public Optional<Integer> connectorId() {
         return Optional.ofNullable(this.connectorId);
     }
-    /**
-     * @return The name of the connector.
-     * 
-     */
     public String connectorName() {
         return this.connectorName;
     }
-    /**
-     * @return The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-     * 
-     */
     public String path() {
         return this.path;
     }
-    /**
-     * @return The Oracle Cloud Storage region where your bucket resides. See [Regions and availability domains in OCS](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-     * 
-     */
     public String region() {
         return this.region;
     }
-    /**
-     * @return **Secret**. The secret access key identifier that you use to authenticate requests to your Oracle Cloud account.
-     * 
-     */
     public String secretAccessKey() {
         return this.secretAccessKey;
     }

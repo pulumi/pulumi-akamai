@@ -10,16 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-//
-// Use the `getCloudletsPhasedReleaseMatchRule` data source to build a match rule JSON object for the Phased Release Cloudlet.
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `type` - The type of Cloudlet the rule is for.
-// * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
 func GetCloudletsPhasedReleaseMatchRule(ctx *pulumi.Context, args *GetCloudletsPhasedReleaseMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsPhasedReleaseMatchRuleResult, error) {
 	var rv GetCloudletsPhasedReleaseMatchRuleResult
 	err := ctx.Invoke("akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule", args, &rv, opts...)
@@ -31,7 +21,6 @@ func GetCloudletsPhasedReleaseMatchRule(ctx *pulumi.Context, args *GetCloudletsP
 
 // A collection of arguments for invoking getCloudletsPhasedReleaseMatchRule.
 type GetCloudletsPhasedReleaseMatchRuleArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsPhasedReleaseMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -58,7 +47,6 @@ func GetCloudletsPhasedReleaseMatchRuleOutput(ctx *pulumi.Context, args GetCloud
 
 // A collection of arguments for invoking getCloudletsPhasedReleaseMatchRule.
 type GetCloudletsPhasedReleaseMatchRuleOutputArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsPhasedReleaseMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

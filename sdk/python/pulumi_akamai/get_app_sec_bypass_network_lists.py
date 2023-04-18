@@ -93,40 +93,7 @@ def get_app_sec_bypass_network_lists(config_id: Optional[int] = None,
                                      security_policy_id: Optional[str] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecBypassNetworkListsResult:
     """
-    **Scopes**: Security configuration
-
-    Returns information about the network lists assigned to the bypass network list; networks on this list are not subject to firewall checking.
-
-    Note that this data source is only applicable to WAP (Web Application Protector) configurations.
-
-    **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/bypass-network-lists](https://techdocs.akamai.com/application-security/reference/get-bypass-network-lists-per-policy)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    bypass_network_lists = akamai.get_app_sec_bypass_network_lists(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("bypassNetworkListsOutput", bypass_network_lists.output_text)
-    pulumi.export("bypassNetworkListsJson", bypass_network_lists.json)
-    pulumi.export("bypassNetworkListsIdList", bypass_network_lists.bypass_network_lists)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `bypass_network_list`. List of network IDs.
-    - `json`. JSON-formatted list of information about the bypass networks.
-    - `output_text`. Tabular report showing the bypass network list information.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the bypass network lists.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the bypass network lists.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -148,39 +115,6 @@ def get_app_sec_bypass_network_lists_output(config_id: Optional[pulumi.Input[int
                                             security_policy_id: Optional[pulumi.Input[str]] = None,
                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecBypassNetworkListsResult]:
     """
-    **Scopes**: Security configuration
-
-    Returns information about the network lists assigned to the bypass network list; networks on this list are not subject to firewall checking.
-
-    Note that this data source is only applicable to WAP (Web Application Protector) configurations.
-
-    **Related API Endpoint**:[/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/bypass-network-lists](https://techdocs.akamai.com/application-security/reference/get-bypass-network-lists-per-policy)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    bypass_network_lists = akamai.get_app_sec_bypass_network_lists(config_id=configuration.config_id,
-        security_policy_id="gms1_134637")
-    pulumi.export("bypassNetworkListsOutput", bypass_network_lists.output_text)
-    pulumi.export("bypassNetworkListsJson", bypass_network_lists.json)
-    pulumi.export("bypassNetworkListsIdList", bypass_network_lists.bypass_network_lists)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `bypass_network_list`. List of network IDs.
-    - `json`. JSON-formatted list of information about the bypass networks.
-    - `output_text`. Tabular report showing the bypass network list information.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the bypass network lists.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the bypass network lists.
+    Use this data source to access information about an existing resource.
     """
     ...

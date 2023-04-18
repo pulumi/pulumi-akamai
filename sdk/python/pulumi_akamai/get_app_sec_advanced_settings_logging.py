@@ -84,39 +84,7 @@ def get_app_sec_advanced_settings_logging(config_id: Optional[int] = None,
                                           security_policy_id: Optional[str] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecAdvancedSettingsLoggingResult:
     """
-    **Scopes**: Security configuration; security policy
-
-    Returns information about your HTTP header logging controls. By default, information is returned for all the security policies in the configuration; however, you can return data for a single policy by using the `security_policy_id` parameter. The returned information is described in the [ConfigHeaderLog members](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-logging) section of the Application Security API.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-logging)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    custom_rules = akamai.get_app_sec_custom_rules(config_id=configuration.config_id)
-    pulumi.export("customRulesOutputText", custom_rules.output_text)
-    pulumi.export("customRulesJson", custom_rules.json)
-    pulumi.export("customRulesConfigId", custom_rules.config_id)
-    specific_custom_rule = akamai.get_app_sec_custom_rules(config_id=configuration.config_id,
-        custom_rule_id=60029316)
-    pulumi.export("specificCustomRuleJson", specific_custom_rule.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list of information about the logging settings.
-    - `output_text`. Tabular report showing the logging settings.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the logging settings.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['configId'] = config_id
@@ -137,38 +105,6 @@ def get_app_sec_advanced_settings_logging_output(config_id: Optional[pulumi.Inpu
                                                  security_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecAdvancedSettingsLoggingResult]:
     """
-    **Scopes**: Security configuration; security policy
-
-    Returns information about your HTTP header logging controls. By default, information is returned for all the security policies in the configuration; however, you can return data for a single policy by using the `security_policy_id` parameter. The returned information is described in the [ConfigHeaderLog members](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-logging) section of the Application Security API.
-
-    **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://techdocs.akamai.com/application-security/reference/get-advanced-settings-logging)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    configuration = akamai.get_app_sec_configuration(name="Documentation")
-    custom_rules = akamai.get_app_sec_custom_rules(config_id=configuration.config_id)
-    pulumi.export("customRulesOutputText", custom_rules.output_text)
-    pulumi.export("customRulesJson", custom_rules.json)
-    pulumi.export("customRulesConfigId", custom_rules.config_id)
-    specific_custom_rule = akamai.get_app_sec_custom_rules(config_id=configuration.config_id,
-        custom_rule_id=60029316)
-    pulumi.export("specificCustomRuleJson", specific_custom_rule.json)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list of information about the logging settings.
-    - `output_text`. Tabular report showing the logging settings.
-
-
-    :param int config_id: . Unique identifier of the security configuration associated with the logging settings.
-    :param str security_policy_id: . Unique identifier of the security policy associated with the logging settings. If not included, information is returned for all your security policies.
+    Use this data source to access information about an existing resource.
     """
     ...

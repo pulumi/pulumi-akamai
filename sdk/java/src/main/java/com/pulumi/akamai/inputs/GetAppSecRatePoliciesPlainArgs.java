@@ -14,32 +14,16 @@ public final class GetAppSecRatePoliciesPlainArgs extends com.pulumi.resources.I
 
     public static final GetAppSecRatePoliciesPlainArgs Empty = new GetAppSecRatePoliciesPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the rate policies.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the rate policies.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
-     * 
-     */
     @Import(name="ratePolicyId")
     private @Nullable Integer ratePolicyId;
 
-    /**
-     * @return . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
-     * 
-     */
     public Optional<Integer> ratePolicyId() {
         return Optional.ofNullable(this.ratePolicyId);
     }
@@ -69,23 +53,11 @@ public final class GetAppSecRatePoliciesPlainArgs extends com.pulumi.resources.I
             $ = new GetAppSecRatePoliciesPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the rate policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param ratePolicyId . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ratePolicyId(@Nullable Integer ratePolicyId) {
             $.ratePolicyId = ratePolicyId;
             return this;

@@ -21,15 +21,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecConfigurationVersionArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration you want to return version information for.
-        /// </summary>
         [Input("configId", required: true)]
         public int ConfigId { get; set; }
 
-        /// <summary>
-        /// . Version number of the security configuration you want to return information about. If not included, information about all the security configuration's versions is returned.
-        /// </summary>
         [Input("version")]
         public int? Version { get; set; }
 
@@ -41,15 +35,9 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecConfigurationVersionInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Unique identifier of the security configuration you want to return version information for.
-        /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
-        /// <summary>
-        /// . Version number of the security configuration you want to return information about. If not included, information about all the security configuration's versions is returned.
-        /// </summary>
         [Input("version")]
         public Input<int>? Version { get; set; }
 

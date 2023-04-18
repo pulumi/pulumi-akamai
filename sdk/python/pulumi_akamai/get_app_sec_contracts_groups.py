@@ -102,39 +102,7 @@ def get_app_sec_contracts_groups(contractid: Optional[str] = None,
                                  groupid: Optional[int] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppSecContractsGroupsResult:
     """
-    **Scopes**: Contract; group
-
-    Returns information about the contracts and groups associated with your account. Among other things, this information is required to create a new security configuration and to return a list of the hostnames available for use in a security policy.
-
-    **Related API Endpoint**: [/appsec/v1/contracts-groups](https://techdocs.akamai.com/application-security/reference/get-contracts-groups)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    contracts_groups = akamai.get_app_sec_contracts_groups(contractid="5-2WA382",
-        groupid=12198)
-    pulumi.export("contractsGroupsList", contracts_groups.output_text)
-    pulumi.export("contractsGroupsJson", contracts_groups.json)
-    pulumi.export("contractGroupsDefaultContractid", contracts_groups.default_contractid)
-    pulumi.export("contractGroupsDefaultGroupid", contracts_groups.default_groupid)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list of contract and group information.
-    - `output_text`. Tabular report of contract and group information.
-    - `default_contractid`. Default contract ID for the specified contract and group.
-    - `default_groupid`. Default group ID for the specified contract and group.
-
-
-    :param str contractid: . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
-    :param int groupid: . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['contractid'] = contractid
@@ -157,38 +125,6 @@ def get_app_sec_contracts_groups_output(contractid: Optional[pulumi.Input[Option
                                         groupid: Optional[pulumi.Input[Optional[int]]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecContractsGroupsResult]:
     """
-    **Scopes**: Contract; group
-
-    Returns information about the contracts and groups associated with your account. Among other things, this information is required to create a new security configuration and to return a list of the hostnames available for use in a security policy.
-
-    **Related API Endpoint**: [/appsec/v1/contracts-groups](https://techdocs.akamai.com/application-security/reference/get-contracts-groups)
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    contracts_groups = akamai.get_app_sec_contracts_groups(contractid="5-2WA382",
-        groupid=12198)
-    pulumi.export("contractsGroupsList", contracts_groups.output_text)
-    pulumi.export("contractsGroupsJson", contracts_groups.json)
-    pulumi.export("contractGroupsDefaultContractid", contracts_groups.default_contractid)
-    pulumi.export("contractGroupsDefaultGroupid", contracts_groups.default_groupid)
-    ```
-    ## Output Options
-
-    The following options can be used to determine the information returned, and how that returned information is formatted:
-
-    - `json`. JSON-formatted list of contract and group information.
-    - `output_text`. Tabular report of contract and group information.
-    - `default_contractid`. Default contract ID for the specified contract and group.
-    - `default_groupid`. Default group ID for the specified contract and group.
-
-
-    :param str contractid: . Unique identifier of an Akamai contract. If not included, information is returned for all the Akamai contracts associated with your account.
-    :param int groupid: . Unique identifier of a contract group. If not included, information is returned for all the groups associated with your account.
+    Use this data source to access information about an existing resource.
     """
     ...

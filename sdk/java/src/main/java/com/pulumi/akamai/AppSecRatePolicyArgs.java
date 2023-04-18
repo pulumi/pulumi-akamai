@@ -15,14 +15,14 @@ public final class AppSecRatePolicyArgs extends com.pulumi.resources.ResourceArg
     public static final AppSecRatePolicyArgs Empty = new AppSecRatePolicyArgs();
 
     /**
-     * . Unique identifier of the security configuration associated with the rate policy being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the rate policy being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -30,14 +30,14 @@ public final class AppSecRatePolicyArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * . Path to a JSON file containing a rate policy definition.
+     * JSON-formatted definition of the rate policy
      * 
      */
     @Import(name="ratePolicy", required=true)
     private Output<String> ratePolicy;
 
     /**
-     * @return . Path to a JSON file containing a rate policy definition.
+     * @return JSON-formatted definition of the rate policy
      * 
      */
     public Output<String> ratePolicy() {
@@ -70,7 +70,7 @@ public final class AppSecRatePolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the rate policy being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class AppSecRatePolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the rate policy being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class AppSecRatePolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param ratePolicy . Path to a JSON file containing a rate policy definition.
+         * @param ratePolicy JSON-formatted definition of the rate policy
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class AppSecRatePolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param ratePolicy . Path to a JSON file containing a rate policy definition.
+         * @param ratePolicy JSON-formatted definition of the rate policy
          * 
          * @return builder
          * 

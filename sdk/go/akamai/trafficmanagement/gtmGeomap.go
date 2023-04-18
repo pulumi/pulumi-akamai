@@ -11,58 +11,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `GtmGeomap` resource to create, configure, and import a GTM Geographic map. Geographic mapping lets you configure a property that returns a CNAME based on the geographic location of the request.
-//
-// You can reuse maps for multiple properties or create new ones. To configure a property for geographic mapping, you need to define at least one geographic map for your domain. Each map needs at least two definitions. For example, you can have one definition that maps a set of countries to a specific data center, and a second definition that routes all other traffic.
-//
-// > **Note** Import requires an ID with this format: `existingDomainName`:`existingMapName`.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewGtmGeomap(ctx, "demoGeomap", &akamai.GtmGeomapArgs{
-//				DefaultDatacenter: &akamai.GtmGeomapDefaultDatacenterArgs{
-//					DatacenterId: pulumi.Int(5400),
-//					Nickname:     pulumi.String("All Others"),
-//				},
-//				Domain: pulumi.String("demo_domain.akadns.net"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // Deprecated: akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap
 type GtmGeomap struct {
 	pulumi.CustomResourceState
 
-	// Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-	Assignments GtmGeomapAssignmentArrayOutput `pulumi:"assignments"`
-	// A placeholder for all other geographic zones. Requires these additional arguments:
+	Assignments       GtmGeomapAssignmentArrayOutput   `pulumi:"assignments"`
 	DefaultDatacenter GtmGeomapDefaultDatacenterOutput `pulumi:"defaultDatacenter"`
-	// GTM Domain name for the Geographic Map.
-	Domain pulumi.StringOutput `pulumi:"domain"`
-	// A descriptive label for the Geographic map.
-	Name pulumi.StringOutput `pulumi:"name"`
-	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	Domain            pulumi.StringOutput              `pulumi:"domain"`
+	Name              pulumi.StringOutput              `pulumi:"name"`
+	WaitOnComplete    pulumi.BoolPtrOutput             `pulumi:"waitOnComplete"`
 }
 
 // NewGtmGeomap registers a new resource with the given unique name, arguments, and options.
@@ -100,29 +57,19 @@ func GetGtmGeomap(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmGeomap resources.
 type gtmGeomapState struct {
-	// Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-	Assignments []GtmGeomapAssignment `pulumi:"assignments"`
-	// A placeholder for all other geographic zones. Requires these additional arguments:
+	Assignments       []GtmGeomapAssignment       `pulumi:"assignments"`
 	DefaultDatacenter *GtmGeomapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// GTM Domain name for the Geographic Map.
-	Domain *string `pulumi:"domain"`
-	// A descriptive label for the Geographic map.
-	Name *string `pulumi:"name"`
-	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            *string                     `pulumi:"domain"`
+	Name              *string                     `pulumi:"name"`
+	WaitOnComplete    *bool                       `pulumi:"waitOnComplete"`
 }
 
 type GtmGeomapState struct {
-	// Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-	Assignments GtmGeomapAssignmentArrayInput
-	// A placeholder for all other geographic zones. Requires these additional arguments:
+	Assignments       GtmGeomapAssignmentArrayInput
 	DefaultDatacenter GtmGeomapDefaultDatacenterPtrInput
-	// GTM Domain name for the Geographic Map.
-	Domain pulumi.StringPtrInput
-	// A descriptive label for the Geographic map.
-	Name pulumi.StringPtrInput
-	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringPtrInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmGeomapState) ElementType() reflect.Type {
@@ -130,30 +77,20 @@ func (GtmGeomapState) ElementType() reflect.Type {
 }
 
 type gtmGeomapArgs struct {
-	// Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-	Assignments []GtmGeomapAssignment `pulumi:"assignments"`
-	// A placeholder for all other geographic zones. Requires these additional arguments:
+	Assignments       []GtmGeomapAssignment      `pulumi:"assignments"`
 	DefaultDatacenter GtmGeomapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// GTM Domain name for the Geographic Map.
-	Domain string `pulumi:"domain"`
-	// A descriptive label for the Geographic map.
-	Name *string `pulumi:"name"`
-	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            string                     `pulumi:"domain"`
+	Name              *string                    `pulumi:"name"`
+	WaitOnComplete    *bool                      `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmGeomap resource.
 type GtmGeomapArgs struct {
-	// Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-	Assignments GtmGeomapAssignmentArrayInput
-	// A placeholder for all other geographic zones. Requires these additional arguments:
+	Assignments       GtmGeomapAssignmentArrayInput
 	DefaultDatacenter GtmGeomapDefaultDatacenterInput
-	// GTM Domain name for the Geographic Map.
-	Domain pulumi.StringInput
-	// A descriptive label for the Geographic map.
-	Name pulumi.StringPtrInput
-	// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmGeomapArgs) ElementType() reflect.Type {
@@ -243,27 +180,22 @@ func (o GtmGeomapOutput) ToGtmGeomapOutputWithContext(ctx context.Context) GtmGe
 	return o
 }
 
-// Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
 func (o GtmGeomapOutput) Assignments() GtmGeomapAssignmentArrayOutput {
 	return o.ApplyT(func(v *GtmGeomap) GtmGeomapAssignmentArrayOutput { return v.Assignments }).(GtmGeomapAssignmentArrayOutput)
 }
 
-// A placeholder for all other geographic zones. Requires these additional arguments:
 func (o GtmGeomapOutput) DefaultDatacenter() GtmGeomapDefaultDatacenterOutput {
 	return o.ApplyT(func(v *GtmGeomap) GtmGeomapDefaultDatacenterOutput { return v.DefaultDatacenter }).(GtmGeomapDefaultDatacenterOutput)
 }
 
-// GTM Domain name for the Geographic Map.
 func (o GtmGeomapOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *GtmGeomap) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }
 
-// A descriptive label for the Geographic map.
 func (o GtmGeomapOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *GtmGeomap) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
 func (o GtmGeomapOutput) WaitOnComplete() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GtmGeomap) pulumi.BoolPtrOutput { return v.WaitOnComplete }).(pulumi.BoolPtrOutput)
 }

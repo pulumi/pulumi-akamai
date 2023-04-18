@@ -4,51 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * ## akamai.getAppSecReputationProfileActions
- *
- * **Scopes**: Security policy; reputation profile
- *
- * Returns action information for your reputation profiles. Actions specify what happens any time a profile is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/get-reputation-profiles-actions)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const reputationProfileActions = configuration.then(configuration => akamai.getAppSecReputationProfileActions({
- *     configId: configuration.configId,
- *     securityPolicyId: "gms1_134637",
- * }));
- * export const reputationProfileActionsText = reputationProfileActions.then(reputationProfileActions => reputationProfileActions.outputText);
- * export const reputationProfileActionsJson = reputationProfileActions.then(reputationProfileActions => reputationProfileActions.json);
- * const reputationProfileActions2AppSecReputationProfileActions = configuration.then(configuration => akamai.getAppSecReputationProfileActions({
- *     configId: configuration.configId,
- *     securityPolicyId: "gms1_134637",
- *     reputationProfileId: 12345,
- * }));
- * export const reputationProfileActions2 = reputationProfileActions.then(reputationProfileActions => reputationProfileActions.action);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `action`. Action taken any time the reputation profile is triggered. Valid values are:
- *   - **alert**. Record the event.
- *   - **deny**. Block the request.
- *   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
- *   - **none**. Take no action.
- * - `json`. JSON-formatted report of the reputation profile action information.
- * - `outputText`. Tabular report of the reputation profile action information.
- */
 export function getAppSecReputationProfileActions(args: GetAppSecReputationProfileActionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppSecReputationProfileActionsResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -63,17 +18,8 @@ export function getAppSecReputationProfileActions(args: GetAppSecReputationProfi
  * A collection of arguments for invoking getAppSecReputationProfileActions.
  */
 export interface GetAppSecReputationProfileActionsArgs {
-    /**
-     * . Unique identifier of the security configuration associated with the reputation profiles.
-     */
     configId: number;
-    /**
-     * . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-     */
     reputationProfileId?: number;
-    /**
-     * . Unique identifier of the security policy associated with the reputation profiles.
-     */
     securityPolicyId: string;
 }
 
@@ -92,51 +38,6 @@ export interface GetAppSecReputationProfileActionsResult {
     readonly reputationProfileId?: number;
     readonly securityPolicyId: string;
 }
-/**
- * ## akamai.getAppSecReputationProfileActions
- *
- * **Scopes**: Security policy; reputation profile
- *
- * Returns action information for your reputation profiles. Actions specify what happens any time a profile is triggered: the issue could be ignored, the request could be denied, or an alert could be generated.
- *
- * **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/get-reputation-profiles-actions)
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const reputationProfileActions = configuration.then(configuration => akamai.getAppSecReputationProfileActions({
- *     configId: configuration.configId,
- *     securityPolicyId: "gms1_134637",
- * }));
- * export const reputationProfileActionsText = reputationProfileActions.then(reputationProfileActions => reputationProfileActions.outputText);
- * export const reputationProfileActionsJson = reputationProfileActions.then(reputationProfileActions => reputationProfileActions.json);
- * const reputationProfileActions2AppSecReputationProfileActions = configuration.then(configuration => akamai.getAppSecReputationProfileActions({
- *     configId: configuration.configId,
- *     securityPolicyId: "gms1_134637",
- *     reputationProfileId: 12345,
- * }));
- * export const reputationProfileActions2 = reputationProfileActions.then(reputationProfileActions => reputationProfileActions.action);
- * ```
- * ## Output Options
- *
- * The following options can be used to determine the information returned, and how that returned information is formatted:
- *
- * - `action`. Action taken any time the reputation profile is triggered. Valid values are:
- *   - **alert**. Record the event.
- *   - **deny**. Block the request.
- *   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
- *   - **none**. Take no action.
- * - `json`. JSON-formatted report of the reputation profile action information.
- * - `outputText`. Tabular report of the reputation profile action information.
- */
 export function getAppSecReputationProfileActionsOutput(args: GetAppSecReputationProfileActionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecReputationProfileActionsResult> {
     return pulumi.output(args).apply((a: any) => getAppSecReputationProfileActions(a, opts))
 }
@@ -145,16 +46,7 @@ export function getAppSecReputationProfileActionsOutput(args: GetAppSecReputatio
  * A collection of arguments for invoking getAppSecReputationProfileActions.
  */
 export interface GetAppSecReputationProfileActionsOutputArgs {
-    /**
-     * . Unique identifier of the security configuration associated with the reputation profiles.
-     */
     configId: pulumi.Input<number>;
-    /**
-     * . Unique identifier of the reputation profile you want to return information for. If not included, information is returned for all your reputation profiles.
-     */
     reputationProfileId?: pulumi.Input<number>;
-    /**
-     * . Unique identifier of the security policy associated with the reputation profiles.
-     */
     securityPolicyId: pulumi.Input<string>;
 }

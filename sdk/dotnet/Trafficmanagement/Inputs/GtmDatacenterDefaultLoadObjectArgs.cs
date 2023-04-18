@@ -12,24 +12,14 @@ namespace Pulumi.Akamai.Trafficmanagement.Inputs
 
     public sealed class GtmDatacenterDefaultLoadObjectArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// A load object is a file that provides real-time information about the current load, maximum allowable load, and target load on each resource.
-        /// </summary>
         [Input("loadObject")]
         public Input<string>? LoadObject { get; set; }
 
-        /// <summary>
-        /// Specifies the TCP port to connect to when requesting the load object.
-        /// </summary>
         [Input("loadObjectPort")]
         public Input<int>? LoadObjectPort { get; set; }
 
         [Input("loadServers")]
         private InputList<string>? _loadServers;
-
-        /// <summary>
-        /// Specifies a list of servers to request the load object from.
-        /// </summary>
         public InputList<string> LoadServers
         {
             get => _loadServers ?? (_loadServers = new InputList<string>());

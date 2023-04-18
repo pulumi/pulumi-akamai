@@ -7,41 +7,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use `getIamTimeoutPolicies` to list all the possible session timeout policies that Akamai supports. Use the values from this data source to set the session timeout for a user. The name for each timeout period is in minutes, and the time value is in seconds.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			timeoutPolicies, err := akamai.GetIamTimeoutPolicies(ctx, nil, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("supportedTimeoutPolicies", timeoutPolicies)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// These attributes are returned:
-//
-// * `policies` — A map of session timeout policy names to their value in seconds.
-//
-// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-timeout-policies)
 func GetIamTimeoutPolicies(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamTimeoutPoliciesResult, error) {
 	var rv GetIamTimeoutPoliciesResult
 	err := ctx.Invoke("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", nil, &rv, opts...)

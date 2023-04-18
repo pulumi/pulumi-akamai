@@ -13,21 +13,9 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetCloudletsApplicationLoadBalancerMatchRuleMatchRuleMatchObjectMatchValueOptionsResult
     {
-        /// <summary>
-        /// (Optional) Whether the `value` argument should be evaluated based on case sensitivity.
-        /// </summary>
         public readonly bool? ValueCaseSensitive;
-        /// <summary>
-        /// (Optional) Whether the `value` argument should be compared in an escaped form.
-        /// </summary>
         public readonly bool? ValueEscaped;
-        /// <summary>
-        /// (Optional) Whether the `value` argument includes wildcards.
-        /// </summary>
         public readonly bool? ValueHasWildcard;
-        /// <summary>
-        /// (Optional) If you set the `type` argument to `simple` or `range`, specify the values in the incoming request to match on. With `range`, you can only specify an array of integers, for example `[1, 2]`.
-        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

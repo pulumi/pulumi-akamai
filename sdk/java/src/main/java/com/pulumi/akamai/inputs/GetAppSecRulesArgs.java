@@ -16,47 +16,23 @@ public final class GetAppSecRulesArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetAppSecRulesArgs Empty = new GetAppSecRulesArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the rules.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the rules.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
-     * 
-     */
     @Import(name="ruleId")
     private @Nullable Output<Integer> ruleId;
 
-    /**
-     * @return . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
-     * 
-     */
     public Optional<Output<Integer>> ruleId() {
         return Optional.ofNullable(this.ruleId);
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the rules.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the rules.
-     * 
-     */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -87,65 +63,29 @@ public final class GetAppSecRulesArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetAppSecRulesArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param ruleId . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ruleId(@Nullable Output<Integer> ruleId) {
             $.ruleId = ruleId;
             return this;
         }
 
-        /**
-         * @param ruleId . Unique identifier of the Kona Rule Set rule you want to return information for. If not included, information is returned for all your KRS rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ruleId(Integer ruleId) {
             return ruleId(Output.of(ruleId));
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
         }

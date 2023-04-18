@@ -9,39 +9,29 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Security policy
-    /// 
-    /// Modifies the reputation analysis settings for a security policy. These settings include the following:
-    /// 
-    /// - The `forward_to_http_header` parameter, which indicates whether client reputation details are added to requests forwarded to origin in an HTTP header.
-    /// - The `forward_shared_ip_to_http_header_siem` parameter, which specifies whether a value is added indicating that shared IPs addresses are included in HTTP headers and in SIEM integration events.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/reputation-analysis](https://techdocs.akamai.com/application-security/reference/put-reputation-analysis)
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecReputationProfileAnalysis:AppSecReputationProfileAnalysis")]
     public partial class AppSecReputationProfileAnalysis : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Output("configId")]
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+        /// Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
         /// </summary>
         [Output("forwardSharedIpToHttpHeaderSiem")]
         public Output<bool> ForwardSharedIpToHttpHeaderSiem { get; private set; } = null!;
 
         /// <summary>
-        /// . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+        /// Whether to add client reputation details to requests forwarded to the origin server
         /// </summary>
         [Output("forwardToHttpHeader")]
         public Output<bool> ForwardToHttpHeader { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
@@ -93,25 +83,25 @@ namespace Pulumi.Akamai
     public sealed class AppSecReputationProfileAnalysisArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId", required: true)]
         public Input<int> ConfigId { get; set; } = null!;
 
         /// <summary>
-        /// . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+        /// Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
         /// </summary>
         [Input("forwardSharedIpToHttpHeaderSiem", required: true)]
         public Input<bool> ForwardSharedIpToHttpHeaderSiem { get; set; } = null!;
 
         /// <summary>
-        /// . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+        /// Whether to add client reputation details to requests forwarded to the origin server
         /// </summary>
         [Input("forwardToHttpHeader", required: true)]
         public Input<bool> ForwardToHttpHeader { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -125,25 +115,25 @@ namespace Pulumi.Akamai
     public sealed class AppSecReputationProfileAnalysisState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the security configuration associated with the reputation profile analysis settings being modified.
+        /// Unique identifier of the security configuration
         /// </summary>
         [Input("configId")]
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Set to **true** to add a value indicating that shared IPs are included in HTTP header and SIEM integration; set to **false** to omit this value.
+        /// Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
         /// </summary>
         [Input("forwardSharedIpToHttpHeaderSiem")]
         public Input<bool>? ForwardSharedIpToHttpHeaderSiem { get; set; }
 
         /// <summary>
-        /// . Set to **true** to add client reputation details to requests forwarded to the origin server in an HTTP header; set to `false` to leave reputation details out of these requests.
+        /// Whether to add client reputation details to requests forwarded to the origin server
         /// </summary>
         [Input("forwardToHttpHeader")]
         public Input<bool>? ForwardToHttpHeader { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the security policy associated with the reputation profile analysis settings being modified.
+        /// Unique identifier of the security policy
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }

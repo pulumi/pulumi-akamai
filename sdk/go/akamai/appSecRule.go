@@ -11,76 +11,18 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Rule
-//
-// Modifies a Kona Rule Set rule's action, conditions, and exceptions.
-//
-// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}](https://techdocs.akamai.com/application-security/reference/put-rule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/rules/{ruleId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-rule-condition-exception)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func readFileOrPanic(path string) pulumi.StringPtrInput {
-//		data, err := os.ReadFile(path)
-//		if err != nil {
-//			panic(err.Error())
-//		}
-//		return pulumi.String(string(data))
-//	}
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppSecRule(ctx, "rule", &akamai.AppSecRuleArgs{
-//				ConfigId:           *pulumi.Int(configuration.ConfigId),
-//				SecurityPolicyId:   pulumi.String("gms1_134637"),
-//				RuleId:             pulumi.Int(60029316),
-//				RuleAction:         pulumi.String("deny"),
-//				ConditionException: readFileOrPanic(fmt.Sprintf("%v/condition_exception.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type AppSecRule struct {
 	pulumi.CustomResourceState
 
-	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+	// JSON-formatted condition and exception information for the rule
 	ConditionException pulumi.StringPtrOutput `pulumi:"conditionException"`
-	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// Allowed values are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action. or `none` to take no action.
+	// Action to be taken when the rule is triggered
 	RuleAction pulumi.StringOutput `pulumi:"ruleAction"`
-	// . Unique identifier of the rule being modified.
+	// Unique identifier of the rule
 	RuleId pulumi.IntOutput `pulumi:"ruleId"`
-	// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -122,36 +64,28 @@ func GetAppSecRule(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecRule resources.
 type appSecRuleState struct {
-	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+	// JSON-formatted condition and exception information for the rule
 	ConditionException *string `pulumi:"conditionException"`
-	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// Allowed values are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action. or `none` to take no action.
+	// Action to be taken when the rule is triggered
 	RuleAction *string `pulumi:"ruleAction"`
-	// . Unique identifier of the rule being modified.
+	// Unique identifier of the rule
 	RuleId *int `pulumi:"ruleId"`
-	// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecRuleState struct {
-	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+	// JSON-formatted condition and exception information for the rule
 	ConditionException pulumi.StringPtrInput
-	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// Allowed values are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action. or `none` to take no action.
+	// Action to be taken when the rule is triggered
 	RuleAction pulumi.StringPtrInput
-	// . Unique identifier of the rule being modified.
+	// Unique identifier of the rule
 	RuleId pulumi.IntPtrInput
-	// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -160,37 +94,29 @@ func (AppSecRuleState) ElementType() reflect.Type {
 }
 
 type appSecRuleArgs struct {
-	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+	// JSON-formatted condition and exception information for the rule
 	ConditionException *string `pulumi:"conditionException"`
-	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// Allowed values are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action. or `none` to take no action.
+	// Action to be taken when the rule is triggered
 	RuleAction *string `pulumi:"ruleAction"`
-	// . Unique identifier of the rule being modified.
+	// Unique identifier of the rule
 	RuleId int `pulumi:"ruleId"`
-	// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecRule resource.
 type AppSecRuleArgs struct {
-	// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+	// JSON-formatted condition and exception information for the rule
 	ConditionException pulumi.StringPtrInput
-	// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// Allowed values are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action. or `none` to take no action.
+	// Action to be taken when the rule is triggered
 	RuleAction pulumi.StringPtrInput
-	// . Unique identifier of the rule being modified.
+	// Unique identifier of the rule
 	RuleId pulumi.IntInput
-	// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringInput
 }
 
@@ -281,31 +207,27 @@ func (o AppSecRuleOutput) ToAppSecRuleOutputWithContext(ctx context.Context) App
 	return o
 }
 
-// . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+// JSON-formatted condition and exception information for the rule
 func (o AppSecRuleOutput) ConditionException() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppSecRule) pulumi.StringPtrOutput { return v.ConditionException }).(pulumi.StringPtrOutput)
 }
 
-// . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+// Unique identifier of the security configuration
 func (o AppSecRuleOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecRule) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// Allowed values are:
-// - **alert**. Record the event.
-// - **deny**. Block the request.
-// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-// - **none**. Take no action. or `none` to take no action.
+// Action to be taken when the rule is triggered
 func (o AppSecRuleOutput) RuleAction() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecRule) pulumi.StringOutput { return v.RuleAction }).(pulumi.StringOutput)
 }
 
-// . Unique identifier of the rule being modified.
+// Unique identifier of the rule
 func (o AppSecRuleOutput) RuleId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecRule) pulumi.IntOutput { return v.RuleId }).(pulumi.IntOutput)
 }
 
-// . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+// Unique identifier of the security policy
 func (o AppSecRuleOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecRule) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }

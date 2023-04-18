@@ -13,17 +13,9 @@ public final class GetCpsDeploymentsArgs extends com.pulumi.resources.InvokeArgs
 
     public static final GetCpsDeploymentsArgs Empty = new GetCpsDeploymentsArgs();
 
-    /**
-     * Unique identifier of the enrollment.
-     * 
-     */
     @Import(name="enrollmentId", required=true)
     private Output<Integer> enrollmentId;
 
-    /**
-     * @return Unique identifier of the enrollment.
-     * 
-     */
     public Output<Integer> enrollmentId() {
         return this.enrollmentId;
     }
@@ -52,23 +44,11 @@ public final class GetCpsDeploymentsArgs extends com.pulumi.resources.InvokeArgs
             $ = new GetCpsDeploymentsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param enrollmentId Unique identifier of the enrollment.
-         * 
-         * @return builder
-         * 
-         */
         public Builder enrollmentId(Output<Integer> enrollmentId) {
             $.enrollmentId = enrollmentId;
             return this;
         }
 
-        /**
-         * @param enrollmentId Unique identifier of the enrollment.
-         * 
-         * @return builder
-         * 
-         */
         public Builder enrollmentId(Integer enrollmentId) {
             return enrollmentId(Output.of(enrollmentId));
         }

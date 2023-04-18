@@ -11,75 +11,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration; security policy
-//
-// Enables, disables, or updates HTTP header logging settings.
-// By default, this operation applies at the configuration level, which means that it applies to all the security policies within that configuration.
-// However, by using the `securityPolicyId` parameter you can specify custom settings for an individual security policy.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/advanced-settings/logging](https://techdocs.akamai.com/application-security/reference/put-policies-logging)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func readFileOrPanic(path string) pulumi.StringPtrInput {
-//		data, err := os.ReadFile(path)
-//		if err != nil {
-//			panic(err.Error())
-//		}
-//		return pulumi.String(string(data))
-//	}
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppSecAdvancedSettingsLogging(ctx, "logging", &akamai.AppSecAdvancedSettingsLoggingArgs{
-//				ConfigId: *pulumi.Int(configuration.ConfigId),
-//				Logging:  readFileOrPanic(fmt.Sprintf("%v/logging.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppSecAdvancedSettingsLogging(ctx, "policyLogging", &akamai.AppSecAdvancedSettingsLoggingArgs{
-//				ConfigId:         *pulumi.Int(configuration.ConfigId),
-//				SecurityPolicyId: pulumi.String("gms1_134637"),
-//				Logging:          readFileOrPanic(fmt.Sprintf("%v/logging.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type AppSecAdvancedSettingsLogging struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configuration containing the logging settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Path to a JSON file containing the logging settings to be configured.
+	// Whether to enable, disable, or update HTTP header logging settings
 	Logging pulumi.StringOutput `pulumi:"logging"`
-	// . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrOutput `pulumi:"securityPolicyId"`
 }
 
@@ -118,20 +57,20 @@ func GetAppSecAdvancedSettingsLogging(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecAdvancedSettingsLogging resources.
 type appSecAdvancedSettingsLoggingState struct {
-	// . Unique identifier of the security configuration containing the logging settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Path to a JSON file containing the logging settings to be configured.
+	// Whether to enable, disable, or update HTTP header logging settings
 	Logging *string `pulumi:"logging"`
-	// . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecAdvancedSettingsLoggingState struct {
-	// . Unique identifier of the security configuration containing the logging settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Path to a JSON file containing the logging settings to be configured.
+	// Whether to enable, disable, or update HTTP header logging settings
 	Logging pulumi.StringPtrInput
-	// . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -140,21 +79,21 @@ func (AppSecAdvancedSettingsLoggingState) ElementType() reflect.Type {
 }
 
 type appSecAdvancedSettingsLoggingArgs struct {
-	// . Unique identifier of the security configuration containing the logging settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Path to a JSON file containing the logging settings to be configured.
+	// Whether to enable, disable, or update HTTP header logging settings
 	Logging string `pulumi:"logging"`
-	// . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecAdvancedSettingsLogging resource.
 type AppSecAdvancedSettingsLoggingArgs struct {
-	// . Unique identifier of the security configuration containing the logging settings being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Path to a JSON file containing the logging settings to be configured.
+	// Whether to enable, disable, or update HTTP header logging settings
 	Logging pulumi.StringInput
-	// . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -245,17 +184,17 @@ func (o AppSecAdvancedSettingsLoggingOutput) ToAppSecAdvancedSettingsLoggingOutp
 	return o
 }
 
-// . Unique identifier of the security configuration containing the logging settings being modified.
+// Unique identifier of the security configuration
 func (o AppSecAdvancedSettingsLoggingOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecAdvancedSettingsLogging) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Path to a JSON file containing the logging settings to be configured.
+// Whether to enable, disable, or update HTTP header logging settings
 func (o AppSecAdvancedSettingsLoggingOutput) Logging() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecAdvancedSettingsLogging) pulumi.StringOutput { return v.Logging }).(pulumi.StringOutput)
 }
 
-// . Unique identifier of the security policies whose settings are being modified. If not included, the logging settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+// Unique identifier of the security policy
 func (o AppSecAdvancedSettingsLoggingOutput) SecurityPolicyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppSecAdvancedSettingsLogging) pulumi.StringPtrOutput { return v.SecurityPolicyId }).(pulumi.StringPtrOutput)
 }

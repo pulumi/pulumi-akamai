@@ -110,34 +110,7 @@ class AwaitableGetCpsDeploymentsResult(GetCpsDeploymentsResult):
 def get_cps_deployments(enrollment_id: Optional[int] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpsDeploymentsResult:
     """
-    Use the _get_cps_deployments_ data source to retrieve deployed certificates for a specific enrollment.
-
-    You'll see data for ECDSA, RSA, or both depending on the type and number of certificates you uploaded.
-
-    ## Basic usage
-
-    This example shows how to return information about deployed certificates for enrollment ID 12345.
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_cps_deployments(enrollment_id=12345)
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `production_certificate_rsa` - The RSA certificate deployed on the production network.
-    * `production_certificate_ecdsa` - The ECDSA certificate deployed on the production network.
-    * `staging_certificate_rsa` - The RSA certificate deployed on the staging network.
-    * `staging_certificate_ecdsa` - The ECDSA certificate deployed on the staging network.
-    * `expiry_date` - The expiration date for the certificate in ISO-8601 format.
-    * `auto_renewal_start_time` - The specific date the automatic renewal will start on. The date is in ISO-8601 format. <br> For DV certificates, CPS automatically starts the renewal process 90 days before the current certificate expires. It then automatically deploys the renewed certificate when it receives it from the CA. <br> For third-party certificates, CPS creates a change. This change is needed to get a new CSR and upload the new certificate. Use the _get_cps_enrollments_ data source to view pending changes.
-
-
-    :param int enrollment_id: Unique identifier of the enrollment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['enrollmentId'] = enrollment_id
@@ -159,33 +132,6 @@ def get_cps_deployments(enrollment_id: Optional[int] = None,
 def get_cps_deployments_output(enrollment_id: Optional[pulumi.Input[int]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpsDeploymentsResult]:
     """
-    Use the _get_cps_deployments_ data source to retrieve deployed certificates for a specific enrollment.
-
-    You'll see data for ECDSA, RSA, or both depending on the type and number of certificates you uploaded.
-
-    ## Basic usage
-
-    This example shows how to return information about deployed certificates for enrollment ID 12345.
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_cps_deployments(enrollment_id=12345)
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-    * `production_certificate_rsa` - The RSA certificate deployed on the production network.
-    * `production_certificate_ecdsa` - The ECDSA certificate deployed on the production network.
-    * `staging_certificate_rsa` - The RSA certificate deployed on the staging network.
-    * `staging_certificate_ecdsa` - The ECDSA certificate deployed on the staging network.
-    * `expiry_date` - The expiration date for the certificate in ISO-8601 format.
-    * `auto_renewal_start_time` - The specific date the automatic renewal will start on. The date is in ISO-8601 format. <br> For DV certificates, CPS automatically starts the renewal process 90 days before the current certificate expires. It then automatically deploys the renewed certificate when it receives it from the CA. <br> For third-party certificates, CPS creates a change. This change is needed to get a new CSR and upload the new certificate. Use the _get_cps_enrollments_ data source to view pending changes.
-
-
-    :param int enrollment_id: Unique identifier of the enrollment.
+    Use this data source to access information about an existing resource.
     """
     ...

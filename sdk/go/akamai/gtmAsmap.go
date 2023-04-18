@@ -11,56 +11,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `GtmAsmap` resource to create, configure, and import a GTM Autonomous System (AS) map. AS mapping lets you configure a GTM property that returns a CNAME based on the AS number associated with the requester's IP address.
-//
-// You can reuse maps for multiple properties or create new ones. AS maps split the Internet into multiple AS block zones. Properties that use AS maps can specify handout integers for each zone. AS mapping lets you configure a property that directs users to a specific environment or to the origin.
-//
-// > **Note** Import requires an ID with this format: `existingDomainName`:`existingMapName`.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewGtmAsmap(ctx, "demoAsmap", &akamai.GtmAsmapArgs{
-//				DefaultDatacenter: &akamai.GtmAsmapDefaultDatacenterArgs{
-//					DatacenterId: pulumi.Int(5400),
-//					Nickname:     pulumi.String("All Other AS numbers"),
-//				},
-//				Domain: pulumi.String("demo_domain.akadns.net"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type GtmAsmap struct {
 	pulumi.CustomResourceState
 
-	// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-	Assignments GtmAsmapAssignmentArrayOutput `pulumi:"assignments"`
-	// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+	Assignments       GtmAsmapAssignmentArrayOutput   `pulumi:"assignments"`
 	DefaultDatacenter GtmAsmapDefaultDatacenterOutput `pulumi:"defaultDatacenter"`
-	// The GTM Domain name for the AS map.
-	Domain pulumi.StringOutput `pulumi:"domain"`
-	// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-	Name pulumi.StringOutput `pulumi:"name"`
-	// A boolean that, if `true`, waits for transaction to complete.
-	WaitOnComplete pulumi.BoolPtrOutput `pulumi:"waitOnComplete"`
+	Domain            pulumi.StringOutput             `pulumi:"domain"`
+	Name              pulumi.StringOutput             `pulumi:"name"`
+	WaitOnComplete    pulumi.BoolPtrOutput            `pulumi:"waitOnComplete"`
 }
 
 // NewGtmAsmap registers a new resource with the given unique name, arguments, and options.
@@ -104,29 +62,19 @@ func GetGtmAsmap(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GtmAsmap resources.
 type gtmAsmapState struct {
-	// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-	Assignments []GtmAsmapAssignment `pulumi:"assignments"`
-	// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+	Assignments       []GtmAsmapAssignment       `pulumi:"assignments"`
 	DefaultDatacenter *GtmAsmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// The GTM Domain name for the AS map.
-	Domain *string `pulumi:"domain"`
-	// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-	Name *string `pulumi:"name"`
-	// A boolean that, if `true`, waits for transaction to complete.
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            *string                    `pulumi:"domain"`
+	Name              *string                    `pulumi:"name"`
+	WaitOnComplete    *bool                      `pulumi:"waitOnComplete"`
 }
 
 type GtmAsmapState struct {
-	// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-	Assignments GtmAsmapAssignmentArrayInput
-	// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+	Assignments       GtmAsmapAssignmentArrayInput
 	DefaultDatacenter GtmAsmapDefaultDatacenterPtrInput
-	// The GTM Domain name for the AS map.
-	Domain pulumi.StringPtrInput
-	// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-	Name pulumi.StringPtrInput
-	// A boolean that, if `true`, waits for transaction to complete.
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringPtrInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmAsmapState) ElementType() reflect.Type {
@@ -134,30 +82,20 @@ func (GtmAsmapState) ElementType() reflect.Type {
 }
 
 type gtmAsmapArgs struct {
-	// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-	Assignments []GtmAsmapAssignment `pulumi:"assignments"`
-	// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+	Assignments       []GtmAsmapAssignment      `pulumi:"assignments"`
 	DefaultDatacenter GtmAsmapDefaultDatacenter `pulumi:"defaultDatacenter"`
-	// The GTM Domain name for the AS map.
-	Domain string `pulumi:"domain"`
-	// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-	Name *string `pulumi:"name"`
-	// A boolean that, if `true`, waits for transaction to complete.
-	WaitOnComplete *bool `pulumi:"waitOnComplete"`
+	Domain            string                    `pulumi:"domain"`
+	Name              *string                   `pulumi:"name"`
+	WaitOnComplete    *bool                     `pulumi:"waitOnComplete"`
 }
 
 // The set of arguments for constructing a GtmAsmap resource.
 type GtmAsmapArgs struct {
-	// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-	Assignments GtmAsmapAssignmentArrayInput
-	// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
+	Assignments       GtmAsmapAssignmentArrayInput
 	DefaultDatacenter GtmAsmapDefaultDatacenterInput
-	// The GTM Domain name for the AS map.
-	Domain pulumi.StringInput
-	// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-	Name pulumi.StringPtrInput
-	// A boolean that, if `true`, waits for transaction to complete.
-	WaitOnComplete pulumi.BoolPtrInput
+	Domain            pulumi.StringInput
+	Name              pulumi.StringPtrInput
+	WaitOnComplete    pulumi.BoolPtrInput
 }
 
 func (GtmAsmapArgs) ElementType() reflect.Type {
@@ -247,27 +185,22 @@ func (o GtmAsmapOutput) ToGtmAsmapOutputWithContext(ctx context.Context) GtmAsma
 	return o
 }
 
-// Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
 func (o GtmAsmapOutput) Assignments() GtmAsmapAssignmentArrayOutput {
 	return o.ApplyT(func(v *GtmAsmap) GtmAsmapAssignmentArrayOutput { return v.Assignments }).(GtmAsmapAssignmentArrayOutput)
 }
 
-// A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
 func (o GtmAsmapOutput) DefaultDatacenter() GtmAsmapDefaultDatacenterOutput {
 	return o.ApplyT(func(v *GtmAsmap) GtmAsmapDefaultDatacenterOutput { return v.DefaultDatacenter }).(GtmAsmapDefaultDatacenterOutput)
 }
 
-// The GTM Domain name for the AS map.
 func (o GtmAsmapOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *GtmAsmap) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }
 
-// A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
 func (o GtmAsmapOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *GtmAsmap) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// A boolean that, if `true`, waits for transaction to complete.
 func (o GtmAsmapOutput) WaitOnComplete() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GtmAsmap) pulumi.BoolPtrOutput { return v.WaitOnComplete }).(pulumi.BoolPtrOutput)
 }

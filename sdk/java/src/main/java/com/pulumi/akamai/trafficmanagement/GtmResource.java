@@ -20,45 +20,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * The `akamai.GtmResource` lets you create, configure, and import a GTM resource. In GTM, a resource is anything you can measure whose scarcity affects load balancing. Examples of resources include bandwidth, CPU load average, database queries per second, or disk operations per second.
- * 
- * &gt; **Note** Import requires an ID with this format: `existing_domain_name`:
- * `existing_resource_name`.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.GtmResource;
- * import com.pulumi.akamai.GtmResourceArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var demoResource = new GtmResource(&#34;demoResource&#34;, GtmResourceArgs.builder()        
- *             .aggregationType(&#34;latest&#34;)
- *             .domain(&#34;demo_domain.akadns.net&#34;)
- *             .type(&#34;XML load object via HTTP&#34;)
- *             .build());
- * 
- *     }
- * }
- * ```
- * 
  * @deprecated
  * akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource
  * 
@@ -66,115 +27,51 @@ import javax.annotation.Nullable;
 @Deprecated /* akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource */
 @ResourceType(type="akamai:trafficmanagement/gtmResource:GtmResource")
 public class GtmResource extends com.pulumi.resources.CustomResource {
-    /**
-     * Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
-     * 
-     */
     @Export(name="aggregationType", type=String.class, parameters={})
     private Output<String> aggregationType;
 
-    /**
-     * @return Specifies how GTM handles different load numbers when multiple load servers are used for a data center or property.
-     * 
-     */
     public Output<String> aggregationType() {
         return this.aggregationType;
     }
-    /**
-     * Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
-     * 
-     */
     @Export(name="constrainedProperty", type=String.class, parameters={})
     private Output</* @Nullable */ String> constrainedProperty;
 
-    /**
-     * @return Specifies the name of the property that this resource constrains, enter `**` to constrain all properties.
-     * 
-     */
     public Output<Optional<String>> constrainedProperty() {
         return Codegen.optional(this.constrainedProperty);
     }
-    /**
-     * For Akamai internal use only. You can omit the value or set it to `null`.
-     * 
-     */
     @Export(name="decayRate", type=Double.class, parameters={})
     private Output</* @Nullable */ Double> decayRate;
 
-    /**
-     * @return For Akamai internal use only. You can omit the value or set it to `null`.
-     * 
-     */
     public Output<Optional<Double>> decayRate() {
         return Codegen.optional(this.decayRate);
     }
-    /**
-     * A descriptive note to help you track what the resource constrains.
-     * 
-     */
     @Export(name="description", type=String.class, parameters={})
     private Output</* @Nullable */ String> description;
 
-    /**
-     * @return A descriptive note to help you track what the resource constrains.
-     * 
-     */
     public Output<Optional<String>> description() {
         return Codegen.optional(this.description);
     }
-    /**
-     * DNS name for the GTM Domain set that includes this property.
-     * 
-     */
     @Export(name="domain", type=String.class, parameters={})
     private Output<String> domain;
 
-    /**
-     * @return DNS name for the GTM Domain set that includes this property.
-     * 
-     */
     public Output<String> domain() {
         return this.domain;
     }
-    /**
-     * Optionally specifies the host header used when fetching the load object.
-     * 
-     */
     @Export(name="hostHeader", type=String.class, parameters={})
     private Output</* @Nullable */ String> hostHeader;
 
-    /**
-     * @return Optionally specifies the host header used when fetching the load object.
-     * 
-     */
     public Output<Optional<String>> hostHeader() {
         return Codegen.optional(this.hostHeader);
     }
-    /**
-     * Specifies the text that comes before the `load_object`.
-     * 
-     */
     @Export(name="leaderString", type=String.class, parameters={})
     private Output</* @Nullable */ String> leaderString;
 
-    /**
-     * @return Specifies the text that comes before the `load_object`.
-     * 
-     */
     public Output<Optional<String>> leaderString() {
         return Codegen.optional(this.leaderString);
     }
-    /**
-     * For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
-     * 
-     */
     @Export(name="leastSquaresDecay", type=Double.class, parameters={})
     private Output</* @Nullable */ Double> leastSquaresDecay;
 
-    /**
-     * @return For internal use only. Unless Akamai indicates otherwise, omit the value or set it to null.
-     * 
-     */
     public Output<Optional<Double>> leastSquaresDecay() {
         return Codegen.optional(this.leastSquaresDecay);
     }
@@ -184,87 +81,39 @@ public class GtmResource extends com.pulumi.resources.CustomResource {
     public Output<Optional<Double>> loadImbalancePercentage() {
         return Codegen.optional(this.loadImbalancePercentage);
     }
-    /**
-     * For Akamai internal use only. You can omit the value or set it to `null`.
-     * 
-     */
     @Export(name="maxUMultiplicativeIncrement", type=Double.class, parameters={})
     private Output</* @Nullable */ Double> maxUMultiplicativeIncrement;
 
-    /**
-     * @return For Akamai internal use only. You can omit the value or set it to `null`.
-     * 
-     */
     public Output<Optional<Double>> maxUMultiplicativeIncrement() {
         return Codegen.optional(this.maxUMultiplicativeIncrement);
     }
-    /**
-     * A descriptive label for the GTM resource.
-     * 
-     */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
-    /**
-     * @return A descriptive label for the GTM resource.
-     * 
-     */
     public Output<String> name() {
         return this.name;
     }
-    /**
-     * (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
-     * 
-     */
     @Export(name="resourceInstances", type=List.class, parameters={GtmResourceResourceInstance.class})
     private Output</* @Nullable */ List<GtmResourceResourceInstance>> resourceInstances;
 
-    /**
-     * @return (multiple allowed) Contains information about the resources that constrain the properties within the data center. You can have multiple `resource_instance` entries. Requires these arguments:
-     * 
-     */
     public Output<Optional<List<GtmResourceResourceInstance>>> resourceInstances() {
         return Codegen.optional(this.resourceInstances);
     }
-    /**
-     * Indicates the kind of `load_object` format used to determine the load on the resource.
-     * 
-     */
     @Export(name="type", type=String.class, parameters={})
     private Output<String> type;
 
-    /**
-     * @return Indicates the kind of `load_object` format used to determine the load on the resource.
-     * 
-     */
     public Output<String> type() {
         return this.type;
     }
-    /**
-     * An optional sanity check that specifies the maximum allowed value for any component of the load object.
-     * 
-     */
     @Export(name="upperBound", type=Integer.class, parameters={})
     private Output</* @Nullable */ Integer> upperBound;
 
-    /**
-     * @return An optional sanity check that specifies the maximum allowed value for any component of the load object.
-     * 
-     */
     public Output<Optional<Integer>> upperBound() {
         return Codegen.optional(this.upperBound);
     }
-    /**
-     * A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-     * 
-     */
     @Export(name="waitOnComplete", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> waitOnComplete;
 
-    /**
-     * @return A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-     * 
-     */
     public Output<Optional<Boolean>> waitOnComplete() {
         return Codegen.optional(this.waitOnComplete);
     }

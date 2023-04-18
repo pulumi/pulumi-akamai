@@ -11,133 +11,9 @@ namespace Pulumi.Akamai.Properties
 {
     public static class GetActivation
     {
-        /// <summary>
-        /// Use the `akamai.PropertyActivation` data source to retrieve activation information for a property version on staging
-        /// or production network.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.IO;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var email = "user@example.org";
-        /// 
-        ///     var ruleFormat = "v2022-10-18";
-        /// 
-        ///     var example = new Akamai.Property("example", new()
-        ///     {
-        ///         ProductId = "prd_SPM",
-        ///         ContractId = @var.Contractid,
-        ///         GroupId = @var.Groupid,
-        ///         Hostnames = new[]
-        ///         {
-        ///             new Akamai.Inputs.PropertyHostnameArgs
-        ///             {
-        ///                 CnameTo = "www.example.com.edgekey.net",
-        ///                 CnameFrom = "www.example.com",
-        ///                 CertProvisioningType = "DEFAULT",
-        ///             },
-        ///         },
-        ///         RuleFormat = ruleFormat,
-        ///         Rules = File.ReadAllText($"{path.Module}/main.json"),
-        ///     });
-        /// 
-        ///     var exampleStagingPropertyActivation = new Akamai.PropertyActivation("exampleStagingPropertyActivation", new()
-        ///     {
-        ///         PropertyId = example.Id,
-        ///         Contacts = new[]
-        ///         {
-        ///             email,
-        ///         },
-        ///         Version = example.LatestVersion,
-        ///         Note = "Sample activation",
-        ///     });
-        /// 
-        ///     var exampleStagingActivation = Akamai.Properties.GetActivation.Invoke(new()
-        ///     {
-        ///         PropertyId = example.Id,
-        ///         Version = example.LatestVersion,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetActivationResult> InvokeAsync(GetActivationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetActivationResult>("akamai:properties/getActivation:getActivation", args ?? new GetActivationArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.PropertyActivation` data source to retrieve activation information for a property version on staging
-        /// or production network.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.IO;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var email = "user@example.org";
-        /// 
-        ///     var ruleFormat = "v2022-10-18";
-        /// 
-        ///     var example = new Akamai.Property("example", new()
-        ///     {
-        ///         ProductId = "prd_SPM",
-        ///         ContractId = @var.Contractid,
-        ///         GroupId = @var.Groupid,
-        ///         Hostnames = new[]
-        ///         {
-        ///             new Akamai.Inputs.PropertyHostnameArgs
-        ///             {
-        ///                 CnameTo = "www.example.com.edgekey.net",
-        ///                 CnameFrom = "www.example.com",
-        ///                 CertProvisioningType = "DEFAULT",
-        ///             },
-        ///         },
-        ///         RuleFormat = ruleFormat,
-        ///         Rules = File.ReadAllText($"{path.Module}/main.json"),
-        ///     });
-        /// 
-        ///     var exampleStagingPropertyActivation = new Akamai.PropertyActivation("exampleStagingPropertyActivation", new()
-        ///     {
-        ///         PropertyId = example.Id,
-        ///         Contacts = new[]
-        ///         {
-        ///             email,
-        ///         },
-        ///         Version = example.LatestVersion,
-        ///         Note = "Sample activation",
-        ///     });
-        /// 
-        ///     var exampleStagingActivation = Akamai.Properties.GetActivation.Invoke(new()
-        ///     {
-        ///         PropertyId = example.Id,
-        ///         Version = example.LatestVersion,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Output<GetActivationResult> Invoke(GetActivationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetActivationResult>("akamai:properties/getActivation:getActivation", args ?? new GetActivationInvokeArgs(), options.WithDefaults());
     }
@@ -145,21 +21,12 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class GetActivationArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-        /// </summary>
         [Input("network")]
         public string? Network { get; set; }
 
-        /// <summary>
-        /// The property's unique identifier, including optional `prp_` prefix.
-        /// </summary>
         [Input("propertyId", required: true)]
         public string PropertyId { get; set; } = null!;
 
-        /// <summary>
-        /// The activated property version. The value depends on the `akamai.Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
-        /// </summary>
         [Input("version", required: true)]
         public int Version { get; set; }
 
@@ -171,21 +38,12 @@ namespace Pulumi.Akamai.Properties
 
     public sealed class GetActivationInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Akamai network to check the activation, either `STAGING` or `PRODUCTION`. If not specified, this defaults to `STAGING`.
-        /// </summary>
         [Input("network")]
         public Input<string>? Network { get; set; }
 
-        /// <summary>
-        /// The property's unique identifier, including optional `prp_` prefix.
-        /// </summary>
         [Input("propertyId", required: true)]
         public Input<string> PropertyId { get; set; } = null!;
 
-        /// <summary>
-        /// The activated property version. The value depends on the `akamai.Property` resource to identify the latest activated version instead of calculating it locally. To always use the latest version, set the variable to identify the resource you want to use: `akamai_property.{resource identifier}.latest_version`.
-        /// </summary>
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
 
@@ -199,38 +57,18 @@ namespace Pulumi.Akamai.Properties
     [OutputType]
     public sealed class GetActivationResult
     {
-        /// <summary>
-        /// The activation's unique identifier, including optional `atv_` prefix.
-        /// </summary>
         public readonly string ActivationId;
-        /// <summary>
-        /// The email addresses to notify about the activation status changes.
-        /// </summary>
         public readonly ImmutableArray<string> Contacts;
-        /// <summary>
-        /// The contents of `errors` field returned by the API. For more information
-        /// see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-        /// </summary>
         public readonly string Errors;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
         public readonly string? Network;
-        /// <summary>
-        /// Log message assigned to the activation request.
-        /// </summary>
         public readonly string Note;
         public readonly string PropertyId;
-        /// <summary>
-        /// The property version's activation status on the selected network.
-        /// </summary>
         public readonly string Status;
         public readonly int Version;
-        /// <summary>
-        /// The contents of `warnings` field returned by the API. For more information
-        /// see [Errors](https://techdocs.akamai.com/property-mgr/reference/api-errors) in the PAPI documentation.
-        /// </summary>
         public readonly string Warnings;
 
         [OutputConstructor]

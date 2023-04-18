@@ -12,41 +12,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GtmGeomapAssignment {
-    /**
-     * @return Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-     * 
-     */
     private @Nullable List<String> countries;
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     private Integer datacenterId;
-    /**
-     * @return A descriptive label for the group.
-     * 
-     */
     private String nickname;
 
     private GtmGeomapAssignment() {}
-    /**
-     * @return Specifies an array of two-letter ISO 3166 country codes, or for finer subdivisions, the two-letter country code and the two-letter stateOrProvince code separated by a forward slash.
-     * 
-     */
     public List<String> countries() {
         return this.countries == null ? List.of() : this.countries;
     }
-    /**
-     * @return A unique identifier for an existing data center in the domain.
-     * 
-     */
     public Integer datacenterId() {
         return this.datacenterId;
     }
-    /**
-     * @return A descriptive label for the group.
-     * 
-     */
     public String nickname() {
         return this.nickname;
     }

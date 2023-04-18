@@ -11,64 +11,27 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Use the `NetworkList` resource to create a network list, or to modify an existing list.
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := akamai.NewNetworkList(ctx, "networkList", &akamai.NetworkListArgs{
-//				Type:        pulumi.String("IP"),
-//				Description: pulumi.String("network list description"),
-//				Lists:       pulumi.Any(_var.List),
-//				Mode:        pulumi.String("APPEND"),
-//				ContractId:  pulumi.String("ABC-123"),
-//				GroupId:     pulumi.Int(12345),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type NetworkList struct {
 	pulumi.CustomResourceState
 
-	// The contract ID of the network list. If supplied, groupId must also be supplied. The
-	// contractId value of an existing network list may not be modified.
+	// contract ID
 	ContractId pulumi.StringPtrOutput `pulumi:"contractId"`
-	// The description to be assigned to the network list.
+	// A description of the network list
 	Description pulumi.StringOutput `pulumi:"description"`
-	// The group ID of the network list. If supplied, contractId must also be supplied. The
-	// groupId value of an existing network list may not be modified.
+	// group ID
 	GroupId pulumi.IntPtrOutput `pulumi:"groupId"`
-	// A list of IP addresses or locations to be included in the list, added to an existing list, or
-	// removed from an existing list.
+	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+	// list
 	Lists pulumi.StringArrayOutput `pulumi:"lists"`
-	// A string specifying the interpretation of the `list` parameter. Must be one of the following:
+	// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
 	Mode pulumi.StringOutput `pulumi:"mode"`
-	// The name to be assigned to the network list.
+	// The name to be assigned to the network list
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The ID of the network list.
+	// network list ID
 	NetworkListId pulumi.StringOutput `pulumi:"networkListId"`
-	// An integer that identifies the current version of the network list; this value is incremented each time
-	// the list is modified.
+	// sync point
 	SyncPoint pulumi.IntOutput `pulumi:"syncPoint"`
-	// The type of the network list; must be either "IP" or "GEO".
+	// The type of the network list; must be either 'IP' or 'GEO'
 	Type pulumi.StringOutput `pulumi:"type"`
 	// unique ID
 	Uniqueid pulumi.StringOutput `pulumi:"uniqueid"`
@@ -112,54 +75,48 @@ func GetNetworkList(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkList resources.
 type networkListState struct {
-	// The contract ID of the network list. If supplied, groupId must also be supplied. The
-	// contractId value of an existing network list may not be modified.
+	// contract ID
 	ContractId *string `pulumi:"contractId"`
-	// The description to be assigned to the network list.
+	// A description of the network list
 	Description *string `pulumi:"description"`
-	// The group ID of the network list. If supplied, contractId must also be supplied. The
-	// groupId value of an existing network list may not be modified.
+	// group ID
 	GroupId *int `pulumi:"groupId"`
-	// A list of IP addresses or locations to be included in the list, added to an existing list, or
-	// removed from an existing list.
+	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+	// list
 	Lists []string `pulumi:"lists"`
-	// A string specifying the interpretation of the `list` parameter. Must be one of the following:
+	// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
 	Mode *string `pulumi:"mode"`
-	// The name to be assigned to the network list.
+	// The name to be assigned to the network list
 	Name *string `pulumi:"name"`
-	// The ID of the network list.
+	// network list ID
 	NetworkListId *string `pulumi:"networkListId"`
-	// An integer that identifies the current version of the network list; this value is incremented each time
-	// the list is modified.
+	// sync point
 	SyncPoint *int `pulumi:"syncPoint"`
-	// The type of the network list; must be either "IP" or "GEO".
+	// The type of the network list; must be either 'IP' or 'GEO'
 	Type *string `pulumi:"type"`
 	// unique ID
 	Uniqueid *string `pulumi:"uniqueid"`
 }
 
 type NetworkListState struct {
-	// The contract ID of the network list. If supplied, groupId must also be supplied. The
-	// contractId value of an existing network list may not be modified.
+	// contract ID
 	ContractId pulumi.StringPtrInput
-	// The description to be assigned to the network list.
+	// A description of the network list
 	Description pulumi.StringPtrInput
-	// The group ID of the network list. If supplied, contractId must also be supplied. The
-	// groupId value of an existing network list may not be modified.
+	// group ID
 	GroupId pulumi.IntPtrInput
-	// A list of IP addresses or locations to be included in the list, added to an existing list, or
-	// removed from an existing list.
+	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+	// list
 	Lists pulumi.StringArrayInput
-	// A string specifying the interpretation of the `list` parameter. Must be one of the following:
+	// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
 	Mode pulumi.StringPtrInput
-	// The name to be assigned to the network list.
+	// The name to be assigned to the network list
 	Name pulumi.StringPtrInput
-	// The ID of the network list.
+	// network list ID
 	NetworkListId pulumi.StringPtrInput
-	// An integer that identifies the current version of the network list; this value is incremented each time
-	// the list is modified.
+	// sync point
 	SyncPoint pulumi.IntPtrInput
-	// The type of the network list; must be either "IP" or "GEO".
+	// The type of the network list; must be either 'IP' or 'GEO'
 	Type pulumi.StringPtrInput
 	// unique ID
 	Uniqueid pulumi.StringPtrInput
@@ -170,43 +127,39 @@ func (NetworkListState) ElementType() reflect.Type {
 }
 
 type networkListArgs struct {
-	// The contract ID of the network list. If supplied, groupId must also be supplied. The
-	// contractId value of an existing network list may not be modified.
+	// contract ID
 	ContractId *string `pulumi:"contractId"`
-	// The description to be assigned to the network list.
+	// A description of the network list
 	Description string `pulumi:"description"`
-	// The group ID of the network list. If supplied, contractId must also be supplied. The
-	// groupId value of an existing network list may not be modified.
+	// group ID
 	GroupId *int `pulumi:"groupId"`
-	// A list of IP addresses or locations to be included in the list, added to an existing list, or
-	// removed from an existing list.
+	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+	// list
 	Lists []string `pulumi:"lists"`
-	// A string specifying the interpretation of the `list` parameter. Must be one of the following:
+	// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
 	Mode string `pulumi:"mode"`
-	// The name to be assigned to the network list.
+	// The name to be assigned to the network list
 	Name *string `pulumi:"name"`
-	// The type of the network list; must be either "IP" or "GEO".
+	// The type of the network list; must be either 'IP' or 'GEO'
 	Type string `pulumi:"type"`
 }
 
 // The set of arguments for constructing a NetworkList resource.
 type NetworkListArgs struct {
-	// The contract ID of the network list. If supplied, groupId must also be supplied. The
-	// contractId value of an existing network list may not be modified.
+	// contract ID
 	ContractId pulumi.StringPtrInput
-	// The description to be assigned to the network list.
+	// A description of the network list
 	Description pulumi.StringInput
-	// The group ID of the network list. If supplied, contractId must also be supplied. The
-	// groupId value of an existing network list may not be modified.
+	// group ID
 	GroupId pulumi.IntPtrInput
-	// A list of IP addresses or locations to be included in the list, added to an existing list, or
-	// removed from an existing list.
+	// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+	// list
 	Lists pulumi.StringArrayInput
-	// A string specifying the interpretation of the `list` parameter. Must be one of the following:
+	// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
 	Mode pulumi.StringInput
-	// The name to be assigned to the network list.
+	// The name to be assigned to the network list
 	Name pulumi.StringPtrInput
-	// The type of the network list; must be either "IP" or "GEO".
+	// The type of the network list; must be either 'IP' or 'GEO'
 	Type pulumi.StringInput
 }
 
@@ -297,51 +250,48 @@ func (o NetworkListOutput) ToNetworkListOutputWithContext(ctx context.Context) N
 	return o
 }
 
-// The contract ID of the network list. If supplied, groupId must also be supplied. The
-// contractId value of an existing network list may not be modified.
+// contract ID
 func (o NetworkListOutput) ContractId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkList) pulumi.StringPtrOutput { return v.ContractId }).(pulumi.StringPtrOutput)
 }
 
-// The description to be assigned to the network list.
+// A description of the network list
 func (o NetworkListOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkList) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// The group ID of the network list. If supplied, contractId must also be supplied. The
-// groupId value of an existing network list may not be modified.
+// group ID
 func (o NetworkListOutput) GroupId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NetworkList) pulumi.IntPtrOutput { return v.GroupId }).(pulumi.IntPtrOutput)
 }
 
-// A list of IP addresses or locations to be included in the list, added to an existing list, or
-// removed from an existing list.
+// A list of IP addresses or locations to be included in the list, added to an existing list, or removed from an existing
+// list
 func (o NetworkListOutput) Lists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkList) pulumi.StringArrayOutput { return v.Lists }).(pulumi.StringArrayOutput)
 }
 
-// A string specifying the interpretation of the `list` parameter. Must be one of the following:
+// A string specifying the interpretation of the `list` parameter. Must be 'APPEND', 'REPLACE', or 'REMOVE'
 func (o NetworkListOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkList) pulumi.StringOutput { return v.Mode }).(pulumi.StringOutput)
 }
 
-// The name to be assigned to the network list.
+// The name to be assigned to the network list
 func (o NetworkListOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkList) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The ID of the network list.
+// network list ID
 func (o NetworkListOutput) NetworkListId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkList) pulumi.StringOutput { return v.NetworkListId }).(pulumi.StringOutput)
 }
 
-// An integer that identifies the current version of the network list; this value is incremented each time
-// the list is modified.
+// sync point
 func (o NetworkListOutput) SyncPoint() pulumi.IntOutput {
 	return o.ApplyT(func(v *NetworkList) pulumi.IntOutput { return v.SyncPoint }).(pulumi.IntOutput)
 }
 
-// The type of the network list; must be either "IP" or "GEO".
+// The type of the network list; must be either 'IP' or 'GEO'
 func (o NetworkListOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkList) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

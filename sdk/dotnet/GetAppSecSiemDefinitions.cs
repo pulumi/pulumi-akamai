@@ -11,97 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetAppSecSiemDefinitions
     {
-        /// <summary>
-        /// **Scopes**: SIEM definition
-        /// 
-        /// Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions) section of the Application Security API.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/siem-definitions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var siemDefinitions = Akamai.GetAppSecSiemDefinitions.Invoke();
-        /// 
-        ///     var siemDefinition = Akamai.GetAppSecSiemDefinitions.Invoke(new()
-        ///     {
-        ///         SiemDefinitionName = "SIEM Version 01",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["siemDefinitionsJson"] = siemDefinitions.Apply(getAppSecSiemDefinitionsResult =&gt; getAppSecSiemDefinitionsResult.Json),
-        ///         ["siemDefinitionsOutput"] = siemDefinitions.Apply(getAppSecSiemDefinitionsResult =&gt; getAppSecSiemDefinitionsResult.OutputText),
-        ///         ["siemDefinitionId"] = siemDefinition.Apply(getAppSecSiemDefinitionsResult =&gt; getAppSecSiemDefinitionsResult.Id),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of the SIEM version information.
-        /// - `output_text`. Tabular report showing the ID and name of each SIEM version.
-        /// </summary>
         public static Task<GetAppSecSiemDefinitionsResult> InvokeAsync(GetAppSecSiemDefinitionsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppSecSiemDefinitionsResult>("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args ?? new GetAppSecSiemDefinitionsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// **Scopes**: SIEM definition
-        /// 
-        /// Returns information about your SIEM (Security Information and Event Management) versions. The returned information is described in the [Get SIEM versions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions) section of the Application Security API.
-        /// 
-        /// **Related API Endpoint**: [/appsec/v1/siem-definitions](https://techdocs.akamai.com/application-security/reference/get-siem-definitions)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var siemDefinitions = Akamai.GetAppSecSiemDefinitions.Invoke();
-        /// 
-        ///     var siemDefinition = Akamai.GetAppSecSiemDefinitions.Invoke(new()
-        ///     {
-        ///         SiemDefinitionName = "SIEM Version 01",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["siemDefinitionsJson"] = siemDefinitions.Apply(getAppSecSiemDefinitionsResult =&gt; getAppSecSiemDefinitionsResult.Json),
-        ///         ["siemDefinitionsOutput"] = siemDefinitions.Apply(getAppSecSiemDefinitionsResult =&gt; getAppSecSiemDefinitionsResult.OutputText),
-        ///         ["siemDefinitionId"] = siemDefinition.Apply(getAppSecSiemDefinitionsResult =&gt; getAppSecSiemDefinitionsResult.Id),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Output Options
-        /// 
-        /// The following options can be used to determine the information returned, and how that returned information is formatted:
-        /// 
-        /// - `json`. JSON-formatted list of the SIEM version information.
-        /// - `output_text`. Tabular report showing the ID and name of each SIEM version.
-        /// </summary>
         public static Output<GetAppSecSiemDefinitionsResult> Invoke(GetAppSecSiemDefinitionsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppSecSiemDefinitionsResult>("akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions", args ?? new GetAppSecSiemDefinitionsInvokeArgs(), options.WithDefaults());
     }
@@ -109,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecSiemDefinitionsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Name of the SIEM definition you want to return information for. If not included, information is returned for all your SIEM definitions.
-        /// </summary>
         [Input("siemDefinitionName")]
         public string? SiemDefinitionName { get; set; }
 
@@ -123,9 +32,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetAppSecSiemDefinitionsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// . Name of the SIEM definition you want to return information for. If not included, information is returned for all your SIEM definitions.
-        /// </summary>
         [Input("siemDefinitionName")]
         public Input<string>? SiemDefinitionName { get; set; }
 

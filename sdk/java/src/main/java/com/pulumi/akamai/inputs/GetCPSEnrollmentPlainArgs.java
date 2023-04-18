@@ -12,17 +12,9 @@ public final class GetCPSEnrollmentPlainArgs extends com.pulumi.resources.Invoke
 
     public static final GetCPSEnrollmentPlainArgs Empty = new GetCPSEnrollmentPlainArgs();
 
-    /**
-     * Unique identifier for the certificate enrollment.
-     * 
-     */
     @Import(name="enrollmentId", required=true)
     private Integer enrollmentId;
 
-    /**
-     * @return Unique identifier for the certificate enrollment.
-     * 
-     */
     public Integer enrollmentId() {
         return this.enrollmentId;
     }
@@ -51,12 +43,6 @@ public final class GetCPSEnrollmentPlainArgs extends com.pulumi.resources.Invoke
             $ = new GetCPSEnrollmentPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param enrollmentId Unique identifier for the certificate enrollment.
-         * 
-         * @return builder
-         * 
-         */
         public Builder enrollmentId(Integer enrollmentId) {
             $.enrollmentId = enrollmentId;
             return this;

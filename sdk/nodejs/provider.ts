@@ -83,6 +83,7 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["papiSection"] = args ? args.papiSection : undefined;
             resourceInputs["property"] = pulumi.output(args ? args.property : undefined).apply(JSON.stringify);
             resourceInputs["propertySection"] = args ? args.propertySection : undefined;
+            resourceInputs["requestLimit"] = pulumi.output(args ? args.requestLimit : undefined).apply(JSON.stringify);
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
@@ -141,4 +142,8 @@ export interface ProviderArgs {
      * @deprecated The setting "property_section" has been deprecated.
      */
     propertySection?: pulumi.Input<string>;
+    /**
+     * The maximum number of API requests to be made per second (0 for no limit)
+     */
+    requestLimit?: pulumi.Input<number>;
 }

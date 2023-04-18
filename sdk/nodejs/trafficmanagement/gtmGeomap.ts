@@ -7,29 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * Use the `akamai.GtmGeomap` resource to create, configure, and import a GTM Geographic map. Geographic mapping lets you configure a property that returns a CNAME based on the geographic location of the request.
- *
- * You can reuse maps for multiple properties or create new ones. To configure a property for geographic mapping, you need to define at least one geographic map for your domain. Each map needs at least two definitions. For example, you can have one definition that maps a set of countries to a specific data center, and a second definition that routes all other traffic.
- *
- * > **Note** Import requires an ID with this format: `existingDomainName`:`existingMapName`.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const demoGeomap = new akamai.GtmGeomap("demoGeomap", {
- *     defaultDatacenter: {
- *         datacenterId: 5400,
- *         nickname: "All Others",
- *     },
- *     domain: "demo_domain.akadns.net",
- * });
- * ```
- *
  * @deprecated akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap
  */
 export class GtmGeomap extends pulumi.CustomResource {
@@ -61,25 +38,10 @@ export class GtmGeomap extends pulumi.CustomResource {
         return obj['__pulumiType'] === GtmGeomap.__pulumiType;
     }
 
-    /**
-     * Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-     */
     public readonly assignments!: pulumi.Output<outputs.trafficmanagement.GtmGeomapAssignment[] | undefined>;
-    /**
-     * A placeholder for all other geographic zones. Requires these additional arguments:
-     */
     public readonly defaultDatacenter!: pulumi.Output<outputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
-    /**
-     * GTM Domain name for the Geographic Map.
-     */
     public readonly domain!: pulumi.Output<string>;
-    /**
-     * A descriptive label for the Geographic map.
-     */
     public readonly name!: pulumi.Output<string>;
-    /**
-     * A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-     */
     public readonly waitOnComplete!: pulumi.Output<boolean | undefined>;
 
     /**
@@ -126,25 +88,10 @@ export class GtmGeomap extends pulumi.CustomResource {
  * Input properties used for looking up and filtering GtmGeomap resources.
  */
 export interface GtmGeomapState {
-    /**
-     * Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-     */
     assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmGeomapAssignment>[]>;
-    /**
-     * A placeholder for all other geographic zones. Requires these additional arguments:
-     */
     defaultDatacenter?: pulumi.Input<inputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
-    /**
-     * GTM Domain name for the Geographic Map.
-     */
     domain?: pulumi.Input<string>;
-    /**
-     * A descriptive label for the Geographic map.
-     */
     name?: pulumi.Input<string>;
-    /**
-     * A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-     */
     waitOnComplete?: pulumi.Input<boolean>;
 }
 
@@ -152,24 +99,9 @@ export interface GtmGeomapState {
  * The set of arguments for constructing a GtmGeomap resource.
  */
 export interface GtmGeomapArgs {
-    /**
-     * Contains information about the geographic zone groupings of countries. You can have multiple `assignment` arguments. If used, requires these additional arguments:
-     */
     assignments?: pulumi.Input<pulumi.Input<inputs.trafficmanagement.GtmGeomapAssignment>[]>;
-    /**
-     * A placeholder for all other geographic zones. Requires these additional arguments:
-     */
     defaultDatacenter: pulumi.Input<inputs.trafficmanagement.GtmGeomapDefaultDatacenter>;
-    /**
-     * GTM Domain name for the Geographic Map.
-     */
     domain: pulumi.Input<string>;
-    /**
-     * A descriptive label for the Geographic map.
-     */
     name?: pulumi.Input<string>;
-    /**
-     * A boolean indicating whether to wait for transaction to complete. Set to `true` by default.
-     */
     waitOnComplete?: pulumi.Input<boolean>;
 }

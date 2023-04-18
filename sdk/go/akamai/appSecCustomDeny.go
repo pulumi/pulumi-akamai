@@ -11,69 +11,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Custom deny
-//
-// Modifies a custom deny action. Custom denies enable you to craft your own error message or redirect pages for use when HTTP requests are denied.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/custom-deny](https://techdocs.akamai.com/application-security/reference/get-custom-deny-actions)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func readFileOrPanic(path string) pulumi.StringPtrInput {
-//		data, err := os.ReadFile(path)
-//		if err != nil {
-//			panic(err.Error())
-//		}
-//		return pulumi.String(string(data))
-//	}
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			customDeny, err := akamai.NewAppSecCustomDeny(ctx, "customDeny", &akamai.AppSecCustomDenyArgs{
-//				ConfigId:   *pulumi.Int(configuration.ConfigId),
-//				CustomDeny: readFileOrPanic(fmt.Sprintf("%v/custom_deny.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("customDenyId", customDeny.CustomDenyId)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `customDenyId`. ID of the new custom deny action.
 type AppSecCustomDeny struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configuration associated with the custom deny.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Path to a JSON file containing properties and property values for the custom deny.
+	// JSON-formatted information about the properties and property values for the custom deny
 	CustomDeny pulumi.StringOutput `pulumi:"customDeny"`
 	// custom_deny_id
 	CustomDenyId pulumi.StringOutput `pulumi:"customDenyId"`
@@ -114,18 +57,18 @@ func GetAppSecCustomDeny(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecCustomDeny resources.
 type appSecCustomDenyState struct {
-	// . Unique identifier of the security configuration associated with the custom deny.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Path to a JSON file containing properties and property values for the custom deny.
+	// JSON-formatted information about the properties and property values for the custom deny
 	CustomDeny *string `pulumi:"customDeny"`
 	// custom_deny_id
 	CustomDenyId *string `pulumi:"customDenyId"`
 }
 
 type AppSecCustomDenyState struct {
-	// . Unique identifier of the security configuration associated with the custom deny.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Path to a JSON file containing properties and property values for the custom deny.
+	// JSON-formatted information about the properties and property values for the custom deny
 	CustomDeny pulumi.StringPtrInput
 	// custom_deny_id
 	CustomDenyId pulumi.StringPtrInput
@@ -136,17 +79,17 @@ func (AppSecCustomDenyState) ElementType() reflect.Type {
 }
 
 type appSecCustomDenyArgs struct {
-	// . Unique identifier of the security configuration associated with the custom deny.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Path to a JSON file containing properties and property values for the custom deny.
+	// JSON-formatted information about the properties and property values for the custom deny
 	CustomDeny string `pulumi:"customDeny"`
 }
 
 // The set of arguments for constructing a AppSecCustomDeny resource.
 type AppSecCustomDenyArgs struct {
-	// . Unique identifier of the security configuration associated with the custom deny.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Path to a JSON file containing properties and property values for the custom deny.
+	// JSON-formatted information about the properties and property values for the custom deny
 	CustomDeny pulumi.StringInput
 }
 
@@ -237,12 +180,12 @@ func (o AppSecCustomDenyOutput) ToAppSecCustomDenyOutputWithContext(ctx context.
 	return o
 }
 
-// . Unique identifier of the security configuration associated with the custom deny.
+// Unique identifier of the security configuration
 func (o AppSecCustomDenyOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecCustomDeny) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Path to a JSON file containing properties and property values for the custom deny.
+// JSON-formatted information about the properties and property values for the custom deny
 func (o AppSecCustomDenyOutput) CustomDeny() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecCustomDeny) pulumi.StringOutput { return v.CustomDeny }).(pulumi.StringOutput)
 }

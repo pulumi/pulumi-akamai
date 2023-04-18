@@ -9,66 +9,6 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// **Scopes**: Contract and group
-    /// 
-    /// Creates a new WAP (Web Application Protector) or KSD (Kona Site Defender) security configuration. KSD security configurations start out empty (i.e., unconfigured), while WAP configurations are created using preset values. The contract referenced in the request body determines the type of configuration you can create.
-    /// 
-    /// In addition to manually creating a new configuration, you can use the `create_from_config_id` argument to clone an existing configuration.
-    /// 
-    /// **Related API Endpoint**: [/appsec/v1/configs](https://techdocs.akamai.com/application-security/reference/post-config)
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var selectableHostnames = Akamai.GetAppSecSelectableHostnames.Invoke(new()
-    ///     {
-    ///         ConfigId = "Documentation",
-    ///     });
-    /// 
-    ///     var createConfig = new Akamai.AppSecConfiguration("createConfig", new()
-    ///     {
-    ///         Description = "This configuration is used as a testing environment for the documentation team.",
-    ///         ContractId = "5-2WA382",
-    ///         GroupId = 12198,
-    ///         HostNames = new[]
-    ///         {
-    ///             "documentation.akamai.com",
-    ///             "training.akamai.com",
-    ///         },
-    ///     });
-    /// 
-    ///     var cloneConfig = new Akamai.AppSecConfiguration("cloneConfig", new()
-    ///     {
-    ///         Description = "This configuration is used as a testing environment for the documentation team.",
-    ///         CreateFromConfigId = data.Akamai_appsec_configuration.Configuration.Config_id,
-    ///         CreateFromVersion = data.Akamai_appsec_configuration.Configuration.Latest_version,
-    ///         ContractId = "5-2WA382",
-    ///         GroupId = 12198,
-    ///         HostNames = selectableHostnames.Apply(getAppSecSelectableHostnamesResult =&gt; getAppSecSelectableHostnamesResult.Hostnames),
-    ///     });
-    /// 
-    ///     return new Dictionary&lt;string, object?&gt;
-    ///     {
-    ///         ["createConfigId"] = createConfig.ConfigId,
-    ///         ["cloneConfigId"] = cloneConfig.ConfigId,
-    ///     };
-    /// });
-    /// ```
-    /// ## Output Options
-    /// 
-    /// The following options can be used to determine the information returned, and how that returned information is formatted:
-    /// 
-    /// - `config_id`. ID of the new security configuration.
-    /// </summary>
     [AkamaiResourceType("akamai:index/appSecConfiguration:AppSecConfiguration")]
     public partial class AppSecConfiguration : global::Pulumi.CustomResource
     {
@@ -79,43 +19,43 @@ namespace Pulumi.Akamai
         public Output<int> ConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the Akamai contract associated with the new configuration.
+        /// Unique identifier of the Akamai contract associated with the new configuration
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+        /// Unique identifier of the existing configuration being cloned to create the new configuration
         /// </summary>
         [Output("createFromConfigId")]
         public Output<int?> CreateFromConfigId { get; private set; } = null!;
 
         /// <summary>
-        /// . Version number of the security configuration being cloned.
+        /// Version number of the existing configuration being cloned to create the new configuration
         /// </summary>
         [Output("createFromVersion")]
         public Output<int?> CreateFromVersion { get; private set; } = null!;
 
         /// <summary>
-        /// . Brief description of the new configuration.
+        /// Brief description of the new configuration
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the contract group associated with the new configuration.
+        /// Unique identifier of the contract group associated with the new configuration
         /// </summary>
         [Output("groupId")]
         public Output<int> GroupId { get; private set; } = null!;
 
         /// <summary>
-        /// . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+        /// Hostnames to be protected by the new configuration
         /// </summary>
         [Output("hostNames")]
         public Output<ImmutableArray<string>> HostNames { get; private set; } = null!;
 
         /// <summary>
-        /// . Name of the new configuration.
+        /// Name of the new configuration
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -167,31 +107,31 @@ namespace Pulumi.Akamai
     public sealed class AppSecConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// . Unique identifier of the Akamai contract associated with the new configuration.
+        /// Unique identifier of the Akamai contract associated with the new configuration
         /// </summary>
         [Input("contractId", required: true)]
         public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+        /// Unique identifier of the existing configuration being cloned to create the new configuration
         /// </summary>
         [Input("createFromConfigId")]
         public Input<int>? CreateFromConfigId { get; set; }
 
         /// <summary>
-        /// . Version number of the security configuration being cloned.
+        /// Version number of the existing configuration being cloned to create the new configuration
         /// </summary>
         [Input("createFromVersion")]
         public Input<int>? CreateFromVersion { get; set; }
 
         /// <summary>
-        /// . Brief description of the new configuration.
+        /// Brief description of the new configuration
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
-        /// . Unique identifier of the contract group associated with the new configuration.
+        /// Unique identifier of the contract group associated with the new configuration
         /// </summary>
         [Input("groupId", required: true)]
         public Input<int> GroupId { get; set; } = null!;
@@ -200,7 +140,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _hostNames;
 
         /// <summary>
-        /// . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+        /// Hostnames to be protected by the new configuration
         /// </summary>
         public InputList<string> HostNames
         {
@@ -209,7 +149,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// . Name of the new configuration.
+        /// Name of the new configuration
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -229,31 +169,31 @@ namespace Pulumi.Akamai
         public Input<int>? ConfigId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the Akamai contract associated with the new configuration.
+        /// Unique identifier of the Akamai contract associated with the new configuration
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the existing configuration being cloned in order to create the new configuration.
+        /// Unique identifier of the existing configuration being cloned to create the new configuration
         /// </summary>
         [Input("createFromConfigId")]
         public Input<int>? CreateFromConfigId { get; set; }
 
         /// <summary>
-        /// . Version number of the security configuration being cloned.
+        /// Version number of the existing configuration being cloned to create the new configuration
         /// </summary>
         [Input("createFromVersion")]
         public Input<int>? CreateFromVersion { get; set; }
 
         /// <summary>
-        /// . Brief description of the new configuration.
+        /// Brief description of the new configuration
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// . Unique identifier of the contract group associated with the new configuration.
+        /// Unique identifier of the contract group associated with the new configuration
         /// </summary>
         [Input("groupId")]
         public Input<int>? GroupId { get; set; }
@@ -262,7 +202,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _hostNames;
 
         /// <summary>
-        /// . JSON array containing the hostnames to be protected by the new configuration. You must specify at least one hostname in order to create a new configuration.
+        /// Hostnames to be protected by the new configuration
         /// </summary>
         public InputList<string> HostNames
         {
@@ -271,7 +211,7 @@ namespace Pulumi.Akamai
         }
 
         /// <summary>
-        /// . Name of the new configuration.
+        /// Name of the new configuration
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

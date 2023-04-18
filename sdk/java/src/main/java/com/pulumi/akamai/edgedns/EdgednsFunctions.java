@@ -18,44 +18,6 @@ import java.util.concurrent.CompletableFuture;
 
 public final class EdgednsFunctions {
     /**
-     * Use the `akamai.getAuthoritiesSet` data source to retrieve a contract&#39;s authorities set. You use the authorities set when creating new zones.
-     * 
-     * ## Example Usage
-     * 
-     * Basic usage:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.inputs.GetAuthoritiesSetArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var example = AkamaiFunctions.getAuthoritiesSet(GetAuthoritiesSetArgs.builder()
-     *             .contract(&#34;ctr_1-AB123&#34;)
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * ## Attributes reference
-     * 
-     * This data source supports this attribute:
-     * 
-     * * `authorities` - A list of authorities.
      * 
      * @deprecated
      * akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet
@@ -66,44 +28,6 @@ public final class EdgednsFunctions {
         return getAuthoritiesSet(args, InvokeOptions.Empty);
     }
     /**
-     * Use the `akamai.getAuthoritiesSet` data source to retrieve a contract&#39;s authorities set. You use the authorities set when creating new zones.
-     * 
-     * ## Example Usage
-     * 
-     * Basic usage:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.inputs.GetAuthoritiesSetArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var example = AkamaiFunctions.getAuthoritiesSet(GetAuthoritiesSetArgs.builder()
-     *             .contract(&#34;ctr_1-AB123&#34;)
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * ## Attributes reference
-     * 
-     * This data source supports this attribute:
-     * 
-     * * `authorities` - A list of authorities.
      * 
      * @deprecated
      * akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet
@@ -114,44 +38,6 @@ public final class EdgednsFunctions {
         return getAuthoritiesSetPlain(args, InvokeOptions.Empty);
     }
     /**
-     * Use the `akamai.getAuthoritiesSet` data source to retrieve a contract&#39;s authorities set. You use the authorities set when creating new zones.
-     * 
-     * ## Example Usage
-     * 
-     * Basic usage:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.inputs.GetAuthoritiesSetArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var example = AkamaiFunctions.getAuthoritiesSet(GetAuthoritiesSetArgs.builder()
-     *             .contract(&#34;ctr_1-AB123&#34;)
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * ## Attributes reference
-     * 
-     * This data source supports this attribute:
-     * 
-     * * `authorities` - A list of authorities.
      * 
      * @deprecated
      * akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet
@@ -162,44 +48,6 @@ public final class EdgednsFunctions {
         return Deployment.getInstance().invoke("akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet", TypeShape.of(GetAuthoritiesSetResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Use the `akamai.getAuthoritiesSet` data source to retrieve a contract&#39;s authorities set. You use the authorities set when creating new zones.
-     * 
-     * ## Example Usage
-     * 
-     * Basic usage:
-     * ```java
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.akamai.AkamaiFunctions;
-     * import com.pulumi.akamai.inputs.GetAuthoritiesSetArgs;
-     * import java.util.List;
-     * import java.util.ArrayList;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         final var example = AkamaiFunctions.getAuthoritiesSet(GetAuthoritiesSetArgs.builder()
-     *             .contract(&#34;ctr_1-AB123&#34;)
-     *             .build());
-     * 
-     *     }
-     * }
-     * ```
-     * ## Attributes reference
-     * 
-     * This data source supports this attribute:
-     * 
-     * * `authorities` - A list of authorities.
      * 
      * @deprecated
      * akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet

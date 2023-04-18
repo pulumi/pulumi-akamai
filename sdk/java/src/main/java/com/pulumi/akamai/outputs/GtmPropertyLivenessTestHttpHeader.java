@@ -11,29 +11,13 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GtmPropertyLivenessTestHttpHeader {
-    /**
-     * @return Name of HTTP header.
-     * 
-     */
     private @Nullable String name;
-    /**
-     * @return Value of HTTP header.
-     * 
-     */
     private @Nullable String value;
 
     private GtmPropertyLivenessTestHttpHeader() {}
-    /**
-     * @return Name of HTTP header.
-     * 
-     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
-    /**
-     * @return Value of HTTP header.
-     * 
-     */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);
     }

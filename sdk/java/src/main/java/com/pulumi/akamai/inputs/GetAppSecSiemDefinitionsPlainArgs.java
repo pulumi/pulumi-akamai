@@ -14,17 +14,9 @@ public final class GetAppSecSiemDefinitionsPlainArgs extends com.pulumi.resource
 
     public static final GetAppSecSiemDefinitionsPlainArgs Empty = new GetAppSecSiemDefinitionsPlainArgs();
 
-    /**
-     * . Name of the SIEM definition you want to return information for. If not included, information is returned for all your SIEM definitions.
-     * 
-     */
     @Import(name="siemDefinitionName")
     private @Nullable String siemDefinitionName;
 
-    /**
-     * @return . Name of the SIEM definition you want to return information for. If not included, information is returned for all your SIEM definitions.
-     * 
-     */
     public Optional<String> siemDefinitionName() {
         return Optional.ofNullable(this.siemDefinitionName);
     }
@@ -53,12 +45,6 @@ public final class GetAppSecSiemDefinitionsPlainArgs extends com.pulumi.resource
             $ = new GetAppSecSiemDefinitionsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param siemDefinitionName . Name of the SIEM definition you want to return information for. If not included, information is returned for all your SIEM definitions.
-         * 
-         * @return builder
-         * 
-         */
         public Builder siemDefinitionName(@Nullable String siemDefinitionName) {
             $.siemDefinitionName = siemDefinitionName;
             return this;

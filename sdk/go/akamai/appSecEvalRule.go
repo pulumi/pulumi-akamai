@@ -11,78 +11,18 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Evaluation rule
-//
-// Creates or modifies an evaluation rule's action, conditions, and exceptions.
-// Evaluation rules are Kona Rule Set rules used when running a security configuration in evaluation mode.
-// Changes to these rules do not affect the rules used on your production network.
-//
-// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}](https://techdocs.akamai.com/application-security/reference/put-policy-eval-rule) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/eval-rules/{ruleId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-condition-exception)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func readFileOrPanic(path string) pulumi.StringPtrInput {
-//		data, err := os.ReadFile(path)
-//		if err != nil {
-//			panic(err.Error())
-//		}
-//		return pulumi.String(string(data))
-//	}
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppSecEvalRule(ctx, "evalRule", &akamai.AppSecEvalRuleArgs{
-//				ConfigId:           *pulumi.Int(configuration.ConfigId),
-//				SecurityPolicyId:   pulumi.String("gms1_134637"),
-//				RuleId:             pulumi.Int(60029316),
-//				RuleAction:         pulumi.String("deny"),
-//				ConditionException: readFileOrPanic(fmt.Sprintf("%v/condition_exception.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type AppSecEvalRule struct {
 	pulumi.CustomResourceState
 
-	// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+	// JSON-formatted condition and exception information for the evaluation rule
 	ConditionException pulumi.StringPtrOutput `pulumi:"conditionException"`
-	// . Unique identifier of the security configuration in evaluation mode.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the evaluation rule is triggered
 	RuleAction pulumi.StringOutput `pulumi:"ruleAction"`
-	// . Unique identifier of the evaluation rule being modified.
+	// Unique identifier of the evaluation rule being modified
 	RuleId pulumi.IntOutput `pulumi:"ruleId"`
-	// . Unique identifier of the security policy associated with the evaluation process.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -127,36 +67,28 @@ func GetAppSecEvalRule(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecEvalRule resources.
 type appSecEvalRuleState struct {
-	// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+	// JSON-formatted condition and exception information for the evaluation rule
 	ConditionException *string `pulumi:"conditionException"`
-	// . Unique identifier of the security configuration in evaluation mode.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the evaluation rule is triggered
 	RuleAction *string `pulumi:"ruleAction"`
-	// . Unique identifier of the evaluation rule being modified.
+	// Unique identifier of the evaluation rule being modified
 	RuleId *int `pulumi:"ruleId"`
-	// . Unique identifier of the security policy associated with the evaluation process.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecEvalRuleState struct {
-	// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+	// JSON-formatted condition and exception information for the evaluation rule
 	ConditionException pulumi.StringPtrInput
-	// . Unique identifier of the security configuration in evaluation mode.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the evaluation rule is triggered
 	RuleAction pulumi.StringPtrInput
-	// . Unique identifier of the evaluation rule being modified.
+	// Unique identifier of the evaluation rule being modified
 	RuleId pulumi.IntPtrInput
-	// . Unique identifier of the security policy associated with the evaluation process.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -165,37 +97,29 @@ func (AppSecEvalRuleState) ElementType() reflect.Type {
 }
 
 type appSecEvalRuleArgs struct {
-	// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+	// JSON-formatted condition and exception information for the evaluation rule
 	ConditionException *string `pulumi:"conditionException"`
-	// . Unique identifier of the security configuration in evaluation mode.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the evaluation rule is triggered
 	RuleAction string `pulumi:"ruleAction"`
-	// . Unique identifier of the evaluation rule being modified.
+	// Unique identifier of the evaluation rule being modified
 	RuleId int `pulumi:"ruleId"`
-	// . Unique identifier of the security policy associated with the evaluation process.
+	// Unique identifier of the security policy
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecEvalRule resource.
 type AppSecEvalRuleArgs struct {
-	// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+	// JSON-formatted condition and exception information for the evaluation rule
 	ConditionException pulumi.StringPtrInput
-	// . Unique identifier of the security configuration in evaluation mode.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-	// - **alert**. Record the event.
-	// - **deny**. Block the request.
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the evaluation rule is triggered
 	RuleAction pulumi.StringInput
-	// . Unique identifier of the evaluation rule being modified.
+	// Unique identifier of the evaluation rule being modified
 	RuleId pulumi.IntInput
-	// . Unique identifier of the security policy associated with the evaluation process.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringInput
 }
 
@@ -286,31 +210,27 @@ func (o AppSecEvalRuleOutput) ToAppSecEvalRuleOutputWithContext(ctx context.Cont
 	return o
 }
 
-// . Path to a JSON file containing the conditions and exceptions to be applied to the evaluation rule.
+// JSON-formatted condition and exception information for the evaluation rule
 func (o AppSecEvalRuleOutput) ConditionException() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppSecEvalRule) pulumi.StringPtrOutput { return v.ConditionException }).(pulumi.StringPtrOutput)
 }
 
-// . Unique identifier of the security configuration in evaluation mode.
+// Unique identifier of the security configuration
 func (o AppSecEvalRuleOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecEvalRule) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Action to be taken any time the evaluation rule is triggered, Allowed actions are:
-// - **alert**. Record the event.
-// - **deny**. Block the request.
-// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-// - **none**. Take no action.
+// Action to be taken when the evaluation rule is triggered
 func (o AppSecEvalRuleOutput) RuleAction() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecEvalRule) pulumi.StringOutput { return v.RuleAction }).(pulumi.StringOutput)
 }
 
-// . Unique identifier of the evaluation rule being modified.
+// Unique identifier of the evaluation rule being modified
 func (o AppSecEvalRuleOutput) RuleId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecEvalRule) pulumi.IntOutput { return v.RuleId }).(pulumi.IntOutput)
 }
 
-// . Unique identifier of the security policy associated with the evaluation process.
+// Unique identifier of the security policy
 func (o AppSecEvalRuleOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecEvalRule) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }

@@ -11,76 +11,18 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Attack group
-//
-// Modify an attack group's action, conditions, and exceptions. Attack groups are collections of Kona Rule Set rules used to streamline the management of website protections.
-//
-// **Related API Endpoints**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups/{attackGroupId}](https://techdocs.akamai.com/application-security/reference/put-attack-group-condition-exception) *and* [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/attack-groups/{attackGroupId}/condition-exception](https://techdocs.akamai.com/application-security/reference/put-attack-group-condition-exception)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func readFileOrPanic(path string) pulumi.StringPtrInput {
-//		data, err := os.ReadFile(path)
-//		if err != nil {
-//			panic(err.Error())
-//		}
-//		return pulumi.String(string(data))
-//	}
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = akamai.NewAppSecAttackGroup(ctx, "attackGroup", &akamai.AppSecAttackGroupArgs{
-//				ConfigId:           *pulumi.Int(configuration.ConfigId),
-//				SecurityPolicyId:   pulumi.String("gms1_134637"),
-//				AttackGroup:        pulumi.String("SQL"),
-//				AttackGroupAction:  pulumi.String("deny"),
-//				ConditionException: readFileOrPanic(fmt.Sprintf("%v/condition_exception.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type AppSecAttackGroup struct {
 	pulumi.CustomResourceState
 
-	// . Unique name of the attack group being modified.
+	// Unique name of the attack group to be modified
 	AttackGroup pulumi.StringOutput `pulumi:"attackGroup"`
-	// . Action taken any time the attack group is triggered. Allowed values are:
-	// - **alert**. Record information about the request.
-	// - **deny**. Block the request,
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the attack group is triggered
 	AttackGroupAction pulumi.StringOutput `pulumi:"attackGroupAction"`
-	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+	// JSON-formatted condition and exception information for the attack group
 	ConditionException pulumi.StringPtrOutput `pulumi:"conditionException"`
-	// . Unique identifier of the security configuration associated with the attack group being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the attack group being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 }
 
@@ -125,36 +67,28 @@ func GetAppSecAttackGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecAttackGroup resources.
 type appSecAttackGroupState struct {
-	// . Unique name of the attack group being modified.
+	// Unique name of the attack group to be modified
 	AttackGroup *string `pulumi:"attackGroup"`
-	// . Action taken any time the attack group is triggered. Allowed values are:
-	// - **alert**. Record information about the request.
-	// - **deny**. Block the request,
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the attack group is triggered
 	AttackGroupAction *string `pulumi:"attackGroupAction"`
-	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+	// JSON-formatted condition and exception information for the attack group
 	ConditionException *string `pulumi:"conditionException"`
-	// . Unique identifier of the security configuration associated with the attack group being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the attack group being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 }
 
 type AppSecAttackGroupState struct {
-	// . Unique name of the attack group being modified.
+	// Unique name of the attack group to be modified
 	AttackGroup pulumi.StringPtrInput
-	// . Action taken any time the attack group is triggered. Allowed values are:
-	// - **alert**. Record information about the request.
-	// - **deny**. Block the request,
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the attack group is triggered
 	AttackGroupAction pulumi.StringPtrInput
-	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+	// JSON-formatted condition and exception information for the attack group
 	ConditionException pulumi.StringPtrInput
-	// . Unique identifier of the security configuration associated with the attack group being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Unique identifier of the security policy associated with the attack group being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
 }
 
@@ -163,37 +97,29 @@ func (AppSecAttackGroupState) ElementType() reflect.Type {
 }
 
 type appSecAttackGroupArgs struct {
-	// . Unique name of the attack group being modified.
+	// Unique name of the attack group to be modified
 	AttackGroup string `pulumi:"attackGroup"`
-	// . Action taken any time the attack group is triggered. Allowed values are:
-	// - **alert**. Record information about the request.
-	// - **deny**. Block the request,
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the attack group is triggered
 	AttackGroupAction string `pulumi:"attackGroupAction"`
-	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+	// JSON-formatted condition and exception information for the attack group
 	ConditionException *string `pulumi:"conditionException"`
-	// . Unique identifier of the security configuration associated with the attack group being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the attack group being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
 // The set of arguments for constructing a AppSecAttackGroup resource.
 type AppSecAttackGroupArgs struct {
-	// . Unique name of the attack group being modified.
+	// Unique name of the attack group to be modified
 	AttackGroup pulumi.StringInput
-	// . Action taken any time the attack group is triggered. Allowed values are:
-	// - **alert**. Record information about the request.
-	// - **deny**. Block the request,
-	// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-	// - **none**. Take no action.
+	// Action to be taken when the attack group is triggered
 	AttackGroupAction pulumi.StringInput
-	// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+	// JSON-formatted condition and exception information for the attack group
 	ConditionException pulumi.StringPtrInput
-	// . Unique identifier of the security configuration associated with the attack group being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Unique identifier of the security policy associated with the attack group being modified.
+	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringInput
 }
 
@@ -284,31 +210,27 @@ func (o AppSecAttackGroupOutput) ToAppSecAttackGroupOutputWithContext(ctx contex
 	return o
 }
 
-// . Unique name of the attack group being modified.
+// Unique name of the attack group to be modified
 func (o AppSecAttackGroupOutput) AttackGroup() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecAttackGroup) pulumi.StringOutput { return v.AttackGroup }).(pulumi.StringOutput)
 }
 
-// . Action taken any time the attack group is triggered. Allowed values are:
-// - **alert**. Record information about the request.
-// - **deny**. Block the request,
-// - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-// - **none**. Take no action.
+// Action to be taken when the attack group is triggered
 func (o AppSecAttackGroupOutput) AttackGroupAction() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecAttackGroup) pulumi.StringOutput { return v.AttackGroupAction }).(pulumi.StringOutput)
 }
 
-// . Path to a JSON file containing the conditions and exceptions to be assigned to the attack group.
+// JSON-formatted condition and exception information for the attack group
 func (o AppSecAttackGroupOutput) ConditionException() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppSecAttackGroup) pulumi.StringPtrOutput { return v.ConditionException }).(pulumi.StringPtrOutput)
 }
 
-// . Unique identifier of the security configuration associated with the attack group being modified.
+// Unique identifier of the security configuration
 func (o AppSecAttackGroupOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecAttackGroup) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Unique identifier of the security policy associated with the attack group being modified.
+// Unique identifier of the security policy
 func (o AppSecAttackGroupOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecAttackGroup) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }

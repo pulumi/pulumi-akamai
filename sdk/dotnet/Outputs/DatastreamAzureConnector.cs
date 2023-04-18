@@ -13,30 +13,12 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class DatastreamAzureConnector
     {
-        /// <summary>
-        /// **Secret**. The access key identifier that you use to authenticate requests to your Oracle Cloud account. See [Managing user credentials in OCS](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm).
-        /// </summary>
         public readonly string AccessKey;
-        /// <summary>
-        /// Specifies the Azure Storage account name.
-        /// </summary>
         public readonly string AccountName;
-        /// <summary>
-        /// Enables GZIP compression for a log file sent to a destination. If unspecified, this defaults to `true`.
-        /// </summary>
         public readonly bool? CompressLogs;
         public readonly int? ConnectorId;
-        /// <summary>
-        /// The name of the connector.
-        /// </summary>
         public readonly string ConnectorName;
-        /// <summary>
-        /// Specifies the Azure Storage container name.
-        /// </summary>
         public readonly string ContainerName;
-        /// <summary>
-        /// The path to the folder within your Oracle Cloud Storage bucket where you want to store your logs.
-        /// </summary>
         public readonly string Path;
 
         [OutputConstructor]

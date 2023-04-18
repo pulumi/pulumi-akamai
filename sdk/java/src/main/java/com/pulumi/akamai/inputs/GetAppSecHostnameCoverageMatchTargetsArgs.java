@@ -14,32 +14,16 @@ public final class GetAppSecHostnameCoverageMatchTargetsArgs extends com.pulumi.
 
     public static final GetAppSecHostnameCoverageMatchTargetsArgs Empty = new GetAppSecHostnameCoverageMatchTargetsArgs();
 
-    /**
-     * . (Required). Unique identifier of the security configuration associated with the hostname.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . (Required). Unique identifier of the security configuration associated with the hostname.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
-     * 
-     */
     @Import(name="hostname", required=true)
     private Output<String> hostname;
 
-    /**
-     * @return . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
-     * 
-     */
     public Output<String> hostname() {
         return this.hostname;
     }
@@ -69,44 +53,20 @@ public final class GetAppSecHostnameCoverageMatchTargetsArgs extends com.pulumi.
             $ = new GetAppSecHostnameCoverageMatchTargetsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . (Required). Unique identifier of the security configuration associated with the hostname.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . (Required). Unique identifier of the security configuration associated with the hostname.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param hostname . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
-         * 
-         * @return builder
-         * 
-         */
         public Builder hostname(Output<String> hostname) {
             $.hostname = hostname;
             return this;
         }
 
-        /**
-         * @param hostname . Name of the host you want to return information for. You can only return information for a single host and hostname at a time.
-         * 
-         * @return builder
-         * 
-         */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
         }

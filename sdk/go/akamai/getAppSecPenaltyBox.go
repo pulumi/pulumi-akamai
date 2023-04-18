@@ -10,63 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy
-//
-// Returns penalty box settings for the specified security policy.
-// When the penalty box is enabled for a policy, clients that trigger a WAF Deny action are placed in the “penalty box”.
-// There, the action you select for penalty box (either Alert or Deny ) continues to apply to any requests from that client for the next 10 minutes.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/penalty-box](https://techdocs.akamai.com/application-security/reference/get-policy-penalty-box)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			penaltyBox, err := akamai.LookupAppSecPenaltyBox(ctx, &akamai.LookupAppSecPenaltyBoxArgs{
-//				ConfigId:         configuration.ConfigId,
-//				SecurityPolicyId: "gms1_134637",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("penaltyBoxAction", penaltyBox.Action)
-//			ctx.Export("penaltyBoxEnabled", penaltyBox.Enabled)
-//			ctx.Export("penaltyBoxText", penaltyBox.OutputText)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `action`. Action taken any time the penalty box is triggered. Valid values are:
-//   - **alert**. Record the event.
-//   - **deny**. The request is blocked.
-//   - **deny_custom_{custom_deny_id}**. The action defined by the custom deny is taken.
-//   - **none**. Take no action.
-//
-// - `enabled`. If **true**, penalty box protection is enabled. If **false**, penalty box protection is disabled.
-// - `outputText`. Tabular report of penalty box protection settings.
 func LookupAppSecPenaltyBox(ctx *pulumi.Context, args *LookupAppSecPenaltyBoxArgs, opts ...pulumi.InvokeOption) (*LookupAppSecPenaltyBoxResult, error) {
 	var rv LookupAppSecPenaltyBoxResult
 	err := ctx.Invoke("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", args, &rv, opts...)
@@ -78,9 +21,7 @@ func LookupAppSecPenaltyBox(ctx *pulumi.Context, args *LookupAppSecPenaltyBoxArg
 
 // A collection of arguments for invoking getAppSecPenaltyBox.
 type LookupAppSecPenaltyBoxArgs struct {
-	// . Unique identifier of the security configuration associated with the penalty box settings.
-	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the penalty box settings.
+	ConfigId         int    `pulumi:"configId"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
 }
 
@@ -110,9 +51,7 @@ func LookupAppSecPenaltyBoxOutput(ctx *pulumi.Context, args LookupAppSecPenaltyB
 
 // A collection of arguments for invoking getAppSecPenaltyBox.
 type LookupAppSecPenaltyBoxOutputArgs struct {
-	// . Unique identifier of the security configuration associated with the penalty box settings.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Unique identifier of the security policy associated with the penalty box settings.
+	ConfigId         pulumi.IntInput    `pulumi:"configId"`
 	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
 }
 

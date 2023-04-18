@@ -17,14 +17,14 @@ public final class AppSecVersionNodesState extends com.pulumi.resources.Resource
     public static final AppSecVersionNodesState Empty = new AppSecVersionNodesState();
 
     /**
-     * . Unique identifier of the security configuration whose version notes are being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration whose version notes are being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -47,14 +47,14 @@ public final class AppSecVersionNodesState extends com.pulumi.resources.Resource
     }
 
     /**
-     * . Brief description of the security configuration version.
+     * Brief description of the security configuration version
      * 
      */
     @Import(name="versionNotes")
     private @Nullable Output<String> versionNotes;
 
     /**
-     * @return . Brief description of the security configuration version.
+     * @return Brief description of the security configuration version
      * 
      */
     public Optional<Output<String>> versionNotes() {
@@ -88,7 +88,7 @@ public final class AppSecVersionNodesState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration whose version notes are being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class AppSecVersionNodesState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration whose version notes are being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class AppSecVersionNodesState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param versionNotes . Brief description of the security configuration version.
+         * @param versionNotes Brief description of the security configuration version
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AppSecVersionNodesState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param versionNotes . Brief description of the security configuration version.
+         * @param versionNotes Brief description of the security configuration version
          * 
          * @return builder
          * 

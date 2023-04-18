@@ -11,72 +11,20 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration
-//
-// Creates a new security policy. The resource enables you to:
-//
-// - Create a new, “blank” security policy.
-// - Create a new policy preconfigured with the default security policy settings.
-// - Clone an existing security policy.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies](https://techdocs.akamai.com/application-security/reference/post-policy)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			securityPolicyCreateAppSecSecurityPolicy, err := akamai.NewAppSecSecurityPolicy(ctx, "securityPolicyCreateAppSecSecurityPolicy", &akamai.AppSecSecurityPolicyArgs{
-//				ConfigId:             *pulumi.Int(configuration.ConfigId),
-//				DefaultSettings:      pulumi.Bool(true),
-//				SecurityPolicyName:   pulumi.String("Documentation Policy"),
-//				SecurityPolicyPrefix: pulumi.String("gms1"),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("securityPolicyCreate", securityPolicyCreateAppSecSecurityPolicy.SecurityPolicyId)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `securityPolicyId`. ID of the newly-created security policy.
 type AppSecSecurityPolicy struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configuration to be associated with the new security policy.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Unique identifier of the existing security policy that the new policy will be cloned from.
+	// Unique identifier of the existing security policy being cloned
 	CreateFromSecurityPolicyId pulumi.StringPtrOutput `pulumi:"createFromSecurityPolicyId"`
-	// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+	// Whether to assign default settings to the new security policy
 	DefaultSettings pulumi.BoolPtrOutput `pulumi:"defaultSettings"`
 	// Unique identifier of the new security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	// . Name of the new security policy.
+	// Name of the new security policy
 	SecurityPolicyName pulumi.StringOutput `pulumi:"securityPolicyName"`
-	// . Four-character alphanumeric string prefix used in creating the security policy ID.
+	// Four-character alphanumeric string prefix used in creating the security policy ID
 	SecurityPolicyPrefix pulumi.StringOutput `pulumi:"securityPolicyPrefix"`
 }
 
@@ -118,32 +66,32 @@ func GetAppSecSecurityPolicy(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecSecurityPolicy resources.
 type appSecSecurityPolicyState struct {
-	// . Unique identifier of the security configuration to be associated with the new security policy.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Unique identifier of the existing security policy that the new policy will be cloned from.
+	// Unique identifier of the existing security policy being cloned
 	CreateFromSecurityPolicyId *string `pulumi:"createFromSecurityPolicyId"`
-	// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+	// Whether to assign default settings to the new security policy
 	DefaultSettings *bool `pulumi:"defaultSettings"`
 	// Unique identifier of the new security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
-	// . Name of the new security policy.
+	// Name of the new security policy
 	SecurityPolicyName *string `pulumi:"securityPolicyName"`
-	// . Four-character alphanumeric string prefix used in creating the security policy ID.
+	// Four-character alphanumeric string prefix used in creating the security policy ID
 	SecurityPolicyPrefix *string `pulumi:"securityPolicyPrefix"`
 }
 
 type AppSecSecurityPolicyState struct {
-	// . Unique identifier of the security configuration to be associated with the new security policy.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Unique identifier of the existing security policy that the new policy will be cloned from.
+	// Unique identifier of the existing security policy being cloned
 	CreateFromSecurityPolicyId pulumi.StringPtrInput
-	// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+	// Whether to assign default settings to the new security policy
 	DefaultSettings pulumi.BoolPtrInput
 	// Unique identifier of the new security policy
 	SecurityPolicyId pulumi.StringPtrInput
-	// . Name of the new security policy.
+	// Name of the new security policy
 	SecurityPolicyName pulumi.StringPtrInput
-	// . Four-character alphanumeric string prefix used in creating the security policy ID.
+	// Four-character alphanumeric string prefix used in creating the security policy ID
 	SecurityPolicyPrefix pulumi.StringPtrInput
 }
 
@@ -152,29 +100,29 @@ func (AppSecSecurityPolicyState) ElementType() reflect.Type {
 }
 
 type appSecSecurityPolicyArgs struct {
-	// . Unique identifier of the security configuration to be associated with the new security policy.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Unique identifier of the existing security policy that the new policy will be cloned from.
+	// Unique identifier of the existing security policy being cloned
 	CreateFromSecurityPolicyId *string `pulumi:"createFromSecurityPolicyId"`
-	// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+	// Whether to assign default settings to the new security policy
 	DefaultSettings *bool `pulumi:"defaultSettings"`
-	// . Name of the new security policy.
+	// Name of the new security policy
 	SecurityPolicyName string `pulumi:"securityPolicyName"`
-	// . Four-character alphanumeric string prefix used in creating the security policy ID.
+	// Four-character alphanumeric string prefix used in creating the security policy ID
 	SecurityPolicyPrefix string `pulumi:"securityPolicyPrefix"`
 }
 
 // The set of arguments for constructing a AppSecSecurityPolicy resource.
 type AppSecSecurityPolicyArgs struct {
-	// . Unique identifier of the security configuration to be associated with the new security policy.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Unique identifier of the existing security policy that the new policy will be cloned from.
+	// Unique identifier of the existing security policy being cloned
 	CreateFromSecurityPolicyId pulumi.StringPtrInput
-	// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+	// Whether to assign default settings to the new security policy
 	DefaultSettings pulumi.BoolPtrInput
-	// . Name of the new security policy.
+	// Name of the new security policy
 	SecurityPolicyName pulumi.StringInput
-	// . Four-character alphanumeric string prefix used in creating the security policy ID.
+	// Four-character alphanumeric string prefix used in creating the security policy ID
 	SecurityPolicyPrefix pulumi.StringInput
 }
 
@@ -265,17 +213,17 @@ func (o AppSecSecurityPolicyOutput) ToAppSecSecurityPolicyOutputWithContext(ctx 
 	return o
 }
 
-// . Unique identifier of the security configuration to be associated with the new security policy.
+// Unique identifier of the security configuration
 func (o AppSecSecurityPolicyOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Unique identifier of the existing security policy that the new policy will be cloned from.
+// Unique identifier of the existing security policy being cloned
 func (o AppSecSecurityPolicyOutput) CreateFromSecurityPolicyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.StringPtrOutput { return v.CreateFromSecurityPolicyId }).(pulumi.StringPtrOutput)
 }
 
-// . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+// Whether to assign default settings to the new security policy
 func (o AppSecSecurityPolicyOutput) DefaultSettings() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.BoolPtrOutput { return v.DefaultSettings }).(pulumi.BoolPtrOutput)
 }
@@ -285,12 +233,12 @@ func (o AppSecSecurityPolicyOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
-// . Name of the new security policy.
+// Name of the new security policy
 func (o AppSecSecurityPolicyOutput) SecurityPolicyName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.StringOutput { return v.SecurityPolicyName }).(pulumi.StringOutput)
 }
 
-// . Four-character alphanumeric string prefix used in creating the security policy ID.
+// Four-character alphanumeric string prefix used in creating the security policy ID
 func (o AppSecSecurityPolicyOutput) SecurityPolicyPrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecSecurityPolicy) pulumi.StringOutput { return v.SecurityPolicyPrefix }).(pulumi.StringOutput)
 }

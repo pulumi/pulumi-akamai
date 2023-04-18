@@ -4,28 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use `akamai.getIamSupportedLangs` to list all the possible languages Akamai supports. Use the values from this API to set the preferred language for a user. Users should see Control Center in the language you set for them. The default language is English.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const supportedLangs = akamai.getIamSupportedLangs({});
- * export const supportedSupportedLangs = supportedLangs;
- * ```
- * ## Attributes reference
- *
- * These attributes are returned:
- *
- * * `languages` — Languages supported by Akamai
- *
- * [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-languages)
- */
 export function getIamSupportedLangs(opts?: pulumi.InvokeOptions): Promise<GetIamSupportedLangsResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

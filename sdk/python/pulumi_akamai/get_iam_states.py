@@ -65,29 +65,7 @@ class AwaitableGetIamStatesResult(GetIamStatesResult):
 def get_iam_states(country: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamStatesResult:
     """
-    Use _get_iam_states_ to list US states or Canadian provinces. If `country=USA` you may enter a value of `TBD` if you don't know a user's state. Administrators use this data source to set a user's state.
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    states = akamai.get_iam_states(country="canada")
-    pulumi.export("supportedStates", states)
-    ```
-    ## Attributes reference
-
-    These attributes are returned:
-
-    * `states` — A list of states.
-
-    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
-
-
-    :param str country: — (required, string) Specifies USA or Canada.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['country'] = country
@@ -104,28 +82,6 @@ def get_iam_states(country: Optional[str] = None,
 def get_iam_states_output(country: Optional[pulumi.Input[str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamStatesResult]:
     """
-    Use _get_iam_states_ to list US states or Canadian provinces. If `country=USA` you may enter a value of `TBD` if you don't know a user's state. Administrators use this data source to set a user's state.
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    states = akamai.get_iam_states(country="canada")
-    pulumi.export("supportedStates", states)
-    ```
-    ## Attributes reference
-
-    These attributes are returned:
-
-    * `states` — A list of states.
-
-    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
-
-
-    :param str country: — (required, string) Specifies USA or Canada.
+    Use this data source to access information about an existing resource.
     """
     ...

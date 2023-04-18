@@ -54,26 +54,7 @@ class AwaitableGetIamContactTypesResult(GetIamContactTypesResult):
 
 def get_iam_contact_types(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamContactTypesResult:
     """
-    Use _get_iam_contact_types_ to retrieve all the possible `contact_types` that Akamai supports. Use the values from this data source to add or update a user's contact type.
-
-    ## Example Usage
-
-    Basic usage:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    contact_types = akamai.get_iam_contact_types()
-    pulumi.export("supportedContactTypes", contact_types)
-    ```
-    ## Attributes reference
-
-    These attributes are returned:
-
-    * `contact_types` — A list of contact types.
-
-    [API Reference](https://techdocs.akamai.com/iam-api/reference/get-user-contact-types)
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

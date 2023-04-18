@@ -11,149 +11,53 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CpsDvEnrollmentTechContact {
-    /**
-     * @return The address of your organization.
-     * 
-     */
     private String addressLineOne;
-    /**
-     * @return The address of your organization.
-     * 
-     */
     private @Nullable String addressLineTwo;
-    /**
-     * @return The city where your organization resides.
-     * 
-     */
     private String city;
-    /**
-     * @return The code for the country where your organization resides.
-     * 
-     */
     private String countryCode;
-    /**
-     * @return The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
-     * 
-     */
     private String email;
-    /**
-     * @return The first name of the technical contact at Akamai.
-     * 
-     */
     private String firstName;
-    /**
-     * @return The last name of the technical contact at Akamai.
-     * 
-     */
     private String lastName;
-    /**
-     * @return Your organization information.
-     * 
-     */
     private String organization;
-    /**
-     * @return The phone number of the administrator who you want to use as a contact at your company.
-     * 
-     */
     private String phone;
-    /**
-     * @return The postal code of your organization.
-     * 
-     */
     private String postalCode;
-    /**
-     * @return The region of your organization, typically a state or province.
-     * 
-     */
     private String region;
-    /**
-     * @return The title of the technical contact at Akamai.
-     * 
-     */
     private @Nullable String title;
 
     private CpsDvEnrollmentTechContact() {}
-    /**
-     * @return The address of your organization.
-     * 
-     */
     public String addressLineOne() {
         return this.addressLineOne;
     }
-    /**
-     * @return The address of your organization.
-     * 
-     */
     public Optional<String> addressLineTwo() {
         return Optional.ofNullable(this.addressLineTwo);
     }
-    /**
-     * @return The city where your organization resides.
-     * 
-     */
     public String city() {
         return this.city;
     }
-    /**
-     * @return The code for the country where your organization resides.
-     * 
-     */
     public String countryCode() {
         return this.countryCode;
     }
-    /**
-     * @return The email address of the technical contact at Akamai, accessible at the `akamai.com` domain.
-     * 
-     */
     public String email() {
         return this.email;
     }
-    /**
-     * @return The first name of the technical contact at Akamai.
-     * 
-     */
     public String firstName() {
         return this.firstName;
     }
-    /**
-     * @return The last name of the technical contact at Akamai.
-     * 
-     */
     public String lastName() {
         return this.lastName;
     }
-    /**
-     * @return Your organization information.
-     * 
-     */
     public String organization() {
         return this.organization;
     }
-    /**
-     * @return The phone number of the administrator who you want to use as a contact at your company.
-     * 
-     */
     public String phone() {
         return this.phone;
     }
-    /**
-     * @return The postal code of your organization.
-     * 
-     */
     public String postalCode() {
         return this.postalCode;
     }
-    /**
-     * @return The region of your organization, typically a state or province.
-     * 
-     */
     public String region() {
         return this.region;
     }
-    /**
-     * @return The title of the technical contact at Akamai.
-     * 
-     */
     public Optional<String> title() {
         return Optional.ofNullable(this.title);
     }

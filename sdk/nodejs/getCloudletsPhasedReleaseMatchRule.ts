@@ -6,18 +6,6 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-/**
- * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
- *
- * Use the `akamai.getCloudletsPhasedReleaseMatchRule` data source to build a match rule JSON object for the Phased Release Cloudlet.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `type` - The type of Cloudlet the rule is for.
- * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
- */
 export function getCloudletsPhasedReleaseMatchRule(args?: GetCloudletsPhasedReleaseMatchRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudletsPhasedReleaseMatchRuleResult> {
     args = args || {};
 
@@ -31,9 +19,6 @@ export function getCloudletsPhasedReleaseMatchRule(args?: GetCloudletsPhasedRele
  * A collection of arguments for invoking getCloudletsPhasedReleaseMatchRule.
  */
 export interface GetCloudletsPhasedReleaseMatchRuleArgs {
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     */
     matchRules?: inputs.GetCloudletsPhasedReleaseMatchRuleMatchRule[];
 }
 
@@ -48,18 +33,6 @@ export interface GetCloudletsPhasedReleaseMatchRuleResult {
     readonly json: string;
     readonly matchRules?: outputs.GetCloudletsPhasedReleaseMatchRuleMatchRule[];
 }
-/**
- * Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
- *
- * Use the `akamai.getCloudletsPhasedReleaseMatchRule` data source to build a match rule JSON object for the Phased Release Cloudlet.
- *
- * ## Attributes reference
- *
- * This data source returns these attributes:
- *
- * * `type` - The type of Cloudlet the rule is for.
- * * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
- */
 export function getCloudletsPhasedReleaseMatchRuleOutput(args?: GetCloudletsPhasedReleaseMatchRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudletsPhasedReleaseMatchRuleResult> {
     return pulumi.output(args).apply((a: any) => getCloudletsPhasedReleaseMatchRule(a, opts))
 }
@@ -68,8 +41,5 @@ export function getCloudletsPhasedReleaseMatchRuleOutput(args?: GetCloudletsPhas
  * A collection of arguments for invoking getCloudletsPhasedReleaseMatchRule.
  */
 export interface GetCloudletsPhasedReleaseMatchRuleOutputArgs {
-    /**
-     * (Optional) A list of Cloudlet-specific match rules for a policy.
-     */
     matchRules?: pulumi.Input<pulumi.Input<inputs.GetCloudletsPhasedReleaseMatchRuleMatchRuleArgs>[]>;
 }

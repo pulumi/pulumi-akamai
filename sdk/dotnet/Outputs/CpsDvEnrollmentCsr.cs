@@ -13,29 +13,11 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class CpsDvEnrollmentCsr
     {
-        /// <summary>
-        /// The city where your organization resides.
-        /// </summary>
         public readonly string City;
-        /// <summary>
-        /// The code for the country where your organization resides.
-        /// </summary>
         public readonly string CountryCode;
-        /// <summary>
-        /// Your organization information.
-        /// </summary>
         public readonly string Organization;
-        /// <summary>
-        /// Your organizational unit.
-        /// </summary>
         public readonly string OrganizationalUnit;
-        /// <summary>
-        /// The preferred trust chain will be included by CPS with the leaf certificate in the TLS handshake. If the field does not have a value, whichever trust chain Akamai chooses will be used by default.
-        /// </summary>
         public readonly string? PreferredTrustChain;
-        /// <summary>
-        /// Your state or province.
-        /// </summary>
         public readonly string State;
 
         [OutputConstructor]

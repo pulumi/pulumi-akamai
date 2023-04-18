@@ -4,26 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * Use the `akamai.IamGroup` resource to list details about groups. Groups are organizational containers for the objects you use.  Groups can contain other groups, primary objects like properties, and secondary objects like edge hostnames or content provider (CP) codes.
- *
- * ## Basic usage
- *
- * This example returns the policy details based on the policy ID and optionally, a version:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const example = new akamai.IamGroup("example", {parentGroupId: 12345});
- * ```
- *
- * ## Attributes reference
- *
- * This resource returns this attribute:
- *
- * * `subGroups` - Sub-groups that are related to this group. Each identifier must be an integer.
- */
 export class IamGroup extends pulumi.CustomResource {
     /**
      * Get an existing IamGroup resource's state with the given name, ID, and optional extra
@@ -53,11 +33,11 @@ export class IamGroup extends pulumi.CustomResource {
     }
 
     /**
-     * Human readable name for a group.
+     * Human readable name for a group
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * A unique identifier for the parent group. Each identifier must be an integer.
+     * Unique identifier for the parent group
      */
     public readonly parentGroupId!: pulumi.Output<number>;
     /**
@@ -100,11 +80,11 @@ export class IamGroup extends pulumi.CustomResource {
  */
 export interface IamGroupState {
     /**
-     * Human readable name for a group.
+     * Human readable name for a group
      */
     name?: pulumi.Input<string>;
     /**
-     * A unique identifier for the parent group. Each identifier must be an integer.
+     * Unique identifier for the parent group
      */
     parentGroupId?: pulumi.Input<number>;
     /**
@@ -118,11 +98,11 @@ export interface IamGroupState {
  */
 export interface IamGroupArgs {
     /**
-     * Human readable name for a group.
+     * Human readable name for a group
      */
     name?: pulumi.Input<string>;
     /**
-     * A unique identifier for the parent group. Each identifier must be an integer.
+     * Unique identifier for the parent group
      */
     parentGroupId: pulumi.Input<number>;
 }

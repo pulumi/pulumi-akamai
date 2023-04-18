@@ -74,30 +74,7 @@ class AwaitableGetCpsCsrResult(GetCpsCsrResult):
 def get_cps_csr(enrollment_id: Optional[int] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpsCsrResult:
     """
-    When setting up a third-party enrollment, use the _get_cps_csr_ data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
-
-    If you're using dual-stacked certificates, you'll see data for both ECDSA and RSA keys.
-
-    ## Basic usage
-
-    This example shows how to return CSR information for enrollment ID 12345:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_cps_csr(enrollment_id=12345)
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-      * `csr_rsa` - Returns CSR information for a certificate that uses the RSA algorithm.
-      * `csr_ecdsa` - Returns CSR information for a certificate that uses the ECDSA algorithm.
-
-
-    :param int enrollment_id: Unique identifier of the enrollment.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['enrollmentId'] = enrollment_id
@@ -115,29 +92,6 @@ def get_cps_csr(enrollment_id: Optional[int] = None,
 def get_cps_csr_output(enrollment_id: Optional[pulumi.Input[int]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpsCsrResult]:
     """
-    When setting up a third-party enrollment, use the _get_cps_csr_ data source to retrieve the Certificate Signing Request (CSR) for that enrollment. When you create an enrollment in CPS, you also generate a PEM-formatted CSR. CPS encodes the CSR with a private key using either the RSA or the ECDSA algorithm. The CSR contains all the information the certificate authority (CA) needs to issue your certificate.
-
-    If you're using dual-stacked certificates, you'll see data for both ECDSA and RSA keys.
-
-    ## Basic usage
-
-    This example shows how to return CSR information for enrollment ID 12345:
-
-    ```python
-    import pulumi
-    import pulumi_akamai as akamai
-
-    example = akamai.get_cps_csr(enrollment_id=12345)
-    ```
-
-    ## Attributes reference
-
-    This data source returns these attributes:
-
-      * `csr_rsa` - Returns CSR information for a certificate that uses the RSA algorithm.
-      * `csr_ecdsa` - Returns CSR information for a certificate that uses the ECDSA algorithm.
-
-
-    :param int enrollment_id: Unique identifier of the enrollment.
+    Use this data source to access information about an existing resource.
     """
     ...

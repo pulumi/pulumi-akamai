@@ -17,14 +17,14 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
     public static final AppSecRuleArgs Empty = new AppSecRuleArgs();
 
     /**
-     * . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+     * JSON-formatted condition and exception information for the rule
      * 
      */
     @Import(name="conditionException")
     private @Nullable Output<String> conditionException;
 
     /**
-     * @return . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+     * @return JSON-formatted condition and exception information for the rule
      * 
      */
     public Optional<Output<String>> conditionException() {
@@ -32,14 +32,14 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Output<Integer> configId() {
@@ -47,22 +47,14 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action. or `none` to take no action.
+     * Action to be taken when the rule is triggered
      * 
      */
     @Import(name="ruleAction")
     private @Nullable Output<String> ruleAction;
 
     /**
-     * @return Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action. or `none` to take no action.
+     * @return Action to be taken when the rule is triggered
      * 
      */
     public Optional<Output<String>> ruleAction() {
@@ -70,14 +62,14 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * . Unique identifier of the rule being modified.
+     * Unique identifier of the rule
      * 
      */
     @Import(name="ruleId", required=true)
     private Output<Integer> ruleId;
 
     /**
-     * @return . Unique identifier of the rule being modified.
+     * @return Unique identifier of the rule
      * 
      */
     public Output<Integer> ruleId() {
@@ -85,14 +77,14 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+     * @return Unique identifier of the security policy
      * 
      */
     public Output<String> securityPolicyId() {
@@ -128,7 +120,7 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param conditionException . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+         * @param conditionException JSON-formatted condition and exception information for the rule
          * 
          * @return builder
          * 
@@ -139,7 +131,7 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param conditionException . Path to a JSON file containing a description of the conditions and exceptions to be associated with a rule.
+         * @param conditionException JSON-formatted condition and exception information for the rule
          * 
          * @return builder
          * 
@@ -149,7 +141,7 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -160,7 +152,7 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the Kona Rule Set rule being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -170,11 +162,7 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleAction Allowed values are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action. or `none` to take no action.
+         * @param ruleAction Action to be taken when the rule is triggered
          * 
          * @return builder
          * 
@@ -185,11 +173,7 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleAction Allowed values are:
-         * - **alert**. Record the event.
-         * - **deny**. Block the request.
-         * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-         * - **none**. Take no action. or `none` to take no action.
+         * @param ruleAction Action to be taken when the rule is triggered
          * 
          * @return builder
          * 
@@ -199,7 +183,7 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleId . Unique identifier of the rule being modified.
+         * @param ruleId Unique identifier of the rule
          * 
          * @return builder
          * 
@@ -210,7 +194,7 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleId . Unique identifier of the rule being modified.
+         * @param ruleId Unique identifier of the rule
          * 
          * @return builder
          * 
@@ -220,7 +204,7 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -231,7 +215,7 @@ public final class AppSecRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the Kona Rule Set rule being modified.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

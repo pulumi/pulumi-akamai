@@ -15,47 +15,23 @@ public final class GetAppSecApiRequestConstraintsPlainArgs extends com.pulumi.re
 
     public static final GetAppSecApiRequestConstraintsPlainArgs Empty = new GetAppSecApiRequestConstraintsPlainArgs();
 
-    /**
-     * . Unique identifier of the API endpoint you want to return constraint information for.
-     * 
-     */
     @Import(name="apiId")
     private @Nullable Integer apiId;
 
-    /**
-     * @return . Unique identifier of the API endpoint you want to return constraint information for.
-     * 
-     */
     public Optional<Integer> apiId() {
         return Optional.ofNullable(this.apiId);
     }
 
-    /**
-     * . Unique identifier of the security configuration associated with the API constraints.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the API constraints.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the API constraints.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the API constraints.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -86,34 +62,16 @@ public final class GetAppSecApiRequestConstraintsPlainArgs extends com.pulumi.re
             $ = new GetAppSecApiRequestConstraintsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param apiId . Unique identifier of the API endpoint you want to return constraint information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder apiId(@Nullable Integer apiId) {
             $.apiId = apiId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the API constraints.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the API constraints.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

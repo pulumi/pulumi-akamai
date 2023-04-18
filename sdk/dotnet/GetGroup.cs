@@ -11,41 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetGroup
     {
-        /// <summary>
-        /// Use the `akamai.getGroup` data source to get a group by name.
-        /// 
-        /// Each account features a hierarchy of groups, which control access to your
-        /// Akamai configurations and help consolidate reporting functions, typically
-        /// mapping to an organizational hierarchy. Using either Control Center or the
-        /// [Identity Management: User Administration API](https://techdocs.akamai.com/iam-api/reference/api),
-        /// account administrators can assign properties to specific groups, each with
-        /// its own set of users and accompanying roles.
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns this attribute:
-        /// 
-        /// * `id` - The group's unique ID, including the `grp_` prefix.
-        /// </summary>
         public static Task<GetGroupResult> InvokeAsync(GetGroupArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetGroupResult>("akamai:index/getGroup:getGroup", args ?? new GetGroupArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getGroup` data source to get a group by name.
-        /// 
-        /// Each account features a hierarchy of groups, which control access to your
-        /// Akamai configurations and help consolidate reporting functions, typically
-        /// mapping to an organizational hierarchy. Using either Control Center or the
-        /// [Identity Management: User Administration API](https://techdocs.akamai.com/iam-api/reference/api),
-        /// account administrators can assign properties to specific groups, each with
-        /// its own set of users and accompanying roles.
-        /// 
-        /// ## Attributes reference
-        /// 
-        /// This data source returns this attribute:
-        /// 
-        /// * `id` - The group's unique ID, including the `grp_` prefix.
-        /// </summary>
         public static Output<GetGroupResult> Invoke(GetGroupInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGroupResult>("akamai:index/getGroup:getGroup", args ?? new GetGroupInvokeArgs(), options.WithDefaults());
     }
@@ -53,27 +21,15 @@ namespace Pulumi.Akamai
 
     public sealed class GetGroupArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Replaced by `contract_id`. Maintained for legacy purposes.
-        /// </summary>
         [Input("contract")]
         public string? Contract { get; set; }
 
-        /// <summary>
-        /// (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// </summary>
         [Input("contractId")]
         public string? ContractId { get; set; }
 
-        /// <summary>
-        /// The group name.
-        /// </summary>
         [Input("groupName")]
         public string? GroupName { get; set; }
 
-        /// <summary>
-        /// Replaced by `group_name`. Maintained for legacy purposes.
-        /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
@@ -85,27 +41,15 @@ namespace Pulumi.Akamai
 
     public sealed class GetGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// Replaced by `contract_id`. Maintained for legacy purposes.
-        /// </summary>
         [Input("contract")]
         public Input<string>? Contract { get; set; }
 
-        /// <summary>
-        /// (Required) A contract's unique ID, including the `ctr_` prefix.
-        /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
 
-        /// <summary>
-        /// The group name.
-        /// </summary>
         [Input("groupName")]
         public Input<string>? GroupName { get; set; }
 
-        /// <summary>
-        /// Replaced by `group_name`. Maintained for legacy purposes.
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

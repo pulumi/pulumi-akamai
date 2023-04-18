@@ -13,13 +13,7 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GtmCidrmapDefaultDatacenter
     {
-        /// <summary>
-        /// A unique identifier for an existing data center in the domain.
-        /// </summary>
         public readonly int DatacenterId;
-        /// <summary>
-        /// A descriptive label for the CIDR zone group, up to 256 characters.
-        /// </summary>
         public readonly string? Nickname;
 
         [OutputConstructor]

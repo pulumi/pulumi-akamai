@@ -17,14 +17,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     public static final CloudletsPolicyState Empty = new CloudletsPolicyState();
 
     /**
-     * The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+     * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
      * 
      */
     @Import(name="cloudletCode")
     private @Nullable Output<String> cloudletCode;
 
     /**
-     * @return The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+     * @return Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
      * 
      */
     public Optional<Output<String>> cloudletCode() {
@@ -32,14 +32,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+     * An integer that corresponds to a Cloudlets policy type (0 or 9)
      * 
      */
     @Import(name="cloudletId")
     private @Nullable Output<Integer> cloudletId;
 
     /**
-     * @return A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+     * @return An integer that corresponds to a Cloudlets policy type (0 or 9)
      * 
      */
     public Optional<Output<Integer>> cloudletId() {
@@ -47,14 +47,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The description of this specific policy.
+     * The description of this specific policy
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The description of this specific policy.
+     * @return The description of this specific policy
      * 
      */
     public Optional<Output<String>> description() {
@@ -62,14 +62,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Defines the group association for the policy. You must have edit privileges for the group.
+     * Defines the group association for the policy. You must have edit privileges for the group
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return Defines the group association for the policy. You must have edit privileges for the group.
+     * @return Defines the group association for the policy. You must have edit privileges for the group
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -77,14 +77,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The version of the Cloudlet-specific `match_rules`.
+     * The version of the Cloudlet specific matchRules
      * 
      */
     @Import(name="matchRuleFormat")
     private @Nullable Output<String> matchRuleFormat;
 
     /**
-     * @return The version of the Cloudlet-specific `match_rules`.
+     * @return The version of the Cloudlet specific matchRules
      * 
      */
     public Optional<Output<String>> matchRuleFormat() {
@@ -107,14 +107,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The unique name of the policy.
+     * The name of the policy. The name must be unique
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The unique name of the policy.
+     * @return The name of the policy. The name must be unique
      * 
      */
     public Optional<Output<String>> name() {
@@ -122,14 +122,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The version number of the policy.
+     * The version number of the policy
      * 
      */
     @Import(name="version")
     private @Nullable Output<Integer> version;
 
     /**
-     * @return The version number of the policy.
+     * @return The version number of the policy
      * 
      */
     public Optional<Output<Integer>> version() {
@@ -137,14 +137,14 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * A JSON-encoded list of warnings.
+     * A JSON encoded list of warnings
      * 
      */
     @Import(name="warnings")
     private @Nullable Output<String> warnings;
 
     /**
-     * @return A JSON-encoded list of warnings.
+     * @return A JSON encoded list of warnings
      * 
      */
     public Optional<Output<String>> warnings() {
@@ -184,7 +184,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param cloudletCode The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+         * @param cloudletCode Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param cloudletCode The two- or three- character code for the type of Cloudlet. Enter `ALB` for Application Load Balancer, `AP` for API Prioritization, `AS` for Audience Segmentation, `CD` for Phased Release, `ER` for Edge Redirector, `FR` for Forward Rewrite, `IG` for Request Control, `IV` for Input Validation, or `VP` for Visitor Prioritization.
+         * @param cloudletCode Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param cloudletId A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+         * @param cloudletId An integer that corresponds to a Cloudlets policy type (0 or 9)
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param cloudletId A unique identifier that corresponds to a Cloudlets policy type. Enter `0` for Edge Redirector, `1` for Visitor Prioritization, `3` for Forward Rewrite, `4` for Request Control, `5` for API Prioritization, `6` for Audience Segmentation, `7` for Phased Release, `8` for Input Validation, or `9` for Application Load Balancer.
+         * @param cloudletId An integer that corresponds to a Cloudlets policy type (0 or 9)
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description The description of this specific policy.
+         * @param description The description of this specific policy
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description The description of this specific policy.
+         * @param description The description of this specific policy
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param groupId Defines the group association for the policy. You must have edit privileges for the group.
+         * @param groupId Defines the group association for the policy. You must have edit privileges for the group
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param groupId Defines the group association for the policy. You must have edit privileges for the group.
+         * @param groupId Defines the group association for the policy. You must have edit privileges for the group
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param matchRuleFormat The version of the Cloudlet-specific `match_rules`.
+         * @param matchRuleFormat The version of the Cloudlet specific matchRules
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param matchRuleFormat The version of the Cloudlet-specific `match_rules`.
+         * @param matchRuleFormat The version of the Cloudlet specific matchRules
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name The unique name of the policy.
+         * @param name The name of the policy. The name must be unique
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name The unique name of the policy.
+         * @param name The name of the policy. The name must be unique
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param version The version number of the policy.
+         * @param version The version number of the policy
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param version The version number of the policy.
+         * @param version The version number of the policy
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param warnings A JSON-encoded list of warnings.
+         * @param warnings A JSON encoded list of warnings
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class CloudletsPolicyState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param warnings A JSON-encoded list of warnings.
+         * @param warnings A JSON encoded list of warnings
          * 
          * @return builder
          * 

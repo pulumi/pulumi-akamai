@@ -4,34 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * **Scopes**: Evaluation attack group
- *
- * Modifies the action and the conditions and exceptions for an evaluation mode attack group.
- *
- * Note that this resource is only available to organizations running the Adaptive Security Engine (ASE) beta. For more information about ASE, please contact your Akamai representative.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- * import * as fs from "fs";
- *
- * const configuration = akamai.getAppSecConfiguration({
- *     name: "Documentation",
- * });
- * const evalAttackGroup = new akamai.AppSecEvalGroup("evalAttackGroup", {
- *     configId: configuration.then(configuration => configuration.configId),
- *     securityPolicyId: "gms1_134637",
- *     attackGroup: "SQL",
- *     attackGroupAction: "deny",
- *     conditionException: fs.readFileSync(`${path.module}/condition_exception.json`),
- * });
- * ```
- */
 export class AppSecEvalGroup extends pulumi.CustomResource {
     /**
      * Get an existing AppSecEvalGroup resource's state with the given name, ID, and optional extra
@@ -61,27 +33,23 @@ export class AppSecEvalGroup extends pulumi.CustomResource {
     }
 
     /**
-     * . Unique identifier of the evaluation attack group being modified.
+     * Unique identifier of the evaluation attack group being modified
      */
     public readonly attackGroup!: pulumi.Output<string>;
     /**
-     * . Action to be taken any time the attack group is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the attack group is triggered
      */
     public readonly attackGroupAction!: pulumi.Output<string>;
     /**
-     * . Path to a JSON file containing properties and property values for the attack group.
+     * JSON-formatted condition and exception information for the evaluation attack group
      */
     public readonly conditionException!: pulumi.Output<string | undefined>;
     /**
-     * . Unique identifier of the security configuration where evaluation is taking place.
+     * Unique identifier of the security configuration
      */
     public readonly configId!: pulumi.Output<number>;
     /**
-     * . Unique identifier of the security policy associated with the evaluation process.
+     * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
 
@@ -133,27 +101,23 @@ export class AppSecEvalGroup extends pulumi.CustomResource {
  */
 export interface AppSecEvalGroupState {
     /**
-     * . Unique identifier of the evaluation attack group being modified.
+     * Unique identifier of the evaluation attack group being modified
      */
     attackGroup?: pulumi.Input<string>;
     /**
-     * . Action to be taken any time the attack group is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the attack group is triggered
      */
     attackGroupAction?: pulumi.Input<string>;
     /**
-     * . Path to a JSON file containing properties and property values for the attack group.
+     * JSON-formatted condition and exception information for the evaluation attack group
      */
     conditionException?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security configuration where evaluation is taking place.
+     * Unique identifier of the security configuration
      */
     configId?: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy associated with the evaluation process.
+     * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
 }
@@ -163,27 +127,23 @@ export interface AppSecEvalGroupState {
  */
 export interface AppSecEvalGroupArgs {
     /**
-     * . Unique identifier of the evaluation attack group being modified.
+     * Unique identifier of the evaluation attack group being modified
      */
     attackGroup: pulumi.Input<string>;
     /**
-     * . Action to be taken any time the attack group is triggered. Allowed values are:
-     * - **alert**. Record the event.
-     * - **deny**. Block the request.
-     * - **deny_custom_{custom_deny_id}**. Take the action specified by the custom deny.
-     * - **none**. Take no action.
+     * Action to be taken when the attack group is triggered
      */
     attackGroupAction: pulumi.Input<string>;
     /**
-     * . Path to a JSON file containing properties and property values for the attack group.
+     * JSON-formatted condition and exception information for the evaluation attack group
      */
     conditionException?: pulumi.Input<string>;
     /**
-     * . Unique identifier of the security configuration where evaluation is taking place.
+     * Unique identifier of the security configuration
      */
     configId: pulumi.Input<number>;
     /**
-     * . Unique identifier of the security policy associated with the evaluation process.
+     * Unique identifier of the security policy
      */
     securityPolicyId: pulumi.Input<string>;
 }

@@ -10,16 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Every policy version specifies the match rules that govern how the Cloudlet is used. Matches specify conditions that need to be met in the incoming request.
-//
-// Use the `getCloudletsAudienceSegmentationMatchRule` data source to build a match rule JSON object for the Audience Segmentation Cloudlet.
-//
-// ## Attributes reference
-//
-// This data source returns these attributes:
-//
-// * `type` - The type of Cloudlet the rule is for.
-// * `json` - A `matchRules` JSON structure generated from the API schema that defines the rules for this policy.
 func GetCloudletsAudienceSegmentationMatchRule(ctx *pulumi.Context, args *GetCloudletsAudienceSegmentationMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsAudienceSegmentationMatchRuleResult, error) {
 	var rv GetCloudletsAudienceSegmentationMatchRuleResult
 	err := ctx.Invoke("akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule", args, &rv, opts...)
@@ -31,7 +21,6 @@ func GetCloudletsAudienceSegmentationMatchRule(ctx *pulumi.Context, args *GetClo
 
 // A collection of arguments for invoking getCloudletsAudienceSegmentationMatchRule.
 type GetCloudletsAudienceSegmentationMatchRuleArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules []GetCloudletsAudienceSegmentationMatchRuleMatchRule `pulumi:"matchRules"`
 }
 
@@ -58,7 +47,6 @@ func GetCloudletsAudienceSegmentationMatchRuleOutput(ctx *pulumi.Context, args G
 
 // A collection of arguments for invoking getCloudletsAudienceSegmentationMatchRule.
 type GetCloudletsAudienceSegmentationMatchRuleOutputArgs struct {
-	// (Optional) A list of Cloudlet-specific match rules for a policy.
 	MatchRules GetCloudletsAudienceSegmentationMatchRuleMatchRuleArrayInput `pulumi:"matchRules"`
 }
 

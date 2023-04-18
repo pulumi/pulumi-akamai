@@ -10,6 +10,7 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'PropertyActivationComplianceRecordArgs',
     'PropertyActivationRuleErrorArgs',
     'PropertyActivationRuleWarningArgs',
     'PropertyHostnameArgs',
@@ -18,6 +19,82 @@ __all__ = [
     'PropertyRuleErrorArgs',
     'PropertyRuleWarningArgs',
 ]
+
+@pulumi.input_type
+class PropertyActivationComplianceRecordArgs:
+    def __init__(__self__, *,
+                 noncompliance_reason: pulumi.Input[str],
+                 customer_email: Optional[pulumi.Input[str]] = None,
+                 other_noncompliance_reason: Optional[pulumi.Input[str]] = None,
+                 peer_reviewed_by: Optional[pulumi.Input[str]] = None,
+                 ticket_id: Optional[pulumi.Input[str]] = None,
+                 unit_tested: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "noncompliance_reason", noncompliance_reason)
+        if customer_email is not None:
+            pulumi.set(__self__, "customer_email", customer_email)
+        if other_noncompliance_reason is not None:
+            pulumi.set(__self__, "other_noncompliance_reason", other_noncompliance_reason)
+        if peer_reviewed_by is not None:
+            pulumi.set(__self__, "peer_reviewed_by", peer_reviewed_by)
+        if ticket_id is not None:
+            pulumi.set(__self__, "ticket_id", ticket_id)
+        if unit_tested is not None:
+            pulumi.set(__self__, "unit_tested", unit_tested)
+
+    @property
+    @pulumi.getter(name="noncomplianceReason")
+    def noncompliance_reason(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "noncompliance_reason")
+
+    @noncompliance_reason.setter
+    def noncompliance_reason(self, value: pulumi.Input[str]):
+        pulumi.set(self, "noncompliance_reason", value)
+
+    @property
+    @pulumi.getter(name="customerEmail")
+    def customer_email(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "customer_email")
+
+    @customer_email.setter
+    def customer_email(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "customer_email", value)
+
+    @property
+    @pulumi.getter(name="otherNoncomplianceReason")
+    def other_noncompliance_reason(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "other_noncompliance_reason")
+
+    @other_noncompliance_reason.setter
+    def other_noncompliance_reason(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "other_noncompliance_reason", value)
+
+    @property
+    @pulumi.getter(name="peerReviewedBy")
+    def peer_reviewed_by(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "peer_reviewed_by")
+
+    @peer_reviewed_by.setter
+    def peer_reviewed_by(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "peer_reviewed_by", value)
+
+    @property
+    @pulumi.getter(name="ticketId")
+    def ticket_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ticket_id")
+
+    @ticket_id.setter
+    def ticket_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ticket_id", value)
+
+    @property
+    @pulumi.getter(name="unitTested")
+    def unit_tested(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "unit_tested")
+
+    @unit_tested.setter
+    def unit_tested(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "unit_tested", value)
+
 
 @pulumi.input_type
 class PropertyActivationRuleErrorArgs:
@@ -206,11 +283,6 @@ class PropertyHostnameArgs:
                  cert_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameCertStatusArgs']]]] = None,
                  cname_type: Optional[pulumi.Input[str]] = None,
                  edge_hostname_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] cert_provisioning_type: The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-        :param pulumi.Input[str] cname_from: A string containing the original origin's hostname. For example, `"example.org"`.
-        :param pulumi.Input[str] cname_to: A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
-        """
         pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
         pulumi.set(__self__, "cname_from", cname_from)
         pulumi.set(__self__, "cname_to", cname_to)
@@ -224,9 +296,6 @@ class PropertyHostnameArgs:
     @property
     @pulumi.getter(name="certProvisioningType")
     def cert_provisioning_type(self) -> pulumi.Input[str]:
-        """
-        The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-        """
         return pulumi.get(self, "cert_provisioning_type")
 
     @cert_provisioning_type.setter
@@ -236,9 +305,6 @@ class PropertyHostnameArgs:
     @property
     @pulumi.getter(name="cnameFrom")
     def cname_from(self) -> pulumi.Input[str]:
-        """
-        A string containing the original origin's hostname. For example, `"example.org"`.
-        """
         return pulumi.get(self, "cname_from")
 
     @cname_from.setter
@@ -248,9 +314,6 @@ class PropertyHostnameArgs:
     @property
     @pulumi.getter(name="cnameTo")
     def cname_to(self) -> pulumi.Input[str]:
-        """
-        A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
-        """
         return pulumi.get(self, "cname_to")
 
     @cname_to.setter

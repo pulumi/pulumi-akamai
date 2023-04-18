@@ -16,50 +16,6 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-/**
- * The `akamai.EdgeWorker` resource lets you deploy custom code on thousands of edge servers and apply logic that creates powerful web experiences.
- * 
- * ## Example Usage
- * 
- * Basic usage:
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.akamai.EdgeWorker;
- * import com.pulumi.akamai.EdgeWorkerArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var ew = new EdgeWorker(&#34;ew&#34;, EdgeWorkerArgs.builder()        
- *             .groupId(72297)
- *             .resourceTierId(100)
- *             .localBundle(var_.bundle_path())
- *             .build());
- * 
- *     }
- * }
- * ```
- * ## Attributes reference
- * 
- * * `edgeworker_id` - Unique identifier for an EdgeWorker ID.
- * * `local_bundle_hash` - A SHA-256 hash digest of the EdgeWorkers code bundle.
- * * `version` - Unique identifier for a specific EdgeWorker version.
- * * `warnings` - List of validation warnings.
- * 
- */
 @ResourceType(type="akamai:index/edgeWorker:EdgeWorker")
 public class EdgeWorker extends com.pulumi.resources.CustomResource {
     /**
@@ -77,28 +33,28 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
         return this.edgeworkerId;
     }
     /**
-     * (Required) Identifies a group to assign to the EdgeWorker ID.
+     * Defines the group association for the EdgeWorker
      * 
      */
     @Export(name="groupId", type=Integer.class, parameters={})
     private Output<Integer> groupId;
 
     /**
-     * @return (Required) Identifies a group to assign to the EdgeWorker ID.
+     * @return Defines the group association for the EdgeWorker
      * 
      */
     public Output<Integer> groupId() {
         return this.groupId;
     }
     /**
-     * (Optional) The path to the EdgeWorkers code bundle.
+     * The path to the EdgeWorkers tgz code bundle
      * 
      */
     @Export(name="localBundle", type=String.class, parameters={})
     private Output</* @Nullable */ String> localBundle;
 
     /**
-     * @return (Optional) The path to the EdgeWorkers code bundle.
+     * @return The path to the EdgeWorkers tgz code bundle
      * 
      */
     public Output<Optional<String>> localBundle() {
@@ -119,28 +75,28 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
         return this.localBundleHash;
     }
     /**
-     * (Required) The name of the EdgeWorker ID.
+     * The EdgeWorker name
      * 
      */
     @Export(name="name", type=String.class, parameters={})
     private Output<String> name;
 
     /**
-     * @return (Required) The name of the EdgeWorker ID.
+     * @return The EdgeWorker name
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * (Required) Unique identifier of the resource tier.
+     * The unique identifier of a resource tier
      * 
      */
     @Export(name="resourceTierId", type=Integer.class, parameters={})
     private Output<Integer> resourceTierId;
 
     /**
-     * @return (Required) Unique identifier of the resource tier.
+     * @return The unique identifier of a resource tier
      * 
      */
     public Output<Integer> resourceTierId() {

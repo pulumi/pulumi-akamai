@@ -21,11 +21,11 @@ class AppSecSecurityPolicyArgs:
                  default_settings: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a AppSecSecurityPolicy resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration to be associated with the new security policy.
-        :param pulumi.Input[str] security_policy_name: . Name of the new security policy.
-        :param pulumi.Input[str] security_policy_prefix: . Four-character alphanumeric string prefix used in creating the security policy ID.
-        :param pulumi.Input[str] create_from_security_policy_id: . Unique identifier of the existing security policy that the new policy will be cloned from.
-        :param pulumi.Input[bool] default_settings: . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] security_policy_name: Name of the new security policy
+        :param pulumi.Input[str] security_policy_prefix: Four-character alphanumeric string prefix used in creating the security policy ID
+        :param pulumi.Input[str] create_from_security_policy_id: Unique identifier of the existing security policy being cloned
+        :param pulumi.Input[bool] default_settings: Whether to assign default settings to the new security policy
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "security_policy_name", security_policy_name)
@@ -39,7 +39,7 @@ class AppSecSecurityPolicyArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[int]:
         """
-        . Unique identifier of the security configuration to be associated with the new security policy.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -51,7 +51,7 @@ class AppSecSecurityPolicyArgs:
     @pulumi.getter(name="securityPolicyName")
     def security_policy_name(self) -> pulumi.Input[str]:
         """
-        . Name of the new security policy.
+        Name of the new security policy
         """
         return pulumi.get(self, "security_policy_name")
 
@@ -63,7 +63,7 @@ class AppSecSecurityPolicyArgs:
     @pulumi.getter(name="securityPolicyPrefix")
     def security_policy_prefix(self) -> pulumi.Input[str]:
         """
-        . Four-character alphanumeric string prefix used in creating the security policy ID.
+        Four-character alphanumeric string prefix used in creating the security policy ID
         """
         return pulumi.get(self, "security_policy_prefix")
 
@@ -75,7 +75,7 @@ class AppSecSecurityPolicyArgs:
     @pulumi.getter(name="createFromSecurityPolicyId")
     def create_from_security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the existing security policy that the new policy will be cloned from.
+        Unique identifier of the existing security policy being cloned
         """
         return pulumi.get(self, "create_from_security_policy_id")
 
@@ -87,7 +87,7 @@ class AppSecSecurityPolicyArgs:
     @pulumi.getter(name="defaultSettings")
     def default_settings(self) -> Optional[pulumi.Input[bool]]:
         """
-        . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+        Whether to assign default settings to the new security policy
         """
         return pulumi.get(self, "default_settings")
 
@@ -107,12 +107,12 @@ class _AppSecSecurityPolicyState:
                  security_policy_prefix: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AppSecSecurityPolicy resources.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration to be associated with the new security policy.
-        :param pulumi.Input[str] create_from_security_policy_id: . Unique identifier of the existing security policy that the new policy will be cloned from.
-        :param pulumi.Input[bool] default_settings: . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] create_from_security_policy_id: Unique identifier of the existing security policy being cloned
+        :param pulumi.Input[bool] default_settings: Whether to assign default settings to the new security policy
         :param pulumi.Input[str] security_policy_id: Unique identifier of the new security policy
-        :param pulumi.Input[str] security_policy_name: . Name of the new security policy.
-        :param pulumi.Input[str] security_policy_prefix: . Four-character alphanumeric string prefix used in creating the security policy ID.
+        :param pulumi.Input[str] security_policy_name: Name of the new security policy
+        :param pulumi.Input[str] security_policy_prefix: Four-character alphanumeric string prefix used in creating the security policy ID
         """
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
@@ -131,7 +131,7 @@ class _AppSecSecurityPolicyState:
     @pulumi.getter(name="configId")
     def config_id(self) -> Optional[pulumi.Input[int]]:
         """
-        . Unique identifier of the security configuration to be associated with the new security policy.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -143,7 +143,7 @@ class _AppSecSecurityPolicyState:
     @pulumi.getter(name="createFromSecurityPolicyId")
     def create_from_security_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        . Unique identifier of the existing security policy that the new policy will be cloned from.
+        Unique identifier of the existing security policy being cloned
         """
         return pulumi.get(self, "create_from_security_policy_id")
 
@@ -155,7 +155,7 @@ class _AppSecSecurityPolicyState:
     @pulumi.getter(name="defaultSettings")
     def default_settings(self) -> Optional[pulumi.Input[bool]]:
         """
-        . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+        Whether to assign default settings to the new security policy
         """
         return pulumi.get(self, "default_settings")
 
@@ -179,7 +179,7 @@ class _AppSecSecurityPolicyState:
     @pulumi.getter(name="securityPolicyName")
     def security_policy_name(self) -> Optional[pulumi.Input[str]]:
         """
-        . Name of the new security policy.
+        Name of the new security policy
         """
         return pulumi.get(self, "security_policy_name")
 
@@ -191,7 +191,7 @@ class _AppSecSecurityPolicyState:
     @pulumi.getter(name="securityPolicyPrefix")
     def security_policy_prefix(self) -> Optional[pulumi.Input[str]]:
         """
-        . Four-character alphanumeric string prefix used in creating the security policy ID.
+        Four-character alphanumeric string prefix used in creating the security policy ID
         """
         return pulumi.get(self, "security_policy_prefix")
 
@@ -212,45 +212,14 @@ class AppSecSecurityPolicy(pulumi.CustomResource):
                  security_policy_prefix: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        **Scopes**: Security configuration
-
-        Creates a new security policy. The resource enables you to:
-
-        - Create a new, “blank” security policy.
-        - Create a new policy preconfigured with the default security policy settings.
-        - Clone an existing security policy.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies](https://techdocs.akamai.com/application-security/reference/post-policy)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        security_policy_create_app_sec_security_policy = akamai.AppSecSecurityPolicy("securityPolicyCreateAppSecSecurityPolicy",
-            config_id=configuration.config_id,
-            default_settings=True,
-            security_policy_name="Documentation Policy",
-            security_policy_prefix="gms1")
-        pulumi.export("securityPolicyCreate", security_policy_create_app_sec_security_policy.security_policy_id)
-        ```
-        ## Output Options
-
-        The following options can be used to determine the information returned, and how that returned information is formatted:
-
-        - `security_policy_id`. ID of the newly-created security policy.
-
+        Create a AppSecSecurityPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration to be associated with the new security policy.
-        :param pulumi.Input[str] create_from_security_policy_id: . Unique identifier of the existing security policy that the new policy will be cloned from.
-        :param pulumi.Input[bool] default_settings: . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
-        :param pulumi.Input[str] security_policy_name: . Name of the new security policy.
-        :param pulumi.Input[str] security_policy_prefix: . Four-character alphanumeric string prefix used in creating the security policy ID.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] create_from_security_policy_id: Unique identifier of the existing security policy being cloned
+        :param pulumi.Input[bool] default_settings: Whether to assign default settings to the new security policy
+        :param pulumi.Input[str] security_policy_name: Name of the new security policy
+        :param pulumi.Input[str] security_policy_prefix: Four-character alphanumeric string prefix used in creating the security policy ID
         """
         ...
     @overload
@@ -259,38 +228,7 @@ class AppSecSecurityPolicy(pulumi.CustomResource):
                  args: AppSecSecurityPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        **Scopes**: Security configuration
-
-        Creates a new security policy. The resource enables you to:
-
-        - Create a new, “blank” security policy.
-        - Create a new policy preconfigured with the default security policy settings.
-        - Clone an existing security policy.
-
-        **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/security-policies](https://techdocs.akamai.com/application-security/reference/post-policy)
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        configuration = akamai.get_app_sec_configuration(name="Documentation")
-        security_policy_create_app_sec_security_policy = akamai.AppSecSecurityPolicy("securityPolicyCreateAppSecSecurityPolicy",
-            config_id=configuration.config_id,
-            default_settings=True,
-            security_policy_name="Documentation Policy",
-            security_policy_prefix="gms1")
-        pulumi.export("securityPolicyCreate", security_policy_create_app_sec_security_policy.security_policy_id)
-        ```
-        ## Output Options
-
-        The following options can be used to determine the information returned, and how that returned information is formatted:
-
-        - `security_policy_id`. ID of the newly-created security policy.
-
+        Create a AppSecSecurityPolicy resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AppSecSecurityPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -355,12 +293,12 @@ class AppSecSecurityPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] config_id: . Unique identifier of the security configuration to be associated with the new security policy.
-        :param pulumi.Input[str] create_from_security_policy_id: . Unique identifier of the existing security policy that the new policy will be cloned from.
-        :param pulumi.Input[bool] default_settings: . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+        :param pulumi.Input[int] config_id: Unique identifier of the security configuration
+        :param pulumi.Input[str] create_from_security_policy_id: Unique identifier of the existing security policy being cloned
+        :param pulumi.Input[bool] default_settings: Whether to assign default settings to the new security policy
         :param pulumi.Input[str] security_policy_id: Unique identifier of the new security policy
-        :param pulumi.Input[str] security_policy_name: . Name of the new security policy.
-        :param pulumi.Input[str] security_policy_prefix: . Four-character alphanumeric string prefix used in creating the security policy ID.
+        :param pulumi.Input[str] security_policy_name: Name of the new security policy
+        :param pulumi.Input[str] security_policy_prefix: Four-character alphanumeric string prefix used in creating the security policy ID
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -378,7 +316,7 @@ class AppSecSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[int]:
         """
-        . Unique identifier of the security configuration to be associated with the new security policy.
+        Unique identifier of the security configuration
         """
         return pulumi.get(self, "config_id")
 
@@ -386,7 +324,7 @@ class AppSecSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="createFromSecurityPolicyId")
     def create_from_security_policy_id(self) -> pulumi.Output[Optional[str]]:
         """
-        . Unique identifier of the existing security policy that the new policy will be cloned from.
+        Unique identifier of the existing security policy being cloned
         """
         return pulumi.get(self, "create_from_security_policy_id")
 
@@ -394,7 +332,7 @@ class AppSecSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="defaultSettings")
     def default_settings(self) -> pulumi.Output[Optional[bool]]:
         """
-        . Set to **true** to assign default setting values to the new policy; set to **false** to create a “blank” security policy. If not included, the new policy will be created using the default settings.
+        Whether to assign default settings to the new security policy
         """
         return pulumi.get(self, "default_settings")
 
@@ -410,7 +348,7 @@ class AppSecSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyName")
     def security_policy_name(self) -> pulumi.Output[str]:
         """
-        . Name of the new security policy.
+        Name of the new security policy
         """
         return pulumi.get(self, "security_policy_name")
 
@@ -418,7 +356,7 @@ class AppSecSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyPrefix")
     def security_policy_prefix(self) -> pulumi.Output[str]:
         """
-        . Four-character alphanumeric string prefix used in creating the security policy ID.
+        Four-character alphanumeric string prefix used in creating the security policy ID
         """
         return pulumi.get(self, "security_policy_prefix")
 

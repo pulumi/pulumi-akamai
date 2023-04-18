@@ -11,178 +11,48 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			example, err := akamai.NewCpsDvEnrollment(ctx, "example", &akamai.CpsDvEnrollmentArgs{
-//				ContractId:                         pulumi.String("ctr_1-AB123"),
-//				AcknowledgePreVerificationWarnings: pulumi.Bool(true),
-//				CommonName:                         pulumi.String("cps-test.example.net"),
-//				Sans: pulumi.StringArray{
-//					pulumi.String("san1.cps-test.example.net"),
-//					pulumi.String("san2.cps-test.example.net"),
-//				},
-//				SecureNetwork: pulumi.String("enhanced-tls"),
-//				SniOnly:       pulumi.Bool(true),
-//				AdminContact: &akamai.CpsDvEnrollmentAdminContactArgs{
-//					FirstName:      pulumi.String("x1"),
-//					LastName:       pulumi.String("x2"),
-//					Phone:          pulumi.String("123123123"),
-//					Email:          pulumi.String("x1x2@example.net"),
-//					AddressLineOne: pulumi.String("150 Broadway"),
-//					City:           pulumi.String("Cambridge"),
-//					CountryCode:    pulumi.String("US"),
-//					Organization:   pulumi.String("Akamai"),
-//					PostalCode:     pulumi.String("02142"),
-//					Region:         pulumi.String("MA"),
-//					Title:          pulumi.String("Administrator"),
-//				},
-//				TechContact: &akamai.CpsDvEnrollmentTechContactArgs{
-//					FirstName:      pulumi.String("x3"),
-//					LastName:       pulumi.String("x4"),
-//					Phone:          pulumi.String("123123123"),
-//					Email:          pulumi.String("x3x4@akamai.com"),
-//					AddressLineOne: pulumi.String("150 Broadway"),
-//					City:           pulumi.String("Cambridge"),
-//					CountryCode:    pulumi.String("US"),
-//					Organization:   pulumi.String("Akamai"),
-//					PostalCode:     pulumi.String("02142"),
-//					Region:         pulumi.String("MA"),
-//					Title:          pulumi.String("Administrator"),
-//				},
-//				CertificateChainType: pulumi.String("default"),
-//				Csr: &akamai.CpsDvEnrollmentCsrArgs{
-//					CountryCode:         pulumi.String("US"),
-//					City:                pulumi.String("Cambridge"),
-//					Organization:        pulumi.String("Akamai"),
-//					OrganizationalUnit:  pulumi.String("Dev"),
-//					PreferredTrustChain: pulumi.String("intermediate-a"),
-//					State:               pulumi.String("MA"),
-//				},
-//				NetworkConfiguration: &akamai.CpsDvEnrollmentNetworkConfigurationArgs{
-//					DisallowedTlsVersions: pulumi.StringArray{
-//						pulumi.String("TLSv1"),
-//						pulumi.String("TLSv1_1"),
-//					},
-//					CloneDnsNames:    pulumi.Bool(false),
-//					Geography:        pulumi.String("core"),
-//					OcspStapling:     pulumi.String("on"),
-//					PreferredCiphers: pulumi.String("ak-akamai-2020q1"),
-//					MustHaveCiphers:  pulumi.String("ak-akamai-2020q1"),
-//					QuicEnabled:      pulumi.Bool(false),
-//				},
-//				SignatureAlgorithm: pulumi.String("SHA-256"),
-//				Organization: &akamai.CpsDvEnrollmentOrganizationArgs{
-//					Name:           pulumi.String("Akamai"),
-//					Phone:          pulumi.String("123123123"),
-//					AddressLineOne: pulumi.String("150 Broadway"),
-//					City:           pulumi.String("Cambridge"),
-//					CountryCode:    pulumi.String("US"),
-//					PostalCode:     pulumi.String("02142"),
-//					Region:         pulumi.String("MA"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("dnsChallenges", example.DnsChallenges)
-//			ctx.Export("httpChallenges", example.HttpChallenges)
-//			ctx.Export("enrollmentId", example.ID())
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Attributes reference
-//
-// The resource returns these attributes:
-//
-// * `registrationAuthority` - (Required) This value populates automatically with the `lets-encrypt` certificate type and is preserved in the `state` file.
-// * `certificateType` - (Required) This value populates automatically with the `san` certificate type and is preserved in the `state` file.
-// * `validationType` - (Required) This value populates automatically with the `dv` validation type and is preserved in the `state` file.
-// * `id` - The unique identifier for this enrollment.
-// * `dnsChallenges` - The validation challenge for the domains listed in the certificate. To successfully perform the validation, only one challenge for each domain must be complete, either `dnsChallenges` or `httpChallenges`.
-//
-//	Returns these additional attributes:
-//
-//	    * `domain` - The domain to validate.
-//	    * `fullPath` - The URL where Akamai publishes `responseBody` for Let's Encrypt to validate.
-//	    * `responseBody` - The data Let's Encrypt expects to find served at `fullPath` URL.
-//
-// * `httpChallenges` - The validation challenge for the domains listed in the certificate. To successfully perform the validation, only one challenge for each domain must be complete, either `dnsChallenges` or `httpChallenges`.
-//
-//	Returns these additional attributes:
-//
-//	    * `domain` - The domain to validate.
-//	    * `fullPath` - The URL where Akamai publishes `responseBody` for Let's Encrypt to validate.
-//	    * `responseBody` - The data Let's Encrypt expects to find served at `fullPath` URL.
-//
-// ## Import
-//
-// Basic Usagehcl resource "akamai_cps_dv_enrollment" "example" { (resource arguments) } You can import your Akamai DV enrollment using a comma-delimited string of the enrollment ID and
-//
-//	contract ID, optionally with the `ctr_` prefix. You have to enter the IDs in this order`enrollment_id,contract_id` For example
-//
-// ```sh
-//
-//	$ pulumi import akamai:index/cpsDvEnrollment:CpsDvEnrollment example 12345,1-AB123
-//
-// ```
 type CpsDvEnrollment struct {
 	pulumi.CustomResourceState
 
-	// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+	// Whether acknowledge warnings before certificate verification
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrOutput `pulumi:"acknowledgePreVerificationWarnings"`
-	// Contact information for the certificate administrator at your company.
+	// Contact information for the certificate administrator to use at organization
 	AdminContact CpsDvEnrollmentAdminContactOutput `pulumi:"adminContact"`
-	// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+	// Allow to duplicate common name
 	AllowDuplicateCommonName pulumi.BoolPtrOutput `pulumi:"allowDuplicateCommonName"`
-	// Certificate trust chain type.
+	// Certificate trust chain type
 	CertificateChainType pulumi.StringPtrOutput `pulumi:"certificateChainType"`
 	// Certificate type of enrollment
 	CertificateType pulumi.StringOutput `pulumi:"certificateType"`
-	// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+	// Common name used for enrollment
 	CommonName pulumi.StringOutput `pulumi:"commonName"`
-	// (Required) A contract's ID, optionally with the `ctr_` prefix.
+	// Contract ID for which enrollment is retrieved
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
-	// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+	// Certificate signing request generated during enrollment creation
 	Csr CpsDvEnrollmentCsrOutput `pulumi:"csr"`
 	// DNS challenge information
 	DnsChallenges CpsDvEnrollmentDnsChallengeArrayOutput `pulumi:"dnsChallenges"`
-	// Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+	// Enable Dual-Stacked certificate deployment for enrollment
 	//
 	// Deprecated: Deprecated, don't use; always false
 	EnableMultiStackedCertificates pulumi.BoolPtrOutput `pulumi:"enableMultiStackedCertificates"`
 	// HTTP challenge information
 	HttpChallenges CpsDvEnrollmentHttpChallengeArrayOutput `pulumi:"httpChallenges"`
-	// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+	// Settings containing network information and TLS Metadata used by CPS
 	NetworkConfiguration CpsDvEnrollmentNetworkConfigurationOutput `pulumi:"networkConfiguration"`
-	// Your organization information.
+	// Organization information
 	Organization CpsDvEnrollmentOrganizationOutput `pulumi:"organization"`
 	// The registration authority or certificate authority (CA) used to obtain a certificate
 	RegistrationAuthority pulumi.StringOutput `pulumi:"registrationAuthority"`
-	// Additional common names to create a Subject Alternative Names (SAN) list.
+	// List of SANs
 	Sans pulumi.StringArrayOutput `pulumi:"sans"`
-	// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+	// Type of TLS deployment network
 	SecureNetwork pulumi.StringOutput `pulumi:"secureNetwork"`
-	// The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+	// SHA algorithm type
 	SignatureAlgorithm pulumi.StringOutput `pulumi:"signatureAlgorithm"`
-	// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+	// Whether Server Name Indication is used for enrollment
 	SniOnly pulumi.BoolOutput `pulumi:"sniOnly"`
-	// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `adminContact`.
+	// Contact information for an administrator at Akamai
 	TechContact CpsDvEnrollmentTechContactOutput `pulumi:"techContact"`
 	// Enrolment validation type
 	ValidationType pulumi.StringOutput `pulumi:"validationType"`
@@ -247,90 +117,90 @@ func GetCpsDvEnrollment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CpsDvEnrollment resources.
 type cpsDvEnrollmentState struct {
-	// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+	// Whether acknowledge warnings before certificate verification
 	AcknowledgePreVerificationWarnings *bool `pulumi:"acknowledgePreVerificationWarnings"`
-	// Contact information for the certificate administrator at your company.
+	// Contact information for the certificate administrator to use at organization
 	AdminContact *CpsDvEnrollmentAdminContact `pulumi:"adminContact"`
-	// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+	// Allow to duplicate common name
 	AllowDuplicateCommonName *bool `pulumi:"allowDuplicateCommonName"`
-	// Certificate trust chain type.
+	// Certificate trust chain type
 	CertificateChainType *string `pulumi:"certificateChainType"`
 	// Certificate type of enrollment
 	CertificateType *string `pulumi:"certificateType"`
-	// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+	// Common name used for enrollment
 	CommonName *string `pulumi:"commonName"`
-	// (Required) A contract's ID, optionally with the `ctr_` prefix.
+	// Contract ID for which enrollment is retrieved
 	ContractId *string `pulumi:"contractId"`
-	// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+	// Certificate signing request generated during enrollment creation
 	Csr *CpsDvEnrollmentCsr `pulumi:"csr"`
 	// DNS challenge information
 	DnsChallenges []CpsDvEnrollmentDnsChallenge `pulumi:"dnsChallenges"`
-	// Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+	// Enable Dual-Stacked certificate deployment for enrollment
 	//
 	// Deprecated: Deprecated, don't use; always false
 	EnableMultiStackedCertificates *bool `pulumi:"enableMultiStackedCertificates"`
 	// HTTP challenge information
 	HttpChallenges []CpsDvEnrollmentHttpChallenge `pulumi:"httpChallenges"`
-	// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+	// Settings containing network information and TLS Metadata used by CPS
 	NetworkConfiguration *CpsDvEnrollmentNetworkConfiguration `pulumi:"networkConfiguration"`
-	// Your organization information.
+	// Organization information
 	Organization *CpsDvEnrollmentOrganization `pulumi:"organization"`
 	// The registration authority or certificate authority (CA) used to obtain a certificate
 	RegistrationAuthority *string `pulumi:"registrationAuthority"`
-	// Additional common names to create a Subject Alternative Names (SAN) list.
+	// List of SANs
 	Sans []string `pulumi:"sans"`
-	// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+	// Type of TLS deployment network
 	SecureNetwork *string `pulumi:"secureNetwork"`
-	// The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+	// SHA algorithm type
 	SignatureAlgorithm *string `pulumi:"signatureAlgorithm"`
-	// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+	// Whether Server Name Indication is used for enrollment
 	SniOnly *bool `pulumi:"sniOnly"`
-	// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `adminContact`.
+	// Contact information for an administrator at Akamai
 	TechContact *CpsDvEnrollmentTechContact `pulumi:"techContact"`
 	// Enrolment validation type
 	ValidationType *string `pulumi:"validationType"`
 }
 
 type CpsDvEnrollmentState struct {
-	// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+	// Whether acknowledge warnings before certificate verification
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrInput
-	// Contact information for the certificate administrator at your company.
+	// Contact information for the certificate administrator to use at organization
 	AdminContact CpsDvEnrollmentAdminContactPtrInput
-	// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+	// Allow to duplicate common name
 	AllowDuplicateCommonName pulumi.BoolPtrInput
-	// Certificate trust chain type.
+	// Certificate trust chain type
 	CertificateChainType pulumi.StringPtrInput
 	// Certificate type of enrollment
 	CertificateType pulumi.StringPtrInput
-	// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+	// Common name used for enrollment
 	CommonName pulumi.StringPtrInput
-	// (Required) A contract's ID, optionally with the `ctr_` prefix.
+	// Contract ID for which enrollment is retrieved
 	ContractId pulumi.StringPtrInput
-	// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+	// Certificate signing request generated during enrollment creation
 	Csr CpsDvEnrollmentCsrPtrInput
 	// DNS challenge information
 	DnsChallenges CpsDvEnrollmentDnsChallengeArrayInput
-	// Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+	// Enable Dual-Stacked certificate deployment for enrollment
 	//
 	// Deprecated: Deprecated, don't use; always false
 	EnableMultiStackedCertificates pulumi.BoolPtrInput
 	// HTTP challenge information
 	HttpChallenges CpsDvEnrollmentHttpChallengeArrayInput
-	// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+	// Settings containing network information and TLS Metadata used by CPS
 	NetworkConfiguration CpsDvEnrollmentNetworkConfigurationPtrInput
-	// Your organization information.
+	// Organization information
 	Organization CpsDvEnrollmentOrganizationPtrInput
 	// The registration authority or certificate authority (CA) used to obtain a certificate
 	RegistrationAuthority pulumi.StringPtrInput
-	// Additional common names to create a Subject Alternative Names (SAN) list.
+	// List of SANs
 	Sans pulumi.StringArrayInput
-	// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+	// Type of TLS deployment network
 	SecureNetwork pulumi.StringPtrInput
-	// The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+	// SHA algorithm type
 	SignatureAlgorithm pulumi.StringPtrInput
-	// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+	// Whether Server Name Indication is used for enrollment
 	SniOnly pulumi.BoolPtrInput
-	// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `adminContact`.
+	// Contact information for an administrator at Akamai
 	TechContact CpsDvEnrollmentTechContactPtrInput
 	// Enrolment validation type
 	ValidationType pulumi.StringPtrInput
@@ -341,73 +211,73 @@ func (CpsDvEnrollmentState) ElementType() reflect.Type {
 }
 
 type cpsDvEnrollmentArgs struct {
-	// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+	// Whether acknowledge warnings before certificate verification
 	AcknowledgePreVerificationWarnings *bool `pulumi:"acknowledgePreVerificationWarnings"`
-	// Contact information for the certificate administrator at your company.
+	// Contact information for the certificate administrator to use at organization
 	AdminContact CpsDvEnrollmentAdminContact `pulumi:"adminContact"`
-	// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+	// Allow to duplicate common name
 	AllowDuplicateCommonName *bool `pulumi:"allowDuplicateCommonName"`
-	// Certificate trust chain type.
+	// Certificate trust chain type
 	CertificateChainType *string `pulumi:"certificateChainType"`
-	// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+	// Common name used for enrollment
 	CommonName string `pulumi:"commonName"`
-	// (Required) A contract's ID, optionally with the `ctr_` prefix.
+	// Contract ID for which enrollment is retrieved
 	ContractId string `pulumi:"contractId"`
-	// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+	// Certificate signing request generated during enrollment creation
 	Csr CpsDvEnrollmentCsr `pulumi:"csr"`
-	// Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+	// Enable Dual-Stacked certificate deployment for enrollment
 	//
 	// Deprecated: Deprecated, don't use; always false
 	EnableMultiStackedCertificates *bool `pulumi:"enableMultiStackedCertificates"`
-	// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+	// Settings containing network information and TLS Metadata used by CPS
 	NetworkConfiguration CpsDvEnrollmentNetworkConfiguration `pulumi:"networkConfiguration"`
-	// Your organization information.
+	// Organization information
 	Organization CpsDvEnrollmentOrganization `pulumi:"organization"`
-	// Additional common names to create a Subject Alternative Names (SAN) list.
+	// List of SANs
 	Sans []string `pulumi:"sans"`
-	// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+	// Type of TLS deployment network
 	SecureNetwork string `pulumi:"secureNetwork"`
-	// The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+	// SHA algorithm type
 	SignatureAlgorithm string `pulumi:"signatureAlgorithm"`
-	// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+	// Whether Server Name Indication is used for enrollment
 	SniOnly bool `pulumi:"sniOnly"`
-	// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `adminContact`.
+	// Contact information for an administrator at Akamai
 	TechContact CpsDvEnrollmentTechContact `pulumi:"techContact"`
 }
 
 // The set of arguments for constructing a CpsDvEnrollment resource.
 type CpsDvEnrollmentArgs struct {
-	// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+	// Whether acknowledge warnings before certificate verification
 	AcknowledgePreVerificationWarnings pulumi.BoolPtrInput
-	// Contact information for the certificate administrator at your company.
+	// Contact information for the certificate administrator to use at organization
 	AdminContact CpsDvEnrollmentAdminContactInput
-	// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+	// Allow to duplicate common name
 	AllowDuplicateCommonName pulumi.BoolPtrInput
-	// Certificate trust chain type.
+	// Certificate trust chain type
 	CertificateChainType pulumi.StringPtrInput
-	// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+	// Common name used for enrollment
 	CommonName pulumi.StringInput
-	// (Required) A contract's ID, optionally with the `ctr_` prefix.
+	// Contract ID for which enrollment is retrieved
 	ContractId pulumi.StringInput
-	// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+	// Certificate signing request generated during enrollment creation
 	Csr CpsDvEnrollmentCsrInput
-	// Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+	// Enable Dual-Stacked certificate deployment for enrollment
 	//
 	// Deprecated: Deprecated, don't use; always false
 	EnableMultiStackedCertificates pulumi.BoolPtrInput
-	// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+	// Settings containing network information and TLS Metadata used by CPS
 	NetworkConfiguration CpsDvEnrollmentNetworkConfigurationInput
-	// Your organization information.
+	// Organization information
 	Organization CpsDvEnrollmentOrganizationInput
-	// Additional common names to create a Subject Alternative Names (SAN) list.
+	// List of SANs
 	Sans pulumi.StringArrayInput
-	// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+	// Type of TLS deployment network
 	SecureNetwork pulumi.StringInput
-	// The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+	// SHA algorithm type
 	SignatureAlgorithm pulumi.StringInput
-	// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+	// Whether Server Name Indication is used for enrollment
 	SniOnly pulumi.BoolInput
-	// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `adminContact`.
+	// Contact information for an administrator at Akamai
 	TechContact CpsDvEnrollmentTechContactInput
 }
 
@@ -498,22 +368,22 @@ func (o CpsDvEnrollmentOutput) ToCpsDvEnrollmentOutputWithContext(ctx context.Co
 	return o
 }
 
-// Whether you want to automatically acknowledge the validation warnings of the current job state and proceed with the execution of a change.
+// Whether acknowledge warnings before certificate verification
 func (o CpsDvEnrollmentOutput) AcknowledgePreVerificationWarnings() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.BoolPtrOutput { return v.AcknowledgePreVerificationWarnings }).(pulumi.BoolPtrOutput)
 }
 
-// Contact information for the certificate administrator at your company.
+// Contact information for the certificate administrator to use at organization
 func (o CpsDvEnrollmentOutput) AdminContact() CpsDvEnrollmentAdminContactOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentAdminContactOutput { return v.AdminContact }).(CpsDvEnrollmentAdminContactOutput)
 }
 
-// (Optional) Boolean. Set to `true` if you want to reuse a common name that's part of an existing enrollment.
+// Allow to duplicate common name
 func (o CpsDvEnrollmentOutput) AllowDuplicateCommonName() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.BoolPtrOutput { return v.AllowDuplicateCommonName }).(pulumi.BoolPtrOutput)
 }
 
-// Certificate trust chain type.
+// Certificate trust chain type
 func (o CpsDvEnrollmentOutput) CertificateChainType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringPtrOutput { return v.CertificateChainType }).(pulumi.StringPtrOutput)
 }
@@ -523,17 +393,17 @@ func (o CpsDvEnrollmentOutput) CertificateType() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.CertificateType }).(pulumi.StringOutput)
 }
 
-// (Required) The fully qualified domain name (FQDN) for which you plan to use your certificate. The domain name you specify here must be owned or have legal rights to use the domain by the company you specify as `organization`. The company that owns the domain name must be a legally incorporated entity and be active and in good standing.
+// Common name used for enrollment
 func (o CpsDvEnrollmentOutput) CommonName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.CommonName }).(pulumi.StringOutput)
 }
 
-// (Required) A contract's ID, optionally with the `ctr_` prefix.
+// Contract ID for which enrollment is retrieved
 func (o CpsDvEnrollmentOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }
 
-// When you create an enrollment, you also generate a certificate signing request (CSR) using CPS. CPS signs the CSR with the private key. The CSR contains all the information the CA needs to issue your certificate.
+// Certificate signing request generated during enrollment creation
 func (o CpsDvEnrollmentOutput) Csr() CpsDvEnrollmentCsrOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentCsrOutput { return v.Csr }).(CpsDvEnrollmentCsrOutput)
 }
@@ -543,7 +413,7 @@ func (o CpsDvEnrollmentOutput) DnsChallenges() CpsDvEnrollmentDnsChallengeArrayO
 	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentDnsChallengeArrayOutput { return v.DnsChallenges }).(CpsDvEnrollmentDnsChallengeArrayOutput)
 }
 
-// Whether to enable an ECDSA certificate in addition to an RSA certificate. CPS automatically performs all certificate operations on both certificates, and uses the best certificate for each client connection to your secure properties. If you are pinning the certificates, you need to pin both the RSA and the ECDSA certificate.
+// Enable Dual-Stacked certificate deployment for enrollment
 //
 // Deprecated: Deprecated, don't use; always false
 func (o CpsDvEnrollmentOutput) EnableMultiStackedCertificates() pulumi.BoolPtrOutput {
@@ -555,12 +425,12 @@ func (o CpsDvEnrollmentOutput) HttpChallenges() CpsDvEnrollmentHttpChallengeArra
 	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentHttpChallengeArrayOutput { return v.HttpChallenges }).(CpsDvEnrollmentHttpChallengeArrayOutput)
 }
 
-// The network information and TLS Metadata you want CPS to use to push the completed certificate to the network.
+// Settings containing network information and TLS Metadata used by CPS
 func (o CpsDvEnrollmentOutput) NetworkConfiguration() CpsDvEnrollmentNetworkConfigurationOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentNetworkConfigurationOutput { return v.NetworkConfiguration }).(CpsDvEnrollmentNetworkConfigurationOutput)
 }
 
-// Your organization information.
+// Organization information
 func (o CpsDvEnrollmentOutput) Organization() CpsDvEnrollmentOrganizationOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentOrganizationOutput { return v.Organization }).(CpsDvEnrollmentOrganizationOutput)
 }
@@ -570,27 +440,27 @@ func (o CpsDvEnrollmentOutput) RegistrationAuthority() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.RegistrationAuthority }).(pulumi.StringOutput)
 }
 
-// Additional common names to create a Subject Alternative Names (SAN) list.
+// List of SANs
 func (o CpsDvEnrollmentOutput) Sans() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringArrayOutput { return v.Sans }).(pulumi.StringArrayOutput)
 }
 
-// The type of deployment network you want to use. `standard-tls` deploys your certificate to Akamai's standard secure network, but it isn't PCI compliant. `enhanced-tls` deploys your certificate to Akamai's more secure network with PCI compliance capability.
+// Type of TLS deployment network
 func (o CpsDvEnrollmentOutput) SecureNetwork() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.SecureNetwork }).(pulumi.StringOutput)
 }
 
-// The Secure Hash Algorithm (SHA) function, either `SHA-1` or `SHA-256`.
+// SHA algorithm type
 func (o CpsDvEnrollmentOutput) SignatureAlgorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.StringOutput { return v.SignatureAlgorithm }).(pulumi.StringOutput)
 }
 
-// Whether you want to enable SNI-only extension for the enrollment. Server Name Indication (SNI) is an extension of the Transport Layer Security (TLS) networking protocol. It allows a server to present multiple certificates on the same IP address. All modern web browsers support the SNI extension. If you have the same SAN on two or more certificates with the SNI-only option set, Akamai may serve traffic using any certificate which matches the requested SNI hostname. You should avoid multiple certificates with overlapping SAN names when using SNI-only. You can't change this setting once an enrollment is created.
+// Whether Server Name Indication is used for enrollment
 func (o CpsDvEnrollmentOutput) SniOnly() pulumi.BoolOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.BoolOutput { return v.SniOnly }).(pulumi.BoolOutput)
 }
 
-// The technical contact within Akamai. This is the person you work closest with at Akamai and who can verify the certificate request. The CA calls this contact if there are any issues with the certificate and they can't reach the `adminContact`.
+// Contact information for an administrator at Akamai
 func (o CpsDvEnrollmentOutput) TechContact() CpsDvEnrollmentTechContactOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentTechContactOutput { return v.TechContact }).(CpsDvEnrollmentTechContactOutput)
 }

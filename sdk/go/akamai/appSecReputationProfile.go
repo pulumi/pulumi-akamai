@@ -11,71 +11,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security policy
-//
-// Creates or modifies a reputation profile.
-// Reputation profiles grade the security risk of an IP address based on previous activities associated with that address.
-// Depending on the reputation score and how your configuration has been set up, requests from a specific IP address can trigger an alert or even be blocked.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/reputation-profiles](https://techdocs.akamai.com/application-security/reference/put-reputation-profile)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"fmt"
-//	"os"
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func readFileOrPanic(path string) pulumi.StringPtrInput {
-//		data, err := os.ReadFile(path)
-//		if err != nil {
-//			panic(err.Error())
-//		}
-//		return pulumi.String(string(data))
-//	}
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			reputationProfile, err := akamai.NewAppSecReputationProfile(ctx, "reputationProfile", &akamai.AppSecReputationProfileArgs{
-//				ConfigId:          *pulumi.Int(configuration.ConfigId),
-//				ReputationProfile: readFileOrPanic(fmt.Sprintf("%v/reputation_profile.json", path.Module)),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("reputationProfileId", reputationProfile.ReputationProfileId)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `reputationProfileId`. ID of the newly-created or newly-modified reputation profile.
 type AppSecReputationProfile struct {
 	pulumi.CustomResourceState
 
-	// . Unique identifier of the security configuration associated with the reputation profile being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
-	// . Path to a JSON file containing a definition of the reputation profile.
+	// JSON-formatted definition of the reputation profile
 	ReputationProfile pulumi.StringOutput `pulumi:"reputationProfile"`
 	// Unique identifier of the reputation profile
 	ReputationProfileId pulumi.IntOutput `pulumi:"reputationProfileId"`
@@ -116,18 +57,18 @@ func GetAppSecReputationProfile(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecReputationProfile resources.
 type appSecReputationProfileState struct {
-	// . Unique identifier of the security configuration associated with the reputation profile being modified.
+	// Unique identifier of the security configuration
 	ConfigId *int `pulumi:"configId"`
-	// . Path to a JSON file containing a definition of the reputation profile.
+	// JSON-formatted definition of the reputation profile
 	ReputationProfile *string `pulumi:"reputationProfile"`
 	// Unique identifier of the reputation profile
 	ReputationProfileId *int `pulumi:"reputationProfileId"`
 }
 
 type AppSecReputationProfileState struct {
-	// . Unique identifier of the security configuration associated with the reputation profile being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntPtrInput
-	// . Path to a JSON file containing a definition of the reputation profile.
+	// JSON-formatted definition of the reputation profile
 	ReputationProfile pulumi.StringPtrInput
 	// Unique identifier of the reputation profile
 	ReputationProfileId pulumi.IntPtrInput
@@ -138,17 +79,17 @@ func (AppSecReputationProfileState) ElementType() reflect.Type {
 }
 
 type appSecReputationProfileArgs struct {
-	// . Unique identifier of the security configuration associated with the reputation profile being modified.
+	// Unique identifier of the security configuration
 	ConfigId int `pulumi:"configId"`
-	// . Path to a JSON file containing a definition of the reputation profile.
+	// JSON-formatted definition of the reputation profile
 	ReputationProfile string `pulumi:"reputationProfile"`
 }
 
 // The set of arguments for constructing a AppSecReputationProfile resource.
 type AppSecReputationProfileArgs struct {
-	// . Unique identifier of the security configuration associated with the reputation profile being modified.
+	// Unique identifier of the security configuration
 	ConfigId pulumi.IntInput
-	// . Path to a JSON file containing a definition of the reputation profile.
+	// JSON-formatted definition of the reputation profile
 	ReputationProfile pulumi.StringInput
 }
 
@@ -239,12 +180,12 @@ func (o AppSecReputationProfileOutput) ToAppSecReputationProfileOutputWithContex
 	return o
 }
 
-// . Unique identifier of the security configuration associated with the reputation profile being modified.
+// Unique identifier of the security configuration
 func (o AppSecReputationProfileOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecReputationProfile) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
 }
 
-// . Path to a JSON file containing a definition of the reputation profile.
+// JSON-formatted definition of the reputation profile
 func (o AppSecReputationProfileOutput) ReputationProfile() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecReputationProfile) pulumi.StringOutput { return v.ReputationProfile }).(pulumi.StringOutput)
 }

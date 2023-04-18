@@ -15,32 +15,16 @@ public final class GetAppSecRatePoliciesArgs extends com.pulumi.resources.Invoke
 
     public static final GetAppSecRatePoliciesArgs Empty = new GetAppSecRatePoliciesArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the rate policies.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the rate policies.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
-     * 
-     */
     @Import(name="ratePolicyId")
     private @Nullable Output<Integer> ratePolicyId;
 
-    /**
-     * @return . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
-     * 
-     */
     public Optional<Output<Integer>> ratePolicyId() {
         return Optional.ofNullable(this.ratePolicyId);
     }
@@ -70,44 +54,20 @@ public final class GetAppSecRatePoliciesArgs extends com.pulumi.resources.Invoke
             $ = new GetAppSecRatePoliciesArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the rate policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the rate policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param ratePolicyId . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ratePolicyId(@Nullable Output<Integer> ratePolicyId) {
             $.ratePolicyId = ratePolicyId;
             return this;
         }
 
-        /**
-         * @param ratePolicyId . Unique identifier of the rate policy you want to return information for. If not included, information is returned for all your rate policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ratePolicyId(Integer ratePolicyId) {
             return ratePolicyId(Output.of(ratePolicyId));
         }

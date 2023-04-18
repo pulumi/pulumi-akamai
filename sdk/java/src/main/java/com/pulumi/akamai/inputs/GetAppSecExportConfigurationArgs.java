@@ -17,47 +17,23 @@ public final class GetAppSecExportConfigurationArgs extends com.pulumi.resources
 
     public static final GetAppSecExportConfigurationArgs Empty = new GetAppSecExportConfigurationArgs();
 
-    /**
-     * . Unique identifier of the security configuration you want to return information for.
-     * 
-     */
     @Import(name="configId", required=true)
     private Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration you want to return information for.
-     * 
-     */
     public Output<Integer> configId() {
         return this.configId;
     }
 
-    /**
-     * . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-     * 
-     */
     @Import(name="searches")
     private @Nullable Output<List<String>> searches;
 
-    /**
-     * @return . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-     * 
-     */
     public Optional<Output<List<String>>> searches() {
         return Optional.ofNullable(this.searches);
     }
 
-    /**
-     * . Version number of the security configuration.
-     * 
-     */
     @Import(name="version", required=true)
     private Output<Integer> version;
 
-    /**
-     * @return . Version number of the security configuration.
-     * 
-     */
     public Output<Integer> version() {
         return this.version;
     }
@@ -88,75 +64,33 @@ public final class GetAppSecExportConfigurationArgs extends com.pulumi.resources
             $ = new GetAppSecExportConfigurationArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return information for.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param searches . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-         * 
-         * @return builder
-         * 
-         */
         public Builder searches(@Nullable Output<List<String>> searches) {
             $.searches = searches;
             return this;
         }
 
-        /**
-         * @param searches . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-         * 
-         * @return builder
-         * 
-         */
         public Builder searches(List<String> searches) {
             return searches(Output.of(searches));
         }
 
-        /**
-         * @param searches . JSON array of strings specifying the types of information to be retrieved. Note that there are two different ways to return data by using the `search` parameter. To return data in tabular format, use one or more of the following terms:
-         * 
-         * @return builder
-         * 
-         */
         public Builder searches(String... searches) {
             return searches(List.of(searches));
         }
 
-        /**
-         * @param version . Version number of the security configuration.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Output<Integer> version) {
             $.version = version;
             return this;
         }
 
-        /**
-         * @param version . Version number of the security configuration.
-         * 
-         * @return builder
-         * 
-         */
         public Builder version(Integer version) {
             return version(Output.of(version));
         }

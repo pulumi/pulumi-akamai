@@ -19,77 +19,37 @@ public final class GtmASmapState extends com.pulumi.resources.ResourceArgs {
 
     public static final GtmASmapState Empty = new GtmASmapState();
 
-    /**
-     * Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-     * 
-     */
     @Import(name="assignments")
     private @Nullable Output<List<GtmASmapAssignmentArgs>> assignments;
 
-    /**
-     * @return Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-     * 
-     */
     public Optional<Output<List<GtmASmapAssignmentArgs>>> assignments() {
         return Optional.ofNullable(this.assignments);
     }
 
-    /**
-     * A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
-     * 
-     */
     @Import(name="defaultDatacenter")
     private @Nullable Output<GtmASmapDefaultDatacenterArgs> defaultDatacenter;
 
-    /**
-     * @return A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
-     * 
-     */
     public Optional<Output<GtmASmapDefaultDatacenterArgs>> defaultDatacenter() {
         return Optional.ofNullable(this.defaultDatacenter);
     }
 
-    /**
-     * The GTM Domain name for the AS map.
-     * 
-     */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
-    /**
-     * @return The GTM Domain name for the AS map.
-     * 
-     */
     public Optional<Output<String>> domain() {
         return Optional.ofNullable(this.domain);
     }
 
-    /**
-     * A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-     * 
-     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
-    /**
-     * @return A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-     * 
-     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * A boolean that, if `true`, waits for transaction to complete.
-     * 
-     */
     @Import(name="waitOnComplete")
     private @Nullable Output<Boolean> waitOnComplete;
 
-    /**
-     * @return A boolean that, if `true`, waits for transaction to complete.
-     * 
-     */
     public Optional<Output<Boolean>> waitOnComplete() {
         return Optional.ofNullable(this.waitOnComplete);
     }
@@ -122,117 +82,51 @@ public final class GtmASmapState extends com.pulumi.resources.ResourceArgs {
             $ = new GtmASmapState(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param assignments Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder assignments(@Nullable Output<List<GtmASmapAssignmentArgs>> assignments) {
             $.assignments = assignments;
             return this;
         }
 
-        /**
-         * @param assignments Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder assignments(List<GtmASmapAssignmentArgs> assignments) {
             return assignments(Output.of(assignments));
         }
 
-        /**
-         * @param assignments Contains information about the AS zone groupings of AS IDs. You can have multiple entries with this argument. If used, requires these arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder assignments(GtmASmapAssignmentArgs... assignments) {
             return assignments(List.of(assignments));
         }
 
-        /**
-         * @param defaultDatacenter A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultDatacenter(@Nullable Output<GtmASmapDefaultDatacenterArgs> defaultDatacenter) {
             $.defaultDatacenter = defaultDatacenter;
             return this;
         }
 
-        /**
-         * @param defaultDatacenter A placeholder for all other AS zones not found in these AS zones. Requires these additional arguments:
-         * 
-         * @return builder
-         * 
-         */
         public Builder defaultDatacenter(GtmASmapDefaultDatacenterArgs defaultDatacenter) {
             return defaultDatacenter(Output.of(defaultDatacenter));
         }
 
-        /**
-         * @param domain The GTM Domain name for the AS map.
-         * 
-         * @return builder
-         * 
-         */
         public Builder domain(@Nullable Output<String> domain) {
             $.domain = domain;
             return this;
         }
 
-        /**
-         * @param domain The GTM Domain name for the AS map.
-         * 
-         * @return builder
-         * 
-         */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
         }
 
-        /**
-         * @param name A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param name A descriptive label for the AS map. Properties set up for  AS mapping can use this as reference.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
-        /**
-         * @param waitOnComplete A boolean that, if `true`, waits for transaction to complete.
-         * 
-         * @return builder
-         * 
-         */
         public Builder waitOnComplete(@Nullable Output<Boolean> waitOnComplete) {
             $.waitOnComplete = waitOnComplete;
             return this;
         }
 
-        /**
-         * @param waitOnComplete A boolean that, if `true`, waits for transaction to complete.
-         * 
-         * @return builder
-         * 
-         */
         public Builder waitOnComplete(Boolean waitOnComplete) {
             return waitOnComplete(Output.of(waitOnComplete));
         }

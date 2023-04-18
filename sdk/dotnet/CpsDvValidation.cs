@@ -9,43 +9,17 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai
 {
-    /// <summary>
-    /// Once you complete the Let's Encrypt challenges, optionally use the `akamai.CpsDvValidation` resource to send the acknowledgement to CPS and inform it that tokens are ready for validation. You can also wait for CPS to check for the tokens, which it does on a regular schedule. Next, CPS automatically deploys the certificate on Staging, and eventually on the Production network.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// Basic usage:
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using Pulumi;
-    /// using Akamai = Pulumi.Akamai;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var example = new Akamai.CpsDvValidation("example", new()
-    ///     {
-    ///         EnrollmentId = akamai_cps_dv_enrollment.Example.Id,
-    ///         Sans = akamai_cps_dv_enrollment.Example.Sans,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// ## Attributes reference
-    /// 
-    /// * `status` - The status of certificate validation.
-    /// </summary>
     [AkamaiResourceType("akamai:index/cpsDvValidation:CpsDvValidation")]
     public partial class CpsDvValidation : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Unique identifier for the DV certificate enrollment.
+        /// The unique identifier of enrollment
         /// </summary>
         [Output("enrollmentId")]
         public Output<int> EnrollmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        /// List of SANs
         /// </summary>
         [Output("sans")]
         public Output<ImmutableArray<string>> Sans { get; private set; } = null!;
@@ -103,7 +77,7 @@ namespace Pulumi.Akamai
     public sealed class CpsDvValidationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Unique identifier for the DV certificate enrollment.
+        /// The unique identifier of enrollment
         /// </summary>
         [Input("enrollmentId", required: true)]
         public Input<int> EnrollmentId { get; set; } = null!;
@@ -112,7 +86,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _sans;
 
         /// <summary>
-        /// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        /// List of SANs
         /// </summary>
         public InputList<string> Sans
         {
@@ -129,7 +103,7 @@ namespace Pulumi.Akamai
     public sealed class CpsDvValidationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Unique identifier for the DV certificate enrollment.
+        /// The unique identifier of enrollment
         /// </summary>
         [Input("enrollmentId")]
         public Input<int>? EnrollmentId { get; set; }
@@ -138,7 +112,7 @@ namespace Pulumi.Akamai
         private InputList<string>? _sans;
 
         /// <summary>
-        /// The Subject Alternative Names (SAN) list for tracking changes on related enrollments. Whenever any SAN changes, the Akamai provider recreates this resource and sends another acknowledgement request to CPS.
+        /// List of SANs
         /// </summary>
         public InputList<string> Sans
         {

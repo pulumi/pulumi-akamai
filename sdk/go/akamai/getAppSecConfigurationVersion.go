@@ -21,10 +21,8 @@ func GetAppSecConfigurationVersion(ctx *pulumi.Context, args *GetAppSecConfigura
 
 // A collection of arguments for invoking getAppSecConfigurationVersion.
 type GetAppSecConfigurationVersionArgs struct {
-	// . Unique identifier of the security configuration you want to return version information for.
-	ConfigId int `pulumi:"configId"`
-	// . Version number of the security configuration you want to return information about. If not included, information about all the security configuration's versions is returned.
-	Version *int `pulumi:"version"`
+	ConfigId int  `pulumi:"configId"`
+	Version  *int `pulumi:"version"`
 }
 
 // A collection of values returned by getAppSecConfigurationVersion.
@@ -54,10 +52,8 @@ func GetAppSecConfigurationVersionOutput(ctx *pulumi.Context, args GetAppSecConf
 
 // A collection of arguments for invoking getAppSecConfigurationVersion.
 type GetAppSecConfigurationVersionOutputArgs struct {
-	// . Unique identifier of the security configuration you want to return version information for.
-	ConfigId pulumi.IntInput `pulumi:"configId"`
-	// . Version number of the security configuration you want to return information about. If not included, information about all the security configuration's versions is returned.
-	Version pulumi.IntPtrInput `pulumi:"version"`
+	ConfigId pulumi.IntInput    `pulumi:"configId"`
+	Version  pulumi.IntPtrInput `pulumi:"version"`
 }
 
 func (GetAppSecConfigurationVersionOutputArgs) ElementType() reflect.Type {

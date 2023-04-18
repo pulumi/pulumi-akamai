@@ -15,47 +15,23 @@ public final class GetAppSecRatePolicyActionsPlainArgs extends com.pulumi.resour
 
     public static final GetAppSecRatePolicyActionsPlainArgs Empty = new GetAppSecRatePolicyActionsPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
-     * 
-     */
     @Import(name="ratePolicyId")
     private @Nullable Integer ratePolicyId;
 
-    /**
-     * @return . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
-     * 
-     */
     public Optional<Integer> ratePolicyId() {
         return Optional.ofNullable(this.ratePolicyId);
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the rate policies and rate policy actions.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the rate policies and rate policy actions.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -86,34 +62,16 @@ public final class GetAppSecRatePolicyActionsPlainArgs extends com.pulumi.resour
             $ = new GetAppSecRatePolicyActionsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration associated with the rate policies and rate policy actions.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param ratePolicyId . Unique identifier of the rate policy you want to return action information for. If not included, action information is returned for all your rate policies.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ratePolicyId(@Nullable Integer ratePolicyId) {
             $.ratePolicyId = ratePolicyId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the rate policies and rate policy actions.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

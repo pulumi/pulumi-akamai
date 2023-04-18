@@ -11,6 +11,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'PropertyActivationComplianceRecord',
     'PropertyActivationRuleError',
     'PropertyActivationRuleWarning',
     'PropertyHostname',
@@ -19,6 +20,85 @@ __all__ = [
     'PropertyRuleError',
     'PropertyRuleWarning',
 ]
+
+@pulumi.output_type
+class PropertyActivationComplianceRecord(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "noncomplianceReason":
+            suggest = "noncompliance_reason"
+        elif key == "customerEmail":
+            suggest = "customer_email"
+        elif key == "otherNoncomplianceReason":
+            suggest = "other_noncompliance_reason"
+        elif key == "peerReviewedBy":
+            suggest = "peer_reviewed_by"
+        elif key == "ticketId":
+            suggest = "ticket_id"
+        elif key == "unitTested":
+            suggest = "unit_tested"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyActivationComplianceRecord. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyActivationComplianceRecord.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyActivationComplianceRecord.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 noncompliance_reason: str,
+                 customer_email: Optional[str] = None,
+                 other_noncompliance_reason: Optional[str] = None,
+                 peer_reviewed_by: Optional[str] = None,
+                 ticket_id: Optional[str] = None,
+                 unit_tested: Optional[bool] = None):
+        pulumi.set(__self__, "noncompliance_reason", noncompliance_reason)
+        if customer_email is not None:
+            pulumi.set(__self__, "customer_email", customer_email)
+        if other_noncompliance_reason is not None:
+            pulumi.set(__self__, "other_noncompliance_reason", other_noncompliance_reason)
+        if peer_reviewed_by is not None:
+            pulumi.set(__self__, "peer_reviewed_by", peer_reviewed_by)
+        if ticket_id is not None:
+            pulumi.set(__self__, "ticket_id", ticket_id)
+        if unit_tested is not None:
+            pulumi.set(__self__, "unit_tested", unit_tested)
+
+    @property
+    @pulumi.getter(name="noncomplianceReason")
+    def noncompliance_reason(self) -> str:
+        return pulumi.get(self, "noncompliance_reason")
+
+    @property
+    @pulumi.getter(name="customerEmail")
+    def customer_email(self) -> Optional[str]:
+        return pulumi.get(self, "customer_email")
+
+    @property
+    @pulumi.getter(name="otherNoncomplianceReason")
+    def other_noncompliance_reason(self) -> Optional[str]:
+        return pulumi.get(self, "other_noncompliance_reason")
+
+    @property
+    @pulumi.getter(name="peerReviewedBy")
+    def peer_reviewed_by(self) -> Optional[str]:
+        return pulumi.get(self, "peer_reviewed_by")
+
+    @property
+    @pulumi.getter(name="ticketId")
+    def ticket_id(self) -> Optional[str]:
+        return pulumi.get(self, "ticket_id")
+
+    @property
+    @pulumi.getter(name="unitTested")
+    def unit_tested(self) -> Optional[bool]:
+        return pulumi.get(self, "unit_tested")
+
 
 @pulumi.output_type
 class PropertyActivationRuleError(dict):
@@ -220,11 +300,6 @@ class PropertyHostname(dict):
                  cert_statuses: Optional[Sequence['outputs.PropertyHostnameCertStatus']] = None,
                  cname_type: Optional[str] = None,
                  edge_hostname_id: Optional[str] = None):
-        """
-        :param str cert_provisioning_type: The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-        :param str cname_from: A string containing the original origin's hostname. For example, `"example.org"`.
-        :param str cname_to: A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
-        """
         pulumi.set(__self__, "cert_provisioning_type", cert_provisioning_type)
         pulumi.set(__self__, "cname_from", cname_from)
         pulumi.set(__self__, "cname_to", cname_to)
@@ -238,25 +313,16 @@ class PropertyHostname(dict):
     @property
     @pulumi.getter(name="certProvisioningType")
     def cert_provisioning_type(self) -> str:
-        """
-        The certificate's provisioning type, either the default `CPS_MANAGED` type for the custom certificates you provision with the [Certificate Provisioning System (CPS)](https://techdocs.akamai.com/cps/docs), or `DEFAULT` for certificates provisioned automatically.
-        """
         return pulumi.get(self, "cert_provisioning_type")
 
     @property
     @pulumi.getter(name="cnameFrom")
     def cname_from(self) -> str:
-        """
-        A string containing the original origin's hostname. For example, `"example.org"`.
-        """
         return pulumi.get(self, "cname_from")
 
     @property
     @pulumi.getter(name="cnameTo")
     def cname_to(self) -> str:
-        """
-        A string containing the hostname for edge content. For example,  `"example.org.edgesuite.net"`.
-        """
         return pulumi.get(self, "cname_to")
 
     @property

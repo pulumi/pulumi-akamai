@@ -15,17 +15,9 @@ public final class GetDatastreamsArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetDatastreamsArgs Empty = new GetDatastreamsArgs();
 
-    /**
-     * Unique identifier of the group that can access the product.
-     * 
-     */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
-    /**
-     * @return Unique identifier of the group that can access the product.
-     * 
-     */
     public Optional<Output<String>> groupId() {
         return Optional.ofNullable(this.groupId);
     }
@@ -54,23 +46,11 @@ public final class GetDatastreamsArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetDatastreamsArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param groupId Unique identifier of the group that can access the product.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(@Nullable Output<String> groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        /**
-         * @param groupId Unique identifier of the group that can access the product.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
         }

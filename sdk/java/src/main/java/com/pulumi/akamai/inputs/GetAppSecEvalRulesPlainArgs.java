@@ -15,47 +15,23 @@ public final class GetAppSecEvalRulesPlainArgs extends com.pulumi.resources.Invo
 
     public static final GetAppSecEvalRulesPlainArgs Empty = new GetAppSecEvalRulesPlainArgs();
 
-    /**
-     * . Unique identifier of the security configuration running in evaluation mode.
-     * 
-     */
     @Import(name="configId", required=true)
     private Integer configId;
 
-    /**
-     * @return . Unique identifier of the security configuration running in evaluation mode.
-     * 
-     */
     public Integer configId() {
         return this.configId;
     }
 
-    /**
-     * . Unique identifier of the evaluation rule you want to return information for. If not included, information is returned for all your evaluation rules.
-     * 
-     */
     @Import(name="ruleId")
     private @Nullable Integer ruleId;
 
-    /**
-     * @return . Unique identifier of the evaluation rule you want to return information for. If not included, information is returned for all your evaluation rules.
-     * 
-     */
     public Optional<Integer> ruleId() {
         return Optional.ofNullable(this.ruleId);
     }
 
-    /**
-     * . Unique identifier of the security policy associated with the evaluation rule.
-     * 
-     */
     @Import(name="securityPolicyId", required=true)
     private String securityPolicyId;
 
-    /**
-     * @return . Unique identifier of the security policy associated with the evaluation rule.
-     * 
-     */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
@@ -86,34 +62,16 @@ public final class GetAppSecEvalRulesPlainArgs extends com.pulumi.resources.Invo
             $ = new GetAppSecEvalRulesPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration running in evaluation mode.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param ruleId . Unique identifier of the evaluation rule you want to return information for. If not included, information is returned for all your evaluation rules.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ruleId(@Nullable Integer ruleId) {
             $.ruleId = ruleId;
             return this;
         }
 
-        /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the evaluation rule.
-         * 
-         * @return builder
-         * 
-         */
         public Builder securityPolicyId(String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
             return this;

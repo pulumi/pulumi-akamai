@@ -31,47 +31,23 @@ public final class GetAppSecSelectableHostnamesArgs extends com.pulumi.resources
         return Optional.ofNullable(this.activeInStaging);
     }
 
-    /**
-     * . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can&#39;t be used with either the `contractid` or the `groupid` arguments.
-     * 
-     */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
-    /**
-     * @return . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can&#39;t be used with either the `contractid` or the `groupid` arguments.
-     * 
-     */
     public Optional<Output<Integer>> configId() {
         return Optional.ofNullable(this.configId);
     }
 
-    /**
-     * . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can&#39;t be used with the `config_id` argument.
-     * 
-     */
     @Import(name="contractid")
     private @Nullable Output<String> contractid;
 
-    /**
-     * @return . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can&#39;t be used with the `config_id` argument.
-     * 
-     */
     public Optional<Output<String>> contractid() {
         return Optional.ofNullable(this.contractid);
     }
 
-    /**
-     * . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can&#39;t be used with the `config_id` argument.
-     * 
-     */
     @Import(name="groupid")
     private @Nullable Output<Integer> groupid;
 
-    /**
-     * @return . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can&#39;t be used with the `config_id` argument.
-     * 
-     */
     public Optional<Output<Integer>> groupid() {
         return Optional.ofNullable(this.groupid);
     }
@@ -122,65 +98,29 @@ public final class GetAppSecSelectableHostnamesArgs extends com.pulumi.resources
             return activeInStaging(Output.of(activeInStaging));
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can&#39;t be used with either the `contractid` or the `groupid` arguments.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(@Nullable Output<Integer> configId) {
             $.configId = configId;
             return this;
         }
 
-        /**
-         * @param configId . Unique identifier of the security configuration you want to return hostname information for. If not included, information is returned for all your security configurations. Note that argument can&#39;t be used with either the `contractid` or the `groupid` arguments.
-         * 
-         * @return builder
-         * 
-         */
         public Builder configId(Integer configId) {
             return configId(Output.of(configId));
         }
 
-        /**
-         * @param contractid . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can&#39;t be used with the `config_id` argument.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractid(@Nullable Output<String> contractid) {
             $.contractid = contractid;
             return this;
         }
 
-        /**
-         * @param contractid . Unique identifier of the Akamai contract you want to return hostname information for. If not included, information is returned for all the Akamai contracts associated with your account. Note that this argument can&#39;t be used with the `config_id` argument.
-         * 
-         * @return builder
-         * 
-         */
         public Builder contractid(String contractid) {
             return contractid(Output.of(contractid));
         }
 
-        /**
-         * @param groupid . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can&#39;t be used with the `config_id` argument.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupid(@Nullable Output<Integer> groupid) {
             $.groupid = groupid;
             return this;
         }
 
-        /**
-         * @param groupid . Unique identifier of the contract group you want to return hostname information for. If not included, information is returned for all your contract groups. (Or, if you include the `contractid` argument, all the groups associated with the specified contract.) Note that this argument can&#39;t be used with the `config_id` argument.
-         * 
-         * @return builder
-         * 
-         */
         public Builder groupid(Integer groupid) {
             return groupid(Output.of(groupid));
         }

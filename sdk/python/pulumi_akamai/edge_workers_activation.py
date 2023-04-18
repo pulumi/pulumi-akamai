@@ -19,9 +19,9 @@ class EdgeWorkersActivationArgs:
                  version: pulumi.Input[str]):
         """
         The set of arguments for constructing a EdgeWorkersActivation resource.
-        :param pulumi.Input[int] edgeworker_id: A unique identifier for the EdgeWorker ID you want to activate.
-        :param pulumi.Input[str] network: The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
-        :param pulumi.Input[str] version: The EdgeWorker version you want to activate.
+        :param pulumi.Input[int] edgeworker_id: Id of the EdgeWorker to activate
+        :param pulumi.Input[str] network: The network on which the version will be activated
+        :param pulumi.Input[str] version: The version of EdgeWorker to activate
         """
         pulumi.set(__self__, "edgeworker_id", edgeworker_id)
         pulumi.set(__self__, "network", network)
@@ -31,7 +31,7 @@ class EdgeWorkersActivationArgs:
     @pulumi.getter(name="edgeworkerId")
     def edgeworker_id(self) -> pulumi.Input[int]:
         """
-        A unique identifier for the EdgeWorker ID you want to activate.
+        Id of the EdgeWorker to activate
         """
         return pulumi.get(self, "edgeworker_id")
 
@@ -43,7 +43,7 @@ class EdgeWorkersActivationArgs:
     @pulumi.getter
     def network(self) -> pulumi.Input[str]:
         """
-        The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+        The network on which the version will be activated
         """
         return pulumi.get(self, "network")
 
@@ -55,7 +55,7 @@ class EdgeWorkersActivationArgs:
     @pulumi.getter
     def version(self) -> pulumi.Input[str]:
         """
-        The EdgeWorker version you want to activate.
+        The version of EdgeWorker to activate
         """
         return pulumi.get(self, "version")
 
@@ -73,10 +73,10 @@ class _EdgeWorkersActivationState:
                  version: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering EdgeWorkersActivation resources.
-        :param pulumi.Input[int] activation_id: (Required) Unique identifier of the activation.
-        :param pulumi.Input[int] edgeworker_id: A unique identifier for the EdgeWorker ID you want to activate.
-        :param pulumi.Input[str] network: The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
-        :param pulumi.Input[str] version: The EdgeWorker version you want to activate.
+        :param pulumi.Input[int] activation_id: A unique identifier of the activation
+        :param pulumi.Input[int] edgeworker_id: Id of the EdgeWorker to activate
+        :param pulumi.Input[str] network: The network on which the version will be activated
+        :param pulumi.Input[str] version: The version of EdgeWorker to activate
         """
         if activation_id is not None:
             pulumi.set(__self__, "activation_id", activation_id)
@@ -91,7 +91,7 @@ class _EdgeWorkersActivationState:
     @pulumi.getter(name="activationId")
     def activation_id(self) -> Optional[pulumi.Input[int]]:
         """
-        (Required) Unique identifier of the activation.
+        A unique identifier of the activation
         """
         return pulumi.get(self, "activation_id")
 
@@ -103,7 +103,7 @@ class _EdgeWorkersActivationState:
     @pulumi.getter(name="edgeworkerId")
     def edgeworker_id(self) -> Optional[pulumi.Input[int]]:
         """
-        A unique identifier for the EdgeWorker ID you want to activate.
+        Id of the EdgeWorker to activate
         """
         return pulumi.get(self, "edgeworker_id")
 
@@ -115,7 +115,7 @@ class _EdgeWorkersActivationState:
     @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
         """
-        The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+        The network on which the version will be activated
         """
         return pulumi.get(self, "network")
 
@@ -127,7 +127,7 @@ class _EdgeWorkersActivationState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
         """
-        The EdgeWorker version you want to activate.
+        The version of EdgeWorker to activate
         """
         return pulumi.get(self, "version")
 
@@ -146,29 +146,12 @@ class EdgeWorkersActivation(pulumi.CustomResource):
                  version: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Use the `EdgeWorkersActivation` resource to activate a specific EdgeWorker version. An activation deploys the version to either the Akamai staging or production network.
-
-        Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        test = akamai.EdgeWorkersActivation("test",
-            edgeworker_id=1234,
-            network="STAGING",
-            version="test1")
-        ```
-
+        Create a EdgeWorkersActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] edgeworker_id: A unique identifier for the EdgeWorker ID you want to activate.
-        :param pulumi.Input[str] network: The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
-        :param pulumi.Input[str] version: The EdgeWorker version you want to activate.
+        :param pulumi.Input[int] edgeworker_id: Id of the EdgeWorker to activate
+        :param pulumi.Input[str] network: The network on which the version will be activated
+        :param pulumi.Input[str] version: The version of EdgeWorker to activate
         """
         ...
     @overload
@@ -177,24 +160,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
                  args: EdgeWorkersActivationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Use the `EdgeWorkersActivation` resource to activate a specific EdgeWorker version. An activation deploys the version to either the Akamai staging or production network.
-
-        Before activating on production, activate on staging first. This way you can detect any problems in staging before your changes progress to production.
-
-        ## Example Usage
-
-        Basic usage:
-
-        ```python
-        import pulumi
-        import pulumi_akamai as akamai
-
-        test = akamai.EdgeWorkersActivation("test",
-            edgeworker_id=1234,
-            network="STAGING",
-            version="test1")
-        ```
-
+        Create a EdgeWorkersActivation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param EdgeWorkersActivationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -253,10 +219,10 @@ class EdgeWorkersActivation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] activation_id: (Required) Unique identifier of the activation.
-        :param pulumi.Input[int] edgeworker_id: A unique identifier for the EdgeWorker ID you want to activate.
-        :param pulumi.Input[str] network: The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
-        :param pulumi.Input[str] version: The EdgeWorker version you want to activate.
+        :param pulumi.Input[int] activation_id: A unique identifier of the activation
+        :param pulumi.Input[int] edgeworker_id: Id of the EdgeWorker to activate
+        :param pulumi.Input[str] network: The network on which the version will be activated
+        :param pulumi.Input[str] version: The version of EdgeWorker to activate
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -272,7 +238,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
     @pulumi.getter(name="activationId")
     def activation_id(self) -> pulumi.Output[int]:
         """
-        (Required) Unique identifier of the activation.
+        A unique identifier of the activation
         """
         return pulumi.get(self, "activation_id")
 
@@ -280,7 +246,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
     @pulumi.getter(name="edgeworkerId")
     def edgeworker_id(self) -> pulumi.Output[int]:
         """
-        A unique identifier for the EdgeWorker ID you want to activate.
+        Id of the EdgeWorker to activate
         """
         return pulumi.get(self, "edgeworker_id")
 
@@ -288,7 +254,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
     @pulumi.getter
     def network(self) -> pulumi.Output[str]:
         """
-        The network you want to activate the policy version on. For the Staging network, specify either `STAGING`, `STAG`, or `S`. For the Production network, specify either `PRODUCTION`, `PROD`, or `P`. All values are case insensitive.
+        The network on which the version will be activated
         """
         return pulumi.get(self, "network")
 
@@ -296,7 +262,7 @@ class EdgeWorkersActivation(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[str]:
         """
-        The EdgeWorker version you want to activate.
+        The version of EdgeWorker to activate
         """
         return pulumi.get(self, "version")
 

@@ -11,89 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetNetworkLists
     {
-        /// <summary>
-        /// Use the `akamai.getNetworkLists` data source to retrieve information about the available network lists,
-        /// optionally filtered by list type or based on a search string. The information available is described in
-        /// [List network lists](https://techdocs.akamai.com/network-lists/reference/get-network-lists).
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var networkLists = Akamai.GetNetworkLists.Invoke();
-        /// 
-        ///     var networkListsFilter = Akamai.GetNetworkLists.Invoke(new()
-        ///     {
-        ///         Name = "Test Whitelist",
-        ///         Type = "IP",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["networkListsText"] = networkLists.Apply(getNetworkListsResult =&gt; getNetworkListsResult.OutputText),
-        ///         ["networkListsJson"] = networkLists.Apply(getNetworkListsResult =&gt; getNetworkListsResult.Json),
-        ///         ["networkListsList"] = networkLists.Apply(getNetworkListsResult =&gt; getNetworkListsResult.Lists),
-        ///         ["networkListsFilterText"] = networkListsFilter.Apply(getNetworkListsResult =&gt; getNetworkListsResult.OutputText),
-        ///         ["networkListsFilterJson"] = networkListsFilter.Apply(getNetworkListsResult =&gt; getNetworkListsResult.Json),
-        ///         ["networkListsFilterList"] = networkListsFilter.Apply(getNetworkListsResult =&gt; getNetworkListsResult.Lists),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetNetworkListsResult> InvokeAsync(GetNetworkListsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkListsResult>("akamai:index/getNetworkLists:getNetworkLists", args ?? new GetNetworkListsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use the `akamai.getNetworkLists` data source to retrieve information about the available network lists,
-        /// optionally filtered by list type or based on a search string. The information available is described in
-        /// [List network lists](https://techdocs.akamai.com/network-lists/reference/get-network-lists).
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var networkLists = Akamai.GetNetworkLists.Invoke();
-        /// 
-        ///     var networkListsFilter = Akamai.GetNetworkLists.Invoke(new()
-        ///     {
-        ///         Name = "Test Whitelist",
-        ///         Type = "IP",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["networkListsText"] = networkLists.Apply(getNetworkListsResult =&gt; getNetworkListsResult.OutputText),
-        ///         ["networkListsJson"] = networkLists.Apply(getNetworkListsResult =&gt; getNetworkListsResult.Json),
-        ///         ["networkListsList"] = networkLists.Apply(getNetworkListsResult =&gt; getNetworkListsResult.Lists),
-        ///         ["networkListsFilterText"] = networkListsFilter.Apply(getNetworkListsResult =&gt; getNetworkListsResult.OutputText),
-        ///         ["networkListsFilterJson"] = networkListsFilter.Apply(getNetworkListsResult =&gt; getNetworkListsResult.Json),
-        ///         ["networkListsFilterList"] = networkListsFilter.Apply(getNetworkListsResult =&gt; getNetworkListsResult.Lists),
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Output<GetNetworkListsResult> Invoke(GetNetworkListsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkListsResult>("akamai:index/getNetworkLists:getNetworkLists", args ?? new GetNetworkListsInvokeArgs(), options.WithDefaults());
     }
@@ -101,24 +21,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetNetworkListsArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// The name of a specific network list to retrieve. If not supplied, information about all network
-        /// lists will be returned.
-        /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
-        /// <summary>
-        /// The ID of a specific network list to retrieve.
-        /// If not supplied, information about all network lists will be returned.
-        /// </summary>
         [Input("networkListId")]
         public string? NetworkListId { get; set; }
 
-        /// <summary>
-        /// The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
-        /// information about both types will be returned.
-        /// </summary>
         [Input("type")]
         public string? Type { get; set; }
 
@@ -130,24 +38,12 @@ namespace Pulumi.Akamai
 
     public sealed class GetNetworkListsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// The name of a specific network list to retrieve. If not supplied, information about all network
-        /// lists will be returned.
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// The ID of a specific network list to retrieve.
-        /// If not supplied, information about all network lists will be returned.
-        /// </summary>
         [Input("networkListId")]
         public Input<string>? NetworkListId { get; set; }
 
-        /// <summary>
-        /// The type of network lists to be retrieved; must be either "IP" or "GEO". If not supplied,
-        /// information about both types will be returned.
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
@@ -167,19 +63,10 @@ namespace Pulumi.Akamai
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A JSON-formatted list of information about the specified network list(s).
-        /// </summary>
         public readonly string Json;
-        /// <summary>
-        /// A list containing the IDs of the specified network lists(s).
-        /// </summary>
         public readonly ImmutableArray<string> Lists;
         public readonly string? Name;
         public readonly string NetworkListId;
-        /// <summary>
-        /// A tabular display showing the network list information.
-        /// </summary>
         public readonly string OutputText;
         public readonly string? Type;
 

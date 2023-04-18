@@ -53,6 +53,7 @@ from .app_sec_waf_mode import *
 from .app_sec_waf_protection import *
 from .app_sec_wap_selected_hostnames import *
 from .appsec_advanced_settings_attack_payload_logging import *
+from .appsec_advanced_settings_request_body import *
 from .cloudlets_application_load_balancer import *
 from .cloudlets_application_load_balancer_activation import *
 from .cloudlets_policy import *
@@ -118,6 +119,7 @@ from .get_app_sec_version_notes import *
 from .get_app_sec_waf_mode import *
 from .get_app_sec_wap_selected_hostnames import *
 from .get_appsec_advanced_settings_attack_payload_logging import *
+from .get_appsec_advanced_settings_request_body import *
 from .get_authorities_set import *
 from .get_cloudlets_api_prioritization_match_rule import *
 from .get_cloudlets_application_load_balancer import *
@@ -169,6 +171,7 @@ from .get_property_includes import *
 from .get_property_products import *
 from .get_property_rule_formats import *
 from .get_property_rules import *
+from .get_property_rules_builder import *
 from .get_property_rules_template import *
 from .gtm_asmap import *
 from .gtm_cidrmap import *
@@ -610,6 +613,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging": "AppsecAdvancedSettingsAttackPayloadLogging"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/appsecAdvancedSettingsRequestBody",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody": "AppsecAdvancedSettingsRequestBody"
   }
  },
  {

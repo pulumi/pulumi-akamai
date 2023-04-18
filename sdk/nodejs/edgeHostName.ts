@@ -4,61 +4,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-/**
- * The `akamai.EdgeHostName` resource lets you configure a secure edge hostname. Your
- * edge hostname determines how requests for your site, app, or content are mapped to
- * Akamai edge servers.
- *
- * An edge hostname is the CNAME target you use when directing your end user traffic to
- * Akamai. Each hostname assigned to a property has a corresponding edge hostname.
- *
- * Akamai supports three types of edge hostnames, depending on the level of security
- * you need for your traffic: Standard TLS, Enhanced TLS, and Shared Certificate. When
- * entering the `edgeHostname` attribute, you need to include a specific domain suffix
- * for your edge hostname type:
- *
- * | Edge hostname type | Domain suffix |
- * |------|-------|
- * | Enhanced TLS | edgekey.net |
- * | Standard TLS | edgesuite.net |
- * | Shared Cert | akamaized.net |
- *
- * For example, if you use Standard TLS and have `www.example.com` as a hostname, your edge hostname would be `www.example.com.edgesuite.net`. If you wanted to use Enhanced TLS with the same hostname, your edge hostname would be `www.example.com.edgekey.net`. See  [Create a new edge hostname](https://techdocs.akamai.com/property-mgr/reference/post-edgehostnames) in the Property Manager API (PAPI) for more information.
- *
- * ## Example Usage
- *
- * Basic usage:
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as akamai from "@pulumi/akamai";
- *
- * const provider_demo = new akamai.EdgeHostName("provider-demo", {
- *     contractId: "ctr_1-AB123",
- *     edgeHostname: "www.example.org.edgesuite.net",
- *     groupId: "grp_123",
- *     ipBehavior: "IPV4",
- *     productId: "prd_Object_Delivery",
- * });
- * ```
- * ## Attributes reference
- *
- * This resource returns this attribute:
- *
- * * `ipBehavior` - Returns the IP protocol the hostname will use, either `IPV4` for version 4, IPV6_PERFORMANCE`for version 6, or`IPV6_COMPLIANCE` for both.
- *
- * ## Import
- *
- * Basic Usagehcl resource "akamai_edge_hostname" "example" {
- *
- * # (resource arguments) } You can import Akamai edge hostnames using a comma-delimited string of edge hostname, contract ID, and group ID. You have to enter the values in this order:
- *
- * `edge_hostname, contract_id, group_id` For example
- *
- * ```sh
- *  $ pulumi import akamai:index/edgeHostName:EdgeHostName example ehn_123,ctr_1-AB123,grp_123
- * ```
- */
 export class EdgeHostName extends pulumi.CustomResource {
     /**
      * Get an existing EdgeHostName resource's state with the given name, ID, and optional extra
@@ -87,41 +32,20 @@ export class EdgeHostName extends pulumi.CustomResource {
         return obj['__pulumiType'] === EdgeHostName.__pulumiType;
     }
 
-    /**
-     * Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
-     */
     public readonly certificate!: pulumi.Output<number | undefined>;
     /**
-     * Replaced by `contractId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "contract" has been deprecated.
      */
     public readonly contract!: pulumi.Output<string>;
-    /**
-     * A contract's unique ID, including the `ctr_` prefix.
-     */
     public readonly contractId!: pulumi.Output<string>;
-    /**
-     * One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
-     */
     public readonly edgeHostname!: pulumi.Output<string>;
     /**
-     * Replaced by `groupId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "group" has been deprecated.
      */
     public readonly group!: pulumi.Output<string>;
-    /**
-     * A group's unique ID, including the `grp_` prefix.
-     */
     public readonly groupId!: pulumi.Output<string>;
-    /**
-     * Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
-     */
     public readonly ipBehavior!: pulumi.Output<string>;
     /**
-     * Replaced by `productId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "product" has been deprecated.
      */
     public readonly product!: pulumi.Output<string>;
@@ -131,7 +55,7 @@ export class EdgeHostName extends pulumi.CustomResource {
      */
     public readonly statusUpdateEmails!: pulumi.Output<string[] | undefined>;
     /**
-     * A JSON encoded list of use cases.
+     * A JSON encoded list of use cases
      */
     public readonly useCases!: pulumi.Output<string | undefined>;
 
@@ -190,41 +114,20 @@ export class EdgeHostName extends pulumi.CustomResource {
  * Input properties used for looking up and filtering EdgeHostName resources.
  */
 export interface EdgeHostNameState {
-    /**
-     * Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
-     */
     certificate?: pulumi.Input<number>;
     /**
-     * Replaced by `contractId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
-    /**
-     * A contract's unique ID, including the `ctr_` prefix.
-     */
     contractId?: pulumi.Input<string>;
-    /**
-     * One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
-     */
     edgeHostname?: pulumi.Input<string>;
     /**
-     * Replaced by `groupId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
-    /**
-     * A group's unique ID, including the `grp_` prefix.
-     */
     groupId?: pulumi.Input<string>;
-    /**
-     * Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
-     */
     ipBehavior?: pulumi.Input<string>;
     /**
-     * Replaced by `productId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
@@ -234,7 +137,7 @@ export interface EdgeHostNameState {
      */
     statusUpdateEmails?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A JSON encoded list of use cases.
+     * A JSON encoded list of use cases
      */
     useCases?: pulumi.Input<string>;
 }
@@ -243,41 +146,20 @@ export interface EdgeHostNameState {
  * The set of arguments for constructing a EdgeHostName resource.
  */
 export interface EdgeHostNameArgs {
-    /**
-     * Required only when creating an Enhanced TLS edge hostname. This argument sets the certificate enrollment ID. Edge hostnames for Enhanced TLS end in `edgekey.net`. You can retrieve this ID from the [Certificate Provisioning Service CLI](https://github.com/akamai/cli-cps) .
-     */
     certificate?: pulumi.Input<number>;
     /**
-     * Replaced by `contractId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
-    /**
-     * A contract's unique ID, including the `ctr_` prefix.
-     */
     contractId?: pulumi.Input<string>;
-    /**
-     * One or more edge hostnames. The number of edge hostnames must be less than or equal to the number of public hostnames.
-     */
     edgeHostname: pulumi.Input<string>;
     /**
-     * Replaced by `groupId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
-    /**
-     * A group's unique ID, including the `grp_` prefix.
-     */
     groupId?: pulumi.Input<string>;
-    /**
-     * Which version of the IP protocol to use: `IPV4` for version 4 only, `IPV6_PERFORMANCE` for version 6 only, or `IPV6_COMPLIANCE` for both 4 and 6.
-     */
     ipBehavior: pulumi.Input<string>;
     /**
-     * Replaced by `productId`. Maintained for legacy purposes.
-     *
      * @deprecated The setting "product" has been deprecated.
      */
     product?: pulumi.Input<string>;
@@ -287,7 +169,7 @@ export interface EdgeHostNameArgs {
      */
     statusUpdateEmails?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * A JSON encoded list of use cases.
+     * A JSON encoded list of use cases
      */
     useCases?: pulumi.Input<string>;
 }

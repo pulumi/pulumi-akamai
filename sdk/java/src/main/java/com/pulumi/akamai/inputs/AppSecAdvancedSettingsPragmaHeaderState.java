@@ -17,14 +17,14 @@ public final class AppSecAdvancedSettingsPragmaHeaderState extends com.pulumi.re
     public static final AppSecAdvancedSettingsPragmaHeaderState Empty = new AppSecAdvancedSettingsPragmaHeaderState();
 
     /**
-     * . Unique identifier of the security configuration associated with the pragma header settings being modified.
+     * Unique identifier of the security configuration
      * 
      */
     @Import(name="configId")
     private @Nullable Output<Integer> configId;
 
     /**
-     * @return . Unique identifier of the security configuration associated with the pragma header settings being modified.
+     * @return Unique identifier of the security configuration
      * 
      */
     public Optional<Output<Integer>> configId() {
@@ -32,14 +32,14 @@ public final class AppSecAdvancedSettingsPragmaHeaderState extends com.pulumi.re
     }
 
     /**
-     * . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation&#39;s response except in cases where you set `excludeCondition`.
+     * JSON-formatted information describing the conditions to exclude from the default remove action
      * 
      */
     @Import(name="pragmaHeader")
     private @Nullable Output<String> pragmaHeader;
 
     /**
-     * @return . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation&#39;s response except in cases where you set `excludeCondition`.
+     * @return JSON-formatted information describing the conditions to exclude from the default remove action
      * 
      */
     public Optional<Output<String>> pragmaHeader() {
@@ -47,14 +47,14 @@ public final class AppSecAdvancedSettingsPragmaHeaderState extends com.pulumi.re
     }
 
     /**
-     * . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * Unique identifier of the security policy
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+     * @return Unique identifier of the security policy
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -88,7 +88,7 @@ public final class AppSecAdvancedSettingsPragmaHeaderState extends com.pulumi.re
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the pragma header settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class AppSecAdvancedSettingsPragmaHeaderState extends com.pulumi.re
         }
 
         /**
-         * @param configId . Unique identifier of the security configuration associated with the pragma header settings being modified.
+         * @param configId Unique identifier of the security configuration
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class AppSecAdvancedSettingsPragmaHeaderState extends com.pulumi.re
         }
 
         /**
-         * @param pragmaHeader . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation&#39;s response except in cases where you set `excludeCondition`.
+         * @param pragmaHeader JSON-formatted information describing the conditions to exclude from the default remove action
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class AppSecAdvancedSettingsPragmaHeaderState extends com.pulumi.re
         }
 
         /**
-         * @param pragmaHeader . Path to a JSON file containing information about the conditions to exclude from the default remove action. By default, the Pragma header debugging information is stripped from an operation&#39;s response except in cases where you set `excludeCondition`.
+         * @param pragmaHeader JSON-formatted information describing the conditions to exclude from the default remove action
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class AppSecAdvancedSettingsPragmaHeaderState extends com.pulumi.re
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AppSecAdvancedSettingsPragmaHeaderState extends com.pulumi.re
         }
 
         /**
-         * @param securityPolicyId . Unique identifier of the security policy associated with the pragma header settings being modified. If not included, pragma header settings are modified at the configuration scope and, as a result, apply to all the security policies associated with the configuration.
+         * @param securityPolicyId Unique identifier of the security policy
          * 
          * @return builder
          * 

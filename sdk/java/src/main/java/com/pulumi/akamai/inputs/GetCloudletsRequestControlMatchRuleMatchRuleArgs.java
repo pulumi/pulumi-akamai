@@ -19,122 +19,58 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
 
     public static final GetCloudletsRequestControlMatchRuleMatchRuleArgs Empty = new GetCloudletsRequestControlMatchRuleMatchRuleArgs();
 
-    /**
-     * (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
-     * 
-     */
     @Import(name="allowDeny", required=true)
     private Output<String> allowDeny;
 
-    /**
-     * @return (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
-     * 
-     */
     public Output<String> allowDeny() {
         return this.allowDeny;
     }
 
-    /**
-     * (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
-     * 
-     */
     @Import(name="disabled")
     private @Nullable Output<Boolean> disabled;
 
-    /**
-     * @return (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
-     * 
-     */
     public Optional<Output<Boolean>> disabled() {
         return Optional.ofNullable(this.disabled);
     }
 
-    /**
-     * (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     * 
-     */
     @Import(name="end")
     private @Nullable Output<Integer> end;
 
-    /**
-     * @return (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-     * 
-     */
     public Optional<Output<Integer>> end() {
         return Optional.ofNullable(this.end);
     }
 
-    /**
-     * (Optional) A list of conditions to apply to a Cloudlet, including:
-     * 
-     */
     @Import(name="matches")
     private @Nullable Output<List<GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs>> matches;
 
-    /**
-     * @return (Optional) A list of conditions to apply to a Cloudlet, including:
-     * 
-     */
     public Optional<Output<List<GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs>>> matches() {
         return Optional.ofNullable(this.matches);
     }
 
-    /**
-     * (Optional) Match on all incoming requests.
-     * 
-     */
     @Import(name="matchesAlways")
     private @Nullable Output<Boolean> matchesAlways;
 
-    /**
-     * @return (Optional) Match on all incoming requests.
-     * 
-     */
     public Optional<Output<Boolean>> matchesAlways() {
         return Optional.ofNullable(this.matchesAlways);
     }
 
-    /**
-     * (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     * 
-     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
-    /**
-     * @return (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-     * 
-     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     * 
-     */
     @Import(name="start")
     private @Nullable Output<Integer> start;
 
-    /**
-     * @return (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-     * 
-     */
     public Optional<Output<Integer>> start() {
         return Optional.ofNullable(this.start);
     }
 
-    /**
-     * (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     * 
-     */
     @Import(name="type", required=true)
     private Output<String> type;
 
-    /**
-     * @return (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-     * 
-     */
     public Output<String> type() {
         return this.type;
     }
@@ -170,180 +106,78 @@ public final class GetCloudletsRequestControlMatchRuleMatchRuleArgs extends com.
             $ = new GetCloudletsRequestControlMatchRuleMatchRuleArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param allowDeny (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder allowDeny(Output<String> allowDeny) {
             $.allowDeny = allowDeny;
             return this;
         }
 
-        /**
-         * @param allowDeny (Required) If set to `allow`, the request is sent to origin when all conditions are true. If set to `deny`, the request is denied when all conditions are true. If set to `denybranded`, the request is denied and rerouted according to the Request Control behavior settings.
-         * 
-         * @return builder
-         * 
-         */
         public Builder allowDeny(String allowDeny) {
             return allowDeny(Output.of(allowDeny));
         }
 
-        /**
-         * @param disabled (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
-         * 
-         * @return builder
-         * 
-         */
         public Builder disabled(@Nullable Output<Boolean> disabled) {
             $.disabled = disabled;
             return this;
         }
 
-        /**
-         * @param disabled (Optional) Whether to disable a rule. When a rule is disabled it&#39;s not evaluated against incoming requests.
-         * 
-         * @return builder
-         * 
-         */
         public Builder disabled(Boolean disabled) {
             return disabled(Output.of(disabled));
         }
 
-        /**
-         * @param end (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-         * 
-         * @return builder
-         * 
-         */
         public Builder end(@Nullable Output<Integer> end) {
             $.end = end;
             return this;
         }
 
-        /**
-         * @param end (Optional) The end time for this match. Specify the value in UTC in seconds since the epoch.
-         * 
-         * @return builder
-         * 
-         */
         public Builder end(Integer end) {
             return end(Output.of(end));
         }
 
-        /**
-         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder matches(@Nullable Output<List<GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs>> matches) {
             $.matches = matches;
             return this;
         }
 
-        /**
-         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder matches(List<GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs> matches) {
             return matches(Output.of(matches));
         }
 
-        /**
-         * @param matches (Optional) A list of conditions to apply to a Cloudlet, including:
-         * 
-         * @return builder
-         * 
-         */
         public Builder matches(GetCloudletsRequestControlMatchRuleMatchRuleMatchArgs... matches) {
             return matches(List.of(matches));
         }
 
-        /**
-         * @param matchesAlways (Optional) Match on all incoming requests.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchesAlways(@Nullable Output<Boolean> matchesAlways) {
             $.matchesAlways = matchesAlways;
             return this;
         }
 
-        /**
-         * @param matchesAlways (Optional) Match on all incoming requests.
-         * 
-         * @return builder
-         * 
-         */
         public Builder matchesAlways(Boolean matchesAlways) {
             return matchesAlways(Output.of(matchesAlways));
         }
 
-        /**
-         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param name (Optional) If you&#39;re using a `match_type` that supports name attributes, specify the part the incoming request to match on, either `cookie`, `header`, `parameter`, or `query`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
-        /**
-         * @param start (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-         * 
-         * @return builder
-         * 
-         */
         public Builder start(@Nullable Output<Integer> start) {
             $.start = start;
             return this;
         }
 
-        /**
-         * @param start (Optional) The start time for this match. Specify the value in UTC in seconds since the epoch.
-         * 
-         * @return builder
-         * 
-         */
         public Builder start(Integer start) {
             return start(Output.of(start));
         }
 
-        /**
-         * @param type (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(Output<String> type) {
             $.type = type;
             return this;
         }
 
-        /**
-         * @param type (Required) The type of the array, either `object` or `simple`. Use the `simple` option when adding only an array of string-based values.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(String type) {
             return type(Output.of(type));
         }

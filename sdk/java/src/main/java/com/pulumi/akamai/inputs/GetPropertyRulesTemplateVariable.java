@@ -14,47 +14,23 @@ public final class GetPropertyRulesTemplateVariable extends com.pulumi.resources
 
     public static final GetPropertyRulesTemplateVariable Empty = new GetPropertyRulesTemplateVariable();
 
-    /**
-     * The name of the variable used in the template.
-     * 
-     */
     @Import(name="name", required=true)
     private String name;
 
-    /**
-     * @return The name of the variable used in the template.
-     * 
-     */
     public String name() {
         return this.name;
     }
 
-    /**
-     * The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-     * 
-     */
     @Import(name="type")
     private @Nullable String type;
 
-    /**
-     * @return The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-     * 
-     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
 
-    /**
-     * The value of the variable passed as a string.
-     * 
-     */
     @Import(name="value", required=true)
     private String value;
 
-    /**
-     * @return The value of the variable passed as a string.
-     * 
-     */
     public String value() {
         return this.value;
     }
@@ -85,34 +61,16 @@ public final class GetPropertyRulesTemplateVariable extends com.pulumi.resources
             $ = new GetPropertyRulesTemplateVariable(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param name The name of the variable used in the template.
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param type The type of variable: `string`, `number`, `bool`, or `jsonBlock`.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(@Nullable String type) {
             $.type = type;
             return this;
         }
 
-        /**
-         * @param value The value of the variable passed as a string.
-         * 
-         * @return builder
-         * 
-         */
         public Builder value(String value) {
             $.value = value;
             return this;

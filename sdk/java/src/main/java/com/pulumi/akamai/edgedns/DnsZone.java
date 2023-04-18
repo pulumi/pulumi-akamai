@@ -38,143 +38,63 @@ public class DnsZone extends com.pulumi.resources.CustomResource {
     public Output<Integer> aliasCount() {
         return this.aliasCount;
     }
-    /**
-     * A descriptive comment.
-     * 
-     */
     @Export(name="comment", type=String.class, parameters={})
     private Output</* @Nullable */ String> comment;
 
-    /**
-     * @return A descriptive comment.
-     * 
-     */
     public Output<Optional<String>> comment() {
         return Codegen.optional(this.comment);
     }
-    /**
-     * The contract ID.
-     * 
-     */
     @Export(name="contract", type=String.class, parameters={})
     private Output<String> contract;
 
-    /**
-     * @return The contract ID.
-     * 
-     */
     public Output<String> contract() {
         return this.contract;
     }
-    /**
-     * A free form identifier for the zone.
-     * 
-     */
     @Export(name="endCustomerId", type=String.class, parameters={})
     private Output</* @Nullable */ String> endCustomerId;
 
-    /**
-     * @return A free form identifier for the zone.
-     * 
-     */
     public Output<Optional<String>> endCustomerId() {
         return Codegen.optional(this.endCustomerId);
     }
-    /**
-     * The currently selected group ID.
-     * 
-     */
     @Export(name="group", type=String.class, parameters={})
     private Output</* @Nullable */ String> group;
 
-    /**
-     * @return The currently selected group ID.
-     * 
-     */
     public Output<Optional<String>> group() {
         return Codegen.optional(this.group);
     }
-    /**
-     * The names or IP addresses of the nameservers that the zone data should be retrieved from.
-     * 
-     */
     @Export(name="masters", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> masters;
 
-    /**
-     * @return The names or IP addresses of the nameservers that the zone data should be retrieved from.
-     * 
-     */
     public Output<Optional<List<String>>> masters() {
         return Codegen.optional(this.masters);
     }
-    /**
-     * Whether DNSSEC Sign and Serve is enabled.
-     * 
-     */
     @Export(name="signAndServe", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> signAndServe;
 
-    /**
-     * @return Whether DNSSEC Sign and Serve is enabled.
-     * 
-     */
     public Output<Optional<Boolean>> signAndServe() {
         return Codegen.optional(this.signAndServe);
     }
-    /**
-     * The algorithm used by Sign and Serve.
-     * 
-     */
     @Export(name="signAndServeAlgorithm", type=String.class, parameters={})
     private Output</* @Nullable */ String> signAndServeAlgorithm;
 
-    /**
-     * @return The algorithm used by Sign and Serve.
-     * 
-     */
     public Output<Optional<String>> signAndServeAlgorithm() {
         return Codegen.optional(this.signAndServeAlgorithm);
     }
-    /**
-     * The name of the zone whose configuration this zone will copy.
-     * 
-     */
     @Export(name="target", type=String.class, parameters={})
     private Output</* @Nullable */ String> target;
 
-    /**
-     * @return The name of the zone whose configuration this zone will copy.
-     * 
-     */
     public Output<Optional<String>> target() {
         return Codegen.optional(this.target);
     }
-    /**
-     * The TSIG Key used in secure zone transfers. If used, requires these arguments:
-     * 
-     */
     @Export(name="tsigKey", type=DnsZoneTsigKey.class, parameters={})
     private Output</* @Nullable */ DnsZoneTsigKey> tsigKey;
 
-    /**
-     * @return The TSIG Key used in secure zone transfers. If used, requires these arguments:
-     * 
-     */
     public Output<Optional<DnsZoneTsigKey>> tsigKey() {
         return Codegen.optional(this.tsigKey);
     }
-    /**
-     * Whether the zone is `primary`, `secondary`, or `alias`.
-     * 
-     */
     @Export(name="type", type=String.class, parameters={})
     private Output<String> type;
 
-    /**
-     * @return Whether the zone is `primary`, `secondary`, or `alias`.
-     * 
-     */
     public Output<String> type() {
         return this.type;
     }
@@ -184,17 +104,9 @@ public class DnsZone extends com.pulumi.resources.CustomResource {
     public Output<String> versionId() {
         return this.versionId;
     }
-    /**
-     * The domain zone, encapsulating any nested subdomains.
-     * 
-     */
     @Export(name="zone", type=String.class, parameters={})
     private Output<String> zone;
 
-    /**
-     * @return The domain zone, encapsulating any nested subdomains.
-     * 
-     */
     public Output<String> zone() {
         return this.zone;
     }

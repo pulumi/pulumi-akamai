@@ -11,83 +11,9 @@ namespace Pulumi.Akamai
 {
     public static class GetIamStates
     {
-        /// <summary>
-        /// Use `akamai.getIamStates` to list US states or Canadian provinces. If `country=USA` you may enter a value of `TBD` if you don't know a user's state. Administrators use this data source to set a user's state.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var states = Akamai.GetIamStates.Invoke(new()
-        ///     {
-        ///         Country = "canada",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["supportedStates"] = states,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// These attributes are returned:
-        /// 
-        /// * `states` — A list of states.
-        /// 
-        /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
-        /// </summary>
         public static Task<GetIamStatesResult> InvokeAsync(GetIamStatesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamStatesResult>("akamai:index/getIamStates:getIamStates", args ?? new GetIamStatesArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// Use `akamai.getIamStates` to list US states or Canadian provinces. If `country=USA` you may enter a value of `TBD` if you don't know a user's state. Administrators use this data source to set a user's state.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// Basic usage:
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Akamai = Pulumi.Akamai;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var states = Akamai.GetIamStates.Invoke(new()
-        ///     {
-        ///         Country = "canada",
-        ///     });
-        /// 
-        ///     return new Dictionary&lt;string, object?&gt;
-        ///     {
-        ///         ["supportedStates"] = states,
-        ///     };
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// ## Attributes reference
-        /// 
-        /// These attributes are returned:
-        /// 
-        /// * `states` — A list of states.
-        /// 
-        /// [API Reference](https://techdocs.akamai.com/iam-api/reference/get-common-states)
-        /// </summary>
         public static Output<GetIamStatesResult> Invoke(GetIamStatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamStatesResult>("akamai:index/getIamStates:getIamStates", args ?? new GetIamStatesInvokeArgs(), options.WithDefaults());
     }
@@ -95,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetIamStatesArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// — (required, string) Specifies USA or Canada.
-        /// </summary>
         [Input("country", required: true)]
         public string Country { get; set; } = null!;
 
@@ -109,9 +32,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetIamStatesInvokeArgs : global::Pulumi.InvokeArgs
     {
-        /// <summary>
-        /// — (required, string) Specifies USA or Canada.
-        /// </summary>
         [Input("country", required: true)]
         public Input<string> Country { get; set; } = null!;
 

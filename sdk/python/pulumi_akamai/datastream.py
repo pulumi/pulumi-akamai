@@ -39,27 +39,17 @@ class DatastreamArgs:
                  sumologic_connector: Optional[pulumi.Input['DatastreamSumologicConnectorArgs']] = None):
         """
         The set of arguments for constructing a Datastream resource.
-        :param pulumi.Input[bool] active: Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
-        :param pulumi.Input['DatastreamConfigArgs'] config: Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
-        :param pulumi.Input[str] contract_id: Identifies the contract that has access to the product.
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] dataset_fields_ids: Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
-        :param pulumi.Input[str] group_id: Identifies the group that has access to the product and this stream configuration.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] property_ids: Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
-        :param pulumi.Input[str] stream_name: The name of the stream.
-        :param pulumi.Input[str] stream_type: The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
-        :param pulumi.Input[str] template_name: The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
-        :param pulumi.Input['DatastreamAzureConnectorArgs'] azure_connector: Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-        :param pulumi.Input['DatastreamDatadogConnectorArgs'] datadog_connector: Specify details about the Datadog connector in a stream, including:
-        :param pulumi.Input['DatastreamElasticsearchConnectorArgs'] elasticsearch_connector: Specify details about the Elasticsearch connector you can use in a stream, including:
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: A list of email addresses you want to notify about activations and deactivations of the stream.
-        :param pulumi.Input['DatastreamGcsConnectorArgs'] gcs_connector: Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-        :param pulumi.Input['DatastreamHttpsConnectorArgs'] https_connector: Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-        :param pulumi.Input['DatastreamLogglyConnectorArgs'] loggly_connector: Specify details about the Loggly connector you can use in a stream, including:
-        :param pulumi.Input['DatastreamNewRelicConnectorArgs'] new_relic_connector: Specify details about the New Relic connector you can use in a stream, including:
-        :param pulumi.Input['DatastreamOracleConnectorArgs'] oracle_connector: Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
-        :param pulumi.Input['DatastreamS3ConnectorArgs'] s3_connector: Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-        :param pulumi.Input['DatastreamSplunkConnectorArgs'] splunk_connector: Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-        :param pulumi.Input['DatastreamSumologicConnectorArgs'] sumologic_connector: Specify details about the Sumo Logic connector in a stream, including:
+        :param pulumi.Input[bool] active: Defining if stream should be active or not
+        :param pulumi.Input['DatastreamConfigArgs'] config: Provides information about the configuration related to logs (format, file names, delivery frequency)
+        :param pulumi.Input[str] contract_id: Identifies the contract that has access to the product
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] dataset_fields_ids: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+               identifiers define how the value for these fields appear in the log lines
+        :param pulumi.Input[str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] property_ids: Identifies the properties monitored in the stream
+        :param pulumi.Input[str] stream_name: The name of the stream
+        :param pulumi.Input[str] stream_type: Specifies the type of the data stream
+        :param pulumi.Input[str] template_name: The name of the template associated with the stream
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: List of email addresses where the system sends notifications about activations and deactivations of the stream
         """
         pulumi.set(__self__, "active", active)
         pulumi.set(__self__, "config", config)
@@ -99,7 +89,7 @@ class DatastreamArgs:
     @pulumi.getter
     def active(self) -> pulumi.Input[bool]:
         """
-        Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
+        Defining if stream should be active or not
         """
         return pulumi.get(self, "active")
 
@@ -111,7 +101,7 @@ class DatastreamArgs:
     @pulumi.getter
     def config(self) -> pulumi.Input['DatastreamConfigArgs']:
         """
-        Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
+        Provides information about the configuration related to logs (format, file names, delivery frequency)
         """
         return pulumi.get(self, "config")
 
@@ -123,7 +113,7 @@ class DatastreamArgs:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Input[str]:
         """
-        Identifies the contract that has access to the product.
+        Identifies the contract that has access to the product
         """
         return pulumi.get(self, "contract_id")
 
@@ -135,7 +125,8 @@ class DatastreamArgs:
     @pulumi.getter(name="datasetFieldsIds")
     def dataset_fields_ids(self) -> pulumi.Input[Sequence[pulumi.Input[int]]]:
         """
-        Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+        A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+        identifiers define how the value for these fields appear in the log lines
         """
         return pulumi.get(self, "dataset_fields_ids")
 
@@ -147,7 +138,7 @@ class DatastreamArgs:
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Input[str]:
         """
-        Identifies the group that has access to the product and this stream configuration.
+        Identifies the group that has access to the product and for which the stream configuration was created
         """
         return pulumi.get(self, "group_id")
 
@@ -159,7 +150,7 @@ class DatastreamArgs:
     @pulumi.getter(name="propertyIds")
     def property_ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+        Identifies the properties monitored in the stream
         """
         return pulumi.get(self, "property_ids")
 
@@ -171,7 +162,7 @@ class DatastreamArgs:
     @pulumi.getter(name="streamName")
     def stream_name(self) -> pulumi.Input[str]:
         """
-        The name of the stream.
+        The name of the stream
         """
         return pulumi.get(self, "stream_name")
 
@@ -183,7 +174,7 @@ class DatastreamArgs:
     @pulumi.getter(name="streamType")
     def stream_type(self) -> pulumi.Input[str]:
         """
-        The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+        Specifies the type of the data stream
         """
         return pulumi.get(self, "stream_type")
 
@@ -195,7 +186,7 @@ class DatastreamArgs:
     @pulumi.getter(name="templateName")
     def template_name(self) -> pulumi.Input[str]:
         """
-        The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+        The name of the template associated with the stream
         """
         return pulumi.get(self, "template_name")
 
@@ -206,9 +197,6 @@ class DatastreamArgs:
     @property
     @pulumi.getter(name="azureConnector")
     def azure_connector(self) -> Optional[pulumi.Input['DatastreamAzureConnectorArgs']]:
-        """
-        Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-        """
         return pulumi.get(self, "azure_connector")
 
     @azure_connector.setter
@@ -218,9 +206,6 @@ class DatastreamArgs:
     @property
     @pulumi.getter(name="datadogConnector")
     def datadog_connector(self) -> Optional[pulumi.Input['DatastreamDatadogConnectorArgs']]:
-        """
-        Specify details about the Datadog connector in a stream, including:
-        """
         return pulumi.get(self, "datadog_connector")
 
     @datadog_connector.setter
@@ -230,9 +215,6 @@ class DatastreamArgs:
     @property
     @pulumi.getter(name="elasticsearchConnector")
     def elasticsearch_connector(self) -> Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']]:
-        """
-        Specify details about the Elasticsearch connector you can use in a stream, including:
-        """
         return pulumi.get(self, "elasticsearch_connector")
 
     @elasticsearch_connector.setter
@@ -243,7 +225,7 @@ class DatastreamArgs:
     @pulumi.getter(name="emailIds")
     def email_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of email addresses you want to notify about activations and deactivations of the stream.
+        List of email addresses where the system sends notifications about activations and deactivations of the stream
         """
         return pulumi.get(self, "email_ids")
 
@@ -254,9 +236,6 @@ class DatastreamArgs:
     @property
     @pulumi.getter(name="gcsConnector")
     def gcs_connector(self) -> Optional[pulumi.Input['DatastreamGcsConnectorArgs']]:
-        """
-        Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-        """
         return pulumi.get(self, "gcs_connector")
 
     @gcs_connector.setter
@@ -266,9 +245,6 @@ class DatastreamArgs:
     @property
     @pulumi.getter(name="httpsConnector")
     def https_connector(self) -> Optional[pulumi.Input['DatastreamHttpsConnectorArgs']]:
-        """
-        Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-        """
         return pulumi.get(self, "https_connector")
 
     @https_connector.setter
@@ -278,9 +254,6 @@ class DatastreamArgs:
     @property
     @pulumi.getter(name="logglyConnector")
     def loggly_connector(self) -> Optional[pulumi.Input['DatastreamLogglyConnectorArgs']]:
-        """
-        Specify details about the Loggly connector you can use in a stream, including:
-        """
         return pulumi.get(self, "loggly_connector")
 
     @loggly_connector.setter
@@ -290,9 +263,6 @@ class DatastreamArgs:
     @property
     @pulumi.getter(name="newRelicConnector")
     def new_relic_connector(self) -> Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']]:
-        """
-        Specify details about the New Relic connector you can use in a stream, including:
-        """
         return pulumi.get(self, "new_relic_connector")
 
     @new_relic_connector.setter
@@ -302,9 +272,6 @@ class DatastreamArgs:
     @property
     @pulumi.getter(name="oracleConnector")
     def oracle_connector(self) -> Optional[pulumi.Input['DatastreamOracleConnectorArgs']]:
-        """
-        Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
-        """
         return pulumi.get(self, "oracle_connector")
 
     @oracle_connector.setter
@@ -314,9 +281,6 @@ class DatastreamArgs:
     @property
     @pulumi.getter(name="s3Connector")
     def s3_connector(self) -> Optional[pulumi.Input['DatastreamS3ConnectorArgs']]:
-        """
-        Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-        """
         return pulumi.get(self, "s3_connector")
 
     @s3_connector.setter
@@ -326,9 +290,6 @@ class DatastreamArgs:
     @property
     @pulumi.getter(name="splunkConnector")
     def splunk_connector(self) -> Optional[pulumi.Input['DatastreamSplunkConnectorArgs']]:
-        """
-        Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-        """
         return pulumi.get(self, "splunk_connector")
 
     @splunk_connector.setter
@@ -338,9 +299,6 @@ class DatastreamArgs:
     @property
     @pulumi.getter(name="sumologicConnector")
     def sumologic_connector(self) -> Optional[pulumi.Input['DatastreamSumologicConnectorArgs']]:
-        """
-        Specify details about the Sumo Logic connector in a stream, including:
-        """
         return pulumi.get(self, "sumologic_connector")
 
     @sumologic_connector.setter
@@ -383,36 +341,26 @@ class _DatastreamState:
                  template_name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Datastream resources.
-        :param pulumi.Input[bool] active: Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
-        :param pulumi.Input['DatastreamAzureConnectorArgs'] azure_connector: Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-        :param pulumi.Input['DatastreamConfigArgs'] config: Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
-        :param pulumi.Input[str] contract_id: Identifies the contract that has access to the product.
+        :param pulumi.Input[bool] active: Defining if stream should be active or not
+        :param pulumi.Input['DatastreamConfigArgs'] config: Provides information about the configuration related to logs (format, file names, delivery frequency)
+        :param pulumi.Input[str] contract_id: Identifies the contract that has access to the product
         :param pulumi.Input[str] created_by: The username who created the stream
         :param pulumi.Input[str] created_date: The date and time when the stream was created
-        :param pulumi.Input['DatastreamDatadogConnectorArgs'] datadog_connector: Specify details about the Datadog connector in a stream, including:
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] dataset_fields_ids: Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
-        :param pulumi.Input['DatastreamElasticsearchConnectorArgs'] elasticsearch_connector: Specify details about the Elasticsearch connector you can use in a stream, including:
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: A list of email addresses you want to notify about activations and deactivations of the stream.
-        :param pulumi.Input['DatastreamGcsConnectorArgs'] gcs_connector: Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-        :param pulumi.Input[str] group_id: Identifies the group that has access to the product and this stream configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] dataset_fields_ids: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+               identifiers define how the value for these fields appear in the log lines
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: List of email addresses where the system sends notifications about activations and deactivations of the stream
+        :param pulumi.Input[str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
         :param pulumi.Input[str] group_name: The name of the user group for which the stream was created
-        :param pulumi.Input['DatastreamHttpsConnectorArgs'] https_connector: Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-        :param pulumi.Input['DatastreamLogglyConnectorArgs'] loggly_connector: Specify details about the Loggly connector you can use in a stream, including:
         :param pulumi.Input[str] modified_by: The username who modified the stream
         :param pulumi.Input[str] modified_date: The date and time when the stream was modified
-        :param pulumi.Input['DatastreamNewRelicConnectorArgs'] new_relic_connector: Specify details about the New Relic connector you can use in a stream, including:
-        :param pulumi.Input['DatastreamOracleConnectorArgs'] oracle_connector: Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
         :param pulumi.Input[str] papi_json: The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
         :param pulumi.Input[str] product_id: The ID of the product for which the stream was created
         :param pulumi.Input[str] product_name: The name of the product for which the stream was created
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] property_ids: Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
-        :param pulumi.Input['DatastreamS3ConnectorArgs'] s3_connector: Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-        :param pulumi.Input['DatastreamSplunkConnectorArgs'] splunk_connector: Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-        :param pulumi.Input[str] stream_name: The name of the stream.
-        :param pulumi.Input[str] stream_type: The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] property_ids: Identifies the properties monitored in the stream
+        :param pulumi.Input[str] stream_name: The name of the stream
+        :param pulumi.Input[str] stream_type: Specifies the type of the data stream
         :param pulumi.Input[int] stream_version_id: Identifies the configuration version of the stream
-        :param pulumi.Input['DatastreamSumologicConnectorArgs'] sumologic_connector: Specify details about the Sumo Logic connector in a stream, including:
-        :param pulumi.Input[str] template_name: The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+        :param pulumi.Input[str] template_name: The name of the template associated with the stream
         """
         if active is not None:
             pulumi.set(__self__, "active", active)
@@ -479,7 +427,7 @@ class _DatastreamState:
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
+        Defining if stream should be active or not
         """
         return pulumi.get(self, "active")
 
@@ -490,9 +438,6 @@ class _DatastreamState:
     @property
     @pulumi.getter(name="azureConnector")
     def azure_connector(self) -> Optional[pulumi.Input['DatastreamAzureConnectorArgs']]:
-        """
-        Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-        """
         return pulumi.get(self, "azure_connector")
 
     @azure_connector.setter
@@ -503,7 +448,7 @@ class _DatastreamState:
     @pulumi.getter
     def config(self) -> Optional[pulumi.Input['DatastreamConfigArgs']]:
         """
-        Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
+        Provides information about the configuration related to logs (format, file names, delivery frequency)
         """
         return pulumi.get(self, "config")
 
@@ -515,7 +460,7 @@ class _DatastreamState:
     @pulumi.getter(name="contractId")
     def contract_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Identifies the contract that has access to the product.
+        Identifies the contract that has access to the product
         """
         return pulumi.get(self, "contract_id")
 
@@ -550,9 +495,6 @@ class _DatastreamState:
     @property
     @pulumi.getter(name="datadogConnector")
     def datadog_connector(self) -> Optional[pulumi.Input['DatastreamDatadogConnectorArgs']]:
-        """
-        Specify details about the Datadog connector in a stream, including:
-        """
         return pulumi.get(self, "datadog_connector")
 
     @datadog_connector.setter
@@ -563,7 +505,8 @@ class _DatastreamState:
     @pulumi.getter(name="datasetFieldsIds")
     def dataset_fields_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
         """
-        Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+        A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+        identifiers define how the value for these fields appear in the log lines
         """
         return pulumi.get(self, "dataset_fields_ids")
 
@@ -574,9 +517,6 @@ class _DatastreamState:
     @property
     @pulumi.getter(name="elasticsearchConnector")
     def elasticsearch_connector(self) -> Optional[pulumi.Input['DatastreamElasticsearchConnectorArgs']]:
-        """
-        Specify details about the Elasticsearch connector you can use in a stream, including:
-        """
         return pulumi.get(self, "elasticsearch_connector")
 
     @elasticsearch_connector.setter
@@ -587,7 +527,7 @@ class _DatastreamState:
     @pulumi.getter(name="emailIds")
     def email_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of email addresses you want to notify about activations and deactivations of the stream.
+        List of email addresses where the system sends notifications about activations and deactivations of the stream
         """
         return pulumi.get(self, "email_ids")
 
@@ -598,9 +538,6 @@ class _DatastreamState:
     @property
     @pulumi.getter(name="gcsConnector")
     def gcs_connector(self) -> Optional[pulumi.Input['DatastreamGcsConnectorArgs']]:
-        """
-        Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-        """
         return pulumi.get(self, "gcs_connector")
 
     @gcs_connector.setter
@@ -611,7 +548,7 @@ class _DatastreamState:
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Identifies the group that has access to the product and this stream configuration.
+        Identifies the group that has access to the product and for which the stream configuration was created
         """
         return pulumi.get(self, "group_id")
 
@@ -634,9 +571,6 @@ class _DatastreamState:
     @property
     @pulumi.getter(name="httpsConnector")
     def https_connector(self) -> Optional[pulumi.Input['DatastreamHttpsConnectorArgs']]:
-        """
-        Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-        """
         return pulumi.get(self, "https_connector")
 
     @https_connector.setter
@@ -646,9 +580,6 @@ class _DatastreamState:
     @property
     @pulumi.getter(name="logglyConnector")
     def loggly_connector(self) -> Optional[pulumi.Input['DatastreamLogglyConnectorArgs']]:
-        """
-        Specify details about the Loggly connector you can use in a stream, including:
-        """
         return pulumi.get(self, "loggly_connector")
 
     @loggly_connector.setter
@@ -682,9 +613,6 @@ class _DatastreamState:
     @property
     @pulumi.getter(name="newRelicConnector")
     def new_relic_connector(self) -> Optional[pulumi.Input['DatastreamNewRelicConnectorArgs']]:
-        """
-        Specify details about the New Relic connector you can use in a stream, including:
-        """
         return pulumi.get(self, "new_relic_connector")
 
     @new_relic_connector.setter
@@ -694,9 +622,6 @@ class _DatastreamState:
     @property
     @pulumi.getter(name="oracleConnector")
     def oracle_connector(self) -> Optional[pulumi.Input['DatastreamOracleConnectorArgs']]:
-        """
-        Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
-        """
         return pulumi.get(self, "oracle_connector")
 
     @oracle_connector.setter
@@ -743,7 +668,7 @@ class _DatastreamState:
     @pulumi.getter(name="propertyIds")
     def property_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+        Identifies the properties monitored in the stream
         """
         return pulumi.get(self, "property_ids")
 
@@ -754,9 +679,6 @@ class _DatastreamState:
     @property
     @pulumi.getter(name="s3Connector")
     def s3_connector(self) -> Optional[pulumi.Input['DatastreamS3ConnectorArgs']]:
-        """
-        Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-        """
         return pulumi.get(self, "s3_connector")
 
     @s3_connector.setter
@@ -766,9 +688,6 @@ class _DatastreamState:
     @property
     @pulumi.getter(name="splunkConnector")
     def splunk_connector(self) -> Optional[pulumi.Input['DatastreamSplunkConnectorArgs']]:
-        """
-        Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-        """
         return pulumi.get(self, "splunk_connector")
 
     @splunk_connector.setter
@@ -779,7 +698,7 @@ class _DatastreamState:
     @pulumi.getter(name="streamName")
     def stream_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the stream.
+        The name of the stream
         """
         return pulumi.get(self, "stream_name")
 
@@ -791,7 +710,7 @@ class _DatastreamState:
     @pulumi.getter(name="streamType")
     def stream_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+        Specifies the type of the data stream
         """
         return pulumi.get(self, "stream_type")
 
@@ -814,9 +733,6 @@ class _DatastreamState:
     @property
     @pulumi.getter(name="sumologicConnector")
     def sumologic_connector(self) -> Optional[pulumi.Input['DatastreamSumologicConnectorArgs']]:
-        """
-        Specify details about the Sumo Logic connector in a stream, including:
-        """
         return pulumi.get(self, "sumologic_connector")
 
     @sumologic_connector.setter
@@ -827,7 +743,7 @@ class _DatastreamState:
     @pulumi.getter(name="templateName")
     def template_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+        The name of the template associated with the stream
         """
         return pulumi.get(self, "template_name")
 
@@ -864,43 +780,20 @@ class Datastream(pulumi.CustomResource):
                  template_name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## Import
-
-        Basic usagehcl resource "akamai_datastream" "example" {
-
-        # (resource arguments)
-
-         } You can import your Akamai DataStream configuration using a stream version ID. For example
-
-        ```sh
-         $ pulumi import akamai:index/datastream:Datastream example 1234
-        ```
-
-         ~> **IMPORTANT:** For security reasons, this command doesn't import any secrets you specify for your connector. To make sure the state file includes complete data, use this resource to manually add the arguments marked **Secret** above.
-
+        Create a Datastream resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] active: Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
-        :param pulumi.Input[pulumi.InputType['DatastreamAzureConnectorArgs']] azure_connector: Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-        :param pulumi.Input[pulumi.InputType['DatastreamConfigArgs']] config: Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
-        :param pulumi.Input[str] contract_id: Identifies the contract that has access to the product.
-        :param pulumi.Input[pulumi.InputType['DatastreamDatadogConnectorArgs']] datadog_connector: Specify details about the Datadog connector in a stream, including:
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] dataset_fields_ids: Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
-        :param pulumi.Input[pulumi.InputType['DatastreamElasticsearchConnectorArgs']] elasticsearch_connector: Specify details about the Elasticsearch connector you can use in a stream, including:
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: A list of email addresses you want to notify about activations and deactivations of the stream.
-        :param pulumi.Input[pulumi.InputType['DatastreamGcsConnectorArgs']] gcs_connector: Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-        :param pulumi.Input[str] group_id: Identifies the group that has access to the product and this stream configuration.
-        :param pulumi.Input[pulumi.InputType['DatastreamHttpsConnectorArgs']] https_connector: Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-        :param pulumi.Input[pulumi.InputType['DatastreamLogglyConnectorArgs']] loggly_connector: Specify details about the Loggly connector you can use in a stream, including:
-        :param pulumi.Input[pulumi.InputType['DatastreamNewRelicConnectorArgs']] new_relic_connector: Specify details about the New Relic connector you can use in a stream, including:
-        :param pulumi.Input[pulumi.InputType['DatastreamOracleConnectorArgs']] oracle_connector: Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] property_ids: Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
-        :param pulumi.Input[pulumi.InputType['DatastreamS3ConnectorArgs']] s3_connector: Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-        :param pulumi.Input[pulumi.InputType['DatastreamSplunkConnectorArgs']] splunk_connector: Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-        :param pulumi.Input[str] stream_name: The name of the stream.
-        :param pulumi.Input[str] stream_type: The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
-        :param pulumi.Input[pulumi.InputType['DatastreamSumologicConnectorArgs']] sumologic_connector: Specify details about the Sumo Logic connector in a stream, including:
-        :param pulumi.Input[str] template_name: The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+        :param pulumi.Input[bool] active: Defining if stream should be active or not
+        :param pulumi.Input[pulumi.InputType['DatastreamConfigArgs']] config: Provides information about the configuration related to logs (format, file names, delivery frequency)
+        :param pulumi.Input[str] contract_id: Identifies the contract that has access to the product
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] dataset_fields_ids: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+               identifiers define how the value for these fields appear in the log lines
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: List of email addresses where the system sends notifications about activations and deactivations of the stream
+        :param pulumi.Input[str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] property_ids: Identifies the properties monitored in the stream
+        :param pulumi.Input[str] stream_name: The name of the stream
+        :param pulumi.Input[str] stream_type: Specifies the type of the data stream
+        :param pulumi.Input[str] template_name: The name of the template associated with the stream
         """
         ...
     @overload
@@ -909,20 +802,7 @@ class Datastream(pulumi.CustomResource):
                  args: DatastreamArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Import
-
-        Basic usagehcl resource "akamai_datastream" "example" {
-
-        # (resource arguments)
-
-         } You can import your Akamai DataStream configuration using a stream version ID. For example
-
-        ```sh
-         $ pulumi import akamai:index/datastream:Datastream example 1234
-        ```
-
-         ~> **IMPORTANT:** For security reasons, this command doesn't import any secrets you specify for your connector. To make sure the state file includes complete data, use this resource to manually add the arguments marked **Secret** above.
-
+        Create a Datastream resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DatastreamArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1063,36 +943,26 @@ class Datastream(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] active: Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
-        :param pulumi.Input[pulumi.InputType['DatastreamAzureConnectorArgs']] azure_connector: Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-        :param pulumi.Input[pulumi.InputType['DatastreamConfigArgs']] config: Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
-        :param pulumi.Input[str] contract_id: Identifies the contract that has access to the product.
+        :param pulumi.Input[bool] active: Defining if stream should be active or not
+        :param pulumi.Input[pulumi.InputType['DatastreamConfigArgs']] config: Provides information about the configuration related to logs (format, file names, delivery frequency)
+        :param pulumi.Input[str] contract_id: Identifies the contract that has access to the product
         :param pulumi.Input[str] created_by: The username who created the stream
         :param pulumi.Input[str] created_date: The date and time when the stream was created
-        :param pulumi.Input[pulumi.InputType['DatastreamDatadogConnectorArgs']] datadog_connector: Specify details about the Datadog connector in a stream, including:
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] dataset_fields_ids: Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
-        :param pulumi.Input[pulumi.InputType['DatastreamElasticsearchConnectorArgs']] elasticsearch_connector: Specify details about the Elasticsearch connector you can use in a stream, including:
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: A list of email addresses you want to notify about activations and deactivations of the stream.
-        :param pulumi.Input[pulumi.InputType['DatastreamGcsConnectorArgs']] gcs_connector: Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-        :param pulumi.Input[str] group_id: Identifies the group that has access to the product and this stream configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] dataset_fields_ids: A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+               identifiers define how the value for these fields appear in the log lines
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] email_ids: List of email addresses where the system sends notifications about activations and deactivations of the stream
+        :param pulumi.Input[str] group_id: Identifies the group that has access to the product and for which the stream configuration was created
         :param pulumi.Input[str] group_name: The name of the user group for which the stream was created
-        :param pulumi.Input[pulumi.InputType['DatastreamHttpsConnectorArgs']] https_connector: Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-        :param pulumi.Input[pulumi.InputType['DatastreamLogglyConnectorArgs']] loggly_connector: Specify details about the Loggly connector you can use in a stream, including:
         :param pulumi.Input[str] modified_by: The username who modified the stream
         :param pulumi.Input[str] modified_date: The date and time when the stream was modified
-        :param pulumi.Input[pulumi.InputType['DatastreamNewRelicConnectorArgs']] new_relic_connector: Specify details about the New Relic connector you can use in a stream, including:
-        :param pulumi.Input[pulumi.InputType['DatastreamOracleConnectorArgs']] oracle_connector: Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
         :param pulumi.Input[str] papi_json: The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
         :param pulumi.Input[str] product_id: The ID of the product for which the stream was created
         :param pulumi.Input[str] product_name: The name of the product for which the stream was created
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] property_ids: Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
-        :param pulumi.Input[pulumi.InputType['DatastreamS3ConnectorArgs']] s3_connector: Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-        :param pulumi.Input[pulumi.InputType['DatastreamSplunkConnectorArgs']] splunk_connector: Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-        :param pulumi.Input[str] stream_name: The name of the stream.
-        :param pulumi.Input[str] stream_type: The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] property_ids: Identifies the properties monitored in the stream
+        :param pulumi.Input[str] stream_name: The name of the stream
+        :param pulumi.Input[str] stream_type: Specifies the type of the data stream
         :param pulumi.Input[int] stream_version_id: Identifies the configuration version of the stream
-        :param pulumi.Input[pulumi.InputType['DatastreamSumologicConnectorArgs']] sumologic_connector: Specify details about the Sumo Logic connector in a stream, including:
-        :param pulumi.Input[str] template_name: The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+        :param pulumi.Input[str] template_name: The name of the template associated with the stream
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1134,23 +1004,20 @@ class Datastream(pulumi.CustomResource):
     @pulumi.getter
     def active(self) -> pulumi.Output[bool]:
         """
-        Whether you want to start activating the stream when applying the resource. Either `true` for activating the stream upon sending the request or `false` for leaving the stream inactive after the request.
+        Defining if stream should be active or not
         """
         return pulumi.get(self, "active")
 
     @property
     @pulumi.getter(name="azureConnector")
     def azure_connector(self) -> pulumi.Output[Optional['outputs.DatastreamAzureConnector']]:
-        """
-        Specify details about the Azure Storage connector configuration in a data stream. Note that currently DataStream supports only streaming data to [block objects](https://docs.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs). The argument includes these sub-arguments:
-        """
         return pulumi.get(self, "azure_connector")
 
     @property
     @pulumi.getter
     def config(self) -> pulumi.Output['outputs.DatastreamConfig']:
         """
-        Provides information about the log line configuration, log file format, names of log files sent, and file delivery. The argument includes these sub-arguments:
+        Provides information about the configuration related to logs (format, file names, delivery frequency)
         """
         return pulumi.get(self, "config")
 
@@ -1158,7 +1025,7 @@ class Datastream(pulumi.CustomResource):
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[str]:
         """
-        Identifies the contract that has access to the product.
+        Identifies the contract that has access to the product
         """
         return pulumi.get(self, "contract_id")
 
@@ -1181,48 +1048,40 @@ class Datastream(pulumi.CustomResource):
     @property
     @pulumi.getter(name="datadogConnector")
     def datadog_connector(self) -> pulumi.Output[Optional['outputs.DatastreamDatadogConnector']]:
-        """
-        Specify details about the Datadog connector in a stream, including:
-        """
         return pulumi.get(self, "datadog_connector")
 
     @property
     @pulumi.getter(name="datasetFieldsIds")
     def dataset_fields_ids(self) -> pulumi.Output[Sequence[int]]:
         """
-        Identifiers of the data set fields within the template that you want to receive in logs. The order of the identifiers define how the value for these fields appears in the log lines. See [Data set parameters](https://techdocs.akamai.com/datastream2/reference/data-set-parameters-1).
+        A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+        identifiers define how the value for these fields appear in the log lines
         """
         return pulumi.get(self, "dataset_fields_ids")
 
     @property
     @pulumi.getter(name="elasticsearchConnector")
     def elasticsearch_connector(self) -> pulumi.Output[Optional['outputs.DatastreamElasticsearchConnector']]:
-        """
-        Specify details about the Elasticsearch connector you can use in a stream, including:
-        """
         return pulumi.get(self, "elasticsearch_connector")
 
     @property
     @pulumi.getter(name="emailIds")
     def email_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        A list of email addresses you want to notify about activations and deactivations of the stream.
+        List of email addresses where the system sends notifications about activations and deactivations of the stream
         """
         return pulumi.get(self, "email_ids")
 
     @property
     @pulumi.getter(name="gcsConnector")
     def gcs_connector(self) -> pulumi.Output[Optional['outputs.DatastreamGcsConnector']]:
-        """
-        Specify details about the Google Cloud Storage connector you can use in a stream. When validating this connector, DataStream uses the private access key to create an `Akamai_access_verification_<timestamp>.txt` object file in your GCS bucket. You can only see this file if the validation process is successful, and you have access to the Google Cloud Storage bucket where you are trying to send logs. The argument includes these sub-arguments:
-        """
         return pulumi.get(self, "gcs_connector")
 
     @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[str]:
         """
-        Identifies the group that has access to the product and this stream configuration.
+        Identifies the group that has access to the product and for which the stream configuration was created
         """
         return pulumi.get(self, "group_id")
 
@@ -1237,17 +1096,11 @@ class Datastream(pulumi.CustomResource):
     @property
     @pulumi.getter(name="httpsConnector")
     def https_connector(self) -> pulumi.Output[Optional['outputs.DatastreamHttpsConnector']]:
-        """
-        Specify details about the custom HTTPS endpoint you can use as a connector for a stream, including:
-        """
         return pulumi.get(self, "https_connector")
 
     @property
     @pulumi.getter(name="logglyConnector")
     def loggly_connector(self) -> pulumi.Output[Optional['outputs.DatastreamLogglyConnector']]:
-        """
-        Specify details about the Loggly connector you can use in a stream, including:
-        """
         return pulumi.get(self, "loggly_connector")
 
     @property
@@ -1269,17 +1122,11 @@ class Datastream(pulumi.CustomResource):
     @property
     @pulumi.getter(name="newRelicConnector")
     def new_relic_connector(self) -> pulumi.Output[Optional['outputs.DatastreamNewRelicConnector']]:
-        """
-        Specify details about the New Relic connector you can use in a stream, including:
-        """
         return pulumi.get(self, "new_relic_connector")
 
     @property
     @pulumi.getter(name="oracleConnector")
     def oracle_connector(self) -> pulumi.Output[Optional['outputs.DatastreamOracleConnector']]:
-        """
-        Specify details about the Oracle Cloud Storage connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and tries to save an `Akamai_access_verification_<timestamp>.txt` file in your Oracle Cloud Storage folder. You can only see this file if the validation process is successful, and you have access to the Oracle Cloud Storage bucket and folder that you’re trying to send logs to.
-        """
         return pulumi.get(self, "oracle_connector")
 
     @property
@@ -1310,31 +1157,25 @@ class Datastream(pulumi.CustomResource):
     @pulumi.getter(name="propertyIds")
     def property_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        Identifies the properties that you want to monitor in the stream. Note that a stream can only log data for active properties.
+        Identifies the properties monitored in the stream
         """
         return pulumi.get(self, "property_ids")
 
     @property
     @pulumi.getter(name="s3Connector")
     def s3_connector(self) -> pulumi.Output[Optional['outputs.DatastreamS3Connector']]:
-        """
-        Specify details about the Amazon S3 connector in a stream. When validating this connector, DataStream uses the provided `access_key` and `secret_access_key` values and saves an `akamai_write_test_2147483647.txt` file in your Amazon S3 folder. You can only see this file if validation succeeds, and you have access to the Amazon S3 bucket and folder that you’re trying to send logs to. The argument includes these sub-arguments:
-        """
         return pulumi.get(self, "s3_connector")
 
     @property
     @pulumi.getter(name="splunkConnector")
     def splunk_connector(self) -> pulumi.Output[Optional['outputs.DatastreamSplunkConnector']]:
-        """
-        Specify details about the Splunk connector in your stream. Note that currently DataStream supports only endpoint URLs ending with `collector/raw`. The argument includes these sub-arguments:
-        """
         return pulumi.get(self, "splunk_connector")
 
     @property
     @pulumi.getter(name="streamName")
     def stream_name(self) -> pulumi.Output[str]:
         """
-        The name of the stream.
+        The name of the stream
         """
         return pulumi.get(self, "stream_name")
 
@@ -1342,7 +1183,7 @@ class Datastream(pulumi.CustomResource):
     @pulumi.getter(name="streamType")
     def stream_type(self) -> pulumi.Output[str]:
         """
-        The type of stream that you want to create. Currently, `RAW_LOGS` is the only possible stream type.
+        Specifies the type of the data stream
         """
         return pulumi.get(self, "stream_type")
 
@@ -1357,16 +1198,13 @@ class Datastream(pulumi.CustomResource):
     @property
     @pulumi.getter(name="sumologicConnector")
     def sumologic_connector(self) -> pulumi.Output[Optional['outputs.DatastreamSumologicConnector']]:
-        """
-        Specify details about the Sumo Logic connector in a stream, including:
-        """
         return pulumi.get(self, "sumologic_connector")
 
     @property
     @pulumi.getter(name="templateName")
     def template_name(self) -> pulumi.Output[str]:
         """
-        The name of the data set template available for the product that you want to use in the stream. Currently, `EDGE_LOGS` is the only data set template available.
+        The name of the template associated with the stream
         """
         return pulumi.get(self, "template_name")
 

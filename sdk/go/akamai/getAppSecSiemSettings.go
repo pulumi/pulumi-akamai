@@ -10,53 +10,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Scopes**: Security configuration
-//
-// Returns the SIEM (Security Event and Information Management) settings for a security configuration.
-//
-// **Related API Endpoint**: [/appsec/v1/configs/{configId}/versions/{versionNumber}/siem](https://techdocs.akamai.com/application-security/reference/get-siem)
-//
-// ## Example Usage
-//
-// Basic usage:
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			configuration, err := akamai.LookupAppSecConfiguration(ctx, &akamai.LookupAppSecConfigurationArgs{
-//				Name: pulumi.StringRef("Documentation"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			siemSettings, err := akamai.LookupAppSecSiemSettings(ctx, &akamai.LookupAppSecSiemSettingsArgs{
-//				ConfigId: configuration.ConfigId,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			ctx.Export("siemSettingsJson", siemSettings.Json)
-//			ctx.Export("siemSettingsOutput", siemSettings.OutputText)
-//			return nil
-//		})
-//	}
-//
-// ```
-// ## Output Options
-//
-// The following options can be used to determine the information returned, and how that returned information is formatted:
-//
-// - `json`. JSON-formatted list of the SIEM setting information.
-// - `outputText`. Tabular report showing the SIEM setting information.
 func LookupAppSecSiemSettings(ctx *pulumi.Context, args *LookupAppSecSiemSettingsArgs, opts ...pulumi.InvokeOption) (*LookupAppSecSiemSettingsResult, error) {
 	var rv LookupAppSecSiemSettingsResult
 	err := ctx.Invoke("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args, &rv, opts...)
@@ -68,7 +21,6 @@ func LookupAppSecSiemSettings(ctx *pulumi.Context, args *LookupAppSecSiemSetting
 
 // A collection of arguments for invoking getAppSecSiemSettings.
 type LookupAppSecSiemSettingsArgs struct {
-	// . Unique identifier of the security configuration you want to return information for.
 	ConfigId int `pulumi:"configId"`
 }
 
@@ -96,7 +48,6 @@ func LookupAppSecSiemSettingsOutput(ctx *pulumi.Context, args LookupAppSecSiemSe
 
 // A collection of arguments for invoking getAppSecSiemSettings.
 type LookupAppSecSiemSettingsOutputArgs struct {
-	// . Unique identifier of the security configuration you want to return information for.
 	ConfigId pulumi.IntInput `pulumi:"configId"`
 }
 
