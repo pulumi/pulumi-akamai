@@ -16,6 +16,8 @@ package akamai
 
 import (
 	"fmt"
+	// embed is used to store bridge-metadata.json in the compiled binary
+	_ "embed"
 	"path/filepath"
 	"unicode"
 
@@ -344,10 +346,12 @@ func Provider() tfbridge.ProviderInfo {
 			Namespaces: map[string]string{
 				mainPkg: "Akamai",
 			},
-		},
+		}, MetadataInfo:
+
+		// edgeDns -> mainMod
+		tfbridge.NewProviderMetadata(metadata),
 	}
 
-	// edgeDns -> mainMod
 	prov.RenameResourceWithAlias("akamai_dns_record", makeResource(edgeDNSMod, "DnsRecord"),
 		makeResource(mainMod, "DnsRecord"), edgeDNSMod, mainMod, &tfbridge.ResourceInfo{})
 	prov.RenameResourceWithAlias("akamai_dns_zone", makeResource(edgeDNSMod, "DnsZone"),
@@ -420,6 +424,8 @@ func Provider() tfbridge.ProviderInfo {
 	for _, d := range prov.DataSources {
 		d.Docs = noUpstreamDocs()
 	}
+	err = x.AutoAliasing(&prov, prov.GetMetadata())
+	contract.AssertNoErrorf(err, "auto aliasing apply failed")
 
 	prov.SetAutonaming(255, "-")
 
@@ -431,3 +437,6 @@ func noUpstreamDocs() *tfbridge.DocInfo {
 		Markdown: []byte(" "),
 	}
 }
+
+//go:embed cmd/pulumi-resource-akamai/bridge-metadata.json
+var metadata []byte
