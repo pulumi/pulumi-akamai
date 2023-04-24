@@ -38,6 +38,7 @@ def readme():
 
 
 setup(name='pulumi_akamai',
+      python_requires='>=3.7',
       version=VERSION,
       description="A Pulumi package for creating and managing akamai cloud resources.",
       long_description=readme(),
