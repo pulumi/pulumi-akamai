@@ -639,6 +639,9 @@ class GtmPropertyTrafficTargetArgs:
         if handout_cname is not None:
             pulumi.set(__self__, "handout_cname", handout_cname)
         if name is not None:
+            warnings.warn("""The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored""", DeprecationWarning)
+            pulumi.log.warn("""name is deprecated: The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored""")
+        if name is not None:
             pulumi.set(__self__, "name", name)
         if servers is not None:
             pulumi.set(__self__, "servers", servers)

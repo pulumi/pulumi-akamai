@@ -112,6 +112,7 @@ namespace Pulumi.Akamai
         /// <summary>
         /// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         /// </summary>
+        [Obsolete(@"The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.")]
         public InputList<Inputs.EdgeKvInitialDataArgs> InitialDatas
         {
             get => _initialDatas ?? (_initialDatas = new InputList<Inputs.EdgeKvInitialDataArgs>());
@@ -162,6 +163,7 @@ namespace Pulumi.Akamai
         /// <summary>
         /// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         /// </summary>
+        [Obsolete(@"The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.")]
         public InputList<Inputs.EdgeKvInitialDataGetArgs> InitialDatas
         {
             get => _initialDatas ?? (_initialDatas = new InputList<Inputs.EdgeKvInitialDataGetArgs>());

@@ -150,6 +150,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &EdgeWorker{}
 	case "akamai:index/edgeWorkersActivation:EdgeWorkersActivation":
 		r = &EdgeWorkersActivation{}
+	case "akamai:index/edgekvGroupItems:EdgekvGroupItems":
+		r = &EdgekvGroupItems{}
 	case "akamai:index/gtmAsmap:GtmAsmap":
 		r = &GtmAsmap{}
 	case "akamai:index/gtmCidrmap:GtmCidrmap":
@@ -539,6 +541,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/edgeWorkersActivation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/edgekvGroupItems",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

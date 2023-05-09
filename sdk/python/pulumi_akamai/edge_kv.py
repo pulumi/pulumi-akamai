@@ -38,6 +38,9 @@ class EdgeKvArgs:
         if geo_location is not None:
             pulumi.set(__self__, "geo_location", geo_location)
         if initial_datas is not None:
+            warnings.warn("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""", DeprecationWarning)
+            pulumi.log.warn("""initial_datas is deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
+        if initial_datas is not None:
             pulumi.set(__self__, "initial_datas", initial_datas)
 
     @property
@@ -135,6 +138,9 @@ class _EdgeKvState:
             pulumi.set(__self__, "geo_location", geo_location)
         if group_id is not None:
             pulumi.set(__self__, "group_id", group_id)
+        if initial_datas is not None:
+            warnings.warn("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""", DeprecationWarning)
+            pulumi.log.warn("""initial_datas is deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
         if initial_datas is not None:
             pulumi.set(__self__, "initial_datas", initial_datas)
         if namespace_name is not None:
@@ -282,6 +288,9 @@ class EdgeKv(pulumi.CustomResource):
             if group_id is None and not opts.urn:
                 raise TypeError("Missing required property 'group_id'")
             __props__.__dict__["group_id"] = group_id
+            if initial_datas is not None and not opts.urn:
+                warnings.warn("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""", DeprecationWarning)
+                pulumi.log.warn("""initial_datas is deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
             __props__.__dict__["initial_datas"] = initial_datas
             if namespace_name is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace_name'")

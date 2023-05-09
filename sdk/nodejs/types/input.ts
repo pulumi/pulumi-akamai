@@ -8303,6 +8303,9 @@ export interface GtmPropertyTrafficTarget {
     datacenterId?: pulumi.Input<number>;
     enabled?: pulumi.Input<boolean>;
     handoutCname?: pulumi.Input<string>;
+    /**
+     * @deprecated The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
+     */
     name?: pulumi.Input<string>;
     servers?: pulumi.Input<pulumi.Input<string>[]>;
     weight?: pulumi.Input<number>;
@@ -8621,6 +8624,9 @@ export namespace trafficmanagement {
         datacenterId?: pulumi.Input<number>;
         enabled?: pulumi.Input<boolean>;
         handoutCname?: pulumi.Input<string>;
+        /**
+         * @deprecated The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
+         */
         name?: pulumi.Input<string>;
         servers?: pulumi.Input<pulumi.Input<string>[]>;
         weight?: pulumi.Input<number>;
