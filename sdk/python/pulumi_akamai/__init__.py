@@ -70,6 +70,7 @@ from .edge_host_name import *
 from .edge_kv import *
 from .edge_worker import *
 from .edge_workers_activation import *
+from .edgekv_group_items import *
 from .get_app_sec_advanced_settings_evasive_path_match import *
 from .get_app_sec_advanced_settings_logging import *
 from .get_app_sec_advanced_settings_pragma_header import *
@@ -147,6 +148,8 @@ from .get_edge_worker import *
 from .get_edge_worker_activation import *
 from .get_edge_workers_property_rules import *
 from .get_edge_workers_resource_tier import *
+from .get_edgekv_group_items import *
+from .get_edgekv_groups import *
 from .get_group import *
 from .get_groups import *
 from .get_gtm_default_datacenter import *
@@ -749,6 +752,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/edgeWorkersActivation:EdgeWorkersActivation": "EdgeWorkersActivation"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/edgekvGroupItems",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/edgekvGroupItems:EdgekvGroupItems": "EdgekvGroupItems"
   }
  },
  {

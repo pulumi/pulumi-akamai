@@ -2,7 +2,12 @@
     "auto-aliasing": {
         "resources": {
             "akamai_appsec_activations": {
-                "current": "akamai:index/appSecActivations:AppSecActivations"
+                "current": "akamai:index/appSecActivations:AppSecActivations",
+                "fields": {
+                    "notification_emails": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_appsec_advanced_settings_attack_payload_logging": {
                 "current": "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging"
@@ -17,7 +22,12 @@
                 "current": "akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader"
             },
             "akamai_appsec_advanced_settings_prefetch": {
-                "current": "akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch"
+                "current": "akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch",
+                "fields": {
+                    "extensions": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_appsec_advanced_settings_request_body": {
                 "current": "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody"
@@ -32,10 +42,20 @@
                 "current": "akamai:index/appSecAttackGroup:AppSecAttackGroup"
             },
             "akamai_appsec_bypass_network_lists": {
-                "current": "akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList"
+                "current": "akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList",
+                "fields": {
+                    "bypass_network_list": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_appsec_configuration": {
-                "current": "akamai:index/appSecConfiguration:AppSecConfiguration"
+                "current": "akamai:index/appSecConfiguration:AppSecConfiguration",
+                "fields": {
+                    "host_names": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_appsec_configuration_rename": {
                 "current": "akamai:index/appSecConfigurationRename:AppSecConfigurationRename"
@@ -62,7 +82,18 @@
                 "current": "akamai:index/appSecEvalRule:AppSecEvalRule"
             },
             "akamai_appsec_ip_geo": {
-                "current": "akamai:index/appSecIPGeo:AppSecIPGeo"
+                "current": "akamai:index/appSecIPGeo:AppSecIPGeo",
+                "fields": {
+                    "exception_ip_network_lists": {
+                        "maxItemsOne": false
+                    },
+                    "geo_network_lists": {
+                        "maxItemsOne": false
+                    },
+                    "ip_network_lists": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_appsec_ip_geo_protection": {
                 "current": "akamai:index/appSecIPGeoProtection:AppSecIPGeoProtection"
@@ -122,10 +153,20 @@
                 "current": "akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename"
             },
             "akamai_appsec_selected_hostnames": {
-                "current": "akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames"
+                "current": "akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames",
+                "fields": {
+                    "hostnames": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_appsec_siem_settings": {
-                "current": "akamai:index/appSecSiemSettings:AppSecSiemSettings"
+                "current": "akamai:index/appSecSiemSettings:AppSecSiemSettings",
+                "fields": {
+                    "security_policy_ids": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_appsec_slow_post": {
                 "current": "akamai:index/appSecSlowPost:AppSecSlowPost"
@@ -146,10 +187,33 @@
                 "current": "akamai:index/appSecWafProtection:AppSecWafProtection"
             },
             "akamai_appsec_wap_selected_hostnames": {
-                "current": "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames"
+                "current": "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames",
+                "fields": {
+                    "evaluated_hosts": {
+                        "maxItemsOne": false
+                    },
+                    "protected_hosts": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_cloudlets_application_load_balancer": {
-                "current": "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer"
+                "current": "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer",
+                "fields": {
+                    "data_centers": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "liveness_hosts": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "liveness_settings": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_cloudlets_application_load_balancer_activation": {
                 "current": "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation"
@@ -158,7 +222,12 @@
                 "current": "akamai:index/cloudletsPolicy:CloudletsPolicy"
             },
             "akamai_cloudlets_policy_activation": {
-                "current": "akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation"
+                "current": "akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation",
+                "fields": {
+                    "associated_properties": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_cp_code": {
                 "current": "akamai:index/cpCode:CpCode"
@@ -167,130 +236,641 @@
                 "current": "akamai:properties/cpCode:CpCode"
             },
             "akamai_cps_dv_enrollment": {
-                "current": "akamai:index/cpsDvEnrollment:CpsDvEnrollment"
+                "current": "akamai:index/cpsDvEnrollment:CpsDvEnrollment",
+                "fields": {
+                    "admin_contact": {
+                        "maxItemsOne": true
+                    },
+                    "csr": {
+                        "maxItemsOne": true
+                    },
+                    "dns_challenges": {
+                        "maxItemsOne": false
+                    },
+                    "http_challenges": {
+                        "maxItemsOne": false
+                    },
+                    "network_configuration": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "client_mutual_authentication": {
+                                    "maxItemsOne": true
+                                },
+                                "disallowed_tls_versions": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "organization": {
+                        "maxItemsOne": true
+                    },
+                    "sans": {
+                        "maxItemsOne": false
+                    },
+                    "tech_contact": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_cps_dv_validation": {
-                "current": "akamai:index/cpsDvValidation:CpsDvValidation"
+                "current": "akamai:index/cpsDvValidation:CpsDvValidation",
+                "fields": {
+                    "sans": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_cps_third_party_enrollment": {
-                "current": "akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment"
+                "current": "akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment",
+                "fields": {
+                    "admin_contact": {
+                        "maxItemsOne": true
+                    },
+                    "auto_approve_warnings": {
+                        "maxItemsOne": false
+                    },
+                    "csr": {
+                        "maxItemsOne": true
+                    },
+                    "network_configuration": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "client_mutual_authentication": {
+                                    "maxItemsOne": true
+                                },
+                                "disallowed_tls_versions": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "organization": {
+                        "maxItemsOne": true
+                    },
+                    "sans": {
+                        "maxItemsOne": false
+                    },
+                    "tech_contact": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_cps_upload_certificate": {
-                "current": "akamai:index/cpsUploadCertificate:CpsUploadCertificate"
+                "current": "akamai:index/cpsUploadCertificate:CpsUploadCertificate",
+                "fields": {
+                    "auto_approve_warnings": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_datastream": {
-                "current": "akamai:index/datastream:Datastream"
+                "current": "akamai:index/datastream:Datastream",
+                "fields": {
+                    "azure_connector": {
+                        "maxItemsOne": true
+                    },
+                    "config": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "frequency": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    },
+                    "datadog_connector": {
+                        "maxItemsOne": true
+                    },
+                    "dataset_fields_ids": {
+                        "maxItemsOne": false
+                    },
+                    "elasticsearch_connector": {
+                        "maxItemsOne": true
+                    },
+                    "email_ids": {
+                        "maxItemsOne": false
+                    },
+                    "gcs_connector": {
+                        "maxItemsOne": true
+                    },
+                    "https_connector": {
+                        "maxItemsOne": true
+                    },
+                    "loggly_connector": {
+                        "maxItemsOne": true
+                    },
+                    "new_relic_connector": {
+                        "maxItemsOne": true
+                    },
+                    "oracle_connector": {
+                        "maxItemsOne": true
+                    },
+                    "property_ids": {
+                        "maxItemsOne": false
+                    },
+                    "s3_connector": {
+                        "maxItemsOne": true
+                    },
+                    "splunk_connector": {
+                        "maxItemsOne": true
+                    },
+                    "sumologic_connector": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_dns_record": {
-                "current": "akamai:index/dnsRecord:DnsRecord"
+                "current": "akamai:index/dnsRecord:DnsRecord",
+                "fields": {
+                    "target": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_dns_record_legacy": {
-                "current": "akamai:edgedns/dnsRecord:DnsRecord"
+                "current": "akamai:edgedns/dnsRecord:DnsRecord",
+                "fields": {
+                    "target": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_dns_zone": {
-                "current": "akamai:index/dnsZone:DnsZone"
+                "current": "akamai:index/dnsZone:DnsZone",
+                "fields": {
+                    "masters": {
+                        "maxItemsOne": false
+                    },
+                    "tsig_key": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_dns_zone_legacy": {
-                "current": "akamai:edgedns/dnsZone:DnsZone"
+                "current": "akamai:edgedns/dnsZone:DnsZone",
+                "fields": {
+                    "masters": {
+                        "maxItemsOne": false
+                    },
+                    "tsig_key": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_edge_hostname": {
-                "current": "akamai:index/edgeHostName:EdgeHostName"
+                "current": "akamai:index/edgeHostName:EdgeHostName",
+                "fields": {
+                    "status_update_email": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_edge_hostname_legacy": {
-                "current": "akamai:properties/edgeHostName:EdgeHostName"
+                "current": "akamai:properties/edgeHostName:EdgeHostName",
+                "fields": {
+                    "status_update_email": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_edgekv": {
-                "current": "akamai:index/edgeKv:EdgeKv"
+                "current": "akamai:index/edgeKv:EdgeKv",
+                "fields": {
+                    "initial_data": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_edgekv_group_items": {
+                "current": "akamai:index/edgekvGroupItems:EdgekvGroupItems"
             },
             "akamai_edgeworker": {
-                "current": "akamai:index/edgeWorker:EdgeWorker"
+                "current": "akamai:index/edgeWorker:EdgeWorker",
+                "fields": {
+                    "warnings": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_edgeworkers_activation": {
                 "current": "akamai:index/edgeWorkersActivation:EdgeWorkersActivation"
             },
             "akamai_gtm_asmap": {
-                "current": "akamai:index/gtmAsmap:GtmAsmap"
+                "current": "akamai:index/gtmAsmap:GtmAsmap",
+                "fields": {
+                    "assignment": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "as_numbers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "default_datacenter": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_gtm_asmap_legacy": {
-                "current": "akamai:trafficmanagement/gtmASmap:GtmASmap"
+                "current": "akamai:trafficmanagement/gtmASmap:GtmASmap",
+                "fields": {
+                    "assignment": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "as_numbers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "default_datacenter": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_gtm_cidrmap": {
-                "current": "akamai:index/gtmCidrmap:GtmCidrmap"
+                "current": "akamai:index/gtmCidrmap:GtmCidrmap",
+                "fields": {
+                    "assignment": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "blocks": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "default_datacenter": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_gtm_cidrmap_legacy": {
-                "current": "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap"
+                "current": "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap",
+                "fields": {
+                    "assignment": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "blocks": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "default_datacenter": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_gtm_datacenter": {
-                "current": "akamai:index/gtmDatacenter:GtmDatacenter"
+                "current": "akamai:index/gtmDatacenter:GtmDatacenter",
+                "fields": {
+                    "default_load_object": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "load_servers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "akamai_gtm_datacenter_legacy": {
-                "current": "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter"
+                "current": "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter",
+                "fields": {
+                    "default_load_object": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "load_servers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "akamai_gtm_domain": {
-                "current": "akamai:index/gtmDomain:GtmDomain"
+                "current": "akamai:index/gtmDomain:GtmDomain",
+                "fields": {
+                    "email_notification_list": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_gtm_domain_legacy": {
-                "current": "akamai:trafficmanagement/gtmDomain:GtmDomain"
+                "current": "akamai:trafficmanagement/gtmDomain:GtmDomain",
+                "fields": {
+                    "email_notification_list": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_gtm_geomap": {
-                "current": "akamai:index/gtmGeomap:GtmGeomap"
+                "current": "akamai:index/gtmGeomap:GtmGeomap",
+                "fields": {
+                    "assignment": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "countries": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "default_datacenter": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_gtm_geomap_legacy": {
-                "current": "akamai:trafficmanagement/gtmGeomap:GtmGeomap"
+                "current": "akamai:trafficmanagement/gtmGeomap:GtmGeomap",
+                "fields": {
+                    "assignment": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "countries": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "default_datacenter": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_gtm_property": {
-                "current": "akamai:index/gtmProperty:GtmProperty"
+                "current": "akamai:index/gtmProperty:GtmProperty",
+                "fields": {
+                    "liveness_test": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "http_header": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "static_rr_set": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "rdata": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "traffic_target": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "servers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "akamai_gtm_property_legacy": {
-                "current": "akamai:trafficmanagement/gtmProperty:GtmProperty"
+                "current": "akamai:trafficmanagement/gtmProperty:GtmProperty",
+                "fields": {
+                    "liveness_test": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "http_header": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "static_rr_set": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "rdata": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "traffic_target": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "servers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "akamai_gtm_resource": {
-                "current": "akamai:index/gtmResource:GtmResource"
+                "current": "akamai:index/gtmResource:GtmResource",
+                "fields": {
+                    "resource_instance": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "load_servers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "akamai_gtm_resource_legacy": {
-                "current": "akamai:trafficmanagement/gtmResource:GtmResource"
+                "current": "akamai:trafficmanagement/gtmResource:GtmResource",
+                "fields": {
+                    "resource_instance": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "load_servers": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "akamai_iam_blocked_user_properties": {
-                "current": "akamai:index/iamBlockedUserProperties:IamBlockedUserProperties"
+                "current": "akamai:index/iamBlockedUserProperties:IamBlockedUserProperties",
+                "fields": {
+                    "blocked_properties": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_iam_group": {
-                "current": "akamai:index/iamGroup:IamGroup"
+                "current": "akamai:index/iamGroup:IamGroup",
+                "fields": {
+                    "sub_groups": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_iam_role": {
-                "current": "akamai:index/iamRole:IamRole"
+                "current": "akamai:index/iamRole:IamRole",
+                "fields": {
+                    "granted_roles": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_iam_user": {
                 "current": "akamai:index/iamUser:IamUser"
             },
             "akamai_networklist_activations": {
-                "current": "akamai:index/networkListActivations:NetworkListActivations"
+                "current": "akamai:index/networkListActivations:NetworkListActivations",
+                "fields": {
+                    "notification_emails": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_networklist_description": {
                 "current": "akamai:index/networkListDescription:NetworkListDescription"
             },
             "akamai_networklist_network_list": {
-                "current": "akamai:index/networkList:NetworkList"
+                "current": "akamai:index/networkList:NetworkList",
+                "fields": {
+                    "list": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_networklist_subscription": {
-                "current": "akamai:index/networkListSubscription:NetworkListSubscription"
+                "current": "akamai:index/networkListSubscription:NetworkListSubscription",
+                "fields": {
+                    "network_list": {
+                        "maxItemsOne": false
+                    },
+                    "recipients": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_property": {
-                "current": "akamai:index/property:Property"
+                "current": "akamai:index/property:Property",
+                "fields": {
+                    "contact": {
+                        "maxItemsOne": false
+                    },
+                    "hostnames": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "cert_status": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "origin": {
+                        "maxItemsOne": false
+                    },
+                    "rule_errors": {
+                        "maxItemsOne": false
+                    },
+                    "rule_warnings": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_property_activation": {
-                "current": "akamai:index/propertyActivation:PropertyActivation"
+                "current": "akamai:index/propertyActivation:PropertyActivation",
+                "fields": {
+                    "compliance_record": {
+                        "maxItemsOne": true
+                    },
+                    "contact": {
+                        "maxItemsOne": false
+                    },
+                    "rule_errors": {
+                        "maxItemsOne": false
+                    },
+                    "rule_warnings": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_property_activation_legacy": {
-                "current": "akamai:properties/propertyActivation:PropertyActivation"
+                "current": "akamai:properties/propertyActivation:PropertyActivation",
+                "fields": {
+                    "compliance_record": {
+                        "maxItemsOne": true
+                    },
+                    "contact": {
+                        "maxItemsOne": false
+                    },
+                    "rule_errors": {
+                        "maxItemsOne": false
+                    },
+                    "rule_warnings": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_property_include": {
                 "current": "akamai:index/propertyInclude:PropertyInclude"
             },
             "akamai_property_include_activation": {
-                "current": "akamai:index/propertyIncludeActivation:PropertyIncludeActivation"
+                "current": "akamai:index/propertyIncludeActivation:PropertyIncludeActivation",
+                "fields": {
+                    "compliance_record": {
+                        "maxItemsOne": true
+                    },
+                    "notify_emails": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_property_legacy": {
-                "current": "akamai:properties/property:Property"
+                "current": "akamai:properties/property:Property",
+                "fields": {
+                    "contact": {
+                        "maxItemsOne": false
+                    },
+                    "hostnames": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "cert_status": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "origin": {
+                        "maxItemsOne": false
+                    },
+                    "rule_errors": {
+                        "maxItemsOne": false
+                    },
+                    "rule_warnings": {
+                        "maxItemsOne": false
+                    }
+                }
             }
         },
         "datasources": {
@@ -522,6 +1102,12 @@
             "akamai_dns_record_set_legacy": {
                 "current": "akamai:edgedns/getDnsRecordSet:getDnsRecordSet"
             },
+            "akamai_edgekv_group_items": {
+                "current": "akamai:index/getEdgekvGroupItems:getEdgekvGroupItems"
+            },
+            "akamai_edgekv_groups": {
+                "current": "akamai:index/getEdgekvGroups:getEdgekvGroups"
+            },
             "akamai_edgeworker": {
                 "current": "akamai:index/getEdgeWorker:getEdgeWorker"
             },
@@ -695,6 +1281,7 @@
             "akamai:index/edgeKv:EdgeKv": "akamai_edgekv",
             "akamai:index/edgeWorker:EdgeWorker": "akamai_edgeworker",
             "akamai:index/edgeWorkersActivation:EdgeWorkersActivation": "akamai_edgeworkers_activation",
+            "akamai:index/edgekvGroupItems:EdgekvGroupItems": "akamai_edgekv_group_items",
             "akamai:index/gtmAsmap:GtmAsmap": "akamai_gtm_asmap",
             "akamai:index/gtmCidrmap:GtmCidrmap": "akamai_gtm_cidrmap",
             "akamai:index/gtmDatacenter:GtmDatacenter": "akamai_gtm_datacenter",
@@ -806,6 +1393,8 @@
             "akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation": "akamai_edgeworker_activation",
             "akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules": "akamai_edgeworkers_property_rules",
             "akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier": "akamai_edgeworkers_resource_tier",
+            "akamai:index/getEdgekvGroupItems:getEdgekvGroupItems": "akamai_edgekv_group_items",
+            "akamai:index/getEdgekvGroups:getEdgekvGroups": "akamai_edgekv_groups",
             "akamai:index/getGroup:getGroup": "akamai_group",
             "akamai:index/getGroups:getGroups": "akamai_groups",
             "akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter": "akamai_gtm_default_datacenter",
@@ -1730,6 +2319,10 @@
                 "activationId": "activation_id",
                 "edgeworkerId": "edgeworker_id"
             },
+            "akamai:index/edgekvGroupItems:EdgekvGroupItems": {
+                "groupName": "group_name",
+                "namespaceName": "namespace_name"
+            },
             "akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch": {
                 "configId": "config_id",
                 "outputText": "output_text",
@@ -2528,6 +3121,13 @@
                 "contractId": "contract_id",
                 "resourceTierId": "resource_tier_id",
                 "resourceTierName": "resource_tier_name"
+            },
+            "akamai:index/getEdgekvGroupItems:getEdgekvGroupItems": {
+                "groupName": "group_name",
+                "namespaceName": "namespace_name"
+            },
+            "akamai:index/getEdgekvGroups:getEdgekvGroups": {
+                "namespaceName": "namespace_name"
             },
             "akamai:index/getGroup:getGroup": {
                 "contractId": "contract_id",

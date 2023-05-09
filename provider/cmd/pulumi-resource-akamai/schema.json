@@ -1761,7 +1761,8 @@
                     "type": "string"
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "deprecationMessage": "The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored"
                 },
                 "servers": {
                     "type": "array",
@@ -15130,7 +15131,8 @@
                     "type": "string"
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "deprecationMessage": "The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored"
                 },
                 "servers": {
                     "type": "array",
@@ -22171,7 +22173,8 @@
                     "items": {
                         "$ref": "#/types/akamai:index/EdgeKvInitialData:EdgeKvInitialData"
                     },
-                    "description": "List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.\n"
+                    "description": "List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.\n",
+                    "deprecationMessage": "The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead."
                 },
                 "namespaceName": {
                     "type": "string",
@@ -22208,7 +22211,8 @@
                     "items": {
                         "$ref": "#/types/akamai:index/EdgeKvInitialData:EdgeKvInitialData"
                     },
-                    "description": "List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.\n"
+                    "description": "List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.\n",
+                    "deprecationMessage": "The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead."
                 },
                 "namespaceName": {
                     "type": "string",
@@ -22249,7 +22253,8 @@
                         "items": {
                             "$ref": "#/types/akamai:index/EdgeKvInitialData:EdgeKvInitialData"
                         },
-                        "description": "List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.\n"
+                        "description": "List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.\n",
+                        "deprecationMessage": "The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead."
                     },
                     "namespaceName": {
                         "type": "string",
@@ -22446,6 +22451,93 @@
                     "version": {
                         "type": "string",
                         "description": "The version of EdgeWorker to activate\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/edgekvGroupItems:EdgekvGroupItems": {
+            "properties": {
+                "groupName": {
+                    "type": "string",
+                    "description": "The name of the EdgeKV group.\n"
+                },
+                "items": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "A map of items within the specified group. Each item consists of an item key and a value.\n"
+                },
+                "namespaceName": {
+                    "type": "string",
+                    "description": "The name for the EdgeKV namespace.\n"
+                },
+                "network": {
+                    "type": "string",
+                    "description": "The network against which to execute the API request.\n"
+                }
+            },
+            "required": [
+                "groupName",
+                "items",
+                "namespaceName",
+                "network"
+            ],
+            "inputProperties": {
+                "groupName": {
+                    "type": "string",
+                    "description": "The name of the EdgeKV group.\n",
+                    "willReplaceOnChanges": true
+                },
+                "items": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "A map of items within the specified group. Each item consists of an item key and a value.\n"
+                },
+                "namespaceName": {
+                    "type": "string",
+                    "description": "The name for the EdgeKV namespace.\n",
+                    "willReplaceOnChanges": true
+                },
+                "network": {
+                    "type": "string",
+                    "description": "The network against which to execute the API request.\n",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "groupName",
+                "items",
+                "namespaceName",
+                "network"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering EdgekvGroupItems resources.\n",
+                "properties": {
+                    "groupName": {
+                        "type": "string",
+                        "description": "The name of the EdgeKV group.\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "A map of items within the specified group. Each item consists of an item key and a value.\n"
+                    },
+                    "namespaceName": {
+                        "type": "string",
+                        "description": "The name for the EdgeKV namespace.\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "network": {
+                        "type": "string",
+                        "description": "The network against which to execute the API request.\n",
+                        "willReplaceOnChanges": true
                     }
                 },
                 "type": "object"
@@ -31310,6 +31402,106 @@
                     "contractId",
                     "resourceTierId",
                     "resourceTierName",
+                    "id"
+                ]
+            }
+        },
+        "akamai:index/getEdgekvGroupItems:getEdgekvGroupItems": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getEdgekvGroupItems.\n",
+                "properties": {
+                    "groupName": {
+                        "type": "string"
+                    },
+                    "namespaceName": {
+                        "type": "string"
+                    },
+                    "network": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "groupName",
+                    "namespaceName",
+                    "network"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getEdgekvGroupItems.\n",
+                "properties": {
+                    "groupName": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    },
+                    "namespaceName": {
+                        "type": "string"
+                    },
+                    "network": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "groupName",
+                    "items",
+                    "namespaceName",
+                    "network",
+                    "id"
+                ]
+            }
+        },
+        "akamai:index/getEdgekvGroups:getEdgekvGroups": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getEdgekvGroups.\n",
+                "properties": {
+                    "namespaceName": {
+                        "type": "string"
+                    },
+                    "network": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "namespaceName",
+                    "network"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getEdgekvGroups.\n",
+                "properties": {
+                    "groups": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "namespaceName": {
+                        "type": "string"
+                    },
+                    "network": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "groups",
+                    "namespaceName",
+                    "network",
                     "id"
                 ]
             }

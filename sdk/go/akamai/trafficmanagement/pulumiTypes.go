@@ -1374,12 +1374,13 @@ func (o GtmPropertyStaticRrSetArrayOutput) Index(i pulumi.IntInput) GtmPropertyS
 }
 
 type GtmPropertyTrafficTarget struct {
-	DatacenterId *int     `pulumi:"datacenterId"`
-	Enabled      *bool    `pulumi:"enabled"`
-	HandoutCname *string  `pulumi:"handoutCname"`
-	Name         *string  `pulumi:"name"`
-	Servers      []string `pulumi:"servers"`
-	Weight       *float64 `pulumi:"weight"`
+	DatacenterId *int    `pulumi:"datacenterId"`
+	Enabled      *bool   `pulumi:"enabled"`
+	HandoutCname *string `pulumi:"handoutCname"`
+	// Deprecated: The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
+	Name    *string  `pulumi:"name"`
+	Servers []string `pulumi:"servers"`
+	Weight  *float64 `pulumi:"weight"`
 }
 
 // GtmPropertyTrafficTargetInput is an input type that accepts GtmPropertyTrafficTargetArgs and GtmPropertyTrafficTargetOutput values.
@@ -1394,12 +1395,13 @@ type GtmPropertyTrafficTargetInput interface {
 }
 
 type GtmPropertyTrafficTargetArgs struct {
-	DatacenterId pulumi.IntPtrInput      `pulumi:"datacenterId"`
-	Enabled      pulumi.BoolPtrInput     `pulumi:"enabled"`
-	HandoutCname pulumi.StringPtrInput   `pulumi:"handoutCname"`
-	Name         pulumi.StringPtrInput   `pulumi:"name"`
-	Servers      pulumi.StringArrayInput `pulumi:"servers"`
-	Weight       pulumi.Float64PtrInput  `pulumi:"weight"`
+	DatacenterId pulumi.IntPtrInput    `pulumi:"datacenterId"`
+	Enabled      pulumi.BoolPtrInput   `pulumi:"enabled"`
+	HandoutCname pulumi.StringPtrInput `pulumi:"handoutCname"`
+	// Deprecated: The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
+	Name    pulumi.StringPtrInput   `pulumi:"name"`
+	Servers pulumi.StringArrayInput `pulumi:"servers"`
+	Weight  pulumi.Float64PtrInput  `pulumi:"weight"`
 }
 
 func (GtmPropertyTrafficTargetArgs) ElementType() reflect.Type {
@@ -1465,6 +1467,7 @@ func (o GtmPropertyTrafficTargetOutput) HandoutCname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *string { return v.HandoutCname }).(pulumi.StringPtrOutput)
 }
 
+// Deprecated: The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
 func (o GtmPropertyTrafficTargetOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GtmPropertyTrafficTarget) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

@@ -4739,6 +4739,9 @@ export interface GtmPropertyTrafficTarget {
     datacenterId?: number;
     enabled?: boolean;
     handoutCname?: string;
+    /**
+     * @deprecated The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
+     */
     name?: string;
     servers?: string[];
     weight?: number;
@@ -5060,6 +5063,9 @@ export namespace trafficmanagement {
         datacenterId?: number;
         enabled?: boolean;
         handoutCname?: string;
+        /**
+         * @deprecated The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
+         */
         name?: string;
         servers?: string[];
         weight?: number;

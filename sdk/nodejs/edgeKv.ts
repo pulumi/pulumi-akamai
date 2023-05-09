@@ -44,6 +44,8 @@ export class EdgeKv extends pulumi.CustomResource {
     public readonly groupId!: pulumi.Output<number>;
     /**
      * List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
+     *
+     * @deprecated The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
      */
     public readonly initialDatas!: pulumi.Output<outputs.EdgeKvInitialData[] | undefined>;
     /**
@@ -118,6 +120,8 @@ export interface EdgeKvState {
     groupId?: pulumi.Input<number>;
     /**
      * List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
+     *
+     * @deprecated The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
      */
     initialDatas?: pulumi.Input<pulumi.Input<inputs.EdgeKvInitialData>[]>;
     /**
@@ -148,6 +152,8 @@ export interface EdgeKvArgs {
     groupId: pulumi.Input<number>;
     /**
      * List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
+     *
+     * @deprecated The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
      */
     initialDatas?: pulumi.Input<pulumi.Input<inputs.EdgeKvInitialData>[]>;
     /**

@@ -330,6 +330,11 @@ export type EdgeWorkersActivation = import("./edgeWorkersActivation").EdgeWorker
 export const EdgeWorkersActivation: typeof import("./edgeWorkersActivation").EdgeWorkersActivation = null as any;
 utilities.lazyLoad(exports, ["EdgeWorkersActivation"], () => require("./edgeWorkersActivation"));
 
+export { EdgekvGroupItemsArgs, EdgekvGroupItemsState } from "./edgekvGroupItems";
+export type EdgekvGroupItems = import("./edgekvGroupItems").EdgekvGroupItems;
+export const EdgekvGroupItems: typeof import("./edgekvGroupItems").EdgekvGroupItems = null as any;
+utilities.lazyLoad(exports, ["EdgekvGroupItems"], () => require("./edgekvGroupItems"));
+
 export { GetAppSecAdvancedSettingsEvasivePathMatchArgs, GetAppSecAdvancedSettingsEvasivePathMatchResult, GetAppSecAdvancedSettingsEvasivePathMatchOutputArgs } from "./getAppSecAdvancedSettingsEvasivePathMatch";
 export const getAppSecAdvancedSettingsEvasivePathMatch: typeof import("./getAppSecAdvancedSettingsEvasivePathMatch").getAppSecAdvancedSettingsEvasivePathMatch = null as any;
 export const getAppSecAdvancedSettingsEvasivePathMatchOutput: typeof import("./getAppSecAdvancedSettingsEvasivePathMatch").getAppSecAdvancedSettingsEvasivePathMatchOutput = null as any;
@@ -712,6 +717,16 @@ export const getEdgeWorkersResourceTier: typeof import("./getEdgeWorkersResource
 export const getEdgeWorkersResourceTierOutput: typeof import("./getEdgeWorkersResourceTier").getEdgeWorkersResourceTierOutput = null as any;
 utilities.lazyLoad(exports, ["getEdgeWorkersResourceTier","getEdgeWorkersResourceTierOutput"], () => require("./getEdgeWorkersResourceTier"));
 
+export { GetEdgekvGroupItemsArgs, GetEdgekvGroupItemsResult, GetEdgekvGroupItemsOutputArgs } from "./getEdgekvGroupItems";
+export const getEdgekvGroupItems: typeof import("./getEdgekvGroupItems").getEdgekvGroupItems = null as any;
+export const getEdgekvGroupItemsOutput: typeof import("./getEdgekvGroupItems").getEdgekvGroupItemsOutput = null as any;
+utilities.lazyLoad(exports, ["getEdgekvGroupItems","getEdgekvGroupItemsOutput"], () => require("./getEdgekvGroupItems"));
+
+export { GetEdgekvGroupsArgs, GetEdgekvGroupsResult, GetEdgekvGroupsOutputArgs } from "./getEdgekvGroups";
+export const getEdgekvGroups: typeof import("./getEdgekvGroups").getEdgekvGroups = null as any;
+export const getEdgekvGroupsOutput: typeof import("./getEdgekvGroups").getEdgekvGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getEdgekvGroups","getEdgekvGroupsOutput"], () => require("./getEdgekvGroups"));
+
 export { GetGroupArgs, GetGroupResult, GetGroupOutputArgs } from "./getGroup";
 export const getGroup: typeof import("./getGroup").getGroup = null as any;
 export const getGroupOutput: typeof import("./getGroup").getGroupOutput = null as any;
@@ -1083,6 +1098,8 @@ const _module = {
                 return new EdgeWorker(name, <any>undefined, { urn })
             case "akamai:index/edgeWorkersActivation:EdgeWorkersActivation":
                 return new EdgeWorkersActivation(name, <any>undefined, { urn })
+            case "akamai:index/edgekvGroupItems:EdgekvGroupItems":
+                return new EdgekvGroupItems(name, <any>undefined, { urn })
             case "akamai:index/gtmAsmap:GtmAsmap":
                 return new GtmAsmap(name, <any>undefined, { urn })
             case "akamai:index/gtmCidrmap:GtmCidrmap":
@@ -1191,6 +1208,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/edgeHostName", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/edgeKv", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/edgeWorker", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/edgeWorkersActivation", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/edgekvGroupItems", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmAsmap", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmCidrmap", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/gtmDatacenter", _module)

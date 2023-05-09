@@ -40,9 +40,21 @@ public final class GtmPropertyTrafficTargetArgs extends com.pulumi.resources.Res
         return Optional.ofNullable(this.handoutCname);
     }
 
+    /**
+     * @deprecated
+     * The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
+     * 
+     */
+    @Deprecated /* The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored */
     @Import(name="name")
     private @Nullable Output<String> name;
 
+    /**
+     * @deprecated
+     * The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
+     * 
+     */
+    @Deprecated /* The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
@@ -117,11 +129,27 @@ public final class GtmPropertyTrafficTargetArgs extends com.pulumi.resources.Res
             return handoutCname(Output.of(handoutCname));
         }
 
+        /**
+         * @return builder
+         * 
+         * @deprecated
+         * The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
+         * 
+         */
+        @Deprecated /* The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @return builder
+         * 
+         * @deprecated
+         * The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
+         * 
+         */
+        @Deprecated /* The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored */
         public Builder name(String name) {
             return name(Output.of(name));
         }

@@ -19,6 +19,8 @@ type EdgeKv struct {
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId pulumi.IntOutput `pulumi:"groupId"`
 	// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
+	//
+	// Deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
 	InitialDatas EdgeKvInitialDataArrayOutput `pulumi:"initialDatas"`
 	// Name for the EKV namespace
 	NamespaceName pulumi.StringOutput `pulumi:"namespaceName"`
@@ -74,6 +76,8 @@ type edgeKvState struct {
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId *int `pulumi:"groupId"`
 	// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
+	//
+	// Deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
 	InitialDatas []EdgeKvInitialData `pulumi:"initialDatas"`
 	// Name for the EKV namespace
 	NamespaceName *string `pulumi:"namespaceName"`
@@ -89,6 +93,8 @@ type EdgeKvState struct {
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId pulumi.IntPtrInput
 	// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
+	//
+	// Deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
 	InitialDatas EdgeKvInitialDataArrayInput
 	// Name for the EKV namespace
 	NamespaceName pulumi.StringPtrInput
@@ -108,6 +114,8 @@ type edgeKvArgs struct {
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId int `pulumi:"groupId"`
 	// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
+	//
+	// Deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
 	InitialDatas []EdgeKvInitialData `pulumi:"initialDatas"`
 	// Name for the EKV namespace
 	NamespaceName string `pulumi:"namespaceName"`
@@ -124,6 +132,8 @@ type EdgeKvArgs struct {
 	// Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
 	GroupId pulumi.IntInput
 	// List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
+	//
+	// Deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
 	InitialDatas EdgeKvInitialDataArrayInput
 	// Name for the EKV namespace
 	NamespaceName pulumi.StringInput
@@ -231,6 +241,8 @@ func (o EdgeKvOutput) GroupId() pulumi.IntOutput {
 }
 
 // List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
+//
+// Deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.
 func (o EdgeKvOutput) InitialDatas() EdgeKvInitialDataArrayOutput {
 	return o.ApplyT(func(v *EdgeKv) EdgeKvInitialDataArrayOutput { return v.InitialDatas }).(EdgeKvInitialDataArrayOutput)
 }

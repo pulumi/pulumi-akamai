@@ -152,6 +152,10 @@ import com.pulumi.akamai.inputs.GetEdgeWorkersPropertyRulesArgs;
 import com.pulumi.akamai.inputs.GetEdgeWorkersPropertyRulesPlainArgs;
 import com.pulumi.akamai.inputs.GetEdgeWorkersResourceTierArgs;
 import com.pulumi.akamai.inputs.GetEdgeWorkersResourceTierPlainArgs;
+import com.pulumi.akamai.inputs.GetEdgekvGroupItemsArgs;
+import com.pulumi.akamai.inputs.GetEdgekvGroupItemsPlainArgs;
+import com.pulumi.akamai.inputs.GetEdgekvGroupsArgs;
+import com.pulumi.akamai.inputs.GetEdgekvGroupsPlainArgs;
 import com.pulumi.akamai.inputs.GetGroupArgs;
 import com.pulumi.akamai.inputs.GetGroupPlainArgs;
 import com.pulumi.akamai.inputs.GetGtmDefaultDatacenterArgs;
@@ -263,6 +267,8 @@ import com.pulumi.akamai.outputs.GetEdgeWorkerActivationResult;
 import com.pulumi.akamai.outputs.GetEdgeWorkerResult;
 import com.pulumi.akamai.outputs.GetEdgeWorkersPropertyRulesResult;
 import com.pulumi.akamai.outputs.GetEdgeWorkersResourceTierResult;
+import com.pulumi.akamai.outputs.GetEdgekvGroupItemsResult;
+import com.pulumi.akamai.outputs.GetEdgekvGroupsResult;
 import com.pulumi.akamai.outputs.GetGroupResult;
 import com.pulumi.akamai.outputs.GetGroupsResult;
 import com.pulumi.akamai.outputs.GetGtmDefaultDatacenterResult;
@@ -1328,6 +1334,30 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetEdgeWorkersResourceTierResult> getEdgeWorkersResourceTierPlain(GetEdgeWorkersResourceTierPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", TypeShape.of(GetEdgeWorkersResourceTierResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetEdgekvGroupItemsResult> getEdgekvGroupItems(GetEdgekvGroupItemsArgs args) {
+        return getEdgekvGroupItems(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetEdgekvGroupItemsResult> getEdgekvGroupItemsPlain(GetEdgekvGroupItemsPlainArgs args) {
+        return getEdgekvGroupItemsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetEdgekvGroupItemsResult> getEdgekvGroupItems(GetEdgekvGroupItemsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getEdgekvGroupItems:getEdgekvGroupItems", TypeShape.of(GetEdgekvGroupItemsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetEdgekvGroupItemsResult> getEdgekvGroupItemsPlain(GetEdgekvGroupItemsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getEdgekvGroupItems:getEdgekvGroupItems", TypeShape.of(GetEdgekvGroupItemsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetEdgekvGroupsResult> getEdgekvGroups(GetEdgekvGroupsArgs args) {
+        return getEdgekvGroups(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetEdgekvGroupsResult> getEdgekvGroupsPlain(GetEdgekvGroupsPlainArgs args) {
+        return getEdgekvGroupsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetEdgekvGroupsResult> getEdgekvGroups(GetEdgekvGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getEdgekvGroups:getEdgekvGroups", TypeShape.of(GetEdgekvGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetEdgekvGroupsResult> getEdgekvGroupsPlain(GetEdgekvGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getEdgekvGroups:getEdgekvGroups", TypeShape.of(GetEdgekvGroupsResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetGroupResult> getGroup() {
         return getGroup(GetGroupArgs.Empty, InvokeOptions.Empty);
