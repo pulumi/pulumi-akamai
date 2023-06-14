@@ -32,7 +32,7 @@ import (
 	iamProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/iam"
 	networkListsProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/networklists"
 	propertyProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/property"
-	"github.com/pulumi/pulumi-akamai/provider/v4/pkg/version"
+	"github.com/pulumi/pulumi-akamai/provider/v5/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/x"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
@@ -107,7 +107,7 @@ func Provider() tfbridge.ProviderInfo {
 		Homepage:                "https://pulumi.io",
 		Repository:              "https://github.com/pulumi/pulumi-akamai",
 		GitHubOrg:               "akamai",
-		TFProviderModuleVersion: "v3",
+		TFProviderModuleVersion: "v4",
 		UpstreamRepoPath:        "./upstream",
 		Config: map[string]*tfbridge.SchemaInfo{
 			"config": {

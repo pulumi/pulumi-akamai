@@ -25,7 +25,7 @@
         "go": {
             "generateExtraInputTypes": true,
             "generateResourceContainerTypes": true,
-            "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v4/go/akamai"
+            "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v5/go/akamai"
         },
         "nodejs": {
             "compatibility": "tfbridge20",
@@ -54,14 +54,14 @@
         "variables": {
             "appsecSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"appsec_section\" has been deprecated."
+                "deprecationMessage": "The setting \"appsec_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "appsecs": {
                 "type": "array",
                 "items": {
                     "$ref": "#/types/akamai:config/appsecs:appsecs"
                 },
-                "deprecationMessage": "The setting \"appsec\" has been deprecated."
+                "deprecationMessage": "The setting \"appsec\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "cacheEnabled": {
                 "type": "boolean"
@@ -80,26 +80,26 @@
             },
             "dns": {
                 "$ref": "#/types/akamai:config/dns:dns",
-                "deprecationMessage": "The setting \"dns\" has been deprecated."
+                "deprecationMessage": "The setting \"dns\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "dnsSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"dns_section\" has been deprecated."
+                "deprecationMessage": "The setting \"dns_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "edgerc": {
                 "type": "string"
             },
             "gtm": {
                 "$ref": "#/types/akamai:config/gtm:gtm",
-                "deprecationMessage": "The setting \"gtm\" has been deprecated."
+                "deprecationMessage": "The setting \"gtm\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "gtmSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"gtm_section\" has been deprecated."
+                "deprecationMessage": "The setting \"gtm_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "networklistSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"networklist_section\" has been deprecated."
+                "deprecationMessage": "The setting \"networklist_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "networks": {
                 "type": "array",
@@ -109,15 +109,15 @@
             },
             "papiSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"papi_section\" has been deprecated."
+                "deprecationMessage": "The setting \"papi_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "property": {
                 "$ref": "#/types/akamai:config/property:property",
-                "deprecationMessage": "The setting \"property\" has been deprecated."
+                "deprecationMessage": "The setting \"property\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "propertySection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"property_section\" has been deprecated."
+                "deprecationMessage": "The setting \"property_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "requestLimit": {
                 "type": "integer",
@@ -1804,13 +1804,40 @@
         },
         "akamai:index/PropertyActivationComplianceRecord:PropertyActivationComplianceRecord": {
             "properties": {
+                "noncomplianceReasonEmergency": {
+                    "$ref": "#/types/akamai:index/PropertyActivationComplianceRecordNoncomplianceReasonEmergency:PropertyActivationComplianceRecordNoncomplianceReasonEmergency"
+                },
+                "noncomplianceReasonNoProductionTraffic": {
+                    "$ref": "#/types/akamai:index/PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic:PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic"
+                },
+                "noncomplianceReasonNone": {
+                    "$ref": "#/types/akamai:index/PropertyActivationComplianceRecordNoncomplianceReasonNone:PropertyActivationComplianceRecordNoncomplianceReasonNone"
+                },
+                "noncomplianceReasonOther": {
+                    "$ref": "#/types/akamai:index/PropertyActivationComplianceRecordNoncomplianceReasonOther:PropertyActivationComplianceRecordNoncomplianceReasonOther"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/PropertyActivationComplianceRecordNoncomplianceReasonEmergency:PropertyActivationComplianceRecordNoncomplianceReasonEmergency": {
+            "properties": {
+                "ticketId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic:PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic": {
+            "properties": {
+                "ticketId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/PropertyActivationComplianceRecordNoncomplianceReasonNone:PropertyActivationComplianceRecordNoncomplianceReasonNone": {
+            "properties": {
                 "customerEmail": {
-                    "type": "string"
-                },
-                "noncomplianceReason": {
-                    "type": "string"
-                },
-                "otherNoncomplianceReason": {
                     "type": "string"
                 },
                 "peerReviewedBy": {
@@ -1823,10 +1850,18 @@
                     "type": "boolean"
                 }
             },
-            "type": "object",
-            "required": [
-                "noncomplianceReason"
-            ]
+            "type": "object"
+        },
+        "akamai:index/PropertyActivationComplianceRecordNoncomplianceReasonOther:PropertyActivationComplianceRecordNoncomplianceReasonOther": {
+            "properties": {
+                "otherNoncomplianceReason": {
+                    "type": "string"
+                },
+                "ticketId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
         },
         "akamai:index/PropertyActivationRuleError:PropertyActivationRuleError": {
             "properties": {
@@ -1952,13 +1987,40 @@
         },
         "akamai:index/PropertyIncludeActivationComplianceRecord:PropertyIncludeActivationComplianceRecord": {
             "properties": {
+                "noncomplianceReasonEmergency": {
+                    "$ref": "#/types/akamai:index/PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency:PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency"
+                },
+                "noncomplianceReasonNoProductionTraffic": {
+                    "$ref": "#/types/akamai:index/PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic:PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic"
+                },
+                "noncomplianceReasonNone": {
+                    "$ref": "#/types/akamai:index/PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone:PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone"
+                },
+                "noncomplianceReasonOther": {
+                    "$ref": "#/types/akamai:index/PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther:PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency:PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency": {
+            "properties": {
+                "ticketId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic:PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic": {
+            "properties": {
+                "ticketId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone:PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone": {
+            "properties": {
                 "customerEmail": {
-                    "type": "string"
-                },
-                "noncomplianceReason": {
-                    "type": "string"
-                },
-                "otherNoncomplianceReason": {
                     "type": "string"
                 },
                 "peerReviewedBy": {
@@ -1971,10 +2033,18 @@
                     "type": "boolean"
                 }
             },
-            "type": "object",
-            "required": [
-                "noncomplianceReason"
-            ]
+            "type": "object"
+        },
+        "akamai:index/PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther:PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther": {
+            "properties": {
+                "otherNoncomplianceReason": {
+                    "type": "string"
+                },
+                "ticketId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
         },
         "akamai:index/PropertyOrigin:PropertyOrigin": {
             "properties": {
@@ -4413,6 +4483,182 @@
                 "groupId",
                 "groupName",
                 "parentGroupId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getGtmDatacenterDefaultLoadObject:getGtmDatacenterDefaultLoadObject": {
+            "properties": {
+                "loadObject": {
+                    "type": "string"
+                },
+                "loadObjectPort": {
+                    "type": "integer"
+                },
+                "loadServers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "loadObject",
+                "loadObjectPort",
+                "loadServers"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getGtmDatacenterLink:getGtmDatacenterLink": {
+            "properties": {
+                "href": {
+                    "type": "string"
+                },
+                "rel": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "href",
+                "rel"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getGtmDatacentersDatacenter:getGtmDatacentersDatacenter": {
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "cloneOf": {
+                    "type": "integer"
+                },
+                "cloudServerHostHeaderOverride": {
+                    "type": "boolean"
+                },
+                "cloudServerTargeting": {
+                    "type": "boolean"
+                },
+                "continent": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "datacenterId": {
+                    "type": "integer"
+                },
+                "defaultLoadObjects": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getGtmDatacentersDatacenterDefaultLoadObject:getGtmDatacentersDatacenterDefaultLoadObject"
+                    }
+                },
+                "latitude": {
+                    "type": "number"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getGtmDatacentersDatacenterLink:getGtmDatacentersDatacenterLink"
+                    }
+                },
+                "longitude": {
+                    "type": "number"
+                },
+                "nickname": {
+                    "type": "string"
+                },
+                "scorePenalty": {
+                    "type": "integer"
+                },
+                "servermonitorPool": {
+                    "type": "string"
+                },
+                "stateOrProvince": {
+                    "type": "string"
+                },
+                "virtual": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object",
+            "required": [
+                "city",
+                "cloneOf",
+                "cloudServerHostHeaderOverride",
+                "cloudServerTargeting",
+                "continent",
+                "country",
+                "datacenterId",
+                "defaultLoadObjects",
+                "latitude",
+                "links",
+                "longitude",
+                "nickname",
+                "scorePenalty",
+                "servermonitorPool",
+                "stateOrProvince",
+                "virtual"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getGtmDatacentersDatacenterDefaultLoadObject:getGtmDatacentersDatacenterDefaultLoadObject": {
+            "properties": {
+                "loadObject": {
+                    "type": "string"
+                },
+                "loadObjectPort": {
+                    "type": "integer"
+                },
+                "loadServers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "loadObject",
+                "loadObjectPort",
+                "loadServers"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getGtmDatacentersDatacenterLink:getGtmDatacentersDatacenterLink": {
+            "properties": {
+                "href": {
+                    "type": "string"
+                },
+                "rel": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "href",
+                "rel"
             ],
             "language": {
                 "nodejs": {
@@ -14660,13 +14906,40 @@
         },
         "akamai:properties/PropertyActivationComplianceRecord:PropertyActivationComplianceRecord": {
             "properties": {
+                "noncomplianceReasonEmergency": {
+                    "$ref": "#/types/akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonEmergency:PropertyActivationComplianceRecordNoncomplianceReasonEmergency"
+                },
+                "noncomplianceReasonNoProductionTraffic": {
+                    "$ref": "#/types/akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic:PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic"
+                },
+                "noncomplianceReasonNone": {
+                    "$ref": "#/types/akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonNone:PropertyActivationComplianceRecordNoncomplianceReasonNone"
+                },
+                "noncomplianceReasonOther": {
+                    "$ref": "#/types/akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonOther:PropertyActivationComplianceRecordNoncomplianceReasonOther"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonEmergency:PropertyActivationComplianceRecordNoncomplianceReasonEmergency": {
+            "properties": {
+                "ticketId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic:PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic": {
+            "properties": {
+                "ticketId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonNone:PropertyActivationComplianceRecordNoncomplianceReasonNone": {
+            "properties": {
                 "customerEmail": {
-                    "type": "string"
-                },
-                "noncomplianceReason": {
-                    "type": "string"
-                },
-                "otherNoncomplianceReason": {
                     "type": "string"
                 },
                 "peerReviewedBy": {
@@ -14679,10 +14952,18 @@
                     "type": "boolean"
                 }
             },
-            "type": "object",
-            "required": [
-                "noncomplianceReason"
-            ]
+            "type": "object"
+        },
+        "akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonOther:PropertyActivationComplianceRecordNoncomplianceReasonOther": {
+            "properties": {
+                "otherNoncomplianceReason": {
+                    "type": "string"
+                },
+                "ticketId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
         },
         "akamai:properties/PropertyActivationRuleError:PropertyActivationRuleError": {
             "properties": {
@@ -15178,14 +15459,14 @@
         "properties": {
             "appsecSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"appsec_section\" has been deprecated."
+                "deprecationMessage": "The setting \"appsec_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "appsecs": {
                 "type": "array",
                 "items": {
                     "$ref": "#/types/akamai:index/ProviderAppsec:ProviderAppsec"
                 },
-                "deprecationMessage": "The setting \"appsec\" has been deprecated."
+                "deprecationMessage": "The setting \"appsec\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "cacheEnabled": {
                 "type": "boolean"
@@ -15204,26 +15485,26 @@
             },
             "dns": {
                 "$ref": "#/types/akamai:index/ProviderDns:ProviderDns",
-                "deprecationMessage": "The setting \"dns\" has been deprecated."
+                "deprecationMessage": "The setting \"dns\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "dnsSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"dns_section\" has been deprecated."
+                "deprecationMessage": "The setting \"dns_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "edgerc": {
                 "type": "string"
             },
             "gtm": {
                 "$ref": "#/types/akamai:index/ProviderGtm:ProviderGtm",
-                "deprecationMessage": "The setting \"gtm\" has been deprecated."
+                "deprecationMessage": "The setting \"gtm\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "gtmSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"gtm_section\" has been deprecated."
+                "deprecationMessage": "The setting \"gtm_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "networklistSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"networklist_section\" has been deprecated."
+                "deprecationMessage": "The setting \"networklist_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "networks": {
                 "type": "array",
@@ -15233,15 +15514,15 @@
             },
             "papiSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"papi_section\" has been deprecated."
+                "deprecationMessage": "The setting \"papi_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "property": {
                 "$ref": "#/types/akamai:index/ProviderProperty:ProviderProperty",
-                "deprecationMessage": "The setting \"property\" has been deprecated."
+                "deprecationMessage": "The setting \"property\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "propertySection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"property_section\" has been deprecated."
+                "deprecationMessage": "The setting \"property_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "requestLimit": {
                 "type": "integer",
@@ -15251,14 +15532,14 @@
         "inputProperties": {
             "appsecSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"appsec_section\" has been deprecated."
+                "deprecationMessage": "The setting \"appsec_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "appsecs": {
                 "type": "array",
                 "items": {
                     "$ref": "#/types/akamai:index/ProviderAppsec:ProviderAppsec"
                 },
-                "deprecationMessage": "The setting \"appsec\" has been deprecated."
+                "deprecationMessage": "The setting \"appsec\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "cacheEnabled": {
                 "type": "boolean"
@@ -15277,26 +15558,26 @@
             },
             "dns": {
                 "$ref": "#/types/akamai:index/ProviderDns:ProviderDns",
-                "deprecationMessage": "The setting \"dns\" has been deprecated."
+                "deprecationMessage": "The setting \"dns\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "dnsSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"dns_section\" has been deprecated."
+                "deprecationMessage": "The setting \"dns_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "edgerc": {
                 "type": "string"
             },
             "gtm": {
                 "$ref": "#/types/akamai:index/ProviderGtm:ProviderGtm",
-                "deprecationMessage": "The setting \"gtm\" has been deprecated."
+                "deprecationMessage": "The setting \"gtm\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "gtmSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"gtm_section\" has been deprecated."
+                "deprecationMessage": "The setting \"gtm_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "networklistSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"networklist_section\" has been deprecated."
+                "deprecationMessage": "The setting \"networklist_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "networks": {
                 "type": "array",
@@ -15306,15 +15587,15 @@
             },
             "papiSection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"papi_section\" has been deprecated."
+                "deprecationMessage": "The setting \"papi_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "property": {
                 "$ref": "#/types/akamai:index/ProviderProperty:ProviderProperty",
-                "deprecationMessage": "The setting \"property\" has been deprecated."
+                "deprecationMessage": "The setting \"property\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "propertySection": {
                 "type": "string",
-                "deprecationMessage": "The setting \"property_section\" has been deprecated."
+                "deprecationMessage": "The setting \"property_section\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
             },
             "requestLimit": {
                 "type": "integer",
@@ -20043,14 +20324,14 @@
             "properties": {
                 "contract": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"contract\" has been deprecated."
+                    "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contractId": {
                     "type": "string"
                 },
                 "group": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"group\" has been deprecated."
+                    "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "groupId": {
                     "type": "string"
@@ -20060,7 +20341,7 @@
                 },
                 "product": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"product\" has been deprecated."
+                    "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "productId": {
                     "type": "string"
@@ -20078,14 +20359,14 @@
             "inputProperties": {
                 "contract": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"contract\" has been deprecated."
+                    "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contractId": {
                     "type": "string"
                 },
                 "group": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"group\" has been deprecated."
+                    "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "groupId": {
                     "type": "string"
@@ -20095,7 +20376,7 @@
                 },
                 "product": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"product\" has been deprecated."
+                    "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "productId": {
                     "type": "string"
@@ -20106,14 +20387,14 @@
                 "properties": {
                     "contract": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"contract\" has been deprecated."
+                        "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "contractId": {
                         "type": "string"
                     },
                     "group": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"group\" has been deprecated."
+                        "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "groupId": {
                         "type": "string"
@@ -20123,7 +20404,7 @@
                     },
                     "product": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"product\" has been deprecated."
+                        "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "productId": {
                         "type": "string"
@@ -22005,7 +22286,7 @@
                 },
                 "contract": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"contract\" has been deprecated."
+                    "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contractId": {
                     "type": "string"
@@ -22015,7 +22296,7 @@
                 },
                 "group": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"group\" has been deprecated."
+                    "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "groupId": {
                     "type": "string"
@@ -22025,7 +22306,7 @@
                 },
                 "product": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"product\" has been deprecated."
+                    "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "productId": {
                     "type": "string"
@@ -22059,7 +22340,7 @@
                 },
                 "contract": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"contract\" has been deprecated."
+                    "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contractId": {
                     "type": "string"
@@ -22070,7 +22351,7 @@
                 },
                 "group": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"group\" has been deprecated."
+                    "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "groupId": {
                     "type": "string"
@@ -22080,7 +22361,7 @@
                 },
                 "product": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"product\" has been deprecated."
+                    "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "productId": {
                     "type": "string"
@@ -22111,7 +22392,7 @@
                     },
                     "contract": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"contract\" has been deprecated."
+                        "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "contractId": {
                         "type": "string"
@@ -22122,7 +22403,7 @@
                     },
                     "group": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"group\" has been deprecated."
+                        "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "groupId": {
                         "type": "string"
@@ -22132,7 +22413,7 @@
                     },
                     "product": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"product\" has been deprecated."
+                        "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "productId": {
                         "type": "string"
@@ -24485,7 +24766,7 @@
             "properties": {
                 "activate": {
                     "type": "boolean",
-                    "deprecationMessage": "The setting \"activate\" has been deprecated."
+                    "deprecationMessage": "The setting \"activate\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "network": {
                     "type": "string",
@@ -24524,7 +24805,7 @@
             "inputProperties": {
                 "activate": {
                     "type": "boolean",
-                    "deprecationMessage": "The setting \"activate\" has been deprecated."
+                    "deprecationMessage": "The setting \"activate\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "network": {
                     "type": "string",
@@ -24561,7 +24842,7 @@
                 "properties": {
                     "activate": {
                         "type": "boolean",
-                        "deprecationMessage": "The setting \"activate\" has been deprecated."
+                        "deprecationMessage": "The setting \"activate\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "network": {
                         "type": "string",
@@ -24706,11 +24987,11 @@
                     "items": {
                         "type": "string"
                     },
-                    "deprecationMessage": "The setting \"contact\" has been deprecated."
+                    "deprecationMessage": "The setting \"contact\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contract": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"contract\" has been deprecated."
+                    "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contractId": {
                     "type": "string",
@@ -24718,11 +24999,11 @@
                 },
                 "cpCode": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"cp_code\" has been deprecated."
+                    "deprecationMessage": "The setting \"cp_code\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "group": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"group\" has been deprecated."
+                    "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "groupId": {
                     "type": "string",
@@ -24736,7 +25017,7 @@
                 },
                 "isSecure": {
                     "type": "boolean",
-                    "deprecationMessage": "The setting \"is_secure\" has been deprecated."
+                    "deprecationMessage": "The setting \"is_secure\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "latestVersion": {
                     "type": "integer",
@@ -24751,11 +25032,11 @@
                     "items": {
                         "$ref": "#/types/akamai:index/PropertyOrigin:PropertyOrigin"
                     },
-                    "deprecationMessage": "The setting \"origin\" has been deprecated."
+                    "deprecationMessage": "The setting \"origin\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "product": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"product\" has been deprecated."
+                    "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "productId": {
                     "type": "string",
@@ -24796,7 +25077,7 @@
                 },
                 "variables": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"variables\" has been deprecated."
+                    "deprecationMessage": "The setting \"variables\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 }
             },
             "required": [
@@ -24822,11 +25103,11 @@
                     "items": {
                         "type": "string"
                     },
-                    "deprecationMessage": "The setting \"contact\" has been deprecated."
+                    "deprecationMessage": "The setting \"contact\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contract": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"contract\" has been deprecated."
+                    "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contractId": {
                     "type": "string",
@@ -24834,11 +25115,11 @@
                 },
                 "cpCode": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"cp_code\" has been deprecated."
+                    "deprecationMessage": "The setting \"cp_code\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "group": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"group\" has been deprecated."
+                    "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "groupId": {
                     "type": "string",
@@ -24852,7 +25133,7 @@
                 },
                 "isSecure": {
                     "type": "boolean",
-                    "deprecationMessage": "The setting \"is_secure\" has been deprecated."
+                    "deprecationMessage": "The setting \"is_secure\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "name": {
                     "type": "string",
@@ -24864,11 +25145,11 @@
                     "items": {
                         "$ref": "#/types/akamai:index/PropertyOrigin:PropertyOrigin"
                     },
-                    "deprecationMessage": "The setting \"origin\" has been deprecated."
+                    "deprecationMessage": "The setting \"origin\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "product": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"product\" has been deprecated."
+                    "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "productId": {
                     "type": "string",
@@ -24891,7 +25172,7 @@
                 },
                 "variables": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"variables\" has been deprecated."
+                    "deprecationMessage": "The setting \"variables\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 }
             },
             "stateInputs": {
@@ -24902,11 +25183,11 @@
                         "items": {
                             "type": "string"
                         },
-                        "deprecationMessage": "The setting \"contact\" has been deprecated."
+                        "deprecationMessage": "The setting \"contact\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "contract": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"contract\" has been deprecated."
+                        "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "contractId": {
                         "type": "string",
@@ -24914,11 +25195,11 @@
                     },
                     "cpCode": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"cp_code\" has been deprecated."
+                        "deprecationMessage": "The setting \"cp_code\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "group": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"group\" has been deprecated."
+                        "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "groupId": {
                         "type": "string",
@@ -24932,7 +25213,7 @@
                     },
                     "isSecure": {
                         "type": "boolean",
-                        "deprecationMessage": "The setting \"is_secure\" has been deprecated."
+                        "deprecationMessage": "The setting \"is_secure\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "latestVersion": {
                         "type": "integer",
@@ -24948,11 +25229,11 @@
                         "items": {
                             "$ref": "#/types/akamai:index/PropertyOrigin:PropertyOrigin"
                         },
-                        "deprecationMessage": "The setting \"origin\" has been deprecated."
+                        "deprecationMessage": "The setting \"origin\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "product": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"product\" has been deprecated."
+                        "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "productId": {
                         "type": "string",
@@ -24993,7 +25274,7 @@
                     },
                     "variables": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"variables\" has been deprecated."
+                        "deprecationMessage": "The setting \"variables\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     }
                 },
                 "type": "object"
@@ -25035,7 +25316,7 @@
                 },
                 "property": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"property\" has been deprecated."
+                    "deprecationMessage": "The setting \"property\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "propertyId": {
                     "type": "string"
@@ -25102,7 +25383,7 @@
                 },
                 "property": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"property\" has been deprecated."
+                    "deprecationMessage": "The setting \"property\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "propertyId": {
                     "type": "string"
@@ -25160,7 +25441,7 @@
                     },
                     "property": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"property\" has been deprecated."
+                        "deprecationMessage": "The setting \"property\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "propertyId": {
                         "type": "string"
@@ -25527,14 +25808,14 @@
             "properties": {
                 "contract": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"contract\" has been deprecated."
+                    "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contractId": {
                     "type": "string"
                 },
                 "group": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"group\" has been deprecated."
+                    "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "groupId": {
                     "type": "string"
@@ -25544,7 +25825,7 @@
                 },
                 "product": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"product\" has been deprecated."
+                    "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "productId": {
                     "type": "string"
@@ -25562,14 +25843,14 @@
             "inputProperties": {
                 "contract": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"contract\" has been deprecated."
+                    "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contractId": {
                     "type": "string"
                 },
                 "group": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"group\" has been deprecated."
+                    "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "groupId": {
                     "type": "string"
@@ -25579,7 +25860,7 @@
                 },
                 "product": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"product\" has been deprecated."
+                    "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "productId": {
                     "type": "string"
@@ -25590,14 +25871,14 @@
                 "properties": {
                     "contract": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"contract\" has been deprecated."
+                        "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "contractId": {
                         "type": "string"
                     },
                     "group": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"group\" has been deprecated."
+                        "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "groupId": {
                         "type": "string"
@@ -25607,7 +25888,7 @@
                     },
                     "product": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"product\" has been deprecated."
+                        "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "productId": {
                         "type": "string"
@@ -25624,7 +25905,7 @@
                 },
                 "contract": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"contract\" has been deprecated."
+                    "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contractId": {
                     "type": "string"
@@ -25634,7 +25915,7 @@
                 },
                 "group": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"group\" has been deprecated."
+                    "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "groupId": {
                     "type": "string"
@@ -25644,7 +25925,7 @@
                 },
                 "product": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"product\" has been deprecated."
+                    "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "productId": {
                     "type": "string"
@@ -25678,7 +25959,7 @@
                 },
                 "contract": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"contract\" has been deprecated."
+                    "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contractId": {
                     "type": "string"
@@ -25689,7 +25970,7 @@
                 },
                 "group": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"group\" has been deprecated."
+                    "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "groupId": {
                     "type": "string"
@@ -25699,7 +25980,7 @@
                 },
                 "product": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"product\" has been deprecated."
+                    "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "productId": {
                     "type": "string"
@@ -25730,7 +26011,7 @@
                     },
                     "contract": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"contract\" has been deprecated."
+                        "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "contractId": {
                         "type": "string"
@@ -25741,7 +26022,7 @@
                     },
                     "group": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"group\" has been deprecated."
+                        "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "groupId": {
                         "type": "string"
@@ -25751,7 +26032,7 @@
                     },
                     "product": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"product\" has been deprecated."
+                        "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "productId": {
                         "type": "string"
@@ -25780,11 +26061,11 @@
                     "items": {
                         "type": "string"
                     },
-                    "deprecationMessage": "The setting \"contact\" has been deprecated."
+                    "deprecationMessage": "The setting \"contact\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contract": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"contract\" has been deprecated."
+                    "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contractId": {
                     "type": "string",
@@ -25792,11 +26073,11 @@
                 },
                 "cpCode": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"cp_code\" has been deprecated."
+                    "deprecationMessage": "The setting \"cp_code\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "group": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"group\" has been deprecated."
+                    "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "groupId": {
                     "type": "string",
@@ -25810,7 +26091,7 @@
                 },
                 "isSecure": {
                     "type": "boolean",
-                    "deprecationMessage": "The setting \"is_secure\" has been deprecated."
+                    "deprecationMessage": "The setting \"is_secure\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "latestVersion": {
                     "type": "integer",
@@ -25825,11 +26106,11 @@
                     "items": {
                         "$ref": "#/types/akamai:properties/PropertyOrigin:PropertyOrigin"
                     },
-                    "deprecationMessage": "The setting \"origin\" has been deprecated."
+                    "deprecationMessage": "The setting \"origin\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "product": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"product\" has been deprecated."
+                    "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "productId": {
                     "type": "string",
@@ -25870,7 +26151,7 @@
                 },
                 "variables": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"variables\" has been deprecated."
+                    "deprecationMessage": "The setting \"variables\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 }
             },
             "required": [
@@ -25896,11 +26177,11 @@
                     "items": {
                         "type": "string"
                     },
-                    "deprecationMessage": "The setting \"contact\" has been deprecated."
+                    "deprecationMessage": "The setting \"contact\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contract": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"contract\" has been deprecated."
+                    "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "contractId": {
                     "type": "string",
@@ -25908,11 +26189,11 @@
                 },
                 "cpCode": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"cp_code\" has been deprecated."
+                    "deprecationMessage": "The setting \"cp_code\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "group": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"group\" has been deprecated."
+                    "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "groupId": {
                     "type": "string",
@@ -25926,7 +26207,7 @@
                 },
                 "isSecure": {
                     "type": "boolean",
-                    "deprecationMessage": "The setting \"is_secure\" has been deprecated."
+                    "deprecationMessage": "The setting \"is_secure\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "name": {
                     "type": "string",
@@ -25938,11 +26219,11 @@
                     "items": {
                         "$ref": "#/types/akamai:properties/PropertyOrigin:PropertyOrigin"
                     },
-                    "deprecationMessage": "The setting \"origin\" has been deprecated."
+                    "deprecationMessage": "The setting \"origin\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "product": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"product\" has been deprecated."
+                    "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "productId": {
                     "type": "string",
@@ -25965,7 +26246,7 @@
                 },
                 "variables": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"variables\" has been deprecated."
+                    "deprecationMessage": "The setting \"variables\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 }
             },
             "stateInputs": {
@@ -25976,11 +26257,11 @@
                         "items": {
                             "type": "string"
                         },
-                        "deprecationMessage": "The setting \"contact\" has been deprecated."
+                        "deprecationMessage": "The setting \"contact\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "contract": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"contract\" has been deprecated."
+                        "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "contractId": {
                         "type": "string",
@@ -25988,11 +26269,11 @@
                     },
                     "cpCode": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"cp_code\" has been deprecated."
+                        "deprecationMessage": "The setting \"cp_code\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "group": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"group\" has been deprecated."
+                        "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "groupId": {
                         "type": "string",
@@ -26006,7 +26287,7 @@
                     },
                     "isSecure": {
                         "type": "boolean",
-                        "deprecationMessage": "The setting \"is_secure\" has been deprecated."
+                        "deprecationMessage": "The setting \"is_secure\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "latestVersion": {
                         "type": "integer",
@@ -26022,11 +26303,11 @@
                         "items": {
                             "$ref": "#/types/akamai:properties/PropertyOrigin:PropertyOrigin"
                         },
-                        "deprecationMessage": "The setting \"origin\" has been deprecated."
+                        "deprecationMessage": "The setting \"origin\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "product": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"product\" has been deprecated."
+                        "deprecationMessage": "The setting \"product\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "productId": {
                         "type": "string",
@@ -26067,7 +26348,7 @@
                     },
                     "variables": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"variables\" has been deprecated."
+                        "deprecationMessage": "The setting \"variables\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     }
                 },
                 "type": "object"
@@ -26105,7 +26386,7 @@
                 },
                 "property": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"property\" has been deprecated."
+                    "deprecationMessage": "The setting \"property\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "propertyId": {
                     "type": "string"
@@ -26172,7 +26453,7 @@
                 },
                 "property": {
                     "type": "string",
-                    "deprecationMessage": "The setting \"property\" has been deprecated."
+                    "deprecationMessage": "The setting \"property\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                 },
                 "propertyId": {
                     "type": "string"
@@ -26230,7 +26511,7 @@
                     },
                     "property": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"property\" has been deprecated."
+                        "deprecationMessage": "The setting \"property\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "propertyId": {
                         "type": "string"
@@ -30808,7 +31089,7 @@
                 "properties": {
                     "group": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"group\" has been deprecated."
+                        "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "groupId": {
                         "type": "string"
@@ -30824,7 +31105,7 @@
                 "properties": {
                     "group": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"group\" has been deprecated."
+                        "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "groupId": {
                         "type": "string"
@@ -30873,7 +31154,7 @@
                 "properties": {
                     "contract": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"contract\" has been deprecated.",
+                        "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations",
                         "willReplaceOnChanges": true
                     },
                     "contractId": {
@@ -30882,7 +31163,7 @@
                     },
                     "group": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"group\" has been deprecated.",
+                        "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations",
                         "willReplaceOnChanges": true
                     },
                     "groupId": {
@@ -30903,14 +31184,14 @@
                 "properties": {
                     "contract": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"contract\" has been deprecated."
+                        "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "contractId": {
                         "type": "string"
                     },
                     "group": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"group\" has been deprecated."
+                        "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "groupId": {
                         "type": "string"
@@ -31512,7 +31793,7 @@
                 "properties": {
                     "contract": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"contract\" has been deprecated."
+                        "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "contractId": {
                         "type": "string"
@@ -31522,7 +31803,7 @@
                     },
                     "name": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"name\" has been deprecated."
+                        "deprecationMessage": "The setting \"name\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     }
                 },
                 "type": "object"
@@ -31532,7 +31813,7 @@
                 "properties": {
                     "contract": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"contract\" has been deprecated."
+                        "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "contractId": {
                         "type": "string"
@@ -31546,7 +31827,7 @@
                     },
                     "name": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"name\" has been deprecated."
+                        "deprecationMessage": "The setting \"name\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     }
                 },
                 "type": "object",
@@ -31577,6 +31858,149 @@
                 "type": "object",
                 "required": [
                     "groups",
+                    "id"
+                ]
+            }
+        },
+        "akamai:index/getGtmDatacenter:getGtmDatacenter": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getGtmDatacenter.\n",
+                "properties": {
+                    "datacenterId": {
+                        "type": "integer"
+                    },
+                    "domain": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "datacenterId",
+                    "domain"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getGtmDatacenter.\n",
+                "properties": {
+                    "city": {
+                        "type": "string"
+                    },
+                    "cloneOf": {
+                        "type": "integer"
+                    },
+                    "cloudServerHostHeaderOverride": {
+                        "type": "boolean"
+                    },
+                    "cloudServerTargeting": {
+                        "type": "boolean"
+                    },
+                    "continent": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string"
+                    },
+                    "datacenterId": {
+                        "type": "integer"
+                    },
+                    "defaultLoadObjects": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getGtmDatacenterDefaultLoadObject:getGtmDatacenterDefaultLoadObject"
+                        }
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "latitude": {
+                        "type": "number"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getGtmDatacenterLink:getGtmDatacenterLink"
+                        }
+                    },
+                    "longitude": {
+                        "type": "number"
+                    },
+                    "nickname": {
+                        "type": "string"
+                    },
+                    "scorePenalty": {
+                        "type": "integer"
+                    },
+                    "servermonitorPool": {
+                        "type": "string"
+                    },
+                    "stateOrProvince": {
+                        "type": "string"
+                    },
+                    "virtual": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "city",
+                    "cloneOf",
+                    "cloudServerHostHeaderOverride",
+                    "cloudServerTargeting",
+                    "continent",
+                    "country",
+                    "datacenterId",
+                    "defaultLoadObjects",
+                    "domain",
+                    "latitude",
+                    "links",
+                    "longitude",
+                    "nickname",
+                    "scorePenalty",
+                    "servermonitorPool",
+                    "stateOrProvince",
+                    "virtual",
+                    "id"
+                ]
+            }
+        },
+        "akamai:index/getGtmDatacenters:getGtmDatacenters": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getGtmDatacenters.\n",
+                "properties": {
+                    "domain": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "domain"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getGtmDatacenters.\n",
+                "properties": {
+                    "datacenters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getGtmDatacentersDatacenter:getGtmDatacentersDatacenter"
+                        }
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "datacenters",
+                    "domain",
                     "id"
                 ]
             }
@@ -32711,7 +33135,7 @@
                 "properties": {
                     "contract": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"contract\" has been deprecated.",
+                        "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations",
                         "willReplaceOnChanges": true
                     },
                     "contractId": {
@@ -32720,7 +33144,7 @@
                     },
                     "group": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"group\" has been deprecated.",
+                        "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations",
                         "willReplaceOnChanges": true
                     },
                     "groupId": {
@@ -32741,14 +33165,14 @@
                 "properties": {
                     "contract": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"contract\" has been deprecated."
+                        "deprecationMessage": "The setting \"contract\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "contractId": {
                         "type": "string"
                     },
                     "group": {
                         "type": "string",
-                        "deprecationMessage": "The setting \"group\" has been deprecated."
+                        "deprecationMessage": "The setting \"group\" has been deprecated. See:\n\thttps://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations"
                     },
                     "groupId": {
                         "type": "string"

@@ -801,7 +801,23 @@
                 "current": "akamai:index/propertyActivation:PropertyActivation",
                 "fields": {
                     "compliance_record": {
-                        "maxItemsOne": true
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "noncompliance_reason_emergency": {
+                                    "maxItemsOne": true
+                                },
+                                "noncompliance_reason_no_production_traffic": {
+                                    "maxItemsOne": true
+                                },
+                                "noncompliance_reason_none": {
+                                    "maxItemsOne": true
+                                },
+                                "noncompliance_reason_other": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
                     },
                     "contact": {
                         "maxItemsOne": false
@@ -818,7 +834,23 @@
                 "current": "akamai:properties/propertyActivation:PropertyActivation",
                 "fields": {
                     "compliance_record": {
-                        "maxItemsOne": true
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "noncompliance_reason_emergency": {
+                                    "maxItemsOne": true
+                                },
+                                "noncompliance_reason_no_production_traffic": {
+                                    "maxItemsOne": true
+                                },
+                                "noncompliance_reason_none": {
+                                    "maxItemsOne": true
+                                },
+                                "noncompliance_reason_other": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
                     },
                     "contact": {
                         "maxItemsOne": false
@@ -838,7 +870,23 @@
                 "current": "akamai:index/propertyIncludeActivation:PropertyIncludeActivation",
                 "fields": {
                     "compliance_record": {
-                        "maxItemsOne": true
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "noncompliance_reason_emergency": {
+                                    "maxItemsOne": true
+                                },
+                                "noncompliance_reason_no_production_traffic": {
+                                    "maxItemsOne": true
+                                },
+                                "noncompliance_reason_none": {
+                                    "maxItemsOne": true
+                                },
+                                "noncompliance_reason_other": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
                     },
                     "notify_emails": {
                         "maxItemsOne": false
@@ -1126,6 +1174,12 @@
             "akamai_groups": {
                 "current": "akamai:index/getGroups:getGroups"
             },
+            "akamai_gtm_datacenter": {
+                "current": "akamai:index/getGtmDatacenter:getGtmDatacenter"
+            },
+            "akamai_gtm_datacenters": {
+                "current": "akamai:index/getGtmDatacenters:getGtmDatacenters"
+            },
             "akamai_gtm_default_datacenter": {
                 "current": "akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter"
             },
@@ -1397,6 +1451,8 @@
             "akamai:index/getEdgekvGroups:getEdgekvGroups": "akamai_edgekv_groups",
             "akamai:index/getGroup:getGroup": "akamai_group",
             "akamai:index/getGroups:getGroups": "akamai_groups",
+            "akamai:index/getGtmDatacenter:getGtmDatacenter": "akamai_gtm_datacenter",
+            "akamai:index/getGtmDatacenters:getGtmDatacenters": "akamai_gtm_datacenters",
             "akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter": "akamai_gtm_default_datacenter",
             "akamai:index/getIamContactTypes:getIamContactTypes": "akamai_iam_contact_types",
             "akamai:index/getIamCountries:getIamCountries": "akamai_iam_countries",
@@ -1782,12 +1838,26 @@
                 "useDefaultLoadObject": "use_default_load_object"
             },
             "akamai:index/PropertyActivationComplianceRecord:PropertyActivationComplianceRecord": {
+                "noncomplianceReasonEmergency": "noncompliance_reason_emergency",
+                "noncomplianceReasonNoProductionTraffic": "noncompliance_reason_no_production_traffic",
+                "noncomplianceReasonNone": "noncompliance_reason_none",
+                "noncomplianceReasonOther": "noncompliance_reason_other"
+            },
+            "akamai:index/PropertyActivationComplianceRecordNoncomplianceReasonEmergency:PropertyActivationComplianceRecordNoncomplianceReasonEmergency": {
+                "ticketId": "ticket_id"
+            },
+            "akamai:index/PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic:PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic": {
+                "ticketId": "ticket_id"
+            },
+            "akamai:index/PropertyActivationComplianceRecordNoncomplianceReasonNone:PropertyActivationComplianceRecordNoncomplianceReasonNone": {
                 "customerEmail": "customer_email",
-                "noncomplianceReason": "noncompliance_reason",
-                "otherNoncomplianceReason": "other_noncompliance_reason",
                 "peerReviewedBy": "peer_reviewed_by",
                 "ticketId": "ticket_id",
                 "unitTested": "unit_tested"
+            },
+            "akamai:index/PropertyActivationComplianceRecordNoncomplianceReasonOther:PropertyActivationComplianceRecordNoncomplianceReasonOther": {
+                "otherNoncomplianceReason": "other_noncompliance_reason",
+                "ticketId": "ticket_id"
             },
             "akamai:index/PropertyActivationRuleError:PropertyActivationRuleError": {
                 "behaviorName": "behavior_name",
@@ -1812,12 +1882,26 @@
                 "stagingStatus": "staging_status"
             },
             "akamai:index/PropertyIncludeActivationComplianceRecord:PropertyIncludeActivationComplianceRecord": {
+                "noncomplianceReasonEmergency": "noncompliance_reason_emergency",
+                "noncomplianceReasonNoProductionTraffic": "noncompliance_reason_no_production_traffic",
+                "noncomplianceReasonNone": "noncompliance_reason_none",
+                "noncomplianceReasonOther": "noncompliance_reason_other"
+            },
+            "akamai:index/PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency:PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency": {
+                "ticketId": "ticket_id"
+            },
+            "akamai:index/PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic:PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic": {
+                "ticketId": "ticket_id"
+            },
+            "akamai:index/PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone:PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone": {
                 "customerEmail": "customer_email",
-                "noncomplianceReason": "noncompliance_reason",
-                "otherNoncomplianceReason": "other_noncompliance_reason",
                 "peerReviewedBy": "peer_reviewed_by",
                 "ticketId": "ticket_id",
                 "unitTested": "unit_tested"
+            },
+            "akamai:index/PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther:PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther": {
+                "otherNoncomplianceReason": "other_noncompliance_reason",
+                "ticketId": "ticket_id"
             },
             "akamai:index/PropertyOrigin:PropertyOrigin": {
                 "cacheKeyHostname": "cache_key_hostname",
@@ -3138,6 +3222,36 @@
                 "groupId": "group_id",
                 "groupName": "group_name",
                 "parentGroupId": "parent_group_id"
+            },
+            "akamai:index/getGtmDatacenter:getGtmDatacenter": {
+                "cloneOf": "clone_of",
+                "cloudServerHostHeaderOverride": "cloud_server_host_header_override",
+                "cloudServerTargeting": "cloud_server_targeting",
+                "datacenterId": "datacenter_id",
+                "defaultLoadObjects": "default_load_object",
+                "scorePenalty": "score_penalty",
+                "servermonitorPool": "servermonitor_pool",
+                "stateOrProvince": "state_or_province"
+            },
+            "akamai:index/getGtmDatacenterDefaultLoadObject:getGtmDatacenterDefaultLoadObject": {
+                "loadObject": "load_object",
+                "loadObjectPort": "load_object_port",
+                "loadServers": "load_servers"
+            },
+            "akamai:index/getGtmDatacentersDatacenter:getGtmDatacentersDatacenter": {
+                "cloneOf": "clone_of",
+                "cloudServerHostHeaderOverride": "cloud_server_host_header_override",
+                "cloudServerTargeting": "cloud_server_targeting",
+                "datacenterId": "datacenter_id",
+                "defaultLoadObjects": "default_load_object",
+                "scorePenalty": "score_penalty",
+                "servermonitorPool": "servermonitor_pool",
+                "stateOrProvince": "state_or_province"
+            },
+            "akamai:index/getGtmDatacentersDatacenterDefaultLoadObject:getGtmDatacentersDatacenterDefaultLoadObject": {
+                "loadObject": "load_object",
+                "loadObjectPort": "load_object_port",
+                "loadServers": "load_servers"
             },
             "akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter": {
                 "datacenterId": "datacenter_id"
@@ -5766,12 +5880,26 @@
                 "requestLimit": "request_limit"
             },
             "akamai:properties/PropertyActivationComplianceRecord:PropertyActivationComplianceRecord": {
+                "noncomplianceReasonEmergency": "noncompliance_reason_emergency",
+                "noncomplianceReasonNoProductionTraffic": "noncompliance_reason_no_production_traffic",
+                "noncomplianceReasonNone": "noncompliance_reason_none",
+                "noncomplianceReasonOther": "noncompliance_reason_other"
+            },
+            "akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonEmergency:PropertyActivationComplianceRecordNoncomplianceReasonEmergency": {
+                "ticketId": "ticket_id"
+            },
+            "akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic:PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic": {
+                "ticketId": "ticket_id"
+            },
+            "akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonNone:PropertyActivationComplianceRecordNoncomplianceReasonNone": {
                 "customerEmail": "customer_email",
-                "noncomplianceReason": "noncompliance_reason",
-                "otherNoncomplianceReason": "other_noncompliance_reason",
                 "peerReviewedBy": "peer_reviewed_by",
                 "ticketId": "ticket_id",
                 "unitTested": "unit_tested"
+            },
+            "akamai:properties/PropertyActivationComplianceRecordNoncomplianceReasonOther:PropertyActivationComplianceRecordNoncomplianceReasonOther": {
+                "otherNoncomplianceReason": "other_noncompliance_reason",
+                "ticketId": "ticket_id"
             },
             "akamai:properties/PropertyActivationRuleError:PropertyActivationRuleError": {
                 "behaviorName": "behavior_name",
