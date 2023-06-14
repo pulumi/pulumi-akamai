@@ -22,10 +22,12 @@ func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getCpCode.
 type LookupCpCodeArgs struct {
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract   *string `pulumi:"contract"`
 	ContractId *string `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group   *string `pulumi:"group"`
 	GroupId *string `pulumi:"groupId"`
 	Name    string  `pulumi:"name"`
@@ -33,10 +35,12 @@ type LookupCpCodeArgs struct {
 
 // A collection of values returned by getCpCode.
 type LookupCpCodeResult struct {
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract   string `pulumi:"contract"`
 	ContractId string `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group   string `pulumi:"group"`
 	GroupId string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
@@ -60,10 +64,12 @@ func LookupCpCodeOutput(ctx *pulumi.Context, args LookupCpCodeOutputArgs, opts .
 
 // A collection of arguments for invoking getCpCode.
 type LookupCpCodeOutputArgs struct {
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract   pulumi.StringPtrInput `pulumi:"contract"`
 	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group   pulumi.StringPtrInput `pulumi:"group"`
 	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
 	Name    pulumi.StringInput    `pulumi:"name"`
@@ -88,7 +94,9 @@ func (o LookupCpCodeResultOutput) ToLookupCpCodeResultOutputWithContext(ctx cont
 	return o
 }
 
-// Deprecated: The setting "contract" has been deprecated.
+// Deprecated: The setting "contract" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o LookupCpCodeResultOutput) Contract() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCpCodeResult) string { return v.Contract }).(pulumi.StringOutput)
 }
@@ -97,7 +105,9 @@ func (o LookupCpCodeResultOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCpCodeResult) string { return v.ContractId }).(pulumi.StringOutput)
 }
 
-// Deprecated: The setting "group" has been deprecated.
+// Deprecated: The setting "group" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o LookupCpCodeResultOutput) Group() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCpCodeResult) string { return v.Group }).(pulumi.StringOutput)
 }

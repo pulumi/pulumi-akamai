@@ -12,6 +12,10 @@ from . import outputs
 
 __all__ = [
     'PropertyActivationComplianceRecord',
+    'PropertyActivationComplianceRecordNoncomplianceReasonEmergency',
+    'PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic',
+    'PropertyActivationComplianceRecordNoncomplianceReasonNone',
+    'PropertyActivationComplianceRecordNoncomplianceReasonOther',
     'PropertyActivationRuleError',
     'PropertyActivationRuleWarning',
     'PropertyHostname',
@@ -26,18 +30,14 @@ class PropertyActivationComplianceRecord(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "noncomplianceReason":
-            suggest = "noncompliance_reason"
-        elif key == "customerEmail":
-            suggest = "customer_email"
-        elif key == "otherNoncomplianceReason":
-            suggest = "other_noncompliance_reason"
-        elif key == "peerReviewedBy":
-            suggest = "peer_reviewed_by"
-        elif key == "ticketId":
-            suggest = "ticket_id"
-        elif key == "unitTested":
-            suggest = "unit_tested"
+        if key == "noncomplianceReasonEmergency":
+            suggest = "noncompliance_reason_emergency"
+        elif key == "noncomplianceReasonNoProductionTraffic":
+            suggest = "noncompliance_reason_no_production_traffic"
+        elif key == "noncomplianceReasonNone":
+            suggest = "noncompliance_reason_none"
+        elif key == "noncomplianceReasonOther":
+            suggest = "noncompliance_reason_other"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in PropertyActivationComplianceRecord. Access the value via the '{suggest}' property getter instead.")
@@ -51,17 +51,132 @@ class PropertyActivationComplianceRecord(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 noncompliance_reason: str,
+                 noncompliance_reason_emergency: Optional['outputs.PropertyActivationComplianceRecordNoncomplianceReasonEmergency'] = None,
+                 noncompliance_reason_no_production_traffic: Optional['outputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic'] = None,
+                 noncompliance_reason_none: Optional['outputs.PropertyActivationComplianceRecordNoncomplianceReasonNone'] = None,
+                 noncompliance_reason_other: Optional['outputs.PropertyActivationComplianceRecordNoncomplianceReasonOther'] = None):
+        if noncompliance_reason_emergency is not None:
+            pulumi.set(__self__, "noncompliance_reason_emergency", noncompliance_reason_emergency)
+        if noncompliance_reason_no_production_traffic is not None:
+            pulumi.set(__self__, "noncompliance_reason_no_production_traffic", noncompliance_reason_no_production_traffic)
+        if noncompliance_reason_none is not None:
+            pulumi.set(__self__, "noncompliance_reason_none", noncompliance_reason_none)
+        if noncompliance_reason_other is not None:
+            pulumi.set(__self__, "noncompliance_reason_other", noncompliance_reason_other)
+
+    @property
+    @pulumi.getter(name="noncomplianceReasonEmergency")
+    def noncompliance_reason_emergency(self) -> Optional['outputs.PropertyActivationComplianceRecordNoncomplianceReasonEmergency']:
+        return pulumi.get(self, "noncompliance_reason_emergency")
+
+    @property
+    @pulumi.getter(name="noncomplianceReasonNoProductionTraffic")
+    def noncompliance_reason_no_production_traffic(self) -> Optional['outputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic']:
+        return pulumi.get(self, "noncompliance_reason_no_production_traffic")
+
+    @property
+    @pulumi.getter(name="noncomplianceReasonNone")
+    def noncompliance_reason_none(self) -> Optional['outputs.PropertyActivationComplianceRecordNoncomplianceReasonNone']:
+        return pulumi.get(self, "noncompliance_reason_none")
+
+    @property
+    @pulumi.getter(name="noncomplianceReasonOther")
+    def noncompliance_reason_other(self) -> Optional['outputs.PropertyActivationComplianceRecordNoncomplianceReasonOther']:
+        return pulumi.get(self, "noncompliance_reason_other")
+
+
+@pulumi.output_type
+class PropertyActivationComplianceRecordNoncomplianceReasonEmergency(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ticketId":
+            suggest = "ticket_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyActivationComplianceRecordNoncomplianceReasonEmergency. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyActivationComplianceRecordNoncomplianceReasonEmergency.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyActivationComplianceRecordNoncomplianceReasonEmergency.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ticket_id: Optional[str] = None):
+        if ticket_id is not None:
+            pulumi.set(__self__, "ticket_id", ticket_id)
+
+    @property
+    @pulumi.getter(name="ticketId")
+    def ticket_id(self) -> Optional[str]:
+        return pulumi.get(self, "ticket_id")
+
+
+@pulumi.output_type
+class PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ticketId":
+            suggest = "ticket_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ticket_id: Optional[str] = None):
+        if ticket_id is not None:
+            pulumi.set(__self__, "ticket_id", ticket_id)
+
+    @property
+    @pulumi.getter(name="ticketId")
+    def ticket_id(self) -> Optional[str]:
+        return pulumi.get(self, "ticket_id")
+
+
+@pulumi.output_type
+class PropertyActivationComplianceRecordNoncomplianceReasonNone(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customerEmail":
+            suggest = "customer_email"
+        elif key == "peerReviewedBy":
+            suggest = "peer_reviewed_by"
+        elif key == "ticketId":
+            suggest = "ticket_id"
+        elif key == "unitTested":
+            suggest = "unit_tested"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyActivationComplianceRecordNoncomplianceReasonNone. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyActivationComplianceRecordNoncomplianceReasonNone.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyActivationComplianceRecordNoncomplianceReasonNone.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
                  customer_email: Optional[str] = None,
-                 other_noncompliance_reason: Optional[str] = None,
                  peer_reviewed_by: Optional[str] = None,
                  ticket_id: Optional[str] = None,
                  unit_tested: Optional[bool] = None):
-        pulumi.set(__self__, "noncompliance_reason", noncompliance_reason)
         if customer_email is not None:
             pulumi.set(__self__, "customer_email", customer_email)
-        if other_noncompliance_reason is not None:
-            pulumi.set(__self__, "other_noncompliance_reason", other_noncompliance_reason)
         if peer_reviewed_by is not None:
             pulumi.set(__self__, "peer_reviewed_by", peer_reviewed_by)
         if ticket_id is not None:
@@ -70,19 +185,9 @@ class PropertyActivationComplianceRecord(dict):
             pulumi.set(__self__, "unit_tested", unit_tested)
 
     @property
-    @pulumi.getter(name="noncomplianceReason")
-    def noncompliance_reason(self) -> str:
-        return pulumi.get(self, "noncompliance_reason")
-
-    @property
     @pulumi.getter(name="customerEmail")
     def customer_email(self) -> Optional[str]:
         return pulumi.get(self, "customer_email")
-
-    @property
-    @pulumi.getter(name="otherNoncomplianceReason")
-    def other_noncompliance_reason(self) -> Optional[str]:
-        return pulumi.get(self, "other_noncompliance_reason")
 
     @property
     @pulumi.getter(name="peerReviewedBy")
@@ -98,6 +203,46 @@ class PropertyActivationComplianceRecord(dict):
     @pulumi.getter(name="unitTested")
     def unit_tested(self) -> Optional[bool]:
         return pulumi.get(self, "unit_tested")
+
+
+@pulumi.output_type
+class PropertyActivationComplianceRecordNoncomplianceReasonOther(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "otherNoncomplianceReason":
+            suggest = "other_noncompliance_reason"
+        elif key == "ticketId":
+            suggest = "ticket_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PropertyActivationComplianceRecordNoncomplianceReasonOther. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PropertyActivationComplianceRecordNoncomplianceReasonOther.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PropertyActivationComplianceRecordNoncomplianceReasonOther.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 other_noncompliance_reason: Optional[str] = None,
+                 ticket_id: Optional[str] = None):
+        if other_noncompliance_reason is not None:
+            pulumi.set(__self__, "other_noncompliance_reason", other_noncompliance_reason)
+        if ticket_id is not None:
+            pulumi.set(__self__, "ticket_id", ticket_id)
+
+    @property
+    @pulumi.getter(name="otherNoncomplianceReason")
+    def other_noncompliance_reason(self) -> Optional[str]:
+        return pulumi.get(self, "other_noncompliance_reason")
+
+    @property
+    @pulumi.getter(name="ticketId")
+    def ticket_id(self) -> Optional[str]:
+        return pulumi.get(self, "ticket_id")
 
 
 @pulumi.output_type

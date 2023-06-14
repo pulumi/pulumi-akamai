@@ -948,6 +948,47 @@ export interface GetGroupsGroup {
     parentGroupId: string;
 }
 
+export interface GetGtmDatacenterDefaultLoadObject {
+    loadObject: string;
+    loadObjectPort: number;
+    loadServers: string[];
+}
+
+export interface GetGtmDatacenterLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetGtmDatacentersDatacenter {
+    city: string;
+    cloneOf: number;
+    cloudServerHostHeaderOverride: boolean;
+    cloudServerTargeting: boolean;
+    continent: string;
+    country: string;
+    datacenterId: number;
+    defaultLoadObjects: outputs.GetGtmDatacentersDatacenterDefaultLoadObject[];
+    latitude: number;
+    links: outputs.GetGtmDatacentersDatacenterLink[];
+    longitude: number;
+    nickname: string;
+    scorePenalty: number;
+    servermonitorPool: string;
+    stateOrProvince: string;
+    virtual: boolean;
+}
+
+export interface GetGtmDatacentersDatacenterDefaultLoadObject {
+    loadObject: string;
+    loadObjectPort: number;
+    loadServers: string[];
+}
+
+export interface GetGtmDatacentersDatacenterLink {
+    href: string;
+    rel: string;
+}
+
 export interface GetIamGrantableRolesGrantableRole {
     description: string;
     grantedRoleId: number;
@@ -4756,12 +4797,30 @@ export interface GtmResourceResourceInstance {
 }
 
 export interface PropertyActivationComplianceRecord {
+    noncomplianceReasonEmergency?: outputs.PropertyActivationComplianceRecordNoncomplianceReasonEmergency;
+    noncomplianceReasonNoProductionTraffic?: outputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic;
+    noncomplianceReasonNone?: outputs.PropertyActivationComplianceRecordNoncomplianceReasonNone;
+    noncomplianceReasonOther?: outputs.PropertyActivationComplianceRecordNoncomplianceReasonOther;
+}
+
+export interface PropertyActivationComplianceRecordNoncomplianceReasonEmergency {
+    ticketId?: string;
+}
+
+export interface PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+    ticketId?: string;
+}
+
+export interface PropertyActivationComplianceRecordNoncomplianceReasonNone {
     customerEmail?: string;
-    noncomplianceReason: string;
-    otherNoncomplianceReason?: string;
     peerReviewedBy?: string;
     ticketId?: string;
     unitTested?: boolean;
+}
+
+export interface PropertyActivationComplianceRecordNoncomplianceReasonOther {
+    otherNoncomplianceReason?: string;
+    ticketId?: string;
 }
 
 export interface PropertyActivationRuleError {
@@ -4801,12 +4860,30 @@ export interface PropertyHostnameCertStatus {
 }
 
 export interface PropertyIncludeActivationComplianceRecord {
+    noncomplianceReasonEmergency?: outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency;
+    noncomplianceReasonNoProductionTraffic?: outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic;
+    noncomplianceReasonNone?: outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone;
+    noncomplianceReasonOther?: outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther;
+}
+
+export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency {
+    ticketId?: string;
+}
+
+export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+    ticketId?: string;
+}
+
+export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone {
     customerEmail?: string;
-    noncomplianceReason: string;
-    otherNoncomplianceReason?: string;
     peerReviewedBy?: string;
     ticketId?: string;
     unitTested?: boolean;
+}
+
+export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther {
+    otherNoncomplianceReason?: string;
+    ticketId?: string;
 }
 
 export interface PropertyOrigin {
@@ -4906,12 +4983,30 @@ export namespace edgedns {
 
 export namespace properties {
     export interface PropertyActivationComplianceRecord {
+        noncomplianceReasonEmergency?: outputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonEmergency;
+        noncomplianceReasonNoProductionTraffic?: outputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic;
+        noncomplianceReasonNone?: outputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonNone;
+        noncomplianceReasonOther?: outputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonOther;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonEmergency {
+        ticketId?: string;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+        ticketId?: string;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonNone {
         customerEmail?: string;
-        noncomplianceReason: string;
-        otherNoncomplianceReason?: string;
         peerReviewedBy?: string;
         ticketId?: string;
         unitTested?: boolean;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonOther {
+        otherNoncomplianceReason?: string;
+        ticketId?: string;
     }
 
     export interface PropertyActivationRuleError {

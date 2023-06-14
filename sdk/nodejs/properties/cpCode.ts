@@ -37,18 +37,21 @@ export class CpCode extends pulumi.CustomResource {
     }
 
     /**
-     * @deprecated The setting "contract" has been deprecated.
+     * @deprecated The setting "contract" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly contract!: pulumi.Output<string>;
     public readonly contractId!: pulumi.Output<string>;
     /**
-     * @deprecated The setting "group" has been deprecated.
+     * @deprecated The setting "group" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly group!: pulumi.Output<string>;
     public readonly groupId!: pulumi.Output<string>;
     public readonly name!: pulumi.Output<string>;
     /**
-     * @deprecated The setting "product" has been deprecated.
+     * @deprecated The setting "product" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly product!: pulumi.Output<string>;
     public readonly productId!: pulumi.Output<string>;
@@ -96,18 +99,21 @@ export class CpCode extends pulumi.CustomResource {
  */
 export interface CpCodeState {
     /**
-     * @deprecated The setting "contract" has been deprecated.
+     * @deprecated The setting "contract" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     contract?: pulumi.Input<string>;
     contractId?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "group" has been deprecated.
+     * @deprecated The setting "group" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     group?: pulumi.Input<string>;
     groupId?: pulumi.Input<string>;
     name?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "product" has been deprecated.
+     * @deprecated The setting "product" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
@@ -118,18 +124,21 @@ export interface CpCodeState {
  */
 export interface CpCodeArgs {
     /**
-     * @deprecated The setting "contract" has been deprecated.
+     * @deprecated The setting "contract" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     contract?: pulumi.Input<string>;
     contractId?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "group" has been deprecated.
+     * @deprecated The setting "group" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     group?: pulumi.Input<string>;
     groupId?: pulumi.Input<string>;
     name?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "product" has been deprecated.
+     * @deprecated The setting "product" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;

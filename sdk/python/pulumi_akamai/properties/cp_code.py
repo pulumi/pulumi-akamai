@@ -25,15 +25,19 @@ class CpCodeArgs:
         The set of arguments for constructing a CpCode resource.
         """
         if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
+            warnings.warn("""The setting \"contract\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if contract is not None:
             pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
         if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
+            warnings.warn("""The setting \"group\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if group is not None:
             pulumi.set(__self__, "group", group)
         if group_id is not None:
@@ -41,8 +45,10 @@ class CpCodeArgs:
         if name is not None:
             pulumi.set(__self__, "name", name)
         if product is not None:
-            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
+            warnings.warn("""The setting \"product\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if product is not None:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
@@ -126,15 +132,19 @@ class _CpCodeState:
         Input properties used for looking up and filtering CpCode resources.
         """
         if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
+            warnings.warn("""The setting \"contract\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if contract is not None:
             pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
         if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
+            warnings.warn("""The setting \"group\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if group is not None:
             pulumi.set(__self__, "group", group)
         if group_id is not None:
@@ -142,8 +152,10 @@ class _CpCodeState:
         if name is not None:
             pulumi.set(__self__, "name", name)
         if product is not None:
-            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
+            warnings.warn("""The setting \"product\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if product is not None:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
@@ -277,19 +289,25 @@ class CpCode(pulumi.CustomResource):
             __props__ = CpCodeArgs.__new__(CpCodeArgs)
 
             if contract is not None and not opts.urn:
-                warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
+                warnings.warn("""The setting \"contract\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["contract"] = contract
             __props__.__dict__["contract_id"] = contract_id
             if group is not None and not opts.urn:
-                warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
+                warnings.warn("""The setting \"group\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["group"] = group
             __props__.__dict__["group_id"] = group_id
             __props__.__dict__["name"] = name
             if product is not None and not opts.urn:
-                warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
+                warnings.warn("""The setting \"product\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["product"] = product
             __props__.__dict__["product_id"] = product_id
         super(CpCode, __self__).__init__(

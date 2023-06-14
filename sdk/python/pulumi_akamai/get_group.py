@@ -25,8 +25,10 @@ class GetGroupResult:
         if contract and not isinstance(contract, str):
             raise TypeError("Expected argument 'contract' to be a str")
         if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
+            warnings.warn("""The setting \"contract\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
 
         pulumi.set(__self__, "contract", contract)
         if contract_id and not isinstance(contract_id, str):
@@ -41,8 +43,10 @@ class GetGroupResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         if name is not None:
-            warnings.warn("""The setting \"name\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""name is deprecated: The setting \"name\" has been deprecated.""")
+            warnings.warn("""The setting \"name\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""name is deprecated: The setting \"name\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
 
         pulumi.set(__self__, "name", name)
 

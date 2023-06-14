@@ -15,15 +15,18 @@ type EdgeHostName struct {
 	pulumi.CustomResourceState
 
 	Certificate pulumi.IntPtrOutput `pulumi:"certificate"`
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract     pulumi.StringOutput `pulumi:"contract"`
 	ContractId   pulumi.StringOutput `pulumi:"contractId"`
 	EdgeHostname pulumi.StringOutput `pulumi:"edgeHostname"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group      pulumi.StringOutput `pulumi:"group"`
 	GroupId    pulumi.StringOutput `pulumi:"groupId"`
 	IpBehavior pulumi.StringOutput `pulumi:"ipBehavior"`
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product   pulumi.StringOutput `pulumi:"product"`
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 	// Email address that should receive updates on the IP behavior update request. Required for update operation.
@@ -74,15 +77,18 @@ func GetEdgeHostName(ctx *pulumi.Context,
 // Input properties used for looking up and filtering EdgeHostName resources.
 type edgeHostNameState struct {
 	Certificate *int `pulumi:"certificate"`
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract     *string `pulumi:"contract"`
 	ContractId   *string `pulumi:"contractId"`
 	EdgeHostname *string `pulumi:"edgeHostname"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group      *string `pulumi:"group"`
 	GroupId    *string `pulumi:"groupId"`
 	IpBehavior *string `pulumi:"ipBehavior"`
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
 	// Email address that should receive updates on the IP behavior update request. Required for update operation.
@@ -93,15 +99,18 @@ type edgeHostNameState struct {
 
 type EdgeHostNameState struct {
 	Certificate pulumi.IntPtrInput
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract     pulumi.StringPtrInput
 	ContractId   pulumi.StringPtrInput
 	EdgeHostname pulumi.StringPtrInput
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group      pulumi.StringPtrInput
 	GroupId    pulumi.StringPtrInput
 	IpBehavior pulumi.StringPtrInput
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
 	// Email address that should receive updates on the IP behavior update request. Required for update operation.
@@ -116,15 +125,18 @@ func (EdgeHostNameState) ElementType() reflect.Type {
 
 type edgeHostNameArgs struct {
 	Certificate *int `pulumi:"certificate"`
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract     *string `pulumi:"contract"`
 	ContractId   *string `pulumi:"contractId"`
 	EdgeHostname string  `pulumi:"edgeHostname"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group      *string `pulumi:"group"`
 	GroupId    *string `pulumi:"groupId"`
 	IpBehavior string  `pulumi:"ipBehavior"`
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
 	// Email address that should receive updates on the IP behavior update request. Required for update operation.
@@ -136,15 +148,18 @@ type edgeHostNameArgs struct {
 // The set of arguments for constructing a EdgeHostName resource.
 type EdgeHostNameArgs struct {
 	Certificate pulumi.IntPtrInput
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract     pulumi.StringPtrInput
 	ContractId   pulumi.StringPtrInput
 	EdgeHostname pulumi.StringInput
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group      pulumi.StringPtrInput
 	GroupId    pulumi.StringPtrInput
 	IpBehavior pulumi.StringInput
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
 	// Email address that should receive updates on the IP behavior update request. Required for update operation.
@@ -244,7 +259,9 @@ func (o EdgeHostNameOutput) Certificate() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *EdgeHostName) pulumi.IntPtrOutput { return v.Certificate }).(pulumi.IntPtrOutput)
 }
 
-// Deprecated: The setting "contract" has been deprecated.
+// Deprecated: The setting "contract" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o EdgeHostNameOutput) Contract() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.Contract }).(pulumi.StringOutput)
 }
@@ -257,7 +274,9 @@ func (o EdgeHostNameOutput) EdgeHostname() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.EdgeHostname }).(pulumi.StringOutput)
 }
 
-// Deprecated: The setting "group" has been deprecated.
+// Deprecated: The setting "group" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o EdgeHostNameOutput) Group() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
 }
@@ -270,7 +289,9 @@ func (o EdgeHostNameOutput) IpBehavior() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.IpBehavior }).(pulumi.StringOutput)
 }
 
-// Deprecated: The setting "product" has been deprecated.
+// Deprecated: The setting "product" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o EdgeHostNameOutput) Product() pulumi.StringOutput {
 	return o.ApplyT(func(v *EdgeHostName) pulumi.StringOutput { return v.Product }).(pulumi.StringOutput)
 }

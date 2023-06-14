@@ -152,6 +152,8 @@ from .get_edgekv_group_items import *
 from .get_edgekv_groups import *
 from .get_group import *
 from .get_groups import *
+from .get_gtm_datacenter import *
+from .get_gtm_datacenters import *
 from .get_gtm_default_datacenter import *
 from .get_iam_contact_types import *
 from .get_iam_countries import *

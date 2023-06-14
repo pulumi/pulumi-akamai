@@ -39,11 +39,13 @@ export class Property extends pulumi.CustomResource {
     }
 
     /**
-     * @deprecated The setting "contact" has been deprecated.
+     * @deprecated The setting "contact" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly contacts!: pulumi.Output<string[] | undefined>;
     /**
-     * @deprecated The setting "contract" has been deprecated.
+     * @deprecated The setting "contract" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly contract!: pulumi.Output<string>;
     /**
@@ -51,11 +53,13 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly contractId!: pulumi.Output<string>;
     /**
-     * @deprecated The setting "cp_code" has been deprecated.
+     * @deprecated The setting "cp_code" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly cpCode!: pulumi.Output<string | undefined>;
     /**
-     * @deprecated The setting "group" has been deprecated.
+     * @deprecated The setting "group" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly group!: pulumi.Output<string>;
     /**
@@ -64,7 +68,8 @@ export class Property extends pulumi.CustomResource {
     public readonly groupId!: pulumi.Output<string>;
     public readonly hostnames!: pulumi.Output<outputs.properties.PropertyHostname[] | undefined>;
     /**
-     * @deprecated The setting "is_secure" has been deprecated.
+     * @deprecated The setting "is_secure" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly isSecure!: pulumi.Output<boolean | undefined>;
     /**
@@ -76,11 +81,13 @@ export class Property extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * @deprecated The setting "origin" has been deprecated.
+     * @deprecated The setting "origin" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly origins!: pulumi.Output<outputs.properties.PropertyOrigin[] | undefined>;
     /**
-     * @deprecated The setting "product" has been deprecated.
+     * @deprecated The setting "product" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly product!: pulumi.Output<string>;
     /**
@@ -113,7 +120,8 @@ export class Property extends pulumi.CustomResource {
      */
     public /*out*/ readonly stagingVersion!: pulumi.Output<number>;
     /**
-     * @deprecated The setting "variables" has been deprecated.
+     * @deprecated The setting "variables" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly variables!: pulumi.Output<string | undefined>;
 
@@ -188,11 +196,13 @@ export class Property extends pulumi.CustomResource {
  */
 export interface PropertyState {
     /**
-     * @deprecated The setting "contact" has been deprecated.
+     * @deprecated The setting "contact" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * @deprecated The setting "contract" has been deprecated.
+     * @deprecated The setting "contract" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     contract?: pulumi.Input<string>;
     /**
@@ -200,11 +210,13 @@ export interface PropertyState {
      */
     contractId?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "cp_code" has been deprecated.
+     * @deprecated The setting "cp_code" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     cpCode?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "group" has been deprecated.
+     * @deprecated The setting "group" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     group?: pulumi.Input<string>;
     /**
@@ -213,7 +225,8 @@ export interface PropertyState {
     groupId?: pulumi.Input<string>;
     hostnames?: pulumi.Input<pulumi.Input<inputs.properties.PropertyHostname>[]>;
     /**
-     * @deprecated The setting "is_secure" has been deprecated.
+     * @deprecated The setting "is_secure" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     isSecure?: pulumi.Input<boolean>;
     /**
@@ -225,11 +238,13 @@ export interface PropertyState {
      */
     name?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "origin" has been deprecated.
+     * @deprecated The setting "origin" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     origins?: pulumi.Input<pulumi.Input<inputs.properties.PropertyOrigin>[]>;
     /**
-     * @deprecated The setting "product" has been deprecated.
+     * @deprecated The setting "product" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     product?: pulumi.Input<string>;
     /**
@@ -262,7 +277,8 @@ export interface PropertyState {
      */
     stagingVersion?: pulumi.Input<number>;
     /**
-     * @deprecated The setting "variables" has been deprecated.
+     * @deprecated The setting "variables" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     variables?: pulumi.Input<string>;
 }
@@ -272,11 +288,13 @@ export interface PropertyState {
  */
 export interface PropertyArgs {
     /**
-     * @deprecated The setting "contact" has been deprecated.
+     * @deprecated The setting "contact" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     contacts?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * @deprecated The setting "contract" has been deprecated.
+     * @deprecated The setting "contract" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     contract?: pulumi.Input<string>;
     /**
@@ -284,11 +302,13 @@ export interface PropertyArgs {
      */
     contractId?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "cp_code" has been deprecated.
+     * @deprecated The setting "cp_code" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     cpCode?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "group" has been deprecated.
+     * @deprecated The setting "group" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     group?: pulumi.Input<string>;
     /**
@@ -297,7 +317,8 @@ export interface PropertyArgs {
     groupId?: pulumi.Input<string>;
     hostnames?: pulumi.Input<pulumi.Input<inputs.properties.PropertyHostname>[]>;
     /**
-     * @deprecated The setting "is_secure" has been deprecated.
+     * @deprecated The setting "is_secure" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     isSecure?: pulumi.Input<boolean>;
     /**
@@ -305,11 +326,13 @@ export interface PropertyArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "origin" has been deprecated.
+     * @deprecated The setting "origin" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     origins?: pulumi.Input<pulumi.Input<inputs.properties.PropertyOrigin>[]>;
     /**
-     * @deprecated The setting "product" has been deprecated.
+     * @deprecated The setting "product" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     product?: pulumi.Input<string>;
     /**
@@ -329,7 +352,8 @@ export interface PropertyArgs {
      */
     rules?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "variables" has been deprecated.
+     * @deprecated The setting "variables" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     variables?: pulumi.Input<string>;
 }

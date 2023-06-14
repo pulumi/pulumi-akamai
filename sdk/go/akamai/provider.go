@@ -17,20 +17,26 @@ import (
 type Provider struct {
 	pulumi.ProviderResourceState
 
-	// Deprecated: The setting "appsec_section" has been deprecated.
+	// Deprecated: The setting "appsec_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	AppsecSection pulumi.StringPtrOutput `pulumi:"appsecSection"`
 	// The section of the edgerc file to use for configuration
 	ConfigSection pulumi.StringPtrOutput `pulumi:"configSection"`
-	// Deprecated: The setting "dns_section" has been deprecated.
+	// Deprecated: The setting "dns_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	DnsSection pulumi.StringPtrOutput `pulumi:"dnsSection"`
 	Edgerc     pulumi.StringPtrOutput `pulumi:"edgerc"`
-	// Deprecated: The setting "gtm_section" has been deprecated.
+	// Deprecated: The setting "gtm_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	GtmSection pulumi.StringPtrOutput `pulumi:"gtmSection"`
-	// Deprecated: The setting "networklist_section" has been deprecated.
+	// Deprecated: The setting "networklist_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	NetworklistSection pulumi.StringPtrOutput `pulumi:"networklistSection"`
-	// Deprecated: The setting "papi_section" has been deprecated.
+	// Deprecated: The setting "papi_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	PapiSection pulumi.StringPtrOutput `pulumi:"papiSection"`
-	// Deprecated: The setting "property_section" has been deprecated.
+	// Deprecated: The setting "property_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	PropertySection pulumi.StringPtrOutput `pulumi:"propertySection"`
 }
 
@@ -50,31 +56,41 @@ func NewProvider(ctx *pulumi.Context,
 }
 
 type providerArgs struct {
-	// Deprecated: The setting "appsec_section" has been deprecated.
+	// Deprecated: The setting "appsec_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	AppsecSection *string `pulumi:"appsecSection"`
-	// Deprecated: The setting "appsec" has been deprecated.
+	// Deprecated: The setting "appsec" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Appsecs      []ProviderAppsec `pulumi:"appsecs"`
 	CacheEnabled *bool            `pulumi:"cacheEnabled"`
 	Config       *ProviderConfig  `pulumi:"config"`
 	// The section of the edgerc file to use for configuration
 	ConfigSection *string `pulumi:"configSection"`
-	// Deprecated: The setting "dns" has been deprecated.
+	// Deprecated: The setting "dns" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Dns *ProviderDns `pulumi:"dns"`
-	// Deprecated: The setting "dns_section" has been deprecated.
+	// Deprecated: The setting "dns_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	DnsSection *string `pulumi:"dnsSection"`
 	Edgerc     *string `pulumi:"edgerc"`
-	// Deprecated: The setting "gtm" has been deprecated.
+	// Deprecated: The setting "gtm" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Gtm *ProviderGtm `pulumi:"gtm"`
-	// Deprecated: The setting "gtm_section" has been deprecated.
+	// Deprecated: The setting "gtm_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	GtmSection *string `pulumi:"gtmSection"`
-	// Deprecated: The setting "networklist_section" has been deprecated.
+	// Deprecated: The setting "networklist_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	NetworklistSection *string           `pulumi:"networklistSection"`
 	Networks           []ProviderNetwork `pulumi:"networks"`
-	// Deprecated: The setting "papi_section" has been deprecated.
+	// Deprecated: The setting "papi_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	PapiSection *string `pulumi:"papiSection"`
-	// Deprecated: The setting "property" has been deprecated.
+	// Deprecated: The setting "property" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Property *ProviderProperty `pulumi:"property"`
-	// Deprecated: The setting "property_section" has been deprecated.
+	// Deprecated: The setting "property_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	PropertySection *string `pulumi:"propertySection"`
 	// The maximum number of API requests to be made per second (0 for no limit)
 	RequestLimit *int `pulumi:"requestLimit"`
@@ -82,31 +98,41 @@ type providerArgs struct {
 
 // The set of arguments for constructing a Provider resource.
 type ProviderArgs struct {
-	// Deprecated: The setting "appsec_section" has been deprecated.
+	// Deprecated: The setting "appsec_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	AppsecSection pulumi.StringPtrInput
-	// Deprecated: The setting "appsec" has been deprecated.
+	// Deprecated: The setting "appsec" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Appsecs      ProviderAppsecArrayInput
 	CacheEnabled pulumi.BoolPtrInput
 	Config       ProviderConfigPtrInput
 	// The section of the edgerc file to use for configuration
 	ConfigSection pulumi.StringPtrInput
-	// Deprecated: The setting "dns" has been deprecated.
+	// Deprecated: The setting "dns" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Dns ProviderDnsPtrInput
-	// Deprecated: The setting "dns_section" has been deprecated.
+	// Deprecated: The setting "dns_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	DnsSection pulumi.StringPtrInput
 	Edgerc     pulumi.StringPtrInput
-	// Deprecated: The setting "gtm" has been deprecated.
+	// Deprecated: The setting "gtm" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Gtm ProviderGtmPtrInput
-	// Deprecated: The setting "gtm_section" has been deprecated.
+	// Deprecated: The setting "gtm_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	GtmSection pulumi.StringPtrInput
-	// Deprecated: The setting "networklist_section" has been deprecated.
+	// Deprecated: The setting "networklist_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	NetworklistSection pulumi.StringPtrInput
 	Networks           ProviderNetworkArrayInput
-	// Deprecated: The setting "papi_section" has been deprecated.
+	// Deprecated: The setting "papi_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	PapiSection pulumi.StringPtrInput
-	// Deprecated: The setting "property" has been deprecated.
+	// Deprecated: The setting "property" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Property ProviderPropertyPtrInput
-	// Deprecated: The setting "property_section" has been deprecated.
+	// Deprecated: The setting "property_section" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	PropertySection pulumi.StringPtrInput
 	// The maximum number of API requests to be made per second (0 for no limit)
 	RequestLimit pulumi.IntPtrInput
@@ -149,7 +175,9 @@ func (o ProviderOutput) ToProviderOutputWithContext(ctx context.Context) Provide
 	return o
 }
 
-// Deprecated: The setting "appsec_section" has been deprecated.
+// Deprecated: The setting "appsec_section" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o ProviderOutput) AppsecSection() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AppsecSection }).(pulumi.StringPtrOutput)
 }
@@ -159,7 +187,9 @@ func (o ProviderOutput) ConfigSection() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.ConfigSection }).(pulumi.StringPtrOutput)
 }
 
-// Deprecated: The setting "dns_section" has been deprecated.
+// Deprecated: The setting "dns_section" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o ProviderOutput) DnsSection() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.DnsSection }).(pulumi.StringPtrOutput)
 }
@@ -168,22 +198,30 @@ func (o ProviderOutput) Edgerc() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Edgerc }).(pulumi.StringPtrOutput)
 }
 
-// Deprecated: The setting "gtm_section" has been deprecated.
+// Deprecated: The setting "gtm_section" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o ProviderOutput) GtmSection() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.GtmSection }).(pulumi.StringPtrOutput)
 }
 
-// Deprecated: The setting "networklist_section" has been deprecated.
+// Deprecated: The setting "networklist_section" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o ProviderOutput) NetworklistSection() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.NetworklistSection }).(pulumi.StringPtrOutput)
 }
 
-// Deprecated: The setting "papi_section" has been deprecated.
+// Deprecated: The setting "papi_section" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o ProviderOutput) PapiSection() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PapiSection }).(pulumi.StringPtrOutput)
 }
 
-// Deprecated: The setting "property_section" has been deprecated.
+// Deprecated: The setting "property_section" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o ProviderOutput) PropertySection() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PropertySection }).(pulumi.StringPtrOutput)
 }

@@ -38,19 +38,22 @@ export class EdgeHostName extends pulumi.CustomResource {
 
     public readonly certificate!: pulumi.Output<number | undefined>;
     /**
-     * @deprecated The setting "contract" has been deprecated.
+     * @deprecated The setting "contract" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly contract!: pulumi.Output<string>;
     public readonly contractId!: pulumi.Output<string>;
     public readonly edgeHostname!: pulumi.Output<string>;
     /**
-     * @deprecated The setting "group" has been deprecated.
+     * @deprecated The setting "group" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly group!: pulumi.Output<string>;
     public readonly groupId!: pulumi.Output<string>;
     public readonly ipBehavior!: pulumi.Output<string>;
     /**
-     * @deprecated The setting "product" has been deprecated.
+     * @deprecated The setting "product" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     public readonly product!: pulumi.Output<string>;
     public readonly productId!: pulumi.Output<string>;
@@ -121,19 +124,22 @@ export class EdgeHostName extends pulumi.CustomResource {
 export interface EdgeHostNameState {
     certificate?: pulumi.Input<number>;
     /**
-     * @deprecated The setting "contract" has been deprecated.
+     * @deprecated The setting "contract" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     contract?: pulumi.Input<string>;
     contractId?: pulumi.Input<string>;
     edgeHostname?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "group" has been deprecated.
+     * @deprecated The setting "group" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     group?: pulumi.Input<string>;
     groupId?: pulumi.Input<string>;
     ipBehavior?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "product" has been deprecated.
+     * @deprecated The setting "product" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
@@ -153,19 +159,22 @@ export interface EdgeHostNameState {
 export interface EdgeHostNameArgs {
     certificate?: pulumi.Input<number>;
     /**
-     * @deprecated The setting "contract" has been deprecated.
+     * @deprecated The setting "contract" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     contract?: pulumi.Input<string>;
     contractId?: pulumi.Input<string>;
     edgeHostname: pulumi.Input<string>;
     /**
-     * @deprecated The setting "group" has been deprecated.
+     * @deprecated The setting "group" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     group?: pulumi.Input<string>;
     groupId?: pulumi.Input<string>;
     ipBehavior: pulumi.Input<string>;
     /**
-     * @deprecated The setting "product" has been deprecated.
+     * @deprecated The setting "product" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      */
     product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;

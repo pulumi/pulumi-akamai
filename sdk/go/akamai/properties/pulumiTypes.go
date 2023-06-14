@@ -11,12 +11,10 @@ import (
 )
 
 type PropertyActivationComplianceRecord struct {
-	CustomerEmail            *string `pulumi:"customerEmail"`
-	NoncomplianceReason      string  `pulumi:"noncomplianceReason"`
-	OtherNoncomplianceReason *string `pulumi:"otherNoncomplianceReason"`
-	PeerReviewedBy           *string `pulumi:"peerReviewedBy"`
-	TicketId                 *string `pulumi:"ticketId"`
-	UnitTested               *bool   `pulumi:"unitTested"`
+	NoncomplianceReasonEmergency           *PropertyActivationComplianceRecordNoncomplianceReasonEmergency           `pulumi:"noncomplianceReasonEmergency"`
+	NoncomplianceReasonNoProductionTraffic *PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic `pulumi:"noncomplianceReasonNoProductionTraffic"`
+	NoncomplianceReasonNone                *PropertyActivationComplianceRecordNoncomplianceReasonNone                `pulumi:"noncomplianceReasonNone"`
+	NoncomplianceReasonOther               *PropertyActivationComplianceRecordNoncomplianceReasonOther               `pulumi:"noncomplianceReasonOther"`
 }
 
 // PropertyActivationComplianceRecordInput is an input type that accepts PropertyActivationComplianceRecordArgs and PropertyActivationComplianceRecordOutput values.
@@ -31,12 +29,10 @@ type PropertyActivationComplianceRecordInput interface {
 }
 
 type PropertyActivationComplianceRecordArgs struct {
-	CustomerEmail            pulumi.StringPtrInput `pulumi:"customerEmail"`
-	NoncomplianceReason      pulumi.StringInput    `pulumi:"noncomplianceReason"`
-	OtherNoncomplianceReason pulumi.StringPtrInput `pulumi:"otherNoncomplianceReason"`
-	PeerReviewedBy           pulumi.StringPtrInput `pulumi:"peerReviewedBy"`
-	TicketId                 pulumi.StringPtrInput `pulumi:"ticketId"`
-	UnitTested               pulumi.BoolPtrInput   `pulumi:"unitTested"`
+	NoncomplianceReasonEmergency           PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrInput           `pulumi:"noncomplianceReasonEmergency"`
+	NoncomplianceReasonNoProductionTraffic PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrInput `pulumi:"noncomplianceReasonNoProductionTraffic"`
+	NoncomplianceReasonNone                PropertyActivationComplianceRecordNoncomplianceReasonNonePtrInput                `pulumi:"noncomplianceReasonNone"`
+	NoncomplianceReasonOther               PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrInput               `pulumi:"noncomplianceReasonOther"`
 }
 
 func (PropertyActivationComplianceRecordArgs) ElementType() reflect.Type {
@@ -116,28 +112,28 @@ func (o PropertyActivationComplianceRecordOutput) ToPropertyActivationCompliance
 	}).(PropertyActivationComplianceRecordPtrOutput)
 }
 
-func (o PropertyActivationComplianceRecordOutput) CustomerEmail() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PropertyActivationComplianceRecord) *string { return v.CustomerEmail }).(pulumi.StringPtrOutput)
+func (o PropertyActivationComplianceRecordOutput) NoncomplianceReasonEmergency() PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecord) *PropertyActivationComplianceRecordNoncomplianceReasonEmergency {
+		return v.NoncomplianceReasonEmergency
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput)
 }
 
-func (o PropertyActivationComplianceRecordOutput) NoncomplianceReason() pulumi.StringOutput {
-	return o.ApplyT(func(v PropertyActivationComplianceRecord) string { return v.NoncomplianceReason }).(pulumi.StringOutput)
+func (o PropertyActivationComplianceRecordOutput) NoncomplianceReasonNoProductionTraffic() PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecord) *PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+		return v.NoncomplianceReasonNoProductionTraffic
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput)
 }
 
-func (o PropertyActivationComplianceRecordOutput) OtherNoncomplianceReason() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PropertyActivationComplianceRecord) *string { return v.OtherNoncomplianceReason }).(pulumi.StringPtrOutput)
+func (o PropertyActivationComplianceRecordOutput) NoncomplianceReasonNone() PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecord) *PropertyActivationComplianceRecordNoncomplianceReasonNone {
+		return v.NoncomplianceReasonNone
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput)
 }
 
-func (o PropertyActivationComplianceRecordOutput) PeerReviewedBy() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PropertyActivationComplianceRecord) *string { return v.PeerReviewedBy }).(pulumi.StringPtrOutput)
-}
-
-func (o PropertyActivationComplianceRecordOutput) TicketId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PropertyActivationComplianceRecord) *string { return v.TicketId }).(pulumi.StringPtrOutput)
-}
-
-func (o PropertyActivationComplianceRecordOutput) UnitTested() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v PropertyActivationComplianceRecord) *bool { return v.UnitTested }).(pulumi.BoolPtrOutput)
+func (o PropertyActivationComplianceRecordOutput) NoncomplianceReasonOther() PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecord) *PropertyActivationComplianceRecordNoncomplianceReasonOther {
+		return v.NoncomplianceReasonOther
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput)
 }
 
 type PropertyActivationComplianceRecordPtrOutput struct{ *pulumi.OutputState }
@@ -164,44 +160,168 @@ func (o PropertyActivationComplianceRecordPtrOutput) Elem() PropertyActivationCo
 	}).(PropertyActivationComplianceRecordOutput)
 }
 
-func (o PropertyActivationComplianceRecordPtrOutput) CustomerEmail() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *string {
+func (o PropertyActivationComplianceRecordPtrOutput) NoncomplianceReasonEmergency() PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *PropertyActivationComplianceRecordNoncomplianceReasonEmergency {
 		if v == nil {
 			return nil
 		}
-		return v.CustomerEmail
-	}).(pulumi.StringPtrOutput)
+		return v.NoncomplianceReasonEmergency
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput)
 }
 
-func (o PropertyActivationComplianceRecordPtrOutput) NoncomplianceReason() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *string {
+func (o PropertyActivationComplianceRecordPtrOutput) NoncomplianceReasonNoProductionTraffic() PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
 		if v == nil {
 			return nil
 		}
-		return &v.NoncomplianceReason
-	}).(pulumi.StringPtrOutput)
+		return v.NoncomplianceReasonNoProductionTraffic
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput)
 }
 
-func (o PropertyActivationComplianceRecordPtrOutput) OtherNoncomplianceReason() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *string {
+func (o PropertyActivationComplianceRecordPtrOutput) NoncomplianceReasonNone() PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *PropertyActivationComplianceRecordNoncomplianceReasonNone {
 		if v == nil {
 			return nil
 		}
-		return v.OtherNoncomplianceReason
-	}).(pulumi.StringPtrOutput)
+		return v.NoncomplianceReasonNone
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput)
 }
 
-func (o PropertyActivationComplianceRecordPtrOutput) PeerReviewedBy() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *string {
+func (o PropertyActivationComplianceRecordPtrOutput) NoncomplianceReasonOther() PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *PropertyActivationComplianceRecordNoncomplianceReasonOther {
 		if v == nil {
 			return nil
 		}
-		return v.PeerReviewedBy
-	}).(pulumi.StringPtrOutput)
+		return v.NoncomplianceReasonOther
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput)
 }
 
-func (o PropertyActivationComplianceRecordPtrOutput) TicketId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *string {
+type PropertyActivationComplianceRecordNoncomplianceReasonEmergency struct {
+	TicketId *string `pulumi:"ticketId"`
+}
+
+// PropertyActivationComplianceRecordNoncomplianceReasonEmergencyInput is an input type that accepts PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs and PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput values.
+// You can construct a concrete instance of `PropertyActivationComplianceRecordNoncomplianceReasonEmergencyInput` via:
+//
+//	PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs{...}
+type PropertyActivationComplianceRecordNoncomplianceReasonEmergencyInput interface {
+	pulumi.Input
+
+	ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput() PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput
+	ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutputWithContext(context.Context) PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs struct {
+	TicketId pulumi.StringPtrInput `pulumi:"ticketId"`
+}
+
+func (PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonEmergency)(nil)).Elem()
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput() PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput {
+	return i.ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput)
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput {
+	return i.ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput).ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutputWithContext(ctx)
+}
+
+// PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrInput is an input type that accepts PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs, PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtr and PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput values.
+// You can construct a concrete instance of `PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrInput` via:
+//
+//	        PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs{...}
+//
+//	or:
+//
+//	        nil
+type PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrInput interface {
+	pulumi.Input
+
+	ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput
+	ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutputWithContext(context.Context) PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput
+}
+
+type propertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrType PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs
+
+func PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtr(v *PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs) PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrInput {
+	return (*propertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrType)(v)
+}
+
+func (*propertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyActivationComplianceRecordNoncomplianceReasonEmergency)(nil)).Elem()
+}
+
+func (i *propertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrType) ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput {
+	return i.ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutputWithContext(context.Background())
+}
+
+func (i *propertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrType) ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput)
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonEmergency)(nil)).Elem()
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput() PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput {
+	return o.ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutputWithContext(context.Background())
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PropertyActivationComplianceRecordNoncomplianceReasonEmergency) *PropertyActivationComplianceRecordNoncomplianceReasonEmergency {
+		return &v
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput) TicketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecordNoncomplianceReasonEmergency) *string { return v.TicketId }).(pulumi.StringPtrOutput)
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyActivationComplianceRecordNoncomplianceReasonEmergency)(nil)).Elem()
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput) Elem() PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecordNoncomplianceReasonEmergency) PropertyActivationComplianceRecordNoncomplianceReasonEmergency {
+		if v != nil {
+			return *v
+		}
+		var ret PropertyActivationComplianceRecordNoncomplianceReasonEmergency
+		return ret
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput) TicketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecordNoncomplianceReasonEmergency) *string {
 		if v == nil {
 			return nil
 		}
@@ -209,13 +329,467 @@ func (o PropertyActivationComplianceRecordPtrOutput) TicketId() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-func (o PropertyActivationComplianceRecordPtrOutput) UnitTested() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *PropertyActivationComplianceRecord) *bool {
+type PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic struct {
+	TicketId *string `pulumi:"ticketId"`
+}
+
+// PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficInput is an input type that accepts PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs and PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput values.
+// You can construct a concrete instance of `PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficInput` via:
+//
+//	PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs{...}
+type PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficInput interface {
+	pulumi.Input
+
+	ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput() PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput
+	ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutputWithContext(context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs struct {
+	TicketId pulumi.StringPtrInput `pulumi:"ticketId"`
+}
+
+func (PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic)(nil)).Elem()
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput() PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput {
+	return i.ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput)
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput {
+	return i.ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput).ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutputWithContext(ctx)
+}
+
+// PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrInput is an input type that accepts PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs, PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtr and PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput values.
+// You can construct a concrete instance of `PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrInput` via:
+//
+//	        PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs{...}
+//
+//	or:
+//
+//	        nil
+type PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrInput interface {
+	pulumi.Input
+
+	ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput
+	ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutputWithContext(context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput
+}
+
+type propertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrType PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs
+
+func PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtr(v *PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs) PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrInput {
+	return (*propertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrType)(v)
+}
+
+func (*propertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic)(nil)).Elem()
+}
+
+func (i *propertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrType) ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput {
+	return i.ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutputWithContext(context.Background())
+}
+
+func (i *propertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrType) ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput)
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic)(nil)).Elem()
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput() PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput {
+	return o.ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutputWithContext(context.Background())
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic) *PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+		return &v
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput) TicketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic) *string {
+		return v.TicketId
+	}).(pulumi.StringPtrOutput)
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic)(nil)).Elem()
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput) Elem() PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic) PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+		if v != nil {
+			return *v
+		}
+		var ret PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic
+		return ret
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput) TicketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TicketId
+	}).(pulumi.StringPtrOutput)
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonNone struct {
+	CustomerEmail  *string `pulumi:"customerEmail"`
+	PeerReviewedBy *string `pulumi:"peerReviewedBy"`
+	TicketId       *string `pulumi:"ticketId"`
+	UnitTested     *bool   `pulumi:"unitTested"`
+}
+
+// PropertyActivationComplianceRecordNoncomplianceReasonNoneInput is an input type that accepts PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs and PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput values.
+// You can construct a concrete instance of `PropertyActivationComplianceRecordNoncomplianceReasonNoneInput` via:
+//
+//	PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs{...}
+type PropertyActivationComplianceRecordNoncomplianceReasonNoneInput interface {
+	pulumi.Input
+
+	ToPropertyActivationComplianceRecordNoncomplianceReasonNoneOutput() PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput
+	ToPropertyActivationComplianceRecordNoncomplianceReasonNoneOutputWithContext(context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs struct {
+	CustomerEmail  pulumi.StringPtrInput `pulumi:"customerEmail"`
+	PeerReviewedBy pulumi.StringPtrInput `pulumi:"peerReviewedBy"`
+	TicketId       pulumi.StringPtrInput `pulumi:"ticketId"`
+	UnitTested     pulumi.BoolPtrInput   `pulumi:"unitTested"`
+}
+
+func (PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonNone)(nil)).Elem()
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonNoneOutput() PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput {
+	return i.ToPropertyActivationComplianceRecordNoncomplianceReasonNoneOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonNoneOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput)
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput {
+	return i.ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput).ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutputWithContext(ctx)
+}
+
+// PropertyActivationComplianceRecordNoncomplianceReasonNonePtrInput is an input type that accepts PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs, PropertyActivationComplianceRecordNoncomplianceReasonNonePtr and PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput values.
+// You can construct a concrete instance of `PropertyActivationComplianceRecordNoncomplianceReasonNonePtrInput` via:
+//
+//	        PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs{...}
+//
+//	or:
+//
+//	        nil
+type PropertyActivationComplianceRecordNoncomplianceReasonNonePtrInput interface {
+	pulumi.Input
+
+	ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput
+	ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutputWithContext(context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput
+}
+
+type propertyActivationComplianceRecordNoncomplianceReasonNonePtrType PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs
+
+func PropertyActivationComplianceRecordNoncomplianceReasonNonePtr(v *PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs) PropertyActivationComplianceRecordNoncomplianceReasonNonePtrInput {
+	return (*propertyActivationComplianceRecordNoncomplianceReasonNonePtrType)(v)
+}
+
+func (*propertyActivationComplianceRecordNoncomplianceReasonNonePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyActivationComplianceRecordNoncomplianceReasonNone)(nil)).Elem()
+}
+
+func (i *propertyActivationComplianceRecordNoncomplianceReasonNonePtrType) ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput {
+	return i.ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutputWithContext(context.Background())
+}
+
+func (i *propertyActivationComplianceRecordNoncomplianceReasonNonePtrType) ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput)
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonNone)(nil)).Elem()
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonNoneOutput() PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonNoneOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput {
+	return o.ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutputWithContext(context.Background())
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PropertyActivationComplianceRecordNoncomplianceReasonNone) *PropertyActivationComplianceRecordNoncomplianceReasonNone {
+		return &v
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput) CustomerEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecordNoncomplianceReasonNone) *string { return v.CustomerEmail }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput) PeerReviewedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecordNoncomplianceReasonNone) *string { return v.PeerReviewedBy }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput) TicketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecordNoncomplianceReasonNone) *string { return v.TicketId }).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput) UnitTested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecordNoncomplianceReasonNone) *bool { return v.UnitTested }).(pulumi.BoolPtrOutput)
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyActivationComplianceRecordNoncomplianceReasonNone)(nil)).Elem()
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput) Elem() PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecordNoncomplianceReasonNone) PropertyActivationComplianceRecordNoncomplianceReasonNone {
+		if v != nil {
+			return *v
+		}
+		var ret PropertyActivationComplianceRecordNoncomplianceReasonNone
+		return ret
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput) CustomerEmail() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecordNoncomplianceReasonNone) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomerEmail
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput) PeerReviewedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecordNoncomplianceReasonNone) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PeerReviewedBy
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput) TicketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecordNoncomplianceReasonNone) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TicketId
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput) UnitTested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecordNoncomplianceReasonNone) *bool {
 		if v == nil {
 			return nil
 		}
 		return v.UnitTested
 	}).(pulumi.BoolPtrOutput)
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonOther struct {
+	OtherNoncomplianceReason *string `pulumi:"otherNoncomplianceReason"`
+	TicketId                 *string `pulumi:"ticketId"`
+}
+
+// PropertyActivationComplianceRecordNoncomplianceReasonOtherInput is an input type that accepts PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs and PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput values.
+// You can construct a concrete instance of `PropertyActivationComplianceRecordNoncomplianceReasonOtherInput` via:
+//
+//	PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs{...}
+type PropertyActivationComplianceRecordNoncomplianceReasonOtherInput interface {
+	pulumi.Input
+
+	ToPropertyActivationComplianceRecordNoncomplianceReasonOtherOutput() PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput
+	ToPropertyActivationComplianceRecordNoncomplianceReasonOtherOutputWithContext(context.Context) PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs struct {
+	OtherNoncomplianceReason pulumi.StringPtrInput `pulumi:"otherNoncomplianceReason"`
+	TicketId                 pulumi.StringPtrInput `pulumi:"ticketId"`
+}
+
+func (PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonOther)(nil)).Elem()
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonOtherOutput() PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput {
+	return i.ToPropertyActivationComplianceRecordNoncomplianceReasonOtherOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonOtherOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput)
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput {
+	return i.ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutputWithContext(context.Background())
+}
+
+func (i PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs) ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput).ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutputWithContext(ctx)
+}
+
+// PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrInput is an input type that accepts PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs, PropertyActivationComplianceRecordNoncomplianceReasonOtherPtr and PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput values.
+// You can construct a concrete instance of `PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrInput` via:
+//
+//	        PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs{...}
+//
+//	or:
+//
+//	        nil
+type PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrInput interface {
+	pulumi.Input
+
+	ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput
+	ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutputWithContext(context.Context) PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput
+}
+
+type propertyActivationComplianceRecordNoncomplianceReasonOtherPtrType PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs
+
+func PropertyActivationComplianceRecordNoncomplianceReasonOtherPtr(v *PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs) PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrInput {
+	return (*propertyActivationComplianceRecordNoncomplianceReasonOtherPtrType)(v)
+}
+
+func (*propertyActivationComplianceRecordNoncomplianceReasonOtherPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyActivationComplianceRecordNoncomplianceReasonOther)(nil)).Elem()
+}
+
+func (i *propertyActivationComplianceRecordNoncomplianceReasonOtherPtrType) ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput {
+	return i.ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutputWithContext(context.Background())
+}
+
+func (i *propertyActivationComplianceRecordNoncomplianceReasonOtherPtrType) ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput)
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonOther)(nil)).Elem()
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonOtherOutput() PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonOtherOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput {
+	return o.ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutputWithContext(context.Background())
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PropertyActivationComplianceRecordNoncomplianceReasonOther) *PropertyActivationComplianceRecordNoncomplianceReasonOther {
+		return &v
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput) OtherNoncomplianceReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecordNoncomplianceReasonOther) *string {
+		return v.OtherNoncomplianceReason
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput) TicketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PropertyActivationComplianceRecordNoncomplianceReasonOther) *string { return v.TicketId }).(pulumi.StringPtrOutput)
+}
+
+type PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput struct{ *pulumi.OutputState }
+
+func (PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PropertyActivationComplianceRecordNoncomplianceReasonOther)(nil)).Elem()
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput() PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput) ToPropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutputWithContext(ctx context.Context) PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput {
+	return o
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput) Elem() PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecordNoncomplianceReasonOther) PropertyActivationComplianceRecordNoncomplianceReasonOther {
+		if v != nil {
+			return *v
+		}
+		var ret PropertyActivationComplianceRecordNoncomplianceReasonOther
+		return ret
+	}).(PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput) OtherNoncomplianceReason() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecordNoncomplianceReasonOther) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OtherNoncomplianceReason
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput) TicketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PropertyActivationComplianceRecordNoncomplianceReasonOther) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TicketId
+	}).(pulumi.StringPtrOutput)
 }
 
 type PropertyActivationRuleError struct {
@@ -1101,6 +1675,14 @@ func (o PropertyRuleWarningArrayOutput) Index(i pulumi.IntInput) PropertyRuleWar
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordInput)(nil)).Elem(), PropertyActivationComplianceRecordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordPtrInput)(nil)).Elem(), PropertyActivationComplianceRecordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonEmergencyInput)(nil)).Elem(), PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrInput)(nil)).Elem(), PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficInput)(nil)).Elem(), PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrInput)(nil)).Elem(), PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonNoneInput)(nil)).Elem(), PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonNonePtrInput)(nil)).Elem(), PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonOtherInput)(nil)).Elem(), PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrInput)(nil)).Elem(), PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationRuleErrorInput)(nil)).Elem(), PropertyActivationRuleErrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationRuleErrorArrayInput)(nil)).Elem(), PropertyActivationRuleErrorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyActivationRuleWarningInput)(nil)).Elem(), PropertyActivationRuleWarningArgs{})
@@ -1117,6 +1699,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PropertyRuleWarningArrayInput)(nil)).Elem(), PropertyRuleWarningArray{})
 	pulumi.RegisterOutputType(PropertyActivationComplianceRecordOutput{})
 	pulumi.RegisterOutputType(PropertyActivationComplianceRecordPtrOutput{})
+	pulumi.RegisterOutputType(PropertyActivationComplianceRecordNoncomplianceReasonEmergencyOutput{})
+	pulumi.RegisterOutputType(PropertyActivationComplianceRecordNoncomplianceReasonEmergencyPtrOutput{})
+	pulumi.RegisterOutputType(PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficOutput{})
+	pulumi.RegisterOutputType(PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficPtrOutput{})
+	pulumi.RegisterOutputType(PropertyActivationComplianceRecordNoncomplianceReasonNoneOutput{})
+	pulumi.RegisterOutputType(PropertyActivationComplianceRecordNoncomplianceReasonNonePtrOutput{})
+	pulumi.RegisterOutputType(PropertyActivationComplianceRecordNoncomplianceReasonOtherOutput{})
+	pulumi.RegisterOutputType(PropertyActivationComplianceRecordNoncomplianceReasonOtherPtrOutput{})
 	pulumi.RegisterOutputType(PropertyActivationRuleErrorOutput{})
 	pulumi.RegisterOutputType(PropertyActivationRuleErrorArrayOutput{})
 	pulumi.RegisterOutputType(PropertyActivationRuleWarningOutput{})

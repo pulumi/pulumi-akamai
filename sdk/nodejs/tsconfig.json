@@ -167,6 +167,8 @@
         "getEdgekvGroups.ts",
         "getGroup.ts",
         "getGroups.ts",
+        "getGtmDatacenter.ts",
+        "getGtmDatacenters.ts",
         "getGtmDefaultDatacenter.ts",
         "getIamContactTypes.ts",
         "getIamCountries.ts",

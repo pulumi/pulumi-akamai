@@ -14,7 +14,8 @@ import (
 type NetworkListActivations struct {
 	pulumi.CustomResourceState
 
-	// Deprecated: The setting "activate" has been deprecated.
+	// Deprecated: The setting "activate" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Activate pulumi.BoolPtrOutput `pulumi:"activate"`
 	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network pulumi.StringPtrOutput `pulumi:"network"`
@@ -68,7 +69,8 @@ func GetNetworkListActivations(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkListActivations resources.
 type networkListActivationsState struct {
-	// Deprecated: The setting "activate" has been deprecated.
+	// Deprecated: The setting "activate" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Activate *bool `pulumi:"activate"`
 	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network *string `pulumi:"network"`
@@ -85,7 +87,8 @@ type networkListActivationsState struct {
 }
 
 type NetworkListActivationsState struct {
-	// Deprecated: The setting "activate" has been deprecated.
+	// Deprecated: The setting "activate" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Activate pulumi.BoolPtrInput
 	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network pulumi.StringPtrInput
@@ -106,7 +109,8 @@ func (NetworkListActivationsState) ElementType() reflect.Type {
 }
 
 type networkListActivationsArgs struct {
-	// Deprecated: The setting "activate" has been deprecated.
+	// Deprecated: The setting "activate" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Activate *bool `pulumi:"activate"`
 	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network *string `pulumi:"network"`
@@ -122,7 +126,8 @@ type networkListActivationsArgs struct {
 
 // The set of arguments for constructing a NetworkListActivations resource.
 type NetworkListActivationsArgs struct {
-	// Deprecated: The setting "activate" has been deprecated.
+	// Deprecated: The setting "activate" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Activate pulumi.BoolPtrInput
 	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network pulumi.StringPtrInput
@@ -223,7 +228,9 @@ func (o NetworkListActivationsOutput) ToNetworkListActivationsOutputWithContext(
 	return o
 }
 
-// Deprecated: The setting "activate" has been deprecated.
+// Deprecated: The setting "activate" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o NetworkListActivationsOutput) Activate() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NetworkListActivations) pulumi.BoolPtrOutput { return v.Activate }).(pulumi.BoolPtrOutput)
 }

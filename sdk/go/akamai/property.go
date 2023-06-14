@@ -13,28 +13,35 @@ import (
 type Property struct {
 	pulumi.CustomResourceState
 
-	// Deprecated: The setting "contact" has been deprecated.
+	// Deprecated: The setting "contact" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contacts pulumi.StringArrayOutput `pulumi:"contacts"`
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract pulumi.StringOutput `pulumi:"contract"`
 	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
-	// Deprecated: The setting "cp_code" has been deprecated.
+	// Deprecated: The setting "cp_code" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	CpCode pulumi.StringPtrOutput `pulumi:"cpCode"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group pulumi.StringOutput `pulumi:"group"`
 	// Group ID to be assigned to the Property
 	GroupId   pulumi.StringOutput         `pulumi:"groupId"`
 	Hostnames PropertyHostnameArrayOutput `pulumi:"hostnames"`
-	// Deprecated: The setting "is_secure" has been deprecated.
+	// Deprecated: The setting "is_secure" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	IsSecure pulumi.BoolPtrOutput `pulumi:"isSecure"`
 	// Property's current latest version number
 	LatestVersion pulumi.IntOutput `pulumi:"latestVersion"`
 	// Name to give to the Property (must be unique)
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Deprecated: The setting "origin" has been deprecated.
+	// Deprecated: The setting "origin" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Origins PropertyOriginArrayOutput `pulumi:"origins"`
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product pulumi.StringOutput `pulumi:"product"`
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringOutput `pulumi:"productId"`
@@ -51,7 +58,8 @@ type Property struct {
 	Rules pulumi.StringOutput `pulumi:"rules"`
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion pulumi.IntOutput `pulumi:"stagingVersion"`
-	// Deprecated: The setting "variables" has been deprecated.
+	// Deprecated: The setting "variables" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Variables pulumi.StringPtrOutput `pulumi:"variables"`
 }
 
@@ -90,28 +98,35 @@ func GetProperty(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Property resources.
 type propertyState struct {
-	// Deprecated: The setting "contact" has been deprecated.
+	// Deprecated: The setting "contact" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contacts []string `pulumi:"contacts"`
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract *string `pulumi:"contract"`
 	// Contract ID to be assigned to the Property
 	ContractId *string `pulumi:"contractId"`
-	// Deprecated: The setting "cp_code" has been deprecated.
+	// Deprecated: The setting "cp_code" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	CpCode *string `pulumi:"cpCode"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group *string `pulumi:"group"`
 	// Group ID to be assigned to the Property
 	GroupId   *string            `pulumi:"groupId"`
 	Hostnames []PropertyHostname `pulumi:"hostnames"`
-	// Deprecated: The setting "is_secure" has been deprecated.
+	// Deprecated: The setting "is_secure" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	IsSecure *bool `pulumi:"isSecure"`
 	// Property's current latest version number
 	LatestVersion *int `pulumi:"latestVersion"`
 	// Name to give to the Property (must be unique)
 	Name *string `pulumi:"name"`
-	// Deprecated: The setting "origin" has been deprecated.
+	// Deprecated: The setting "origin" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Origins []PropertyOrigin `pulumi:"origins"`
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product *string `pulumi:"product"`
 	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
@@ -128,33 +143,41 @@ type propertyState struct {
 	Rules *string `pulumi:"rules"`
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion *int `pulumi:"stagingVersion"`
-	// Deprecated: The setting "variables" has been deprecated.
+	// Deprecated: The setting "variables" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Variables *string `pulumi:"variables"`
 }
 
 type PropertyState struct {
-	// Deprecated: The setting "contact" has been deprecated.
+	// Deprecated: The setting "contact" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contacts pulumi.StringArrayInput
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract pulumi.StringPtrInput
 	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringPtrInput
-	// Deprecated: The setting "cp_code" has been deprecated.
+	// Deprecated: The setting "cp_code" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	CpCode pulumi.StringPtrInput
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group pulumi.StringPtrInput
 	// Group ID to be assigned to the Property
 	GroupId   pulumi.StringPtrInput
 	Hostnames PropertyHostnameArrayInput
-	// Deprecated: The setting "is_secure" has been deprecated.
+	// Deprecated: The setting "is_secure" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	IsSecure pulumi.BoolPtrInput
 	// Property's current latest version number
 	LatestVersion pulumi.IntPtrInput
 	// Name to give to the Property (must be unique)
 	Name pulumi.StringPtrInput
-	// Deprecated: The setting "origin" has been deprecated.
+	// Deprecated: The setting "origin" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Origins PropertyOriginArrayInput
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringPtrInput
@@ -171,7 +194,8 @@ type PropertyState struct {
 	Rules pulumi.StringPtrInput
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion pulumi.IntPtrInput
-	// Deprecated: The setting "variables" has been deprecated.
+	// Deprecated: The setting "variables" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Variables pulumi.StringPtrInput
 }
 
@@ -180,26 +204,33 @@ func (PropertyState) ElementType() reflect.Type {
 }
 
 type propertyArgs struct {
-	// Deprecated: The setting "contact" has been deprecated.
+	// Deprecated: The setting "contact" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contacts []string `pulumi:"contacts"`
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract *string `pulumi:"contract"`
 	// Contract ID to be assigned to the Property
 	ContractId *string `pulumi:"contractId"`
-	// Deprecated: The setting "cp_code" has been deprecated.
+	// Deprecated: The setting "cp_code" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	CpCode *string `pulumi:"cpCode"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group *string `pulumi:"group"`
 	// Group ID to be assigned to the Property
 	GroupId   *string            `pulumi:"groupId"`
 	Hostnames []PropertyHostname `pulumi:"hostnames"`
-	// Deprecated: The setting "is_secure" has been deprecated.
+	// Deprecated: The setting "is_secure" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	IsSecure *bool `pulumi:"isSecure"`
 	// Name to give to the Property (must be unique)
 	Name *string `pulumi:"name"`
-	// Deprecated: The setting "origin" has been deprecated.
+	// Deprecated: The setting "origin" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Origins []PropertyOrigin `pulumi:"origins"`
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product *string `pulumi:"product"`
 	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
@@ -209,32 +240,40 @@ type propertyArgs struct {
 	RuleWarnings []PropertyRuleWarning `pulumi:"ruleWarnings"`
 	// Property Rules as JSON
 	Rules *string `pulumi:"rules"`
-	// Deprecated: The setting "variables" has been deprecated.
+	// Deprecated: The setting "variables" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Variables *string `pulumi:"variables"`
 }
 
 // The set of arguments for constructing a Property resource.
 type PropertyArgs struct {
-	// Deprecated: The setting "contact" has been deprecated.
+	// Deprecated: The setting "contact" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contacts pulumi.StringArrayInput
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract pulumi.StringPtrInput
 	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringPtrInput
-	// Deprecated: The setting "cp_code" has been deprecated.
+	// Deprecated: The setting "cp_code" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	CpCode pulumi.StringPtrInput
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group pulumi.StringPtrInput
 	// Group ID to be assigned to the Property
 	GroupId   pulumi.StringPtrInput
 	Hostnames PropertyHostnameArrayInput
-	// Deprecated: The setting "is_secure" has been deprecated.
+	// Deprecated: The setting "is_secure" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	IsSecure pulumi.BoolPtrInput
 	// Name to give to the Property (must be unique)
 	Name pulumi.StringPtrInput
-	// Deprecated: The setting "origin" has been deprecated.
+	// Deprecated: The setting "origin" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Origins PropertyOriginArrayInput
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringPtrInput
@@ -244,7 +283,8 @@ type PropertyArgs struct {
 	RuleWarnings PropertyRuleWarningArrayInput
 	// Property Rules as JSON
 	Rules pulumi.StringPtrInput
-	// Deprecated: The setting "variables" has been deprecated.
+	// Deprecated: The setting "variables" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Variables pulumi.StringPtrInput
 }
 
@@ -335,12 +375,16 @@ func (o PropertyOutput) ToPropertyOutputWithContext(ctx context.Context) Propert
 	return o
 }
 
-// Deprecated: The setting "contact" has been deprecated.
+// Deprecated: The setting "contact" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o PropertyOutput) Contacts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringArrayOutput { return v.Contacts }).(pulumi.StringArrayOutput)
 }
 
-// Deprecated: The setting "contract" has been deprecated.
+// Deprecated: The setting "contract" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o PropertyOutput) Contract() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Contract }).(pulumi.StringOutput)
 }
@@ -350,12 +394,16 @@ func (o PropertyOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }
 
-// Deprecated: The setting "cp_code" has been deprecated.
+// Deprecated: The setting "cp_code" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o PropertyOutput) CpCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringPtrOutput { return v.CpCode }).(pulumi.StringPtrOutput)
 }
 
-// Deprecated: The setting "group" has been deprecated.
+// Deprecated: The setting "group" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o PropertyOutput) Group() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
 }
@@ -369,7 +417,9 @@ func (o PropertyOutput) Hostnames() PropertyHostnameArrayOutput {
 	return o.ApplyT(func(v *Property) PropertyHostnameArrayOutput { return v.Hostnames }).(PropertyHostnameArrayOutput)
 }
 
-// Deprecated: The setting "is_secure" has been deprecated.
+// Deprecated: The setting "is_secure" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o PropertyOutput) IsSecure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Property) pulumi.BoolPtrOutput { return v.IsSecure }).(pulumi.BoolPtrOutput)
 }
@@ -384,12 +434,16 @@ func (o PropertyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Deprecated: The setting "origin" has been deprecated.
+// Deprecated: The setting "origin" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o PropertyOutput) Origins() PropertyOriginArrayOutput {
 	return o.ApplyT(func(v *Property) PropertyOriginArrayOutput { return v.Origins }).(PropertyOriginArrayOutput)
 }
 
-// Deprecated: The setting "product" has been deprecated.
+// Deprecated: The setting "product" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o PropertyOutput) Product() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Product }).(pulumi.StringOutput)
 }
@@ -433,7 +487,9 @@ func (o PropertyOutput) StagingVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Property) pulumi.IntOutput { return v.StagingVersion }).(pulumi.IntOutput)
 }
 
-// Deprecated: The setting "variables" has been deprecated.
+// Deprecated: The setting "variables" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o PropertyOutput) Variables() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringPtrOutput { return v.Variables }).(pulumi.StringPtrOutput)
 }

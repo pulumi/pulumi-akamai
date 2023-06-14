@@ -8320,12 +8320,30 @@ export interface GtmResourceResourceInstance {
 }
 
 export interface PropertyActivationComplianceRecord {
+    noncomplianceReasonEmergency?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonEmergency>;
+    noncomplianceReasonNoProductionTraffic?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic>;
+    noncomplianceReasonNone?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonNone>;
+    noncomplianceReasonOther?: pulumi.Input<inputs.PropertyActivationComplianceRecordNoncomplianceReasonOther>;
+}
+
+export interface PropertyActivationComplianceRecordNoncomplianceReasonEmergency {
+    ticketId?: pulumi.Input<string>;
+}
+
+export interface PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+    ticketId?: pulumi.Input<string>;
+}
+
+export interface PropertyActivationComplianceRecordNoncomplianceReasonNone {
     customerEmail?: pulumi.Input<string>;
-    noncomplianceReason: pulumi.Input<string>;
-    otherNoncomplianceReason?: pulumi.Input<string>;
     peerReviewedBy?: pulumi.Input<string>;
     ticketId?: pulumi.Input<string>;
     unitTested?: pulumi.Input<boolean>;
+}
+
+export interface PropertyActivationComplianceRecordNoncomplianceReasonOther {
+    otherNoncomplianceReason?: pulumi.Input<string>;
+    ticketId?: pulumi.Input<string>;
 }
 
 export interface PropertyActivationRuleError {
@@ -8365,12 +8383,30 @@ export interface PropertyHostnameCertStatus {
 }
 
 export interface PropertyIncludeActivationComplianceRecord {
+    noncomplianceReasonEmergency?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency>;
+    noncomplianceReasonNoProductionTraffic?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic>;
+    noncomplianceReasonNone?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone>;
+    noncomplianceReasonOther?: pulumi.Input<inputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther>;
+}
+
+export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency {
+    ticketId?: pulumi.Input<string>;
+}
+
+export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+    ticketId?: pulumi.Input<string>;
+}
+
+export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone {
     customerEmail?: pulumi.Input<string>;
-    noncomplianceReason: pulumi.Input<string>;
-    otherNoncomplianceReason?: pulumi.Input<string>;
     peerReviewedBy?: pulumi.Input<string>;
     ticketId?: pulumi.Input<string>;
     unitTested?: pulumi.Input<boolean>;
+}
+
+export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther {
+    otherNoncomplianceReason?: pulumi.Input<string>;
+    ticketId?: pulumi.Input<string>;
 }
 
 export interface PropertyOrigin {
@@ -8468,12 +8504,30 @@ export namespace edgedns {
 
 export namespace properties {
     export interface PropertyActivationComplianceRecord {
+        noncomplianceReasonEmergency?: pulumi.Input<inputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonEmergency>;
+        noncomplianceReasonNoProductionTraffic?: pulumi.Input<inputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic>;
+        noncomplianceReasonNone?: pulumi.Input<inputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonNone>;
+        noncomplianceReasonOther?: pulumi.Input<inputs.properties.PropertyActivationComplianceRecordNoncomplianceReasonOther>;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonEmergency {
+        ticketId?: pulumi.Input<string>;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+        ticketId?: pulumi.Input<string>;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonNone {
         customerEmail?: pulumi.Input<string>;
-        noncomplianceReason: pulumi.Input<string>;
-        otherNoncomplianceReason?: pulumi.Input<string>;
         peerReviewedBy?: pulumi.Input<string>;
         ticketId?: pulumi.Input<string>;
         unitTested?: pulumi.Input<boolean>;
+    }
+
+    export interface PropertyActivationComplianceRecordNoncomplianceReasonOther {
+        otherNoncomplianceReason?: pulumi.Input<string>;
+        ticketId?: pulumi.Input<string>;
     }
 
     export interface PropertyActivationRuleError {
