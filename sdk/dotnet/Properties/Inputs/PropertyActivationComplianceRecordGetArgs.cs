@@ -12,23 +12,17 @@ namespace Pulumi.Akamai.Properties.Inputs
 
     public sealed class PropertyActivationComplianceRecordGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("customerEmail")]
-        public Input<string>? CustomerEmail { get; set; }
+        [Input("noncomplianceReasonEmergency")]
+        public Input<Inputs.PropertyActivationComplianceRecordNoncomplianceReasonEmergencyGetArgs>? NoncomplianceReasonEmergency { get; set; }
 
-        [Input("noncomplianceReason", required: true)]
-        public Input<string> NoncomplianceReason { get; set; } = null!;
+        [Input("noncomplianceReasonNoProductionTraffic")]
+        public Input<Inputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficGetArgs>? NoncomplianceReasonNoProductionTraffic { get; set; }
 
-        [Input("otherNoncomplianceReason")]
-        public Input<string>? OtherNoncomplianceReason { get; set; }
+        [Input("noncomplianceReasonNone")]
+        public Input<Inputs.PropertyActivationComplianceRecordNoncomplianceReasonNoneGetArgs>? NoncomplianceReasonNone { get; set; }
 
-        [Input("peerReviewedBy")]
-        public Input<string>? PeerReviewedBy { get; set; }
-
-        [Input("ticketId")]
-        public Input<string>? TicketId { get; set; }
-
-        [Input("unitTested")]
-        public Input<bool>? UnitTested { get; set; }
+        [Input("noncomplianceReasonOther")]
+        public Input<Inputs.PropertyActivationComplianceRecordNoncomplianceReasonOtherGetArgs>? NoncomplianceReasonOther { get; set; }
 
         public PropertyActivationComplianceRecordGetArgs()
         {

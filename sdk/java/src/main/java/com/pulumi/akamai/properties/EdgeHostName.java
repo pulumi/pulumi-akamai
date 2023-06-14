@@ -32,10 +32,12 @@ public class EdgeHostName extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
+     * The setting &#34;contract&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
+    @Deprecated /* The setting ""contract"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Export(name="contract", type=String.class, parameters={})
     private Output<String> contract;
 
@@ -56,10 +58,12 @@ public class EdgeHostName extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
+     * The setting &#34;group&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. */
+    @Deprecated /* The setting ""group"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Export(name="group", type=String.class, parameters={})
     private Output<String> group;
 
@@ -80,10 +84,12 @@ public class EdgeHostName extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;product&#34; has been deprecated.
+     * The setting &#34;product&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""product"" has been deprecated. */
+    @Deprecated /* The setting ""product"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Export(name="product", type=String.class, parameters={})
     private Output<String> product;
 

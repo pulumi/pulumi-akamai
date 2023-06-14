@@ -21,10 +21,12 @@ import javax.annotation.Nullable;
 public class NetworkListActivations extends com.pulumi.resources.CustomResource {
     /**
      * @deprecated
-     * The setting &#34;activate&#34; has been deprecated.
+     * The setting &#34;activate&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""activate"" has been deprecated. */
+    @Deprecated /* The setting ""activate"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Export(name="activate", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> activate;
 

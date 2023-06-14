@@ -96,10 +96,12 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;property&#34; has been deprecated.
+     * The setting &#34;property&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""property"" has been deprecated. */
+    @Deprecated /* The setting ""property"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Export(name="property", type=String.class, parameters={})
     private Output<String> property;
 

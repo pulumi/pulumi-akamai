@@ -16,19 +16,23 @@ public final class GetGroupPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
+     * The setting &#34;contract&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
+    @Deprecated /* The setting ""contract"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="contract")
     private @Nullable String contract;
 
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
+     * The setting &#34;contract&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
+    @Deprecated /* The setting ""contract"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<String> contract() {
         return Optional.ofNullable(this.contract);
     }
@@ -49,19 +53,23 @@ public final class GetGroupPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * @deprecated
-     * The setting &#34;name&#34; has been deprecated.
+     * The setting &#34;name&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""name"" has been deprecated. */
+    @Deprecated /* The setting ""name"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="name")
     private @Nullable String name;
 
     /**
      * @deprecated
-     * The setting &#34;name&#34; has been deprecated.
+     * The setting &#34;name&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""name"" has been deprecated. */
+    @Deprecated /* The setting ""name"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
@@ -97,10 +105,12 @@ public final class GetGroupPlainArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;contract&#34; has been deprecated.
+         * The setting &#34;contract&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""contract"" has been deprecated. */
+        @Deprecated /* The setting ""contract"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder contract(@Nullable String contract) {
             $.contract = contract;
             return this;
@@ -120,10 +130,12 @@ public final class GetGroupPlainArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;name&#34; has been deprecated.
+         * The setting &#34;name&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""name"" has been deprecated. */
+        @Deprecated /* The setting ""name"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder name(@Nullable String name) {
             $.name = name;
             return this;

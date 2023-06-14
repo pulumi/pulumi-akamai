@@ -24,38 +24,46 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @deprecated
-     * The setting &#34;contact&#34; has been deprecated.
+     * The setting &#34;contact&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""contact"" has been deprecated. */
+    @Deprecated /* The setting ""contact"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="contacts")
     private @Nullable Output<List<String>> contacts;
 
     /**
      * @deprecated
-     * The setting &#34;contact&#34; has been deprecated.
+     * The setting &#34;contact&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""contact"" has been deprecated. */
+    @Deprecated /* The setting ""contact"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<List<String>>> contacts() {
         return Optional.ofNullable(this.contacts);
     }
 
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
+     * The setting &#34;contract&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
+    @Deprecated /* The setting ""contract"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="contract")
     private @Nullable Output<String> contract;
 
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
+     * The setting &#34;contract&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
+    @Deprecated /* The setting ""contract"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<String>> contract() {
         return Optional.ofNullable(this.contract);
     }
@@ -77,38 +85,46 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @deprecated
-     * The setting &#34;cp_code&#34; has been deprecated.
+     * The setting &#34;cp_code&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""cp_code"" has been deprecated. */
+    @Deprecated /* The setting ""cp_code"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="cpCode")
     private @Nullable Output<String> cpCode;
 
     /**
      * @deprecated
-     * The setting &#34;cp_code&#34; has been deprecated.
+     * The setting &#34;cp_code&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""cp_code"" has been deprecated. */
+    @Deprecated /* The setting ""cp_code"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<String>> cpCode() {
         return Optional.ofNullable(this.cpCode);
     }
 
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
+     * The setting &#34;group&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. */
+    @Deprecated /* The setting ""group"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="group")
     private @Nullable Output<String> group;
 
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
+     * The setting &#34;group&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. */
+    @Deprecated /* The setting ""group"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<String>> group() {
         return Optional.ofNullable(this.group);
     }
@@ -137,19 +153,23 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @deprecated
-     * The setting &#34;is_secure&#34; has been deprecated.
+     * The setting &#34;is_secure&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""is_secure"" has been deprecated. */
+    @Deprecated /* The setting ""is_secure"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="isSecure")
     private @Nullable Output<Boolean> isSecure;
 
     /**
      * @deprecated
-     * The setting &#34;is_secure&#34; has been deprecated.
+     * The setting &#34;is_secure&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""is_secure"" has been deprecated. */
+    @Deprecated /* The setting ""is_secure"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<Boolean>> isSecure() {
         return Optional.ofNullable(this.isSecure);
     }
@@ -186,38 +206,46 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @deprecated
-     * The setting &#34;origin&#34; has been deprecated.
+     * The setting &#34;origin&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""origin"" has been deprecated. */
+    @Deprecated /* The setting ""origin"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="origins")
     private @Nullable Output<List<PropertyOriginArgs>> origins;
 
     /**
      * @deprecated
-     * The setting &#34;origin&#34; has been deprecated.
+     * The setting &#34;origin&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""origin"" has been deprecated. */
+    @Deprecated /* The setting ""origin"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<List<PropertyOriginArgs>>> origins() {
         return Optional.ofNullable(this.origins);
     }
 
     /**
      * @deprecated
-     * The setting &#34;product&#34; has been deprecated.
+     * The setting &#34;product&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""product"" has been deprecated. */
+    @Deprecated /* The setting ""product"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="product")
     private @Nullable Output<String> product;
 
     /**
      * @deprecated
-     * The setting &#34;product&#34; has been deprecated.
+     * The setting &#34;product&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""product"" has been deprecated. */
+    @Deprecated /* The setting ""product"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<String>> product() {
         return Optional.ofNullable(this.product);
     }
@@ -340,19 +368,23 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @deprecated
-     * The setting &#34;variables&#34; has been deprecated.
+     * The setting &#34;variables&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""variables"" has been deprecated. */
+    @Deprecated /* The setting ""variables"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="variables")
     private @Nullable Output<String> variables;
 
     /**
      * @deprecated
-     * The setting &#34;variables&#34; has been deprecated.
+     * The setting &#34;variables&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""variables"" has been deprecated. */
+    @Deprecated /* The setting ""variables"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<String>> variables() {
         return Optional.ofNullable(this.variables);
     }
@@ -405,10 +437,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;contact&#34; has been deprecated.
+         * The setting &#34;contact&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""contact"" has been deprecated. */
+        @Deprecated /* The setting ""contact"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder contacts(@Nullable Output<List<String>> contacts) {
             $.contacts = contacts;
             return this;
@@ -418,10 +452,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;contact&#34; has been deprecated.
+         * The setting &#34;contact&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""contact"" has been deprecated. */
+        @Deprecated /* The setting ""contact"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder contacts(List<String> contacts) {
             return contacts(Output.of(contacts));
         }
@@ -430,10 +466,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;contact&#34; has been deprecated.
+         * The setting &#34;contact&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""contact"" has been deprecated. */
+        @Deprecated /* The setting ""contact"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder contacts(String... contacts) {
             return contacts(List.of(contacts));
         }
@@ -442,10 +480,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;contract&#34; has been deprecated.
+         * The setting &#34;contract&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""contract"" has been deprecated. */
+        @Deprecated /* The setting ""contract"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder contract(@Nullable Output<String> contract) {
             $.contract = contract;
             return this;
@@ -455,10 +495,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;contract&#34; has been deprecated.
+         * The setting &#34;contract&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""contract"" has been deprecated. */
+        @Deprecated /* The setting ""contract"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder contract(String contract) {
             return contract(Output.of(contract));
         }
@@ -488,10 +530,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;cp_code&#34; has been deprecated.
+         * The setting &#34;cp_code&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""cp_code"" has been deprecated. */
+        @Deprecated /* The setting ""cp_code"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder cpCode(@Nullable Output<String> cpCode) {
             $.cpCode = cpCode;
             return this;
@@ -501,10 +545,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;cp_code&#34; has been deprecated.
+         * The setting &#34;cp_code&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""cp_code"" has been deprecated. */
+        @Deprecated /* The setting ""cp_code"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder cpCode(String cpCode) {
             return cpCode(Output.of(cpCode));
         }
@@ -513,10 +559,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;group&#34; has been deprecated.
+         * The setting &#34;group&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""group"" has been deprecated. */
+        @Deprecated /* The setting ""group"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder group(@Nullable Output<String> group) {
             $.group = group;
             return this;
@@ -526,10 +574,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;group&#34; has been deprecated.
+         * The setting &#34;group&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""group"" has been deprecated. */
+        @Deprecated /* The setting ""group"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder group(String group) {
             return group(Output.of(group));
         }
@@ -572,10 +622,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;is_secure&#34; has been deprecated.
+         * The setting &#34;is_secure&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""is_secure"" has been deprecated. */
+        @Deprecated /* The setting ""is_secure"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder isSecure(@Nullable Output<Boolean> isSecure) {
             $.isSecure = isSecure;
             return this;
@@ -585,10 +637,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;is_secure&#34; has been deprecated.
+         * The setting &#34;is_secure&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""is_secure"" has been deprecated. */
+        @Deprecated /* The setting ""is_secure"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder isSecure(Boolean isSecure) {
             return isSecure(Output.of(isSecure));
         }
@@ -639,10 +693,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;origin&#34; has been deprecated.
+         * The setting &#34;origin&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""origin"" has been deprecated. */
+        @Deprecated /* The setting ""origin"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder origins(@Nullable Output<List<PropertyOriginArgs>> origins) {
             $.origins = origins;
             return this;
@@ -652,10 +708,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;origin&#34; has been deprecated.
+         * The setting &#34;origin&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""origin"" has been deprecated. */
+        @Deprecated /* The setting ""origin"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder origins(List<PropertyOriginArgs> origins) {
             return origins(Output.of(origins));
         }
@@ -664,10 +722,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;origin&#34; has been deprecated.
+         * The setting &#34;origin&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""origin"" has been deprecated. */
+        @Deprecated /* The setting ""origin"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder origins(PropertyOriginArgs... origins) {
             return origins(List.of(origins));
         }
@@ -676,10 +736,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;product&#34; has been deprecated.
+         * The setting &#34;product&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""product"" has been deprecated. */
+        @Deprecated /* The setting ""product"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder product(@Nullable Output<String> product) {
             $.product = product;
             return this;
@@ -689,10 +751,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;product&#34; has been deprecated.
+         * The setting &#34;product&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""product"" has been deprecated. */
+        @Deprecated /* The setting ""product"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder product(String product) {
             return product(Output.of(product));
         }
@@ -877,10 +941,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;variables&#34; has been deprecated.
+         * The setting &#34;variables&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""variables"" has been deprecated. */
+        @Deprecated /* The setting ""variables"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder variables(@Nullable Output<String> variables) {
             $.variables = variables;
             return this;
@@ -890,10 +956,12 @@ public final class PropertyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;variables&#34; has been deprecated.
+         * The setting &#34;variables&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""variables"" has been deprecated. */
+        @Deprecated /* The setting ""variables"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder variables(String variables) {
             return variables(Output.of(variables));
         }

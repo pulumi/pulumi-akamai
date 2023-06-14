@@ -158,6 +158,10 @@ import com.pulumi.akamai.inputs.GetEdgekvGroupsArgs;
 import com.pulumi.akamai.inputs.GetEdgekvGroupsPlainArgs;
 import com.pulumi.akamai.inputs.GetGroupArgs;
 import com.pulumi.akamai.inputs.GetGroupPlainArgs;
+import com.pulumi.akamai.inputs.GetGtmDatacenterArgs;
+import com.pulumi.akamai.inputs.GetGtmDatacenterPlainArgs;
+import com.pulumi.akamai.inputs.GetGtmDatacentersArgs;
+import com.pulumi.akamai.inputs.GetGtmDatacentersPlainArgs;
 import com.pulumi.akamai.inputs.GetGtmDefaultDatacenterArgs;
 import com.pulumi.akamai.inputs.GetGtmDefaultDatacenterPlainArgs;
 import com.pulumi.akamai.inputs.GetIamStatesArgs;
@@ -271,6 +275,8 @@ import com.pulumi.akamai.outputs.GetEdgekvGroupItemsResult;
 import com.pulumi.akamai.outputs.GetEdgekvGroupsResult;
 import com.pulumi.akamai.outputs.GetGroupResult;
 import com.pulumi.akamai.outputs.GetGroupsResult;
+import com.pulumi.akamai.outputs.GetGtmDatacenterResult;
+import com.pulumi.akamai.outputs.GetGtmDatacentersResult;
 import com.pulumi.akamai.outputs.GetGtmDefaultDatacenterResult;
 import com.pulumi.akamai.outputs.GetIamContactTypesResult;
 import com.pulumi.akamai.outputs.GetIamCountriesResult;
@@ -1394,6 +1400,30 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetGroupsResult> getGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getGroups:getGroups", TypeShape.of(GetGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetGtmDatacenterResult> getGtmDatacenter(GetGtmDatacenterArgs args) {
+        return getGtmDatacenter(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetGtmDatacenterResult> getGtmDatacenterPlain(GetGtmDatacenterPlainArgs args) {
+        return getGtmDatacenterPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetGtmDatacenterResult> getGtmDatacenter(GetGtmDatacenterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getGtmDatacenter:getGtmDatacenter", TypeShape.of(GetGtmDatacenterResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetGtmDatacenterResult> getGtmDatacenterPlain(GetGtmDatacenterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getGtmDatacenter:getGtmDatacenter", TypeShape.of(GetGtmDatacenterResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetGtmDatacentersResult> getGtmDatacenters(GetGtmDatacentersArgs args) {
+        return getGtmDatacenters(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetGtmDatacentersResult> getGtmDatacentersPlain(GetGtmDatacentersPlainArgs args) {
+        return getGtmDatacentersPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetGtmDatacentersResult> getGtmDatacenters(GetGtmDatacentersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getGtmDatacenters:getGtmDatacenters", TypeShape.of(GetGtmDatacentersResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetGtmDatacentersResult> getGtmDatacentersPlain(GetGtmDatacentersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getGtmDatacenters:getGtmDatacenters", TypeShape.of(GetGtmDatacentersResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetGtmDefaultDatacenterResult> getGtmDefaultDatacenter(GetGtmDefaultDatacenterArgs args) {
         return getGtmDefaultDatacenter(args, InvokeOptions.Empty);

@@ -26,38 +26,46 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @deprecated
-     * The setting &#34;appsec_section&#34; has been deprecated.
+     * The setting &#34;appsec_section&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""appsec_section"" has been deprecated. */
+    @Deprecated /* The setting ""appsec_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="appsecSection")
     private @Nullable Output<String> appsecSection;
 
     /**
      * @deprecated
-     * The setting &#34;appsec_section&#34; has been deprecated.
+     * The setting &#34;appsec_section&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""appsec_section"" has been deprecated. */
+    @Deprecated /* The setting ""appsec_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<String>> appsecSection() {
         return Optional.ofNullable(this.appsecSection);
     }
 
     /**
      * @deprecated
-     * The setting &#34;appsec&#34; has been deprecated.
+     * The setting &#34;appsec&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""appsec"" has been deprecated. */
+    @Deprecated /* The setting ""appsec"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="appsecs", json=true)
     private @Nullable Output<List<ProviderAppsecArgs>> appsecs;
 
     /**
      * @deprecated
-     * The setting &#34;appsec&#34; has been deprecated.
+     * The setting &#34;appsec&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""appsec"" has been deprecated. */
+    @Deprecated /* The setting ""appsec"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<List<ProviderAppsecArgs>>> appsecs() {
         return Optional.ofNullable(this.appsecs);
     }
@@ -93,38 +101,46 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @deprecated
-     * The setting &#34;dns&#34; has been deprecated.
+     * The setting &#34;dns&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""dns"" has been deprecated. */
+    @Deprecated /* The setting ""dns"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="dns", json=true)
     private @Nullable Output<ProviderDnsArgs> dns;
 
     /**
      * @deprecated
-     * The setting &#34;dns&#34; has been deprecated.
+     * The setting &#34;dns&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""dns"" has been deprecated. */
+    @Deprecated /* The setting ""dns"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<ProviderDnsArgs>> dns() {
         return Optional.ofNullable(this.dns);
     }
 
     /**
      * @deprecated
-     * The setting &#34;dns_section&#34; has been deprecated.
+     * The setting &#34;dns_section&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""dns_section"" has been deprecated. */
+    @Deprecated /* The setting ""dns_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="dnsSection")
     private @Nullable Output<String> dnsSection;
 
     /**
      * @deprecated
-     * The setting &#34;dns_section&#34; has been deprecated.
+     * The setting &#34;dns_section&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""dns_section"" has been deprecated. */
+    @Deprecated /* The setting ""dns_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<String>> dnsSection() {
         return Optional.ofNullable(this.dnsSection);
     }
@@ -138,57 +154,69 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @deprecated
-     * The setting &#34;gtm&#34; has been deprecated.
+     * The setting &#34;gtm&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""gtm"" has been deprecated. */
+    @Deprecated /* The setting ""gtm"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="gtm", json=true)
     private @Nullable Output<ProviderGtmArgs> gtm;
 
     /**
      * @deprecated
-     * The setting &#34;gtm&#34; has been deprecated.
+     * The setting &#34;gtm&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""gtm"" has been deprecated. */
+    @Deprecated /* The setting ""gtm"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<ProviderGtmArgs>> gtm() {
         return Optional.ofNullable(this.gtm);
     }
 
     /**
      * @deprecated
-     * The setting &#34;gtm_section&#34; has been deprecated.
+     * The setting &#34;gtm_section&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""gtm_section"" has been deprecated. */
+    @Deprecated /* The setting ""gtm_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="gtmSection")
     private @Nullable Output<String> gtmSection;
 
     /**
      * @deprecated
-     * The setting &#34;gtm_section&#34; has been deprecated.
+     * The setting &#34;gtm_section&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""gtm_section"" has been deprecated. */
+    @Deprecated /* The setting ""gtm_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<String>> gtmSection() {
         return Optional.ofNullable(this.gtmSection);
     }
 
     /**
      * @deprecated
-     * The setting &#34;networklist_section&#34; has been deprecated.
+     * The setting &#34;networklist_section&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""networklist_section"" has been deprecated. */
+    @Deprecated /* The setting ""networklist_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="networklistSection")
     private @Nullable Output<String> networklistSection;
 
     /**
      * @deprecated
-     * The setting &#34;networklist_section&#34; has been deprecated.
+     * The setting &#34;networklist_section&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""networklist_section"" has been deprecated. */
+    @Deprecated /* The setting ""networklist_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<String>> networklistSection() {
         return Optional.ofNullable(this.networklistSection);
     }
@@ -202,57 +230,69 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @deprecated
-     * The setting &#34;papi_section&#34; has been deprecated.
+     * The setting &#34;papi_section&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""papi_section"" has been deprecated. */
+    @Deprecated /* The setting ""papi_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="papiSection")
     private @Nullable Output<String> papiSection;
 
     /**
      * @deprecated
-     * The setting &#34;papi_section&#34; has been deprecated.
+     * The setting &#34;papi_section&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""papi_section"" has been deprecated. */
+    @Deprecated /* The setting ""papi_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<String>> papiSection() {
         return Optional.ofNullable(this.papiSection);
     }
 
     /**
      * @deprecated
-     * The setting &#34;property&#34; has been deprecated.
+     * The setting &#34;property&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""property"" has been deprecated. */
+    @Deprecated /* The setting ""property"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="property", json=true)
     private @Nullable Output<ProviderPropertyArgs> property;
 
     /**
      * @deprecated
-     * The setting &#34;property&#34; has been deprecated.
+     * The setting &#34;property&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""property"" has been deprecated. */
+    @Deprecated /* The setting ""property"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<ProviderPropertyArgs>> property() {
         return Optional.ofNullable(this.property);
     }
 
     /**
      * @deprecated
-     * The setting &#34;property_section&#34; has been deprecated.
+     * The setting &#34;property_section&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""property_section"" has been deprecated. */
+    @Deprecated /* The setting ""property_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="propertySection")
     private @Nullable Output<String> propertySection;
 
     /**
      * @deprecated
-     * The setting &#34;property_section&#34; has been deprecated.
+     * The setting &#34;property_section&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""property_section"" has been deprecated. */
+    @Deprecated /* The setting ""property_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<String>> propertySection() {
         return Optional.ofNullable(this.propertySection);
     }
@@ -315,10 +355,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;appsec_section&#34; has been deprecated.
+         * The setting &#34;appsec_section&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""appsec_section"" has been deprecated. */
+        @Deprecated /* The setting ""appsec_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder appsecSection(@Nullable Output<String> appsecSection) {
             $.appsecSection = appsecSection;
             return this;
@@ -328,10 +370,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;appsec_section&#34; has been deprecated.
+         * The setting &#34;appsec_section&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""appsec_section"" has been deprecated. */
+        @Deprecated /* The setting ""appsec_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder appsecSection(String appsecSection) {
             return appsecSection(Output.of(appsecSection));
         }
@@ -340,10 +384,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;appsec&#34; has been deprecated.
+         * The setting &#34;appsec&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""appsec"" has been deprecated. */
+        @Deprecated /* The setting ""appsec"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder appsecs(@Nullable Output<List<ProviderAppsecArgs>> appsecs) {
             $.appsecs = appsecs;
             return this;
@@ -353,10 +399,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;appsec&#34; has been deprecated.
+         * The setting &#34;appsec&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""appsec"" has been deprecated. */
+        @Deprecated /* The setting ""appsec"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder appsecs(List<ProviderAppsecArgs> appsecs) {
             return appsecs(Output.of(appsecs));
         }
@@ -365,10 +413,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;appsec&#34; has been deprecated.
+         * The setting &#34;appsec&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""appsec"" has been deprecated. */
+        @Deprecated /* The setting ""appsec"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder appsecs(ProviderAppsecArgs... appsecs) {
             return appsecs(List.of(appsecs));
         }
@@ -416,10 +466,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;dns&#34; has been deprecated.
+         * The setting &#34;dns&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""dns"" has been deprecated. */
+        @Deprecated /* The setting ""dns"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder dns(@Nullable Output<ProviderDnsArgs> dns) {
             $.dns = dns;
             return this;
@@ -429,10 +481,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;dns&#34; has been deprecated.
+         * The setting &#34;dns&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""dns"" has been deprecated. */
+        @Deprecated /* The setting ""dns"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder dns(ProviderDnsArgs dns) {
             return dns(Output.of(dns));
         }
@@ -441,10 +495,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;dns_section&#34; has been deprecated.
+         * The setting &#34;dns_section&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""dns_section"" has been deprecated. */
+        @Deprecated /* The setting ""dns_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder dnsSection(@Nullable Output<String> dnsSection) {
             $.dnsSection = dnsSection;
             return this;
@@ -454,10 +510,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;dns_section&#34; has been deprecated.
+         * The setting &#34;dns_section&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""dns_section"" has been deprecated. */
+        @Deprecated /* The setting ""dns_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder dnsSection(String dnsSection) {
             return dnsSection(Output.of(dnsSection));
         }
@@ -475,10 +533,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;gtm&#34; has been deprecated.
+         * The setting &#34;gtm&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""gtm"" has been deprecated. */
+        @Deprecated /* The setting ""gtm"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder gtm(@Nullable Output<ProviderGtmArgs> gtm) {
             $.gtm = gtm;
             return this;
@@ -488,10 +548,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;gtm&#34; has been deprecated.
+         * The setting &#34;gtm&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""gtm"" has been deprecated. */
+        @Deprecated /* The setting ""gtm"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder gtm(ProviderGtmArgs gtm) {
             return gtm(Output.of(gtm));
         }
@@ -500,10 +562,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;gtm_section&#34; has been deprecated.
+         * The setting &#34;gtm_section&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""gtm_section"" has been deprecated. */
+        @Deprecated /* The setting ""gtm_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder gtmSection(@Nullable Output<String> gtmSection) {
             $.gtmSection = gtmSection;
             return this;
@@ -513,10 +577,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;gtm_section&#34; has been deprecated.
+         * The setting &#34;gtm_section&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""gtm_section"" has been deprecated. */
+        @Deprecated /* The setting ""gtm_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder gtmSection(String gtmSection) {
             return gtmSection(Output.of(gtmSection));
         }
@@ -525,10 +591,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;networklist_section&#34; has been deprecated.
+         * The setting &#34;networklist_section&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""networklist_section"" has been deprecated. */
+        @Deprecated /* The setting ""networklist_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder networklistSection(@Nullable Output<String> networklistSection) {
             $.networklistSection = networklistSection;
             return this;
@@ -538,10 +606,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;networklist_section&#34; has been deprecated.
+         * The setting &#34;networklist_section&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""networklist_section"" has been deprecated. */
+        @Deprecated /* The setting ""networklist_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder networklistSection(String networklistSection) {
             return networklistSection(Output.of(networklistSection));
         }
@@ -563,10 +633,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;papi_section&#34; has been deprecated.
+         * The setting &#34;papi_section&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""papi_section"" has been deprecated. */
+        @Deprecated /* The setting ""papi_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder papiSection(@Nullable Output<String> papiSection) {
             $.papiSection = papiSection;
             return this;
@@ -576,10 +648,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;papi_section&#34; has been deprecated.
+         * The setting &#34;papi_section&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""papi_section"" has been deprecated. */
+        @Deprecated /* The setting ""papi_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder papiSection(String papiSection) {
             return papiSection(Output.of(papiSection));
         }
@@ -588,10 +662,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;property&#34; has been deprecated.
+         * The setting &#34;property&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""property"" has been deprecated. */
+        @Deprecated /* The setting ""property"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder property(@Nullable Output<ProviderPropertyArgs> property) {
             $.property = property;
             return this;
@@ -601,10 +677,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;property&#34; has been deprecated.
+         * The setting &#34;property&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""property"" has been deprecated. */
+        @Deprecated /* The setting ""property"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder property(ProviderPropertyArgs property) {
             return property(Output.of(property));
         }
@@ -613,10 +691,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;property_section&#34; has been deprecated.
+         * The setting &#34;property_section&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""property_section"" has been deprecated. */
+        @Deprecated /* The setting ""property_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder propertySection(@Nullable Output<String> propertySection) {
             $.propertySection = propertySection;
             return this;
@@ -626,10 +706,12 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;property_section&#34; has been deprecated.
+         * The setting &#34;property_section&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""property_section"" has been deprecated. */
+        @Deprecated /* The setting ""property_section"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder propertySection(String propertySection) {
             return propertySection(Output.of(propertySection));
         }

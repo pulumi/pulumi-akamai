@@ -11,10 +11,12 @@ import java.util.Objects;
 public final class GetGroupResult {
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
+     * The setting &#34;contract&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
+    @Deprecated /* The setting ""contract"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     private String contract;
     private String contractId;
     private String groupName;
@@ -25,19 +27,23 @@ public final class GetGroupResult {
     private String id;
     /**
      * @deprecated
-     * The setting &#34;name&#34; has been deprecated.
+     * The setting &#34;name&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""name"" has been deprecated. */
+    @Deprecated /* The setting ""name"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     private String name;
 
     private GetGroupResult() {}
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
+     * The setting &#34;contract&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
+    @Deprecated /* The setting ""contract"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public String contract() {
         return this.contract;
     }
@@ -56,10 +62,12 @@ public final class GetGroupResult {
     }
     /**
      * @deprecated
-     * The setting &#34;name&#34; has been deprecated.
+     * The setting &#34;name&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""name"" has been deprecated. */
+    @Deprecated /* The setting ""name"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public String name() {
         return this.name;
     }

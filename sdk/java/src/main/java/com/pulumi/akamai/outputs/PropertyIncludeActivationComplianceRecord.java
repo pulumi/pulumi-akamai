@@ -3,40 +3,34 @@
 
 package com.pulumi.akamai.outputs;
 
+import com.pulumi.akamai.outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency;
+import com.pulumi.akamai.outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic;
+import com.pulumi.akamai.outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone;
+import com.pulumi.akamai.outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther;
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Boolean;
-import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class PropertyIncludeActivationComplianceRecord {
-    private @Nullable String customerEmail;
-    private String noncomplianceReason;
-    private @Nullable String otherNoncomplianceReason;
-    private @Nullable String peerReviewedBy;
-    private @Nullable String ticketId;
-    private @Nullable Boolean unitTested;
+    private @Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency noncomplianceReasonEmergency;
+    private @Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic noncomplianceReasonNoProductionTraffic;
+    private @Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone noncomplianceReasonNone;
+    private @Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther noncomplianceReasonOther;
 
     private PropertyIncludeActivationComplianceRecord() {}
-    public Optional<String> customerEmail() {
-        return Optional.ofNullable(this.customerEmail);
+    public Optional<PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency> noncomplianceReasonEmergency() {
+        return Optional.ofNullable(this.noncomplianceReasonEmergency);
     }
-    public String noncomplianceReason() {
-        return this.noncomplianceReason;
+    public Optional<PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic> noncomplianceReasonNoProductionTraffic() {
+        return Optional.ofNullable(this.noncomplianceReasonNoProductionTraffic);
     }
-    public Optional<String> otherNoncomplianceReason() {
-        return Optional.ofNullable(this.otherNoncomplianceReason);
+    public Optional<PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone> noncomplianceReasonNone() {
+        return Optional.ofNullable(this.noncomplianceReasonNone);
     }
-    public Optional<String> peerReviewedBy() {
-        return Optional.ofNullable(this.peerReviewedBy);
-    }
-    public Optional<String> ticketId() {
-        return Optional.ofNullable(this.ticketId);
-    }
-    public Optional<Boolean> unitTested() {
-        return Optional.ofNullable(this.unitTested);
+    public Optional<PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther> noncomplianceReasonOther() {
+        return Optional.ofNullable(this.noncomplianceReasonOther);
     }
 
     public static Builder builder() {
@@ -48,61 +42,45 @@ public final class PropertyIncludeActivationComplianceRecord {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String customerEmail;
-        private String noncomplianceReason;
-        private @Nullable String otherNoncomplianceReason;
-        private @Nullable String peerReviewedBy;
-        private @Nullable String ticketId;
-        private @Nullable Boolean unitTested;
+        private @Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency noncomplianceReasonEmergency;
+        private @Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic noncomplianceReasonNoProductionTraffic;
+        private @Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone noncomplianceReasonNone;
+        private @Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther noncomplianceReasonOther;
         public Builder() {}
         public Builder(PropertyIncludeActivationComplianceRecord defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.customerEmail = defaults.customerEmail;
-    	      this.noncomplianceReason = defaults.noncomplianceReason;
-    	      this.otherNoncomplianceReason = defaults.otherNoncomplianceReason;
-    	      this.peerReviewedBy = defaults.peerReviewedBy;
-    	      this.ticketId = defaults.ticketId;
-    	      this.unitTested = defaults.unitTested;
+    	      this.noncomplianceReasonEmergency = defaults.noncomplianceReasonEmergency;
+    	      this.noncomplianceReasonNoProductionTraffic = defaults.noncomplianceReasonNoProductionTraffic;
+    	      this.noncomplianceReasonNone = defaults.noncomplianceReasonNone;
+    	      this.noncomplianceReasonOther = defaults.noncomplianceReasonOther;
         }
 
         @CustomType.Setter
-        public Builder customerEmail(@Nullable String customerEmail) {
-            this.customerEmail = customerEmail;
+        public Builder noncomplianceReasonEmergency(@Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency noncomplianceReasonEmergency) {
+            this.noncomplianceReasonEmergency = noncomplianceReasonEmergency;
             return this;
         }
         @CustomType.Setter
-        public Builder noncomplianceReason(String noncomplianceReason) {
-            this.noncomplianceReason = Objects.requireNonNull(noncomplianceReason);
+        public Builder noncomplianceReasonNoProductionTraffic(@Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic noncomplianceReasonNoProductionTraffic) {
+            this.noncomplianceReasonNoProductionTraffic = noncomplianceReasonNoProductionTraffic;
             return this;
         }
         @CustomType.Setter
-        public Builder otherNoncomplianceReason(@Nullable String otherNoncomplianceReason) {
-            this.otherNoncomplianceReason = otherNoncomplianceReason;
+        public Builder noncomplianceReasonNone(@Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone noncomplianceReasonNone) {
+            this.noncomplianceReasonNone = noncomplianceReasonNone;
             return this;
         }
         @CustomType.Setter
-        public Builder peerReviewedBy(@Nullable String peerReviewedBy) {
-            this.peerReviewedBy = peerReviewedBy;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder ticketId(@Nullable String ticketId) {
-            this.ticketId = ticketId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder unitTested(@Nullable Boolean unitTested) {
-            this.unitTested = unitTested;
+        public Builder noncomplianceReasonOther(@Nullable PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther noncomplianceReasonOther) {
+            this.noncomplianceReasonOther = noncomplianceReasonOther;
             return this;
         }
         public PropertyIncludeActivationComplianceRecord build() {
             final var o = new PropertyIncludeActivationComplianceRecord();
-            o.customerEmail = customerEmail;
-            o.noncomplianceReason = noncomplianceReason;
-            o.otherNoncomplianceReason = otherNoncomplianceReason;
-            o.peerReviewedBy = peerReviewedBy;
-            o.ticketId = ticketId;
-            o.unitTested = unitTested;
+            o.noncomplianceReasonEmergency = noncomplianceReasonEmergency;
+            o.noncomplianceReasonNoProductionTraffic = noncomplianceReasonNoProductionTraffic;
+            o.noncomplianceReasonNone = noncomplianceReasonNone;
+            o.noncomplianceReasonOther = noncomplianceReasonOther;
             return o;
         }
     }

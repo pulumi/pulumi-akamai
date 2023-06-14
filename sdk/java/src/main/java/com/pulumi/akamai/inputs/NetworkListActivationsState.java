@@ -20,19 +20,23 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
 
     /**
      * @deprecated
-     * The setting &#34;activate&#34; has been deprecated.
+     * The setting &#34;activate&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""activate"" has been deprecated. */
+    @Deprecated /* The setting ""activate"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     @Import(name="activate")
     private @Nullable Output<Boolean> activate;
 
     /**
      * @deprecated
-     * The setting &#34;activate&#34; has been deprecated.
+     * The setting &#34;activate&#34; has been deprecated. See:
+     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
      * 
      */
-    @Deprecated /* The setting ""activate"" has been deprecated. */
+    @Deprecated /* The setting ""activate"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
     public Optional<Output<Boolean>> activate() {
         return Optional.ofNullable(this.activate);
     }
@@ -161,10 +165,12 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;activate&#34; has been deprecated.
+         * The setting &#34;activate&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""activate"" has been deprecated. */
+        @Deprecated /* The setting ""activate"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder activate(@Nullable Output<Boolean> activate) {
             $.activate = activate;
             return this;
@@ -174,10 +180,12 @@ public final class NetworkListActivationsState extends com.pulumi.resources.Reso
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;activate&#34; has been deprecated.
+         * The setting &#34;activate&#34; has been deprecated. See:
+         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
          * 
          */
-        @Deprecated /* The setting ""activate"" has been deprecated. */
+        @Deprecated /* The setting ""activate"" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
         public Builder activate(Boolean activate) {
             return activate(Output.of(activate));
         }
