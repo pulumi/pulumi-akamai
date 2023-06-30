@@ -20,10 +20,10 @@ import javax.annotation.Nullable;
 
 /**
  * @deprecated
- * akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap
+ * akamai.trafficmanagement/gtmasmap.GtmASmap has been deprecated in favor of akamai.index/gtmasmap.GtmAsmap
  * 
  */
-@Deprecated /* akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap */
+@Deprecated /* akamai.trafficmanagement/gtmasmap.GtmASmap has been deprecated in favor of akamai.index/gtmasmap.GtmAsmap */
 @ResourceType(type="akamai:trafficmanagement/gtmASmap:GtmASmap")
 public class GtmASmap extends com.pulumi.resources.CustomResource {
     @Export(name="assignments", type=List.class, parameters={GtmASmapAssignment.class})

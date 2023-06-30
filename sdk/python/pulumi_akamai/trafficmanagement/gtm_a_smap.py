@@ -147,11 +147,11 @@ class _GtmASmapState:
         pulumi.set(self, "wait_on_complete", value)
 
 
-warnings.warn("""akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap""", DeprecationWarning)
+warnings.warn("""akamai.trafficmanagement/gtmasmap.GtmASmap has been deprecated in favor of akamai.index/gtmasmap.GtmAsmap""", DeprecationWarning)
 
 
 class GtmASmap(pulumi.CustomResource):
-    warnings.warn("""akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap""", DeprecationWarning)
+    warnings.warn("""akamai.trafficmanagement/gtmasmap.GtmASmap has been deprecated in favor of akamai.index/gtmasmap.GtmAsmap""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -197,7 +197,7 @@ class GtmASmap(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
-        pulumi.log.warn("""GtmASmap is deprecated: akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap""")
+        pulumi.log.warn("""GtmASmap is deprecated: akamai.trafficmanagement/gtmasmap.GtmASmap has been deprecated in favor of akamai.index/gtmasmap.GtmAsmap""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

@@ -1416,11 +1416,11 @@ class _DnsRecordState:
         pulumi.set(self, "zone", value)
 
 
-warnings.warn("""akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord""", DeprecationWarning)
+warnings.warn("""akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord""", DeprecationWarning)
 
 
 class DnsRecord(pulumi.CustomResource):
-    warnings.warn("""akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord""", DeprecationWarning)
+    warnings.warn("""akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -1568,7 +1568,7 @@ class DnsRecord(pulumi.CustomResource):
                  weight: Optional[pulumi.Input[int]] = None,
                  zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
-        pulumi.log.warn("""DnsRecord is deprecated: akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord""")
+        pulumi.log.warn("""DnsRecord is deprecated: akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

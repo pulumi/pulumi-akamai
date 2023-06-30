@@ -213,11 +213,11 @@ class _CpCodeState:
         pulumi.set(self, "product_id", value)
 
 
-warnings.warn("""akamai.properties.CpCode has been deprecated in favor of akamai.CpCode""", DeprecationWarning)
+warnings.warn("""akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode""", DeprecationWarning)
 
 
 class CpCode(pulumi.CustomResource):
-    warnings.warn("""akamai.properties.CpCode has been deprecated in favor of akamai.CpCode""", DeprecationWarning)
+    warnings.warn("""akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -267,7 +267,7 @@ class CpCode(pulumi.CustomResource):
                  product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
-        pulumi.log.warn("""CpCode is deprecated: akamai.properties.CpCode has been deprecated in favor of akamai.CpCode""")
+        pulumi.log.warn("""CpCode is deprecated: akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

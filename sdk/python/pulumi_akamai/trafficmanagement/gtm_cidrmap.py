@@ -147,11 +147,11 @@ class _GtmCidrmapState:
         pulumi.set(self, "wait_on_complete", value)
 
 
-warnings.warn("""akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap""", DeprecationWarning)
+warnings.warn("""akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap""", DeprecationWarning)
 
 
 class GtmCidrmap(pulumi.CustomResource):
-    warnings.warn("""akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap""", DeprecationWarning)
+    warnings.warn("""akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -197,7 +197,7 @@ class GtmCidrmap(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
-        pulumi.log.warn("""GtmCidrmap is deprecated: akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap""")
+        pulumi.log.warn("""GtmCidrmap is deprecated: akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

@@ -591,11 +591,11 @@ class _PropertyState:
         pulumi.set(self, "variables", value)
 
 
-warnings.warn("""akamai.properties.Property has been deprecated in favor of akamai.Property""", DeprecationWarning)
+warnings.warn("""akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property""", DeprecationWarning)
 
 
 class Property(pulumi.CustomResource):
-    warnings.warn("""akamai.properties.Property has been deprecated in favor of akamai.Property""", DeprecationWarning)
+    warnings.warn("""akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -669,7 +669,7 @@ class Property(pulumi.CustomResource):
                  rules: Optional[pulumi.Input[str]] = None,
                  variables: Optional[pulumi.Input[str]] = None,
                  __props__=None):
-        pulumi.log.warn("""Property is deprecated: akamai.properties.Property has been deprecated in favor of akamai.Property""")
+        pulumi.log.warn("""Property is deprecated: akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

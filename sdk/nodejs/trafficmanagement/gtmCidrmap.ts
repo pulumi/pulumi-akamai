@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * @deprecated akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap
+ * @deprecated akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap
  */
 export class GtmCidrmap extends pulumi.CustomResource {
     /**
@@ -20,7 +20,7 @@ export class GtmCidrmap extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: GtmCidrmapState, opts?: pulumi.CustomResourceOptions): GtmCidrmap {
-        pulumi.log.warn("GtmCidrmap is deprecated: akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap")
+        pulumi.log.warn("GtmCidrmap is deprecated: akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap")
         return new GtmCidrmap(name, <any>state, { ...opts, id: id });
     }
 
@@ -51,11 +51,11 @@ export class GtmCidrmap extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    /** @deprecated akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap */
+    /** @deprecated akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap */
     constructor(name: string, args: GtmCidrmapArgs, opts?: pulumi.CustomResourceOptions)
-    /** @deprecated akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap */
+    /** @deprecated akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap */
     constructor(name: string, argsOrState?: GtmCidrmapArgs | GtmCidrmapState, opts?: pulumi.CustomResourceOptions) {
-        pulumi.log.warn("GtmCidrmap is deprecated: akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap")
+        pulumi.log.warn("GtmCidrmap is deprecated: akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap")
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {

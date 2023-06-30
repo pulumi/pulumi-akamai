@@ -17,40 +17,40 @@ public final class TrafficmanagementFunctions {
     /**
      * 
      * @deprecated
-     * akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter
+     * akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter
      * 
      */
-    @Deprecated /* akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter */
+    @Deprecated /* akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter */
     public static Output<GetGtmDefaultDatacenterResult> getGtmDefaultDatacenter(GetGtmDefaultDatacenterArgs args) {
         return getGtmDefaultDatacenter(args, InvokeOptions.Empty);
     }
     /**
      * 
      * @deprecated
-     * akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter
+     * akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter
      * 
      */
-    @Deprecated /* akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter */
+    @Deprecated /* akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter */
     public static CompletableFuture<GetGtmDefaultDatacenterResult> getGtmDefaultDatacenterPlain(GetGtmDefaultDatacenterPlainArgs args) {
         return getGtmDefaultDatacenterPlain(args, InvokeOptions.Empty);
     }
     /**
      * 
      * @deprecated
-     * akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter
+     * akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter
      * 
      */
-    @Deprecated /* akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter */
+    @Deprecated /* akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter */
     public static Output<GetGtmDefaultDatacenterResult> getGtmDefaultDatacenter(GetGtmDefaultDatacenterArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", TypeShape.of(GetGtmDefaultDatacenterResult.class), args, Utilities.withVersion(options));
     }
     /**
      * 
      * @deprecated
-     * akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter
+     * akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter
      * 
      */
-    @Deprecated /* akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter */
+    @Deprecated /* akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter */
     public static CompletableFuture<GetGtmDefaultDatacenterResult> getGtmDefaultDatacenterPlain(GetGtmDefaultDatacenterPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", TypeShape.of(GetGtmDefaultDatacenterResult.class), args, Utilities.withVersion(options));
     }

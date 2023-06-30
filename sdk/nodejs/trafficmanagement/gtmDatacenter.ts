@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * @deprecated akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter
+ * @deprecated akamai.trafficmanagement/gtmdatacenter.GtmDatacenter has been deprecated in favor of akamai.index/gtmdatacenter.GtmDatacenter
  */
 export class GtmDatacenter extends pulumi.CustomResource {
     /**
@@ -20,7 +20,7 @@ export class GtmDatacenter extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: GtmDatacenterState, opts?: pulumi.CustomResourceOptions): GtmDatacenter {
-        pulumi.log.warn("GtmDatacenter is deprecated: akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter")
+        pulumi.log.warn("GtmDatacenter is deprecated: akamai.trafficmanagement/gtmdatacenter.GtmDatacenter has been deprecated in favor of akamai.index/gtmdatacenter.GtmDatacenter")
         return new GtmDatacenter(name, <any>state, { ...opts, id: id });
     }
 
@@ -67,11 +67,11 @@ export class GtmDatacenter extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    /** @deprecated akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter */
+    /** @deprecated akamai.trafficmanagement/gtmdatacenter.GtmDatacenter has been deprecated in favor of akamai.index/gtmdatacenter.GtmDatacenter */
     constructor(name: string, args: GtmDatacenterArgs, opts?: pulumi.CustomResourceOptions)
-    /** @deprecated akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter */
+    /** @deprecated akamai.trafficmanagement/gtmdatacenter.GtmDatacenter has been deprecated in favor of akamai.index/gtmdatacenter.GtmDatacenter */
     constructor(name: string, argsOrState?: GtmDatacenterArgs | GtmDatacenterState, opts?: pulumi.CustomResourceOptions) {
-        pulumi.log.warn("GtmDatacenter is deprecated: akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter")
+        pulumi.log.warn("GtmDatacenter is deprecated: akamai.trafficmanagement/gtmdatacenter.GtmDatacenter has been deprecated in favor of akamai.index/gtmdatacenter.GtmDatacenter")
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {

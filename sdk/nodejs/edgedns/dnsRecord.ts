@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * @deprecated akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord
+ * @deprecated akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord
  */
 export class DnsRecord extends pulumi.CustomResource {
     /**
@@ -18,7 +18,7 @@ export class DnsRecord extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: DnsRecordState, opts?: pulumi.CustomResourceOptions): DnsRecord {
-        pulumi.log.warn("DnsRecord is deprecated: akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord")
+        pulumi.log.warn("DnsRecord is deprecated: akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord")
         return new DnsRecord(name, <any>state, { ...opts, id: id });
     }
 
@@ -104,11 +104,11 @@ export class DnsRecord extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    /** @deprecated akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord */
+    /** @deprecated akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord */
     constructor(name: string, args: DnsRecordArgs, opts?: pulumi.CustomResourceOptions)
-    /** @deprecated akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord */
+    /** @deprecated akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord */
     constructor(name: string, argsOrState?: DnsRecordArgs | DnsRecordState, opts?: pulumi.CustomResourceOptions) {
-        pulumi.log.warn("DnsRecord is deprecated: akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord")
+        pulumi.log.warn("DnsRecord is deprecated: akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord")
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {

@@ -794,6 +794,11 @@ export const getProperty: typeof import("./getProperty").getProperty = null as a
 export const getPropertyOutput: typeof import("./getProperty").getPropertyOutput = null as any;
 utilities.lazyLoad(exports, ["getProperty","getPropertyOutput"], () => require("./getProperty"));
 
+export { GetPropertyActivationArgs, GetPropertyActivationResult, GetPropertyActivationOutputArgs } from "./getPropertyActivation";
+export const getPropertyActivation: typeof import("./getPropertyActivation").getPropertyActivation = null as any;
+export const getPropertyActivationOutput: typeof import("./getPropertyActivation").getPropertyActivationOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyActivation","getPropertyActivationOutput"], () => require("./getPropertyActivation"));
+
 export { GetPropertyHostnamesArgs, GetPropertyHostnamesResult, GetPropertyHostnamesOutputArgs } from "./getPropertyHostnames";
 export const getPropertyHostnames: typeof import("./getPropertyHostnames").getPropertyHostnames = null as any;
 export const getPropertyHostnamesOutput: typeof import("./getPropertyHostnames").getPropertyHostnamesOutput = null as any;

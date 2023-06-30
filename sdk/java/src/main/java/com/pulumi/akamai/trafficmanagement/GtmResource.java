@@ -21,10 +21,10 @@ import javax.annotation.Nullable;
 
 /**
  * @deprecated
- * akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource
+ * akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource
  * 
  */
-@Deprecated /* akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource */
+@Deprecated /* akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource */
 @ResourceType(type="akamai:trafficmanagement/gtmResource:GtmResource")
 public class GtmResource extends com.pulumi.resources.CustomResource {
     @Export(name="aggregationType", type=String.class, parameters={})

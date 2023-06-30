@@ -4,9 +4,9 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
-/** @deprecated akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode */
+/** @deprecated akamai.properties/getcpcode.getCpCode has been deprecated in favor of akamai.index/getcpcode.getCpCode */
 export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Promise<GetCpCodeResult> {
-    pulumi.log.warn("getCpCode is deprecated: akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode")
+    pulumi.log.warn("getCpCode is deprecated: akamai.properties/getcpcode.getCpCode has been deprecated in favor of akamai.index/getcpcode.getCpCode")
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:properties/getCpCode:getCpCode", {
@@ -56,7 +56,7 @@ export interface GetCpCodeResult {
     readonly name: string;
     readonly productIds: string[];
 }
-/** @deprecated akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode */
+/** @deprecated akamai.properties/getcpcode.getCpCode has been deprecated in favor of akamai.index/getcpcode.getCpCode */
 export function getCpCodeOutput(args: GetCpCodeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpCodeResult> {
     return pulumi.output(args).apply((a: any) => getCpCode(a, opts))
 }

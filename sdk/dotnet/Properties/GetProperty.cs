@@ -9,7 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Properties
 {
-    [Obsolete(@"akamai.properties.getProperty has been deprecated in favor of akamai.getProperty")]
+    [Obsolete(@"akamai.properties/getproperty.getProperty has been deprecated in favor of akamai.index/getproperty.getProperty")]
     public static class GetProperty
     {
         public static Task<GetPropertyResult> InvokeAsync(GetPropertyArgs args, InvokeOptions? options = null)

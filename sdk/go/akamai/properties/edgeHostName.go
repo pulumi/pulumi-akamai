@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName
+// Deprecated: akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName
 type EdgeHostName struct {
 	pulumi.CustomResourceState
 

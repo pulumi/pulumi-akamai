@@ -23,10 +23,10 @@ import javax.annotation.Nullable;
 
 /**
  * @deprecated
- * akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty
+ * akamai.trafficmanagement/gtmproperty.GtmProperty has been deprecated in favor of akamai.index/gtmproperty.GtmProperty
  * 
  */
-@Deprecated /* akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty */
+@Deprecated /* akamai.trafficmanagement/gtmproperty.GtmProperty has been deprecated in favor of akamai.index/gtmproperty.GtmProperty */
 @ResourceType(type="akamai:trafficmanagement/gtmProperty:GtmProperty")
 public class GtmProperty extends com.pulumi.resources.CustomResource {
     @Export(name="backupCname", type=String.class, parameters={})

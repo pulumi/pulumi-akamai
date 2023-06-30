@@ -323,11 +323,11 @@ class _EdgeHostNameState:
         pulumi.set(self, "use_cases", value)
 
 
-warnings.warn("""akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName""", DeprecationWarning)
+warnings.warn("""akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName""", DeprecationWarning)
 
 
 class EdgeHostName(pulumi.CustomResource):
-    warnings.warn("""akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName""", DeprecationWarning)
+    warnings.warn("""akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -387,7 +387,7 @@ class EdgeHostName(pulumi.CustomResource):
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None,
                  __props__=None):
-        pulumi.log.warn("""EdgeHostName is deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName""")
+        pulumi.log.warn("""EdgeHostName is deprecated: akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

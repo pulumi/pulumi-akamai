@@ -4,9 +4,9 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
-/** @deprecated akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter */
+/** @deprecated akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter */
 export function getGtmDefaultDatacenter(args: GetGtmDefaultDatacenterArgs, opts?: pulumi.InvokeOptions): Promise<GetGtmDefaultDatacenterResult> {
-    pulumi.log.warn("getGtmDefaultDatacenter is deprecated: akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter")
+    pulumi.log.warn("getGtmDefaultDatacenter is deprecated: akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter")
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", {
@@ -36,7 +36,7 @@ export interface GetGtmDefaultDatacenterResult {
     readonly id: string;
     readonly nickname: string;
 }
-/** @deprecated akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter */
+/** @deprecated akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter */
 export function getGtmDefaultDatacenterOutput(args: GetGtmDefaultDatacenterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGtmDefaultDatacenterResult> {
     return pulumi.output(args).apply((a: any) => getGtmDefaultDatacenter(a, opts))
 }

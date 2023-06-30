@@ -9,7 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Edgedns
 {
-    [Obsolete(@"akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord")]
+    [Obsolete(@"akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord")]
     [AkamaiResourceType("akamai:edgedns/dnsRecord:DnsRecord")]
     public partial class DnsRecord : global::Pulumi.CustomResource
     {

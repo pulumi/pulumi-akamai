@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone
+// Deprecated: akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone
 type DnsZone struct {
 	pulumi.CustomResourceState
 

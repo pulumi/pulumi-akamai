@@ -363,11 +363,11 @@ class _PropertyActivationState:
         pulumi.set(self, "property", value)
 
 
-warnings.warn("""akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation""", DeprecationWarning)
+warnings.warn("""akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation""", DeprecationWarning)
 
 
 class PropertyActivation(pulumi.CustomResource):
-    warnings.warn("""akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation""", DeprecationWarning)
+    warnings.warn("""akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -428,7 +428,7 @@ class PropertyActivation(pulumi.CustomResource):
                  rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyActivationRuleWarningArgs']]]]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
-        pulumi.log.warn("""PropertyActivation is deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation""")
+        pulumi.log.warn("""PropertyActivation is deprecated: akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

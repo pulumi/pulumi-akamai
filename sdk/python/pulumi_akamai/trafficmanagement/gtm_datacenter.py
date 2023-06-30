@@ -436,11 +436,11 @@ class _GtmDatacenterState:
         pulumi.set(self, "wait_on_complete", value)
 
 
-warnings.warn("""akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter""", DeprecationWarning)
+warnings.warn("""akamai.trafficmanagement/gtmdatacenter.GtmDatacenter has been deprecated in favor of akamai.index/gtmdatacenter.GtmDatacenter""", DeprecationWarning)
 
 
 class GtmDatacenter(pulumi.CustomResource):
-    warnings.warn("""akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter""", DeprecationWarning)
+    warnings.warn("""akamai.trafficmanagement/gtmdatacenter.GtmDatacenter has been deprecated in favor of akamai.index/gtmdatacenter.GtmDatacenter""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -502,7 +502,7 @@ class GtmDatacenter(pulumi.CustomResource):
                  state_or_province: Optional[pulumi.Input[str]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
-        pulumi.log.warn("""GtmDatacenter is deprecated: akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter""")
+        pulumi.log.warn("""GtmDatacenter is deprecated: akamai.trafficmanagement/gtmdatacenter.GtmDatacenter has been deprecated in favor of akamai.index/gtmdatacenter.GtmDatacenter""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

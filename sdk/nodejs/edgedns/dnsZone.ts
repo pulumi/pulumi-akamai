@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * @deprecated akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone
+ * @deprecated akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone
  */
 export class DnsZone extends pulumi.CustomResource {
     /**
@@ -20,7 +20,7 @@ export class DnsZone extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: DnsZoneState, opts?: pulumi.CustomResourceOptions): DnsZone {
-        pulumi.log.warn("DnsZone is deprecated: akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone")
+        pulumi.log.warn("DnsZone is deprecated: akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone")
         return new DnsZone(name, <any>state, { ...opts, id: id });
     }
 
@@ -60,11 +60,11 @@ export class DnsZone extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    /** @deprecated akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone */
+    /** @deprecated akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone */
     constructor(name: string, args: DnsZoneArgs, opts?: pulumi.CustomResourceOptions)
-    /** @deprecated akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone */
+    /** @deprecated akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone */
     constructor(name: string, argsOrState?: DnsZoneArgs | DnsZoneState, opts?: pulumi.CustomResourceOptions) {
-        pulumi.log.warn("DnsZone is deprecated: akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone")
+        pulumi.log.warn("DnsZone is deprecated: akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone")
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {

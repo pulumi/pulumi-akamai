@@ -816,11 +816,11 @@ class _GtmPropertyState:
         pulumi.set(self, "weighted_hash_bits_for_ipv6", value)
 
 
-warnings.warn("""akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty""", DeprecationWarning)
+warnings.warn("""akamai.trafficmanagement/gtmproperty.GtmProperty has been deprecated in favor of akamai.index/gtmproperty.GtmProperty""", DeprecationWarning)
 
 
 class GtmProperty(pulumi.CustomResource):
-    warnings.warn("""akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty""", DeprecationWarning)
+    warnings.warn("""akamai.trafficmanagement/gtmproperty.GtmProperty has been deprecated in favor of akamai.index/gtmproperty.GtmProperty""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -920,7 +920,7 @@ class GtmProperty(pulumi.CustomResource):
                  use_computed_targets: Optional[pulumi.Input[bool]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
-        pulumi.log.warn("""GtmProperty is deprecated: akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty""")
+        pulumi.log.warn("""GtmProperty is deprecated: akamai.trafficmanagement/gtmproperty.GtmProperty has been deprecated in favor of akamai.index/gtmproperty.GtmProperty""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

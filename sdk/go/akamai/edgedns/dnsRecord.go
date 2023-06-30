@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord
+// Deprecated: akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord
 type DnsRecord struct {
 	pulumi.CustomResourceState
 

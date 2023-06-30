@@ -16,7 +16,7 @@ __all__ = [
     'get_property_rules_output',
 ]
 
-warnings.warn("""akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules""", DeprecationWarning)
+warnings.warn("""akamai.properties/getpropertyrules.getPropertyRules has been deprecated in favor of akamai.index/getpropertyrules.getPropertyRules""", DeprecationWarning)
 
 @pulumi.output_type
 class GetPropertyRulesResult:
@@ -118,7 +118,7 @@ def get_property_rules(contract_id: Optional[str] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("""get_property_rules is deprecated: akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules""")
+    pulumi.log.warn("""get_property_rules is deprecated: akamai.properties/getpropertyrules.getPropertyRules has been deprecated in favor of akamai.index/getpropertyrules.getPropertyRules""")
     __args__ = dict()
     __args__['contractId'] = contract_id
     __args__['groupId'] = group_id
@@ -149,5 +149,5 @@ def get_property_rules_output(contract_id: Optional[pulumi.Input[Optional[str]]]
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("""get_property_rules is deprecated: akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules""")
+    pulumi.log.warn("""get_property_rules is deprecated: akamai.properties/getpropertyrules.getPropertyRules has been deprecated in favor of akamai.index/getpropertyrules.getPropertyRules""")
     ...

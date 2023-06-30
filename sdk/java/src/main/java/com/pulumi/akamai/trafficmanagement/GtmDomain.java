@@ -20,10 +20,10 @@ import javax.annotation.Nullable;
 
 /**
  * @deprecated
- * akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain
+ * akamai.trafficmanagement/gtmdomain.GtmDomain has been deprecated in favor of akamai.index/gtmdomain.GtmDomain
  * 
  */
-@Deprecated /* akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain */
+@Deprecated /* akamai.trafficmanagement/gtmdomain.GtmDomain has been deprecated in favor of akamai.index/gtmdomain.GtmDomain */
 @ResourceType(type="akamai:trafficmanagement/gtmDomain:GtmDomain")
 public class GtmDomain extends com.pulumi.resources.CustomResource {
     @Export(name="cnameCoalescingEnabled", type=Boolean.class, parameters={})

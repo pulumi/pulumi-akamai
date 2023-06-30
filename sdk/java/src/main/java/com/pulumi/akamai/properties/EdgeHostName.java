@@ -18,10 +18,10 @@ import javax.annotation.Nullable;
 
 /**
  * @deprecated
- * akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName
+ * akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName
  * 
  */
-@Deprecated /* akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName */
+@Deprecated /* akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName */
 @ResourceType(type="akamai:properties/edgeHostName:EdgeHostName")
 public class EdgeHostName extends com.pulumi.resources.CustomResource {
     @Export(name="certificate", type=Integer.class, parameters={})

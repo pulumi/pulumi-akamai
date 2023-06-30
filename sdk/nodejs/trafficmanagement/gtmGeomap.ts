@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * @deprecated akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap
+ * @deprecated akamai.trafficmanagement/gtmgeomap.GtmGeomap has been deprecated in favor of akamai.index/gtmgeomap.GtmGeomap
  */
 export class GtmGeomap extends pulumi.CustomResource {
     /**
@@ -20,7 +20,7 @@ export class GtmGeomap extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: GtmGeomapState, opts?: pulumi.CustomResourceOptions): GtmGeomap {
-        pulumi.log.warn("GtmGeomap is deprecated: akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap")
+        pulumi.log.warn("GtmGeomap is deprecated: akamai.trafficmanagement/gtmgeomap.GtmGeomap has been deprecated in favor of akamai.index/gtmgeomap.GtmGeomap")
         return new GtmGeomap(name, <any>state, { ...opts, id: id });
     }
 
@@ -51,11 +51,11 @@ export class GtmGeomap extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    /** @deprecated akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap */
+    /** @deprecated akamai.trafficmanagement/gtmgeomap.GtmGeomap has been deprecated in favor of akamai.index/gtmgeomap.GtmGeomap */
     constructor(name: string, args: GtmGeomapArgs, opts?: pulumi.CustomResourceOptions)
-    /** @deprecated akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap */
+    /** @deprecated akamai.trafficmanagement/gtmgeomap.GtmGeomap has been deprecated in favor of akamai.index/gtmgeomap.GtmGeomap */
     constructor(name: string, argsOrState?: GtmGeomapArgs | GtmGeomapState, opts?: pulumi.CustomResourceOptions) {
-        pulumi.log.warn("GtmGeomap is deprecated: akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap")
+        pulumi.log.warn("GtmGeomap is deprecated: akamai.trafficmanagement/gtmgeomap.GtmGeomap has been deprecated in favor of akamai.index/gtmgeomap.GtmGeomap")
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {

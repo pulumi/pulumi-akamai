@@ -386,11 +386,11 @@ class _GtmResourceState:
         pulumi.set(self, "wait_on_complete", value)
 
 
-warnings.warn("""akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource""", DeprecationWarning)
+warnings.warn("""akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource""", DeprecationWarning)
 
 
 class GtmResource(pulumi.CustomResource):
-    warnings.warn("""akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource""", DeprecationWarning)
+    warnings.warn("""akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -456,7 +456,7 @@ class GtmResource(pulumi.CustomResource):
                  upper_bound: Optional[pulumi.Input[int]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
-        pulumi.log.warn("""GtmResource is deprecated: akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource""")
+        pulumi.log.warn("""GtmResource is deprecated: akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

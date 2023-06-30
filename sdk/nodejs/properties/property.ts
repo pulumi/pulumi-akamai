@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * @deprecated akamai.properties.Property has been deprecated in favor of akamai.Property
+ * @deprecated akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property
  */
 export class Property extends pulumi.CustomResource {
     /**
@@ -20,7 +20,7 @@ export class Property extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: PropertyState, opts?: pulumi.CustomResourceOptions): Property {
-        pulumi.log.warn("Property is deprecated: akamai.properties.Property has been deprecated in favor of akamai.Property")
+        pulumi.log.warn("Property is deprecated: akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property")
         return new Property(name, <any>state, { ...opts, id: id });
     }
 
@@ -124,11 +124,11 @@ export class Property extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    /** @deprecated akamai.properties.Property has been deprecated in favor of akamai.Property */
+    /** @deprecated akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property */
     constructor(name: string, args?: PropertyArgs, opts?: pulumi.CustomResourceOptions)
-    /** @deprecated akamai.properties.Property has been deprecated in favor of akamai.Property */
+    /** @deprecated akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property */
     constructor(name: string, argsOrState?: PropertyArgs | PropertyState, opts?: pulumi.CustomResourceOptions) {
-        pulumi.log.warn("Property is deprecated: akamai.properties.Property has been deprecated in favor of akamai.Property")
+        pulumi.log.warn("Property is deprecated: akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property")
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {

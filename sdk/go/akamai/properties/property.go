@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.properties.Property has been deprecated in favor of akamai.Property
+// Deprecated: akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property
 type Property struct {
 	pulumi.CustomResourceState
 

@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * @deprecated akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName
+ * @deprecated akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName
  */
 export class EdgeHostName extends pulumi.CustomResource {
     /**
@@ -18,7 +18,7 @@ export class EdgeHostName extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: EdgeHostNameState, opts?: pulumi.CustomResourceOptions): EdgeHostName {
-        pulumi.log.warn("EdgeHostName is deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName")
+        pulumi.log.warn("EdgeHostName is deprecated: akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName")
         return new EdgeHostName(name, <any>state, { ...opts, id: id });
     }
 
@@ -70,11 +70,11 @@ export class EdgeHostName extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    /** @deprecated akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName */
+    /** @deprecated akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName */
     constructor(name: string, args: EdgeHostNameArgs, opts?: pulumi.CustomResourceOptions)
-    /** @deprecated akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName */
+    /** @deprecated akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName */
     constructor(name: string, argsOrState?: EdgeHostNameArgs | EdgeHostNameState, opts?: pulumi.CustomResourceOptions) {
-        pulumi.log.warn("EdgeHostName is deprecated: akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName")
+        pulumi.log.warn("EdgeHostName is deprecated: akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName")
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {

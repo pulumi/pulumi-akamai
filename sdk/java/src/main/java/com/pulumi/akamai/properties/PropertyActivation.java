@@ -22,10 +22,10 @@ import javax.annotation.Nullable;
 
 /**
  * @deprecated
- * akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation
+ * akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation
  * 
  */
-@Deprecated /* akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation */
+@Deprecated /* akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation */
 @ResourceType(type="akamai:properties/propertyActivation:PropertyActivation")
 public class PropertyActivation extends com.pulumi.resources.CustomResource {
     @Export(name="activationId", type=String.class, parameters={})

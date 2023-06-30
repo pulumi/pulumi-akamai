@@ -19,10 +19,10 @@ import javax.annotation.Nullable;
 
 /**
  * @deprecated
- * akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord
+ * akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord
  * 
  */
-@Deprecated /* akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord */
+@Deprecated /* akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord */
 @ResourceType(type="akamai:edgedns/dnsRecord:DnsRecord")
 public class DnsRecord extends com.pulumi.resources.CustomResource {
     @Export(name="active", type=Boolean.class, parameters={})

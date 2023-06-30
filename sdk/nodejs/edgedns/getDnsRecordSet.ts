@@ -4,9 +4,9 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
-/** @deprecated akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet */
+/** @deprecated akamai.edgedns/getdnsrecordset.getDnsRecordSet has been deprecated in favor of akamai.index/getdnsrecordset.getDnsRecordSet */
 export function getDnsRecordSet(args: GetDnsRecordSetArgs, opts?: pulumi.InvokeOptions): Promise<GetDnsRecordSetResult> {
-    pulumi.log.warn("getDnsRecordSet is deprecated: akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet")
+    pulumi.log.warn("getDnsRecordSet is deprecated: akamai.edgedns/getdnsrecordset.getDnsRecordSet has been deprecated in favor of akamai.index/getdnsrecordset.getDnsRecordSet")
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", {
@@ -38,7 +38,7 @@ export interface GetDnsRecordSetResult {
     readonly recordType: string;
     readonly zone: string;
 }
-/** @deprecated akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet */
+/** @deprecated akamai.edgedns/getdnsrecordset.getDnsRecordSet has been deprecated in favor of akamai.index/getdnsrecordset.getDnsRecordSet */
 export function getDnsRecordSetOutput(args: GetDnsRecordSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDnsRecordSetResult> {
     return pulumi.output(args).apply((a: any) => getDnsRecordSet(a, opts))
 }

@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter
+// Deprecated: akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter
 func GetGtmDefaultDatacenter(ctx *pulumi.Context, args *GetGtmDefaultDatacenterArgs, opts ...pulumi.InvokeOption) (*GetGtmDefaultDatacenterResult, error) {
 	var rv GetGtmDefaultDatacenterResult
 	err := ctx.Invoke("akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter", args, &rv, opts...)

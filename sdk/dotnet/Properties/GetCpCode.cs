@@ -9,7 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Properties
 {
-    [Obsolete(@"akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode")]
+    [Obsolete(@"akamai.properties/getcpcode.getCpCode has been deprecated in favor of akamai.index/getcpcode.getCpCode")]
     public static class GetCpCode
     {
         public static Task<GetCpCodeResult> InvokeAsync(GetCpCodeArgs args, InvokeOptions? options = null)

@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * @deprecated akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation
+ * @deprecated akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation
  */
 export class PropertyActivation extends pulumi.CustomResource {
     /**
@@ -20,7 +20,7 @@ export class PropertyActivation extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: PropertyActivationState, opts?: pulumi.CustomResourceOptions): PropertyActivation {
-        pulumi.log.warn("PropertyActivation is deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation")
+        pulumi.log.warn("PropertyActivation is deprecated: akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation")
         return new PropertyActivation(name, <any>state, { ...opts, id: id });
     }
 
@@ -75,11 +75,11 @@ export class PropertyActivation extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    /** @deprecated akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation */
+    /** @deprecated akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation */
     constructor(name: string, args: PropertyActivationArgs, opts?: pulumi.CustomResourceOptions)
-    /** @deprecated akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation */
+    /** @deprecated akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation */
     constructor(name: string, argsOrState?: PropertyActivationArgs | PropertyActivationState, opts?: pulumi.CustomResourceOptions) {
-        pulumi.log.warn("PropertyActivation is deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation")
+        pulumi.log.warn("PropertyActivation is deprecated: akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation")
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {

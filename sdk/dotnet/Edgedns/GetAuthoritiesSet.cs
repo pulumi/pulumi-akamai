@@ -9,7 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Edgedns
 {
-    [Obsolete(@"akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet")]
+    [Obsolete(@"akamai.edgedns/getauthoritiesset.getAuthoritiesSet has been deprecated in favor of akamai.index/getauthoritiesset.getAuthoritiesSet")]
     public static class GetAuthoritiesSet
     {
         public static Task<GetAuthoritiesSetResult> InvokeAsync(GetAuthoritiesSetArgs args, InvokeOptions? options = null)

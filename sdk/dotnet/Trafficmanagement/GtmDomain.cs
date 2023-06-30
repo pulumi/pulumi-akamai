@@ -9,7 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
-    [Obsolete(@"akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain")]
+    [Obsolete(@"akamai.trafficmanagement/gtmdomain.GtmDomain has been deprecated in favor of akamai.index/gtmdomain.GtmDomain")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmDomain:GtmDomain")]
     public partial class GtmDomain : global::Pulumi.CustomResource
     {

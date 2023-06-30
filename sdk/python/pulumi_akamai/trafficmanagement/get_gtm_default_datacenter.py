@@ -16,7 +16,7 @@ __all__ = [
     'get_gtm_default_datacenter_output',
 ]
 
-warnings.warn("""akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter""", DeprecationWarning)
+warnings.warn("""akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter""", DeprecationWarning)
 
 @pulumi.output_type
 class GetGtmDefaultDatacenterResult:
@@ -88,7 +88,7 @@ def get_gtm_default_datacenter(datacenter: Optional[int] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("""get_gtm_default_datacenter is deprecated: akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter""")
+    pulumi.log.warn("""get_gtm_default_datacenter is deprecated: akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter""")
     __args__ = dict()
     __args__['datacenter'] = datacenter
     __args__['domain'] = domain
@@ -110,5 +110,5 @@ def get_gtm_default_datacenter_output(datacenter: Optional[pulumi.Input[Optional
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("""get_gtm_default_datacenter is deprecated: akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter""")
+    pulumi.log.warn("""get_gtm_default_datacenter is deprecated: akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter""")
     ...

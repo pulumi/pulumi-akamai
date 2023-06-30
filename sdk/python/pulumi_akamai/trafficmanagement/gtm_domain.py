@@ -614,11 +614,11 @@ class _GtmDomainState:
         pulumi.set(self, "wait_on_complete", value)
 
 
-warnings.warn("""akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain""", DeprecationWarning)
+warnings.warn("""akamai.trafficmanagement/gtmdomain.GtmDomain has been deprecated in favor of akamai.index/gtmdomain.GtmDomain""", DeprecationWarning)
 
 
 class GtmDomain(pulumi.CustomResource):
-    warnings.warn("""akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain""", DeprecationWarning)
+    warnings.warn("""akamai.trafficmanagement/gtmdomain.GtmDomain has been deprecated in favor of akamai.index/gtmdomain.GtmDomain""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -684,7 +684,7 @@ class GtmDomain(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
-        pulumi.log.warn("""GtmDomain is deprecated: akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain""")
+        pulumi.log.warn("""GtmDomain is deprecated: akamai.trafficmanagement/gtmdomain.GtmDomain has been deprecated in favor of akamai.index/gtmdomain.GtmDomain""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

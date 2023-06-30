@@ -9,7 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
-    [Obsolete(@"akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap")]
+    [Obsolete(@"akamai.trafficmanagement/gtmgeomap.GtmGeomap has been deprecated in favor of akamai.index/gtmgeomap.GtmGeomap")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmGeomap:GtmGeomap")]
     public partial class GtmGeomap : global::Pulumi.CustomResource
     {

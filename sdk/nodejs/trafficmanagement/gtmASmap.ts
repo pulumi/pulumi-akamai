@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * @deprecated akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap
+ * @deprecated akamai.trafficmanagement/gtmasmap.GtmASmap has been deprecated in favor of akamai.index/gtmasmap.GtmAsmap
  */
 export class GtmASmap extends pulumi.CustomResource {
     /**
@@ -20,7 +20,7 @@ export class GtmASmap extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: GtmASmapState, opts?: pulumi.CustomResourceOptions): GtmASmap {
-        pulumi.log.warn("GtmASmap is deprecated: akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap")
+        pulumi.log.warn("GtmASmap is deprecated: akamai.trafficmanagement/gtmasmap.GtmASmap has been deprecated in favor of akamai.index/gtmasmap.GtmAsmap")
         return new GtmASmap(name, <any>state, { ...opts, id: id });
     }
 
@@ -51,11 +51,11 @@ export class GtmASmap extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    /** @deprecated akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap */
+    /** @deprecated akamai.trafficmanagement/gtmasmap.GtmASmap has been deprecated in favor of akamai.index/gtmasmap.GtmAsmap */
     constructor(name: string, args: GtmASmapArgs, opts?: pulumi.CustomResourceOptions)
-    /** @deprecated akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap */
+    /** @deprecated akamai.trafficmanagement/gtmasmap.GtmASmap has been deprecated in favor of akamai.index/gtmasmap.GtmAsmap */
     constructor(name: string, argsOrState?: GtmASmapArgs | GtmASmapState, opts?: pulumi.CustomResourceOptions) {
-        pulumi.log.warn("GtmASmap is deprecated: akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap")
+        pulumi.log.warn("GtmASmap is deprecated: akamai.trafficmanagement/gtmasmap.GtmASmap has been deprecated in favor of akamai.index/gtmasmap.GtmAsmap")
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {

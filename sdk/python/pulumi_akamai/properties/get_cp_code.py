@@ -16,7 +16,7 @@ __all__ = [
     'get_cp_code_output',
 ]
 
-warnings.warn("""akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode""", DeprecationWarning)
+warnings.warn("""akamai.properties/getcpcode.getCpCode has been deprecated in favor of akamai.index/getcpcode.getCpCode""", DeprecationWarning)
 
 @pulumi.output_type
 class GetCpCodeResult:
@@ -117,7 +117,7 @@ def get_cp_code(contract: Optional[str] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("""get_cp_code is deprecated: akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode""")
+    pulumi.log.warn("""get_cp_code is deprecated: akamai.properties/getcpcode.getCpCode has been deprecated in favor of akamai.index/getcpcode.getCpCode""")
     __args__ = dict()
     __args__['contract'] = contract
     __args__['contractId'] = contract_id
@@ -147,5 +147,5 @@ def get_cp_code_output(contract: Optional[pulumi.Input[Optional[str]]] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("""get_cp_code is deprecated: akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode""")
+    pulumi.log.warn("""get_cp_code is deprecated: akamai.properties/getcpcode.getCpCode has been deprecated in favor of akamai.index/getcpcode.getCpCode""")
     ...

@@ -9,7 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Properties
 {
-    [Obsolete(@"akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName")]
+    [Obsolete(@"akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName")]
     [AkamaiResourceType("akamai:properties/edgeHostName:EdgeHostName")]
     public partial class EdgeHostName : global::Pulumi.CustomResource
     {
