@@ -292,7 +292,6 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_edgeworkers_resource_tier":  {Tok: makeDataSource(mainMod, "getEdgeWorkersResourceTier")},
 
 			"akamai_properties":                  {Tok: makeDataSource(mainMod, "getProperties")},
-			"akamai_property_activation":         {Tok: makeDataSource(propertiesMod, "getActivation")},
 			"akamai_property_products":           {Tok: makeDataSource(mainMod, "getPropertyProducts")},
 			"akamai_property_rule_formats":       {Tok: makeDataSource(mainMod, "getPropertyRuleFormats")},
 			"akamai_property_rules_template":     {Tok: makeDataSource(mainMod, "getPropertyRulesTemplate")},
@@ -352,18 +351,6 @@ func Provider() tfbridge.ProviderInfo {
 		MetadataInfo: tfbridge.NewProviderMetadata(metadata),
 	}
 
-	// edgeDns -> mainMod
-	prov.RenameDataSource("akamai_authorities_set", makeDataSource(edgeDNSMod, "getAuthoritiesSet"),
-		makeDataSource(mainMod, "getAuthoritiesSet"), edgeDNSMod, mainMod, &tfbridge.DataSourceInfo{})
-	prov.RenameDataSource("akamai_dns_record_set", makeDataSource(edgeDNSMod, "getDnsRecordSet"),
-		makeDataSource(mainMod, "getDnsRecordSet"), edgeDNSMod, mainMod, &tfbridge.DataSourceInfo{})
-
-	// trafficManagement -> mainMod
-	prov.RenameDataSource("akamai_gtm_default_datacenter",
-		makeDataSource(trafficManagementMod, "getGtmDefaultDatacenter"),
-		makeDataSource(mainMod, "getGtmDefaultDatacenter"), trafficManagementMod,
-		mainMod, &tfbridge.DataSourceInfo{})
-
 	// properties -> mainMod
 	prov.RenameResourceWithAlias("akamai_property", makeResource(propertiesMod, "Property"),
 		makeResource(mainMod, "Property"), propertiesMod, mainMod, &tfbridge.ResourceInfo{
@@ -381,16 +368,9 @@ func Provider() tfbridge.ProviderInfo {
 				},
 			},
 		})
-	prov.RenameDataSource("akamai_cp_code", makeDataSource(propertiesMod, "getCpCode"),
-		makeDataSource(mainMod, "getCpCode"), propertiesMod, mainMod, &tfbridge.DataSourceInfo{})
-	prov.RenameDataSource("akamai_property", makeDataSource(propertiesMod, "getProperty"),
-		makeDataSource(mainMod, "getProperty"), propertiesMod, mainMod, &tfbridge.DataSourceInfo{})
-	prov.RenameDataSource("akamai_property_rules", makeDataSource(propertiesMod, "getPropertyRules"),
-		makeDataSource(mainMod, "getPropertyRules"), propertiesMod, mainMod, &tfbridge.DataSourceInfo{})
 
 	err := x.ComputeDefaults(&prov, x.TokensKnownModules("akamai_", mainMod, []string{
 		"edgedns_",
-		"properties_",
 		"trafficmanagement_",
 	}, x.MakeStandardToken(mainPkg)))
 	contract.AssertNoError(err)

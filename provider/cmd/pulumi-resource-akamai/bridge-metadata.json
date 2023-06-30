@@ -1128,7 +1128,14 @@
                 }
             },
             "akamai_authorities_set": {
-                "current": "akamai:index/getAuthoritiesSet:getAuthoritiesSet",
+                "current": "akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet",
+                "past": [
+                    {
+                        "name": "akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "authorities": {
@@ -1529,7 +1536,14 @@
                 }
             },
             "akamai_cp_code": {
-                "current": "akamai:index/getCpCode:getCpCode",
+                "current": "akamai:properties/getCpCode:getCpCode",
+                "past": [
+                    {
+                        "name": "akamai:properties/getCpCode:getCpCode",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "product_ids": {
@@ -1684,7 +1698,14 @@
                 }
             },
             "akamai_dns_record_set": {
-                "current": "akamai:index/getDnsRecordSet:getDnsRecordSet",
+                "current": "akamai:edgedns/getDnsRecordSet:getDnsRecordSet",
+                "past": [
+                    {
+                        "name": "akamai:edgedns/getDnsRecordSet:getDnsRecordSet",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "rdata": {
@@ -1756,7 +1777,14 @@
                 }
             },
             "akamai_gtm_default_datacenter": {
-                "current": "akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter",
+                "current": "akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4
             },
             "akamai_gtm_default_datacenter_legacy": {
@@ -1858,10 +1886,33 @@
                 }
             },
             "akamai_property": {
-                "current": "akamai:index/getProperty:getProperty",
+                "current": "akamai:properties/getProperty:getProperty",
+                "past": [
+                    {
+                        "name": "akamai:properties/getProperty:getProperty",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4
             },
             "akamai_property_activation": {
+                "current": "akamai:properties/getActivation:getActivation",
+                "past": [
+                    {
+                        "name": "akamai:properties/getActivation:getActivation",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
+                "majorVersion": 4,
+                "fields": {
+                    "contact": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_property_activation_legacy": {
                 "current": "akamai:properties/getActivation:getActivation",
                 "majorVersion": 4,
                 "fields": {
@@ -1947,7 +1998,14 @@
                 }
             },
             "akamai_property_rules": {
-                "current": "akamai:index/getPropertyRules:getPropertyRules",
+                "current": "akamai:properties/getPropertyRules:getPropertyRules",
+                "past": [
+                    {
+                        "name": "akamai:properties/getPropertyRules:getPropertyRules",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4
             },
             "akamai_property_rules_builder": {
@@ -3676,6 +3734,7 @@
             "akamai:index/getProperties:getProperties": "akamai_properties",
             "akamai:index/getPropertiesSearch:getPropertiesSearch": "akamai_properties_search",
             "akamai:index/getProperty:getProperty": "akamai_property",
+            "akamai:index/getPropertyActivation:getPropertyActivation": "akamai_property_activation",
             "akamai:index/getPropertyHostnames:getPropertyHostnames": "akamai_property_hostnames",
             "akamai:index/getPropertyInclude:getPropertyInclude": "akamai_property_include",
             "akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation": "akamai_property_include_activation",
@@ -3687,7 +3746,7 @@
             "akamai:index/getPropertyRules:getPropertyRules": "akamai_property_rules",
             "akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder": "akamai_property_rules_builder",
             "akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate": "akamai_property_rules_template",
-            "akamai:properties/getActivation:getActivation": "akamai_property_activation",
+            "akamai:properties/getActivation:getActivation": "akamai_property_activation_legacy",
             "akamai:properties/getCpCode:getCpCode": "akamai_cp_code_legacy",
             "akamai:properties/getProperty:getProperty": "akamai_property_legacy",
             "akamai:properties/getPropertyRules:getPropertyRules": "akamai_property_rules_legacy",
@@ -5459,6 +5518,11 @@
                 "stagingStatus": "staging_status",
                 "updatedByUser": "updated_by_user",
                 "updatedDate": "updated_date"
+            },
+            "akamai:index/getPropertyActivation:getPropertyActivation": {
+                "activationId": "activation_id",
+                "contacts": "contact",
+                "propertyId": "property_id"
             },
             "akamai:index/getPropertyHostnames:getPropertyHostnames": {
                 "contractId": "contract_id",

@@ -27507,7 +27507,7 @@
     },
     "functions": {
         "akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet": {
-            "deprecationMessage": "akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet",
+            "deprecationMessage": "akamai.edgedns/getauthoritiesset.getAuthoritiesSet has been deprecated in favor of akamai.index/getauthoritiesset.getAuthoritiesSet",
             "inputs": {
                 "description": "A collection of arguments for invoking getAuthoritiesSet.\n",
                 "properties": {
@@ -27546,7 +27546,7 @@
             }
         },
         "akamai:edgedns/getDnsRecordSet:getDnsRecordSet": {
-            "deprecationMessage": "akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet",
+            "deprecationMessage": "akamai.edgedns/getdnsrecordset.getDnsRecordSet has been deprecated in favor of akamai.index/getdnsrecordset.getDnsRecordSet",
             "inputs": {
                 "description": "A collection of arguments for invoking getDnsRecordSet.\n",
                 "properties": {
@@ -32014,6 +32014,78 @@
                 ]
             }
         },
+        "akamai:index/getPropertyActivation:getPropertyActivation": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getPropertyActivation.\n",
+                "properties": {
+                    "network": {
+                        "type": "string"
+                    },
+                    "propertyId": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "propertyId",
+                    "version"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getPropertyActivation.\n",
+                "properties": {
+                    "activationId": {
+                        "type": "string"
+                    },
+                    "contacts": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "errors": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "network": {
+                        "type": "string"
+                    },
+                    "note": {
+                        "type": "string"
+                    },
+                    "propertyId": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "integer"
+                    },
+                    "warnings": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "activationId",
+                    "contacts",
+                    "errors",
+                    "note",
+                    "propertyId",
+                    "status",
+                    "version",
+                    "warnings",
+                    "id"
+                ]
+            }
+        },
         "akamai:index/getPropertyHostnames:getPropertyHostnames": {
             "inputs": {
                 "description": "A collection of arguments for invoking getPropertyHostnames.\n",
@@ -32633,6 +32705,7 @@
             }
         },
         "akamai:properties/getActivation:getActivation": {
+            "deprecationMessage": "akamai.properties/getactivation.getActivation has been deprecated in favor of akamai.index/getpropertyactivation.getPropertyActivation",
             "inputs": {
                 "description": "A collection of arguments for invoking getActivation.\n",
                 "properties": {
@@ -32705,7 +32778,7 @@
             }
         },
         "akamai:properties/getCpCode:getCpCode": {
-            "deprecationMessage": "akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode",
+            "deprecationMessage": "akamai.properties/getcpcode.getCpCode has been deprecated in favor of akamai.index/getcpcode.getCpCode",
             "inputs": {
                 "description": "A collection of arguments for invoking getCpCode.\n",
                 "properties": {
@@ -32780,7 +32853,7 @@
             }
         },
         "akamai:properties/getProperty:getProperty": {
-            "deprecationMessage": "akamai.properties.getProperty has been deprecated in favor of akamai.getProperty",
+            "deprecationMessage": "akamai.properties/getproperty.getProperty has been deprecated in favor of akamai.index/getproperty.getProperty",
             "inputs": {
                 "description": "A collection of arguments for invoking getProperty.\n",
                 "properties": {
@@ -32822,7 +32895,7 @@
             }
         },
         "akamai:properties/getPropertyRules:getPropertyRules": {
-            "deprecationMessage": "akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules",
+            "deprecationMessage": "akamai.properties/getpropertyrules.getPropertyRules has been deprecated in favor of akamai.index/getpropertyrules.getPropertyRules",
             "inputs": {
                 "description": "A collection of arguments for invoking getPropertyRules.\n",
                 "properties": {
@@ -32889,7 +32962,7 @@
             }
         },
         "akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter": {
-            "deprecationMessage": "akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter",
+            "deprecationMessage": "akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter",
             "inputs": {
                 "description": "A collection of arguments for invoking getGtmDefaultDatacenter.\n",
                 "properties": {
