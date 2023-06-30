@@ -772,7 +772,14 @@
                 }
             },
             "akamai_property": {
-                "current": "akamai:index/property:Property",
+                "current": "akamai:properties/property:Property",
+                "past": [
+                    {
+                        "name": "akamai:properties/property:Property",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "contact": {
@@ -836,34 +843,6 @@
                         "maxItemsOne": true
                     },
                     "notify_emails": {
-                        "maxItemsOne": false
-                    }
-                }
-            },
-            "akamai_property_legacy": {
-                "current": "akamai:properties/property:Property",
-                "majorVersion": 4,
-                "fields": {
-                    "contact": {
-                        "maxItemsOne": false
-                    },
-                    "hostnames": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "cert_status": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "origin": {
-                        "maxItemsOne": false
-                    },
-                    "rule_errors": {
-                        "maxItemsOne": false
-                    },
-                    "rule_warnings": {
                         "maxItemsOne": false
                     }
                 }

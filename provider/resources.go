@@ -46,10 +46,7 @@ const (
 	// packages:
 	mainPkg = "akamai"
 	// modules:
-	mainMod              = "index"
-	edgeDNSMod           = "edgedns"
-	propertiesMod        = "properties"
-	trafficManagementMod = "trafficmanagement"
+	mainMod = "index"
 )
 
 // makeMember manufactures a type token for the package and the given module and type.
@@ -209,6 +206,22 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_iam_role":                    {Tok: makeResource(mainMod, "IamRole")},
 			"akamai_iam_user":                    {Tok: makeResource(mainMod, "IamUser")},
 
+			"akamai_property": {
+				Tok: makeResource(mainMod, "Property"),
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"read_version": {
+						Transform: func(v resource.PropertyValue) (resource.PropertyValue, error) {
+							// Read version needs to be populated and non-zero on updates, but
+							// for some reason isn't. See
+							// https://github.com/pulumi/pulumi-akamai/issues/107
+							if v.IsNull() || (v.IsNumber() && v.NumberValue() == 0) {
+								v = resource.NewNumberProperty(1)
+							}
+							return v, nil
+						},
+					},
+				},
+			},
 			"akamai_property_include":            {Tok: makeResource(mainMod, "PropertyInclude")},
 			"akamai_property_include_activation": {Tok: makeResource(mainMod, "PropertyIncludeActivation")},
 		},
@@ -351,28 +364,7 @@ func Provider() tfbridge.ProviderInfo {
 		MetadataInfo: tfbridge.NewProviderMetadata(metadata),
 	}
 
-	// properties -> mainMod
-	prov.RenameResourceWithAlias("akamai_property", makeResource(propertiesMod, "Property"),
-		makeResource(mainMod, "Property"), propertiesMod, mainMod, &tfbridge.ResourceInfo{
-			Fields: map[string]*tfbridge.SchemaInfo{
-				"read_version": {
-					Transform: func(v resource.PropertyValue) (resource.PropertyValue, error) {
-						// Read version needs to be populated and non-zero on updates, but
-						// for some reason isn't. See
-						// https://github.com/pulumi/pulumi-akamai/issues/107
-						if v.IsNull() || (v.IsNumber() && v.NumberValue() == 0) {
-							v = resource.NewNumberProperty(1)
-						}
-						return v, nil
-					},
-				},
-			},
-		})
-
-	err := x.ComputeDefaults(&prov, x.TokensKnownModules("akamai_", mainMod, []string{
-		"edgedns_",
-		"trafficmanagement_",
-	}, x.MakeStandardToken(mainPkg)))
+	err := x.ComputeDefaults(&prov, x.TokensSingleModule("akamai_", mainMod, x.MakeStandardToken(mainPkg)))
 	contract.AssertNoError(err)
 
 	// The upstream provider decided to move all documentation to their own website,

@@ -26072,7 +26072,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.properties.Property has been deprecated in favor of akamai.Property"
+            "deprecationMessage": "akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property"
         },
         "akamai:properties/propertyActivation:PropertyActivation": {
             "properties": {
