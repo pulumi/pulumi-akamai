@@ -197,6 +197,7 @@ func Provider() tfbridge.ProviderInfo {
 				},
 			},
 			"akamai_edgeworkers_activation": {Tok: makeResource(mainMod, "EdgeWorkersActivation")},
+			"akamai_edge_hostname":          {Tok: makeResource(mainMod, "EdgeHostName")},
 
 			"akamai_networklist_activations":  {Tok: makeResource(mainMod, "NetworkListActivations")},
 			"akamai_networklist_description":  {Tok: makeResource(mainMod, "NetworkListDescription")},
@@ -352,38 +353,18 @@ func Provider() tfbridge.ProviderInfo {
 	}
 
 	// edgeDns -> mainMod
-	prov.RenameResourceWithAlias("akamai_dns_record", makeResource(edgeDNSMod, "DnsRecord"),
-		makeResource(mainMod, "DnsRecord"), edgeDNSMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_dns_zone", makeResource(edgeDNSMod, "DnsZone"),
-		makeResource(mainMod, "DnsZone"), edgeDNSMod, mainMod, &tfbridge.ResourceInfo{})
 	prov.RenameDataSource("akamai_authorities_set", makeDataSource(edgeDNSMod, "getAuthoritiesSet"),
 		makeDataSource(mainMod, "getAuthoritiesSet"), edgeDNSMod, mainMod, &tfbridge.DataSourceInfo{})
 	prov.RenameDataSource("akamai_dns_record_set", makeDataSource(edgeDNSMod, "getDnsRecordSet"),
 		makeDataSource(mainMod, "getDnsRecordSet"), edgeDNSMod, mainMod, &tfbridge.DataSourceInfo{})
 
 	// trafficManagement -> mainMod
-	prov.RenameResourceWithAlias("akamai_gtm_domain", makeResource(trafficManagementMod, "GtmDomain"),
-		makeResource(mainMod, "GtmDomain"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_gtm_datacenter", makeResource(trafficManagementMod, "GtmDatacenter"),
-		makeResource(mainMod, "GtmDatacenter"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_gtm_property", makeResource(trafficManagementMod, "GtmProperty"),
-		makeResource(mainMod, "GtmProperty"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_gtm_resource", makeResource(trafficManagementMod, "GtmResource"),
-		makeResource(mainMod, "GtmResource"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_gtm_cidrmap", makeResource(trafficManagementMod, "GtmCidrmap"),
-		makeResource(mainMod, "GtmCidrmap"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_gtm_asmap", makeResource(trafficManagementMod, "GtmASmap"),
-		makeResource(mainMod, "GtmAsmap"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_gtm_geomap", makeResource(trafficManagementMod, "GtmGeomap"),
-		makeResource(mainMod, "GtmGeomap"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameDataSource("akamai_gtm_default_datacenter", makeDataSource(trafficManagementMod, "getGtmDefaultDatacenter"),
-		makeDataSource(mainMod, "getGtmDefaultDatacenter"), trafficManagementMod, mainMod, &tfbridge.DataSourceInfo{})
+	prov.RenameDataSource("akamai_gtm_default_datacenter",
+		makeDataSource(trafficManagementMod, "getGtmDefaultDatacenter"),
+		makeDataSource(mainMod, "getGtmDefaultDatacenter"), trafficManagementMod,
+		mainMod, &tfbridge.DataSourceInfo{})
 
 	// properties -> mainMod
-	prov.RenameResourceWithAlias("akamai_cp_code", makeResource(propertiesMod, "CpCode"),
-		makeResource(mainMod, "CpCode"), propertiesMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_edge_hostname", makeResource(propertiesMod, "EdgeHostName"),
-		makeResource(mainMod, "EdgeHostName"), propertiesMod, mainMod, &tfbridge.ResourceInfo{})
 	prov.RenameResourceWithAlias("akamai_property", makeResource(propertiesMod, "Property"),
 		makeResource(mainMod, "Property"), propertiesMod, mainMod, &tfbridge.ResourceInfo{
 			Fields: map[string]*tfbridge.SchemaInfo{
@@ -400,8 +381,6 @@ func Provider() tfbridge.ProviderInfo {
 				},
 			},
 		})
-	prov.RenameResourceWithAlias("akamai_property_activation", makeResource(propertiesMod, "PropertyActivation"),
-		makeResource(mainMod, "PropertyActivation"), propertiesMod, mainMod, &tfbridge.ResourceInfo{})
 	prov.RenameDataSource("akamai_cp_code", makeDataSource(propertiesMod, "getCpCode"),
 		makeDataSource(mainMod, "getCpCode"), propertiesMod, mainMod, &tfbridge.DataSourceInfo{})
 	prov.RenameDataSource("akamai_property", makeDataSource(propertiesMod, "getProperty"),

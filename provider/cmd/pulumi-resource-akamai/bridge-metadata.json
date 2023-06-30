@@ -283,11 +283,14 @@
                 }
             },
             "akamai_cp_code": {
-                "current": "akamai:index/cpCode:CpCode",
-                "majorVersion": 4
-            },
-            "akamai_cp_code_legacy": {
                 "current": "akamai:properties/cpCode:CpCode",
+                "past": [
+                    {
+                        "name": "akamai:properties/cpCode:CpCode",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4
             },
             "akamai_cps_dv_enrollment": {
@@ -444,16 +447,14 @@
                 }
             },
             "akamai_dns_record": {
-                "current": "akamai:index/dnsRecord:DnsRecord",
-                "majorVersion": 4,
-                "fields": {
-                    "target": {
-                        "maxItemsOne": false
-                    }
-                }
-            },
-            "akamai_dns_record_legacy": {
                 "current": "akamai:edgedns/dnsRecord:DnsRecord",
+                "past": [
+                    {
+                        "name": "akamai:edgedns/dnsRecord:DnsRecord",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "target": {
@@ -462,19 +463,14 @@
                 }
             },
             "akamai_dns_zone": {
-                "current": "akamai:index/dnsZone:DnsZone",
-                "majorVersion": 4,
-                "fields": {
-                    "masters": {
-                        "maxItemsOne": false
-                    },
-                    "tsig_key": {
-                        "maxItemsOne": true
-                    }
-                }
-            },
-            "akamai_dns_zone_legacy": {
                 "current": "akamai:edgedns/dnsZone:DnsZone",
+                "past": [
+                    {
+                        "name": "akamai:edgedns/dnsZone:DnsZone",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "masters": {
@@ -486,16 +482,14 @@
                 }
             },
             "akamai_edge_hostname": {
-                "current": "akamai:index/edgeHostName:EdgeHostName",
-                "majorVersion": 4,
-                "fields": {
-                    "status_update_email": {
-                        "maxItemsOne": false
-                    }
-                }
-            },
-            "akamai_edge_hostname_legacy": {
                 "current": "akamai:properties/edgeHostName:EdgeHostName",
+                "past": [
+                    {
+                        "name": "akamai:properties/edgeHostName:EdgeHostName",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "status_update_email": {
@@ -530,26 +524,14 @@
                 "majorVersion": 4
             },
             "akamai_gtm_asmap": {
-                "current": "akamai:index/gtmAsmap:GtmAsmap",
-                "majorVersion": 4,
-                "fields": {
-                    "assignment": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "as_numbers": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "default_datacenter": {
-                        "maxItemsOne": true
-                    }
-                }
-            },
-            "akamai_gtm_asmap_legacy": {
                 "current": "akamai:trafficmanagement/gtmASmap:GtmASmap",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmASmap:GtmASmap",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "assignment": {
@@ -568,26 +550,14 @@
                 }
             },
             "akamai_gtm_cidrmap": {
-                "current": "akamai:index/gtmCidrmap:GtmCidrmap",
-                "majorVersion": 4,
-                "fields": {
-                    "assignment": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "blocks": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "default_datacenter": {
-                        "maxItemsOne": true
-                    }
-                }
-            },
-            "akamai_gtm_cidrmap_legacy": {
                 "current": "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "assignment": {
@@ -606,23 +576,14 @@
                 }
             },
             "akamai_gtm_datacenter": {
-                "current": "akamai:index/gtmDatacenter:GtmDatacenter",
-                "majorVersion": 4,
-                "fields": {
-                    "default_load_object": {
-                        "maxItemsOne": true,
-                        "elem": {
-                            "fields": {
-                                "load_servers": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "akamai_gtm_datacenter_legacy": {
                 "current": "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "default_load_object": {
@@ -638,16 +599,14 @@
                 }
             },
             "akamai_gtm_domain": {
-                "current": "akamai:index/gtmDomain:GtmDomain",
-                "majorVersion": 4,
-                "fields": {
-                    "email_notification_list": {
-                        "maxItemsOne": false
-                    }
-                }
-            },
-            "akamai_gtm_domain_legacy": {
                 "current": "akamai:trafficmanagement/gtmDomain:GtmDomain",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmDomain:GtmDomain",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "email_notification_list": {
@@ -656,26 +615,14 @@
                 }
             },
             "akamai_gtm_geomap": {
-                "current": "akamai:index/gtmGeomap:GtmGeomap",
-                "majorVersion": 4,
-                "fields": {
-                    "assignment": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "countries": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "default_datacenter": {
-                        "maxItemsOne": true
-                    }
-                }
-            },
-            "akamai_gtm_geomap_legacy": {
                 "current": "akamai:trafficmanagement/gtmGeomap:GtmGeomap",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmGeomap:GtmGeomap",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "assignment": {
@@ -694,43 +641,14 @@
                 }
             },
             "akamai_gtm_property": {
-                "current": "akamai:index/gtmProperty:GtmProperty",
-                "majorVersion": 4,
-                "fields": {
-                    "liveness_test": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "http_header": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "static_rr_set": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "rdata": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "traffic_target": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "servers": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "akamai_gtm_property_legacy": {
                 "current": "akamai:trafficmanagement/gtmProperty:GtmProperty",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmProperty:GtmProperty",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "liveness_test": {
@@ -766,23 +684,14 @@
                 }
             },
             "akamai_gtm_resource": {
-                "current": "akamai:index/gtmResource:GtmResource",
-                "majorVersion": 4,
-                "fields": {
-                    "resource_instance": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "load_servers": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "akamai_gtm_resource_legacy": {
                 "current": "akamai:trafficmanagement/gtmResource:GtmResource",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmResource:GtmResource",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "resource_instance": {
@@ -891,25 +800,14 @@
                 }
             },
             "akamai_property_activation": {
-                "current": "akamai:index/propertyActivation:PropertyActivation",
-                "majorVersion": 4,
-                "fields": {
-                    "compliance_record": {
-                        "maxItemsOne": true
-                    },
-                    "contact": {
-                        "maxItemsOne": false
-                    },
-                    "rule_errors": {
-                        "maxItemsOne": false
-                    },
-                    "rule_warnings": {
-                        "maxItemsOne": false
-                    }
-                }
-            },
-            "akamai_property_activation_legacy": {
                 "current": "akamai:properties/propertyActivation:PropertyActivation",
+                "past": [
+                    {
+                        "name": "akamai:properties/propertyActivation:PropertyActivation",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "compliance_record": {

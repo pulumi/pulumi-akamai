@@ -15892,7 +15892,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.edgedns.DnsRecord has been deprecated in favor of akamai.DnsRecord"
+            "deprecationMessage": "akamai.edgedns/dnsrecord.DnsRecord has been deprecated in favor of akamai.index/dnsrecord.DnsRecord"
         },
         "akamai:edgedns/dnsZone:DnsZone": {
             "properties": {
@@ -16046,7 +16046,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone"
+            "deprecationMessage": "akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone"
         },
         "akamai:index/appSecActivations:AppSecActivations": {
             "properties": {
@@ -25615,7 +25615,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.properties.CpCode has been deprecated in favor of akamai.CpCode"
+            "deprecationMessage": "akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode"
         },
         "akamai:properties/edgeHostName:EdgeHostName": {
             "properties": {
@@ -25771,7 +25771,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.properties.EdgeHostName has been deprecated in favor of akamai.EdgeHostName"
+            "deprecationMessage": "akamai.properties/edgehostname.EdgeHostName has been deprecated in favor of akamai.index/edgehostname.EdgeHostName"
         },
         "akamai:properties/property:Property": {
             "properties": {
@@ -26260,7 +26260,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation"
+            "deprecationMessage": "akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation"
         },
         "akamai:trafficmanagement/gtmASmap:GtmASmap": {
             "properties": {
@@ -26336,7 +26336,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.trafficmanagement.GtmASmap has been deprecated in favor of akamai.GtmAsmap"
+            "deprecationMessage": "akamai.trafficmanagement/gtmasmap.GtmASmap has been deprecated in favor of akamai.index/gtmasmap.GtmAsmap"
         },
         "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap": {
             "properties": {
@@ -26412,7 +26412,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap"
+            "deprecationMessage": "akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap"
         },
         "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter": {
             "properties": {
@@ -26604,7 +26604,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter"
+            "deprecationMessage": "akamai.trafficmanagement/gtmdatacenter.GtmDatacenter has been deprecated in favor of akamai.index/gtmdatacenter.GtmDatacenter"
         },
         "akamai:trafficmanagement/gtmDomain:GtmDomain": {
             "properties": {
@@ -26901,7 +26901,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.trafficmanagement.GtmDomain has been deprecated in favor of akamai.GtmDomain"
+            "deprecationMessage": "akamai.trafficmanagement/gtmdomain.GtmDomain has been deprecated in favor of akamai.index/gtmdomain.GtmDomain"
         },
         "akamai:trafficmanagement/gtmGeomap:GtmGeomap": {
             "properties": {
@@ -26977,7 +26977,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap"
+            "deprecationMessage": "akamai.trafficmanagement/gtmgeomap.GtmGeomap has been deprecated in favor of akamai.index/gtmgeomap.GtmGeomap"
         },
         "akamai:trafficmanagement/gtmProperty:GtmProperty": {
             "properties": {
@@ -27334,7 +27334,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty"
+            "deprecationMessage": "akamai.trafficmanagement/gtmproperty.GtmProperty has been deprecated in favor of akamai.index/gtmproperty.GtmProperty"
         },
         "akamai:trafficmanagement/gtmResource:GtmResource": {
             "properties": {
@@ -27502,7 +27502,7 @@
                 },
                 "type": "object"
             },
-            "deprecationMessage": "akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource"
+            "deprecationMessage": "akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource"
         }
     },
     "functions": {
