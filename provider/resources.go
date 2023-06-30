@@ -108,6 +108,7 @@ func Provider() tfbridge.ProviderInfo {
 		Repository:              "https://github.com/pulumi/pulumi-akamai",
 		GitHubOrg:               "akamai",
 		TFProviderModuleVersion: "v3",
+		Version:                 version.Version,
 		UpstreamRepoPath:        "./upstream",
 		Config: map[string]*tfbridge.SchemaInfo{
 			"config": {
@@ -346,12 +347,11 @@ func Provider() tfbridge.ProviderInfo {
 			Namespaces: map[string]string{
 				mainPkg: "Akamai",
 			},
-		}, MetadataInfo:
-
-		// edgeDns -> mainMod
-		tfbridge.NewProviderMetadata(metadata),
+		},
+		MetadataInfo: tfbridge.NewProviderMetadata(metadata),
 	}
 
+	// edgeDns -> mainMod
 	prov.RenameResourceWithAlias("akamai_dns_record", makeResource(edgeDNSMod, "DnsRecord"),
 		makeResource(mainMod, "DnsRecord"), edgeDNSMod, mainMod, &tfbridge.ResourceInfo{})
 	prov.RenameResourceWithAlias("akamai_dns_zone", makeResource(edgeDNSMod, "DnsZone"),

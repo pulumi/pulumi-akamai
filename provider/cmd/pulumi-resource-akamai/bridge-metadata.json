@@ -3,6 +3,7 @@
         "resources": {
             "akamai_appsec_activations": {
                 "current": "akamai:index/appSecActivations:AppSecActivations",
+                "majorVersion": 4,
                 "fields": {
                     "notification_emails": {
                         "maxItemsOne": false
@@ -10,19 +11,24 @@
                 }
             },
             "akamai_appsec_advanced_settings_attack_payload_logging": {
-                "current": "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging"
+                "current": "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging",
+                "majorVersion": 4
             },
             "akamai_appsec_advanced_settings_evasive_path_match": {
-                "current": "akamai:index/appSecAdvancedSettingsEvasivePathMatch:AppSecAdvancedSettingsEvasivePathMatch"
+                "current": "akamai:index/appSecAdvancedSettingsEvasivePathMatch:AppSecAdvancedSettingsEvasivePathMatch",
+                "majorVersion": 4
             },
             "akamai_appsec_advanced_settings_logging": {
-                "current": "akamai:index/appSecAdvancedSettingsLogging:AppSecAdvancedSettingsLogging"
+                "current": "akamai:index/appSecAdvancedSettingsLogging:AppSecAdvancedSettingsLogging",
+                "majorVersion": 4
             },
             "akamai_appsec_advanced_settings_pragma_header": {
-                "current": "akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader"
+                "current": "akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader",
+                "majorVersion": 4
             },
             "akamai_appsec_advanced_settings_prefetch": {
                 "current": "akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch",
+                "majorVersion": 4,
                 "fields": {
                     "extensions": {
                         "maxItemsOne": false
@@ -30,19 +36,24 @@
                 }
             },
             "akamai_appsec_advanced_settings_request_body": {
-                "current": "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody"
+                "current": "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody",
+                "majorVersion": 4
             },
             "akamai_appsec_api_constraints_protection": {
-                "current": "akamai:index/appSecApiConstraintsProtection:AppSecApiConstraintsProtection"
+                "current": "akamai:index/appSecApiConstraintsProtection:AppSecApiConstraintsProtection",
+                "majorVersion": 4
             },
             "akamai_appsec_api_request_constraints": {
-                "current": "akamai:index/appSecApiRequestConstraints:AppSecApiRequestConstraints"
+                "current": "akamai:index/appSecApiRequestConstraints:AppSecApiRequestConstraints",
+                "majorVersion": 4
             },
             "akamai_appsec_attack_group": {
-                "current": "akamai:index/appSecAttackGroup:AppSecAttackGroup"
+                "current": "akamai:index/appSecAttackGroup:AppSecAttackGroup",
+                "majorVersion": 4
             },
             "akamai_appsec_bypass_network_lists": {
                 "current": "akamai:index/appSecByPassNetworkList:AppSecByPassNetworkList",
+                "majorVersion": 4,
                 "fields": {
                     "bypass_network_list": {
                         "maxItemsOne": false
@@ -51,6 +62,7 @@
             },
             "akamai_appsec_configuration": {
                 "current": "akamai:index/appSecConfiguration:AppSecConfiguration",
+                "majorVersion": 4,
                 "fields": {
                     "host_names": {
                         "maxItemsOne": false
@@ -58,31 +70,40 @@
                 }
             },
             "akamai_appsec_configuration_rename": {
-                "current": "akamai:index/appSecConfigurationRename:AppSecConfigurationRename"
+                "current": "akamai:index/appSecConfigurationRename:AppSecConfigurationRename",
+                "majorVersion": 4
             },
             "akamai_appsec_custom_deny": {
-                "current": "akamai:index/appSecCustomDeny:AppSecCustomDeny"
+                "current": "akamai:index/appSecCustomDeny:AppSecCustomDeny",
+                "majorVersion": 4
             },
             "akamai_appsec_custom_rule": {
-                "current": "akamai:index/appSecCustomRule:AppSecCustomRule"
+                "current": "akamai:index/appSecCustomRule:AppSecCustomRule",
+                "majorVersion": 4
             },
             "akamai_appsec_custom_rule_action": {
-                "current": "akamai:index/appSecCustomRuleAction:AppSecCustomRuleAction"
+                "current": "akamai:index/appSecCustomRuleAction:AppSecCustomRuleAction",
+                "majorVersion": 4
             },
             "akamai_appsec_eval": {
-                "current": "akamai:index/appSecEval:AppSecEval"
+                "current": "akamai:index/appSecEval:AppSecEval",
+                "majorVersion": 4
             },
             "akamai_appsec_eval_group": {
-                "current": "akamai:index/appSecEvalGroup:AppSecEvalGroup"
+                "current": "akamai:index/appSecEvalGroup:AppSecEvalGroup",
+                "majorVersion": 4
             },
             "akamai_appsec_eval_penalty_box": {
-                "current": "akamai:index/appSecEvalPenaltyBox:AppSecEvalPenaltyBox"
+                "current": "akamai:index/appSecEvalPenaltyBox:AppSecEvalPenaltyBox",
+                "majorVersion": 4
             },
             "akamai_appsec_eval_rule": {
-                "current": "akamai:index/appSecEvalRule:AppSecEvalRule"
+                "current": "akamai:index/appSecEvalRule:AppSecEvalRule",
+                "majorVersion": 4
             },
             "akamai_appsec_ip_geo": {
                 "current": "akamai:index/appSecIPGeo:AppSecIPGeo",
+                "majorVersion": 4,
                 "fields": {
                     "exception_ip_network_lists": {
                         "maxItemsOne": false
@@ -96,64 +117,84 @@
                 }
             },
             "akamai_appsec_ip_geo_protection": {
-                "current": "akamai:index/appSecIPGeoProtection:AppSecIPGeoProtection"
+                "current": "akamai:index/appSecIPGeoProtection:AppSecIPGeoProtection",
+                "majorVersion": 4
             },
             "akamai_appsec_malware_policy": {
-                "current": "akamai:index/appSecMalwarePolicy:AppSecMalwarePolicy"
+                "current": "akamai:index/appSecMalwarePolicy:AppSecMalwarePolicy",
+                "majorVersion": 4
             },
             "akamai_appsec_malware_policy_action": {
-                "current": "akamai:index/appSecMalwarePolicyAction:AppSecMalwarePolicyAction"
+                "current": "akamai:index/appSecMalwarePolicyAction:AppSecMalwarePolicyAction",
+                "majorVersion": 4
             },
             "akamai_appsec_malware_policy_actions": {
-                "current": "akamai:index/appSecMalwarePolicyActions:AppSecMalwarePolicyActions"
+                "current": "akamai:index/appSecMalwarePolicyActions:AppSecMalwarePolicyActions",
+                "majorVersion": 4
             },
             "akamai_appsec_malware_protection": {
-                "current": "akamai:index/appSecMalwareProtection:AppSecMalwareProtection"
+                "current": "akamai:index/appSecMalwareProtection:AppSecMalwareProtection",
+                "majorVersion": 4
             },
             "akamai_appsec_match_target": {
-                "current": "akamai:index/appSecMatchTarget:AppSecMatchTarget"
+                "current": "akamai:index/appSecMatchTarget:AppSecMatchTarget",
+                "majorVersion": 4
             },
             "akamai_appsec_match_target_sequence": {
-                "current": "akamai:index/appSecMatchTargetSequence:AppSecMatchTargetSequence"
+                "current": "akamai:index/appSecMatchTargetSequence:AppSecMatchTargetSequence",
+                "majorVersion": 4
             },
             "akamai_appsec_penalty_box": {
-                "current": "akamai:index/appSecPenaltyBox:AppSecPenaltyBox"
+                "current": "akamai:index/appSecPenaltyBox:AppSecPenaltyBox",
+                "majorVersion": 4
             },
             "akamai_appsec_rate_policy": {
-                "current": "akamai:index/appSecRatePolicy:AppSecRatePolicy"
+                "current": "akamai:index/appSecRatePolicy:AppSecRatePolicy",
+                "majorVersion": 4
             },
             "akamai_appsec_rate_policy_action": {
-                "current": "akamai:index/appSecRatePolicyAction:AppSecRatePolicyAction"
+                "current": "akamai:index/appSecRatePolicyAction:AppSecRatePolicyAction",
+                "majorVersion": 4
             },
             "akamai_appsec_rate_protection": {
-                "current": "akamai:index/appSecRateProtection:AppSecRateProtection"
+                "current": "akamai:index/appSecRateProtection:AppSecRateProtection",
+                "majorVersion": 4
             },
             "akamai_appsec_reputation_profile": {
-                "current": "akamai:index/appSecReputationProfile:AppSecReputationProfile"
+                "current": "akamai:index/appSecReputationProfile:AppSecReputationProfile",
+                "majorVersion": 4
             },
             "akamai_appsec_reputation_profile_action": {
-                "current": "akamai:index/appSecReputationProfileAction:AppSecReputationProfileAction"
+                "current": "akamai:index/appSecReputationProfileAction:AppSecReputationProfileAction",
+                "majorVersion": 4
             },
             "akamai_appsec_reputation_profile_analysis": {
-                "current": "akamai:index/appSecReputationProfileAnalysis:AppSecReputationProfileAnalysis"
+                "current": "akamai:index/appSecReputationProfileAnalysis:AppSecReputationProfileAnalysis",
+                "majorVersion": 4
             },
             "akamai_appsec_reputation_protection": {
-                "current": "akamai:index/appSecReputationProtection:AppSecReputationProtection"
+                "current": "akamai:index/appSecReputationProtection:AppSecReputationProtection",
+                "majorVersion": 4
             },
             "akamai_appsec_rule": {
-                "current": "akamai:index/appSecRule:AppSecRule"
+                "current": "akamai:index/appSecRule:AppSecRule",
+                "majorVersion": 4
             },
             "akamai_appsec_rule_upgrade": {
-                "current": "akamai:index/appSecRuleUpgrade:AppSecRuleUpgrade"
+                "current": "akamai:index/appSecRuleUpgrade:AppSecRuleUpgrade",
+                "majorVersion": 4
             },
             "akamai_appsec_security_policy": {
-                "current": "akamai:index/appSecSecurityPolicy:AppSecSecurityPolicy"
+                "current": "akamai:index/appSecSecurityPolicy:AppSecSecurityPolicy",
+                "majorVersion": 4
             },
             "akamai_appsec_security_policy_rename": {
-                "current": "akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename"
+                "current": "akamai:index/appSecSecurityPolicyRename:AppSecSecurityPolicyRename",
+                "majorVersion": 4
             },
             "akamai_appsec_selected_hostnames": {
                 "current": "akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames",
+                "majorVersion": 4,
                 "fields": {
                     "hostnames": {
                         "maxItemsOne": false
@@ -162,6 +203,7 @@
             },
             "akamai_appsec_siem_settings": {
                 "current": "akamai:index/appSecSiemSettings:AppSecSiemSettings",
+                "majorVersion": 4,
                 "fields": {
                     "security_policy_ids": {
                         "maxItemsOne": false
@@ -169,25 +211,32 @@
                 }
             },
             "akamai_appsec_slow_post": {
-                "current": "akamai:index/appSecSlowPost:AppSecSlowPost"
+                "current": "akamai:index/appSecSlowPost:AppSecSlowPost",
+                "majorVersion": 4
             },
             "akamai_appsec_slowpost_protection": {
-                "current": "akamai:index/appSecSlowPostProtection:AppSecSlowPostProtection"
+                "current": "akamai:index/appSecSlowPostProtection:AppSecSlowPostProtection",
+                "majorVersion": 4
             },
             "akamai_appsec_threat_intel": {
-                "current": "akamai:index/appSecThreatIntel:AppSecThreatIntel"
+                "current": "akamai:index/appSecThreatIntel:AppSecThreatIntel",
+                "majorVersion": 4
             },
             "akamai_appsec_version_notes": {
-                "current": "akamai:index/appSecVersionNodes:AppSecVersionNodes"
+                "current": "akamai:index/appSecVersionNodes:AppSecVersionNodes",
+                "majorVersion": 4
             },
             "akamai_appsec_waf_mode": {
-                "current": "akamai:index/appSecWafMode:AppSecWafMode"
+                "current": "akamai:index/appSecWafMode:AppSecWafMode",
+                "majorVersion": 4
             },
             "akamai_appsec_waf_protection": {
-                "current": "akamai:index/appSecWafProtection:AppSecWafProtection"
+                "current": "akamai:index/appSecWafProtection:AppSecWafProtection",
+                "majorVersion": 4
             },
             "akamai_appsec_wap_selected_hostnames": {
                 "current": "akamai:index/appSecWapSelectedHostnames:AppSecWapSelectedHostnames",
+                "majorVersion": 4,
                 "fields": {
                     "evaluated_hosts": {
                         "maxItemsOne": false
@@ -199,6 +248,7 @@
             },
             "akamai_cloudlets_application_load_balancer": {
                 "current": "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer",
+                "majorVersion": 4,
                 "fields": {
                     "data_centers": {
                         "maxItemsOne": false,
@@ -216,13 +266,16 @@
                 }
             },
             "akamai_cloudlets_application_load_balancer_activation": {
-                "current": "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation"
+                "current": "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation",
+                "majorVersion": 4
             },
             "akamai_cloudlets_policy": {
-                "current": "akamai:index/cloudletsPolicy:CloudletsPolicy"
+                "current": "akamai:index/cloudletsPolicy:CloudletsPolicy",
+                "majorVersion": 4
             },
             "akamai_cloudlets_policy_activation": {
                 "current": "akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation",
+                "majorVersion": 4,
                 "fields": {
                     "associated_properties": {
                         "maxItemsOne": false
@@ -230,13 +283,16 @@
                 }
             },
             "akamai_cp_code": {
-                "current": "akamai:index/cpCode:CpCode"
+                "current": "akamai:index/cpCode:CpCode",
+                "majorVersion": 4
             },
             "akamai_cp_code_legacy": {
-                "current": "akamai:properties/cpCode:CpCode"
+                "current": "akamai:properties/cpCode:CpCode",
+                "majorVersion": 4
             },
             "akamai_cps_dv_enrollment": {
                 "current": "akamai:index/cpsDvEnrollment:CpsDvEnrollment",
+                "majorVersion": 4,
                 "fields": {
                     "admin_contact": {
                         "maxItemsOne": true
@@ -276,6 +332,7 @@
             },
             "akamai_cps_dv_validation": {
                 "current": "akamai:index/cpsDvValidation:CpsDvValidation",
+                "majorVersion": 4,
                 "fields": {
                     "sans": {
                         "maxItemsOne": false
@@ -284,6 +341,7 @@
             },
             "akamai_cps_third_party_enrollment": {
                 "current": "akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment",
+                "majorVersion": 4,
                 "fields": {
                     "admin_contact": {
                         "maxItemsOne": true
@@ -320,6 +378,7 @@
             },
             "akamai_cps_upload_certificate": {
                 "current": "akamai:index/cpsUploadCertificate:CpsUploadCertificate",
+                "majorVersion": 4,
                 "fields": {
                     "auto_approve_warnings": {
                         "maxItemsOne": false
@@ -328,6 +387,7 @@
             },
             "akamai_datastream": {
                 "current": "akamai:index/datastream:Datastream",
+                "majorVersion": 4,
                 "fields": {
                     "azure_connector": {
                         "maxItemsOne": true
@@ -385,6 +445,7 @@
             },
             "akamai_dns_record": {
                 "current": "akamai:index/dnsRecord:DnsRecord",
+                "majorVersion": 4,
                 "fields": {
                     "target": {
                         "maxItemsOne": false
@@ -393,6 +454,7 @@
             },
             "akamai_dns_record_legacy": {
                 "current": "akamai:edgedns/dnsRecord:DnsRecord",
+                "majorVersion": 4,
                 "fields": {
                     "target": {
                         "maxItemsOne": false
@@ -401,6 +463,7 @@
             },
             "akamai_dns_zone": {
                 "current": "akamai:index/dnsZone:DnsZone",
+                "majorVersion": 4,
                 "fields": {
                     "masters": {
                         "maxItemsOne": false
@@ -412,6 +475,7 @@
             },
             "akamai_dns_zone_legacy": {
                 "current": "akamai:edgedns/dnsZone:DnsZone",
+                "majorVersion": 4,
                 "fields": {
                     "masters": {
                         "maxItemsOne": false
@@ -423,6 +487,7 @@
             },
             "akamai_edge_hostname": {
                 "current": "akamai:index/edgeHostName:EdgeHostName",
+                "majorVersion": 4,
                 "fields": {
                     "status_update_email": {
                         "maxItemsOne": false
@@ -431,6 +496,7 @@
             },
             "akamai_edge_hostname_legacy": {
                 "current": "akamai:properties/edgeHostName:EdgeHostName",
+                "majorVersion": 4,
                 "fields": {
                     "status_update_email": {
                         "maxItemsOne": false
@@ -439,6 +505,7 @@
             },
             "akamai_edgekv": {
                 "current": "akamai:index/edgeKv:EdgeKv",
+                "majorVersion": 4,
                 "fields": {
                     "initial_data": {
                         "maxItemsOne": false
@@ -446,10 +513,12 @@
                 }
             },
             "akamai_edgekv_group_items": {
-                "current": "akamai:index/edgekvGroupItems:EdgekvGroupItems"
+                "current": "akamai:index/edgekvGroupItems:EdgekvGroupItems",
+                "majorVersion": 4
             },
             "akamai_edgeworker": {
                 "current": "akamai:index/edgeWorker:EdgeWorker",
+                "majorVersion": 4,
                 "fields": {
                     "warnings": {
                         "maxItemsOne": false
@@ -457,10 +526,12 @@
                 }
             },
             "akamai_edgeworkers_activation": {
-                "current": "akamai:index/edgeWorkersActivation:EdgeWorkersActivation"
+                "current": "akamai:index/edgeWorkersActivation:EdgeWorkersActivation",
+                "majorVersion": 4
             },
             "akamai_gtm_asmap": {
                 "current": "akamai:index/gtmAsmap:GtmAsmap",
+                "majorVersion": 4,
                 "fields": {
                     "assignment": {
                         "maxItemsOne": false,
@@ -479,6 +550,7 @@
             },
             "akamai_gtm_asmap_legacy": {
                 "current": "akamai:trafficmanagement/gtmASmap:GtmASmap",
+                "majorVersion": 4,
                 "fields": {
                     "assignment": {
                         "maxItemsOne": false,
@@ -497,6 +569,7 @@
             },
             "akamai_gtm_cidrmap": {
                 "current": "akamai:index/gtmCidrmap:GtmCidrmap",
+                "majorVersion": 4,
                 "fields": {
                     "assignment": {
                         "maxItemsOne": false,
@@ -515,6 +588,7 @@
             },
             "akamai_gtm_cidrmap_legacy": {
                 "current": "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap",
+                "majorVersion": 4,
                 "fields": {
                     "assignment": {
                         "maxItemsOne": false,
@@ -533,6 +607,7 @@
             },
             "akamai_gtm_datacenter": {
                 "current": "akamai:index/gtmDatacenter:GtmDatacenter",
+                "majorVersion": 4,
                 "fields": {
                     "default_load_object": {
                         "maxItemsOne": true,
@@ -548,6 +623,7 @@
             },
             "akamai_gtm_datacenter_legacy": {
                 "current": "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter",
+                "majorVersion": 4,
                 "fields": {
                     "default_load_object": {
                         "maxItemsOne": true,
@@ -563,6 +639,7 @@
             },
             "akamai_gtm_domain": {
                 "current": "akamai:index/gtmDomain:GtmDomain",
+                "majorVersion": 4,
                 "fields": {
                     "email_notification_list": {
                         "maxItemsOne": false
@@ -571,6 +648,7 @@
             },
             "akamai_gtm_domain_legacy": {
                 "current": "akamai:trafficmanagement/gtmDomain:GtmDomain",
+                "majorVersion": 4,
                 "fields": {
                     "email_notification_list": {
                         "maxItemsOne": false
@@ -579,6 +657,7 @@
             },
             "akamai_gtm_geomap": {
                 "current": "akamai:index/gtmGeomap:GtmGeomap",
+                "majorVersion": 4,
                 "fields": {
                     "assignment": {
                         "maxItemsOne": false,
@@ -597,6 +676,7 @@
             },
             "akamai_gtm_geomap_legacy": {
                 "current": "akamai:trafficmanagement/gtmGeomap:GtmGeomap",
+                "majorVersion": 4,
                 "fields": {
                     "assignment": {
                         "maxItemsOne": false,
@@ -615,6 +695,7 @@
             },
             "akamai_gtm_property": {
                 "current": "akamai:index/gtmProperty:GtmProperty",
+                "majorVersion": 4,
                 "fields": {
                     "liveness_test": {
                         "maxItemsOne": false,
@@ -650,6 +731,7 @@
             },
             "akamai_gtm_property_legacy": {
                 "current": "akamai:trafficmanagement/gtmProperty:GtmProperty",
+                "majorVersion": 4,
                 "fields": {
                     "liveness_test": {
                         "maxItemsOne": false,
@@ -685,6 +767,7 @@
             },
             "akamai_gtm_resource": {
                 "current": "akamai:index/gtmResource:GtmResource",
+                "majorVersion": 4,
                 "fields": {
                     "resource_instance": {
                         "maxItemsOne": false,
@@ -700,6 +783,7 @@
             },
             "akamai_gtm_resource_legacy": {
                 "current": "akamai:trafficmanagement/gtmResource:GtmResource",
+                "majorVersion": 4,
                 "fields": {
                     "resource_instance": {
                         "maxItemsOne": false,
@@ -715,6 +799,7 @@
             },
             "akamai_iam_blocked_user_properties": {
                 "current": "akamai:index/iamBlockedUserProperties:IamBlockedUserProperties",
+                "majorVersion": 4,
                 "fields": {
                     "blocked_properties": {
                         "maxItemsOne": false
@@ -723,6 +808,7 @@
             },
             "akamai_iam_group": {
                 "current": "akamai:index/iamGroup:IamGroup",
+                "majorVersion": 4,
                 "fields": {
                     "sub_groups": {
                         "maxItemsOne": false
@@ -731,6 +817,7 @@
             },
             "akamai_iam_role": {
                 "current": "akamai:index/iamRole:IamRole",
+                "majorVersion": 4,
                 "fields": {
                     "granted_roles": {
                         "maxItemsOne": false
@@ -738,10 +825,12 @@
                 }
             },
             "akamai_iam_user": {
-                "current": "akamai:index/iamUser:IamUser"
+                "current": "akamai:index/iamUser:IamUser",
+                "majorVersion": 4
             },
             "akamai_networklist_activations": {
                 "current": "akamai:index/networkListActivations:NetworkListActivations",
+                "majorVersion": 4,
                 "fields": {
                     "notification_emails": {
                         "maxItemsOne": false
@@ -749,10 +838,12 @@
                 }
             },
             "akamai_networklist_description": {
-                "current": "akamai:index/networkListDescription:NetworkListDescription"
+                "current": "akamai:index/networkListDescription:NetworkListDescription",
+                "majorVersion": 4
             },
             "akamai_networklist_network_list": {
                 "current": "akamai:index/networkList:NetworkList",
+                "majorVersion": 4,
                 "fields": {
                     "list": {
                         "maxItemsOne": false
@@ -761,6 +852,7 @@
             },
             "akamai_networklist_subscription": {
                 "current": "akamai:index/networkListSubscription:NetworkListSubscription",
+                "majorVersion": 4,
                 "fields": {
                     "network_list": {
                         "maxItemsOne": false
@@ -772,6 +864,7 @@
             },
             "akamai_property": {
                 "current": "akamai:index/property:Property",
+                "majorVersion": 4,
                 "fields": {
                     "contact": {
                         "maxItemsOne": false
@@ -799,6 +892,7 @@
             },
             "akamai_property_activation": {
                 "current": "akamai:index/propertyActivation:PropertyActivation",
+                "majorVersion": 4,
                 "fields": {
                     "compliance_record": {
                         "maxItemsOne": true
@@ -816,6 +910,7 @@
             },
             "akamai_property_activation_legacy": {
                 "current": "akamai:properties/propertyActivation:PropertyActivation",
+                "majorVersion": 4,
                 "fields": {
                     "compliance_record": {
                         "maxItemsOne": true
@@ -832,10 +927,12 @@
                 }
             },
             "akamai_property_include": {
-                "current": "akamai:index/propertyInclude:PropertyInclude"
+                "current": "akamai:index/propertyInclude:PropertyInclude",
+                "majorVersion": 4
             },
             "akamai_property_include_activation": {
                 "current": "akamai:index/propertyIncludeActivation:PropertyIncludeActivation",
+                "majorVersion": 4,
                 "fields": {
                     "compliance_record": {
                         "maxItemsOne": true
@@ -847,6 +944,7 @@
             },
             "akamai_property_legacy": {
                 "current": "akamai:properties/property:Property",
+                "majorVersion": 4,
                 "fields": {
                     "contact": {
                         "maxItemsOne": false
