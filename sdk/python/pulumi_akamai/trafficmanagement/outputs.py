@@ -679,6 +679,9 @@ class GtmPropertyTrafficTarget(dict):
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
+        warnings.warn("""The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored""", DeprecationWarning)
+        pulumi.log.warn("""name is deprecated: The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored""")
+
         return pulumi.get(self, "name")
 
     @property

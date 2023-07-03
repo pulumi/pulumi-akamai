@@ -102,12 +102,12 @@ def get_app_sec_eval_penalty_box(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox', __args__, opts=opts, typ=GetAppSecEvalPenaltyBoxResult).value
 
     return AwaitableGetAppSecEvalPenaltyBoxResult(
-        action=__ret__.action,
-        config_id=__ret__.config_id,
-        enabled=__ret__.enabled,
-        id=__ret__.id,
-        output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id)
+        action=pulumi.get(__ret__, 'action'),
+        config_id=pulumi.get(__ret__, 'config_id'),
+        enabled=pulumi.get(__ret__, 'enabled'),
+        id=pulumi.get(__ret__, 'id'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 
 
 @_utilities.lift_output_func(get_app_sec_eval_penalty_box)

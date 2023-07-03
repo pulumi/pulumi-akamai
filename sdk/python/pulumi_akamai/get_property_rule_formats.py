@@ -61,5 +61,5 @@ def get_property_rule_formats(opts: Optional[pulumi.InvokeOptions] = None) -> Aw
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyRuleFormats:getPropertyRuleFormats', __args__, opts=opts, typ=GetPropertyRuleFormatsResult).value
 
     return AwaitableGetPropertyRuleFormatsResult(
-        id=__ret__.id,
-        rule_formats=__ret__.rule_formats)
+        id=pulumi.get(__ret__, 'id'),
+        rule_formats=pulumi.get(__ret__, 'rule_formats'))

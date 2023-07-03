@@ -24,12 +24,6 @@ class GetContractResult:
     def __init__(__self__, group=None, group_id=None, group_name=None, id=None):
         if group and not isinstance(group, str):
             raise TypeError("Expected argument 'group' to be a str")
-        if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
-
         pulumi.set(__self__, "group", group)
         if group_id and not isinstance(group_id, str):
             raise TypeError("Expected argument 'group_id' to be a str")
@@ -44,6 +38,11 @@ class GetContractResult:
     @property
     @pulumi.getter
     def group(self) -> Optional[str]:
+        warnings.warn("""The setting \"group\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "group")
 
     @property
@@ -92,10 +91,10 @@ def get_contract(group: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getContract:getContract', __args__, opts=opts, typ=GetContractResult).value
 
     return AwaitableGetContractResult(
-        group=__ret__.group,
-        group_id=__ret__.group_id,
-        group_name=__ret__.group_name,
-        id=__ret__.id)
+        group=pulumi.get(__ret__, 'group'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        group_name=pulumi.get(__ret__, 'group_name'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_contract)

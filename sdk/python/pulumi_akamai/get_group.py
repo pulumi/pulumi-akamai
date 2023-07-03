@@ -24,12 +24,6 @@ class GetGroupResult:
     def __init__(__self__, contract=None, contract_id=None, group_name=None, id=None, name=None):
         if contract and not isinstance(contract, str):
             raise TypeError("Expected argument 'contract' to be a str")
-        if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
-
         pulumi.set(__self__, "contract", contract)
         if contract_id and not isinstance(contract_id, str):
             raise TypeError("Expected argument 'contract_id' to be a str")
@@ -42,17 +36,16 @@ class GetGroupResult:
         pulumi.set(__self__, "id", id)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
-        if name is not None:
-            warnings.warn("""The setting \"name\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""name is deprecated: The setting \"name\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
-
         pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
     def contract(self) -> str:
+        warnings.warn("""The setting \"contract\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "contract")
 
     @property
@@ -76,6 +69,11 @@ class GetGroupResult:
     @property
     @pulumi.getter
     def name(self) -> str:
+        warnings.warn("""The setting \"name\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""name is deprecated: The setting \"name\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "name")
 
 
@@ -109,11 +107,11 @@ def get_group(contract: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getGroup:getGroup', __args__, opts=opts, typ=GetGroupResult).value
 
     return AwaitableGetGroupResult(
-        contract=__ret__.contract,
-        contract_id=__ret__.contract_id,
-        group_name=__ret__.group_name,
-        id=__ret__.id,
-        name=__ret__.name)
+        contract=pulumi.get(__ret__, 'contract'),
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        group_name=pulumi.get(__ret__, 'group_name'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_group)

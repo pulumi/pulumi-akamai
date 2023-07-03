@@ -93,11 +93,11 @@ def get_gtm_default_datacenter(datacenter: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter', __args__, opts=opts, typ=GetGtmDefaultDatacenterResult).value
 
     return AwaitableGetGtmDefaultDatacenterResult(
-        datacenter=__ret__.datacenter,
-        datacenter_id=__ret__.datacenter_id,
-        domain=__ret__.domain,
-        id=__ret__.id,
-        nickname=__ret__.nickname)
+        datacenter=pulumi.get(__ret__, 'datacenter'),
+        datacenter_id=pulumi.get(__ret__, 'datacenter_id'),
+        domain=pulumi.get(__ret__, 'domain'),
+        id=pulumi.get(__ret__, 'id'),
+        nickname=pulumi.get(__ret__, 'nickname'))
 
 
 @_utilities.lift_output_func(get_gtm_default_datacenter)

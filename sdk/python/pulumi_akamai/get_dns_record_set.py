@@ -95,11 +95,11 @@ def get_dns_record_set(host: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getDnsRecordSet:getDnsRecordSet', __args__, opts=opts, typ=GetDnsRecordSetResult).value
 
     return AwaitableGetDnsRecordSetResult(
-        host=__ret__.host,
-        id=__ret__.id,
-        rdatas=__ret__.rdatas,
-        record_type=__ret__.record_type,
-        zone=__ret__.zone)
+        host=pulumi.get(__ret__, 'host'),
+        id=pulumi.get(__ret__, 'id'),
+        rdatas=pulumi.get(__ret__, 'rdatas'),
+        record_type=pulumi.get(__ret__, 'record_type'),
+        zone=pulumi.get(__ret__, 'zone'))
 
 
 @_utilities.lift_output_func(get_dns_record_set)

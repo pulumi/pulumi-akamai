@@ -85,10 +85,10 @@ def get_properties(contract_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getProperties:getProperties', __args__, opts=opts, typ=GetPropertiesResult).value
 
     return AwaitableGetPropertiesResult(
-        contract_id=__ret__.contract_id,
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        properties=__ret__.properties)
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        properties=pulumi.get(__ret__, 'properties'))
 
 
 @_utilities.lift_output_func(get_properties)

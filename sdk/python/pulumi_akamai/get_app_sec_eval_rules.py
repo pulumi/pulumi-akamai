@@ -122,14 +122,14 @@ def get_app_sec_eval_rules(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecEvalRules:getAppSecEvalRules', __args__, opts=opts, typ=GetAppSecEvalRulesResult).value
 
     return AwaitableGetAppSecEvalRulesResult(
-        condition_exception=__ret__.condition_exception,
-        config_id=__ret__.config_id,
-        eval_rule_action=__ret__.eval_rule_action,
-        id=__ret__.id,
-        json=__ret__.json,
-        output_text=__ret__.output_text,
-        rule_id=__ret__.rule_id,
-        security_policy_id=__ret__.security_policy_id)
+        condition_exception=pulumi.get(__ret__, 'condition_exception'),
+        config_id=pulumi.get(__ret__, 'config_id'),
+        eval_rule_action=pulumi.get(__ret__, 'eval_rule_action'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        rule_id=pulumi.get(__ret__, 'rule_id'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 
 
 @_utilities.lift_output_func(get_app_sec_eval_rules)

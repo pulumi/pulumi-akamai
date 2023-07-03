@@ -84,10 +84,10 @@ def get_edgekv_groups(namespace_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getEdgekvGroups:getEdgekvGroups', __args__, opts=opts, typ=GetEdgekvGroupsResult).value
 
     return AwaitableGetEdgekvGroupsResult(
-        groups=__ret__.groups,
-        id=__ret__.id,
-        namespace_name=__ret__.namespace_name,
-        network=__ret__.network)
+        groups=pulumi.get(__ret__, 'groups'),
+        id=pulumi.get(__ret__, 'id'),
+        namespace_name=pulumi.get(__ret__, 'namespace_name'),
+        network=pulumi.get(__ret__, 'network'))
 
 
 @_utilities.lift_output_func(get_edgekv_groups)

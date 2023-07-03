@@ -62,5 +62,5 @@ def get_iam_timezones(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableG
     __ret__ = pulumi.runtime.invoke('akamai:index/getIamTimezones:getIamTimezones', __args__, opts=opts, typ=GetIamTimezonesResult).value
 
     return AwaitableGetIamTimezonesResult(
-        id=__ret__.id,
-        timezones=__ret__.timezones)
+        id=pulumi.get(__ret__, 'id'),
+        timezones=pulumi.get(__ret__, 'timezones'))

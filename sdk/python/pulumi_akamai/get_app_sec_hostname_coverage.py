@@ -70,6 +70,6 @@ def get_app_sec_hostname_coverage(opts: Optional[pulumi.InvokeOptions] = None) -
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage', __args__, opts=opts, typ=GetAppSecHostnameCoverageResult).value
 
     return AwaitableGetAppSecHostnameCoverageResult(
-        id=__ret__.id,
-        json=__ret__.json,
-        output_text=__ret__.output_text)
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'))

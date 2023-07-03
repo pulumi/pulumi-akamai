@@ -151,17 +151,17 @@ def get_property_include_rules(contract_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyIncludeRules:getPropertyIncludeRules', __args__, opts=opts, typ=GetPropertyIncludeRulesResult).value
 
     return AwaitableGetPropertyIncludeRulesResult(
-        contract_id=__ret__.contract_id,
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        include_id=__ret__.include_id,
-        name=__ret__.name,
-        rule_errors=__ret__.rule_errors,
-        rule_format=__ret__.rule_format,
-        rule_warnings=__ret__.rule_warnings,
-        rules=__ret__.rules,
-        type=__ret__.type,
-        version=__ret__.version)
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        include_id=pulumi.get(__ret__, 'include_id'),
+        name=pulumi.get(__ret__, 'name'),
+        rule_errors=pulumi.get(__ret__, 'rule_errors'),
+        rule_format=pulumi.get(__ret__, 'rule_format'),
+        rule_warnings=pulumi.get(__ret__, 'rule_warnings'),
+        rules=pulumi.get(__ret__, 'rules'),
+        type=pulumi.get(__ret__, 'type'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_property_include_rules)

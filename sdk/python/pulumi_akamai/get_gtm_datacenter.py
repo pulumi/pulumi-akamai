@@ -211,24 +211,24 @@ def get_gtm_datacenter(datacenter_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getGtmDatacenter:getGtmDatacenter', __args__, opts=opts, typ=GetGtmDatacenterResult).value
 
     return AwaitableGetGtmDatacenterResult(
-        city=__ret__.city,
-        clone_of=__ret__.clone_of,
-        cloud_server_host_header_override=__ret__.cloud_server_host_header_override,
-        cloud_server_targeting=__ret__.cloud_server_targeting,
-        continent=__ret__.continent,
-        country=__ret__.country,
-        datacenter_id=__ret__.datacenter_id,
-        default_load_objects=__ret__.default_load_objects,
-        domain=__ret__.domain,
-        id=__ret__.id,
-        latitude=__ret__.latitude,
-        links=__ret__.links,
-        longitude=__ret__.longitude,
-        nickname=__ret__.nickname,
-        score_penalty=__ret__.score_penalty,
-        servermonitor_pool=__ret__.servermonitor_pool,
-        state_or_province=__ret__.state_or_province,
-        virtual=__ret__.virtual)
+        city=pulumi.get(__ret__, 'city'),
+        clone_of=pulumi.get(__ret__, 'clone_of'),
+        cloud_server_host_header_override=pulumi.get(__ret__, 'cloud_server_host_header_override'),
+        cloud_server_targeting=pulumi.get(__ret__, 'cloud_server_targeting'),
+        continent=pulumi.get(__ret__, 'continent'),
+        country=pulumi.get(__ret__, 'country'),
+        datacenter_id=pulumi.get(__ret__, 'datacenter_id'),
+        default_load_objects=pulumi.get(__ret__, 'default_load_objects'),
+        domain=pulumi.get(__ret__, 'domain'),
+        id=pulumi.get(__ret__, 'id'),
+        latitude=pulumi.get(__ret__, 'latitude'),
+        links=pulumi.get(__ret__, 'links'),
+        longitude=pulumi.get(__ret__, 'longitude'),
+        nickname=pulumi.get(__ret__, 'nickname'),
+        score_penalty=pulumi.get(__ret__, 'score_penalty'),
+        servermonitor_pool=pulumi.get(__ret__, 'servermonitor_pool'),
+        state_or_province=pulumi.get(__ret__, 'state_or_province'),
+        virtual=pulumi.get(__ret__, 'virtual'))
 
 
 @_utilities.lift_output_func(get_gtm_datacenter)

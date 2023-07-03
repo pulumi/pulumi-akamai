@@ -102,12 +102,12 @@ def get_app_sec_threat_intel(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecThreatIntel:getAppSecThreatIntel', __args__, opts=opts, typ=GetAppSecThreatIntelResult).value
 
     return AwaitableGetAppSecThreatIntelResult(
-        config_id=__ret__.config_id,
-        id=__ret__.id,
-        json=__ret__.json,
-        output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id,
-        threat_intel=__ret__.threat_intel)
+        config_id=pulumi.get(__ret__, 'config_id'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
+        threat_intel=pulumi.get(__ret__, 'threat_intel'))
 
 
 @_utilities.lift_output_func(get_app_sec_threat_intel)

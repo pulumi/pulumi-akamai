@@ -129,15 +129,15 @@ def get_app_sec_wap_selected_hostnames(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames', __args__, opts=opts, typ=GetAppSecWapSelectedHostnamesResult).value
 
     return AwaitableGetAppSecWapSelectedHostnamesResult(
-        config_id=__ret__.config_id,
-        evaluated_hosts=__ret__.evaluated_hosts,
-        id=__ret__.id,
-        json=__ret__.json,
-        match_targets=__ret__.match_targets,
-        output_text=__ret__.output_text,
-        protected_hosts=__ret__.protected_hosts,
-        security_policy_id=__ret__.security_policy_id,
-        selected_hosts=__ret__.selected_hosts)
+        config_id=pulumi.get(__ret__, 'config_id'),
+        evaluated_hosts=pulumi.get(__ret__, 'evaluated_hosts'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        match_targets=pulumi.get(__ret__, 'match_targets'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        protected_hosts=pulumi.get(__ret__, 'protected_hosts'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
+        selected_hosts=pulumi.get(__ret__, 'selected_hosts'))
 
 
 @_utilities.lift_output_func(get_app_sec_wap_selected_hostnames)

@@ -73,9 +73,9 @@ def get_iam_states(country: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getIamStates:getIamStates', __args__, opts=opts, typ=GetIamStatesResult).value
 
     return AwaitableGetIamStatesResult(
-        country=__ret__.country,
-        id=__ret__.id,
-        states=__ret__.states)
+        country=pulumi.get(__ret__, 'country'),
+        id=pulumi.get(__ret__, 'id'),
+        states=pulumi.get(__ret__, 'states'))
 
 
 @_utilities.lift_output_func(get_iam_states)

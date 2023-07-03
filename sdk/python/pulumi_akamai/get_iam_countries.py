@@ -61,5 +61,5 @@ def get_iam_countries(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableG
     __ret__ = pulumi.runtime.invoke('akamai:index/getIamCountries:getIamCountries', __args__, opts=opts, typ=GetIamCountriesResult).value
 
     return AwaitableGetIamCountriesResult(
-        countries=__ret__.countries,
-        id=__ret__.id)
+        countries=pulumi.get(__ret__, 'countries'),
+        id=pulumi.get(__ret__, 'id'))

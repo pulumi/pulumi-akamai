@@ -91,11 +91,11 @@ def get_app_sec_failover_hostnames(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames', __args__, opts=opts, typ=GetAppSecFailoverHostnamesResult).value
 
     return AwaitableGetAppSecFailoverHostnamesResult(
-        config_id=__ret__.config_id,
-        hostnames=__ret__.hostnames,
-        id=__ret__.id,
-        json=__ret__.json,
-        output_text=__ret__.output_text)
+        config_id=pulumi.get(__ret__, 'config_id'),
+        hostnames=pulumi.get(__ret__, 'hostnames'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'))
 
 
 @_utilities.lift_output_func(get_app_sec_failover_hostnames)

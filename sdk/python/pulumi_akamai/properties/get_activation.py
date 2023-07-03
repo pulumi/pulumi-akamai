@@ -140,16 +140,16 @@ def get_activation(network: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:properties/getActivation:getActivation', __args__, opts=opts, typ=GetActivationResult).value
 
     return AwaitableGetActivationResult(
-        activation_id=__ret__.activation_id,
-        contacts=__ret__.contacts,
-        errors=__ret__.errors,
-        id=__ret__.id,
-        network=__ret__.network,
-        note=__ret__.note,
-        property_id=__ret__.property_id,
-        status=__ret__.status,
-        version=__ret__.version,
-        warnings=__ret__.warnings)
+        activation_id=pulumi.get(__ret__, 'activation_id'),
+        contacts=pulumi.get(__ret__, 'contacts'),
+        errors=pulumi.get(__ret__, 'errors'),
+        id=pulumi.get(__ret__, 'id'),
+        network=pulumi.get(__ret__, 'network'),
+        note=pulumi.get(__ret__, 'note'),
+        property_id=pulumi.get(__ret__, 'property_id'),
+        status=pulumi.get(__ret__, 'status'),
+        version=pulumi.get(__ret__, 'version'),
+        warnings=pulumi.get(__ret__, 'warnings'))
 
 
 @_utilities.lift_output_func(get_activation)

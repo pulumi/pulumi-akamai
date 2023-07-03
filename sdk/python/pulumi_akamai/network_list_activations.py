@@ -82,6 +82,11 @@ class NetworkListActivationsArgs:
     @property
     @pulumi.getter
     def activate(self) -> Optional[pulumi.Input[bool]]:
+        warnings.warn("""The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "activate")
 
     @activate.setter
@@ -155,6 +160,11 @@ class _NetworkListActivationsState:
     @property
     @pulumi.getter
     def activate(self) -> Optional[pulumi.Input[bool]]:
+        warnings.warn("""The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "activate")
 
     @activate.setter
@@ -359,6 +369,11 @@ class NetworkListActivations(pulumi.CustomResource):
     @property
     @pulumi.getter
     def activate(self) -> pulumi.Output[Optional[bool]]:
+        warnings.warn("""The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "activate")
 
     @property

@@ -117,13 +117,13 @@ def get_app_sec_tuning_recommendations(attack_group: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations', __args__, opts=opts, typ=GetAppSecTuningRecommendationsResult).value
 
     return AwaitableGetAppSecTuningRecommendationsResult(
-        attack_group=__ret__.attack_group,
-        config_id=__ret__.config_id,
-        id=__ret__.id,
-        json=__ret__.json,
-        rule_id=__ret__.rule_id,
-        ruleset_type=__ret__.ruleset_type,
-        security_policy_id=__ret__.security_policy_id)
+        attack_group=pulumi.get(__ret__, 'attack_group'),
+        config_id=pulumi.get(__ret__, 'config_id'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        rule_id=pulumi.get(__ret__, 'rule_id'),
+        ruleset_type=pulumi.get(__ret__, 'ruleset_type'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 
 
 @_utilities.lift_output_func(get_app_sec_tuning_recommendations)

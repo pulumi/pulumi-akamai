@@ -193,22 +193,22 @@ def get_cloudlets_policy(policy_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getCloudletsPolicy:getCloudletsPolicy', __args__, opts=opts, typ=GetCloudletsPolicyResult).value
 
     return AwaitableGetCloudletsPolicyResult(
-        activations=__ret__.activations,
-        api_version=__ret__.api_version,
-        cloudlet_code=__ret__.cloudlet_code,
-        cloudlet_id=__ret__.cloudlet_id,
-        description=__ret__.description,
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        match_rule_format=__ret__.match_rule_format,
-        match_rules=__ret__.match_rules,
-        name=__ret__.name,
-        policy_id=__ret__.policy_id,
-        revision_id=__ret__.revision_id,
-        rules_locked=__ret__.rules_locked,
-        version=__ret__.version,
-        version_description=__ret__.version_description,
-        warnings=__ret__.warnings)
+        activations=pulumi.get(__ret__, 'activations'),
+        api_version=pulumi.get(__ret__, 'api_version'),
+        cloudlet_code=pulumi.get(__ret__, 'cloudlet_code'),
+        cloudlet_id=pulumi.get(__ret__, 'cloudlet_id'),
+        description=pulumi.get(__ret__, 'description'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        match_rule_format=pulumi.get(__ret__, 'match_rule_format'),
+        match_rules=pulumi.get(__ret__, 'match_rules'),
+        name=pulumi.get(__ret__, 'name'),
+        policy_id=pulumi.get(__ret__, 'policy_id'),
+        revision_id=pulumi.get(__ret__, 'revision_id'),
+        rules_locked=pulumi.get(__ret__, 'rules_locked'),
+        version=pulumi.get(__ret__, 'version'),
+        version_description=pulumi.get(__ret__, 'version_description'),
+        warnings=pulumi.get(__ret__, 'warnings'))
 
 
 @_utilities.lift_output_func(get_cloudlets_policy)

@@ -82,10 +82,10 @@ def get_app_sec_siem_definitions(siem_definition_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions', __args__, opts=opts, typ=GetAppSecSiemDefinitionsResult).value
 
     return AwaitableGetAppSecSiemDefinitionsResult(
-        id=__ret__.id,
-        json=__ret__.json,
-        output_text=__ret__.output_text,
-        siem_definition_name=__ret__.siem_definition_name)
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        siem_definition_name=pulumi.get(__ret__, 'siem_definition_name'))
 
 
 @_utilities.lift_output_func(get_app_sec_siem_definitions)

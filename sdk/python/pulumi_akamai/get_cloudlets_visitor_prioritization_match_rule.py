@@ -75,9 +75,9 @@ def get_cloudlets_visitor_prioritization_match_rule(match_rules: Optional[Sequen
     __ret__ = pulumi.runtime.invoke('akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule', __args__, opts=opts, typ=GetCloudletsVisitorPrioritizationMatchRuleResult).value
 
     return AwaitableGetCloudletsVisitorPrioritizationMatchRuleResult(
-        id=__ret__.id,
-        json=__ret__.json,
-        match_rules=__ret__.match_rules)
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        match_rules=pulumi.get(__ret__, 'match_rules'))
 
 
 @_utilities.lift_output_func(get_cloudlets_visitor_prioritization_match_rule)

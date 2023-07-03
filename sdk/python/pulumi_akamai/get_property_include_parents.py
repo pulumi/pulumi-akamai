@@ -96,11 +96,11 @@ def get_property_include_parents(contract_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyIncludeParents:getPropertyIncludeParents', __args__, opts=opts, typ=GetPropertyIncludeParentsResult).value
 
     return AwaitableGetPropertyIncludeParentsResult(
-        contract_id=__ret__.contract_id,
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        include_id=__ret__.include_id,
-        parents=__ret__.parents)
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        include_id=pulumi.get(__ret__, 'include_id'),
+        parents=pulumi.get(__ret__, 'parents'))
 
 
 @_utilities.lift_output_func(get_property_include_parents)

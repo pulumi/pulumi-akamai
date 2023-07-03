@@ -109,13 +109,13 @@ def get_app_sec_configuration(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecConfiguration:getAppSecConfiguration', __args__, opts=opts, typ=GetAppSecConfigurationResult).value
 
     return AwaitableGetAppSecConfigurationResult(
-        config_id=__ret__.config_id,
-        id=__ret__.id,
-        latest_version=__ret__.latest_version,
-        name=__ret__.name,
-        output_text=__ret__.output_text,
-        production_version=__ret__.production_version,
-        staging_version=__ret__.staging_version)
+        config_id=pulumi.get(__ret__, 'config_id'),
+        id=pulumi.get(__ret__, 'id'),
+        latest_version=pulumi.get(__ret__, 'latest_version'),
+        name=pulumi.get(__ret__, 'name'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        production_version=pulumi.get(__ret__, 'production_version'),
+        staging_version=pulumi.get(__ret__, 'staging_version'))
 
 
 @_utilities.lift_output_func(get_app_sec_configuration)

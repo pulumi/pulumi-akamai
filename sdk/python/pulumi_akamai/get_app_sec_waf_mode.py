@@ -138,16 +138,16 @@ def get_app_sec_waf_mode(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecWafMode:getAppSecWafMode', __args__, opts=opts, typ=GetAppSecWafModeResult).value
 
     return AwaitableGetAppSecWafModeResult(
-        config_id=__ret__.config_id,
-        current_ruleset=__ret__.current_ruleset,
-        eval_expiration_date=__ret__.eval_expiration_date,
-        eval_ruleset=__ret__.eval_ruleset,
-        eval_status=__ret__.eval_status,
-        id=__ret__.id,
-        json=__ret__.json,
-        mode=__ret__.mode,
-        output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id)
+        config_id=pulumi.get(__ret__, 'config_id'),
+        current_ruleset=pulumi.get(__ret__, 'current_ruleset'),
+        eval_expiration_date=pulumi.get(__ret__, 'eval_expiration_date'),
+        eval_ruleset=pulumi.get(__ret__, 'eval_ruleset'),
+        eval_status=pulumi.get(__ret__, 'eval_status'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        mode=pulumi.get(__ret__, 'mode'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 
 
 @_utilities.lift_output_func(get_app_sec_waf_mode)

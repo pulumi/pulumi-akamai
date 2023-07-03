@@ -113,13 +113,13 @@ def get_app_sec_api_endpoints(api_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints', __args__, opts=opts, typ=GetAppSecApiEndpointsResult).value
 
     return AwaitableGetAppSecApiEndpointsResult(
-        api_name=__ret__.api_name,
-        config_id=__ret__.config_id,
-        id=__ret__.id,
-        id_lists=__ret__.id_lists,
-        json=__ret__.json,
-        output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id)
+        api_name=pulumi.get(__ret__, 'api_name'),
+        config_id=pulumi.get(__ret__, 'config_id'),
+        id=pulumi.get(__ret__, 'id'),
+        id_lists=pulumi.get(__ret__, 'id_lists'),
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 
 
 @_utilities.lift_output_func(get_app_sec_api_endpoints)

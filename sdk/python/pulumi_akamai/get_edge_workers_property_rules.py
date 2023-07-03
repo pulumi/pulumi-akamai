@@ -73,9 +73,9 @@ def get_edge_workers_property_rules(edgeworker_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules', __args__, opts=opts, typ=GetEdgeWorkersPropertyRulesResult).value
 
     return AwaitableGetEdgeWorkersPropertyRulesResult(
-        edgeworker_id=__ret__.edgeworker_id,
-        id=__ret__.id,
-        json=__ret__.json)
+        edgeworker_id=pulumi.get(__ret__, 'edgeworker_id'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'))
 
 
 @_utilities.lift_output_func(get_edge_workers_property_rules)

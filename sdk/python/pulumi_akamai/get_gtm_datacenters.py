@@ -74,9 +74,9 @@ def get_gtm_datacenters(domain: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getGtmDatacenters:getGtmDatacenters', __args__, opts=opts, typ=GetGtmDatacentersResult).value
 
     return AwaitableGetGtmDatacentersResult(
-        datacenters=__ret__.datacenters,
-        domain=__ret__.domain,
-        id=__ret__.id)
+        datacenters=pulumi.get(__ret__, 'datacenters'),
+        domain=pulumi.get(__ret__, 'domain'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_gtm_datacenters)

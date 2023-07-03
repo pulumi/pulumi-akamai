@@ -26,24 +26,12 @@ class GetCpCodeResult:
     def __init__(__self__, contract=None, contract_id=None, group=None, group_id=None, id=None, name=None, product_ids=None):
         if contract and not isinstance(contract, str):
             raise TypeError("Expected argument 'contract' to be a str")
-        if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
-
         pulumi.set(__self__, "contract", contract)
         if contract_id and not isinstance(contract_id, str):
             raise TypeError("Expected argument 'contract_id' to be a str")
         pulumi.set(__self__, "contract_id", contract_id)
         if group and not isinstance(group, str):
             raise TypeError("Expected argument 'group' to be a str")
-        if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
-
         pulumi.set(__self__, "group", group)
         if group_id and not isinstance(group_id, str):
             raise TypeError("Expected argument 'group_id' to be a str")
@@ -61,6 +49,11 @@ class GetCpCodeResult:
     @property
     @pulumi.getter
     def contract(self) -> str:
+        warnings.warn("""The setting \"contract\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "contract")
 
     @property
@@ -71,6 +64,11 @@ class GetCpCodeResult:
     @property
     @pulumi.getter
     def group(self) -> str:
+        warnings.warn("""The setting \"group\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "group")
 
     @property
@@ -132,13 +130,13 @@ def get_cp_code(contract: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:properties/getCpCode:getCpCode', __args__, opts=opts, typ=GetCpCodeResult).value
 
     return AwaitableGetCpCodeResult(
-        contract=__ret__.contract,
-        contract_id=__ret__.contract_id,
-        group=__ret__.group,
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        name=__ret__.name,
-        product_ids=__ret__.product_ids)
+        contract=pulumi.get(__ret__, 'contract'),
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        group=pulumi.get(__ret__, 'group'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        product_ids=pulumi.get(__ret__, 'product_ids'))
 
 
 @_utilities.lift_output_func(get_cp_code)
