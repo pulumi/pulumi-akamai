@@ -21,17 +21,23 @@ import (
 	"path/filepath"
 	"unicode"
 
-	"github.com/akamai/terraform-provider-akamai/v3/pkg/akamai"
-	appSecProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/appsec"
-	cloudletsProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/cloudlets"
-	cpsProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/cps"
-	datastreamProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/datastream"
-	dnsProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/dns"
-	edgeworksProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/edgeworkers"
-	gtmProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/gtm"
-	iamProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/iam"
-	networkListsProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/networklists"
-	propertyProvider "github.com/akamai/terraform-provider-akamai/v3/pkg/providers/property"
+	"github.com/akamai/terraform-provider-akamai/v4/pkg/akamai"
+
+	// The list of akamai subproviders we are using. We load in each provider manually
+	// because it requires build flags to configure automatic loading.
+	appSecProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/appsec"
+	botmanProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/botman"
+	cloudletsProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/cloudlets"
+	cpsProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/cps"
+	datastreamProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/datastream"
+	dnsProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/dns"
+	edgeworksProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/edgeworkers"
+	gtmProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/gtm"
+	iamProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/iam"
+	imagingProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/imaging"
+	networkListsProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/networklists"
+	propertyProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/property"
+
 	"github.com/pulumi/pulumi-akamai/provider/v5/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/x"
@@ -89,6 +95,8 @@ func Provider() tfbridge.ProviderInfo {
 		networkListsProvider.Subprovider(),
 		propertyProvider.Subprovider(),
 		iamProvider.Subprovider(),
+		botmanProvider.Subprovider(),
+		imagingProvider.Subprovider(),
 	)
 
 	// Instantiate the Terraform provider
@@ -104,7 +112,7 @@ func Provider() tfbridge.ProviderInfo {
 		Homepage:                "https://pulumi.io",
 		Repository:              "https://github.com/pulumi/pulumi-akamai",
 		GitHubOrg:               "akamai",
-		TFProviderModuleVersion: "v3",
+		TFProviderModuleVersion: "v4",
 		Version:                 version.Version,
 		UpstreamRepoPath:        "./upstream",
 		Config: map[string]*tfbridge.SchemaInfo{

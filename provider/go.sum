@@ -351,8 +351,6 @@ github.com/agext/levenshtein v1.2.3/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki
 github.com/agl/ed25519 v0.0.0-20170116200512-5312a6153412/go.mod h1:WPjqKcmVOxf0XSf3YxCJs6N6AOSrOx3obionmG7T0y0=
 github.com/akamai/AkamaiOPEN-edgegrid-golang/v6 v6.0.0 h1:YR4Uce34BxhBWxtIqxm86kZ/WWK7v1A8aHBWSnzD3KI=
 github.com/akamai/AkamaiOPEN-edgegrid-golang/v6 v6.0.0/go.mod h1:9YKAQNAuk/p5qpbk/2kg28GI23VKpnrCzHOmml3YZzM=
-github.com/akamai/terraform-provider-akamai/v4 v4.1.0 h1:ifRJHAmVCfBfjjzjm5rHUZ1BRlm70RfNYImXfSsieQs=
-github.com/akamai/terraform-provider-akamai/v4 v4.1.0/go.mod h1:X7LxghL//9wUgjjH9tyyHYPsGzVxCoVnSZDQTYLWtAg=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf/go.mod h1:ybxpYRFXyAe+OPACYpWeL0wqObRcbAqCMya13uyzqw0=
