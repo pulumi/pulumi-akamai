@@ -326,11 +326,11 @@ class _DnsZoneState:
         pulumi.set(self, "zone", value)
 
 
-warnings.warn("""akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone""", DeprecationWarning)
+warnings.warn("""akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone""", DeprecationWarning)
 
 
 class DnsZone(pulumi.CustomResource):
-    warnings.warn("""akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone""", DeprecationWarning)
+    warnings.warn("""akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -388,7 +388,7 @@ class DnsZone(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
-        pulumi.log.warn("""DnsZone is deprecated: akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone""")
+        pulumi.log.warn("""DnsZone is deprecated: akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

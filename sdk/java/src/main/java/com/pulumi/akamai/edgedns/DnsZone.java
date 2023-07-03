@@ -20,10 +20,10 @@ import javax.annotation.Nullable;
 
 /**
  * @deprecated
- * akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone
+ * akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone
  * 
  */
-@Deprecated /* akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone */
+@Deprecated /* akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone */
 @ResourceType(type="akamai:edgedns/dnsZone:DnsZone")
 public class DnsZone extends com.pulumi.resources.CustomResource {
     @Export(name="activationState", type=String.class, parameters={})

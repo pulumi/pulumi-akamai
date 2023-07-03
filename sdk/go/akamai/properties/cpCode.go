@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.properties.CpCode has been deprecated in favor of akamai.CpCode
+// Deprecated: akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode
 type CpCode struct {
 	pulumi.CustomResourceState
 

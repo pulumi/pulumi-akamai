@@ -9,7 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
-    [Obsolete(@"akamai.trafficmanagement.getGtmDefaultDatacenter has been deprecated in favor of akamai.getGtmDefaultDatacenter")]
+    [Obsolete(@"akamai.trafficmanagement/getgtmdefaultdatacenter.getGtmDefaultDatacenter has been deprecated in favor of akamai.index/getgtmdefaultdatacenter.getGtmDefaultDatacenter")]
     public static class GetGtmDefaultDatacenter
     {
         public static Task<GetGtmDefaultDatacenterResult> InvokeAsync(GetGtmDefaultDatacenterArgs args, InvokeOptions? options = null)

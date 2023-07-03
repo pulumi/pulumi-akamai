@@ -23,10 +23,10 @@ import javax.annotation.Nullable;
 
 /**
  * @deprecated
- * akamai.properties.Property has been deprecated in favor of akamai.Property
+ * akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property
  * 
  */
-@Deprecated /* akamai.properties.Property has been deprecated in favor of akamai.Property */
+@Deprecated /* akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property */
 @ResourceType(type="akamai:properties/property:Property")
 public class Property extends com.pulumi.resources.CustomResource {
     /**

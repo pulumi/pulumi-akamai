@@ -4,7 +4,9 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
+/** @deprecated akamai.properties/getactivation.getActivation has been deprecated in favor of akamai.index/getpropertyactivation.getPropertyActivation */
 export function getActivation(args: GetActivationArgs, opts?: pulumi.InvokeOptions): Promise<GetActivationResult> {
+    pulumi.log.warn("getActivation is deprecated: akamai.properties/getactivation.getActivation has been deprecated in favor of akamai.index/getpropertyactivation.getPropertyActivation")
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:properties/getActivation:getActivation", {
@@ -41,6 +43,7 @@ export interface GetActivationResult {
     readonly version: number;
     readonly warnings: string;
 }
+/** @deprecated akamai.properties/getactivation.getActivation has been deprecated in favor of akamai.index/getpropertyactivation.getPropertyActivation */
 export function getActivationOutput(args: GetActivationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetActivationResult> {
     return pulumi.output(args).apply((a: any) => getActivation(a, opts))
 }

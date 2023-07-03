@@ -4,9 +4,9 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
-/** @deprecated akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules */
+/** @deprecated akamai.properties/getpropertyrules.getPropertyRules has been deprecated in favor of akamai.index/getpropertyrules.getPropertyRules */
 export function getPropertyRules(args: GetPropertyRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetPropertyRulesResult> {
-    pulumi.log.warn("getPropertyRules is deprecated: akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules")
+    pulumi.log.warn("getPropertyRules is deprecated: akamai.properties/getpropertyrules.getPropertyRules has been deprecated in favor of akamai.index/getpropertyrules.getPropertyRules")
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:properties/getPropertyRules:getPropertyRules", {
@@ -45,7 +45,7 @@ export interface GetPropertyRulesResult {
     readonly rules: string;
     readonly version: number;
 }
-/** @deprecated akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules */
+/** @deprecated akamai.properties/getpropertyrules.getPropertyRules has been deprecated in favor of akamai.index/getpropertyrules.getPropertyRules */
 export function getPropertyRulesOutput(args: GetPropertyRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRulesResult> {
     return pulumi.output(args).apply((a: any) => getPropertyRules(a, opts))
 }

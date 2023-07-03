@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * @deprecated akamai.properties.CpCode has been deprecated in favor of akamai.CpCode
+ * @deprecated akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode
  */
 export class CpCode extends pulumi.CustomResource {
     /**
@@ -18,7 +18,7 @@ export class CpCode extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: CpCodeState, opts?: pulumi.CustomResourceOptions): CpCode {
-        pulumi.log.warn("CpCode is deprecated: akamai.properties.CpCode has been deprecated in favor of akamai.CpCode")
+        pulumi.log.warn("CpCode is deprecated: akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode")
         return new CpCode(name, <any>state, { ...opts, id: id });
     }
 
@@ -60,11 +60,11 @@ export class CpCode extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    /** @deprecated akamai.properties.CpCode has been deprecated in favor of akamai.CpCode */
+    /** @deprecated akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode */
     constructor(name: string, args?: CpCodeArgs, opts?: pulumi.CustomResourceOptions)
-    /** @deprecated akamai.properties.CpCode has been deprecated in favor of akamai.CpCode */
+    /** @deprecated akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode */
     constructor(name: string, argsOrState?: CpCodeArgs | CpCodeState, opts?: pulumi.CustomResourceOptions) {
-        pulumi.log.warn("CpCode is deprecated: akamai.properties.CpCode has been deprecated in favor of akamai.CpCode")
+        pulumi.log.warn("CpCode is deprecated: akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode")
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {

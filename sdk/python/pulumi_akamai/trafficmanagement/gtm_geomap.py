@@ -147,11 +147,11 @@ class _GtmGeomapState:
         pulumi.set(self, "wait_on_complete", value)
 
 
-warnings.warn("""akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap""", DeprecationWarning)
+warnings.warn("""akamai.trafficmanagement/gtmgeomap.GtmGeomap has been deprecated in favor of akamai.index/gtmgeomap.GtmGeomap""", DeprecationWarning)
 
 
 class GtmGeomap(pulumi.CustomResource):
-    warnings.warn("""akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap""", DeprecationWarning)
+    warnings.warn("""akamai.trafficmanagement/gtmgeomap.GtmGeomap has been deprecated in favor of akamai.index/gtmgeomap.GtmGeomap""", DeprecationWarning)
 
     @overload
     def __init__(__self__,
@@ -197,7 +197,7 @@ class GtmGeomap(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  wait_on_complete: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
-        pulumi.log.warn("""GtmGeomap is deprecated: akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap""")
+        pulumi.log.warn("""GtmGeomap is deprecated: akamai.trafficmanagement/gtmgeomap.GtmGeomap has been deprecated in favor of akamai.index/gtmgeomap.GtmGeomap""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

@@ -10,6 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Deprecated: akamai.properties/getactivation.getActivation has been deprecated in favor of akamai.index/getpropertyactivation.getPropertyActivation
 func GetActivation(ctx *pulumi.Context, args *GetActivationArgs, opts ...pulumi.InvokeOption) (*GetActivationResult, error) {
 	var rv GetActivationResult
 	err := ctx.Invoke("akamai:properties/getActivation:getActivation", args, &rv, opts...)

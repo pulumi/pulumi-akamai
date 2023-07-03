@@ -165,6 +165,7 @@ from .get_network_lists import *
 from .get_properties import *
 from .get_properties_search import *
 from .get_property import *
+from .get_property_activation import *
 from .get_property_hostnames import *
 from .get_property_include import *
 from .get_property_include_activation import *

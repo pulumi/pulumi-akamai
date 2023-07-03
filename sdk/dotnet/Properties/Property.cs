@@ -9,7 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Properties
 {
-    [Obsolete(@"akamai.properties.Property has been deprecated in favor of akamai.Property")]
+    [Obsolete(@"akamai.properties/property.Property has been deprecated in favor of akamai.index/property.Property")]
     [AkamaiResourceType("akamai:properties/property:Property")]
     public partial class Property : global::Pulumi.CustomResource
     {

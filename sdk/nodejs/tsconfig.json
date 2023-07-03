@@ -180,6 +180,7 @@
         "getProperties.ts",
         "getPropertiesSearch.ts",
         "getProperty.ts",
+        "getPropertyActivation.ts",
         "getPropertyHostnames.ts",
         "getPropertyInclude.ts",
         "getPropertyIncludeActivation.ts",

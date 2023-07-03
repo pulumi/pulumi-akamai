@@ -20,10 +20,10 @@ import javax.annotation.Nullable;
 
 /**
  * @deprecated
- * akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap
+ * akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap
  * 
  */
-@Deprecated /* akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap */
+@Deprecated /* akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap */
 @ResourceType(type="akamai:trafficmanagement/gtmCidrmap:GtmCidrmap")
 public class GtmCidrmap extends com.pulumi.resources.CustomResource {
     @Export(name="assignments", type=List.class, parameters={GtmCidrmapAssignment.class})

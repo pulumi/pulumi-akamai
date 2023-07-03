@@ -20,10 +20,10 @@ import javax.annotation.Nullable;
 
 /**
  * @deprecated
- * akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter
+ * akamai.trafficmanagement/gtmdatacenter.GtmDatacenter has been deprecated in favor of akamai.index/gtmdatacenter.GtmDatacenter
  * 
  */
-@Deprecated /* akamai.trafficmanagement.GtmDatacenter has been deprecated in favor of akamai.GtmDatacenter */
+@Deprecated /* akamai.trafficmanagement/gtmdatacenter.GtmDatacenter has been deprecated in favor of akamai.index/gtmdatacenter.GtmDatacenter */
 @ResourceType(type="akamai:trafficmanagement/gtmDatacenter:GtmDatacenter")
 public class GtmDatacenter extends com.pulumi.resources.CustomResource {
     @Export(name="city", type=String.class, parameters={})

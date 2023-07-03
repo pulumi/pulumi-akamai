@@ -16,7 +16,7 @@ __all__ = [
     'get_dns_record_set_output',
 ]
 
-warnings.warn("""akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet""", DeprecationWarning)
+warnings.warn("""akamai.edgedns/getdnsrecordset.getDnsRecordSet has been deprecated in favor of akamai.index/getdnsrecordset.getDnsRecordSet""", DeprecationWarning)
 
 @pulumi.output_type
 class GetDnsRecordSetResult:
@@ -89,7 +89,7 @@ def get_dns_record_set(host: Optional[str] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("""get_dns_record_set is deprecated: akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet""")
+    pulumi.log.warn("""get_dns_record_set is deprecated: akamai.edgedns/getdnsrecordset.getDnsRecordSet has been deprecated in favor of akamai.index/getdnsrecordset.getDnsRecordSet""")
     __args__ = dict()
     __args__['host'] = host
     __args__['recordType'] = record_type
@@ -113,5 +113,5 @@ def get_dns_record_set_output(host: Optional[pulumi.Input[str]] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("""get_dns_record_set is deprecated: akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet""")
+    pulumi.log.warn("""get_dns_record_set is deprecated: akamai.edgedns/getdnsrecordset.getDnsRecordSet has been deprecated in favor of akamai.index/getdnsrecordset.getDnsRecordSet""")
     ...

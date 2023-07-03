@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.edgedns.getDnsRecordSet has been deprecated in favor of akamai.getDnsRecordSet
+// Deprecated: akamai.edgedns/getdnsrecordset.getDnsRecordSet has been deprecated in favor of akamai.index/getdnsrecordset.getDnsRecordSet
 func GetDnsRecordSet(ctx *pulumi.Context, args *GetDnsRecordSetArgs, opts ...pulumi.InvokeOption) (*GetDnsRecordSetResult, error) {
 	var rv GetDnsRecordSetResult
 	err := ctx.Invoke("akamai:edgedns/getDnsRecordSet:getDnsRecordSet", args, &rv, opts...)

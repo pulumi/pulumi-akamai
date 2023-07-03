@@ -16,7 +16,7 @@ __all__ = [
     'get_authorities_set_output',
 ]
 
-warnings.warn("""akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet""", DeprecationWarning)
+warnings.warn("""akamai.edgedns/getauthoritiesset.getAuthoritiesSet has been deprecated in favor of akamai.index/getauthoritiesset.getAuthoritiesSet""", DeprecationWarning)
 
 @pulumi.output_type
 class GetAuthoritiesSetResult:
@@ -69,7 +69,7 @@ def get_authorities_set(contract: Optional[str] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("""get_authorities_set is deprecated: akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet""")
+    pulumi.log.warn("""get_authorities_set is deprecated: akamai.edgedns/getauthoritiesset.getAuthoritiesSet has been deprecated in favor of akamai.index/getauthoritiesset.getAuthoritiesSet""")
     __args__ = dict()
     __args__['contract'] = contract
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -87,5 +87,5 @@ def get_authorities_set_output(contract: Optional[pulumi.Input[str]] = None,
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("""get_authorities_set is deprecated: akamai.edgedns.getAuthoritiesSet has been deprecated in favor of akamai.getAuthoritiesSet""")
+    pulumi.log.warn("""get_authorities_set is deprecated: akamai.edgedns/getauthoritiesset.getAuthoritiesSet has been deprecated in favor of akamai.index/getauthoritiesset.getAuthoritiesSet""")
     ...

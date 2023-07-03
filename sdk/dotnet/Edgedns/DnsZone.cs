@@ -9,7 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Edgedns
 {
-    [Obsolete(@"akamai.edgedns.DnsZone has been deprecated in favor of akamai.DnsZone")]
+    [Obsolete(@"akamai.edgedns/dnszone.DnsZone has been deprecated in favor of akamai.index/dnszone.DnsZone")]
     [AkamaiResourceType("akamai:edgedns/dnsZone:DnsZone")]
     public partial class DnsZone : global::Pulumi.CustomResource
     {

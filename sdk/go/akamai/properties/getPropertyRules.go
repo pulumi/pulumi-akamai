@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.properties.getPropertyRules has been deprecated in favor of akamai.getPropertyRules
+// Deprecated: akamai.properties/getpropertyrules.getPropertyRules has been deprecated in favor of akamai.index/getpropertyrules.getPropertyRules
 func GetPropertyRules(ctx *pulumi.Context, args *GetPropertyRulesArgs, opts ...pulumi.InvokeOption) (*GetPropertyRulesResult, error) {
 	var rv GetPropertyRulesResult
 	err := ctx.Invoke("akamai:properties/getPropertyRules:getPropertyRules", args, &rv, opts...)

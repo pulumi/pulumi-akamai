@@ -168,6 +168,8 @@ import com.pulumi.akamai.inputs.GetPropertiesArgs;
 import com.pulumi.akamai.inputs.GetPropertiesPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertiesSearchArgs;
 import com.pulumi.akamai.inputs.GetPropertiesSearchPlainArgs;
+import com.pulumi.akamai.inputs.GetPropertyActivationArgs;
+import com.pulumi.akamai.inputs.GetPropertyActivationPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertyArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnamesArgs;
 import com.pulumi.akamai.inputs.GetPropertyHostnamesPlainArgs;
@@ -283,6 +285,7 @@ import com.pulumi.akamai.outputs.GetIamTimezonesResult;
 import com.pulumi.akamai.outputs.GetNetworkListsResult;
 import com.pulumi.akamai.outputs.GetPropertiesResult;
 import com.pulumi.akamai.outputs.GetPropertiesSearchResult;
+import com.pulumi.akamai.outputs.GetPropertyActivationResult;
 import com.pulumi.akamai.outputs.GetPropertyHostnamesResult;
 import com.pulumi.akamai.outputs.GetPropertyIncludeActivationResult;
 import com.pulumi.akamai.outputs.GetPropertyIncludeParentsResult;
@@ -1598,6 +1601,18 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetPropertyResult> getPropertyPlain(GetPropertyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getProperty:getProperty", TypeShape.of(GetPropertyResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetPropertyActivationResult> getPropertyActivation(GetPropertyActivationArgs args) {
+        return getPropertyActivation(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetPropertyActivationResult> getPropertyActivationPlain(GetPropertyActivationPlainArgs args) {
+        return getPropertyActivationPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetPropertyActivationResult> getPropertyActivation(GetPropertyActivationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getPropertyActivation:getPropertyActivation", TypeShape.of(GetPropertyActivationResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetPropertyActivationResult> getPropertyActivationPlain(GetPropertyActivationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getPropertyActivation:getPropertyActivation", TypeShape.of(GetPropertyActivationResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetPropertyHostnamesResult> getPropertyHostnames(GetPropertyHostnamesArgs args) {
         return getPropertyHostnames(args, InvokeOptions.Empty);

@@ -15,10 +15,10 @@ import javax.annotation.Nullable;
 
 /**
  * @deprecated
- * akamai.properties.CpCode has been deprecated in favor of akamai.CpCode
+ * akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode
  * 
  */
-@Deprecated /* akamai.properties.CpCode has been deprecated in favor of akamai.CpCode */
+@Deprecated /* akamai.properties/cpcode.CpCode has been deprecated in favor of akamai.index/cpcode.CpCode */
 @ResourceType(type="akamai:properties/cpCode:CpCode")
 public class CpCode extends com.pulumi.resources.CustomResource {
     /**

@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.properties.PropertyActivation has been deprecated in favor of akamai.PropertyActivation
+// Deprecated: akamai.properties/propertyactivation.PropertyActivation has been deprecated in favor of akamai.index/propertyactivation.PropertyActivation
 type PropertyActivation struct {
 	pulumi.CustomResourceState
 

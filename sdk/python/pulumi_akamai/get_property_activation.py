@@ -7,21 +7,19 @@ import warnings
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
-from .. import _utilities
+from . import _utilities
 
 __all__ = [
-    'GetActivationResult',
-    'AwaitableGetActivationResult',
-    'get_activation',
-    'get_activation_output',
+    'GetPropertyActivationResult',
+    'AwaitableGetPropertyActivationResult',
+    'get_property_activation',
+    'get_property_activation_output',
 ]
 
-warnings.warn("""akamai.properties/getactivation.getActivation has been deprecated in favor of akamai.index/getpropertyactivation.getPropertyActivation""", DeprecationWarning)
-
 @pulumi.output_type
-class GetActivationResult:
+class GetPropertyActivationResult:
     """
-    A collection of values returned by getActivation.
+    A collection of values returned by getPropertyActivation.
     """
     def __init__(__self__, activation_id=None, contacts=None, errors=None, id=None, network=None, note=None, property_id=None, status=None, version=None, warnings=None):
         if activation_id and not isinstance(activation_id, str):
@@ -109,12 +107,12 @@ class GetActivationResult:
         return pulumi.get(self, "warnings")
 
 
-class AwaitableGetActivationResult(GetActivationResult):
+class AwaitableGetPropertyActivationResult(GetPropertyActivationResult):
     # pylint: disable=using-constant-test
     def __await__(self):
         if False:
             yield self
-        return GetActivationResult(
+        return GetPropertyActivationResult(
             activation_id=self.activation_id,
             contacts=self.contacts,
             errors=self.errors,
@@ -127,22 +125,21 @@ class AwaitableGetActivationResult(GetActivationResult):
             warnings=self.warnings)
 
 
-def get_activation(network: Optional[str] = None,
-                   property_id: Optional[str] = None,
-                   version: Optional[int] = None,
-                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetActivationResult:
+def get_property_activation(network: Optional[str] = None,
+                            property_id: Optional[str] = None,
+                            version: Optional[int] = None,
+                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyActivationResult:
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("""get_activation is deprecated: akamai.properties/getactivation.getActivation has been deprecated in favor of akamai.index/getpropertyactivation.getPropertyActivation""")
     __args__ = dict()
     __args__['network'] = network
     __args__['propertyId'] = property_id
     __args__['version'] = version
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
-    __ret__ = pulumi.runtime.invoke('akamai:properties/getActivation:getActivation', __args__, opts=opts, typ=GetActivationResult).value
+    __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyActivation:getPropertyActivation', __args__, opts=opts, typ=GetPropertyActivationResult).value
 
-    return AwaitableGetActivationResult(
+    return AwaitableGetPropertyActivationResult(
         activation_id=__ret__.activation_id,
         contacts=__ret__.contacts,
         errors=__ret__.errors,
@@ -155,13 +152,12 @@ def get_activation(network: Optional[str] = None,
         warnings=__ret__.warnings)
 
 
-@_utilities.lift_output_func(get_activation)
-def get_activation_output(network: Optional[pulumi.Input[Optional[str]]] = None,
-                          property_id: Optional[pulumi.Input[str]] = None,
-                          version: Optional[pulumi.Input[int]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetActivationResult]:
+@_utilities.lift_output_func(get_property_activation)
+def get_property_activation_output(network: Optional[pulumi.Input[Optional[str]]] = None,
+                                   property_id: Optional[pulumi.Input[str]] = None,
+                                   version: Optional[pulumi.Input[int]] = None,
+                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyActivationResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    pulumi.log.warn("""get_activation is deprecated: akamai.properties/getactivation.getActivation has been deprecated in favor of akamai.index/getpropertyactivation.getPropertyActivation""")
     ...

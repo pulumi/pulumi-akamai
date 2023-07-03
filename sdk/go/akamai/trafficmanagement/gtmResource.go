@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource
+// Deprecated: akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource
 type GtmResource struct {
 	pulumi.CustomResourceState
 

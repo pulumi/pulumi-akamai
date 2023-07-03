@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * @deprecated akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource
+ * @deprecated akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource
  */
 export class GtmResource extends pulumi.CustomResource {
     /**
@@ -20,7 +20,7 @@ export class GtmResource extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: GtmResourceState, opts?: pulumi.CustomResourceOptions): GtmResource {
-        pulumi.log.warn("GtmResource is deprecated: akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource")
+        pulumi.log.warn("GtmResource is deprecated: akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource")
         return new GtmResource(name, <any>state, { ...opts, id: id });
     }
 
@@ -61,11 +61,11 @@ export class GtmResource extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    /** @deprecated akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource */
+    /** @deprecated akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource */
     constructor(name: string, args: GtmResourceArgs, opts?: pulumi.CustomResourceOptions)
-    /** @deprecated akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource */
+    /** @deprecated akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource */
     constructor(name: string, argsOrState?: GtmResourceArgs | GtmResourceState, opts?: pulumi.CustomResourceOptions) {
-        pulumi.log.warn("GtmResource is deprecated: akamai.trafficmanagement.GtmResource has been deprecated in favor of akamai.GtmResource")
+        pulumi.log.warn("GtmResource is deprecated: akamai.trafficmanagement/gtmresource.GtmResource has been deprecated in favor of akamai.index/gtmresource.GtmResource")
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {

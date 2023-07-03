@@ -7,20 +7,19 @@ using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
 
-namespace Pulumi.Akamai.Properties
+namespace Pulumi.Akamai
 {
-    [Obsolete(@"akamai.properties/getactivation.getActivation has been deprecated in favor of akamai.index/getpropertyactivation.getPropertyActivation")]
-    public static class GetActivation
+    public static class GetPropertyActivation
     {
-        public static Task<GetActivationResult> InvokeAsync(GetActivationArgs args, InvokeOptions? options = null)
-            => global::Pulumi.Deployment.Instance.InvokeAsync<GetActivationResult>("akamai:properties/getActivation:getActivation", args ?? new GetActivationArgs(), options.WithDefaults());
+        public static Task<GetPropertyActivationResult> InvokeAsync(GetPropertyActivationArgs args, InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyActivationResult>("akamai:index/getPropertyActivation:getPropertyActivation", args ?? new GetPropertyActivationArgs(), options.WithDefaults());
 
-        public static Output<GetActivationResult> Invoke(GetActivationInvokeArgs args, InvokeOptions? options = null)
-            => global::Pulumi.Deployment.Instance.Invoke<GetActivationResult>("akamai:properties/getActivation:getActivation", args ?? new GetActivationInvokeArgs(), options.WithDefaults());
+        public static Output<GetPropertyActivationResult> Invoke(GetPropertyActivationInvokeArgs args, InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertyActivationResult>("akamai:index/getPropertyActivation:getPropertyActivation", args ?? new GetPropertyActivationInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetActivationArgs : global::Pulumi.InvokeArgs
+    public sealed class GetPropertyActivationArgs : global::Pulumi.InvokeArgs
     {
         [Input("network")]
         public string? Network { get; set; }
@@ -31,13 +30,13 @@ namespace Pulumi.Akamai.Properties
         [Input("version", required: true)]
         public int Version { get; set; }
 
-        public GetActivationArgs()
+        public GetPropertyActivationArgs()
         {
         }
-        public static new GetActivationArgs Empty => new GetActivationArgs();
+        public static new GetPropertyActivationArgs Empty => new GetPropertyActivationArgs();
     }
 
-    public sealed class GetActivationInvokeArgs : global::Pulumi.InvokeArgs
+    public sealed class GetPropertyActivationInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("network")]
         public Input<string>? Network { get; set; }
@@ -48,15 +47,15 @@ namespace Pulumi.Akamai.Properties
         [Input("version", required: true)]
         public Input<int> Version { get; set; } = null!;
 
-        public GetActivationInvokeArgs()
+        public GetPropertyActivationInvokeArgs()
         {
         }
-        public static new GetActivationInvokeArgs Empty => new GetActivationInvokeArgs();
+        public static new GetPropertyActivationInvokeArgs Empty => new GetPropertyActivationInvokeArgs();
     }
 
 
     [OutputType]
-    public sealed class GetActivationResult
+    public sealed class GetPropertyActivationResult
     {
         public readonly string ActivationId;
         public readonly ImmutableArray<string> Contacts;
@@ -73,7 +72,7 @@ namespace Pulumi.Akamai.Properties
         public readonly string Warnings;
 
         [OutputConstructor]
-        private GetActivationResult(
+        private GetPropertyActivationResult(
             string activationId,
 
             ImmutableArray<string> contacts,

@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.properties.getCpCode has been deprecated in favor of akamai.getCpCode
+// Deprecated: akamai.properties/getcpcode.getCpCode has been deprecated in favor of akamai.index/getcpcode.getCpCode
 func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.InvokeOption) (*LookupCpCodeResult, error) {
 	var rv LookupCpCodeResult
 	err := ctx.Invoke("akamai:properties/getCpCode:getCpCode", args, &rv, opts...)

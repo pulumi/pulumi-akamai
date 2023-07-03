@@ -9,7 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Akamai.Trafficmanagement
 {
-    [Obsolete(@"akamai.trafficmanagement.GtmProperty has been deprecated in favor of akamai.GtmProperty")]
+    [Obsolete(@"akamai.trafficmanagement/gtmproperty.GtmProperty has been deprecated in favor of akamai.index/gtmproperty.GtmProperty")]
     [AkamaiResourceType("akamai:trafficmanagement/gtmProperty:GtmProperty")]
     public partial class GtmProperty : global::Pulumi.CustomResource
     {

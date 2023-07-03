@@ -46,10 +46,7 @@ const (
 	// packages:
 	mainPkg = "akamai"
 	// modules:
-	mainMod              = "index"
-	edgeDNSMod           = "edgedns"
-	propertiesMod        = "properties"
-	trafficManagementMod = "trafficmanagement"
+	mainMod = "index"
 )
 
 // makeMember manufactures a type token for the package and the given module and type.
@@ -197,6 +194,7 @@ func Provider() tfbridge.ProviderInfo {
 				},
 			},
 			"akamai_edgeworkers_activation": {Tok: makeResource(mainMod, "EdgeWorkersActivation")},
+			"akamai_edge_hostname":          {Tok: makeResource(mainMod, "EdgeHostName")},
 
 			"akamai_networklist_activations":  {Tok: makeResource(mainMod, "NetworkListActivations")},
 			"akamai_networklist_description":  {Tok: makeResource(mainMod, "NetworkListDescription")},
@@ -208,6 +206,22 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_iam_role":                    {Tok: makeResource(mainMod, "IamRole")},
 			"akamai_iam_user":                    {Tok: makeResource(mainMod, "IamUser")},
 
+			"akamai_property": {
+				Tok: makeResource(mainMod, "Property"),
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"read_version": {
+						Transform: func(v resource.PropertyValue) (resource.PropertyValue, error) {
+							// Read version needs to be populated and non-zero on updates, but
+							// for some reason isn't. See
+							// https://github.com/pulumi/pulumi-akamai/issues/107
+							if v.IsNull() || (v.IsNumber() && v.NumberValue() == 0) {
+								v = resource.NewNumberProperty(1)
+							}
+							return v, nil
+						},
+					},
+				},
+			},
 			"akamai_property_include":            {Tok: makeResource(mainMod, "PropertyInclude")},
 			"akamai_property_include_activation": {Tok: makeResource(mainMod, "PropertyIncludeActivation")},
 		},
@@ -291,7 +305,6 @@ func Provider() tfbridge.ProviderInfo {
 			"akamai_edgeworkers_resource_tier":  {Tok: makeDataSource(mainMod, "getEdgeWorkersResourceTier")},
 
 			"akamai_properties":                  {Tok: makeDataSource(mainMod, "getProperties")},
-			"akamai_property_activation":         {Tok: makeDataSource(propertiesMod, "getActivation")},
 			"akamai_property_products":           {Tok: makeDataSource(mainMod, "getPropertyProducts")},
 			"akamai_property_rule_formats":       {Tok: makeDataSource(mainMod, "getPropertyRuleFormats")},
 			"akamai_property_rules_template":     {Tok: makeDataSource(mainMod, "getPropertyRulesTemplate")},
@@ -351,69 +364,7 @@ func Provider() tfbridge.ProviderInfo {
 		MetadataInfo: tfbridge.NewProviderMetadata(metadata),
 	}
 
-	// edgeDns -> mainMod
-	prov.RenameResourceWithAlias("akamai_dns_record", makeResource(edgeDNSMod, "DnsRecord"),
-		makeResource(mainMod, "DnsRecord"), edgeDNSMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_dns_zone", makeResource(edgeDNSMod, "DnsZone"),
-		makeResource(mainMod, "DnsZone"), edgeDNSMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameDataSource("akamai_authorities_set", makeDataSource(edgeDNSMod, "getAuthoritiesSet"),
-		makeDataSource(mainMod, "getAuthoritiesSet"), edgeDNSMod, mainMod, &tfbridge.DataSourceInfo{})
-	prov.RenameDataSource("akamai_dns_record_set", makeDataSource(edgeDNSMod, "getDnsRecordSet"),
-		makeDataSource(mainMod, "getDnsRecordSet"), edgeDNSMod, mainMod, &tfbridge.DataSourceInfo{})
-
-	// trafficManagement -> mainMod
-	prov.RenameResourceWithAlias("akamai_gtm_domain", makeResource(trafficManagementMod, "GtmDomain"),
-		makeResource(mainMod, "GtmDomain"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_gtm_datacenter", makeResource(trafficManagementMod, "GtmDatacenter"),
-		makeResource(mainMod, "GtmDatacenter"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_gtm_property", makeResource(trafficManagementMod, "GtmProperty"),
-		makeResource(mainMod, "GtmProperty"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_gtm_resource", makeResource(trafficManagementMod, "GtmResource"),
-		makeResource(mainMod, "GtmResource"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_gtm_cidrmap", makeResource(trafficManagementMod, "GtmCidrmap"),
-		makeResource(mainMod, "GtmCidrmap"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_gtm_asmap", makeResource(trafficManagementMod, "GtmASmap"),
-		makeResource(mainMod, "GtmAsmap"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_gtm_geomap", makeResource(trafficManagementMod, "GtmGeomap"),
-		makeResource(mainMod, "GtmGeomap"), trafficManagementMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameDataSource("akamai_gtm_default_datacenter", makeDataSource(trafficManagementMod, "getGtmDefaultDatacenter"),
-		makeDataSource(mainMod, "getGtmDefaultDatacenter"), trafficManagementMod, mainMod, &tfbridge.DataSourceInfo{})
-
-	// properties -> mainMod
-	prov.RenameResourceWithAlias("akamai_cp_code", makeResource(propertiesMod, "CpCode"),
-		makeResource(mainMod, "CpCode"), propertiesMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_edge_hostname", makeResource(propertiesMod, "EdgeHostName"),
-		makeResource(mainMod, "EdgeHostName"), propertiesMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameResourceWithAlias("akamai_property", makeResource(propertiesMod, "Property"),
-		makeResource(mainMod, "Property"), propertiesMod, mainMod, &tfbridge.ResourceInfo{
-			Fields: map[string]*tfbridge.SchemaInfo{
-				"read_version": {
-					Transform: func(v resource.PropertyValue) (resource.PropertyValue, error) {
-						// Read version needs to be populated and non-zero on updates, but
-						// for some reason isn't. See
-						// https://github.com/pulumi/pulumi-akamai/issues/107
-						if v.IsNull() || (v.IsNumber() && v.NumberValue() == 0) {
-							v = resource.NewNumberProperty(1)
-						}
-						return v, nil
-					},
-				},
-			},
-		})
-	prov.RenameResourceWithAlias("akamai_property_activation", makeResource(propertiesMod, "PropertyActivation"),
-		makeResource(mainMod, "PropertyActivation"), propertiesMod, mainMod, &tfbridge.ResourceInfo{})
-	prov.RenameDataSource("akamai_cp_code", makeDataSource(propertiesMod, "getCpCode"),
-		makeDataSource(mainMod, "getCpCode"), propertiesMod, mainMod, &tfbridge.DataSourceInfo{})
-	prov.RenameDataSource("akamai_property", makeDataSource(propertiesMod, "getProperty"),
-		makeDataSource(mainMod, "getProperty"), propertiesMod, mainMod, &tfbridge.DataSourceInfo{})
-	prov.RenameDataSource("akamai_property_rules", makeDataSource(propertiesMod, "getPropertyRules"),
-		makeDataSource(mainMod, "getPropertyRules"), propertiesMod, mainMod, &tfbridge.DataSourceInfo{})
-
-	err := x.ComputeDefaults(&prov, x.TokensKnownModules("akamai_", mainMod, []string{
-		"edgedns_",
-		"properties_",
-		"trafficmanagement_",
-	}, x.MakeStandardToken(mainPkg)))
+	err := x.ComputeDefaults(&prov, x.TokensSingleModule("akamai_", mainMod, x.MakeStandardToken(mainPkg)))
 	contract.AssertNoError(err)
 
 	// The upstream provider decided to move all documentation to their own website,

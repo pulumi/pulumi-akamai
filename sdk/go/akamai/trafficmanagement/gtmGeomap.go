@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.trafficmanagement.GtmGeomap has been deprecated in favor of akamai.GtmGeomap
+// Deprecated: akamai.trafficmanagement/gtmgeomap.GtmGeomap has been deprecated in favor of akamai.index/gtmgeomap.GtmGeomap
 type GtmGeomap struct {
 	pulumi.CustomResourceState
 

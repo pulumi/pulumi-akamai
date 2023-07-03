@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Deprecated: akamai.trafficmanagement.GtmCidrmap has been deprecated in favor of akamai.GtmCidrmap
+// Deprecated: akamai.trafficmanagement/gtmcidrmap.GtmCidrmap has been deprecated in favor of akamai.index/gtmcidrmap.GtmCidrmap
 type GtmCidrmap struct {
 	pulumi.CustomResourceState
 

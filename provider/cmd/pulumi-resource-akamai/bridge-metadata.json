@@ -283,11 +283,14 @@
                 }
             },
             "akamai_cp_code": {
-                "current": "akamai:index/cpCode:CpCode",
-                "majorVersion": 4
-            },
-            "akamai_cp_code_legacy": {
                 "current": "akamai:properties/cpCode:CpCode",
+                "past": [
+                    {
+                        "name": "akamai:properties/cpCode:CpCode",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4
             },
             "akamai_cps_dv_enrollment": {
@@ -444,16 +447,14 @@
                 }
             },
             "akamai_dns_record": {
-                "current": "akamai:index/dnsRecord:DnsRecord",
-                "majorVersion": 4,
-                "fields": {
-                    "target": {
-                        "maxItemsOne": false
-                    }
-                }
-            },
-            "akamai_dns_record_legacy": {
                 "current": "akamai:edgedns/dnsRecord:DnsRecord",
+                "past": [
+                    {
+                        "name": "akamai:edgedns/dnsRecord:DnsRecord",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "target": {
@@ -462,19 +463,14 @@
                 }
             },
             "akamai_dns_zone": {
-                "current": "akamai:index/dnsZone:DnsZone",
-                "majorVersion": 4,
-                "fields": {
-                    "masters": {
-                        "maxItemsOne": false
-                    },
-                    "tsig_key": {
-                        "maxItemsOne": true
-                    }
-                }
-            },
-            "akamai_dns_zone_legacy": {
                 "current": "akamai:edgedns/dnsZone:DnsZone",
+                "past": [
+                    {
+                        "name": "akamai:edgedns/dnsZone:DnsZone",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "masters": {
@@ -486,16 +482,14 @@
                 }
             },
             "akamai_edge_hostname": {
-                "current": "akamai:index/edgeHostName:EdgeHostName",
-                "majorVersion": 4,
-                "fields": {
-                    "status_update_email": {
-                        "maxItemsOne": false
-                    }
-                }
-            },
-            "akamai_edge_hostname_legacy": {
                 "current": "akamai:properties/edgeHostName:EdgeHostName",
+                "past": [
+                    {
+                        "name": "akamai:properties/edgeHostName:EdgeHostName",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "status_update_email": {
@@ -530,26 +524,14 @@
                 "majorVersion": 4
             },
             "akamai_gtm_asmap": {
-                "current": "akamai:index/gtmAsmap:GtmAsmap",
-                "majorVersion": 4,
-                "fields": {
-                    "assignment": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "as_numbers": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "default_datacenter": {
-                        "maxItemsOne": true
-                    }
-                }
-            },
-            "akamai_gtm_asmap_legacy": {
                 "current": "akamai:trafficmanagement/gtmASmap:GtmASmap",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmASmap:GtmASmap",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "assignment": {
@@ -568,26 +550,14 @@
                 }
             },
             "akamai_gtm_cidrmap": {
-                "current": "akamai:index/gtmCidrmap:GtmCidrmap",
-                "majorVersion": 4,
-                "fields": {
-                    "assignment": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "blocks": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "default_datacenter": {
-                        "maxItemsOne": true
-                    }
-                }
-            },
-            "akamai_gtm_cidrmap_legacy": {
                 "current": "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmCidrmap:GtmCidrmap",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "assignment": {
@@ -606,23 +576,14 @@
                 }
             },
             "akamai_gtm_datacenter": {
-                "current": "akamai:index/gtmDatacenter:GtmDatacenter",
-                "majorVersion": 4,
-                "fields": {
-                    "default_load_object": {
-                        "maxItemsOne": true,
-                        "elem": {
-                            "fields": {
-                                "load_servers": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "akamai_gtm_datacenter_legacy": {
                 "current": "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmDatacenter:GtmDatacenter",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "default_load_object": {
@@ -638,16 +599,14 @@
                 }
             },
             "akamai_gtm_domain": {
-                "current": "akamai:index/gtmDomain:GtmDomain",
-                "majorVersion": 4,
-                "fields": {
-                    "email_notification_list": {
-                        "maxItemsOne": false
-                    }
-                }
-            },
-            "akamai_gtm_domain_legacy": {
                 "current": "akamai:trafficmanagement/gtmDomain:GtmDomain",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmDomain:GtmDomain",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "email_notification_list": {
@@ -656,26 +615,14 @@
                 }
             },
             "akamai_gtm_geomap": {
-                "current": "akamai:index/gtmGeomap:GtmGeomap",
-                "majorVersion": 4,
-                "fields": {
-                    "assignment": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "countries": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "default_datacenter": {
-                        "maxItemsOne": true
-                    }
-                }
-            },
-            "akamai_gtm_geomap_legacy": {
                 "current": "akamai:trafficmanagement/gtmGeomap:GtmGeomap",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmGeomap:GtmGeomap",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "assignment": {
@@ -694,43 +641,14 @@
                 }
             },
             "akamai_gtm_property": {
-                "current": "akamai:index/gtmProperty:GtmProperty",
-                "majorVersion": 4,
-                "fields": {
-                    "liveness_test": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "http_header": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "static_rr_set": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "rdata": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    },
-                    "traffic_target": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "servers": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "akamai_gtm_property_legacy": {
                 "current": "akamai:trafficmanagement/gtmProperty:GtmProperty",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmProperty:GtmProperty",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "liveness_test": {
@@ -766,23 +684,14 @@
                 }
             },
             "akamai_gtm_resource": {
-                "current": "akamai:index/gtmResource:GtmResource",
-                "majorVersion": 4,
-                "fields": {
-                    "resource_instance": {
-                        "maxItemsOne": false,
-                        "elem": {
-                            "fields": {
-                                "load_servers": {
-                                    "maxItemsOne": false
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "akamai_gtm_resource_legacy": {
                 "current": "akamai:trafficmanagement/gtmResource:GtmResource",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/gtmResource:GtmResource",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "resource_instance": {
@@ -863,7 +772,14 @@
                 }
             },
             "akamai_property": {
-                "current": "akamai:index/property:Property",
+                "current": "akamai:properties/property:Property",
+                "past": [
+                    {
+                        "name": "akamai:properties/property:Property",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "contact": {
@@ -891,25 +807,14 @@
                 }
             },
             "akamai_property_activation": {
-                "current": "akamai:index/propertyActivation:PropertyActivation",
-                "majorVersion": 4,
-                "fields": {
-                    "compliance_record": {
-                        "maxItemsOne": true
-                    },
-                    "contact": {
-                        "maxItemsOne": false
-                    },
-                    "rule_errors": {
-                        "maxItemsOne": false
-                    },
-                    "rule_warnings": {
-                        "maxItemsOne": false
-                    }
-                }
-            },
-            "akamai_property_activation_legacy": {
                 "current": "akamai:properties/propertyActivation:PropertyActivation",
+                "past": [
+                    {
+                        "name": "akamai:properties/propertyActivation:PropertyActivation",
+                        "inCodegen": true,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "compliance_record": {
@@ -941,14 +846,1064 @@
                         "maxItemsOne": false
                     }
                 }
+            }
+        },
+        "datasources": {
+            "akamai_appsec_advanced_settings_attack_payload_logging": {
+                "current": "akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging",
+                "majorVersion": 4
             },
-            "akamai_property_legacy": {
-                "current": "akamai:properties/property:Property",
+            "akamai_appsec_advanced_settings_evasive_path_match": {
+                "current": "akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch",
+                "majorVersion": 4
+            },
+            "akamai_appsec_advanced_settings_logging": {
+                "current": "akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging",
+                "majorVersion": 4
+            },
+            "akamai_appsec_advanced_settings_pragma_header": {
+                "current": "akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader",
+                "majorVersion": 4
+            },
+            "akamai_appsec_advanced_settings_prefetch": {
+                "current": "akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch",
+                "majorVersion": 4
+            },
+            "akamai_appsec_advanced_settings_request_body": {
+                "current": "akamai:index/getAppsecAdvancedSettingsRequestBody:getAppsecAdvancedSettingsRequestBody",
+                "majorVersion": 4
+            },
+            "akamai_appsec_api_endpoints": {
+                "current": "akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints",
+                "majorVersion": 4,
+                "fields": {
+                    "id_list": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_appsec_api_request_constraints": {
+                "current": "akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints",
+                "majorVersion": 4
+            },
+            "akamai_appsec_attack_groups": {
+                "current": "akamai:index/getAppSecAttackGroups:getAppSecAttackGroups",
+                "majorVersion": 4
+            },
+            "akamai_appsec_bypass_network_lists": {
+                "current": "akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists",
+                "majorVersion": 4,
+                "fields": {
+                    "bypass_network_list": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_appsec_configuration": {
+                "current": "akamai:index/getAppSecConfiguration:getAppSecConfiguration",
+                "majorVersion": 4
+            },
+            "akamai_appsec_configuration_version": {
+                "current": "akamai:index/getAppSecConfigurationVersion:getAppSecConfigurationVersion",
+                "majorVersion": 4
+            },
+            "akamai_appsec_contracts_groups": {
+                "current": "akamai:index/getAppSecContractsGroups:getAppSecContractsGroups",
+                "majorVersion": 4
+            },
+            "akamai_appsec_custom_deny": {
+                "current": "akamai:index/getAppSecCustomDeny:getAppSecCustomDeny",
+                "majorVersion": 4
+            },
+            "akamai_appsec_custom_rule_actions": {
+                "current": "akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions",
+                "majorVersion": 4
+            },
+            "akamai_appsec_custom_rules": {
+                "current": "akamai:index/getAppSecCustomRules:getAppSecCustomRules",
+                "majorVersion": 4
+            },
+            "akamai_appsec_eval": {
+                "current": "akamai:index/getAppSecEval:getAppSecEval",
+                "majorVersion": 4
+            },
+            "akamai_appsec_eval_groups": {
+                "current": "akamai:index/getAppSecEvalGroups:getAppSecEvalGroups",
+                "majorVersion": 4
+            },
+            "akamai_appsec_eval_penalty_box": {
+                "current": "akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox",
+                "majorVersion": 4
+            },
+            "akamai_appsec_eval_rules": {
+                "current": "akamai:index/getAppSecEvalRules:getAppSecEvalRules",
+                "majorVersion": 4
+            },
+            "akamai_appsec_export_configuration": {
+                "current": "akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration",
+                "majorVersion": 4,
+                "fields": {
+                    "search": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_appsec_failover_hostnames": {
+                "current": "akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames",
+                "majorVersion": 4,
+                "fields": {
+                    "hostnames": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_appsec_hostname_coverage": {
+                "current": "akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage",
+                "majorVersion": 4
+            },
+            "akamai_appsec_hostname_coverage_match_targets": {
+                "current": "akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets",
+                "majorVersion": 4
+            },
+            "akamai_appsec_hostname_coverage_overlapping": {
+                "current": "akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping",
+                "majorVersion": 4
+            },
+            "akamai_appsec_ip_geo": {
+                "current": "akamai:index/getAppSecIPGeo:getAppSecIPGeo",
+                "majorVersion": 4,
+                "fields": {
+                    "exception_ip_network_lists": {
+                        "maxItemsOne": false
+                    },
+                    "geo_network_lists": {
+                        "maxItemsOne": false
+                    },
+                    "ip_network_lists": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_appsec_malware_content_types": {
+                "current": "akamai:index/getAppSecMalwareContentTypes:getAppSecMalwareContentTypes",
+                "majorVersion": 4
+            },
+            "akamai_appsec_malware_policies": {
+                "current": "akamai:index/getAppSecMalwarePolicies:getAppSecMalwarePolicies",
+                "majorVersion": 4
+            },
+            "akamai_appsec_malware_policy_actions": {
+                "current": "akamai:index/getAppSecMalwarePolicyActions:getAppSecMalwarePolicyActions",
+                "majorVersion": 4
+            },
+            "akamai_appsec_match_targets": {
+                "current": "akamai:index/getAppSecMatchTargets:getAppSecMatchTargets",
+                "majorVersion": 4
+            },
+            "akamai_appsec_penalty_box": {
+                "current": "akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox",
+                "majorVersion": 4
+            },
+            "akamai_appsec_rate_policies": {
+                "current": "akamai:index/getAppSecRatePolicies:getAppSecRatePolicies",
+                "majorVersion": 4
+            },
+            "akamai_appsec_rate_policy_actions": {
+                "current": "akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions",
+                "majorVersion": 4
+            },
+            "akamai_appsec_reputation_profile_actions": {
+                "current": "akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions",
+                "majorVersion": 4
+            },
+            "akamai_appsec_reputation_profile_analysis": {
+                "current": "akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis",
+                "majorVersion": 4
+            },
+            "akamai_appsec_reputation_profiles": {
+                "current": "akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles",
+                "majorVersion": 4
+            },
+            "akamai_appsec_rule_upgrade_details": {
+                "current": "akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails",
+                "majorVersion": 4
+            },
+            "akamai_appsec_rules": {
+                "current": "akamai:index/getAppSecRules:getAppSecRules",
+                "majorVersion": 4
+            },
+            "akamai_appsec_security_policy": {
+                "current": "akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy",
+                "majorVersion": 4,
+                "fields": {
+                    "security_policy_id_list": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_appsec_security_policy_protections": {
+                "current": "akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections",
+                "majorVersion": 4
+            },
+            "akamai_appsec_selectable_hostnames": {
+                "current": "akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames",
+                "majorVersion": 4,
+                "fields": {
+                    "hostnames": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_appsec_selected_hostnames": {
+                "current": "akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames",
+                "majorVersion": 4,
+                "fields": {
+                    "hostnames": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_appsec_siem_definitions": {
+                "current": "akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions",
+                "majorVersion": 4
+            },
+            "akamai_appsec_siem_settings": {
+                "current": "akamai:index/getAppSecSiemSettings:getAppSecSiemSettings",
+                "majorVersion": 4
+            },
+            "akamai_appsec_slow_post": {
+                "current": "akamai:index/getAppSecSlowPost:getAppSecSlowPost",
+                "majorVersion": 4
+            },
+            "akamai_appsec_threat_intel": {
+                "current": "akamai:index/getAppSecThreatIntel:getAppSecThreatIntel",
+                "majorVersion": 4
+            },
+            "akamai_appsec_tuning_recommendations": {
+                "current": "akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations",
+                "majorVersion": 4
+            },
+            "akamai_appsec_version_notes": {
+                "current": "akamai:index/getAppSecVersionNotes:getAppSecVersionNotes",
+                "majorVersion": 4
+            },
+            "akamai_appsec_waf_mode": {
+                "current": "akamai:index/getAppSecWafMode:getAppSecWafMode",
+                "majorVersion": 4
+            },
+            "akamai_appsec_wap_selected_hostnames": {
+                "current": "akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames",
+                "majorVersion": 4,
+                "fields": {
+                    "evaluated_hosts": {
+                        "maxItemsOne": false
+                    },
+                    "protected_hosts": {
+                        "maxItemsOne": false
+                    },
+                    "selected_hosts": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_authorities_set": {
+                "current": "akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet",
+                "past": [
+                    {
+                        "name": "akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
+                "majorVersion": 4,
+                "fields": {
+                    "authorities": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_authorities_set_legacy": {
+                "current": "akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet",
+                "majorVersion": 4,
+                "fields": {
+                    "authorities": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_cloudlets_api_prioritization_match_rule": {
+                "current": "akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule",
+                "majorVersion": 4,
+                "fields": {
+                    "match_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "matches": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "object_match_value": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "options": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "value": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "value": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_cloudlets_application_load_balancer": {
+                "current": "akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer",
+                "majorVersion": 4,
+                "fields": {
+                    "data_centers": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "liveness_hosts": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "liveness_settings": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_cloudlets_application_load_balancer_match_rule": {
+                "current": "akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule",
+                "majorVersion": 4,
+                "fields": {
+                    "match_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "forward_settings": {
+                                    "maxItemsOne": false
+                                },
+                                "matches": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "object_match_value": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "options": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "value": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "value": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_cloudlets_audience_segmentation_match_rule": {
+                "current": "akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule",
+                "majorVersion": 4,
+                "fields": {
+                    "match_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "forward_settings": {
+                                    "maxItemsOne": true
+                                },
+                                "matches": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "object_match_value": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "options": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "value": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "value": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_cloudlets_edge_redirector_match_rule": {
+                "current": "akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule",
+                "majorVersion": 4,
+                "fields": {
+                    "match_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "matches": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "object_match_value": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "options": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "value": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "value": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_cloudlets_forward_rewrite_match_rule": {
+                "current": "akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule",
+                "majorVersion": 4,
+                "fields": {
+                    "match_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "forward_settings": {
+                                    "maxItemsOne": true
+                                },
+                                "matches": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "object_match_value": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "options": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "value": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "value": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_cloudlets_phased_release_match_rule": {
+                "current": "akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule",
+                "majorVersion": 4,
+                "fields": {
+                    "match_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "forward_settings": {
+                                    "maxItemsOne": true
+                                },
+                                "matches": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "object_match_value": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "options": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "value": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "value": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_cloudlets_policy": {
+                "current": "akamai:index/getCloudletsPolicy:getCloudletsPolicy",
+                "majorVersion": 4,
+                "fields": {
+                    "activations": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "policy_info": {
+                                    "maxItemsOne": false
+                                },
+                                "property_info": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_cloudlets_request_control_match_rule": {
+                "current": "akamai:index/getCloudletsRequestControlMatchRule:getCloudletsRequestControlMatchRule",
+                "majorVersion": 4,
+                "fields": {
+                    "match_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "matches": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "object_match_value": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "options": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "value": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "value": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_cloudlets_visitor_prioritization_match_rule": {
+                "current": "akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule",
+                "majorVersion": 4,
+                "fields": {
+                    "match_rules": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "matches": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "object_match_value": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "options": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "value": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "value": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_contract": {
+                "current": "akamai:index/getContract:getContract",
+                "majorVersion": 4
+            },
+            "akamai_contracts": {
+                "current": "akamai:index/getContracts:getContracts",
+                "majorVersion": 4,
+                "fields": {
+                    "contracts": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_cp_code": {
+                "current": "akamai:properties/getCpCode:getCpCode",
+                "past": [
+                    {
+                        "name": "akamai:properties/getCpCode:getCpCode",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
+                "majorVersion": 4,
+                "fields": {
+                    "product_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_cp_code_legacy": {
+                "current": "akamai:properties/getCpCode:getCpCode",
+                "majorVersion": 4,
+                "fields": {
+                    "product_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_cps_csr": {
+                "current": "akamai:index/getCpsCsr:getCpsCsr",
+                "majorVersion": 4
+            },
+            "akamai_cps_deployments": {
+                "current": "akamai:index/getCpsDeployments:getCpsDeployments",
+                "majorVersion": 4
+            },
+            "akamai_cps_enrollment": {
+                "current": "akamai:index/getCPSEnrollment:getCPSEnrollment",
+                "majorVersion": 4,
+                "fields": {
+                    "admin_contact": {
+                        "maxItemsOne": false
+                    },
+                    "csr": {
+                        "maxItemsOne": false
+                    },
+                    "dns_challenges": {
+                        "maxItemsOne": false
+                    },
+                    "http_challenges": {
+                        "maxItemsOne": false
+                    },
+                    "network_configuration": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "client_mutual_authentication": {
+                                    "maxItemsOne": false
+                                },
+                                "disallowed_tls_versions": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "organization": {
+                        "maxItemsOne": false
+                    },
+                    "sans": {
+                        "maxItemsOne": false
+                    },
+                    "tech_contact": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_cps_enrollments": {
+                "current": "akamai:index/getCPSEnrollments:getCPSEnrollments",
+                "majorVersion": 4,
+                "fields": {
+                    "enrollments": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "admin_contact": {
+                                    "maxItemsOne": false
+                                },
+                                "csr": {
+                                    "maxItemsOne": false
+                                },
+                                "network_configuration": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "client_mutual_authentication": {
+                                                "maxItemsOne": false
+                                            },
+                                            "disallowed_tls_versions": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "organization": {
+                                    "maxItemsOne": false
+                                },
+                                "sans": {
+                                    "maxItemsOne": false
+                                },
+                                "tech_contact": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_cps_warnings": {
+                "current": "akamai:index/getCpsWarnings:getCpsWarnings",
+                "majorVersion": 4
+            },
+            "akamai_datastream_activation_history": {
+                "current": "akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory",
+                "majorVersion": 4,
+                "fields": {
+                    "activations": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_datastream_dataset_fields": {
+                "current": "akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields",
+                "majorVersion": 4,
+                "fields": {
+                    "fields": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "dataset_fields": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_datastreams": {
+                "current": "akamai:index/getDatastreams:getDatastreams",
+                "majorVersion": 4,
+                "fields": {
+                    "streams": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "errors": {
+                                    "maxItemsOne": false
+                                },
+                                "properties": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_dns_record_set": {
+                "current": "akamai:edgedns/getDnsRecordSet:getDnsRecordSet",
+                "past": [
+                    {
+                        "name": "akamai:edgedns/getDnsRecordSet:getDnsRecordSet",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
+                "majorVersion": 4,
+                "fields": {
+                    "rdata": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_dns_record_set_legacy": {
+                "current": "akamai:edgedns/getDnsRecordSet:getDnsRecordSet",
+                "majorVersion": 4,
+                "fields": {
+                    "rdata": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_edgekv_group_items": {
+                "current": "akamai:index/getEdgekvGroupItems:getEdgekvGroupItems",
+                "majorVersion": 4
+            },
+            "akamai_edgekv_groups": {
+                "current": "akamai:index/getEdgekvGroups:getEdgekvGroups",
+                "majorVersion": 4,
+                "fields": {
+                    "groups": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_edgeworker": {
+                "current": "akamai:index/getEdgeWorker:getEdgeWorker",
+                "majorVersion": 4,
+                "fields": {
+                    "warnings": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_edgeworker_activation": {
+                "current": "akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation",
+                "majorVersion": 4
+            },
+            "akamai_edgeworkers_property_rules": {
+                "current": "akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules",
+                "majorVersion": 4
+            },
+            "akamai_edgeworkers_resource_tier": {
+                "current": "akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier",
+                "majorVersion": 4
+            },
+            "akamai_group": {
+                "current": "akamai:index/getGroup:getGroup",
+                "majorVersion": 4
+            },
+            "akamai_groups": {
+                "current": "akamai:index/getGroups:getGroups",
+                "majorVersion": 4,
+                "fields": {
+                    "groups": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "contract_ids": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "akamai_gtm_default_datacenter": {
+                "current": "akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter",
+                "past": [
+                    {
+                        "name": "akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
+                "majorVersion": 4
+            },
+            "akamai_gtm_default_datacenter_legacy": {
+                "current": "akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter",
+                "majorVersion": 4
+            },
+            "akamai_iam_contact_types": {
+                "current": "akamai:index/getIamContactTypes:getIamContactTypes",
+                "majorVersion": 4,
+                "fields": {
+                    "contact_types": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_iam_countries": {
+                "current": "akamai:index/getIamCountries:getIamCountries",
+                "majorVersion": 4,
+                "fields": {
+                    "countries": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_iam_grantable_roles": {
+                "current": "akamai:index/getIamGrantableRoles:getIamGrantableRoles",
+                "majorVersion": 4,
+                "fields": {
+                    "grantable_roles": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_iam_roles": {
+                "current": "akamai:index/getIamRoles:getIamRoles",
+                "majorVersion": 4,
+                "fields": {
+                    "roles": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_iam_states": {
+                "current": "akamai:index/getIamStates:getIamStates",
+                "majorVersion": 4,
+                "fields": {
+                    "states": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_iam_supported_langs": {
+                "current": "akamai:index/getIamSupportedLangs:getIamSupportedLangs",
+                "majorVersion": 4,
+                "fields": {
+                    "languages": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_iam_timeout_policies": {
+                "current": "akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies",
+                "majorVersion": 4
+            },
+            "akamai_iam_timezones": {
+                "current": "akamai:index/getIamTimezones:getIamTimezones",
+                "majorVersion": 4,
+                "fields": {
+                    "timezones": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_networklist_network_lists": {
+                "current": "akamai:index/getNetworkLists:getNetworkLists",
+                "majorVersion": 4,
+                "fields": {
+                    "list": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_properties": {
+                "current": "akamai:index/getProperties:getProperties",
+                "majorVersion": 4,
+                "fields": {
+                    "properties": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_properties_search": {
+                "current": "akamai:index/getPropertiesSearch:getPropertiesSearch",
+                "majorVersion": 4,
+                "fields": {
+                    "properties": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_property": {
+                "current": "akamai:properties/getProperty:getProperty",
+                "past": [
+                    {
+                        "name": "akamai:properties/getProperty:getProperty",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
+                "majorVersion": 4
+            },
+            "akamai_property_activation": {
+                "current": "akamai:properties/getActivation:getActivation",
+                "past": [
+                    {
+                        "name": "akamai:properties/getActivation:getActivation",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
                 "majorVersion": 4,
                 "fields": {
                     "contact": {
                         "maxItemsOne": false
-                    },
+                    }
+                }
+            },
+            "akamai_property_activation_legacy": {
+                "current": "akamai:properties/getActivation:getActivation",
+                "majorVersion": 4,
+                "fields": {
+                    "contact": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "akamai_property_hostnames": {
+                "current": "akamai:index/getPropertyHostnames:getPropertyHostnames",
+                "majorVersion": 4,
+                "fields": {
                     "hostnames": {
                         "maxItemsOne": false,
                         "elem": {
@@ -958,355 +1913,1605 @@
                                 }
                             }
                         }
-                    },
-                    "origin": {
-                        "maxItemsOne": false
-                    },
-                    "rule_errors": {
-                        "maxItemsOne": false
-                    },
-                    "rule_warnings": {
+                    }
+                }
+            },
+            "akamai_property_include": {
+                "current": "akamai:index/getPropertyInclude:getPropertyInclude",
+                "majorVersion": 4
+            },
+            "akamai_property_include_activation": {
+                "current": "akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation",
+                "majorVersion": 4,
+                "fields": {
+                    "notify_emails": {
                         "maxItemsOne": false
                     }
                 }
-            }
-        },
-        "datasources": {
-            "akamai_appsec_advanced_settings_attack_payload_logging": {
-                "current": "akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging"
-            },
-            "akamai_appsec_advanced_settings_evasive_path_match": {
-                "current": "akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch"
-            },
-            "akamai_appsec_advanced_settings_logging": {
-                "current": "akamai:index/getAppSecAdvancedSettingsLogging:getAppSecAdvancedSettingsLogging"
-            },
-            "akamai_appsec_advanced_settings_pragma_header": {
-                "current": "akamai:index/getAppSecAdvancedSettingsPragmaHeader:getAppSecAdvancedSettingsPragmaHeader"
-            },
-            "akamai_appsec_advanced_settings_prefetch": {
-                "current": "akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch"
-            },
-            "akamai_appsec_advanced_settings_request_body": {
-                "current": "akamai:index/getAppsecAdvancedSettingsRequestBody:getAppsecAdvancedSettingsRequestBody"
-            },
-            "akamai_appsec_api_endpoints": {
-                "current": "akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints"
-            },
-            "akamai_appsec_api_request_constraints": {
-                "current": "akamai:index/getAppSecApiRequestConstraints:getAppSecApiRequestConstraints"
-            },
-            "akamai_appsec_attack_groups": {
-                "current": "akamai:index/getAppSecAttackGroups:getAppSecAttackGroups"
-            },
-            "akamai_appsec_bypass_network_lists": {
-                "current": "akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists"
-            },
-            "akamai_appsec_configuration": {
-                "current": "akamai:index/getAppSecConfiguration:getAppSecConfiguration"
-            },
-            "akamai_appsec_configuration_version": {
-                "current": "akamai:index/getAppSecConfigurationVersion:getAppSecConfigurationVersion"
-            },
-            "akamai_appsec_contracts_groups": {
-                "current": "akamai:index/getAppSecContractsGroups:getAppSecContractsGroups"
-            },
-            "akamai_appsec_custom_deny": {
-                "current": "akamai:index/getAppSecCustomDeny:getAppSecCustomDeny"
-            },
-            "akamai_appsec_custom_rule_actions": {
-                "current": "akamai:index/getAppSecCustomRuleActions:getAppSecCustomRuleActions"
-            },
-            "akamai_appsec_custom_rules": {
-                "current": "akamai:index/getAppSecCustomRules:getAppSecCustomRules"
-            },
-            "akamai_appsec_eval": {
-                "current": "akamai:index/getAppSecEval:getAppSecEval"
-            },
-            "akamai_appsec_eval_groups": {
-                "current": "akamai:index/getAppSecEvalGroups:getAppSecEvalGroups"
-            },
-            "akamai_appsec_eval_penalty_box": {
-                "current": "akamai:index/getAppSecEvalPenaltyBox:getAppSecEvalPenaltyBox"
-            },
-            "akamai_appsec_eval_rules": {
-                "current": "akamai:index/getAppSecEvalRules:getAppSecEvalRules"
-            },
-            "akamai_appsec_export_configuration": {
-                "current": "akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration"
-            },
-            "akamai_appsec_failover_hostnames": {
-                "current": "akamai:index/getAppSecFailoverHostnames:getAppSecFailoverHostnames"
-            },
-            "akamai_appsec_hostname_coverage": {
-                "current": "akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage"
-            },
-            "akamai_appsec_hostname_coverage_match_targets": {
-                "current": "akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets"
-            },
-            "akamai_appsec_hostname_coverage_overlapping": {
-                "current": "akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping"
-            },
-            "akamai_appsec_ip_geo": {
-                "current": "akamai:index/getAppSecIPGeo:getAppSecIPGeo"
-            },
-            "akamai_appsec_malware_content_types": {
-                "current": "akamai:index/getAppSecMalwareContentTypes:getAppSecMalwareContentTypes"
-            },
-            "akamai_appsec_malware_policies": {
-                "current": "akamai:index/getAppSecMalwarePolicies:getAppSecMalwarePolicies"
-            },
-            "akamai_appsec_malware_policy_actions": {
-                "current": "akamai:index/getAppSecMalwarePolicyActions:getAppSecMalwarePolicyActions"
-            },
-            "akamai_appsec_match_targets": {
-                "current": "akamai:index/getAppSecMatchTargets:getAppSecMatchTargets"
-            },
-            "akamai_appsec_penalty_box": {
-                "current": "akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox"
-            },
-            "akamai_appsec_rate_policies": {
-                "current": "akamai:index/getAppSecRatePolicies:getAppSecRatePolicies"
-            },
-            "akamai_appsec_rate_policy_actions": {
-                "current": "akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions"
-            },
-            "akamai_appsec_reputation_profile_actions": {
-                "current": "akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions"
-            },
-            "akamai_appsec_reputation_profile_analysis": {
-                "current": "akamai:index/getAppSecReputationProfileAnalysis:getAppSecReputationProfileAnalysis"
-            },
-            "akamai_appsec_reputation_profiles": {
-                "current": "akamai:index/getAppSecReputationProfiles:getAppSecReputationProfiles"
-            },
-            "akamai_appsec_rule_upgrade_details": {
-                "current": "akamai:index/getAppSecRuleUpgradeDetails:getAppSecRuleUpgradeDetails"
-            },
-            "akamai_appsec_rules": {
-                "current": "akamai:index/getAppSecRules:getAppSecRules"
-            },
-            "akamai_appsec_security_policy": {
-                "current": "akamai:index/getAppSecSecurityPolicy:getAppSecSecurityPolicy"
-            },
-            "akamai_appsec_security_policy_protections": {
-                "current": "akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections"
-            },
-            "akamai_appsec_selectable_hostnames": {
-                "current": "akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames"
-            },
-            "akamai_appsec_selected_hostnames": {
-                "current": "akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames"
-            },
-            "akamai_appsec_siem_definitions": {
-                "current": "akamai:index/getAppSecSiemDefinitions:getAppSecSiemDefinitions"
-            },
-            "akamai_appsec_siem_settings": {
-                "current": "akamai:index/getAppSecSiemSettings:getAppSecSiemSettings"
-            },
-            "akamai_appsec_slow_post": {
-                "current": "akamai:index/getAppSecSlowPost:getAppSecSlowPost"
-            },
-            "akamai_appsec_threat_intel": {
-                "current": "akamai:index/getAppSecThreatIntel:getAppSecThreatIntel"
-            },
-            "akamai_appsec_tuning_recommendations": {
-                "current": "akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations"
-            },
-            "akamai_appsec_version_notes": {
-                "current": "akamai:index/getAppSecVersionNotes:getAppSecVersionNotes"
-            },
-            "akamai_appsec_waf_mode": {
-                "current": "akamai:index/getAppSecWafMode:getAppSecWafMode"
-            },
-            "akamai_appsec_wap_selected_hostnames": {
-                "current": "akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames"
-            },
-            "akamai_authorities_set": {
-                "current": "akamai:index/getAuthoritiesSet:getAuthoritiesSet"
-            },
-            "akamai_authorities_set_legacy": {
-                "current": "akamai:edgedns/getAuthoritiesSet:getAuthoritiesSet"
-            },
-            "akamai_cloudlets_api_prioritization_match_rule": {
-                "current": "akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule"
-            },
-            "akamai_cloudlets_application_load_balancer": {
-                "current": "akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer"
-            },
-            "akamai_cloudlets_application_load_balancer_match_rule": {
-                "current": "akamai:index/getCloudletsApplicationLoadBalancerMatchRule:getCloudletsApplicationLoadBalancerMatchRule"
-            },
-            "akamai_cloudlets_audience_segmentation_match_rule": {
-                "current": "akamai:index/getCloudletsAudienceSegmentationMatchRule:getCloudletsAudienceSegmentationMatchRule"
-            },
-            "akamai_cloudlets_edge_redirector_match_rule": {
-                "current": "akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule"
-            },
-            "akamai_cloudlets_forward_rewrite_match_rule": {
-                "current": "akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule"
-            },
-            "akamai_cloudlets_phased_release_match_rule": {
-                "current": "akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule"
-            },
-            "akamai_cloudlets_policy": {
-                "current": "akamai:index/getCloudletsPolicy:getCloudletsPolicy"
-            },
-            "akamai_cloudlets_request_control_match_rule": {
-                "current": "akamai:index/getCloudletsRequestControlMatchRule:getCloudletsRequestControlMatchRule"
-            },
-            "akamai_cloudlets_visitor_prioritization_match_rule": {
-                "current": "akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule"
-            },
-            "akamai_contract": {
-                "current": "akamai:index/getContract:getContract"
-            },
-            "akamai_contracts": {
-                "current": "akamai:index/getContracts:getContracts"
-            },
-            "akamai_cp_code": {
-                "current": "akamai:index/getCpCode:getCpCode"
-            },
-            "akamai_cp_code_legacy": {
-                "current": "akamai:properties/getCpCode:getCpCode"
-            },
-            "akamai_cps_csr": {
-                "current": "akamai:index/getCpsCsr:getCpsCsr"
-            },
-            "akamai_cps_deployments": {
-                "current": "akamai:index/getCpsDeployments:getCpsDeployments"
-            },
-            "akamai_cps_enrollment": {
-                "current": "akamai:index/getCPSEnrollment:getCPSEnrollment"
-            },
-            "akamai_cps_enrollments": {
-                "current": "akamai:index/getCPSEnrollments:getCPSEnrollments"
-            },
-            "akamai_cps_warnings": {
-                "current": "akamai:index/getCpsWarnings:getCpsWarnings"
-            },
-            "akamai_datastream_activation_history": {
-                "current": "akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory"
-            },
-            "akamai_datastream_dataset_fields": {
-                "current": "akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields"
-            },
-            "akamai_datastreams": {
-                "current": "akamai:index/getDatastreams:getDatastreams"
-            },
-            "akamai_dns_record_set": {
-                "current": "akamai:index/getDnsRecordSet:getDnsRecordSet"
-            },
-            "akamai_dns_record_set_legacy": {
-                "current": "akamai:edgedns/getDnsRecordSet:getDnsRecordSet"
-            },
-            "akamai_edgekv_group_items": {
-                "current": "akamai:index/getEdgekvGroupItems:getEdgekvGroupItems"
-            },
-            "akamai_edgekv_groups": {
-                "current": "akamai:index/getEdgekvGroups:getEdgekvGroups"
-            },
-            "akamai_edgeworker": {
-                "current": "akamai:index/getEdgeWorker:getEdgeWorker"
-            },
-            "akamai_edgeworker_activation": {
-                "current": "akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation"
-            },
-            "akamai_edgeworkers_property_rules": {
-                "current": "akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules"
-            },
-            "akamai_edgeworkers_resource_tier": {
-                "current": "akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier"
-            },
-            "akamai_group": {
-                "current": "akamai:index/getGroup:getGroup"
-            },
-            "akamai_groups": {
-                "current": "akamai:index/getGroups:getGroups"
-            },
-            "akamai_gtm_default_datacenter": {
-                "current": "akamai:index/getGtmDefaultDatacenter:getGtmDefaultDatacenter"
-            },
-            "akamai_gtm_default_datacenter_legacy": {
-                "current": "akamai:trafficmanagement/getGtmDefaultDatacenter:getGtmDefaultDatacenter"
-            },
-            "akamai_iam_contact_types": {
-                "current": "akamai:index/getIamContactTypes:getIamContactTypes"
-            },
-            "akamai_iam_countries": {
-                "current": "akamai:index/getIamCountries:getIamCountries"
-            },
-            "akamai_iam_grantable_roles": {
-                "current": "akamai:index/getIamGrantableRoles:getIamGrantableRoles"
-            },
-            "akamai_iam_roles": {
-                "current": "akamai:index/getIamRoles:getIamRoles"
-            },
-            "akamai_iam_states": {
-                "current": "akamai:index/getIamStates:getIamStates"
-            },
-            "akamai_iam_supported_langs": {
-                "current": "akamai:index/getIamSupportedLangs:getIamSupportedLangs"
-            },
-            "akamai_iam_timeout_policies": {
-                "current": "akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies"
-            },
-            "akamai_iam_timezones": {
-                "current": "akamai:index/getIamTimezones:getIamTimezones"
-            },
-            "akamai_networklist_network_lists": {
-                "current": "akamai:index/getNetworkLists:getNetworkLists"
-            },
-            "akamai_properties": {
-                "current": "akamai:index/getProperties:getProperties"
-            },
-            "akamai_properties_search": {
-                "current": "akamai:index/getPropertiesSearch:getPropertiesSearch"
-            },
-            "akamai_property": {
-                "current": "akamai:index/getProperty:getProperty"
-            },
-            "akamai_property_activation": {
-                "current": "akamai:properties/getActivation:getActivation"
-            },
-            "akamai_property_hostnames": {
-                "current": "akamai:index/getPropertyHostnames:getPropertyHostnames"
-            },
-            "akamai_property_include": {
-                "current": "akamai:index/getPropertyInclude:getPropertyInclude"
-            },
-            "akamai_property_include_activation": {
-                "current": "akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation"
             },
             "akamai_property_include_parents": {
-                "current": "akamai:index/getPropertyIncludeParents:getPropertyIncludeParents"
+                "current": "akamai:index/getPropertyIncludeParents:getPropertyIncludeParents",
+                "majorVersion": 4,
+                "fields": {
+                    "parents": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_property_include_rules": {
-                "current": "akamai:index/getPropertyIncludeRules:getPropertyIncludeRules"
+                "current": "akamai:index/getPropertyIncludeRules:getPropertyIncludeRules",
+                "majorVersion": 4
             },
             "akamai_property_includes": {
-                "current": "akamai:index/getPropertyIncludes:getPropertyIncludes"
+                "current": "akamai:index/getPropertyIncludes:getPropertyIncludes",
+                "majorVersion": 4,
+                "fields": {
+                    "includes": {
+                        "maxItemsOne": false
+                    },
+                    "parent_property": {
+                        "maxItemsOne": true
+                    }
+                }
             },
             "akamai_property_legacy": {
-                "current": "akamai:properties/getProperty:getProperty"
+                "current": "akamai:properties/getProperty:getProperty",
+                "majorVersion": 4
             },
             "akamai_property_products": {
-                "current": "akamai:index/getPropertyProducts:getPropertyProducts"
+                "current": "akamai:index/getPropertyProducts:getPropertyProducts",
+                "majorVersion": 4,
+                "fields": {
+                    "products": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_property_rule_formats": {
-                "current": "akamai:index/getPropertyRuleFormats:getPropertyRuleFormats"
+                "current": "akamai:index/getPropertyRuleFormats:getPropertyRuleFormats",
+                "majorVersion": 4,
+                "fields": {
+                    "rule_format": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "akamai_property_rules": {
-                "current": "akamai:index/getPropertyRules:getPropertyRules"
+                "current": "akamai:properties/getPropertyRules:getPropertyRules",
+                "past": [
+                    {
+                        "name": "akamai:properties/getPropertyRules:getPropertyRules",
+                        "inCodegen": false,
+                        "majorVersion": 4
+                    }
+                ],
+                "majorVersion": 4
             },
             "akamai_property_rules_builder": {
-                "current": "akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder"
+                "current": "akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder",
+                "majorVersion": 4,
+                "fields": {
+                    "rules_v2023_01_05": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "behavior": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "ad_scaler_circuit_breaker": {
+                                                "maxItemsOne": true
+                                            },
+                                            "adaptive_acceleration": {
+                                                "maxItemsOne": true
+                                            },
+                                            "adaptive_image_compression": {
+                                                "maxItemsOne": true
+                                            },
+                                            "advanced": {
+                                                "maxItemsOne": true
+                                            },
+                                            "aggregated_reporting": {
+                                                "maxItemsOne": true
+                                            },
+                                            "akamaizer": {
+                                                "maxItemsOne": true
+                                            },
+                                            "akamaizer_tag": {
+                                                "maxItemsOne": true
+                                            },
+                                            "all_http_in_cache_hierarchy": {
+                                                "maxItemsOne": true
+                                            },
+                                            "allow_cloudlets_origins": {
+                                                "maxItemsOne": true
+                                            },
+                                            "allow_delete": {
+                                                "maxItemsOne": true
+                                            },
+                                            "allow_https_cache_key_sharing": {
+                                                "maxItemsOne": true
+                                            },
+                                            "allow_https_downgrade": {
+                                                "maxItemsOne": true
+                                            },
+                                            "allow_options": {
+                                                "maxItemsOne": true
+                                            },
+                                            "allow_patch": {
+                                                "maxItemsOne": true
+                                            },
+                                            "allow_post": {
+                                                "maxItemsOne": true
+                                            },
+                                            "allow_put": {
+                                                "maxItemsOne": true
+                                            },
+                                            "allow_transfer_encoding": {
+                                                "maxItemsOne": true
+                                            },
+                                            "alt_svc_header": {
+                                                "maxItemsOne": true
+                                            },
+                                            "api_prioritization": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cloudlet_policy": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "net_storage": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "throttled_cp_code": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "cp_code_limits": {
+                                                                        "maxItemsOne": true
+                                                                    },
+                                                                    "products": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "application_load_balancer": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "all_down_net_storage": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "cloudlet_policy": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "failover_origin_map": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "to_origin_ids": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "failover_status_codes": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "audience_segmentation": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cloudlet_policy": {
+                                                            "maxItemsOne": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "auto_domain_validation": {
+                                                "maxItemsOne": true
+                                            },
+                                            "base_directory": {
+                                                "maxItemsOne": true
+                                            },
+                                            "boss_beaconing": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "conditional_http_status": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "breadcrumbs": {
+                                                "maxItemsOne": true
+                                            },
+                                            "break_connection": {
+                                                "maxItemsOne": true
+                                            },
+                                            "brotli": {
+                                                "maxItemsOne": true
+                                            },
+                                            "cache_error": {
+                                                "maxItemsOne": true
+                                            },
+                                            "cache_id": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "elements": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "cache_key_ignore_case": {
+                                                "maxItemsOne": true
+                                            },
+                                            "cache_key_query_params": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "parameters": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "cache_key_rewrite": {
+                                                "maxItemsOne": true
+                                            },
+                                            "cache_post": {
+                                                "maxItemsOne": true
+                                            },
+                                            "cache_redirect": {
+                                                "maxItemsOne": true
+                                            },
+                                            "cache_tag": {
+                                                "maxItemsOne": true
+                                            },
+                                            "cache_tag_visible": {
+                                                "maxItemsOne": true
+                                            },
+                                            "caching": {
+                                                "maxItemsOne": true
+                                            },
+                                            "central_authorization": {
+                                                "maxItemsOne": true
+                                            },
+                                            "chase_redirects": {
+                                                "maxItemsOne": true
+                                            },
+                                            "client_characteristics": {
+                                                "maxItemsOne": true
+                                            },
+                                            "cloud_interconnects": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cloud_locations": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "cloud_wrapper": {
+                                                "maxItemsOne": true
+                                            },
+                                            "cloud_wrapper_advanced": {
+                                                "maxItemsOne": true
+                                            },
+                                            "conditional_origin": {
+                                                "maxItemsOne": true
+                                            },
+                                            "construct_response": {
+                                                "maxItemsOne": true
+                                            },
+                                            "content_characteristics": {
+                                                "maxItemsOne": true
+                                            },
+                                            "content_characteristics_amd": {
+                                                "maxItemsOne": true
+                                            },
+                                            "content_characteristics_dd": {
+                                                "maxItemsOne": true
+                                            },
+                                            "content_characteristics_wsd_large_file": {
+                                                "maxItemsOne": true
+                                            },
+                                            "content_characteristics_wsd_live": {
+                                                "maxItemsOne": true
+                                            },
+                                            "content_characteristics_wsd_vod": {
+                                                "maxItemsOne": true
+                                            },
+                                            "content_pre_position": {
+                                                "maxItemsOne": true
+                                            },
+                                            "content_targeting_protection": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "countries": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "dmas": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "ip_addresses": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "override_ip_addresses": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "referrer_domains": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "regions": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "cors_support": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "expose_headers": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "headers": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "methods": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "origins": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "cp_code": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "value": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "cp_code_limits": {
+                                                                        "maxItemsOne": true
+                                                                    },
+                                                                    "products": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "custom_behavior": {
+                                                "maxItemsOne": true
+                                            },
+                                            "datastream": {
+                                                "maxItemsOne": true
+                                            },
+                                            "dcp": {
+                                                "maxItemsOne": true
+                                            },
+                                            "dcp_auth_hmac_transformation": {
+                                                "maxItemsOne": true
+                                            },
+                                            "dcp_auth_regex_transformation": {
+                                                "maxItemsOne": true
+                                            },
+                                            "dcp_auth_substring_transformation": {
+                                                "maxItemsOne": true
+                                            },
+                                            "dcp_auth_variable_extractor": {
+                                                "maxItemsOne": true
+                                            },
+                                            "dcp_default_authz_groups": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "group_names": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "dcp_dev_relations": {
+                                                "maxItemsOne": true
+                                            },
+                                            "dcp_real_time_auth": {
+                                                "maxItemsOne": true
+                                            },
+                                            "delivery_receipt": {
+                                                "maxItemsOne": true
+                                            },
+                                            "deny_access": {
+                                                "maxItemsOne": true
+                                            },
+                                            "deny_direct_failover_access": {
+                                                "maxItemsOne": true
+                                            },
+                                            "device_characteristic_cache_id": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "elements": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "device_characteristic_header": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "elements": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "dns_async_refresh": {
+                                                "maxItemsOne": true
+                                            },
+                                            "dns_prefresh": {
+                                                "maxItemsOne": true
+                                            },
+                                            "downgrade_protocol": {
+                                                "maxItemsOne": true
+                                            },
+                                            "download_complete_marker": {
+                                                "maxItemsOne": true
+                                            },
+                                            "download_notification": {
+                                                "maxItemsOne": true
+                                            },
+                                            "downstream_cache": {
+                                                "maxItemsOne": true
+                                            },
+                                            "dynamic_throughtput_optimization": {
+                                                "maxItemsOne": true
+                                            },
+                                            "dynamic_throughtput_optimization_override": {
+                                                "maxItemsOne": true
+                                            },
+                                            "dynamic_web_content": {
+                                                "maxItemsOne": true
+                                            },
+                                            "ecms_bulk_upload": {
+                                                "maxItemsOne": true
+                                            },
+                                            "ecms_database": {
+                                                "maxItemsOne": true
+                                            },
+                                            "ecms_dataset": {
+                                                "maxItemsOne": true
+                                            },
+                                            "ecms_object_key": {
+                                                "maxItemsOne": true
+                                            },
+                                            "edge_connect": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "api_data_elements": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "edge_load_balancing_advanced": {
+                                                "maxItemsOne": true
+                                            },
+                                            "edge_load_balancing_data_center": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "failover_rules": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "edge_load_balancing_origin": {
+                                                "maxItemsOne": true
+                                            },
+                                            "edge_origin_authorization": {
+                                                "maxItemsOne": true
+                                            },
+                                            "edge_redirector": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cloudlet_policy": {
+                                                            "maxItemsOne": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "edge_scape": {
+                                                "maxItemsOne": true
+                                            },
+                                            "edge_side_includes": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "i18n_charset": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "edge_worker": {
+                                                "maxItemsOne": true
+                                            },
+                                            "enhanced_akamai_protocol": {
+                                                "maxItemsOne": true
+                                            },
+                                            "enhanced_proxy_detection": {
+                                                "maxItemsOne": true
+                                            },
+                                            "epd_forward_header_enrichment": {
+                                                "maxItemsOne": true
+                                            },
+                                            "fail_action": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cp_code": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "cp_code_limits": {
+                                                                        "maxItemsOne": true
+                                                                    },
+                                                                    "products": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "net_storage_hostname": {
+                                                            "maxItemsOne": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "failover_bot_manager_feature_compatibility": {
+                                                "maxItemsOne": true
+                                            },
+                                            "fast_invalidate": {
+                                                "maxItemsOne": true
+                                            },
+                                            "first_party_marketing": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cloudlet_policy": {
+                                                            "maxItemsOne": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "first_party_marketing_plus": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cloudlet_policy": {
+                                                            "maxItemsOne": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "forward_rewrite": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cloudlet_policy": {
+                                                            "maxItemsOne": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "front_end_optimization": {
+                                                "maxItemsOne": true
+                                            },
+                                            "g2oheader": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "custom_sign_string": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "global_request_number": {
+                                                "maxItemsOne": true
+                                            },
+                                            "graphql_caching": {
+                                                "maxItemsOne": true
+                                            },
+                                            "gzip_response": {
+                                                "maxItemsOne": true
+                                            },
+                                            "hd_data_advanced": {
+                                                "maxItemsOne": true
+                                            },
+                                            "health_detection": {
+                                                "maxItemsOne": true
+                                            },
+                                            "hsaf_eip_binding": {
+                                                "maxItemsOne": true
+                                            },
+                                            "http2": {
+                                                "maxItemsOne": true
+                                            },
+                                            "http3": {
+                                                "maxItemsOne": true
+                                            },
+                                            "http_strict_transport_security": {
+                                                "maxItemsOne": true
+                                            },
+                                            "http_to_https_upgrade": {
+                                                "maxItemsOne": true
+                                            },
+                                            "im_override": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "excluded_query_parameters": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "image_and_video_manager": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cp_code_original": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "cp_code_limits": {
+                                                                        "maxItemsOne": true
+                                                                    },
+                                                                    "products": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "cp_code_transformed": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "cp_code_limits": {
+                                                                        "maxItemsOne": true
+                                                                    },
+                                                                    "products": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "image_manager": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cp_code_original": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "cp_code_limits": {
+                                                                        "maxItemsOne": true
+                                                                    },
+                                                                    "products": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "cp_code_transformed": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "cp_code_limits": {
+                                                                        "maxItemsOne": true
+                                                                    },
+                                                                    "products": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "image_manager_video": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cp_code_original": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "cp_code_limits": {
+                                                                        "maxItemsOne": true
+                                                                    },
+                                                                    "products": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "cp_code_transformed": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "cp_code_limits": {
+                                                                        "maxItemsOne": true
+                                                                    },
+                                                                    "products": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "include": {
+                                                "maxItemsOne": true
+                                            },
+                                            "input_validation": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cloudlet_policy": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "penalty_net_storage": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "user_identification_key_headers": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "user_identification_key_params": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "instant": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "custom_link_relations": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "prefetch_no_store_extensions": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "instant_config": {
+                                                "maxItemsOne": true
+                                            },
+                                            "large_file_optimization": {
+                                                "maxItemsOne": true
+                                            },
+                                            "large_file_optimization_advanced": {
+                                                "maxItemsOne": true
+                                            },
+                                            "limit_bit_rate": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "bitrate_table": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "threshold_table": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "log_custom": {
+                                                "maxItemsOne": true
+                                            },
+                                            "m_pulse": {
+                                                "maxItemsOne": true
+                                            },
+                                            "manifest_personalization": {
+                                                "maxItemsOne": true
+                                            },
+                                            "manifest_rerouting": {
+                                                "maxItemsOne": true
+                                            },
+                                            "manual_server_push": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "serverpushlist": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "media_acceleration": {
+                                                "maxItemsOne": true
+                                            },
+                                            "media_acceleration_quic_optout": {
+                                                "maxItemsOne": true
+                                            },
+                                            "media_client": {
+                                                "maxItemsOne": true
+                                            },
+                                            "media_file_retrieval_optimization": {
+                                                "maxItemsOne": true
+                                            },
+                                            "media_origin_failover": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "object_unavailable_response_codes": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "origin_unavailable_response_codes": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "metadata_caching": {
+                                                "maxItemsOne": true
+                                            },
+                                            "mobile_sdk_performance": {
+                                                "maxItemsOne": true
+                                            },
+                                            "modify_incoming_request_header": {
+                                                "maxItemsOne": true
+                                            },
+                                            "modify_incoming_response_header": {
+                                                "maxItemsOne": true
+                                            },
+                                            "modify_outgoing_request_header": {
+                                                "maxItemsOne": true
+                                            },
+                                            "modify_outgoing_response_header": {
+                                                "maxItemsOne": true
+                                            },
+                                            "modify_via_header": {
+                                                "maxItemsOne": true
+                                            },
+                                            "origin": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "custom_certificate_authorities": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "custom_certificates": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "custom_valid_cn_values": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "net_storage": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "standard_certificate_authorities": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "origin_characteristics": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "custom_sign_string": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "origin_characteristics_wsd": {
+                                                "maxItemsOne": true
+                                            },
+                                            "origin_failure_recovery_method": {
+                                                "maxItemsOne": true
+                                            },
+                                            "origin_failure_recovery_policy": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "monitor_response_codes1": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "monitor_response_codes2": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "monitor_response_codes3": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "origin_ip_acl": {
+                                                "maxItemsOne": true
+                                            },
+                                            "persistent_client_connection": {
+                                                "maxItemsOne": true
+                                            },
+                                            "persistent_connection": {
+                                                "maxItemsOne": true
+                                            },
+                                            "personally_identifiable_information": {
+                                                "maxItemsOne": true
+                                            },
+                                            "phased_release": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cloudlet_policy": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "failover_response_code": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "preconnect": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "preconnectlist": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "predictive_content_delivery": {
+                                                "maxItemsOne": true
+                                            },
+                                            "predictive_prefetching": {
+                                                "maxItemsOne": true
+                                            },
+                                            "prefetch": {
+                                                "maxItemsOne": true
+                                            },
+                                            "prefetchable": {
+                                                "maxItemsOne": true
+                                            },
+                                            "prefresh_cache": {
+                                                "maxItemsOne": true
+                                            },
+                                            "quality": {
+                                                "maxItemsOne": true
+                                            },
+                                            "quic_beta": {
+                                                "maxItemsOne": true
+                                            },
+                                            "random_seek": {
+                                                "maxItemsOne": true
+                                            },
+                                            "rapid": {
+                                                "maxItemsOne": true
+                                            },
+                                            "read_timeout": {
+                                                "maxItemsOne": true
+                                            },
+                                            "real_time_reporting": {
+                                                "maxItemsOne": true
+                                            },
+                                            "real_user_monitoring": {
+                                                "maxItemsOne": true
+                                            },
+                                            "redirect": {
+                                                "maxItemsOne": true
+                                            },
+                                            "redirectplus": {
+                                                "maxItemsOne": true
+                                            },
+                                            "referer_checking": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "domains": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "remove_query_parameter": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "parameters": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "remove_vary": {
+                                                "maxItemsOne": true
+                                            },
+                                            "report": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cookies": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "request_control": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cloudlet_policy": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "net_storage": {
+                                                            "maxItemsOne": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "request_type_marker": {
+                                                "maxItemsOne": true
+                                            },
+                                            "resource_optimizer": {
+                                                "maxItemsOne": true
+                                            },
+                                            "resource_optimizer_extended_compatibility": {
+                                                "maxItemsOne": true
+                                            },
+                                            "response_code": {
+                                                "maxItemsOne": true
+                                            },
+                                            "response_cookie": {
+                                                "maxItemsOne": true
+                                            },
+                                            "restrict_object_caching": {
+                                                "maxItemsOne": true
+                                            },
+                                            "return_cache_status": {
+                                                "maxItemsOne": true
+                                            },
+                                            "rewrite_url": {
+                                                "maxItemsOne": true
+                                            },
+                                            "rum_custom": {
+                                                "maxItemsOne": true
+                                            },
+                                            "saas_definitions": {
+                                                "maxItemsOne": true
+                                            },
+                                            "sales_force_commerce_cloud_client": {
+                                                "maxItemsOne": true
+                                            },
+                                            "sales_force_commerce_cloud_provider": {
+                                                "maxItemsOne": true
+                                            },
+                                            "sales_force_commerce_cloud_provider_host_header": {
+                                                "maxItemsOne": true
+                                            },
+                                            "save_post_dca_processing": {
+                                                "maxItemsOne": true
+                                            },
+                                            "schedule_invalidation": {
+                                                "maxItemsOne": true
+                                            },
+                                            "script_management": {
+                                                "maxItemsOne": true
+                                            },
+                                            "segmented_content_protection": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "header_for_salt": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "hls_master_manifest_files": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "segmented_media_optimization": {
+                                                "maxItemsOne": true
+                                            },
+                                            "segmented_media_streaming_prefetch": {
+                                                "maxItemsOne": true
+                                            },
+                                            "set_variable": {
+                                                "maxItemsOne": true
+                                            },
+                                            "shutr": {
+                                                "maxItemsOne": true
+                                            },
+                                            "simulate_error_code": {
+                                                "maxItemsOne": true
+                                            },
+                                            "site_shield": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "ssmap": {
+                                                            "maxItemsOne": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "standard_tls_migration": {
+                                                "maxItemsOne": true
+                                            },
+                                            "standard_tls_migration_override": {
+                                                "maxItemsOne": true
+                                            },
+                                            "strict_header_parsing": {
+                                                "maxItemsOne": true
+                                            },
+                                            "sub_customer": {
+                                                "maxItemsOne": true
+                                            },
+                                            "sure_route": {
+                                                "maxItemsOne": true
+                                            },
+                                            "tcp_optimization": {
+                                                "maxItemsOne": true
+                                            },
+                                            "tea_leaf": {
+                                                "maxItemsOne": true
+                                            },
+                                            "tiered_distribution": {
+                                                "maxItemsOne": true
+                                            },
+                                            "tiered_distribution_advanced": {
+                                                "maxItemsOne": true
+                                            },
+                                            "tiered_distribution_customization": {
+                                                "maxItemsOne": true
+                                            },
+                                            "timeout": {
+                                                "maxItemsOne": true
+                                            },
+                                            "uid_configuration": {
+                                                "maxItemsOne": true
+                                            },
+                                            "validate_entity_tag": {
+                                                "maxItemsOne": true
+                                            },
+                                            "verify_json_web_token": {
+                                                "maxItemsOne": true
+                                            },
+                                            "verify_json_web_token_for_dcp": {
+                                                "maxItemsOne": true
+                                            },
+                                            "verify_token_authorization": {
+                                                "maxItemsOne": true
+                                            },
+                                            "virtual_waiting_room": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "waiting_room_assets_paths": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "virtual_waiting_room_with_edge_workers": {
+                                                "maxItemsOne": true
+                                            },
+                                            "visitor_prioritization": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "cloudlet_policy": {
+                                                            "maxItemsOne": true
+                                                        },
+                                                        "user_identification_key_headers": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "user_identification_key_params": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "waiting_room_cp_code": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "cp_code_limits": {
+                                                                        "maxItemsOne": true
+                                                                    },
+                                                                    "products": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "waiting_room_net_storage": {
+                                                            "maxItemsOne": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "visitor_prioritization_fifo": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "waiting_room_assets_paths": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "visitor_prioritization_fifo_standalone": {
+                                                "maxItemsOne": true
+                                            },
+                                            "watermarking": {
+                                                "maxItemsOne": true
+                                            },
+                                            "web_application_firewall": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "firewall_configuration": {
+                                                            "maxItemsOne": true
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "web_sockets": {
+                                                "maxItemsOne": true
+                                            },
+                                            "webdav": {
+                                                "maxItemsOne": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "children": {
+                                    "maxItemsOne": false
+                                },
+                                "criterion": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "advanced_im_match": {
+                                                "maxItemsOne": true
+                                            },
+                                            "bucket": {
+                                                "maxItemsOne": true
+                                            },
+                                            "cacheability": {
+                                                "maxItemsOne": true
+                                            },
+                                            "china_cdn_region": {
+                                                "maxItemsOne": true
+                                            },
+                                            "client_certificate": {
+                                                "maxItemsOne": true
+                                            },
+                                            "client_ip": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "client_ip_version": {
+                                                "maxItemsOne": true
+                                            },
+                                            "cloudlets_origin": {
+                                                "maxItemsOne": true
+                                            },
+                                            "content_delivery_network": {
+                                                "maxItemsOne": true
+                                            },
+                                            "content_type": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "device_characteristic": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "string_value": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "ecmd_auth_groups": {
+                                                "maxItemsOne": true
+                                            },
+                                            "ecmd_auth_scheme": {
+                                                "maxItemsOne": true
+                                            },
+                                            "ecmd_is_authenticated": {
+                                                "maxItemsOne": true
+                                            },
+                                            "ecmd_username": {
+                                                "maxItemsOne": true
+                                            },
+                                            "edge_workers_failure": {
+                                                "maxItemsOne": true
+                                            },
+                                            "file_extension": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "filename": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "hostname": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "match_advanced": {
+                                                "maxItemsOne": true
+                                            },
+                                            "match_cp_code": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "value": {
+                                                            "maxItemsOne": true,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "cp_code_limits": {
+                                                                        "maxItemsOne": true
+                                                                    },
+                                                                    "products": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "match_response_code": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "match_variable": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "variable_values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "metadata_stage": {
+                                                "maxItemsOne": true
+                                            },
+                                            "origin_timeout": {
+                                                "maxItemsOne": true
+                                            },
+                                            "path": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "query_string_parameter": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "random": {
+                                                "maxItemsOne": true
+                                            },
+                                            "recovery_config": {
+                                                "maxItemsOne": true
+                                            },
+                                            "regular_expression": {
+                                                "maxItemsOne": true
+                                            },
+                                            "request_cookie": {
+                                                "maxItemsOne": true
+                                            },
+                                            "request_header": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "request_method": {
+                                                "maxItemsOne": true
+                                            },
+                                            "request_protocol": {
+                                                "maxItemsOne": true
+                                            },
+                                            "request_type": {
+                                                "maxItemsOne": true
+                                            },
+                                            "response_header": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "time": {
+                                                "maxItemsOne": true
+                                            },
+                                            "token_authorization": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "status_list": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "user_agent": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "user_location": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "continent_values": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "country_values": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "region_values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "user_network": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "bandwidth_values": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "network_type_values": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "network_values": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "variable_error": {
+                                                "maxItemsOne": true,
+                                                "elem": {
+                                                    "fields": {
+                                                        "variable_names": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "virtual_waiting_room_request": {
+                                                "maxItemsOne": true
+                                            },
+                                            "visitor_prioritization_request": {
+                                                "maxItemsOne": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "custom_override": {
+                                    "maxItemsOne": true
+                                },
+                                "variable": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "akamai_property_rules_legacy": {
-                "current": "akamai:properties/getPropertyRules:getPropertyRules"
+                "current": "akamai:properties/getPropertyRules:getPropertyRules",
+                "majorVersion": 4
             },
             "akamai_property_rules_template": {
-                "current": "akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate"
+                "current": "akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate",
+                "majorVersion": 4,
+                "fields": {
+                    "template": {
+                        "maxItemsOne": false
+                    },
+                    "variables": {
+                        "maxItemsOne": false
+                    }
+                }
             }
         }
     },
@@ -1508,6 +3713,7 @@
             "akamai:index/getProperties:getProperties": "akamai_properties",
             "akamai:index/getPropertiesSearch:getPropertiesSearch": "akamai_properties_search",
             "akamai:index/getProperty:getProperty": "akamai_property",
+            "akamai:index/getPropertyActivation:getPropertyActivation": "akamai_property_activation",
             "akamai:index/getPropertyHostnames:getPropertyHostnames": "akamai_property_hostnames",
             "akamai:index/getPropertyInclude:getPropertyInclude": "akamai_property_include",
             "akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation": "akamai_property_include_activation",
@@ -1519,7 +3725,7 @@
             "akamai:index/getPropertyRules:getPropertyRules": "akamai_property_rules",
             "akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder": "akamai_property_rules_builder",
             "akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate": "akamai_property_rules_template",
-            "akamai:properties/getActivation:getActivation": "akamai_property_activation",
+            "akamai:properties/getActivation:getActivation": "akamai_property_activation_legacy",
             "akamai:properties/getCpCode:getCpCode": "akamai_cp_code_legacy",
             "akamai:properties/getProperty:getProperty": "akamai_property_legacy",
             "akamai:properties/getPropertyRules:getPropertyRules": "akamai_property_rules_legacy",
@@ -3291,6 +5497,11 @@
                 "stagingStatus": "staging_status",
                 "updatedByUser": "updated_by_user",
                 "updatedDate": "updated_date"
+            },
+            "akamai:index/getPropertyActivation:getPropertyActivation": {
+                "activationId": "activation_id",
+                "contacts": "contact",
+                "propertyId": "property_id"
             },
             "akamai:index/getPropertyHostnames:getPropertyHostnames": {
                 "contractId": "contract_id",
