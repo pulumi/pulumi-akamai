@@ -74,9 +74,9 @@ def get_datastreams(group_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getDatastreams:getDatastreams', __args__, opts=opts, typ=GetDatastreamsResult).value
 
     return AwaitableGetDatastreamsResult(
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        streams=__ret__.streams)
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        streams=pulumi.get(__ret__, 'streams'))
 
 
 @_utilities.lift_output_func(get_datastreams)

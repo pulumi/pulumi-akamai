@@ -62,5 +62,5 @@ def get_iam_roles(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIa
     __ret__ = pulumi.runtime.invoke('akamai:index/getIamRoles:getIamRoles', __args__, opts=opts, typ=GetIamRolesResult).value
 
     return AwaitableGetIamRolesResult(
-        id=__ret__.id,
-        roles=__ret__.roles)
+        id=pulumi.get(__ret__, 'id'),
+        roles=pulumi.get(__ret__, 'roles'))

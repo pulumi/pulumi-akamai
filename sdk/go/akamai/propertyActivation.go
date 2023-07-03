@@ -24,7 +24,8 @@ type PropertyActivation struct {
 	Network          pulumi.StringPtrOutput                      `pulumi:"network"`
 	// assigns a log message to the activation request
 	Note pulumi.StringPtrOutput `pulumi:"note"`
-	// Deprecated: The setting "property" has been deprecated.
+	// Deprecated: The setting "property" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Property   pulumi.StringOutput                    `pulumi:"property"`
 	PropertyId pulumi.StringOutput                    `pulumi:"propertyId"`
 	RuleErrors PropertyActivationRuleErrorArrayOutput `pulumi:"ruleErrors"`
@@ -86,7 +87,8 @@ type propertyActivationState struct {
 	Network          *string                             `pulumi:"network"`
 	// assigns a log message to the activation request
 	Note *string `pulumi:"note"`
-	// Deprecated: The setting "property" has been deprecated.
+	// Deprecated: The setting "property" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Property   *string                       `pulumi:"property"`
 	PropertyId *string                       `pulumi:"propertyId"`
 	RuleErrors []PropertyActivationRuleError `pulumi:"ruleErrors"`
@@ -108,7 +110,8 @@ type PropertyActivationState struct {
 	Network          pulumi.StringPtrInput
 	// assigns a log message to the activation request
 	Note pulumi.StringPtrInput
-	// Deprecated: The setting "property" has been deprecated.
+	// Deprecated: The setting "property" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Property   pulumi.StringPtrInput
 	PropertyId pulumi.StringPtrInput
 	RuleErrors PropertyActivationRuleErrorArrayInput
@@ -133,7 +136,8 @@ type propertyActivationArgs struct {
 	Network          *string                             `pulumi:"network"`
 	// assigns a log message to the activation request
 	Note *string `pulumi:"note"`
-	// Deprecated: The setting "property" has been deprecated.
+	// Deprecated: The setting "property" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Property   *string                       `pulumi:"property"`
 	PropertyId *string                       `pulumi:"propertyId"`
 	RuleErrors []PropertyActivationRuleError `pulumi:"ruleErrors"`
@@ -153,7 +157,8 @@ type PropertyActivationArgs struct {
 	Network          pulumi.StringPtrInput
 	// assigns a log message to the activation request
 	Note pulumi.StringPtrInput
-	// Deprecated: The setting "property" has been deprecated.
+	// Deprecated: The setting "property" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Property   pulumi.StringPtrInput
 	PropertyId pulumi.StringPtrInput
 	RuleErrors PropertyActivationRuleErrorArrayInput
@@ -280,7 +285,9 @@ func (o PropertyActivationOutput) Note() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringPtrOutput { return v.Note }).(pulumi.StringPtrOutput)
 }
 
-// Deprecated: The setting "property" has been deprecated.
+// Deprecated: The setting "property" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o PropertyActivationOutput) Property() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.Property }).(pulumi.StringOutput)
 }

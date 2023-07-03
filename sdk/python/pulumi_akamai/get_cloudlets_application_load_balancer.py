@@ -184,21 +184,21 @@ def get_cloudlets_application_load_balancer(origin_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer', __args__, opts=opts, typ=GetCloudletsApplicationLoadBalancerResult).value
 
     return AwaitableGetCloudletsApplicationLoadBalancerResult(
-        balancing_type=__ret__.balancing_type,
-        created_by=__ret__.created_by,
-        created_date=__ret__.created_date,
-        data_centers=__ret__.data_centers,
-        deleted=__ret__.deleted,
-        description=__ret__.description,
-        id=__ret__.id,
-        immutable=__ret__.immutable,
-        last_modified_by=__ret__.last_modified_by,
-        last_modified_date=__ret__.last_modified_date,
-        liveness_settings=__ret__.liveness_settings,
-        origin_id=__ret__.origin_id,
-        type=__ret__.type,
-        version=__ret__.version,
-        warnings=__ret__.warnings)
+        balancing_type=pulumi.get(__ret__, 'balancing_type'),
+        created_by=pulumi.get(__ret__, 'created_by'),
+        created_date=pulumi.get(__ret__, 'created_date'),
+        data_centers=pulumi.get(__ret__, 'data_centers'),
+        deleted=pulumi.get(__ret__, 'deleted'),
+        description=pulumi.get(__ret__, 'description'),
+        id=pulumi.get(__ret__, 'id'),
+        immutable=pulumi.get(__ret__, 'immutable'),
+        last_modified_by=pulumi.get(__ret__, 'last_modified_by'),
+        last_modified_date=pulumi.get(__ret__, 'last_modified_date'),
+        liveness_settings=pulumi.get(__ret__, 'liveness_settings'),
+        origin_id=pulumi.get(__ret__, 'origin_id'),
+        type=pulumi.get(__ret__, 'type'),
+        version=pulumi.get(__ret__, 'version'),
+        warnings=pulumi.get(__ret__, 'warnings'))
 
 
 @_utilities.lift_output_func(get_cloudlets_application_load_balancer)

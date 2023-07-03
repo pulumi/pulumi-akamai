@@ -91,6 +91,9 @@ class AppSecActivationsArgs:
         """
         Whether to activate or deactivate the specified security configuration and version
         """
+        warnings.warn("""The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""", DeprecationWarning)
+        pulumi.log.warn("""activate is deprecated: The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""")
+
         return pulumi.get(self, "activate")
 
     @activate.setter
@@ -127,6 +130,9 @@ class AppSecActivationsArgs:
         """
         Note describing the activation
         """
+        warnings.warn("""The setting notes has been deprecated. Use \"note\" instead.""", DeprecationWarning)
+        pulumi.log.warn("""notes is deprecated: The setting notes has been deprecated. Use \"note\" instead.""")
+
         return pulumi.get(self, "notes")
 
     @notes.setter
@@ -185,6 +191,9 @@ class _AppSecActivationsState:
         """
         Whether to activate or deactivate the specified security configuration and version
         """
+        warnings.warn("""The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""", DeprecationWarning)
+        pulumi.log.warn("""activate is deprecated: The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""")
+
         return pulumi.get(self, "activate")
 
     @activate.setter
@@ -233,6 +242,9 @@ class _AppSecActivationsState:
         """
         Note describing the activation
         """
+        warnings.warn("""The setting notes has been deprecated. Use \"note\" instead.""", DeprecationWarning)
+        pulumi.log.warn("""notes is deprecated: The setting notes has been deprecated. Use \"note\" instead.""")
+
         return pulumi.get(self, "notes")
 
     @notes.setter
@@ -414,6 +426,9 @@ class AppSecActivations(pulumi.CustomResource):
         """
         Whether to activate or deactivate the specified security configuration and version
         """
+        warnings.warn("""The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""", DeprecationWarning)
+        pulumi.log.warn("""activate is deprecated: The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""")
+
         return pulumi.get(self, "activate")
 
     @property
@@ -446,6 +461,9 @@ class AppSecActivations(pulumi.CustomResource):
         """
         Note describing the activation
         """
+        warnings.warn("""The setting notes has been deprecated. Use \"note\" instead.""", DeprecationWarning)
+        pulumi.log.warn("""notes is deprecated: The setting notes has been deprecated. Use \"note\" instead.""")
+
         return pulumi.get(self, "notes")
 
     @property

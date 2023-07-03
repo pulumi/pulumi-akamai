@@ -129,15 +129,15 @@ def get_edge_worker(edgeworker_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getEdgeWorker:getEdgeWorker', __args__, opts=opts, typ=GetEdgeWorkerResult).value
 
     return AwaitableGetEdgeWorkerResult(
-        edgeworker_id=__ret__.edgeworker_id,
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        local_bundle=__ret__.local_bundle,
-        local_bundle_hash=__ret__.local_bundle_hash,
-        name=__ret__.name,
-        resource_tier_id=__ret__.resource_tier_id,
-        version=__ret__.version,
-        warnings=__ret__.warnings)
+        edgeworker_id=pulumi.get(__ret__, 'edgeworker_id'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        local_bundle=pulumi.get(__ret__, 'local_bundle'),
+        local_bundle_hash=pulumi.get(__ret__, 'local_bundle_hash'),
+        name=pulumi.get(__ret__, 'name'),
+        resource_tier_id=pulumi.get(__ret__, 'resource_tier_id'),
+        version=pulumi.get(__ret__, 'version'),
+        warnings=pulumi.get(__ret__, 'warnings'))
 
 
 @_utilities.lift_output_func(get_edge_worker)

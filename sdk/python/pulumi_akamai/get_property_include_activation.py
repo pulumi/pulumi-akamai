@@ -133,15 +133,15 @@ def get_property_include_activation(contract_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation', __args__, opts=opts, typ=GetPropertyIncludeActivationResult).value
 
     return AwaitableGetPropertyIncludeActivationResult(
-        contract_id=__ret__.contract_id,
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        include_id=__ret__.include_id,
-        name=__ret__.name,
-        network=__ret__.network,
-        note=__ret__.note,
-        notify_emails=__ret__.notify_emails,
-        version=__ret__.version)
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        include_id=pulumi.get(__ret__, 'include_id'),
+        name=pulumi.get(__ret__, 'name'),
+        network=pulumi.get(__ret__, 'network'),
+        note=pulumi.get(__ret__, 'note'),
+        notify_emails=pulumi.get(__ret__, 'notify_emails'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_property_include_activation)

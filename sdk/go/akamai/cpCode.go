@@ -13,14 +13,17 @@ import (
 type CpCode struct {
 	pulumi.CustomResourceState
 
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract   pulumi.StringOutput `pulumi:"contract"`
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group   pulumi.StringOutput `pulumi:"group"`
 	GroupId pulumi.StringOutput `pulumi:"groupId"`
 	Name    pulumi.StringOutput `pulumi:"name"`
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product   pulumi.StringOutput `pulumi:"product"`
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 }
@@ -60,27 +63,33 @@ func GetCpCode(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CpCode resources.
 type cpCodeState struct {
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract   *string `pulumi:"contract"`
 	ContractId *string `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group   *string `pulumi:"group"`
 	GroupId *string `pulumi:"groupId"`
 	Name    *string `pulumi:"name"`
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
 }
 
 type CpCodeState struct {
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract   pulumi.StringPtrInput
 	ContractId pulumi.StringPtrInput
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group   pulumi.StringPtrInput
 	GroupId pulumi.StringPtrInput
 	Name    pulumi.StringPtrInput
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
 }
@@ -90,28 +99,34 @@ func (CpCodeState) ElementType() reflect.Type {
 }
 
 type cpCodeArgs struct {
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract   *string `pulumi:"contract"`
 	ContractId *string `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group   *string `pulumi:"group"`
 	GroupId *string `pulumi:"groupId"`
 	Name    *string `pulumi:"name"`
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product   *string `pulumi:"product"`
 	ProductId *string `pulumi:"productId"`
 }
 
 // The set of arguments for constructing a CpCode resource.
 type CpCodeArgs struct {
-	// Deprecated: The setting "contract" has been deprecated.
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract   pulumi.StringPtrInput
 	ContractId pulumi.StringPtrInput
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group   pulumi.StringPtrInput
 	GroupId pulumi.StringPtrInput
 	Name    pulumi.StringPtrInput
-	// Deprecated: The setting "product" has been deprecated.
+	// Deprecated: The setting "product" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Product   pulumi.StringPtrInput
 	ProductId pulumi.StringPtrInput
 }
@@ -203,7 +218,9 @@ func (o CpCodeOutput) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutpu
 	return o
 }
 
-// Deprecated: The setting "contract" has been deprecated.
+// Deprecated: The setting "contract" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o CpCodeOutput) Contract() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.Contract }).(pulumi.StringOutput)
 }
@@ -212,7 +229,9 @@ func (o CpCodeOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
 }
 
-// Deprecated: The setting "group" has been deprecated.
+// Deprecated: The setting "group" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o CpCodeOutput) Group() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
 }
@@ -225,7 +244,9 @@ func (o CpCodeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Deprecated: The setting "product" has been deprecated.
+// Deprecated: The setting "product" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 func (o CpCodeOutput) Product() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.Product }).(pulumi.StringOutput)
 }

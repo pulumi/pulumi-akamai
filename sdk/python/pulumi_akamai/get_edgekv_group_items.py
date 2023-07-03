@@ -95,11 +95,11 @@ def get_edgekv_group_items(group_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getEdgekvGroupItems:getEdgekvGroupItems', __args__, opts=opts, typ=GetEdgekvGroupItemsResult).value
 
     return AwaitableGetEdgekvGroupItemsResult(
-        group_name=__ret__.group_name,
-        id=__ret__.id,
-        items=__ret__.items,
-        namespace_name=__ret__.namespace_name,
-        network=__ret__.network)
+        group_name=pulumi.get(__ret__, 'group_name'),
+        id=pulumi.get(__ret__, 'id'),
+        items=pulumi.get(__ret__, 'items'),
+        namespace_name=pulumi.get(__ret__, 'namespace_name'),
+        network=pulumi.get(__ret__, 'network'))
 
 
 @_utilities.lift_output_func(get_edgekv_group_items)

@@ -131,15 +131,15 @@ def get_property_include(contract_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyInclude:getPropertyInclude', __args__, opts=opts, typ=GetPropertyIncludeResult).value
 
     return AwaitableGetPropertyIncludeResult(
-        contract_id=__ret__.contract_id,
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        include_id=__ret__.include_id,
-        latest_version=__ret__.latest_version,
-        name=__ret__.name,
-        production_version=__ret__.production_version,
-        staging_version=__ret__.staging_version,
-        type=__ret__.type)
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        include_id=pulumi.get(__ret__, 'include_id'),
+        latest_version=pulumi.get(__ret__, 'latest_version'),
+        name=pulumi.get(__ret__, 'name'),
+        production_version=pulumi.get(__ret__, 'production_version'),
+        staging_version=pulumi.get(__ret__, 'staging_version'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_property_include)

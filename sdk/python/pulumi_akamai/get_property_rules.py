@@ -126,14 +126,14 @@ def get_property_rules(contract_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyRules:getPropertyRules', __args__, opts=opts, typ=GetPropertyRulesResult).value
 
     return AwaitableGetPropertyRulesResult(
-        contract_id=__ret__.contract_id,
-        errors=__ret__.errors,
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        property_id=__ret__.property_id,
-        rule_format=__ret__.rule_format,
-        rules=__ret__.rules,
-        version=__ret__.version)
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        errors=pulumi.get(__ret__, 'errors'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        property_id=pulumi.get(__ret__, 'property_id'),
+        rule_format=pulumi.get(__ret__, 'rule_format'),
+        rules=pulumi.get(__ret__, 'rules'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_property_rules)

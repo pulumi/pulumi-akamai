@@ -135,15 +135,15 @@ def get_app_sec_selectable_hostnames(active_in_production: Optional[bool] = None
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecSelectableHostnames:getAppSecSelectableHostnames', __args__, opts=opts, typ=GetAppSecSelectableHostnamesResult).value
 
     return AwaitableGetAppSecSelectableHostnamesResult(
-        active_in_production=__ret__.active_in_production,
-        active_in_staging=__ret__.active_in_staging,
-        config_id=__ret__.config_id,
-        contractid=__ret__.contractid,
-        groupid=__ret__.groupid,
-        hostnames=__ret__.hostnames,
-        hostnames_json=__ret__.hostnames_json,
-        id=__ret__.id,
-        output_text=__ret__.output_text)
+        active_in_production=pulumi.get(__ret__, 'active_in_production'),
+        active_in_staging=pulumi.get(__ret__, 'active_in_staging'),
+        config_id=pulumi.get(__ret__, 'config_id'),
+        contractid=pulumi.get(__ret__, 'contractid'),
+        groupid=pulumi.get(__ret__, 'groupid'),
+        hostnames=pulumi.get(__ret__, 'hostnames'),
+        hostnames_json=pulumi.get(__ret__, 'hostnames_json'),
+        id=pulumi.get(__ret__, 'id'),
+        output_text=pulumi.get(__ret__, 'output_text'))
 
 
 @_utilities.lift_output_func(get_app_sec_selectable_hostnames)

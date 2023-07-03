@@ -540,6 +540,9 @@ class _IamUserState:
         """
         The user's lock status
         """
+        warnings.warn("""The setting \"is_locked\" has been deprecated. Please use \"lock\" setting instead""", DeprecationWarning)
+        pulumi.log.warn("""is_locked is deprecated: The setting \"is_locked\" has been deprecated. Please use \"lock\" setting instead""")
+
         return pulumi.get(self, "is_locked")
 
     @is_locked.setter
@@ -1043,6 +1046,9 @@ class IamUser(pulumi.CustomResource):
         """
         The user's lock status
         """
+        warnings.warn("""The setting \"is_locked\" has been deprecated. Please use \"lock\" setting instead""", DeprecationWarning)
+        pulumi.log.warn("""is_locked is deprecated: The setting \"is_locked\" has been deprecated. Please use \"lock\" setting instead""")
+
         return pulumi.get(self, "is_locked")
 
     @property

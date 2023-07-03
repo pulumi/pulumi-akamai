@@ -119,13 +119,13 @@ def get_property_rules_template(template_file: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyRulesTemplate:getPropertyRulesTemplate', __args__, opts=opts, typ=GetPropertyRulesTemplateResult).value
 
     return AwaitableGetPropertyRulesTemplateResult(
-        id=__ret__.id,
-        json=__ret__.json,
-        template_file=__ret__.template_file,
-        templates=__ret__.templates,
-        var_definition_file=__ret__.var_definition_file,
-        var_values_file=__ret__.var_values_file,
-        variables=__ret__.variables)
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        template_file=pulumi.get(__ret__, 'template_file'),
+        templates=pulumi.get(__ret__, 'templates'),
+        var_definition_file=pulumi.get(__ret__, 'var_definition_file'),
+        var_values_file=pulumi.get(__ret__, 'var_values_file'),
+        variables=pulumi.get(__ret__, 'variables'))
 
 
 @_utilities.lift_output_func(get_property_rules_template)

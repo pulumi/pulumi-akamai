@@ -61,5 +61,5 @@ def get_cps_warnings(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
     __ret__ = pulumi.runtime.invoke('akamai:index/getCpsWarnings:getCpsWarnings', __args__, opts=opts, typ=GetCpsWarningsResult).value
 
     return AwaitableGetCpsWarningsResult(
-        id=__ret__.id,
-        warnings=__ret__.warnings)
+        id=pulumi.get(__ret__, 'id'),
+        warnings=pulumi.get(__ret__, 'warnings'))

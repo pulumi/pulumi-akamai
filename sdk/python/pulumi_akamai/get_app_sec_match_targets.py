@@ -93,11 +93,11 @@ def get_app_sec_match_targets(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecMatchTargets:getAppSecMatchTargets', __args__, opts=opts, typ=GetAppSecMatchTargetsResult).value
 
     return AwaitableGetAppSecMatchTargetsResult(
-        config_id=__ret__.config_id,
-        id=__ret__.id,
-        json=__ret__.json,
-        match_target_id=__ret__.match_target_id,
-        output_text=__ret__.output_text)
+        config_id=pulumi.get(__ret__, 'config_id'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        match_target_id=pulumi.get(__ret__, 'match_target_id'),
+        output_text=pulumi.get(__ret__, 'output_text'))
 
 
 @_utilities.lift_output_func(get_app_sec_match_targets)

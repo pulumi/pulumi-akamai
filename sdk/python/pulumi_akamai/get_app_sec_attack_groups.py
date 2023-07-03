@@ -122,14 +122,14 @@ def get_app_sec_attack_groups(attack_group: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecAttackGroups:getAppSecAttackGroups', __args__, opts=opts, typ=GetAppSecAttackGroupsResult).value
 
     return AwaitableGetAppSecAttackGroupsResult(
-        attack_group=__ret__.attack_group,
-        attack_group_action=__ret__.attack_group_action,
-        condition_exception=__ret__.condition_exception,
-        config_id=__ret__.config_id,
-        id=__ret__.id,
-        json=__ret__.json,
-        output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id)
+        attack_group=pulumi.get(__ret__, 'attack_group'),
+        attack_group_action=pulumi.get(__ret__, 'attack_group_action'),
+        condition_exception=pulumi.get(__ret__, 'condition_exception'),
+        config_id=pulumi.get(__ret__, 'config_id'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 
 
 @_utilities.lift_output_func(get_app_sec_attack_groups)

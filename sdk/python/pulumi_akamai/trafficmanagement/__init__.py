@@ -6,12 +6,3 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .get_gtm_default_datacenter import *
-from .gtm_a_smap import *
-from .gtm_cidrmap import *
-from .gtm_datacenter import *
-from .gtm_domain import *
-from .gtm_geomap import *
-from .gtm_property import *
-from .gtm_resource import *
-from ._inputs import *
-from . import outputs

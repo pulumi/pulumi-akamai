@@ -111,13 +111,13 @@ def get_app_sec_contracts_groups(contractid: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecContractsGroups:getAppSecContractsGroups', __args__, opts=opts, typ=GetAppSecContractsGroupsResult).value
 
     return AwaitableGetAppSecContractsGroupsResult(
-        contractid=__ret__.contractid,
-        default_contractid=__ret__.default_contractid,
-        default_groupid=__ret__.default_groupid,
-        groupid=__ret__.groupid,
-        id=__ret__.id,
-        json=__ret__.json,
-        output_text=__ret__.output_text)
+        contractid=pulumi.get(__ret__, 'contractid'),
+        default_contractid=pulumi.get(__ret__, 'default_contractid'),
+        default_groupid=pulumi.get(__ret__, 'default_groupid'),
+        groupid=pulumi.get(__ret__, 'groupid'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'))
 
 
 @_utilities.lift_output_func(get_app_sec_contracts_groups)

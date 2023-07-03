@@ -37,13 +37,17 @@ class ProviderArgs:
         :param pulumi.Input[int] request_limit: The maximum number of API requests to be made per second (0 for no limit)
         """
         if appsec_section is not None:
-            warnings.warn("""The setting \"appsec_section\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""appsec_section is deprecated: The setting \"appsec_section\" has been deprecated.""")
+            warnings.warn("""The setting \"appsec_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""appsec_section is deprecated: The setting \"appsec_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if appsec_section is not None:
             pulumi.set(__self__, "appsec_section", appsec_section)
         if appsecs is not None:
-            warnings.warn("""The setting \"appsec\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""appsecs is deprecated: The setting \"appsec\" has been deprecated.""")
+            warnings.warn("""The setting \"appsec\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""appsecs is deprecated: The setting \"appsec\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if appsecs is not None:
             pulumi.set(__self__, "appsecs", appsecs)
         if cache_enabled is not None:
@@ -53,47 +57,63 @@ class ProviderArgs:
         if config_section is not None:
             pulumi.set(__self__, "config_section", config_section)
         if dns is not None:
-            warnings.warn("""The setting \"dns\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""dns is deprecated: The setting \"dns\" has been deprecated.""")
+            warnings.warn("""The setting \"dns\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""dns is deprecated: The setting \"dns\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if dns is not None:
             pulumi.set(__self__, "dns", dns)
         if dns_section is not None:
-            warnings.warn("""The setting \"dns_section\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""dns_section is deprecated: The setting \"dns_section\" has been deprecated.""")
+            warnings.warn("""The setting \"dns_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""dns_section is deprecated: The setting \"dns_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if dns_section is not None:
             pulumi.set(__self__, "dns_section", dns_section)
         if edgerc is not None:
             pulumi.set(__self__, "edgerc", edgerc)
         if gtm is not None:
-            warnings.warn("""The setting \"gtm\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""gtm is deprecated: The setting \"gtm\" has been deprecated.""")
+            warnings.warn("""The setting \"gtm\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""gtm is deprecated: The setting \"gtm\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if gtm is not None:
             pulumi.set(__self__, "gtm", gtm)
         if gtm_section is not None:
-            warnings.warn("""The setting \"gtm_section\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""gtm_section is deprecated: The setting \"gtm_section\" has been deprecated.""")
+            warnings.warn("""The setting \"gtm_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""gtm_section is deprecated: The setting \"gtm_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if gtm_section is not None:
             pulumi.set(__self__, "gtm_section", gtm_section)
         if networklist_section is not None:
-            warnings.warn("""The setting \"networklist_section\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""networklist_section is deprecated: The setting \"networklist_section\" has been deprecated.""")
+            warnings.warn("""The setting \"networklist_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""networklist_section is deprecated: The setting \"networklist_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if networklist_section is not None:
             pulumi.set(__self__, "networklist_section", networklist_section)
         if networks is not None:
             pulumi.set(__self__, "networks", networks)
         if papi_section is not None:
-            warnings.warn("""The setting \"papi_section\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""papi_section is deprecated: The setting \"papi_section\" has been deprecated.""")
+            warnings.warn("""The setting \"papi_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""papi_section is deprecated: The setting \"papi_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if papi_section is not None:
             pulumi.set(__self__, "papi_section", papi_section)
         if property is not None:
-            warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
+            warnings.warn("""The setting \"property\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if property is not None:
             pulumi.set(__self__, "property", property)
         if property_section is not None:
-            warnings.warn("""The setting \"property_section\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""property_section is deprecated: The setting \"property_section\" has been deprecated.""")
+            warnings.warn("""The setting \"property_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""property_section is deprecated: The setting \"property_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if property_section is not None:
             pulumi.set(__self__, "property_section", property_section)
         if request_limit is not None:
@@ -102,6 +122,11 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="appsecSection")
     def appsec_section(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"appsec_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""appsec_section is deprecated: The setting \"appsec_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "appsec_section")
 
     @appsec_section.setter
@@ -111,6 +136,11 @@ class ProviderArgs:
     @property
     @pulumi.getter
     def appsecs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProviderAppsecArgs']]]]:
+        warnings.warn("""The setting \"appsec\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""appsecs is deprecated: The setting \"appsec\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "appsecs")
 
     @appsecs.setter
@@ -150,6 +180,11 @@ class ProviderArgs:
     @property
     @pulumi.getter
     def dns(self) -> Optional[pulumi.Input['ProviderDnsArgs']]:
+        warnings.warn("""The setting \"dns\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""dns is deprecated: The setting \"dns\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "dns")
 
     @dns.setter
@@ -159,6 +194,11 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="dnsSection")
     def dns_section(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"dns_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""dns_section is deprecated: The setting \"dns_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "dns_section")
 
     @dns_section.setter
@@ -177,6 +217,11 @@ class ProviderArgs:
     @property
     @pulumi.getter
     def gtm(self) -> Optional[pulumi.Input['ProviderGtmArgs']]:
+        warnings.warn("""The setting \"gtm\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""gtm is deprecated: The setting \"gtm\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "gtm")
 
     @gtm.setter
@@ -186,6 +231,11 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="gtmSection")
     def gtm_section(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"gtm_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""gtm_section is deprecated: The setting \"gtm_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "gtm_section")
 
     @gtm_section.setter
@@ -195,6 +245,11 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="networklistSection")
     def networklist_section(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"networklist_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""networklist_section is deprecated: The setting \"networklist_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "networklist_section")
 
     @networklist_section.setter
@@ -213,6 +268,11 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="papiSection")
     def papi_section(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"papi_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""papi_section is deprecated: The setting \"papi_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "papi_section")
 
     @papi_section.setter
@@ -222,6 +282,11 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="propertySection")
     def property_section(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"property_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""property_section is deprecated: The setting \"property_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "property_section")
 
     @property_section.setter
@@ -243,6 +308,11 @@ class ProviderArgs:
     @property
     @pulumi.getter
     def property(self) -> Optional[pulumi.Input['ProviderPropertyArgs']]:
+        warnings.warn("""The setting \"property\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "property")
 
     @property.setter
@@ -336,49 +406,69 @@ class Provider(pulumi.ProviderResource):
             __props__ = ProviderArgs.__new__(ProviderArgs)
 
             if appsec_section is not None and not opts.urn:
-                warnings.warn("""The setting \"appsec_section\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""appsec_section is deprecated: The setting \"appsec_section\" has been deprecated.""")
+                warnings.warn("""The setting \"appsec_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""appsec_section is deprecated: The setting \"appsec_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["appsec_section"] = appsec_section
             if appsecs is not None and not opts.urn:
-                warnings.warn("""The setting \"appsec\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""appsecs is deprecated: The setting \"appsec\" has been deprecated.""")
+                warnings.warn("""The setting \"appsec\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""appsecs is deprecated: The setting \"appsec\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["appsecs"] = pulumi.Output.from_input(appsecs).apply(pulumi.runtime.to_json) if appsecs is not None else None
             __props__.__dict__["cache_enabled"] = pulumi.Output.from_input(cache_enabled).apply(pulumi.runtime.to_json) if cache_enabled is not None else None
             __props__.__dict__["config"] = pulumi.Output.from_input(config).apply(pulumi.runtime.to_json) if config is not None else None
             __props__.__dict__["config_section"] = config_section
             if dns is not None and not opts.urn:
-                warnings.warn("""The setting \"dns\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""dns is deprecated: The setting \"dns\" has been deprecated.""")
+                warnings.warn("""The setting \"dns\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""dns is deprecated: The setting \"dns\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["dns"] = pulumi.Output.from_input(dns).apply(pulumi.runtime.to_json) if dns is not None else None
             if dns_section is not None and not opts.urn:
-                warnings.warn("""The setting \"dns_section\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""dns_section is deprecated: The setting \"dns_section\" has been deprecated.""")
+                warnings.warn("""The setting \"dns_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""dns_section is deprecated: The setting \"dns_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["dns_section"] = dns_section
             __props__.__dict__["edgerc"] = edgerc
             if gtm is not None and not opts.urn:
-                warnings.warn("""The setting \"gtm\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""gtm is deprecated: The setting \"gtm\" has been deprecated.""")
+                warnings.warn("""The setting \"gtm\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""gtm is deprecated: The setting \"gtm\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["gtm"] = pulumi.Output.from_input(gtm).apply(pulumi.runtime.to_json) if gtm is not None else None
             if gtm_section is not None and not opts.urn:
-                warnings.warn("""The setting \"gtm_section\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""gtm_section is deprecated: The setting \"gtm_section\" has been deprecated.""")
+                warnings.warn("""The setting \"gtm_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""gtm_section is deprecated: The setting \"gtm_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["gtm_section"] = gtm_section
             if networklist_section is not None and not opts.urn:
-                warnings.warn("""The setting \"networklist_section\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""networklist_section is deprecated: The setting \"networklist_section\" has been deprecated.""")
+                warnings.warn("""The setting \"networklist_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""networklist_section is deprecated: The setting \"networklist_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["networklist_section"] = networklist_section
             __props__.__dict__["networks"] = pulumi.Output.from_input(networks).apply(pulumi.runtime.to_json) if networks is not None else None
             if papi_section is not None and not opts.urn:
-                warnings.warn("""The setting \"papi_section\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""papi_section is deprecated: The setting \"papi_section\" has been deprecated.""")
+                warnings.warn("""The setting \"papi_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""papi_section is deprecated: The setting \"papi_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["papi_section"] = papi_section
             if property is not None and not opts.urn:
-                warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
+                warnings.warn("""The setting \"property\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["property"] = pulumi.Output.from_input(property).apply(pulumi.runtime.to_json) if property is not None else None
             if property_section is not None and not opts.urn:
-                warnings.warn("""The setting \"property_section\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""property_section is deprecated: The setting \"property_section\" has been deprecated.""")
+                warnings.warn("""The setting \"property_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""property_section is deprecated: The setting \"property_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["property_section"] = property_section
             __props__.__dict__["request_limit"] = pulumi.Output.from_input(request_limit).apply(pulumi.runtime.to_json) if request_limit is not None else None
         super(Provider, __self__).__init__(
@@ -390,6 +480,11 @@ class Provider(pulumi.ProviderResource):
     @property
     @pulumi.getter(name="appsecSection")
     def appsec_section(self) -> pulumi.Output[Optional[str]]:
+        warnings.warn("""The setting \"appsec_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""appsec_section is deprecated: The setting \"appsec_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "appsec_section")
 
     @property
@@ -403,6 +498,11 @@ class Provider(pulumi.ProviderResource):
     @property
     @pulumi.getter(name="dnsSection")
     def dns_section(self) -> pulumi.Output[Optional[str]]:
+        warnings.warn("""The setting \"dns_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""dns_section is deprecated: The setting \"dns_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "dns_section")
 
     @property
@@ -413,20 +513,40 @@ class Provider(pulumi.ProviderResource):
     @property
     @pulumi.getter(name="gtmSection")
     def gtm_section(self) -> pulumi.Output[Optional[str]]:
+        warnings.warn("""The setting \"gtm_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""gtm_section is deprecated: The setting \"gtm_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "gtm_section")
 
     @property
     @pulumi.getter(name="networklistSection")
     def networklist_section(self) -> pulumi.Output[Optional[str]]:
+        warnings.warn("""The setting \"networklist_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""networklist_section is deprecated: The setting \"networklist_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "networklist_section")
 
     @property
     @pulumi.getter(name="papiSection")
     def papi_section(self) -> pulumi.Output[Optional[str]]:
+        warnings.warn("""The setting \"papi_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""papi_section is deprecated: The setting \"papi_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "papi_section")
 
     @property
     @pulumi.getter(name="propertySection")
     def property_section(self) -> pulumi.Output[Optional[str]]:
+        warnings.warn("""The setting \"property_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""property_section is deprecated: The setting \"property_section\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "property_section")
 

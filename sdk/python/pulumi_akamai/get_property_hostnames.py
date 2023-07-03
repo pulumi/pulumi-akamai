@@ -105,12 +105,12 @@ def get_property_hostnames(contract_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyHostnames:getPropertyHostnames', __args__, opts=opts, typ=GetPropertyHostnamesResult).value
 
     return AwaitableGetPropertyHostnamesResult(
-        contract_id=__ret__.contract_id,
-        group_id=__ret__.group_id,
-        hostnames=__ret__.hostnames,
-        id=__ret__.id,
-        property_id=__ret__.property_id,
-        version=__ret__.version)
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        hostnames=pulumi.get(__ret__, 'hostnames'),
+        id=pulumi.get(__ret__, 'id'),
+        property_id=pulumi.get(__ret__, 'property_id'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_property_hostnames)

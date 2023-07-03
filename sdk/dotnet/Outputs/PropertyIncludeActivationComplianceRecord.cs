@@ -13,33 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class PropertyIncludeActivationComplianceRecord
     {
-        public readonly string? CustomerEmail;
-        public readonly string NoncomplianceReason;
-        public readonly string? OtherNoncomplianceReason;
-        public readonly string? PeerReviewedBy;
-        public readonly string? TicketId;
-        public readonly bool? UnitTested;
+        public readonly Outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency? NoncomplianceReasonEmergency;
+        public readonly Outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic? NoncomplianceReasonNoProductionTraffic;
+        public readonly Outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone? NoncomplianceReasonNone;
+        public readonly Outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther? NoncomplianceReasonOther;
 
         [OutputConstructor]
         private PropertyIncludeActivationComplianceRecord(
-            string? customerEmail,
+            Outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency? noncomplianceReasonEmergency,
 
-            string noncomplianceReason,
+            Outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic? noncomplianceReasonNoProductionTraffic,
 
-            string? otherNoncomplianceReason,
+            Outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone? noncomplianceReasonNone,
 
-            string? peerReviewedBy,
-
-            string? ticketId,
-
-            bool? unitTested)
+            Outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther? noncomplianceReasonOther)
         {
-            CustomerEmail = customerEmail;
-            NoncomplianceReason = noncomplianceReason;
-            OtherNoncomplianceReason = otherNoncomplianceReason;
-            PeerReviewedBy = peerReviewedBy;
-            TicketId = ticketId;
-            UnitTested = unitTested;
+            NoncomplianceReasonEmergency = noncomplianceReasonEmergency;
+            NoncomplianceReasonNoProductionTraffic = noncomplianceReasonNoProductionTraffic;
+            NoncomplianceReasonNone = noncomplianceReasonNone;
+            NoncomplianceReasonOther = noncomplianceReasonOther;
         }
     }
 }

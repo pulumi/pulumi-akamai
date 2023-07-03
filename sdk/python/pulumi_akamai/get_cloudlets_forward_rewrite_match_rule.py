@@ -75,9 +75,9 @@ def get_cloudlets_forward_rewrite_match_rule(match_rules: Optional[Sequence[pulu
     __ret__ = pulumi.runtime.invoke('akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule', __args__, opts=opts, typ=GetCloudletsForwardRewriteMatchRuleResult).value
 
     return AwaitableGetCloudletsForwardRewriteMatchRuleResult(
-        id=__ret__.id,
-        json=__ret__.json,
-        match_rules=__ret__.match_rules)
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        match_rules=pulumi.get(__ret__, 'match_rules'))
 
 
 @_utilities.lift_output_func(get_cloudlets_forward_rewrite_match_rule)

@@ -11,8 +11,8 @@ import (
 )
 
 // Deprecated: akamai.properties/getcpcode.getCpCode has been deprecated in favor of akamai.index/getcpcode.getCpCode
-func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.InvokeOption) (*LookupCpCodeResult, error) {
-	var rv LookupCpCodeResult
+func GetCpCode(ctx *pulumi.Context, args *GetCpCodeArgs, opts ...pulumi.InvokeOption) (*GetCpCodeResult, error) {
+	var rv GetCpCodeResult
 	err := ctx.Invoke("akamai:properties/getCpCode:getCpCode", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -21,22 +21,26 @@ func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.In
 }
 
 // A collection of arguments for invoking getCpCode.
-type LookupCpCodeArgs struct {
-	// Deprecated: The setting "contract" has been deprecated.
+type GetCpCodeArgs struct {
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract   *string `pulumi:"contract"`
 	ContractId *string `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group   *string `pulumi:"group"`
 	GroupId *string `pulumi:"groupId"`
 	Name    string  `pulumi:"name"`
 }
 
 // A collection of values returned by getCpCode.
-type LookupCpCodeResult struct {
-	// Deprecated: The setting "contract" has been deprecated.
+type GetCpCodeResult struct {
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract   string `pulumi:"contract"`
 	ContractId string `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group   string `pulumi:"group"`
 	GroupId string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
@@ -45,80 +49,86 @@ type LookupCpCodeResult struct {
 	ProductIds []string `pulumi:"productIds"`
 }
 
-func LookupCpCodeOutput(ctx *pulumi.Context, args LookupCpCodeOutputArgs, opts ...pulumi.InvokeOption) LookupCpCodeResultOutput {
+func GetCpCodeOutput(ctx *pulumi.Context, args GetCpCodeOutputArgs, opts ...pulumi.InvokeOption) GetCpCodeResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupCpCodeResult, error) {
-			args := v.(LookupCpCodeArgs)
-			r, err := LookupCpCode(ctx, &args, opts...)
-			var s LookupCpCodeResult
+		ApplyT(func(v interface{}) (GetCpCodeResult, error) {
+			args := v.(GetCpCodeArgs)
+			r, err := GetCpCode(ctx, &args, opts...)
+			var s GetCpCodeResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(LookupCpCodeResultOutput)
+		}).(GetCpCodeResultOutput)
 }
 
 // A collection of arguments for invoking getCpCode.
-type LookupCpCodeOutputArgs struct {
-	// Deprecated: The setting "contract" has been deprecated.
+type GetCpCodeOutputArgs struct {
+	// Deprecated: The setting "contract" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Contract   pulumi.StringPtrInput `pulumi:"contract"`
 	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
+	// Deprecated: The setting "group" has been deprecated. See:
+	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
 	Group   pulumi.StringPtrInput `pulumi:"group"`
 	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
 	Name    pulumi.StringInput    `pulumi:"name"`
 }
 
-func (LookupCpCodeOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*LookupCpCodeArgs)(nil)).Elem()
+func (GetCpCodeOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCpCodeArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getCpCode.
-type LookupCpCodeResultOutput struct{ *pulumi.OutputState }
+type GetCpCodeResultOutput struct{ *pulumi.OutputState }
 
-func (LookupCpCodeResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*LookupCpCodeResult)(nil)).Elem()
+func (GetCpCodeResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCpCodeResult)(nil)).Elem()
 }
 
-func (o LookupCpCodeResultOutput) ToLookupCpCodeResultOutput() LookupCpCodeResultOutput {
+func (o GetCpCodeResultOutput) ToGetCpCodeResultOutput() GetCpCodeResultOutput {
 	return o
 }
 
-func (o LookupCpCodeResultOutput) ToLookupCpCodeResultOutputWithContext(ctx context.Context) LookupCpCodeResultOutput {
+func (o GetCpCodeResultOutput) ToGetCpCodeResultOutputWithContext(ctx context.Context) GetCpCodeResultOutput {
 	return o
 }
 
-// Deprecated: The setting "contract" has been deprecated.
-func (o LookupCpCodeResultOutput) Contract() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCpCodeResult) string { return v.Contract }).(pulumi.StringOutput)
+// Deprecated: The setting "contract" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+func (o GetCpCodeResultOutput) Contract() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCpCodeResult) string { return v.Contract }).(pulumi.StringOutput)
 }
 
-func (o LookupCpCodeResultOutput) ContractId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCpCodeResult) string { return v.ContractId }).(pulumi.StringOutput)
+func (o GetCpCodeResultOutput) ContractId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCpCodeResult) string { return v.ContractId }).(pulumi.StringOutput)
 }
 
-// Deprecated: The setting "group" has been deprecated.
-func (o LookupCpCodeResultOutput) Group() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCpCodeResult) string { return v.Group }).(pulumi.StringOutput)
+// Deprecated: The setting "group" has been deprecated. See:
+//
+//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+func (o GetCpCodeResultOutput) Group() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCpCodeResult) string { return v.Group }).(pulumi.StringOutput)
 }
 
-func (o LookupCpCodeResultOutput) GroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCpCodeResult) string { return v.GroupId }).(pulumi.StringOutput)
+func (o GetCpCodeResultOutput) GroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCpCodeResult) string { return v.GroupId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o LookupCpCodeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCpCodeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCpCodeResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCpCodeResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o LookupCpCodeResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCpCodeResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetCpCodeResultOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCpCodeResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-func (o LookupCpCodeResultOutput) ProductIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v LookupCpCodeResult) []string { return v.ProductIds }).(pulumi.StringArrayOutput)
+func (o GetCpCodeResultOutput) ProductIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCpCodeResult) []string { return v.ProductIds }).(pulumi.StringArrayOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(LookupCpCodeResultOutput{})
+	pulumi.RegisterOutputType(GetCpCodeResultOutput{})
 }

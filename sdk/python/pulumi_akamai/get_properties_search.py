@@ -85,10 +85,10 @@ def get_properties_search(key: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertiesSearch:getPropertiesSearch', __args__, opts=opts, typ=GetPropertiesSearchResult).value
 
     return AwaitableGetPropertiesSearchResult(
-        id=__ret__.id,
-        key=__ret__.key,
-        properties=__ret__.properties,
-        value=__ret__.value)
+        id=pulumi.get(__ret__, 'id'),
+        key=pulumi.get(__ret__, 'key'),
+        properties=pulumi.get(__ret__, 'properties'),
+        value=pulumi.get(__ret__, 'value'))
 
 
 @_utilities.lift_output_func(get_properties_search)

@@ -13,33 +13,25 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class PropertyActivationComplianceRecord
     {
-        public readonly string? CustomerEmail;
-        public readonly string NoncomplianceReason;
-        public readonly string? OtherNoncomplianceReason;
-        public readonly string? PeerReviewedBy;
-        public readonly string? TicketId;
-        public readonly bool? UnitTested;
+        public readonly Outputs.PropertyActivationComplianceRecordNoncomplianceReasonEmergency? NoncomplianceReasonEmergency;
+        public readonly Outputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic? NoncomplianceReasonNoProductionTraffic;
+        public readonly Outputs.PropertyActivationComplianceRecordNoncomplianceReasonNone? NoncomplianceReasonNone;
+        public readonly Outputs.PropertyActivationComplianceRecordNoncomplianceReasonOther? NoncomplianceReasonOther;
 
         [OutputConstructor]
         private PropertyActivationComplianceRecord(
-            string? customerEmail,
+            Outputs.PropertyActivationComplianceRecordNoncomplianceReasonEmergency? noncomplianceReasonEmergency,
 
-            string noncomplianceReason,
+            Outputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic? noncomplianceReasonNoProductionTraffic,
 
-            string? otherNoncomplianceReason,
+            Outputs.PropertyActivationComplianceRecordNoncomplianceReasonNone? noncomplianceReasonNone,
 
-            string? peerReviewedBy,
-
-            string? ticketId,
-
-            bool? unitTested)
+            Outputs.PropertyActivationComplianceRecordNoncomplianceReasonOther? noncomplianceReasonOther)
         {
-            CustomerEmail = customerEmail;
-            NoncomplianceReason = noncomplianceReason;
-            OtherNoncomplianceReason = otherNoncomplianceReason;
-            PeerReviewedBy = peerReviewedBy;
-            TicketId = ticketId;
-            UnitTested = unitTested;
+            NoncomplianceReasonEmergency = noncomplianceReasonEmergency;
+            NoncomplianceReasonNoProductionTraffic = noncomplianceReasonNoProductionTraffic;
+            NoncomplianceReasonNone = noncomplianceReasonNone;
+            NoncomplianceReasonOther = noncomplianceReasonOther;
         }
     }
 }

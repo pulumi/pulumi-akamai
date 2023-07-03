@@ -61,5 +61,5 @@ def get_iam_timeout_policies(opts: Optional[pulumi.InvokeOptions] = None) -> Awa
     __ret__ = pulumi.runtime.invoke('akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies', __args__, opts=opts, typ=GetIamTimeoutPoliciesResult).value
 
     return AwaitableGetIamTimeoutPoliciesResult(
-        id=__ret__.id,
-        policies=__ret__.policies)
+        id=pulumi.get(__ret__, 'id'),
+        policies=pulumi.get(__ret__, 'policies'))

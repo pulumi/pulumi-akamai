@@ -736,6 +736,16 @@ export { GetGroupsResult } from "./getGroups";
 export const getGroups: typeof import("./getGroups").getGroups = null as any;
 utilities.lazyLoad(exports, ["getGroups"], () => require("./getGroups"));
 
+export { GetGtmDatacenterArgs, GetGtmDatacenterResult, GetGtmDatacenterOutputArgs } from "./getGtmDatacenter";
+export const getGtmDatacenter: typeof import("./getGtmDatacenter").getGtmDatacenter = null as any;
+export const getGtmDatacenterOutput: typeof import("./getGtmDatacenter").getGtmDatacenterOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmDatacenter","getGtmDatacenterOutput"], () => require("./getGtmDatacenter"));
+
+export { GetGtmDatacentersArgs, GetGtmDatacentersResult, GetGtmDatacentersOutputArgs } from "./getGtmDatacenters";
+export const getGtmDatacenters: typeof import("./getGtmDatacenters").getGtmDatacenters = null as any;
+export const getGtmDatacentersOutput: typeof import("./getGtmDatacenters").getGtmDatacentersOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmDatacenters","getGtmDatacentersOutput"], () => require("./getGtmDatacenters"));
+
 export { GetGtmDefaultDatacenterArgs, GetGtmDefaultDatacenterResult, GetGtmDefaultDatacenterOutputArgs } from "./getGtmDefaultDatacenter";
 export const getGtmDefaultDatacenter: typeof import("./getGtmDefaultDatacenter").getGtmDefaultDatacenter = null as any;
 export const getGtmDefaultDatacenterOutput: typeof import("./getGtmDefaultDatacenter").getGtmDefaultDatacenterOutput = null as any;

@@ -74,9 +74,9 @@ def get_property_products(contract_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyProducts:getPropertyProducts', __args__, opts=opts, typ=GetPropertyProductsResult).value
 
     return AwaitableGetPropertyProductsResult(
-        contract_id=__ret__.contract_id,
-        id=__ret__.id,
-        products=__ret__.products)
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        id=pulumi.get(__ret__, 'id'),
+        products=pulumi.get(__ret__, 'products'))
 
 
 @_utilities.lift_output_func(get_property_products)

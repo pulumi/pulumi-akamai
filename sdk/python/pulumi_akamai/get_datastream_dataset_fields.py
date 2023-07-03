@@ -74,9 +74,9 @@ def get_datastream_dataset_fields(template_name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields', __args__, opts=opts, typ=GetDatastreamDatasetFieldsResult).value
 
     return AwaitableGetDatastreamDatasetFieldsResult(
-        fields=__ret__.fields,
-        id=__ret__.id,
-        template_name=__ret__.template_name)
+        fields=pulumi.get(__ret__, 'fields'),
+        id=pulumi.get(__ret__, 'id'),
+        template_name=pulumi.get(__ret__, 'template_name'))
 
 
 @_utilities.lift_output_func(get_datastream_dataset_fields)

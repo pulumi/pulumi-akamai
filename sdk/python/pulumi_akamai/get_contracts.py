@@ -62,5 +62,5 @@ def get_contracts(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCo
     __ret__ = pulumi.runtime.invoke('akamai:index/getContracts:getContracts', __args__, opts=opts, typ=GetContractsResult).value
 
     return AwaitableGetContractsResult(
-        contracts=__ret__.contracts,
-        id=__ret__.id)
+        contracts=pulumi.get(__ret__, 'contracts'),
+        id=pulumi.get(__ret__, 'id'))

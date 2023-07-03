@@ -118,14 +118,14 @@ def get_cps_deployments(enrollment_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getCpsDeployments:getCpsDeployments', __args__, opts=opts, typ=GetCpsDeploymentsResult).value
 
     return AwaitableGetCpsDeploymentsResult(
-        auto_renewal_start_time=__ret__.auto_renewal_start_time,
-        enrollment_id=__ret__.enrollment_id,
-        expiry_date=__ret__.expiry_date,
-        id=__ret__.id,
-        production_certificate_ecdsa=__ret__.production_certificate_ecdsa,
-        production_certificate_rsa=__ret__.production_certificate_rsa,
-        staging_certificate_ecdsa=__ret__.staging_certificate_ecdsa,
-        staging_certificate_rsa=__ret__.staging_certificate_rsa)
+        auto_renewal_start_time=pulumi.get(__ret__, 'auto_renewal_start_time'),
+        enrollment_id=pulumi.get(__ret__, 'enrollment_id'),
+        expiry_date=pulumi.get(__ret__, 'expiry_date'),
+        id=pulumi.get(__ret__, 'id'),
+        production_certificate_ecdsa=pulumi.get(__ret__, 'production_certificate_ecdsa'),
+        production_certificate_rsa=pulumi.get(__ret__, 'production_certificate_rsa'),
+        staging_certificate_ecdsa=pulumi.get(__ret__, 'staging_certificate_ecdsa'),
+        staging_certificate_rsa=pulumi.get(__ret__, 'staging_certificate_rsa'))
 
 
 @_utilities.lift_output_func(get_cps_deployments)

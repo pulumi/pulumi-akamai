@@ -32,8 +32,10 @@ class NetworkListActivationsArgs:
         pulumi.set(__self__, "notification_emails", notification_emails)
         pulumi.set(__self__, "sync_point", sync_point)
         if activate is not None:
-            warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
+            warnings.warn("""The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if activate is not None:
             pulumi.set(__self__, "activate", activate)
         if network is not None:
@@ -80,6 +82,11 @@ class NetworkListActivationsArgs:
     @property
     @pulumi.getter
     def activate(self) -> Optional[pulumi.Input[bool]]:
+        warnings.warn("""The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "activate")
 
     @activate.setter
@@ -131,8 +138,10 @@ class _NetworkListActivationsState:
         :param pulumi.Input[int] sync_point: Identifies the sync point of the network list to be activated
         """
         if activate is not None:
-            warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
+            warnings.warn("""The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+            pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
         if activate is not None:
             pulumi.set(__self__, "activate", activate)
         if network is not None:
@@ -151,6 +160,11 @@ class _NetworkListActivationsState:
     @property
     @pulumi.getter
     def activate(self) -> Optional[pulumi.Input[bool]]:
+        warnings.warn("""The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "activate")
 
     @activate.setter
@@ -291,8 +305,10 @@ class NetworkListActivations(pulumi.CustomResource):
             __props__ = NetworkListActivationsArgs.__new__(NetworkListActivationsArgs)
 
             if activate is not None and not opts.urn:
-                warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
+                warnings.warn("""The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+                pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
             __props__.__dict__["activate"] = activate
             __props__.__dict__["network"] = network
             if network_list_id is None and not opts.urn:
@@ -353,6 +369,11 @@ class NetworkListActivations(pulumi.CustomResource):
     @property
     @pulumi.getter
     def activate(self) -> pulumi.Output[Optional[bool]]:
+        warnings.warn("""The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
+        pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated. See:
+	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+
         return pulumi.get(self, "activate")
 
     @property

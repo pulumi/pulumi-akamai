@@ -104,12 +104,12 @@ def get_app_sec_export_configuration(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration', __args__, opts=opts, typ=GetAppSecExportConfigurationResult).value
 
     return AwaitableGetAppSecExportConfigurationResult(
-        config_id=__ret__.config_id,
-        id=__ret__.id,
-        json=__ret__.json,
-        output_text=__ret__.output_text,
-        searches=__ret__.searches,
-        version=__ret__.version)
+        config_id=pulumi.get(__ret__, 'config_id'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        searches=pulumi.get(__ret__, 'searches'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_app_sec_export_configuration)

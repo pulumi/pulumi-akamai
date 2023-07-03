@@ -74,9 +74,9 @@ def get_cps_enrollments(contract_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getCPSEnrollments:getCPSEnrollments', __args__, opts=opts, typ=GetCPSEnrollmentsResult).value
 
     return AwaitableGetCPSEnrollmentsResult(
-        contract_id=__ret__.contract_id,
-        enrollments=__ret__.enrollments,
-        id=__ret__.id)
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        enrollments=pulumi.get(__ret__, 'enrollments'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_cps_enrollments)

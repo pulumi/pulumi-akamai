@@ -948,6 +948,47 @@ export interface GetGroupsGroup {
     parentGroupId: string;
 }
 
+export interface GetGtmDatacenterDefaultLoadObject {
+    loadObject: string;
+    loadObjectPort: number;
+    loadServers: string[];
+}
+
+export interface GetGtmDatacenterLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetGtmDatacentersDatacenter {
+    city: string;
+    cloneOf: number;
+    cloudServerHostHeaderOverride: boolean;
+    cloudServerTargeting: boolean;
+    continent: string;
+    country: string;
+    datacenterId: number;
+    defaultLoadObjects: outputs.GetGtmDatacentersDatacenterDefaultLoadObject[];
+    latitude: number;
+    links: outputs.GetGtmDatacentersDatacenterLink[];
+    longitude: number;
+    nickname: string;
+    scorePenalty: number;
+    servermonitorPool: string;
+    stateOrProvince: string;
+    virtual: boolean;
+}
+
+export interface GetGtmDatacentersDatacenterDefaultLoadObject {
+    loadObject: string;
+    loadObjectPort: number;
+    loadServers: string[];
+}
+
+export interface GetGtmDatacentersDatacenterLink {
+    href: string;
+    rel: string;
+}
+
 export interface GetIamGrantableRolesGrantableRole {
     description: string;
     grantedRoleId: number;
@@ -4756,12 +4797,30 @@ export interface GtmResourceResourceInstance {
 }
 
 export interface PropertyActivationComplianceRecord {
+    noncomplianceReasonEmergency?: outputs.PropertyActivationComplianceRecordNoncomplianceReasonEmergency;
+    noncomplianceReasonNoProductionTraffic?: outputs.PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic;
+    noncomplianceReasonNone?: outputs.PropertyActivationComplianceRecordNoncomplianceReasonNone;
+    noncomplianceReasonOther?: outputs.PropertyActivationComplianceRecordNoncomplianceReasonOther;
+}
+
+export interface PropertyActivationComplianceRecordNoncomplianceReasonEmergency {
+    ticketId?: string;
+}
+
+export interface PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+    ticketId?: string;
+}
+
+export interface PropertyActivationComplianceRecordNoncomplianceReasonNone {
     customerEmail?: string;
-    noncomplianceReason: string;
-    otherNoncomplianceReason?: string;
     peerReviewedBy?: string;
     ticketId?: string;
     unitTested?: boolean;
+}
+
+export interface PropertyActivationComplianceRecordNoncomplianceReasonOther {
+    otherNoncomplianceReason?: string;
+    ticketId?: string;
 }
 
 export interface PropertyActivationRuleError {
@@ -4801,12 +4860,30 @@ export interface PropertyHostnameCertStatus {
 }
 
 export interface PropertyIncludeActivationComplianceRecord {
+    noncomplianceReasonEmergency?: outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency;
+    noncomplianceReasonNoProductionTraffic?: outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic;
+    noncomplianceReasonNone?: outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone;
+    noncomplianceReasonOther?: outputs.PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther;
+}
+
+export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergency {
+    ticketId?: string;
+}
+
+export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTraffic {
+    ticketId?: string;
+}
+
+export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonNone {
     customerEmail?: string;
-    noncomplianceReason: string;
-    otherNoncomplianceReason?: string;
     peerReviewedBy?: string;
     ticketId?: string;
     unitTested?: boolean;
+}
+
+export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonOther {
+    otherNoncomplianceReason?: string;
+    ticketId?: string;
 }
 
 export interface PropertyOrigin {
@@ -4891,192 +4968,6 @@ export namespace config {
         clientToken?: string;
         host?: string;
         maxBody?: number;
-    }
-
-}
-
-export namespace edgedns {
-    export interface DnsZoneTsigKey {
-        algorithm: string;
-        name: string;
-        secret: string;
-    }
-
-}
-
-export namespace properties {
-    export interface PropertyActivationComplianceRecord {
-        customerEmail?: string;
-        noncomplianceReason: string;
-        otherNoncomplianceReason?: string;
-        peerReviewedBy?: string;
-        ticketId?: string;
-        unitTested?: boolean;
-    }
-
-    export interface PropertyActivationRuleError {
-        behaviorName?: string;
-        detail?: string;
-        errorLocation?: string;
-        instance?: string;
-        statusCode?: number;
-        title?: string;
-        type?: string;
-    }
-
-    export interface PropertyActivationRuleWarning {
-        behaviorName?: string;
-        detail?: string;
-        errorLocation?: string;
-        instance?: string;
-        statusCode?: number;
-        title?: string;
-        type?: string;
-    }
-
-    export interface PropertyHostname {
-        certProvisioningType: string;
-        certStatuses: outputs.properties.PropertyHostnameCertStatus[];
-        cnameFrom: string;
-        cnameTo: string;
-        cnameType: string;
-        edgeHostnameId: string;
-    }
-
-    export interface PropertyHostnameCertStatus {
-        hostname: string;
-        productionStatus: string;
-        stagingStatus: string;
-        target: string;
-    }
-
-    export interface PropertyOrigin {
-        cacheKeyHostname?: string;
-        compress?: boolean;
-        enableTrueClientIp?: boolean;
-        forwardHostname?: string;
-        hostname?: string;
-        port?: number;
-    }
-
-    export interface PropertyRuleError {
-        behaviorName?: string;
-        detail?: string;
-        errorLocation?: string;
-        instance?: string;
-        statusCode?: number;
-        title?: string;
-        type?: string;
-    }
-
-    export interface PropertyRuleWarning {
-        behaviorName?: string;
-        detail?: string;
-        errorLocation?: string;
-        instance?: string;
-        statusCode?: number;
-        title?: string;
-        type?: string;
-    }
-
-}
-
-export namespace trafficmanagement {
-    export interface GtmASmapAssignment {
-        asNumbers: number[];
-        datacenterId: number;
-        nickname: string;
-    }
-
-    export interface GtmASmapDefaultDatacenter {
-        datacenterId: number;
-        nickname?: string;
-    }
-
-    export interface GtmCidrmapAssignment {
-        blocks?: string[];
-        datacenterId: number;
-        nickname: string;
-    }
-
-    export interface GtmCidrmapDefaultDatacenter {
-        datacenterId: number;
-        nickname?: string;
-    }
-
-    export interface GtmDatacenterDefaultLoadObject {
-        loadObject?: string;
-        loadObjectPort?: number;
-        loadServers?: string[];
-    }
-
-    export interface GtmGeomapAssignment {
-        countries?: string[];
-        datacenterId: number;
-        nickname: string;
-    }
-
-    export interface GtmGeomapDefaultDatacenter {
-        datacenterId: number;
-        nickname?: string;
-    }
-
-    export interface GtmPropertyLivenessTest {
-        answersRequired?: boolean;
-        disableNonstandardPortWarning?: boolean;
-        disabled?: boolean;
-        errorPenalty?: number;
-        httpError3xx?: boolean;
-        httpError4xx?: boolean;
-        httpError5xx?: boolean;
-        httpHeaders?: outputs.trafficmanagement.GtmPropertyLivenessTestHttpHeader[];
-        name: string;
-        peerCertificateVerification?: boolean;
-        recursionRequested?: boolean;
-        requestString?: string;
-        resourceType?: string;
-        responseString?: string;
-        sslClientCertificate?: string;
-        sslClientPrivateKey?: string;
-        testInterval: number;
-        testObject: string;
-        testObjectPassword?: string;
-        testObjectPort?: number;
-        testObjectProtocol: string;
-        testObjectUsername?: string;
-        testTimeout: number;
-        timeoutPenalty?: number;
-    }
-
-    export interface GtmPropertyLivenessTestHttpHeader {
-        name?: string;
-        value?: string;
-    }
-
-    export interface GtmPropertyStaticRrSet {
-        rdatas?: string[];
-        ttl?: number;
-        type?: string;
-    }
-
-    export interface GtmPropertyTrafficTarget {
-        datacenterId?: number;
-        enabled?: boolean;
-        handoutCname?: string;
-        /**
-         * @deprecated The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored
-         */
-        name?: string;
-        servers?: string[];
-        weight?: number;
-    }
-
-    export interface GtmResourceResourceInstance {
-        datacenterId: number;
-        loadObject?: string;
-        loadObjectPort?: number;
-        loadServers?: string[];
-        useDefaultLoadObject?: boolean;
     }
 
 }
