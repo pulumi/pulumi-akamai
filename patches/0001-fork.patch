@@ -1,4 +1,4 @@
-From 3db7477ab51b5c21802151bb2e185af8ec923472 Mon Sep 17 00:00:00 2001
+From ad38d96b727c50c6c9907458af4eece008791864 Mon Sep 17 00:00:00 2001
 From: Ian Wahbe <ian@wahbe.com>
 Date: Tue, 4 Apr 2023 09:19:57 -0700
 Subject: [PATCH] fork
@@ -23,26 +23,26 @@ index fb831b27..0b4485c7 100644
  )
  
 diff --git a/pkg/providers/property/resource_akamai_property.go b/pkg/providers/property/resource_akamai_property.go
-index 71b3962b..f4aa1c0d 100644
+index a46df4d4..accf4893 100644
 --- a/pkg/providers/property/resource_akamai_property.go
 +++ b/pkg/providers/property/resource_akamai_property.go
-@@ -504,10 +504,11 @@ func resourcePropertyCreate(ctx context.Context, d *schema.ResourceData, m inter
+@@ -509,10 +509,11 @@ func resourcePropertyCreate(ctx context.Context, d *schema.ResourceData, m inter
  	// Save minimum state BEFORE moving on
- 	d.SetId(PropertyID)
+ 	d.SetId(propertyID)
  	attrs := map[string]interface{}{
--		"group_id":    GroupID,
--		"contract_id": ContractID,
--		"product_id":  ProductID,
--		"product":     ProductID,
-+		"group_id":       GroupID,
-+		"contract_id":    ContractID,
-+		"product_id":     ProductID,
-+		"product":        ProductID,
+-		"group_id":    groupID,
+-		"contract_id": contractID,
+-		"product_id":  productID,
+-		"product":     productID,
++		"group_id":       groupID,
++		"contract_id":    contractID,
++		"product_id":     productID,
++		"product":        productID,
 +		"latest_version": 1, // we are defaulting to 1 here in the create like we do below in the property creation
  	}
  	if err := rdSetAttrs(ctx, d, attrs); err != nil {
  		return diag.FromErr(err)
-@@ -732,6 +733,7 @@ func resourcePropertyUpdate(ctx context.Context, d *schema.ResourceData, m inter
+@@ -737,6 +738,7 @@ func resourcePropertyUpdate(ctx context.Context, d *schema.ResourceData, m inter
  
  	var propertyVersion int
  	if v, ok := d.GetOk("read_version"); ok && v.(int) != 0 {
@@ -51,5 +51,5 @@ index 71b3962b..f4aa1c0d 100644
  	} else {
  		propertyVersion = property.LatestVersion
 -- 
-2.39.1
+2.41.0
 
