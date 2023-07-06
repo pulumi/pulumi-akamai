@@ -84,10 +84,10 @@ def get_app_sec_eval(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecEval:getAppSecEval', __args__, opts=opts, typ=GetAppSecEvalResult).value
 
     return AwaitableGetAppSecEvalResult(
-        config_id=__ret__.config_id,
-        id=__ret__.id,
-        output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id)
+        config_id=pulumi.get(__ret__, 'config_id'),
+        id=pulumi.get(__ret__, 'id'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 
 
 @_utilities.lift_output_func(get_app_sec_eval)

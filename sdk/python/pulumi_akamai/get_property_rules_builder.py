@@ -84,10 +84,10 @@ def get_property_rules_builder(rules_v20230105: Optional[pulumi.InputType['GetPr
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder', __args__, opts=opts, typ=GetPropertyRulesBuilderResult).value
 
     return AwaitableGetPropertyRulesBuilderResult(
-        id=__ret__.id,
-        json=__ret__.json,
-        rule_format=__ret__.rule_format,
-        rules_v20230105=__ret__.rules_v20230105)
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        rule_format=pulumi.get(__ret__, 'rule_format'),
+        rules_v20230105=pulumi.get(__ret__, 'rules_v20230105'))
 
 
 @_utilities.lift_output_func(get_property_rules_builder)

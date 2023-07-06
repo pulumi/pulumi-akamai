@@ -74,9 +74,9 @@ def get_datastream_activation_history(stream_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory', __args__, opts=opts, typ=GetDatastreamActivationHistoryResult).value
 
     return AwaitableGetDatastreamActivationHistoryResult(
-        activations=__ret__.activations,
-        id=__ret__.id,
-        stream_id=__ret__.stream_id)
+        activations=pulumi.get(__ret__, 'activations'),
+        id=pulumi.get(__ret__, 'id'),
+        stream_id=pulumi.get(__ret__, 'stream_id'))
 
 
 @_utilities.lift_output_func(get_datastream_activation_history)

@@ -91,11 +91,11 @@ def get_app_sec_selected_hostnames(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecSelectedHostnames:getAppSecSelectedHostnames', __args__, opts=opts, typ=GetAppSecSelectedHostnamesResult).value
 
     return AwaitableGetAppSecSelectedHostnamesResult(
-        config_id=__ret__.config_id,
-        hostnames=__ret__.hostnames,
-        hostnames_json=__ret__.hostnames_json,
-        id=__ret__.id,
-        output_text=__ret__.output_text)
+        config_id=pulumi.get(__ret__, 'config_id'),
+        hostnames=pulumi.get(__ret__, 'hostnames'),
+        hostnames_json=pulumi.get(__ret__, 'hostnames_json'),
+        id=pulumi.get(__ret__, 'id'),
+        output_text=pulumi.get(__ret__, 'output_text'))
 
 
 @_utilities.lift_output_func(get_app_sec_selected_hostnames)

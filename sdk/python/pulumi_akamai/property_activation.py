@@ -153,6 +153,9 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter(name="ruleWarnings")
     def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]]:
+        warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
+        pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
+
         return pulumi.get(self, "rule_warnings")
 
     @rule_warnings.setter
@@ -162,6 +165,9 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter
     def property(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
+
         return pulumi.get(self, "property")
 
     @property.setter
@@ -320,6 +326,9 @@ class _PropertyActivationState:
     @property
     @pulumi.getter(name="ruleWarnings")
     def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyActivationRuleWarningArgs']]]]:
+        warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
+        pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
+
         return pulumi.get(self, "rule_warnings")
 
     @rule_warnings.setter
@@ -356,6 +365,9 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def property(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
+
         return pulumi.get(self, "property")
 
     @property.setter
@@ -569,6 +581,9 @@ class PropertyActivation(pulumi.CustomResource):
     @property
     @pulumi.getter(name="ruleWarnings")
     def rule_warnings(self) -> pulumi.Output[Sequence['outputs.PropertyActivationRuleWarning']]:
+        warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
+        pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
+
         return pulumi.get(self, "rule_warnings")
 
     @property
@@ -589,5 +604,8 @@ class PropertyActivation(pulumi.CustomResource):
     @property
     @pulumi.getter
     def property(self) -> pulumi.Output[str]:
+        warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
+
         return pulumi.get(self, "property")
 

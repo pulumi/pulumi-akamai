@@ -95,11 +95,11 @@ def get_app_sec_rate_policy_actions(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecRatePolicyActions:getAppSecRatePolicyActions', __args__, opts=opts, typ=GetAppSecRatePolicyActionsResult).value
 
     return AwaitableGetAppSecRatePolicyActionsResult(
-        config_id=__ret__.config_id,
-        id=__ret__.id,
-        output_text=__ret__.output_text,
-        rate_policy_id=__ret__.rate_policy_id,
-        security_policy_id=__ret__.security_policy_id)
+        config_id=pulumi.get(__ret__, 'config_id'),
+        id=pulumi.get(__ret__, 'id'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        rate_policy_id=pulumi.get(__ret__, 'rate_policy_id'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 
 
 @_utilities.lift_output_func(get_app_sec_rate_policy_actions)

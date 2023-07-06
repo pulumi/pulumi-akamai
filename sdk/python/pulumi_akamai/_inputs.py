@@ -54,11 +54,19 @@ __all__ = [
     'GtmPropertyTrafficTargetArgs',
     'GtmResourceResourceInstanceArgs',
     'PropertyActivationComplianceRecordArgs',
+    'PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs',
+    'PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs',
+    'PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs',
+    'PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs',
     'PropertyActivationRuleErrorArgs',
     'PropertyActivationRuleWarningArgs',
     'PropertyHostnameArgs',
     'PropertyHostnameCertStatusArgs',
     'PropertyIncludeActivationComplianceRecordArgs',
+    'PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgs',
+    'PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs',
+    'PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgs',
+    'PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgs',
     'PropertyOriginArgs',
     'PropertyRuleErrorArgs',
     'PropertyRuleWarningArgs',
@@ -4009,6 +4017,9 @@ class GtmPropertyTrafficTargetArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored""", DeprecationWarning)
+        pulumi.log.warn("""name is deprecated: The attribute `name` has been deprecated. Any reads or writes on this attribute are ignored""")
+
         return pulumi.get(self, "name")
 
     @name.setter
@@ -4101,32 +4112,105 @@ class GtmResourceResourceInstanceArgs:
 @pulumi.input_type
 class PropertyActivationComplianceRecordArgs:
     def __init__(__self__, *,
-                 noncompliance_reason: pulumi.Input[str],
+                 noncompliance_reason_emergency: Optional[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs']] = None,
+                 noncompliance_reason_no_production_traffic: Optional[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs']] = None,
+                 noncompliance_reason_none: Optional[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs']] = None,
+                 noncompliance_reason_other: Optional[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs']] = None):
+        if noncompliance_reason_emergency is not None:
+            pulumi.set(__self__, "noncompliance_reason_emergency", noncompliance_reason_emergency)
+        if noncompliance_reason_no_production_traffic is not None:
+            pulumi.set(__self__, "noncompliance_reason_no_production_traffic", noncompliance_reason_no_production_traffic)
+        if noncompliance_reason_none is not None:
+            pulumi.set(__self__, "noncompliance_reason_none", noncompliance_reason_none)
+        if noncompliance_reason_other is not None:
+            pulumi.set(__self__, "noncompliance_reason_other", noncompliance_reason_other)
+
+    @property
+    @pulumi.getter(name="noncomplianceReasonEmergency")
+    def noncompliance_reason_emergency(self) -> Optional[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs']]:
+        return pulumi.get(self, "noncompliance_reason_emergency")
+
+    @noncompliance_reason_emergency.setter
+    def noncompliance_reason_emergency(self, value: Optional[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs']]):
+        pulumi.set(self, "noncompliance_reason_emergency", value)
+
+    @property
+    @pulumi.getter(name="noncomplianceReasonNoProductionTraffic")
+    def noncompliance_reason_no_production_traffic(self) -> Optional[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs']]:
+        return pulumi.get(self, "noncompliance_reason_no_production_traffic")
+
+    @noncompliance_reason_no_production_traffic.setter
+    def noncompliance_reason_no_production_traffic(self, value: Optional[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs']]):
+        pulumi.set(self, "noncompliance_reason_no_production_traffic", value)
+
+    @property
+    @pulumi.getter(name="noncomplianceReasonNone")
+    def noncompliance_reason_none(self) -> Optional[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs']]:
+        return pulumi.get(self, "noncompliance_reason_none")
+
+    @noncompliance_reason_none.setter
+    def noncompliance_reason_none(self, value: Optional[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs']]):
+        pulumi.set(self, "noncompliance_reason_none", value)
+
+    @property
+    @pulumi.getter(name="noncomplianceReasonOther")
+    def noncompliance_reason_other(self) -> Optional[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs']]:
+        return pulumi.get(self, "noncompliance_reason_other")
+
+    @noncompliance_reason_other.setter
+    def noncompliance_reason_other(self, value: Optional[pulumi.Input['PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs']]):
+        pulumi.set(self, "noncompliance_reason_other", value)
+
+
+@pulumi.input_type
+class PropertyActivationComplianceRecordNoncomplianceReasonEmergencyArgs:
+    def __init__(__self__, *,
+                 ticket_id: Optional[pulumi.Input[str]] = None):
+        if ticket_id is not None:
+            pulumi.set(__self__, "ticket_id", ticket_id)
+
+    @property
+    @pulumi.getter(name="ticketId")
+    def ticket_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ticket_id")
+
+    @ticket_id.setter
+    def ticket_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ticket_id", value)
+
+
+@pulumi.input_type
+class PropertyActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs:
+    def __init__(__self__, *,
+                 ticket_id: Optional[pulumi.Input[str]] = None):
+        if ticket_id is not None:
+            pulumi.set(__self__, "ticket_id", ticket_id)
+
+    @property
+    @pulumi.getter(name="ticketId")
+    def ticket_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ticket_id")
+
+    @ticket_id.setter
+    def ticket_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ticket_id", value)
+
+
+@pulumi.input_type
+class PropertyActivationComplianceRecordNoncomplianceReasonNoneArgs:
+    def __init__(__self__, *,
                  customer_email: Optional[pulumi.Input[str]] = None,
-                 other_noncompliance_reason: Optional[pulumi.Input[str]] = None,
                  peer_reviewed_by: Optional[pulumi.Input[str]] = None,
                  ticket_id: Optional[pulumi.Input[str]] = None,
                  unit_tested: Optional[pulumi.Input[bool]] = None):
-        pulumi.set(__self__, "noncompliance_reason", noncompliance_reason)
         if customer_email is not None:
             pulumi.set(__self__, "customer_email", customer_email)
-        if other_noncompliance_reason is not None:
-            pulumi.set(__self__, "other_noncompliance_reason", other_noncompliance_reason)
         if peer_reviewed_by is not None:
             pulumi.set(__self__, "peer_reviewed_by", peer_reviewed_by)
         if ticket_id is not None:
             pulumi.set(__self__, "ticket_id", ticket_id)
         if unit_tested is not None:
             pulumi.set(__self__, "unit_tested", unit_tested)
-
-    @property
-    @pulumi.getter(name="noncomplianceReason")
-    def noncompliance_reason(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "noncompliance_reason")
-
-    @noncompliance_reason.setter
-    def noncompliance_reason(self, value: pulumi.Input[str]):
-        pulumi.set(self, "noncompliance_reason", value)
 
     @property
     @pulumi.getter(name="customerEmail")
@@ -4136,15 +4220,6 @@ class PropertyActivationComplianceRecordArgs:
     @customer_email.setter
     def customer_email(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "customer_email", value)
-
-    @property
-    @pulumi.getter(name="otherNoncomplianceReason")
-    def other_noncompliance_reason(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "other_noncompliance_reason")
-
-    @other_noncompliance_reason.setter
-    def other_noncompliance_reason(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "other_noncompliance_reason", value)
 
     @property
     @pulumi.getter(name="peerReviewedBy")
@@ -4172,6 +4247,35 @@ class PropertyActivationComplianceRecordArgs:
     @unit_tested.setter
     def unit_tested(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "unit_tested", value)
+
+
+@pulumi.input_type
+class PropertyActivationComplianceRecordNoncomplianceReasonOtherArgs:
+    def __init__(__self__, *,
+                 other_noncompliance_reason: Optional[pulumi.Input[str]] = None,
+                 ticket_id: Optional[pulumi.Input[str]] = None):
+        if other_noncompliance_reason is not None:
+            pulumi.set(__self__, "other_noncompliance_reason", other_noncompliance_reason)
+        if ticket_id is not None:
+            pulumi.set(__self__, "ticket_id", ticket_id)
+
+    @property
+    @pulumi.getter(name="otherNoncomplianceReason")
+    def other_noncompliance_reason(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "other_noncompliance_reason")
+
+    @other_noncompliance_reason.setter
+    def other_noncompliance_reason(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "other_noncompliance_reason", value)
+
+    @property
+    @pulumi.getter(name="ticketId")
+    def ticket_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ticket_id")
+
+    @ticket_id.setter
+    def ticket_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ticket_id", value)
 
 
 @pulumi.input_type
@@ -4482,32 +4586,105 @@ class PropertyHostnameCertStatusArgs:
 @pulumi.input_type
 class PropertyIncludeActivationComplianceRecordArgs:
     def __init__(__self__, *,
-                 noncompliance_reason: pulumi.Input[str],
+                 noncompliance_reason_emergency: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgs']] = None,
+                 noncompliance_reason_no_production_traffic: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs']] = None,
+                 noncompliance_reason_none: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgs']] = None,
+                 noncompliance_reason_other: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgs']] = None):
+        if noncompliance_reason_emergency is not None:
+            pulumi.set(__self__, "noncompliance_reason_emergency", noncompliance_reason_emergency)
+        if noncompliance_reason_no_production_traffic is not None:
+            pulumi.set(__self__, "noncompliance_reason_no_production_traffic", noncompliance_reason_no_production_traffic)
+        if noncompliance_reason_none is not None:
+            pulumi.set(__self__, "noncompliance_reason_none", noncompliance_reason_none)
+        if noncompliance_reason_other is not None:
+            pulumi.set(__self__, "noncompliance_reason_other", noncompliance_reason_other)
+
+    @property
+    @pulumi.getter(name="noncomplianceReasonEmergency")
+    def noncompliance_reason_emergency(self) -> Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgs']]:
+        return pulumi.get(self, "noncompliance_reason_emergency")
+
+    @noncompliance_reason_emergency.setter
+    def noncompliance_reason_emergency(self, value: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgs']]):
+        pulumi.set(self, "noncompliance_reason_emergency", value)
+
+    @property
+    @pulumi.getter(name="noncomplianceReasonNoProductionTraffic")
+    def noncompliance_reason_no_production_traffic(self) -> Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs']]:
+        return pulumi.get(self, "noncompliance_reason_no_production_traffic")
+
+    @noncompliance_reason_no_production_traffic.setter
+    def noncompliance_reason_no_production_traffic(self, value: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs']]):
+        pulumi.set(self, "noncompliance_reason_no_production_traffic", value)
+
+    @property
+    @pulumi.getter(name="noncomplianceReasonNone")
+    def noncompliance_reason_none(self) -> Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgs']]:
+        return pulumi.get(self, "noncompliance_reason_none")
+
+    @noncompliance_reason_none.setter
+    def noncompliance_reason_none(self, value: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgs']]):
+        pulumi.set(self, "noncompliance_reason_none", value)
+
+    @property
+    @pulumi.getter(name="noncomplianceReasonOther")
+    def noncompliance_reason_other(self) -> Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgs']]:
+        return pulumi.get(self, "noncompliance_reason_other")
+
+    @noncompliance_reason_other.setter
+    def noncompliance_reason_other(self, value: Optional[pulumi.Input['PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgs']]):
+        pulumi.set(self, "noncompliance_reason_other", value)
+
+
+@pulumi.input_type
+class PropertyIncludeActivationComplianceRecordNoncomplianceReasonEmergencyArgs:
+    def __init__(__self__, *,
+                 ticket_id: Optional[pulumi.Input[str]] = None):
+        if ticket_id is not None:
+            pulumi.set(__self__, "ticket_id", ticket_id)
+
+    @property
+    @pulumi.getter(name="ticketId")
+    def ticket_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ticket_id")
+
+    @ticket_id.setter
+    def ticket_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ticket_id", value)
+
+
+@pulumi.input_type
+class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoProductionTrafficArgs:
+    def __init__(__self__, *,
+                 ticket_id: Optional[pulumi.Input[str]] = None):
+        if ticket_id is not None:
+            pulumi.set(__self__, "ticket_id", ticket_id)
+
+    @property
+    @pulumi.getter(name="ticketId")
+    def ticket_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ticket_id")
+
+    @ticket_id.setter
+    def ticket_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ticket_id", value)
+
+
+@pulumi.input_type
+class PropertyIncludeActivationComplianceRecordNoncomplianceReasonNoneArgs:
+    def __init__(__self__, *,
                  customer_email: Optional[pulumi.Input[str]] = None,
-                 other_noncompliance_reason: Optional[pulumi.Input[str]] = None,
                  peer_reviewed_by: Optional[pulumi.Input[str]] = None,
                  ticket_id: Optional[pulumi.Input[str]] = None,
                  unit_tested: Optional[pulumi.Input[bool]] = None):
-        pulumi.set(__self__, "noncompliance_reason", noncompliance_reason)
         if customer_email is not None:
             pulumi.set(__self__, "customer_email", customer_email)
-        if other_noncompliance_reason is not None:
-            pulumi.set(__self__, "other_noncompliance_reason", other_noncompliance_reason)
         if peer_reviewed_by is not None:
             pulumi.set(__self__, "peer_reviewed_by", peer_reviewed_by)
         if ticket_id is not None:
             pulumi.set(__self__, "ticket_id", ticket_id)
         if unit_tested is not None:
             pulumi.set(__self__, "unit_tested", unit_tested)
-
-    @property
-    @pulumi.getter(name="noncomplianceReason")
-    def noncompliance_reason(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "noncompliance_reason")
-
-    @noncompliance_reason.setter
-    def noncompliance_reason(self, value: pulumi.Input[str]):
-        pulumi.set(self, "noncompliance_reason", value)
 
     @property
     @pulumi.getter(name="customerEmail")
@@ -4517,15 +4694,6 @@ class PropertyIncludeActivationComplianceRecordArgs:
     @customer_email.setter
     def customer_email(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "customer_email", value)
-
-    @property
-    @pulumi.getter(name="otherNoncomplianceReason")
-    def other_noncompliance_reason(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "other_noncompliance_reason")
-
-    @other_noncompliance_reason.setter
-    def other_noncompliance_reason(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "other_noncompliance_reason", value)
 
     @property
     @pulumi.getter(name="peerReviewedBy")
@@ -4553,6 +4721,35 @@ class PropertyIncludeActivationComplianceRecordArgs:
     @unit_tested.setter
     def unit_tested(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "unit_tested", value)
+
+
+@pulumi.input_type
+class PropertyIncludeActivationComplianceRecordNoncomplianceReasonOtherArgs:
+    def __init__(__self__, *,
+                 other_noncompliance_reason: Optional[pulumi.Input[str]] = None,
+                 ticket_id: Optional[pulumi.Input[str]] = None):
+        if other_noncompliance_reason is not None:
+            pulumi.set(__self__, "other_noncompliance_reason", other_noncompliance_reason)
+        if ticket_id is not None:
+            pulumi.set(__self__, "ticket_id", ticket_id)
+
+    @property
+    @pulumi.getter(name="otherNoncomplianceReason")
+    def other_noncompliance_reason(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "other_noncompliance_reason")
+
+    @other_noncompliance_reason.setter
+    def other_noncompliance_reason(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "other_noncompliance_reason", value)
+
+    @property
+    @pulumi.getter(name="ticketId")
+    def ticket_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ticket_id")
+
+    @ticket_id.setter
+    def ticket_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ticket_id", value)
 
 
 @pulumi.input_type

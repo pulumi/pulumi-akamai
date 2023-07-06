@@ -120,14 +120,14 @@ def get_app_sec_ip_geo(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecIPGeo:getAppSecIPGeo', __args__, opts=opts, typ=GetAppSecIPGeoResult).value
 
     return AwaitableGetAppSecIPGeoResult(
-        config_id=__ret__.config_id,
-        exception_ip_network_lists=__ret__.exception_ip_network_lists,
-        geo_network_lists=__ret__.geo_network_lists,
-        id=__ret__.id,
-        ip_network_lists=__ret__.ip_network_lists,
-        mode=__ret__.mode,
-        output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id)
+        config_id=pulumi.get(__ret__, 'config_id'),
+        exception_ip_network_lists=pulumi.get(__ret__, 'exception_ip_network_lists'),
+        geo_network_lists=pulumi.get(__ret__, 'geo_network_lists'),
+        id=pulumi.get(__ret__, 'id'),
+        ip_network_lists=pulumi.get(__ret__, 'ip_network_lists'),
+        mode=pulumi.get(__ret__, 'mode'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 
 
 @_utilities.lift_output_func(get_app_sec_ip_geo)

@@ -51,6 +51,9 @@ class CpCodeArgs:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
+
         return pulumi.get(self, "contract")
 
     @contract.setter
@@ -69,6 +72,9 @@ class CpCodeArgs:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
+
         return pulumi.get(self, "group")
 
     @group.setter
@@ -96,6 +102,9 @@ class CpCodeArgs:
     @property
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
+
         return pulumi.get(self, "product")
 
     @product.setter
@@ -152,6 +161,9 @@ class _CpCodeState:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
+
         return pulumi.get(self, "contract")
 
     @contract.setter
@@ -170,6 +182,9 @@ class _CpCodeState:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
+
         return pulumi.get(self, "group")
 
     @group.setter
@@ -197,6 +212,9 @@ class _CpCodeState:
     @property
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
+
         return pulumi.get(self, "product")
 
     @product.setter
@@ -329,6 +347,9 @@ class CpCode(pulumi.CustomResource):
     @property
     @pulumi.getter
     def contract(self) -> pulumi.Output[str]:
+        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
+
         return pulumi.get(self, "contract")
 
     @property
@@ -339,6 +360,9 @@ class CpCode(pulumi.CustomResource):
     @property
     @pulumi.getter
     def group(self) -> pulumi.Output[str]:
+        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
+
         return pulumi.get(self, "group")
 
     @property
@@ -354,6 +378,9 @@ class CpCode(pulumi.CustomResource):
     @property
     @pulumi.getter
     def product(self) -> pulumi.Output[str]:
+        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
+
         return pulumi.get(self, "product")
 
     @property

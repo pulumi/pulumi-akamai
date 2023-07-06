@@ -61,5 +61,5 @@ def get_iam_supported_langs(opts: Optional[pulumi.InvokeOptions] = None) -> Awai
     __ret__ = pulumi.runtime.invoke('akamai:index/getIamSupportedLangs:getIamSupportedLangs', __args__, opts=opts, typ=GetIamSupportedLangsResult).value
 
     return AwaitableGetIamSupportedLangsResult(
-        id=__ret__.id,
-        languages=__ret__.languages)
+        id=pulumi.get(__ret__, 'id'),
+        languages=pulumi.get(__ret__, 'languages'))

@@ -93,11 +93,11 @@ def get_app_sec_hostname_coverage_overlapping(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecHostnameCoverageOverlapping:getAppSecHostnameCoverageOverlapping', __args__, opts=opts, typ=GetAppSecHostnameCoverageOverlappingResult).value
 
     return AwaitableGetAppSecHostnameCoverageOverlappingResult(
-        config_id=__ret__.config_id,
-        hostname=__ret__.hostname,
-        id=__ret__.id,
-        json=__ret__.json,
-        output_text=__ret__.output_text)
+        config_id=pulumi.get(__ret__, 'config_id'),
+        hostname=pulumi.get(__ret__, 'hostname'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'))
 
 
 @_utilities.lift_output_func(get_app_sec_hostname_coverage_overlapping)

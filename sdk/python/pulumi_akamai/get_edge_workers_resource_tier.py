@@ -84,10 +84,10 @@ def get_edge_workers_resource_tier(contract_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier', __args__, opts=opts, typ=GetEdgeWorkersResourceTierResult).value
 
     return AwaitableGetEdgeWorkersResourceTierResult(
-        contract_id=__ret__.contract_id,
-        id=__ret__.id,
-        resource_tier_id=__ret__.resource_tier_id,
-        resource_tier_name=__ret__.resource_tier_name)
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        id=pulumi.get(__ret__, 'id'),
+        resource_tier_id=pulumi.get(__ret__, 'resource_tier_id'),
+        resource_tier_name=pulumi.get(__ret__, 'resource_tier_name'))
 
 
 @_utilities.lift_output_func(get_edge_workers_resource_tier)

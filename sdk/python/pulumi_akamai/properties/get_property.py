@@ -87,10 +87,10 @@ def get_property(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:properties/getProperty:getProperty', __args__, opts=opts, typ=GetPropertyResult).value
 
     return AwaitableGetPropertyResult(
-        id=__ret__.id,
-        name=__ret__.name,
-        rules=__ret__.rules,
-        version=__ret__.version)
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        rules=pulumi.get(__ret__, 'rules'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_property)

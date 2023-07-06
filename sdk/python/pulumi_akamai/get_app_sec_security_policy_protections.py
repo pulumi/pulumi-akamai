@@ -165,19 +165,19 @@ def get_app_sec_security_policy_protections(config_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAppSecSecurityPolicyProtections:getAppSecSecurityPolicyProtections', __args__, opts=opts, typ=GetAppSecSecurityPolicyProtectionsResult).value
 
     return AwaitableGetAppSecSecurityPolicyProtectionsResult(
-        apply_api_constraints=__ret__.apply_api_constraints,
-        apply_application_layer_controls=__ret__.apply_application_layer_controls,
-        apply_botman_controls=__ret__.apply_botman_controls,
-        apply_malware_controls=__ret__.apply_malware_controls,
-        apply_network_layer_controls=__ret__.apply_network_layer_controls,
-        apply_rate_controls=__ret__.apply_rate_controls,
-        apply_reputation_controls=__ret__.apply_reputation_controls,
-        apply_slow_post_controls=__ret__.apply_slow_post_controls,
-        config_id=__ret__.config_id,
-        id=__ret__.id,
-        json=__ret__.json,
-        output_text=__ret__.output_text,
-        security_policy_id=__ret__.security_policy_id)
+        apply_api_constraints=pulumi.get(__ret__, 'apply_api_constraints'),
+        apply_application_layer_controls=pulumi.get(__ret__, 'apply_application_layer_controls'),
+        apply_botman_controls=pulumi.get(__ret__, 'apply_botman_controls'),
+        apply_malware_controls=pulumi.get(__ret__, 'apply_malware_controls'),
+        apply_network_layer_controls=pulumi.get(__ret__, 'apply_network_layer_controls'),
+        apply_rate_controls=pulumi.get(__ret__, 'apply_rate_controls'),
+        apply_reputation_controls=pulumi.get(__ret__, 'apply_reputation_controls'),
+        apply_slow_post_controls=pulumi.get(__ret__, 'apply_slow_post_controls'),
+        config_id=pulumi.get(__ret__, 'config_id'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
 
 
 @_utilities.lift_output_func(get_app_sec_security_policy_protections)

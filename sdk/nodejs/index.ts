@@ -250,6 +250,106 @@ export type AppsecAdvancedSettingsRequestBody = import("./appsecAdvancedSettings
 export const AppsecAdvancedSettingsRequestBody: typeof import("./appsecAdvancedSettingsRequestBody").AppsecAdvancedSettingsRequestBody = null as any;
 utilities.lazyLoad(exports, ["AppsecAdvancedSettingsRequestBody"], () => require("./appsecAdvancedSettingsRequestBody"));
 
+export { BotmanAkamaiBotCategoryActionArgs, BotmanAkamaiBotCategoryActionState } from "./botmanAkamaiBotCategoryAction";
+export type BotmanAkamaiBotCategoryAction = import("./botmanAkamaiBotCategoryAction").BotmanAkamaiBotCategoryAction;
+export const BotmanAkamaiBotCategoryAction: typeof import("./botmanAkamaiBotCategoryAction").BotmanAkamaiBotCategoryAction = null as any;
+utilities.lazyLoad(exports, ["BotmanAkamaiBotCategoryAction"], () => require("./botmanAkamaiBotCategoryAction"));
+
+export { BotmanBotAnalyticsCookieArgs, BotmanBotAnalyticsCookieState } from "./botmanBotAnalyticsCookie";
+export type BotmanBotAnalyticsCookie = import("./botmanBotAnalyticsCookie").BotmanBotAnalyticsCookie;
+export const BotmanBotAnalyticsCookie: typeof import("./botmanBotAnalyticsCookie").BotmanBotAnalyticsCookie = null as any;
+utilities.lazyLoad(exports, ["BotmanBotAnalyticsCookie"], () => require("./botmanBotAnalyticsCookie"));
+
+export { BotmanBotCategoryExceptionArgs, BotmanBotCategoryExceptionState } from "./botmanBotCategoryException";
+export type BotmanBotCategoryException = import("./botmanBotCategoryException").BotmanBotCategoryException;
+export const BotmanBotCategoryException: typeof import("./botmanBotCategoryException").BotmanBotCategoryException = null as any;
+utilities.lazyLoad(exports, ["BotmanBotCategoryException"], () => require("./botmanBotCategoryException"));
+
+export { BotmanBotDetectionActionArgs, BotmanBotDetectionActionState } from "./botmanBotDetectionAction";
+export type BotmanBotDetectionAction = import("./botmanBotDetectionAction").BotmanBotDetectionAction;
+export const BotmanBotDetectionAction: typeof import("./botmanBotDetectionAction").BotmanBotDetectionAction = null as any;
+utilities.lazyLoad(exports, ["BotmanBotDetectionAction"], () => require("./botmanBotDetectionAction"));
+
+export { BotmanBotManagementSettingsArgs, BotmanBotManagementSettingsState } from "./botmanBotManagementSettings";
+export type BotmanBotManagementSettings = import("./botmanBotManagementSettings").BotmanBotManagementSettings;
+export const BotmanBotManagementSettings: typeof import("./botmanBotManagementSettings").BotmanBotManagementSettings = null as any;
+utilities.lazyLoad(exports, ["BotmanBotManagementSettings"], () => require("./botmanBotManagementSettings"));
+
+export { BotmanChallengeActionArgs, BotmanChallengeActionState } from "./botmanChallengeAction";
+export type BotmanChallengeAction = import("./botmanChallengeAction").BotmanChallengeAction;
+export const BotmanChallengeAction: typeof import("./botmanChallengeAction").BotmanChallengeAction = null as any;
+utilities.lazyLoad(exports, ["BotmanChallengeAction"], () => require("./botmanChallengeAction"));
+
+export { BotmanChallengeInterceptionRulesArgs, BotmanChallengeInterceptionRulesState } from "./botmanChallengeInterceptionRules";
+export type BotmanChallengeInterceptionRules = import("./botmanChallengeInterceptionRules").BotmanChallengeInterceptionRules;
+export const BotmanChallengeInterceptionRules: typeof import("./botmanChallengeInterceptionRules").BotmanChallengeInterceptionRules = null as any;
+utilities.lazyLoad(exports, ["BotmanChallengeInterceptionRules"], () => require("./botmanChallengeInterceptionRules"));
+
+export { BotmanClientSideSecurityArgs, BotmanClientSideSecurityState } from "./botmanClientSideSecurity";
+export type BotmanClientSideSecurity = import("./botmanClientSideSecurity").BotmanClientSideSecurity;
+export const BotmanClientSideSecurity: typeof import("./botmanClientSideSecurity").BotmanClientSideSecurity = null as any;
+utilities.lazyLoad(exports, ["BotmanClientSideSecurity"], () => require("./botmanClientSideSecurity"));
+
+export { BotmanConditionalActionArgs, BotmanConditionalActionState } from "./botmanConditionalAction";
+export type BotmanConditionalAction = import("./botmanConditionalAction").BotmanConditionalAction;
+export const BotmanConditionalAction: typeof import("./botmanConditionalAction").BotmanConditionalAction = null as any;
+utilities.lazyLoad(exports, ["BotmanConditionalAction"], () => require("./botmanConditionalAction"));
+
+export { BotmanCustomBotCategoryArgs, BotmanCustomBotCategoryState } from "./botmanCustomBotCategory";
+export type BotmanCustomBotCategory = import("./botmanCustomBotCategory").BotmanCustomBotCategory;
+export const BotmanCustomBotCategory: typeof import("./botmanCustomBotCategory").BotmanCustomBotCategory = null as any;
+utilities.lazyLoad(exports, ["BotmanCustomBotCategory"], () => require("./botmanCustomBotCategory"));
+
+export { BotmanCustomBotCategoryActionArgs, BotmanCustomBotCategoryActionState } from "./botmanCustomBotCategoryAction";
+export type BotmanCustomBotCategoryAction = import("./botmanCustomBotCategoryAction").BotmanCustomBotCategoryAction;
+export const BotmanCustomBotCategoryAction: typeof import("./botmanCustomBotCategoryAction").BotmanCustomBotCategoryAction = null as any;
+utilities.lazyLoad(exports, ["BotmanCustomBotCategoryAction"], () => require("./botmanCustomBotCategoryAction"));
+
+export { BotmanCustomBotCategorySequenceArgs, BotmanCustomBotCategorySequenceState } from "./botmanCustomBotCategorySequence";
+export type BotmanCustomBotCategorySequence = import("./botmanCustomBotCategorySequence").BotmanCustomBotCategorySequence;
+export const BotmanCustomBotCategorySequence: typeof import("./botmanCustomBotCategorySequence").BotmanCustomBotCategorySequence = null as any;
+utilities.lazyLoad(exports, ["BotmanCustomBotCategorySequence"], () => require("./botmanCustomBotCategorySequence"));
+
+export { BotmanCustomClientArgs, BotmanCustomClientState } from "./botmanCustomClient";
+export type BotmanCustomClient = import("./botmanCustomClient").BotmanCustomClient;
+export const BotmanCustomClient: typeof import("./botmanCustomClient").BotmanCustomClient = null as any;
+utilities.lazyLoad(exports, ["BotmanCustomClient"], () => require("./botmanCustomClient"));
+
+export { BotmanCustomDefinedBotArgs, BotmanCustomDefinedBotState } from "./botmanCustomDefinedBot";
+export type BotmanCustomDefinedBot = import("./botmanCustomDefinedBot").BotmanCustomDefinedBot;
+export const BotmanCustomDefinedBot: typeof import("./botmanCustomDefinedBot").BotmanCustomDefinedBot = null as any;
+utilities.lazyLoad(exports, ["BotmanCustomDefinedBot"], () => require("./botmanCustomDefinedBot"));
+
+export { BotmanCustomDenyActionArgs, BotmanCustomDenyActionState } from "./botmanCustomDenyAction";
+export type BotmanCustomDenyAction = import("./botmanCustomDenyAction").BotmanCustomDenyAction;
+export const BotmanCustomDenyAction: typeof import("./botmanCustomDenyAction").BotmanCustomDenyAction = null as any;
+utilities.lazyLoad(exports, ["BotmanCustomDenyAction"], () => require("./botmanCustomDenyAction"));
+
+export { BotmanJavascriptInjectionArgs, BotmanJavascriptInjectionState } from "./botmanJavascriptInjection";
+export type BotmanJavascriptInjection = import("./botmanJavascriptInjection").BotmanJavascriptInjection;
+export const BotmanJavascriptInjection: typeof import("./botmanJavascriptInjection").BotmanJavascriptInjection = null as any;
+utilities.lazyLoad(exports, ["BotmanJavascriptInjection"], () => require("./botmanJavascriptInjection"));
+
+export { BotmanRecategorizedAkamaiDefinedBotArgs, BotmanRecategorizedAkamaiDefinedBotState } from "./botmanRecategorizedAkamaiDefinedBot";
+export type BotmanRecategorizedAkamaiDefinedBot = import("./botmanRecategorizedAkamaiDefinedBot").BotmanRecategorizedAkamaiDefinedBot;
+export const BotmanRecategorizedAkamaiDefinedBot: typeof import("./botmanRecategorizedAkamaiDefinedBot").BotmanRecategorizedAkamaiDefinedBot = null as any;
+utilities.lazyLoad(exports, ["BotmanRecategorizedAkamaiDefinedBot"], () => require("./botmanRecategorizedAkamaiDefinedBot"));
+
+export { BotmanServeAlternateActionArgs, BotmanServeAlternateActionState } from "./botmanServeAlternateAction";
+export type BotmanServeAlternateAction = import("./botmanServeAlternateAction").BotmanServeAlternateAction;
+export const BotmanServeAlternateAction: typeof import("./botmanServeAlternateAction").BotmanServeAlternateAction = null as any;
+utilities.lazyLoad(exports, ["BotmanServeAlternateAction"], () => require("./botmanServeAlternateAction"));
+
+export { BotmanTransactionalEndpointArgs, BotmanTransactionalEndpointState } from "./botmanTransactionalEndpoint";
+export type BotmanTransactionalEndpoint = import("./botmanTransactionalEndpoint").BotmanTransactionalEndpoint;
+export const BotmanTransactionalEndpoint: typeof import("./botmanTransactionalEndpoint").BotmanTransactionalEndpoint = null as any;
+utilities.lazyLoad(exports, ["BotmanTransactionalEndpoint"], () => require("./botmanTransactionalEndpoint"));
+
+export { BotmanTransactionalEndpointProtectionArgs, BotmanTransactionalEndpointProtectionState } from "./botmanTransactionalEndpointProtection";
+export type BotmanTransactionalEndpointProtection = import("./botmanTransactionalEndpointProtection").BotmanTransactionalEndpointProtection;
+export const BotmanTransactionalEndpointProtection: typeof import("./botmanTransactionalEndpointProtection").BotmanTransactionalEndpointProtection = null as any;
+utilities.lazyLoad(exports, ["BotmanTransactionalEndpointProtection"], () => require("./botmanTransactionalEndpointProtection"));
+
 export { CloudletsApplicationLoadBalancerArgs, CloudletsApplicationLoadBalancerState } from "./cloudletsApplicationLoadBalancer";
 export type CloudletsApplicationLoadBalancer = import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer;
 export const CloudletsApplicationLoadBalancer: typeof import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer = null as any;
@@ -589,6 +689,135 @@ export const getAuthoritiesSet: typeof import("./getAuthoritiesSet").getAuthorit
 export const getAuthoritiesSetOutput: typeof import("./getAuthoritiesSet").getAuthoritiesSetOutput = null as any;
 utilities.lazyLoad(exports, ["getAuthoritiesSet","getAuthoritiesSetOutput"], () => require("./getAuthoritiesSet"));
 
+export { GetBotmanAkamaiBotCategoryArgs, GetBotmanAkamaiBotCategoryResult, GetBotmanAkamaiBotCategoryOutputArgs } from "./getBotmanAkamaiBotCategory";
+export const getBotmanAkamaiBotCategory: typeof import("./getBotmanAkamaiBotCategory").getBotmanAkamaiBotCategory = null as any;
+export const getBotmanAkamaiBotCategoryOutput: typeof import("./getBotmanAkamaiBotCategory").getBotmanAkamaiBotCategoryOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanAkamaiBotCategory","getBotmanAkamaiBotCategoryOutput"], () => require("./getBotmanAkamaiBotCategory"));
+
+export { GetBotmanAkamaiBotCategoryActionArgs, GetBotmanAkamaiBotCategoryActionResult, GetBotmanAkamaiBotCategoryActionOutputArgs } from "./getBotmanAkamaiBotCategoryAction";
+export const getBotmanAkamaiBotCategoryAction: typeof import("./getBotmanAkamaiBotCategoryAction").getBotmanAkamaiBotCategoryAction = null as any;
+export const getBotmanAkamaiBotCategoryActionOutput: typeof import("./getBotmanAkamaiBotCategoryAction").getBotmanAkamaiBotCategoryActionOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanAkamaiBotCategoryAction","getBotmanAkamaiBotCategoryActionOutput"], () => require("./getBotmanAkamaiBotCategoryAction"));
+
+export { GetBotmanAkamaiDefinedBotArgs, GetBotmanAkamaiDefinedBotResult, GetBotmanAkamaiDefinedBotOutputArgs } from "./getBotmanAkamaiDefinedBot";
+export const getBotmanAkamaiDefinedBot: typeof import("./getBotmanAkamaiDefinedBot").getBotmanAkamaiDefinedBot = null as any;
+export const getBotmanAkamaiDefinedBotOutput: typeof import("./getBotmanAkamaiDefinedBot").getBotmanAkamaiDefinedBotOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanAkamaiDefinedBot","getBotmanAkamaiDefinedBotOutput"], () => require("./getBotmanAkamaiDefinedBot"));
+
+export { GetBotmanBotAnalyticsCookieArgs, GetBotmanBotAnalyticsCookieResult, GetBotmanBotAnalyticsCookieOutputArgs } from "./getBotmanBotAnalyticsCookie";
+export const getBotmanBotAnalyticsCookie: typeof import("./getBotmanBotAnalyticsCookie").getBotmanBotAnalyticsCookie = null as any;
+export const getBotmanBotAnalyticsCookieOutput: typeof import("./getBotmanBotAnalyticsCookie").getBotmanBotAnalyticsCookieOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanBotAnalyticsCookie","getBotmanBotAnalyticsCookieOutput"], () => require("./getBotmanBotAnalyticsCookie"));
+
+export { GetBotmanBotAnalyticsCookieValuesResult } from "./getBotmanBotAnalyticsCookieValues";
+export const getBotmanBotAnalyticsCookieValues: typeof import("./getBotmanBotAnalyticsCookieValues").getBotmanBotAnalyticsCookieValues = null as any;
+utilities.lazyLoad(exports, ["getBotmanBotAnalyticsCookieValues"], () => require("./getBotmanBotAnalyticsCookieValues"));
+
+export { GetBotmanBotCategoryExceptionArgs, GetBotmanBotCategoryExceptionResult, GetBotmanBotCategoryExceptionOutputArgs } from "./getBotmanBotCategoryException";
+export const getBotmanBotCategoryException: typeof import("./getBotmanBotCategoryException").getBotmanBotCategoryException = null as any;
+export const getBotmanBotCategoryExceptionOutput: typeof import("./getBotmanBotCategoryException").getBotmanBotCategoryExceptionOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanBotCategoryException","getBotmanBotCategoryExceptionOutput"], () => require("./getBotmanBotCategoryException"));
+
+export { GetBotmanBotDetectionArgs, GetBotmanBotDetectionResult, GetBotmanBotDetectionOutputArgs } from "./getBotmanBotDetection";
+export const getBotmanBotDetection: typeof import("./getBotmanBotDetection").getBotmanBotDetection = null as any;
+export const getBotmanBotDetectionOutput: typeof import("./getBotmanBotDetection").getBotmanBotDetectionOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanBotDetection","getBotmanBotDetectionOutput"], () => require("./getBotmanBotDetection"));
+
+export { GetBotmanBotDetectionActionArgs, GetBotmanBotDetectionActionResult, GetBotmanBotDetectionActionOutputArgs } from "./getBotmanBotDetectionAction";
+export const getBotmanBotDetectionAction: typeof import("./getBotmanBotDetectionAction").getBotmanBotDetectionAction = null as any;
+export const getBotmanBotDetectionActionOutput: typeof import("./getBotmanBotDetectionAction").getBotmanBotDetectionActionOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanBotDetectionAction","getBotmanBotDetectionActionOutput"], () => require("./getBotmanBotDetectionAction"));
+
+export { GetBotmanBotEndpointCoverageReportArgs, GetBotmanBotEndpointCoverageReportResult, GetBotmanBotEndpointCoverageReportOutputArgs } from "./getBotmanBotEndpointCoverageReport";
+export const getBotmanBotEndpointCoverageReport: typeof import("./getBotmanBotEndpointCoverageReport").getBotmanBotEndpointCoverageReport = null as any;
+export const getBotmanBotEndpointCoverageReportOutput: typeof import("./getBotmanBotEndpointCoverageReport").getBotmanBotEndpointCoverageReportOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanBotEndpointCoverageReport","getBotmanBotEndpointCoverageReportOutput"], () => require("./getBotmanBotEndpointCoverageReport"));
+
+export { GetBotmanBotManagementSettingsArgs, GetBotmanBotManagementSettingsResult, GetBotmanBotManagementSettingsOutputArgs } from "./getBotmanBotManagementSettings";
+export const getBotmanBotManagementSettings: typeof import("./getBotmanBotManagementSettings").getBotmanBotManagementSettings = null as any;
+export const getBotmanBotManagementSettingsOutput: typeof import("./getBotmanBotManagementSettings").getBotmanBotManagementSettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanBotManagementSettings","getBotmanBotManagementSettingsOutput"], () => require("./getBotmanBotManagementSettings"));
+
+export { GetBotmanChallengeActionArgs, GetBotmanChallengeActionResult, GetBotmanChallengeActionOutputArgs } from "./getBotmanChallengeAction";
+export const getBotmanChallengeAction: typeof import("./getBotmanChallengeAction").getBotmanChallengeAction = null as any;
+export const getBotmanChallengeActionOutput: typeof import("./getBotmanChallengeAction").getBotmanChallengeActionOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanChallengeAction","getBotmanChallengeActionOutput"], () => require("./getBotmanChallengeAction"));
+
+export { GetBotmanChallengeInterceptionRulesArgs, GetBotmanChallengeInterceptionRulesResult, GetBotmanChallengeInterceptionRulesOutputArgs } from "./getBotmanChallengeInterceptionRules";
+export const getBotmanChallengeInterceptionRules: typeof import("./getBotmanChallengeInterceptionRules").getBotmanChallengeInterceptionRules = null as any;
+export const getBotmanChallengeInterceptionRulesOutput: typeof import("./getBotmanChallengeInterceptionRules").getBotmanChallengeInterceptionRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanChallengeInterceptionRules","getBotmanChallengeInterceptionRulesOutput"], () => require("./getBotmanChallengeInterceptionRules"));
+
+export { GetBotmanClientSideSecurityArgs, GetBotmanClientSideSecurityResult, GetBotmanClientSideSecurityOutputArgs } from "./getBotmanClientSideSecurity";
+export const getBotmanClientSideSecurity: typeof import("./getBotmanClientSideSecurity").getBotmanClientSideSecurity = null as any;
+export const getBotmanClientSideSecurityOutput: typeof import("./getBotmanClientSideSecurity").getBotmanClientSideSecurityOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanClientSideSecurity","getBotmanClientSideSecurityOutput"], () => require("./getBotmanClientSideSecurity"));
+
+export { GetBotmanConditionalActionArgs, GetBotmanConditionalActionResult, GetBotmanConditionalActionOutputArgs } from "./getBotmanConditionalAction";
+export const getBotmanConditionalAction: typeof import("./getBotmanConditionalAction").getBotmanConditionalAction = null as any;
+export const getBotmanConditionalActionOutput: typeof import("./getBotmanConditionalAction").getBotmanConditionalActionOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanConditionalAction","getBotmanConditionalActionOutput"], () => require("./getBotmanConditionalAction"));
+
+export { GetBotmanCustomBotCategoryArgs, GetBotmanCustomBotCategoryResult, GetBotmanCustomBotCategoryOutputArgs } from "./getBotmanCustomBotCategory";
+export const getBotmanCustomBotCategory: typeof import("./getBotmanCustomBotCategory").getBotmanCustomBotCategory = null as any;
+export const getBotmanCustomBotCategoryOutput: typeof import("./getBotmanCustomBotCategory").getBotmanCustomBotCategoryOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanCustomBotCategory","getBotmanCustomBotCategoryOutput"], () => require("./getBotmanCustomBotCategory"));
+
+export { GetBotmanCustomBotCategoryActionArgs, GetBotmanCustomBotCategoryActionResult, GetBotmanCustomBotCategoryActionOutputArgs } from "./getBotmanCustomBotCategoryAction";
+export const getBotmanCustomBotCategoryAction: typeof import("./getBotmanCustomBotCategoryAction").getBotmanCustomBotCategoryAction = null as any;
+export const getBotmanCustomBotCategoryActionOutput: typeof import("./getBotmanCustomBotCategoryAction").getBotmanCustomBotCategoryActionOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanCustomBotCategoryAction","getBotmanCustomBotCategoryActionOutput"], () => require("./getBotmanCustomBotCategoryAction"));
+
+export { GetBotmanCustomBotCategorySequenceArgs, GetBotmanCustomBotCategorySequenceResult, GetBotmanCustomBotCategorySequenceOutputArgs } from "./getBotmanCustomBotCategorySequence";
+export const getBotmanCustomBotCategorySequence: typeof import("./getBotmanCustomBotCategorySequence").getBotmanCustomBotCategorySequence = null as any;
+export const getBotmanCustomBotCategorySequenceOutput: typeof import("./getBotmanCustomBotCategorySequence").getBotmanCustomBotCategorySequenceOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanCustomBotCategorySequence","getBotmanCustomBotCategorySequenceOutput"], () => require("./getBotmanCustomBotCategorySequence"));
+
+export { GetBotmanCustomClientArgs, GetBotmanCustomClientResult, GetBotmanCustomClientOutputArgs } from "./getBotmanCustomClient";
+export const getBotmanCustomClient: typeof import("./getBotmanCustomClient").getBotmanCustomClient = null as any;
+export const getBotmanCustomClientOutput: typeof import("./getBotmanCustomClient").getBotmanCustomClientOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanCustomClient","getBotmanCustomClientOutput"], () => require("./getBotmanCustomClient"));
+
+export { GetBotmanCustomDefinedBotArgs, GetBotmanCustomDefinedBotResult, GetBotmanCustomDefinedBotOutputArgs } from "./getBotmanCustomDefinedBot";
+export const getBotmanCustomDefinedBot: typeof import("./getBotmanCustomDefinedBot").getBotmanCustomDefinedBot = null as any;
+export const getBotmanCustomDefinedBotOutput: typeof import("./getBotmanCustomDefinedBot").getBotmanCustomDefinedBotOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanCustomDefinedBot","getBotmanCustomDefinedBotOutput"], () => require("./getBotmanCustomDefinedBot"));
+
+export { GetBotmanCustomDenyActionArgs, GetBotmanCustomDenyActionResult, GetBotmanCustomDenyActionOutputArgs } from "./getBotmanCustomDenyAction";
+export const getBotmanCustomDenyAction: typeof import("./getBotmanCustomDenyAction").getBotmanCustomDenyAction = null as any;
+export const getBotmanCustomDenyActionOutput: typeof import("./getBotmanCustomDenyAction").getBotmanCustomDenyActionOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanCustomDenyAction","getBotmanCustomDenyActionOutput"], () => require("./getBotmanCustomDenyAction"));
+
+export { GetBotmanJavascriptInjectionArgs, GetBotmanJavascriptInjectionResult, GetBotmanJavascriptInjectionOutputArgs } from "./getBotmanJavascriptInjection";
+export const getBotmanJavascriptInjection: typeof import("./getBotmanJavascriptInjection").getBotmanJavascriptInjection = null as any;
+export const getBotmanJavascriptInjectionOutput: typeof import("./getBotmanJavascriptInjection").getBotmanJavascriptInjectionOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanJavascriptInjection","getBotmanJavascriptInjectionOutput"], () => require("./getBotmanJavascriptInjection"));
+
+export { GetBotmanRecategorizedAkamaiDefinedBotArgs, GetBotmanRecategorizedAkamaiDefinedBotResult, GetBotmanRecategorizedAkamaiDefinedBotOutputArgs } from "./getBotmanRecategorizedAkamaiDefinedBot";
+export const getBotmanRecategorizedAkamaiDefinedBot: typeof import("./getBotmanRecategorizedAkamaiDefinedBot").getBotmanRecategorizedAkamaiDefinedBot = null as any;
+export const getBotmanRecategorizedAkamaiDefinedBotOutput: typeof import("./getBotmanRecategorizedAkamaiDefinedBot").getBotmanRecategorizedAkamaiDefinedBotOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanRecategorizedAkamaiDefinedBot","getBotmanRecategorizedAkamaiDefinedBotOutput"], () => require("./getBotmanRecategorizedAkamaiDefinedBot"));
+
+export { GetBotmanResponseActionArgs, GetBotmanResponseActionResult, GetBotmanResponseActionOutputArgs } from "./getBotmanResponseAction";
+export const getBotmanResponseAction: typeof import("./getBotmanResponseAction").getBotmanResponseAction = null as any;
+export const getBotmanResponseActionOutput: typeof import("./getBotmanResponseAction").getBotmanResponseActionOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanResponseAction","getBotmanResponseActionOutput"], () => require("./getBotmanResponseAction"));
+
+export { GetBotmanServeAlternateActionArgs, GetBotmanServeAlternateActionResult, GetBotmanServeAlternateActionOutputArgs } from "./getBotmanServeAlternateAction";
+export const getBotmanServeAlternateAction: typeof import("./getBotmanServeAlternateAction").getBotmanServeAlternateAction = null as any;
+export const getBotmanServeAlternateActionOutput: typeof import("./getBotmanServeAlternateAction").getBotmanServeAlternateActionOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanServeAlternateAction","getBotmanServeAlternateActionOutput"], () => require("./getBotmanServeAlternateAction"));
+
+export { GetBotmanTransactionalEndpointArgs, GetBotmanTransactionalEndpointResult, GetBotmanTransactionalEndpointOutputArgs } from "./getBotmanTransactionalEndpoint";
+export const getBotmanTransactionalEndpoint: typeof import("./getBotmanTransactionalEndpoint").getBotmanTransactionalEndpoint = null as any;
+export const getBotmanTransactionalEndpointOutput: typeof import("./getBotmanTransactionalEndpoint").getBotmanTransactionalEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanTransactionalEndpoint","getBotmanTransactionalEndpointOutput"], () => require("./getBotmanTransactionalEndpoint"));
+
+export { GetBotmanTransactionalEndpointProtectionArgs, GetBotmanTransactionalEndpointProtectionResult, GetBotmanTransactionalEndpointProtectionOutputArgs } from "./getBotmanTransactionalEndpointProtection";
+export const getBotmanTransactionalEndpointProtection: typeof import("./getBotmanTransactionalEndpointProtection").getBotmanTransactionalEndpointProtection = null as any;
+export const getBotmanTransactionalEndpointProtectionOutput: typeof import("./getBotmanTransactionalEndpointProtection").getBotmanTransactionalEndpointProtectionOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanTransactionalEndpointProtection","getBotmanTransactionalEndpointProtectionOutput"], () => require("./getBotmanTransactionalEndpointProtection"));
+
 export { GetCPSEnrollmentArgs, GetCPSEnrollmentResult, GetCPSEnrollmentOutputArgs } from "./getCPSEnrollment";
 export const getCPSEnrollment: typeof import("./getCPSEnrollment").getCPSEnrollment = null as any;
 export const getCPSEnrollmentOutput: typeof import("./getCPSEnrollment").getCPSEnrollmentOutput = null as any;
@@ -735,6 +964,16 @@ utilities.lazyLoad(exports, ["getGroup","getGroupOutput"], () => require("./getG
 export { GetGroupsResult } from "./getGroups";
 export const getGroups: typeof import("./getGroups").getGroups = null as any;
 utilities.lazyLoad(exports, ["getGroups"], () => require("./getGroups"));
+
+export { GetGtmDatacenterArgs, GetGtmDatacenterResult, GetGtmDatacenterOutputArgs } from "./getGtmDatacenter";
+export const getGtmDatacenter: typeof import("./getGtmDatacenter").getGtmDatacenter = null as any;
+export const getGtmDatacenterOutput: typeof import("./getGtmDatacenter").getGtmDatacenterOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmDatacenter","getGtmDatacenterOutput"], () => require("./getGtmDatacenter"));
+
+export { GetGtmDatacentersArgs, GetGtmDatacentersResult, GetGtmDatacentersOutputArgs } from "./getGtmDatacenters";
+export const getGtmDatacenters: typeof import("./getGtmDatacenters").getGtmDatacenters = null as any;
+export const getGtmDatacentersOutput: typeof import("./getGtmDatacenters").getGtmDatacentersOutput = null as any;
+utilities.lazyLoad(exports, ["getGtmDatacenters","getGtmDatacentersOutput"], () => require("./getGtmDatacenters"));
 
 export { GetGtmDefaultDatacenterArgs, GetGtmDefaultDatacenterResult, GetGtmDefaultDatacenterOutputArgs } from "./getGtmDefaultDatacenter";
 export const getGtmDefaultDatacenter: typeof import("./getGtmDefaultDatacenter").getGtmDefaultDatacenter = null as any;
@@ -1071,6 +1310,46 @@ const _module = {
                 return new AppsecAdvancedSettingsAttackPayloadLogging(name, <any>undefined, { urn })
             case "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody":
                 return new AppsecAdvancedSettingsRequestBody(name, <any>undefined, { urn })
+            case "akamai:index/botmanAkamaiBotCategoryAction:BotmanAkamaiBotCategoryAction":
+                return new BotmanAkamaiBotCategoryAction(name, <any>undefined, { urn })
+            case "akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie":
+                return new BotmanBotAnalyticsCookie(name, <any>undefined, { urn })
+            case "akamai:index/botmanBotCategoryException:BotmanBotCategoryException":
+                return new BotmanBotCategoryException(name, <any>undefined, { urn })
+            case "akamai:index/botmanBotDetectionAction:BotmanBotDetectionAction":
+                return new BotmanBotDetectionAction(name, <any>undefined, { urn })
+            case "akamai:index/botmanBotManagementSettings:BotmanBotManagementSettings":
+                return new BotmanBotManagementSettings(name, <any>undefined, { urn })
+            case "akamai:index/botmanChallengeAction:BotmanChallengeAction":
+                return new BotmanChallengeAction(name, <any>undefined, { urn })
+            case "akamai:index/botmanChallengeInterceptionRules:BotmanChallengeInterceptionRules":
+                return new BotmanChallengeInterceptionRules(name, <any>undefined, { urn })
+            case "akamai:index/botmanClientSideSecurity:BotmanClientSideSecurity":
+                return new BotmanClientSideSecurity(name, <any>undefined, { urn })
+            case "akamai:index/botmanConditionalAction:BotmanConditionalAction":
+                return new BotmanConditionalAction(name, <any>undefined, { urn })
+            case "akamai:index/botmanCustomBotCategory:BotmanCustomBotCategory":
+                return new BotmanCustomBotCategory(name, <any>undefined, { urn })
+            case "akamai:index/botmanCustomBotCategoryAction:BotmanCustomBotCategoryAction":
+                return new BotmanCustomBotCategoryAction(name, <any>undefined, { urn })
+            case "akamai:index/botmanCustomBotCategorySequence:BotmanCustomBotCategorySequence":
+                return new BotmanCustomBotCategorySequence(name, <any>undefined, { urn })
+            case "akamai:index/botmanCustomClient:BotmanCustomClient":
+                return new BotmanCustomClient(name, <any>undefined, { urn })
+            case "akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot":
+                return new BotmanCustomDefinedBot(name, <any>undefined, { urn })
+            case "akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction":
+                return new BotmanCustomDenyAction(name, <any>undefined, { urn })
+            case "akamai:index/botmanJavascriptInjection:BotmanJavascriptInjection":
+                return new BotmanJavascriptInjection(name, <any>undefined, { urn })
+            case "akamai:index/botmanRecategorizedAkamaiDefinedBot:BotmanRecategorizedAkamaiDefinedBot":
+                return new BotmanRecategorizedAkamaiDefinedBot(name, <any>undefined, { urn })
+            case "akamai:index/botmanServeAlternateAction:BotmanServeAlternateAction":
+                return new BotmanServeAlternateAction(name, <any>undefined, { urn })
+            case "akamai:index/botmanTransactionalEndpoint:BotmanTransactionalEndpoint":
+                return new BotmanTransactionalEndpoint(name, <any>undefined, { urn })
+            case "akamai:index/botmanTransactionalEndpointProtection:BotmanTransactionalEndpointProtection":
+                return new BotmanTransactionalEndpointProtection(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
                 return new CloudletsApplicationLoadBalancer(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -1197,6 +1476,26 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecWafProtection", _mo
 pulumi.runtime.registerResourceModule("akamai", "index/appSecWapSelectedHostnames", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsAttackPayloadLogging", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsRequestBody", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanAkamaiBotCategoryAction", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanBotAnalyticsCookie", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanBotCategoryException", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanBotDetectionAction", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanBotManagementSettings", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanChallengeAction", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanChallengeInterceptionRules", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanClientSideSecurity", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanConditionalAction", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategory", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategoryAction", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategorySequence", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomClient", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomDefinedBot", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomDenyAction", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanJavascriptInjection", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanRecategorizedAkamaiDefinedBot", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanServeAlternateAction", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanTransactionalEndpoint", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanTransactionalEndpointProtection", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancer", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancerActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsPolicy", _module)

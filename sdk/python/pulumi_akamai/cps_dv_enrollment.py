@@ -235,6 +235,9 @@ class CpsDvEnrollmentArgs:
         """
         Enable Dual-Stacked certificate deployment for enrollment
         """
+        warnings.warn("""Deprecated, don't use; always false""", DeprecationWarning)
+        pulumi.log.warn("""enable_multi_stacked_certificates is deprecated: Deprecated, don't use; always false""")
+
         return pulumi.get(self, "enable_multi_stacked_certificates")
 
     @enable_multi_stacked_certificates.setter
@@ -458,6 +461,9 @@ class _CpsDvEnrollmentState:
         """
         Enable Dual-Stacked certificate deployment for enrollment
         """
+        warnings.warn("""Deprecated, don't use; always false""", DeprecationWarning)
+        pulumi.log.warn("""enable_multi_stacked_certificates is deprecated: Deprecated, don't use; always false""")
+
         return pulumi.get(self, "enable_multi_stacked_certificates")
 
     @enable_multi_stacked_certificates.setter
@@ -878,6 +884,9 @@ class CpsDvEnrollment(pulumi.CustomResource):
         """
         Enable Dual-Stacked certificate deployment for enrollment
         """
+        warnings.warn("""Deprecated, don't use; always false""", DeprecationWarning)
+        pulumi.log.warn("""enable_multi_stacked_certificates is deprecated: Deprecated, don't use; always false""")
+
         return pulumi.get(self, "enable_multi_stacked_certificates")
 
     @property

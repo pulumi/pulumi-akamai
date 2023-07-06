@@ -61,5 +61,5 @@ def get_iam_contact_types(opts: Optional[pulumi.InvokeOptions] = None) -> Awaita
     __ret__ = pulumi.runtime.invoke('akamai:index/getIamContactTypes:getIamContactTypes', __args__, opts=opts, typ=GetIamContactTypesResult).value
 
     return AwaitableGetIamContactTypesResult(
-        contact_types=__ret__.contact_types,
-        id=__ret__.id)
+        contact_types=pulumi.get(__ret__, 'contact_types'),
+        id=pulumi.get(__ret__, 'id'))

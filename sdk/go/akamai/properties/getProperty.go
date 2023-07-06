@@ -11,8 +11,8 @@ import (
 )
 
 // Deprecated: akamai.properties/getproperty.getProperty has been deprecated in favor of akamai.index/getproperty.getProperty
-func LookupProperty(ctx *pulumi.Context, args *LookupPropertyArgs, opts ...pulumi.InvokeOption) (*LookupPropertyResult, error) {
-	var rv LookupPropertyResult
+func GetProperty(ctx *pulumi.Context, args *GetPropertyArgs, opts ...pulumi.InvokeOption) (*GetPropertyResult, error) {
+	var rv GetPropertyResult
 	err := ctx.Invoke("akamai:properties/getProperty:getProperty", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -21,13 +21,13 @@ func LookupProperty(ctx *pulumi.Context, args *LookupPropertyArgs, opts ...pulum
 }
 
 // A collection of arguments for invoking getProperty.
-type LookupPropertyArgs struct {
+type GetPropertyArgs struct {
 	Name    string `pulumi:"name"`
 	Version *int   `pulumi:"version"`
 }
 
 // A collection of values returned by getProperty.
-type LookupPropertyResult struct {
+type GetPropertyResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id      string `pulumi:"id"`
 	Name    string `pulumi:"name"`
@@ -35,61 +35,61 @@ type LookupPropertyResult struct {
 	Version *int   `pulumi:"version"`
 }
 
-func LookupPropertyOutput(ctx *pulumi.Context, args LookupPropertyOutputArgs, opts ...pulumi.InvokeOption) LookupPropertyResultOutput {
+func GetPropertyOutput(ctx *pulumi.Context, args GetPropertyOutputArgs, opts ...pulumi.InvokeOption) GetPropertyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupPropertyResult, error) {
-			args := v.(LookupPropertyArgs)
-			r, err := LookupProperty(ctx, &args, opts...)
-			var s LookupPropertyResult
+		ApplyT(func(v interface{}) (GetPropertyResult, error) {
+			args := v.(GetPropertyArgs)
+			r, err := GetProperty(ctx, &args, opts...)
+			var s GetPropertyResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(LookupPropertyResultOutput)
+		}).(GetPropertyResultOutput)
 }
 
 // A collection of arguments for invoking getProperty.
-type LookupPropertyOutputArgs struct {
+type GetPropertyOutputArgs struct {
 	Name    pulumi.StringInput `pulumi:"name"`
 	Version pulumi.IntPtrInput `pulumi:"version"`
 }
 
-func (LookupPropertyOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*LookupPropertyArgs)(nil)).Elem()
+func (GetPropertyOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getProperty.
-type LookupPropertyResultOutput struct{ *pulumi.OutputState }
+type GetPropertyResultOutput struct{ *pulumi.OutputState }
 
-func (LookupPropertyResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*LookupPropertyResult)(nil)).Elem()
+func (GetPropertyResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPropertyResult)(nil)).Elem()
 }
 
-func (o LookupPropertyResultOutput) ToLookupPropertyResultOutput() LookupPropertyResultOutput {
+func (o GetPropertyResultOutput) ToGetPropertyResultOutput() GetPropertyResultOutput {
 	return o
 }
 
-func (o LookupPropertyResultOutput) ToLookupPropertyResultOutputWithContext(ctx context.Context) LookupPropertyResultOutput {
+func (o GetPropertyResultOutput) ToGetPropertyResultOutputWithContext(ctx context.Context) GetPropertyResultOutput {
 	return o
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o LookupPropertyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPropertyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetPropertyResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o LookupPropertyResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPropertyResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetPropertyResultOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-func (o LookupPropertyResultOutput) Rules() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPropertyResult) string { return v.Rules }).(pulumi.StringOutput)
+func (o GetPropertyResultOutput) Rules() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPropertyResult) string { return v.Rules }).(pulumi.StringOutput)
 }
 
-func (o LookupPropertyResultOutput) Version() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v LookupPropertyResult) *int { return v.Version }).(pulumi.IntPtrOutput)
+func (o GetPropertyResultOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetPropertyResult) *int { return v.Version }).(pulumi.IntPtrOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(LookupPropertyResultOutput{})
+	pulumi.RegisterOutputType(GetPropertyResultOutput{})
 }

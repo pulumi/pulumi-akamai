@@ -109,6 +109,9 @@ class EdgeKvArgs:
         """
         List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         """
+        warnings.warn("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""", DeprecationWarning)
+        pulumi.log.warn("""initial_datas is deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
+
         return pulumi.get(self, "initial_datas")
 
     @initial_datas.setter
@@ -180,6 +183,9 @@ class _EdgeKvState:
         """
         List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         """
+        warnings.warn("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""", DeprecationWarning)
+        pulumi.log.warn("""initial_datas is deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
+
         return pulumi.get(self, "initial_datas")
 
     @initial_datas.setter
@@ -365,6 +371,9 @@ class EdgeKv(pulumi.CustomResource):
         """
         List of pairs to initialize the namespace. Just meaningful for creation, updates will be ignored.
         """
+        warnings.warn("""The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""", DeprecationWarning)
+        pulumi.log.warn("""initial_datas is deprecated: The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead.""")
+
         return pulumi.get(self, "initial_datas")
 
     @property

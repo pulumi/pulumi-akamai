@@ -102,6 +102,9 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="appsecSection")
     def appsec_section(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"appsec_section\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""appsec_section is deprecated: The setting \"appsec_section\" has been deprecated.""")
+
         return pulumi.get(self, "appsec_section")
 
     @appsec_section.setter
@@ -111,6 +114,9 @@ class ProviderArgs:
     @property
     @pulumi.getter
     def appsecs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProviderAppsecArgs']]]]:
+        warnings.warn("""The setting \"appsec\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""appsecs is deprecated: The setting \"appsec\" has been deprecated.""")
+
         return pulumi.get(self, "appsecs")
 
     @appsecs.setter
@@ -150,6 +156,9 @@ class ProviderArgs:
     @property
     @pulumi.getter
     def dns(self) -> Optional[pulumi.Input['ProviderDnsArgs']]:
+        warnings.warn("""The setting \"dns\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""dns is deprecated: The setting \"dns\" has been deprecated.""")
+
         return pulumi.get(self, "dns")
 
     @dns.setter
@@ -159,6 +168,9 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="dnsSection")
     def dns_section(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"dns_section\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""dns_section is deprecated: The setting \"dns_section\" has been deprecated.""")
+
         return pulumi.get(self, "dns_section")
 
     @dns_section.setter
@@ -177,6 +189,9 @@ class ProviderArgs:
     @property
     @pulumi.getter
     def gtm(self) -> Optional[pulumi.Input['ProviderGtmArgs']]:
+        warnings.warn("""The setting \"gtm\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""gtm is deprecated: The setting \"gtm\" has been deprecated.""")
+
         return pulumi.get(self, "gtm")
 
     @gtm.setter
@@ -186,6 +201,9 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="gtmSection")
     def gtm_section(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"gtm_section\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""gtm_section is deprecated: The setting \"gtm_section\" has been deprecated.""")
+
         return pulumi.get(self, "gtm_section")
 
     @gtm_section.setter
@@ -195,6 +213,9 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="networklistSection")
     def networklist_section(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"networklist_section\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""networklist_section is deprecated: The setting \"networklist_section\" has been deprecated.""")
+
         return pulumi.get(self, "networklist_section")
 
     @networklist_section.setter
@@ -213,6 +234,9 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="papiSection")
     def papi_section(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"papi_section\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""papi_section is deprecated: The setting \"papi_section\" has been deprecated.""")
+
         return pulumi.get(self, "papi_section")
 
     @papi_section.setter
@@ -222,6 +246,9 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="propertySection")
     def property_section(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The setting \"property_section\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""property_section is deprecated: The setting \"property_section\" has been deprecated.""")
+
         return pulumi.get(self, "property_section")
 
     @property_section.setter
@@ -243,6 +270,9 @@ class ProviderArgs:
     @property
     @pulumi.getter
     def property(self) -> Optional[pulumi.Input['ProviderPropertyArgs']]:
+        warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
+
         return pulumi.get(self, "property")
 
     @property.setter
@@ -390,6 +420,9 @@ class Provider(pulumi.ProviderResource):
     @property
     @pulumi.getter(name="appsecSection")
     def appsec_section(self) -> pulumi.Output[Optional[str]]:
+        warnings.warn("""The setting \"appsec_section\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""appsec_section is deprecated: The setting \"appsec_section\" has been deprecated.""")
+
         return pulumi.get(self, "appsec_section")
 
     @property
@@ -403,6 +436,9 @@ class Provider(pulumi.ProviderResource):
     @property
     @pulumi.getter(name="dnsSection")
     def dns_section(self) -> pulumi.Output[Optional[str]]:
+        warnings.warn("""The setting \"dns_section\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""dns_section is deprecated: The setting \"dns_section\" has been deprecated.""")
+
         return pulumi.get(self, "dns_section")
 
     @property
@@ -413,20 +449,32 @@ class Provider(pulumi.ProviderResource):
     @property
     @pulumi.getter(name="gtmSection")
     def gtm_section(self) -> pulumi.Output[Optional[str]]:
+        warnings.warn("""The setting \"gtm_section\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""gtm_section is deprecated: The setting \"gtm_section\" has been deprecated.""")
+
         return pulumi.get(self, "gtm_section")
 
     @property
     @pulumi.getter(name="networklistSection")
     def networklist_section(self) -> pulumi.Output[Optional[str]]:
+        warnings.warn("""The setting \"networklist_section\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""networklist_section is deprecated: The setting \"networklist_section\" has been deprecated.""")
+
         return pulumi.get(self, "networklist_section")
 
     @property
     @pulumi.getter(name="papiSection")
     def papi_section(self) -> pulumi.Output[Optional[str]]:
+        warnings.warn("""The setting \"papi_section\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""papi_section is deprecated: The setting \"papi_section\" has been deprecated.""")
+
         return pulumi.get(self, "papi_section")
 
     @property
     @pulumi.getter(name="propertySection")
     def property_section(self) -> pulumi.Output[Optional[str]]:
+        warnings.warn("""The setting \"property_section\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""property_section is deprecated: The setting \"property_section\" has been deprecated.""")
+
         return pulumi.get(self, "property_section")
 

@@ -82,10 +82,10 @@ def get_cps_csr(enrollment_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getCpsCsr:getCpsCsr', __args__, opts=opts, typ=GetCpsCsrResult).value
 
     return AwaitableGetCpsCsrResult(
-        csr_ecdsa=__ret__.csr_ecdsa,
-        csr_rsa=__ret__.csr_rsa,
-        enrollment_id=__ret__.enrollment_id,
-        id=__ret__.id)
+        csr_ecdsa=pulumi.get(__ret__, 'csr_ecdsa'),
+        csr_rsa=pulumi.get(__ret__, 'csr_rsa'),
+        enrollment_id=pulumi.get(__ret__, 'enrollment_id'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_cps_csr)

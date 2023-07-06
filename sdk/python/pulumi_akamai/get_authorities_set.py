@@ -73,9 +73,9 @@ def get_authorities_set(contract: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getAuthoritiesSet:getAuthoritiesSet', __args__, opts=opts, typ=GetAuthoritiesSetResult).value
 
     return AwaitableGetAuthoritiesSetResult(
-        authorities=__ret__.authorities,
-        contract=__ret__.contract,
-        id=__ret__.id)
+        authorities=pulumi.get(__ret__, 'authorities'),
+        contract=pulumi.get(__ret__, 'contract'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_authorities_set)

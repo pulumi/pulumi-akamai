@@ -62,5 +62,5 @@ def get_iam_grantable_roles(opts: Optional[pulumi.InvokeOptions] = None) -> Awai
     __ret__ = pulumi.runtime.invoke('akamai:index/getIamGrantableRoles:getIamGrantableRoles', __args__, opts=opts, typ=GetIamGrantableRolesResult).value
 
     return AwaitableGetIamGrantableRolesResult(
-        grantable_roles=__ret__.grantable_roles,
-        id=__ret__.id)
+        grantable_roles=pulumi.get(__ret__, 'grantable_roles'),
+        id=pulumi.get(__ret__, 'id'))

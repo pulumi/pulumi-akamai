@@ -75,9 +75,9 @@ def get_cloudlets_edge_redirector_match_rule(match_rules: Optional[Sequence[pulu
     __ret__ = pulumi.runtime.invoke('akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule', __args__, opts=opts, typ=GetCloudletsEdgeRedirectorMatchRuleResult).value
 
     return AwaitableGetCloudletsEdgeRedirectorMatchRuleResult(
-        id=__ret__.id,
-        json=__ret__.json,
-        match_rules=__ret__.match_rules)
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        match_rules=pulumi.get(__ret__, 'match_rules'))
 
 
 @_utilities.lift_output_func(get_cloudlets_edge_redirector_match_rule)

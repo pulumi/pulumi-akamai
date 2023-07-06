@@ -93,11 +93,11 @@ def get_edge_worker_activation(edgeworker_id: Optional[int] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation', __args__, opts=opts, typ=GetEdgeWorkerActivationResult).value
 
     return AwaitableGetEdgeWorkerActivationResult(
-        activation_id=__ret__.activation_id,
-        edgeworker_id=__ret__.edgeworker_id,
-        id=__ret__.id,
-        network=__ret__.network,
-        version=__ret__.version)
+        activation_id=pulumi.get(__ret__, 'activation_id'),
+        edgeworker_id=pulumi.get(__ret__, 'edgeworker_id'),
+        id=pulumi.get(__ret__, 'id'),
+        network=pulumi.get(__ret__, 'network'),
+        version=pulumi.get(__ret__, 'version'))
 
 
 @_utilities.lift_output_func(get_edge_worker_activation)

@@ -131,15 +131,15 @@ def get_network_lists(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('akamai:index/getNetworkLists:getNetworkLists', __args__, opts=opts, typ=GetNetworkListsResult).value
 
     return AwaitableGetNetworkListsResult(
-        contract_id=__ret__.contract_id,
-        group_id=__ret__.group_id,
-        id=__ret__.id,
-        json=__ret__.json,
-        lists=__ret__.lists,
-        name=__ret__.name,
-        network_list_id=__ret__.network_list_id,
-        output_text=__ret__.output_text,
-        type=__ret__.type)
+        contract_id=pulumi.get(__ret__, 'contract_id'),
+        group_id=pulumi.get(__ret__, 'group_id'),
+        id=pulumi.get(__ret__, 'id'),
+        json=pulumi.get(__ret__, 'json'),
+        lists=pulumi.get(__ret__, 'lists'),
+        name=pulumi.get(__ret__, 'name'),
+        network_list_id=pulumi.get(__ret__, 'network_list_id'),
+        output_text=pulumi.get(__ret__, 'output_text'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_network_lists)

@@ -19,8 +19,8 @@ package main
 import (
 	_ "embed"
 
-	akamai "github.com/pulumi/pulumi-akamai/provider/v4"
-	"github.com/pulumi/pulumi-akamai/provider/v4/pkg/version"
+	akamai "github.com/pulumi/pulumi-akamai/provider/v5"
+	"github.com/pulumi/pulumi-akamai/provider/v5/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 )
 
