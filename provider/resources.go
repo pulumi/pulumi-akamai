@@ -34,7 +34,8 @@ import (
 	edgeworksProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/edgeworkers"
 	gtmProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/gtm"
 	iamProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/iam"
-	imagingProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/imaging"
+	// It looks like imaging has a recursive type, which we are omitting
+	// imagingProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/imaging"
 	networkListsProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/networklists"
 	propertyProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/property"
 
@@ -96,7 +97,8 @@ func Provider() tfbridge.ProviderInfo {
 		propertyProvider.Subprovider(),
 		iamProvider.Subprovider(),
 		botmanProvider.Subprovider(),
-		imagingProvider.Subprovider(),
+		// This subprovider adds a recursive type (expanded out quite large).
+		// imagingProvider.Subprovider(),
 	)
 
 	// Instantiate the Terraform provider
