@@ -216,10 +216,6 @@ import com.pulumi.akamai.inputs.GetGtmDefaultDatacenterArgs;
 import com.pulumi.akamai.inputs.GetGtmDefaultDatacenterPlainArgs;
 import com.pulumi.akamai.inputs.GetIamStatesArgs;
 import com.pulumi.akamai.inputs.GetIamStatesPlainArgs;
-import com.pulumi.akamai.inputs.GetImagingPolicyImageArgs;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePlainArgs;
-import com.pulumi.akamai.inputs.GetImagingPolicyVideoArgs;
-import com.pulumi.akamai.inputs.GetImagingPolicyVideoPlainArgs;
 import com.pulumi.akamai.inputs.GetNetworkListsArgs;
 import com.pulumi.akamai.inputs.GetNetworkListsPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertiesArgs;
@@ -368,8 +364,6 @@ import com.pulumi.akamai.outputs.GetIamStatesResult;
 import com.pulumi.akamai.outputs.GetIamSupportedLangsResult;
 import com.pulumi.akamai.outputs.GetIamTimeoutPoliciesResult;
 import com.pulumi.akamai.outputs.GetIamTimezonesResult;
-import com.pulumi.akamai.outputs.GetImagingPolicyImageResult;
-import com.pulumi.akamai.outputs.GetImagingPolicyVideoResult;
 import com.pulumi.akamai.outputs.GetNetworkListsResult;
 import com.pulumi.akamai.outputs.GetPropertiesResult;
 import com.pulumi.akamai.outputs.GetPropertiesSearchResult;
@@ -2001,30 +1995,6 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetIamTimezonesResult> getIamTimezonesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getIamTimezones:getIamTimezones", TypeShape.of(GetIamTimezonesResult.class), args, Utilities.withVersion(options));
-    }
-    public static Output<GetImagingPolicyImageResult> getImagingPolicyImage(GetImagingPolicyImageArgs args) {
-        return getImagingPolicyImage(args, InvokeOptions.Empty);
-    }
-    public static CompletableFuture<GetImagingPolicyImageResult> getImagingPolicyImagePlain(GetImagingPolicyImagePlainArgs args) {
-        return getImagingPolicyImagePlain(args, InvokeOptions.Empty);
-    }
-    public static Output<GetImagingPolicyImageResult> getImagingPolicyImage(GetImagingPolicyImageArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("akamai:index/getImagingPolicyImage:getImagingPolicyImage", TypeShape.of(GetImagingPolicyImageResult.class), args, Utilities.withVersion(options));
-    }
-    public static CompletableFuture<GetImagingPolicyImageResult> getImagingPolicyImagePlain(GetImagingPolicyImagePlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("akamai:index/getImagingPolicyImage:getImagingPolicyImage", TypeShape.of(GetImagingPolicyImageResult.class), args, Utilities.withVersion(options));
-    }
-    public static Output<GetImagingPolicyVideoResult> getImagingPolicyVideo(GetImagingPolicyVideoArgs args) {
-        return getImagingPolicyVideo(args, InvokeOptions.Empty);
-    }
-    public static CompletableFuture<GetImagingPolicyVideoResult> getImagingPolicyVideoPlain(GetImagingPolicyVideoPlainArgs args) {
-        return getImagingPolicyVideoPlain(args, InvokeOptions.Empty);
-    }
-    public static Output<GetImagingPolicyVideoResult> getImagingPolicyVideo(GetImagingPolicyVideoArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invoke("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", TypeShape.of(GetImagingPolicyVideoResult.class), args, Utilities.withVersion(options));
-    }
-    public static CompletableFuture<GetImagingPolicyVideoResult> getImagingPolicyVideoPlain(GetImagingPolicyVideoPlainArgs args, InvokeOptions options) {
-        return Deployment.getInstance().invokeAsync("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", TypeShape.of(GetImagingPolicyVideoResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetNetworkListsResult> getNetworkLists() {
         return getNetworkLists(GetNetworkListsArgs.Empty, InvokeOptions.Empty);

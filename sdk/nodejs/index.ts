@@ -1013,16 +1013,6 @@ export { GetIamTimezonesResult } from "./getIamTimezones";
 export const getIamTimezones: typeof import("./getIamTimezones").getIamTimezones = null as any;
 utilities.lazyLoad(exports, ["getIamTimezones"], () => require("./getIamTimezones"));
 
-export { GetImagingPolicyImageArgs, GetImagingPolicyImageResult, GetImagingPolicyImageOutputArgs } from "./getImagingPolicyImage";
-export const getImagingPolicyImage: typeof import("./getImagingPolicyImage").getImagingPolicyImage = null as any;
-export const getImagingPolicyImageOutput: typeof import("./getImagingPolicyImage").getImagingPolicyImageOutput = null as any;
-utilities.lazyLoad(exports, ["getImagingPolicyImage","getImagingPolicyImageOutput"], () => require("./getImagingPolicyImage"));
-
-export { GetImagingPolicyVideoArgs, GetImagingPolicyVideoResult, GetImagingPolicyVideoOutputArgs } from "./getImagingPolicyVideo";
-export const getImagingPolicyVideo: typeof import("./getImagingPolicyVideo").getImagingPolicyVideo = null as any;
-export const getImagingPolicyVideoOutput: typeof import("./getImagingPolicyVideo").getImagingPolicyVideoOutput = null as any;
-utilities.lazyLoad(exports, ["getImagingPolicyVideo","getImagingPolicyVideoOutput"], () => require("./getImagingPolicyVideo"));
-
 export { GetNetworkListsArgs, GetNetworkListsResult, GetNetworkListsOutputArgs } from "./getNetworkLists";
 export const getNetworkLists: typeof import("./getNetworkLists").getNetworkLists = null as any;
 export const getNetworkListsOutput: typeof import("./getNetworkLists").getNetworkListsOutput = null as any;
@@ -1156,21 +1146,6 @@ export { IamUserArgs, IamUserState } from "./iamUser";
 export type IamUser = import("./iamUser").IamUser;
 export const IamUser: typeof import("./iamUser").IamUser = null as any;
 utilities.lazyLoad(exports, ["IamUser"], () => require("./iamUser"));
-
-export { ImagingPolicyImageArgs, ImagingPolicyImageState } from "./imagingPolicyImage";
-export type ImagingPolicyImage = import("./imagingPolicyImage").ImagingPolicyImage;
-export const ImagingPolicyImage: typeof import("./imagingPolicyImage").ImagingPolicyImage = null as any;
-utilities.lazyLoad(exports, ["ImagingPolicyImage"], () => require("./imagingPolicyImage"));
-
-export { ImagingPolicySetArgs, ImagingPolicySetState } from "./imagingPolicySet";
-export type ImagingPolicySet = import("./imagingPolicySet").ImagingPolicySet;
-export const ImagingPolicySet: typeof import("./imagingPolicySet").ImagingPolicySet = null as any;
-utilities.lazyLoad(exports, ["ImagingPolicySet"], () => require("./imagingPolicySet"));
-
-export { ImagingPolicyVideoArgs, ImagingPolicyVideoState } from "./imagingPolicyVideo";
-export type ImagingPolicyVideo = import("./imagingPolicyVideo").ImagingPolicyVideo;
-export const ImagingPolicyVideo: typeof import("./imagingPolicyVideo").ImagingPolicyVideo = null as any;
-utilities.lazyLoad(exports, ["ImagingPolicyVideo"], () => require("./imagingPolicyVideo"));
 
 export { NetworkListArgs, NetworkListState } from "./networkList";
 export type NetworkList = import("./networkList").NetworkList;
@@ -1431,12 +1406,6 @@ const _module = {
                 return new IamRole(name, <any>undefined, { urn })
             case "akamai:index/iamUser:IamUser":
                 return new IamUser(name, <any>undefined, { urn })
-            case "akamai:index/imagingPolicyImage:ImagingPolicyImage":
-                return new ImagingPolicyImage(name, <any>undefined, { urn })
-            case "akamai:index/imagingPolicySet:ImagingPolicySet":
-                return new ImagingPolicySet(name, <any>undefined, { urn })
-            case "akamai:index/imagingPolicyVideo:ImagingPolicyVideo":
-                return new ImagingPolicyVideo(name, <any>undefined, { urn })
             case "akamai:index/networkList:NetworkList":
                 return new NetworkList(name, <any>undefined, { urn })
             case "akamai:index/networkListActivations:NetworkListActivations":
@@ -1555,9 +1524,6 @@ pulumi.runtime.registerResourceModule("akamai", "index/iamBlockedUserProperties"
 pulumi.runtime.registerResourceModule("akamai", "index/iamGroup", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/iamRole", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/iamUser", _module)
-pulumi.runtime.registerResourceModule("akamai", "index/imagingPolicyImage", _module)
-pulumi.runtime.registerResourceModule("akamai", "index/imagingPolicySet", _module)
-pulumi.runtime.registerResourceModule("akamai", "index/imagingPolicyVideo", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/networkList", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/networkListActivations", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/networkListDescription", _module)

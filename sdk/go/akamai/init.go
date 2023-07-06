@@ -214,12 +214,6 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &IamRole{}
 	case "akamai:index/iamUser:IamUser":
 		r = &IamUser{}
-	case "akamai:index/imagingPolicyImage:ImagingPolicyImage":
-		r = &ImagingPolicyImage{}
-	case "akamai:index/imagingPolicySet:ImagingPolicySet":
-		r = &ImagingPolicySet{}
-	case "akamai:index/imagingPolicyVideo:ImagingPolicyVideo":
-		r = &ImagingPolicyVideo{}
 	case "akamai:index/networkList:NetworkList":
 		r = &NetworkList{}
 	case "akamai:index/networkListActivations:NetworkListActivations":
@@ -747,21 +741,6 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/iamUser",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
-		"index/imagingPolicyImage",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
-		"index/imagingPolicySet",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"akamai",
-		"index/imagingPolicyVideo",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

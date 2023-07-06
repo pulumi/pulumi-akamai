@@ -209,8 +209,6 @@ from .get_iam_states import *
 from .get_iam_supported_langs import *
 from .get_iam_timeout_policies import *
 from .get_iam_timezones import *
-from .get_imaging_policy_image import *
-from .get_imaging_policy_video import *
 from .get_network_lists import *
 from .get_properties import *
 from .get_properties_search import *
@@ -238,9 +236,6 @@ from .iam_blocked_user_properties import *
 from .iam_group import *
 from .iam_role import *
 from .iam_user import *
-from .imaging_policy_image import *
-from .imaging_policy_set import *
-from .imaging_policy_video import *
 from .network_list import *
 from .network_list_activations import *
 from .network_list_description import *
@@ -1046,30 +1041,6 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/iamUser:IamUser": "IamUser"
-  }
- },
- {
-  "pkg": "akamai",
-  "mod": "index/imagingPolicyImage",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/imagingPolicyImage:ImagingPolicyImage": "ImagingPolicyImage"
-  }
- },
- {
-  "pkg": "akamai",
-  "mod": "index/imagingPolicySet",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/imagingPolicySet:ImagingPolicySet": "ImagingPolicySet"
-  }
- },
- {
-  "pkg": "akamai",
-  "mod": "index/imagingPolicyVideo",
-  "fqn": "pulumi_akamai",
-  "classes": {
-   "akamai:index/imagingPolicyVideo:ImagingPolicyVideo": "ImagingPolicyVideo"
   }
  },
  {
