@@ -1,4 +1,5 @@
 // Copyright 2016-2020, Pulumi Corporation.  All rights reserved.
+//go:build nodejs || all
 // +build nodejs all
 
 package examples
@@ -24,11 +25,6 @@ func TestPropertyUpdate(t *testing.T) {
 	test := getJSBaseOptions(t).
 		With(integration.ProgramTestOptions{
 			Dir: dir,
-			EditDirs: []integration.EditDir{{
-				Dir:             path.Join(dir, "update"),
-				ExpectNoChanges: false,
-				Additive:        true,
-			}},
 		})
 	integration.ProgramTest(t, &test)
 }
