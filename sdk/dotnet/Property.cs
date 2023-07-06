@@ -157,8 +157,7 @@ namespace Pulumi.Akamai
     {
         [Input("contacts")]
         private InputList<string>? _contacts;
-        [Obsolete(@"The setting ""contact"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations")]
+        [Obsolete(@"The setting ""contact"" has been deprecated.")]
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
@@ -205,8 +204,7 @@ namespace Pulumi.Akamai
 
         [Input("origins")]
         private InputList<Inputs.PropertyOriginArgs>? _origins;
-        [Obsolete(@"The setting ""origin"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations")]
+        [Obsolete(@"The setting ""origin"" has been deprecated.")]
         public InputList<Inputs.PropertyOriginArgs> Origins
         {
             get => _origins ?? (_origins = new InputList<Inputs.PropertyOriginArgs>());
@@ -256,8 +254,7 @@ namespace Pulumi.Akamai
     {
         [Input("contacts")]
         private InputList<string>? _contacts;
-        [Obsolete(@"The setting ""contact"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations")]
+        [Obsolete(@"The setting ""contact"" has been deprecated.")]
         public InputList<string> Contacts
         {
             get => _contacts ?? (_contacts = new InputList<string>());
@@ -310,8 +307,7 @@ namespace Pulumi.Akamai
 
         [Input("origins")]
         private InputList<Inputs.PropertyOriginGetArgs>? _origins;
-        [Obsolete(@"The setting ""origin"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations")]
+        [Obsolete(@"The setting ""origin"" has been deprecated.")]
         public InputList<Inputs.PropertyOriginGetArgs> Origins
         {
             get => _origins ?? (_origins = new InputList<Inputs.PropertyOriginGetArgs>());

@@ -38,10 +38,8 @@ class GetContractResult:
     @property
     @pulumi.getter
     def group(self) -> Optional[str]:
-        warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
 
         return pulumi.get(self, "group")
 

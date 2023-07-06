@@ -104,6 +104,56 @@ import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsRequestBodyArgs;
 import com.pulumi.akamai.inputs.GetAppsecAdvancedSettingsRequestBodyPlainArgs;
 import com.pulumi.akamai.inputs.GetAuthoritiesSetArgs;
 import com.pulumi.akamai.inputs.GetAuthoritiesSetPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanAkamaiBotCategoryActionArgs;
+import com.pulumi.akamai.inputs.GetBotmanAkamaiBotCategoryActionPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanAkamaiBotCategoryArgs;
+import com.pulumi.akamai.inputs.GetBotmanAkamaiBotCategoryPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanAkamaiDefinedBotArgs;
+import com.pulumi.akamai.inputs.GetBotmanAkamaiDefinedBotPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotAnalyticsCookieArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotAnalyticsCookiePlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotCategoryExceptionArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotCategoryExceptionPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotDetectionActionArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotDetectionActionPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotDetectionArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotDetectionPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotEndpointCoverageReportArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotEndpointCoverageReportPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotManagementSettingsArgs;
+import com.pulumi.akamai.inputs.GetBotmanBotManagementSettingsPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanChallengeActionArgs;
+import com.pulumi.akamai.inputs.GetBotmanChallengeActionPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanChallengeInterceptionRulesArgs;
+import com.pulumi.akamai.inputs.GetBotmanChallengeInterceptionRulesPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanClientSideSecurityArgs;
+import com.pulumi.akamai.inputs.GetBotmanClientSideSecurityPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanConditionalActionArgs;
+import com.pulumi.akamai.inputs.GetBotmanConditionalActionPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomBotCategoryActionArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomBotCategoryActionPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomBotCategoryArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomBotCategoryPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomBotCategorySequenceArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomBotCategorySequencePlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomClientArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomClientPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomDefinedBotArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomDefinedBotPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomDenyActionArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomDenyActionPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanJavascriptInjectionArgs;
+import com.pulumi.akamai.inputs.GetBotmanJavascriptInjectionPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanRecategorizedAkamaiDefinedBotArgs;
+import com.pulumi.akamai.inputs.GetBotmanRecategorizedAkamaiDefinedBotPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanResponseActionArgs;
+import com.pulumi.akamai.inputs.GetBotmanResponseActionPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanServeAlternateActionArgs;
+import com.pulumi.akamai.inputs.GetBotmanServeAlternateActionPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanTransactionalEndpointArgs;
+import com.pulumi.akamai.inputs.GetBotmanTransactionalEndpointPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanTransactionalEndpointProtectionArgs;
+import com.pulumi.akamai.inputs.GetBotmanTransactionalEndpointProtectionPlainArgs;
 import com.pulumi.akamai.inputs.GetCPSEnrollmentArgs;
 import com.pulumi.akamai.inputs.GetCPSEnrollmentPlainArgs;
 import com.pulumi.akamai.inputs.GetCPSEnrollmentsArgs;
@@ -166,6 +216,10 @@ import com.pulumi.akamai.inputs.GetGtmDefaultDatacenterArgs;
 import com.pulumi.akamai.inputs.GetGtmDefaultDatacenterPlainArgs;
 import com.pulumi.akamai.inputs.GetIamStatesArgs;
 import com.pulumi.akamai.inputs.GetIamStatesPlainArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImageArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePlainArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyVideoArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyVideoPlainArgs;
 import com.pulumi.akamai.inputs.GetNetworkListsArgs;
 import com.pulumi.akamai.inputs.GetNetworkListsPlainArgs;
 import com.pulumi.akamai.inputs.GetPropertiesArgs;
@@ -247,6 +301,32 @@ import com.pulumi.akamai.outputs.GetAppSecWapSelectedHostnamesResult;
 import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsAttackPayloadLoggingResult;
 import com.pulumi.akamai.outputs.GetAppsecAdvancedSettingsRequestBodyResult;
 import com.pulumi.akamai.outputs.GetAuthoritiesSetResult;
+import com.pulumi.akamai.outputs.GetBotmanAkamaiBotCategoryActionResult;
+import com.pulumi.akamai.outputs.GetBotmanAkamaiBotCategoryResult;
+import com.pulumi.akamai.outputs.GetBotmanAkamaiDefinedBotResult;
+import com.pulumi.akamai.outputs.GetBotmanBotAnalyticsCookieResult;
+import com.pulumi.akamai.outputs.GetBotmanBotAnalyticsCookieValuesResult;
+import com.pulumi.akamai.outputs.GetBotmanBotCategoryExceptionResult;
+import com.pulumi.akamai.outputs.GetBotmanBotDetectionActionResult;
+import com.pulumi.akamai.outputs.GetBotmanBotDetectionResult;
+import com.pulumi.akamai.outputs.GetBotmanBotEndpointCoverageReportResult;
+import com.pulumi.akamai.outputs.GetBotmanBotManagementSettingsResult;
+import com.pulumi.akamai.outputs.GetBotmanChallengeActionResult;
+import com.pulumi.akamai.outputs.GetBotmanChallengeInterceptionRulesResult;
+import com.pulumi.akamai.outputs.GetBotmanClientSideSecurityResult;
+import com.pulumi.akamai.outputs.GetBotmanConditionalActionResult;
+import com.pulumi.akamai.outputs.GetBotmanCustomBotCategoryActionResult;
+import com.pulumi.akamai.outputs.GetBotmanCustomBotCategoryResult;
+import com.pulumi.akamai.outputs.GetBotmanCustomBotCategorySequenceResult;
+import com.pulumi.akamai.outputs.GetBotmanCustomClientResult;
+import com.pulumi.akamai.outputs.GetBotmanCustomDefinedBotResult;
+import com.pulumi.akamai.outputs.GetBotmanCustomDenyActionResult;
+import com.pulumi.akamai.outputs.GetBotmanJavascriptInjectionResult;
+import com.pulumi.akamai.outputs.GetBotmanRecategorizedAkamaiDefinedBotResult;
+import com.pulumi.akamai.outputs.GetBotmanResponseActionResult;
+import com.pulumi.akamai.outputs.GetBotmanServeAlternateActionResult;
+import com.pulumi.akamai.outputs.GetBotmanTransactionalEndpointProtectionResult;
+import com.pulumi.akamai.outputs.GetBotmanTransactionalEndpointResult;
 import com.pulumi.akamai.outputs.GetCPSEnrollmentResult;
 import com.pulumi.akamai.outputs.GetCPSEnrollmentsResult;
 import com.pulumi.akamai.outputs.GetCloudletsApiPrioritizationMatchRuleResult;
@@ -288,6 +368,8 @@ import com.pulumi.akamai.outputs.GetIamStatesResult;
 import com.pulumi.akamai.outputs.GetIamSupportedLangsResult;
 import com.pulumi.akamai.outputs.GetIamTimeoutPoliciesResult;
 import com.pulumi.akamai.outputs.GetIamTimezonesResult;
+import com.pulumi.akamai.outputs.GetImagingPolicyImageResult;
+import com.pulumi.akamai.outputs.GetImagingPolicyVideoResult;
 import com.pulumi.akamai.outputs.GetNetworkListsResult;
 import com.pulumi.akamai.outputs.GetPropertiesResult;
 import com.pulumi.akamai.outputs.GetPropertiesSearchResult;
@@ -954,6 +1036,348 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetAuthoritiesSetResult> getAuthoritiesSetPlain(GetAuthoritiesSetPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getAuthoritiesSet:getAuthoritiesSet", TypeShape.of(GetAuthoritiesSetResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetBotmanAkamaiBotCategoryResult> getBotmanAkamaiBotCategory() {
+        return getBotmanAkamaiBotCategory(GetBotmanAkamaiBotCategoryArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanAkamaiBotCategoryResult> getBotmanAkamaiBotCategoryPlain() {
+        return getBotmanAkamaiBotCategoryPlain(GetBotmanAkamaiBotCategoryPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanAkamaiBotCategoryResult> getBotmanAkamaiBotCategory(GetBotmanAkamaiBotCategoryArgs args) {
+        return getBotmanAkamaiBotCategory(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanAkamaiBotCategoryResult> getBotmanAkamaiBotCategoryPlain(GetBotmanAkamaiBotCategoryPlainArgs args) {
+        return getBotmanAkamaiBotCategoryPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanAkamaiBotCategoryResult> getBotmanAkamaiBotCategory(GetBotmanAkamaiBotCategoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanAkamaiBotCategory:getBotmanAkamaiBotCategory", TypeShape.of(GetBotmanAkamaiBotCategoryResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanAkamaiBotCategoryResult> getBotmanAkamaiBotCategoryPlain(GetBotmanAkamaiBotCategoryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanAkamaiBotCategory:getBotmanAkamaiBotCategory", TypeShape.of(GetBotmanAkamaiBotCategoryResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanAkamaiBotCategoryActionResult> getBotmanAkamaiBotCategoryAction(GetBotmanAkamaiBotCategoryActionArgs args) {
+        return getBotmanAkamaiBotCategoryAction(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanAkamaiBotCategoryActionResult> getBotmanAkamaiBotCategoryActionPlain(GetBotmanAkamaiBotCategoryActionPlainArgs args) {
+        return getBotmanAkamaiBotCategoryActionPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanAkamaiBotCategoryActionResult> getBotmanAkamaiBotCategoryAction(GetBotmanAkamaiBotCategoryActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanAkamaiBotCategoryAction:getBotmanAkamaiBotCategoryAction", TypeShape.of(GetBotmanAkamaiBotCategoryActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanAkamaiBotCategoryActionResult> getBotmanAkamaiBotCategoryActionPlain(GetBotmanAkamaiBotCategoryActionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanAkamaiBotCategoryAction:getBotmanAkamaiBotCategoryAction", TypeShape.of(GetBotmanAkamaiBotCategoryActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanAkamaiDefinedBotResult> getBotmanAkamaiDefinedBot() {
+        return getBotmanAkamaiDefinedBot(GetBotmanAkamaiDefinedBotArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanAkamaiDefinedBotResult> getBotmanAkamaiDefinedBotPlain() {
+        return getBotmanAkamaiDefinedBotPlain(GetBotmanAkamaiDefinedBotPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanAkamaiDefinedBotResult> getBotmanAkamaiDefinedBot(GetBotmanAkamaiDefinedBotArgs args) {
+        return getBotmanAkamaiDefinedBot(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanAkamaiDefinedBotResult> getBotmanAkamaiDefinedBotPlain(GetBotmanAkamaiDefinedBotPlainArgs args) {
+        return getBotmanAkamaiDefinedBotPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanAkamaiDefinedBotResult> getBotmanAkamaiDefinedBot(GetBotmanAkamaiDefinedBotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanAkamaiDefinedBot:getBotmanAkamaiDefinedBot", TypeShape.of(GetBotmanAkamaiDefinedBotResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanAkamaiDefinedBotResult> getBotmanAkamaiDefinedBotPlain(GetBotmanAkamaiDefinedBotPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanAkamaiDefinedBot:getBotmanAkamaiDefinedBot", TypeShape.of(GetBotmanAkamaiDefinedBotResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanBotAnalyticsCookieResult> getBotmanBotAnalyticsCookie(GetBotmanBotAnalyticsCookieArgs args) {
+        return getBotmanBotAnalyticsCookie(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotAnalyticsCookieResult> getBotmanBotAnalyticsCookiePlain(GetBotmanBotAnalyticsCookiePlainArgs args) {
+        return getBotmanBotAnalyticsCookiePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotAnalyticsCookieResult> getBotmanBotAnalyticsCookie(GetBotmanBotAnalyticsCookieArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanBotAnalyticsCookie:getBotmanBotAnalyticsCookie", TypeShape.of(GetBotmanBotAnalyticsCookieResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanBotAnalyticsCookieResult> getBotmanBotAnalyticsCookiePlain(GetBotmanBotAnalyticsCookiePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanBotAnalyticsCookie:getBotmanBotAnalyticsCookie", TypeShape.of(GetBotmanBotAnalyticsCookieResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanBotAnalyticsCookieValuesResult> getBotmanBotAnalyticsCookieValues() {
+        return getBotmanBotAnalyticsCookieValues(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotAnalyticsCookieValuesResult> getBotmanBotAnalyticsCookieValuesPlain() {
+        return getBotmanBotAnalyticsCookieValuesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotAnalyticsCookieValuesResult> getBotmanBotAnalyticsCookieValues(InvokeArgs args) {
+        return getBotmanBotAnalyticsCookieValues(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotAnalyticsCookieValuesResult> getBotmanBotAnalyticsCookieValuesPlain(InvokeArgs args) {
+        return getBotmanBotAnalyticsCookieValuesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotAnalyticsCookieValuesResult> getBotmanBotAnalyticsCookieValues(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues", TypeShape.of(GetBotmanBotAnalyticsCookieValuesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanBotAnalyticsCookieValuesResult> getBotmanBotAnalyticsCookieValuesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues", TypeShape.of(GetBotmanBotAnalyticsCookieValuesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanBotCategoryExceptionResult> getBotmanBotCategoryException(GetBotmanBotCategoryExceptionArgs args) {
+        return getBotmanBotCategoryException(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotCategoryExceptionResult> getBotmanBotCategoryExceptionPlain(GetBotmanBotCategoryExceptionPlainArgs args) {
+        return getBotmanBotCategoryExceptionPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotCategoryExceptionResult> getBotmanBotCategoryException(GetBotmanBotCategoryExceptionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanBotCategoryException:getBotmanBotCategoryException", TypeShape.of(GetBotmanBotCategoryExceptionResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanBotCategoryExceptionResult> getBotmanBotCategoryExceptionPlain(GetBotmanBotCategoryExceptionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanBotCategoryException:getBotmanBotCategoryException", TypeShape.of(GetBotmanBotCategoryExceptionResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanBotDetectionResult> getBotmanBotDetection() {
+        return getBotmanBotDetection(GetBotmanBotDetectionArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotDetectionResult> getBotmanBotDetectionPlain() {
+        return getBotmanBotDetectionPlain(GetBotmanBotDetectionPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotDetectionResult> getBotmanBotDetection(GetBotmanBotDetectionArgs args) {
+        return getBotmanBotDetection(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotDetectionResult> getBotmanBotDetectionPlain(GetBotmanBotDetectionPlainArgs args) {
+        return getBotmanBotDetectionPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotDetectionResult> getBotmanBotDetection(GetBotmanBotDetectionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanBotDetection:getBotmanBotDetection", TypeShape.of(GetBotmanBotDetectionResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanBotDetectionResult> getBotmanBotDetectionPlain(GetBotmanBotDetectionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanBotDetection:getBotmanBotDetection", TypeShape.of(GetBotmanBotDetectionResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanBotDetectionActionResult> getBotmanBotDetectionAction(GetBotmanBotDetectionActionArgs args) {
+        return getBotmanBotDetectionAction(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotDetectionActionResult> getBotmanBotDetectionActionPlain(GetBotmanBotDetectionActionPlainArgs args) {
+        return getBotmanBotDetectionActionPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotDetectionActionResult> getBotmanBotDetectionAction(GetBotmanBotDetectionActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanBotDetectionAction:getBotmanBotDetectionAction", TypeShape.of(GetBotmanBotDetectionActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanBotDetectionActionResult> getBotmanBotDetectionActionPlain(GetBotmanBotDetectionActionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanBotDetectionAction:getBotmanBotDetectionAction", TypeShape.of(GetBotmanBotDetectionActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanBotEndpointCoverageReportResult> getBotmanBotEndpointCoverageReport() {
+        return getBotmanBotEndpointCoverageReport(GetBotmanBotEndpointCoverageReportArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotEndpointCoverageReportResult> getBotmanBotEndpointCoverageReportPlain() {
+        return getBotmanBotEndpointCoverageReportPlain(GetBotmanBotEndpointCoverageReportPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotEndpointCoverageReportResult> getBotmanBotEndpointCoverageReport(GetBotmanBotEndpointCoverageReportArgs args) {
+        return getBotmanBotEndpointCoverageReport(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotEndpointCoverageReportResult> getBotmanBotEndpointCoverageReportPlain(GetBotmanBotEndpointCoverageReportPlainArgs args) {
+        return getBotmanBotEndpointCoverageReportPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotEndpointCoverageReportResult> getBotmanBotEndpointCoverageReport(GetBotmanBotEndpointCoverageReportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport", TypeShape.of(GetBotmanBotEndpointCoverageReportResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanBotEndpointCoverageReportResult> getBotmanBotEndpointCoverageReportPlain(GetBotmanBotEndpointCoverageReportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport", TypeShape.of(GetBotmanBotEndpointCoverageReportResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanBotManagementSettingsResult> getBotmanBotManagementSettings(GetBotmanBotManagementSettingsArgs args) {
+        return getBotmanBotManagementSettings(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanBotManagementSettingsResult> getBotmanBotManagementSettingsPlain(GetBotmanBotManagementSettingsPlainArgs args) {
+        return getBotmanBotManagementSettingsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanBotManagementSettingsResult> getBotmanBotManagementSettings(GetBotmanBotManagementSettingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanBotManagementSettings:getBotmanBotManagementSettings", TypeShape.of(GetBotmanBotManagementSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanBotManagementSettingsResult> getBotmanBotManagementSettingsPlain(GetBotmanBotManagementSettingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanBotManagementSettings:getBotmanBotManagementSettings", TypeShape.of(GetBotmanBotManagementSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanChallengeActionResult> getBotmanChallengeAction(GetBotmanChallengeActionArgs args) {
+        return getBotmanChallengeAction(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanChallengeActionResult> getBotmanChallengeActionPlain(GetBotmanChallengeActionPlainArgs args) {
+        return getBotmanChallengeActionPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanChallengeActionResult> getBotmanChallengeAction(GetBotmanChallengeActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanChallengeAction:getBotmanChallengeAction", TypeShape.of(GetBotmanChallengeActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanChallengeActionResult> getBotmanChallengeActionPlain(GetBotmanChallengeActionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanChallengeAction:getBotmanChallengeAction", TypeShape.of(GetBotmanChallengeActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanChallengeInterceptionRulesResult> getBotmanChallengeInterceptionRules(GetBotmanChallengeInterceptionRulesArgs args) {
+        return getBotmanChallengeInterceptionRules(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanChallengeInterceptionRulesResult> getBotmanChallengeInterceptionRulesPlain(GetBotmanChallengeInterceptionRulesPlainArgs args) {
+        return getBotmanChallengeInterceptionRulesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanChallengeInterceptionRulesResult> getBotmanChallengeInterceptionRules(GetBotmanChallengeInterceptionRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanChallengeInterceptionRules:getBotmanChallengeInterceptionRules", TypeShape.of(GetBotmanChallengeInterceptionRulesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanChallengeInterceptionRulesResult> getBotmanChallengeInterceptionRulesPlain(GetBotmanChallengeInterceptionRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanChallengeInterceptionRules:getBotmanChallengeInterceptionRules", TypeShape.of(GetBotmanChallengeInterceptionRulesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanClientSideSecurityResult> getBotmanClientSideSecurity(GetBotmanClientSideSecurityArgs args) {
+        return getBotmanClientSideSecurity(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanClientSideSecurityResult> getBotmanClientSideSecurityPlain(GetBotmanClientSideSecurityPlainArgs args) {
+        return getBotmanClientSideSecurityPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanClientSideSecurityResult> getBotmanClientSideSecurity(GetBotmanClientSideSecurityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanClientSideSecurity:getBotmanClientSideSecurity", TypeShape.of(GetBotmanClientSideSecurityResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanClientSideSecurityResult> getBotmanClientSideSecurityPlain(GetBotmanClientSideSecurityPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanClientSideSecurity:getBotmanClientSideSecurity", TypeShape.of(GetBotmanClientSideSecurityResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanConditionalActionResult> getBotmanConditionalAction(GetBotmanConditionalActionArgs args) {
+        return getBotmanConditionalAction(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanConditionalActionResult> getBotmanConditionalActionPlain(GetBotmanConditionalActionPlainArgs args) {
+        return getBotmanConditionalActionPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanConditionalActionResult> getBotmanConditionalAction(GetBotmanConditionalActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanConditionalAction:getBotmanConditionalAction", TypeShape.of(GetBotmanConditionalActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanConditionalActionResult> getBotmanConditionalActionPlain(GetBotmanConditionalActionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanConditionalAction:getBotmanConditionalAction", TypeShape.of(GetBotmanConditionalActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanCustomBotCategoryResult> getBotmanCustomBotCategory(GetBotmanCustomBotCategoryArgs args) {
+        return getBotmanCustomBotCategory(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanCustomBotCategoryResult> getBotmanCustomBotCategoryPlain(GetBotmanCustomBotCategoryPlainArgs args) {
+        return getBotmanCustomBotCategoryPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanCustomBotCategoryResult> getBotmanCustomBotCategory(GetBotmanCustomBotCategoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanCustomBotCategory:getBotmanCustomBotCategory", TypeShape.of(GetBotmanCustomBotCategoryResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanCustomBotCategoryResult> getBotmanCustomBotCategoryPlain(GetBotmanCustomBotCategoryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanCustomBotCategory:getBotmanCustomBotCategory", TypeShape.of(GetBotmanCustomBotCategoryResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanCustomBotCategoryActionResult> getBotmanCustomBotCategoryAction(GetBotmanCustomBotCategoryActionArgs args) {
+        return getBotmanCustomBotCategoryAction(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanCustomBotCategoryActionResult> getBotmanCustomBotCategoryActionPlain(GetBotmanCustomBotCategoryActionPlainArgs args) {
+        return getBotmanCustomBotCategoryActionPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanCustomBotCategoryActionResult> getBotmanCustomBotCategoryAction(GetBotmanCustomBotCategoryActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanCustomBotCategoryAction:getBotmanCustomBotCategoryAction", TypeShape.of(GetBotmanCustomBotCategoryActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanCustomBotCategoryActionResult> getBotmanCustomBotCategoryActionPlain(GetBotmanCustomBotCategoryActionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanCustomBotCategoryAction:getBotmanCustomBotCategoryAction", TypeShape.of(GetBotmanCustomBotCategoryActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanCustomBotCategorySequenceResult> getBotmanCustomBotCategorySequence(GetBotmanCustomBotCategorySequenceArgs args) {
+        return getBotmanCustomBotCategorySequence(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanCustomBotCategorySequenceResult> getBotmanCustomBotCategorySequencePlain(GetBotmanCustomBotCategorySequencePlainArgs args) {
+        return getBotmanCustomBotCategorySequencePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanCustomBotCategorySequenceResult> getBotmanCustomBotCategorySequence(GetBotmanCustomBotCategorySequenceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanCustomBotCategorySequence:getBotmanCustomBotCategorySequence", TypeShape.of(GetBotmanCustomBotCategorySequenceResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanCustomBotCategorySequenceResult> getBotmanCustomBotCategorySequencePlain(GetBotmanCustomBotCategorySequencePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanCustomBotCategorySequence:getBotmanCustomBotCategorySequence", TypeShape.of(GetBotmanCustomBotCategorySequenceResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanCustomClientResult> getBotmanCustomClient(GetBotmanCustomClientArgs args) {
+        return getBotmanCustomClient(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanCustomClientResult> getBotmanCustomClientPlain(GetBotmanCustomClientPlainArgs args) {
+        return getBotmanCustomClientPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanCustomClientResult> getBotmanCustomClient(GetBotmanCustomClientArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanCustomClient:getBotmanCustomClient", TypeShape.of(GetBotmanCustomClientResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanCustomClientResult> getBotmanCustomClientPlain(GetBotmanCustomClientPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanCustomClient:getBotmanCustomClient", TypeShape.of(GetBotmanCustomClientResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanCustomDefinedBotResult> getBotmanCustomDefinedBot(GetBotmanCustomDefinedBotArgs args) {
+        return getBotmanCustomDefinedBot(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanCustomDefinedBotResult> getBotmanCustomDefinedBotPlain(GetBotmanCustomDefinedBotPlainArgs args) {
+        return getBotmanCustomDefinedBotPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanCustomDefinedBotResult> getBotmanCustomDefinedBot(GetBotmanCustomDefinedBotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanCustomDefinedBot:getBotmanCustomDefinedBot", TypeShape.of(GetBotmanCustomDefinedBotResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanCustomDefinedBotResult> getBotmanCustomDefinedBotPlain(GetBotmanCustomDefinedBotPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanCustomDefinedBot:getBotmanCustomDefinedBot", TypeShape.of(GetBotmanCustomDefinedBotResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanCustomDenyActionResult> getBotmanCustomDenyAction(GetBotmanCustomDenyActionArgs args) {
+        return getBotmanCustomDenyAction(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanCustomDenyActionResult> getBotmanCustomDenyActionPlain(GetBotmanCustomDenyActionPlainArgs args) {
+        return getBotmanCustomDenyActionPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanCustomDenyActionResult> getBotmanCustomDenyAction(GetBotmanCustomDenyActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanCustomDenyAction:getBotmanCustomDenyAction", TypeShape.of(GetBotmanCustomDenyActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanCustomDenyActionResult> getBotmanCustomDenyActionPlain(GetBotmanCustomDenyActionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanCustomDenyAction:getBotmanCustomDenyAction", TypeShape.of(GetBotmanCustomDenyActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanJavascriptInjectionResult> getBotmanJavascriptInjection(GetBotmanJavascriptInjectionArgs args) {
+        return getBotmanJavascriptInjection(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanJavascriptInjectionResult> getBotmanJavascriptInjectionPlain(GetBotmanJavascriptInjectionPlainArgs args) {
+        return getBotmanJavascriptInjectionPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanJavascriptInjectionResult> getBotmanJavascriptInjection(GetBotmanJavascriptInjectionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanJavascriptInjection:getBotmanJavascriptInjection", TypeShape.of(GetBotmanJavascriptInjectionResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanJavascriptInjectionResult> getBotmanJavascriptInjectionPlain(GetBotmanJavascriptInjectionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanJavascriptInjection:getBotmanJavascriptInjection", TypeShape.of(GetBotmanJavascriptInjectionResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanRecategorizedAkamaiDefinedBotResult> getBotmanRecategorizedAkamaiDefinedBot(GetBotmanRecategorizedAkamaiDefinedBotArgs args) {
+        return getBotmanRecategorizedAkamaiDefinedBot(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanRecategorizedAkamaiDefinedBotResult> getBotmanRecategorizedAkamaiDefinedBotPlain(GetBotmanRecategorizedAkamaiDefinedBotPlainArgs args) {
+        return getBotmanRecategorizedAkamaiDefinedBotPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanRecategorizedAkamaiDefinedBotResult> getBotmanRecategorizedAkamaiDefinedBot(GetBotmanRecategorizedAkamaiDefinedBotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanRecategorizedAkamaiDefinedBot:getBotmanRecategorizedAkamaiDefinedBot", TypeShape.of(GetBotmanRecategorizedAkamaiDefinedBotResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanRecategorizedAkamaiDefinedBotResult> getBotmanRecategorizedAkamaiDefinedBotPlain(GetBotmanRecategorizedAkamaiDefinedBotPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanRecategorizedAkamaiDefinedBot:getBotmanRecategorizedAkamaiDefinedBot", TypeShape.of(GetBotmanRecategorizedAkamaiDefinedBotResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanResponseActionResult> getBotmanResponseAction(GetBotmanResponseActionArgs args) {
+        return getBotmanResponseAction(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanResponseActionResult> getBotmanResponseActionPlain(GetBotmanResponseActionPlainArgs args) {
+        return getBotmanResponseActionPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanResponseActionResult> getBotmanResponseAction(GetBotmanResponseActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanResponseAction:getBotmanResponseAction", TypeShape.of(GetBotmanResponseActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanResponseActionResult> getBotmanResponseActionPlain(GetBotmanResponseActionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanResponseAction:getBotmanResponseAction", TypeShape.of(GetBotmanResponseActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanServeAlternateActionResult> getBotmanServeAlternateAction(GetBotmanServeAlternateActionArgs args) {
+        return getBotmanServeAlternateAction(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanServeAlternateActionResult> getBotmanServeAlternateActionPlain(GetBotmanServeAlternateActionPlainArgs args) {
+        return getBotmanServeAlternateActionPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanServeAlternateActionResult> getBotmanServeAlternateAction(GetBotmanServeAlternateActionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanServeAlternateAction:getBotmanServeAlternateAction", TypeShape.of(GetBotmanServeAlternateActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanServeAlternateActionResult> getBotmanServeAlternateActionPlain(GetBotmanServeAlternateActionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanServeAlternateAction:getBotmanServeAlternateAction", TypeShape.of(GetBotmanServeAlternateActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanTransactionalEndpointResult> getBotmanTransactionalEndpoint(GetBotmanTransactionalEndpointArgs args) {
+        return getBotmanTransactionalEndpoint(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanTransactionalEndpointResult> getBotmanTransactionalEndpointPlain(GetBotmanTransactionalEndpointPlainArgs args) {
+        return getBotmanTransactionalEndpointPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanTransactionalEndpointResult> getBotmanTransactionalEndpoint(GetBotmanTransactionalEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanTransactionalEndpoint:getBotmanTransactionalEndpoint", TypeShape.of(GetBotmanTransactionalEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanTransactionalEndpointResult> getBotmanTransactionalEndpointPlain(GetBotmanTransactionalEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanTransactionalEndpoint:getBotmanTransactionalEndpoint", TypeShape.of(GetBotmanTransactionalEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanTransactionalEndpointProtectionResult> getBotmanTransactionalEndpointProtection(GetBotmanTransactionalEndpointProtectionArgs args) {
+        return getBotmanTransactionalEndpointProtection(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanTransactionalEndpointProtectionResult> getBotmanTransactionalEndpointProtectionPlain(GetBotmanTransactionalEndpointProtectionPlainArgs args) {
+        return getBotmanTransactionalEndpointProtectionPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanTransactionalEndpointProtectionResult> getBotmanTransactionalEndpointProtection(GetBotmanTransactionalEndpointProtectionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanTransactionalEndpointProtection:getBotmanTransactionalEndpointProtection", TypeShape.of(GetBotmanTransactionalEndpointProtectionResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanTransactionalEndpointProtectionResult> getBotmanTransactionalEndpointProtectionPlain(GetBotmanTransactionalEndpointProtectionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanTransactionalEndpointProtection:getBotmanTransactionalEndpointProtection", TypeShape.of(GetBotmanTransactionalEndpointProtectionResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetCPSEnrollmentResult> getCPSEnrollment(GetCPSEnrollmentArgs args) {
         return getCPSEnrollment(args, InvokeOptions.Empty);
     }
@@ -1577,6 +2001,30 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetIamTimezonesResult> getIamTimezonesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getIamTimezones:getIamTimezones", TypeShape.of(GetIamTimezonesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetImagingPolicyImageResult> getImagingPolicyImage(GetImagingPolicyImageArgs args) {
+        return getImagingPolicyImage(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetImagingPolicyImageResult> getImagingPolicyImagePlain(GetImagingPolicyImagePlainArgs args) {
+        return getImagingPolicyImagePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetImagingPolicyImageResult> getImagingPolicyImage(GetImagingPolicyImageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getImagingPolicyImage:getImagingPolicyImage", TypeShape.of(GetImagingPolicyImageResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetImagingPolicyImageResult> getImagingPolicyImagePlain(GetImagingPolicyImagePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getImagingPolicyImage:getImagingPolicyImage", TypeShape.of(GetImagingPolicyImageResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetImagingPolicyVideoResult> getImagingPolicyVideo(GetImagingPolicyVideoArgs args) {
+        return getImagingPolicyVideo(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetImagingPolicyVideoResult> getImagingPolicyVideoPlain(GetImagingPolicyVideoPlainArgs args) {
+        return getImagingPolicyVideoPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetImagingPolicyVideoResult> getImagingPolicyVideo(GetImagingPolicyVideoArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", TypeShape.of(GetImagingPolicyVideoResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetImagingPolicyVideoResult> getImagingPolicyVideoPlain(GetImagingPolicyVideoPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getImagingPolicyVideo:getImagingPolicyVideo", TypeShape.of(GetImagingPolicyVideoResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetNetworkListsResult> getNetworkLists() {
         return getNetworkLists(GetNetworkListsArgs.Empty, InvokeOptions.Empty);

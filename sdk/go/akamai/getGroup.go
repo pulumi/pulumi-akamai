@@ -21,27 +21,23 @@ func GetGroup(ctx *pulumi.Context, args *GetGroupArgs, opts ...pulumi.InvokeOpti
 
 // A collection of arguments for invoking getGroup.
 type GetGroupArgs struct {
-	// Deprecated: The setting "contract" has been deprecated. See:
-	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract   *string `pulumi:"contract"`
 	ContractId *string `pulumi:"contractId"`
 	GroupName  *string `pulumi:"groupName"`
-	// Deprecated: The setting "name" has been deprecated. See:
-	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+	// Deprecated: The setting "name" has been deprecated.
 	Name *string `pulumi:"name"`
 }
 
 // A collection of values returned by getGroup.
 type GetGroupResult struct {
-	// Deprecated: The setting "contract" has been deprecated. See:
-	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract   string `pulumi:"contract"`
 	ContractId string `pulumi:"contractId"`
 	GroupName  string `pulumi:"groupName"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Deprecated: The setting "name" has been deprecated. See:
-	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+	// Deprecated: The setting "name" has been deprecated.
 	Name string `pulumi:"name"`
 }
 
@@ -60,13 +56,11 @@ func GetGroupOutput(ctx *pulumi.Context, args GetGroupOutputArgs, opts ...pulumi
 
 // A collection of arguments for invoking getGroup.
 type GetGroupOutputArgs struct {
-	// Deprecated: The setting "contract" has been deprecated. See:
-	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+	// Deprecated: The setting "contract" has been deprecated.
 	Contract   pulumi.StringPtrInput `pulumi:"contract"`
 	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
 	GroupName  pulumi.StringPtrInput `pulumi:"groupName"`
-	// Deprecated: The setting "name" has been deprecated. See:
-	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+	// Deprecated: The setting "name" has been deprecated.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -89,9 +83,7 @@ func (o GetGroupResultOutput) ToGetGroupResultOutputWithContext(ctx context.Cont
 	return o
 }
 
-// Deprecated: The setting "contract" has been deprecated. See:
-//
-//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+// Deprecated: The setting "contract" has been deprecated.
 func (o GetGroupResultOutput) Contract() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupResult) string { return v.Contract }).(pulumi.StringOutput)
 }
@@ -109,9 +101,7 @@ func (o GetGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Deprecated: The setting "name" has been deprecated. See:
-//
-//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+// Deprecated: The setting "name" has been deprecated.
 func (o GetGroupResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupResult) string { return v.Name }).(pulumi.StringOutput)
 }

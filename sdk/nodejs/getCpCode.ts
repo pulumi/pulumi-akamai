@@ -21,14 +21,12 @@ export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Pro
  */
 export interface GetCpCodeArgs {
     /**
-     * @deprecated The setting "contract" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "contract" has been deprecated.
      */
     contract?: string;
     contractId?: string;
     /**
-     * @deprecated The setting "group" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "group" has been deprecated.
      */
     group?: string;
     groupId?: string;
@@ -40,14 +38,12 @@ export interface GetCpCodeArgs {
  */
 export interface GetCpCodeResult {
     /**
-     * @deprecated The setting "contract" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "contract" has been deprecated.
      */
     readonly contract: string;
     readonly contractId: string;
     /**
-     * @deprecated The setting "group" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "group" has been deprecated.
      */
     readonly group: string;
     readonly groupId: string;
@@ -67,14 +63,12 @@ export function getCpCodeOutput(args: GetCpCodeOutputArgs, opts?: pulumi.InvokeO
  */
 export interface GetCpCodeOutputArgs {
     /**
-     * @deprecated The setting "contract" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
     contractId?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "group" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
     groupId?: pulumi.Input<string>;

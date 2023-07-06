@@ -13,12 +13,10 @@ import javax.annotation.Nullable;
 public final class GetContractResult {
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;group&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""group"" has been deprecated. */
     private @Nullable String group;
     private String groupId;
     private String groupName;
@@ -31,12 +29,10 @@ public final class GetContractResult {
     private GetContractResult() {}
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;group&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""group"" has been deprecated. */
     public Optional<String> group() {
         return Optional.ofNullable(this.group);
     }

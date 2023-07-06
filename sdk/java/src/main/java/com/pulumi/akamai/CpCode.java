@@ -19,12 +19,10 @@ import javax.annotation.Nullable;
 public class CpCode extends com.pulumi.resources.CustomResource {
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;contract&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""contract"" has been deprecated. */
     @Export(name="contract", type=String.class, parameters={})
     private Output<String> contract;
 
@@ -39,12 +37,10 @@ public class CpCode extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;group&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""group"" has been deprecated. */
     @Export(name="group", type=String.class, parameters={})
     private Output<String> group;
 
@@ -65,12 +61,10 @@ public class CpCode extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;product&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;product&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""product"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""product"" has been deprecated. */
     @Export(name="product", type=String.class, parameters={})
     private Output<String> product;
 

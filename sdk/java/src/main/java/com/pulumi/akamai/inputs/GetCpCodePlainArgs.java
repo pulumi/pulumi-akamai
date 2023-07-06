@@ -16,23 +16,19 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;contract&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""contract"" has been deprecated. */
     @Import(name="contract")
     private @Nullable String contract;
 
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;contract&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""contract"" has been deprecated. */
     public Optional<String> contract() {
         return Optional.ofNullable(this.contract);
     }
@@ -46,23 +42,19 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;group&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""group"" has been deprecated. */
     @Import(name="group")
     private @Nullable String group;
 
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;group&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""group"" has been deprecated. */
     public Optional<String> group() {
         return Optional.ofNullable(this.group);
     }
@@ -113,12 +105,10 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;contract&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;contract&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""contract"" has been deprecated. */
         public Builder contract(@Nullable String contract) {
             $.contract = contract;
             return this;
@@ -133,12 +123,10 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;group&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;group&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""group"" has been deprecated. */
         public Builder group(@Nullable String group) {
             $.group = group;
             return this;

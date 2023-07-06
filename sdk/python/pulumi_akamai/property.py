@@ -42,33 +42,25 @@ class PropertyArgs:
         :param pulumi.Input[str] rules: Property Rules as JSON
         """
         if contacts is not None:
-            warnings.warn("""The setting \"contact\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
         if contacts is not None:
             pulumi.set(__self__, "contacts", contacts)
         if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
         if contract is not None:
             pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
         if cp_code is not None:
-            warnings.warn("""The setting \"cp_code\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
         if cp_code is not None:
             pulumi.set(__self__, "cp_code", cp_code)
         if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
         if group is not None:
             pulumi.set(__self__, "group", group)
         if group_id is not None:
@@ -76,26 +68,20 @@ class PropertyArgs:
         if hostnames is not None:
             pulumi.set(__self__, "hostnames", hostnames)
         if is_secure is not None:
-            warnings.warn("""The setting \"is_secure\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
         if is_secure is not None:
             pulumi.set(__self__, "is_secure", is_secure)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if origins is not None:
-            warnings.warn("""The setting \"origin\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
         if origins is not None:
             pulumi.set(__self__, "origins", origins)
         if product is not None:
-            warnings.warn("""The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
         if product is not None:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
@@ -110,20 +96,16 @@ class PropertyArgs:
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if variables is not None:
-            warnings.warn("""The setting \"variables\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
         if variables is not None:
             pulumi.set(__self__, "variables", variables)
 
     @property
     @pulumi.getter
     def contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        warnings.warn("""The setting \"contact\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
 
         return pulumi.get(self, "contacts")
 
@@ -134,10 +116,8 @@ class PropertyArgs:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
 
         return pulumi.get(self, "contract")
 
@@ -160,10 +140,8 @@ class PropertyArgs:
     @property
     @pulumi.getter(name="cpCode")
     def cp_code(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"cp_code\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
 
         return pulumi.get(self, "cp_code")
 
@@ -174,10 +152,8 @@ class PropertyArgs:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
 
         return pulumi.get(self, "group")
 
@@ -209,10 +185,8 @@ class PropertyArgs:
     @property
     @pulumi.getter(name="isSecure")
     def is_secure(self) -> Optional[pulumi.Input[bool]]:
-        warnings.warn("""The setting \"is_secure\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
 
         return pulumi.get(self, "is_secure")
 
@@ -235,10 +209,8 @@ class PropertyArgs:
     @property
     @pulumi.getter
     def origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyOriginArgs']]]]:
-        warnings.warn("""The setting \"origin\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
 
         return pulumi.get(self, "origins")
 
@@ -249,10 +221,8 @@ class PropertyArgs:
     @property
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
 
         return pulumi.get(self, "product")
 
@@ -311,10 +281,8 @@ class PropertyArgs:
     @property
     @pulumi.getter
     def variables(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"variables\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
 
         return pulumi.get(self, "variables")
 
@@ -361,33 +329,25 @@ class _PropertyState:
         :param pulumi.Input[int] staging_version: Property's version currently activated in staging (zero when not active in staging)
         """
         if contacts is not None:
-            warnings.warn("""The setting \"contact\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
         if contacts is not None:
             pulumi.set(__self__, "contacts", contacts)
         if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
         if contract is not None:
             pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
         if cp_code is not None:
-            warnings.warn("""The setting \"cp_code\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
         if cp_code is not None:
             pulumi.set(__self__, "cp_code", cp_code)
         if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
         if group is not None:
             pulumi.set(__self__, "group", group)
         if group_id is not None:
@@ -395,10 +355,8 @@ class _PropertyState:
         if hostnames is not None:
             pulumi.set(__self__, "hostnames", hostnames)
         if is_secure is not None:
-            warnings.warn("""The setting \"is_secure\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
         if is_secure is not None:
             pulumi.set(__self__, "is_secure", is_secure)
         if latest_version is not None:
@@ -406,17 +364,13 @@ class _PropertyState:
         if name is not None:
             pulumi.set(__self__, "name", name)
         if origins is not None:
-            warnings.warn("""The setting \"origin\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
         if origins is not None:
             pulumi.set(__self__, "origins", origins)
         if product is not None:
-            warnings.warn("""The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
         if product is not None:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
@@ -439,20 +393,16 @@ class _PropertyState:
         if staging_version is not None:
             pulumi.set(__self__, "staging_version", staging_version)
         if variables is not None:
-            warnings.warn("""The setting \"variables\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
         if variables is not None:
             pulumi.set(__self__, "variables", variables)
 
     @property
     @pulumi.getter
     def contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        warnings.warn("""The setting \"contact\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
 
         return pulumi.get(self, "contacts")
 
@@ -463,10 +413,8 @@ class _PropertyState:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
 
         return pulumi.get(self, "contract")
 
@@ -489,10 +437,8 @@ class _PropertyState:
     @property
     @pulumi.getter(name="cpCode")
     def cp_code(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"cp_code\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
 
         return pulumi.get(self, "cp_code")
 
@@ -503,10 +449,8 @@ class _PropertyState:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
 
         return pulumi.get(self, "group")
 
@@ -538,10 +482,8 @@ class _PropertyState:
     @property
     @pulumi.getter(name="isSecure")
     def is_secure(self) -> Optional[pulumi.Input[bool]]:
-        warnings.warn("""The setting \"is_secure\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
 
         return pulumi.get(self, "is_secure")
 
@@ -576,10 +518,8 @@ class _PropertyState:
     @property
     @pulumi.getter
     def origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyOriginArgs']]]]:
-        warnings.warn("""The setting \"origin\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
 
         return pulumi.get(self, "origins")
 
@@ -590,10 +530,8 @@ class _PropertyState:
     @property
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
 
         return pulumi.get(self, "product")
 
@@ -697,10 +635,8 @@ class _PropertyState:
     @property
     @pulumi.getter
     def variables(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"variables\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
 
         return pulumi.get(self, "variables")
 
@@ -791,50 +727,36 @@ class Property(pulumi.CustomResource):
             __props__ = PropertyArgs.__new__(PropertyArgs)
 
             if contacts is not None and not opts.urn:
-                warnings.warn("""The setting \"contact\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-                pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+                warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
             __props__.__dict__["contacts"] = contacts
             if contract is not None and not opts.urn:
-                warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-                pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+                warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
             __props__.__dict__["contract"] = contract
             __props__.__dict__["contract_id"] = contract_id
             if cp_code is not None and not opts.urn:
-                warnings.warn("""The setting \"cp_code\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-                pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+                warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
             __props__.__dict__["cp_code"] = cp_code
             if group is not None and not opts.urn:
-                warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-                pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+                warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
             __props__.__dict__["group"] = group
             __props__.__dict__["group_id"] = group_id
             __props__.__dict__["hostnames"] = hostnames
             if is_secure is not None and not opts.urn:
-                warnings.warn("""The setting \"is_secure\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-                pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+                warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
             __props__.__dict__["is_secure"] = is_secure
             __props__.__dict__["name"] = name
             if origins is not None and not opts.urn:
-                warnings.warn("""The setting \"origin\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-                pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+                warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
             __props__.__dict__["origins"] = origins
             if product is not None and not opts.urn:
-                warnings.warn("""The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-                pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+                warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
             __props__.__dict__["product"] = product
             __props__.__dict__["product_id"] = product_id
             __props__.__dict__["rule_format"] = rule_format
@@ -844,10 +766,8 @@ class Property(pulumi.CustomResource):
             __props__.__dict__["rule_warnings"] = rule_warnings
             __props__.__dict__["rules"] = rules
             if variables is not None and not opts.urn:
-                warnings.warn("""The setting \"variables\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-                pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+                warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
             __props__.__dict__["variables"] = variables
             __props__.__dict__["latest_version"] = None
             __props__.__dict__["production_version"] = None
@@ -935,20 +855,16 @@ class Property(pulumi.CustomResource):
     @property
     @pulumi.getter
     def contacts(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        warnings.warn("""The setting \"contact\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
 
         return pulumi.get(self, "contacts")
 
     @property
     @pulumi.getter
     def contract(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
 
         return pulumi.get(self, "contract")
 
@@ -963,20 +879,16 @@ class Property(pulumi.CustomResource):
     @property
     @pulumi.getter(name="cpCode")
     def cp_code(self) -> pulumi.Output[Optional[str]]:
-        warnings.warn("""The setting \"cp_code\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
 
         return pulumi.get(self, "cp_code")
 
     @property
     @pulumi.getter
     def group(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
 
         return pulumi.get(self, "group")
 
@@ -996,10 +908,8 @@ class Property(pulumi.CustomResource):
     @property
     @pulumi.getter(name="isSecure")
     def is_secure(self) -> pulumi.Output[Optional[bool]]:
-        warnings.warn("""The setting \"is_secure\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
 
         return pulumi.get(self, "is_secure")
 
@@ -1022,20 +932,16 @@ class Property(pulumi.CustomResource):
     @property
     @pulumi.getter
     def origins(self) -> pulumi.Output[Optional[Sequence['outputs.PropertyOrigin']]]:
-        warnings.warn("""The setting \"origin\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
 
         return pulumi.get(self, "origins")
 
     @property
     @pulumi.getter
     def product(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
 
         return pulumi.get(self, "product")
 
@@ -1103,10 +1009,8 @@ class Property(pulumi.CustomResource):
     @property
     @pulumi.getter
     def variables(self) -> pulumi.Output[Optional[str]]:
-        warnings.warn("""The setting \"variables\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
 
         return pulumi.get(self, "variables")
 

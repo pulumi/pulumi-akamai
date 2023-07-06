@@ -26,12 +26,10 @@ import javax.annotation.Nullable;
 public class Property extends com.pulumi.resources.CustomResource {
     /**
      * @deprecated
-     * The setting &#34;contact&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;contact&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""contact"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""contact"" has been deprecated. */
     @Export(name="contacts", type=List.class, parameters={String.class})
     private Output</* @Nullable */ List<String>> contacts;
 
@@ -40,12 +38,10 @@ public class Property extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;contract&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""contract"" has been deprecated. */
     @Export(name="contract", type=String.class, parameters={})
     private Output<String> contract;
 
@@ -68,12 +64,10 @@ public class Property extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;cp_code&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;cp_code&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""cp_code"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""cp_code"" has been deprecated. */
     @Export(name="cpCode", type=String.class, parameters={})
     private Output</* @Nullable */ String> cpCode;
 
@@ -82,12 +76,10 @@ public class Property extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;group&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""group"" has been deprecated. */
     @Export(name="group", type=String.class, parameters={})
     private Output<String> group;
 
@@ -116,12 +108,10 @@ public class Property extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;is_secure&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;is_secure&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""is_secure"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""is_secure"" has been deprecated. */
     @Export(name="isSecure", type=Boolean.class, parameters={})
     private Output</* @Nullable */ Boolean> isSecure;
 
@@ -158,12 +148,10 @@ public class Property extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;origin&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;origin&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""origin"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""origin"" has been deprecated. */
     @Export(name="origins", type=List.class, parameters={PropertyOrigin.class})
     private Output</* @Nullable */ List<PropertyOrigin>> origins;
 
@@ -172,12 +160,10 @@ public class Property extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;product&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;product&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""product"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""product"" has been deprecated. */
     @Export(name="product", type=String.class, parameters={})
     private Output<String> product;
 
@@ -288,12 +274,10 @@ public class Property extends com.pulumi.resources.CustomResource {
     }
     /**
      * @deprecated
-     * The setting &#34;variables&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;variables&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""variables"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""variables"" has been deprecated. */
     @Export(name="variables", type=String.class, parameters={})
     private Output</* @Nullable */ String> variables;
 

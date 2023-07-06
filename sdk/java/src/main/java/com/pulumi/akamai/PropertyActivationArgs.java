@@ -89,23 +89,19 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
 
     /**
      * @deprecated
-     * The setting &#34;property&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;property&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""property"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""property"" has been deprecated. */
     @Import(name="property")
     private @Nullable Output<String> property;
 
     /**
      * @deprecated
-     * The setting &#34;property&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;property&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""property"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""property"" has been deprecated. */
     public Optional<Output<String>> property() {
         return Optional.ofNullable(this.property);
     }
@@ -282,12 +278,10 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;property&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;property&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""property"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""property"" has been deprecated. */
         public Builder property(@Nullable Output<String> property) {
             $.property = property;
             return this;
@@ -297,12 +291,10 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;property&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;property&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""property"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""property"" has been deprecated. */
         public Builder property(String property) {
             return property(Output.of(property));
         }

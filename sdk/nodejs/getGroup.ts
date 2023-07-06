@@ -21,15 +21,13 @@ export function getGroup(args?: GetGroupArgs, opts?: pulumi.InvokeOptions): Prom
  */
 export interface GetGroupArgs {
     /**
-     * @deprecated The setting "contract" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "contract" has been deprecated.
      */
     contract?: string;
     contractId?: string;
     groupName?: string;
     /**
-     * @deprecated The setting "name" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "name" has been deprecated.
      */
     name?: string;
 }
@@ -39,8 +37,7 @@ export interface GetGroupArgs {
  */
 export interface GetGroupResult {
     /**
-     * @deprecated The setting "contract" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "contract" has been deprecated.
      */
     readonly contract: string;
     readonly contractId: string;
@@ -50,8 +47,7 @@ export interface GetGroupResult {
      */
     readonly id: string;
     /**
-     * @deprecated The setting "name" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "name" has been deprecated.
      */
     readonly name: string;
 }
@@ -64,15 +60,13 @@ export function getGroupOutput(args?: GetGroupOutputArgs, opts?: pulumi.InvokeOp
  */
 export interface GetGroupOutputArgs {
     /**
-     * @deprecated The setting "contract" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "contract" has been deprecated.
      */
     contract?: pulumi.Input<string>;
     contractId?: pulumi.Input<string>;
     groupName?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "name" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "name" has been deprecated.
      */
     name?: pulumi.Input<string>;
 }

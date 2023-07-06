@@ -35,28 +35,22 @@ class EdgeHostNameArgs:
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
         if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
         if contract is not None:
             pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
         if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
         if group is not None:
             pulumi.set(__self__, "group", group)
         if group_id is not None:
             pulumi.set(__self__, "group_id", group_id)
         if product is not None:
-            warnings.warn("""The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
         if product is not None:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
@@ -96,10 +90,8 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
 
         return pulumi.get(self, "contract")
 
@@ -119,10 +111,8 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
 
         return pulumi.get(self, "group")
 
@@ -142,10 +132,8 @@ class EdgeHostNameArgs:
     @property
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
 
         return pulumi.get(self, "product")
 
@@ -209,10 +197,8 @@ class _EdgeHostNameState:
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
         if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
         if contract is not None:
             pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
@@ -220,10 +206,8 @@ class _EdgeHostNameState:
         if edge_hostname is not None:
             pulumi.set(__self__, "edge_hostname", edge_hostname)
         if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
         if group is not None:
             pulumi.set(__self__, "group", group)
         if group_id is not None:
@@ -231,10 +215,8 @@ class _EdgeHostNameState:
         if ip_behavior is not None:
             pulumi.set(__self__, "ip_behavior", ip_behavior)
         if product is not None:
-            warnings.warn("""The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
         if product is not None:
             pulumi.set(__self__, "product", product)
         if product_id is not None:
@@ -256,10 +238,8 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter
     def contract(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
 
         return pulumi.get(self, "contract")
 
@@ -288,10 +268,8 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
 
         return pulumi.get(self, "group")
 
@@ -320,10 +298,8 @@ class _EdgeHostNameState:
     @property
     @pulumi.getter
     def product(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
 
         return pulumi.get(self, "product")
 
@@ -434,30 +410,24 @@ class EdgeHostName(pulumi.CustomResource):
 
             __props__.__dict__["certificate"] = certificate
             if contract is not None and not opts.urn:
-                warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-                pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+                warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
             __props__.__dict__["contract"] = contract
             __props__.__dict__["contract_id"] = contract_id
             if edge_hostname is None and not opts.urn:
                 raise TypeError("Missing required property 'edge_hostname'")
             __props__.__dict__["edge_hostname"] = edge_hostname
             if group is not None and not opts.urn:
-                warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-                pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+                warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
             __props__.__dict__["group"] = group
             __props__.__dict__["group_id"] = group_id
             if ip_behavior is None and not opts.urn:
                 raise TypeError("Missing required property 'ip_behavior'")
             __props__.__dict__["ip_behavior"] = ip_behavior
             if product is not None and not opts.urn:
-                warnings.warn("""The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-                pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+                warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
             __props__.__dict__["product"] = product
             __props__.__dict__["product_id"] = product_id
             __props__.__dict__["status_update_emails"] = status_update_emails
@@ -520,10 +490,8 @@ class EdgeHostName(pulumi.CustomResource):
     @property
     @pulumi.getter
     def contract(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
 
         return pulumi.get(self, "contract")
 
@@ -540,10 +508,8 @@ class EdgeHostName(pulumi.CustomResource):
     @property
     @pulumi.getter
     def group(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
 
         return pulumi.get(self, "group")
 
@@ -560,10 +526,8 @@ class EdgeHostName(pulumi.CustomResource):
     @property
     @pulumi.getter
     def product(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
 
         return pulumi.get(self, "product")
 

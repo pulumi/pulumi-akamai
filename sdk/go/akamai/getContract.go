@@ -21,8 +21,7 @@ func GetContract(ctx *pulumi.Context, args *GetContractArgs, opts ...pulumi.Invo
 
 // A collection of arguments for invoking getContract.
 type GetContractArgs struct {
-	// Deprecated: The setting "group" has been deprecated. See:
-	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+	// Deprecated: The setting "group" has been deprecated.
 	Group     *string `pulumi:"group"`
 	GroupId   *string `pulumi:"groupId"`
 	GroupName *string `pulumi:"groupName"`
@@ -30,8 +29,7 @@ type GetContractArgs struct {
 
 // A collection of values returned by getContract.
 type GetContractResult struct {
-	// Deprecated: The setting "group" has been deprecated. See:
-	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+	// Deprecated: The setting "group" has been deprecated.
 	Group     *string `pulumi:"group"`
 	GroupId   string  `pulumi:"groupId"`
 	GroupName string  `pulumi:"groupName"`
@@ -54,8 +52,7 @@ func GetContractOutput(ctx *pulumi.Context, args GetContractOutputArgs, opts ...
 
 // A collection of arguments for invoking getContract.
 type GetContractOutputArgs struct {
-	// Deprecated: The setting "group" has been deprecated. See:
-	// 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+	// Deprecated: The setting "group" has been deprecated.
 	Group     pulumi.StringPtrInput `pulumi:"group"`
 	GroupId   pulumi.StringPtrInput `pulumi:"groupId"`
 	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
@@ -80,9 +77,7 @@ func (o GetContractResultOutput) ToGetContractResultOutputWithContext(ctx contex
 	return o
 }
 
-// Deprecated: The setting "group" has been deprecated. See:
-//
-//	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+// Deprecated: The setting "group" has been deprecated.
 func (o GetContractResultOutput) Group() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetContractResult) *string { return v.Group }).(pulumi.StringPtrOutput)
 }

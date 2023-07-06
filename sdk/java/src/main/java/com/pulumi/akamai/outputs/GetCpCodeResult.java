@@ -12,22 +12,18 @@ import java.util.Objects;
 public final class GetCpCodeResult {
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;contract&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""contract"" has been deprecated. */
     private String contract;
     private String contractId;
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;group&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""group"" has been deprecated. */
     private String group;
     private String groupId;
     /**
@@ -41,12 +37,10 @@ public final class GetCpCodeResult {
     private GetCpCodeResult() {}
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;contract&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""contract"" has been deprecated. */
     public String contract() {
         return this.contract;
     }
@@ -55,12 +49,10 @@ public final class GetCpCodeResult {
     }
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;group&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""group"" has been deprecated. */
     public String group() {
         return this.group;
     }

@@ -28,8 +28,7 @@ export class Provider extends pulumi.ProviderResource {
     }
 
     /**
-     * @deprecated The setting "appsec_section" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "appsec_section" has been deprecated.
      */
     public readonly appsecSection!: pulumi.Output<string | undefined>;
     /**
@@ -37,29 +36,24 @@ export class Provider extends pulumi.ProviderResource {
      */
     public readonly configSection!: pulumi.Output<string | undefined>;
     /**
-     * @deprecated The setting "dns_section" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "dns_section" has been deprecated.
      */
     public readonly dnsSection!: pulumi.Output<string | undefined>;
     public readonly edgerc!: pulumi.Output<string | undefined>;
     /**
-     * @deprecated The setting "gtm_section" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "gtm_section" has been deprecated.
      */
     public readonly gtmSection!: pulumi.Output<string | undefined>;
     /**
-     * @deprecated The setting "networklist_section" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "networklist_section" has been deprecated.
      */
     public readonly networklistSection!: pulumi.Output<string | undefined>;
     /**
-     * @deprecated The setting "papi_section" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "papi_section" has been deprecated.
      */
     public readonly papiSection!: pulumi.Output<string | undefined>;
     /**
-     * @deprecated The setting "property_section" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "property_section" has been deprecated.
      */
     public readonly propertySection!: pulumi.Output<string | undefined>;
 
@@ -101,13 +95,11 @@ export class Provider extends pulumi.ProviderResource {
  */
 export interface ProviderArgs {
     /**
-     * @deprecated The setting "appsec_section" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "appsec_section" has been deprecated.
      */
     appsecSection?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "appsec" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "appsec" has been deprecated.
      */
     appsecs?: pulumi.Input<pulumi.Input<inputs.ProviderAppsec>[]>;
     cacheEnabled?: pulumi.Input<boolean>;
@@ -117,45 +109,37 @@ export interface ProviderArgs {
      */
     configSection?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "dns" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "dns" has been deprecated.
      */
     dns?: pulumi.Input<inputs.ProviderDns>;
     /**
-     * @deprecated The setting "dns_section" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "dns_section" has been deprecated.
      */
     dnsSection?: pulumi.Input<string>;
     edgerc?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "gtm" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "gtm" has been deprecated.
      */
     gtm?: pulumi.Input<inputs.ProviderGtm>;
     /**
-     * @deprecated The setting "gtm_section" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "gtm_section" has been deprecated.
      */
     gtmSection?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "networklist_section" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "networklist_section" has been deprecated.
      */
     networklistSection?: pulumi.Input<string>;
     networks?: pulumi.Input<pulumi.Input<inputs.ProviderNetwork>[]>;
     /**
-     * @deprecated The setting "papi_section" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "papi_section" has been deprecated.
      */
     papiSection?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "property" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "property" has been deprecated.
      */
     property?: pulumi.Input<inputs.ProviderProperty>;
     /**
-     * @deprecated The setting "property_section" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "property_section" has been deprecated.
      */
     propertySection?: pulumi.Input<string>;
     /**

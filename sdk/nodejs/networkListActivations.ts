@@ -33,8 +33,7 @@ export class NetworkListActivations extends pulumi.CustomResource {
     }
 
     /**
-     * @deprecated The setting "activate" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "activate" has been deprecated.
      */
     public readonly activate!: pulumi.Output<boolean | undefined>;
     /**
@@ -111,8 +110,7 @@ export class NetworkListActivations extends pulumi.CustomResource {
  */
 export interface NetworkListActivationsState {
     /**
-     * @deprecated The setting "activate" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "activate" has been deprecated.
      */
     activate?: pulumi.Input<boolean>;
     /**
@@ -146,8 +144,7 @@ export interface NetworkListActivationsState {
  */
 export interface NetworkListActivationsArgs {
     /**
-     * @deprecated The setting "activate" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "activate" has been deprecated.
      */
     activate?: pulumi.Input<boolean>;
     /**

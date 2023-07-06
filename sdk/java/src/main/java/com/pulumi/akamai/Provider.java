@@ -24,12 +24,10 @@ import javax.annotation.Nullable;
 public class Provider extends com.pulumi.resources.ProviderResource {
     /**
      * @deprecated
-     * The setting &#34;appsec_section&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;appsec_section&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""appsec_section"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""appsec_section"" has been deprecated. */
     @Export(name="appsecSection", type=String.class, parameters={})
     private Output</* @Nullable */ String> appsecSection;
 
@@ -52,12 +50,10 @@ public class Provider extends com.pulumi.resources.ProviderResource {
     }
     /**
      * @deprecated
-     * The setting &#34;dns_section&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;dns_section&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""dns_section"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""dns_section"" has been deprecated. */
     @Export(name="dnsSection", type=String.class, parameters={})
     private Output</* @Nullable */ String> dnsSection;
 
@@ -72,12 +68,10 @@ public class Provider extends com.pulumi.resources.ProviderResource {
     }
     /**
      * @deprecated
-     * The setting &#34;gtm_section&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;gtm_section&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""gtm_section"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""gtm_section"" has been deprecated. */
     @Export(name="gtmSection", type=String.class, parameters={})
     private Output</* @Nullable */ String> gtmSection;
 
@@ -86,12 +80,10 @@ public class Provider extends com.pulumi.resources.ProviderResource {
     }
     /**
      * @deprecated
-     * The setting &#34;networklist_section&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;networklist_section&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""networklist_section"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""networklist_section"" has been deprecated. */
     @Export(name="networklistSection", type=String.class, parameters={})
     private Output</* @Nullable */ String> networklistSection;
 
@@ -100,12 +92,10 @@ public class Provider extends com.pulumi.resources.ProviderResource {
     }
     /**
      * @deprecated
-     * The setting &#34;papi_section&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;papi_section&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""papi_section"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""papi_section"" has been deprecated. */
     @Export(name="papiSection", type=String.class, parameters={})
     private Output</* @Nullable */ String> papiSection;
 
@@ -114,12 +104,10 @@ public class Provider extends com.pulumi.resources.ProviderResource {
     }
     /**
      * @deprecated
-     * The setting &#34;property_section&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;property_section&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""property_section"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""property_section"" has been deprecated. */
     @Export(name="propertySection", type=String.class, parameters={})
     private Output</* @Nullable */ String> propertySection;
 

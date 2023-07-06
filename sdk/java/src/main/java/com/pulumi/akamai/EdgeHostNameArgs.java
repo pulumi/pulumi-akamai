@@ -26,23 +26,19 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;contract&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""contract"" has been deprecated. */
     @Import(name="contract")
     private @Nullable Output<String> contract;
 
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;contract&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""contract"" has been deprecated. */
     public Optional<Output<String>> contract() {
         return Optional.ofNullable(this.contract);
     }
@@ -63,23 +59,19 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;group&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""group"" has been deprecated. */
     @Import(name="group")
     private @Nullable Output<String> group;
 
     /**
      * @deprecated
-     * The setting &#34;group&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;group&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""group"" has been deprecated. */
     public Optional<Output<String>> group() {
         return Optional.ofNullable(this.group);
     }
@@ -100,23 +92,19 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @deprecated
-     * The setting &#34;product&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;product&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""product"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""product"" has been deprecated. */
     @Import(name="product")
     private @Nullable Output<String> product;
 
     /**
      * @deprecated
-     * The setting &#34;product&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;product&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""product"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""product"" has been deprecated. */
     public Optional<Output<String>> product() {
         return Optional.ofNullable(this.product);
     }
@@ -205,12 +193,10 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;contract&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;contract&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""contract"" has been deprecated. */
         public Builder contract(@Nullable Output<String> contract) {
             $.contract = contract;
             return this;
@@ -220,12 +206,10 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;contract&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;contract&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""contract"" has been deprecated. */
         public Builder contract(String contract) {
             return contract(Output.of(contract));
         }
@@ -252,12 +236,10 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;group&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;group&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""group"" has been deprecated. */
         public Builder group(@Nullable Output<String> group) {
             $.group = group;
             return this;
@@ -267,12 +249,10 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;group&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;group&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""group"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""group"" has been deprecated. */
         public Builder group(String group) {
             return group(Output.of(group));
         }
@@ -299,12 +279,10 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;product&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;product&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""product"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""product"" has been deprecated. */
         public Builder product(@Nullable Output<String> product) {
             $.product = product;
             return this;
@@ -314,12 +292,10 @@ public final class EdgeHostNameArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;product&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;product&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""product"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""product"" has been deprecated. */
         public Builder product(String product) {
             return product(Output.of(product));
         }

@@ -41,10 +41,8 @@ class GetGroupResult:
     @property
     @pulumi.getter
     def contract(self) -> str:
-        warnings.warn("""The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
 
         return pulumi.get(self, "contract")
 
@@ -69,10 +67,8 @@ class GetGroupResult:
     @property
     @pulumi.getter
     def name(self) -> str:
-        warnings.warn("""The setting \"name\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""name is deprecated: The setting \"name\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"name\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""name is deprecated: The setting \"name\" has been deprecated.""")
 
         return pulumi.get(self, "name")
 

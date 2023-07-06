@@ -118,6 +118,46 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppsecAdvancedSettingsAttackPayloadLogging{}
 	case "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody":
 		r = &AppsecAdvancedSettingsRequestBody{}
+	case "akamai:index/botmanAkamaiBotCategoryAction:BotmanAkamaiBotCategoryAction":
+		r = &BotmanAkamaiBotCategoryAction{}
+	case "akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie":
+		r = &BotmanBotAnalyticsCookie{}
+	case "akamai:index/botmanBotCategoryException:BotmanBotCategoryException":
+		r = &BotmanBotCategoryException{}
+	case "akamai:index/botmanBotDetectionAction:BotmanBotDetectionAction":
+		r = &BotmanBotDetectionAction{}
+	case "akamai:index/botmanBotManagementSettings:BotmanBotManagementSettings":
+		r = &BotmanBotManagementSettings{}
+	case "akamai:index/botmanChallengeAction:BotmanChallengeAction":
+		r = &BotmanChallengeAction{}
+	case "akamai:index/botmanChallengeInterceptionRules:BotmanChallengeInterceptionRules":
+		r = &BotmanChallengeInterceptionRules{}
+	case "akamai:index/botmanClientSideSecurity:BotmanClientSideSecurity":
+		r = &BotmanClientSideSecurity{}
+	case "akamai:index/botmanConditionalAction:BotmanConditionalAction":
+		r = &BotmanConditionalAction{}
+	case "akamai:index/botmanCustomBotCategory:BotmanCustomBotCategory":
+		r = &BotmanCustomBotCategory{}
+	case "akamai:index/botmanCustomBotCategoryAction:BotmanCustomBotCategoryAction":
+		r = &BotmanCustomBotCategoryAction{}
+	case "akamai:index/botmanCustomBotCategorySequence:BotmanCustomBotCategorySequence":
+		r = &BotmanCustomBotCategorySequence{}
+	case "akamai:index/botmanCustomClient:BotmanCustomClient":
+		r = &BotmanCustomClient{}
+	case "akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot":
+		r = &BotmanCustomDefinedBot{}
+	case "akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction":
+		r = &BotmanCustomDenyAction{}
+	case "akamai:index/botmanJavascriptInjection:BotmanJavascriptInjection":
+		r = &BotmanJavascriptInjection{}
+	case "akamai:index/botmanRecategorizedAkamaiDefinedBot:BotmanRecategorizedAkamaiDefinedBot":
+		r = &BotmanRecategorizedAkamaiDefinedBot{}
+	case "akamai:index/botmanServeAlternateAction:BotmanServeAlternateAction":
+		r = &BotmanServeAlternateAction{}
+	case "akamai:index/botmanTransactionalEndpoint:BotmanTransactionalEndpoint":
+		r = &BotmanTransactionalEndpoint{}
+	case "akamai:index/botmanTransactionalEndpointProtection:BotmanTransactionalEndpointProtection":
+		r = &BotmanTransactionalEndpointProtection{}
 	case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
 		r = &CloudletsApplicationLoadBalancer{}
 	case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -174,6 +214,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &IamRole{}
 	case "akamai:index/iamUser:IamUser":
 		r = &IamUser{}
+	case "akamai:index/imagingPolicyImage:ImagingPolicyImage":
+		r = &ImagingPolicyImage{}
+	case "akamai:index/imagingPolicySet:ImagingPolicySet":
+		r = &ImagingPolicySet{}
+	case "akamai:index/imagingPolicyVideo:ImagingPolicyVideo":
+		r = &ImagingPolicyVideo{}
 	case "akamai:index/networkList:NetworkList":
 		r = &NetworkList{}
 	case "akamai:index/networkListActivations:NetworkListActivations":
@@ -465,6 +511,106 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/botmanAkamaiBotCategoryAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanBotAnalyticsCookie",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanBotCategoryException",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanBotDetectionAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanBotManagementSettings",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanChallengeAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanChallengeInterceptionRules",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanClientSideSecurity",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanConditionalAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanCustomBotCategory",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanCustomBotCategoryAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanCustomBotCategorySequence",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanCustomClient",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanCustomDefinedBot",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanCustomDenyAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanJavascriptInjection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanRecategorizedAkamaiDefinedBot",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanServeAlternateAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanTransactionalEndpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanTransactionalEndpointProtection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/cloudletsApplicationLoadBalancer",
 		&module{version},
 	)
@@ -601,6 +747,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/iamUser",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/imagingPolicyImage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/imagingPolicySet",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/imagingPolicyVideo",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

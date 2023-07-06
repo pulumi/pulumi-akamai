@@ -17,23 +17,19 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;contract&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""contract"" has been deprecated. */
     @Import(name="contract")
     private @Nullable Output<String> contract;
 
     /**
      * @deprecated
-     * The setting &#34;contract&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;contract&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""contract"" has been deprecated. */
     public Optional<Output<String>> contract() {
         return Optional.ofNullable(this.contract);
     }
@@ -54,23 +50,19 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * @deprecated
-     * The setting &#34;name&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;name&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""name"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""name"" has been deprecated. */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @deprecated
-     * The setting &#34;name&#34; has been deprecated. See:
-     * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * The setting &#34;name&#34; has been deprecated.
      * 
      */
-    @Deprecated /* The setting ""name"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+    @Deprecated /* The setting ""name"" has been deprecated. */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
@@ -106,12 +98,10 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;contract&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;contract&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""contract"" has been deprecated. */
         public Builder contract(@Nullable Output<String> contract) {
             $.contract = contract;
             return this;
@@ -121,12 +111,10 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;contract&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;contract&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""contract"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""contract"" has been deprecated. */
         public Builder contract(String contract) {
             return contract(Output.of(contract));
         }
@@ -153,12 +141,10 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;name&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;name&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""name"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""name"" has been deprecated. */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
@@ -168,12 +154,10 @@ public final class GetGroupArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          * @deprecated
-         * The setting &#34;name&#34; has been deprecated. See:
-         * 	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+         * The setting &#34;name&#34; has been deprecated.
          * 
          */
-        @Deprecated /* The setting ""name"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations */
+        @Deprecated /* The setting ""name"" has been deprecated. */
         public Builder name(String name) {
             return name(Output.of(name));
         }

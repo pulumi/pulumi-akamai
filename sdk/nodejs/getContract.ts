@@ -20,8 +20,7 @@ export function getContract(args?: GetContractArgs, opts?: pulumi.InvokeOptions)
  */
 export interface GetContractArgs {
     /**
-     * @deprecated The setting "group" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "group" has been deprecated.
      */
     group?: string;
     groupId?: string;
@@ -33,8 +32,7 @@ export interface GetContractArgs {
  */
 export interface GetContractResult {
     /**
-     * @deprecated The setting "group" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "group" has been deprecated.
      */
     readonly group?: string;
     readonly groupId: string;
@@ -53,8 +51,7 @@ export function getContractOutput(args?: GetContractOutputArgs, opts?: pulumi.In
  */
 export interface GetContractOutputArgs {
     /**
-     * @deprecated The setting "group" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "group" has been deprecated.
      */
     group?: pulumi.Input<string>;
     groupId?: pulumi.Input<string>;

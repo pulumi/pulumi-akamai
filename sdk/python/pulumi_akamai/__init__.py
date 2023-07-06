@@ -54,6 +54,26 @@ from .app_sec_waf_protection import *
 from .app_sec_wap_selected_hostnames import *
 from .appsec_advanced_settings_attack_payload_logging import *
 from .appsec_advanced_settings_request_body import *
+from .botman_akamai_bot_category_action import *
+from .botman_bot_analytics_cookie import *
+from .botman_bot_category_exception import *
+from .botman_bot_detection_action import *
+from .botman_bot_management_settings import *
+from .botman_challenge_action import *
+from .botman_challenge_interception_rules import *
+from .botman_client_side_security import *
+from .botman_conditional_action import *
+from .botman_custom_bot_category import *
+from .botman_custom_bot_category_action import *
+from .botman_custom_bot_category_sequence import *
+from .botman_custom_client import *
+from .botman_custom_defined_bot import *
+from .botman_custom_deny_action import *
+from .botman_javascript_injection import *
+from .botman_recategorized_akamai_defined_bot import *
+from .botman_serve_alternate_action import *
+from .botman_transactional_endpoint import *
+from .botman_transactional_endpoint_protection import *
 from .cloudlets_application_load_balancer import *
 from .cloudlets_application_load_balancer_activation import *
 from .cloudlets_policy import *
@@ -122,6 +142,32 @@ from .get_app_sec_wap_selected_hostnames import *
 from .get_appsec_advanced_settings_attack_payload_logging import *
 from .get_appsec_advanced_settings_request_body import *
 from .get_authorities_set import *
+from .get_botman_akamai_bot_category import *
+from .get_botman_akamai_bot_category_action import *
+from .get_botman_akamai_defined_bot import *
+from .get_botman_bot_analytics_cookie import *
+from .get_botman_bot_analytics_cookie_values import *
+from .get_botman_bot_category_exception import *
+from .get_botman_bot_detection import *
+from .get_botman_bot_detection_action import *
+from .get_botman_bot_endpoint_coverage_report import *
+from .get_botman_bot_management_settings import *
+from .get_botman_challenge_action import *
+from .get_botman_challenge_interception_rules import *
+from .get_botman_client_side_security import *
+from .get_botman_conditional_action import *
+from .get_botman_custom_bot_category import *
+from .get_botman_custom_bot_category_action import *
+from .get_botman_custom_bot_category_sequence import *
+from .get_botman_custom_client import *
+from .get_botman_custom_defined_bot import *
+from .get_botman_custom_deny_action import *
+from .get_botman_javascript_injection import *
+from .get_botman_recategorized_akamai_defined_bot import *
+from .get_botman_response_action import *
+from .get_botman_serve_alternate_action import *
+from .get_botman_transactional_endpoint import *
+from .get_botman_transactional_endpoint_protection import *
 from .get_cloudlets_api_prioritization_match_rule import *
 from .get_cloudlets_application_load_balancer import *
 from .get_cloudlets_application_load_balancer_match_rule import *
@@ -163,6 +209,8 @@ from .get_iam_states import *
 from .get_iam_supported_langs import *
 from .get_iam_timeout_policies import *
 from .get_iam_timezones import *
+from .get_imaging_policy_image import *
+from .get_imaging_policy_video import *
 from .get_network_lists import *
 from .get_properties import *
 from .get_properties_search import *
@@ -190,6 +238,9 @@ from .iam_blocked_user_properties import *
 from .iam_group import *
 from .iam_role import *
 from .iam_user import *
+from .imaging_policy_image import *
+from .imaging_policy_set import *
+from .imaging_policy_video import *
 from .network_list import *
 from .network_list_activations import *
 from .network_list_description import *
@@ -615,6 +666,166 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/botmanAkamaiBotCategoryAction",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanAkamaiBotCategoryAction:BotmanAkamaiBotCategoryAction": "BotmanAkamaiBotCategoryAction"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanBotAnalyticsCookie",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie": "BotmanBotAnalyticsCookie"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanBotCategoryException",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanBotCategoryException:BotmanBotCategoryException": "BotmanBotCategoryException"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanBotDetectionAction",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanBotDetectionAction:BotmanBotDetectionAction": "BotmanBotDetectionAction"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanBotManagementSettings",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanBotManagementSettings:BotmanBotManagementSettings": "BotmanBotManagementSettings"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanChallengeAction",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanChallengeAction:BotmanChallengeAction": "BotmanChallengeAction"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanChallengeInterceptionRules",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanChallengeInterceptionRules:BotmanChallengeInterceptionRules": "BotmanChallengeInterceptionRules"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanClientSideSecurity",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanClientSideSecurity:BotmanClientSideSecurity": "BotmanClientSideSecurity"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanConditionalAction",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanConditionalAction:BotmanConditionalAction": "BotmanConditionalAction"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanCustomBotCategory",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanCustomBotCategory:BotmanCustomBotCategory": "BotmanCustomBotCategory"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanCustomBotCategoryAction",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanCustomBotCategoryAction:BotmanCustomBotCategoryAction": "BotmanCustomBotCategoryAction"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanCustomBotCategorySequence",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanCustomBotCategorySequence:BotmanCustomBotCategorySequence": "BotmanCustomBotCategorySequence"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanCustomClient",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanCustomClient:BotmanCustomClient": "BotmanCustomClient"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanCustomDefinedBot",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot": "BotmanCustomDefinedBot"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanCustomDenyAction",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction": "BotmanCustomDenyAction"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanJavascriptInjection",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanJavascriptInjection:BotmanJavascriptInjection": "BotmanJavascriptInjection"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanRecategorizedAkamaiDefinedBot",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanRecategorizedAkamaiDefinedBot:BotmanRecategorizedAkamaiDefinedBot": "BotmanRecategorizedAkamaiDefinedBot"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanServeAlternateAction",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanServeAlternateAction:BotmanServeAlternateAction": "BotmanServeAlternateAction"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanTransactionalEndpoint",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanTransactionalEndpoint:BotmanTransactionalEndpoint": "BotmanTransactionalEndpoint"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanTransactionalEndpointProtection",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanTransactionalEndpointProtection:BotmanTransactionalEndpointProtection": "BotmanTransactionalEndpointProtection"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/cloudletsApplicationLoadBalancer",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -835,6 +1046,30 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/iamUser:IamUser": "IamUser"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/imagingPolicyImage",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/imagingPolicyImage:ImagingPolicyImage": "ImagingPolicyImage"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/imagingPolicySet",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/imagingPolicySet:ImagingPolicySet": "ImagingPolicySet"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/imagingPolicyVideo",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/imagingPolicyVideo:ImagingPolicyVideo": "ImagingPolicyVideo"
   }
  },
  {

@@ -46,10 +46,8 @@ class PropertyActivationArgs:
         if note is not None:
             pulumi.set(__self__, "note", note)
         if property is not None:
-            warnings.warn("""The setting \"property\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
         if property is not None:
             pulumi.set(__self__, "property", property)
         if property_id is not None:
@@ -167,10 +165,8 @@ class PropertyActivationArgs:
     @property
     @pulumi.getter
     def property(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"property\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
 
         return pulumi.get(self, "property")
 
@@ -217,10 +213,8 @@ class _PropertyActivationState:
         if note is not None:
             pulumi.set(__self__, "note", note)
         if property is not None:
-            warnings.warn("""The setting \"property\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-            pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+            warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+            pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
         if property is not None:
             pulumi.set(__self__, "property", property)
         if property_id is not None:
@@ -371,10 +365,8 @@ class _PropertyActivationState:
     @property
     @pulumi.getter
     def property(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"property\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
 
         return pulumi.get(self, "property")
 
@@ -460,10 +452,8 @@ class PropertyActivation(pulumi.CustomResource):
             __props__.__dict__["network"] = network
             __props__.__dict__["note"] = note
             if property is not None and not opts.urn:
-                warnings.warn("""The setting \"property\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-                pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+                warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+                pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
             __props__.__dict__["property"] = property
             __props__.__dict__["property_id"] = property_id
             __props__.__dict__["rule_errors"] = rule_errors
@@ -614,10 +604,8 @@ class PropertyActivation(pulumi.CustomResource):
     @property
     @pulumi.getter
     def property(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"property\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""", DeprecationWarning)
-        pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations""")
+        warnings.warn("""The setting \"property\" has been deprecated.""", DeprecationWarning)
+        pulumi.log.warn("""property is deprecated: The setting \"property\" has been deprecated.""")
 
         return pulumi.get(self, "property")
 

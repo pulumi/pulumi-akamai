@@ -51,8 +51,7 @@ export class PropertyActivation extends pulumi.CustomResource {
      */
     public readonly note!: pulumi.Output<string | undefined>;
     /**
-     * @deprecated The setting "property" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "property" has been deprecated.
      */
     public readonly property!: pulumi.Output<string>;
     public readonly propertyId!: pulumi.Output<string>;
@@ -143,8 +142,7 @@ export interface PropertyActivationState {
      */
     note?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "property" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "property" has been deprecated.
      */
     property?: pulumi.Input<string>;
     propertyId?: pulumi.Input<string>;
@@ -178,8 +176,7 @@ export interface PropertyActivationArgs {
      */
     note?: pulumi.Input<string>;
     /**
-     * @deprecated The setting "property" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations
+     * @deprecated The setting "property" has been deprecated.
      */
     property?: pulumi.Input<string>;
     propertyId?: pulumi.Input<string>;

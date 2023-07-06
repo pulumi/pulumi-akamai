@@ -78,8 +78,7 @@ namespace Pulumi.Akamai
 
         [Input("appsecs", json: true)]
         private InputList<Inputs.ProviderAppsecArgs>? _appsecs;
-        [Obsolete(@"The setting ""appsec"" has been deprecated. See:
-	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations")]
+        [Obsolete(@"The setting ""appsec"" has been deprecated.")]
         public InputList<Inputs.ProviderAppsecArgs> Appsecs
         {
             get => _appsecs ?? (_appsecs = new InputList<Inputs.ProviderAppsecArgs>());
