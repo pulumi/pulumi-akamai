@@ -26,7 +26,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * The section of the edgerc file to use for configuration
      * 
      */
-    @Export(name="configSection", type=String.class, parameters={})
+    @Export(name="configSection", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> configSection;
 
     /**
@@ -36,7 +36,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
     public Output<Optional<String>> configSection() {
         return Codegen.optional(this.configSection);
     }
-    @Export(name="edgerc", type=String.class, parameters={})
+    @Export(name="edgerc", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> edgerc;
 
     public Output<Optional<String>> edgerc() {
