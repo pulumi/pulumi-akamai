@@ -24,6 +24,8 @@ import (
 
 	"github.com/akamai/terraform-provider-akamai/v5/pkg/akamai"
 	"github.com/akamai/terraform-provider-akamai/v5/pkg/providers/registry"
+	// Load the providers
+	_ "github.com/akamai/terraform-provider-akamai/v5/pkg/providers"
 
 	"github.com/pulumi/pulumi-akamai/provider/v6/pkg/version"
 	pf "github.com/pulumi/pulumi-terraform-bridge/pf/tfbridge"

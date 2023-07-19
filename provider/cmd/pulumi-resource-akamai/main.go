@@ -29,5 +29,6 @@ var pulumiSchema []byte
 
 func main() {
 	// Modify the path to point to the new provider
-	tfbridge.MainWithMuxer(context.Background(), "akamai", akamai.Provider(), pulumiSchema)
+	tfbridge.MainWithMuxer(context.Background(), "akamai",
+		akamai.Provider(), pulumiSchema)
 }

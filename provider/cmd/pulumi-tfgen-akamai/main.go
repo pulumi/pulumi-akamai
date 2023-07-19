@@ -21,5 +21,5 @@ import (
 
 func main() {
 	// Modify the path to point to the new provider
-	tfgen.Main("akamai", akamai.Provider())
+	tfgen.MainWithMuxer("akamai", akamai.Provider())
 }
