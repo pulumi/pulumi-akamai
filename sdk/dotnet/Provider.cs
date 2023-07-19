@@ -18,32 +18,14 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("pulumi:providers:akamai")]
     public partial class Provider : global::Pulumi.ProviderResource
     {
-        [Output("appsecSection")]
-        public Output<string?> AppsecSection { get; private set; } = null!;
-
         /// <summary>
         /// The section of the edgerc file to use for configuration
         /// </summary>
         [Output("configSection")]
         public Output<string?> ConfigSection { get; private set; } = null!;
 
-        [Output("dnsSection")]
-        public Output<string?> DnsSection { get; private set; } = null!;
-
         [Output("edgerc")]
         public Output<string?> Edgerc { get; private set; } = null!;
-
-        [Output("gtmSection")]
-        public Output<string?> GtmSection { get; private set; } = null!;
-
-        [Output("networklistSection")]
-        public Output<string?> NetworklistSection { get; private set; } = null!;
-
-        [Output("papiSection")]
-        public Output<string?> PapiSection { get; private set; } = null!;
-
-        [Output("propertySection")]
-        public Output<string?> PropertySection { get; private set; } = null!;
 
 
         /// <summary>
@@ -73,18 +55,6 @@ namespace Pulumi.Akamai
 
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
-        [Input("appsecSection")]
-        public Input<string>? AppsecSection { get; set; }
-
-        [Input("appsecs", json: true)]
-        private InputList<Inputs.ProviderAppsecArgs>? _appsecs;
-        [Obsolete(@"The setting ""appsec"" has been deprecated.")]
-        public InputList<Inputs.ProviderAppsecArgs> Appsecs
-        {
-            get => _appsecs ?? (_appsecs = new InputList<Inputs.ProviderAppsecArgs>());
-            set => _appsecs = value;
-        }
-
         [Input("cacheEnabled", json: true)]
         public Input<bool>? CacheEnabled { get; set; }
 
@@ -97,40 +67,8 @@ namespace Pulumi.Akamai
         [Input("configSection")]
         public Input<string>? ConfigSection { get; set; }
 
-        [Input("dns", json: true)]
-        public Input<Inputs.ProviderDnsArgs>? Dns { get; set; }
-
-        [Input("dnsSection")]
-        public Input<string>? DnsSection { get; set; }
-
         [Input("edgerc")]
         public Input<string>? Edgerc { get; set; }
-
-        [Input("gtm", json: true)]
-        public Input<Inputs.ProviderGtmArgs>? Gtm { get; set; }
-
-        [Input("gtmSection")]
-        public Input<string>? GtmSection { get; set; }
-
-        [Input("networklistSection")]
-        public Input<string>? NetworklistSection { get; set; }
-
-        [Input("networks", json: true)]
-        private InputList<Inputs.ProviderNetworkArgs>? _networks;
-        public InputList<Inputs.ProviderNetworkArgs> Networks
-        {
-            get => _networks ?? (_networks = new InputList<Inputs.ProviderNetworkArgs>());
-            set => _networks = value;
-        }
-
-        [Input("papiSection")]
-        public Input<string>? PapiSection { get; set; }
-
-        [Input("property", json: true)]
-        public Input<Inputs.ProviderPropertyArgs>? Property { get; set; }
-
-        [Input("propertySection")]
-        public Input<string>? PropertySection { get; set; }
 
         /// <summary>
         /// The maximum number of API requests to be made per second (0 for no limit)

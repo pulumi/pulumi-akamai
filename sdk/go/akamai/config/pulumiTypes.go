@@ -7,139 +7,18 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-type Appsecs struct {
-	AccessToken  *string `pulumi:"accessToken"`
-	AccountKey   *string `pulumi:"accountKey"`
-	ClientSecret *string `pulumi:"clientSecret"`
-	ClientToken  *string `pulumi:"clientToken"`
-	Host         *string `pulumi:"host"`
-	MaxBody      *int    `pulumi:"maxBody"`
-}
-
-// AppsecsInput is an input type that accepts AppsecsArgs and AppsecsOutput values.
-// You can construct a concrete instance of `AppsecsInput` via:
-//
-//	AppsecsArgs{...}
-type AppsecsInput interface {
-	pulumi.Input
-
-	ToAppsecsOutput() AppsecsOutput
-	ToAppsecsOutputWithContext(context.Context) AppsecsOutput
-}
-
-type AppsecsArgs struct {
-	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
-	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
-	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
-	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
-	Host         pulumi.StringPtrInput `pulumi:"host"`
-	MaxBody      pulumi.IntPtrInput    `pulumi:"maxBody"`
-}
-
-func (AppsecsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*Appsecs)(nil)).Elem()
-}
-
-func (i AppsecsArgs) ToAppsecsOutput() AppsecsOutput {
-	return i.ToAppsecsOutputWithContext(context.Background())
-}
-
-func (i AppsecsArgs) ToAppsecsOutputWithContext(ctx context.Context) AppsecsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppsecsOutput)
-}
-
-// AppsecsArrayInput is an input type that accepts AppsecsArray and AppsecsArrayOutput values.
-// You can construct a concrete instance of `AppsecsArrayInput` via:
-//
-//	AppsecsArray{ AppsecsArgs{...} }
-type AppsecsArrayInput interface {
-	pulumi.Input
-
-	ToAppsecsArrayOutput() AppsecsArrayOutput
-	ToAppsecsArrayOutputWithContext(context.Context) AppsecsArrayOutput
-}
-
-type AppsecsArray []AppsecsInput
-
-func (AppsecsArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]Appsecs)(nil)).Elem()
-}
-
-func (i AppsecsArray) ToAppsecsArrayOutput() AppsecsArrayOutput {
-	return i.ToAppsecsArrayOutputWithContext(context.Background())
-}
-
-func (i AppsecsArray) ToAppsecsArrayOutputWithContext(ctx context.Context) AppsecsArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(AppsecsArrayOutput)
-}
-
-type AppsecsOutput struct{ *pulumi.OutputState }
-
-func (AppsecsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*Appsecs)(nil)).Elem()
-}
-
-func (o AppsecsOutput) ToAppsecsOutput() AppsecsOutput {
-	return o
-}
-
-func (o AppsecsOutput) ToAppsecsOutputWithContext(ctx context.Context) AppsecsOutput {
-	return o
-}
-
-func (o AppsecsOutput) AccessToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Appsecs) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
-}
-
-func (o AppsecsOutput) AccountKey() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Appsecs) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
-}
-
-func (o AppsecsOutput) ClientSecret() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Appsecs) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
-}
-
-func (o AppsecsOutput) ClientToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Appsecs) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
-}
-
-func (o AppsecsOutput) Host() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Appsecs) *string { return v.Host }).(pulumi.StringPtrOutput)
-}
-
-func (o AppsecsOutput) MaxBody() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v Appsecs) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
-}
-
-type AppsecsArrayOutput struct{ *pulumi.OutputState }
-
-func (AppsecsArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]Appsecs)(nil)).Elem()
-}
-
-func (o AppsecsArrayOutput) ToAppsecsArrayOutput() AppsecsArrayOutput {
-	return o
-}
-
-func (o AppsecsArrayOutput) ToAppsecsArrayOutputWithContext(ctx context.Context) AppsecsArrayOutput {
-	return o
-}
-
-func (o AppsecsArrayOutput) Index(i pulumi.IntInput) AppsecsOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) Appsecs {
-		return vs[0].([]Appsecs)[vs[1].(int)]
-	}).(AppsecsOutput)
-}
+var _ = internal.GetEnvOrDefault
 
 type Config struct {
-	AccessToken  *string `pulumi:"accessToken"`
+	AccessToken  string  `pulumi:"accessToken"`
 	AccountKey   *string `pulumi:"accountKey"`
-	ClientSecret *string `pulumi:"clientSecret"`
-	ClientToken  *string `pulumi:"clientToken"`
-	Host         *string `pulumi:"host"`
+	ClientSecret string  `pulumi:"clientSecret"`
+	ClientToken  string  `pulumi:"clientToken"`
+	Host         string  `pulumi:"host"`
 	MaxBody      *int    `pulumi:"maxBody"`
 }
 
@@ -155,11 +34,11 @@ type ConfigInput interface {
 }
 
 type ConfigArgs struct {
-	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
+	AccessToken  pulumi.StringInput    `pulumi:"accessToken"`
 	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
-	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
-	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
-	Host         pulumi.StringPtrInput `pulumi:"host"`
+	ClientSecret pulumi.StringInput    `pulumi:"clientSecret"`
+	ClientToken  pulumi.StringInput    `pulumi:"clientToken"`
+	Host         pulumi.StringInput    `pulumi:"host"`
 	MaxBody      pulumi.IntPtrInput    `pulumi:"maxBody"`
 }
 
@@ -189,406 +68,31 @@ func (o ConfigOutput) ToConfigOutputWithContext(ctx context.Context) ConfigOutpu
 	return o
 }
 
-func (o ConfigOutput) AccessToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Config) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
+func (o ConfigOutput) AccessToken() pulumi.StringOutput {
+	return o.ApplyT(func(v Config) string { return v.AccessToken }).(pulumi.StringOutput)
 }
 
 func (o ConfigOutput) AccountKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v Config) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
 }
 
-func (o ConfigOutput) ClientSecret() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Config) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
+func (o ConfigOutput) ClientSecret() pulumi.StringOutput {
+	return o.ApplyT(func(v Config) string { return v.ClientSecret }).(pulumi.StringOutput)
 }
 
-func (o ConfigOutput) ClientToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Config) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
+func (o ConfigOutput) ClientToken() pulumi.StringOutput {
+	return o.ApplyT(func(v Config) string { return v.ClientToken }).(pulumi.StringOutput)
 }
 
-func (o ConfigOutput) Host() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Config) *string { return v.Host }).(pulumi.StringPtrOutput)
+func (o ConfigOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v Config) string { return v.Host }).(pulumi.StringOutput)
 }
 
 func (o ConfigOutput) MaxBody() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v Config) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
 }
 
-type Dns struct {
-	AccessToken  *string `pulumi:"accessToken"`
-	AccountKey   *string `pulumi:"accountKey"`
-	ClientSecret *string `pulumi:"clientSecret"`
-	ClientToken  *string `pulumi:"clientToken"`
-	Host         *string `pulumi:"host"`
-	MaxBody      *int    `pulumi:"maxBody"`
-}
-
-// DnsInput is an input type that accepts DnsArgs and DnsOutput values.
-// You can construct a concrete instance of `DnsInput` via:
-//
-//	DnsArgs{...}
-type DnsInput interface {
-	pulumi.Input
-
-	ToDnsOutput() DnsOutput
-	ToDnsOutputWithContext(context.Context) DnsOutput
-}
-
-type DnsArgs struct {
-	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
-	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
-	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
-	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
-	Host         pulumi.StringPtrInput `pulumi:"host"`
-	MaxBody      pulumi.IntPtrInput    `pulumi:"maxBody"`
-}
-
-func (DnsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*Dns)(nil)).Elem()
-}
-
-func (i DnsArgs) ToDnsOutput() DnsOutput {
-	return i.ToDnsOutputWithContext(context.Background())
-}
-
-func (i DnsArgs) ToDnsOutputWithContext(ctx context.Context) DnsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(DnsOutput)
-}
-
-type DnsOutput struct{ *pulumi.OutputState }
-
-func (DnsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*Dns)(nil)).Elem()
-}
-
-func (o DnsOutput) ToDnsOutput() DnsOutput {
-	return o
-}
-
-func (o DnsOutput) ToDnsOutputWithContext(ctx context.Context) DnsOutput {
-	return o
-}
-
-func (o DnsOutput) AccessToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Dns) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
-}
-
-func (o DnsOutput) AccountKey() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Dns) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
-}
-
-func (o DnsOutput) ClientSecret() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Dns) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
-}
-
-func (o DnsOutput) ClientToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Dns) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
-}
-
-func (o DnsOutput) Host() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Dns) *string { return v.Host }).(pulumi.StringPtrOutput)
-}
-
-func (o DnsOutput) MaxBody() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v Dns) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
-}
-
-type Gtm struct {
-	AccessToken  *string `pulumi:"accessToken"`
-	AccountKey   *string `pulumi:"accountKey"`
-	ClientSecret *string `pulumi:"clientSecret"`
-	ClientToken  *string `pulumi:"clientToken"`
-	Host         *string `pulumi:"host"`
-	MaxBody      *int    `pulumi:"maxBody"`
-}
-
-// GtmInput is an input type that accepts GtmArgs and GtmOutput values.
-// You can construct a concrete instance of `GtmInput` via:
-//
-//	GtmArgs{...}
-type GtmInput interface {
-	pulumi.Input
-
-	ToGtmOutput() GtmOutput
-	ToGtmOutputWithContext(context.Context) GtmOutput
-}
-
-type GtmArgs struct {
-	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
-	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
-	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
-	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
-	Host         pulumi.StringPtrInput `pulumi:"host"`
-	MaxBody      pulumi.IntPtrInput    `pulumi:"maxBody"`
-}
-
-func (GtmArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*Gtm)(nil)).Elem()
-}
-
-func (i GtmArgs) ToGtmOutput() GtmOutput {
-	return i.ToGtmOutputWithContext(context.Background())
-}
-
-func (i GtmArgs) ToGtmOutputWithContext(ctx context.Context) GtmOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GtmOutput)
-}
-
-type GtmOutput struct{ *pulumi.OutputState }
-
-func (GtmOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*Gtm)(nil)).Elem()
-}
-
-func (o GtmOutput) ToGtmOutput() GtmOutput {
-	return o
-}
-
-func (o GtmOutput) ToGtmOutputWithContext(ctx context.Context) GtmOutput {
-	return o
-}
-
-func (o GtmOutput) AccessToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Gtm) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
-}
-
-func (o GtmOutput) AccountKey() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Gtm) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
-}
-
-func (o GtmOutput) ClientSecret() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Gtm) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
-}
-
-func (o GtmOutput) ClientToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Gtm) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
-}
-
-func (o GtmOutput) Host() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Gtm) *string { return v.Host }).(pulumi.StringPtrOutput)
-}
-
-func (o GtmOutput) MaxBody() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v Gtm) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
-}
-
-type Networks struct {
-	AccessToken  *string `pulumi:"accessToken"`
-	AccountKey   *string `pulumi:"accountKey"`
-	ClientSecret *string `pulumi:"clientSecret"`
-	ClientToken  *string `pulumi:"clientToken"`
-	Host         *string `pulumi:"host"`
-	MaxBody      *int    `pulumi:"maxBody"`
-}
-
-// NetworksInput is an input type that accepts NetworksArgs and NetworksOutput values.
-// You can construct a concrete instance of `NetworksInput` via:
-//
-//	NetworksArgs{...}
-type NetworksInput interface {
-	pulumi.Input
-
-	ToNetworksOutput() NetworksOutput
-	ToNetworksOutputWithContext(context.Context) NetworksOutput
-}
-
-type NetworksArgs struct {
-	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
-	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
-	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
-	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
-	Host         pulumi.StringPtrInput `pulumi:"host"`
-	MaxBody      pulumi.IntPtrInput    `pulumi:"maxBody"`
-}
-
-func (NetworksArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*Networks)(nil)).Elem()
-}
-
-func (i NetworksArgs) ToNetworksOutput() NetworksOutput {
-	return i.ToNetworksOutputWithContext(context.Background())
-}
-
-func (i NetworksArgs) ToNetworksOutputWithContext(ctx context.Context) NetworksOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NetworksOutput)
-}
-
-// NetworksArrayInput is an input type that accepts NetworksArray and NetworksArrayOutput values.
-// You can construct a concrete instance of `NetworksArrayInput` via:
-//
-//	NetworksArray{ NetworksArgs{...} }
-type NetworksArrayInput interface {
-	pulumi.Input
-
-	ToNetworksArrayOutput() NetworksArrayOutput
-	ToNetworksArrayOutputWithContext(context.Context) NetworksArrayOutput
-}
-
-type NetworksArray []NetworksInput
-
-func (NetworksArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]Networks)(nil)).Elem()
-}
-
-func (i NetworksArray) ToNetworksArrayOutput() NetworksArrayOutput {
-	return i.ToNetworksArrayOutputWithContext(context.Background())
-}
-
-func (i NetworksArray) ToNetworksArrayOutputWithContext(ctx context.Context) NetworksArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NetworksArrayOutput)
-}
-
-type NetworksOutput struct{ *pulumi.OutputState }
-
-func (NetworksOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*Networks)(nil)).Elem()
-}
-
-func (o NetworksOutput) ToNetworksOutput() NetworksOutput {
-	return o
-}
-
-func (o NetworksOutput) ToNetworksOutputWithContext(ctx context.Context) NetworksOutput {
-	return o
-}
-
-func (o NetworksOutput) AccessToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Networks) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
-}
-
-func (o NetworksOutput) AccountKey() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Networks) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
-}
-
-func (o NetworksOutput) ClientSecret() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Networks) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
-}
-
-func (o NetworksOutput) ClientToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Networks) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
-}
-
-func (o NetworksOutput) Host() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Networks) *string { return v.Host }).(pulumi.StringPtrOutput)
-}
-
-func (o NetworksOutput) MaxBody() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v Networks) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
-}
-
-type NetworksArrayOutput struct{ *pulumi.OutputState }
-
-func (NetworksArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]Networks)(nil)).Elem()
-}
-
-func (o NetworksArrayOutput) ToNetworksArrayOutput() NetworksArrayOutput {
-	return o
-}
-
-func (o NetworksArrayOutput) ToNetworksArrayOutputWithContext(ctx context.Context) NetworksArrayOutput {
-	return o
-}
-
-func (o NetworksArrayOutput) Index(i pulumi.IntInput) NetworksOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) Networks {
-		return vs[0].([]Networks)[vs[1].(int)]
-	}).(NetworksOutput)
-}
-
-type Property struct {
-	AccessToken  *string `pulumi:"accessToken"`
-	AccountKey   *string `pulumi:"accountKey"`
-	ClientSecret *string `pulumi:"clientSecret"`
-	ClientToken  *string `pulumi:"clientToken"`
-	Host         *string `pulumi:"host"`
-	MaxBody      *int    `pulumi:"maxBody"`
-}
-
-// PropertyInput is an input type that accepts PropertyArgs and PropertyOutput values.
-// You can construct a concrete instance of `PropertyInput` via:
-//
-//	PropertyArgs{...}
-type PropertyInput interface {
-	pulumi.Input
-
-	ToPropertyOutput() PropertyOutput
-	ToPropertyOutputWithContext(context.Context) PropertyOutput
-}
-
-type PropertyArgs struct {
-	AccessToken  pulumi.StringPtrInput `pulumi:"accessToken"`
-	AccountKey   pulumi.StringPtrInput `pulumi:"accountKey"`
-	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
-	ClientToken  pulumi.StringPtrInput `pulumi:"clientToken"`
-	Host         pulumi.StringPtrInput `pulumi:"host"`
-	MaxBody      pulumi.IntPtrInput    `pulumi:"maxBody"`
-}
-
-func (PropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*Property)(nil)).Elem()
-}
-
-func (i PropertyArgs) ToPropertyOutput() PropertyOutput {
-	return i.ToPropertyOutputWithContext(context.Background())
-}
-
-func (i PropertyArgs) ToPropertyOutputWithContext(ctx context.Context) PropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PropertyOutput)
-}
-
-type PropertyOutput struct{ *pulumi.OutputState }
-
-func (PropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*Property)(nil)).Elem()
-}
-
-func (o PropertyOutput) ToPropertyOutput() PropertyOutput {
-	return o
-}
-
-func (o PropertyOutput) ToPropertyOutputWithContext(ctx context.Context) PropertyOutput {
-	return o
-}
-
-func (o PropertyOutput) AccessToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Property) *string { return v.AccessToken }).(pulumi.StringPtrOutput)
-}
-
-func (o PropertyOutput) AccountKey() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Property) *string { return v.AccountKey }).(pulumi.StringPtrOutput)
-}
-
-func (o PropertyOutput) ClientSecret() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Property) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
-}
-
-func (o PropertyOutput) ClientToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Property) *string { return v.ClientToken }).(pulumi.StringPtrOutput)
-}
-
-func (o PropertyOutput) Host() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v Property) *string { return v.Host }).(pulumi.StringPtrOutput)
-}
-
-func (o PropertyOutput) MaxBody() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v Property) *int { return v.MaxBody }).(pulumi.IntPtrOutput)
-}
-
 func init() {
-	pulumi.RegisterInputType(reflect.TypeOf((*AppsecsInput)(nil)).Elem(), AppsecsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*AppsecsArrayInput)(nil)).Elem(), AppsecsArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigInput)(nil)).Elem(), ConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*DnsInput)(nil)).Elem(), DnsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GtmInput)(nil)).Elem(), GtmArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NetworksInput)(nil)).Elem(), NetworksArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NetworksArrayInput)(nil)).Elem(), NetworksArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PropertyInput)(nil)).Elem(), PropertyArgs{})
-	pulumi.RegisterOutputType(AppsecsOutput{})
-	pulumi.RegisterOutputType(AppsecsArrayOutput{})
 	pulumi.RegisterOutputType(ConfigOutput{})
-	pulumi.RegisterOutputType(DnsOutput{})
-	pulumi.RegisterOutputType(GtmOutput{})
-	pulumi.RegisterOutputType(NetworksOutput{})
-	pulumi.RegisterOutputType(NetworksArrayOutput{})
-	pulumi.RegisterOutputType(PropertyOutput{})
 }

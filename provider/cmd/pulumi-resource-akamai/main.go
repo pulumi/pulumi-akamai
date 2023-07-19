@@ -17,11 +17,11 @@
 package main
 
 import (
+	"context"
 	_ "embed"
 
-	akamai "github.com/pulumi/pulumi-akamai/provider/v5"
-	"github.com/pulumi/pulumi-akamai/provider/v5/pkg/version"
-	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
+	akamai "github.com/pulumi/pulumi-akamai/provider/v6"
+	"github.com/pulumi/pulumi-terraform-bridge/pf/tfbridge"
 )
 
 //go:embed schema-embed.json
@@ -29,5 +29,5 @@ var pulumiSchema []byte
 
 func main() {
 	// Modify the path to point to the new provider
-	tfbridge.Main("akamai", version.Version, akamai.Provider(), pulumiSchema)
+	tfbridge.MainWithMuxer(context.Background(), "akamai", akamai.Provider(), pulumiSchema)
 }

@@ -12,28 +12,28 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class Config {
-    private @Nullable String accessToken;
+    private String accessToken;
     private @Nullable String accountKey;
-    private @Nullable String clientSecret;
-    private @Nullable String clientToken;
-    private @Nullable String host;
+    private String clientSecret;
+    private String clientToken;
+    private String host;
     private @Nullable Integer maxBody;
 
     private Config() {}
-    public Optional<String> accessToken() {
-        return Optional.ofNullable(this.accessToken);
+    public String accessToken() {
+        return this.accessToken;
     }
     public Optional<String> accountKey() {
         return Optional.ofNullable(this.accountKey);
     }
-    public Optional<String> clientSecret() {
-        return Optional.ofNullable(this.clientSecret);
+    public String clientSecret() {
+        return this.clientSecret;
     }
-    public Optional<String> clientToken() {
-        return Optional.ofNullable(this.clientToken);
+    public String clientToken() {
+        return this.clientToken;
     }
-    public Optional<String> host() {
-        return Optional.ofNullable(this.host);
+    public String host() {
+        return this.host;
     }
     public Optional<Integer> maxBody() {
         return Optional.ofNullable(this.maxBody);
@@ -48,11 +48,11 @@ public final class Config {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String accessToken;
+        private String accessToken;
         private @Nullable String accountKey;
-        private @Nullable String clientSecret;
-        private @Nullable String clientToken;
-        private @Nullable String host;
+        private String clientSecret;
+        private String clientToken;
+        private String host;
         private @Nullable Integer maxBody;
         public Builder() {}
         public Builder(Config defaults) {
@@ -66,8 +66,8 @@ public final class Config {
         }
 
         @CustomType.Setter
-        public Builder accessToken(@Nullable String accessToken) {
-            this.accessToken = accessToken;
+        public Builder accessToken(String accessToken) {
+            this.accessToken = Objects.requireNonNull(accessToken);
             return this;
         }
         @CustomType.Setter
@@ -76,18 +76,18 @@ public final class Config {
             return this;
         }
         @CustomType.Setter
-        public Builder clientSecret(@Nullable String clientSecret) {
-            this.clientSecret = clientSecret;
+        public Builder clientSecret(String clientSecret) {
+            this.clientSecret = Objects.requireNonNull(clientSecret);
             return this;
         }
         @CustomType.Setter
-        public Builder clientToken(@Nullable String clientToken) {
-            this.clientToken = clientToken;
+        public Builder clientToken(String clientToken) {
+            this.clientToken = Objects.requireNonNull(clientToken);
             return this;
         }
         @CustomType.Setter
-        public Builder host(@Nullable String host) {
-            this.host = host;
+        public Builder host(String host) {
+            this.host = Objects.requireNonNull(host);
             return this;
         }
         @CustomType.Setter
