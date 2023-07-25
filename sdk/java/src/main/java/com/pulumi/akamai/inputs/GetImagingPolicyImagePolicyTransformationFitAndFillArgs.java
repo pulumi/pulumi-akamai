@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformationArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
@@ -17,9 +17,9 @@ public final class GetImagingPolicyImagePolicyTransformationFitAndFillArgs exten
     public static final GetImagingPolicyImagePolicyTransformationFitAndFillArgs Empty = new GetImagingPolicyImagePolicyTransformationFitAndFillArgs();
 
     @Import(name="fillTransformation")
-    private @Nullable Output<GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformationArgs> fillTransformation;
+    private @Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> fillTransformation;
 
-    public Optional<Output<GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformationArgs>> fillTransformation() {
+    public Optional<Output<GetImagingPolicyImagePolicyTransformationArgs>> fillTransformation() {
         return Optional.ofNullable(this.fillTransformation);
     }
 
@@ -79,12 +79,12 @@ public final class GetImagingPolicyImagePolicyTransformationFitAndFillArgs exten
             $ = new GetImagingPolicyImagePolicyTransformationFitAndFillArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder fillTransformation(@Nullable Output<GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformationArgs> fillTransformation) {
+        public Builder fillTransformation(@Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> fillTransformation) {
             $.fillTransformation = fillTransformation;
             return this;
         }
 
-        public Builder fillTransformation(GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformationArgs fillTransformation) {
+        public Builder fillTransformation(GetImagingPolicyImagePolicyTransformationArgs fillTransformation) {
             return fillTransformation(Output.of(fillTransformation));
         }
 

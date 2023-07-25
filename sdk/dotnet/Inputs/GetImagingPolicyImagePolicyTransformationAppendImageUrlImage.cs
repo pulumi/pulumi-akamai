@@ -13,7 +13,7 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs : global::Pulumi.InvokeArgs
     {
         [Input("transformation")]
-        public Inputs.GetImagingPolicyImagePolicyTransformationAppendImageUrlImageTransformationArgs? Transformation { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyTransformationArgs? Transformation { get; set; }
 
         [Input("url")]
         public string? Url { get; set; }

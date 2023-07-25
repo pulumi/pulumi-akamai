@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationCompoundTransformation;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformation;
 import com.pulumi.core.annotations.Import;
 import java.util.List;
 import java.util.Objects;
@@ -16,9 +16,9 @@ public final class GetImagingPolicyImagePolicyTransformationCompound extends com
     public static final GetImagingPolicyImagePolicyTransformationCompound Empty = new GetImagingPolicyImagePolicyTransformationCompound();
 
     @Import(name="transformations")
-    private @Nullable List<GetImagingPolicyImagePolicyTransformationCompoundTransformation> transformations;
+    private @Nullable List<GetImagingPolicyImagePolicyTransformation> transformations;
 
-    public Optional<List<GetImagingPolicyImagePolicyTransformationCompoundTransformation>> transformations() {
+    public Optional<List<GetImagingPolicyImagePolicyTransformation>> transformations() {
         return Optional.ofNullable(this.transformations);
     }
 
@@ -46,12 +46,12 @@ public final class GetImagingPolicyImagePolicyTransformationCompound extends com
             $ = new GetImagingPolicyImagePolicyTransformationCompound(Objects.requireNonNull(defaults));
         }
 
-        public Builder transformations(@Nullable List<GetImagingPolicyImagePolicyTransformationCompoundTransformation> transformations) {
+        public Builder transformations(@Nullable List<GetImagingPolicyImagePolicyTransformation> transformations) {
             $.transformations = transformations;
             return this;
         }
 
-        public Builder transformations(GetImagingPolicyImagePolicyTransformationCompoundTransformation... transformations) {
+        public Builder transformations(GetImagingPolicyImagePolicyTransformation... transformations) {
             return transformations(List.of(transformations));
         }
 

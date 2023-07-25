@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformationArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
@@ -17,9 +17,9 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgs Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgs();
 
     @Import(name="transformation")
-    private @Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformationArgs> transformation;
+    private @Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> transformation;
 
-    public Optional<Output<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformationArgs>> transformation() {
+    public Optional<Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>> transformation() {
         return Optional.ofNullable(this.transformation);
     }
 
@@ -63,12 +63,12 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder transformation(@Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformationArgs> transformation) {
+        public Builder transformation(@Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> transformation) {
             $.transformation = transformation;
             return this;
         }
 
-        public Builder transformation(GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformationArgs transformation) {
+        public Builder transformation(GetImagingPolicyImagePolicyPostBreakpointTransformationArgs transformation) {
             return transformation(Output.of(transformation));
         }
 

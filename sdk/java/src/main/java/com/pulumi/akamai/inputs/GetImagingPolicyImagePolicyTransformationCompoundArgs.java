@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationCompoundTransformationArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.util.List;
@@ -17,9 +17,9 @@ public final class GetImagingPolicyImagePolicyTransformationCompoundArgs extends
     public static final GetImagingPolicyImagePolicyTransformationCompoundArgs Empty = new GetImagingPolicyImagePolicyTransformationCompoundArgs();
 
     @Import(name="transformations")
-    private @Nullable Output<List<GetImagingPolicyImagePolicyTransformationCompoundTransformationArgs>> transformations;
+    private @Nullable Output<List<GetImagingPolicyImagePolicyTransformationArgs>> transformations;
 
-    public Optional<Output<List<GetImagingPolicyImagePolicyTransformationCompoundTransformationArgs>>> transformations() {
+    public Optional<Output<List<GetImagingPolicyImagePolicyTransformationArgs>>> transformations() {
         return Optional.ofNullable(this.transformations);
     }
 
@@ -47,16 +47,16 @@ public final class GetImagingPolicyImagePolicyTransformationCompoundArgs extends
             $ = new GetImagingPolicyImagePolicyTransformationCompoundArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder transformations(@Nullable Output<List<GetImagingPolicyImagePolicyTransformationCompoundTransformationArgs>> transformations) {
+        public Builder transformations(@Nullable Output<List<GetImagingPolicyImagePolicyTransformationArgs>> transformations) {
             $.transformations = transformations;
             return this;
         }
 
-        public Builder transformations(List<GetImagingPolicyImagePolicyTransformationCompoundTransformationArgs> transformations) {
+        public Builder transformations(List<GetImagingPolicyImagePolicyTransformationArgs> transformations) {
             return transformations(Output.of(transformations));
         }
 
-        public Builder transformations(GetImagingPolicyImagePolicyTransformationCompoundTransformationArgs... transformations) {
+        public Builder transformations(GetImagingPolicyImagePolicyTransformationArgs... transformations) {
             return transformations(List.of(transformations));
         }
 

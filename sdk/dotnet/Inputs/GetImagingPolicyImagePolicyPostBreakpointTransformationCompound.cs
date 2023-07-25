@@ -13,10 +13,10 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgs : global::Pulumi.InvokeArgs
     {
         [Input("transformations")]
-        private List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformationArgs>? _transformations;
-        public List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformationArgs> Transformations
+        private List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>? _transformations;
+        public List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> Transformations
         {
-            get => _transformations ?? (_transformations = new List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformationArgs>());
+            get => _transformations ?? (_transformations = new List<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>());
             set => _transformations = value;
         }
 

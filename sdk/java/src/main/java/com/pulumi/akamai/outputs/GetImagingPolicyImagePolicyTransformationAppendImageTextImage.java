@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationAppendImageTextImageTransformation;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformation;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
@@ -22,7 +22,7 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageTextImage
     private @Nullable String strokeVar;
     private @Nullable String text;
     private @Nullable String textVar;
-    private @Nullable GetImagingPolicyImagePolicyTransformationAppendImageTextImageTransformation transformation;
+    private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
     private @Nullable String typeface;
     private @Nullable String typefaceVar;
 
@@ -57,7 +57,7 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageTextImage
     public Optional<String> textVar() {
         return Optional.ofNullable(this.textVar);
     }
-    public Optional<GetImagingPolicyImagePolicyTransformationAppendImageTextImageTransformation> transformation() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
     public Optional<String> typeface() {
@@ -86,7 +86,7 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageTextImage
         private @Nullable String strokeVar;
         private @Nullable String text;
         private @Nullable String textVar;
-        private @Nullable GetImagingPolicyImagePolicyTransformationAppendImageTextImageTransformation transformation;
+        private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
         private @Nullable String typeface;
         private @Nullable String typefaceVar;
         public Builder() {}
@@ -158,7 +158,7 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageTextImage
             return this;
         }
         @CustomType.Setter
-        public Builder transformation(@Nullable GetImagingPolicyImagePolicyTransformationAppendImageTextImageTransformation transformation) {
+        public Builder transformation(@Nullable GetImagingPolicyImagePolicyTransformation transformation) {
             this.transformation = transformation;
             return this;
         }

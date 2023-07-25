@@ -13,7 +13,7 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationFitAndFillResult
     {
-        public readonly Outputs.GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformationResult? FillTransformation;
+        public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? FillTransformation;
         public readonly string? Height;
         public readonly string? HeightVar;
         public readonly string? Width;
@@ -21,7 +21,7 @@ namespace Pulumi.Akamai.Outputs
 
         [OutputConstructor]
         private GetImagingPolicyImagePolicyTransformationFitAndFillResult(
-            Outputs.GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformationResult? fillTransformation,
+            Outputs.GetImagingPolicyImagePolicyTransformationResult? fillTransformation,
 
             string? height,
 

@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationAppendImageUrlImageTransformationArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
@@ -17,9 +17,9 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageUrlImageA
     public static final GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs Empty = new GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs();
 
     @Import(name="transformation")
-    private @Nullable Output<GetImagingPolicyImagePolicyTransformationAppendImageUrlImageTransformationArgs> transformation;
+    private @Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> transformation;
 
-    public Optional<Output<GetImagingPolicyImagePolicyTransformationAppendImageUrlImageTransformationArgs>> transformation() {
+    public Optional<Output<GetImagingPolicyImagePolicyTransformationArgs>> transformation() {
         return Optional.ofNullable(this.transformation);
     }
 
@@ -63,12 +63,12 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageUrlImageA
             $ = new GetImagingPolicyImagePolicyTransformationAppendImageUrlImageArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder transformation(@Nullable Output<GetImagingPolicyImagePolicyTransformationAppendImageUrlImageTransformationArgs> transformation) {
+        public Builder transformation(@Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> transformation) {
             $.transformation = transformation;
             return this;
         }
 
-        public Builder transformation(GetImagingPolicyImagePolicyTransformationAppendImageUrlImageTransformationArgs transformation) {
+        public Builder transformation(GetImagingPolicyImagePolicyTransformationArgs transformation) {
             return transformation(Output.of(transformation));
         }
 

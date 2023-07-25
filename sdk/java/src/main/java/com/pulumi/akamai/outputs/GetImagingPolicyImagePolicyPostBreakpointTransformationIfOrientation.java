@@ -3,10 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationDefault;
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationLandscape;
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationPortrait;
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationSquare;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
 import com.pulumi.core.annotations.CustomType;
 import java.util.Objects;
 import java.util.Optional;
@@ -14,22 +11,22 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation {
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationDefault default_;
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationLandscape landscape;
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationPortrait portrait;
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationSquare square;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation default_;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation landscape;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation portrait;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation square;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation() {}
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationDefault> default_() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> default_() {
         return Optional.ofNullable(this.default_);
     }
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationLandscape> landscape() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> landscape() {
         return Optional.ofNullable(this.landscape);
     }
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationPortrait> portrait() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> portrait() {
         return Optional.ofNullable(this.portrait);
     }
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationSquare> square() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> square() {
         return Optional.ofNullable(this.square);
     }
 
@@ -42,10 +39,10 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrie
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationDefault default_;
-        private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationLandscape landscape;
-        private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationPortrait portrait;
-        private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationSquare square;
+        private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation default_;
+        private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation landscape;
+        private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation portrait;
+        private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation square;
         public Builder() {}
         public Builder(GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,22 +53,22 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrie
         }
 
         @CustomType.Setter("default")
-        public Builder default_(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationDefault default_) {
+        public Builder default_(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation default_) {
             this.default_ = default_;
             return this;
         }
         @CustomType.Setter
-        public Builder landscape(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationLandscape landscape) {
+        public Builder landscape(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation landscape) {
             this.landscape = landscape;
             return this;
         }
         @CustomType.Setter
-        public Builder portrait(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationPortrait portrait) {
+        public Builder portrait(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation portrait) {
             this.portrait = portrait;
             return this;
         }
         @CustomType.Setter
-        public Builder square(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationSquare square) {
+        public Builder square(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation square) {
             this.square = square;
             return this;
         }

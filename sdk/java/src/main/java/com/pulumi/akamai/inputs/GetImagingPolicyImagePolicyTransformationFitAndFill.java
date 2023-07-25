@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformation;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformation;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
@@ -16,9 +16,9 @@ public final class GetImagingPolicyImagePolicyTransformationFitAndFill extends c
     public static final GetImagingPolicyImagePolicyTransformationFitAndFill Empty = new GetImagingPolicyImagePolicyTransformationFitAndFill();
 
     @Import(name="fillTransformation")
-    private @Nullable GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformation fillTransformation;
+    private @Nullable GetImagingPolicyImagePolicyTransformation fillTransformation;
 
-    public Optional<GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformation> fillTransformation() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> fillTransformation() {
         return Optional.ofNullable(this.fillTransformation);
     }
 
@@ -78,7 +78,7 @@ public final class GetImagingPolicyImagePolicyTransformationFitAndFill extends c
             $ = new GetImagingPolicyImagePolicyTransformationFitAndFill(Objects.requireNonNull(defaults));
         }
 
-        public Builder fillTransformation(@Nullable GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformation fillTransformation) {
+        public Builder fillTransformation(@Nullable GetImagingPolicyImagePolicyTransformation fillTransformation) {
             $.fillTransformation = fillTransformation;
             return this;
         }

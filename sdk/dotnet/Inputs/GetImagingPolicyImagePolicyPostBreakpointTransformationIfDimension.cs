@@ -13,7 +13,7 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgs : global::Pulumi.InvokeArgs
     {
         [Input("default")]
-        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionDefaultArgs? Default { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs? Default { get; set; }
 
         [Input("dimension")]
         public string? Dimension { get; set; }
@@ -22,13 +22,13 @@ namespace Pulumi.Akamai.Inputs
         public string? DimensionVar { get; set; }
 
         [Input("equal")]
-        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionEqualArgs? Equal { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs? Equal { get; set; }
 
         [Input("greaterThan")]
-        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionGreaterThanArgs? GreaterThan { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs? GreaterThan { get; set; }
 
         [Input("lessThan")]
-        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionLessThanArgs? LessThan { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs? LessThan { get; set; }
 
         [Input("value")]
         public string? Value { get; set; }

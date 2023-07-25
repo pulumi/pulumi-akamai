@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageTransformation;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
@@ -44,9 +44,9 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
     }
 
     @Import(name="transformation")
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageTransformation transformation;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation transformation;
 
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageTransformation> transformation() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
 
@@ -114,7 +114,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
             return this;
         }
 
-        public Builder transformation(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImageTransformation transformation) {
+        public Builder transformation(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation transformation) {
             $.transformation = transformation;
             return this;
         }

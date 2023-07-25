@@ -43,7 +43,7 @@ namespace Pulumi.Akamai.Inputs
         public string? TextVar { get; set; }
 
         [Input("transformation")]
-        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageTransformationArgs? Transformation { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs? Transformation { get; set; }
 
         [Input("typeface")]
         public string? Typeface { get; set; }

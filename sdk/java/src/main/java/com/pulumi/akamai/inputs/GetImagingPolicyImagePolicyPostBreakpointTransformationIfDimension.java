@@ -3,10 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionDefault;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionEqual;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionGreaterThan;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionLessThan;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
@@ -19,9 +16,9 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDime
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimension Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimension();
 
     @Import(name="default")
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionDefault default_;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation default_;
 
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionDefault> default_() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> default_() {
         return Optional.ofNullable(this.default_);
     }
 
@@ -40,23 +37,23 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDime
     }
 
     @Import(name="equal")
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionEqual equal;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation equal;
 
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionEqual> equal() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> equal() {
         return Optional.ofNullable(this.equal);
     }
 
     @Import(name="greaterThan")
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionGreaterThan greaterThan;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation greaterThan;
 
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionGreaterThan> greaterThan() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> greaterThan() {
         return Optional.ofNullable(this.greaterThan);
     }
 
     @Import(name="lessThan")
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionLessThan lessThan;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation lessThan;
 
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionLessThan> lessThan() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> lessThan() {
         return Optional.ofNullable(this.lessThan);
     }
 
@@ -105,7 +102,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDime
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimension(Objects.requireNonNull(defaults));
         }
 
-        public Builder default_(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionDefault default_) {
+        public Builder default_(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation default_) {
             $.default_ = default_;
             return this;
         }
@@ -120,17 +117,17 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDime
             return this;
         }
 
-        public Builder equal(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionEqual equal) {
+        public Builder equal(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation equal) {
             $.equal = equal;
             return this;
         }
 
-        public Builder greaterThan(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionGreaterThan greaterThan) {
+        public Builder greaterThan(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation greaterThan) {
             $.greaterThan = greaterThan;
             return this;
         }
 
-        public Builder lessThan(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionLessThan lessThan) {
+        public Builder lessThan(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation lessThan) {
             $.lessThan = lessThan;
             return this;
         }

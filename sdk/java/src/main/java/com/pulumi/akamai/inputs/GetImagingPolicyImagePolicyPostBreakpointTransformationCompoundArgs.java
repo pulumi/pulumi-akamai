@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformationArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.util.List;
@@ -17,9 +17,9 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompou
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgs Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgs();
 
     @Import(name="transformations")
-    private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformationArgs>> transformations;
+    private @Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>> transformations;
 
-    public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformationArgs>>> transformations() {
+    public Optional<Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>>> transformations() {
         return Optional.ofNullable(this.transformations);
     }
 
@@ -47,16 +47,16 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompou
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder transformations(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformationArgs>> transformations) {
+        public Builder transformations(@Nullable Output<List<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>> transformations) {
             $.transformations = transformations;
             return this;
         }
 
-        public Builder transformations(List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformationArgs> transformations) {
+        public Builder transformations(List<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> transformations) {
             return transformations(Output.of(transformations));
         }
 
-        public Builder transformations(GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformationArgs... transformations) {
+        public Builder transformations(GetImagingPolicyImagePolicyPostBreakpointTransformationArgs... transformations) {
             return transformations(List.of(transformations));
         }
 

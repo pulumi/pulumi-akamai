@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformation;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
 import com.pulumi.core.annotations.CustomType;
 import java.util.List;
 import java.util.Objects;
@@ -11,10 +11,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompound {
-    private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformation> transformations;
+    private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformation> transformations;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformationCompound() {}
-    public List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformation> transformations() {
+    public List<GetImagingPolicyImagePolicyPostBreakpointTransformation> transformations() {
         return this.transformations == null ? List.of() : this.transformations;
     }
 
@@ -27,7 +27,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompou
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformation> transformations;
+        private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformation> transformations;
         public Builder() {}
         public Builder(GetImagingPolicyImagePolicyPostBreakpointTransformationCompound defaults) {
     	      Objects.requireNonNull(defaults);
@@ -35,11 +35,11 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompou
         }
 
         @CustomType.Setter
-        public Builder transformations(@Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformation> transformations) {
+        public Builder transformations(@Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformation> transformations) {
             this.transformations = transformations;
             return this;
         }
-        public Builder transformations(GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformation... transformations) {
+        public Builder transformations(GetImagingPolicyImagePolicyPostBreakpointTransformation... transformations) {
             return transformations(List.of(transformations));
         }
         public GetImagingPolicyImagePolicyPostBreakpointTransformationCompound build() {

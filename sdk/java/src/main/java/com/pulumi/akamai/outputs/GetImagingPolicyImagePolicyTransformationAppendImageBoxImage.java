@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationAppendImageBoxImageTransformation;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformation;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
@@ -16,7 +16,7 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageBoxImage 
     private @Nullable String colorVar;
     private @Nullable String height;
     private @Nullable String heightVar;
-    private @Nullable GetImagingPolicyImagePolicyTransformationAppendImageBoxImageTransformation transformation;
+    private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
     private @Nullable String width;
     private @Nullable String widthVar;
 
@@ -33,7 +33,7 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageBoxImage 
     public Optional<String> heightVar() {
         return Optional.ofNullable(this.heightVar);
     }
-    public Optional<GetImagingPolicyImagePolicyTransformationAppendImageBoxImageTransformation> transformation() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
     public Optional<String> width() {
@@ -56,7 +56,7 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageBoxImage 
         private @Nullable String colorVar;
         private @Nullable String height;
         private @Nullable String heightVar;
-        private @Nullable GetImagingPolicyImagePolicyTransformationAppendImageBoxImageTransformation transformation;
+        private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
         private @Nullable String width;
         private @Nullable String widthVar;
         public Builder() {}
@@ -92,7 +92,7 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageBoxImage 
             return this;
         }
         @CustomType.Setter
-        public Builder transformation(@Nullable GetImagingPolicyImagePolicyTransformationAppendImageBoxImageTransformation transformation) {
+        public Builder transformation(@Nullable GetImagingPolicyImagePolicyTransformation transformation) {
             this.transformation = transformation;
             return this;
         }

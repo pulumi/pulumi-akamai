@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationCompositeImageTextImageTransformation;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformation;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
@@ -22,7 +22,7 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageTextIm
     private @Nullable String strokeVar;
     private @Nullable String text;
     private @Nullable String textVar;
-    private @Nullable GetImagingPolicyImagePolicyTransformationCompositeImageTextImageTransformation transformation;
+    private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
     private @Nullable String typeface;
     private @Nullable String typefaceVar;
 
@@ -57,7 +57,7 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageTextIm
     public Optional<String> textVar() {
         return Optional.ofNullable(this.textVar);
     }
-    public Optional<GetImagingPolicyImagePolicyTransformationCompositeImageTextImageTransformation> transformation() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
     public Optional<String> typeface() {
@@ -86,7 +86,7 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageTextIm
         private @Nullable String strokeVar;
         private @Nullable String text;
         private @Nullable String textVar;
-        private @Nullable GetImagingPolicyImagePolicyTransformationCompositeImageTextImageTransformation transformation;
+        private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
         private @Nullable String typeface;
         private @Nullable String typefaceVar;
         public Builder() {}
@@ -158,7 +158,7 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageTextIm
             return this;
         }
         @CustomType.Setter
-        public Builder transformation(@Nullable GetImagingPolicyImagePolicyTransformationCompositeImageTextImageTransformation transformation) {
+        public Builder transformation(@Nullable GetImagingPolicyImagePolicyTransformation transformation) {
             this.transformation = transformation;
             return this;
         }

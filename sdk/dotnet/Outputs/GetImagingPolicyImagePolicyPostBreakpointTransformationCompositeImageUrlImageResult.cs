@@ -13,13 +13,13 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageResult
     {
-        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformationResult? Transformation;
+        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? Transformation;
         public readonly string? Url;
         public readonly string? UrlVar;
 
         [OutputConstructor]
         private GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageResult(
-            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformationResult? transformation,
+            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? transformation,
 
             string? url,
 

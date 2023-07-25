@@ -3,10 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationIfDimensionDefault;
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationIfDimensionEqual;
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThan;
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationIfDimensionLessThan;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformation;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
@@ -15,17 +12,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationIfDimension {
-    private @Nullable GetImagingPolicyImagePolicyTransformationIfDimensionDefault default_;
+    private @Nullable GetImagingPolicyImagePolicyTransformation default_;
     private @Nullable String dimension;
     private @Nullable String dimensionVar;
-    private @Nullable GetImagingPolicyImagePolicyTransformationIfDimensionEqual equal;
-    private @Nullable GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThan greaterThan;
-    private @Nullable GetImagingPolicyImagePolicyTransformationIfDimensionLessThan lessThan;
+    private @Nullable GetImagingPolicyImagePolicyTransformation equal;
+    private @Nullable GetImagingPolicyImagePolicyTransformation greaterThan;
+    private @Nullable GetImagingPolicyImagePolicyTransformation lessThan;
     private @Nullable String value;
     private @Nullable String valueVar;
 
     private GetImagingPolicyImagePolicyTransformationIfDimension() {}
-    public Optional<GetImagingPolicyImagePolicyTransformationIfDimensionDefault> default_() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> default_() {
         return Optional.ofNullable(this.default_);
     }
     public Optional<String> dimension() {
@@ -34,13 +31,13 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimension {
     public Optional<String> dimensionVar() {
         return Optional.ofNullable(this.dimensionVar);
     }
-    public Optional<GetImagingPolicyImagePolicyTransformationIfDimensionEqual> equal() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> equal() {
         return Optional.ofNullable(this.equal);
     }
-    public Optional<GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThan> greaterThan() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> greaterThan() {
         return Optional.ofNullable(this.greaterThan);
     }
-    public Optional<GetImagingPolicyImagePolicyTransformationIfDimensionLessThan> lessThan() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> lessThan() {
         return Optional.ofNullable(this.lessThan);
     }
     public Optional<String> value() {
@@ -59,12 +56,12 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimension {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable GetImagingPolicyImagePolicyTransformationIfDimensionDefault default_;
+        private @Nullable GetImagingPolicyImagePolicyTransformation default_;
         private @Nullable String dimension;
         private @Nullable String dimensionVar;
-        private @Nullable GetImagingPolicyImagePolicyTransformationIfDimensionEqual equal;
-        private @Nullable GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThan greaterThan;
-        private @Nullable GetImagingPolicyImagePolicyTransformationIfDimensionLessThan lessThan;
+        private @Nullable GetImagingPolicyImagePolicyTransformation equal;
+        private @Nullable GetImagingPolicyImagePolicyTransformation greaterThan;
+        private @Nullable GetImagingPolicyImagePolicyTransformation lessThan;
         private @Nullable String value;
         private @Nullable String valueVar;
         public Builder() {}
@@ -81,7 +78,7 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimension {
         }
 
         @CustomType.Setter("default")
-        public Builder default_(@Nullable GetImagingPolicyImagePolicyTransformationIfDimensionDefault default_) {
+        public Builder default_(@Nullable GetImagingPolicyImagePolicyTransformation default_) {
             this.default_ = default_;
             return this;
         }
@@ -96,17 +93,17 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimension {
             return this;
         }
         @CustomType.Setter
-        public Builder equal(@Nullable GetImagingPolicyImagePolicyTransformationIfDimensionEqual equal) {
+        public Builder equal(@Nullable GetImagingPolicyImagePolicyTransformation equal) {
             this.equal = equal;
             return this;
         }
         @CustomType.Setter
-        public Builder greaterThan(@Nullable GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThan greaterThan) {
+        public Builder greaterThan(@Nullable GetImagingPolicyImagePolicyTransformation greaterThan) {
             this.greaterThan = greaterThan;
             return this;
         }
         @CustomType.Setter
-        public Builder lessThan(@Nullable GetImagingPolicyImagePolicyTransformationIfDimensionLessThan lessThan) {
+        public Builder lessThan(@Nullable GetImagingPolicyImagePolicyTransformation lessThan) {
             this.lessThan = lessThan;
             return this;
         }

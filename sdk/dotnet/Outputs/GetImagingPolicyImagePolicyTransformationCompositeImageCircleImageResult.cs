@@ -17,7 +17,7 @@ namespace Pulumi.Akamai.Outputs
         public readonly string? ColorVar;
         public readonly string? Diameter;
         public readonly string? DiameterVar;
-        public readonly Outputs.GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageTransformationResult? Transformation;
+        public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Transformation;
         public readonly string? Width;
         public readonly string? WidthVar;
 
@@ -31,7 +31,7 @@ namespace Pulumi.Akamai.Outputs
 
             string? diameterVar,
 
-            Outputs.GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageTransformationResult? transformation,
+            Outputs.GetImagingPolicyImagePolicyTransformationResult? transformation,
 
             string? width,
 

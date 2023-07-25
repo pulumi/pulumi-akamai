@@ -23,7 +23,7 @@ namespace Pulumi.Akamai.Outputs
         public readonly string? StrokeVar;
         public readonly string? Text;
         public readonly string? TextVar;
-        public readonly Outputs.GetImagingPolicyImagePolicyTransformationCompositeImageTextImageTransformationResult? Transformation;
+        public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Transformation;
         public readonly string? Typeface;
         public readonly string? TypefaceVar;
 
@@ -49,7 +49,7 @@ namespace Pulumi.Akamai.Outputs
 
             string? textVar,
 
-            Outputs.GetImagingPolicyImagePolicyTransformationCompositeImageTextImageTransformationResult? transformation,
+            Outputs.GetImagingPolicyImagePolicyTransformationResult? transformation,
 
             string? typeface,
 

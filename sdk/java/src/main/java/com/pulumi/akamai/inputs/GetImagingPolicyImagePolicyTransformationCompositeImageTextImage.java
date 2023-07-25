@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationCompositeImageTextImageTransformation;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformation;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
@@ -86,9 +86,9 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageTextIm
     }
 
     @Import(name="transformation")
-    private @Nullable GetImagingPolicyImagePolicyTransformationCompositeImageTextImageTransformation transformation;
+    private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
 
-    public Optional<GetImagingPolicyImagePolicyTransformationCompositeImageTextImageTransformation> transformation() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
 
@@ -192,7 +192,7 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageTextIm
             return this;
         }
 
-        public Builder transformation(@Nullable GetImagingPolicyImagePolicyTransformationCompositeImageTextImageTransformation transformation) {
+        public Builder transformation(@Nullable GetImagingPolicyImagePolicyTransformation transformation) {
             $.transformation = transformation;
             return this;
         }

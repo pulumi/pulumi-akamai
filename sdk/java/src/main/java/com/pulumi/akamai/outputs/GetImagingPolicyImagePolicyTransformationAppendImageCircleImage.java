@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationAppendImageCircleImageTransformation;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformation;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
@@ -16,7 +16,7 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageCircleIma
     private @Nullable String colorVar;
     private @Nullable String diameter;
     private @Nullable String diameterVar;
-    private @Nullable GetImagingPolicyImagePolicyTransformationAppendImageCircleImageTransformation transformation;
+    private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
     private @Nullable String width;
     private @Nullable String widthVar;
 
@@ -33,7 +33,7 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageCircleIma
     public Optional<String> diameterVar() {
         return Optional.ofNullable(this.diameterVar);
     }
-    public Optional<GetImagingPolicyImagePolicyTransformationAppendImageCircleImageTransformation> transformation() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
     public Optional<String> width() {
@@ -56,7 +56,7 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageCircleIma
         private @Nullable String colorVar;
         private @Nullable String diameter;
         private @Nullable String diameterVar;
-        private @Nullable GetImagingPolicyImagePolicyTransformationAppendImageCircleImageTransformation transformation;
+        private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
         private @Nullable String width;
         private @Nullable String widthVar;
         public Builder() {}
@@ -92,7 +92,7 @@ public final class GetImagingPolicyImagePolicyTransformationAppendImageCircleIma
             return this;
         }
         @CustomType.Setter
-        public Builder transformation(@Nullable GetImagingPolicyImagePolicyTransformationAppendImageCircleImageTransformation transformation) {
+        public Builder transformation(@Nullable GetImagingPolicyImagePolicyTransformation transformation) {
             this.transformation = transformation;
             return this;
         }

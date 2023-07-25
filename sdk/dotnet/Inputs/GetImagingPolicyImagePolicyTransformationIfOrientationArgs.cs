@@ -13,16 +13,16 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetImagingPolicyImagePolicyTransformationIfOrientationInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("default")]
-        public Input<Inputs.GetImagingPolicyImagePolicyTransformationIfOrientationDefaultInputArgs>? Default { get; set; }
+        public Input<Inputs.GetImagingPolicyImagePolicyTransformationInputArgs>? Default { get; set; }
 
         [Input("landscape")]
-        public Input<Inputs.GetImagingPolicyImagePolicyTransformationIfOrientationLandscapeInputArgs>? Landscape { get; set; }
+        public Input<Inputs.GetImagingPolicyImagePolicyTransformationInputArgs>? Landscape { get; set; }
 
         [Input("portrait")]
-        public Input<Inputs.GetImagingPolicyImagePolicyTransformationIfOrientationPortraitInputArgs>? Portrait { get; set; }
+        public Input<Inputs.GetImagingPolicyImagePolicyTransformationInputArgs>? Portrait { get; set; }
 
         [Input("square")]
-        public Input<Inputs.GetImagingPolicyImagePolicyTransformationIfOrientationSquareInputArgs>? Square { get; set; }
+        public Input<Inputs.GetImagingPolicyImagePolicyTransformationInputArgs>? Square { get; set; }
 
         public GetImagingPolicyImagePolicyTransformationIfOrientationInputArgs()
         {

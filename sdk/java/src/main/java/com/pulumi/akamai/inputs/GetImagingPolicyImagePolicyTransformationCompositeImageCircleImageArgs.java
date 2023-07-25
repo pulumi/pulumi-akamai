@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageTransformationArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
@@ -45,9 +45,9 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageCircle
     }
 
     @Import(name="transformation")
-    private @Nullable Output<GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageTransformationArgs> transformation;
+    private @Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> transformation;
 
-    public Optional<Output<GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageTransformationArgs>> transformation() {
+    public Optional<Output<GetImagingPolicyImagePolicyTransformationArgs>> transformation() {
         return Optional.ofNullable(this.transformation);
     }
 
@@ -131,12 +131,12 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageCircle
             return diameterVar(Output.of(diameterVar));
         }
 
-        public Builder transformation(@Nullable Output<GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageTransformationArgs> transformation) {
+        public Builder transformation(@Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> transformation) {
             $.transformation = transformation;
             return this;
         }
 
-        public Builder transformation(GetImagingPolicyImagePolicyTransformationCompositeImageCircleImageTransformationArgs transformation) {
+        public Builder transformation(GetImagingPolicyImagePolicyTransformationArgs transformation) {
             return transformation(Output.of(transformation));
         }
 

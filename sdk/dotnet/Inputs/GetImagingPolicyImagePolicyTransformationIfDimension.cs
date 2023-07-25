@@ -13,7 +13,7 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetImagingPolicyImagePolicyTransformationIfDimensionArgs : global::Pulumi.InvokeArgs
     {
         [Input("default")]
-        public Inputs.GetImagingPolicyImagePolicyTransformationIfDimensionDefaultArgs? Default { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyTransformationArgs? Default { get; set; }
 
         [Input("dimension")]
         public string? Dimension { get; set; }
@@ -22,13 +22,13 @@ namespace Pulumi.Akamai.Inputs
         public string? DimensionVar { get; set; }
 
         [Input("equal")]
-        public Inputs.GetImagingPolicyImagePolicyTransformationIfDimensionEqualArgs? Equal { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyTransformationArgs? Equal { get; set; }
 
         [Input("greaterThan")]
-        public Inputs.GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThanArgs? GreaterThan { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyTransformationArgs? GreaterThan { get; set; }
 
         [Input("lessThan")]
-        public Inputs.GetImagingPolicyImagePolicyTransformationIfDimensionLessThanArgs? LessThan { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyTransformationArgs? LessThan { get; set; }
 
         [Input("value")]
         public string? Value { get; set; }

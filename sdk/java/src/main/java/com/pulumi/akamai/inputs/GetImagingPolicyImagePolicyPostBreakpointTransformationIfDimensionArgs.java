@@ -3,10 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionDefaultArgs;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionEqualArgs;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionGreaterThanArgs;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionLessThanArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
@@ -20,9 +17,9 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDime
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgs Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgs();
 
     @Import(name="default")
-    private @Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionDefaultArgs> default_;
+    private @Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> default_;
 
-    public Optional<Output<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionDefaultArgs>> default_() {
+    public Optional<Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>> default_() {
         return Optional.ofNullable(this.default_);
     }
 
@@ -41,23 +38,23 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDime
     }
 
     @Import(name="equal")
-    private @Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionEqualArgs> equal;
+    private @Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> equal;
 
-    public Optional<Output<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionEqualArgs>> equal() {
+    public Optional<Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>> equal() {
         return Optional.ofNullable(this.equal);
     }
 
     @Import(name="greaterThan")
-    private @Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionGreaterThanArgs> greaterThan;
+    private @Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> greaterThan;
 
-    public Optional<Output<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionGreaterThanArgs>> greaterThan() {
+    public Optional<Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>> greaterThan() {
         return Optional.ofNullable(this.greaterThan);
     }
 
     @Import(name="lessThan")
-    private @Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionLessThanArgs> lessThan;
+    private @Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> lessThan;
 
-    public Optional<Output<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionLessThanArgs>> lessThan() {
+    public Optional<Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>> lessThan() {
         return Optional.ofNullable(this.lessThan);
     }
 
@@ -106,12 +103,12 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDime
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder default_(@Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionDefaultArgs> default_) {
+        public Builder default_(@Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> default_) {
             $.default_ = default_;
             return this;
         }
 
-        public Builder default_(GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionDefaultArgs default_) {
+        public Builder default_(GetImagingPolicyImagePolicyPostBreakpointTransformationArgs default_) {
             return default_(Output.of(default_));
         }
 
@@ -133,30 +130,30 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDime
             return dimensionVar(Output.of(dimensionVar));
         }
 
-        public Builder equal(@Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionEqualArgs> equal) {
+        public Builder equal(@Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> equal) {
             $.equal = equal;
             return this;
         }
 
-        public Builder equal(GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionEqualArgs equal) {
+        public Builder equal(GetImagingPolicyImagePolicyPostBreakpointTransformationArgs equal) {
             return equal(Output.of(equal));
         }
 
-        public Builder greaterThan(@Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionGreaterThanArgs> greaterThan) {
+        public Builder greaterThan(@Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> greaterThan) {
             $.greaterThan = greaterThan;
             return this;
         }
 
-        public Builder greaterThan(GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionGreaterThanArgs greaterThan) {
+        public Builder greaterThan(GetImagingPolicyImagePolicyPostBreakpointTransformationArgs greaterThan) {
             return greaterThan(Output.of(greaterThan));
         }
 
-        public Builder lessThan(@Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionLessThanArgs> lessThan) {
+        public Builder lessThan(@Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> lessThan) {
             $.lessThan = lessThan;
             return this;
         }
 
-        public Builder lessThan(GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionLessThanArgs lessThan) {
+        public Builder lessThan(GetImagingPolicyImagePolicyPostBreakpointTransformationArgs lessThan) {
             return lessThan(Output.of(lessThan));
         }
 

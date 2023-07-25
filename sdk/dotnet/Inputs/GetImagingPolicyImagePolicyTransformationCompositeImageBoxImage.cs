@@ -25,7 +25,7 @@ namespace Pulumi.Akamai.Inputs
         public string? HeightVar { get; set; }
 
         [Input("transformation")]
-        public Inputs.GetImagingPolicyImagePolicyTransformationCompositeImageBoxImageTransformationArgs? Transformation { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyTransformationArgs? Transformation { get; set; }
 
         [Input("width")]
         public string? Width { get; set; }

@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageTransformation;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
@@ -22,7 +22,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
     private @Nullable String strokeVar;
     private @Nullable String text;
     private @Nullable String textVar;
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageTransformation transformation;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation transformation;
     private @Nullable String typeface;
     private @Nullable String typefaceVar;
 
@@ -57,7 +57,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
     public Optional<String> textVar() {
         return Optional.ofNullable(this.textVar);
     }
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageTransformation> transformation() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
     public Optional<String> typeface() {
@@ -86,7 +86,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
         private @Nullable String strokeVar;
         private @Nullable String text;
         private @Nullable String textVar;
-        private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageTransformation transformation;
+        private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation transformation;
         private @Nullable String typeface;
         private @Nullable String typefaceVar;
         public Builder() {}
@@ -158,7 +158,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
             return this;
         }
         @CustomType.Setter
-        public Builder transformation(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImageTransformation transformation) {
+        public Builder transformation(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation transformation) {
             this.transformation = transformation;
             return this;
         }

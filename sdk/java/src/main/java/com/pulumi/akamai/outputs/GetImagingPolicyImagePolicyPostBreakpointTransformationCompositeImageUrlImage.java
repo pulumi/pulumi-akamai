@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformation;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
@@ -12,12 +12,12 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage {
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformation transformation;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation transformation;
     private @Nullable String url;
     private @Nullable String urlVar;
 
     private GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage() {}
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformation> transformation() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
     public Optional<String> url() {
@@ -36,7 +36,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformation transformation;
+        private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation transformation;
         private @Nullable String url;
         private @Nullable String urlVar;
         public Builder() {}
@@ -48,7 +48,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
         }
 
         @CustomType.Setter
-        public Builder transformation(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformation transformation) {
+        public Builder transformation(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation transformation) {
             this.transformation = transformation;
             return this;
         }

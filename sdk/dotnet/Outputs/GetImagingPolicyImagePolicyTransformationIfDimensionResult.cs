@@ -13,28 +13,28 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationIfDimensionResult
     {
-        public readonly Outputs.GetImagingPolicyImagePolicyTransformationIfDimensionDefaultResult? Default;
+        public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Default;
         public readonly string? Dimension;
         public readonly string? DimensionVar;
-        public readonly Outputs.GetImagingPolicyImagePolicyTransformationIfDimensionEqualResult? Equal;
-        public readonly Outputs.GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThanResult? GreaterThan;
-        public readonly Outputs.GetImagingPolicyImagePolicyTransformationIfDimensionLessThanResult? LessThan;
+        public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Equal;
+        public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? GreaterThan;
+        public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? LessThan;
         public readonly string? Value;
         public readonly string? ValueVar;
 
         [OutputConstructor]
         private GetImagingPolicyImagePolicyTransformationIfDimensionResult(
-            Outputs.GetImagingPolicyImagePolicyTransformationIfDimensionDefaultResult? @default,
+            Outputs.GetImagingPolicyImagePolicyTransformationResult? @default,
 
             string? dimension,
 
             string? dimensionVar,
 
-            Outputs.GetImagingPolicyImagePolicyTransformationIfDimensionEqualResult? equal,
+            Outputs.GetImagingPolicyImagePolicyTransformationResult? equal,
 
-            Outputs.GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThanResult? greaterThan,
+            Outputs.GetImagingPolicyImagePolicyTransformationResult? greaterThan,
 
-            Outputs.GetImagingPolicyImagePolicyTransformationIfDimensionLessThanResult? lessThan,
+            Outputs.GetImagingPolicyImagePolicyTransformationResult? lessThan,
 
             string? value,
 

@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformation;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
@@ -16,9 +16,9 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage();
 
     @Import(name="transformation")
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformation transformation;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation transformation;
 
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformation> transformation() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
 
@@ -62,7 +62,7 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage(Objects.requireNonNull(defaults));
         }
 
-        public Builder transformation(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImageTransformation transformation) {
+        public Builder transformation(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation transformation) {
             $.transformation = transformation;
             return this;
         }

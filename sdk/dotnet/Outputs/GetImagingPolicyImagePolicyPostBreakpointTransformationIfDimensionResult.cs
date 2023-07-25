@@ -13,28 +13,28 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionResult
     {
-        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionDefaultResult? Default;
+        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? Default;
         public readonly string? Dimension;
         public readonly string? DimensionVar;
-        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionEqualResult? Equal;
-        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionGreaterThanResult? GreaterThan;
-        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionLessThanResult? LessThan;
+        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? Equal;
+        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? GreaterThan;
+        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? LessThan;
         public readonly string? Value;
         public readonly string? ValueVar;
 
         [OutputConstructor]
         private GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionResult(
-            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionDefaultResult? @default,
+            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? @default,
 
             string? dimension,
 
             string? dimensionVar,
 
-            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionEqualResult? equal,
+            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? equal,
 
-            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionGreaterThanResult? greaterThan,
+            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? greaterThan,
 
-            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimensionLessThanResult? lessThan,
+            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? lessThan,
 
             string? value,
 

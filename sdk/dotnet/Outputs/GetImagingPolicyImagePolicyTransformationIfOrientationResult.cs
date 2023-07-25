@@ -13,20 +13,20 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyTransformationIfOrientationResult
     {
-        public readonly Outputs.GetImagingPolicyImagePolicyTransformationIfOrientationDefaultResult? Default;
-        public readonly Outputs.GetImagingPolicyImagePolicyTransformationIfOrientationLandscapeResult? Landscape;
-        public readonly Outputs.GetImagingPolicyImagePolicyTransformationIfOrientationPortraitResult? Portrait;
-        public readonly Outputs.GetImagingPolicyImagePolicyTransformationIfOrientationSquareResult? Square;
+        public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Default;
+        public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Landscape;
+        public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Portrait;
+        public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Square;
 
         [OutputConstructor]
         private GetImagingPolicyImagePolicyTransformationIfOrientationResult(
-            Outputs.GetImagingPolicyImagePolicyTransformationIfOrientationDefaultResult? @default,
+            Outputs.GetImagingPolicyImagePolicyTransformationResult? @default,
 
-            Outputs.GetImagingPolicyImagePolicyTransformationIfOrientationLandscapeResult? landscape,
+            Outputs.GetImagingPolicyImagePolicyTransformationResult? landscape,
 
-            Outputs.GetImagingPolicyImagePolicyTransformationIfOrientationPortraitResult? portrait,
+            Outputs.GetImagingPolicyImagePolicyTransformationResult? portrait,
 
-            Outputs.GetImagingPolicyImagePolicyTransformationIfOrientationSquareResult? square)
+            Outputs.GetImagingPolicyImagePolicyTransformationResult? square)
         {
             Default = @default;
             Landscape = landscape;

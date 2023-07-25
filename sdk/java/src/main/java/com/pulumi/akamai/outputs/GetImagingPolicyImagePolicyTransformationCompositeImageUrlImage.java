@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageTransformation;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformation;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
@@ -12,12 +12,12 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationCompositeImageUrlImage {
-    private @Nullable GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageTransformation transformation;
+    private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
     private @Nullable String url;
     private @Nullable String urlVar;
 
     private GetImagingPolicyImagePolicyTransformationCompositeImageUrlImage() {}
-    public Optional<GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageTransformation> transformation() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> transformation() {
         return Optional.ofNullable(this.transformation);
     }
     public Optional<String> url() {
@@ -36,7 +36,7 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageUrlIma
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageTransformation transformation;
+        private @Nullable GetImagingPolicyImagePolicyTransformation transformation;
         private @Nullable String url;
         private @Nullable String urlVar;
         public Builder() {}
@@ -48,7 +48,7 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageUrlIma
         }
 
         @CustomType.Setter
-        public Builder transformation(@Nullable GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageTransformation transformation) {
+        public Builder transformation(@Nullable GetImagingPolicyImagePolicyTransformation transformation) {
             this.transformation = transformation;
             return this;
         }

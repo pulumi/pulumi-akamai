@@ -3,10 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationIfDimensionDefaultArgs;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationIfDimensionEqualArgs;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThanArgs;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationIfDimensionLessThanArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
@@ -20,9 +17,9 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimensionArgs exte
     public static final GetImagingPolicyImagePolicyTransformationIfDimensionArgs Empty = new GetImagingPolicyImagePolicyTransformationIfDimensionArgs();
 
     @Import(name="default")
-    private @Nullable Output<GetImagingPolicyImagePolicyTransformationIfDimensionDefaultArgs> default_;
+    private @Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> default_;
 
-    public Optional<Output<GetImagingPolicyImagePolicyTransformationIfDimensionDefaultArgs>> default_() {
+    public Optional<Output<GetImagingPolicyImagePolicyTransformationArgs>> default_() {
         return Optional.ofNullable(this.default_);
     }
 
@@ -41,23 +38,23 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimensionArgs exte
     }
 
     @Import(name="equal")
-    private @Nullable Output<GetImagingPolicyImagePolicyTransformationIfDimensionEqualArgs> equal;
+    private @Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> equal;
 
-    public Optional<Output<GetImagingPolicyImagePolicyTransformationIfDimensionEqualArgs>> equal() {
+    public Optional<Output<GetImagingPolicyImagePolicyTransformationArgs>> equal() {
         return Optional.ofNullable(this.equal);
     }
 
     @Import(name="greaterThan")
-    private @Nullable Output<GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThanArgs> greaterThan;
+    private @Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> greaterThan;
 
-    public Optional<Output<GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThanArgs>> greaterThan() {
+    public Optional<Output<GetImagingPolicyImagePolicyTransformationArgs>> greaterThan() {
         return Optional.ofNullable(this.greaterThan);
     }
 
     @Import(name="lessThan")
-    private @Nullable Output<GetImagingPolicyImagePolicyTransformationIfDimensionLessThanArgs> lessThan;
+    private @Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> lessThan;
 
-    public Optional<Output<GetImagingPolicyImagePolicyTransformationIfDimensionLessThanArgs>> lessThan() {
+    public Optional<Output<GetImagingPolicyImagePolicyTransformationArgs>> lessThan() {
         return Optional.ofNullable(this.lessThan);
     }
 
@@ -106,12 +103,12 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimensionArgs exte
             $ = new GetImagingPolicyImagePolicyTransformationIfDimensionArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder default_(@Nullable Output<GetImagingPolicyImagePolicyTransformationIfDimensionDefaultArgs> default_) {
+        public Builder default_(@Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> default_) {
             $.default_ = default_;
             return this;
         }
 
-        public Builder default_(GetImagingPolicyImagePolicyTransformationIfDimensionDefaultArgs default_) {
+        public Builder default_(GetImagingPolicyImagePolicyTransformationArgs default_) {
             return default_(Output.of(default_));
         }
 
@@ -133,30 +130,30 @@ public final class GetImagingPolicyImagePolicyTransformationIfDimensionArgs exte
             return dimensionVar(Output.of(dimensionVar));
         }
 
-        public Builder equal(@Nullable Output<GetImagingPolicyImagePolicyTransformationIfDimensionEqualArgs> equal) {
+        public Builder equal(@Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> equal) {
             $.equal = equal;
             return this;
         }
 
-        public Builder equal(GetImagingPolicyImagePolicyTransformationIfDimensionEqualArgs equal) {
+        public Builder equal(GetImagingPolicyImagePolicyTransformationArgs equal) {
             return equal(Output.of(equal));
         }
 
-        public Builder greaterThan(@Nullable Output<GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThanArgs> greaterThan) {
+        public Builder greaterThan(@Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> greaterThan) {
             $.greaterThan = greaterThan;
             return this;
         }
 
-        public Builder greaterThan(GetImagingPolicyImagePolicyTransformationIfDimensionGreaterThanArgs greaterThan) {
+        public Builder greaterThan(GetImagingPolicyImagePolicyTransformationArgs greaterThan) {
             return greaterThan(Output.of(greaterThan));
         }
 
-        public Builder lessThan(@Nullable Output<GetImagingPolicyImagePolicyTransformationIfDimensionLessThanArgs> lessThan) {
+        public Builder lessThan(@Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> lessThan) {
             $.lessThan = lessThan;
             return this;
         }
 
-        public Builder lessThan(GetImagingPolicyImagePolicyTransformationIfDimensionLessThanArgs lessThan) {
+        public Builder lessThan(GetImagingPolicyImagePolicyTransformationArgs lessThan) {
             return lessThan(Output.of(lessThan));
         }
 

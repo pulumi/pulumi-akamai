@@ -13,20 +13,20 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationResult
     {
-        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationDefaultResult? Default;
-        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationLandscapeResult? Landscape;
-        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationPortraitResult? Portrait;
-        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationSquareResult? Square;
+        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? Default;
+        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? Landscape;
+        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? Portrait;
+        public readonly Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? Square;
 
         [OutputConstructor]
         private GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationResult(
-            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationDefaultResult? @default,
+            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? @default,
 
-            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationLandscapeResult? landscape,
+            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? landscape,
 
-            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationPortraitResult? portrait,
+            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? portrait,
 
-            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationSquareResult? square)
+            Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult? square)
         {
             Default = @default;
             Landscape = landscape;

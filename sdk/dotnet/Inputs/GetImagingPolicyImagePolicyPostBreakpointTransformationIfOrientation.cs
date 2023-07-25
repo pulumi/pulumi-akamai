@@ -13,16 +13,16 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationArgs : global::Pulumi.InvokeArgs
     {
         [Input("default")]
-        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationDefaultArgs? Default { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs? Default { get; set; }
 
         [Input("landscape")]
-        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationLandscapeArgs? Landscape { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs? Landscape { get; set; }
 
         [Input("portrait")]
-        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationPortraitArgs? Portrait { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs? Portrait { get; set; }
 
         [Input("square")]
-        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationSquareArgs? Square { get; set; }
+        public Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs? Square { get; set; }
 
         public GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationArgs()
         {

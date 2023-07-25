@@ -13,10 +13,10 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundResult
     {
-        public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformationResult> Transformations;
+        public readonly ImmutableArray<Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult> Transformations;
 
         [OutputConstructor]
-        private GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundResult(ImmutableArray<Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformationResult> transformations)
+        private GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundResult(ImmutableArray<Outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationResult> transformations)
         {
             Transformations = transformations;
         }

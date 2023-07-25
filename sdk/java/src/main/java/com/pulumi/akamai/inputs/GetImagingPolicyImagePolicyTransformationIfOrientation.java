@@ -3,10 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationIfOrientationDefault;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationIfOrientationLandscape;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationIfOrientationPortrait;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationIfOrientationSquare;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformation;
 import com.pulumi.core.annotations.Import;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,30 +15,30 @@ public final class GetImagingPolicyImagePolicyTransformationIfOrientation extend
     public static final GetImagingPolicyImagePolicyTransformationIfOrientation Empty = new GetImagingPolicyImagePolicyTransformationIfOrientation();
 
     @Import(name="default")
-    private @Nullable GetImagingPolicyImagePolicyTransformationIfOrientationDefault default_;
+    private @Nullable GetImagingPolicyImagePolicyTransformation default_;
 
-    public Optional<GetImagingPolicyImagePolicyTransformationIfOrientationDefault> default_() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> default_() {
         return Optional.ofNullable(this.default_);
     }
 
     @Import(name="landscape")
-    private @Nullable GetImagingPolicyImagePolicyTransformationIfOrientationLandscape landscape;
+    private @Nullable GetImagingPolicyImagePolicyTransformation landscape;
 
-    public Optional<GetImagingPolicyImagePolicyTransformationIfOrientationLandscape> landscape() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> landscape() {
         return Optional.ofNullable(this.landscape);
     }
 
     @Import(name="portrait")
-    private @Nullable GetImagingPolicyImagePolicyTransformationIfOrientationPortrait portrait;
+    private @Nullable GetImagingPolicyImagePolicyTransformation portrait;
 
-    public Optional<GetImagingPolicyImagePolicyTransformationIfOrientationPortrait> portrait() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> portrait() {
         return Optional.ofNullable(this.portrait);
     }
 
     @Import(name="square")
-    private @Nullable GetImagingPolicyImagePolicyTransformationIfOrientationSquare square;
+    private @Nullable GetImagingPolicyImagePolicyTransformation square;
 
-    public Optional<GetImagingPolicyImagePolicyTransformationIfOrientationSquare> square() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> square() {
         return Optional.ofNullable(this.square);
     }
 
@@ -72,22 +69,22 @@ public final class GetImagingPolicyImagePolicyTransformationIfOrientation extend
             $ = new GetImagingPolicyImagePolicyTransformationIfOrientation(Objects.requireNonNull(defaults));
         }
 
-        public Builder default_(@Nullable GetImagingPolicyImagePolicyTransformationIfOrientationDefault default_) {
+        public Builder default_(@Nullable GetImagingPolicyImagePolicyTransformation default_) {
             $.default_ = default_;
             return this;
         }
 
-        public Builder landscape(@Nullable GetImagingPolicyImagePolicyTransformationIfOrientationLandscape landscape) {
+        public Builder landscape(@Nullable GetImagingPolicyImagePolicyTransformation landscape) {
             $.landscape = landscape;
             return this;
         }
 
-        public Builder portrait(@Nullable GetImagingPolicyImagePolicyTransformationIfOrientationPortrait portrait) {
+        public Builder portrait(@Nullable GetImagingPolicyImagePolicyTransformation portrait) {
             $.portrait = portrait;
             return this;
         }
 
-        public Builder square(@Nullable GetImagingPolicyImagePolicyTransformationIfOrientationSquare square) {
+        public Builder square(@Nullable GetImagingPolicyImagePolicyTransformation square) {
             $.square = square;
             return this;
         }

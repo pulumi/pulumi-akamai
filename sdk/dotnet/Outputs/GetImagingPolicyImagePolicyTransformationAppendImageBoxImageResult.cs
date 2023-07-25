@@ -17,7 +17,7 @@ namespace Pulumi.Akamai.Outputs
         public readonly string? ColorVar;
         public readonly string? Height;
         public readonly string? HeightVar;
-        public readonly Outputs.GetImagingPolicyImagePolicyTransformationAppendImageBoxImageTransformationResult? Transformation;
+        public readonly Outputs.GetImagingPolicyImagePolicyTransformationResult? Transformation;
         public readonly string? Width;
         public readonly string? WidthVar;
 
@@ -31,7 +31,7 @@ namespace Pulumi.Akamai.Outputs
 
             string? heightVar,
 
-            Outputs.GetImagingPolicyImagePolicyTransformationAppendImageBoxImageTransformationResult? transformation,
+            Outputs.GetImagingPolicyImagePolicyTransformationResult? transformation,
 
             string? width,
 

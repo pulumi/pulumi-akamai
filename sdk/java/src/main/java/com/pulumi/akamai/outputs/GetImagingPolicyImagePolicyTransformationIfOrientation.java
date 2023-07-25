@@ -3,10 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationIfOrientationDefault;
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationIfOrientationLandscape;
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationIfOrientationPortrait;
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationIfOrientationSquare;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformation;
 import com.pulumi.core.annotations.CustomType;
 import java.util.Objects;
 import java.util.Optional;
@@ -14,22 +11,22 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationIfOrientation {
-    private @Nullable GetImagingPolicyImagePolicyTransformationIfOrientationDefault default_;
-    private @Nullable GetImagingPolicyImagePolicyTransformationIfOrientationLandscape landscape;
-    private @Nullable GetImagingPolicyImagePolicyTransformationIfOrientationPortrait portrait;
-    private @Nullable GetImagingPolicyImagePolicyTransformationIfOrientationSquare square;
+    private @Nullable GetImagingPolicyImagePolicyTransformation default_;
+    private @Nullable GetImagingPolicyImagePolicyTransformation landscape;
+    private @Nullable GetImagingPolicyImagePolicyTransformation portrait;
+    private @Nullable GetImagingPolicyImagePolicyTransformation square;
 
     private GetImagingPolicyImagePolicyTransformationIfOrientation() {}
-    public Optional<GetImagingPolicyImagePolicyTransformationIfOrientationDefault> default_() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> default_() {
         return Optional.ofNullable(this.default_);
     }
-    public Optional<GetImagingPolicyImagePolicyTransformationIfOrientationLandscape> landscape() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> landscape() {
         return Optional.ofNullable(this.landscape);
     }
-    public Optional<GetImagingPolicyImagePolicyTransformationIfOrientationPortrait> portrait() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> portrait() {
         return Optional.ofNullable(this.portrait);
     }
-    public Optional<GetImagingPolicyImagePolicyTransformationIfOrientationSquare> square() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> square() {
         return Optional.ofNullable(this.square);
     }
 
@@ -42,10 +39,10 @@ public final class GetImagingPolicyImagePolicyTransformationIfOrientation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable GetImagingPolicyImagePolicyTransformationIfOrientationDefault default_;
-        private @Nullable GetImagingPolicyImagePolicyTransformationIfOrientationLandscape landscape;
-        private @Nullable GetImagingPolicyImagePolicyTransformationIfOrientationPortrait portrait;
-        private @Nullable GetImagingPolicyImagePolicyTransformationIfOrientationSquare square;
+        private @Nullable GetImagingPolicyImagePolicyTransformation default_;
+        private @Nullable GetImagingPolicyImagePolicyTransformation landscape;
+        private @Nullable GetImagingPolicyImagePolicyTransformation portrait;
+        private @Nullable GetImagingPolicyImagePolicyTransformation square;
         public Builder() {}
         public Builder(GetImagingPolicyImagePolicyTransformationIfOrientation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,22 +53,22 @@ public final class GetImagingPolicyImagePolicyTransformationIfOrientation {
         }
 
         @CustomType.Setter("default")
-        public Builder default_(@Nullable GetImagingPolicyImagePolicyTransformationIfOrientationDefault default_) {
+        public Builder default_(@Nullable GetImagingPolicyImagePolicyTransformation default_) {
             this.default_ = default_;
             return this;
         }
         @CustomType.Setter
-        public Builder landscape(@Nullable GetImagingPolicyImagePolicyTransformationIfOrientationLandscape landscape) {
+        public Builder landscape(@Nullable GetImagingPolicyImagePolicyTransformation landscape) {
             this.landscape = landscape;
             return this;
         }
         @CustomType.Setter
-        public Builder portrait(@Nullable GetImagingPolicyImagePolicyTransformationIfOrientationPortrait portrait) {
+        public Builder portrait(@Nullable GetImagingPolicyImagePolicyTransformation portrait) {
             this.portrait = portrait;
             return this;
         }
         @CustomType.Setter
-        public Builder square(@Nullable GetImagingPolicyImagePolicyTransformationIfOrientationSquare square) {
+        public Builder square(@Nullable GetImagingPolicyImagePolicyTransformation square) {
             this.square = square;
             return this;
         }

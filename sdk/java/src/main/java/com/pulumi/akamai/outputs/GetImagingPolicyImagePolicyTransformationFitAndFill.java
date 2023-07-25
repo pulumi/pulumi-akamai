@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformation;
+import com.pulumi.akamai.outputs.GetImagingPolicyImagePolicyTransformation;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetImagingPolicyImagePolicyTransformationFitAndFill {
-    private @Nullable GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformation fillTransformation;
+    private @Nullable GetImagingPolicyImagePolicyTransformation fillTransformation;
     private @Nullable String height;
     private @Nullable String heightVar;
     private @Nullable String width;
     private @Nullable String widthVar;
 
     private GetImagingPolicyImagePolicyTransformationFitAndFill() {}
-    public Optional<GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformation> fillTransformation() {
+    public Optional<GetImagingPolicyImagePolicyTransformation> fillTransformation() {
         return Optional.ofNullable(this.fillTransformation);
     }
     public Optional<String> height() {
@@ -44,7 +44,7 @@ public final class GetImagingPolicyImagePolicyTransformationFitAndFill {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformation fillTransformation;
+        private @Nullable GetImagingPolicyImagePolicyTransformation fillTransformation;
         private @Nullable String height;
         private @Nullable String heightVar;
         private @Nullable String width;
@@ -60,7 +60,7 @@ public final class GetImagingPolicyImagePolicyTransformationFitAndFill {
         }
 
         @CustomType.Setter
-        public Builder fillTransformation(@Nullable GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformation fillTransformation) {
+        public Builder fillTransformation(@Nullable GetImagingPolicyImagePolicyTransformation fillTransformation) {
             this.fillTransformation = fillTransformation;
             return this;
         }

@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageTransformationArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
@@ -45,9 +45,9 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
     }
 
     @Import(name="transformation")
-    private @Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageTransformationArgs> transformation;
+    private @Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> transformation;
 
-    public Optional<Output<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageTransformationArgs>> transformation() {
+    public Optional<Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs>> transformation() {
         return Optional.ofNullable(this.transformation);
     }
 
@@ -131,12 +131,12 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompos
             return diameterVar(Output.of(diameterVar));
         }
 
-        public Builder transformation(@Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageTransformationArgs> transformation) {
+        public Builder transformation(@Nullable Output<GetImagingPolicyImagePolicyPostBreakpointTransformationArgs> transformation) {
             $.transformation = transformation;
             return this;
         }
 
-        public Builder transformation(GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageTransformationArgs transformation) {
+        public Builder transformation(GetImagingPolicyImagePolicyPostBreakpointTransformationArgs transformation) {
             return transformation(Output.of(transformation));
         }
 

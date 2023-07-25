@@ -3,10 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationDefault;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationLandscape;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationPortrait;
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationSquare;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
 import com.pulumi.core.annotations.Import;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,30 +15,30 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrie
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation();
 
     @Import(name="default")
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationDefault default_;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation default_;
 
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationDefault> default_() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> default_() {
         return Optional.ofNullable(this.default_);
     }
 
     @Import(name="landscape")
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationLandscape landscape;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation landscape;
 
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationLandscape> landscape() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> landscape() {
         return Optional.ofNullable(this.landscape);
     }
 
     @Import(name="portrait")
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationPortrait portrait;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation portrait;
 
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationPortrait> portrait() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> portrait() {
         return Optional.ofNullable(this.portrait);
     }
 
     @Import(name="square")
-    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationSquare square;
+    private @Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation square;
 
-    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationSquare> square() {
+    public Optional<GetImagingPolicyImagePolicyPostBreakpointTransformation> square() {
         return Optional.ofNullable(this.square);
     }
 
@@ -72,22 +69,22 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrie
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation(Objects.requireNonNull(defaults));
         }
 
-        public Builder default_(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationDefault default_) {
+        public Builder default_(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation default_) {
             $.default_ = default_;
             return this;
         }
 
-        public Builder landscape(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationLandscape landscape) {
+        public Builder landscape(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation landscape) {
             $.landscape = landscape;
             return this;
         }
 
-        public Builder portrait(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationPortrait portrait) {
+        public Builder portrait(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation portrait) {
             $.portrait = portrait;
             return this;
         }
 
-        public Builder square(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientationSquare square) {
+        public Builder square(@Nullable GetImagingPolicyImagePolicyPostBreakpointTransformation square) {
             $.square = square;
             return this;
         }

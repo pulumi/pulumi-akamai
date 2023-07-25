@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageTransformationArgs;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyTransformationArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
@@ -17,9 +17,9 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageUrlIma
     public static final GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgs Empty = new GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgs();
 
     @Import(name="transformation")
-    private @Nullable Output<GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageTransformationArgs> transformation;
+    private @Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> transformation;
 
-    public Optional<Output<GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageTransformationArgs>> transformation() {
+    public Optional<Output<GetImagingPolicyImagePolicyTransformationArgs>> transformation() {
         return Optional.ofNullable(this.transformation);
     }
 
@@ -63,12 +63,12 @@ public final class GetImagingPolicyImagePolicyTransformationCompositeImageUrlIma
             $ = new GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder transformation(@Nullable Output<GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageTransformationArgs> transformation) {
+        public Builder transformation(@Nullable Output<GetImagingPolicyImagePolicyTransformationArgs> transformation) {
             $.transformation = transformation;
             return this;
         }
 
-        public Builder transformation(GetImagingPolicyImagePolicyTransformationCompositeImageUrlImageTransformationArgs transformation) {
+        public Builder transformation(GetImagingPolicyImagePolicyTransformationArgs transformation) {
             return transformation(Output.of(transformation));
         }
 

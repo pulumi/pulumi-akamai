@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.inputs;
 
-import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformation;
+import com.pulumi.akamai.inputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
 import com.pulumi.core.annotations.Import;
 import java.util.List;
 import java.util.Objects;
@@ -16,9 +16,9 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompou
     public static final GetImagingPolicyImagePolicyPostBreakpointTransformationCompound Empty = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompound();
 
     @Import(name="transformations")
-    private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformation> transformations;
+    private @Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformation> transformations;
 
-    public Optional<List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformation>> transformations() {
+    public Optional<List<GetImagingPolicyImagePolicyPostBreakpointTransformation>> transformations() {
         return Optional.ofNullable(this.transformations);
     }
 
@@ -46,12 +46,12 @@ public final class GetImagingPolicyImagePolicyPostBreakpointTransformationCompou
             $ = new GetImagingPolicyImagePolicyPostBreakpointTransformationCompound(Objects.requireNonNull(defaults));
         }
 
-        public Builder transformations(@Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformation> transformations) {
+        public Builder transformations(@Nullable List<GetImagingPolicyImagePolicyPostBreakpointTransformation> transformations) {
             $.transformations = transformations;
             return this;
         }
 
-        public Builder transformations(GetImagingPolicyImagePolicyPostBreakpointTransformationCompoundTransformation... transformations) {
+        public Builder transformations(GetImagingPolicyImagePolicyPostBreakpointTransformation... transformations) {
             return transformations(List.of(transformations));
         }
 

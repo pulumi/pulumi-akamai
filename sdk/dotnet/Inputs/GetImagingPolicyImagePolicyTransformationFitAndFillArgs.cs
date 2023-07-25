@@ -13,7 +13,7 @@ namespace Pulumi.Akamai.Inputs
     public sealed class GetImagingPolicyImagePolicyTransformationFitAndFillInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("fillTransformation")]
-        public Input<Inputs.GetImagingPolicyImagePolicyTransformationFitAndFillFillTransformationInputArgs>? FillTransformation { get; set; }
+        public Input<Inputs.GetImagingPolicyImagePolicyTransformationInputArgs>? FillTransformation { get; set; }
 
         [Input("height")]
         public Input<string>? Height { get; set; }

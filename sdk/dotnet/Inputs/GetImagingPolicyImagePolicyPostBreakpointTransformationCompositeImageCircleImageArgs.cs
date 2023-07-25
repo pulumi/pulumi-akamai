@@ -25,7 +25,7 @@ namespace Pulumi.Akamai.Inputs
         public Input<string>? DiameterVar { get; set; }
 
         [Input("transformation")]
-        public Input<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImageTransformationInputArgs>? Transformation { get; set; }
+        public Input<Inputs.GetImagingPolicyImagePolicyPostBreakpointTransformationInputArgs>? Transformation { get; set; }
 
         [Input("width")]
         public Input<string>? Width { get; set; }
