@@ -16,6 +16,8 @@ package akamai
 
 import (
 	"fmt"
+	"strings"
+
 	// embed is used to store bridge-metadata.json in the compiled binary
 	"context"
 	_ "embed"
@@ -24,6 +26,7 @@ import (
 
 	"github.com/akamai/terraform-provider-akamai/v5/pkg/akamai"
 	"github.com/akamai/terraform-provider-akamai/v5/pkg/providers/registry"
+
 	// Load the providers
 	_ "github.com/akamai/terraform-provider-akamai/v5/pkg/providers"
 
@@ -32,6 +35,7 @@ import (
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/x"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
+	"github.com/pulumi/pulumi/pkg/v3/codegen/schema"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
@@ -369,6 +373,90 @@ func Provider() tfbridge.ProviderInfo {
 	prov.SetAutonaming(255, "-")
 
 	return prov
+}
+
+func ReplaceImagePolicyImageRecursiveTypes(spec *schema.PackageSpec, rootType string) {
+	removedTypes := []string{}
+	rootTypeTokenPrefix := "akamai:index/" + rootType
+	rootTypeToken := rootTypeTokenPrefix + ":" + rootType
+	rootTypeRef := "#/types/" + rootTypeToken
+	rootTypeSpec, ok := spec.Types[rootTypeToken]
+	if !ok {
+		fmt.Printf("warning: root type %s not found in spec.Types\n", rootTypeRef)
+	}
+
+	// Basic comparison of type by name and type only (we ignore refs because they will never match)
+	isRootSpec := func(typeSpec schema.ComplexTypeSpec) bool {
+		for propName, rootProp := range rootTypeSpec.Properties {
+			compProp, ok := typeSpec.Properties[propName]
+			if !ok {
+				return false
+			}
+			if rootProp.Type != compProp.Type {
+				return false
+			}
+		}
+		for propName := range typeSpec.Properties {
+			if _, ok := rootTypeSpec.Properties[propName]; !ok {
+				return false
+			}
+		}
+		return true
+	}
+
+	checkRefForRemoval := func(ref string) bool {
+		token := strings.TrimPrefix(ref, "#/types/")
+		typeSpec, ok := spec.Types[token]
+		if !ok {
+			return false
+		}
+		if isRootSpec(typeSpec) {
+			// E.g. #/types/akamai:index/getImagingPolicyImagePolicyTransformation:getImagingPolicyImagePolicyTransformation
+			tokenParts := strings.Split(token, ":")
+			contract.Assertf(len(tokenParts) == 3, "expected token to have 3 parts: %v", token)
+			typeName := tokenParts[2]
+			removedTypes = append(removedTypes, typeName)
+			return true
+		}
+		return false
+	}
+
+	for tok, typeSpec := range spec.Types {
+		if !strings.HasPrefix(tok, rootTypeTokenPrefix) {
+			continue
+		}
+
+		for propName, prop := range typeSpec.Properties {
+			if prop.Ref != "" {
+				if checkRefForRemoval(prop.Ref) {
+					prop.Ref = rootTypeRef
+				}
+			} else if prop.Type == "array" && prop.Items != nil && prop.Items.Ref != "" {
+				if checkRefForRemoval(prop.Items.Ref) {
+					prop.Items.Ref = rootTypeRef
+				}
+			} else {
+				continue
+			}
+			typeSpec.Properties[propName] = prop
+		}
+	}
+
+	var elidedTypeTokens []string
+	for tok := range spec.Types {
+		if !strings.HasPrefix(tok, rootTypeTokenPrefix) {
+			continue
+		}
+		for _, removedType := range removedTypes {
+			if strings.Contains(tok, removedType) {
+				elidedTypeTokens = append(elidedTypeTokens, tok)
+			}
+		}
+	}
+
+	for _, removedType := range elidedTypeTokens {
+		delete(spec.Types, removedType)
+	}
 }
 
 func noUpstreamDocs() *tfbridge.DocInfo {
