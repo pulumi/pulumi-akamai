@@ -1,7 +1,6 @@
 package akamai
 
 import (
-	"fmt"
 	"strings"
 
 	"github.com/pulumi/pulumi/pkg/v3/codegen"
@@ -15,9 +14,7 @@ func ReplaceImagePolicyImageRecursiveTypes(spec *schema.PackageSpec, rootTypeNam
 	rootTypeToken := rootTypeTokenPrefix + ":" + rootTypeName
 	rootTypeRef := "#/types/" + rootTypeToken
 	rootTypeSpec, ok := spec.Types[rootTypeToken]
-	if !ok {
-		fmt.Printf("warning: root type %s not found in spec.Types\n", rootTypeRef)
-	}
+	contract.Assertf(ok, "root type %s not found in spec.Types", rootTypeRef)
 
 	checkRefForRemoval := func(ref string) bool {
 		token := strings.TrimPrefix(ref, "#/types/")
