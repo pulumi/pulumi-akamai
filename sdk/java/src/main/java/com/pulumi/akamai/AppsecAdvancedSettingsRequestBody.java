@@ -21,7 +21,7 @@ public class AppsecAdvancedSettingsRequestBody extends com.pulumi.resources.Cust
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -35,7 +35,7 @@ public class AppsecAdvancedSettingsRequestBody extends com.pulumi.resources.Cust
      * Request body inspection size limit in KB allowed values are &#39;default&#39;, 8, 16, 32
      * 
      */
-    @Export(name="requestBodyInspectionLimit", type=String.class, parameters={})
+    @Export(name="requestBodyInspectionLimit", refs={String.class}, tree="[0]")
     private Output<String> requestBodyInspectionLimit;
 
     /**
@@ -49,7 +49,7 @@ public class AppsecAdvancedSettingsRequestBody extends com.pulumi.resources.Cust
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> securityPolicyId;
 
     /**

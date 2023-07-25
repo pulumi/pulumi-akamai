@@ -12,23 +12,11 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("akamai:index/property:Property")]
     public partial class Property : global::Pulumi.CustomResource
     {
-        [Output("contacts")]
-        public Output<ImmutableArray<string>> Contacts { get; private set; } = null!;
-
-        [Output("contract")]
-        public Output<string> Contract { get; private set; } = null!;
-
         /// <summary>
         /// Contract ID to be assigned to the Property
         /// </summary>
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
-
-        [Output("cpCode")]
-        public Output<string?> CpCode { get; private set; } = null!;
-
-        [Output("group")]
-        public Output<string> Group { get; private set; } = null!;
 
         /// <summary>
         /// Group ID to be assigned to the Property
@@ -38,9 +26,6 @@ namespace Pulumi.Akamai
 
         [Output("hostnames")]
         public Output<ImmutableArray<Outputs.PropertyHostname>> Hostnames { get; private set; } = null!;
-
-        [Output("isSecure")]
-        public Output<bool?> IsSecure { get; private set; } = null!;
 
         /// <summary>
         /// Property's current latest version number
@@ -53,12 +38,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
-
-        [Output("origins")]
-        public Output<ImmutableArray<Outputs.PropertyOrigin>> Origins { get; private set; } = null!;
-
-        [Output("product")]
-        public Output<string> Product { get; private set; } = null!;
 
         /// <summary>
         /// Product ID to be assigned to the Property
@@ -87,9 +66,6 @@ namespace Pulumi.Akamai
         [Output("ruleFormat")]
         public Output<string> RuleFormat { get; private set; } = null!;
 
-        [Output("ruleWarnings")]
-        public Output<ImmutableArray<Outputs.PropertyRuleWarning>> RuleWarnings { get; private set; } = null!;
-
         /// <summary>
         /// Property Rules as JSON
         /// </summary>
@@ -102,9 +78,6 @@ namespace Pulumi.Akamai
         [Output("stagingVersion")]
         public Output<int> StagingVersion { get; private set; } = null!;
 
-        [Output("variables")]
-        public Output<string?> Variables { get; private set; } = null!;
-
 
         /// <summary>
         /// Create a Property resource with the given unique name, arguments, and options.
@@ -113,7 +86,7 @@ namespace Pulumi.Akamai
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public Property(string name, PropertyArgs? args = null, CustomResourceOptions? options = null)
+        public Property(string name, PropertyArgs args, CustomResourceOptions? options = null)
             : base("akamai:index/property:Property", name, args ?? new PropertyArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -155,35 +128,17 @@ namespace Pulumi.Akamai
 
     public sealed class PropertyArgs : global::Pulumi.ResourceArgs
     {
-        [Input("contacts")]
-        private InputList<string>? _contacts;
-        [Obsolete(@"The setting ""contact"" has been deprecated.")]
-        public InputList<string> Contacts
-        {
-            get => _contacts ?? (_contacts = new InputList<string>());
-            set => _contacts = value;
-        }
-
-        [Input("contract")]
-        public Input<string>? Contract { get; set; }
-
         /// <summary>
         /// Contract ID to be assigned to the Property
         /// </summary>
-        [Input("contractId")]
-        public Input<string>? ContractId { get; set; }
-
-        [Input("cpCode")]
-        public Input<string>? CpCode { get; set; }
-
-        [Input("group")]
-        public Input<string>? Group { get; set; }
+        [Input("contractId", required: true)]
+        public Input<string> ContractId { get; set; } = null!;
 
         /// <summary>
         /// Group ID to be assigned to the Property
         /// </summary>
-        [Input("groupId")]
-        public Input<string>? GroupId { get; set; }
+        [Input("groupId", required: true)]
+        public Input<string> GroupId { get; set; } = null!;
 
         [Input("hostnames")]
         private InputList<Inputs.PropertyHostnameArgs>? _hostnames;
@@ -193,32 +148,17 @@ namespace Pulumi.Akamai
             set => _hostnames = value;
         }
 
-        [Input("isSecure")]
-        public Input<bool>? IsSecure { get; set; }
-
         /// <summary>
         /// Name to give to the Property (must be unique)
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        [Input("origins")]
-        private InputList<Inputs.PropertyOriginArgs>? _origins;
-        [Obsolete(@"The setting ""origin"" has been deprecated.")]
-        public InputList<Inputs.PropertyOriginArgs> Origins
-        {
-            get => _origins ?? (_origins = new InputList<Inputs.PropertyOriginArgs>());
-            set => _origins = value;
-        }
-
-        [Input("product")]
-        public Input<string>? Product { get; set; }
-
         /// <summary>
         /// Product ID to be assigned to the Property
         /// </summary>
-        [Input("productId")]
-        public Input<string>? ProductId { get; set; }
+        [Input("productId", required: true)]
+        public Input<string> ProductId { get; set; } = null!;
 
         /// <summary>
         /// Specify the rule format version (defaults to latest version available when created)
@@ -226,23 +166,11 @@ namespace Pulumi.Akamai
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }
 
-        [Input("ruleWarnings")]
-        private InputList<Inputs.PropertyRuleWarningArgs>? _ruleWarnings;
-        [Obsolete(@"Rule warnings will not be set in state anymore")]
-        public InputList<Inputs.PropertyRuleWarningArgs> RuleWarnings
-        {
-            get => _ruleWarnings ?? (_ruleWarnings = new InputList<Inputs.PropertyRuleWarningArgs>());
-            set => _ruleWarnings = value;
-        }
-
         /// <summary>
         /// Property Rules as JSON
         /// </summary>
         [Input("rules")]
         public Input<string>? Rules { get; set; }
-
-        [Input("variables")]
-        public Input<string>? Variables { get; set; }
 
         public PropertyArgs()
         {
@@ -252,29 +180,11 @@ namespace Pulumi.Akamai
 
     public sealed class PropertyState : global::Pulumi.ResourceArgs
     {
-        [Input("contacts")]
-        private InputList<string>? _contacts;
-        [Obsolete(@"The setting ""contact"" has been deprecated.")]
-        public InputList<string> Contacts
-        {
-            get => _contacts ?? (_contacts = new InputList<string>());
-            set => _contacts = value;
-        }
-
-        [Input("contract")]
-        public Input<string>? Contract { get; set; }
-
         /// <summary>
         /// Contract ID to be assigned to the Property
         /// </summary>
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
-
-        [Input("cpCode")]
-        public Input<string>? CpCode { get; set; }
-
-        [Input("group")]
-        public Input<string>? Group { get; set; }
 
         /// <summary>
         /// Group ID to be assigned to the Property
@@ -290,9 +200,6 @@ namespace Pulumi.Akamai
             set => _hostnames = value;
         }
 
-        [Input("isSecure")]
-        public Input<bool>? IsSecure { get; set; }
-
         /// <summary>
         /// Property's current latest version number
         /// </summary>
@@ -304,18 +211,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
-
-        [Input("origins")]
-        private InputList<Inputs.PropertyOriginGetArgs>? _origins;
-        [Obsolete(@"The setting ""origin"" has been deprecated.")]
-        public InputList<Inputs.PropertyOriginGetArgs> Origins
-        {
-            get => _origins ?? (_origins = new InputList<Inputs.PropertyOriginGetArgs>());
-            set => _origins = value;
-        }
-
-        [Input("product")]
-        public Input<string>? Product { get; set; }
 
         /// <summary>
         /// Product ID to be assigned to the Property
@@ -349,15 +244,6 @@ namespace Pulumi.Akamai
         [Input("ruleFormat")]
         public Input<string>? RuleFormat { get; set; }
 
-        [Input("ruleWarnings")]
-        private InputList<Inputs.PropertyRuleWarningGetArgs>? _ruleWarnings;
-        [Obsolete(@"Rule warnings will not be set in state anymore")]
-        public InputList<Inputs.PropertyRuleWarningGetArgs> RuleWarnings
-        {
-            get => _ruleWarnings ?? (_ruleWarnings = new InputList<Inputs.PropertyRuleWarningGetArgs>());
-            set => _ruleWarnings = value;
-        }
-
         /// <summary>
         /// Property Rules as JSON
         /// </summary>
@@ -369,9 +255,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("stagingVersion")]
         public Input<int>? StagingVersion { get; set; }
-
-        [Input("variables")]
-        public Input<string>? Variables { get; set; }
 
         public PropertyState()
         {

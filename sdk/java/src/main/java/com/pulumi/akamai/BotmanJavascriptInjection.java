@@ -16,19 +16,19 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/botmanJavascriptInjection:BotmanJavascriptInjection")
 public class BotmanJavascriptInjection extends com.pulumi.resources.CustomResource {
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     public Output<Integer> configId() {
         return this.configId;
     }
-    @Export(name="javascriptInjection", type=String.class, parameters={})
+    @Export(name="javascriptInjection", refs={String.class}, tree="[0]")
     private Output<String> javascriptInjection;
 
     public Output<String> javascriptInjection() {
         return this.javascriptInjection;
     }
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     public Output<String> securityPolicyId() {

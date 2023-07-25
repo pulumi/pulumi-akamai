@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetCloudletsApiPrioritizationMatchRule(ctx *pulumi.Context, args *GetCloudletsApiPrioritizationMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsApiPrioritizationMatchRuleResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCloudletsApiPrioritizationMatchRuleResult
 	err := ctx.Invoke("akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule", args, &rv, opts...)
 	if err != nil {

@@ -16,11 +16,11 @@ public final class ProviderConfigArgs extends com.pulumi.resources.ResourceArgs 
 
     public static final ProviderConfigArgs Empty = new ProviderConfigArgs();
 
-    @Import(name="accessToken")
-    private @Nullable Output<String> accessToken;
+    @Import(name="accessToken", required=true)
+    private Output<String> accessToken;
 
-    public Optional<Output<String>> accessToken() {
-        return Optional.ofNullable(this.accessToken);
+    public Output<String> accessToken() {
+        return this.accessToken;
     }
 
     @Import(name="accountKey")
@@ -30,25 +30,25 @@ public final class ProviderConfigArgs extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.accountKey);
     }
 
-    @Import(name="clientSecret")
-    private @Nullable Output<String> clientSecret;
+    @Import(name="clientSecret", required=true)
+    private Output<String> clientSecret;
 
-    public Optional<Output<String>> clientSecret() {
-        return Optional.ofNullable(this.clientSecret);
+    public Output<String> clientSecret() {
+        return this.clientSecret;
     }
 
-    @Import(name="clientToken")
-    private @Nullable Output<String> clientToken;
+    @Import(name="clientToken", required=true)
+    private Output<String> clientToken;
 
-    public Optional<Output<String>> clientToken() {
-        return Optional.ofNullable(this.clientToken);
+    public Output<String> clientToken() {
+        return this.clientToken;
     }
 
-    @Import(name="host")
-    private @Nullable Output<String> host;
+    @Import(name="host", required=true)
+    private Output<String> host;
 
-    public Optional<Output<String>> host() {
-        return Optional.ofNullable(this.host);
+    public Output<String> host() {
+        return this.host;
     }
 
     @Import(name="maxBody")
@@ -87,7 +87,7 @@ public final class ProviderConfigArgs extends com.pulumi.resources.ResourceArgs 
             $ = new ProviderConfigArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder accessToken(@Nullable Output<String> accessToken) {
+        public Builder accessToken(Output<String> accessToken) {
             $.accessToken = accessToken;
             return this;
         }
@@ -105,7 +105,7 @@ public final class ProviderConfigArgs extends com.pulumi.resources.ResourceArgs 
             return accountKey(Output.of(accountKey));
         }
 
-        public Builder clientSecret(@Nullable Output<String> clientSecret) {
+        public Builder clientSecret(Output<String> clientSecret) {
             $.clientSecret = clientSecret;
             return this;
         }
@@ -114,7 +114,7 @@ public final class ProviderConfigArgs extends com.pulumi.resources.ResourceArgs 
             return clientSecret(Output.of(clientSecret));
         }
 
-        public Builder clientToken(@Nullable Output<String> clientToken) {
+        public Builder clientToken(Output<String> clientToken) {
             $.clientToken = clientToken;
             return this;
         }
@@ -123,7 +123,7 @@ public final class ProviderConfigArgs extends com.pulumi.resources.ResourceArgs 
             return clientToken(Output.of(clientToken));
         }
 
-        public Builder host(@Nullable Output<String> host) {
+        public Builder host(Output<String> host) {
             $.host = host;
             return this;
         }
@@ -142,6 +142,10 @@ public final class ProviderConfigArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public ProviderConfigArgs build() {
+            $.accessToken = Objects.requireNonNull($.accessToken, "expected parameter 'accessToken' to be non-null");
+            $.clientSecret = Objects.requireNonNull($.clientSecret, "expected parameter 'clientSecret' to be non-null");
+            $.clientToken = Objects.requireNonNull($.clientToken, "expected parameter 'clientToken' to be non-null");
+            $.host = Objects.requireNonNull($.host, "expected parameter 'host' to be non-null");
             return $;
         }
     }

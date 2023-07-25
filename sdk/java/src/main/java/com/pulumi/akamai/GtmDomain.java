@@ -21,205 +21,205 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/gtmDomain:GtmDomain")
 public class GtmDomain extends com.pulumi.resources.CustomResource {
-    @Export(name="cnameCoalescingEnabled", type=Boolean.class, parameters={})
+    @Export(name="cnameCoalescingEnabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> cnameCoalescingEnabled;
 
     public Output<Optional<Boolean>> cnameCoalescingEnabled() {
         return Codegen.optional(this.cnameCoalescingEnabled);
     }
-    @Export(name="comment", type=String.class, parameters={})
+    @Export(name="comment", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> comment;
 
     public Output<Optional<String>> comment() {
         return Codegen.optional(this.comment);
     }
-    @Export(name="contract", type=String.class, parameters={})
+    @Export(name="contract", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> contract;
 
     public Output<Optional<String>> contract() {
         return Codegen.optional(this.contract);
     }
-    @Export(name="defaultErrorPenalty", type=Integer.class, parameters={})
+    @Export(name="defaultErrorPenalty", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> defaultErrorPenalty;
 
     public Output<Optional<Integer>> defaultErrorPenalty() {
         return Codegen.optional(this.defaultErrorPenalty);
     }
-    @Export(name="defaultHealthMax", type=Double.class, parameters={})
+    @Export(name="defaultHealthMax", refs={Double.class}, tree="[0]")
     private Output<Double> defaultHealthMax;
 
     public Output<Double> defaultHealthMax() {
         return this.defaultHealthMax;
     }
-    @Export(name="defaultHealthMultiplier", type=Double.class, parameters={})
+    @Export(name="defaultHealthMultiplier", refs={Double.class}, tree="[0]")
     private Output<Double> defaultHealthMultiplier;
 
     public Output<Double> defaultHealthMultiplier() {
         return this.defaultHealthMultiplier;
     }
-    @Export(name="defaultHealthThreshold", type=Double.class, parameters={})
+    @Export(name="defaultHealthThreshold", refs={Double.class}, tree="[0]")
     private Output<Double> defaultHealthThreshold;
 
     public Output<Double> defaultHealthThreshold() {
         return this.defaultHealthThreshold;
     }
-    @Export(name="defaultMaxUnreachablePenalty", type=Integer.class, parameters={})
+    @Export(name="defaultMaxUnreachablePenalty", refs={Integer.class}, tree="[0]")
     private Output<Integer> defaultMaxUnreachablePenalty;
 
     public Output<Integer> defaultMaxUnreachablePenalty() {
         return this.defaultMaxUnreachablePenalty;
     }
-    @Export(name="defaultSslClientCertificate", type=String.class, parameters={})
+    @Export(name="defaultSslClientCertificate", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> defaultSslClientCertificate;
 
     public Output<Optional<String>> defaultSslClientCertificate() {
         return Codegen.optional(this.defaultSslClientCertificate);
     }
-    @Export(name="defaultSslClientPrivateKey", type=String.class, parameters={})
+    @Export(name="defaultSslClientPrivateKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> defaultSslClientPrivateKey;
 
     public Output<Optional<String>> defaultSslClientPrivateKey() {
         return Codegen.optional(this.defaultSslClientPrivateKey);
     }
-    @Export(name="defaultTimeoutPenalty", type=Integer.class, parameters={})
+    @Export(name="defaultTimeoutPenalty", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> defaultTimeoutPenalty;
 
     public Output<Optional<Integer>> defaultTimeoutPenalty() {
         return Codegen.optional(this.defaultTimeoutPenalty);
     }
-    @Export(name="defaultUnreachableThreshold", type=Double.class, parameters={})
+    @Export(name="defaultUnreachableThreshold", refs={Double.class}, tree="[0]")
     private Output<Double> defaultUnreachableThreshold;
 
     public Output<Double> defaultUnreachableThreshold() {
         return this.defaultUnreachableThreshold;
     }
-    @Export(name="emailNotificationLists", type=List.class, parameters={String.class})
+    @Export(name="emailNotificationLists", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> emailNotificationLists;
 
     public Output<Optional<List<String>>> emailNotificationLists() {
         return Codegen.optional(this.emailNotificationLists);
     }
-    @Export(name="endUserMappingEnabled", type=Boolean.class, parameters={})
+    @Export(name="endUserMappingEnabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> endUserMappingEnabled;
 
     public Output<Optional<Boolean>> endUserMappingEnabled() {
         return Codegen.optional(this.endUserMappingEnabled);
     }
-    @Export(name="group", type=String.class, parameters={})
+    @Export(name="group", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> group;
 
     public Output<Optional<String>> group() {
         return Codegen.optional(this.group);
     }
-    @Export(name="loadFeedback", type=Boolean.class, parameters={})
+    @Export(name="loadFeedback", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> loadFeedback;
 
     public Output<Optional<Boolean>> loadFeedback() {
         return Codegen.optional(this.loadFeedback);
     }
-    @Export(name="loadImbalancePercentage", type=Double.class, parameters={})
+    @Export(name="loadImbalancePercentage", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> loadImbalancePercentage;
 
     public Output<Optional<Double>> loadImbalancePercentage() {
         return Codegen.optional(this.loadImbalancePercentage);
     }
-    @Export(name="mapUpdateInterval", type=Integer.class, parameters={})
+    @Export(name="mapUpdateInterval", refs={Integer.class}, tree="[0]")
     private Output<Integer> mapUpdateInterval;
 
     public Output<Integer> mapUpdateInterval() {
         return this.mapUpdateInterval;
     }
-    @Export(name="maxProperties", type=Integer.class, parameters={})
+    @Export(name="maxProperties", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxProperties;
 
     public Output<Integer> maxProperties() {
         return this.maxProperties;
     }
-    @Export(name="maxResources", type=Integer.class, parameters={})
+    @Export(name="maxResources", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxResources;
 
     public Output<Integer> maxResources() {
         return this.maxResources;
     }
-    @Export(name="maxTestTimeout", type=Double.class, parameters={})
+    @Export(name="maxTestTimeout", refs={Double.class}, tree="[0]")
     private Output<Double> maxTestTimeout;
 
     public Output<Double> maxTestTimeout() {
         return this.maxTestTimeout;
     }
-    @Export(name="maxTtl", type=Integer.class, parameters={})
+    @Export(name="maxTtl", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxTtl;
 
     public Output<Integer> maxTtl() {
         return this.maxTtl;
     }
-    @Export(name="minPingableRegionFraction", type=Double.class, parameters={})
+    @Export(name="minPingableRegionFraction", refs={Double.class}, tree="[0]")
     private Output<Double> minPingableRegionFraction;
 
     public Output<Double> minPingableRegionFraction() {
         return this.minPingableRegionFraction;
     }
-    @Export(name="minTestInterval", type=Integer.class, parameters={})
+    @Export(name="minTestInterval", refs={Integer.class}, tree="[0]")
     private Output<Integer> minTestInterval;
 
     public Output<Integer> minTestInterval() {
         return this.minTestInterval;
     }
-    @Export(name="minTtl", type=Integer.class, parameters={})
+    @Export(name="minTtl", refs={Integer.class}, tree="[0]")
     private Output<Integer> minTtl;
 
     public Output<Integer> minTtl() {
         return this.minTtl;
     }
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     public Output<String> name() {
         return this.name;
     }
-    @Export(name="pingInterval", type=Integer.class, parameters={})
+    @Export(name="pingInterval", refs={Integer.class}, tree="[0]")
     private Output<Integer> pingInterval;
 
     public Output<Integer> pingInterval() {
         return this.pingInterval;
     }
-    @Export(name="pingPacketSize", type=Integer.class, parameters={})
+    @Export(name="pingPacketSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> pingPacketSize;
 
     public Output<Integer> pingPacketSize() {
         return this.pingPacketSize;
     }
-    @Export(name="roundRobinPrefix", type=String.class, parameters={})
+    @Export(name="roundRobinPrefix", refs={String.class}, tree="[0]")
     private Output<String> roundRobinPrefix;
 
     public Output<String> roundRobinPrefix() {
         return this.roundRobinPrefix;
     }
-    @Export(name="servermonitorLivenessCount", type=Integer.class, parameters={})
+    @Export(name="servermonitorLivenessCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> servermonitorLivenessCount;
 
     public Output<Integer> servermonitorLivenessCount() {
         return this.servermonitorLivenessCount;
     }
-    @Export(name="servermonitorLoadCount", type=Integer.class, parameters={})
+    @Export(name="servermonitorLoadCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> servermonitorLoadCount;
 
     public Output<Integer> servermonitorLoadCount() {
         return this.servermonitorLoadCount;
     }
-    @Export(name="servermonitorPool", type=String.class, parameters={})
+    @Export(name="servermonitorPool", refs={String.class}, tree="[0]")
     private Output<String> servermonitorPool;
 
     public Output<String> servermonitorPool() {
         return this.servermonitorPool;
     }
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     public Output<String> type() {
         return this.type;
     }
-    @Export(name="waitOnComplete", type=Boolean.class, parameters={})
+    @Export(name="waitOnComplete", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> waitOnComplete;
 
     public Output<Optional<Boolean>> waitOnComplete() {

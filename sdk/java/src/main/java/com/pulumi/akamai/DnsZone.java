@@ -21,85 +21,85 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/dnsZone:DnsZone")
 public class DnsZone extends com.pulumi.resources.CustomResource {
-    @Export(name="activationState", type=String.class, parameters={})
+    @Export(name="activationState", refs={String.class}, tree="[0]")
     private Output<String> activationState;
 
     public Output<String> activationState() {
         return this.activationState;
     }
-    @Export(name="aliasCount", type=Integer.class, parameters={})
+    @Export(name="aliasCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> aliasCount;
 
     public Output<Integer> aliasCount() {
         return this.aliasCount;
     }
-    @Export(name="comment", type=String.class, parameters={})
+    @Export(name="comment", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> comment;
 
     public Output<Optional<String>> comment() {
         return Codegen.optional(this.comment);
     }
-    @Export(name="contract", type=String.class, parameters={})
+    @Export(name="contract", refs={String.class}, tree="[0]")
     private Output<String> contract;
 
     public Output<String> contract() {
         return this.contract;
     }
-    @Export(name="endCustomerId", type=String.class, parameters={})
+    @Export(name="endCustomerId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> endCustomerId;
 
     public Output<Optional<String>> endCustomerId() {
         return Codegen.optional(this.endCustomerId);
     }
-    @Export(name="group", type=String.class, parameters={})
+    @Export(name="group", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> group;
 
     public Output<Optional<String>> group() {
         return Codegen.optional(this.group);
     }
-    @Export(name="masters", type=List.class, parameters={String.class})
+    @Export(name="masters", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> masters;
 
     public Output<Optional<List<String>>> masters() {
         return Codegen.optional(this.masters);
     }
-    @Export(name="signAndServe", type=Boolean.class, parameters={})
+    @Export(name="signAndServe", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> signAndServe;
 
     public Output<Optional<Boolean>> signAndServe() {
         return Codegen.optional(this.signAndServe);
     }
-    @Export(name="signAndServeAlgorithm", type=String.class, parameters={})
+    @Export(name="signAndServeAlgorithm", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> signAndServeAlgorithm;
 
     public Output<Optional<String>> signAndServeAlgorithm() {
         return Codegen.optional(this.signAndServeAlgorithm);
     }
-    @Export(name="target", type=String.class, parameters={})
+    @Export(name="target", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> target;
 
     public Output<Optional<String>> target() {
         return Codegen.optional(this.target);
     }
-    @Export(name="tsigKey", type=DnsZoneTsigKey.class, parameters={})
+    @Export(name="tsigKey", refs={DnsZoneTsigKey.class}, tree="[0]")
     private Output</* @Nullable */ DnsZoneTsigKey> tsigKey;
 
     public Output<Optional<DnsZoneTsigKey>> tsigKey() {
         return Codegen.optional(this.tsigKey);
     }
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     public Output<String> type() {
         return this.type;
     }
-    @Export(name="versionId", type=String.class, parameters={})
+    @Export(name="versionId", refs={String.class}, tree="[0]")
     private Output<String> versionId;
 
     public Output<String> versionId() {
         return this.versionId;
     }
-    @Export(name="zone", type=String.class, parameters={})
+    @Export(name="zone", refs={String.class}, tree="[0]")
     private Output<String> zone;
 
     public Output<String> zone() {

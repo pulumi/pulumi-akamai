@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupAppSecAdvancedSettingsPrefetch(ctx *pulumi.Context, args *LookupAppSecAdvancedSettingsPrefetchArgs, opts ...pulumi.InvokeOption) (*LookupAppSecAdvancedSettingsPrefetchResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAppSecAdvancedSettingsPrefetchResult
 	err := ctx.Invoke("akamai:index/getAppSecAdvancedSettingsPrefetch:getAppSecAdvancedSettingsPrefetch", args, &rv, opts...)
 	if err != nil {

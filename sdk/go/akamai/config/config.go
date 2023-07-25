@@ -4,19 +4,13 @@
 package config
 
 import (
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 )
 
-// Deprecated: The setting "appsec_section" has been deprecated.
-func GetAppsecSection(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:appsecSection")
-}
+var _ = internal.GetEnvOrDefault
 
-// Deprecated: The setting "appsec" has been deprecated.
-func GetAppsecs(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:appsecs")
-}
 func GetCacheEnabled(ctx *pulumi.Context) bool {
 	return config.GetBool(ctx, "akamai:cacheEnabled")
 }
@@ -28,51 +22,8 @@ func GetConfig(ctx *pulumi.Context) string {
 func GetConfigSection(ctx *pulumi.Context) string {
 	return config.Get(ctx, "akamai:configSection")
 }
-
-// Deprecated: The setting "dns" has been deprecated.
-func GetDns(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:dns")
-}
-
-// Deprecated: The setting "dns_section" has been deprecated.
-func GetDnsSection(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:dnsSection")
-}
 func GetEdgerc(ctx *pulumi.Context) string {
 	return config.Get(ctx, "akamai:edgerc")
-}
-
-// Deprecated: The setting "gtm" has been deprecated.
-func GetGtm(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:gtm")
-}
-
-// Deprecated: The setting "gtm_section" has been deprecated.
-func GetGtmSection(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:gtmSection")
-}
-
-// Deprecated: The setting "networklist_section" has been deprecated.
-func GetNetworklistSection(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:networklistSection")
-}
-func GetNetworks(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:networks")
-}
-
-// Deprecated: The setting "papi_section" has been deprecated.
-func GetPapiSection(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:papiSection")
-}
-
-// Deprecated: The setting "property" has been deprecated.
-func GetProperty(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:property")
-}
-
-// Deprecated: The setting "property_section" has been deprecated.
-func GetPropertySection(ctx *pulumi.Context) string {
-	return config.Get(ctx, "akamai:propertySection")
 }
 
 // The maximum number of API requests to be made per second (0 for no limit)

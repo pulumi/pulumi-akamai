@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupBotmanBotManagementSettings(ctx *pulumi.Context, args *LookupBotmanBotManagementSettingsArgs, opts ...pulumi.InvokeOption) (*LookupBotmanBotManagementSettingsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBotmanBotManagementSettingsResult
 	err := ctx.Invoke("akamai:index/getBotmanBotManagementSettings:getBotmanBotManagementSettings", args, &rv, opts...)
 	if err != nil {

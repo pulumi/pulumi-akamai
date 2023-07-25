@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -34,6 +35,7 @@ func NewAppSecCustomRule(ctx *pulumi.Context,
 	if args.CustomRule == nil {
 		return nil, errors.New("invalid value for required argument 'CustomRule'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecCustomRule
 	err := ctx.RegisterResource("akamai:index/appSecCustomRule:AppSecCustomRule", name, args, &resource, opts...)
 	if err != nil {

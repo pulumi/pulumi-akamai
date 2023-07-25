@@ -24,9 +24,6 @@ namespace Pulumi.Akamai.Inputs
             }
         }
 
-        [Input("connectorName", required: true)]
-        public Input<string> ConnectorName { get; set; } = null!;
-
         [Input("contentType")]
         public Input<string>? ContentType { get; set; }
 
@@ -35,6 +32,9 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("customHeaderValue")]
         public Input<string>? CustomHeaderValue { get; set; }
+
+        [Input("displayName", required: true)]
+        public Input<string> DisplayName { get; set; } = null!;
 
         [Input("endpoint", required: true)]
         public Input<string> Endpoint { get; set; } = null!;

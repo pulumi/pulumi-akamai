@@ -22,21 +22,21 @@ class GetDatastreamDatasetFieldsResult:
     """
     A collection of values returned by getDatastreamDatasetFields.
     """
-    def __init__(__self__, fields=None, id=None, template_name=None):
-        if fields and not isinstance(fields, list):
-            raise TypeError("Expected argument 'fields' to be a list")
-        pulumi.set(__self__, "fields", fields)
+    def __init__(__self__, dataset_fields=None, id=None, product_id=None):
+        if dataset_fields and not isinstance(dataset_fields, list):
+            raise TypeError("Expected argument 'dataset_fields' to be a list")
+        pulumi.set(__self__, "dataset_fields", dataset_fields)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
-        if template_name and not isinstance(template_name, str):
-            raise TypeError("Expected argument 'template_name' to be a str")
-        pulumi.set(__self__, "template_name", template_name)
+        if product_id and not isinstance(product_id, str):
+            raise TypeError("Expected argument 'product_id' to be a str")
+        pulumi.set(__self__, "product_id", product_id)
 
     @property
-    @pulumi.getter
-    def fields(self) -> Sequence['outputs.GetDatastreamDatasetFieldsFieldResult']:
-        return pulumi.get(self, "fields")
+    @pulumi.getter(name="datasetFields")
+    def dataset_fields(self) -> Sequence['outputs.GetDatastreamDatasetFieldsDatasetFieldResult']:
+        return pulumi.get(self, "dataset_fields")
 
     @property
     @pulumi.getter
@@ -47,9 +47,9 @@ class GetDatastreamDatasetFieldsResult:
         return pulumi.get(self, "id")
 
     @property
-    @pulumi.getter(name="templateName")
-    def template_name(self) -> Optional[str]:
-        return pulumi.get(self, "template_name")
+    @pulumi.getter(name="productId")
+    def product_id(self) -> Optional[str]:
+        return pulumi.get(self, "product_id")
 
 
 class AwaitableGetDatastreamDatasetFieldsResult(GetDatastreamDatasetFieldsResult):
@@ -58,29 +58,29 @@ class AwaitableGetDatastreamDatasetFieldsResult(GetDatastreamDatasetFieldsResult
         if False:
             yield self
         return GetDatastreamDatasetFieldsResult(
-            fields=self.fields,
+            dataset_fields=self.dataset_fields,
             id=self.id,
-            template_name=self.template_name)
+            product_id=self.product_id)
 
 
-def get_datastream_dataset_fields(template_name: Optional[str] = None,
+def get_datastream_dataset_fields(product_id: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatastreamDatasetFieldsResult:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    __args__['templateName'] = template_name
+    __args__['productId'] = product_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields', __args__, opts=opts, typ=GetDatastreamDatasetFieldsResult).value
 
     return AwaitableGetDatastreamDatasetFieldsResult(
-        fields=pulumi.get(__ret__, 'fields'),
+        dataset_fields=pulumi.get(__ret__, 'dataset_fields'),
         id=pulumi.get(__ret__, 'id'),
-        template_name=pulumi.get(__ret__, 'template_name'))
+        product_id=pulumi.get(__ret__, 'product_id'))
 
 
 @_utilities.lift_output_func(get_datastream_dataset_fields)
-def get_datastream_dataset_fields_output(template_name: Optional[pulumi.Input[Optional[str]]] = None,
+def get_datastream_dataset_fields_output(product_id: Optional[pulumi.Input[Optional[str]]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatastreamDatasetFieldsResult]:
     """
     Use this data source to access information about an existing resource.

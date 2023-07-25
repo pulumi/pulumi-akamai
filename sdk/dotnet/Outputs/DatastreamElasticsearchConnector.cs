@@ -16,10 +16,10 @@ namespace Pulumi.Akamai.Outputs
         public readonly string? CaCert;
         public readonly string? ClientCert;
         public readonly string? ClientKey;
-        public readonly string ConnectorName;
         public readonly string? ContentType;
         public readonly string? CustomHeaderName;
         public readonly string? CustomHeaderValue;
+        public readonly string DisplayName;
         public readonly string Endpoint;
         public readonly string IndexName;
         public readonly bool? MTls;
@@ -35,13 +35,13 @@ namespace Pulumi.Akamai.Outputs
 
             string? clientKey,
 
-            string connectorName,
-
             string? contentType,
 
             string? customHeaderName,
 
             string? customHeaderValue,
+
+            string displayName,
 
             string endpoint,
 
@@ -58,10 +58,10 @@ namespace Pulumi.Akamai.Outputs
             CaCert = caCert;
             ClientCert = clientCert;
             ClientKey = clientKey;
-            ConnectorName = connectorName;
             ContentType = contentType;
             CustomHeaderName = customHeaderName;
             CustomHeaderValue = customHeaderValue;
+            DisplayName = displayName;
             Endpoint = endpoint;
             IndexName = indexName;
             MTls = mTls;

@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetEdgeWorkersPropertyRules(ctx *pulumi.Context, args *GetEdgeWorkersPropertyRulesArgs, opts ...pulumi.InvokeOption) (*GetEdgeWorkersPropertyRulesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEdgeWorkersPropertyRulesResult
 	err := ctx.Invoke("akamai:index/getEdgeWorkersPropertyRules:getEdgeWorkersPropertyRules", args, &rv, opts...)
 	if err != nil {

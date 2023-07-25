@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupBotmanClientSideSecurity(ctx *pulumi.Context, args *LookupBotmanClientSideSecurityArgs, opts ...pulumi.InvokeOption) (*LookupBotmanClientSideSecurityResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBotmanClientSideSecurityResult
 	err := ctx.Invoke("akamai:index/getBotmanClientSideSecurity:getBotmanClientSideSecurity", args, &rv, opts...)
 	if err != nil {

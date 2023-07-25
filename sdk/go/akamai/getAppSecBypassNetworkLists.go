@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAppSecBypassNetworkLists(ctx *pulumi.Context, args *GetAppSecBypassNetworkListsArgs, opts ...pulumi.InvokeOption) (*GetAppSecBypassNetworkListsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppSecBypassNetworkListsResult
 	err := ctx.Invoke("akamai:index/getAppSecBypassNetworkLists:getAppSecBypassNetworkLists", args, &rv, opts...)
 	if err != nil {

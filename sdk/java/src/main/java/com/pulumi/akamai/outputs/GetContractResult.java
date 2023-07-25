@@ -6,18 +6,9 @@ package com.pulumi.akamai.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class GetContractResult {
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    private @Nullable String group;
     private String groupId;
     private String groupName;
     /**
@@ -27,15 +18,6 @@ public final class GetContractResult {
     private String id;
 
     private GetContractResult() {}
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    public Optional<String> group() {
-        return Optional.ofNullable(this.group);
-    }
     public String groupId() {
         return this.groupId;
     }
@@ -59,24 +41,17 @@ public final class GetContractResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String group;
         private String groupId;
         private String groupName;
         private String id;
         public Builder() {}
         public Builder(GetContractResult defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.group = defaults.group;
     	      this.groupId = defaults.groupId;
     	      this.groupName = defaults.groupName;
     	      this.id = defaults.id;
         }
 
-        @CustomType.Setter
-        public Builder group(@Nullable String group) {
-            this.group = group;
-            return this;
-        }
         @CustomType.Setter
         public Builder groupId(String groupId) {
             this.groupId = Objects.requireNonNull(groupId);
@@ -94,7 +69,6 @@ public final class GetContractResult {
         }
         public GetContractResult build() {
             final var o = new GetContractResult();
-            o.group = group;
             o.groupId = groupId;
             o.groupName = groupName;
             o.id = id;

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -32,6 +33,7 @@ func NewBotmanServeAlternateAction(ctx *pulumi.Context,
 	if args.ServeAlternateAction == nil {
 		return nil, errors.New("invalid value for required argument 'ServeAlternateAction'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BotmanServeAlternateAction
 	err := ctx.RegisterResource("akamai:index/botmanServeAlternateAction:BotmanServeAlternateAction", name, args, &resource, opts...)
 	if err != nil {

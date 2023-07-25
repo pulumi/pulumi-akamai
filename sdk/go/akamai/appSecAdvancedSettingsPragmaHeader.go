@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -35,6 +36,7 @@ func NewAppSecAdvancedSettingsPragmaHeader(ctx *pulumi.Context,
 	if args.PragmaHeader == nil {
 		return nil, errors.New("invalid value for required argument 'PragmaHeader'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecAdvancedSettingsPragmaHeader
 	err := ctx.RegisterResource("akamai:index/appSecAdvancedSettingsPragmaHeader:AppSecAdvancedSettingsPragmaHeader", name, args, &resource, opts...)
 	if err != nil {

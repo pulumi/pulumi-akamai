@@ -23,7 +23,7 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
      * Whether to acknowledge change management
      * 
      */
-    @Export(name="acknowledgeChangeManagement", type=Boolean.class, parameters={})
+    @Export(name="acknowledgeChangeManagement", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> acknowledgeChangeManagement;
 
     /**
@@ -37,7 +37,7 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
      * Whether to acknowledge post-verification warnings
      * 
      */
-    @Export(name="acknowledgePostVerificationWarnings", type=Boolean.class, parameters={})
+    @Export(name="acknowledgePostVerificationWarnings", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> acknowledgePostVerificationWarnings;
 
     /**
@@ -51,7 +51,7 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
      * List of post-verification warnings to be automatically acknowledged
      * 
      */
-    @Export(name="autoApproveWarnings", type=List.class, parameters={String.class})
+    @Export(name="autoApproveWarnings", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> autoApproveWarnings;
 
     /**
@@ -65,7 +65,7 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
      * ECDSA certificate in pem format to be uploaded
      * 
      */
-    @Export(name="certificateEcdsaPem", type=String.class, parameters={})
+    @Export(name="certificateEcdsaPem", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> certificateEcdsaPem;
 
     /**
@@ -79,7 +79,7 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
      * RSA certificate in pem format to be uploaded
      * 
      */
-    @Export(name="certificateRsaPem", type=String.class, parameters={})
+    @Export(name="certificateRsaPem", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> certificateRsaPem;
 
     /**
@@ -93,7 +93,7 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
      * The unique identifier of the enrollment
      * 
      */
-    @Export(name="enrollmentId", type=Integer.class, parameters={})
+    @Export(name="enrollmentId", refs={Integer.class}, tree="[0]")
     private Output<Integer> enrollmentId;
 
     /**
@@ -107,7 +107,7 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
      * Trust chain in pem format for provided ECDSA certificate
      * 
      */
-    @Export(name="trustChainEcdsaPem", type=String.class, parameters={})
+    @Export(name="trustChainEcdsaPem", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> trustChainEcdsaPem;
 
     /**
@@ -121,7 +121,7 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
      * Trust chain in pem format for provided RSA certificate
      * 
      */
-    @Export(name="trustChainRsaPem", type=String.class, parameters={})
+    @Export(name="trustChainRsaPem", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> trustChainRsaPem;
 
     /**
@@ -135,7 +135,7 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
      * Used to distinguish whether there are unacknowledged warnings for a certificate
      * 
      */
-    @Export(name="unacknowledgedWarnings", type=Boolean.class, parameters={})
+    @Export(name="unacknowledgedWarnings", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> unacknowledgedWarnings;
 
     /**
@@ -149,7 +149,7 @@ public class CpsUploadCertificate extends com.pulumi.resources.CustomResource {
      * Whether to wait for certificate to be deployed
      * 
      */
-    @Export(name="waitForDeployment", type=Boolean.class, parameters={})
+    @Export(name="waitForDeployment", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> waitForDeployment;
 
     /**

@@ -8,9 +8,7 @@ export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Pro
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getCpCode:getCpCode", {
-        "contract": args.contract,
         "contractId": args.contractId,
-        "group": args.group,
         "groupId": args.groupId,
         "name": args.name,
     }, opts);
@@ -20,16 +18,8 @@ export function getCpCode(args: GetCpCodeArgs, opts?: pulumi.InvokeOptions): Pro
  * A collection of arguments for invoking getCpCode.
  */
 export interface GetCpCodeArgs {
-    /**
-     * @deprecated The setting "contract" has been deprecated.
-     */
-    contract?: string;
-    contractId?: string;
-    /**
-     * @deprecated The setting "group" has been deprecated.
-     */
-    group?: string;
-    groupId?: string;
+    contractId: string;
+    groupId: string;
     name: string;
 }
 
@@ -37,15 +27,7 @@ export interface GetCpCodeArgs {
  * A collection of values returned by getCpCode.
  */
 export interface GetCpCodeResult {
-    /**
-     * @deprecated The setting "contract" has been deprecated.
-     */
-    readonly contract: string;
     readonly contractId: string;
-    /**
-     * @deprecated The setting "group" has been deprecated.
-     */
-    readonly group: string;
     readonly groupId: string;
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -62,15 +44,7 @@ export function getCpCodeOutput(args: GetCpCodeOutputArgs, opts?: pulumi.InvokeO
  * A collection of arguments for invoking getCpCode.
  */
 export interface GetCpCodeOutputArgs {
-    /**
-     * @deprecated The setting "contract" has been deprecated.
-     */
-    contract?: pulumi.Input<string>;
-    contractId?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "group" has been deprecated.
-     */
-    group?: pulumi.Input<string>;
-    groupId?: pulumi.Input<string>;
+    contractId: pulumi.Input<string>;
+    groupId: pulumi.Input<string>;
     name: pulumi.Input<string>;
 }

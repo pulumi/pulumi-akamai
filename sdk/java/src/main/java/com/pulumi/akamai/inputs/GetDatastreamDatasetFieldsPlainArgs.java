@@ -14,17 +14,17 @@ public final class GetDatastreamDatasetFieldsPlainArgs extends com.pulumi.resour
 
     public static final GetDatastreamDatasetFieldsPlainArgs Empty = new GetDatastreamDatasetFieldsPlainArgs();
 
-    @Import(name="templateName")
-    private @Nullable String templateName;
+    @Import(name="productId")
+    private @Nullable String productId;
 
-    public Optional<String> templateName() {
-        return Optional.ofNullable(this.templateName);
+    public Optional<String> productId() {
+        return Optional.ofNullable(this.productId);
     }
 
     private GetDatastreamDatasetFieldsPlainArgs() {}
 
     private GetDatastreamDatasetFieldsPlainArgs(GetDatastreamDatasetFieldsPlainArgs $) {
-        this.templateName = $.templateName;
+        this.productId = $.productId;
     }
 
     public static Builder builder() {
@@ -45,8 +45,8 @@ public final class GetDatastreamDatasetFieldsPlainArgs extends com.pulumi.resour
             $ = new GetDatastreamDatasetFieldsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder templateName(@Nullable String templateName) {
-            $.templateName = templateName;
+        public Builder productId(@Nullable String productId) {
+            $.productId = productId;
             return this;
         }
 

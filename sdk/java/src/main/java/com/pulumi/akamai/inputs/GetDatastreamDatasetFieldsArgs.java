@@ -15,17 +15,17 @@ public final class GetDatastreamDatasetFieldsArgs extends com.pulumi.resources.I
 
     public static final GetDatastreamDatasetFieldsArgs Empty = new GetDatastreamDatasetFieldsArgs();
 
-    @Import(name="templateName")
-    private @Nullable Output<String> templateName;
+    @Import(name="productId")
+    private @Nullable Output<String> productId;
 
-    public Optional<Output<String>> templateName() {
-        return Optional.ofNullable(this.templateName);
+    public Optional<Output<String>> productId() {
+        return Optional.ofNullable(this.productId);
     }
 
     private GetDatastreamDatasetFieldsArgs() {}
 
     private GetDatastreamDatasetFieldsArgs(GetDatastreamDatasetFieldsArgs $) {
-        this.templateName = $.templateName;
+        this.productId = $.productId;
     }
 
     public static Builder builder() {
@@ -46,13 +46,13 @@ public final class GetDatastreamDatasetFieldsArgs extends com.pulumi.resources.I
             $ = new GetDatastreamDatasetFieldsArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder templateName(@Nullable Output<String> templateName) {
-            $.templateName = templateName;
+        public Builder productId(@Nullable Output<String> productId) {
+            $.productId = productId;
             return this;
         }
 
-        public Builder templateName(String templateName) {
-            return templateName(Output.of(templateName));
+        public Builder productId(String productId) {
+            return productId(Output.of(productId));
         }
 
         public GetDatastreamDatasetFieldsArgs build() {

@@ -14,17 +14,15 @@ namespace Pulumi.Akamai.Outputs
     public sealed class DatastreamNewRelicConnector
     {
         public readonly string AuthToken;
-        public readonly string ConnectorName;
         public readonly string? ContentType;
         public readonly string? CustomHeaderName;
         public readonly string? CustomHeaderValue;
+        public readonly string DisplayName;
         public readonly string Endpoint;
 
         [OutputConstructor]
         private DatastreamNewRelicConnector(
             string authToken,
-
-            string connectorName,
 
             string? contentType,
 
@@ -32,13 +30,15 @@ namespace Pulumi.Akamai.Outputs
 
             string? customHeaderValue,
 
+            string displayName,
+
             string endpoint)
         {
             AuthToken = authToken;
-            ConnectorName = connectorName;
             ContentType = contentType;
             CustomHeaderName = customHeaderName;
             CustomHeaderValue = customHeaderValue;
+            DisplayName = displayName;
             Endpoint = endpoint;
         }
     }

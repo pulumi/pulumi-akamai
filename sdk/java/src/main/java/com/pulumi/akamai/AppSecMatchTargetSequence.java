@@ -21,7 +21,7 @@ public class AppSecMatchTargetSequence extends com.pulumi.resources.CustomResour
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -35,7 +35,7 @@ public class AppSecMatchTargetSequence extends com.pulumi.resources.CustomResour
      * JSON-formatted definition of the processing sequence for all defined match targets
      * 
      */
-    @Export(name="matchTargetSequence", type=String.class, parameters={})
+    @Export(name="matchTargetSequence", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> matchTargetSequence;
 
     /**

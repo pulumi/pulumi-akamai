@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetBotmanBotEndpointCoverageReport(ctx *pulumi.Context, args *GetBotmanBotEndpointCoverageReportArgs, opts ...pulumi.InvokeOption) (*GetBotmanBotEndpointCoverageReportResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBotmanBotEndpointCoverageReportResult
 	err := ctx.Invoke("akamai:index/getBotmanBotEndpointCoverageReport:getBotmanBotEndpointCoverageReport", args, &rv, opts...)
 	if err != nil {

@@ -153,29 +153,6 @@ public final class IamUserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The user&#39;s lock status
-     * 
-     * @deprecated
-     * The setting &#34;is_locked&#34; has been deprecated. Please use &#34;lock&#34; setting instead
-     * 
-     */
-    @Deprecated /* The setting ""is_locked"" has been deprecated. Please use ""lock"" setting instead */
-    @Import(name="isLocked")
-    private @Nullable Output<Boolean> isLocked;
-
-    /**
-     * @return The user&#39;s lock status
-     * 
-     * @deprecated
-     * The setting &#34;is_locked&#34; has been deprecated. Please use &#34;lock&#34; setting instead
-     * 
-     */
-    @Deprecated /* The setting ""is_locked"" has been deprecated. Please use ""lock"" setting instead */
-    public Optional<Output<Boolean>> isLocked() {
-        return Optional.ofNullable(this.isLocked);
-    }
-
-    /**
      * The user&#39;s position at your company
      * 
      */
@@ -412,7 +389,6 @@ public final class IamUserState extends com.pulumi.resources.ResourceArgs {
         this.emailUpdatePending = $.emailUpdatePending;
         this.enableTfa = $.enableTfa;
         this.firstName = $.firstName;
-        this.isLocked = $.isLocked;
         this.jobTitle = $.jobTitle;
         this.lastLogin = $.lastLogin;
         this.lastName = $.lastName;
@@ -635,35 +611,6 @@ public final class IamUserState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder firstName(String firstName) {
             return firstName(Output.of(firstName));
-        }
-
-        /**
-         * @param isLocked The user&#39;s lock status
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;is_locked&#34; has been deprecated. Please use &#34;lock&#34; setting instead
-         * 
-         */
-        @Deprecated /* The setting ""is_locked"" has been deprecated. Please use ""lock"" setting instead */
-        public Builder isLocked(@Nullable Output<Boolean> isLocked) {
-            $.isLocked = isLocked;
-            return this;
-        }
-
-        /**
-         * @param isLocked The user&#39;s lock status
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;is_locked&#34; has been deprecated. Please use &#34;lock&#34; setting instead
-         * 
-         */
-        @Deprecated /* The setting ""is_locked"" has been deprecated. Please use ""lock"" setting instead */
-        public Builder isLocked(Boolean isLocked) {
-            return isLocked(Output.of(isLocked));
         }
 
         /**

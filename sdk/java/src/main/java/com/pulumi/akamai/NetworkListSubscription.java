@@ -16,13 +16,13 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/networkListSubscription:NetworkListSubscription")
 public class NetworkListSubscription extends com.pulumi.resources.CustomResource {
-    @Export(name="networkLists", type=List.class, parameters={String.class})
+    @Export(name="networkLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> networkLists;
 
     public Output<List<String>> networkLists() {
         return this.networkLists;
     }
-    @Export(name="recipients", type=List.class, parameters={String.class})
+    @Export(name="recipients", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> recipients;
 
     public Output<List<String>> recipients() {

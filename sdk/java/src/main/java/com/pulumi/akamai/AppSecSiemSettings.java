@@ -23,7 +23,7 @@ public class AppSecSiemSettings extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -37,7 +37,7 @@ public class AppSecSiemSettings extends com.pulumi.resources.CustomResource {
      * Whether Bot Manager events should be included in SIEM events
      * 
      */
-    @Export(name="enableBotmanSiem", type=Boolean.class, parameters={})
+    @Export(name="enableBotmanSiem", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableBotmanSiem;
 
     /**
@@ -51,7 +51,7 @@ public class AppSecSiemSettings extends com.pulumi.resources.CustomResource {
      * Whether to enable SIEM on all security policies in the security configuration
      * 
      */
-    @Export(name="enableForAllPolicies", type=Boolean.class, parameters={})
+    @Export(name="enableForAllPolicies", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableForAllPolicies;
 
     /**
@@ -65,7 +65,7 @@ public class AppSecSiemSettings extends com.pulumi.resources.CustomResource {
      * Whether to enable SIEM
      * 
      */
-    @Export(name="enableSiem", type=Boolean.class, parameters={})
+    @Export(name="enableSiem", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableSiem;
 
     /**
@@ -79,7 +79,7 @@ public class AppSecSiemSettings extends com.pulumi.resources.CustomResource {
      * List of IDs of security policy for which SIEM integration is to be enabled
      * 
      */
-    @Export(name="securityPolicyIds", type=List.class, parameters={String.class})
+    @Export(name="securityPolicyIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> securityPolicyIds;
 
     /**
@@ -93,7 +93,7 @@ public class AppSecSiemSettings extends com.pulumi.resources.CustomResource {
      * Unique identifier of the SIEM settings being modified
      * 
      */
-    @Export(name="siemId", type=Integer.class, parameters={})
+    @Export(name="siemId", refs={Integer.class}, tree="[0]")
     private Output<Integer> siemId;
 
     /**

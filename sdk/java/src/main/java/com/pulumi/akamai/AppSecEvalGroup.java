@@ -21,7 +21,7 @@ public class AppSecEvalGroup extends com.pulumi.resources.CustomResource {
      * Unique identifier of the evaluation attack group being modified
      * 
      */
-    @Export(name="attackGroup", type=String.class, parameters={})
+    @Export(name="attackGroup", refs={String.class}, tree="[0]")
     private Output<String> attackGroup;
 
     /**
@@ -35,7 +35,7 @@ public class AppSecEvalGroup extends com.pulumi.resources.CustomResource {
      * Action to be taken when the attack group is triggered
      * 
      */
-    @Export(name="attackGroupAction", type=String.class, parameters={})
+    @Export(name="attackGroupAction", refs={String.class}, tree="[0]")
     private Output<String> attackGroupAction;
 
     /**
@@ -49,7 +49,7 @@ public class AppSecEvalGroup extends com.pulumi.resources.CustomResource {
      * JSON-formatted condition and exception information for the evaluation attack group
      * 
      */
-    @Export(name="conditionException", type=String.class, parameters={})
+    @Export(name="conditionException", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> conditionException;
 
     /**
@@ -63,7 +63,7 @@ public class AppSecEvalGroup extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -77,7 +77,7 @@ public class AppSecEvalGroup extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**

@@ -14,10 +14,10 @@ namespace Pulumi.Akamai.Outputs
     public sealed class DatastreamLogglyConnector
     {
         public readonly string AuthToken;
-        public readonly string ConnectorName;
         public readonly string? ContentType;
         public readonly string? CustomHeaderName;
         public readonly string? CustomHeaderValue;
+        public readonly string DisplayName;
         public readonly string Endpoint;
         public readonly string? Tags;
 
@@ -25,23 +25,23 @@ namespace Pulumi.Akamai.Outputs
         private DatastreamLogglyConnector(
             string authToken,
 
-            string connectorName,
-
             string? contentType,
 
             string? customHeaderName,
 
             string? customHeaderValue,
 
+            string displayName,
+
             string endpoint,
 
             string? tags)
         {
             AuthToken = authToken;
-            ConnectorName = connectorName;
             ContentType = contentType;
             CustomHeaderName = customHeaderName;
             CustomHeaderValue = customHeaderValue;
+            DisplayName = displayName;
             Endpoint = endpoint;
             Tags = tags;
         }

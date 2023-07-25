@@ -21,7 +21,7 @@ public class IamBlockedUserProperties extends com.pulumi.resources.CustomResourc
      * List of properties to block for a user
      * 
      */
-    @Export(name="blockedProperties", type=List.class, parameters={Integer.class})
+    @Export(name="blockedProperties", refs={List.class,Integer.class}, tree="[0,1]")
     private Output<List<Integer>> blockedProperties;
 
     /**
@@ -35,7 +35,7 @@ public class IamBlockedUserProperties extends com.pulumi.resources.CustomResourc
      * A unique identifier for a group
      * 
      */
-    @Export(name="groupId", type=Integer.class, parameters={})
+    @Export(name="groupId", refs={Integer.class}, tree="[0]")
     private Output<Integer> groupId;
 
     /**
@@ -49,7 +49,7 @@ public class IamBlockedUserProperties extends com.pulumi.resources.CustomResourc
      * A unique identifier for a user&#39;s profile, which corresponds to a user&#39;s actual profile or client ID
      * 
      */
-    @Export(name="identityId", type=String.class, parameters={})
+    @Export(name="identityId", refs={String.class}, tree="[0]")
     private Output<String> identityId;
 
     /**

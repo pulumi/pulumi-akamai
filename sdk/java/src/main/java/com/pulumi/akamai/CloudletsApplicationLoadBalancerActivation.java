@@ -20,7 +20,7 @@ public class CloudletsApplicationLoadBalancerActivation extends com.pulumi.resou
      * The network you want to activate the application load balancer version on (options are Staging and Production)
      * 
      */
-    @Export(name="network", type=String.class, parameters={})
+    @Export(name="network", refs={String.class}, tree="[0]")
     private Output<String> network;
 
     /**
@@ -34,7 +34,7 @@ public class CloudletsApplicationLoadBalancerActivation extends com.pulumi.resou
      * The conditional origin’s unique identifier
      * 
      */
-    @Export(name="originId", type=String.class, parameters={})
+    @Export(name="originId", refs={String.class}, tree="[0]")
     private Output<String> originId;
 
     /**
@@ -48,7 +48,7 @@ public class CloudletsApplicationLoadBalancerActivation extends com.pulumi.resou
      * Activation status for this application load balancer
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -62,7 +62,7 @@ public class CloudletsApplicationLoadBalancerActivation extends com.pulumi.resou
      * Cloudlets application load balancer version you want to activate
      * 
      */
-    @Export(name="version", type=Integer.class, parameters={})
+    @Export(name="version", refs={Integer.class}, tree="[0]")
     private Output<Integer> version;
 
     /**

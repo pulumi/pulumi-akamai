@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetGroup(ctx *pulumi.Context, args *GetGroupArgs, opts ...pulumi.InvokeOption) (*GetGroupResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetGroupResult
 	err := ctx.Invoke("akamai:index/getGroup:getGroup", args, &rv, opts...)
 	if err != nil {
@@ -21,24 +23,16 @@ func GetGroup(ctx *pulumi.Context, args *GetGroupArgs, opts ...pulumi.InvokeOpti
 
 // A collection of arguments for invoking getGroup.
 type GetGroupArgs struct {
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract   *string `pulumi:"contract"`
-	ContractId *string `pulumi:"contractId"`
-	GroupName  *string `pulumi:"groupName"`
-	// Deprecated: The setting "name" has been deprecated.
-	Name *string `pulumi:"name"`
+	ContractId string `pulumi:"contractId"`
+	GroupName  string `pulumi:"groupName"`
 }
 
 // A collection of values returned by getGroup.
 type GetGroupResult struct {
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract   string `pulumi:"contract"`
 	ContractId string `pulumi:"contractId"`
 	GroupName  string `pulumi:"groupName"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Deprecated: The setting "name" has been deprecated.
-	Name string `pulumi:"name"`
 }
 
 func GetGroupOutput(ctx *pulumi.Context, args GetGroupOutputArgs, opts ...pulumi.InvokeOption) GetGroupResultOutput {
@@ -56,12 +50,8 @@ func GetGroupOutput(ctx *pulumi.Context, args GetGroupOutputArgs, opts ...pulumi
 
 // A collection of arguments for invoking getGroup.
 type GetGroupOutputArgs struct {
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringPtrInput `pulumi:"contract"`
-	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
-	GroupName  pulumi.StringPtrInput `pulumi:"groupName"`
-	// Deprecated: The setting "name" has been deprecated.
-	Name pulumi.StringPtrInput `pulumi:"name"`
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	GroupName  pulumi.StringInput `pulumi:"groupName"`
 }
 
 func (GetGroupOutputArgs) ElementType() reflect.Type {
@@ -83,11 +73,6 @@ func (o GetGroupResultOutput) ToGetGroupResultOutputWithContext(ctx context.Cont
 	return o
 }
 
-// Deprecated: The setting "contract" has been deprecated.
-func (o GetGroupResultOutput) Contract() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGroupResult) string { return v.Contract }).(pulumi.StringOutput)
-}
-
 func (o GetGroupResultOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupResult) string { return v.ContractId }).(pulumi.StringOutput)
 }
@@ -99,11 +84,6 @@ func (o GetGroupResultOutput) GroupName() pulumi.StringOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGroupResult) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// Deprecated: The setting "name" has been deprecated.
-func (o GetGroupResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGroupResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
 func init() {

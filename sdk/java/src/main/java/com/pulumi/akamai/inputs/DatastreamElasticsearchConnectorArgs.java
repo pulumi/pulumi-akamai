@@ -37,13 +37,6 @@ public final class DatastreamElasticsearchConnectorArgs extends com.pulumi.resou
         return Optional.ofNullable(this.clientKey);
     }
 
-    @Import(name="connectorName", required=true)
-    private Output<String> connectorName;
-
-    public Output<String> connectorName() {
-        return this.connectorName;
-    }
-
     @Import(name="contentType")
     private @Nullable Output<String> contentType;
 
@@ -63,6 +56,13 @@ public final class DatastreamElasticsearchConnectorArgs extends com.pulumi.resou
 
     public Optional<Output<String>> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
+    }
+
+    @Import(name="displayName", required=true)
+    private Output<String> displayName;
+
+    public Output<String> displayName() {
+        return this.displayName;
     }
 
     @Import(name="endpoint", required=true)
@@ -113,10 +113,10 @@ public final class DatastreamElasticsearchConnectorArgs extends com.pulumi.resou
         this.caCert = $.caCert;
         this.clientCert = $.clientCert;
         this.clientKey = $.clientKey;
-        this.connectorName = $.connectorName;
         this.contentType = $.contentType;
         this.customHeaderName = $.customHeaderName;
         this.customHeaderValue = $.customHeaderValue;
+        this.displayName = $.displayName;
         this.endpoint = $.endpoint;
         this.indexName = $.indexName;
         this.mTls = $.mTls;
@@ -170,15 +170,6 @@ public final class DatastreamElasticsearchConnectorArgs extends com.pulumi.resou
             return clientKey(Output.of(clientKey));
         }
 
-        public Builder connectorName(Output<String> connectorName) {
-            $.connectorName = connectorName;
-            return this;
-        }
-
-        public Builder connectorName(String connectorName) {
-            return connectorName(Output.of(connectorName));
-        }
-
         public Builder contentType(@Nullable Output<String> contentType) {
             $.contentType = contentType;
             return this;
@@ -204,6 +195,15 @@ public final class DatastreamElasticsearchConnectorArgs extends com.pulumi.resou
 
         public Builder customHeaderValue(String customHeaderValue) {
             return customHeaderValue(Output.of(customHeaderValue));
+        }
+
+        public Builder displayName(Output<String> displayName) {
+            $.displayName = displayName;
+            return this;
+        }
+
+        public Builder displayName(String displayName) {
+            return displayName(Output.of(displayName));
         }
 
         public Builder endpoint(Output<String> endpoint) {
@@ -261,7 +261,7 @@ public final class DatastreamElasticsearchConnectorArgs extends com.pulumi.resou
         }
 
         public DatastreamElasticsearchConnectorArgs build() {
-            $.connectorName = Objects.requireNonNull($.connectorName, "expected parameter 'connectorName' to be non-null");
+            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
             $.endpoint = Objects.requireNonNull($.endpoint, "expected parameter 'endpoint' to be non-null");
             $.indexName = Objects.requireNonNull($.indexName, "expected parameter 'indexName' to be non-null");
             $.password = Objects.requireNonNull($.password, "expected parameter 'password' to be non-null");

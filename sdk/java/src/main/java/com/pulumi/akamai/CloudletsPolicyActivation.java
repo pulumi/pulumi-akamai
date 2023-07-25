@@ -21,7 +21,7 @@ public class CloudletsPolicyActivation extends com.pulumi.resources.CustomResour
      * Set of property IDs to link to this Cloudlets policy
      * 
      */
-    @Export(name="associatedProperties", type=List.class, parameters={String.class})
+    @Export(name="associatedProperties", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> associatedProperties;
 
     /**
@@ -35,7 +35,7 @@ public class CloudletsPolicyActivation extends com.pulumi.resources.CustomResour
      * The network you want to activate the policy version on (options are Staging and Production)
      * 
      */
-    @Export(name="network", type=String.class, parameters={})
+    @Export(name="network", refs={String.class}, tree="[0]")
     private Output<String> network;
 
     /**
@@ -49,7 +49,7 @@ public class CloudletsPolicyActivation extends com.pulumi.resources.CustomResour
      * ID of the Cloudlets policy you want to activate
      * 
      */
-    @Export(name="policyId", type=Integer.class, parameters={})
+    @Export(name="policyId", refs={Integer.class}, tree="[0]")
     private Output<Integer> policyId;
 
     /**
@@ -63,7 +63,7 @@ public class CloudletsPolicyActivation extends com.pulumi.resources.CustomResour
      * Activation status for this Cloudlets policy
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -77,7 +77,7 @@ public class CloudletsPolicyActivation extends com.pulumi.resources.CustomResour
      * Cloudlets policy version you want to activate
      * 
      */
-    @Export(name="version", type=Integer.class, parameters={})
+    @Export(name="version", refs={Integer.class}, tree="[0]")
     private Output<Integer> version;
 
     /**

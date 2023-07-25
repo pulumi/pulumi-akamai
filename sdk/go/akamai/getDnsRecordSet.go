@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetDnsRecordSet(ctx *pulumi.Context, args *GetDnsRecordSetArgs, opts ...pulumi.InvokeOption) (*GetDnsRecordSetResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDnsRecordSetResult
 	err := ctx.Invoke("akamai:index/getDnsRecordSet:getDnsRecordSet", args, &rv, opts...)
 	if err != nil {

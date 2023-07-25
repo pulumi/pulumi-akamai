@@ -15,25 +15,6 @@ public final class GetContractArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetContractArgs Empty = new GetContractArgs();
 
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    @Import(name="group")
-    private @Nullable Output<String> group;
-
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    public Optional<Output<String>> group() {
-        return Optional.ofNullable(this.group);
-    }
-
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
@@ -51,7 +32,6 @@ public final class GetContractArgs extends com.pulumi.resources.InvokeArgs {
     private GetContractArgs() {}
 
     private GetContractArgs(GetContractArgs $) {
-        this.group = $.group;
         this.groupId = $.groupId;
         this.groupName = $.groupName;
     }
@@ -72,31 +52,6 @@ public final class GetContractArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder(GetContractArgs defaults) {
             $ = new GetContractArgs(Objects.requireNonNull(defaults));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;group&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""group"" has been deprecated. */
-        public Builder group(@Nullable Output<String> group) {
-            $.group = group;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;group&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""group"" has been deprecated. */
-        public Builder group(String group) {
-            return group(Output.of(group));
         }
 
         public Builder groupId(@Nullable Output<String> groupId) {

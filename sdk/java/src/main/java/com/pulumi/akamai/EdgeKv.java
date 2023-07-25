@@ -23,7 +23,7 @@ public class EdgeKv extends com.pulumi.resources.CustomResource {
      * Storage location for data
      * 
      */
-    @Export(name="geoLocation", type=String.class, parameters={})
+    @Export(name="geoLocation", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> geoLocation;
 
     /**
@@ -37,7 +37,7 @@ public class EdgeKv extends com.pulumi.resources.CustomResource {
      * Namespace ACC group ID. It will be used in EdgeKV API v2. Not updatable.
      * 
      */
-    @Export(name="groupId", type=Integer.class, parameters={})
+    @Export(name="groupId", refs={Integer.class}, tree="[0]")
     private Output<Integer> groupId;
 
     /**
@@ -55,7 +55,7 @@ public class EdgeKv extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* The attribute 'initial_data' has been deprecated. To manage edgeKV items use 'akamai_edgekv_group_items' resource instead. */
-    @Export(name="initialDatas", type=List.class, parameters={EdgeKvInitialData.class})
+    @Export(name="initialDatas", refs={List.class,EdgeKvInitialData.class}, tree="[0,1]")
     private Output</* @Nullable */ List<EdgeKvInitialData>> initialDatas;
 
     /**
@@ -69,7 +69,7 @@ public class EdgeKv extends com.pulumi.resources.CustomResource {
      * Name for the EKV namespace
      * 
      */
-    @Export(name="namespaceName", type=String.class, parameters={})
+    @Export(name="namespaceName", refs={String.class}, tree="[0]")
     private Output<String> namespaceName;
 
     /**
@@ -83,7 +83,7 @@ public class EdgeKv extends com.pulumi.resources.CustomResource {
      * The network on which the namespace will be activated
      * 
      */
-    @Export(name="network", type=String.class, parameters={})
+    @Export(name="network", refs={String.class}, tree="[0]")
     private Output<String> network;
 
     /**
@@ -97,7 +97,7 @@ public class EdgeKv extends com.pulumi.resources.CustomResource {
      * Retention period for data in this namespace. An update of this value will just affect new EKV items.
      * 
      */
-    @Export(name="retentionInSeconds", type=Integer.class, parameters={})
+    @Export(name="retentionInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> retentionInSeconds;
 
     /**

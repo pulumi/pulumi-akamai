@@ -30,7 +30,7 @@ namespace Pulumi.Akamai.Outputs
         public readonly string? SslClientCertificate;
         public readonly string? SslClientPrivateKey;
         public readonly int TestInterval;
-        public readonly string TestObject;
+        public readonly string? TestObject;
         public readonly string? TestObjectPassword;
         public readonly int? TestObjectPort;
         public readonly string TestObjectProtocol;
@@ -74,7 +74,7 @@ namespace Pulumi.Akamai.Outputs
 
             int testInterval,
 
-            string testObject,
+            string? testObject,
 
             string? testObjectPassword,
 

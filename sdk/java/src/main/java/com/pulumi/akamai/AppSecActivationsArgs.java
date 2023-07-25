@@ -5,7 +5,6 @@ package com.pulumi.akamai;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -17,29 +16,6 @@ import javax.annotation.Nullable;
 public final class AppSecActivationsArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final AppSecActivationsArgs Empty = new AppSecActivationsArgs();
-
-    /**
-     * Whether to activate or deactivate the specified security configuration and version
-     * 
-     * @deprecated
-     * The setting activate has been deprecated; &#34;terraform apply&#34; will always perform activation. (Use &#34;terraform destroy&#34; for deactivation.)
-     * 
-     */
-    @Deprecated /* The setting activate has been deprecated; ""terraform apply"" will always perform activation. (Use ""terraform destroy"" for deactivation.) */
-    @Import(name="activate")
-    private @Nullable Output<Boolean> activate;
-
-    /**
-     * @return Whether to activate or deactivate the specified security configuration and version
-     * 
-     * @deprecated
-     * The setting activate has been deprecated; &#34;terraform apply&#34; will always perform activation. (Use &#34;terraform destroy&#34; for deactivation.)
-     * 
-     */
-    @Deprecated /* The setting activate has been deprecated; ""terraform apply"" will always perform activation. (Use ""terraform destroy"" for deactivation.) */
-    public Optional<Output<Boolean>> activate() {
-        return Optional.ofNullable(this.activate);
-    }
 
     /**
      * Unique identifier of the security configuration to be activated
@@ -87,29 +63,6 @@ public final class AppSecActivationsArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Note describing the activation
-     * 
-     * @deprecated
-     * The setting notes has been deprecated. Use &#34;note&#34; instead.
-     * 
-     */
-    @Deprecated /* The setting notes has been deprecated. Use ""note"" instead. */
-    @Import(name="notes")
-    private @Nullable Output<String> notes;
-
-    /**
-     * @return Note describing the activation
-     * 
-     * @deprecated
-     * The setting notes has been deprecated. Use &#34;note&#34; instead.
-     * 
-     */
-    @Deprecated /* The setting notes has been deprecated. Use ""note"" instead. */
-    public Optional<Output<String>> notes() {
-        return Optional.ofNullable(this.notes);
-    }
-
-    /**
      * List of email addresses to be notified with the results of the activation
      * 
      */
@@ -142,11 +95,9 @@ public final class AppSecActivationsArgs extends com.pulumi.resources.ResourceAr
     private AppSecActivationsArgs() {}
 
     private AppSecActivationsArgs(AppSecActivationsArgs $) {
-        this.activate = $.activate;
         this.configId = $.configId;
         this.network = $.network;
         this.note = $.note;
-        this.notes = $.notes;
         this.notificationEmails = $.notificationEmails;
         this.version = $.version;
     }
@@ -167,35 +118,6 @@ public final class AppSecActivationsArgs extends com.pulumi.resources.ResourceAr
 
         public Builder(AppSecActivationsArgs defaults) {
             $ = new AppSecActivationsArgs(Objects.requireNonNull(defaults));
-        }
-
-        /**
-         * @param activate Whether to activate or deactivate the specified security configuration and version
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * The setting activate has been deprecated; &#34;terraform apply&#34; will always perform activation. (Use &#34;terraform destroy&#34; for deactivation.)
-         * 
-         */
-        @Deprecated /* The setting activate has been deprecated; ""terraform apply"" will always perform activation. (Use ""terraform destroy"" for deactivation.) */
-        public Builder activate(@Nullable Output<Boolean> activate) {
-            $.activate = activate;
-            return this;
-        }
-
-        /**
-         * @param activate Whether to activate or deactivate the specified security configuration and version
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * The setting activate has been deprecated; &#34;terraform apply&#34; will always perform activation. (Use &#34;terraform destroy&#34; for deactivation.)
-         * 
-         */
-        @Deprecated /* The setting activate has been deprecated; ""terraform apply"" will always perform activation. (Use ""terraform destroy"" for deactivation.) */
-        public Builder activate(Boolean activate) {
-            return activate(Output.of(activate));
         }
 
         /**
@@ -259,35 +181,6 @@ public final class AppSecActivationsArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder note(String note) {
             return note(Output.of(note));
-        }
-
-        /**
-         * @param notes Note describing the activation
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * The setting notes has been deprecated. Use &#34;note&#34; instead.
-         * 
-         */
-        @Deprecated /* The setting notes has been deprecated. Use ""note"" instead. */
-        public Builder notes(@Nullable Output<String> notes) {
-            $.notes = notes;
-            return this;
-        }
-
-        /**
-         * @param notes Note describing the activation
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * The setting notes has been deprecated. Use &#34;note&#34; instead.
-         * 
-         */
-        @Deprecated /* The setting notes has been deprecated. Use ""note"" instead. */
-        public Builder notes(String notes) {
-            return notes(Output.of(notes));
         }
 
         /**

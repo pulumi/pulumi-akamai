@@ -5,7 +5,6 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.akamai.inputs.PropertyActivationComplianceRecordArgs;
 import com.pulumi.akamai.inputs.PropertyActivationRuleErrorArgs;
-import com.pulumi.akamai.inputs.PropertyActivationRuleWarningArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
@@ -29,14 +28,14 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
     }
 
     /**
-     * automatically acknowledge all rule warnings for activation to continue. default is true
+     * Automatically acknowledge all rule warnings for activation to continue. Default is false
      * 
      */
     @Import(name="autoAcknowledgeRuleWarnings")
     private @Nullable Output<Boolean> autoAcknowledgeRuleWarnings;
 
     /**
-     * @return automatically acknowledge all rule warnings for activation to continue. default is true
+     * @return Automatically acknowledge all rule warnings for activation to continue. Default is false
      * 
      */
     public Optional<Output<Boolean>> autoAcknowledgeRuleWarnings() {
@@ -94,25 +93,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.note);
     }
 
-    /**
-     * @deprecated
-     * The setting &#34;property&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""property"" has been deprecated. */
-    @Import(name="property")
-    private @Nullable Output<String> property;
-
-    /**
-     * @deprecated
-     * The setting &#34;property&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""property"" has been deprecated. */
-    public Optional<Output<String>> property() {
-        return Optional.ofNullable(this.property);
-    }
-
     @Import(name="propertyId")
     private @Nullable Output<String> propertyId;
 
@@ -125,25 +105,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
 
     public Optional<Output<List<PropertyActivationRuleErrorArgs>>> ruleErrors() {
         return Optional.ofNullable(this.ruleErrors);
-    }
-
-    /**
-     * @deprecated
-     * Rule warnings will not be set in state anymore
-     * 
-     */
-    @Deprecated /* Rule warnings will not be set in state anymore */
-    @Import(name="ruleWarnings")
-    private @Nullable Output<List<PropertyActivationRuleWarningArgs>> ruleWarnings;
-
-    /**
-     * @deprecated
-     * Rule warnings will not be set in state anymore
-     * 
-     */
-    @Deprecated /* Rule warnings will not be set in state anymore */
-    public Optional<Output<List<PropertyActivationRuleWarningArgs>>> ruleWarnings() {
-        return Optional.ofNullable(this.ruleWarnings);
     }
 
     @Import(name="status")
@@ -177,10 +138,8 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         this.errors = $.errors;
         this.network = $.network;
         this.note = $.note;
-        this.property = $.property;
         this.propertyId = $.propertyId;
         this.ruleErrors = $.ruleErrors;
-        this.ruleWarnings = $.ruleWarnings;
         this.status = $.status;
         this.version = $.version;
         this.warnings = $.warnings;
@@ -214,7 +173,7 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param autoAcknowledgeRuleWarnings automatically acknowledge all rule warnings for activation to continue. default is true
+         * @param autoAcknowledgeRuleWarnings Automatically acknowledge all rule warnings for activation to continue. Default is false
          * 
          * @return builder
          * 
@@ -225,7 +184,7 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param autoAcknowledgeRuleWarnings automatically acknowledge all rule warnings for activation to continue. default is true
+         * @param autoAcknowledgeRuleWarnings Automatically acknowledge all rule warnings for activation to continue. Default is false
          * 
          * @return builder
          * 
@@ -307,31 +266,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
             return note(Output.of(note));
         }
 
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;property&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""property"" has been deprecated. */
-        public Builder property(@Nullable Output<String> property) {
-            $.property = property;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;property&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""property"" has been deprecated. */
-        public Builder property(String property) {
-            return property(Output.of(property));
-        }
-
         public Builder propertyId(@Nullable Output<String> propertyId) {
             $.propertyId = propertyId;
             return this;
@@ -352,43 +286,6 @@ public final class PropertyActivationState extends com.pulumi.resources.Resource
 
         public Builder ruleErrors(PropertyActivationRuleErrorArgs... ruleErrors) {
             return ruleErrors(List.of(ruleErrors));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * Rule warnings will not be set in state anymore
-         * 
-         */
-        @Deprecated /* Rule warnings will not be set in state anymore */
-        public Builder ruleWarnings(@Nullable Output<List<PropertyActivationRuleWarningArgs>> ruleWarnings) {
-            $.ruleWarnings = ruleWarnings;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * Rule warnings will not be set in state anymore
-         * 
-         */
-        @Deprecated /* Rule warnings will not be set in state anymore */
-        public Builder ruleWarnings(List<PropertyActivationRuleWarningArgs> ruleWarnings) {
-            return ruleWarnings(Output.of(ruleWarnings));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * Rule warnings will not be set in state anymore
-         * 
-         */
-        @Deprecated /* Rule warnings will not be set in state anymore */
-        public Builder ruleWarnings(PropertyActivationRuleWarningArgs... ruleWarnings) {
-            return ruleWarnings(List.of(ruleWarnings));
         }
 
         public Builder status(@Nullable Output<String> status) {

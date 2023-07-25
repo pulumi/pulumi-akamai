@@ -15,49 +15,11 @@ public final class CpCodeState extends com.pulumi.resources.ResourceArgs {
 
     public static final CpCodeState Empty = new CpCodeState();
 
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    @Import(name="contract")
-    private @Nullable Output<String> contract;
-
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    public Optional<Output<String>> contract() {
-        return Optional.ofNullable(this.contract);
-    }
-
     @Import(name="contractId")
     private @Nullable Output<String> contractId;
 
     public Optional<Output<String>> contractId() {
         return Optional.ofNullable(this.contractId);
-    }
-
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    @Import(name="group")
-    private @Nullable Output<String> group;
-
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    public Optional<Output<String>> group() {
-        return Optional.ofNullable(this.group);
     }
 
     @Import(name="groupId")
@@ -74,25 +36,6 @@ public final class CpCodeState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * @deprecated
-     * The setting &#34;product&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""product"" has been deprecated. */
-    @Import(name="product")
-    private @Nullable Output<String> product;
-
-    /**
-     * @deprecated
-     * The setting &#34;product&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""product"" has been deprecated. */
-    public Optional<Output<String>> product() {
-        return Optional.ofNullable(this.product);
-    }
-
     @Import(name="productId")
     private @Nullable Output<String> productId;
 
@@ -103,12 +46,9 @@ public final class CpCodeState extends com.pulumi.resources.ResourceArgs {
     private CpCodeState() {}
 
     private CpCodeState(CpCodeState $) {
-        this.contract = $.contract;
         this.contractId = $.contractId;
-        this.group = $.group;
         this.groupId = $.groupId;
         this.name = $.name;
-        this.product = $.product;
         this.productId = $.productId;
     }
 
@@ -130,31 +70,6 @@ public final class CpCodeState extends com.pulumi.resources.ResourceArgs {
             $ = new CpCodeState(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;contract&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""contract"" has been deprecated. */
-        public Builder contract(@Nullable Output<String> contract) {
-            $.contract = contract;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;contract&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""contract"" has been deprecated. */
-        public Builder contract(String contract) {
-            return contract(Output.of(contract));
-        }
-
         public Builder contractId(@Nullable Output<String> contractId) {
             $.contractId = contractId;
             return this;
@@ -162,31 +77,6 @@ public final class CpCodeState extends com.pulumi.resources.ResourceArgs {
 
         public Builder contractId(String contractId) {
             return contractId(Output.of(contractId));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;group&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""group"" has been deprecated. */
-        public Builder group(@Nullable Output<String> group) {
-            $.group = group;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;group&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""group"" has been deprecated. */
-        public Builder group(String group) {
-            return group(Output.of(group));
         }
 
         public Builder groupId(@Nullable Output<String> groupId) {
@@ -205,31 +95,6 @@ public final class CpCodeState extends com.pulumi.resources.ResourceArgs {
 
         public Builder name(String name) {
             return name(Output.of(name));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;product&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""product"" has been deprecated. */
-        public Builder product(@Nullable Output<String> product) {
-            $.product = product;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;product&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""product"" has been deprecated. */
-        public Builder product(String product) {
-            return product(Output.of(product));
         }
 
         public Builder productId(@Nullable Output<String> productId) {

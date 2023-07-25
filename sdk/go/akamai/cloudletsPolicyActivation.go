@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ func NewCloudletsPolicyActivation(ctx *pulumi.Context,
 	if args.Version == nil {
 		return nil, errors.New("invalid value for required argument 'Version'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CloudletsPolicyActivation
 	err := ctx.RegisterResource("akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation", name, args, &resource, opts...)
 	if err != nil {

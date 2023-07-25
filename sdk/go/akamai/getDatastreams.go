@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetDatastreams(ctx *pulumi.Context, args *GetDatastreamsArgs, opts ...pulumi.InvokeOption) (*GetDatastreamsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatastreamsResult
 	err := ctx.Invoke("akamai:index/getDatastreams:getDatastreams", args, &rv, opts...)
 	if err != nil {
@@ -21,15 +23,15 @@ func GetDatastreams(ctx *pulumi.Context, args *GetDatastreamsArgs, opts ...pulum
 
 // A collection of arguments for invoking getDatastreams.
 type GetDatastreamsArgs struct {
-	GroupId *string `pulumi:"groupId"`
+	GroupId *int `pulumi:"groupId"`
 }
 
 // A collection of values returned by getDatastreams.
 type GetDatastreamsResult struct {
-	GroupId *string `pulumi:"groupId"`
+	GroupId *int `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string                 `pulumi:"id"`
-	Streams []GetDatastreamsStream `pulumi:"streams"`
+	Id             string                        `pulumi:"id"`
+	StreamsDetails []GetDatastreamsStreamsDetail `pulumi:"streamsDetails"`
 }
 
 func GetDatastreamsOutput(ctx *pulumi.Context, args GetDatastreamsOutputArgs, opts ...pulumi.InvokeOption) GetDatastreamsResultOutput {
@@ -47,7 +49,7 @@ func GetDatastreamsOutput(ctx *pulumi.Context, args GetDatastreamsOutputArgs, op
 
 // A collection of arguments for invoking getDatastreams.
 type GetDatastreamsOutputArgs struct {
-	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
+	GroupId pulumi.IntPtrInput `pulumi:"groupId"`
 }
 
 func (GetDatastreamsOutputArgs) ElementType() reflect.Type {
@@ -69,8 +71,8 @@ func (o GetDatastreamsResultOutput) ToGetDatastreamsResultOutputWithContext(ctx 
 	return o
 }
 
-func (o GetDatastreamsResultOutput) GroupId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetDatastreamsResult) *string { return v.GroupId }).(pulumi.StringPtrOutput)
+func (o GetDatastreamsResultOutput) GroupId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDatastreamsResult) *int { return v.GroupId }).(pulumi.IntPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
@@ -78,8 +80,8 @@ func (o GetDatastreamsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatastreamsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o GetDatastreamsResultOutput) Streams() GetDatastreamsStreamArrayOutput {
-	return o.ApplyT(func(v GetDatastreamsResult) []GetDatastreamsStream { return v.Streams }).(GetDatastreamsStreamArrayOutput)
+func (o GetDatastreamsResultOutput) StreamsDetails() GetDatastreamsStreamsDetailArrayOutput {
+	return o.ApplyT(func(v GetDatastreamsResult) []GetDatastreamsStreamsDetail { return v.StreamsDetails }).(GetDatastreamsStreamsDetailArrayOutput)
 }
 
 func init() {

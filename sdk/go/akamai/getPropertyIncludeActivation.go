@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupPropertyIncludeActivation(ctx *pulumi.Context, args *LookupPropertyIncludeActivationArgs, opts ...pulumi.InvokeOption) (*LookupPropertyIncludeActivationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupPropertyIncludeActivationResult
 	err := ctx.Invoke("akamai:index/getPropertyIncludeActivation:getPropertyIncludeActivation", args, &rv, opts...)
 	if err != nil {

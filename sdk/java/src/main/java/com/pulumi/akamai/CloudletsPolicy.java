@@ -21,7 +21,7 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
      * Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
      * 
      */
-    @Export(name="cloudletCode", type=String.class, parameters={})
+    @Export(name="cloudletCode", refs={String.class}, tree="[0]")
     private Output<String> cloudletCode;
 
     /**
@@ -35,7 +35,7 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
      * An integer that corresponds to a Cloudlets policy type (0 or 9)
      * 
      */
-    @Export(name="cloudletId", type=Integer.class, parameters={})
+    @Export(name="cloudletId", refs={Integer.class}, tree="[0]")
     private Output<Integer> cloudletId;
 
     /**
@@ -49,7 +49,7 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
      * The description of this specific policy
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -63,7 +63,7 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
      * Defines the group association for the policy. You must have edit privileges for the group
      * 
      */
-    @Export(name="groupId", type=String.class, parameters={})
+    @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
@@ -77,7 +77,7 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
      * The version of the Cloudlet specific matchRules
      * 
      */
-    @Export(name="matchRuleFormat", type=String.class, parameters={})
+    @Export(name="matchRuleFormat", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> matchRuleFormat;
 
     /**
@@ -91,7 +91,7 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
      * A JSON structure that defines the rules for this policy
      * 
      */
-    @Export(name="matchRules", type=String.class, parameters={})
+    @Export(name="matchRules", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> matchRules;
 
     /**
@@ -105,7 +105,7 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
      * The name of the policy. The name must be unique
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -119,7 +119,7 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
      * The version number of the policy
      * 
      */
-    @Export(name="version", type=Integer.class, parameters={})
+    @Export(name="version", refs={Integer.class}, tree="[0]")
     private Output<Integer> version;
 
     /**
@@ -133,7 +133,7 @@ public class CloudletsPolicy extends com.pulumi.resources.CustomResource {
      * A JSON encoded list of warnings
      * 
      */
-    @Export(name="warnings", type=String.class, parameters={})
+    @Export(name="warnings", refs={String.class}, tree="[0]")
     private Output<String> warnings;
 
     /**

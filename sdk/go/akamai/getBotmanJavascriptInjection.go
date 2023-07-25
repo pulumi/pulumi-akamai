@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupBotmanJavascriptInjection(ctx *pulumi.Context, args *LookupBotmanJavascriptInjectionArgs, opts ...pulumi.InvokeOption) (*LookupBotmanJavascriptInjectionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBotmanJavascriptInjectionResult
 	err := ctx.Invoke("akamai:index/getBotmanJavascriptInjection:getBotmanJavascriptInjection", args, &rv, opts...)
 	if err != nil {

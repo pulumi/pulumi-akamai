@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupCloudletsApplicationLoadBalancer(ctx *pulumi.Context, args *LookupCloudletsApplicationLoadBalancerArgs, opts ...pulumi.InvokeOption) (*LookupCloudletsApplicationLoadBalancerResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCloudletsApplicationLoadBalancerResult
 	err := ctx.Invoke("akamai:index/getCloudletsApplicationLoadBalancer:getCloudletsApplicationLoadBalancer", args, &rv, opts...)
 	if err != nil {

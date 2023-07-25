@@ -16,7 +16,7 @@ namespace Pulumi.Akamai
         public Output<string> ActivationId { get; private set; } = null!;
 
         /// <summary>
-        /// automatically acknowledge all rule warnings for activation to continue. default is true
+        /// Automatically acknowledge all rule warnings for activation to continue. Default is false
         /// </summary>
         [Output("autoAcknowledgeRuleWarnings")]
         public Output<bool?> AutoAcknowledgeRuleWarnings { get; private set; } = null!;
@@ -42,17 +42,11 @@ namespace Pulumi.Akamai
         [Output("note")]
         public Output<string?> Note { get; private set; } = null!;
 
-        [Output("property")]
-        public Output<string> Property { get; private set; } = null!;
-
         [Output("propertyId")]
         public Output<string> PropertyId { get; private set; } = null!;
 
         [Output("ruleErrors")]
         public Output<ImmutableArray<Outputs.PropertyActivationRuleError>> RuleErrors { get; private set; } = null!;
-
-        [Output("ruleWarnings")]
-        public Output<ImmutableArray<Outputs.PropertyActivationRuleWarning>> RuleWarnings { get; private set; } = null!;
 
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -117,7 +111,7 @@ namespace Pulumi.Akamai
         public Input<string>? ActivationId { get; set; }
 
         /// <summary>
-        /// automatically acknowledge all rule warnings for activation to continue. default is true
+        /// Automatically acknowledge all rule warnings for activation to continue. Default is false
         /// </summary>
         [Input("autoAcknowledgeRuleWarnings")]
         public Input<bool>? AutoAcknowledgeRuleWarnings { get; set; }
@@ -145,11 +139,8 @@ namespace Pulumi.Akamai
         [Input("note")]
         public Input<string>? Note { get; set; }
 
-        [Input("property")]
-        public Input<string>? Property { get; set; }
-
-        [Input("propertyId")]
-        public Input<string>? PropertyId { get; set; }
+        [Input("propertyId", required: true)]
+        public Input<string> PropertyId { get; set; } = null!;
 
         [Input("ruleErrors")]
         private InputList<Inputs.PropertyActivationRuleErrorArgs>? _ruleErrors;
@@ -157,15 +148,6 @@ namespace Pulumi.Akamai
         {
             get => _ruleErrors ?? (_ruleErrors = new InputList<Inputs.PropertyActivationRuleErrorArgs>());
             set => _ruleErrors = value;
-        }
-
-        [Input("ruleWarnings")]
-        private InputList<Inputs.PropertyActivationRuleWarningArgs>? _ruleWarnings;
-        [Obsolete(@"Rule warnings will not be set in state anymore")]
-        public InputList<Inputs.PropertyActivationRuleWarningArgs> RuleWarnings
-        {
-            get => _ruleWarnings ?? (_ruleWarnings = new InputList<Inputs.PropertyActivationRuleWarningArgs>());
-            set => _ruleWarnings = value;
         }
 
         [Input("version", required: true)]
@@ -183,7 +165,7 @@ namespace Pulumi.Akamai
         public Input<string>? ActivationId { get; set; }
 
         /// <summary>
-        /// automatically acknowledge all rule warnings for activation to continue. default is true
+        /// Automatically acknowledge all rule warnings for activation to continue. Default is false
         /// </summary>
         [Input("autoAcknowledgeRuleWarnings")]
         public Input<bool>? AutoAcknowledgeRuleWarnings { get; set; }
@@ -214,9 +196,6 @@ namespace Pulumi.Akamai
         [Input("note")]
         public Input<string>? Note { get; set; }
 
-        [Input("property")]
-        public Input<string>? Property { get; set; }
-
         [Input("propertyId")]
         public Input<string>? PropertyId { get; set; }
 
@@ -226,15 +205,6 @@ namespace Pulumi.Akamai
         {
             get => _ruleErrors ?? (_ruleErrors = new InputList<Inputs.PropertyActivationRuleErrorGetArgs>());
             set => _ruleErrors = value;
-        }
-
-        [Input("ruleWarnings")]
-        private InputList<Inputs.PropertyActivationRuleWarningGetArgs>? _ruleWarnings;
-        [Obsolete(@"Rule warnings will not be set in state anymore")]
-        public InputList<Inputs.PropertyActivationRuleWarningGetArgs> RuleWarnings
-        {
-            get => _ruleWarnings ?? (_ruleWarnings = new InputList<Inputs.PropertyActivationRuleWarningGetArgs>());
-            set => _ruleWarnings = value;
         }
 
         [Input("status")]

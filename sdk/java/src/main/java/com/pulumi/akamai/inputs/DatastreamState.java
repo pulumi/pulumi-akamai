@@ -4,8 +4,8 @@
 package com.pulumi.akamai.inputs;
 
 import com.pulumi.akamai.inputs.DatastreamAzureConnectorArgs;
-import com.pulumi.akamai.inputs.DatastreamConfigArgs;
 import com.pulumi.akamai.inputs.DatastreamDatadogConnectorArgs;
+import com.pulumi.akamai.inputs.DatastreamDeliveryConfigurationArgs;
 import com.pulumi.akamai.inputs.DatastreamElasticsearchConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamGcsConnectorArgs;
 import com.pulumi.akamai.inputs.DatastreamHttpsConnectorArgs;
@@ -53,18 +53,18 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Provides information about the configuration related to logs (format, file names, delivery frequency)
+     * Identifies if stream needs to collect midgress data
      * 
      */
-    @Import(name="config")
-    private @Nullable Output<DatastreamConfigArgs> config;
+    @Import(name="collectMidgress")
+    private @Nullable Output<Boolean> collectMidgress;
 
     /**
-     * @return Provides information about the configuration related to logs (format, file names, delivery frequency)
+     * @return Identifies if stream needs to collect midgress data
      * 
      */
-    public Optional<Output<DatastreamConfigArgs>> config() {
-        return Optional.ofNullable(this.config);
+    public Optional<Output<Boolean>> collectMidgress() {
+        return Optional.ofNullable(this.collectMidgress);
     }
 
     /**
@@ -124,16 +124,31 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
      * identifiers define how the value for these fields appear in the log lines
      * 
      */
-    @Import(name="datasetFieldsIds")
-    private @Nullable Output<List<Integer>> datasetFieldsIds;
+    @Import(name="datasetFields")
+    private @Nullable Output<List<Integer>> datasetFields;
 
     /**
      * @return A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
      * identifiers define how the value for these fields appear in the log lines
      * 
      */
-    public Optional<Output<List<Integer>>> datasetFieldsIds() {
-        return Optional.ofNullable(this.datasetFieldsIds);
+    public Optional<Output<List<Integer>>> datasetFields() {
+        return Optional.ofNullable(this.datasetFields);
+    }
+
+    /**
+     * Provides information about the configuration related to logs (format, file names, delivery frequency)
+     * 
+     */
+    @Import(name="deliveryConfiguration")
+    private @Nullable Output<DatastreamDeliveryConfigurationArgs> deliveryConfiguration;
+
+    /**
+     * @return Provides information about the configuration related to logs (format, file names, delivery frequency)
+     * 
+     */
+    public Optional<Output<DatastreamDeliveryConfigurationArgs>> deliveryConfiguration() {
+        return Optional.ofNullable(this.deliveryConfiguration);
     }
 
     @Import(name="elasticsearchConnector")
@@ -141,21 +156,6 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
 
     public Optional<Output<DatastreamElasticsearchConnectorArgs>> elasticsearchConnector() {
         return Optional.ofNullable(this.elasticsearchConnector);
-    }
-
-    /**
-     * List of email addresses where the system sends notifications about activations and deactivations of the stream
-     * 
-     */
-    @Import(name="emailIds")
-    private @Nullable Output<List<String>> emailIds;
-
-    /**
-     * @return List of email addresses where the system sends notifications about activations and deactivations of the stream
-     * 
-     */
-    public Optional<Output<List<String>>> emailIds() {
-        return Optional.ofNullable(this.emailIds);
     }
 
     @Import(name="gcsConnector")
@@ -180,26 +180,26 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.groupId);
     }
 
-    /**
-     * The name of the user group for which the stream was created
-     * 
-     */
-    @Import(name="groupName")
-    private @Nullable Output<String> groupName;
-
-    /**
-     * @return The name of the user group for which the stream was created
-     * 
-     */
-    public Optional<Output<String>> groupName() {
-        return Optional.ofNullable(this.groupName);
-    }
-
     @Import(name="httpsConnector")
     private @Nullable Output<DatastreamHttpsConnectorArgs> httpsConnector;
 
     public Optional<Output<DatastreamHttpsConnectorArgs>> httpsConnector() {
         return Optional.ofNullable(this.httpsConnector);
+    }
+
+    /**
+     * Identifies the latest active configuration version of the stream
+     * 
+     */
+    @Import(name="latestVersion")
+    private @Nullable Output<Integer> latestVersion;
+
+    /**
+     * @return Identifies the latest active configuration version of the stream
+     * 
+     */
+    public Optional<Output<Integer>> latestVersion() {
+        return Optional.ofNullable(this.latestVersion);
     }
 
     @Import(name="logglyConnector")
@@ -246,6 +246,21 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.newRelicConnector);
     }
 
+    /**
+     * List of email addresses where the system sends notifications about activations and deactivations of the stream
+     * 
+     */
+    @Import(name="notificationEmails")
+    private @Nullable Output<List<String>> notificationEmails;
+
+    /**
+     * @return List of email addresses where the system sends notifications about activations and deactivations of the stream
+     * 
+     */
+    public Optional<Output<List<String>>> notificationEmails() {
+        return Optional.ofNullable(this.notificationEmails);
+    }
+
     @Import(name="oracleConnector")
     private @Nullable Output<DatastreamOracleConnectorArgs> oracleConnector;
 
@@ -284,33 +299,18 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name of the product for which the stream was created
-     * 
-     */
-    @Import(name="productName")
-    private @Nullable Output<String> productName;
-
-    /**
-     * @return The name of the product for which the stream was created
-     * 
-     */
-    public Optional<Output<String>> productName() {
-        return Optional.ofNullable(this.productName);
-    }
-
-    /**
      * Identifies the properties monitored in the stream
      * 
      */
-    @Import(name="propertyIds")
-    private @Nullable Output<List<String>> propertyIds;
+    @Import(name="properties")
+    private @Nullable Output<List<String>> properties;
 
     /**
      * @return Identifies the properties monitored in the stream
      * 
      */
-    public Optional<Output<List<String>>> propertyIds() {
-        return Optional.ofNullable(this.propertyIds);
+    public Optional<Output<List<String>>> properties() {
+        return Optional.ofNullable(this.properties);
     }
 
     @Import(name="s3Connector")
@@ -343,33 +343,18 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies the type of the data stream
-     * 
-     */
-    @Import(name="streamType")
-    private @Nullable Output<String> streamType;
-
-    /**
-     * @return Specifies the type of the data stream
-     * 
-     */
-    public Optional<Output<String>> streamType() {
-        return Optional.ofNullable(this.streamType);
-    }
-
-    /**
      * Identifies the configuration version of the stream
      * 
      */
-    @Import(name="streamVersionId")
-    private @Nullable Output<Integer> streamVersionId;
+    @Import(name="streamVersion")
+    private @Nullable Output<Integer> streamVersion;
 
     /**
      * @return Identifies the configuration version of the stream
      * 
      */
-    public Optional<Output<Integer>> streamVersionId() {
-        return Optional.ofNullable(this.streamVersionId);
+    public Optional<Output<Integer>> streamVersion() {
+        return Optional.ofNullable(this.streamVersion);
     }
 
     @Import(name="sumologicConnector")
@@ -379,54 +364,37 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.sumologicConnector);
     }
 
-    /**
-     * The name of the template associated with the stream
-     * 
-     */
-    @Import(name="templateName")
-    private @Nullable Output<String> templateName;
-
-    /**
-     * @return The name of the template associated with the stream
-     * 
-     */
-    public Optional<Output<String>> templateName() {
-        return Optional.ofNullable(this.templateName);
-    }
-
     private DatastreamState() {}
 
     private DatastreamState(DatastreamState $) {
         this.active = $.active;
         this.azureConnector = $.azureConnector;
-        this.config = $.config;
+        this.collectMidgress = $.collectMidgress;
         this.contractId = $.contractId;
         this.createdBy = $.createdBy;
         this.createdDate = $.createdDate;
         this.datadogConnector = $.datadogConnector;
-        this.datasetFieldsIds = $.datasetFieldsIds;
+        this.datasetFields = $.datasetFields;
+        this.deliveryConfiguration = $.deliveryConfiguration;
         this.elasticsearchConnector = $.elasticsearchConnector;
-        this.emailIds = $.emailIds;
         this.gcsConnector = $.gcsConnector;
         this.groupId = $.groupId;
-        this.groupName = $.groupName;
         this.httpsConnector = $.httpsConnector;
+        this.latestVersion = $.latestVersion;
         this.logglyConnector = $.logglyConnector;
         this.modifiedBy = $.modifiedBy;
         this.modifiedDate = $.modifiedDate;
         this.newRelicConnector = $.newRelicConnector;
+        this.notificationEmails = $.notificationEmails;
         this.oracleConnector = $.oracleConnector;
         this.papiJson = $.papiJson;
         this.productId = $.productId;
-        this.productName = $.productName;
-        this.propertyIds = $.propertyIds;
+        this.properties = $.properties;
         this.s3Connector = $.s3Connector;
         this.splunkConnector = $.splunkConnector;
         this.streamName = $.streamName;
-        this.streamType = $.streamType;
-        this.streamVersionId = $.streamVersionId;
+        this.streamVersion = $.streamVersion;
         this.sumologicConnector = $.sumologicConnector;
-        this.templateName = $.templateName;
     }
 
     public static Builder builder() {
@@ -478,24 +446,24 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param config Provides information about the configuration related to logs (format, file names, delivery frequency)
+         * @param collectMidgress Identifies if stream needs to collect midgress data
          * 
          * @return builder
          * 
          */
-        public Builder config(@Nullable Output<DatastreamConfigArgs> config) {
-            $.config = config;
+        public Builder collectMidgress(@Nullable Output<Boolean> collectMidgress) {
+            $.collectMidgress = collectMidgress;
             return this;
         }
 
         /**
-         * @param config Provides information about the configuration related to logs (format, file names, delivery frequency)
+         * @param collectMidgress Identifies if stream needs to collect midgress data
          * 
          * @return builder
          * 
          */
-        public Builder config(DatastreamConfigArgs config) {
-            return config(Output.of(config));
+        public Builder collectMidgress(Boolean collectMidgress) {
+            return collectMidgress(Output.of(collectMidgress));
         }
 
         /**
@@ -571,37 +539,58 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param datasetFieldsIds A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+         * @param datasetFields A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
          * identifiers define how the value for these fields appear in the log lines
          * 
          * @return builder
          * 
          */
-        public Builder datasetFieldsIds(@Nullable Output<List<Integer>> datasetFieldsIds) {
-            $.datasetFieldsIds = datasetFieldsIds;
+        public Builder datasetFields(@Nullable Output<List<Integer>> datasetFields) {
+            $.datasetFields = datasetFields;
             return this;
         }
 
         /**
-         * @param datasetFieldsIds A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+         * @param datasetFields A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
          * identifiers define how the value for these fields appear in the log lines
          * 
          * @return builder
          * 
          */
-        public Builder datasetFieldsIds(List<Integer> datasetFieldsIds) {
-            return datasetFieldsIds(Output.of(datasetFieldsIds));
+        public Builder datasetFields(List<Integer> datasetFields) {
+            return datasetFields(Output.of(datasetFields));
         }
 
         /**
-         * @param datasetFieldsIds A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
+         * @param datasetFields A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
          * identifiers define how the value for these fields appear in the log lines
          * 
          * @return builder
          * 
          */
-        public Builder datasetFieldsIds(Integer... datasetFieldsIds) {
-            return datasetFieldsIds(List.of(datasetFieldsIds));
+        public Builder datasetFields(Integer... datasetFields) {
+            return datasetFields(List.of(datasetFields));
+        }
+
+        /**
+         * @param deliveryConfiguration Provides information about the configuration related to logs (format, file names, delivery frequency)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deliveryConfiguration(@Nullable Output<DatastreamDeliveryConfigurationArgs> deliveryConfiguration) {
+            $.deliveryConfiguration = deliveryConfiguration;
+            return this;
+        }
+
+        /**
+         * @param deliveryConfiguration Provides information about the configuration related to logs (format, file names, delivery frequency)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deliveryConfiguration(DatastreamDeliveryConfigurationArgs deliveryConfiguration) {
+            return deliveryConfiguration(Output.of(deliveryConfiguration));
         }
 
         public Builder elasticsearchConnector(@Nullable Output<DatastreamElasticsearchConnectorArgs> elasticsearchConnector) {
@@ -611,37 +600,6 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
 
         public Builder elasticsearchConnector(DatastreamElasticsearchConnectorArgs elasticsearchConnector) {
             return elasticsearchConnector(Output.of(elasticsearchConnector));
-        }
-
-        /**
-         * @param emailIds List of email addresses where the system sends notifications about activations and deactivations of the stream
-         * 
-         * @return builder
-         * 
-         */
-        public Builder emailIds(@Nullable Output<List<String>> emailIds) {
-            $.emailIds = emailIds;
-            return this;
-        }
-
-        /**
-         * @param emailIds List of email addresses where the system sends notifications about activations and deactivations of the stream
-         * 
-         * @return builder
-         * 
-         */
-        public Builder emailIds(List<String> emailIds) {
-            return emailIds(Output.of(emailIds));
-        }
-
-        /**
-         * @param emailIds List of email addresses where the system sends notifications about activations and deactivations of the stream
-         * 
-         * @return builder
-         * 
-         */
-        public Builder emailIds(String... emailIds) {
-            return emailIds(List.of(emailIds));
         }
 
         public Builder gcsConnector(@Nullable Output<DatastreamGcsConnectorArgs> gcsConnector) {
@@ -674,27 +632,6 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
             return groupId(Output.of(groupId));
         }
 
-        /**
-         * @param groupName The name of the user group for which the stream was created
-         * 
-         * @return builder
-         * 
-         */
-        public Builder groupName(@Nullable Output<String> groupName) {
-            $.groupName = groupName;
-            return this;
-        }
-
-        /**
-         * @param groupName The name of the user group for which the stream was created
-         * 
-         * @return builder
-         * 
-         */
-        public Builder groupName(String groupName) {
-            return groupName(Output.of(groupName));
-        }
-
         public Builder httpsConnector(@Nullable Output<DatastreamHttpsConnectorArgs> httpsConnector) {
             $.httpsConnector = httpsConnector;
             return this;
@@ -702,6 +639,27 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
 
         public Builder httpsConnector(DatastreamHttpsConnectorArgs httpsConnector) {
             return httpsConnector(Output.of(httpsConnector));
+        }
+
+        /**
+         * @param latestVersion Identifies the latest active configuration version of the stream
+         * 
+         * @return builder
+         * 
+         */
+        public Builder latestVersion(@Nullable Output<Integer> latestVersion) {
+            $.latestVersion = latestVersion;
+            return this;
+        }
+
+        /**
+         * @param latestVersion Identifies the latest active configuration version of the stream
+         * 
+         * @return builder
+         * 
+         */
+        public Builder latestVersion(Integer latestVersion) {
+            return latestVersion(Output.of(latestVersion));
         }
 
         public Builder logglyConnector(@Nullable Output<DatastreamLogglyConnectorArgs> logglyConnector) {
@@ -764,6 +722,37 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
             return newRelicConnector(Output.of(newRelicConnector));
         }
 
+        /**
+         * @param notificationEmails List of email addresses where the system sends notifications about activations and deactivations of the stream
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notificationEmails(@Nullable Output<List<String>> notificationEmails) {
+            $.notificationEmails = notificationEmails;
+            return this;
+        }
+
+        /**
+         * @param notificationEmails List of email addresses where the system sends notifications about activations and deactivations of the stream
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notificationEmails(List<String> notificationEmails) {
+            return notificationEmails(Output.of(notificationEmails));
+        }
+
+        /**
+         * @param notificationEmails List of email addresses where the system sends notifications about activations and deactivations of the stream
+         * 
+         * @return builder
+         * 
+         */
+        public Builder notificationEmails(String... notificationEmails) {
+            return notificationEmails(List.of(notificationEmails));
+        }
+
         public Builder oracleConnector(@Nullable Output<DatastreamOracleConnectorArgs> oracleConnector) {
             $.oracleConnector = oracleConnector;
             return this;
@@ -816,55 +805,34 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param productName The name of the product for which the stream was created
+         * @param properties Identifies the properties monitored in the stream
          * 
          * @return builder
          * 
          */
-        public Builder productName(@Nullable Output<String> productName) {
-            $.productName = productName;
+        public Builder properties(@Nullable Output<List<String>> properties) {
+            $.properties = properties;
             return this;
         }
 
         /**
-         * @param productName The name of the product for which the stream was created
+         * @param properties Identifies the properties monitored in the stream
          * 
          * @return builder
          * 
          */
-        public Builder productName(String productName) {
-            return productName(Output.of(productName));
+        public Builder properties(List<String> properties) {
+            return properties(Output.of(properties));
         }
 
         /**
-         * @param propertyIds Identifies the properties monitored in the stream
+         * @param properties Identifies the properties monitored in the stream
          * 
          * @return builder
          * 
          */
-        public Builder propertyIds(@Nullable Output<List<String>> propertyIds) {
-            $.propertyIds = propertyIds;
-            return this;
-        }
-
-        /**
-         * @param propertyIds Identifies the properties monitored in the stream
-         * 
-         * @return builder
-         * 
-         */
-        public Builder propertyIds(List<String> propertyIds) {
-            return propertyIds(Output.of(propertyIds));
-        }
-
-        /**
-         * @param propertyIds Identifies the properties monitored in the stream
-         * 
-         * @return builder
-         * 
-         */
-        public Builder propertyIds(String... propertyIds) {
-            return propertyIds(List.of(propertyIds));
+        public Builder properties(String... properties) {
+            return properties(List.of(properties));
         }
 
         public Builder s3Connector(@Nullable Output<DatastreamS3ConnectorArgs> s3Connector) {
@@ -907,45 +875,24 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param streamType Specifies the type of the data stream
+         * @param streamVersion Identifies the configuration version of the stream
          * 
          * @return builder
          * 
          */
-        public Builder streamType(@Nullable Output<String> streamType) {
-            $.streamType = streamType;
+        public Builder streamVersion(@Nullable Output<Integer> streamVersion) {
+            $.streamVersion = streamVersion;
             return this;
         }
 
         /**
-         * @param streamType Specifies the type of the data stream
+         * @param streamVersion Identifies the configuration version of the stream
          * 
          * @return builder
          * 
          */
-        public Builder streamType(String streamType) {
-            return streamType(Output.of(streamType));
-        }
-
-        /**
-         * @param streamVersionId Identifies the configuration version of the stream
-         * 
-         * @return builder
-         * 
-         */
-        public Builder streamVersionId(@Nullable Output<Integer> streamVersionId) {
-            $.streamVersionId = streamVersionId;
-            return this;
-        }
-
-        /**
-         * @param streamVersionId Identifies the configuration version of the stream
-         * 
-         * @return builder
-         * 
-         */
-        public Builder streamVersionId(Integer streamVersionId) {
-            return streamVersionId(Output.of(streamVersionId));
+        public Builder streamVersion(Integer streamVersion) {
+            return streamVersion(Output.of(streamVersion));
         }
 
         public Builder sumologicConnector(@Nullable Output<DatastreamSumologicConnectorArgs> sumologicConnector) {
@@ -955,27 +902,6 @@ public final class DatastreamState extends com.pulumi.resources.ResourceArgs {
 
         public Builder sumologicConnector(DatastreamSumologicConnectorArgs sumologicConnector) {
             return sumologicConnector(Output.of(sumologicConnector));
-        }
-
-        /**
-         * @param templateName The name of the template associated with the stream
-         * 
-         * @return builder
-         * 
-         */
-        public Builder templateName(@Nullable Output<String> templateName) {
-            $.templateName = templateName;
-            return this;
-        }
-
-        /**
-         * @param templateName The name of the template associated with the stream
-         * 
-         * @return builder
-         * 
-         */
-        public Builder templateName(String templateName) {
-            return templateName(Output.of(templateName));
         }
 
         public DatastreamState build() {

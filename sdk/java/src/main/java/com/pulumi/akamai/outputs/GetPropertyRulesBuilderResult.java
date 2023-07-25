@@ -4,6 +4,7 @@
 package com.pulumi.akamai.outputs;
 
 import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230105;
+import com.pulumi.akamai.outputs.GetPropertyRulesBuilderRulesV20230530;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
@@ -20,6 +21,7 @@ public final class GetPropertyRulesBuilderResult {
     private String json;
     private String ruleFormat;
     private @Nullable GetPropertyRulesBuilderRulesV20230105 rulesV20230105;
+    private @Nullable GetPropertyRulesBuilderRulesV20230530 rulesV20230530;
 
     private GetPropertyRulesBuilderResult() {}
     /**
@@ -38,6 +40,9 @@ public final class GetPropertyRulesBuilderResult {
     public Optional<GetPropertyRulesBuilderRulesV20230105> rulesV20230105() {
         return Optional.ofNullable(this.rulesV20230105);
     }
+    public Optional<GetPropertyRulesBuilderRulesV20230530> rulesV20230530() {
+        return Optional.ofNullable(this.rulesV20230530);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -52,6 +57,7 @@ public final class GetPropertyRulesBuilderResult {
         private String json;
         private String ruleFormat;
         private @Nullable GetPropertyRulesBuilderRulesV20230105 rulesV20230105;
+        private @Nullable GetPropertyRulesBuilderRulesV20230530 rulesV20230530;
         public Builder() {}
         public Builder(GetPropertyRulesBuilderResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -59,6 +65,7 @@ public final class GetPropertyRulesBuilderResult {
     	      this.json = defaults.json;
     	      this.ruleFormat = defaults.ruleFormat;
     	      this.rulesV20230105 = defaults.rulesV20230105;
+    	      this.rulesV20230530 = defaults.rulesV20230530;
         }
 
         @CustomType.Setter
@@ -81,12 +88,18 @@ public final class GetPropertyRulesBuilderResult {
             this.rulesV20230105 = rulesV20230105;
             return this;
         }
+        @CustomType.Setter
+        public Builder rulesV20230530(@Nullable GetPropertyRulesBuilderRulesV20230530 rulesV20230530) {
+            this.rulesV20230530 = rulesV20230530;
+            return this;
+        }
         public GetPropertyRulesBuilderResult build() {
             final var o = new GetPropertyRulesBuilderResult();
             o.id = id;
             o.json = json;
             o.ruleFormat = ruleFormat;
             o.rulesV20230105 = rulesV20230105;
+            o.rulesV20230530 = rulesV20230530;
             return o;
         }
     }

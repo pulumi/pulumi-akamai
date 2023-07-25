@@ -10,10 +10,6 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
-appsecSection: Optional[str]
-
-appsecs: Optional[str]
-
 cacheEnabled: Optional[bool]
 
 config: Optional[str]
@@ -23,25 +19,7 @@ configSection: Optional[str]
 The section of the edgerc file to use for configuration
 """
 
-dns: Optional[str]
-
-dnsSection: Optional[str]
-
 edgerc: Optional[str]
-
-gtm: Optional[str]
-
-gtmSection: Optional[str]
-
-networklistSection: Optional[str]
-
-networks: Optional[str]
-
-papiSection: Optional[str]
-
-property: Optional[str]
-
-propertySection: Optional[str]
 
 requestLimit: Optional[int]
 """

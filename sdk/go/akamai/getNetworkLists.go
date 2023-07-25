@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetNetworkLists(ctx *pulumi.Context, args *GetNetworkListsArgs, opts ...pulumi.InvokeOption) (*GetNetworkListsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNetworkListsResult
 	err := ctx.Invoke("akamai:index/getNetworkLists:getNetworkLists", args, &rv, opts...)
 	if err != nil {

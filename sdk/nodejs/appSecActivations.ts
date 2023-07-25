@@ -33,12 +33,6 @@ export class AppSecActivations extends pulumi.CustomResource {
     }
 
     /**
-     * Whether to activate or deactivate the specified security configuration and version
-     *
-     * @deprecated The setting activate has been deprecated; "terraform apply" will always perform activation. (Use "terraform destroy" for deactivation.)
-     */
-    public readonly activate!: pulumi.Output<boolean | undefined>;
-    /**
      * Unique identifier of the security configuration to be activated
      */
     public readonly configId!: pulumi.Output<number>;
@@ -50,12 +44,6 @@ export class AppSecActivations extends pulumi.CustomResource {
      * Note describing the activation. Will use timestamp if omitted.
      */
     public readonly note!: pulumi.Output<string | undefined>;
-    /**
-     * Note describing the activation
-     *
-     * @deprecated The setting notes has been deprecated. Use "note" instead.
-     */
-    public readonly notes!: pulumi.Output<string | undefined>;
     /**
      * List of email addresses to be notified with the results of the activation
      */
@@ -82,11 +70,9 @@ export class AppSecActivations extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppSecActivationsState | undefined;
-            resourceInputs["activate"] = state ? state.activate : undefined;
             resourceInputs["configId"] = state ? state.configId : undefined;
             resourceInputs["network"] = state ? state.network : undefined;
             resourceInputs["note"] = state ? state.note : undefined;
-            resourceInputs["notes"] = state ? state.notes : undefined;
             resourceInputs["notificationEmails"] = state ? state.notificationEmails : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
@@ -101,11 +87,9 @@ export class AppSecActivations extends pulumi.CustomResource {
             if ((!args || args.version === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            resourceInputs["activate"] = args ? args.activate : undefined;
             resourceInputs["configId"] = args ? args.configId : undefined;
             resourceInputs["network"] = args ? args.network : undefined;
             resourceInputs["note"] = args ? args.note : undefined;
-            resourceInputs["notes"] = args ? args.notes : undefined;
             resourceInputs["notificationEmails"] = args ? args.notificationEmails : undefined;
             resourceInputs["version"] = args ? args.version : undefined;
             resourceInputs["status"] = undefined /*out*/;
@@ -120,12 +104,6 @@ export class AppSecActivations extends pulumi.CustomResource {
  */
 export interface AppSecActivationsState {
     /**
-     * Whether to activate or deactivate the specified security configuration and version
-     *
-     * @deprecated The setting activate has been deprecated; "terraform apply" will always perform activation. (Use "terraform destroy" for deactivation.)
-     */
-    activate?: pulumi.Input<boolean>;
-    /**
      * Unique identifier of the security configuration to be activated
      */
     configId?: pulumi.Input<number>;
@@ -137,12 +115,6 @@ export interface AppSecActivationsState {
      * Note describing the activation. Will use timestamp if omitted.
      */
     note?: pulumi.Input<string>;
-    /**
-     * Note describing the activation
-     *
-     * @deprecated The setting notes has been deprecated. Use "note" instead.
-     */
-    notes?: pulumi.Input<string>;
     /**
      * List of email addresses to be notified with the results of the activation
      */
@@ -162,12 +134,6 @@ export interface AppSecActivationsState {
  */
 export interface AppSecActivationsArgs {
     /**
-     * Whether to activate or deactivate the specified security configuration and version
-     *
-     * @deprecated The setting activate has been deprecated; "terraform apply" will always perform activation. (Use "terraform destroy" for deactivation.)
-     */
-    activate?: pulumi.Input<boolean>;
-    /**
      * Unique identifier of the security configuration to be activated
      */
     configId: pulumi.Input<number>;
@@ -179,12 +145,6 @@ export interface AppSecActivationsArgs {
      * Note describing the activation. Will use timestamp if omitted.
      */
     note?: pulumi.Input<string>;
-    /**
-     * Note describing the activation
-     *
-     * @deprecated The setting notes has been deprecated. Use "note" instead.
-     */
-    notes?: pulumi.Input<string>;
     /**
      * List of email addresses to be notified with the results of the activation
      */

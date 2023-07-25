@@ -160,29 +160,6 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Enable Dual-Stacked certificate deployment for enrollment
-     * 
-     * @deprecated
-     * Deprecated, don&#39;t use; always false
-     * 
-     */
-    @Deprecated /* Deprecated, don't use; always false */
-    @Import(name="enableMultiStackedCertificates")
-    private @Nullable Output<Boolean> enableMultiStackedCertificates;
-
-    /**
-     * @return Enable Dual-Stacked certificate deployment for enrollment
-     * 
-     * @deprecated
-     * Deprecated, don&#39;t use; always false
-     * 
-     */
-    @Deprecated /* Deprecated, don't use; always false */
-    public Optional<Output<Boolean>> enableMultiStackedCertificates() {
-        return Optional.ofNullable(this.enableMultiStackedCertificates);
-    }
-
-    /**
      * HTTP challenge information
      * 
      */
@@ -344,7 +321,6 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
         this.contractId = $.contractId;
         this.csr = $.csr;
         this.dnsChallenges = $.dnsChallenges;
-        this.enableMultiStackedCertificates = $.enableMultiStackedCertificates;
         this.httpChallenges = $.httpChallenges;
         this.networkConfiguration = $.networkConfiguration;
         this.organization = $.organization;
@@ -572,35 +548,6 @@ public final class CpsDvEnrollmentState extends com.pulumi.resources.ResourceArg
          */
         public Builder dnsChallenges(CpsDvEnrollmentDnsChallengeArgs... dnsChallenges) {
             return dnsChallenges(List.of(dnsChallenges));
-        }
-
-        /**
-         * @param enableMultiStackedCertificates Enable Dual-Stacked certificate deployment for enrollment
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * Deprecated, don&#39;t use; always false
-         * 
-         */
-        @Deprecated /* Deprecated, don't use; always false */
-        public Builder enableMultiStackedCertificates(@Nullable Output<Boolean> enableMultiStackedCertificates) {
-            $.enableMultiStackedCertificates = enableMultiStackedCertificates;
-            return this;
-        }
-
-        /**
-         * @param enableMultiStackedCertificates Enable Dual-Stacked certificate deployment for enrollment
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * Deprecated, don&#39;t use; always false
-         * 
-         */
-        @Deprecated /* Deprecated, don't use; always false */
-        public Builder enableMultiStackedCertificates(Boolean enableMultiStackedCertificates) {
-            return enableMultiStackedCertificates(Output.of(enableMultiStackedCertificates));
         }
 
         /**

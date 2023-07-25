@@ -4,10 +4,12 @@
 package akamai
 
 import (
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetBotmanBotAnalyticsCookieValues(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetBotmanBotAnalyticsCookieValuesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBotmanBotAnalyticsCookieValuesResult
 	err := ctx.Invoke("akamai:index/getBotmanBotAnalyticsCookieValues:getBotmanBotAnalyticsCookieValues", nil, &rv, opts...)
 	if err != nil {

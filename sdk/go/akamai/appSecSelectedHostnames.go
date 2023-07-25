@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -38,6 +39,7 @@ func NewAppSecSelectedHostnames(ctx *pulumi.Context,
 	if args.Mode == nil {
 		return nil, errors.New("invalid value for required argument 'Mode'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecSelectedHostnames
 	err := ctx.RegisterResource("akamai:index/appSecSelectedHostnames:AppSecSelectedHostnames", name, args, &resource, opts...)
 	if err != nil {

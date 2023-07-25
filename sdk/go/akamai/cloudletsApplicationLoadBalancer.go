@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ func NewCloudletsApplicationLoadBalancer(ctx *pulumi.Context,
 	if args.OriginId == nil {
 		return nil, errors.New("invalid value for required argument 'OriginId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CloudletsApplicationLoadBalancer
 	err := ctx.RegisterResource("akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer", name, args, &resource, opts...)
 	if err != nil {

@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAppSecTuningRecommendations(ctx *pulumi.Context, args *GetAppSecTuningRecommendationsArgs, opts ...pulumi.InvokeOption) (*GetAppSecTuningRecommendationsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppSecTuningRecommendationsResult
 	err := ctx.Invoke("akamai:index/getAppSecTuningRecommendations:getAppSecTuningRecommendations", args, &rv, opts...)
 	if err != nil {

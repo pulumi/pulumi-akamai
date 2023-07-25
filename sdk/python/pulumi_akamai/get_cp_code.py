@@ -21,16 +21,10 @@ class GetCpCodeResult:
     """
     A collection of values returned by getCpCode.
     """
-    def __init__(__self__, contract=None, contract_id=None, group=None, group_id=None, id=None, name=None, product_ids=None):
-        if contract and not isinstance(contract, str):
-            raise TypeError("Expected argument 'contract' to be a str")
-        pulumi.set(__self__, "contract", contract)
+    def __init__(__self__, contract_id=None, group_id=None, id=None, name=None, product_ids=None):
         if contract_id and not isinstance(contract_id, str):
             raise TypeError("Expected argument 'contract_id' to be a str")
         pulumi.set(__self__, "contract_id", contract_id)
-        if group and not isinstance(group, str):
-            raise TypeError("Expected argument 'group' to be a str")
-        pulumi.set(__self__, "group", group)
         if group_id and not isinstance(group_id, str):
             raise TypeError("Expected argument 'group_id' to be a str")
         pulumi.set(__self__, "group_id", group_id)
@@ -45,25 +39,9 @@ class GetCpCodeResult:
         pulumi.set(__self__, "product_ids", product_ids)
 
     @property
-    @pulumi.getter
-    def contract(self) -> str:
-        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-
-        return pulumi.get(self, "contract")
-
-    @property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> str:
         return pulumi.get(self, "contract_id")
-
-    @property
-    @pulumi.getter
-    def group(self) -> str:
-        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-
-        return pulumi.get(self, "group")
 
     @property
     @pulumi.getter(name="groupId")
@@ -95,18 +73,14 @@ class AwaitableGetCpCodeResult(GetCpCodeResult):
         if False:
             yield self
         return GetCpCodeResult(
-            contract=self.contract,
             contract_id=self.contract_id,
-            group=self.group,
             group_id=self.group_id,
             id=self.id,
             name=self.name,
             product_ids=self.product_ids)
 
 
-def get_cp_code(contract: Optional[str] = None,
-                contract_id: Optional[str] = None,
-                group: Optional[str] = None,
+def get_cp_code(contract_id: Optional[str] = None,
                 group_id: Optional[str] = None,
                 name: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCpCodeResult:
@@ -114,18 +88,14 @@ def get_cp_code(contract: Optional[str] = None,
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
-    __args__['contract'] = contract
     __args__['contractId'] = contract_id
-    __args__['group'] = group
     __args__['groupId'] = group_id
     __args__['name'] = name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('akamai:index/getCpCode:getCpCode', __args__, opts=opts, typ=GetCpCodeResult).value
 
     return AwaitableGetCpCodeResult(
-        contract=pulumi.get(__ret__, 'contract'),
         contract_id=pulumi.get(__ret__, 'contract_id'),
-        group=pulumi.get(__ret__, 'group'),
         group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
@@ -133,10 +103,8 @@ def get_cp_code(contract: Optional[str] = None,
 
 
 @_utilities.lift_output_func(get_cp_code)
-def get_cp_code_output(contract: Optional[pulumi.Input[Optional[str]]] = None,
-                       contract_id: Optional[pulumi.Input[Optional[str]]] = None,
-                       group: Optional[pulumi.Input[Optional[str]]] = None,
-                       group_id: Optional[pulumi.Input[Optional[str]]] = None,
+def get_cp_code_output(contract_id: Optional[pulumi.Input[str]] = None,
+                       group_id: Optional[pulumi.Input[str]] = None,
                        name: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpCodeResult]:
     """

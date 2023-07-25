@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAppSecRatePolicies(ctx *pulumi.Context, args *GetAppSecRatePoliciesArgs, opts ...pulumi.InvokeOption) (*GetAppSecRatePoliciesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppSecRatePoliciesResult
 	err := ctx.Invoke("akamai:index/getAppSecRatePolicies:getAppSecRatePolicies", args, &rv, opts...)
 	if err != nil {

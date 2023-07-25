@@ -20,7 +20,7 @@ public class AppSecRatePolicy extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -34,7 +34,7 @@ public class AppSecRatePolicy extends com.pulumi.resources.CustomResource {
      * JSON-formatted definition of the rate policy
      * 
      */
-    @Export(name="ratePolicy", type=String.class, parameters={})
+    @Export(name="ratePolicy", refs={String.class}, tree="[0]")
     private Output<String> ratePolicy;
 
     /**
@@ -48,7 +48,7 @@ public class AppSecRatePolicy extends com.pulumi.resources.CustomResource {
      * Unique identifier of the rate policy
      * 
      */
-    @Export(name="ratePolicyId", type=Integer.class, parameters={})
+    @Export(name="ratePolicyId", refs={Integer.class}, tree="[0]")
     private Output<Integer> ratePolicyId;
 
     /**

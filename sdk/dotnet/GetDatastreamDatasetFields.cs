@@ -21,8 +21,8 @@ namespace Pulumi.Akamai
 
     public sealed class GetDatastreamDatasetFieldsArgs : global::Pulumi.InvokeArgs
     {
-        [Input("templateName")]
-        public string? TemplateName { get; set; }
+        [Input("productId")]
+        public string? ProductId { get; set; }
 
         public GetDatastreamDatasetFieldsArgs()
         {
@@ -32,8 +32,8 @@ namespace Pulumi.Akamai
 
     public sealed class GetDatastreamDatasetFieldsInvokeArgs : global::Pulumi.InvokeArgs
     {
-        [Input("templateName")]
-        public Input<string>? TemplateName { get; set; }
+        [Input("productId")]
+        public Input<string>? ProductId { get; set; }
 
         public GetDatastreamDatasetFieldsInvokeArgs()
         {
@@ -45,24 +45,24 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetDatastreamDatasetFieldsResult
     {
-        public readonly ImmutableArray<Outputs.GetDatastreamDatasetFieldsFieldResult> Fields;
+        public readonly ImmutableArray<Outputs.GetDatastreamDatasetFieldsDatasetFieldResult> DatasetFields;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        public readonly string? TemplateName;
+        public readonly string? ProductId;
 
         [OutputConstructor]
         private GetDatastreamDatasetFieldsResult(
-            ImmutableArray<Outputs.GetDatastreamDatasetFieldsFieldResult> fields,
+            ImmutableArray<Outputs.GetDatastreamDatasetFieldsDatasetFieldResult> datasetFields,
 
             string id,
 
-            string? templateName)
+            string? productId)
         {
-            Fields = fields;
+            DatasetFields = datasetFields;
             Id = id;
-            TemplateName = templateName;
+            ProductId = productId;
         }
     }
 }

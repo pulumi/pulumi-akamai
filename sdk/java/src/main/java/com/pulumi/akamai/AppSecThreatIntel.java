@@ -20,7 +20,7 @@ public class AppSecThreatIntel extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -34,7 +34,7 @@ public class AppSecThreatIntel extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**
@@ -48,7 +48,7 @@ public class AppSecThreatIntel extends com.pulumi.resources.CustomResource {
      * Whether threat intelligence protection should be on or off
      * 
      */
-    @Export(name="threatIntel", type=String.class, parameters={})
+    @Export(name="threatIntel", refs={String.class}, tree="[0]")
     private Output<String> threatIntel;
 
     /**

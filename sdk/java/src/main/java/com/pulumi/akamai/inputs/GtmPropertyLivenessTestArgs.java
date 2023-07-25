@@ -139,11 +139,11 @@ public final class GtmPropertyLivenessTestArgs extends com.pulumi.resources.Reso
         return this.testInterval;
     }
 
-    @Import(name="testObject", required=true)
-    private Output<String> testObject;
+    @Import(name="testObject")
+    private @Nullable Output<String> testObject;
 
-    public Output<String> testObject() {
-        return this.testObject;
+    public Optional<Output<String>> testObject() {
+        return Optional.ofNullable(this.testObject);
     }
 
     @Import(name="testObjectPassword")
@@ -392,7 +392,7 @@ public final class GtmPropertyLivenessTestArgs extends com.pulumi.resources.Reso
             return testInterval(Output.of(testInterval));
         }
 
-        public Builder testObject(Output<String> testObject) {
+        public Builder testObject(@Nullable Output<String> testObject) {
             $.testObject = testObject;
             return this;
         }
@@ -458,7 +458,6 @@ public final class GtmPropertyLivenessTestArgs extends com.pulumi.resources.Reso
         public GtmPropertyLivenessTestArgs build() {
             $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             $.testInterval = Objects.requireNonNull($.testInterval, "expected parameter 'testInterval' to be non-null");
-            $.testObject = Objects.requireNonNull($.testObject, "expected parameter 'testObject' to be non-null");
             $.testObjectProtocol = Objects.requireNonNull($.testObjectProtocol, "expected parameter 'testObjectProtocol' to be non-null");
             $.testTimeout = Objects.requireNonNull($.testTimeout, "expected parameter 'testTimeout' to be non-null");
             return $;

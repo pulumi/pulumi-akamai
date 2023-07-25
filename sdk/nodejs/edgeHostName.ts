@@ -33,22 +33,10 @@ export class EdgeHostName extends pulumi.CustomResource {
     }
 
     public readonly certificate!: pulumi.Output<number | undefined>;
-    /**
-     * @deprecated The setting "contract" has been deprecated.
-     */
-    public readonly contract!: pulumi.Output<string>;
     public readonly contractId!: pulumi.Output<string>;
     public readonly edgeHostname!: pulumi.Output<string>;
-    /**
-     * @deprecated The setting "group" has been deprecated.
-     */
-    public readonly group!: pulumi.Output<string>;
     public readonly groupId!: pulumi.Output<string>;
     public readonly ipBehavior!: pulumi.Output<string>;
-    /**
-     * @deprecated The setting "product" has been deprecated.
-     */
-    public readonly product!: pulumi.Output<string>;
     public readonly productId!: pulumi.Output<string>;
     /**
      * Email address that should receive updates on the IP behavior update request. Required for update operation.
@@ -73,32 +61,32 @@ export class EdgeHostName extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as EdgeHostNameState | undefined;
             resourceInputs["certificate"] = state ? state.certificate : undefined;
-            resourceInputs["contract"] = state ? state.contract : undefined;
             resourceInputs["contractId"] = state ? state.contractId : undefined;
             resourceInputs["edgeHostname"] = state ? state.edgeHostname : undefined;
-            resourceInputs["group"] = state ? state.group : undefined;
             resourceInputs["groupId"] = state ? state.groupId : undefined;
             resourceInputs["ipBehavior"] = state ? state.ipBehavior : undefined;
-            resourceInputs["product"] = state ? state.product : undefined;
             resourceInputs["productId"] = state ? state.productId : undefined;
             resourceInputs["statusUpdateEmails"] = state ? state.statusUpdateEmails : undefined;
             resourceInputs["useCases"] = state ? state.useCases : undefined;
         } else {
             const args = argsOrState as EdgeHostNameArgs | undefined;
+            if ((!args || args.contractId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'contractId'");
+            }
             if ((!args || args.edgeHostname === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'edgeHostname'");
+            }
+            if ((!args || args.groupId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'groupId'");
             }
             if ((!args || args.ipBehavior === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ipBehavior'");
             }
             resourceInputs["certificate"] = args ? args.certificate : undefined;
-            resourceInputs["contract"] = args ? args.contract : undefined;
             resourceInputs["contractId"] = args ? args.contractId : undefined;
             resourceInputs["edgeHostname"] = args ? args.edgeHostname : undefined;
-            resourceInputs["group"] = args ? args.group : undefined;
             resourceInputs["groupId"] = args ? args.groupId : undefined;
             resourceInputs["ipBehavior"] = args ? args.ipBehavior : undefined;
-            resourceInputs["product"] = args ? args.product : undefined;
             resourceInputs["productId"] = args ? args.productId : undefined;
             resourceInputs["statusUpdateEmails"] = args ? args.statusUpdateEmails : undefined;
             resourceInputs["useCases"] = args ? args.useCases : undefined;
@@ -115,22 +103,10 @@ export class EdgeHostName extends pulumi.CustomResource {
  */
 export interface EdgeHostNameState {
     certificate?: pulumi.Input<number>;
-    /**
-     * @deprecated The setting "contract" has been deprecated.
-     */
-    contract?: pulumi.Input<string>;
     contractId?: pulumi.Input<string>;
     edgeHostname?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "group" has been deprecated.
-     */
-    group?: pulumi.Input<string>;
     groupId?: pulumi.Input<string>;
     ipBehavior?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "product" has been deprecated.
-     */
-    product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
     /**
      * Email address that should receive updates on the IP behavior update request. Required for update operation.
@@ -147,22 +123,10 @@ export interface EdgeHostNameState {
  */
 export interface EdgeHostNameArgs {
     certificate?: pulumi.Input<number>;
-    /**
-     * @deprecated The setting "contract" has been deprecated.
-     */
-    contract?: pulumi.Input<string>;
-    contractId?: pulumi.Input<string>;
+    contractId: pulumi.Input<string>;
     edgeHostname: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "group" has been deprecated.
-     */
-    group?: pulumi.Input<string>;
-    groupId?: pulumi.Input<string>;
+    groupId: pulumi.Input<string>;
     ipBehavior: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "product" has been deprecated.
-     */
-    product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
     /**
      * Email address that should receive updates on the IP behavior update request. Required for update operation.

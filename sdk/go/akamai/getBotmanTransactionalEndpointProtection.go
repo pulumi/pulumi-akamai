@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupBotmanTransactionalEndpointProtection(ctx *pulumi.Context, args *LookupBotmanTransactionalEndpointProtectionArgs, opts ...pulumi.InvokeOption) (*LookupBotmanTransactionalEndpointProtectionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBotmanTransactionalEndpointProtectionResult
 	err := ctx.Invoke("akamai:index/getBotmanTransactionalEndpointProtection:getBotmanTransactionalEndpointProtection", args, &rv, opts...)
 	if err != nil {

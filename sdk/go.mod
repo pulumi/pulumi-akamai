@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-akamai/sdk/v5
+module github.com/pulumi/pulumi-akamai/sdk/v6
 
 go 1.19
 

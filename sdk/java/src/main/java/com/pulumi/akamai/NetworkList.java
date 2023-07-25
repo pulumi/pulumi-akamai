@@ -22,7 +22,7 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
      * contract ID
      * 
      */
-    @Export(name="contractId", type=String.class, parameters={})
+    @Export(name="contractId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> contractId;
 
     /**
@@ -36,7 +36,7 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
      * A description of the network list
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -50,7 +50,7 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
      * group ID
      * 
      */
-    @Export(name="groupId", type=Integer.class, parameters={})
+    @Export(name="groupId", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> groupId;
 
     /**
@@ -65,7 +65,7 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
      * list
      * 
      */
-    @Export(name="lists", type=List.class, parameters={String.class})
+    @Export(name="lists", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> lists;
 
     /**
@@ -80,7 +80,7 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
      * A string specifying the interpretation of the `list` parameter. Must be &#39;APPEND&#39;, &#39;REPLACE&#39;, or &#39;REMOVE&#39;
      * 
      */
-    @Export(name="mode", type=String.class, parameters={})
+    @Export(name="mode", refs={String.class}, tree="[0]")
     private Output<String> mode;
 
     /**
@@ -94,7 +94,7 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
      * The name to be assigned to the network list
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -108,7 +108,7 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
      * network list ID
      * 
      */
-    @Export(name="networkListId", type=String.class, parameters={})
+    @Export(name="networkListId", refs={String.class}, tree="[0]")
     private Output<String> networkListId;
 
     /**
@@ -122,7 +122,7 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
      * sync point
      * 
      */
-    @Export(name="syncPoint", type=Integer.class, parameters={})
+    @Export(name="syncPoint", refs={Integer.class}, tree="[0]")
     private Output<Integer> syncPoint;
 
     /**
@@ -136,7 +136,7 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
      * The type of the network list; must be either &#39;IP&#39; or &#39;GEO&#39;
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -150,7 +150,7 @@ public class NetworkList extends com.pulumi.resources.CustomResource {
      * unique ID
      * 
      */
-    @Export(name="uniqueid", type=String.class, parameters={})
+    @Export(name="uniqueid", refs={String.class}, tree="[0]")
     private Output<String> uniqueid;
 
     /**

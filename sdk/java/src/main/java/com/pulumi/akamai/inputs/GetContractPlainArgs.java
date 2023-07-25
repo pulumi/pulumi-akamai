@@ -14,25 +14,6 @@ public final class GetContractPlainArgs extends com.pulumi.resources.InvokeArgs 
 
     public static final GetContractPlainArgs Empty = new GetContractPlainArgs();
 
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    @Import(name="group")
-    private @Nullable String group;
-
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    public Optional<String> group() {
-        return Optional.ofNullable(this.group);
-    }
-
     @Import(name="groupId")
     private @Nullable String groupId;
 
@@ -50,7 +31,6 @@ public final class GetContractPlainArgs extends com.pulumi.resources.InvokeArgs 
     private GetContractPlainArgs() {}
 
     private GetContractPlainArgs(GetContractPlainArgs $) {
-        this.group = $.group;
         this.groupId = $.groupId;
         this.groupName = $.groupName;
     }
@@ -71,19 +51,6 @@ public final class GetContractPlainArgs extends com.pulumi.resources.InvokeArgs 
 
         public Builder(GetContractPlainArgs defaults) {
             $ = new GetContractPlainArgs(Objects.requireNonNull(defaults));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;group&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""group"" has been deprecated. */
-        public Builder group(@Nullable String group) {
-            $.group = group;
-            return this;
         }
 
         public Builder groupId(@Nullable String groupId) {

@@ -6,73 +6,31 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class GetGroupPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetGroupPlainArgs Empty = new GetGroupPlainArgs();
 
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    @Import(name="contract")
-    private @Nullable String contract;
+    @Import(name="contractId", required=true)
+    private String contractId;
 
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    public Optional<String> contract() {
-        return Optional.ofNullable(this.contract);
+    public String contractId() {
+        return this.contractId;
     }
 
-    @Import(name="contractId")
-    private @Nullable String contractId;
+    @Import(name="groupName", required=true)
+    private String groupName;
 
-    public Optional<String> contractId() {
-        return Optional.ofNullable(this.contractId);
-    }
-
-    @Import(name="groupName")
-    private @Nullable String groupName;
-
-    public Optional<String> groupName() {
-        return Optional.ofNullable(this.groupName);
-    }
-
-    /**
-     * @deprecated
-     * The setting &#34;name&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""name"" has been deprecated. */
-    @Import(name="name")
-    private @Nullable String name;
-
-    /**
-     * @deprecated
-     * The setting &#34;name&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""name"" has been deprecated. */
-    public Optional<String> name() {
-        return Optional.ofNullable(this.name);
+    public String groupName() {
+        return this.groupName;
     }
 
     private GetGroupPlainArgs() {}
 
     private GetGroupPlainArgs(GetGroupPlainArgs $) {
-        this.contract = $.contract;
         this.contractId = $.contractId;
         this.groupName = $.groupName;
-        this.name = $.name;
     }
 
     public static Builder builder() {
@@ -93,43 +51,19 @@ public final class GetGroupPlainArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetGroupPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;contract&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""contract"" has been deprecated. */
-        public Builder contract(@Nullable String contract) {
-            $.contract = contract;
-            return this;
-        }
-
-        public Builder contractId(@Nullable String contractId) {
+        public Builder contractId(String contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        public Builder groupName(@Nullable String groupName) {
+        public Builder groupName(String groupName) {
             $.groupName = groupName;
             return this;
         }
 
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;name&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""name"" has been deprecated. */
-        public Builder name(@Nullable String name) {
-            $.name = name;
-            return this;
-        }
-
         public GetGroupPlainArgs build() {
+            $.contractId = Objects.requireNonNull($.contractId, "expected parameter 'contractId' to be non-null");
+            $.groupName = Objects.requireNonNull($.groupName, "expected parameter 'groupName' to be non-null");
             return $;
         }
     }

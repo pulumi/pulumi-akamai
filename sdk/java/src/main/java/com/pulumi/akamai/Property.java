@@ -7,15 +7,12 @@ import com.pulumi.akamai.PropertyArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.PropertyState;
 import com.pulumi.akamai.outputs.PropertyHostname;
-import com.pulumi.akamai.outputs.PropertyOrigin;
 import com.pulumi.akamai.outputs.PropertyRuleError;
-import com.pulumi.akamai.outputs.PropertyRuleWarning;
 import com.pulumi.core.Alias;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
-import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -25,34 +22,10 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/property:Property")
 public class Property extends com.pulumi.resources.CustomResource {
     /**
-     * @deprecated
-     * The setting &#34;contact&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contact"" has been deprecated. */
-    @Export(name="contacts", type=List.class, parameters={String.class})
-    private Output</* @Nullable */ List<String>> contacts;
-
-    public Output<Optional<List<String>>> contacts() {
-        return Codegen.optional(this.contacts);
-    }
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    @Export(name="contract", type=String.class, parameters={})
-    private Output<String> contract;
-
-    public Output<String> contract() {
-        return this.contract;
-    }
-    /**
      * Contract ID to be assigned to the Property
      * 
      */
-    @Export(name="contractId", type=String.class, parameters={})
+    @Export(name="contractId", refs={String.class}, tree="[0]")
     private Output<String> contractId;
 
     /**
@@ -63,34 +36,10 @@ public class Property extends com.pulumi.resources.CustomResource {
         return this.contractId;
     }
     /**
-     * @deprecated
-     * The setting &#34;cp_code&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""cp_code"" has been deprecated. */
-    @Export(name="cpCode", type=String.class, parameters={})
-    private Output</* @Nullable */ String> cpCode;
-
-    public Output<Optional<String>> cpCode() {
-        return Codegen.optional(this.cpCode);
-    }
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    @Export(name="group", type=String.class, parameters={})
-    private Output<String> group;
-
-    public Output<String> group() {
-        return this.group;
-    }
-    /**
      * Group ID to be assigned to the Property
      * 
      */
-    @Export(name="groupId", type=String.class, parameters={})
+    @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
@@ -100,29 +49,17 @@ public class Property extends com.pulumi.resources.CustomResource {
     public Output<String> groupId() {
         return this.groupId;
     }
-    @Export(name="hostnames", type=List.class, parameters={PropertyHostname.class})
+    @Export(name="hostnames", refs={List.class,PropertyHostname.class}, tree="[0,1]")
     private Output</* @Nullable */ List<PropertyHostname>> hostnames;
 
     public Output<Optional<List<PropertyHostname>>> hostnames() {
         return Codegen.optional(this.hostnames);
     }
     /**
-     * @deprecated
-     * The setting &#34;is_secure&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""is_secure"" has been deprecated. */
-    @Export(name="isSecure", type=Boolean.class, parameters={})
-    private Output</* @Nullable */ Boolean> isSecure;
-
-    public Output<Optional<Boolean>> isSecure() {
-        return Codegen.optional(this.isSecure);
-    }
-    /**
      * Property&#39;s current latest version number
      * 
      */
-    @Export(name="latestVersion", type=Integer.class, parameters={})
+    @Export(name="latestVersion", refs={Integer.class}, tree="[0]")
     private Output<Integer> latestVersion;
 
     /**
@@ -136,7 +73,7 @@ public class Property extends com.pulumi.resources.CustomResource {
      * Name to give to the Property (must be unique)
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -147,34 +84,10 @@ public class Property extends com.pulumi.resources.CustomResource {
         return this.name;
     }
     /**
-     * @deprecated
-     * The setting &#34;origin&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""origin"" has been deprecated. */
-    @Export(name="origins", type=List.class, parameters={PropertyOrigin.class})
-    private Output</* @Nullable */ List<PropertyOrigin>> origins;
-
-    public Output<Optional<List<PropertyOrigin>>> origins() {
-        return Codegen.optional(this.origins);
-    }
-    /**
-     * @deprecated
-     * The setting &#34;product&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""product"" has been deprecated. */
-    @Export(name="product", type=String.class, parameters={})
-    private Output<String> product;
-
-    public Output<String> product() {
-        return this.product;
-    }
-    /**
      * Product ID to be assigned to the Property
      * 
      */
-    @Export(name="productId", type=String.class, parameters={})
+    @Export(name="productId", refs={String.class}, tree="[0]")
     private Output<String> productId;
 
     /**
@@ -188,7 +101,7 @@ public class Property extends com.pulumi.resources.CustomResource {
      * Property&#39;s version currently activated in production (zero when not active in production)
      * 
      */
-    @Export(name="productionVersion", type=Integer.class, parameters={})
+    @Export(name="productionVersion", refs={Integer.class}, tree="[0]")
     private Output<Integer> productionVersion;
 
     /**
@@ -202,7 +115,7 @@ public class Property extends com.pulumi.resources.CustomResource {
      * Required property&#39;s version to be read
      * 
      */
-    @Export(name="readVersion", type=Integer.class, parameters={})
+    @Export(name="readVersion", refs={Integer.class}, tree="[0]")
     private Output<Integer> readVersion;
 
     /**
@@ -212,7 +125,7 @@ public class Property extends com.pulumi.resources.CustomResource {
     public Output<Integer> readVersion() {
         return this.readVersion;
     }
-    @Export(name="ruleErrors", type=List.class, parameters={PropertyRuleError.class})
+    @Export(name="ruleErrors", refs={List.class,PropertyRuleError.class}, tree="[0,1]")
     private Output<List<PropertyRuleError>> ruleErrors;
 
     public Output<List<PropertyRuleError>> ruleErrors() {
@@ -222,7 +135,7 @@ public class Property extends com.pulumi.resources.CustomResource {
      * Specify the rule format version (defaults to latest version available when created)
      * 
      */
-    @Export(name="ruleFormat", type=String.class, parameters={})
+    @Export(name="ruleFormat", refs={String.class}, tree="[0]")
     private Output<String> ruleFormat;
 
     /**
@@ -233,22 +146,10 @@ public class Property extends com.pulumi.resources.CustomResource {
         return this.ruleFormat;
     }
     /**
-     * @deprecated
-     * Rule warnings will not be set in state anymore
-     * 
-     */
-    @Deprecated /* Rule warnings will not be set in state anymore */
-    @Export(name="ruleWarnings", type=List.class, parameters={PropertyRuleWarning.class})
-    private Output<List<PropertyRuleWarning>> ruleWarnings;
-
-    public Output<List<PropertyRuleWarning>> ruleWarnings() {
-        return this.ruleWarnings;
-    }
-    /**
      * Property Rules as JSON
      * 
      */
-    @Export(name="rules", type=String.class, parameters={})
+    @Export(name="rules", refs={String.class}, tree="[0]")
     private Output<String> rules;
 
     /**
@@ -262,7 +163,7 @@ public class Property extends com.pulumi.resources.CustomResource {
      * Property&#39;s version currently activated in staging (zero when not active in staging)
      * 
      */
-    @Export(name="stagingVersion", type=Integer.class, parameters={})
+    @Export(name="stagingVersion", refs={Integer.class}, tree="[0]")
     private Output<Integer> stagingVersion;
 
     /**
@@ -271,18 +172,6 @@ public class Property extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> stagingVersion() {
         return this.stagingVersion;
-    }
-    /**
-     * @deprecated
-     * The setting &#34;variables&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""variables"" has been deprecated. */
-    @Export(name="variables", type=String.class, parameters={})
-    private Output</* @Nullable */ String> variables;
-
-    public Output<Optional<String>> variables() {
-        return Codegen.optional(this.variables);
     }
 
     /**
@@ -297,7 +186,7 @@ public class Property extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public Property(String name, @Nullable PropertyArgs args) {
+    public Property(String name, PropertyArgs args) {
         this(name, args, null);
     }
     /**
@@ -306,7 +195,7 @@ public class Property extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public Property(String name, @Nullable PropertyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public Property(String name, PropertyArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("akamai:index/property:Property", name, args == null ? PropertyArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
     }
 

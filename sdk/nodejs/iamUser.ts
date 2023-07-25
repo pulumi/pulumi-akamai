@@ -69,12 +69,6 @@ export class IamUser extends pulumi.CustomResource {
      */
     public readonly firstName!: pulumi.Output<string>;
     /**
-     * The user's lock status
-     *
-     * @deprecated The setting "is_locked" has been deprecated. Please use "lock" setting instead
-     */
-    public /*out*/ readonly isLocked!: pulumi.Output<boolean>;
-    /**
      * The user's position at your company
      */
     public readonly jobTitle!: pulumi.Output<string | undefined>;
@@ -157,7 +151,6 @@ export class IamUser extends pulumi.CustomResource {
             resourceInputs["emailUpdatePending"] = state ? state.emailUpdatePending : undefined;
             resourceInputs["enableTfa"] = state ? state.enableTfa : undefined;
             resourceInputs["firstName"] = state ? state.firstName : undefined;
-            resourceInputs["isLocked"] = state ? state.isLocked : undefined;
             resourceInputs["jobTitle"] = state ? state.jobTitle : undefined;
             resourceInputs["lastLogin"] = state ? state.lastLogin : undefined;
             resourceInputs["lastName"] = state ? state.lastName : undefined;
@@ -216,7 +209,6 @@ export class IamUser extends pulumi.CustomResource {
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["zipCode"] = args ? args.zipCode : undefined;
             resourceInputs["emailUpdatePending"] = undefined /*out*/;
-            resourceInputs["isLocked"] = undefined /*out*/;
             resourceInputs["lastLogin"] = undefined /*out*/;
             resourceInputs["passwordExpiredAfter"] = undefined /*out*/;
             resourceInputs["tfaConfigured"] = undefined /*out*/;
@@ -267,12 +259,6 @@ export interface IamUserState {
      * The user's first name
      */
     firstName?: pulumi.Input<string>;
-    /**
-     * The user's lock status
-     *
-     * @deprecated The setting "is_locked" has been deprecated. Please use "lock" setting instead
-     */
-    isLocked?: pulumi.Input<boolean>;
     /**
      * The user's position at your company
      */

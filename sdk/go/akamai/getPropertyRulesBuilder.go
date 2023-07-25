@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetPropertyRulesBuilder(ctx *pulumi.Context, args *GetPropertyRulesBuilderArgs, opts ...pulumi.InvokeOption) (*GetPropertyRulesBuilderResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPropertyRulesBuilderResult
 	err := ctx.Invoke("akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder", args, &rv, opts...)
 	if err != nil {
@@ -22,6 +24,7 @@ func GetPropertyRulesBuilder(ctx *pulumi.Context, args *GetPropertyRulesBuilderA
 // A collection of arguments for invoking getPropertyRulesBuilder.
 type GetPropertyRulesBuilderArgs struct {
 	RulesV20230105 *GetPropertyRulesBuilderRulesV20230105 `pulumi:"rulesV20230105"`
+	RulesV20230530 *GetPropertyRulesBuilderRulesV20230530 `pulumi:"rulesV20230530"`
 }
 
 // A collection of values returned by getPropertyRulesBuilder.
@@ -31,6 +34,7 @@ type GetPropertyRulesBuilderResult struct {
 	Json           string                                 `pulumi:"json"`
 	RuleFormat     string                                 `pulumi:"ruleFormat"`
 	RulesV20230105 *GetPropertyRulesBuilderRulesV20230105 `pulumi:"rulesV20230105"`
+	RulesV20230530 *GetPropertyRulesBuilderRulesV20230530 `pulumi:"rulesV20230530"`
 }
 
 func GetPropertyRulesBuilderOutput(ctx *pulumi.Context, args GetPropertyRulesBuilderOutputArgs, opts ...pulumi.InvokeOption) GetPropertyRulesBuilderResultOutput {
@@ -49,6 +53,7 @@ func GetPropertyRulesBuilderOutput(ctx *pulumi.Context, args GetPropertyRulesBui
 // A collection of arguments for invoking getPropertyRulesBuilder.
 type GetPropertyRulesBuilderOutputArgs struct {
 	RulesV20230105 GetPropertyRulesBuilderRulesV20230105PtrInput `pulumi:"rulesV20230105"`
+	RulesV20230530 GetPropertyRulesBuilderRulesV20230530PtrInput `pulumi:"rulesV20230530"`
 }
 
 func (GetPropertyRulesBuilderOutputArgs) ElementType() reflect.Type {
@@ -85,6 +90,10 @@ func (o GetPropertyRulesBuilderResultOutput) RuleFormat() pulumi.StringOutput {
 
 func (o GetPropertyRulesBuilderResultOutput) RulesV20230105() GetPropertyRulesBuilderRulesV20230105PtrOutput {
 	return o.ApplyT(func(v GetPropertyRulesBuilderResult) *GetPropertyRulesBuilderRulesV20230105 { return v.RulesV20230105 }).(GetPropertyRulesBuilderRulesV20230105PtrOutput)
+}
+
+func (o GetPropertyRulesBuilderResultOutput) RulesV20230530() GetPropertyRulesBuilderRulesV20230530PtrOutput {
+	return o.ApplyT(func(v GetPropertyRulesBuilderResult) *GetPropertyRulesBuilderRulesV20230530 { return v.RulesV20230530 }).(GetPropertyRulesBuilderRulesV20230530PtrOutput)
 }
 
 func init() {

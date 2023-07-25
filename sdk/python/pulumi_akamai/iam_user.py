@@ -328,7 +328,6 @@ class _IamUserState:
                  email_update_pending: Optional[pulumi.Input[bool]] = None,
                  enable_tfa: Optional[pulumi.Input[bool]] = None,
                  first_name: Optional[pulumi.Input[str]] = None,
-                 is_locked: Optional[pulumi.Input[bool]] = None,
                  job_title: Optional[pulumi.Input[str]] = None,
                  last_login: Optional[pulumi.Input[str]] = None,
                  last_name: Optional[pulumi.Input[str]] = None,
@@ -355,7 +354,6 @@ class _IamUserState:
         :param pulumi.Input[bool] email_update_pending: Indicates whether email update is pending
         :param pulumi.Input[bool] enable_tfa: Indicates whether two-factor authentication is allowed
         :param pulumi.Input[str] first_name: The user's first name
-        :param pulumi.Input[bool] is_locked: The user's lock status
         :param pulumi.Input[str] job_title: The user's position at your company
         :param pulumi.Input[str] last_login: ISO 8601 timestamp indicating when the user last logged in
         :param pulumi.Input[str] last_name: The user's surname
@@ -390,11 +388,6 @@ class _IamUserState:
             pulumi.set(__self__, "enable_tfa", enable_tfa)
         if first_name is not None:
             pulumi.set(__self__, "first_name", first_name)
-        if is_locked is not None:
-            warnings.warn("""The setting \"is_locked\" has been deprecated. Please use \"lock\" setting instead""", DeprecationWarning)
-            pulumi.log.warn("""is_locked is deprecated: The setting \"is_locked\" has been deprecated. Please use \"lock\" setting instead""")
-        if is_locked is not None:
-            pulumi.set(__self__, "is_locked", is_locked)
         if job_title is not None:
             pulumi.set(__self__, "job_title", job_title)
         if last_login is not None:
@@ -533,21 +526,6 @@ class _IamUserState:
     @first_name.setter
     def first_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "first_name", value)
-
-    @property
-    @pulumi.getter(name="isLocked")
-    def is_locked(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The user's lock status
-        """
-        warnings.warn("""The setting \"is_locked\" has been deprecated. Please use \"lock\" setting instead""", DeprecationWarning)
-        pulumi.log.warn("""is_locked is deprecated: The setting \"is_locked\" has been deprecated. Please use \"lock\" setting instead""")
-
-        return pulumi.get(self, "is_locked")
-
-    @is_locked.setter
-    def is_locked(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "is_locked", value)
 
     @property
     @pulumi.getter(name="jobTitle")
@@ -864,7 +842,6 @@ class IamUser(pulumi.CustomResource):
             __props__.__dict__["time_zone"] = time_zone
             __props__.__dict__["zip_code"] = zip_code
             __props__.__dict__["email_update_pending"] = None
-            __props__.__dict__["is_locked"] = None
             __props__.__dict__["last_login"] = None
             __props__.__dict__["password_expired_after"] = None
             __props__.__dict__["tfa_configured"] = None
@@ -888,7 +865,6 @@ class IamUser(pulumi.CustomResource):
             email_update_pending: Optional[pulumi.Input[bool]] = None,
             enable_tfa: Optional[pulumi.Input[bool]] = None,
             first_name: Optional[pulumi.Input[str]] = None,
-            is_locked: Optional[pulumi.Input[bool]] = None,
             job_title: Optional[pulumi.Input[str]] = None,
             last_login: Optional[pulumi.Input[str]] = None,
             last_name: Optional[pulumi.Input[str]] = None,
@@ -920,7 +896,6 @@ class IamUser(pulumi.CustomResource):
         :param pulumi.Input[bool] email_update_pending: Indicates whether email update is pending
         :param pulumi.Input[bool] enable_tfa: Indicates whether two-factor authentication is allowed
         :param pulumi.Input[str] first_name: The user's first name
-        :param pulumi.Input[bool] is_locked: The user's lock status
         :param pulumi.Input[str] job_title: The user's position at your company
         :param pulumi.Input[str] last_login: ISO 8601 timestamp indicating when the user last logged in
         :param pulumi.Input[str] last_name: The user's surname
@@ -950,7 +925,6 @@ class IamUser(pulumi.CustomResource):
         __props__.__dict__["email_update_pending"] = email_update_pending
         __props__.__dict__["enable_tfa"] = enable_tfa
         __props__.__dict__["first_name"] = first_name
-        __props__.__dict__["is_locked"] = is_locked
         __props__.__dict__["job_title"] = job_title
         __props__.__dict__["last_login"] = last_login
         __props__.__dict__["last_name"] = last_name
@@ -1039,17 +1013,6 @@ class IamUser(pulumi.CustomResource):
         The user's first name
         """
         return pulumi.get(self, "first_name")
-
-    @property
-    @pulumi.getter(name="isLocked")
-    def is_locked(self) -> pulumi.Output[bool]:
-        """
-        The user's lock status
-        """
-        warnings.warn("""The setting \"is_locked\" has been deprecated. Please use \"lock\" setting instead""", DeprecationWarning)
-        pulumi.log.warn("""is_locked is deprecated: The setting \"is_locked\" has been deprecated. Please use \"lock\" setting instead""")
-
-        return pulumi.get(self, "is_locked")
 
     @property
     @pulumi.getter(name="jobTitle")

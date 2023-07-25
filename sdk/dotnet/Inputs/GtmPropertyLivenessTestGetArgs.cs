@@ -68,8 +68,8 @@ namespace Pulumi.Akamai.Inputs
         [Input("testInterval", required: true)]
         public Input<int> TestInterval { get; set; } = null!;
 
-        [Input("testObject", required: true)]
-        public Input<string> TestObject { get; set; } = null!;
+        [Input("testObject")]
+        public Input<string>? TestObject { get; set; }
 
         [Input("testObjectPassword")]
         public Input<string>? TestObjectPassword { get; set; }

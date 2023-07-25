@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -35,6 +36,7 @@ func NewBotmanBotManagementSettings(ctx *pulumi.Context,
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BotmanBotManagementSettings
 	err := ctx.RegisterResource("akamai:index/botmanBotManagementSettings:BotmanBotManagementSettings", name, args, &resource, opts...)
 	if err != nil {

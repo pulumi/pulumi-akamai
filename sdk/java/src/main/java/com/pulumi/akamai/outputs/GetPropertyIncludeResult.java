@@ -12,10 +12,6 @@ import java.util.Objects;
 public final class GetPropertyIncludeResult {
     private String contractId;
     private String groupId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
     private String id;
     private String includeId;
     private Integer latestVersion;
@@ -31,10 +27,6 @@ public final class GetPropertyIncludeResult {
     public String groupId() {
         return this.groupId;
     }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
     public String id() {
         return this.id;
     }

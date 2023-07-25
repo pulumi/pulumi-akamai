@@ -21,7 +21,7 @@ public class IamGroup extends com.pulumi.resources.CustomResource {
      * Human readable name for a group
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -35,7 +35,7 @@ public class IamGroup extends com.pulumi.resources.CustomResource {
      * Unique identifier for the parent group
      * 
      */
-    @Export(name="parentGroupId", type=Integer.class, parameters={})
+    @Export(name="parentGroupId", refs={Integer.class}, tree="[0]")
     private Output<Integer> parentGroupId;
 
     /**
@@ -49,7 +49,7 @@ public class IamGroup extends com.pulumi.resources.CustomResource {
      * Subgroups IDs
      * 
      */
-    @Export(name="subGroups", type=List.class, parameters={Integer.class})
+    @Export(name="subGroups", refs={List.class,Integer.class}, tree="[0,1]")
     private Output<List<Integer>> subGroups;
 
     /**

@@ -4,6 +4,7 @@
 package com.pulumi.akamai.inputs;
 
 import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20230105;
+import com.pulumi.akamai.inputs.GetPropertyRulesBuilderRulesV20230530;
 import com.pulumi.core.annotations.Import;
 import java.util.Objects;
 import java.util.Optional;
@@ -21,10 +22,18 @@ public final class GetPropertyRulesBuilderPlainArgs extends com.pulumi.resources
         return Optional.ofNullable(this.rulesV20230105);
     }
 
+    @Import(name="rulesV20230530")
+    private @Nullable GetPropertyRulesBuilderRulesV20230530 rulesV20230530;
+
+    public Optional<GetPropertyRulesBuilderRulesV20230530> rulesV20230530() {
+        return Optional.ofNullable(this.rulesV20230530);
+    }
+
     private GetPropertyRulesBuilderPlainArgs() {}
 
     private GetPropertyRulesBuilderPlainArgs(GetPropertyRulesBuilderPlainArgs $) {
         this.rulesV20230105 = $.rulesV20230105;
+        this.rulesV20230530 = $.rulesV20230530;
     }
 
     public static Builder builder() {
@@ -47,6 +56,11 @@ public final class GetPropertyRulesBuilderPlainArgs extends com.pulumi.resources
 
         public Builder rulesV20230105(@Nullable GetPropertyRulesBuilderRulesV20230105 rulesV20230105) {
             $.rulesV20230105 = rulesV20230105;
+            return this;
+        }
+
+        public Builder rulesV20230530(@Nullable GetPropertyRulesBuilderRulesV20230530 rulesV20230530) {
+            $.rulesV20230530 = rulesV20230530;
             return this;
         }
 

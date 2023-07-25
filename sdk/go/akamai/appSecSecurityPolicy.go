@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -44,6 +45,7 @@ func NewAppSecSecurityPolicy(ctx *pulumi.Context,
 	if args.SecurityPolicyPrefix == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyPrefix'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecSecurityPolicy
 	err := ctx.RegisterResource("akamai:index/appSecSecurityPolicy:AppSecSecurityPolicy", name, args, &resource, opts...)
 	if err != nil {

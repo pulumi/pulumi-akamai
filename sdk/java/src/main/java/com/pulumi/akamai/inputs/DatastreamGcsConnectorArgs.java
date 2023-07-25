@@ -6,7 +6,6 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -31,18 +30,11 @@ public final class DatastreamGcsConnectorArgs extends com.pulumi.resources.Resou
         return Optional.ofNullable(this.compressLogs);
     }
 
-    @Import(name="connectorId")
-    private @Nullable Output<Integer> connectorId;
+    @Import(name="displayName", required=true)
+    private Output<String> displayName;
 
-    public Optional<Output<Integer>> connectorId() {
-        return Optional.ofNullable(this.connectorId);
-    }
-
-    @Import(name="connectorName", required=true)
-    private Output<String> connectorName;
-
-    public Output<String> connectorName() {
-        return this.connectorName;
+    public Output<String> displayName() {
+        return this.displayName;
     }
 
     @Import(name="path")
@@ -78,8 +70,7 @@ public final class DatastreamGcsConnectorArgs extends com.pulumi.resources.Resou
     private DatastreamGcsConnectorArgs(DatastreamGcsConnectorArgs $) {
         this.bucket = $.bucket;
         this.compressLogs = $.compressLogs;
-        this.connectorId = $.connectorId;
-        this.connectorName = $.connectorName;
+        this.displayName = $.displayName;
         this.path = $.path;
         this.privateKey = $.privateKey;
         this.projectId = $.projectId;
@@ -122,22 +113,13 @@ public final class DatastreamGcsConnectorArgs extends com.pulumi.resources.Resou
             return compressLogs(Output.of(compressLogs));
         }
 
-        public Builder connectorId(@Nullable Output<Integer> connectorId) {
-            $.connectorId = connectorId;
+        public Builder displayName(Output<String> displayName) {
+            $.displayName = displayName;
             return this;
         }
 
-        public Builder connectorId(Integer connectorId) {
-            return connectorId(Output.of(connectorId));
-        }
-
-        public Builder connectorName(Output<String> connectorName) {
-            $.connectorName = connectorName;
-            return this;
-        }
-
-        public Builder connectorName(String connectorName) {
-            return connectorName(Output.of(connectorName));
+        public Builder displayName(String displayName) {
+            return displayName(Output.of(displayName));
         }
 
         public Builder path(@Nullable Output<String> path) {
@@ -178,7 +160,7 @@ public final class DatastreamGcsConnectorArgs extends com.pulumi.resources.Resou
 
         public DatastreamGcsConnectorArgs build() {
             $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
-            $.connectorName = Objects.requireNonNull($.connectorName, "expected parameter 'connectorName' to be non-null");
+            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
             $.privateKey = Objects.requireNonNull($.privateKey, "expected parameter 'privateKey' to be non-null");
             $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
             $.serviceAccountName = Objects.requireNonNull($.serviceAccountName, "expected parameter 'serviceAccountName' to be non-null");

@@ -5,7 +5,7 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.String;
+import java.lang.Integer;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -16,9 +16,9 @@ public final class GetDatastreamsArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetDatastreamsArgs Empty = new GetDatastreamsArgs();
 
     @Import(name="groupId")
-    private @Nullable Output<String> groupId;
+    private @Nullable Output<Integer> groupId;
 
-    public Optional<Output<String>> groupId() {
+    public Optional<Output<Integer>> groupId() {
         return Optional.ofNullable(this.groupId);
     }
 
@@ -46,12 +46,12 @@ public final class GetDatastreamsArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetDatastreamsArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder groupId(@Nullable Output<String> groupId) {
+        public Builder groupId(@Nullable Output<Integer> groupId) {
             $.groupId = groupId;
             return this;
         }
 
-        public Builder groupId(String groupId) {
+        public Builder groupId(Integer groupId) {
             return groupId(Output.of(groupId));
         }
 

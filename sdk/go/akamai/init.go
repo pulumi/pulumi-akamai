@@ -7,6 +7,7 @@ import (
 	"fmt"
 
 	"github.com/blang/semver"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -116,6 +117,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppSecWapSelectedHostnames{}
 	case "akamai:index/appsecAdvancedSettingsAttackPayloadLogging:AppsecAdvancedSettingsAttackPayloadLogging":
 		r = &AppsecAdvancedSettingsAttackPayloadLogging{}
+	case "akamai:index/appsecAdvancedSettingsPiiLearning:AppsecAdvancedSettingsPiiLearning":
+		r = &AppsecAdvancedSettingsPiiLearning{}
 	case "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody":
 		r = &AppsecAdvancedSettingsRequestBody{}
 	case "akamai:index/botmanAkamaiBotCategoryAction:BotmanAkamaiBotCategoryAction":
@@ -214,6 +217,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &IamRole{}
 	case "akamai:index/iamUser:IamUser":
 		r = &IamUser{}
+	case "akamai:index/imagingPolicyImage:ImagingPolicyImage":
+		r = &ImagingPolicyImage{}
+	case "akamai:index/imagingPolicySet:ImagingPolicySet":
+		r = &ImagingPolicySet{}
+	case "akamai:index/imagingPolicyVideo:ImagingPolicyVideo":
+		r = &ImagingPolicyVideo{}
 	case "akamai:index/networkList:NetworkList":
 		r = &NetworkList{}
 	case "akamai:index/networkListActivations:NetworkListActivations":
@@ -257,7 +266,10 @@ func (p *pkg) ConstructProvider(ctx *pulumi.Context, name, typ, urn string) (pul
 }
 
 func init() {
-	version, _ := PkgVersion()
+	version, err := internal.PkgVersion()
+	if err != nil {
+		version = semver.Version{Major: 1}
+	}
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appSecActivations",
@@ -496,6 +508,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/appsecAdvancedSettingsAttackPayloadLogging",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/appsecAdvancedSettingsPiiLearning",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -741,6 +758,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/iamUser",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/imagingPolicyImage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/imagingPolicySet",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/imagingPolicyVideo",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

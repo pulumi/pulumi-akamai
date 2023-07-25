@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAppSecAttackGroups(ctx *pulumi.Context, args *GetAppSecAttackGroupsArgs, opts ...pulumi.InvokeOption) (*GetAppSecAttackGroupsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppSecAttackGroupsResult
 	err := ctx.Invoke("akamai:index/getAppSecAttackGroups:getAppSecAttackGroups", args, &rv, opts...)
 	if err != nil {

@@ -67,12 +67,6 @@ namespace Pulumi.Akamai
         public Output<ImmutableArray<Outputs.CpsDvEnrollmentDnsChallenge>> DnsChallenges { get; private set; } = null!;
 
         /// <summary>
-        /// Enable Dual-Stacked certificate deployment for enrollment
-        /// </summary>
-        [Output("enableMultiStackedCertificates")]
-        public Output<bool?> EnableMultiStackedCertificates { get; private set; } = null!;
-
-        /// <summary>
         /// HTTP challenge information
         /// </summary>
         [Output("httpChallenges")]
@@ -221,12 +215,6 @@ namespace Pulumi.Akamai
         public Input<Inputs.CpsDvEnrollmentCsrArgs> Csr { get; set; } = null!;
 
         /// <summary>
-        /// Enable Dual-Stacked certificate deployment for enrollment
-        /// </summary>
-        [Input("enableMultiStackedCertificates")]
-        public Input<bool>? EnableMultiStackedCertificates { get; set; }
-
-        /// <summary>
         /// Settings containing network information and TLS Metadata used by CPS
         /// </summary>
         [Input("networkConfiguration", required: true)]
@@ -341,12 +329,6 @@ namespace Pulumi.Akamai
             get => _dnsChallenges ?? (_dnsChallenges = new InputList<Inputs.CpsDvEnrollmentDnsChallengeGetArgs>());
             set => _dnsChallenges = value;
         }
-
-        /// <summary>
-        /// Enable Dual-Stacked certificate deployment for enrollment
-        /// </summary>
-        [Input("enableMultiStackedCertificates")]
-        public Input<bool>? EnableMultiStackedCertificates { get; set; }
 
         [Input("httpChallenges")]
         private InputList<Inputs.CpsDvEnrollmentHttpChallengeGetArgs>? _httpChallenges;

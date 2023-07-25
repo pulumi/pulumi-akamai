@@ -33,7 +33,7 @@ public final class GtmPropertyLivenessTest {
     private @Nullable String sslClientCertificate;
     private @Nullable String sslClientPrivateKey;
     private Integer testInterval;
-    private String testObject;
+    private @Nullable String testObject;
     private @Nullable String testObjectPassword;
     private @Nullable Integer testObjectPort;
     private String testObjectProtocol;
@@ -93,8 +93,8 @@ public final class GtmPropertyLivenessTest {
     public Integer testInterval() {
         return this.testInterval;
     }
-    public String testObject() {
-        return this.testObject;
+    public Optional<String> testObject() {
+        return Optional.ofNullable(this.testObject);
     }
     public Optional<String> testObjectPassword() {
         return Optional.ofNullable(this.testObjectPassword);
@@ -141,7 +141,7 @@ public final class GtmPropertyLivenessTest {
         private @Nullable String sslClientCertificate;
         private @Nullable String sslClientPrivateKey;
         private Integer testInterval;
-        private String testObject;
+        private @Nullable String testObject;
         private @Nullable String testObjectPassword;
         private @Nullable Integer testObjectPort;
         private String testObjectProtocol;
@@ -266,8 +266,8 @@ public final class GtmPropertyLivenessTest {
             return this;
         }
         @CustomType.Setter
-        public Builder testObject(String testObject) {
-            this.testObject = Objects.requireNonNull(testObject);
+        public Builder testObject(@Nullable String testObject) {
+            this.testObject = testObject;
             return this;
         }
         @CustomType.Setter

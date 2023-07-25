@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -46,6 +47,7 @@ func NewCpsUploadCertificate(ctx *pulumi.Context,
 	if args.EnrollmentId == nil {
 		return nil, errors.New("invalid value for required argument 'EnrollmentId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CpsUploadCertificate
 	err := ctx.RegisterResource("akamai:index/cpsUploadCertificate:CpsUploadCertificate", name, args, &resource, opts...)
 	if err != nil {

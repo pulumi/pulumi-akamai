@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetPropertyIncludeRules(ctx *pulumi.Context, args *GetPropertyIncludeRulesArgs, opts ...pulumi.InvokeOption) (*GetPropertyIncludeRulesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPropertyIncludeRulesResult
 	err := ctx.Invoke("akamai:index/getPropertyIncludeRules:getPropertyIncludeRules", args, &rv, opts...)
 	if err != nil {

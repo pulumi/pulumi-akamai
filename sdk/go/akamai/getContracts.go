@@ -4,10 +4,12 @@
 package akamai
 
 import (
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetContracts(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetContractsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetContractsResult
 	err := ctx.Invoke("akamai:index/getContracts:getContracts", nil, &rv, opts...)
 	if err != nil {

@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupAppSecThreatIntel(ctx *pulumi.Context, args *LookupAppSecThreatIntelArgs, opts ...pulumi.InvokeOption) (*LookupAppSecThreatIntelResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAppSecThreatIntelResult
 	err := ctx.Invoke("akamai:index/getAppSecThreatIntel:getAppSecThreatIntel", args, &rv, opts...)
 	if err != nil {

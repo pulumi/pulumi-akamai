@@ -22,7 +22,7 @@ public class AppSecIPGeo extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -36,7 +36,7 @@ public class AppSecIPGeo extends com.pulumi.resources.CustomResource {
      * List of IDs of network list that are always allowed
      * 
      */
-    @Export(name="exceptionIpNetworkLists", type=List.class, parameters={String.class})
+    @Export(name="exceptionIpNetworkLists", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> exceptionIpNetworkLists;
 
     /**
@@ -50,7 +50,7 @@ public class AppSecIPGeo extends com.pulumi.resources.CustomResource {
      * List of IDs of geographic network list to be blocked
      * 
      */
-    @Export(name="geoNetworkLists", type=List.class, parameters={String.class})
+    @Export(name="geoNetworkLists", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> geoNetworkLists;
 
     /**
@@ -64,7 +64,7 @@ public class AppSecIPGeo extends com.pulumi.resources.CustomResource {
      * List of IDs of IP network list to be blocked
      * 
      */
-    @Export(name="ipNetworkLists", type=List.class, parameters={String.class})
+    @Export(name="ipNetworkLists", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> ipNetworkLists;
 
     /**
@@ -78,7 +78,7 @@ public class AppSecIPGeo extends com.pulumi.resources.CustomResource {
      * Protection mode (block or allow)
      * 
      */
-    @Export(name="mode", type=String.class, parameters={})
+    @Export(name="mode", refs={String.class}, tree="[0]")
     private Output<String> mode;
 
     /**
@@ -92,7 +92,7 @@ public class AppSecIPGeo extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**
@@ -101,6 +101,20 @@ public class AppSecIPGeo extends com.pulumi.resources.CustomResource {
      */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
+    }
+    /**
+     * Action set for Ukraine geo control
+     * 
+     */
+    @Export(name="ukraineGeoControlAction", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> ukraineGeoControlAction;
+
+    /**
+     * @return Action set for Ukraine geo control
+     * 
+     */
+    public Output<Optional<String>> ukraineGeoControlAction() {
+        return Codegen.optional(this.ukraineGeoControlAction);
     }
 
     /**

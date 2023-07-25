@@ -22,91 +22,91 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/gtmResource:GtmResource")
 public class GtmResource extends com.pulumi.resources.CustomResource {
-    @Export(name="aggregationType", type=String.class, parameters={})
+    @Export(name="aggregationType", refs={String.class}, tree="[0]")
     private Output<String> aggregationType;
 
     public Output<String> aggregationType() {
         return this.aggregationType;
     }
-    @Export(name="constrainedProperty", type=String.class, parameters={})
+    @Export(name="constrainedProperty", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> constrainedProperty;
 
     public Output<Optional<String>> constrainedProperty() {
         return Codegen.optional(this.constrainedProperty);
     }
-    @Export(name="decayRate", type=Double.class, parameters={})
+    @Export(name="decayRate", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> decayRate;
 
     public Output<Optional<Double>> decayRate() {
         return Codegen.optional(this.decayRate);
     }
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     public Output<Optional<String>> description() {
         return Codegen.optional(this.description);
     }
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     public Output<String> domain() {
         return this.domain;
     }
-    @Export(name="hostHeader", type=String.class, parameters={})
+    @Export(name="hostHeader", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> hostHeader;
 
     public Output<Optional<String>> hostHeader() {
         return Codegen.optional(this.hostHeader);
     }
-    @Export(name="leaderString", type=String.class, parameters={})
+    @Export(name="leaderString", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> leaderString;
 
     public Output<Optional<String>> leaderString() {
         return Codegen.optional(this.leaderString);
     }
-    @Export(name="leastSquaresDecay", type=Double.class, parameters={})
+    @Export(name="leastSquaresDecay", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> leastSquaresDecay;
 
     public Output<Optional<Double>> leastSquaresDecay() {
         return Codegen.optional(this.leastSquaresDecay);
     }
-    @Export(name="loadImbalancePercentage", type=Double.class, parameters={})
+    @Export(name="loadImbalancePercentage", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> loadImbalancePercentage;
 
     public Output<Optional<Double>> loadImbalancePercentage() {
         return Codegen.optional(this.loadImbalancePercentage);
     }
-    @Export(name="maxUMultiplicativeIncrement", type=Double.class, parameters={})
+    @Export(name="maxUMultiplicativeIncrement", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> maxUMultiplicativeIncrement;
 
     public Output<Optional<Double>> maxUMultiplicativeIncrement() {
         return Codegen.optional(this.maxUMultiplicativeIncrement);
     }
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     public Output<String> name() {
         return this.name;
     }
-    @Export(name="resourceInstances", type=List.class, parameters={GtmResourceResourceInstance.class})
+    @Export(name="resourceInstances", refs={List.class,GtmResourceResourceInstance.class}, tree="[0,1]")
     private Output</* @Nullable */ List<GtmResourceResourceInstance>> resourceInstances;
 
     public Output<Optional<List<GtmResourceResourceInstance>>> resourceInstances() {
         return Codegen.optional(this.resourceInstances);
     }
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     public Output<String> type() {
         return this.type;
     }
-    @Export(name="upperBound", type=Integer.class, parameters={})
+    @Export(name="upperBound", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> upperBound;
 
     public Output<Optional<Integer>> upperBound() {
         return Codegen.optional(this.upperBound);
     }
-    @Export(name="waitOnComplete", type=Boolean.class, parameters={})
+    @Export(name="waitOnComplete", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> waitOnComplete;
 
     public Output<Optional<Boolean>> waitOnComplete() {

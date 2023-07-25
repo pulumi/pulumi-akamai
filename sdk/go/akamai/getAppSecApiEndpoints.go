@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAppSecApiEndpoints(ctx *pulumi.Context, args *GetAppSecApiEndpointsArgs, opts ...pulumi.InvokeOption) (*GetAppSecApiEndpointsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppSecApiEndpointsResult
 	err := ctx.Invoke("akamai:index/getAppSecApiEndpoints:getAppSecApiEndpoints", args, &rv, opts...)
 	if err != nil {

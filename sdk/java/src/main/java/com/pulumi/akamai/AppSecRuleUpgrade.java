@@ -21,7 +21,7 @@ public class AppSecRuleUpgrade extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -35,7 +35,7 @@ public class AppSecRuleUpgrade extends com.pulumi.resources.CustomResource {
      * Versioning information for the current KRS rule set
      * 
      */
-    @Export(name="currentRuleset", type=String.class, parameters={})
+    @Export(name="currentRuleset", refs={String.class}, tree="[0]")
     private Output<String> currentRuleset;
 
     /**
@@ -49,7 +49,7 @@ public class AppSecRuleUpgrade extends com.pulumi.resources.CustomResource {
      * Whether an evaluation is currently in progress
      * 
      */
-    @Export(name="evalStatus", type=String.class, parameters={})
+    @Export(name="evalStatus", refs={String.class}, tree="[0]")
     private Output<String> evalStatus;
 
     /**
@@ -63,7 +63,7 @@ public class AppSecRuleUpgrade extends com.pulumi.resources.CustomResource {
      * Upgrade mode (KRS, AAG, ASE_MANUAL or ASE_AUTO)
      * 
      */
-    @Export(name="mode", type=String.class, parameters={})
+    @Export(name="mode", refs={String.class}, tree="[0]")
     private Output<String> mode;
 
     /**
@@ -77,7 +77,7 @@ public class AppSecRuleUpgrade extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**
@@ -91,7 +91,7 @@ public class AppSecRuleUpgrade extends com.pulumi.resources.CustomResource {
      * Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
      * 
      */
-    @Export(name="upgradeMode", type=String.class, parameters={})
+    @Export(name="upgradeMode", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> upgradeMode;
 
     /**

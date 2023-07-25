@@ -18,15 +18,14 @@ namespace Pulumi.Akamai.Outputs
         public readonly string? ClientCert;
         public readonly string? ClientKey;
         public readonly bool? CompressLogs;
-        public readonly int? ConnectorId;
-        public readonly string ConnectorName;
         public readonly string? ContentType;
         public readonly string? CustomHeaderName;
         public readonly string? CustomHeaderValue;
+        public readonly string DisplayName;
+        public readonly string Endpoint;
         public readonly bool? MTls;
         public readonly string? Password;
         public readonly string? TlsHostname;
-        public readonly string Url;
         public readonly string? UserName;
 
         [OutputConstructor]
@@ -41,23 +40,21 @@ namespace Pulumi.Akamai.Outputs
 
             bool? compressLogs,
 
-            int? connectorId,
-
-            string connectorName,
-
             string? contentType,
 
             string? customHeaderName,
 
             string? customHeaderValue,
 
+            string displayName,
+
+            string endpoint,
+
             bool? mTls,
 
             string? password,
 
             string? tlsHostname,
-
-            string url,
 
             string? userName)
         {
@@ -66,15 +63,14 @@ namespace Pulumi.Akamai.Outputs
             ClientCert = clientCert;
             ClientKey = clientKey;
             CompressLogs = compressLogs;
-            ConnectorId = connectorId;
-            ConnectorName = connectorName;
             ContentType = contentType;
             CustomHeaderName = customHeaderName;
             CustomHeaderValue = customHeaderValue;
+            DisplayName = displayName;
+            Endpoint = endpoint;
             MTls = mTls;
             Password = password;
             TlsHostname = tlsHostname;
-            Url = url;
             UserName = userName;
         }
     }

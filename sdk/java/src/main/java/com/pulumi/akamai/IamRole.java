@@ -21,7 +21,7 @@ public class IamRole extends com.pulumi.resources.CustomResource {
      * The description for a role
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -35,7 +35,7 @@ public class IamRole extends com.pulumi.resources.CustomResource {
      * The list of existing unique identifiers for the granted roles
      * 
      */
-    @Export(name="grantedRoles", type=List.class, parameters={Integer.class})
+    @Export(name="grantedRoles", refs={List.class,Integer.class}, tree="[0,1]")
     private Output<List<Integer>> grantedRoles;
 
     /**
@@ -49,7 +49,7 @@ public class IamRole extends com.pulumi.resources.CustomResource {
      * The name you supply for a role
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -63,7 +63,7 @@ public class IamRole extends com.pulumi.resources.CustomResource {
      * The role type which indicates whether it&#39;s a standard role provided by Akamai or a custom role for the account
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**

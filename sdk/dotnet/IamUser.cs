@@ -67,12 +67,6 @@ namespace Pulumi.Akamai
         public Output<string> FirstName { get; private set; } = null!;
 
         /// <summary>
-        /// The user's lock status
-        /// </summary>
-        [Output("isLocked")]
-        public Output<bool> IsLocked { get; private set; } = null!;
-
-        /// <summary>
         /// The user's position at your company
         /// </summary>
         [Output("jobTitle")]
@@ -383,12 +377,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("firstName")]
         public Input<string>? FirstName { get; set; }
-
-        /// <summary>
-        /// The user's lock status
-        /// </summary>
-        [Input("isLocked")]
-        public Input<bool>? IsLocked { get; set; }
 
         /// <summary>
         /// The user's position at your company

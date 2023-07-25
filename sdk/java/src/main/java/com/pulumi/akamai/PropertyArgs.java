@@ -4,11 +4,8 @@
 package com.pulumi.akamai;
 
 import com.pulumi.akamai.inputs.PropertyHostnameArgs;
-import com.pulumi.akamai.inputs.PropertyOriginArgs;
-import com.pulumi.akamai.inputs.PropertyRuleWarningArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -21,109 +18,33 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     public static final PropertyArgs Empty = new PropertyArgs();
 
     /**
-     * @deprecated
-     * The setting &#34;contact&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contact"" has been deprecated. */
-    @Import(name="contacts")
-    private @Nullable Output<List<String>> contacts;
-
-    /**
-     * @deprecated
-     * The setting &#34;contact&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contact"" has been deprecated. */
-    public Optional<Output<List<String>>> contacts() {
-        return Optional.ofNullable(this.contacts);
-    }
-
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    @Import(name="contract")
-    private @Nullable Output<String> contract;
-
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    public Optional<Output<String>> contract() {
-        return Optional.ofNullable(this.contract);
-    }
-
-    /**
      * Contract ID to be assigned to the Property
      * 
      */
-    @Import(name="contractId")
-    private @Nullable Output<String> contractId;
+    @Import(name="contractId", required=true)
+    private Output<String> contractId;
 
     /**
      * @return Contract ID to be assigned to the Property
      * 
      */
-    public Optional<Output<String>> contractId() {
-        return Optional.ofNullable(this.contractId);
-    }
-
-    /**
-     * @deprecated
-     * The setting &#34;cp_code&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""cp_code"" has been deprecated. */
-    @Import(name="cpCode")
-    private @Nullable Output<String> cpCode;
-
-    /**
-     * @deprecated
-     * The setting &#34;cp_code&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""cp_code"" has been deprecated. */
-    public Optional<Output<String>> cpCode() {
-        return Optional.ofNullable(this.cpCode);
-    }
-
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    @Import(name="group")
-    private @Nullable Output<String> group;
-
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    public Optional<Output<String>> group() {
-        return Optional.ofNullable(this.group);
+    public Output<String> contractId() {
+        return this.contractId;
     }
 
     /**
      * Group ID to be assigned to the Property
      * 
      */
-    @Import(name="groupId")
-    private @Nullable Output<String> groupId;
+    @Import(name="groupId", required=true)
+    private Output<String> groupId;
 
     /**
      * @return Group ID to be assigned to the Property
      * 
      */
-    public Optional<Output<String>> groupId() {
-        return Optional.ofNullable(this.groupId);
+    public Output<String> groupId() {
+        return this.groupId;
     }
 
     @Import(name="hostnames")
@@ -131,25 +52,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
 
     public Optional<Output<List<PropertyHostnameArgs>>> hostnames() {
         return Optional.ofNullable(this.hostnames);
-    }
-
-    /**
-     * @deprecated
-     * The setting &#34;is_secure&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""is_secure"" has been deprecated. */
-    @Import(name="isSecure")
-    private @Nullable Output<Boolean> isSecure;
-
-    /**
-     * @deprecated
-     * The setting &#34;is_secure&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""is_secure"" has been deprecated. */
-    public Optional<Output<Boolean>> isSecure() {
-        return Optional.ofNullable(this.isSecure);
     }
 
     /**
@@ -168,56 +70,18 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * @deprecated
-     * The setting &#34;origin&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""origin"" has been deprecated. */
-    @Import(name="origins")
-    private @Nullable Output<List<PropertyOriginArgs>> origins;
-
-    /**
-     * @deprecated
-     * The setting &#34;origin&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""origin"" has been deprecated. */
-    public Optional<Output<List<PropertyOriginArgs>>> origins() {
-        return Optional.ofNullable(this.origins);
-    }
-
-    /**
-     * @deprecated
-     * The setting &#34;product&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""product"" has been deprecated. */
-    @Import(name="product")
-    private @Nullable Output<String> product;
-
-    /**
-     * @deprecated
-     * The setting &#34;product&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""product"" has been deprecated. */
-    public Optional<Output<String>> product() {
-        return Optional.ofNullable(this.product);
-    }
-
-    /**
      * Product ID to be assigned to the Property
      * 
      */
-    @Import(name="productId")
-    private @Nullable Output<String> productId;
+    @Import(name="productId", required=true)
+    private Output<String> productId;
 
     /**
      * @return Product ID to be assigned to the Property
      * 
      */
-    public Optional<Output<String>> productId() {
-        return Optional.ofNullable(this.productId);
+    public Output<String> productId() {
+        return this.productId;
     }
 
     /**
@@ -236,25 +100,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * @deprecated
-     * Rule warnings will not be set in state anymore
-     * 
-     */
-    @Deprecated /* Rule warnings will not be set in state anymore */
-    @Import(name="ruleWarnings")
-    private @Nullable Output<List<PropertyRuleWarningArgs>> ruleWarnings;
-
-    /**
-     * @deprecated
-     * Rule warnings will not be set in state anymore
-     * 
-     */
-    @Deprecated /* Rule warnings will not be set in state anymore */
-    public Optional<Output<List<PropertyRuleWarningArgs>>> ruleWarnings() {
-        return Optional.ofNullable(this.ruleWarnings);
-    }
-
-    /**
      * Property Rules as JSON
      * 
      */
@@ -269,44 +114,16 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.rules);
     }
 
-    /**
-     * @deprecated
-     * The setting &#34;variables&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""variables"" has been deprecated. */
-    @Import(name="variables")
-    private @Nullable Output<String> variables;
-
-    /**
-     * @deprecated
-     * The setting &#34;variables&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""variables"" has been deprecated. */
-    public Optional<Output<String>> variables() {
-        return Optional.ofNullable(this.variables);
-    }
-
     private PropertyArgs() {}
 
     private PropertyArgs(PropertyArgs $) {
-        this.contacts = $.contacts;
-        this.contract = $.contract;
         this.contractId = $.contractId;
-        this.cpCode = $.cpCode;
-        this.group = $.group;
         this.groupId = $.groupId;
         this.hostnames = $.hostnames;
-        this.isSecure = $.isSecure;
         this.name = $.name;
-        this.origins = $.origins;
-        this.product = $.product;
         this.productId = $.productId;
         this.ruleFormat = $.ruleFormat;
-        this.ruleWarnings = $.ruleWarnings;
         this.rules = $.rules;
-        this.variables = $.variables;
     }
 
     public static Builder builder() {
@@ -328,74 +145,12 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;contact&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""contact"" has been deprecated. */
-        public Builder contacts(@Nullable Output<List<String>> contacts) {
-            $.contacts = contacts;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;contact&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""contact"" has been deprecated. */
-        public Builder contacts(List<String> contacts) {
-            return contacts(Output.of(contacts));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;contact&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""contact"" has been deprecated. */
-        public Builder contacts(String... contacts) {
-            return contacts(List.of(contacts));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;contract&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""contract"" has been deprecated. */
-        public Builder contract(@Nullable Output<String> contract) {
-            $.contract = contract;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;contract&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""contract"" has been deprecated. */
-        public Builder contract(String contract) {
-            return contract(Output.of(contract));
-        }
-
-        /**
          * @param contractId Contract ID to be assigned to the Property
          * 
          * @return builder
          * 
          */
-        public Builder contractId(@Nullable Output<String> contractId) {
+        public Builder contractId(Output<String> contractId) {
             $.contractId = contractId;
             return this;
         }
@@ -411,62 +166,12 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;cp_code&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""cp_code"" has been deprecated. */
-        public Builder cpCode(@Nullable Output<String> cpCode) {
-            $.cpCode = cpCode;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;cp_code&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""cp_code"" has been deprecated. */
-        public Builder cpCode(String cpCode) {
-            return cpCode(Output.of(cpCode));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;group&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""group"" has been deprecated. */
-        public Builder group(@Nullable Output<String> group) {
-            $.group = group;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;group&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""group"" has been deprecated. */
-        public Builder group(String group) {
-            return group(Output.of(group));
-        }
-
-        /**
          * @param groupId Group ID to be assigned to the Property
          * 
          * @return builder
          * 
          */
-        public Builder groupId(@Nullable Output<String> groupId) {
+        public Builder groupId(Output<String> groupId) {
             $.groupId = groupId;
             return this;
         }
@@ -495,31 +200,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;is_secure&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""is_secure"" has been deprecated. */
-        public Builder isSecure(@Nullable Output<Boolean> isSecure) {
-            $.isSecure = isSecure;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;is_secure&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""is_secure"" has been deprecated. */
-        public Builder isSecure(Boolean isSecure) {
-            return isSecure(Output.of(isSecure));
-        }
-
-        /**
          * @param name Name to give to the Property (must be unique)
          * 
          * @return builder
@@ -541,74 +221,12 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;origin&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""origin"" has been deprecated. */
-        public Builder origins(@Nullable Output<List<PropertyOriginArgs>> origins) {
-            $.origins = origins;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;origin&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""origin"" has been deprecated. */
-        public Builder origins(List<PropertyOriginArgs> origins) {
-            return origins(Output.of(origins));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;origin&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""origin"" has been deprecated. */
-        public Builder origins(PropertyOriginArgs... origins) {
-            return origins(List.of(origins));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;product&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""product"" has been deprecated. */
-        public Builder product(@Nullable Output<String> product) {
-            $.product = product;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;product&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""product"" has been deprecated. */
-        public Builder product(String product) {
-            return product(Output.of(product));
-        }
-
-        /**
          * @param productId Product ID to be assigned to the Property
          * 
          * @return builder
          * 
          */
-        public Builder productId(@Nullable Output<String> productId) {
+        public Builder productId(Output<String> productId) {
             $.productId = productId;
             return this;
         }
@@ -645,43 +263,6 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @return builder
-         * 
-         * @deprecated
-         * Rule warnings will not be set in state anymore
-         * 
-         */
-        @Deprecated /* Rule warnings will not be set in state anymore */
-        public Builder ruleWarnings(@Nullable Output<List<PropertyRuleWarningArgs>> ruleWarnings) {
-            $.ruleWarnings = ruleWarnings;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * Rule warnings will not be set in state anymore
-         * 
-         */
-        @Deprecated /* Rule warnings will not be set in state anymore */
-        public Builder ruleWarnings(List<PropertyRuleWarningArgs> ruleWarnings) {
-            return ruleWarnings(Output.of(ruleWarnings));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * Rule warnings will not be set in state anymore
-         * 
-         */
-        @Deprecated /* Rule warnings will not be set in state anymore */
-        public Builder ruleWarnings(PropertyRuleWarningArgs... ruleWarnings) {
-            return ruleWarnings(List.of(ruleWarnings));
-        }
-
-        /**
          * @param rules Property Rules as JSON
          * 
          * @return builder
@@ -702,32 +283,10 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
             return rules(Output.of(rules));
         }
 
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;variables&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""variables"" has been deprecated. */
-        public Builder variables(@Nullable Output<String> variables) {
-            $.variables = variables;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;variables&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""variables"" has been deprecated. */
-        public Builder variables(String variables) {
-            return variables(Output.of(variables));
-        }
-
         public PropertyArgs build() {
+            $.contractId = Objects.requireNonNull($.contractId, "expected parameter 'contractId' to be non-null");
+            $.groupId = Objects.requireNonNull($.groupId, "expected parameter 'groupId' to be non-null");
+            $.productId = Objects.requireNonNull($.productId, "expected parameter 'productId' to be non-null");
             return $;
         }
     }

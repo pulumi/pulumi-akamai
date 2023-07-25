@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupCloudletsPolicy(ctx *pulumi.Context, args *LookupCloudletsPolicyArgs, opts ...pulumi.InvokeOption) (*LookupCloudletsPolicyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCloudletsPolicyResult
 	err := ctx.Invoke("akamai:index/getCloudletsPolicy:getCloudletsPolicy", args, &rv, opts...)
 	if err != nil {

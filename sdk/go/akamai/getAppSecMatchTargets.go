@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAppSecMatchTargets(ctx *pulumi.Context, args *GetAppSecMatchTargetsArgs, opts ...pulumi.InvokeOption) (*GetAppSecMatchTargetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppSecMatchTargetsResult
 	err := ctx.Invoke("akamai:index/getAppSecMatchTargets:getAppSecMatchTargets", args, &rv, opts...)
 	if err != nil {

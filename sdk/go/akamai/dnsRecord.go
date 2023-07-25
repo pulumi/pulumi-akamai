@@ -8,12 +8,14 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type DnsRecord struct {
 	pulumi.CustomResourceState
 
+	// Deprecated: Field 'active' has been deprecated. Setting it has no effect
 	Active              pulumi.BoolPtrOutput     `pulumi:"active"`
 	Algorithm           pulumi.IntPtrOutput      `pulumi:"algorithm"`
 	AnswerType          pulumi.StringOutput      `pulumi:"answerType"`
@@ -98,6 +100,7 @@ func NewDnsRecord(ctx *pulumi.Context,
 		},
 	})
 	opts = append(opts, aliases)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DnsRecord
 	err := ctx.RegisterResource("akamai:index/dnsRecord:DnsRecord", name, args, &resource, opts...)
 	if err != nil {
@@ -120,6 +123,7 @@ func GetDnsRecord(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DnsRecord resources.
 type dnsRecordState struct {
+	// Deprecated: Field 'active' has been deprecated. Setting it has no effect
 	Active              *bool    `pulumi:"active"`
 	Algorithm           *int     `pulumi:"algorithm"`
 	AnswerType          *string  `pulumi:"answerType"`
@@ -183,6 +187,7 @@ type dnsRecordState struct {
 }
 
 type DnsRecordState struct {
+	// Deprecated: Field 'active' has been deprecated. Setting it has no effect
 	Active              pulumi.BoolPtrInput
 	Algorithm           pulumi.IntPtrInput
 	AnswerType          pulumi.StringPtrInput
@@ -250,6 +255,7 @@ func (DnsRecordState) ElementType() reflect.Type {
 }
 
 type dnsRecordArgs struct {
+	// Deprecated: Field 'active' has been deprecated. Setting it has no effect
 	Active              *bool    `pulumi:"active"`
 	Algorithm           *int     `pulumi:"algorithm"`
 	Certificate         *string  `pulumi:"certificate"`
@@ -310,6 +316,7 @@ type dnsRecordArgs struct {
 
 // The set of arguments for constructing a DnsRecord resource.
 type DnsRecordArgs struct {
+	// Deprecated: Field 'active' has been deprecated. Setting it has no effect
 	Active              pulumi.BoolPtrInput
 	Algorithm           pulumi.IntPtrInput
 	Certificate         pulumi.StringPtrInput
@@ -455,6 +462,7 @@ func (o DnsRecordOutput) ToDnsRecordOutputWithContext(ctx context.Context) DnsRe
 	return o
 }
 
+// Deprecated: Field 'active' has been deprecated. Setting it has no effect
 func (o DnsRecordOutput) Active() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DnsRecord) pulumi.BoolPtrOutput { return v.Active }).(pulumi.BoolPtrOutput)
 }

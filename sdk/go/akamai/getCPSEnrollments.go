@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetCPSEnrollments(ctx *pulumi.Context, args *GetCPSEnrollmentsArgs, opts ...pulumi.InvokeOption) (*GetCPSEnrollmentsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCPSEnrollmentsResult
 	err := ctx.Invoke("akamai:index/getCPSEnrollments:getCPSEnrollments", args, &rv, opts...)
 	if err != nil {

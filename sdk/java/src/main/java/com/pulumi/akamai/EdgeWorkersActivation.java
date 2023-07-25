@@ -20,7 +20,7 @@ public class EdgeWorkersActivation extends com.pulumi.resources.CustomResource {
      * A unique identifier of the activation
      * 
      */
-    @Export(name="activationId", type=Integer.class, parameters={})
+    @Export(name="activationId", refs={Integer.class}, tree="[0]")
     private Output<Integer> activationId;
 
     /**
@@ -34,7 +34,7 @@ public class EdgeWorkersActivation extends com.pulumi.resources.CustomResource {
      * Id of the EdgeWorker to activate
      * 
      */
-    @Export(name="edgeworkerId", type=Integer.class, parameters={})
+    @Export(name="edgeworkerId", refs={Integer.class}, tree="[0]")
     private Output<Integer> edgeworkerId;
 
     /**
@@ -48,7 +48,7 @@ public class EdgeWorkersActivation extends com.pulumi.resources.CustomResource {
      * The network on which the version will be activated
      * 
      */
-    @Export(name="network", type=String.class, parameters={})
+    @Export(name="network", refs={String.class}, tree="[0]")
     private Output<String> network;
 
     /**
@@ -62,7 +62,7 @@ public class EdgeWorkersActivation extends com.pulumi.resources.CustomResource {
      * The version of EdgeWorker to activate
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**

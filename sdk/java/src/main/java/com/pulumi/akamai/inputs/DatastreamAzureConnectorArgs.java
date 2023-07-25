@@ -6,7 +6,6 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -38,25 +37,18 @@ public final class DatastreamAzureConnectorArgs extends com.pulumi.resources.Res
         return Optional.ofNullable(this.compressLogs);
     }
 
-    @Import(name="connectorId")
-    private @Nullable Output<Integer> connectorId;
-
-    public Optional<Output<Integer>> connectorId() {
-        return Optional.ofNullable(this.connectorId);
-    }
-
-    @Import(name="connectorName", required=true)
-    private Output<String> connectorName;
-
-    public Output<String> connectorName() {
-        return this.connectorName;
-    }
-
     @Import(name="containerName", required=true)
     private Output<String> containerName;
 
     public Output<String> containerName() {
         return this.containerName;
+    }
+
+    @Import(name="displayName", required=true)
+    private Output<String> displayName;
+
+    public Output<String> displayName() {
+        return this.displayName;
     }
 
     @Import(name="path", required=true)
@@ -72,9 +64,8 @@ public final class DatastreamAzureConnectorArgs extends com.pulumi.resources.Res
         this.accessKey = $.accessKey;
         this.accountName = $.accountName;
         this.compressLogs = $.compressLogs;
-        this.connectorId = $.connectorId;
-        this.connectorName = $.connectorName;
         this.containerName = $.containerName;
+        this.displayName = $.displayName;
         this.path = $.path;
     }
 
@@ -123,24 +114,6 @@ public final class DatastreamAzureConnectorArgs extends com.pulumi.resources.Res
             return compressLogs(Output.of(compressLogs));
         }
 
-        public Builder connectorId(@Nullable Output<Integer> connectorId) {
-            $.connectorId = connectorId;
-            return this;
-        }
-
-        public Builder connectorId(Integer connectorId) {
-            return connectorId(Output.of(connectorId));
-        }
-
-        public Builder connectorName(Output<String> connectorName) {
-            $.connectorName = connectorName;
-            return this;
-        }
-
-        public Builder connectorName(String connectorName) {
-            return connectorName(Output.of(connectorName));
-        }
-
         public Builder containerName(Output<String> containerName) {
             $.containerName = containerName;
             return this;
@@ -148,6 +121,15 @@ public final class DatastreamAzureConnectorArgs extends com.pulumi.resources.Res
 
         public Builder containerName(String containerName) {
             return containerName(Output.of(containerName));
+        }
+
+        public Builder displayName(Output<String> displayName) {
+            $.displayName = displayName;
+            return this;
+        }
+
+        public Builder displayName(String displayName) {
+            return displayName(Output.of(displayName));
         }
 
         public Builder path(Output<String> path) {
@@ -162,8 +144,8 @@ public final class DatastreamAzureConnectorArgs extends com.pulumi.resources.Res
         public DatastreamAzureConnectorArgs build() {
             $.accessKey = Objects.requireNonNull($.accessKey, "expected parameter 'accessKey' to be non-null");
             $.accountName = Objects.requireNonNull($.accountName, "expected parameter 'accountName' to be non-null");
-            $.connectorName = Objects.requireNonNull($.connectorName, "expected parameter 'connectorName' to be non-null");
             $.containerName = Objects.requireNonNull($.containerName, "expected parameter 'containerName' to be non-null");
+            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
             $.path = Objects.requireNonNull($.path, "expected parameter 'path' to be non-null");
             return $;
         }

@@ -15,10 +15,10 @@ public final class DatastreamElasticsearchConnector {
     private @Nullable String caCert;
     private @Nullable String clientCert;
     private @Nullable String clientKey;
-    private String connectorName;
     private @Nullable String contentType;
     private @Nullable String customHeaderName;
     private @Nullable String customHeaderValue;
+    private String displayName;
     private String endpoint;
     private String indexName;
     private @Nullable Boolean mTls;
@@ -36,9 +36,6 @@ public final class DatastreamElasticsearchConnector {
     public Optional<String> clientKey() {
         return Optional.ofNullable(this.clientKey);
     }
-    public String connectorName() {
-        return this.connectorName;
-    }
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
     }
@@ -47,6 +44,9 @@ public final class DatastreamElasticsearchConnector {
     }
     public Optional<String> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
+    }
+    public String displayName() {
+        return this.displayName;
     }
     public String endpoint() {
         return this.endpoint;
@@ -79,10 +79,10 @@ public final class DatastreamElasticsearchConnector {
         private @Nullable String caCert;
         private @Nullable String clientCert;
         private @Nullable String clientKey;
-        private String connectorName;
         private @Nullable String contentType;
         private @Nullable String customHeaderName;
         private @Nullable String customHeaderValue;
+        private String displayName;
         private String endpoint;
         private String indexName;
         private @Nullable Boolean mTls;
@@ -95,10 +95,10 @@ public final class DatastreamElasticsearchConnector {
     	      this.caCert = defaults.caCert;
     	      this.clientCert = defaults.clientCert;
     	      this.clientKey = defaults.clientKey;
-    	      this.connectorName = defaults.connectorName;
     	      this.contentType = defaults.contentType;
     	      this.customHeaderName = defaults.customHeaderName;
     	      this.customHeaderValue = defaults.customHeaderValue;
+    	      this.displayName = defaults.displayName;
     	      this.endpoint = defaults.endpoint;
     	      this.indexName = defaults.indexName;
     	      this.mTls = defaults.mTls;
@@ -123,11 +123,6 @@ public final class DatastreamElasticsearchConnector {
             return this;
         }
         @CustomType.Setter
-        public Builder connectorName(String connectorName) {
-            this.connectorName = Objects.requireNonNull(connectorName);
-            return this;
-        }
-        @CustomType.Setter
         public Builder contentType(@Nullable String contentType) {
             this.contentType = contentType;
             return this;
@@ -140,6 +135,11 @@ public final class DatastreamElasticsearchConnector {
         @CustomType.Setter
         public Builder customHeaderValue(@Nullable String customHeaderValue) {
             this.customHeaderValue = customHeaderValue;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder displayName(String displayName) {
+            this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
         @CustomType.Setter
@@ -177,10 +177,10 @@ public final class DatastreamElasticsearchConnector {
             o.caCert = caCert;
             o.clientCert = clientCert;
             o.clientKey = clientKey;
-            o.connectorName = connectorName;
             o.contentType = contentType;
             o.customHeaderName = customHeaderName;
             o.customHeaderValue = customHeaderValue;
+            o.displayName = displayName;
             o.endpoint = endpoint;
             o.indexName = indexName;
             o.mTls = mTls;

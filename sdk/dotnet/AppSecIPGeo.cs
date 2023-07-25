@@ -48,6 +48,12 @@ namespace Pulumi.Akamai
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
 
+        /// <summary>
+        /// Action set for Ukraine geo control
+        /// </summary>
+        [Output("ukraineGeoControlAction")]
+        public Output<string?> UkraineGeoControlAction { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a AppSecIPGeo resource with the given unique name, arguments, and options.
@@ -148,6 +154,12 @@ namespace Pulumi.Akamai
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
 
+        /// <summary>
+        /// Action set for Ukraine geo control
+        /// </summary>
+        [Input("ukraineGeoControlAction")]
+        public Input<string>? UkraineGeoControlAction { get; set; }
+
         public AppSecIPGeoArgs()
         {
         }
@@ -209,6 +221,12 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
+
+        /// <summary>
+        /// Action set for Ukraine geo control
+        /// </summary>
+        [Input("ukraineGeoControlAction")]
+        public Input<string>? UkraineGeoControlAction { get; set; }
 
         public AppSecIPGeoState()
         {

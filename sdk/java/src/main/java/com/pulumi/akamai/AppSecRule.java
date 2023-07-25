@@ -21,7 +21,7 @@ public class AppSecRule extends com.pulumi.resources.CustomResource {
      * JSON-formatted condition and exception information for the rule
      * 
      */
-    @Export(name="conditionException", type=String.class, parameters={})
+    @Export(name="conditionException", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> conditionException;
 
     /**
@@ -35,7 +35,7 @@ public class AppSecRule extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -49,7 +49,7 @@ public class AppSecRule extends com.pulumi.resources.CustomResource {
      * Action to be taken when the rule is triggered
      * 
      */
-    @Export(name="ruleAction", type=String.class, parameters={})
+    @Export(name="ruleAction", refs={String.class}, tree="[0]")
     private Output<String> ruleAction;
 
     /**
@@ -63,7 +63,7 @@ public class AppSecRule extends com.pulumi.resources.CustomResource {
      * Unique identifier of the rule
      * 
      */
-    @Export(name="ruleId", type=Integer.class, parameters={})
+    @Export(name="ruleId", refs={Integer.class}, tree="[0]")
     private Output<Integer> ruleId;
 
     /**
@@ -77,7 +77,7 @@ public class AppSecRule extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**

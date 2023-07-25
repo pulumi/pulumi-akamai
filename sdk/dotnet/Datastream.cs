@@ -22,10 +22,10 @@ namespace Pulumi.Akamai
         public Output<Outputs.DatastreamAzureConnector?> AzureConnector { get; private set; } = null!;
 
         /// <summary>
-        /// Provides information about the configuration related to logs (format, file names, delivery frequency)
+        /// Identifies if stream needs to collect midgress data
         /// </summary>
-        [Output("config")]
-        public Output<Outputs.DatastreamConfig> Config { get; private set; } = null!;
+        [Output("collectMidgress")]
+        public Output<bool?> CollectMidgress { get; private set; } = null!;
 
         /// <summary>
         /// Identifies the contract that has access to the product
@@ -52,17 +52,17 @@ namespace Pulumi.Akamai
         /// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
         /// identifiers define how the value for these fields appear in the log lines
         /// </summary>
-        [Output("datasetFieldsIds")]
-        public Output<ImmutableArray<int>> DatasetFieldsIds { get; private set; } = null!;
+        [Output("datasetFields")]
+        public Output<ImmutableArray<int>> DatasetFields { get; private set; } = null!;
+
+        /// <summary>
+        /// Provides information about the configuration related to logs (format, file names, delivery frequency)
+        /// </summary>
+        [Output("deliveryConfiguration")]
+        public Output<Outputs.DatastreamDeliveryConfiguration> DeliveryConfiguration { get; private set; } = null!;
 
         [Output("elasticsearchConnector")]
         public Output<Outputs.DatastreamElasticsearchConnector?> ElasticsearchConnector { get; private set; } = null!;
-
-        /// <summary>
-        /// List of email addresses where the system sends notifications about activations and deactivations of the stream
-        /// </summary>
-        [Output("emailIds")]
-        public Output<ImmutableArray<string>> EmailIds { get; private set; } = null!;
 
         [Output("gcsConnector")]
         public Output<Outputs.DatastreamGcsConnector?> GcsConnector { get; private set; } = null!;
@@ -73,14 +73,14 @@ namespace Pulumi.Akamai
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
-        /// <summary>
-        /// The name of the user group for which the stream was created
-        /// </summary>
-        [Output("groupName")]
-        public Output<string> GroupName { get; private set; } = null!;
-
         [Output("httpsConnector")]
         public Output<Outputs.DatastreamHttpsConnector?> HttpsConnector { get; private set; } = null!;
+
+        /// <summary>
+        /// Identifies the latest active configuration version of the stream
+        /// </summary>
+        [Output("latestVersion")]
+        public Output<int> LatestVersion { get; private set; } = null!;
 
         [Output("logglyConnector")]
         public Output<Outputs.DatastreamLogglyConnector?> LogglyConnector { get; private set; } = null!;
@@ -100,6 +100,12 @@ namespace Pulumi.Akamai
         [Output("newRelicConnector")]
         public Output<Outputs.DatastreamNewRelicConnector?> NewRelicConnector { get; private set; } = null!;
 
+        /// <summary>
+        /// List of email addresses where the system sends notifications about activations and deactivations of the stream
+        /// </summary>
+        [Output("notificationEmails")]
+        public Output<ImmutableArray<string>> NotificationEmails { get; private set; } = null!;
+
         [Output("oracleConnector")]
         public Output<Outputs.DatastreamOracleConnector?> OracleConnector { get; private set; } = null!;
 
@@ -116,16 +122,10 @@ namespace Pulumi.Akamai
         public Output<string> ProductId { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the product for which the stream was created
-        /// </summary>
-        [Output("productName")]
-        public Output<string> ProductName { get; private set; } = null!;
-
-        /// <summary>
         /// Identifies the properties monitored in the stream
         /// </summary>
-        [Output("propertyIds")]
-        public Output<ImmutableArray<string>> PropertyIds { get; private set; } = null!;
+        [Output("properties")]
+        public Output<ImmutableArray<string>> Properties { get; private set; } = null!;
 
         [Output("s3Connector")]
         public Output<Outputs.DatastreamS3Connector?> S3Connector { get; private set; } = null!;
@@ -140,25 +140,13 @@ namespace Pulumi.Akamai
         public Output<string> StreamName { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the type of the data stream
-        /// </summary>
-        [Output("streamType")]
-        public Output<string> StreamType { get; private set; } = null!;
-
-        /// <summary>
         /// Identifies the configuration version of the stream
         /// </summary>
-        [Output("streamVersionId")]
-        public Output<int> StreamVersionId { get; private set; } = null!;
+        [Output("streamVersion")]
+        public Output<int> StreamVersion { get; private set; } = null!;
 
         [Output("sumologicConnector")]
         public Output<Outputs.DatastreamSumologicConnector?> SumologicConnector { get; private set; } = null!;
-
-        /// <summary>
-        /// The name of the template associated with the stream
-        /// </summary>
-        [Output("templateName")]
-        public Output<string> TemplateName { get; private set; } = null!;
 
 
         /// <summary>
@@ -216,10 +204,10 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamAzureConnectorArgs>? AzureConnector { get; set; }
 
         /// <summary>
-        /// Provides information about the configuration related to logs (format, file names, delivery frequency)
+        /// Identifies if stream needs to collect midgress data
         /// </summary>
-        [Input("config", required: true)]
-        public Input<Inputs.DatastreamConfigArgs> Config { get; set; } = null!;
+        [Input("collectMidgress")]
+        public Input<bool>? CollectMidgress { get; set; }
 
         /// <summary>
         /// Identifies the contract that has access to the product
@@ -230,33 +218,27 @@ namespace Pulumi.Akamai
         [Input("datadogConnector")]
         public Input<Inputs.DatastreamDatadogConnectorArgs>? DatadogConnector { get; set; }
 
-        [Input("datasetFieldsIds", required: true)]
-        private InputList<int>? _datasetFieldsIds;
+        [Input("datasetFields", required: true)]
+        private InputList<int>? _datasetFields;
 
         /// <summary>
         /// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
         /// identifiers define how the value for these fields appear in the log lines
         /// </summary>
-        public InputList<int> DatasetFieldsIds
+        public InputList<int> DatasetFields
         {
-            get => _datasetFieldsIds ?? (_datasetFieldsIds = new InputList<int>());
-            set => _datasetFieldsIds = value;
+            get => _datasetFields ?? (_datasetFields = new InputList<int>());
+            set => _datasetFields = value;
         }
+
+        /// <summary>
+        /// Provides information about the configuration related to logs (format, file names, delivery frequency)
+        /// </summary>
+        [Input("deliveryConfiguration", required: true)]
+        public Input<Inputs.DatastreamDeliveryConfigurationArgs> DeliveryConfiguration { get; set; } = null!;
 
         [Input("elasticsearchConnector")]
         public Input<Inputs.DatastreamElasticsearchConnectorArgs>? ElasticsearchConnector { get; set; }
-
-        [Input("emailIds")]
-        private InputList<string>? _emailIds;
-
-        /// <summary>
-        /// List of email addresses where the system sends notifications about activations and deactivations of the stream
-        /// </summary>
-        public InputList<string> EmailIds
-        {
-            get => _emailIds ?? (_emailIds = new InputList<string>());
-            set => _emailIds = value;
-        }
 
         [Input("gcsConnector")]
         public Input<Inputs.DatastreamGcsConnectorArgs>? GcsConnector { get; set; }
@@ -276,19 +258,31 @@ namespace Pulumi.Akamai
         [Input("newRelicConnector")]
         public Input<Inputs.DatastreamNewRelicConnectorArgs>? NewRelicConnector { get; set; }
 
+        [Input("notificationEmails")]
+        private InputList<string>? _notificationEmails;
+
+        /// <summary>
+        /// List of email addresses where the system sends notifications about activations and deactivations of the stream
+        /// </summary>
+        public InputList<string> NotificationEmails
+        {
+            get => _notificationEmails ?? (_notificationEmails = new InputList<string>());
+            set => _notificationEmails = value;
+        }
+
         [Input("oracleConnector")]
         public Input<Inputs.DatastreamOracleConnectorArgs>? OracleConnector { get; set; }
 
-        [Input("propertyIds", required: true)]
-        private InputList<string>? _propertyIds;
+        [Input("properties", required: true)]
+        private InputList<string>? _properties;
 
         /// <summary>
         /// Identifies the properties monitored in the stream
         /// </summary>
-        public InputList<string> PropertyIds
+        public InputList<string> Properties
         {
-            get => _propertyIds ?? (_propertyIds = new InputList<string>());
-            set => _propertyIds = value;
+            get => _properties ?? (_properties = new InputList<string>());
+            set => _properties = value;
         }
 
         [Input("s3Connector")]
@@ -303,20 +297,8 @@ namespace Pulumi.Akamai
         [Input("streamName", required: true)]
         public Input<string> StreamName { get; set; } = null!;
 
-        /// <summary>
-        /// Specifies the type of the data stream
-        /// </summary>
-        [Input("streamType", required: true)]
-        public Input<string> StreamType { get; set; } = null!;
-
         [Input("sumologicConnector")]
         public Input<Inputs.DatastreamSumologicConnectorArgs>? SumologicConnector { get; set; }
-
-        /// <summary>
-        /// The name of the template associated with the stream
-        /// </summary>
-        [Input("templateName", required: true)]
-        public Input<string> TemplateName { get; set; } = null!;
 
         public DatastreamArgs()
         {
@@ -336,10 +318,10 @@ namespace Pulumi.Akamai
         public Input<Inputs.DatastreamAzureConnectorGetArgs>? AzureConnector { get; set; }
 
         /// <summary>
-        /// Provides information about the configuration related to logs (format, file names, delivery frequency)
+        /// Identifies if stream needs to collect midgress data
         /// </summary>
-        [Input("config")]
-        public Input<Inputs.DatastreamConfigGetArgs>? Config { get; set; }
+        [Input("collectMidgress")]
+        public Input<bool>? CollectMidgress { get; set; }
 
         /// <summary>
         /// Identifies the contract that has access to the product
@@ -362,33 +344,27 @@ namespace Pulumi.Akamai
         [Input("datadogConnector")]
         public Input<Inputs.DatastreamDatadogConnectorGetArgs>? DatadogConnector { get; set; }
 
-        [Input("datasetFieldsIds")]
-        private InputList<int>? _datasetFieldsIds;
+        [Input("datasetFields")]
+        private InputList<int>? _datasetFields;
 
         /// <summary>
         /// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
         /// identifiers define how the value for these fields appear in the log lines
         /// </summary>
-        public InputList<int> DatasetFieldsIds
+        public InputList<int> DatasetFields
         {
-            get => _datasetFieldsIds ?? (_datasetFieldsIds = new InputList<int>());
-            set => _datasetFieldsIds = value;
+            get => _datasetFields ?? (_datasetFields = new InputList<int>());
+            set => _datasetFields = value;
         }
+
+        /// <summary>
+        /// Provides information about the configuration related to logs (format, file names, delivery frequency)
+        /// </summary>
+        [Input("deliveryConfiguration")]
+        public Input<Inputs.DatastreamDeliveryConfigurationGetArgs>? DeliveryConfiguration { get; set; }
 
         [Input("elasticsearchConnector")]
         public Input<Inputs.DatastreamElasticsearchConnectorGetArgs>? ElasticsearchConnector { get; set; }
-
-        [Input("emailIds")]
-        private InputList<string>? _emailIds;
-
-        /// <summary>
-        /// List of email addresses where the system sends notifications about activations and deactivations of the stream
-        /// </summary>
-        public InputList<string> EmailIds
-        {
-            get => _emailIds ?? (_emailIds = new InputList<string>());
-            set => _emailIds = value;
-        }
 
         [Input("gcsConnector")]
         public Input<Inputs.DatastreamGcsConnectorGetArgs>? GcsConnector { get; set; }
@@ -399,14 +375,14 @@ namespace Pulumi.Akamai
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
-        /// <summary>
-        /// The name of the user group for which the stream was created
-        /// </summary>
-        [Input("groupName")]
-        public Input<string>? GroupName { get; set; }
-
         [Input("httpsConnector")]
         public Input<Inputs.DatastreamHttpsConnectorGetArgs>? HttpsConnector { get; set; }
+
+        /// <summary>
+        /// Identifies the latest active configuration version of the stream
+        /// </summary>
+        [Input("latestVersion")]
+        public Input<int>? LatestVersion { get; set; }
 
         [Input("logglyConnector")]
         public Input<Inputs.DatastreamLogglyConnectorGetArgs>? LogglyConnector { get; set; }
@@ -426,6 +402,18 @@ namespace Pulumi.Akamai
         [Input("newRelicConnector")]
         public Input<Inputs.DatastreamNewRelicConnectorGetArgs>? NewRelicConnector { get; set; }
 
+        [Input("notificationEmails")]
+        private InputList<string>? _notificationEmails;
+
+        /// <summary>
+        /// List of email addresses where the system sends notifications about activations and deactivations of the stream
+        /// </summary>
+        public InputList<string> NotificationEmails
+        {
+            get => _notificationEmails ?? (_notificationEmails = new InputList<string>());
+            set => _notificationEmails = value;
+        }
+
         [Input("oracleConnector")]
         public Input<Inputs.DatastreamOracleConnectorGetArgs>? OracleConnector { get; set; }
 
@@ -441,22 +429,16 @@ namespace Pulumi.Akamai
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
 
-        /// <summary>
-        /// The name of the product for which the stream was created
-        /// </summary>
-        [Input("productName")]
-        public Input<string>? ProductName { get; set; }
-
-        [Input("propertyIds")]
-        private InputList<string>? _propertyIds;
+        [Input("properties")]
+        private InputList<string>? _properties;
 
         /// <summary>
         /// Identifies the properties monitored in the stream
         /// </summary>
-        public InputList<string> PropertyIds
+        public InputList<string> Properties
         {
-            get => _propertyIds ?? (_propertyIds = new InputList<string>());
-            set => _propertyIds = value;
+            get => _properties ?? (_properties = new InputList<string>());
+            set => _properties = value;
         }
 
         [Input("s3Connector")]
@@ -472,25 +454,13 @@ namespace Pulumi.Akamai
         public Input<string>? StreamName { get; set; }
 
         /// <summary>
-        /// Specifies the type of the data stream
-        /// </summary>
-        [Input("streamType")]
-        public Input<string>? StreamType { get; set; }
-
-        /// <summary>
         /// Identifies the configuration version of the stream
         /// </summary>
-        [Input("streamVersionId")]
-        public Input<int>? StreamVersionId { get; set; }
+        [Input("streamVersion")]
+        public Input<int>? StreamVersion { get; set; }
 
         [Input("sumologicConnector")]
         public Input<Inputs.DatastreamSumologicConnectorGetArgs>? SumologicConnector { get; set; }
-
-        /// <summary>
-        /// The name of the template associated with the stream
-        /// </summary>
-        [Input("templateName")]
-        public Input<string>? TemplateName { get; set; }
 
         public DatastreamState()
         {

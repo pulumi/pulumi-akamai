@@ -16,25 +16,25 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/botmanTransactionalEndpoint:BotmanTransactionalEndpoint")
 public class BotmanTransactionalEndpoint extends com.pulumi.resources.CustomResource {
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     public Output<Integer> configId() {
         return this.configId;
     }
-    @Export(name="operationId", type=String.class, parameters={})
+    @Export(name="operationId", refs={String.class}, tree="[0]")
     private Output<String> operationId;
 
     public Output<String> operationId() {
         return this.operationId;
     }
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
-    @Export(name="transactionalEndpoint", type=String.class, parameters={})
+    @Export(name="transactionalEndpoint", refs={String.class}, tree="[0]")
     private Output<String> transactionalEndpoint;
 
     public Output<String> transactionalEndpoint() {

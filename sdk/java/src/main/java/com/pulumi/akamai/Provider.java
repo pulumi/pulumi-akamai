@@ -23,22 +23,10 @@ import javax.annotation.Nullable;
 @ResourceType(type="pulumi:providers:akamai")
 public class Provider extends com.pulumi.resources.ProviderResource {
     /**
-     * @deprecated
-     * The setting &#34;appsec_section&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""appsec_section"" has been deprecated. */
-    @Export(name="appsecSection", type=String.class, parameters={})
-    private Output</* @Nullable */ String> appsecSection;
-
-    public Output<Optional<String>> appsecSection() {
-        return Codegen.optional(this.appsecSection);
-    }
-    /**
      * The section of the edgerc file to use for configuration
      * 
      */
-    @Export(name="configSection", type=String.class, parameters={})
+    @Export(name="configSection", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> configSection;
 
     /**
@@ -48,71 +36,11 @@ public class Provider extends com.pulumi.resources.ProviderResource {
     public Output<Optional<String>> configSection() {
         return Codegen.optional(this.configSection);
     }
-    /**
-     * @deprecated
-     * The setting &#34;dns_section&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""dns_section"" has been deprecated. */
-    @Export(name="dnsSection", type=String.class, parameters={})
-    private Output</* @Nullable */ String> dnsSection;
-
-    public Output<Optional<String>> dnsSection() {
-        return Codegen.optional(this.dnsSection);
-    }
-    @Export(name="edgerc", type=String.class, parameters={})
+    @Export(name="edgerc", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> edgerc;
 
     public Output<Optional<String>> edgerc() {
         return Codegen.optional(this.edgerc);
-    }
-    /**
-     * @deprecated
-     * The setting &#34;gtm_section&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""gtm_section"" has been deprecated. */
-    @Export(name="gtmSection", type=String.class, parameters={})
-    private Output</* @Nullable */ String> gtmSection;
-
-    public Output<Optional<String>> gtmSection() {
-        return Codegen.optional(this.gtmSection);
-    }
-    /**
-     * @deprecated
-     * The setting &#34;networklist_section&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""networklist_section"" has been deprecated. */
-    @Export(name="networklistSection", type=String.class, parameters={})
-    private Output</* @Nullable */ String> networklistSection;
-
-    public Output<Optional<String>> networklistSection() {
-        return Codegen.optional(this.networklistSection);
-    }
-    /**
-     * @deprecated
-     * The setting &#34;papi_section&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""papi_section"" has been deprecated. */
-    @Export(name="papiSection", type=String.class, parameters={})
-    private Output</* @Nullable */ String> papiSection;
-
-    public Output<Optional<String>> papiSection() {
-        return Codegen.optional(this.papiSection);
-    }
-    /**
-     * @deprecated
-     * The setting &#34;property_section&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""property_section"" has been deprecated. */
-    @Export(name="propertySection", type=String.class, parameters={})
-    private Output</* @Nullable */ String> propertySection;
-
-    public Output<Optional<String>> propertySection() {
-        return Codegen.optional(this.propertySection);
     }
 
     /**

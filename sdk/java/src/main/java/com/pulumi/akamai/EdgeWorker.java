@@ -22,7 +22,7 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
      * The unique identifier of the EdgeWorker
      * 
      */
-    @Export(name="edgeworkerId", type=Integer.class, parameters={})
+    @Export(name="edgeworkerId", refs={Integer.class}, tree="[0]")
     private Output<Integer> edgeworkerId;
 
     /**
@@ -36,7 +36,7 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
      * Defines the group association for the EdgeWorker
      * 
      */
-    @Export(name="groupId", type=Integer.class, parameters={})
+    @Export(name="groupId", refs={Integer.class}, tree="[0]")
     private Output<Integer> groupId;
 
     /**
@@ -50,7 +50,7 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
      * The path to the EdgeWorkers tgz code bundle
      * 
      */
-    @Export(name="localBundle", type=String.class, parameters={})
+    @Export(name="localBundle", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> localBundle;
 
     /**
@@ -64,7 +64,7 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
      * The local bundle hash for the EdgeWorker
      * 
      */
-    @Export(name="localBundleHash", type=String.class, parameters={})
+    @Export(name="localBundleHash", refs={String.class}, tree="[0]")
     private Output<String> localBundleHash;
 
     /**
@@ -78,7 +78,7 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
      * The EdgeWorker name
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -92,7 +92,7 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
      * The unique identifier of a resource tier
      * 
      */
-    @Export(name="resourceTierId", type=Integer.class, parameters={})
+    @Export(name="resourceTierId", refs={Integer.class}, tree="[0]")
     private Output<Integer> resourceTierId;
 
     /**
@@ -106,7 +106,7 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
      * The bundle version
      * 
      */
-    @Export(name="version", type=String.class, parameters={})
+    @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
@@ -120,7 +120,7 @@ public class EdgeWorker extends com.pulumi.resources.CustomResource {
      * The list of warnings returned by EdgeWorker validation
      * 
      */
-    @Export(name="warnings", type=List.class, parameters={String.class})
+    @Export(name="warnings", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> warnings;
 
     /**

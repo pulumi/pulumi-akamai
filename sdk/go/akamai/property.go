@@ -7,35 +7,23 @@ import (
 	"context"
 	"reflect"
 
+	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type Property struct {
 	pulumi.CustomResourceState
 
-	// Deprecated: The setting "contact" has been deprecated.
-	Contacts pulumi.StringArrayOutput `pulumi:"contacts"`
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract pulumi.StringOutput `pulumi:"contract"`
 	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
-	// Deprecated: The setting "cp_code" has been deprecated.
-	CpCode pulumi.StringPtrOutput `pulumi:"cpCode"`
-	// Deprecated: The setting "group" has been deprecated.
-	Group pulumi.StringOutput `pulumi:"group"`
 	// Group ID to be assigned to the Property
 	GroupId   pulumi.StringOutput         `pulumi:"groupId"`
 	Hostnames PropertyHostnameArrayOutput `pulumi:"hostnames"`
-	// Deprecated: The setting "is_secure" has been deprecated.
-	IsSecure pulumi.BoolPtrOutput `pulumi:"isSecure"`
 	// Property's current latest version number
 	LatestVersion pulumi.IntOutput `pulumi:"latestVersion"`
 	// Name to give to the Property (must be unique)
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Deprecated: The setting "origin" has been deprecated.
-	Origins PropertyOriginArrayOutput `pulumi:"origins"`
-	// Deprecated: The setting "product" has been deprecated.
-	Product pulumi.StringOutput `pulumi:"product"`
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringOutput `pulumi:"productId"`
 	// Property's version currently activated in production (zero when not active in production)
@@ -45,29 +33,35 @@ type Property struct {
 	RuleErrors  PropertyRuleErrorArrayOutput `pulumi:"ruleErrors"`
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringOutput `pulumi:"ruleFormat"`
-	// Deprecated: Rule warnings will not be set in state anymore
-	RuleWarnings PropertyRuleWarningArrayOutput `pulumi:"ruleWarnings"`
 	// Property Rules as JSON
 	Rules pulumi.StringOutput `pulumi:"rules"`
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion pulumi.IntOutput `pulumi:"stagingVersion"`
-	// Deprecated: The setting "variables" has been deprecated.
-	Variables pulumi.StringPtrOutput `pulumi:"variables"`
 }
 
 // NewProperty registers a new resource with the given unique name, arguments, and options.
 func NewProperty(ctx *pulumi.Context,
 	name string, args *PropertyArgs, opts ...pulumi.ResourceOption) (*Property, error) {
 	if args == nil {
-		args = &PropertyArgs{}
+		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.ContractId == nil {
+		return nil, errors.New("invalid value for required argument 'ContractId'")
+	}
+	if args.GroupId == nil {
+		return nil, errors.New("invalid value for required argument 'GroupId'")
+	}
+	if args.ProductId == nil {
+		return nil, errors.New("invalid value for required argument 'ProductId'")
+	}
 	aliases := pulumi.Aliases([]pulumi.Alias{
 		{
 			Type: pulumi.String("akamai:properties/property:Property"),
 		},
 	})
 	opts = append(opts, aliases)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Property
 	err := ctx.RegisterResource("akamai:index/property:Property", name, args, &resource, opts...)
 	if err != nil {
@@ -90,29 +84,15 @@ func GetProperty(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Property resources.
 type propertyState struct {
-	// Deprecated: The setting "contact" has been deprecated.
-	Contacts []string `pulumi:"contacts"`
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract *string `pulumi:"contract"`
 	// Contract ID to be assigned to the Property
 	ContractId *string `pulumi:"contractId"`
-	// Deprecated: The setting "cp_code" has been deprecated.
-	CpCode *string `pulumi:"cpCode"`
-	// Deprecated: The setting "group" has been deprecated.
-	Group *string `pulumi:"group"`
 	// Group ID to be assigned to the Property
 	GroupId   *string            `pulumi:"groupId"`
 	Hostnames []PropertyHostname `pulumi:"hostnames"`
-	// Deprecated: The setting "is_secure" has been deprecated.
-	IsSecure *bool `pulumi:"isSecure"`
 	// Property's current latest version number
 	LatestVersion *int `pulumi:"latestVersion"`
 	// Name to give to the Property (must be unique)
 	Name *string `pulumi:"name"`
-	// Deprecated: The setting "origin" has been deprecated.
-	Origins []PropertyOrigin `pulumi:"origins"`
-	// Deprecated: The setting "product" has been deprecated.
-	Product *string `pulumi:"product"`
 	// Product ID to be assigned to the Property
 	ProductId *string `pulumi:"productId"`
 	// Property's version currently activated in production (zero when not active in production)
@@ -122,40 +102,22 @@ type propertyState struct {
 	RuleErrors  []PropertyRuleError `pulumi:"ruleErrors"`
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat *string `pulumi:"ruleFormat"`
-	// Deprecated: Rule warnings will not be set in state anymore
-	RuleWarnings []PropertyRuleWarning `pulumi:"ruleWarnings"`
 	// Property Rules as JSON
 	Rules *string `pulumi:"rules"`
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion *int `pulumi:"stagingVersion"`
-	// Deprecated: The setting "variables" has been deprecated.
-	Variables *string `pulumi:"variables"`
 }
 
 type PropertyState struct {
-	// Deprecated: The setting "contact" has been deprecated.
-	Contacts pulumi.StringArrayInput
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract pulumi.StringPtrInput
 	// Contract ID to be assigned to the Property
 	ContractId pulumi.StringPtrInput
-	// Deprecated: The setting "cp_code" has been deprecated.
-	CpCode pulumi.StringPtrInput
-	// Deprecated: The setting "group" has been deprecated.
-	Group pulumi.StringPtrInput
 	// Group ID to be assigned to the Property
 	GroupId   pulumi.StringPtrInput
 	Hostnames PropertyHostnameArrayInput
-	// Deprecated: The setting "is_secure" has been deprecated.
-	IsSecure pulumi.BoolPtrInput
 	// Property's current latest version number
 	LatestVersion pulumi.IntPtrInput
 	// Name to give to the Property (must be unique)
 	Name pulumi.StringPtrInput
-	// Deprecated: The setting "origin" has been deprecated.
-	Origins PropertyOriginArrayInput
-	// Deprecated: The setting "product" has been deprecated.
-	Product pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
 	ProductId pulumi.StringPtrInput
 	// Property's version currently activated in production (zero when not active in production)
@@ -165,14 +127,10 @@ type PropertyState struct {
 	RuleErrors  PropertyRuleErrorArrayInput
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringPtrInput
-	// Deprecated: Rule warnings will not be set in state anymore
-	RuleWarnings PropertyRuleWarningArrayInput
 	// Property Rules as JSON
 	Rules pulumi.StringPtrInput
 	// Property's version currently activated in staging (zero when not active in staging)
 	StagingVersion pulumi.IntPtrInput
-	// Deprecated: The setting "variables" has been deprecated.
-	Variables pulumi.StringPtrInput
 }
 
 func (PropertyState) ElementType() reflect.Type {
@@ -180,72 +138,36 @@ func (PropertyState) ElementType() reflect.Type {
 }
 
 type propertyArgs struct {
-	// Deprecated: The setting "contact" has been deprecated.
-	Contacts []string `pulumi:"contacts"`
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract *string `pulumi:"contract"`
 	// Contract ID to be assigned to the Property
-	ContractId *string `pulumi:"contractId"`
-	// Deprecated: The setting "cp_code" has been deprecated.
-	CpCode *string `pulumi:"cpCode"`
-	// Deprecated: The setting "group" has been deprecated.
-	Group *string `pulumi:"group"`
+	ContractId string `pulumi:"contractId"`
 	// Group ID to be assigned to the Property
-	GroupId   *string            `pulumi:"groupId"`
+	GroupId   string             `pulumi:"groupId"`
 	Hostnames []PropertyHostname `pulumi:"hostnames"`
-	// Deprecated: The setting "is_secure" has been deprecated.
-	IsSecure *bool `pulumi:"isSecure"`
 	// Name to give to the Property (must be unique)
 	Name *string `pulumi:"name"`
-	// Deprecated: The setting "origin" has been deprecated.
-	Origins []PropertyOrigin `pulumi:"origins"`
-	// Deprecated: The setting "product" has been deprecated.
-	Product *string `pulumi:"product"`
 	// Product ID to be assigned to the Property
-	ProductId *string `pulumi:"productId"`
+	ProductId string `pulumi:"productId"`
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat *string `pulumi:"ruleFormat"`
-	// Deprecated: Rule warnings will not be set in state anymore
-	RuleWarnings []PropertyRuleWarning `pulumi:"ruleWarnings"`
 	// Property Rules as JSON
 	Rules *string `pulumi:"rules"`
-	// Deprecated: The setting "variables" has been deprecated.
-	Variables *string `pulumi:"variables"`
 }
 
 // The set of arguments for constructing a Property resource.
 type PropertyArgs struct {
-	// Deprecated: The setting "contact" has been deprecated.
-	Contacts pulumi.StringArrayInput
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract pulumi.StringPtrInput
 	// Contract ID to be assigned to the Property
-	ContractId pulumi.StringPtrInput
-	// Deprecated: The setting "cp_code" has been deprecated.
-	CpCode pulumi.StringPtrInput
-	// Deprecated: The setting "group" has been deprecated.
-	Group pulumi.StringPtrInput
+	ContractId pulumi.StringInput
 	// Group ID to be assigned to the Property
-	GroupId   pulumi.StringPtrInput
+	GroupId   pulumi.StringInput
 	Hostnames PropertyHostnameArrayInput
-	// Deprecated: The setting "is_secure" has been deprecated.
-	IsSecure pulumi.BoolPtrInput
 	// Name to give to the Property (must be unique)
 	Name pulumi.StringPtrInput
-	// Deprecated: The setting "origin" has been deprecated.
-	Origins PropertyOriginArrayInput
-	// Deprecated: The setting "product" has been deprecated.
-	Product pulumi.StringPtrInput
 	// Product ID to be assigned to the Property
-	ProductId pulumi.StringPtrInput
+	ProductId pulumi.StringInput
 	// Specify the rule format version (defaults to latest version available when created)
 	RuleFormat pulumi.StringPtrInput
-	// Deprecated: Rule warnings will not be set in state anymore
-	RuleWarnings PropertyRuleWarningArrayInput
 	// Property Rules as JSON
 	Rules pulumi.StringPtrInput
-	// Deprecated: The setting "variables" has been deprecated.
-	Variables pulumi.StringPtrInput
 }
 
 func (PropertyArgs) ElementType() reflect.Type {
@@ -335,29 +257,9 @@ func (o PropertyOutput) ToPropertyOutputWithContext(ctx context.Context) Propert
 	return o
 }
 
-// Deprecated: The setting "contact" has been deprecated.
-func (o PropertyOutput) Contacts() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *Property) pulumi.StringArrayOutput { return v.Contacts }).(pulumi.StringArrayOutput)
-}
-
-// Deprecated: The setting "contract" has been deprecated.
-func (o PropertyOutput) Contract() pulumi.StringOutput {
-	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Contract }).(pulumi.StringOutput)
-}
-
 // Contract ID to be assigned to the Property
 func (o PropertyOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
-}
-
-// Deprecated: The setting "cp_code" has been deprecated.
-func (o PropertyOutput) CpCode() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *Property) pulumi.StringPtrOutput { return v.CpCode }).(pulumi.StringPtrOutput)
-}
-
-// Deprecated: The setting "group" has been deprecated.
-func (o PropertyOutput) Group() pulumi.StringOutput {
-	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
 }
 
 // Group ID to be assigned to the Property
@@ -369,11 +271,6 @@ func (o PropertyOutput) Hostnames() PropertyHostnameArrayOutput {
 	return o.ApplyT(func(v *Property) PropertyHostnameArrayOutput { return v.Hostnames }).(PropertyHostnameArrayOutput)
 }
 
-// Deprecated: The setting "is_secure" has been deprecated.
-func (o PropertyOutput) IsSecure() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *Property) pulumi.BoolPtrOutput { return v.IsSecure }).(pulumi.BoolPtrOutput)
-}
-
 // Property's current latest version number
 func (o PropertyOutput) LatestVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Property) pulumi.IntOutput { return v.LatestVersion }).(pulumi.IntOutput)
@@ -382,16 +279,6 @@ func (o PropertyOutput) LatestVersion() pulumi.IntOutput {
 // Name to give to the Property (must be unique)
 func (o PropertyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
-}
-
-// Deprecated: The setting "origin" has been deprecated.
-func (o PropertyOutput) Origins() PropertyOriginArrayOutput {
-	return o.ApplyT(func(v *Property) PropertyOriginArrayOutput { return v.Origins }).(PropertyOriginArrayOutput)
-}
-
-// Deprecated: The setting "product" has been deprecated.
-func (o PropertyOutput) Product() pulumi.StringOutput {
-	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Product }).(pulumi.StringOutput)
 }
 
 // Product ID to be assigned to the Property
@@ -418,11 +305,6 @@ func (o PropertyOutput) RuleFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.RuleFormat }).(pulumi.StringOutput)
 }
 
-// Deprecated: Rule warnings will not be set in state anymore
-func (o PropertyOutput) RuleWarnings() PropertyRuleWarningArrayOutput {
-	return o.ApplyT(func(v *Property) PropertyRuleWarningArrayOutput { return v.RuleWarnings }).(PropertyRuleWarningArrayOutput)
-}
-
 // Property Rules as JSON
 func (o PropertyOutput) Rules() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.Rules }).(pulumi.StringOutput)
@@ -431,11 +313,6 @@ func (o PropertyOutput) Rules() pulumi.StringOutput {
 // Property's version currently activated in staging (zero when not active in staging)
 func (o PropertyOutput) StagingVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *Property) pulumi.IntOutput { return v.StagingVersion }).(pulumi.IntOutput)
-}
-
-// Deprecated: The setting "variables" has been deprecated.
-func (o PropertyOutput) Variables() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *Property) pulumi.StringPtrOutput { return v.Variables }).(pulumi.StringPtrOutput)
 }
 
 type PropertyArrayOutput struct{ *pulumi.OutputState }

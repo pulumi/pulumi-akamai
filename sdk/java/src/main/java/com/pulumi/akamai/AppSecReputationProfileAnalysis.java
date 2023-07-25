@@ -21,7 +21,7 @@ public class AppSecReputationProfileAnalysis extends com.pulumi.resources.Custom
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -35,7 +35,7 @@ public class AppSecReputationProfileAnalysis extends com.pulumi.resources.Custom
      * Whether to add a value indicating that shared IPs are included in HTTP header and SIEM integration
      * 
      */
-    @Export(name="forwardSharedIpToHttpHeaderSiem", type=Boolean.class, parameters={})
+    @Export(name="forwardSharedIpToHttpHeaderSiem", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> forwardSharedIpToHttpHeaderSiem;
 
     /**
@@ -49,7 +49,7 @@ public class AppSecReputationProfileAnalysis extends com.pulumi.resources.Custom
      * Whether to add client reputation details to requests forwarded to the origin server
      * 
      */
-    @Export(name="forwardToHttpHeader", type=Boolean.class, parameters={})
+    @Export(name="forwardToHttpHeader", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> forwardToHttpHeader;
 
     /**
@@ -63,7 +63,7 @@ public class AppSecReputationProfileAnalysis extends com.pulumi.resources.Custom
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**

@@ -12,20 +12,20 @@ namespace Pulumi.Akamai.Inputs
 
     public sealed class ProviderConfigArgs : global::Pulumi.ResourceArgs
     {
-        [Input("accessToken")]
-        public Input<string>? AccessToken { get; set; }
+        [Input("accessToken", required: true)]
+        public Input<string> AccessToken { get; set; } = null!;
 
         [Input("accountKey")]
         public Input<string>? AccountKey { get; set; }
 
-        [Input("clientSecret")]
-        public Input<string>? ClientSecret { get; set; }
+        [Input("clientSecret", required: true)]
+        public Input<string> ClientSecret { get; set; } = null!;
 
-        [Input("clientToken")]
-        public Input<string>? ClientToken { get; set; }
+        [Input("clientToken", required: true)]
+        public Input<string> ClientToken { get; set; } = null!;
 
-        [Input("host")]
-        public Input<string>? Host { get; set; }
+        [Input("host", required: true)]
+        public Input<string> Host { get; set; } = null!;
 
         [Input("maxBody")]
         public Input<int>? MaxBody { get; set; }

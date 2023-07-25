@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupAppSecIPGeo(ctx *pulumi.Context, args *LookupAppSecIPGeoArgs, opts ...pulumi.InvokeOption) (*LookupAppSecIPGeoResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAppSecIPGeoResult
 	err := ctx.Invoke("akamai:index/getAppSecIPGeo:getAppSecIPGeo", args, &rv, opts...)
 	if err != nil {
@@ -31,11 +33,12 @@ type LookupAppSecIPGeoResult struct {
 	ExceptionIpNetworkLists []string `pulumi:"exceptionIpNetworkLists"`
 	GeoNetworkLists         []string `pulumi:"geoNetworkLists"`
 	// The provider-assigned unique ID for this managed resource.
-	Id               string   `pulumi:"id"`
-	IpNetworkLists   []string `pulumi:"ipNetworkLists"`
-	Mode             string   `pulumi:"mode"`
-	OutputText       string   `pulumi:"outputText"`
-	SecurityPolicyId string   `pulumi:"securityPolicyId"`
+	Id                      string   `pulumi:"id"`
+	IpNetworkLists          []string `pulumi:"ipNetworkLists"`
+	Mode                    string   `pulumi:"mode"`
+	OutputText              string   `pulumi:"outputText"`
+	SecurityPolicyId        string   `pulumi:"securityPolicyId"`
+	UkraineGeoControlAction string   `pulumi:"ukraineGeoControlAction"`
 }
 
 func LookupAppSecIPGeoOutput(ctx *pulumi.Context, args LookupAppSecIPGeoOutputArgs, opts ...pulumi.InvokeOption) LookupAppSecIPGeoResultOutput {
@@ -107,6 +110,10 @@ func (o LookupAppSecIPGeoResultOutput) OutputText() pulumi.StringOutput {
 
 func (o LookupAppSecIPGeoResultOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+func (o LookupAppSecIPGeoResultOutput) UkraineGeoControlAction() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAppSecIPGeoResult) string { return v.UkraineGeoControlAction }).(pulumi.StringOutput)
 }
 
 func init() {

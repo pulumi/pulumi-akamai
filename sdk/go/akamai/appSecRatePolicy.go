@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -35,6 +36,7 @@ func NewAppSecRatePolicy(ctx *pulumi.Context,
 	if args.RatePolicy == nil {
 		return nil, errors.New("invalid value for required argument 'RatePolicy'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecRatePolicy
 	err := ctx.RegisterResource("akamai:index/appSecRatePolicy:AppSecRatePolicy", name, args, &resource, opts...)
 	if err != nil {

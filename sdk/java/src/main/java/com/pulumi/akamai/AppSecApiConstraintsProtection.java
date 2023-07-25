@@ -21,7 +21,7 @@ public class AppSecApiConstraintsProtection extends com.pulumi.resources.CustomR
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -35,7 +35,7 @@ public class AppSecApiConstraintsProtection extends com.pulumi.resources.CustomR
      * Whether to enable API constraints protection
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
@@ -49,7 +49,7 @@ public class AppSecApiConstraintsProtection extends com.pulumi.resources.CustomR
      * Text representation
      * 
      */
-    @Export(name="outputText", type=String.class, parameters={})
+    @Export(name="outputText", refs={String.class}, tree="[0]")
     private Output<String> outputText;
 
     /**
@@ -63,7 +63,7 @@ public class AppSecApiConstraintsProtection extends com.pulumi.resources.CustomR
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**

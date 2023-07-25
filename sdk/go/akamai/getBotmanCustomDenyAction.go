@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupBotmanCustomDenyAction(ctx *pulumi.Context, args *LookupBotmanCustomDenyActionArgs, opts ...pulumi.InvokeOption) (*LookupBotmanCustomDenyActionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBotmanCustomDenyActionResult
 	err := ctx.Invoke("akamai:index/getBotmanCustomDenyAction:getBotmanCustomDenyAction", args, &rv, opts...)
 	if err != nil {

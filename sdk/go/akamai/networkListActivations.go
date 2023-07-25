@@ -8,14 +8,13 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type NetworkListActivations struct {
 	pulumi.CustomResourceState
 
-	// Deprecated: The setting "activate" has been deprecated.
-	Activate pulumi.BoolPtrOutput `pulumi:"activate"`
 	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network pulumi.StringPtrOutput `pulumi:"network"`
 	// Unique identifier of the network list
@@ -46,6 +45,7 @@ func NewNetworkListActivations(ctx *pulumi.Context,
 	if args.SyncPoint == nil {
 		return nil, errors.New("invalid value for required argument 'SyncPoint'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource NetworkListActivations
 	err := ctx.RegisterResource("akamai:index/networkListActivations:NetworkListActivations", name, args, &resource, opts...)
 	if err != nil {
@@ -68,8 +68,6 @@ func GetNetworkListActivations(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkListActivations resources.
 type networkListActivationsState struct {
-	// Deprecated: The setting "activate" has been deprecated.
-	Activate *bool `pulumi:"activate"`
 	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network *string `pulumi:"network"`
 	// Unique identifier of the network list
@@ -85,8 +83,6 @@ type networkListActivationsState struct {
 }
 
 type NetworkListActivationsState struct {
-	// Deprecated: The setting "activate" has been deprecated.
-	Activate pulumi.BoolPtrInput
 	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network pulumi.StringPtrInput
 	// Unique identifier of the network list
@@ -106,8 +102,6 @@ func (NetworkListActivationsState) ElementType() reflect.Type {
 }
 
 type networkListActivationsArgs struct {
-	// Deprecated: The setting "activate" has been deprecated.
-	Activate *bool `pulumi:"activate"`
 	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network *string `pulumi:"network"`
 	// Unique identifier of the network list
@@ -122,8 +116,6 @@ type networkListActivationsArgs struct {
 
 // The set of arguments for constructing a NetworkListActivations resource.
 type NetworkListActivationsArgs struct {
-	// Deprecated: The setting "activate" has been deprecated.
-	Activate pulumi.BoolPtrInput
 	// The Akamai network on which the list is activated: STAGING or PRODUCTION
 	Network pulumi.StringPtrInput
 	// Unique identifier of the network list
@@ -221,11 +213,6 @@ func (o NetworkListActivationsOutput) ToNetworkListActivationsOutput() NetworkLi
 
 func (o NetworkListActivationsOutput) ToNetworkListActivationsOutputWithContext(ctx context.Context) NetworkListActivationsOutput {
 	return o
-}
-
-// Deprecated: The setting "activate" has been deprecated.
-func (o NetworkListActivationsOutput) Activate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *NetworkListActivations) pulumi.BoolPtrOutput { return v.Activate }).(pulumi.BoolPtrOutput)
 }
 
 // The Akamai network on which the list is activated: STAGING or PRODUCTION

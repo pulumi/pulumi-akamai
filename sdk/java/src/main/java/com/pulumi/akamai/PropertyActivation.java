@@ -8,7 +8,6 @@ import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.PropertyActivationState;
 import com.pulumi.akamai.outputs.PropertyActivationComplianceRecord;
 import com.pulumi.akamai.outputs.PropertyActivationRuleError;
-import com.pulumi.akamai.outputs.PropertyActivationRuleWarning;
 import com.pulumi.core.Alias;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
@@ -23,21 +22,21 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/propertyActivation:PropertyActivation")
 public class PropertyActivation extends com.pulumi.resources.CustomResource {
-    @Export(name="activationId", type=String.class, parameters={})
+    @Export(name="activationId", refs={String.class}, tree="[0]")
     private Output<String> activationId;
 
     public Output<String> activationId() {
         return this.activationId;
     }
     /**
-     * automatically acknowledge all rule warnings for activation to continue. default is true
+     * Automatically acknowledge all rule warnings for activation to continue. Default is false
      * 
      */
-    @Export(name="autoAcknowledgeRuleWarnings", type=Boolean.class, parameters={})
+    @Export(name="autoAcknowledgeRuleWarnings", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> autoAcknowledgeRuleWarnings;
 
     /**
-     * @return automatically acknowledge all rule warnings for activation to continue. default is true
+     * @return Automatically acknowledge all rule warnings for activation to continue. Default is false
      * 
      */
     public Output<Optional<Boolean>> autoAcknowledgeRuleWarnings() {
@@ -47,7 +46,7 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
      * Provides an audit record when activating on a production network
      * 
      */
-    @Export(name="complianceRecord", type=PropertyActivationComplianceRecord.class, parameters={})
+    @Export(name="complianceRecord", refs={PropertyActivationComplianceRecord.class}, tree="[0]")
     private Output</* @Nullable */ PropertyActivationComplianceRecord> complianceRecord;
 
     /**
@@ -57,19 +56,19 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
     public Output<Optional<PropertyActivationComplianceRecord>> complianceRecord() {
         return Codegen.optional(this.complianceRecord);
     }
-    @Export(name="contacts", type=List.class, parameters={String.class})
+    @Export(name="contacts", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> contacts;
 
     public Output<List<String>> contacts() {
         return this.contacts;
     }
-    @Export(name="errors", type=String.class, parameters={})
+    @Export(name="errors", refs={String.class}, tree="[0]")
     private Output<String> errors;
 
     public Output<String> errors() {
         return this.errors;
     }
-    @Export(name="network", type=String.class, parameters={})
+    @Export(name="network", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> network;
 
     public Output<Optional<String>> network() {
@@ -79,7 +78,7 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
      * assigns a log message to the activation request
      * 
      */
-    @Export(name="note", type=String.class, parameters={})
+    @Export(name="note", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> note;
 
     /**
@@ -89,55 +88,31 @@ public class PropertyActivation extends com.pulumi.resources.CustomResource {
     public Output<Optional<String>> note() {
         return Codegen.optional(this.note);
     }
-    /**
-     * @deprecated
-     * The setting &#34;property&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""property"" has been deprecated. */
-    @Export(name="property", type=String.class, parameters={})
-    private Output<String> property;
-
-    public Output<String> property() {
-        return this.property;
-    }
-    @Export(name="propertyId", type=String.class, parameters={})
+    @Export(name="propertyId", refs={String.class}, tree="[0]")
     private Output<String> propertyId;
 
     public Output<String> propertyId() {
         return this.propertyId;
     }
-    @Export(name="ruleErrors", type=List.class, parameters={PropertyActivationRuleError.class})
+    @Export(name="ruleErrors", refs={List.class,PropertyActivationRuleError.class}, tree="[0,1]")
     private Output<List<PropertyActivationRuleError>> ruleErrors;
 
     public Output<List<PropertyActivationRuleError>> ruleErrors() {
         return this.ruleErrors;
     }
-    /**
-     * @deprecated
-     * Rule warnings will not be set in state anymore
-     * 
-     */
-    @Deprecated /* Rule warnings will not be set in state anymore */
-    @Export(name="ruleWarnings", type=List.class, parameters={PropertyActivationRuleWarning.class})
-    private Output<List<PropertyActivationRuleWarning>> ruleWarnings;
-
-    public Output<List<PropertyActivationRuleWarning>> ruleWarnings() {
-        return this.ruleWarnings;
-    }
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     public Output<String> status() {
         return this.status;
     }
-    @Export(name="version", type=Integer.class, parameters={})
+    @Export(name="version", refs={Integer.class}, tree="[0]")
     private Output<Integer> version;
 
     public Output<Integer> version() {
         return this.version;
     }
-    @Export(name="warnings", type=String.class, parameters={})
+    @Export(name="warnings", refs={String.class}, tree="[0]")
     private Output<String> warnings;
 
     public Output<String> warnings() {

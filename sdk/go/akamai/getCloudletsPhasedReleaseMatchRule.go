@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetCloudletsPhasedReleaseMatchRule(ctx *pulumi.Context, args *GetCloudletsPhasedReleaseMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsPhasedReleaseMatchRuleResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCloudletsPhasedReleaseMatchRuleResult
 	err := ctx.Invoke("akamai:index/getCloudletsPhasedReleaseMatchRule:getCloudletsPhasedReleaseMatchRule", args, &rv, opts...)
 	if err != nil {

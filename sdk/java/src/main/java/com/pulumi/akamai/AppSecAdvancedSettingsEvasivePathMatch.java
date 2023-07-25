@@ -22,7 +22,7 @@ public class AppSecAdvancedSettingsEvasivePathMatch extends com.pulumi.resources
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -36,7 +36,7 @@ public class AppSecAdvancedSettingsEvasivePathMatch extends com.pulumi.resources
      * Whether to enable the evasive path match setting
      * 
      */
-    @Export(name="enablePathMatch", type=Boolean.class, parameters={})
+    @Export(name="enablePathMatch", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enablePathMatch;
 
     /**
@@ -50,7 +50,7 @@ public class AppSecAdvancedSettingsEvasivePathMatch extends com.pulumi.resources
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> securityPolicyId;
 
     /**

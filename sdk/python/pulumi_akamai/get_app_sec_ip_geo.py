@@ -21,7 +21,7 @@ class GetAppSecIPGeoResult:
     """
     A collection of values returned by getAppSecIPGeo.
     """
-    def __init__(__self__, config_id=None, exception_ip_network_lists=None, geo_network_lists=None, id=None, ip_network_lists=None, mode=None, output_text=None, security_policy_id=None):
+    def __init__(__self__, config_id=None, exception_ip_network_lists=None, geo_network_lists=None, id=None, ip_network_lists=None, mode=None, output_text=None, security_policy_id=None, ukraine_geo_control_action=None):
         if config_id and not isinstance(config_id, int):
             raise TypeError("Expected argument 'config_id' to be a int")
         pulumi.set(__self__, "config_id", config_id)
@@ -46,6 +46,9 @@ class GetAppSecIPGeoResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
+        if ukraine_geo_control_action and not isinstance(ukraine_geo_control_action, str):
+            raise TypeError("Expected argument 'ukraine_geo_control_action' to be a str")
+        pulumi.set(__self__, "ukraine_geo_control_action", ukraine_geo_control_action)
 
     @property
     @pulumi.getter(name="configId")
@@ -90,6 +93,11 @@ class GetAppSecIPGeoResult:
     def security_policy_id(self) -> str:
         return pulumi.get(self, "security_policy_id")
 
+    @property
+    @pulumi.getter(name="ukraineGeoControlAction")
+    def ukraine_geo_control_action(self) -> str:
+        return pulumi.get(self, "ukraine_geo_control_action")
+
 
 class AwaitableGetAppSecIPGeoResult(GetAppSecIPGeoResult):
     # pylint: disable=using-constant-test
@@ -104,7 +112,8 @@ class AwaitableGetAppSecIPGeoResult(GetAppSecIPGeoResult):
             ip_network_lists=self.ip_network_lists,
             mode=self.mode,
             output_text=self.output_text,
-            security_policy_id=self.security_policy_id)
+            security_policy_id=self.security_policy_id,
+            ukraine_geo_control_action=self.ukraine_geo_control_action)
 
 
 def get_app_sec_ip_geo(config_id: Optional[int] = None,
@@ -127,7 +136,8 @@ def get_app_sec_ip_geo(config_id: Optional[int] = None,
         ip_network_lists=pulumi.get(__ret__, 'ip_network_lists'),
         mode=pulumi.get(__ret__, 'mode'),
         output_text=pulumi.get(__ret__, 'output_text'),
-        security_policy_id=pulumi.get(__ret__, 'security_policy_id'))
+        security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
+        ukraine_geo_control_action=pulumi.get(__ret__, 'ukraine_geo_control_action'))
 
 
 @_utilities.lift_output_func(get_app_sec_ip_geo)

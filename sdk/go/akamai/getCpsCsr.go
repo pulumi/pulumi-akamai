@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetCpsCsr(ctx *pulumi.Context, args *GetCpsCsrArgs, opts ...pulumi.InvokeOption) (*GetCpsCsrResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCpsCsrResult
 	err := ctx.Invoke("akamai:index/getCpsCsr:getCpsCsr", args, &rv, opts...)
 	if err != nil {

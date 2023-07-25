@@ -54,12 +54,6 @@ namespace Pulumi.Akamai.Inputs
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
-        [Input("connectorId")]
-        public Input<int>? ConnectorId { get; set; }
-
-        [Input("connectorName", required: true)]
-        public Input<string> ConnectorName { get; set; } = null!;
-
         [Input("contentType")]
         public Input<string>? ContentType { get; set; }
 
@@ -68,6 +62,12 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("customHeaderValue")]
         public Input<string>? CustomHeaderValue { get; set; }
+
+        [Input("displayName", required: true)]
+        public Input<string> DisplayName { get; set; } = null!;
+
+        [Input("endpoint", required: true)]
+        public Input<string> Endpoint { get; set; } = null!;
 
         [Input("mTls")]
         public Input<bool>? MTls { get; set; }
@@ -86,9 +86,6 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("tlsHostname")]
         public Input<string>? TlsHostname { get; set; }
-
-        [Input("url", required: true)]
-        public Input<string> Url { get; set; } = null!;
 
         [Input("userName")]
         private Input<string>? _userName;

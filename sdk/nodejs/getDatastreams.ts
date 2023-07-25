@@ -19,19 +19,19 @@ export function getDatastreams(args?: GetDatastreamsArgs, opts?: pulumi.InvokeOp
  * A collection of arguments for invoking getDatastreams.
  */
 export interface GetDatastreamsArgs {
-    groupId?: string;
+    groupId?: number;
 }
 
 /**
  * A collection of values returned by getDatastreams.
  */
 export interface GetDatastreamsResult {
-    readonly groupId?: string;
+    readonly groupId?: number;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    readonly streams: outputs.GetDatastreamsStream[];
+    readonly streamsDetails: outputs.GetDatastreamsStreamsDetail[];
 }
 export function getDatastreamsOutput(args?: GetDatastreamsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatastreamsResult> {
     return pulumi.output(args).apply((a: any) => getDatastreams(a, opts))
@@ -41,5 +41,5 @@ export function getDatastreamsOutput(args?: GetDatastreamsOutputArgs, opts?: pul
  * A collection of arguments for invoking getDatastreams.
  */
 export interface GetDatastreamsOutputArgs {
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<number>;
 }

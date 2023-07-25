@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupAppSecPenaltyBox(ctx *pulumi.Context, args *LookupAppSecPenaltyBoxArgs, opts ...pulumi.InvokeOption) (*LookupAppSecPenaltyBoxResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAppSecPenaltyBoxResult
 	err := ctx.Invoke("akamai:index/getAppSecPenaltyBox:getAppSecPenaltyBox", args, &rv, opts...)
 	if err != nil {

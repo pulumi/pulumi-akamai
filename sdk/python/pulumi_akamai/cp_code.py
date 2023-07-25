@@ -14,80 +14,36 @@ __all__ = ['CpCodeArgs', 'CpCode']
 @pulumi.input_type
 class CpCodeArgs:
     def __init__(__self__, *,
-                 contract: Optional[pulumi.Input[str]] = None,
-                 contract_id: Optional[pulumi.Input[str]] = None,
-                 group: Optional[pulumi.Input[str]] = None,
-                 group_id: Optional[pulumi.Input[str]] = None,
+                 contract_id: pulumi.Input[str],
+                 group_id: pulumi.Input[str],
                  name: Optional[pulumi.Input[str]] = None,
-                 product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CpCode resource.
         """
-        if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-        if contract is not None:
-            pulumi.set(__self__, "contract", contract)
-        if contract_id is not None:
-            pulumi.set(__self__, "contract_id", contract_id)
-        if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-        if group is not None:
-            pulumi.set(__self__, "group", group)
-        if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "group_id", group_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
-        if product is not None:
-            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-        if product is not None:
-            pulumi.set(__self__, "product", product)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
 
     @property
-    @pulumi.getter
-    def contract(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-
-        return pulumi.get(self, "contract")
-
-    @contract.setter
-    def contract(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "contract", value)
-
-    @property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[str]]:
+    def contract_id(self) -> pulumi.Input[str]:
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[str]]):
+    def contract_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "contract_id", value)
 
     @property
-    @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-
-        return pulumi.get(self, "group")
-
-    @group.setter
-    def group(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "group", value)
-
-    @property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[str]]:
+    def group_id(self) -> pulumi.Input[str]:
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[str]]):
+    def group_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "group_id", value)
 
     @property
@@ -98,18 +54,6 @@ class CpCodeArgs:
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def product(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-
-        return pulumi.get(self, "product")
-
-    @product.setter
-    def product(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "product", value)
 
     @property
     @pulumi.getter(name="productId")
@@ -124,51 +68,21 @@ class CpCodeArgs:
 @pulumi.input_type
 class _CpCodeState:
     def __init__(__self__, *,
-                 contract: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
-                 group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CpCode resources.
         """
-        if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-        if contract is not None:
-            pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
-        if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-        if group is not None:
-            pulumi.set(__self__, "group", group)
         if group_id is not None:
             pulumi.set(__self__, "group_id", group_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
-        if product is not None:
-            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-        if product is not None:
-            pulumi.set(__self__, "product", product)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
-
-    @property
-    @pulumi.getter
-    def contract(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-
-        return pulumi.get(self, "contract")
-
-    @contract.setter
-    def contract(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "contract", value)
 
     @property
     @pulumi.getter(name="contractId")
@@ -178,18 +92,6 @@ class _CpCodeState:
     @contract_id.setter
     def contract_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "contract_id", value)
-
-    @property
-    @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-
-        return pulumi.get(self, "group")
-
-    @group.setter
-    def group(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "group", value)
 
     @property
     @pulumi.getter(name="groupId")
@@ -208,18 +110,6 @@ class _CpCodeState:
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def product(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-
-        return pulumi.get(self, "product")
-
-    @product.setter
-    def product(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "product", value)
 
     @property
     @pulumi.getter(name="productId")
@@ -236,12 +126,9 @@ class CpCode(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
-                 group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -253,7 +140,7 @@ class CpCode(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: Optional[CpCodeArgs] = None,
+                 args: CpCodeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a CpCode resource with the given unique name, props, and options.
@@ -272,12 +159,9 @@ class CpCode(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
-                 group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -288,21 +172,13 @@ class CpCode(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = CpCodeArgs.__new__(CpCodeArgs)
 
-            if contract is not None and not opts.urn:
-                warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-            __props__.__dict__["contract"] = contract
+            if contract_id is None and not opts.urn:
+                raise TypeError("Missing required property 'contract_id'")
             __props__.__dict__["contract_id"] = contract_id
-            if group is not None and not opts.urn:
-                warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-            __props__.__dict__["group"] = group
+            if group_id is None and not opts.urn:
+                raise TypeError("Missing required property 'group_id'")
             __props__.__dict__["group_id"] = group_id
             __props__.__dict__["name"] = name
-            if product is not None and not opts.urn:
-                warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-            __props__.__dict__["product"] = product
             __props__.__dict__["product_id"] = product_id
         alias_opts = pulumi.ResourceOptions(aliases=[pulumi.Alias(type_="akamai:properties/cpCode:CpCode")])
         opts = pulumi.ResourceOptions.merge(opts, alias_opts)
@@ -316,12 +192,9 @@ class CpCode(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            contract: Optional[pulumi.Input[str]] = None,
             contract_id: Optional[pulumi.Input[str]] = None,
-            group: Optional[pulumi.Input[str]] = None,
             group_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            product: Optional[pulumi.Input[str]] = None,
             product_id: Optional[pulumi.Input[str]] = None) -> 'CpCode':
         """
         Get an existing CpCode resource's state with the given name, id, and optional extra
@@ -335,35 +208,16 @@ class CpCode(pulumi.CustomResource):
 
         __props__ = _CpCodeState.__new__(_CpCodeState)
 
-        __props__.__dict__["contract"] = contract
         __props__.__dict__["contract_id"] = contract_id
-        __props__.__dict__["group"] = group
         __props__.__dict__["group_id"] = group_id
         __props__.__dict__["name"] = name
-        __props__.__dict__["product"] = product
         __props__.__dict__["product_id"] = product_id
         return CpCode(resource_name, opts=opts, __props__=__props__)
-
-    @property
-    @pulumi.getter
-    def contract(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-
-        return pulumi.get(self, "contract")
 
     @property
     @pulumi.getter(name="contractId")
     def contract_id(self) -> pulumi.Output[str]:
         return pulumi.get(self, "contract_id")
-
-    @property
-    @pulumi.getter
-    def group(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-
-        return pulumi.get(self, "group")
 
     @property
     @pulumi.getter(name="groupId")
@@ -374,14 +228,6 @@ class CpCode(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def product(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-
-        return pulumi.get(self, "product")
 
     @property
     @pulumi.getter(name="productId")

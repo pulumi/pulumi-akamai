@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -32,10 +33,6 @@ type IamUser struct {
 	EnableTfa pulumi.BoolOutput `pulumi:"enableTfa"`
 	// The user's first name
 	FirstName pulumi.StringOutput `pulumi:"firstName"`
-	// The user's lock status
-	//
-	// Deprecated: The setting "is_locked" has been deprecated. Please use "lock" setting instead
-	IsLocked pulumi.BoolOutput `pulumi:"isLocked"`
 	// The user's position at your company
 	JobTitle pulumi.StringPtrOutput `pulumi:"jobTitle"`
 	// ISO 8601 timestamp indicating when the user last logged in
@@ -96,6 +93,7 @@ func NewIamUser(ctx *pulumi.Context,
 	if args.Phone == nil {
 		return nil, errors.New("invalid value for required argument 'Phone'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource IamUser
 	err := ctx.RegisterResource("akamai:index/iamUser:IamUser", name, args, &resource, opts...)
 	if err != nil {
@@ -136,10 +134,6 @@ type iamUserState struct {
 	EnableTfa *bool `pulumi:"enableTfa"`
 	// The user's first name
 	FirstName *string `pulumi:"firstName"`
-	// The user's lock status
-	//
-	// Deprecated: The setting "is_locked" has been deprecated. Please use "lock" setting instead
-	IsLocked *bool `pulumi:"isLocked"`
 	// The user's position at your company
 	JobTitle *string `pulumi:"jobTitle"`
 	// ISO 8601 timestamp indicating when the user last logged in
@@ -191,10 +185,6 @@ type IamUserState struct {
 	EnableTfa pulumi.BoolPtrInput
 	// The user's first name
 	FirstName pulumi.StringPtrInput
-	// The user's lock status
-	//
-	// Deprecated: The setting "is_locked" has been deprecated. Please use "lock" setting instead
-	IsLocked pulumi.BoolPtrInput
 	// The user's position at your company
 	JobTitle pulumi.StringPtrInput
 	// ISO 8601 timestamp indicating when the user last logged in
@@ -444,13 +434,6 @@ func (o IamUserOutput) EnableTfa() pulumi.BoolOutput {
 // The user's first name
 func (o IamUserOutput) FirstName() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.FirstName }).(pulumi.StringOutput)
-}
-
-// The user's lock status
-//
-// Deprecated: The setting "is_locked" has been deprecated. Please use "lock" setting instead
-func (o IamUserOutput) IsLocked() pulumi.BoolOutput {
-	return o.ApplyT(func(v *IamUser) pulumi.BoolOutput { return v.IsLocked }).(pulumi.BoolOutput)
 }
 
 // The user's position at your company

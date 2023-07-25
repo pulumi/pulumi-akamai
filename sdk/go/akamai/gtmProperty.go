@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -78,6 +79,7 @@ func NewGtmProperty(ctx *pulumi.Context,
 		},
 	})
 	opts = append(opts, aliases)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource GtmProperty
 	err := ctx.RegisterResource("akamai:index/gtmProperty:GtmProperty", name, args, &resource, opts...)
 	if err != nil {

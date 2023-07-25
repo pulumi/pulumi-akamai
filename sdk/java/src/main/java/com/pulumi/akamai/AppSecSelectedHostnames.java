@@ -21,7 +21,7 @@ public class AppSecSelectedHostnames extends com.pulumi.resources.CustomResource
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -35,7 +35,7 @@ public class AppSecSelectedHostnames extends com.pulumi.resources.CustomResource
      * List of hostnames to be added or removed from the protected hosts list
      * 
      */
-    @Export(name="hostnames", type=List.class, parameters={String.class})
+    @Export(name="hostnames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> hostnames;
 
     /**
@@ -49,7 +49,7 @@ public class AppSecSelectedHostnames extends com.pulumi.resources.CustomResource
      * How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
      * 
      */
-    @Export(name="mode", type=String.class, parameters={})
+    @Export(name="mode", refs={String.class}, tree="[0]")
     private Output<String> mode;
 
     /**

@@ -21,9 +21,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetContractArgs : global::Pulumi.InvokeArgs
     {
-        [Input("group")]
-        public string? Group { get; set; }
-
         [Input("groupId")]
         public string? GroupId { get; set; }
 
@@ -38,9 +35,6 @@ namespace Pulumi.Akamai
 
     public sealed class GetContractInvokeArgs : global::Pulumi.InvokeArgs
     {
-        [Input("group")]
-        public Input<string>? Group { get; set; }
-
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
@@ -57,7 +51,6 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetContractResult
     {
-        public readonly string? Group;
         public readonly string GroupId;
         public readonly string GroupName;
         /// <summary>
@@ -67,15 +60,12 @@ namespace Pulumi.Akamai
 
         [OutputConstructor]
         private GetContractResult(
-            string? group,
-
             string groupId,
 
             string groupName,
 
             string id)
         {
-            Group = group;
             GroupId = groupId;
             GroupName = groupName;
             Id = id;

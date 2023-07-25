@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -35,6 +36,7 @@ func NewAppSecConfigurationRename(ctx *pulumi.Context,
 	if args.Description == nil {
 		return nil, errors.New("invalid value for required argument 'Description'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecConfigurationRename
 	err := ctx.RegisterResource("akamai:index/appSecConfigurationRename:AppSecConfigurationRename", name, args, &resource, opts...)
 	if err != nil {

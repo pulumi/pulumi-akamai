@@ -59,9 +59,6 @@ namespace Pulumi.Akamai
     {
         public readonly string ContractId;
         public readonly string GroupId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
         public readonly string Id;
         public readonly string IncludeId;
         public readonly int LatestVersion;

@@ -21,31 +21,31 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/gtmGeomap:GtmGeomap")
 public class GtmGeomap extends com.pulumi.resources.CustomResource {
-    @Export(name="assignments", type=List.class, parameters={GtmGeomapAssignment.class})
+    @Export(name="assignments", refs={List.class,GtmGeomapAssignment.class}, tree="[0,1]")
     private Output</* @Nullable */ List<GtmGeomapAssignment>> assignments;
 
     public Output<Optional<List<GtmGeomapAssignment>>> assignments() {
         return Codegen.optional(this.assignments);
     }
-    @Export(name="defaultDatacenter", type=GtmGeomapDefaultDatacenter.class, parameters={})
+    @Export(name="defaultDatacenter", refs={GtmGeomapDefaultDatacenter.class}, tree="[0]")
     private Output<GtmGeomapDefaultDatacenter> defaultDatacenter;
 
     public Output<GtmGeomapDefaultDatacenter> defaultDatacenter() {
         return this.defaultDatacenter;
     }
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     public Output<String> domain() {
         return this.domain;
     }
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     public Output<String> name() {
         return this.name;
     }
-    @Export(name="waitOnComplete", type=Boolean.class, parameters={})
+    @Export(name="waitOnComplete", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> waitOnComplete;
 
     public Output<Optional<Boolean>> waitOnComplete() {

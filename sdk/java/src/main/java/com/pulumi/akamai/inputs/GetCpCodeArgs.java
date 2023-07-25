@@ -7,64 +7,24 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class GetCpCodeArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetCpCodeArgs Empty = new GetCpCodeArgs();
 
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    @Import(name="contract")
-    private @Nullable Output<String> contract;
+    @Import(name="contractId", required=true)
+    private Output<String> contractId;
 
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    public Optional<Output<String>> contract() {
-        return Optional.ofNullable(this.contract);
+    public Output<String> contractId() {
+        return this.contractId;
     }
 
-    @Import(name="contractId")
-    private @Nullable Output<String> contractId;
+    @Import(name="groupId", required=true)
+    private Output<String> groupId;
 
-    public Optional<Output<String>> contractId() {
-        return Optional.ofNullable(this.contractId);
-    }
-
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    @Import(name="group")
-    private @Nullable Output<String> group;
-
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    public Optional<Output<String>> group() {
-        return Optional.ofNullable(this.group);
-    }
-
-    @Import(name="groupId")
-    private @Nullable Output<String> groupId;
-
-    public Optional<Output<String>> groupId() {
-        return Optional.ofNullable(this.groupId);
+    public Output<String> groupId() {
+        return this.groupId;
     }
 
     @Import(name="name", required=true)
@@ -77,9 +37,7 @@ public final class GetCpCodeArgs extends com.pulumi.resources.InvokeArgs {
     private GetCpCodeArgs() {}
 
     private GetCpCodeArgs(GetCpCodeArgs $) {
-        this.contract = $.contract;
         this.contractId = $.contractId;
-        this.group = $.group;
         this.groupId = $.groupId;
         this.name = $.name;
     }
@@ -102,32 +60,7 @@ public final class GetCpCodeArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetCpCodeArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;contract&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""contract"" has been deprecated. */
-        public Builder contract(@Nullable Output<String> contract) {
-            $.contract = contract;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;contract&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""contract"" has been deprecated. */
-        public Builder contract(String contract) {
-            return contract(Output.of(contract));
-        }
-
-        public Builder contractId(@Nullable Output<String> contractId) {
+        public Builder contractId(Output<String> contractId) {
             $.contractId = contractId;
             return this;
         }
@@ -136,32 +69,7 @@ public final class GetCpCodeArgs extends com.pulumi.resources.InvokeArgs {
             return contractId(Output.of(contractId));
         }
 
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;group&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""group"" has been deprecated. */
-        public Builder group(@Nullable Output<String> group) {
-            $.group = group;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;group&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""group"" has been deprecated. */
-        public Builder group(String group) {
-            return group(Output.of(group));
-        }
-
-        public Builder groupId(@Nullable Output<String> groupId) {
+        public Builder groupId(Output<String> groupId) {
             $.groupId = groupId;
             return this;
         }
@@ -180,6 +88,8 @@ public final class GetCpCodeArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetCpCodeArgs build() {
+            $.contractId = Objects.requireNonNull($.contractId, "expected parameter 'contractId' to be non-null");
+            $.groupId = Objects.requireNonNull($.groupId, "expected parameter 'groupId' to be non-null");
             $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }

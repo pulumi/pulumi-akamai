@@ -7,8 +7,8 @@ import com.pulumi.akamai.DatastreamArgs;
 import com.pulumi.akamai.Utilities;
 import com.pulumi.akamai.inputs.DatastreamState;
 import com.pulumi.akamai.outputs.DatastreamAzureConnector;
-import com.pulumi.akamai.outputs.DatastreamConfig;
 import com.pulumi.akamai.outputs.DatastreamDatadogConnector;
+import com.pulumi.akamai.outputs.DatastreamDeliveryConfiguration;
 import com.pulumi.akamai.outputs.DatastreamElasticsearchConnector;
 import com.pulumi.akamai.outputs.DatastreamGcsConnector;
 import com.pulumi.akamai.outputs.DatastreamHttpsConnector;
@@ -35,7 +35,7 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * Defining if stream should be active or not
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> active;
 
     /**
@@ -45,31 +45,31 @@ public class Datastream extends com.pulumi.resources.CustomResource {
     public Output<Boolean> active() {
         return this.active;
     }
-    @Export(name="azureConnector", type=DatastreamAzureConnector.class, parameters={})
+    @Export(name="azureConnector", refs={DatastreamAzureConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamAzureConnector> azureConnector;
 
     public Output<Optional<DatastreamAzureConnector>> azureConnector() {
         return Codegen.optional(this.azureConnector);
     }
     /**
-     * Provides information about the configuration related to logs (format, file names, delivery frequency)
+     * Identifies if stream needs to collect midgress data
      * 
      */
-    @Export(name="config", type=DatastreamConfig.class, parameters={})
-    private Output<DatastreamConfig> config;
+    @Export(name="collectMidgress", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> collectMidgress;
 
     /**
-     * @return Provides information about the configuration related to logs (format, file names, delivery frequency)
+     * @return Identifies if stream needs to collect midgress data
      * 
      */
-    public Output<DatastreamConfig> config() {
-        return this.config;
+    public Output<Optional<Boolean>> collectMidgress() {
+        return Codegen.optional(this.collectMidgress);
     }
     /**
      * Identifies the contract that has access to the product
      * 
      */
-    @Export(name="contractId", type=String.class, parameters={})
+    @Export(name="contractId", refs={String.class}, tree="[0]")
     private Output<String> contractId;
 
     /**
@@ -83,7 +83,7 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * The username who created the stream
      * 
      */
-    @Export(name="createdBy", type=String.class, parameters={})
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
     private Output<String> createdBy;
 
     /**
@@ -97,7 +97,7 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * The date and time when the stream was created
      * 
      */
-    @Export(name="createdDate", type=String.class, parameters={})
+    @Export(name="createdDate", refs={String.class}, tree="[0]")
     private Output<String> createdDate;
 
     /**
@@ -107,7 +107,7 @@ public class Datastream extends com.pulumi.resources.CustomResource {
     public Output<String> createdDate() {
         return this.createdDate;
     }
-    @Export(name="datadogConnector", type=DatastreamDatadogConnector.class, parameters={})
+    @Export(name="datadogConnector", refs={DatastreamDatadogConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamDatadogConnector> datadogConnector;
 
     public Output<Optional<DatastreamDatadogConnector>> datadogConnector() {
@@ -118,38 +118,38 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * identifiers define how the value for these fields appear in the log lines
      * 
      */
-    @Export(name="datasetFieldsIds", type=List.class, parameters={Integer.class})
-    private Output<List<Integer>> datasetFieldsIds;
+    @Export(name="datasetFields", refs={List.class,Integer.class}, tree="[0,1]")
+    private Output<List<Integer>> datasetFields;
 
     /**
      * @return A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
      * identifiers define how the value for these fields appear in the log lines
      * 
      */
-    public Output<List<Integer>> datasetFieldsIds() {
-        return this.datasetFieldsIds;
+    public Output<List<Integer>> datasetFields() {
+        return this.datasetFields;
     }
-    @Export(name="elasticsearchConnector", type=DatastreamElasticsearchConnector.class, parameters={})
+    /**
+     * Provides information about the configuration related to logs (format, file names, delivery frequency)
+     * 
+     */
+    @Export(name="deliveryConfiguration", refs={DatastreamDeliveryConfiguration.class}, tree="[0]")
+    private Output<DatastreamDeliveryConfiguration> deliveryConfiguration;
+
+    /**
+     * @return Provides information about the configuration related to logs (format, file names, delivery frequency)
+     * 
+     */
+    public Output<DatastreamDeliveryConfiguration> deliveryConfiguration() {
+        return this.deliveryConfiguration;
+    }
+    @Export(name="elasticsearchConnector", refs={DatastreamElasticsearchConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamElasticsearchConnector> elasticsearchConnector;
 
     public Output<Optional<DatastreamElasticsearchConnector>> elasticsearchConnector() {
         return Codegen.optional(this.elasticsearchConnector);
     }
-    /**
-     * List of email addresses where the system sends notifications about activations and deactivations of the stream
-     * 
-     */
-    @Export(name="emailIds", type=List.class, parameters={String.class})
-    private Output</* @Nullable */ List<String>> emailIds;
-
-    /**
-     * @return List of email addresses where the system sends notifications about activations and deactivations of the stream
-     * 
-     */
-    public Output<Optional<List<String>>> emailIds() {
-        return Codegen.optional(this.emailIds);
-    }
-    @Export(name="gcsConnector", type=DatastreamGcsConnector.class, parameters={})
+    @Export(name="gcsConnector", refs={DatastreamGcsConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamGcsConnector> gcsConnector;
 
     public Output<Optional<DatastreamGcsConnector>> gcsConnector() {
@@ -159,7 +159,7 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * Identifies the group that has access to the product and for which the stream configuration was created
      * 
      */
-    @Export(name="groupId", type=String.class, parameters={})
+    @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
@@ -169,27 +169,27 @@ public class Datastream extends com.pulumi.resources.CustomResource {
     public Output<String> groupId() {
         return this.groupId;
     }
-    /**
-     * The name of the user group for which the stream was created
-     * 
-     */
-    @Export(name="groupName", type=String.class, parameters={})
-    private Output<String> groupName;
-
-    /**
-     * @return The name of the user group for which the stream was created
-     * 
-     */
-    public Output<String> groupName() {
-        return this.groupName;
-    }
-    @Export(name="httpsConnector", type=DatastreamHttpsConnector.class, parameters={})
+    @Export(name="httpsConnector", refs={DatastreamHttpsConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamHttpsConnector> httpsConnector;
 
     public Output<Optional<DatastreamHttpsConnector>> httpsConnector() {
         return Codegen.optional(this.httpsConnector);
     }
-    @Export(name="logglyConnector", type=DatastreamLogglyConnector.class, parameters={})
+    /**
+     * Identifies the latest active configuration version of the stream
+     * 
+     */
+    @Export(name="latestVersion", refs={Integer.class}, tree="[0]")
+    private Output<Integer> latestVersion;
+
+    /**
+     * @return Identifies the latest active configuration version of the stream
+     * 
+     */
+    public Output<Integer> latestVersion() {
+        return this.latestVersion;
+    }
+    @Export(name="logglyConnector", refs={DatastreamLogglyConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamLogglyConnector> logglyConnector;
 
     public Output<Optional<DatastreamLogglyConnector>> logglyConnector() {
@@ -199,7 +199,7 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * The username who modified the stream
      * 
      */
-    @Export(name="modifiedBy", type=String.class, parameters={})
+    @Export(name="modifiedBy", refs={String.class}, tree="[0]")
     private Output<String> modifiedBy;
 
     /**
@@ -213,7 +213,7 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * The date and time when the stream was modified
      * 
      */
-    @Export(name="modifiedDate", type=String.class, parameters={})
+    @Export(name="modifiedDate", refs={String.class}, tree="[0]")
     private Output<String> modifiedDate;
 
     /**
@@ -223,13 +223,27 @@ public class Datastream extends com.pulumi.resources.CustomResource {
     public Output<String> modifiedDate() {
         return this.modifiedDate;
     }
-    @Export(name="newRelicConnector", type=DatastreamNewRelicConnector.class, parameters={})
+    @Export(name="newRelicConnector", refs={DatastreamNewRelicConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamNewRelicConnector> newRelicConnector;
 
     public Output<Optional<DatastreamNewRelicConnector>> newRelicConnector() {
         return Codegen.optional(this.newRelicConnector);
     }
-    @Export(name="oracleConnector", type=DatastreamOracleConnector.class, parameters={})
+    /**
+     * List of email addresses where the system sends notifications about activations and deactivations of the stream
+     * 
+     */
+    @Export(name="notificationEmails", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> notificationEmails;
+
+    /**
+     * @return List of email addresses where the system sends notifications about activations and deactivations of the stream
+     * 
+     */
+    public Output<Optional<List<String>>> notificationEmails() {
+        return Codegen.optional(this.notificationEmails);
+    }
+    @Export(name="oracleConnector", refs={DatastreamOracleConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamOracleConnector> oracleConnector;
 
     public Output<Optional<DatastreamOracleConnector>> oracleConnector() {
@@ -239,7 +253,7 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
      * 
      */
-    @Export(name="papiJson", type=String.class, parameters={})
+    @Export(name="papiJson", refs={String.class}, tree="[0]")
     private Output<String> papiJson;
 
     /**
@@ -253,7 +267,7 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * The ID of the product for which the stream was created
      * 
      */
-    @Export(name="productId", type=String.class, parameters={})
+    @Export(name="productId", refs={String.class}, tree="[0]")
     private Output<String> productId;
 
     /**
@@ -264,40 +278,26 @@ public class Datastream extends com.pulumi.resources.CustomResource {
         return this.productId;
     }
     /**
-     * The name of the product for which the stream was created
-     * 
-     */
-    @Export(name="productName", type=String.class, parameters={})
-    private Output<String> productName;
-
-    /**
-     * @return The name of the product for which the stream was created
-     * 
-     */
-    public Output<String> productName() {
-        return this.productName;
-    }
-    /**
      * Identifies the properties monitored in the stream
      * 
      */
-    @Export(name="propertyIds", type=List.class, parameters={String.class})
-    private Output<List<String>> propertyIds;
+    @Export(name="properties", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> properties;
 
     /**
      * @return Identifies the properties monitored in the stream
      * 
      */
-    public Output<List<String>> propertyIds() {
-        return this.propertyIds;
+    public Output<List<String>> properties() {
+        return this.properties;
     }
-    @Export(name="s3Connector", type=DatastreamS3Connector.class, parameters={})
+    @Export(name="s3Connector", refs={DatastreamS3Connector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamS3Connector> s3Connector;
 
     public Output<Optional<DatastreamS3Connector>> s3Connector() {
         return Codegen.optional(this.s3Connector);
     }
-    @Export(name="splunkConnector", type=DatastreamSplunkConnector.class, parameters={})
+    @Export(name="splunkConnector", refs={DatastreamSplunkConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamSplunkConnector> splunkConnector;
 
     public Output<Optional<DatastreamSplunkConnector>> splunkConnector() {
@@ -307,7 +307,7 @@ public class Datastream extends com.pulumi.resources.CustomResource {
      * The name of the stream
      * 
      */
-    @Export(name="streamName", type=String.class, parameters={})
+    @Export(name="streamName", refs={String.class}, tree="[0]")
     private Output<String> streamName;
 
     /**
@@ -318,52 +318,24 @@ public class Datastream extends com.pulumi.resources.CustomResource {
         return this.streamName;
     }
     /**
-     * Specifies the type of the data stream
-     * 
-     */
-    @Export(name="streamType", type=String.class, parameters={})
-    private Output<String> streamType;
-
-    /**
-     * @return Specifies the type of the data stream
-     * 
-     */
-    public Output<String> streamType() {
-        return this.streamType;
-    }
-    /**
      * Identifies the configuration version of the stream
      * 
      */
-    @Export(name="streamVersionId", type=Integer.class, parameters={})
-    private Output<Integer> streamVersionId;
+    @Export(name="streamVersion", refs={Integer.class}, tree="[0]")
+    private Output<Integer> streamVersion;
 
     /**
      * @return Identifies the configuration version of the stream
      * 
      */
-    public Output<Integer> streamVersionId() {
-        return this.streamVersionId;
+    public Output<Integer> streamVersion() {
+        return this.streamVersion;
     }
-    @Export(name="sumologicConnector", type=DatastreamSumologicConnector.class, parameters={})
+    @Export(name="sumologicConnector", refs={DatastreamSumologicConnector.class}, tree="[0]")
     private Output</* @Nullable */ DatastreamSumologicConnector> sumologicConnector;
 
     public Output<Optional<DatastreamSumologicConnector>> sumologicConnector() {
         return Codegen.optional(this.sumologicConnector);
-    }
-    /**
-     * The name of the template associated with the stream
-     * 
-     */
-    @Export(name="templateName", type=String.class, parameters={})
-    private Output<String> templateName;
-
-    /**
-     * @return The name of the template associated with the stream
-     * 
-     */
-    public Output<String> templateName() {
-        return this.templateName;
     }
 
     /**

@@ -10,21 +10,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCpCodeResult {
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    private String contract;
     private String contractId;
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    private String group;
     private String groupId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -35,26 +21,8 @@ public final class GetCpCodeResult {
     private List<String> productIds;
 
     private GetCpCodeResult() {}
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    public String contract() {
-        return this.contract;
-    }
     public String contractId() {
         return this.contractId;
-    }
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    public String group() {
-        return this.group;
     }
     public String groupId() {
         return this.groupId;
@@ -82,9 +50,7 @@ public final class GetCpCodeResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String contract;
         private String contractId;
-        private String group;
         private String groupId;
         private String id;
         private String name;
@@ -92,9 +58,7 @@ public final class GetCpCodeResult {
         public Builder() {}
         public Builder(GetCpCodeResult defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.contract = defaults.contract;
     	      this.contractId = defaults.contractId;
-    	      this.group = defaults.group;
     	      this.groupId = defaults.groupId;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
@@ -102,18 +66,8 @@ public final class GetCpCodeResult {
         }
 
         @CustomType.Setter
-        public Builder contract(String contract) {
-            this.contract = Objects.requireNonNull(contract);
-            return this;
-        }
-        @CustomType.Setter
         public Builder contractId(String contractId) {
             this.contractId = Objects.requireNonNull(contractId);
-            return this;
-        }
-        @CustomType.Setter
-        public Builder group(String group) {
-            this.group = Objects.requireNonNull(group);
             return this;
         }
         @CustomType.Setter
@@ -141,9 +95,7 @@ public final class GetCpCodeResult {
         }
         public GetCpCodeResult build() {
             final var o = new GetCpCodeResult();
-            o.contract = contract;
             o.contractId = contractId;
-            o.group = group;
             o.groupId = groupId;
             o.id = id;
             o.name = name;

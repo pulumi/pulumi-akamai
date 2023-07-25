@@ -22,7 +22,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The user&#39;s street address
      * 
      */
-    @Export(name="address", type=String.class, parameters={})
+    @Export(name="address", refs={String.class}, tree="[0]")
     private Output<String> address;
 
     /**
@@ -36,7 +36,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * A user&#39;s per-group role assignments, in JSON form
      * 
      */
-    @Export(name="authGrantsJson", type=String.class, parameters={})
+    @Export(name="authGrantsJson", refs={String.class}, tree="[0]")
     private Output<String> authGrantsJson;
 
     /**
@@ -50,7 +50,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The user&#39;s city
      * 
      */
-    @Export(name="city", type=String.class, parameters={})
+    @Export(name="city", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> city;
 
     /**
@@ -64,7 +64,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * To help characterize the user, the value can be any that are available from the view-contact-types operation
      * 
      */
-    @Export(name="contactType", type=String.class, parameters={})
+    @Export(name="contactType", refs={String.class}, tree="[0]")
     private Output<String> contactType;
 
     /**
@@ -78,7 +78,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * As part of the user&#39;s location, the value can be any that are available from the view-supported-countries operation
      * 
      */
-    @Export(name="country", type=String.class, parameters={})
+    @Export(name="country", refs={String.class}, tree="[0]")
     private Output<String> country;
 
     /**
@@ -92,7 +92,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The user&#39;s email address
      * 
      */
-    @Export(name="email", type=String.class, parameters={})
+    @Export(name="email", refs={String.class}, tree="[0]")
     private Output<String> email;
 
     /**
@@ -106,7 +106,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * Indicates whether email update is pending
      * 
      */
-    @Export(name="emailUpdatePending", type=Boolean.class, parameters={})
+    @Export(name="emailUpdatePending", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> emailUpdatePending;
 
     /**
@@ -120,7 +120,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * Indicates whether two-factor authentication is allowed
      * 
      */
-    @Export(name="enableTfa", type=Boolean.class, parameters={})
+    @Export(name="enableTfa", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableTfa;
 
     /**
@@ -134,7 +134,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The user&#39;s first name
      * 
      */
-    @Export(name="firstName", type=String.class, parameters={})
+    @Export(name="firstName", refs={String.class}, tree="[0]")
     private Output<String> firstName;
 
     /**
@@ -145,28 +145,10 @@ public class IamUser extends com.pulumi.resources.CustomResource {
         return this.firstName;
     }
     /**
-     * The user&#39;s lock status
-     * 
-     * @deprecated
-     * The setting &#34;is_locked&#34; has been deprecated. Please use &#34;lock&#34; setting instead
-     * 
-     */
-    @Deprecated /* The setting ""is_locked"" has been deprecated. Please use ""lock"" setting instead */
-    @Export(name="isLocked", type=Boolean.class, parameters={})
-    private Output<Boolean> isLocked;
-
-    /**
-     * @return The user&#39;s lock status
-     * 
-     */
-    public Output<Boolean> isLocked() {
-        return this.isLocked;
-    }
-    /**
      * The user&#39;s position at your company
      * 
      */
-    @Export(name="jobTitle", type=String.class, parameters={})
+    @Export(name="jobTitle", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> jobTitle;
 
     /**
@@ -180,7 +162,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * ISO 8601 timestamp indicating when the user last logged in
      * 
      */
-    @Export(name="lastLogin", type=String.class, parameters={})
+    @Export(name="lastLogin", refs={String.class}, tree="[0]")
     private Output<String> lastLogin;
 
     /**
@@ -194,7 +176,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The user&#39;s surname
      * 
      */
-    @Export(name="lastName", type=String.class, parameters={})
+    @Export(name="lastName", refs={String.class}, tree="[0]")
     private Output<String> lastName;
 
     /**
@@ -208,7 +190,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * Flag to block a user account
      * 
      */
-    @Export(name="lock", type=Boolean.class, parameters={})
+    @Export(name="lock", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> lock;
 
     /**
@@ -222,7 +204,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The user&#39;s mobile phone number
      * 
      */
-    @Export(name="mobilePhone", type=String.class, parameters={})
+    @Export(name="mobilePhone", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> mobilePhone;
 
     /**
@@ -236,7 +218,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The date a user&#39;s password expires
      * 
      */
-    @Export(name="passwordExpiredAfter", type=String.class, parameters={})
+    @Export(name="passwordExpiredAfter", refs={String.class}, tree="[0]")
     private Output<String> passwordExpiredAfter;
 
     /**
@@ -250,7 +232,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The user&#39;s main phone number
      * 
      */
-    @Export(name="phone", type=String.class, parameters={})
+    @Export(name="phone", refs={String.class}, tree="[0]")
     private Output<String> phone;
 
     /**
@@ -264,7 +246,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The value can be any that are available from the view-languages operation
      * 
      */
-    @Export(name="preferredLanguage", type=String.class, parameters={})
+    @Export(name="preferredLanguage", refs={String.class}, tree="[0]")
     private Output<String> preferredLanguage;
 
     /**
@@ -278,7 +260,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The user&#39;s secondary email address
      * 
      */
-    @Export(name="secondaryEmail", type=String.class, parameters={})
+    @Export(name="secondaryEmail", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> secondaryEmail;
 
     /**
@@ -292,7 +274,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The number of seconds it takes for the user&#39;s Control Center session to time out if there hasn&#39;t been any activity
      * 
      */
-    @Export(name="sessionTimeout", type=Integer.class, parameters={})
+    @Export(name="sessionTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> sessionTimeout;
 
     /**
@@ -306,7 +288,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The user&#39;s state
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> state;
 
     /**
@@ -320,7 +302,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * Indicates whether two-factor authentication is configured
      * 
      */
-    @Export(name="tfaConfigured", type=Boolean.class, parameters={})
+    @Export(name="tfaConfigured", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> tfaConfigured;
 
     /**
@@ -334,7 +316,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The user&#39;s time zone. The value can be any that are available from the view-time-zones operation
      * 
      */
-    @Export(name="timeZone", type=String.class, parameters={})
+    @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**
@@ -348,7 +330,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * A user&#39;s `loginId`. Typically, a user&#39;s email address
      * 
      */
-    @Export(name="userName", type=String.class, parameters={})
+    @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
@@ -362,7 +344,7 @@ public class IamUser extends com.pulumi.resources.CustomResource {
      * The user&#39;s five-digit ZIP code
      * 
      */
-    @Export(name="zipCode", type=String.class, parameters={})
+    @Export(name="zipCode", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> zipCode;
 
     /**

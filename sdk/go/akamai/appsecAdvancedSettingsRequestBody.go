@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -35,6 +36,7 @@ func NewAppsecAdvancedSettingsRequestBody(ctx *pulumi.Context,
 	if args.RequestBodyInspectionLimit == nil {
 		return nil, errors.New("invalid value for required argument 'RequestBodyInspectionLimit'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppsecAdvancedSettingsRequestBody
 	err := ctx.RegisterResource("akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody", name, args, &resource, opts...)
 	if err != nil {

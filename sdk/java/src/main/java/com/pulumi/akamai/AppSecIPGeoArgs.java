@@ -107,6 +107,21 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         return this.securityPolicyId;
     }
 
+    /**
+     * Action set for Ukraine geo control
+     * 
+     */
+    @Import(name="ukraineGeoControlAction")
+    private @Nullable Output<String> ukraineGeoControlAction;
+
+    /**
+     * @return Action set for Ukraine geo control
+     * 
+     */
+    public Optional<Output<String>> ukraineGeoControlAction() {
+        return Optional.ofNullable(this.ukraineGeoControlAction);
+    }
+
     private AppSecIPGeoArgs() {}
 
     private AppSecIPGeoArgs(AppSecIPGeoArgs $) {
@@ -116,6 +131,7 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
         this.ipNetworkLists = $.ipNetworkLists;
         this.mode = $.mode;
         this.securityPolicyId = $.securityPolicyId;
+        this.ukraineGeoControlAction = $.ukraineGeoControlAction;
     }
 
     public static Builder builder() {
@@ -290,6 +306,27 @@ public final class AppSecIPGeoArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
+        }
+
+        /**
+         * @param ukraineGeoControlAction Action set for Ukraine geo control
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ukraineGeoControlAction(@Nullable Output<String> ukraineGeoControlAction) {
+            $.ukraineGeoControlAction = ukraineGeoControlAction;
+            return this;
+        }
+
+        /**
+         * @param ukraineGeoControlAction Action set for Ukraine geo control
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ukraineGeoControlAction(String ukraineGeoControlAction) {
+            return ukraineGeoControlAction(Output.of(ukraineGeoControlAction));
         }
 
         public AppSecIPGeoArgs build() {

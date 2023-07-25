@@ -5,7 +5,6 @@ package com.pulumi.akamai;
 
 import com.pulumi.akamai.inputs.PropertyActivationComplianceRecordArgs;
 import com.pulumi.akamai.inputs.PropertyActivationRuleErrorArgs;
-import com.pulumi.akamai.inputs.PropertyActivationRuleWarningArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
@@ -29,14 +28,14 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * automatically acknowledge all rule warnings for activation to continue. default is true
+     * Automatically acknowledge all rule warnings for activation to continue. Default is false
      * 
      */
     @Import(name="autoAcknowledgeRuleWarnings")
     private @Nullable Output<Boolean> autoAcknowledgeRuleWarnings;
 
     /**
-     * @return automatically acknowledge all rule warnings for activation to continue. default is true
+     * @return Automatically acknowledge all rule warnings for activation to continue. Default is false
      * 
      */
     public Optional<Output<Boolean>> autoAcknowledgeRuleWarnings() {
@@ -87,30 +86,11 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.note);
     }
 
-    /**
-     * @deprecated
-     * The setting &#34;property&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""property"" has been deprecated. */
-    @Import(name="property")
-    private @Nullable Output<String> property;
+    @Import(name="propertyId", required=true)
+    private Output<String> propertyId;
 
-    /**
-     * @deprecated
-     * The setting &#34;property&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""property"" has been deprecated. */
-    public Optional<Output<String>> property() {
-        return Optional.ofNullable(this.property);
-    }
-
-    @Import(name="propertyId")
-    private @Nullable Output<String> propertyId;
-
-    public Optional<Output<String>> propertyId() {
-        return Optional.ofNullable(this.propertyId);
+    public Output<String> propertyId() {
+        return this.propertyId;
     }
 
     @Import(name="ruleErrors")
@@ -118,25 +98,6 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
 
     public Optional<Output<List<PropertyActivationRuleErrorArgs>>> ruleErrors() {
         return Optional.ofNullable(this.ruleErrors);
-    }
-
-    /**
-     * @deprecated
-     * Rule warnings will not be set in state anymore
-     * 
-     */
-    @Deprecated /* Rule warnings will not be set in state anymore */
-    @Import(name="ruleWarnings")
-    private @Nullable Output<List<PropertyActivationRuleWarningArgs>> ruleWarnings;
-
-    /**
-     * @deprecated
-     * Rule warnings will not be set in state anymore
-     * 
-     */
-    @Deprecated /* Rule warnings will not be set in state anymore */
-    public Optional<Output<List<PropertyActivationRuleWarningArgs>>> ruleWarnings() {
-        return Optional.ofNullable(this.ruleWarnings);
     }
 
     @Import(name="version", required=true)
@@ -155,10 +116,8 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         this.contacts = $.contacts;
         this.network = $.network;
         this.note = $.note;
-        this.property = $.property;
         this.propertyId = $.propertyId;
         this.ruleErrors = $.ruleErrors;
-        this.ruleWarnings = $.ruleWarnings;
         this.version = $.version;
     }
 
@@ -190,7 +149,7 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param autoAcknowledgeRuleWarnings automatically acknowledge all rule warnings for activation to continue. default is true
+         * @param autoAcknowledgeRuleWarnings Automatically acknowledge all rule warnings for activation to continue. Default is false
          * 
          * @return builder
          * 
@@ -201,7 +160,7 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param autoAcknowledgeRuleWarnings automatically acknowledge all rule warnings for activation to continue. default is true
+         * @param autoAcknowledgeRuleWarnings Automatically acknowledge all rule warnings for activation to continue. Default is false
          * 
          * @return builder
          * 
@@ -274,32 +233,7 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
             return note(Output.of(note));
         }
 
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;property&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""property"" has been deprecated. */
-        public Builder property(@Nullable Output<String> property) {
-            $.property = property;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;property&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""property"" has been deprecated. */
-        public Builder property(String property) {
-            return property(Output.of(property));
-        }
-
-        public Builder propertyId(@Nullable Output<String> propertyId) {
+        public Builder propertyId(Output<String> propertyId) {
             $.propertyId = propertyId;
             return this;
         }
@@ -321,43 +255,6 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
             return ruleErrors(List.of(ruleErrors));
         }
 
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * Rule warnings will not be set in state anymore
-         * 
-         */
-        @Deprecated /* Rule warnings will not be set in state anymore */
-        public Builder ruleWarnings(@Nullable Output<List<PropertyActivationRuleWarningArgs>> ruleWarnings) {
-            $.ruleWarnings = ruleWarnings;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * Rule warnings will not be set in state anymore
-         * 
-         */
-        @Deprecated /* Rule warnings will not be set in state anymore */
-        public Builder ruleWarnings(List<PropertyActivationRuleWarningArgs> ruleWarnings) {
-            return ruleWarnings(Output.of(ruleWarnings));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * Rule warnings will not be set in state anymore
-         * 
-         */
-        @Deprecated /* Rule warnings will not be set in state anymore */
-        public Builder ruleWarnings(PropertyActivationRuleWarningArgs... ruleWarnings) {
-            return ruleWarnings(List.of(ruleWarnings));
-        }
-
         public Builder version(Output<Integer> version) {
             $.version = version;
             return this;
@@ -369,6 +266,7 @@ public final class PropertyActivationArgs extends com.pulumi.resources.ResourceA
 
         public PropertyActivationArgs build() {
             $.contacts = Objects.requireNonNull($.contacts, "expected parameter 'contacts' to be non-null");
+            $.propertyId = Objects.requireNonNull($.propertyId, "expected parameter 'propertyId' to be non-null");
             $.version = Objects.requireNonNull($.version, "expected parameter 'version' to be non-null");
             return $;
         }

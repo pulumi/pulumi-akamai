@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAppSecExportConfiguration(ctx *pulumi.Context, args *GetAppSecExportConfigurationArgs, opts ...pulumi.InvokeOption) (*GetAppSecExportConfigurationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppSecExportConfigurationResult
 	err := ctx.Invoke("akamai:index/getAppSecExportConfiguration:getAppSecExportConfiguration", args, &rv, opts...)
 	if err != nil {

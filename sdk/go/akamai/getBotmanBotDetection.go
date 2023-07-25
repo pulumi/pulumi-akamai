@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetBotmanBotDetection(ctx *pulumi.Context, args *GetBotmanBotDetectionArgs, opts ...pulumi.InvokeOption) (*GetBotmanBotDetectionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBotmanBotDetectionResult
 	err := ctx.Invoke("akamai:index/getBotmanBotDetection:getBotmanBotDetection", args, &rv, opts...)
 	if err != nil {

@@ -20,7 +20,7 @@ public class AppSecConfigurationRename extends com.pulumi.resources.CustomResour
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -34,7 +34,7 @@ public class AppSecConfigurationRename extends com.pulumi.resources.CustomResour
      * Brief description of the security configuration
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -48,7 +48,7 @@ public class AppSecConfigurationRename extends com.pulumi.resources.CustomResour
      * New name for the security configuration
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**

@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupBotmanRecategorizedAkamaiDefinedBot(ctx *pulumi.Context, args *LookupBotmanRecategorizedAkamaiDefinedBotArgs, opts ...pulumi.InvokeOption) (*LookupBotmanRecategorizedAkamaiDefinedBotResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBotmanRecategorizedAkamaiDefinedBotResult
 	err := ctx.Invoke("akamai:index/getBotmanRecategorizedAkamaiDefinedBot:getBotmanRecategorizedAkamaiDefinedBot", args, &rv, opts...)
 	if err != nil {

@@ -15,19 +15,19 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/networkListDescription:NetworkListDescription")
 public class NetworkListDescription extends com.pulumi.resources.CustomResource {
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     public Output<String> description() {
         return this.description;
     }
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     public Output<String> name() {
         return this.name;
     }
-    @Export(name="networkListId", type=String.class, parameters={})
+    @Export(name="networkListId", refs={String.class}, tree="[0]")
     private Output<String> networkListId;
 
     public Output<String> networkListId() {

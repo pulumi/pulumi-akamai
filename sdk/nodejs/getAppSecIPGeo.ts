@@ -36,6 +36,7 @@ export interface GetAppSecIPGeoResult {
     readonly mode: string;
     readonly outputText: string;
     readonly securityPolicyId: string;
+    readonly ukraineGeoControlAction: string;
 }
 export function getAppSecIPGeoOutput(args: GetAppSecIPGeoOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecIPGeoResult> {
     return pulumi.output(args).apply((a: any) => getAppSecIPGeo(a, opts))

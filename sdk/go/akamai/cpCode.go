@@ -7,37 +7,40 @@ import (
 	"context"
 	"reflect"
 
+	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type CpCode struct {
 	pulumi.CustomResourceState
 
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringOutput `pulumi:"contract"`
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
-	Group   pulumi.StringOutput `pulumi:"group"`
-	GroupId pulumi.StringOutput `pulumi:"groupId"`
-	Name    pulumi.StringOutput `pulumi:"name"`
-	// Deprecated: The setting "product" has been deprecated.
-	Product   pulumi.StringOutput `pulumi:"product"`
-	ProductId pulumi.StringOutput `pulumi:"productId"`
+	GroupId    pulumi.StringOutput `pulumi:"groupId"`
+	Name       pulumi.StringOutput `pulumi:"name"`
+	ProductId  pulumi.StringOutput `pulumi:"productId"`
 }
 
 // NewCpCode registers a new resource with the given unique name, arguments, and options.
 func NewCpCode(ctx *pulumi.Context,
 	name string, args *CpCodeArgs, opts ...pulumi.ResourceOption) (*CpCode, error) {
 	if args == nil {
-		args = &CpCodeArgs{}
+		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.ContractId == nil {
+		return nil, errors.New("invalid value for required argument 'ContractId'")
+	}
+	if args.GroupId == nil {
+		return nil, errors.New("invalid value for required argument 'GroupId'")
+	}
 	aliases := pulumi.Aliases([]pulumi.Alias{
 		{
 			Type: pulumi.String("akamai:properties/cpCode:CpCode"),
 		},
 	})
 	opts = append(opts, aliases)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CpCode
 	err := ctx.RegisterResource("akamai:index/cpCode:CpCode", name, args, &resource, opts...)
 	if err != nil {
@@ -60,29 +63,17 @@ func GetCpCode(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CpCode resources.
 type cpCodeState struct {
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract   *string `pulumi:"contract"`
 	ContractId *string `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
-	Group   *string `pulumi:"group"`
-	GroupId *string `pulumi:"groupId"`
-	Name    *string `pulumi:"name"`
-	// Deprecated: The setting "product" has been deprecated.
-	Product   *string `pulumi:"product"`
-	ProductId *string `pulumi:"productId"`
+	GroupId    *string `pulumi:"groupId"`
+	Name       *string `pulumi:"name"`
+	ProductId  *string `pulumi:"productId"`
 }
 
 type CpCodeState struct {
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringPtrInput
 	ContractId pulumi.StringPtrInput
-	// Deprecated: The setting "group" has been deprecated.
-	Group   pulumi.StringPtrInput
-	GroupId pulumi.StringPtrInput
-	Name    pulumi.StringPtrInput
-	// Deprecated: The setting "product" has been deprecated.
-	Product   pulumi.StringPtrInput
-	ProductId pulumi.StringPtrInput
+	GroupId    pulumi.StringPtrInput
+	Name       pulumi.StringPtrInput
+	ProductId  pulumi.StringPtrInput
 }
 
 func (CpCodeState) ElementType() reflect.Type {
@@ -90,30 +81,18 @@ func (CpCodeState) ElementType() reflect.Type {
 }
 
 type cpCodeArgs struct {
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract   *string `pulumi:"contract"`
-	ContractId *string `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
-	Group   *string `pulumi:"group"`
-	GroupId *string `pulumi:"groupId"`
-	Name    *string `pulumi:"name"`
-	// Deprecated: The setting "product" has been deprecated.
-	Product   *string `pulumi:"product"`
-	ProductId *string `pulumi:"productId"`
+	ContractId string  `pulumi:"contractId"`
+	GroupId    string  `pulumi:"groupId"`
+	Name       *string `pulumi:"name"`
+	ProductId  *string `pulumi:"productId"`
 }
 
 // The set of arguments for constructing a CpCode resource.
 type CpCodeArgs struct {
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringPtrInput
-	ContractId pulumi.StringPtrInput
-	// Deprecated: The setting "group" has been deprecated.
-	Group   pulumi.StringPtrInput
-	GroupId pulumi.StringPtrInput
-	Name    pulumi.StringPtrInput
-	// Deprecated: The setting "product" has been deprecated.
-	Product   pulumi.StringPtrInput
-	ProductId pulumi.StringPtrInput
+	ContractId pulumi.StringInput
+	GroupId    pulumi.StringInput
+	Name       pulumi.StringPtrInput
+	ProductId  pulumi.StringPtrInput
 }
 
 func (CpCodeArgs) ElementType() reflect.Type {
@@ -203,18 +182,8 @@ func (o CpCodeOutput) ToCpCodeOutputWithContext(ctx context.Context) CpCodeOutpu
 	return o
 }
 
-// Deprecated: The setting "contract" has been deprecated.
-func (o CpCodeOutput) Contract() pulumi.StringOutput {
-	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.Contract }).(pulumi.StringOutput)
-}
-
 func (o CpCodeOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.ContractId }).(pulumi.StringOutput)
-}
-
-// Deprecated: The setting "group" has been deprecated.
-func (o CpCodeOutput) Group() pulumi.StringOutput {
-	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
 }
 
 func (o CpCodeOutput) GroupId() pulumi.StringOutput {
@@ -223,11 +192,6 @@ func (o CpCodeOutput) GroupId() pulumi.StringOutput {
 
 func (o CpCodeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
-}
-
-// Deprecated: The setting "product" has been deprecated.
-func (o CpCodeOutput) Product() pulumi.StringOutput {
-	return o.ApplyT(func(v *CpCode) pulumi.StringOutput { return v.Product }).(pulumi.StringOutput)
 }
 
 func (o CpCodeOutput) ProductId() pulumi.StringOutput {

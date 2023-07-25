@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.InvokeOption) (*LookupCpCodeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCpCodeResult
 	err := ctx.Invoke("akamai:index/getCpCode:getCpCode", args, &rv, opts...)
 	if err != nil {
@@ -21,23 +23,15 @@ func LookupCpCode(ctx *pulumi.Context, args *LookupCpCodeArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getCpCode.
 type LookupCpCodeArgs struct {
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract   *string `pulumi:"contract"`
-	ContractId *string `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
-	Group   *string `pulumi:"group"`
-	GroupId *string `pulumi:"groupId"`
-	Name    string  `pulumi:"name"`
+	ContractId string `pulumi:"contractId"`
+	GroupId    string `pulumi:"groupId"`
+	Name       string `pulumi:"name"`
 }
 
 // A collection of values returned by getCpCode.
 type LookupCpCodeResult struct {
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract   string `pulumi:"contract"`
 	ContractId string `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
-	Group   string `pulumi:"group"`
-	GroupId string `pulumi:"groupId"`
+	GroupId    string `pulumi:"groupId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id         string   `pulumi:"id"`
 	Name       string   `pulumi:"name"`
@@ -59,13 +53,9 @@ func LookupCpCodeOutput(ctx *pulumi.Context, args LookupCpCodeOutputArgs, opts .
 
 // A collection of arguments for invoking getCpCode.
 type LookupCpCodeOutputArgs struct {
-	// Deprecated: The setting "contract" has been deprecated.
-	Contract   pulumi.StringPtrInput `pulumi:"contract"`
-	ContractId pulumi.StringPtrInput `pulumi:"contractId"`
-	// Deprecated: The setting "group" has been deprecated.
-	Group   pulumi.StringPtrInput `pulumi:"group"`
-	GroupId pulumi.StringPtrInput `pulumi:"groupId"`
-	Name    pulumi.StringInput    `pulumi:"name"`
+	ContractId pulumi.StringInput `pulumi:"contractId"`
+	GroupId    pulumi.StringInput `pulumi:"groupId"`
+	Name       pulumi.StringInput `pulumi:"name"`
 }
 
 func (LookupCpCodeOutputArgs) ElementType() reflect.Type {
@@ -87,18 +77,8 @@ func (o LookupCpCodeResultOutput) ToLookupCpCodeResultOutputWithContext(ctx cont
 	return o
 }
 
-// Deprecated: The setting "contract" has been deprecated.
-func (o LookupCpCodeResultOutput) Contract() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCpCodeResult) string { return v.Contract }).(pulumi.StringOutput)
-}
-
 func (o LookupCpCodeResultOutput) ContractId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCpCodeResult) string { return v.ContractId }).(pulumi.StringOutput)
-}
-
-// Deprecated: The setting "group" has been deprecated.
-func (o LookupCpCodeResultOutput) Group() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupCpCodeResult) string { return v.Group }).(pulumi.StringOutput)
 }
 
 func (o LookupCpCodeResultOutput) GroupId() pulumi.StringOutput {

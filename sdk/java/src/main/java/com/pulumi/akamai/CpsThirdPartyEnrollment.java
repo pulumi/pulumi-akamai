@@ -27,7 +27,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * Whether acknowledge warnings before certificate verification
      * 
      */
-    @Export(name="acknowledgePreVerificationWarnings", type=Boolean.class, parameters={})
+    @Export(name="acknowledgePreVerificationWarnings", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> acknowledgePreVerificationWarnings;
 
     /**
@@ -41,7 +41,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * Contact information for the certificate administrator to use at organization
      * 
      */
-    @Export(name="adminContact", type=CpsThirdPartyEnrollmentAdminContact.class, parameters={})
+    @Export(name="adminContact", refs={CpsThirdPartyEnrollmentAdminContact.class}, tree="[0]")
     private Output<CpsThirdPartyEnrollmentAdminContact> adminContact;
 
     /**
@@ -55,7 +55,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * Allow to duplicate common name
      * 
      */
-    @Export(name="allowDuplicateCommonName", type=Boolean.class, parameters={})
+    @Export(name="allowDuplicateCommonName", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> allowDuplicateCommonName;
 
     /**
@@ -69,7 +69,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * List of warnings to be automatically approved
      * 
      */
-    @Export(name="autoApproveWarnings", type=List.class, parameters={String.class})
+    @Export(name="autoApproveWarnings", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> autoApproveWarnings;
 
     /**
@@ -83,7 +83,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * Certificate trust chain type
      * 
      */
-    @Export(name="certificateChainType", type=String.class, parameters={})
+    @Export(name="certificateChainType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> certificateChainType;
 
     /**
@@ -97,7 +97,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * When set to false, the certificate will be deployed to both staging and production networks
      * 
      */
-    @Export(name="changeManagement", type=Boolean.class, parameters={})
+    @Export(name="changeManagement", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> changeManagement;
 
     /**
@@ -111,7 +111,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * Common name used for enrollment
      * 
      */
-    @Export(name="commonName", type=String.class, parameters={})
+    @Export(name="commonName", refs={String.class}, tree="[0]")
     private Output<String> commonName;
 
     /**
@@ -125,7 +125,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * Contract ID for which enrollment is retrieved
      * 
      */
-    @Export(name="contractId", type=String.class, parameters={})
+    @Export(name="contractId", refs={String.class}, tree="[0]")
     private Output<String> contractId;
 
     /**
@@ -139,7 +139,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * Data used for generation of Certificate Signing Request
      * 
      */
-    @Export(name="csr", type=CpsThirdPartyEnrollmentCsr.class, parameters={})
+    @Export(name="csr", refs={CpsThirdPartyEnrollmentCsr.class}, tree="[0]")
     private Output<CpsThirdPartyEnrollmentCsr> csr;
 
     /**
@@ -153,7 +153,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * When true, SANs are excluded from the CSR
      * 
      */
-    @Export(name="excludeSans", type=Boolean.class, parameters={})
+    @Export(name="excludeSans", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> excludeSans;
 
     /**
@@ -167,7 +167,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * Settings containing network information and TLS metadata used by CPS
      * 
      */
-    @Export(name="networkConfiguration", type=CpsThirdPartyEnrollmentNetworkConfiguration.class, parameters={})
+    @Export(name="networkConfiguration", refs={CpsThirdPartyEnrollmentNetworkConfiguration.class}, tree="[0]")
     private Output<CpsThirdPartyEnrollmentNetworkConfiguration> networkConfiguration;
 
     /**
@@ -181,7 +181,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * Organization information
      * 
      */
-    @Export(name="organization", type=CpsThirdPartyEnrollmentOrganization.class, parameters={})
+    @Export(name="organization", refs={CpsThirdPartyEnrollmentOrganization.class}, tree="[0]")
     private Output<CpsThirdPartyEnrollmentOrganization> organization;
 
     /**
@@ -195,7 +195,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * List of SANs
      * 
      */
-    @Export(name="sans", type=List.class, parameters={String.class})
+    @Export(name="sans", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> sans;
 
     /**
@@ -209,7 +209,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * Type of TLS deployment network
      * 
      */
-    @Export(name="secureNetwork", type=String.class, parameters={})
+    @Export(name="secureNetwork", refs={String.class}, tree="[0]")
     private Output<String> secureNetwork;
 
     /**
@@ -223,7 +223,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * The SHA function. Changing this value may require running terraform destroy, terraform apply
      * 
      */
-    @Export(name="signatureAlgorithm", type=String.class, parameters={})
+    @Export(name="signatureAlgorithm", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> signatureAlgorithm;
 
     /**
@@ -237,7 +237,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * Whether Server Name Indication is used for enrollment
      * 
      */
-    @Export(name="sniOnly", type=Boolean.class, parameters={})
+    @Export(name="sniOnly", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> sniOnly;
 
     /**
@@ -251,7 +251,7 @@ public class CpsThirdPartyEnrollment extends com.pulumi.resources.CustomResource
      * Contact information for an administrator at Akamai
      * 
      */
-    @Export(name="techContact", type=CpsThirdPartyEnrollmentTechContact.class, parameters={})
+    @Export(name="techContact", refs={CpsThirdPartyEnrollmentTechContact.class}, tree="[0]")
     private Output<CpsThirdPartyEnrollmentTechContact> techContact;
 
     /**

@@ -4,7 +4,7 @@
 package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.annotations.Import;
-import java.lang.String;
+import java.lang.Integer;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -15,9 +15,9 @@ public final class GetDatastreamsPlainArgs extends com.pulumi.resources.InvokeAr
     public static final GetDatastreamsPlainArgs Empty = new GetDatastreamsPlainArgs();
 
     @Import(name="groupId")
-    private @Nullable String groupId;
+    private @Nullable Integer groupId;
 
-    public Optional<String> groupId() {
+    public Optional<Integer> groupId() {
         return Optional.ofNullable(this.groupId);
     }
 
@@ -45,7 +45,7 @@ public final class GetDatastreamsPlainArgs extends com.pulumi.resources.InvokeAr
             $ = new GetDatastreamsPlainArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder groupId(@Nullable String groupId) {
+        public Builder groupId(@Nullable Integer groupId) {
             $.groupId = groupId;
             return this;
         }

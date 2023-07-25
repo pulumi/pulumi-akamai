@@ -16,13 +16,13 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/botmanChallengeInterceptionRules:BotmanChallengeInterceptionRules")
 public class BotmanChallengeInterceptionRules extends com.pulumi.resources.CustomResource {
-    @Export(name="challengeInterceptionRules", type=String.class, parameters={})
+    @Export(name="challengeInterceptionRules", refs={String.class}, tree="[0]")
     private Output<String> challengeInterceptionRules;
 
     public Output<String> challengeInterceptionRules() {
         return this.challengeInterceptionRules;
     }
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     public Output<Integer> configId() {

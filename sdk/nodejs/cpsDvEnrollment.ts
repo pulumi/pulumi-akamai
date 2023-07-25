@@ -71,12 +71,6 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
      */
     public /*out*/ readonly dnsChallenges!: pulumi.Output<outputs.CpsDvEnrollmentDnsChallenge[]>;
     /**
-     * Enable Dual-Stacked certificate deployment for enrollment
-     *
-     * @deprecated Deprecated, don't use; always false
-     */
-    public readonly enableMultiStackedCertificates!: pulumi.Output<boolean | undefined>;
-    /**
      * HTTP challenge information
      */
     public /*out*/ readonly httpChallenges!: pulumi.Output<outputs.CpsDvEnrollmentHttpChallenge[]>;
@@ -139,7 +133,6 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
             resourceInputs["contractId"] = state ? state.contractId : undefined;
             resourceInputs["csr"] = state ? state.csr : undefined;
             resourceInputs["dnsChallenges"] = state ? state.dnsChallenges : undefined;
-            resourceInputs["enableMultiStackedCertificates"] = state ? state.enableMultiStackedCertificates : undefined;
             resourceInputs["httpChallenges"] = state ? state.httpChallenges : undefined;
             resourceInputs["networkConfiguration"] = state ? state.networkConfiguration : undefined;
             resourceInputs["organization"] = state ? state.organization : undefined;
@@ -189,7 +182,6 @@ export class CpsDvEnrollment extends pulumi.CustomResource {
             resourceInputs["commonName"] = args ? args.commonName : undefined;
             resourceInputs["contractId"] = args ? args.contractId : undefined;
             resourceInputs["csr"] = args ? args.csr : undefined;
-            resourceInputs["enableMultiStackedCertificates"] = args ? args.enableMultiStackedCertificates : undefined;
             resourceInputs["networkConfiguration"] = args ? args.networkConfiguration : undefined;
             resourceInputs["organization"] = args ? args.organization : undefined;
             resourceInputs["sans"] = args ? args.sans : undefined;
@@ -248,12 +240,6 @@ export interface CpsDvEnrollmentState {
      * DNS challenge information
      */
     dnsChallenges?: pulumi.Input<pulumi.Input<inputs.CpsDvEnrollmentDnsChallenge>[]>;
-    /**
-     * Enable Dual-Stacked certificate deployment for enrollment
-     *
-     * @deprecated Deprecated, don't use; always false
-     */
-    enableMultiStackedCertificates?: pulumi.Input<boolean>;
     /**
      * HTTP challenge information
      */
@@ -328,12 +314,6 @@ export interface CpsDvEnrollmentArgs {
      * Certificate signing request generated during enrollment creation
      */
     csr: pulumi.Input<inputs.CpsDvEnrollmentCsr>;
-    /**
-     * Enable Dual-Stacked certificate deployment for enrollment
-     *
-     * @deprecated Deprecated, don't use; always false
-     */
-    enableMultiStackedCertificates?: pulumi.Input<boolean>;
     /**
      * Settings containing network information and TLS Metadata used by CPS
      */

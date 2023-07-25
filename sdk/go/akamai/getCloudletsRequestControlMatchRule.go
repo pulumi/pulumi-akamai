@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetCloudletsRequestControlMatchRule(ctx *pulumi.Context, args *GetCloudletsRequestControlMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsRequestControlMatchRuleResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCloudletsRequestControlMatchRuleResult
 	err := ctx.Invoke("akamai:index/getCloudletsRequestControlMatchRule:getCloudletsRequestControlMatchRule", args, &rv, opts...)
 	if err != nil {

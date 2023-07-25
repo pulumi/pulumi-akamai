@@ -23,6 +23,7 @@ public final class GetAppSecIPGeoResult {
     private String mode;
     private String outputText;
     private String securityPolicyId;
+    private String ukraineGeoControlAction;
 
     private GetAppSecIPGeoResult() {}
     public Integer configId() {
@@ -53,6 +54,9 @@ public final class GetAppSecIPGeoResult {
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
+    public String ukraineGeoControlAction() {
+        return this.ukraineGeoControlAction;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -71,6 +75,7 @@ public final class GetAppSecIPGeoResult {
         private String mode;
         private String outputText;
         private String securityPolicyId;
+        private String ukraineGeoControlAction;
         public Builder() {}
         public Builder(GetAppSecIPGeoResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -82,6 +87,7 @@ public final class GetAppSecIPGeoResult {
     	      this.mode = defaults.mode;
     	      this.outputText = defaults.outputText;
     	      this.securityPolicyId = defaults.securityPolicyId;
+    	      this.ukraineGeoControlAction = defaults.ukraineGeoControlAction;
         }
 
         @CustomType.Setter
@@ -133,6 +139,11 @@ public final class GetAppSecIPGeoResult {
             this.securityPolicyId = Objects.requireNonNull(securityPolicyId);
             return this;
         }
+        @CustomType.Setter
+        public Builder ukraineGeoControlAction(String ukraineGeoControlAction) {
+            this.ukraineGeoControlAction = Objects.requireNonNull(ukraineGeoControlAction);
+            return this;
+        }
         public GetAppSecIPGeoResult build() {
             final var o = new GetAppSecIPGeoResult();
             o.configId = configId;
@@ -143,6 +154,7 @@ public final class GetAppSecIPGeoResult {
             o.mode = mode;
             o.outputText = outputText;
             o.securityPolicyId = securityPolicyId;
+            o.ukraineGeoControlAction = ukraineGeoControlAction;
             return o;
         }
     }

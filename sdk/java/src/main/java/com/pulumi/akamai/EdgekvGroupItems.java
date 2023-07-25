@@ -20,7 +20,7 @@ public class EdgekvGroupItems extends com.pulumi.resources.CustomResource {
      * The name of the EdgeKV group.
      * 
      */
-    @Export(name="groupName", type=String.class, parameters={})
+    @Export(name="groupName", refs={String.class}, tree="[0]")
     private Output<String> groupName;
 
     /**
@@ -34,7 +34,7 @@ public class EdgekvGroupItems extends com.pulumi.resources.CustomResource {
      * A map of items within the specified group. Each item consists of an item key and a value.
      * 
      */
-    @Export(name="items", type=Map.class, parameters={String.class, String.class})
+    @Export(name="items", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> items;
 
     /**
@@ -48,7 +48,7 @@ public class EdgekvGroupItems extends com.pulumi.resources.CustomResource {
      * The name for the EdgeKV namespace.
      * 
      */
-    @Export(name="namespaceName", type=String.class, parameters={})
+    @Export(name="namespaceName", refs={String.class}, tree="[0]")
     private Output<String> namespaceName;
 
     /**
@@ -62,7 +62,7 @@ public class EdgekvGroupItems extends com.pulumi.resources.CustomResource {
      * The network against which to execute the API request.
      * 
      */
-    @Export(name="network", type=String.class, parameters={})
+    @Export(name="network", refs={String.class}, tree="[0]")
     private Output<String> network;
 
     /**

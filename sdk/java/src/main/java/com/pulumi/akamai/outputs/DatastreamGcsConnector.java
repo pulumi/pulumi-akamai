@@ -5,7 +5,6 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,8 +14,7 @@ import javax.annotation.Nullable;
 public final class DatastreamGcsConnector {
     private String bucket;
     private @Nullable Boolean compressLogs;
-    private @Nullable Integer connectorId;
-    private String connectorName;
+    private String displayName;
     private @Nullable String path;
     private String privateKey;
     private String projectId;
@@ -29,11 +27,8 @@ public final class DatastreamGcsConnector {
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
-    public Optional<Integer> connectorId() {
-        return Optional.ofNullable(this.connectorId);
-    }
-    public String connectorName() {
-        return this.connectorName;
+    public String displayName() {
+        return this.displayName;
     }
     public Optional<String> path() {
         return Optional.ofNullable(this.path);
@@ -59,8 +54,7 @@ public final class DatastreamGcsConnector {
     public static final class Builder {
         private String bucket;
         private @Nullable Boolean compressLogs;
-        private @Nullable Integer connectorId;
-        private String connectorName;
+        private String displayName;
         private @Nullable String path;
         private String privateKey;
         private String projectId;
@@ -70,8 +64,7 @@ public final class DatastreamGcsConnector {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
     	      this.compressLogs = defaults.compressLogs;
-    	      this.connectorId = defaults.connectorId;
-    	      this.connectorName = defaults.connectorName;
+    	      this.displayName = defaults.displayName;
     	      this.path = defaults.path;
     	      this.privateKey = defaults.privateKey;
     	      this.projectId = defaults.projectId;
@@ -89,13 +82,8 @@ public final class DatastreamGcsConnector {
             return this;
         }
         @CustomType.Setter
-        public Builder connectorId(@Nullable Integer connectorId) {
-            this.connectorId = connectorId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder connectorName(String connectorName) {
-            this.connectorName = Objects.requireNonNull(connectorName);
+        public Builder displayName(String displayName) {
+            this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
         @CustomType.Setter
@@ -122,8 +110,7 @@ public final class DatastreamGcsConnector {
             final var o = new DatastreamGcsConnector();
             o.bucket = bucket;
             o.compressLogs = compressLogs;
-            o.connectorId = connectorId;
-            o.connectorName = connectorName;
+            o.displayName = displayName;
             o.path = path;
             o.privateKey = privateKey;
             o.projectId = projectId;

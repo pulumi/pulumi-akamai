@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetEdgeWorkerActivation(ctx *pulumi.Context, args *GetEdgeWorkerActivationArgs, opts ...pulumi.InvokeOption) (*GetEdgeWorkerActivationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEdgeWorkerActivationResult
 	err := ctx.Invoke("akamai:index/getEdgeWorkerActivation:getEdgeWorkerActivation", args, &rv, opts...)
 	if err != nil {

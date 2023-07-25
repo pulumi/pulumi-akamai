@@ -16,19 +16,19 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/botmanBotCategoryException:BotmanBotCategoryException")
 public class BotmanBotCategoryException extends com.pulumi.resources.CustomResource {
-    @Export(name="botCategoryException", type=String.class, parameters={})
+    @Export(name="botCategoryException", refs={String.class}, tree="[0]")
     private Output<String> botCategoryException;
 
     public Output<String> botCategoryException() {
         return this.botCategoryException;
     }
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     public Output<Integer> configId() {
         return this.configId;
     }
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     public Output<String> securityPolicyId() {

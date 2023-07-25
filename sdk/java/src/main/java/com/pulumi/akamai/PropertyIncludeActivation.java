@@ -24,7 +24,7 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
      * Automatically acknowledge all rule warnings for activation and continue
      * 
      */
-    @Export(name="autoAcknowledgeRuleWarnings", type=Boolean.class, parameters={})
+    @Export(name="autoAcknowledgeRuleWarnings", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> autoAcknowledgeRuleWarnings;
 
     /**
@@ -38,7 +38,7 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
      * Provides an audit record when activating on a production network
      * 
      */
-    @Export(name="complianceRecord", type=PropertyIncludeActivationComplianceRecord.class, parameters={})
+    @Export(name="complianceRecord", refs={PropertyIncludeActivationComplianceRecord.class}, tree="[0]")
     private Output</* @Nullable */ PropertyIncludeActivationComplianceRecord> complianceRecord;
 
     /**
@@ -52,7 +52,7 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
      * The contract under which the include is activated
      * 
      */
-    @Export(name="contractId", type=String.class, parameters={})
+    @Export(name="contractId", refs={String.class}, tree="[0]")
     private Output<String> contractId;
 
     /**
@@ -66,7 +66,7 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
      * The group under which the include is activated
      * 
      */
-    @Export(name="groupId", type=String.class, parameters={})
+    @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
@@ -80,7 +80,7 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
      * The unique identifier of the include
      * 
      */
-    @Export(name="includeId", type=String.class, parameters={})
+    @Export(name="includeId", refs={String.class}, tree="[0]")
     private Output<String> includeId;
 
     /**
@@ -94,7 +94,7 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
      * The network for which the activation will be performed
      * 
      */
-    @Export(name="network", type=String.class, parameters={})
+    @Export(name="network", refs={String.class}, tree="[0]")
     private Output<String> network;
 
     /**
@@ -108,7 +108,7 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
      * The note to assign to a log message of the activation request
      * 
      */
-    @Export(name="note", type=String.class, parameters={})
+    @Export(name="note", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> note;
 
     /**
@@ -122,7 +122,7 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
      * The list of email addresses to notify about an activation status
      * 
      */
-    @Export(name="notifyEmails", type=List.class, parameters={String.class})
+    @Export(name="notifyEmails", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> notifyEmails;
 
     /**
@@ -136,7 +136,7 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
      * The validation information in JSON format
      * 
      */
-    @Export(name="validations", type=String.class, parameters={})
+    @Export(name="validations", refs={String.class}, tree="[0]")
     private Output<String> validations;
 
     /**
@@ -150,7 +150,7 @@ public class PropertyIncludeActivation extends com.pulumi.resources.CustomResour
      * The unique identifier of the include
      * 
      */
-    @Export(name="version", type=Integer.class, parameters={})
+    @Export(name="version", refs={Integer.class}, tree="[0]")
     private Output<Integer> version;
 
     /**

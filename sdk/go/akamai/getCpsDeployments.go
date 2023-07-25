@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetCpsDeployments(ctx *pulumi.Context, args *GetCpsDeploymentsArgs, opts ...pulumi.InvokeOption) (*GetCpsDeploymentsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCpsDeploymentsResult
 	err := ctx.Invoke("akamai:index/getCpsDeployments:getCpsDeployments", args, &rv, opts...)
 	if err != nil {

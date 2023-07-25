@@ -8,26 +8,19 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 type AppSecActivations struct {
 	pulumi.CustomResourceState
 
-	// Whether to activate or deactivate the specified security configuration and version
-	//
-	// Deprecated: The setting activate has been deprecated; "terraform apply" will always perform activation. (Use "terraform destroy" for deactivation.)
-	Activate pulumi.BoolPtrOutput `pulumi:"activate"`
 	// Unique identifier of the security configuration to be activated
 	ConfigId pulumi.IntOutput `pulumi:"configId"`
 	// Network on which to activate the configuration version (STAGING or PRODUCTION)
 	Network pulumi.StringPtrOutput `pulumi:"network"`
 	// Note describing the activation. Will use timestamp if omitted.
 	Note pulumi.StringPtrOutput `pulumi:"note"`
-	// Note describing the activation
-	//
-	// Deprecated: The setting notes has been deprecated. Use "note" instead.
-	Notes pulumi.StringPtrOutput `pulumi:"notes"`
 	// List of email addresses to be notified with the results of the activation
 	NotificationEmails pulumi.StringArrayOutput `pulumi:"notificationEmails"`
 	// The results of the activation
@@ -52,6 +45,7 @@ func NewAppSecActivations(ctx *pulumi.Context,
 	if args.Version == nil {
 		return nil, errors.New("invalid value for required argument 'Version'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecActivations
 	err := ctx.RegisterResource("akamai:index/appSecActivations:AppSecActivations", name, args, &resource, opts...)
 	if err != nil {
@@ -74,20 +68,12 @@ func GetAppSecActivations(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AppSecActivations resources.
 type appSecActivationsState struct {
-	// Whether to activate or deactivate the specified security configuration and version
-	//
-	// Deprecated: The setting activate has been deprecated; "terraform apply" will always perform activation. (Use "terraform destroy" for deactivation.)
-	Activate *bool `pulumi:"activate"`
 	// Unique identifier of the security configuration to be activated
 	ConfigId *int `pulumi:"configId"`
 	// Network on which to activate the configuration version (STAGING or PRODUCTION)
 	Network *string `pulumi:"network"`
 	// Note describing the activation. Will use timestamp if omitted.
 	Note *string `pulumi:"note"`
-	// Note describing the activation
-	//
-	// Deprecated: The setting notes has been deprecated. Use "note" instead.
-	Notes *string `pulumi:"notes"`
 	// List of email addresses to be notified with the results of the activation
 	NotificationEmails []string `pulumi:"notificationEmails"`
 	// The results of the activation
@@ -97,20 +83,12 @@ type appSecActivationsState struct {
 }
 
 type AppSecActivationsState struct {
-	// Whether to activate or deactivate the specified security configuration and version
-	//
-	// Deprecated: The setting activate has been deprecated; "terraform apply" will always perform activation. (Use "terraform destroy" for deactivation.)
-	Activate pulumi.BoolPtrInput
 	// Unique identifier of the security configuration to be activated
 	ConfigId pulumi.IntPtrInput
 	// Network on which to activate the configuration version (STAGING or PRODUCTION)
 	Network pulumi.StringPtrInput
 	// Note describing the activation. Will use timestamp if omitted.
 	Note pulumi.StringPtrInput
-	// Note describing the activation
-	//
-	// Deprecated: The setting notes has been deprecated. Use "note" instead.
-	Notes pulumi.StringPtrInput
 	// List of email addresses to be notified with the results of the activation
 	NotificationEmails pulumi.StringArrayInput
 	// The results of the activation
@@ -124,20 +102,12 @@ func (AppSecActivationsState) ElementType() reflect.Type {
 }
 
 type appSecActivationsArgs struct {
-	// Whether to activate or deactivate the specified security configuration and version
-	//
-	// Deprecated: The setting activate has been deprecated; "terraform apply" will always perform activation. (Use "terraform destroy" for deactivation.)
-	Activate *bool `pulumi:"activate"`
 	// Unique identifier of the security configuration to be activated
 	ConfigId int `pulumi:"configId"`
 	// Network on which to activate the configuration version (STAGING or PRODUCTION)
 	Network *string `pulumi:"network"`
 	// Note describing the activation. Will use timestamp if omitted.
 	Note *string `pulumi:"note"`
-	// Note describing the activation
-	//
-	// Deprecated: The setting notes has been deprecated. Use "note" instead.
-	Notes *string `pulumi:"notes"`
 	// List of email addresses to be notified with the results of the activation
 	NotificationEmails []string `pulumi:"notificationEmails"`
 	// Version of the security configuration to be activated
@@ -146,20 +116,12 @@ type appSecActivationsArgs struct {
 
 // The set of arguments for constructing a AppSecActivations resource.
 type AppSecActivationsArgs struct {
-	// Whether to activate or deactivate the specified security configuration and version
-	//
-	// Deprecated: The setting activate has been deprecated; "terraform apply" will always perform activation. (Use "terraform destroy" for deactivation.)
-	Activate pulumi.BoolPtrInput
 	// Unique identifier of the security configuration to be activated
 	ConfigId pulumi.IntInput
 	// Network on which to activate the configuration version (STAGING or PRODUCTION)
 	Network pulumi.StringPtrInput
 	// Note describing the activation. Will use timestamp if omitted.
 	Note pulumi.StringPtrInput
-	// Note describing the activation
-	//
-	// Deprecated: The setting notes has been deprecated. Use "note" instead.
-	Notes pulumi.StringPtrInput
 	// List of email addresses to be notified with the results of the activation
 	NotificationEmails pulumi.StringArrayInput
 	// Version of the security configuration to be activated
@@ -253,13 +215,6 @@ func (o AppSecActivationsOutput) ToAppSecActivationsOutputWithContext(ctx contex
 	return o
 }
 
-// Whether to activate or deactivate the specified security configuration and version
-//
-// Deprecated: The setting activate has been deprecated; "terraform apply" will always perform activation. (Use "terraform destroy" for deactivation.)
-func (o AppSecActivationsOutput) Activate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *AppSecActivations) pulumi.BoolPtrOutput { return v.Activate }).(pulumi.BoolPtrOutput)
-}
-
 // Unique identifier of the security configuration to be activated
 func (o AppSecActivationsOutput) ConfigId() pulumi.IntOutput {
 	return o.ApplyT(func(v *AppSecActivations) pulumi.IntOutput { return v.ConfigId }).(pulumi.IntOutput)
@@ -273,13 +228,6 @@ func (o AppSecActivationsOutput) Network() pulumi.StringPtrOutput {
 // Note describing the activation. Will use timestamp if omitted.
 func (o AppSecActivationsOutput) Note() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppSecActivations) pulumi.StringPtrOutput { return v.Note }).(pulumi.StringPtrOutput)
-}
-
-// Note describing the activation
-//
-// Deprecated: The setting notes has been deprecated. Use "note" instead.
-func (o AppSecActivationsOutput) Notes() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *AppSecActivations) pulumi.StringPtrOutput { return v.Notes }).(pulumi.StringPtrOutput)
 }
 
 // List of email addresses to be notified with the results of the activation

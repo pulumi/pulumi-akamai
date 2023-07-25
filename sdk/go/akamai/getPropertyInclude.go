@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupPropertyInclude(ctx *pulumi.Context, args *LookupPropertyIncludeArgs, opts ...pulumi.InvokeOption) (*LookupPropertyIncludeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupPropertyIncludeResult
 	err := ctx.Invoke("akamai:index/getPropertyInclude:getPropertyInclude", args, &rv, opts...)
 	if err != nil {
@@ -28,9 +30,8 @@ type LookupPropertyIncludeArgs struct {
 
 // A collection of values returned by getPropertyInclude.
 type LookupPropertyIncludeResult struct {
-	ContractId string `pulumi:"contractId"`
-	GroupId    string `pulumi:"groupId"`
-	// The provider-assigned unique ID for this managed resource.
+	ContractId        string `pulumi:"contractId"`
+	GroupId           string `pulumi:"groupId"`
 	Id                string `pulumi:"id"`
 	IncludeId         string `pulumi:"includeId"`
 	LatestVersion     int    `pulumi:"latestVersion"`
@@ -87,7 +88,6 @@ func (o LookupPropertyIncludeResultOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyIncludeResult) string { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
 func (o LookupPropertyIncludeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyIncludeResult) string { return v.Id }).(pulumi.StringOutput)
 }

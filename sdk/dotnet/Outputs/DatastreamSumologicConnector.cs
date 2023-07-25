@@ -15,11 +15,10 @@ namespace Pulumi.Akamai.Outputs
     {
         public readonly string CollectorCode;
         public readonly bool? CompressLogs;
-        public readonly int? ConnectorId;
-        public readonly string ConnectorName;
         public readonly string? ContentType;
         public readonly string? CustomHeaderName;
         public readonly string? CustomHeaderValue;
+        public readonly string DisplayName;
         public readonly string Endpoint;
 
         [OutputConstructor]
@@ -28,25 +27,22 @@ namespace Pulumi.Akamai.Outputs
 
             bool? compressLogs,
 
-            int? connectorId,
-
-            string connectorName,
-
             string? contentType,
 
             string? customHeaderName,
 
             string? customHeaderValue,
 
+            string displayName,
+
             string endpoint)
         {
             CollectorCode = collectorCode;
             CompressLogs = compressLogs;
-            ConnectorId = connectorId;
-            ConnectorName = connectorName;
             ContentType = contentType;
             CustomHeaderName = customHeaderName;
             CustomHeaderValue = customHeaderValue;
+            DisplayName = displayName;
             Endpoint = endpoint;
         }
     }

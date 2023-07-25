@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetCloudletsEdgeRedirectorMatchRule(ctx *pulumi.Context, args *GetCloudletsEdgeRedirectorMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsEdgeRedirectorMatchRuleResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCloudletsEdgeRedirectorMatchRuleResult
 	err := ctx.Invoke("akamai:index/getCloudletsEdgeRedirectorMatchRule:getCloudletsEdgeRedirectorMatchRule", args, &rv, opts...)
 	if err != nil {

@@ -5,7 +5,6 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,8 +15,7 @@ public final class DatastreamS3Connector {
     private String accessKey;
     private String bucket;
     private @Nullable Boolean compressLogs;
-    private @Nullable Integer connectorId;
-    private String connectorName;
+    private String displayName;
     private String path;
     private String region;
     private String secretAccessKey;
@@ -32,11 +30,8 @@ public final class DatastreamS3Connector {
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
-    public Optional<Integer> connectorId() {
-        return Optional.ofNullable(this.connectorId);
-    }
-    public String connectorName() {
-        return this.connectorName;
+    public String displayName() {
+        return this.displayName;
     }
     public String path() {
         return this.path;
@@ -60,8 +55,7 @@ public final class DatastreamS3Connector {
         private String accessKey;
         private String bucket;
         private @Nullable Boolean compressLogs;
-        private @Nullable Integer connectorId;
-        private String connectorName;
+        private String displayName;
         private String path;
         private String region;
         private String secretAccessKey;
@@ -71,8 +65,7 @@ public final class DatastreamS3Connector {
     	      this.accessKey = defaults.accessKey;
     	      this.bucket = defaults.bucket;
     	      this.compressLogs = defaults.compressLogs;
-    	      this.connectorId = defaults.connectorId;
-    	      this.connectorName = defaults.connectorName;
+    	      this.displayName = defaults.displayName;
     	      this.path = defaults.path;
     	      this.region = defaults.region;
     	      this.secretAccessKey = defaults.secretAccessKey;
@@ -94,13 +87,8 @@ public final class DatastreamS3Connector {
             return this;
         }
         @CustomType.Setter
-        public Builder connectorId(@Nullable Integer connectorId) {
-            this.connectorId = connectorId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder connectorName(String connectorName) {
-            this.connectorName = Objects.requireNonNull(connectorName);
+        public Builder displayName(String displayName) {
+            this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
         @CustomType.Setter
@@ -123,8 +111,7 @@ public final class DatastreamS3Connector {
             o.accessKey = accessKey;
             o.bucket = bucket;
             o.compressLogs = compressLogs;
-            o.connectorId = connectorId;
-            o.connectorName = connectorName;
+            o.displayName = displayName;
             o.path = path;
             o.region = region;
             o.secretAccessKey = secretAccessKey;

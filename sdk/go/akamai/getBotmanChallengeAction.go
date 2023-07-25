@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupBotmanChallengeAction(ctx *pulumi.Context, args *LookupBotmanChallengeActionArgs, opts ...pulumi.InvokeOption) (*LookupBotmanChallengeActionResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBotmanChallengeActionResult
 	err := ctx.Invoke("akamai:index/getBotmanChallengeAction:getBotmanChallengeAction", args, &rv, opts...)
 	if err != nil {

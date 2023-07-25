@@ -27,11 +27,11 @@ namespace Pulumi.Akamai.Inputs
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
-        [Input("connectorId")]
-        public Input<int>? ConnectorId { get; set; }
+        [Input("displayName", required: true)]
+        public Input<string> DisplayName { get; set; } = null!;
 
-        [Input("connectorName", required: true)]
-        public Input<string> ConnectorName { get; set; } = null!;
+        [Input("endpoint", required: true)]
+        public Input<string> Endpoint { get; set; } = null!;
 
         [Input("service")]
         public Input<string>? Service { get; set; }
@@ -41,9 +41,6 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("tags")]
         public Input<string>? Tags { get; set; }
-
-        [Input("url", required: true)]
-        public Input<string> Url { get; set; } = null!;
 
         public DatastreamDatadogConnectorArgs()
         {

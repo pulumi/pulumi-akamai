@@ -4,10 +4,12 @@
 package akamai
 
 import (
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAppSecHostnameCoverage(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetAppSecHostnameCoverageResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppSecHostnameCoverageResult
 	err := ctx.Invoke("akamai:index/getAppSecHostnameCoverage:getAppSecHostnameCoverage", nil, &rv, opts...)
 	if err != nil {

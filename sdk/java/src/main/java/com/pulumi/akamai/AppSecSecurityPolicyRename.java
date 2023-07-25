@@ -20,7 +20,7 @@ public class AppSecSecurityPolicyRename extends com.pulumi.resources.CustomResou
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -34,7 +34,7 @@ public class AppSecSecurityPolicyRename extends com.pulumi.resources.CustomResou
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**
@@ -48,7 +48,7 @@ public class AppSecSecurityPolicyRename extends com.pulumi.resources.CustomResou
      * New name to be given to the security policy
      * 
      */
-    @Export(name="securityPolicyName", type=String.class, parameters={})
+    @Export(name="securityPolicyName", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyName;
 
     /**

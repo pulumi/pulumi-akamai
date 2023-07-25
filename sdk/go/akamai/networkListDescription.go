@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -32,6 +33,7 @@ func NewNetworkListDescription(ctx *pulumi.Context,
 	if args.NetworkListId == nil {
 		return nil, errors.New("invalid value for required argument 'NetworkListId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource NetworkListDescription
 	err := ctx.RegisterResource("akamai:index/networkListDescription:NetworkListDescription", name, args, &resource, opts...)
 	if err != nil {

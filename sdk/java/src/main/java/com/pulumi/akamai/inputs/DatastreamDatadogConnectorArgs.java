@@ -6,7 +6,6 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -31,18 +30,18 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.compressLogs);
     }
 
-    @Import(name="connectorId")
-    private @Nullable Output<Integer> connectorId;
+    @Import(name="displayName", required=true)
+    private Output<String> displayName;
 
-    public Optional<Output<Integer>> connectorId() {
-        return Optional.ofNullable(this.connectorId);
+    public Output<String> displayName() {
+        return this.displayName;
     }
 
-    @Import(name="connectorName", required=true)
-    private Output<String> connectorName;
+    @Import(name="endpoint", required=true)
+    private Output<String> endpoint;
 
-    public Output<String> connectorName() {
-        return this.connectorName;
+    public Output<String> endpoint() {
+        return this.endpoint;
     }
 
     @Import(name="service")
@@ -66,24 +65,16 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.tags);
     }
 
-    @Import(name="url", required=true)
-    private Output<String> url;
-
-    public Output<String> url() {
-        return this.url;
-    }
-
     private DatastreamDatadogConnectorArgs() {}
 
     private DatastreamDatadogConnectorArgs(DatastreamDatadogConnectorArgs $) {
         this.authToken = $.authToken;
         this.compressLogs = $.compressLogs;
-        this.connectorId = $.connectorId;
-        this.connectorName = $.connectorName;
+        this.displayName = $.displayName;
+        this.endpoint = $.endpoint;
         this.service = $.service;
         this.source = $.source;
         this.tags = $.tags;
-        this.url = $.url;
     }
 
     public static Builder builder() {
@@ -122,22 +113,22 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
             return compressLogs(Output.of(compressLogs));
         }
 
-        public Builder connectorId(@Nullable Output<Integer> connectorId) {
-            $.connectorId = connectorId;
+        public Builder displayName(Output<String> displayName) {
+            $.displayName = displayName;
             return this;
         }
 
-        public Builder connectorId(Integer connectorId) {
-            return connectorId(Output.of(connectorId));
+        public Builder displayName(String displayName) {
+            return displayName(Output.of(displayName));
         }
 
-        public Builder connectorName(Output<String> connectorName) {
-            $.connectorName = connectorName;
+        public Builder endpoint(Output<String> endpoint) {
+            $.endpoint = endpoint;
             return this;
         }
 
-        public Builder connectorName(String connectorName) {
-            return connectorName(Output.of(connectorName));
+        public Builder endpoint(String endpoint) {
+            return endpoint(Output.of(endpoint));
         }
 
         public Builder service(@Nullable Output<String> service) {
@@ -167,19 +158,10 @@ public final class DatastreamDatadogConnectorArgs extends com.pulumi.resources.R
             return tags(Output.of(tags));
         }
 
-        public Builder url(Output<String> url) {
-            $.url = url;
-            return this;
-        }
-
-        public Builder url(String url) {
-            return url(Output.of(url));
-        }
-
         public DatastreamDatadogConnectorArgs build() {
             $.authToken = Objects.requireNonNull($.authToken, "expected parameter 'authToken' to be non-null");
-            $.connectorName = Objects.requireNonNull($.connectorName, "expected parameter 'connectorName' to be non-null");
-            $.url = Objects.requireNonNull($.url, "expected parameter 'url' to be non-null");
+            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            $.endpoint = Objects.requireNonNull($.endpoint, "expected parameter 'endpoint' to be non-null");
             return $;
         }
     }

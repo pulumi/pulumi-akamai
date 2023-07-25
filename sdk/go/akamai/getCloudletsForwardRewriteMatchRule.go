@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetCloudletsForwardRewriteMatchRule(ctx *pulumi.Context, args *GetCloudletsForwardRewriteMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsForwardRewriteMatchRuleResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCloudletsForwardRewriteMatchRuleResult
 	err := ctx.Invoke("akamai:index/getCloudletsForwardRewriteMatchRule:getCloudletsForwardRewriteMatchRule", args, &rv, opts...)
 	if err != nil {

@@ -6,64 +6,24 @@ package com.pulumi.akamai.properties.inputs;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetCpCodePlainArgs Empty = new GetCpCodePlainArgs();
 
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    @Import(name="contract")
-    private @Nullable String contract;
+    @Import(name="contractId", required=true)
+    private String contractId;
 
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    public Optional<String> contract() {
-        return Optional.ofNullable(this.contract);
+    public String contractId() {
+        return this.contractId;
     }
 
-    @Import(name="contractId")
-    private @Nullable String contractId;
+    @Import(name="groupId", required=true)
+    private String groupId;
 
-    public Optional<String> contractId() {
-        return Optional.ofNullable(this.contractId);
-    }
-
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    @Import(name="group")
-    private @Nullable String group;
-
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    public Optional<String> group() {
-        return Optional.ofNullable(this.group);
-    }
-
-    @Import(name="groupId")
-    private @Nullable String groupId;
-
-    public Optional<String> groupId() {
-        return Optional.ofNullable(this.groupId);
+    public String groupId() {
+        return this.groupId;
     }
 
     @Import(name="name", required=true)
@@ -76,9 +36,7 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
     private GetCpCodePlainArgs() {}
 
     private GetCpCodePlainArgs(GetCpCodePlainArgs $) {
-        this.contract = $.contract;
         this.contractId = $.contractId;
-        this.group = $.group;
         this.groupId = $.groupId;
         this.name = $.name;
     }
@@ -101,38 +59,12 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetCpCodePlainArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;contract&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""contract"" has been deprecated. */
-        public Builder contract(@Nullable String contract) {
-            $.contract = contract;
-            return this;
-        }
-
-        public Builder contractId(@Nullable String contractId) {
+        public Builder contractId(String contractId) {
             $.contractId = contractId;
             return this;
         }
 
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;group&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""group"" has been deprecated. */
-        public Builder group(@Nullable String group) {
-            $.group = group;
-            return this;
-        }
-
-        public Builder groupId(@Nullable String groupId) {
+        public Builder groupId(String groupId) {
             $.groupId = groupId;
             return this;
         }
@@ -143,6 +75,8 @@ public final class GetCpCodePlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetCpCodePlainArgs build() {
+            $.contractId = Objects.requireNonNull($.contractId, "expected parameter 'contractId' to be non-null");
+            $.groupId = Objects.requireNonNull($.groupId, "expected parameter 'groupId' to be non-null");
             $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
             return $;
         }

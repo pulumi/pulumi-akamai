@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupAppSecSlowPost(ctx *pulumi.Context, args *LookupAppSecSlowPostArgs, opts ...pulumi.InvokeOption) (*LookupAppSecSlowPostResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAppSecSlowPostResult
 	err := ctx.Invoke("akamai:index/getAppSecSlowPost:getAppSecSlowPost", args, &rv, opts...)
 	if err != nil {

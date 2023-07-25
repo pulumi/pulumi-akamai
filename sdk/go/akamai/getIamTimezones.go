@@ -4,10 +4,12 @@
 package akamai
 
 import (
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetIamTimezones(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamTimezonesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIamTimezonesResult
 	err := ctx.Invoke("akamai:index/getIamTimezones:getIamTimezones", nil, &rv, opts...)
 	if err != nil {

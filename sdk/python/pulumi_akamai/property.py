@@ -16,162 +16,69 @@ __all__ = ['PropertyArgs', 'Property']
 @pulumi.input_type
 class PropertyArgs:
     def __init__(__self__, *,
-                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 contract: Optional[pulumi.Input[str]] = None,
-                 contract_id: Optional[pulumi.Input[str]] = None,
-                 cp_code: Optional[pulumi.Input[str]] = None,
-                 group: Optional[pulumi.Input[str]] = None,
-                 group_id: Optional[pulumi.Input[str]] = None,
+                 contract_id: pulumi.Input[str],
+                 group_id: pulumi.Input[str],
+                 product_id: pulumi.Input[str],
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]] = None,
-                 is_secure: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 origins: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyOriginArgs']]]] = None,
-                 product: Optional[pulumi.Input[str]] = None,
-                 product_id: Optional[pulumi.Input[str]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
-                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]] = None,
-                 rules: Optional[pulumi.Input[str]] = None,
-                 variables: Optional[pulumi.Input[str]] = None):
+                 rules: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Property resource.
         :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
         :param pulumi.Input[str] group_id: Group ID to be assigned to the Property
-        :param pulumi.Input[str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[str] product_id: Product ID to be assigned to the Property
+        :param pulumi.Input[str] name: Name to give to the Property (must be unique)
         :param pulumi.Input[str] rule_format: Specify the rule format version (defaults to latest version available when created)
         :param pulumi.Input[str] rules: Property Rules as JSON
         """
-        if contacts is not None:
-            warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
-        if contacts is not None:
-            pulumi.set(__self__, "contacts", contacts)
-        if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-        if contract is not None:
-            pulumi.set(__self__, "contract", contract)
-        if contract_id is not None:
-            pulumi.set(__self__, "contract_id", contract_id)
-        if cp_code is not None:
-            warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
-        if cp_code is not None:
-            pulumi.set(__self__, "cp_code", cp_code)
-        if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-        if group is not None:
-            pulumi.set(__self__, "group", group)
-        if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "product_id", product_id)
         if hostnames is not None:
             pulumi.set(__self__, "hostnames", hostnames)
-        if is_secure is not None:
-            warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
-        if is_secure is not None:
-            pulumi.set(__self__, "is_secure", is_secure)
         if name is not None:
             pulumi.set(__self__, "name", name)
-        if origins is not None:
-            warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
-        if origins is not None:
-            pulumi.set(__self__, "origins", origins)
-        if product is not None:
-            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-        if product is not None:
-            pulumi.set(__self__, "product", product)
-        if product_id is not None:
-            pulumi.set(__self__, "product_id", product_id)
         if rule_format is not None:
             pulumi.set(__self__, "rule_format", rule_format)
-        if rule_warnings is not None:
-            warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
-            pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
-        if rule_warnings is not None:
-            pulumi.set(__self__, "rule_warnings", rule_warnings)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
-        if variables is not None:
-            warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
-        if variables is not None:
-            pulumi.set(__self__, "variables", variables)
-
-    @property
-    @pulumi.getter
-    def contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
-
-        return pulumi.get(self, "contacts")
-
-    @contacts.setter
-    def contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "contacts", value)
-
-    @property
-    @pulumi.getter
-    def contract(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-
-        return pulumi.get(self, "contract")
-
-    @contract.setter
-    def contract(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "contract", value)
 
     @property
     @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[str]]:
+    def contract_id(self) -> pulumi.Input[str]:
         """
         Contract ID to be assigned to the Property
         """
         return pulumi.get(self, "contract_id")
 
     @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[str]]):
+    def contract_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "contract_id", value)
 
     @property
-    @pulumi.getter(name="cpCode")
-    def cp_code(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
-
-        return pulumi.get(self, "cp_code")
-
-    @cp_code.setter
-    def cp_code(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "cp_code", value)
-
-    @property
-    @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-
-        return pulumi.get(self, "group")
-
-    @group.setter
-    def group(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "group", value)
-
-    @property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[str]]:
+    def group_id(self) -> pulumi.Input[str]:
         """
         Group ID to be assigned to the Property
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[str]]):
+    def group_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "group_id", value)
+
+    @property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> pulumi.Input[str]:
+        """
+        Product ID to be assigned to the Property
+        """
+        return pulumi.get(self, "product_id")
+
+    @product_id.setter
+    def product_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "product_id", value)
 
     @property
     @pulumi.getter
@@ -181,18 +88,6 @@ class PropertyArgs:
     @hostnames.setter
     def hostnames(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]):
         pulumi.set(self, "hostnames", value)
-
-    @property
-    @pulumi.getter(name="isSecure")
-    def is_secure(self) -> Optional[pulumi.Input[bool]]:
-        warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
-
-        return pulumi.get(self, "is_secure")
-
-    @is_secure.setter
-    def is_secure(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "is_secure", value)
 
     @property
     @pulumi.getter
@@ -207,42 +102,6 @@ class PropertyArgs:
         pulumi.set(self, "name", value)
 
     @property
-    @pulumi.getter
-    def origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyOriginArgs']]]]:
-        warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
-
-        return pulumi.get(self, "origins")
-
-    @origins.setter
-    def origins(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyOriginArgs']]]]):
-        pulumi.set(self, "origins", value)
-
-    @property
-    @pulumi.getter
-    def product(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-
-        return pulumi.get(self, "product")
-
-    @product.setter
-    def product(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "product", value)
-
-    @property
-    @pulumi.getter(name="productId")
-    def product_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Product ID to be assigned to the Property
-        """
-        return pulumi.get(self, "product_id")
-
-    @product_id.setter
-    def product_id(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "product_id", value)
-
-    @property
     @pulumi.getter(name="ruleFormat")
     def rule_format(self) -> Optional[pulumi.Input[str]]:
         """
@@ -253,18 +112,6 @@ class PropertyArgs:
     @rule_format.setter
     def rule_format(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "rule_format", value)
-
-    @property
-    @pulumi.getter(name="ruleWarnings")
-    def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]:
-        warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
-        pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
-
-        return pulumi.get(self, "rule_warnings")
-
-    @rule_warnings.setter
-    def rule_warnings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]):
-        pulumi.set(self, "rule_warnings", value)
 
     @property
     @pulumi.getter
@@ -278,43 +125,22 @@ class PropertyArgs:
     def rules(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "rules", value)
 
-    @property
-    @pulumi.getter
-    def variables(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
-
-        return pulumi.get(self, "variables")
-
-    @variables.setter
-    def variables(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "variables", value)
-
 
 @pulumi.input_type
 class _PropertyState:
     def __init__(__self__, *,
-                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 contract: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
-                 cp_code: Optional[pulumi.Input[str]] = None,
-                 group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]] = None,
-                 is_secure: Optional[pulumi.Input[bool]] = None,
                  latest_version: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 origins: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyOriginArgs']]]] = None,
-                 product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  production_version: Optional[pulumi.Input[int]] = None,
                  read_version: Optional[pulumi.Input[int]] = None,
                  rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleErrorArgs']]]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
-                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
-                 staging_version: Optional[pulumi.Input[int]] = None,
-                 variables: Optional[pulumi.Input[str]] = None):
+                 staging_version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering Property resources.
         :param pulumi.Input[str] contract_id: Contract ID to be assigned to the Property
@@ -328,51 +154,16 @@ class _PropertyState:
         :param pulumi.Input[str] rules: Property Rules as JSON
         :param pulumi.Input[int] staging_version: Property's version currently activated in staging (zero when not active in staging)
         """
-        if contacts is not None:
-            warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
-        if contacts is not None:
-            pulumi.set(__self__, "contacts", contacts)
-        if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-        if contract is not None:
-            pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
-        if cp_code is not None:
-            warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
-        if cp_code is not None:
-            pulumi.set(__self__, "cp_code", cp_code)
-        if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-        if group is not None:
-            pulumi.set(__self__, "group", group)
         if group_id is not None:
             pulumi.set(__self__, "group_id", group_id)
         if hostnames is not None:
             pulumi.set(__self__, "hostnames", hostnames)
-        if is_secure is not None:
-            warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
-        if is_secure is not None:
-            pulumi.set(__self__, "is_secure", is_secure)
         if latest_version is not None:
             pulumi.set(__self__, "latest_version", latest_version)
         if name is not None:
             pulumi.set(__self__, "name", name)
-        if origins is not None:
-            warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
-        if origins is not None:
-            pulumi.set(__self__, "origins", origins)
-        if product is not None:
-            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-        if product is not None:
-            pulumi.set(__self__, "product", product)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
         if production_version is not None:
@@ -383,44 +174,10 @@ class _PropertyState:
             pulumi.set(__self__, "rule_errors", rule_errors)
         if rule_format is not None:
             pulumi.set(__self__, "rule_format", rule_format)
-        if rule_warnings is not None:
-            warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
-            pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
-        if rule_warnings is not None:
-            pulumi.set(__self__, "rule_warnings", rule_warnings)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if staging_version is not None:
             pulumi.set(__self__, "staging_version", staging_version)
-        if variables is not None:
-            warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
-        if variables is not None:
-            pulumi.set(__self__, "variables", variables)
-
-    @property
-    @pulumi.getter
-    def contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
-
-        return pulumi.get(self, "contacts")
-
-    @contacts.setter
-    def contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "contacts", value)
-
-    @property
-    @pulumi.getter
-    def contract(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-
-        return pulumi.get(self, "contract")
-
-    @contract.setter
-    def contract(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "contract", value)
 
     @property
     @pulumi.getter(name="contractId")
@@ -433,30 +190,6 @@ class _PropertyState:
     @contract_id.setter
     def contract_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "contract_id", value)
-
-    @property
-    @pulumi.getter(name="cpCode")
-    def cp_code(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
-
-        return pulumi.get(self, "cp_code")
-
-    @cp_code.setter
-    def cp_code(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "cp_code", value)
-
-    @property
-    @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-
-        return pulumi.get(self, "group")
-
-    @group.setter
-    def group(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "group", value)
 
     @property
     @pulumi.getter(name="groupId")
@@ -478,18 +211,6 @@ class _PropertyState:
     @hostnames.setter
     def hostnames(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyHostnameArgs']]]]):
         pulumi.set(self, "hostnames", value)
-
-    @property
-    @pulumi.getter(name="isSecure")
-    def is_secure(self) -> Optional[pulumi.Input[bool]]:
-        warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
-
-        return pulumi.get(self, "is_secure")
-
-    @is_secure.setter
-    def is_secure(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "is_secure", value)
 
     @property
     @pulumi.getter(name="latestVersion")
@@ -514,30 +235,6 @@ class _PropertyState:
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyOriginArgs']]]]:
-        warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
-
-        return pulumi.get(self, "origins")
-
-    @origins.setter
-    def origins(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyOriginArgs']]]]):
-        pulumi.set(self, "origins", value)
-
-    @property
-    @pulumi.getter
-    def product(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-
-        return pulumi.get(self, "product")
-
-    @product.setter
-    def product(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "product", value)
 
     @property
     @pulumi.getter(name="productId")
@@ -597,18 +294,6 @@ class _PropertyState:
         pulumi.set(self, "rule_format", value)
 
     @property
-    @pulumi.getter(name="ruleWarnings")
-    def rule_warnings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]:
-        warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
-        pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
-
-        return pulumi.get(self, "rule_warnings")
-
-    @rule_warnings.setter
-    def rule_warnings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PropertyRuleWarningArgs']]]]):
-        pulumi.set(self, "rule_warnings", value)
-
-    @property
     @pulumi.getter
     def rules(self) -> Optional[pulumi.Input[str]]:
         """
@@ -632,40 +317,19 @@ class _PropertyState:
     def staging_version(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "staging_version", value)
 
-    @property
-    @pulumi.getter
-    def variables(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
-
-        return pulumi.get(self, "variables")
-
-    @variables.setter
-    def variables(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "variables", value)
-
 
 class Property(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 contract: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
-                 cp_code: Optional[pulumi.Input[str]] = None,
-                 group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]]] = None,
-                 is_secure: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 origins: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
-                 product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
-                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
-                 variables: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a Property resource with the given unique name, props, and options.
@@ -682,7 +346,7 @@ class Property(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: Optional[PropertyArgs] = None,
+                 args: PropertyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a Property resource with the given unique name, props, and options.
@@ -701,22 +365,13 @@ class Property(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 contract: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
-                 cp_code: Optional[pulumi.Input[str]] = None,
-                 group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]]] = None,
-                 is_secure: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 origins: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
-                 product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  rule_format: Optional[pulumi.Input[str]] = None,
-                 rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]]] = None,
                  rules: Optional[pulumi.Input[str]] = None,
-                 variables: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -726,49 +381,19 @@ class Property(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = PropertyArgs.__new__(PropertyArgs)
 
-            if contacts is not None and not opts.urn:
-                warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
-            __props__.__dict__["contacts"] = contacts
-            if contract is not None and not opts.urn:
-                warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-            __props__.__dict__["contract"] = contract
+            if contract_id is None and not opts.urn:
+                raise TypeError("Missing required property 'contract_id'")
             __props__.__dict__["contract_id"] = contract_id
-            if cp_code is not None and not opts.urn:
-                warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
-            __props__.__dict__["cp_code"] = cp_code
-            if group is not None and not opts.urn:
-                warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-            __props__.__dict__["group"] = group
+            if group_id is None and not opts.urn:
+                raise TypeError("Missing required property 'group_id'")
             __props__.__dict__["group_id"] = group_id
             __props__.__dict__["hostnames"] = hostnames
-            if is_secure is not None and not opts.urn:
-                warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
-            __props__.__dict__["is_secure"] = is_secure
             __props__.__dict__["name"] = name
-            if origins is not None and not opts.urn:
-                warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
-            __props__.__dict__["origins"] = origins
-            if product is not None and not opts.urn:
-                warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-            __props__.__dict__["product"] = product
+            if product_id is None and not opts.urn:
+                raise TypeError("Missing required property 'product_id'")
             __props__.__dict__["product_id"] = product_id
             __props__.__dict__["rule_format"] = rule_format
-            if rule_warnings is not None and not opts.urn:
-                warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
-                pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
-            __props__.__dict__["rule_warnings"] = rule_warnings
             __props__.__dict__["rules"] = rules
-            if variables is not None and not opts.urn:
-                warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
-            __props__.__dict__["variables"] = variables
             __props__.__dict__["latest_version"] = None
             __props__.__dict__["production_version"] = None
             __props__.__dict__["read_version"] = None
@@ -786,27 +411,18 @@ class Property(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            contacts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            contract: Optional[pulumi.Input[str]] = None,
             contract_id: Optional[pulumi.Input[str]] = None,
-            cp_code: Optional[pulumi.Input[str]] = None,
-            group: Optional[pulumi.Input[str]] = None,
             group_id: Optional[pulumi.Input[str]] = None,
             hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyHostnameArgs']]]]] = None,
-            is_secure: Optional[pulumi.Input[bool]] = None,
             latest_version: Optional[pulumi.Input[int]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            origins: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyOriginArgs']]]]] = None,
-            product: Optional[pulumi.Input[str]] = None,
             product_id: Optional[pulumi.Input[str]] = None,
             production_version: Optional[pulumi.Input[int]] = None,
             read_version: Optional[pulumi.Input[int]] = None,
             rule_errors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleErrorArgs']]]]] = None,
             rule_format: Optional[pulumi.Input[str]] = None,
-            rule_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PropertyRuleWarningArgs']]]]] = None,
             rules: Optional[pulumi.Input[str]] = None,
-            staging_version: Optional[pulumi.Input[int]] = None,
-            variables: Optional[pulumi.Input[str]] = None) -> 'Property':
+            staging_version: Optional[pulumi.Input[int]] = None) -> 'Property':
         """
         Get an existing Property resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -829,44 +445,19 @@ class Property(pulumi.CustomResource):
 
         __props__ = _PropertyState.__new__(_PropertyState)
 
-        __props__.__dict__["contacts"] = contacts
-        __props__.__dict__["contract"] = contract
         __props__.__dict__["contract_id"] = contract_id
-        __props__.__dict__["cp_code"] = cp_code
-        __props__.__dict__["group"] = group
         __props__.__dict__["group_id"] = group_id
         __props__.__dict__["hostnames"] = hostnames
-        __props__.__dict__["is_secure"] = is_secure
         __props__.__dict__["latest_version"] = latest_version
         __props__.__dict__["name"] = name
-        __props__.__dict__["origins"] = origins
-        __props__.__dict__["product"] = product
         __props__.__dict__["product_id"] = product_id
         __props__.__dict__["production_version"] = production_version
         __props__.__dict__["read_version"] = read_version
         __props__.__dict__["rule_errors"] = rule_errors
         __props__.__dict__["rule_format"] = rule_format
-        __props__.__dict__["rule_warnings"] = rule_warnings
         __props__.__dict__["rules"] = rules
         __props__.__dict__["staging_version"] = staging_version
-        __props__.__dict__["variables"] = variables
         return Property(resource_name, opts=opts, __props__=__props__)
-
-    @property
-    @pulumi.getter
-    def contacts(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        warnings.warn("""The setting \"contact\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contacts is deprecated: The setting \"contact\" has been deprecated.""")
-
-        return pulumi.get(self, "contacts")
-
-    @property
-    @pulumi.getter
-    def contract(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-
-        return pulumi.get(self, "contract")
 
     @property
     @pulumi.getter(name="contractId")
@@ -875,22 +466,6 @@ class Property(pulumi.CustomResource):
         Contract ID to be assigned to the Property
         """
         return pulumi.get(self, "contract_id")
-
-    @property
-    @pulumi.getter(name="cpCode")
-    def cp_code(self) -> pulumi.Output[Optional[str]]:
-        warnings.warn("""The setting \"cp_code\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""cp_code is deprecated: The setting \"cp_code\" has been deprecated.""")
-
-        return pulumi.get(self, "cp_code")
-
-    @property
-    @pulumi.getter
-    def group(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-
-        return pulumi.get(self, "group")
 
     @property
     @pulumi.getter(name="groupId")
@@ -904,14 +479,6 @@ class Property(pulumi.CustomResource):
     @pulumi.getter
     def hostnames(self) -> pulumi.Output[Optional[Sequence['outputs.PropertyHostname']]]:
         return pulumi.get(self, "hostnames")
-
-    @property
-    @pulumi.getter(name="isSecure")
-    def is_secure(self) -> pulumi.Output[Optional[bool]]:
-        warnings.warn("""The setting \"is_secure\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""is_secure is deprecated: The setting \"is_secure\" has been deprecated.""")
-
-        return pulumi.get(self, "is_secure")
 
     @property
     @pulumi.getter(name="latestVersion")
@@ -928,22 +495,6 @@ class Property(pulumi.CustomResource):
         Name to give to the Property (must be unique)
         """
         return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def origins(self) -> pulumi.Output[Optional[Sequence['outputs.PropertyOrigin']]]:
-        warnings.warn("""The setting \"origin\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""origins is deprecated: The setting \"origin\" has been deprecated.""")
-
-        return pulumi.get(self, "origins")
-
-    @property
-    @pulumi.getter
-    def product(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-
-        return pulumi.get(self, "product")
 
     @property
     @pulumi.getter(name="productId")
@@ -983,14 +534,6 @@ class Property(pulumi.CustomResource):
         return pulumi.get(self, "rule_format")
 
     @property
-    @pulumi.getter(name="ruleWarnings")
-    def rule_warnings(self) -> pulumi.Output[Sequence['outputs.PropertyRuleWarning']]:
-        warnings.warn("""Rule warnings will not be set in state anymore""", DeprecationWarning)
-        pulumi.log.warn("""rule_warnings is deprecated: Rule warnings will not be set in state anymore""")
-
-        return pulumi.get(self, "rule_warnings")
-
-    @property
     @pulumi.getter
     def rules(self) -> pulumi.Output[str]:
         """
@@ -1005,12 +548,4 @@ class Property(pulumi.CustomResource):
         Property's version currently activated in staging (zero when not active in staging)
         """
         return pulumi.get(self, "staging_version")
-
-    @property
-    @pulumi.getter
-    def variables(self) -> pulumi.Output[Optional[str]]:
-        warnings.warn("""The setting \"variables\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""variables is deprecated: The setting \"variables\" has been deprecated.""")
-
-        return pulumi.get(self, "variables")
 

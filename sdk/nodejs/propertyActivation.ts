@@ -36,7 +36,7 @@ export class PropertyActivation extends pulumi.CustomResource {
 
     public readonly activationId!: pulumi.Output<string>;
     /**
-     * automatically acknowledge all rule warnings for activation to continue. default is true
+     * Automatically acknowledge all rule warnings for activation to continue. Default is false
      */
     public readonly autoAcknowledgeRuleWarnings!: pulumi.Output<boolean | undefined>;
     /**
@@ -50,16 +50,8 @@ export class PropertyActivation extends pulumi.CustomResource {
      * assigns a log message to the activation request
      */
     public readonly note!: pulumi.Output<string | undefined>;
-    /**
-     * @deprecated The setting "property" has been deprecated.
-     */
-    public readonly property!: pulumi.Output<string>;
     public readonly propertyId!: pulumi.Output<string>;
     public readonly ruleErrors!: pulumi.Output<outputs.PropertyActivationRuleError[]>;
-    /**
-     * @deprecated Rule warnings will not be set in state anymore
-     */
-    public readonly ruleWarnings!: pulumi.Output<outputs.PropertyActivationRuleWarning[]>;
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly version!: pulumi.Output<number>;
     public /*out*/ readonly warnings!: pulumi.Output<string>;
@@ -84,10 +76,8 @@ export class PropertyActivation extends pulumi.CustomResource {
             resourceInputs["errors"] = state ? state.errors : undefined;
             resourceInputs["network"] = state ? state.network : undefined;
             resourceInputs["note"] = state ? state.note : undefined;
-            resourceInputs["property"] = state ? state.property : undefined;
             resourceInputs["propertyId"] = state ? state.propertyId : undefined;
             resourceInputs["ruleErrors"] = state ? state.ruleErrors : undefined;
-            resourceInputs["ruleWarnings"] = state ? state.ruleWarnings : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
             resourceInputs["warnings"] = state ? state.warnings : undefined;
@@ -95,6 +85,9 @@ export class PropertyActivation extends pulumi.CustomResource {
             const args = argsOrState as PropertyActivationArgs | undefined;
             if ((!args || args.contacts === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'contacts'");
+            }
+            if ((!args || args.propertyId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'propertyId'");
             }
             if ((!args || args.version === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'version'");
@@ -105,10 +98,8 @@ export class PropertyActivation extends pulumi.CustomResource {
             resourceInputs["contacts"] = args ? args.contacts : undefined;
             resourceInputs["network"] = args ? args.network : undefined;
             resourceInputs["note"] = args ? args.note : undefined;
-            resourceInputs["property"] = args ? args.property : undefined;
             resourceInputs["propertyId"] = args ? args.propertyId : undefined;
             resourceInputs["ruleErrors"] = args ? args.ruleErrors : undefined;
-            resourceInputs["ruleWarnings"] = args ? args.ruleWarnings : undefined;
             resourceInputs["version"] = args ? args.version : undefined;
             resourceInputs["errors"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
@@ -127,7 +118,7 @@ export class PropertyActivation extends pulumi.CustomResource {
 export interface PropertyActivationState {
     activationId?: pulumi.Input<string>;
     /**
-     * automatically acknowledge all rule warnings for activation to continue. default is true
+     * Automatically acknowledge all rule warnings for activation to continue. Default is false
      */
     autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
     /**
@@ -141,16 +132,8 @@ export interface PropertyActivationState {
      * assigns a log message to the activation request
      */
     note?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "property" has been deprecated.
-     */
-    property?: pulumi.Input<string>;
     propertyId?: pulumi.Input<string>;
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleError>[]>;
-    /**
-     * @deprecated Rule warnings will not be set in state anymore
-     */
-    ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleWarning>[]>;
     status?: pulumi.Input<string>;
     version?: pulumi.Input<number>;
     warnings?: pulumi.Input<string>;
@@ -162,7 +145,7 @@ export interface PropertyActivationState {
 export interface PropertyActivationArgs {
     activationId?: pulumi.Input<string>;
     /**
-     * automatically acknowledge all rule warnings for activation to continue. default is true
+     * Automatically acknowledge all rule warnings for activation to continue. Default is false
      */
     autoAcknowledgeRuleWarnings?: pulumi.Input<boolean>;
     /**
@@ -175,15 +158,7 @@ export interface PropertyActivationArgs {
      * assigns a log message to the activation request
      */
     note?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "property" has been deprecated.
-     */
-    property?: pulumi.Input<string>;
-    propertyId?: pulumi.Input<string>;
+    propertyId: pulumi.Input<string>;
     ruleErrors?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleError>[]>;
-    /**
-     * @deprecated Rule warnings will not be set in state anymore
-     */
-    ruleWarnings?: pulumi.Input<pulumi.Input<inputs.PropertyActivationRuleWarning>[]>;
     version: pulumi.Input<number>;
 }

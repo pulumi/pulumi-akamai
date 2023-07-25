@@ -20,7 +20,7 @@ public class AppSecMatchTarget extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -34,7 +34,7 @@ public class AppSecMatchTarget extends com.pulumi.resources.CustomResource {
      * JSON-formatted definition of the match target
      * 
      */
-    @Export(name="matchTarget", type=String.class, parameters={})
+    @Export(name="matchTarget", refs={String.class}, tree="[0]")
     private Output<String> matchTarget;
 
     /**
@@ -48,7 +48,7 @@ public class AppSecMatchTarget extends com.pulumi.resources.CustomResource {
      * Unique identifier of the match target
      * 
      */
-    @Export(name="matchTargetId", type=Integer.class, parameters={})
+    @Export(name="matchTargetId", refs={Integer.class}, tree="[0]")
     private Output<Integer> matchTargetId;
 
     /**

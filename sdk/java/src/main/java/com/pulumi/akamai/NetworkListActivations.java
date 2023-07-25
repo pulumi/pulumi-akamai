@@ -10,7 +10,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
-import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -20,22 +19,10 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/networkListActivations:NetworkListActivations")
 public class NetworkListActivations extends com.pulumi.resources.CustomResource {
     /**
-     * @deprecated
-     * The setting &#34;activate&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""activate"" has been deprecated. */
-    @Export(name="activate", type=Boolean.class, parameters={})
-    private Output</* @Nullable */ Boolean> activate;
-
-    public Output<Optional<Boolean>> activate() {
-        return Codegen.optional(this.activate);
-    }
-    /**
      * The Akamai network on which the list is activated: STAGING or PRODUCTION
      * 
      */
-    @Export(name="network", type=String.class, parameters={})
+    @Export(name="network", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> network;
 
     /**
@@ -49,7 +36,7 @@ public class NetworkListActivations extends com.pulumi.resources.CustomResource 
      * Unique identifier of the network list
      * 
      */
-    @Export(name="networkListId", type=String.class, parameters={})
+    @Export(name="networkListId", refs={String.class}, tree="[0]")
     private Output<String> networkListId;
 
     /**
@@ -63,7 +50,7 @@ public class NetworkListActivations extends com.pulumi.resources.CustomResource 
      * Descriptive text to accompany the activation
      * 
      */
-    @Export(name="notes", type=String.class, parameters={})
+    @Export(name="notes", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> notes;
 
     /**
@@ -77,7 +64,7 @@ public class NetworkListActivations extends com.pulumi.resources.CustomResource 
      * List of email addresses of Control Center users who receive an email when activation of this list is complete
      * 
      */
-    @Export(name="notificationEmails", type=List.class, parameters={String.class})
+    @Export(name="notificationEmails", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> notificationEmails;
 
     /**
@@ -91,7 +78,7 @@ public class NetworkListActivations extends com.pulumi.resources.CustomResource 
      * This network list&#39;s current activation status in the environment specified by the &#34;network&#34; attribute
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -105,7 +92,7 @@ public class NetworkListActivations extends com.pulumi.resources.CustomResource 
      * Identifies the sync point of the network list to be activated
      * 
      */
-    @Export(name="syncPoint", type=Integer.class, parameters={})
+    @Export(name="syncPoint", refs={Integer.class}, tree="[0]")
     private Output<Integer> syncPoint;
 
     /**

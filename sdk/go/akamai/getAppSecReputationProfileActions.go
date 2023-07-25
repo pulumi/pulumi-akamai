@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAppSecReputationProfileActions(ctx *pulumi.Context, args *GetAppSecReputationProfileActionsArgs, opts ...pulumi.InvokeOption) (*GetAppSecReputationProfileActionsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppSecReputationProfileActionsResult
 	err := ctx.Invoke("akamai:index/getAppSecReputationProfileActions:getAppSecReputationProfileActions", args, &rv, opts...)
 	if err != nil {

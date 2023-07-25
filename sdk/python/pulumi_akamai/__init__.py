@@ -53,6 +53,7 @@ from .app_sec_waf_mode import *
 from .app_sec_waf_protection import *
 from .app_sec_wap_selected_hostnames import *
 from .appsec_advanced_settings_attack_payload_logging import *
+from .appsec_advanced_settings_pii_learning import *
 from .appsec_advanced_settings_request_body import *
 from .botman_akamai_bot_category_action import *
 from .botman_bot_analytics_cookie import *
@@ -140,6 +141,7 @@ from .get_app_sec_version_notes import *
 from .get_app_sec_waf_mode import *
 from .get_app_sec_wap_selected_hostnames import *
 from .get_appsec_advanced_settings_attack_payload_logging import *
+from .get_appsec_advanced_settings_pii_learning import *
 from .get_appsec_advanced_settings_request_body import *
 from .get_authorities_set import *
 from .get_botman_akamai_bot_category import *
@@ -209,6 +211,8 @@ from .get_iam_states import *
 from .get_iam_supported_langs import *
 from .get_iam_timeout_policies import *
 from .get_iam_timezones import *
+from .get_imaging_policy_image import *
+from .get_imaging_policy_video import *
 from .get_network_lists import *
 from .get_properties import *
 from .get_properties_search import *
@@ -236,6 +240,9 @@ from .iam_blocked_user_properties import *
 from .iam_group import *
 from .iam_role import *
 from .iam_user import *
+from .imaging_policy_image import *
+from .imaging_policy_set import *
+from .imaging_policy_video import *
 from .network_list import *
 from .network_list_activations import *
 from .network_list_description import *
@@ -653,6 +660,14 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/appsecAdvancedSettingsPiiLearning",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecAdvancedSettingsPiiLearning:AppsecAdvancedSettingsPiiLearning": "AppsecAdvancedSettingsPiiLearning"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/appsecAdvancedSettingsRequestBody",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -1041,6 +1056,30 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/iamUser:IamUser": "IamUser"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/imagingPolicyImage",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/imagingPolicyImage:ImagingPolicyImage": "ImagingPolicyImage"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/imagingPolicySet",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/imagingPolicySet:ImagingPolicySet": "ImagingPolicySet"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/imagingPolicyVideo",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/imagingPolicyVideo:ImagingPolicyVideo": "ImagingPolicyVideo"
   }
  },
  {

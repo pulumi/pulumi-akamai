@@ -21,31 +21,31 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/gtmAsmap:GtmAsmap")
 public class GtmAsmap extends com.pulumi.resources.CustomResource {
-    @Export(name="assignments", type=List.class, parameters={GtmAsmapAssignment.class})
+    @Export(name="assignments", refs={List.class,GtmAsmapAssignment.class}, tree="[0,1]")
     private Output</* @Nullable */ List<GtmAsmapAssignment>> assignments;
 
     public Output<Optional<List<GtmAsmapAssignment>>> assignments() {
         return Codegen.optional(this.assignments);
     }
-    @Export(name="defaultDatacenter", type=GtmAsmapDefaultDatacenter.class, parameters={})
+    @Export(name="defaultDatacenter", refs={GtmAsmapDefaultDatacenter.class}, tree="[0]")
     private Output<GtmAsmapDefaultDatacenter> defaultDatacenter;
 
     public Output<GtmAsmapDefaultDatacenter> defaultDatacenter() {
         return this.defaultDatacenter;
     }
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     public Output<String> domain() {
         return this.domain;
     }
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     public Output<String> name() {
         return this.name;
     }
-    @Export(name="waitOnComplete", type=Boolean.class, parameters={})
+    @Export(name="waitOnComplete", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> waitOnComplete;
 
     public Output<Optional<Boolean>> waitOnComplete() {

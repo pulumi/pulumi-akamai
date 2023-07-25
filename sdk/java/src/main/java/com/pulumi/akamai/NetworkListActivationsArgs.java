@@ -5,7 +5,6 @@ package com.pulumi.akamai;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -17,25 +16,6 @@ import javax.annotation.Nullable;
 public final class NetworkListActivationsArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final NetworkListActivationsArgs Empty = new NetworkListActivationsArgs();
-
-    /**
-     * @deprecated
-     * The setting &#34;activate&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""activate"" has been deprecated. */
-    @Import(name="activate")
-    private @Nullable Output<Boolean> activate;
-
-    /**
-     * @deprecated
-     * The setting &#34;activate&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""activate"" has been deprecated. */
-    public Optional<Output<Boolean>> activate() {
-        return Optional.ofNullable(this.activate);
-    }
 
     /**
      * The Akamai network on which the list is activated: STAGING or PRODUCTION
@@ -115,7 +95,6 @@ public final class NetworkListActivationsArgs extends com.pulumi.resources.Resou
     private NetworkListActivationsArgs() {}
 
     private NetworkListActivationsArgs(NetworkListActivationsArgs $) {
-        this.activate = $.activate;
         this.network = $.network;
         this.networkListId = $.networkListId;
         this.notes = $.notes;
@@ -139,31 +118,6 @@ public final class NetworkListActivationsArgs extends com.pulumi.resources.Resou
 
         public Builder(NetworkListActivationsArgs defaults) {
             $ = new NetworkListActivationsArgs(Objects.requireNonNull(defaults));
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;activate&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""activate"" has been deprecated. */
-        public Builder activate(@Nullable Output<Boolean> activate) {
-            $.activate = activate;
-            return this;
-        }
-
-        /**
-         * @return builder
-         * 
-         * @deprecated
-         * The setting &#34;activate&#34; has been deprecated.
-         * 
-         */
-        @Deprecated /* The setting ""activate"" has been deprecated. */
-        public Builder activate(Boolean activate) {
-            return activate(Output.of(activate));
         }
 
         /**

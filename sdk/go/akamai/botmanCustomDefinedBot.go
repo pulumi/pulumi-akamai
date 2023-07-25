@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -32,6 +33,7 @@ func NewBotmanCustomDefinedBot(ctx *pulumi.Context,
 	if args.CustomDefinedBot == nil {
 		return nil, errors.New("invalid value for required argument 'CustomDefinedBot'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BotmanCustomDefinedBot
 	err := ctx.RegisterResource("akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot", name, args, &resource, opts...)
 	if err != nil {

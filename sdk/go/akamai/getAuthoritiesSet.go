@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAuthoritiesSet(ctx *pulumi.Context, args *GetAuthoritiesSetArgs, opts ...pulumi.InvokeOption) (*GetAuthoritiesSetResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAuthoritiesSetResult
 	err := ctx.Invoke("akamai:index/getAuthoritiesSet:getAuthoritiesSet", args, &rv, opts...)
 	if err != nil {

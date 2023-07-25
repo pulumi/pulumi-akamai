@@ -5,7 +5,6 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,8 +15,7 @@ public final class DatastreamOracleConnector {
     private String accessKey;
     private String bucket;
     private @Nullable Boolean compressLogs;
-    private @Nullable Integer connectorId;
-    private String connectorName;
+    private String displayName;
     private String namespace;
     private String path;
     private String region;
@@ -33,11 +31,8 @@ public final class DatastreamOracleConnector {
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
-    public Optional<Integer> connectorId() {
-        return Optional.ofNullable(this.connectorId);
-    }
-    public String connectorName() {
-        return this.connectorName;
+    public String displayName() {
+        return this.displayName;
     }
     public String namespace() {
         return this.namespace;
@@ -64,8 +59,7 @@ public final class DatastreamOracleConnector {
         private String accessKey;
         private String bucket;
         private @Nullable Boolean compressLogs;
-        private @Nullable Integer connectorId;
-        private String connectorName;
+        private String displayName;
         private String namespace;
         private String path;
         private String region;
@@ -76,8 +70,7 @@ public final class DatastreamOracleConnector {
     	      this.accessKey = defaults.accessKey;
     	      this.bucket = defaults.bucket;
     	      this.compressLogs = defaults.compressLogs;
-    	      this.connectorId = defaults.connectorId;
-    	      this.connectorName = defaults.connectorName;
+    	      this.displayName = defaults.displayName;
     	      this.namespace = defaults.namespace;
     	      this.path = defaults.path;
     	      this.region = defaults.region;
@@ -100,13 +93,8 @@ public final class DatastreamOracleConnector {
             return this;
         }
         @CustomType.Setter
-        public Builder connectorId(@Nullable Integer connectorId) {
-            this.connectorId = connectorId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder connectorName(String connectorName) {
-            this.connectorName = Objects.requireNonNull(connectorName);
+        public Builder displayName(String displayName) {
+            this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
         @CustomType.Setter
@@ -134,8 +122,7 @@ public final class DatastreamOracleConnector {
             o.accessKey = accessKey;
             o.bucket = bucket;
             o.compressLogs = compressLogs;
-            o.connectorId = connectorId;
-            o.connectorName = connectorName;
+            o.displayName = displayName;
             o.namespace = namespace;
             o.path = path;
             o.region = region;

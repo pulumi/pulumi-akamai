@@ -9,7 +9,6 @@ export function getContract(args?: GetContractArgs, opts?: pulumi.InvokeOptions)
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getContract:getContract", {
-        "group": args.group,
         "groupId": args.groupId,
         "groupName": args.groupName,
     }, opts);
@@ -19,10 +18,6 @@ export function getContract(args?: GetContractArgs, opts?: pulumi.InvokeOptions)
  * A collection of arguments for invoking getContract.
  */
 export interface GetContractArgs {
-    /**
-     * @deprecated The setting "group" has been deprecated.
-     */
-    group?: string;
     groupId?: string;
     groupName?: string;
 }
@@ -31,10 +26,6 @@ export interface GetContractArgs {
  * A collection of values returned by getContract.
  */
 export interface GetContractResult {
-    /**
-     * @deprecated The setting "group" has been deprecated.
-     */
-    readonly group?: string;
     readonly groupId: string;
     readonly groupName: string;
     /**
@@ -50,10 +41,6 @@ export function getContractOutput(args?: GetContractOutputArgs, opts?: pulumi.In
  * A collection of arguments for invoking getContract.
  */
 export interface GetContractOutputArgs {
-    /**
-     * @deprecated The setting "group" has been deprecated.
-     */
-    group?: pulumi.Input<string>;
     groupId?: pulumi.Input<string>;
     groupName?: pulumi.Input<string>;
 }

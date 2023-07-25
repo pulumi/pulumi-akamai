@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -17,8 +18,8 @@ type Datastream struct {
 	// Defining if stream should be active or not
 	Active         pulumi.BoolOutput                 `pulumi:"active"`
 	AzureConnector DatastreamAzureConnectorPtrOutput `pulumi:"azureConnector"`
-	// Provides information about the configuration related to logs (format, file names, delivery frequency)
-	Config DatastreamConfigOutput `pulumi:"config"`
+	// Identifies if stream needs to collect midgress data
+	CollectMidgress pulumi.BoolPtrOutput `pulumi:"collectMidgress"`
 	// Identifies the contract that has access to the product
 	ContractId pulumi.StringOutput `pulumi:"contractId"`
 	// The username who created the stream
@@ -28,42 +29,38 @@ type Datastream struct {
 	DatadogConnector DatastreamDatadogConnectorPtrOutput `pulumi:"datadogConnector"`
 	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
 	// identifiers define how the value for these fields appear in the log lines
-	DatasetFieldsIds       pulumi.IntArrayOutput                     `pulumi:"datasetFieldsIds"`
+	DatasetFields pulumi.IntArrayOutput `pulumi:"datasetFields"`
+	// Provides information about the configuration related to logs (format, file names, delivery frequency)
+	DeliveryConfiguration  DatastreamDeliveryConfigurationOutput     `pulumi:"deliveryConfiguration"`
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrOutput `pulumi:"elasticsearchConnector"`
-	// List of email addresses where the system sends notifications about activations and deactivations of the stream
-	EmailIds     pulumi.StringArrayOutput        `pulumi:"emailIds"`
-	GcsConnector DatastreamGcsConnectorPtrOutput `pulumi:"gcsConnector"`
+	GcsConnector           DatastreamGcsConnectorPtrOutput           `pulumi:"gcsConnector"`
 	// Identifies the group that has access to the product and for which the stream configuration was created
-	GroupId pulumi.StringOutput `pulumi:"groupId"`
-	// The name of the user group for which the stream was created
-	GroupName       pulumi.StringOutput                `pulumi:"groupName"`
-	HttpsConnector  DatastreamHttpsConnectorPtrOutput  `pulumi:"httpsConnector"`
+	GroupId        pulumi.StringOutput               `pulumi:"groupId"`
+	HttpsConnector DatastreamHttpsConnectorPtrOutput `pulumi:"httpsConnector"`
+	// Identifies the latest active configuration version of the stream
+	LatestVersion   pulumi.IntOutput                   `pulumi:"latestVersion"`
 	LogglyConnector DatastreamLogglyConnectorPtrOutput `pulumi:"logglyConnector"`
 	// The username who modified the stream
 	ModifiedBy pulumi.StringOutput `pulumi:"modifiedBy"`
 	// The date and time when the stream was modified
 	ModifiedDate      pulumi.StringOutput                  `pulumi:"modifiedDate"`
 	NewRelicConnector DatastreamNewRelicConnectorPtrOutput `pulumi:"newRelicConnector"`
-	OracleConnector   DatastreamOracleConnectorPtrOutput   `pulumi:"oracleConnector"`
+	// List of email addresses where the system sends notifications about activations and deactivations of the stream
+	NotificationEmails pulumi.StringArrayOutput           `pulumi:"notificationEmails"`
+	OracleConnector    DatastreamOracleConnectorPtrOutput `pulumi:"oracleConnector"`
 	// The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
 	PapiJson pulumi.StringOutput `pulumi:"papiJson"`
 	// The ID of the product for which the stream was created
 	ProductId pulumi.StringOutput `pulumi:"productId"`
-	// The name of the product for which the stream was created
-	ProductName pulumi.StringOutput `pulumi:"productName"`
 	// Identifies the properties monitored in the stream
-	PropertyIds     pulumi.StringArrayOutput           `pulumi:"propertyIds"`
+	Properties      pulumi.StringArrayOutput           `pulumi:"properties"`
 	S3Connector     DatastreamS3ConnectorPtrOutput     `pulumi:"s3Connector"`
 	SplunkConnector DatastreamSplunkConnectorPtrOutput `pulumi:"splunkConnector"`
 	// The name of the stream
 	StreamName pulumi.StringOutput `pulumi:"streamName"`
-	// Specifies the type of the data stream
-	StreamType pulumi.StringOutput `pulumi:"streamType"`
 	// Identifies the configuration version of the stream
-	StreamVersionId    pulumi.IntOutput                      `pulumi:"streamVersionId"`
+	StreamVersion      pulumi.IntOutput                      `pulumi:"streamVersion"`
 	SumologicConnector DatastreamSumologicConnectorPtrOutput `pulumi:"sumologicConnector"`
-	// The name of the template associated with the stream
-	TemplateName pulumi.StringOutput `pulumi:"templateName"`
 }
 
 // NewDatastream registers a new resource with the given unique name, arguments, and options.
@@ -76,30 +73,25 @@ func NewDatastream(ctx *pulumi.Context,
 	if args.Active == nil {
 		return nil, errors.New("invalid value for required argument 'Active'")
 	}
-	if args.Config == nil {
-		return nil, errors.New("invalid value for required argument 'Config'")
-	}
 	if args.ContractId == nil {
 		return nil, errors.New("invalid value for required argument 'ContractId'")
 	}
-	if args.DatasetFieldsIds == nil {
-		return nil, errors.New("invalid value for required argument 'DatasetFieldsIds'")
+	if args.DatasetFields == nil {
+		return nil, errors.New("invalid value for required argument 'DatasetFields'")
+	}
+	if args.DeliveryConfiguration == nil {
+		return nil, errors.New("invalid value for required argument 'DeliveryConfiguration'")
 	}
 	if args.GroupId == nil {
 		return nil, errors.New("invalid value for required argument 'GroupId'")
 	}
-	if args.PropertyIds == nil {
-		return nil, errors.New("invalid value for required argument 'PropertyIds'")
+	if args.Properties == nil {
+		return nil, errors.New("invalid value for required argument 'Properties'")
 	}
 	if args.StreamName == nil {
 		return nil, errors.New("invalid value for required argument 'StreamName'")
 	}
-	if args.StreamType == nil {
-		return nil, errors.New("invalid value for required argument 'StreamType'")
-	}
-	if args.TemplateName == nil {
-		return nil, errors.New("invalid value for required argument 'TemplateName'")
-	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Datastream
 	err := ctx.RegisterResource("akamai:index/datastream:Datastream", name, args, &resource, opts...)
 	if err != nil {
@@ -125,8 +117,8 @@ type datastreamState struct {
 	// Defining if stream should be active or not
 	Active         *bool                     `pulumi:"active"`
 	AzureConnector *DatastreamAzureConnector `pulumi:"azureConnector"`
-	// Provides information about the configuration related to logs (format, file names, delivery frequency)
-	Config *DatastreamConfig `pulumi:"config"`
+	// Identifies if stream needs to collect midgress data
+	CollectMidgress *bool `pulumi:"collectMidgress"`
 	// Identifies the contract that has access to the product
 	ContractId *string `pulumi:"contractId"`
 	// The username who created the stream
@@ -136,50 +128,46 @@ type datastreamState struct {
 	DatadogConnector *DatastreamDatadogConnector `pulumi:"datadogConnector"`
 	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
 	// identifiers define how the value for these fields appear in the log lines
-	DatasetFieldsIds       []int                             `pulumi:"datasetFieldsIds"`
+	DatasetFields []int `pulumi:"datasetFields"`
+	// Provides information about the configuration related to logs (format, file names, delivery frequency)
+	DeliveryConfiguration  *DatastreamDeliveryConfiguration  `pulumi:"deliveryConfiguration"`
 	ElasticsearchConnector *DatastreamElasticsearchConnector `pulumi:"elasticsearchConnector"`
-	// List of email addresses where the system sends notifications about activations and deactivations of the stream
-	EmailIds     []string                `pulumi:"emailIds"`
-	GcsConnector *DatastreamGcsConnector `pulumi:"gcsConnector"`
+	GcsConnector           *DatastreamGcsConnector           `pulumi:"gcsConnector"`
 	// Identifies the group that has access to the product and for which the stream configuration was created
-	GroupId *string `pulumi:"groupId"`
-	// The name of the user group for which the stream was created
-	GroupName       *string                    `pulumi:"groupName"`
-	HttpsConnector  *DatastreamHttpsConnector  `pulumi:"httpsConnector"`
+	GroupId        *string                   `pulumi:"groupId"`
+	HttpsConnector *DatastreamHttpsConnector `pulumi:"httpsConnector"`
+	// Identifies the latest active configuration version of the stream
+	LatestVersion   *int                       `pulumi:"latestVersion"`
 	LogglyConnector *DatastreamLogglyConnector `pulumi:"logglyConnector"`
 	// The username who modified the stream
 	ModifiedBy *string `pulumi:"modifiedBy"`
 	// The date and time when the stream was modified
 	ModifiedDate      *string                      `pulumi:"modifiedDate"`
 	NewRelicConnector *DatastreamNewRelicConnector `pulumi:"newRelicConnector"`
-	OracleConnector   *DatastreamOracleConnector   `pulumi:"oracleConnector"`
+	// List of email addresses where the system sends notifications about activations and deactivations of the stream
+	NotificationEmails []string                   `pulumi:"notificationEmails"`
+	OracleConnector    *DatastreamOracleConnector `pulumi:"oracleConnector"`
 	// The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
 	PapiJson *string `pulumi:"papiJson"`
 	// The ID of the product for which the stream was created
 	ProductId *string `pulumi:"productId"`
-	// The name of the product for which the stream was created
-	ProductName *string `pulumi:"productName"`
 	// Identifies the properties monitored in the stream
-	PropertyIds     []string                   `pulumi:"propertyIds"`
+	Properties      []string                   `pulumi:"properties"`
 	S3Connector     *DatastreamS3Connector     `pulumi:"s3Connector"`
 	SplunkConnector *DatastreamSplunkConnector `pulumi:"splunkConnector"`
 	// The name of the stream
 	StreamName *string `pulumi:"streamName"`
-	// Specifies the type of the data stream
-	StreamType *string `pulumi:"streamType"`
 	// Identifies the configuration version of the stream
-	StreamVersionId    *int                          `pulumi:"streamVersionId"`
+	StreamVersion      *int                          `pulumi:"streamVersion"`
 	SumologicConnector *DatastreamSumologicConnector `pulumi:"sumologicConnector"`
-	// The name of the template associated with the stream
-	TemplateName *string `pulumi:"templateName"`
 }
 
 type DatastreamState struct {
 	// Defining if stream should be active or not
 	Active         pulumi.BoolPtrInput
 	AzureConnector DatastreamAzureConnectorPtrInput
-	// Provides information about the configuration related to logs (format, file names, delivery frequency)
-	Config DatastreamConfigPtrInput
+	// Identifies if stream needs to collect midgress data
+	CollectMidgress pulumi.BoolPtrInput
 	// Identifies the contract that has access to the product
 	ContractId pulumi.StringPtrInput
 	// The username who created the stream
@@ -189,42 +177,38 @@ type DatastreamState struct {
 	DatadogConnector DatastreamDatadogConnectorPtrInput
 	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
 	// identifiers define how the value for these fields appear in the log lines
-	DatasetFieldsIds       pulumi.IntArrayInput
+	DatasetFields pulumi.IntArrayInput
+	// Provides information about the configuration related to logs (format, file names, delivery frequency)
+	DeliveryConfiguration  DatastreamDeliveryConfigurationPtrInput
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrInput
-	// List of email addresses where the system sends notifications about activations and deactivations of the stream
-	EmailIds     pulumi.StringArrayInput
-	GcsConnector DatastreamGcsConnectorPtrInput
+	GcsConnector           DatastreamGcsConnectorPtrInput
 	// Identifies the group that has access to the product and for which the stream configuration was created
-	GroupId pulumi.StringPtrInput
-	// The name of the user group for which the stream was created
-	GroupName       pulumi.StringPtrInput
-	HttpsConnector  DatastreamHttpsConnectorPtrInput
+	GroupId        pulumi.StringPtrInput
+	HttpsConnector DatastreamHttpsConnectorPtrInput
+	// Identifies the latest active configuration version of the stream
+	LatestVersion   pulumi.IntPtrInput
 	LogglyConnector DatastreamLogglyConnectorPtrInput
 	// The username who modified the stream
 	ModifiedBy pulumi.StringPtrInput
 	// The date and time when the stream was modified
 	ModifiedDate      pulumi.StringPtrInput
 	NewRelicConnector DatastreamNewRelicConnectorPtrInput
-	OracleConnector   DatastreamOracleConnectorPtrInput
+	// List of email addresses where the system sends notifications about activations and deactivations of the stream
+	NotificationEmails pulumi.StringArrayInput
+	OracleConnector    DatastreamOracleConnectorPtrInput
 	// The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
 	PapiJson pulumi.StringPtrInput
 	// The ID of the product for which the stream was created
 	ProductId pulumi.StringPtrInput
-	// The name of the product for which the stream was created
-	ProductName pulumi.StringPtrInput
 	// Identifies the properties monitored in the stream
-	PropertyIds     pulumi.StringArrayInput
+	Properties      pulumi.StringArrayInput
 	S3Connector     DatastreamS3ConnectorPtrInput
 	SplunkConnector DatastreamSplunkConnectorPtrInput
 	// The name of the stream
 	StreamName pulumi.StringPtrInput
-	// Specifies the type of the data stream
-	StreamType pulumi.StringPtrInput
 	// Identifies the configuration version of the stream
-	StreamVersionId    pulumi.IntPtrInput
+	StreamVersion      pulumi.IntPtrInput
 	SumologicConnector DatastreamSumologicConnectorPtrInput
-	// The name of the template associated with the stream
-	TemplateName pulumi.StringPtrInput
 }
 
 func (DatastreamState) ElementType() reflect.Type {
@@ -235,35 +219,33 @@ type datastreamArgs struct {
 	// Defining if stream should be active or not
 	Active         bool                      `pulumi:"active"`
 	AzureConnector *DatastreamAzureConnector `pulumi:"azureConnector"`
-	// Provides information about the configuration related to logs (format, file names, delivery frequency)
-	Config DatastreamConfig `pulumi:"config"`
+	// Identifies if stream needs to collect midgress data
+	CollectMidgress *bool `pulumi:"collectMidgress"`
 	// Identifies the contract that has access to the product
 	ContractId       string                      `pulumi:"contractId"`
 	DatadogConnector *DatastreamDatadogConnector `pulumi:"datadogConnector"`
 	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
 	// identifiers define how the value for these fields appear in the log lines
-	DatasetFieldsIds       []int                             `pulumi:"datasetFieldsIds"`
+	DatasetFields []int `pulumi:"datasetFields"`
+	// Provides information about the configuration related to logs (format, file names, delivery frequency)
+	DeliveryConfiguration  DatastreamDeliveryConfiguration   `pulumi:"deliveryConfiguration"`
 	ElasticsearchConnector *DatastreamElasticsearchConnector `pulumi:"elasticsearchConnector"`
-	// List of email addresses where the system sends notifications about activations and deactivations of the stream
-	EmailIds     []string                `pulumi:"emailIds"`
-	GcsConnector *DatastreamGcsConnector `pulumi:"gcsConnector"`
+	GcsConnector           *DatastreamGcsConnector           `pulumi:"gcsConnector"`
 	// Identifies the group that has access to the product and for which the stream configuration was created
 	GroupId           string                       `pulumi:"groupId"`
 	HttpsConnector    *DatastreamHttpsConnector    `pulumi:"httpsConnector"`
 	LogglyConnector   *DatastreamLogglyConnector   `pulumi:"logglyConnector"`
 	NewRelicConnector *DatastreamNewRelicConnector `pulumi:"newRelicConnector"`
-	OracleConnector   *DatastreamOracleConnector   `pulumi:"oracleConnector"`
+	// List of email addresses where the system sends notifications about activations and deactivations of the stream
+	NotificationEmails []string                   `pulumi:"notificationEmails"`
+	OracleConnector    *DatastreamOracleConnector `pulumi:"oracleConnector"`
 	// Identifies the properties monitored in the stream
-	PropertyIds     []string                   `pulumi:"propertyIds"`
+	Properties      []string                   `pulumi:"properties"`
 	S3Connector     *DatastreamS3Connector     `pulumi:"s3Connector"`
 	SplunkConnector *DatastreamSplunkConnector `pulumi:"splunkConnector"`
 	// The name of the stream
-	StreamName string `pulumi:"streamName"`
-	// Specifies the type of the data stream
-	StreamType         string                        `pulumi:"streamType"`
+	StreamName         string                        `pulumi:"streamName"`
 	SumologicConnector *DatastreamSumologicConnector `pulumi:"sumologicConnector"`
-	// The name of the template associated with the stream
-	TemplateName string `pulumi:"templateName"`
 }
 
 // The set of arguments for constructing a Datastream resource.
@@ -271,35 +253,33 @@ type DatastreamArgs struct {
 	// Defining if stream should be active or not
 	Active         pulumi.BoolInput
 	AzureConnector DatastreamAzureConnectorPtrInput
-	// Provides information about the configuration related to logs (format, file names, delivery frequency)
-	Config DatastreamConfigInput
+	// Identifies if stream needs to collect midgress data
+	CollectMidgress pulumi.BoolPtrInput
 	// Identifies the contract that has access to the product
 	ContractId       pulumi.StringInput
 	DatadogConnector DatastreamDatadogConnectorPtrInput
 	// A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
 	// identifiers define how the value for these fields appear in the log lines
-	DatasetFieldsIds       pulumi.IntArrayInput
+	DatasetFields pulumi.IntArrayInput
+	// Provides information about the configuration related to logs (format, file names, delivery frequency)
+	DeliveryConfiguration  DatastreamDeliveryConfigurationInput
 	ElasticsearchConnector DatastreamElasticsearchConnectorPtrInput
-	// List of email addresses where the system sends notifications about activations and deactivations of the stream
-	EmailIds     pulumi.StringArrayInput
-	GcsConnector DatastreamGcsConnectorPtrInput
+	GcsConnector           DatastreamGcsConnectorPtrInput
 	// Identifies the group that has access to the product and for which the stream configuration was created
 	GroupId           pulumi.StringInput
 	HttpsConnector    DatastreamHttpsConnectorPtrInput
 	LogglyConnector   DatastreamLogglyConnectorPtrInput
 	NewRelicConnector DatastreamNewRelicConnectorPtrInput
-	OracleConnector   DatastreamOracleConnectorPtrInput
+	// List of email addresses where the system sends notifications about activations and deactivations of the stream
+	NotificationEmails pulumi.StringArrayInput
+	OracleConnector    DatastreamOracleConnectorPtrInput
 	// Identifies the properties monitored in the stream
-	PropertyIds     pulumi.StringArrayInput
+	Properties      pulumi.StringArrayInput
 	S3Connector     DatastreamS3ConnectorPtrInput
 	SplunkConnector DatastreamSplunkConnectorPtrInput
 	// The name of the stream
-	StreamName pulumi.StringInput
-	// Specifies the type of the data stream
-	StreamType         pulumi.StringInput
+	StreamName         pulumi.StringInput
 	SumologicConnector DatastreamSumologicConnectorPtrInput
-	// The name of the template associated with the stream
-	TemplateName pulumi.StringInput
 }
 
 func (DatastreamArgs) ElementType() reflect.Type {
@@ -398,9 +378,9 @@ func (o DatastreamOutput) AzureConnector() DatastreamAzureConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamAzureConnectorPtrOutput { return v.AzureConnector }).(DatastreamAzureConnectorPtrOutput)
 }
 
-// Provides information about the configuration related to logs (format, file names, delivery frequency)
-func (o DatastreamOutput) Config() DatastreamConfigOutput {
-	return o.ApplyT(func(v *Datastream) DatastreamConfigOutput { return v.Config }).(DatastreamConfigOutput)
+// Identifies if stream needs to collect midgress data
+func (o DatastreamOutput) CollectMidgress() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Datastream) pulumi.BoolPtrOutput { return v.CollectMidgress }).(pulumi.BoolPtrOutput)
 }
 
 // Identifies the contract that has access to the product
@@ -424,17 +404,17 @@ func (o DatastreamOutput) DatadogConnector() DatastreamDatadogConnectorPtrOutput
 
 // A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
 // identifiers define how the value for these fields appear in the log lines
-func (o DatastreamOutput) DatasetFieldsIds() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v *Datastream) pulumi.IntArrayOutput { return v.DatasetFieldsIds }).(pulumi.IntArrayOutput)
+func (o DatastreamOutput) DatasetFields() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v *Datastream) pulumi.IntArrayOutput { return v.DatasetFields }).(pulumi.IntArrayOutput)
+}
+
+// Provides information about the configuration related to logs (format, file names, delivery frequency)
+func (o DatastreamOutput) DeliveryConfiguration() DatastreamDeliveryConfigurationOutput {
+	return o.ApplyT(func(v *Datastream) DatastreamDeliveryConfigurationOutput { return v.DeliveryConfiguration }).(DatastreamDeliveryConfigurationOutput)
 }
 
 func (o DatastreamOutput) ElasticsearchConnector() DatastreamElasticsearchConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamElasticsearchConnectorPtrOutput { return v.ElasticsearchConnector }).(DatastreamElasticsearchConnectorPtrOutput)
-}
-
-// List of email addresses where the system sends notifications about activations and deactivations of the stream
-func (o DatastreamOutput) EmailIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *Datastream) pulumi.StringArrayOutput { return v.EmailIds }).(pulumi.StringArrayOutput)
 }
 
 func (o DatastreamOutput) GcsConnector() DatastreamGcsConnectorPtrOutput {
@@ -446,13 +426,13 @@ func (o DatastreamOutput) GroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.GroupId }).(pulumi.StringOutput)
 }
 
-// The name of the user group for which the stream was created
-func (o DatastreamOutput) GroupName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.GroupName }).(pulumi.StringOutput)
-}
-
 func (o DatastreamOutput) HttpsConnector() DatastreamHttpsConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamHttpsConnectorPtrOutput { return v.HttpsConnector }).(DatastreamHttpsConnectorPtrOutput)
+}
+
+// Identifies the latest active configuration version of the stream
+func (o DatastreamOutput) LatestVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v *Datastream) pulumi.IntOutput { return v.LatestVersion }).(pulumi.IntOutput)
 }
 
 func (o DatastreamOutput) LogglyConnector() DatastreamLogglyConnectorPtrOutput {
@@ -473,6 +453,11 @@ func (o DatastreamOutput) NewRelicConnector() DatastreamNewRelicConnectorPtrOutp
 	return o.ApplyT(func(v *Datastream) DatastreamNewRelicConnectorPtrOutput { return v.NewRelicConnector }).(DatastreamNewRelicConnectorPtrOutput)
 }
 
+// List of email addresses where the system sends notifications about activations and deactivations of the stream
+func (o DatastreamOutput) NotificationEmails() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Datastream) pulumi.StringArrayOutput { return v.NotificationEmails }).(pulumi.StringArrayOutput)
+}
+
 func (o DatastreamOutput) OracleConnector() DatastreamOracleConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamOracleConnectorPtrOutput { return v.OracleConnector }).(DatastreamOracleConnectorPtrOutput)
 }
@@ -487,14 +472,9 @@ func (o DatastreamOutput) ProductId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.ProductId }).(pulumi.StringOutput)
 }
 
-// The name of the product for which the stream was created
-func (o DatastreamOutput) ProductName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.ProductName }).(pulumi.StringOutput)
-}
-
 // Identifies the properties monitored in the stream
-func (o DatastreamOutput) PropertyIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *Datastream) pulumi.StringArrayOutput { return v.PropertyIds }).(pulumi.StringArrayOutput)
+func (o DatastreamOutput) Properties() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Datastream) pulumi.StringArrayOutput { return v.Properties }).(pulumi.StringArrayOutput)
 }
 
 func (o DatastreamOutput) S3Connector() DatastreamS3ConnectorPtrOutput {
@@ -510,23 +490,13 @@ func (o DatastreamOutput) StreamName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.StreamName }).(pulumi.StringOutput)
 }
 
-// Specifies the type of the data stream
-func (o DatastreamOutput) StreamType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.StreamType }).(pulumi.StringOutput)
-}
-
 // Identifies the configuration version of the stream
-func (o DatastreamOutput) StreamVersionId() pulumi.IntOutput {
-	return o.ApplyT(func(v *Datastream) pulumi.IntOutput { return v.StreamVersionId }).(pulumi.IntOutput)
+func (o DatastreamOutput) StreamVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v *Datastream) pulumi.IntOutput { return v.StreamVersion }).(pulumi.IntOutput)
 }
 
 func (o DatastreamOutput) SumologicConnector() DatastreamSumologicConnectorPtrOutput {
 	return o.ApplyT(func(v *Datastream) DatastreamSumologicConnectorPtrOutput { return v.SumologicConnector }).(DatastreamSumologicConnectorPtrOutput)
-}
-
-// The name of the template associated with the stream
-func (o DatastreamOutput) TemplateName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Datastream) pulumi.StringOutput { return v.TemplateName }).(pulumi.StringOutput)
 }
 
 type DatastreamArrayOutput struct{ *pulumi.OutputState }

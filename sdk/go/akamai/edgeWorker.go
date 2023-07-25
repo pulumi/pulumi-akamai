@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ func NewEdgeWorker(ctx *pulumi.Context,
 	if args.ResourceTierId == nil {
 		return nil, errors.New("invalid value for required argument 'ResourceTierId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource EdgeWorker
 	err := ctx.RegisterResource("akamai:index/edgeWorker:EdgeWorker", name, args, &resource, opts...)
 	if err != nil {

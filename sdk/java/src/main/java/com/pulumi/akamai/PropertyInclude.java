@@ -21,7 +21,7 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
      * Identifies the contract to which the include is assigned
      * 
      */
-    @Export(name="contractId", type=String.class, parameters={})
+    @Export(name="contractId", refs={String.class}, tree="[0]")
     private Output<String> contractId;
 
     /**
@@ -35,7 +35,7 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
      * Identifies the group to which the include is assigned
      * 
      */
-    @Export(name="groupId", type=String.class, parameters={})
+    @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
@@ -49,7 +49,7 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
      * Specifies the most recent version of the include
      * 
      */
-    @Export(name="latestVersion", type=Integer.class, parameters={})
+    @Export(name="latestVersion", refs={Integer.class}, tree="[0]")
     private Output<Integer> latestVersion;
 
     /**
@@ -63,7 +63,7 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
      * A descriptive name for the include
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -77,7 +77,7 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
      * The product assigned to the include
      * 
      */
-    @Export(name="productId", type=String.class, parameters={})
+    @Export(name="productId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> productId;
 
     /**
@@ -91,7 +91,7 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
      * The most recent version to be activated to the production network
      * 
      */
-    @Export(name="productionVersion", type=String.class, parameters={})
+    @Export(name="productionVersion", refs={String.class}, tree="[0]")
     private Output<String> productionVersion;
 
     /**
@@ -105,7 +105,7 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
      * Rule validation errors
      * 
      */
-    @Export(name="ruleErrors", type=String.class, parameters={})
+    @Export(name="ruleErrors", refs={String.class}, tree="[0]")
     private Output<String> ruleErrors;
 
     /**
@@ -119,7 +119,7 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
      * Indicates the versioned set of features and criteria
      * 
      */
-    @Export(name="ruleFormat", type=String.class, parameters={})
+    @Export(name="ruleFormat", refs={String.class}, tree="[0]")
     private Output<String> ruleFormat;
 
     /**
@@ -133,7 +133,7 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
      * Rule validation warnings
      * 
      */
-    @Export(name="ruleWarnings", type=String.class, parameters={})
+    @Export(name="ruleWarnings", refs={String.class}, tree="[0]")
     private Output<String> ruleWarnings;
 
     /**
@@ -147,7 +147,7 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
      * Property Rules as JSON
      * 
      */
-    @Export(name="rules", type=String.class, parameters={})
+    @Export(name="rules", refs={String.class}, tree="[0]")
     private Output<String> rules;
 
     /**
@@ -161,7 +161,7 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
      * The most recent version to be activated to the staging network
      * 
      */
-    @Export(name="stagingVersion", type=String.class, parameters={})
+    @Export(name="stagingVersion", refs={String.class}, tree="[0]")
     private Output<String> stagingVersion;
 
     /**
@@ -175,7 +175,7 @@ public class PropertyInclude extends com.pulumi.resources.CustomResource {
      * Specifies the type of the include, either &#39;MICROSERVICES&#39; or &#39;COMMON_SETTINGS&#39;
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**

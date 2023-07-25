@@ -12,19 +12,16 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatastreamLogglyConnector {
     private String authToken;
-    private String connectorName;
     private @Nullable String contentType;
     private @Nullable String customHeaderName;
     private @Nullable String customHeaderValue;
+    private String displayName;
     private String endpoint;
     private @Nullable String tags;
 
     private DatastreamLogglyConnector() {}
     public String authToken() {
         return this.authToken;
-    }
-    public String connectorName() {
-        return this.connectorName;
     }
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
@@ -34,6 +31,9 @@ public final class DatastreamLogglyConnector {
     }
     public Optional<String> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
+    }
+    public String displayName() {
+        return this.displayName;
     }
     public String endpoint() {
         return this.endpoint;
@@ -52,20 +52,20 @@ public final class DatastreamLogglyConnector {
     @CustomType.Builder
     public static final class Builder {
         private String authToken;
-        private String connectorName;
         private @Nullable String contentType;
         private @Nullable String customHeaderName;
         private @Nullable String customHeaderValue;
+        private String displayName;
         private String endpoint;
         private @Nullable String tags;
         public Builder() {}
         public Builder(DatastreamLogglyConnector defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authToken = defaults.authToken;
-    	      this.connectorName = defaults.connectorName;
     	      this.contentType = defaults.contentType;
     	      this.customHeaderName = defaults.customHeaderName;
     	      this.customHeaderValue = defaults.customHeaderValue;
+    	      this.displayName = defaults.displayName;
     	      this.endpoint = defaults.endpoint;
     	      this.tags = defaults.tags;
         }
@@ -73,11 +73,6 @@ public final class DatastreamLogglyConnector {
         @CustomType.Setter
         public Builder authToken(String authToken) {
             this.authToken = Objects.requireNonNull(authToken);
-            return this;
-        }
-        @CustomType.Setter
-        public Builder connectorName(String connectorName) {
-            this.connectorName = Objects.requireNonNull(connectorName);
             return this;
         }
         @CustomType.Setter
@@ -96,6 +91,11 @@ public final class DatastreamLogglyConnector {
             return this;
         }
         @CustomType.Setter
+        public Builder displayName(String displayName) {
+            this.displayName = Objects.requireNonNull(displayName);
+            return this;
+        }
+        @CustomType.Setter
         public Builder endpoint(String endpoint) {
             this.endpoint = Objects.requireNonNull(endpoint);
             return this;
@@ -108,10 +108,10 @@ public final class DatastreamLogglyConnector {
         public DatastreamLogglyConnector build() {
             final var o = new DatastreamLogglyConnector();
             o.authToken = authToken;
-            o.connectorName = connectorName;
             o.contentType = contentType;
             o.customHeaderName = customHeaderName;
             o.customHeaderValue = customHeaderValue;
+            o.displayName = displayName;
             o.endpoint = endpoint;
             o.tags = tags;
             return o;

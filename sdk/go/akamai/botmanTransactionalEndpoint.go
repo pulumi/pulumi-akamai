@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -39,6 +40,7 @@ func NewBotmanTransactionalEndpoint(ctx *pulumi.Context,
 	if args.TransactionalEndpoint == nil {
 		return nil, errors.New("invalid value for required argument 'TransactionalEndpoint'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BotmanTransactionalEndpoint
 	err := ctx.RegisterResource("akamai:index/botmanTransactionalEndpoint:BotmanTransactionalEndpoint", name, args, &resource, opts...)
 	if err != nil {

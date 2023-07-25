@@ -33,10 +33,6 @@ export class NetworkListActivations extends pulumi.CustomResource {
     }
 
     /**
-     * @deprecated The setting "activate" has been deprecated.
-     */
-    public readonly activate!: pulumi.Output<boolean | undefined>;
-    /**
      * The Akamai network on which the list is activated: STAGING or PRODUCTION
      */
     public readonly network!: pulumi.Output<string | undefined>;
@@ -74,7 +70,6 @@ export class NetworkListActivations extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkListActivationsState | undefined;
-            resourceInputs["activate"] = state ? state.activate : undefined;
             resourceInputs["network"] = state ? state.network : undefined;
             resourceInputs["networkListId"] = state ? state.networkListId : undefined;
             resourceInputs["notes"] = state ? state.notes : undefined;
@@ -92,7 +87,6 @@ export class NetworkListActivations extends pulumi.CustomResource {
             if ((!args || args.syncPoint === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'syncPoint'");
             }
-            resourceInputs["activate"] = args ? args.activate : undefined;
             resourceInputs["network"] = args ? args.network : undefined;
             resourceInputs["networkListId"] = args ? args.networkListId : undefined;
             resourceInputs["notes"] = args ? args.notes : undefined;
@@ -109,10 +103,6 @@ export class NetworkListActivations extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NetworkListActivations resources.
  */
 export interface NetworkListActivationsState {
-    /**
-     * @deprecated The setting "activate" has been deprecated.
-     */
-    activate?: pulumi.Input<boolean>;
     /**
      * The Akamai network on which the list is activated: STAGING or PRODUCTION
      */
@@ -143,10 +133,6 @@ export interface NetworkListActivationsState {
  * The set of arguments for constructing a NetworkListActivations resource.
  */
 export interface NetworkListActivationsArgs {
-    /**
-     * @deprecated The setting "activate" has been deprecated.
-     */
-    activate?: pulumi.Input<boolean>;
     /**
      * The Akamai network on which the list is activated: STAGING or PRODUCTION
      */

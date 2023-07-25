@@ -20,7 +20,7 @@ public class AppSecVersionNodes extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -34,7 +34,7 @@ public class AppSecVersionNodes extends com.pulumi.resources.CustomResource {
      * Text representation
      * 
      */
-    @Export(name="outputText", type=String.class, parameters={})
+    @Export(name="outputText", refs={String.class}, tree="[0]")
     private Output<String> outputText;
 
     /**
@@ -48,7 +48,7 @@ public class AppSecVersionNodes extends com.pulumi.resources.CustomResource {
      * Brief description of the security configuration version
      * 
      */
-    @Export(name="versionNotes", type=String.class, parameters={})
+    @Export(name="versionNotes", refs={String.class}, tree="[0]")
     private Output<String> versionNotes;
 
     /**

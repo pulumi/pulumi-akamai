@@ -22,13 +22,6 @@ public final class DatastreamLogglyConnectorArgs extends com.pulumi.resources.Re
         return this.authToken;
     }
 
-    @Import(name="connectorName", required=true)
-    private Output<String> connectorName;
-
-    public Output<String> connectorName() {
-        return this.connectorName;
-    }
-
     @Import(name="contentType")
     private @Nullable Output<String> contentType;
 
@@ -50,6 +43,13 @@ public final class DatastreamLogglyConnectorArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.customHeaderValue);
     }
 
+    @Import(name="displayName", required=true)
+    private Output<String> displayName;
+
+    public Output<String> displayName() {
+        return this.displayName;
+    }
+
     @Import(name="endpoint", required=true)
     private Output<String> endpoint;
 
@@ -68,10 +68,10 @@ public final class DatastreamLogglyConnectorArgs extends com.pulumi.resources.Re
 
     private DatastreamLogglyConnectorArgs(DatastreamLogglyConnectorArgs $) {
         this.authToken = $.authToken;
-        this.connectorName = $.connectorName;
         this.contentType = $.contentType;
         this.customHeaderName = $.customHeaderName;
         this.customHeaderValue = $.customHeaderValue;
+        this.displayName = $.displayName;
         this.endpoint = $.endpoint;
         this.tags = $.tags;
     }
@@ -103,15 +103,6 @@ public final class DatastreamLogglyConnectorArgs extends com.pulumi.resources.Re
             return authToken(Output.of(authToken));
         }
 
-        public Builder connectorName(Output<String> connectorName) {
-            $.connectorName = connectorName;
-            return this;
-        }
-
-        public Builder connectorName(String connectorName) {
-            return connectorName(Output.of(connectorName));
-        }
-
         public Builder contentType(@Nullable Output<String> contentType) {
             $.contentType = contentType;
             return this;
@@ -139,6 +130,15 @@ public final class DatastreamLogglyConnectorArgs extends com.pulumi.resources.Re
             return customHeaderValue(Output.of(customHeaderValue));
         }
 
+        public Builder displayName(Output<String> displayName) {
+            $.displayName = displayName;
+            return this;
+        }
+
+        public Builder displayName(String displayName) {
+            return displayName(Output.of(displayName));
+        }
+
         public Builder endpoint(Output<String> endpoint) {
             $.endpoint = endpoint;
             return this;
@@ -159,7 +159,7 @@ public final class DatastreamLogglyConnectorArgs extends com.pulumi.resources.Re
 
         public DatastreamLogglyConnectorArgs build() {
             $.authToken = Objects.requireNonNull($.authToken, "expected parameter 'authToken' to be non-null");
-            $.connectorName = Objects.requireNonNull($.connectorName, "expected parameter 'connectorName' to be non-null");
+            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
             $.endpoint = Objects.requireNonNull($.endpoint, "expected parameter 'endpoint' to be non-null");
             return $;
         }

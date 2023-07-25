@@ -5,7 +5,6 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,14 +16,13 @@ public final class DatastreamSplunkConnector {
     private @Nullable String clientCert;
     private @Nullable String clientKey;
     private @Nullable Boolean compressLogs;
-    private @Nullable Integer connectorId;
-    private String connectorName;
     private @Nullable String customHeaderName;
     private @Nullable String customHeaderValue;
+    private String displayName;
+    private String endpoint;
     private String eventCollectorToken;
     private @Nullable Boolean mTls;
     private @Nullable String tlsHostname;
-    private String url;
 
     private DatastreamSplunkConnector() {}
     public Optional<String> caCert() {
@@ -39,17 +37,17 @@ public final class DatastreamSplunkConnector {
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
-    public Optional<Integer> connectorId() {
-        return Optional.ofNullable(this.connectorId);
-    }
-    public String connectorName() {
-        return this.connectorName;
-    }
     public Optional<String> customHeaderName() {
         return Optional.ofNullable(this.customHeaderName);
     }
     public Optional<String> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
+    }
+    public String displayName() {
+        return this.displayName;
+    }
+    public String endpoint() {
+        return this.endpoint;
     }
     public String eventCollectorToken() {
         return this.eventCollectorToken;
@@ -59,9 +57,6 @@ public final class DatastreamSplunkConnector {
     }
     public Optional<String> tlsHostname() {
         return Optional.ofNullable(this.tlsHostname);
-    }
-    public String url() {
-        return this.url;
     }
 
     public static Builder builder() {
@@ -77,14 +72,13 @@ public final class DatastreamSplunkConnector {
         private @Nullable String clientCert;
         private @Nullable String clientKey;
         private @Nullable Boolean compressLogs;
-        private @Nullable Integer connectorId;
-        private String connectorName;
         private @Nullable String customHeaderName;
         private @Nullable String customHeaderValue;
+        private String displayName;
+        private String endpoint;
         private String eventCollectorToken;
         private @Nullable Boolean mTls;
         private @Nullable String tlsHostname;
-        private String url;
         public Builder() {}
         public Builder(DatastreamSplunkConnector defaults) {
     	      Objects.requireNonNull(defaults);
@@ -92,14 +86,13 @@ public final class DatastreamSplunkConnector {
     	      this.clientCert = defaults.clientCert;
     	      this.clientKey = defaults.clientKey;
     	      this.compressLogs = defaults.compressLogs;
-    	      this.connectorId = defaults.connectorId;
-    	      this.connectorName = defaults.connectorName;
     	      this.customHeaderName = defaults.customHeaderName;
     	      this.customHeaderValue = defaults.customHeaderValue;
+    	      this.displayName = defaults.displayName;
+    	      this.endpoint = defaults.endpoint;
     	      this.eventCollectorToken = defaults.eventCollectorToken;
     	      this.mTls = defaults.mTls;
     	      this.tlsHostname = defaults.tlsHostname;
-    	      this.url = defaults.url;
         }
 
         @CustomType.Setter
@@ -123,16 +116,6 @@ public final class DatastreamSplunkConnector {
             return this;
         }
         @CustomType.Setter
-        public Builder connectorId(@Nullable Integer connectorId) {
-            this.connectorId = connectorId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder connectorName(String connectorName) {
-            this.connectorName = Objects.requireNonNull(connectorName);
-            return this;
-        }
-        @CustomType.Setter
         public Builder customHeaderName(@Nullable String customHeaderName) {
             this.customHeaderName = customHeaderName;
             return this;
@@ -140,6 +123,16 @@ public final class DatastreamSplunkConnector {
         @CustomType.Setter
         public Builder customHeaderValue(@Nullable String customHeaderValue) {
             this.customHeaderValue = customHeaderValue;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder displayName(String displayName) {
+            this.displayName = Objects.requireNonNull(displayName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder endpoint(String endpoint) {
+            this.endpoint = Objects.requireNonNull(endpoint);
             return this;
         }
         @CustomType.Setter
@@ -157,25 +150,19 @@ public final class DatastreamSplunkConnector {
             this.tlsHostname = tlsHostname;
             return this;
         }
-        @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
-            return this;
-        }
         public DatastreamSplunkConnector build() {
             final var o = new DatastreamSplunkConnector();
             o.caCert = caCert;
             o.clientCert = clientCert;
             o.clientKey = clientKey;
             o.compressLogs = compressLogs;
-            o.connectorId = connectorId;
-            o.connectorName = connectorName;
             o.customHeaderName = customHeaderName;
             o.customHeaderValue = customHeaderValue;
+            o.displayName = displayName;
+            o.endpoint = endpoint;
             o.eventCollectorToken = eventCollectorToken;
             o.mTls = mTls;
             o.tlsHostname = tlsHostname;
-            o.url = url;
             return o;
         }
     }

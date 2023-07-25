@@ -17,7 +17,6 @@ class NetworkListActivationsArgs:
                  network_list_id: pulumi.Input[str],
                  notification_emails: pulumi.Input[Sequence[pulumi.Input[str]]],
                  sync_point: pulumi.Input[int],
-                 activate: Optional[pulumi.Input[bool]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  notes: Optional[pulumi.Input[str]] = None):
         """
@@ -31,11 +30,6 @@ class NetworkListActivationsArgs:
         pulumi.set(__self__, "network_list_id", network_list_id)
         pulumi.set(__self__, "notification_emails", notification_emails)
         pulumi.set(__self__, "sync_point", sync_point)
-        if activate is not None:
-            warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
-        if activate is not None:
-            pulumi.set(__self__, "activate", activate)
         if network is not None:
             pulumi.set(__self__, "network", network)
         if notes is not None:
@@ -79,18 +73,6 @@ class NetworkListActivationsArgs:
 
     @property
     @pulumi.getter
-    def activate(self) -> Optional[pulumi.Input[bool]]:
-        warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
-
-        return pulumi.get(self, "activate")
-
-    @activate.setter
-    def activate(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "activate", value)
-
-    @property
-    @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
         """
         The Akamai network on which the list is activated: STAGING or PRODUCTION
@@ -117,7 +99,6 @@ class NetworkListActivationsArgs:
 @pulumi.input_type
 class _NetworkListActivationsState:
     def __init__(__self__, *,
-                 activate: Optional[pulumi.Input[bool]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  network_list_id: Optional[pulumi.Input[str]] = None,
                  notes: Optional[pulumi.Input[str]] = None,
@@ -133,11 +114,6 @@ class _NetworkListActivationsState:
         :param pulumi.Input[str] status: This network list's current activation status in the environment specified by the "network" attribute
         :param pulumi.Input[int] sync_point: Identifies the sync point of the network list to be activated
         """
-        if activate is not None:
-            warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
-        if activate is not None:
-            pulumi.set(__self__, "activate", activate)
         if network is not None:
             pulumi.set(__self__, "network", network)
         if network_list_id is not None:
@@ -150,18 +126,6 @@ class _NetworkListActivationsState:
             pulumi.set(__self__, "status", status)
         if sync_point is not None:
             pulumi.set(__self__, "sync_point", sync_point)
-
-    @property
-    @pulumi.getter
-    def activate(self) -> Optional[pulumi.Input[bool]]:
-        warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
-
-        return pulumi.get(self, "activate")
-
-    @activate.setter
-    def activate(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "activate", value)
 
     @property
     @pulumi.getter
@@ -241,7 +205,6 @@ class NetworkListActivations(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activate: Optional[pulumi.Input[bool]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  network_list_id: Optional[pulumi.Input[str]] = None,
                  notes: Optional[pulumi.Input[str]] = None,
@@ -281,7 +244,6 @@ class NetworkListActivations(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activate: Optional[pulumi.Input[bool]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  network_list_id: Optional[pulumi.Input[str]] = None,
                  notes: Optional[pulumi.Input[str]] = None,
@@ -296,10 +258,6 @@ class NetworkListActivations(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NetworkListActivationsArgs.__new__(NetworkListActivationsArgs)
 
-            if activate is not None and not opts.urn:
-                warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
-            __props__.__dict__["activate"] = activate
             __props__.__dict__["network"] = network
             if network_list_id is None and not opts.urn:
                 raise TypeError("Missing required property 'network_list_id'")
@@ -322,7 +280,6 @@ class NetworkListActivations(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            activate: Optional[pulumi.Input[bool]] = None,
             network: Optional[pulumi.Input[str]] = None,
             network_list_id: Optional[pulumi.Input[str]] = None,
             notes: Optional[pulumi.Input[str]] = None,
@@ -347,7 +304,6 @@ class NetworkListActivations(pulumi.CustomResource):
 
         __props__ = _NetworkListActivationsState.__new__(_NetworkListActivationsState)
 
-        __props__.__dict__["activate"] = activate
         __props__.__dict__["network"] = network
         __props__.__dict__["network_list_id"] = network_list_id
         __props__.__dict__["notes"] = notes
@@ -355,14 +311,6 @@ class NetworkListActivations(pulumi.CustomResource):
         __props__.__dict__["status"] = status
         __props__.__dict__["sync_point"] = sync_point
         return NetworkListActivations(resource_name, opts=opts, __props__=__props__)
-
-    @property
-    @pulumi.getter
-    def activate(self) -> pulumi.Output[Optional[bool]]:
-        warnings.warn("""The setting \"activate\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""activate is deprecated: The setting \"activate\" has been deprecated.""")
-
-        return pulumi.get(self, "activate")
 
     @property
     @pulumi.getter

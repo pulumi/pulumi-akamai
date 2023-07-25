@@ -22,7 +22,7 @@ namespace Pulumi.Akamai
     public sealed class GetDatastreamsArgs : global::Pulumi.InvokeArgs
     {
         [Input("groupId")]
-        public string? GroupId { get; set; }
+        public int? GroupId { get; set; }
 
         public GetDatastreamsArgs()
         {
@@ -33,7 +33,7 @@ namespace Pulumi.Akamai
     public sealed class GetDatastreamsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("groupId")]
-        public Input<string>? GroupId { get; set; }
+        public Input<int>? GroupId { get; set; }
 
         public GetDatastreamsInvokeArgs()
         {
@@ -45,24 +45,24 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetDatastreamsResult
     {
-        public readonly string? GroupId;
+        public readonly int? GroupId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        public readonly ImmutableArray<Outputs.GetDatastreamsStreamResult> Streams;
+        public readonly ImmutableArray<Outputs.GetDatastreamsStreamsDetailResult> StreamsDetails;
 
         [OutputConstructor]
         private GetDatastreamsResult(
-            string? groupId,
+            int? groupId,
 
             string id,
 
-            ImmutableArray<Outputs.GetDatastreamsStreamResult> streams)
+            ImmutableArray<Outputs.GetDatastreamsStreamsDetailResult> streamsDetails)
         {
             GroupId = groupId;
             Id = id;
-            Streams = streams;
+            StreamsDetails = streamsDetails;
         }
     }
 }

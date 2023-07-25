@@ -20,7 +20,7 @@ public class AppSecCustomDeny extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -34,7 +34,7 @@ public class AppSecCustomDeny extends com.pulumi.resources.CustomResource {
      * JSON-formatted information about the properties and property values for the custom deny
      * 
      */
-    @Export(name="customDeny", type=String.class, parameters={})
+    @Export(name="customDeny", refs={String.class}, tree="[0]")
     private Output<String> customDeny;
 
     /**
@@ -48,7 +48,7 @@ public class AppSecCustomDeny extends com.pulumi.resources.CustomResource {
      * custom_deny_id
      * 
      */
-    @Export(name="customDenyId", type=String.class, parameters={})
+    @Export(name="customDenyId", refs={String.class}, tree="[0]")
     private Output<String> customDenyId;
 
     /**

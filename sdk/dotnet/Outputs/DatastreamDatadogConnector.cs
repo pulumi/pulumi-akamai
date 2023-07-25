@@ -15,12 +15,11 @@ namespace Pulumi.Akamai.Outputs
     {
         public readonly string AuthToken;
         public readonly bool? CompressLogs;
-        public readonly int? ConnectorId;
-        public readonly string ConnectorName;
+        public readonly string DisplayName;
+        public readonly string Endpoint;
         public readonly string? Service;
         public readonly string? Source;
         public readonly string? Tags;
-        public readonly string Url;
 
         [OutputConstructor]
         private DatastreamDatadogConnector(
@@ -28,26 +27,23 @@ namespace Pulumi.Akamai.Outputs
 
             bool? compressLogs,
 
-            int? connectorId,
+            string displayName,
 
-            string connectorName,
+            string endpoint,
 
             string? service,
 
             string? source,
 
-            string? tags,
-
-            string url)
+            string? tags)
         {
             AuthToken = authToken;
             CompressLogs = compressLogs;
-            ConnectorId = connectorId;
-            ConnectorName = connectorName;
+            DisplayName = displayName;
+            Endpoint = endpoint;
             Service = service;
             Source = source;
             Tags = tags;
-            Url = url;
         }
     }
 }

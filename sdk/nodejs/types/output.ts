@@ -186,43 +186,41 @@ export interface DatastreamAzureConnector {
     accessKey: string;
     accountName: string;
     compressLogs: boolean;
-    connectorId: number;
-    connectorName: string;
     containerName: string;
+    displayName: string;
     path: string;
-}
-
-export interface DatastreamConfig {
-    delimiter?: string;
-    format: string;
-    frequency: outputs.DatastreamConfigFrequency;
-    uploadFilePrefix?: string;
-    uploadFileSuffix?: string;
-}
-
-export interface DatastreamConfigFrequency {
-    timeInSec: number;
 }
 
 export interface DatastreamDatadogConnector {
     authToken: string;
     compressLogs?: boolean;
-    connectorId: number;
-    connectorName: string;
+    displayName: string;
+    endpoint: string;
     service?: string;
     source?: string;
     tags?: string;
-    url: string;
+}
+
+export interface DatastreamDeliveryConfiguration {
+    fieldDelimiter?: string;
+    format: string;
+    frequency: outputs.DatastreamDeliveryConfigurationFrequency;
+    uploadFilePrefix?: string;
+    uploadFileSuffix?: string;
+}
+
+export interface DatastreamDeliveryConfigurationFrequency {
+    intervalInSecs: number;
 }
 
 export interface DatastreamElasticsearchConnector {
     caCert?: string;
     clientCert?: string;
     clientKey?: string;
-    connectorName: string;
     contentType?: string;
     customHeaderName?: string;
     customHeaderValue?: string;
+    displayName: string;
     endpoint: string;
     indexName: string;
     mTls: boolean;
@@ -234,8 +232,7 @@ export interface DatastreamElasticsearchConnector {
 export interface DatastreamGcsConnector {
     bucket: string;
     compressLogs: boolean;
-    connectorId: number;
-    connectorName: string;
+    displayName: string;
     path?: string;
     privateKey: string;
     projectId: string;
@@ -248,34 +245,33 @@ export interface DatastreamHttpsConnector {
     clientCert?: string;
     clientKey?: string;
     compressLogs?: boolean;
-    connectorId: number;
-    connectorName: string;
     contentType?: string;
     customHeaderName?: string;
     customHeaderValue?: string;
+    displayName: string;
+    endpoint: string;
     mTls: boolean;
     password?: string;
     tlsHostname?: string;
-    url: string;
     userName?: string;
 }
 
 export interface DatastreamLogglyConnector {
     authToken: string;
-    connectorName: string;
     contentType?: string;
     customHeaderName?: string;
     customHeaderValue?: string;
+    displayName: string;
     endpoint: string;
     tags?: string;
 }
 
 export interface DatastreamNewRelicConnector {
     authToken: string;
-    connectorName: string;
     contentType?: string;
     customHeaderName?: string;
     customHeaderValue?: string;
+    displayName: string;
     endpoint: string;
 }
 
@@ -283,8 +279,7 @@ export interface DatastreamOracleConnector {
     accessKey: string;
     bucket: string;
     compressLogs: boolean;
-    connectorId: number;
-    connectorName: string;
+    displayName: string;
     namespace: string;
     path: string;
     region: string;
@@ -295,8 +290,7 @@ export interface DatastreamS3Connector {
     accessKey: string;
     bucket: string;
     compressLogs: boolean;
-    connectorId: number;
-    connectorName: string;
+    displayName: string;
     path: string;
     region: string;
     secretAccessKey: string;
@@ -307,24 +301,22 @@ export interface DatastreamSplunkConnector {
     clientCert?: string;
     clientKey?: string;
     compressLogs?: boolean;
-    connectorId: number;
-    connectorName: string;
     customHeaderName?: string;
     customHeaderValue?: string;
+    displayName: string;
+    endpoint: string;
     eventCollectorToken: string;
     mTls: boolean;
     tlsHostname?: string;
-    url: string;
 }
 
 export interface DatastreamSumologicConnector {
     collectorCode: string;
     compressLogs?: boolean;
-    connectorId: number;
-    connectorName: string;
     contentType?: string;
     customHeaderName?: string;
     customHeaderValue?: string;
+    displayName: string;
     endpoint: string;
 }
 
@@ -892,51 +884,38 @@ export interface GetContractsContract {
 }
 
 export interface GetDatastreamActivationHistoryActivation {
-    createdBy: string;
-    createdDate: string;
-    isActive: boolean;
+    modifiedBy: string;
+    modifiedDate: string;
+    status: string;
     streamId: number;
-    streamVersionId: number;
+    streamVersion: number;
 }
 
-export interface GetDatastreamDatasetFieldsField {
-    datasetFields: outputs.GetDatastreamDatasetFieldsFieldDatasetField[];
-    datasetGroupDescription: string;
-    datasetGroupName: string;
-}
-
-export interface GetDatastreamDatasetFieldsFieldDatasetField {
+export interface GetDatastreamDatasetFieldsDatasetField {
     datasetFieldDescription: string;
+    datasetFieldGroup: string;
     datasetFieldId: number;
     datasetFieldJsonKey: string;
     datasetFieldName: string;
 }
 
-export interface GetDatastreamsStream {
-    activationStatus: string;
-    archived: boolean;
-    connectors: string;
+export interface GetDatastreamsStreamsDetail {
     contractId: string;
     createdBy: string;
     createdDate: string;
-    currentVersionId: number;
-    errors: outputs.GetDatastreamsStreamError[];
     groupId: number;
-    groupName: string;
-    properties: outputs.GetDatastreamsStreamProperty[];
+    latestVersion: number;
+    modifiedBy: string;
+    modifiedDate: string;
+    productId: string;
+    properties: outputs.GetDatastreamsStreamsDetailProperty[];
     streamId: number;
     streamName: string;
-    streamTypeName: string;
-    streamVersionId: number;
+    streamStatus: string;
+    streamVersion: number;
 }
 
-export interface GetDatastreamsStreamError {
-    detail: string;
-    title: string;
-    type: string;
-}
-
-export interface GetDatastreamsStreamProperty {
+export interface GetDatastreamsStreamsDetailProperty {
     propertyId: number;
     propertyName: string;
 }
@@ -1011,6 +990,847 @@ export interface GetIamTimezonesTimezone {
     offset: string;
     posix: string;
     timezone: string;
+}
+
+export interface GetImagingPolicyImagePolicy {
+    breakpoints?: outputs.GetImagingPolicyImagePolicyBreakpoints;
+    hosts?: string[];
+    output?: outputs.GetImagingPolicyImagePolicyOutput;
+    postBreakpointTransformations?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation[];
+    rolloutDuration?: string;
+    transformations?: outputs.GetImagingPolicyImagePolicyTransformation[];
+    variables?: outputs.GetImagingPolicyImagePolicyVariable[];
+}
+
+export interface GetImagingPolicyImagePolicyBreakpoints {
+    widths?: number[];
+}
+
+export interface GetImagingPolicyImagePolicyOutput {
+    adaptiveQuality?: string;
+    allowedFormats?: string[];
+    forcedFormats?: string[];
+    perceptualQuality?: string;
+    perceptualQualityFloor?: string;
+    perceptualQualityVar?: string;
+    quality?: string;
+    qualityVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformation {
+    backgroundColors?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColor[];
+    blurs?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationBlur[];
+    chromaKeys?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKey[];
+    composites?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationComposite[];
+    compounds?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompound[];
+    contrasts?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationContrast[];
+    goops?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationGoop[];
+    grayscales?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscale[];
+    hsls?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHsl[];
+    hsvs?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationHsv[];
+    ifDimensions?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimension[];
+    ifOrientations?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation[];
+    maxColors?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor[];
+    mirrors?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMirror[];
+    monoHues?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHue[];
+    opacities?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationOpacity[];
+    removeColors?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColor[];
+    unsharpMasks?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMask[];
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationBackgroundColor {
+    color?: string;
+    colorVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationBlur {
+    sigma?: string;
+    sigmaVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationChromaKey {
+    hue?: string;
+    hueFeather?: string;
+    hueFeatherVar?: string;
+    hueTolerance?: string;
+    hueToleranceVar?: string;
+    hueVar?: string;
+    lightnessFeather?: string;
+    lightnessFeatherVar?: string;
+    lightnessTolerance?: string;
+    lightnessToleranceVar?: string;
+    saturationFeather?: string;
+    saturationFeatherVar?: string;
+    saturationTolerance?: string;
+    saturationToleranceVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationComposite {
+    gravity?: string;
+    gravityVar?: string;
+    image: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImage;
+    placement?: string;
+    placementVar?: string;
+    scale?: string;
+    scaleDimension?: string;
+    scaleDimensionVar?: string;
+    scaleVar?: string;
+    xPosition?: string;
+    xPositionVar?: string;
+    yPosition?: string;
+    yPositionVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImage {
+    boxImages?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImage[];
+    circleImages?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImage[];
+    textImages?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImage[];
+    urlImages?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage[];
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageBoxImage {
+    color?: string;
+    colorVar?: string;
+    height?: string;
+    heightVar?: string;
+    transformation?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageCircleImage {
+    color?: string;
+    colorVar?: string;
+    diameter?: string;
+    diameterVar?: string;
+    transformation?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageTextImage {
+    fill?: string;
+    fillVar?: string;
+    size?: string;
+    sizeVar?: string;
+    stroke?: string;
+    strokeSize?: string;
+    strokeSizeVar?: string;
+    strokeVar?: string;
+    text?: string;
+    textVar?: string;
+    transformation?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
+    typeface?: string;
+    typefaceVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompositeImageUrlImage {
+    transformation?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
+    url?: string;
+    urlVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationCompound {
+    transformations?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation[];
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationContrast {
+    brightness?: string;
+    brightnessVar?: string;
+    contrast?: string;
+    contrastVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationGoop {
+    chaos?: string;
+    chaosVar?: string;
+    density?: string;
+    densityVar?: string;
+    power?: string;
+    powerVar?: string;
+    seed?: string;
+    seedVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationGrayscale {
+    type?: string;
+    typeVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationHsl {
+    hue?: string;
+    hueVar?: string;
+    lightness?: string;
+    lightnessVar?: string;
+    saturation?: string;
+    saturationVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationHsv {
+    hue?: string;
+    hueVar?: string;
+    saturation?: string;
+    saturationVar?: string;
+    value?: string;
+    valueVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationIfDimension {
+    default?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
+    dimension?: string;
+    dimensionVar?: string;
+    equal?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
+    greaterThan?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
+    lessThan?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
+    value?: string;
+    valueVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationIfOrientation {
+    default?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
+    landscape?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
+    portrait?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
+    square?: outputs.GetImagingPolicyImagePolicyPostBreakpointTransformation;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationMaxColor {
+    colors?: string;
+    colorsVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationMirror {
+    horizontal?: string;
+    horizontalVar?: string;
+    vertical?: string;
+    verticalVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationMonoHue {
+    hue?: string;
+    hueVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationOpacity {
+    opacity?: string;
+    opacityVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationRemoveColor {
+    color?: string;
+    colorVar?: string;
+    feather?: string;
+    featherVar?: string;
+    tolerance?: string;
+    toleranceVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyPostBreakpointTransformationUnsharpMask {
+    gain?: string;
+    gainVar?: string;
+    sigma?: string;
+    sigmaVar?: string;
+    threshold?: string;
+    thresholdVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformation {
+    appends?: outputs.GetImagingPolicyImagePolicyTransformationAppend[];
+    aspectCrops?: outputs.GetImagingPolicyImagePolicyTransformationAspectCrop[];
+    backgroundColors?: outputs.GetImagingPolicyImagePolicyTransformationBackgroundColor[];
+    blurs?: outputs.GetImagingPolicyImagePolicyTransformationBlur[];
+    chromaKeys?: outputs.GetImagingPolicyImagePolicyTransformationChromaKey[];
+    composites?: outputs.GetImagingPolicyImagePolicyTransformationComposite[];
+    compounds?: outputs.GetImagingPolicyImagePolicyTransformationCompound[];
+    contrasts?: outputs.GetImagingPolicyImagePolicyTransformationContrast[];
+    crops?: outputs.GetImagingPolicyImagePolicyTransformationCrop[];
+    faceCrops?: outputs.GetImagingPolicyImagePolicyTransformationFaceCrop[];
+    featureCrops?: outputs.GetImagingPolicyImagePolicyTransformationFeatureCrop[];
+    fitAndFills?: outputs.GetImagingPolicyImagePolicyTransformationFitAndFill[];
+    goops?: outputs.GetImagingPolicyImagePolicyTransformationGoop[];
+    grayscales?: outputs.GetImagingPolicyImagePolicyTransformationGrayscale[];
+    hsls?: outputs.GetImagingPolicyImagePolicyTransformationHsl[];
+    hsvs?: outputs.GetImagingPolicyImagePolicyTransformationHsv[];
+    ifDimensions?: outputs.GetImagingPolicyImagePolicyTransformationIfDimension[];
+    ifOrientations?: outputs.GetImagingPolicyImagePolicyTransformationIfOrientation[];
+    imQueries?: outputs.GetImagingPolicyImagePolicyTransformationImQuery[];
+    maxColors?: outputs.GetImagingPolicyImagePolicyTransformationMaxColor[];
+    mirrors?: outputs.GetImagingPolicyImagePolicyTransformationMirror[];
+    monoHues?: outputs.GetImagingPolicyImagePolicyTransformationMonoHue[];
+    opacities?: outputs.GetImagingPolicyImagePolicyTransformationOpacity[];
+    regionOfInterestCrops?: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop[];
+    relativeCrops?: outputs.GetImagingPolicyImagePolicyTransformationRelativeCrop[];
+    removeColors?: outputs.GetImagingPolicyImagePolicyTransformationRemoveColor[];
+    resizes?: outputs.GetImagingPolicyImagePolicyTransformationResize[];
+    rotates?: outputs.GetImagingPolicyImagePolicyTransformationRotate[];
+    scales?: outputs.GetImagingPolicyImagePolicyTransformationScale[];
+    shears?: outputs.GetImagingPolicyImagePolicyTransformationShears[];
+    trims?: outputs.GetImagingPolicyImagePolicyTransformationTrim[];
+    unsharpMasks?: outputs.GetImagingPolicyImagePolicyTransformationUnsharpMask[];
+}
+
+export interface GetImagingPolicyImagePolicyTransformationAppend {
+    gravity?: string;
+    gravityPriority?: string;
+    gravityPriorityVar?: string;
+    gravityVar?: string;
+    image: outputs.GetImagingPolicyImagePolicyTransformationAppendImage;
+    preserveMinorDimension?: string;
+    preserveMinorDimensionVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationAppendImage {
+    boxImages?: outputs.GetImagingPolicyImagePolicyTransformationAppendImageBoxImage[];
+    circleImages?: outputs.GetImagingPolicyImagePolicyTransformationAppendImageCircleImage[];
+    textImages?: outputs.GetImagingPolicyImagePolicyTransformationAppendImageTextImage[];
+    urlImages?: outputs.GetImagingPolicyImagePolicyTransformationAppendImageUrlImage[];
+}
+
+export interface GetImagingPolicyImagePolicyTransformationAppendImageBoxImage {
+    color?: string;
+    colorVar?: string;
+    height?: string;
+    heightVar?: string;
+    transformation?: outputs.GetImagingPolicyImagePolicyTransformation;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationAppendImageCircleImage {
+    color?: string;
+    colorVar?: string;
+    diameter?: string;
+    diameterVar?: string;
+    transformation?: outputs.GetImagingPolicyImagePolicyTransformation;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationAppendImageTextImage {
+    fill?: string;
+    fillVar?: string;
+    size?: string;
+    sizeVar?: string;
+    stroke?: string;
+    strokeSize?: string;
+    strokeSizeVar?: string;
+    strokeVar?: string;
+    text?: string;
+    textVar?: string;
+    transformation?: outputs.GetImagingPolicyImagePolicyTransformation;
+    typeface?: string;
+    typefaceVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationAppendImageUrlImage {
+    transformation?: outputs.GetImagingPolicyImagePolicyTransformation;
+    url?: string;
+    urlVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationAspectCrop {
+    allowExpansion?: string;
+    allowExpansionVar?: string;
+    height?: string;
+    heightVar?: string;
+    width?: string;
+    widthVar?: string;
+    xPosition?: string;
+    xPositionVar?: string;
+    yPosition?: string;
+    yPositionVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationBackgroundColor {
+    color?: string;
+    colorVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationBlur {
+    sigma?: string;
+    sigmaVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationChromaKey {
+    hue?: string;
+    hueFeather?: string;
+    hueFeatherVar?: string;
+    hueTolerance?: string;
+    hueToleranceVar?: string;
+    hueVar?: string;
+    lightnessFeather?: string;
+    lightnessFeatherVar?: string;
+    lightnessTolerance?: string;
+    lightnessToleranceVar?: string;
+    saturationFeather?: string;
+    saturationFeatherVar?: string;
+    saturationTolerance?: string;
+    saturationToleranceVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationComposite {
+    gravity?: string;
+    gravityVar?: string;
+    image: outputs.GetImagingPolicyImagePolicyTransformationCompositeImage;
+    placement?: string;
+    placementVar?: string;
+    scale?: string;
+    scaleDimension?: string;
+    scaleDimensionVar?: string;
+    scaleVar?: string;
+    xPosition?: string;
+    xPositionVar?: string;
+    yPosition?: string;
+    yPositionVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationCompositeImage {
+    boxImages?: outputs.GetImagingPolicyImagePolicyTransformationCompositeImageBoxImage[];
+    circleImages?: outputs.GetImagingPolicyImagePolicyTransformationCompositeImageCircleImage[];
+    textImages?: outputs.GetImagingPolicyImagePolicyTransformationCompositeImageTextImage[];
+    urlImages?: outputs.GetImagingPolicyImagePolicyTransformationCompositeImageUrlImage[];
+}
+
+export interface GetImagingPolicyImagePolicyTransformationCompositeImageBoxImage {
+    color?: string;
+    colorVar?: string;
+    height?: string;
+    heightVar?: string;
+    transformation?: outputs.GetImagingPolicyImagePolicyTransformation;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationCompositeImageCircleImage {
+    color?: string;
+    colorVar?: string;
+    diameter?: string;
+    diameterVar?: string;
+    transformation?: outputs.GetImagingPolicyImagePolicyTransformation;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationCompositeImageTextImage {
+    fill?: string;
+    fillVar?: string;
+    size?: string;
+    sizeVar?: string;
+    stroke?: string;
+    strokeSize?: string;
+    strokeSizeVar?: string;
+    strokeVar?: string;
+    text?: string;
+    textVar?: string;
+    transformation?: outputs.GetImagingPolicyImagePolicyTransformation;
+    typeface?: string;
+    typefaceVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationCompositeImageUrlImage {
+    transformation?: outputs.GetImagingPolicyImagePolicyTransformation;
+    url?: string;
+    urlVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationCompound {
+    transformations?: outputs.GetImagingPolicyImagePolicyTransformation[];
+}
+
+export interface GetImagingPolicyImagePolicyTransformationContrast {
+    brightness?: string;
+    brightnessVar?: string;
+    contrast?: string;
+    contrastVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationCrop {
+    allowExpansion?: string;
+    allowExpansionVar?: string;
+    gravity?: string;
+    gravityVar?: string;
+    height?: string;
+    heightVar?: string;
+    width?: string;
+    widthVar?: string;
+    xPosition?: string;
+    xPositionVar?: string;
+    yPosition?: string;
+    yPositionVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationFaceCrop {
+    algorithm?: string;
+    algorithmVar?: string;
+    confidence?: string;
+    confidenceVar?: string;
+    failGravity?: string;
+    failGravityVar?: string;
+    focus?: string;
+    focusVar?: string;
+    gravity?: string;
+    gravityVar?: string;
+    height?: string;
+    heightVar?: string;
+    padding?: string;
+    paddingVar?: string;
+    style?: string;
+    styleVar?: string;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationFeatureCrop {
+    failGravity?: string;
+    failGravityVar?: string;
+    featureRadius?: string;
+    featureRadiusVar?: string;
+    gravity?: string;
+    gravityVar?: string;
+    height?: string;
+    heightVar?: string;
+    maxFeatures?: string;
+    maxFeaturesVar?: string;
+    minFeatureQuality?: string;
+    minFeatureQualityVar?: string;
+    padding?: string;
+    paddingVar?: string;
+    style?: string;
+    styleVar?: string;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationFitAndFill {
+    fillTransformation?: outputs.GetImagingPolicyImagePolicyTransformation;
+    height?: string;
+    heightVar?: string;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationGoop {
+    chaos?: string;
+    chaosVar?: string;
+    density?: string;
+    densityVar?: string;
+    power?: string;
+    powerVar?: string;
+    seed?: string;
+    seedVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationGrayscale {
+    type?: string;
+    typeVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationHsl {
+    hue?: string;
+    hueVar?: string;
+    lightness?: string;
+    lightnessVar?: string;
+    saturation?: string;
+    saturationVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationHsv {
+    hue?: string;
+    hueVar?: string;
+    saturation?: string;
+    saturationVar?: string;
+    value?: string;
+    valueVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationIfDimension {
+    default?: outputs.GetImagingPolicyImagePolicyTransformation;
+    dimension?: string;
+    dimensionVar?: string;
+    equal?: outputs.GetImagingPolicyImagePolicyTransformation;
+    greaterThan?: outputs.GetImagingPolicyImagePolicyTransformation;
+    lessThan?: outputs.GetImagingPolicyImagePolicyTransformation;
+    value?: string;
+    valueVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationIfOrientation {
+    default?: outputs.GetImagingPolicyImagePolicyTransformation;
+    landscape?: outputs.GetImagingPolicyImagePolicyTransformation;
+    portrait?: outputs.GetImagingPolicyImagePolicyTransformation;
+    square?: outputs.GetImagingPolicyImagePolicyTransformation;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationImQuery {
+    allowedTransformations: string[];
+    queryVar: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationMaxColor {
+    colors?: string;
+    colorsVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationMirror {
+    horizontal?: string;
+    horizontalVar?: string;
+    vertical?: string;
+    verticalVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationMonoHue {
+    hue?: string;
+    hueVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationOpacity {
+    opacity?: string;
+    opacityVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCrop {
+    gravity?: string;
+    gravityVar?: string;
+    height?: string;
+    heightVar?: string;
+    regionOfInterest: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterest;
+    style?: string;
+    styleVar?: string;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterest {
+    circleShapes?: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShape[];
+    pointShapes?: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPointShape[];
+    polygonShapes?: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShape[];
+    rectangleShapes?: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShape[];
+    unionShapes?: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShape[];
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShape {
+    center: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenter;
+    radius?: string;
+    radiusVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestCircleShapeCenter {
+    x?: string;
+    xVar?: string;
+    y?: string;
+    yVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPointShape {
+    x?: string;
+    xVar?: string;
+    y?: string;
+    yVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShape {
+    points: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePoint[];
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestPolygonShapePoint {
+    x?: string;
+    xVar?: string;
+    y?: string;
+    yVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShape {
+    anchor: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeAnchor;
+    height?: string;
+    heightVar?: string;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestRectangleShapeAnchor {
+    x?: string;
+    xVar?: string;
+    y?: string;
+    yVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShape {
+    shapes: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShape[];
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShape {
+    circleShapes?: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShape[];
+    pointShapes?: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShape[];
+    polygonShapes?: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShape[];
+    rectangleShapes?: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShape[];
+    unionShapes?: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShape[];
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShape {
+    center: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenter;
+    radius?: string;
+    radiusVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeCircleShapeCenter {
+    x?: string;
+    xVar?: string;
+    y?: string;
+    yVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePointShape {
+    x?: string;
+    xVar?: string;
+    y?: string;
+    yVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShape {
+    points: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePoint[];
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapePolygonShapePoint {
+    x?: string;
+    xVar?: string;
+    y?: string;
+    yVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShape {
+    anchor: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchor;
+    height?: string;
+    heightVar?: string;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeRectangleShapeAnchor {
+    x?: string;
+    xVar?: string;
+    y?: string;
+    yVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShape {
+    shapes: outputs.GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeShape[];
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRegionOfInterestCropRegionOfInterestUnionShapeShapeUnionShapeShape {
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRelativeCrop {
+    east?: string;
+    eastVar?: string;
+    north?: string;
+    northVar?: string;
+    south?: string;
+    southVar?: string;
+    west?: string;
+    westVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRemoveColor {
+    color?: string;
+    colorVar?: string;
+    feather?: string;
+    featherVar?: string;
+    tolerance?: string;
+    toleranceVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationResize {
+    aspect?: string;
+    aspectVar?: string;
+    height?: string;
+    heightVar?: string;
+    type?: string;
+    typeVar?: string;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationRotate {
+    degrees?: string;
+    degreesVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationScale {
+    height?: string;
+    heightVar?: string;
+    width?: string;
+    widthVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationShears {
+    xShear?: string;
+    xShearVar?: string;
+    yShear?: string;
+    yShearVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationTrim {
+    fuzz?: string;
+    fuzzVar?: string;
+    padding?: string;
+    paddingVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyTransformationUnsharpMask {
+    gain?: string;
+    gainVar?: string;
+    sigma?: string;
+    sigmaVar?: string;
+    threshold?: string;
+    thresholdVar?: string;
+}
+
+export interface GetImagingPolicyImagePolicyVariable {
+    defaultValue: string;
+    enumOptions?: outputs.GetImagingPolicyImagePolicyVariableEnumOption[];
+    name: string;
+    postfix?: string;
+    prefix?: string;
+    type: string;
+}
+
+export interface GetImagingPolicyImagePolicyVariableEnumOption {
+    id: string;
+    value: string;
+}
+
+export interface GetImagingPolicyVideoPolicy {
+    breakpoints?: outputs.GetImagingPolicyVideoPolicyBreakpoints;
+    hosts?: string[];
+    output?: outputs.GetImagingPolicyVideoPolicyOutput;
+    rolloutDuration?: string;
+    variables?: outputs.GetImagingPolicyVideoPolicyVariable[];
+}
+
+export interface GetImagingPolicyVideoPolicyBreakpoints {
+    widths?: number[];
+}
+
+export interface GetImagingPolicyVideoPolicyOutput {
+    perceptualQuality?: string;
+    perceptualQualityVar?: string;
+    placeholderVideoUrl?: string;
+    placeholderVideoUrlVar?: string;
+    videoAdaptiveQuality?: string;
+    videoAdaptiveQualityVar?: string;
+}
+
+export interface GetImagingPolicyVideoPolicyVariable {
+    defaultValue: string;
+    enumOptions?: outputs.GetImagingPolicyVideoPolicyVariableEnumOption[];
+    name: string;
+    postfix?: string;
+    prefix?: string;
+    type: string;
+}
+
+export interface GetImagingPolicyVideoPolicyVariableEnumOption {
+    id: string;
+    value: string;
 }
 
 export interface GetPropertiesProperty {
@@ -4688,6 +5508,3580 @@ export interface GetPropertyRulesBuilderRulesV20230105Variable {
     value: string;
 }
 
+export interface GetPropertyRulesBuilderRulesV20230530 {
+    advancedOverride?: string;
+    behaviors?: outputs.GetPropertyRulesBuilderRulesV20230530Behavior[];
+    childrens?: string[];
+    comments?: string;
+    criteriaLocked?: boolean;
+    criteriaMustSatisfy?: string;
+    criterions?: outputs.GetPropertyRulesBuilderRulesV20230530Criterion[];
+    customOverride?: outputs.GetPropertyRulesBuilderRulesV20230530CustomOverride;
+    isSecure?: boolean;
+    name: string;
+    templateLink?: string;
+    templateUuid?: string;
+    uuid?: string;
+    variables?: outputs.GetPropertyRulesBuilderRulesV20230530Variable[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530Behavior {
+    adScalerCircuitBreaker?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAdScalerCircuitBreaker;
+    adaptiveAcceleration?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveAcceleration;
+    adaptiveImageCompression?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveImageCompression;
+    advanced?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAdvanced;
+    aggregatedReporting?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAggregatedReporting;
+    akamaizer?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAkamaizer;
+    akamaizerTag?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAkamaizerTag;
+    allHttpInCacheHierarchy?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAllHttpInCacheHierarchy;
+    allowCloudletsOrigins?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAllowCloudletsOrigins;
+    allowDelete?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAllowDelete;
+    allowHttpsCacheKeySharing?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAllowHttpsCacheKeySharing;
+    allowHttpsDowngrade?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAllowHttpsDowngrade;
+    allowOptions?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAllowOptions;
+    allowPatch?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAllowPatch;
+    allowPost?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAllowPost;
+    allowPut?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAllowPut;
+    allowTransferEncoding?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAllowTransferEncoding;
+    altSvcHeader?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAltSvcHeader;
+    apiPrioritization?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritization;
+    applicationLoadBalancer?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancer;
+    audienceSegmentation?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentation;
+    autoDomainValidation?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAutoDomainValidation;
+    baseDirectory?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorBaseDirectory;
+    bossBeaconing?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconing;
+    breadcrumbs?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorBreadcrumbs;
+    breakConnection?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorBreakConnection;
+    brotli?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorBrotli;
+    cacheError?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCacheError;
+    cacheId?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCacheId;
+    cacheKeyIgnoreCase?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyIgnoreCase;
+    cacheKeyQueryParams?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyQueryParams;
+    cacheKeyRewrite?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyRewrite;
+    cachePost?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCachePost;
+    cacheRedirect?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCacheRedirect;
+    cacheTag?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCacheTag;
+    cacheTagVisible?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCacheTagVisible;
+    caching?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCaching;
+    centralAuthorization?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCentralAuthorization;
+    chaseRedirects?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorChaseRedirects;
+    clientCharacteristics?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorClientCharacteristics;
+    cloudInterconnects?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCloudInterconnects;
+    cloudWrapper?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCloudWrapper;
+    cloudWrapperAdvanced?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCloudWrapperAdvanced;
+    commonMediaClientData?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClientData;
+    conditionalOrigin?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorConditionalOrigin;
+    constructResponse?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorConstructResponse;
+    contentCharacteristics?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristics;
+    contentCharacteristicsAmd?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsAmd;
+    contentCharacteristicsDd?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsDd;
+    contentCharacteristicsWsdLargeFile?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdLargeFile;
+    contentCharacteristicsWsdLive?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdLive;
+    contentCharacteristicsWsdVod?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdVod;
+    contentPrePosition?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorContentPrePosition;
+    contentTargetingProtection?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorContentTargetingProtection;
+    corsSupport?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCorsSupport;
+    cpCode?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCpCode;
+    customBehavior?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCustomBehavior;
+    datastream?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDatastream;
+    dcp?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDcp;
+    dcpAuthHmacTransformation?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthHmacTransformation;
+    dcpAuthRegexTransformation?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthRegexTransformation;
+    dcpAuthSubstringTransformation?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthSubstringTransformation;
+    dcpAuthVariableExtractor?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthVariableExtractor;
+    dcpDefaultAuthzGroups?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDcpDefaultAuthzGroups;
+    dcpDevRelations?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDcpDevRelations;
+    dcpRealTimeAuth?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuth;
+    deliveryReceipt?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDeliveryReceipt;
+    denyAccess?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDenyAccess;
+    denyDirectFailoverAccess?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDenyDirectFailoverAccess;
+    deviceCharacteristicCacheId?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDeviceCharacteristicCacheId;
+    deviceCharacteristicHeader?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDeviceCharacteristicHeader;
+    dnsAsyncRefresh?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDnsAsyncRefresh;
+    dnsPrefresh?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDnsPrefresh;
+    downgradeProtocol?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDowngradeProtocol;
+    downloadCompleteMarker?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDownloadCompleteMarker;
+    downloadNotification?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDownloadNotification;
+    downstreamCache?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCache;
+    dynamicThroughtputOptimization?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDynamicThroughtputOptimization;
+    dynamicThroughtputOptimizationOverride?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDynamicThroughtputOptimizationOverride;
+    dynamicWebContent?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorDynamicWebContent;
+    ecmsBulkUpload?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEcmsBulkUpload;
+    ecmsDatabase?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEcmsDatabase;
+    ecmsDataset?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEcmsDataset;
+    ecmsObjectKey?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEcmsObjectKey;
+    edgeConnect?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEdgeConnect;
+    edgeLoadBalancingAdvanced?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingAdvanced;
+    edgeLoadBalancingDataCenter?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenter;
+    edgeLoadBalancingOrigin?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingOrigin;
+    edgeOriginAuthorization?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEdgeOriginAuthorization;
+    edgeRedirector?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEdgeRedirector;
+    edgeScape?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEdgeScape;
+    edgeSideIncludes?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEdgeSideIncludes;
+    edgeWorker?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEdgeWorker;
+    enhancedAkamaiProtocol?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEnhancedAkamaiProtocol;
+    enhancedProxyDetection?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEnhancedProxyDetection;
+    epdForwardHeaderEnrichment?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEpdForwardHeaderEnrichment;
+    failAction?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorFailAction;
+    failoverBotManagerFeatureCompatibility?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorFailoverBotManagerFeatureCompatibility;
+    fastInvalidate?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorFastInvalidate;
+    firstPartyMarketing?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketing;
+    firstPartyMarketingPlus?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingPlus;
+    forwardRewrite?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorForwardRewrite;
+    g2oheader?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorG2oheader;
+    globalRequestNumber?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorGlobalRequestNumber;
+    graphqlCaching?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorGraphqlCaching;
+    gzipResponse?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorGzipResponse;
+    hdDataAdvanced?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorHdDataAdvanced;
+    healthDetection?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorHealthDetection;
+    hsafEipBinding?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorHsafEipBinding;
+    http2?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorHttp2;
+    http3?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorHttp3;
+    httpStrictTransportSecurity?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorHttpStrictTransportSecurity;
+    httpToHttpsUpgrade?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorHttpToHttpsUpgrade;
+    imOverride?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImOverride;
+    imageAndVideoManager?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManager;
+    imageManager?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageManager;
+    imageManagerVideo?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideo;
+    include?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorInclude;
+    instant?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorInstant;
+    instantConfig?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorInstantConfig;
+    largeFileOptimization?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimization;
+    largeFileOptimizationAdvanced?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimizationAdvanced;
+    limitBitRate?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRate;
+    logCustom?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorLogCustom;
+    mPulse?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorMPulse;
+    manifestPersonalization?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorManifestPersonalization;
+    manifestRerouting?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorManifestRerouting;
+    manualServerPush?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorManualServerPush;
+    mediaAcceleration?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaAcceleration;
+    mediaAccelerationQuicOptout?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaAccelerationQuicOptout;
+    mediaClient?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaClient;
+    mediaFileRetrievalOptimization?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaFileRetrievalOptimization;
+    mediaOriginFailover?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorMediaOriginFailover;
+    metadataCaching?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorMetadataCaching;
+    mobileSdkPerformance?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorMobileSdkPerformance;
+    modifyIncomingRequestHeader?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingRequestHeader;
+    modifyIncomingResponseHeader?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingResponseHeader;
+    modifyOutgoingRequestHeader?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingRequestHeader;
+    modifyOutgoingResponseHeader?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingResponseHeader;
+    modifyViaHeader?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorModifyViaHeader;
+    origin?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOrigin;
+    originCharacteristics?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristics;
+    originCharacteristicsWsd?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsWsd;
+    originFailureRecoveryMethod?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethod;
+    originFailureRecoveryPolicy?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryPolicy;
+    originIpAcl?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginIpAcl;
+    persistentClientConnection?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorPersistentClientConnection;
+    persistentConnection?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorPersistentConnection;
+    personallyIdentifiableInformation?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorPersonallyIdentifiableInformation;
+    phasedRelease?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorPhasedRelease;
+    preconnect?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorPreconnect;
+    predictiveContentDelivery?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorPredictiveContentDelivery;
+    predictivePrefetching?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorPredictivePrefetching;
+    prefetch?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorPrefetch;
+    prefetchable?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorPrefetchable;
+    prefreshCache?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorPrefreshCache;
+    quality?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorQuality;
+    quicBeta?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorQuicBeta;
+    randomSeek?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRandomSeek;
+    rapid?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRapid;
+    readTimeout?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorReadTimeout;
+    realTimeReporting?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRealTimeReporting;
+    realUserMonitoring?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRealUserMonitoring;
+    redirect?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRedirect;
+    redirectplus?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRedirectplus;
+    refererChecking?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRefererChecking;
+    removeQueryParameter?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRemoveQueryParameter;
+    removeVary?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRemoveVary;
+    report?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorReport;
+    requestControl?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestControl;
+    requestTypeMarker?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestTypeMarker;
+    resourceOptimizer?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizer;
+    resourceOptimizerExtendedCompatibility?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizerExtendedCompatibility;
+    responseCode?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorResponseCode;
+    responseCookie?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorResponseCookie;
+    restrictObjectCaching?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRestrictObjectCaching;
+    returnCacheStatus?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorReturnCacheStatus;
+    rewriteUrl?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrl;
+    rumCustom?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRumCustom;
+    saasDefinitions?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSaasDefinitions;
+    salesForceCommerceCloudClient?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudClient;
+    salesForceCommerceCloudProvider?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProvider;
+    salesForceCommerceCloudProviderHostHeader?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProviderHostHeader;
+    savePostDcaProcessing?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSavePostDcaProcessing;
+    scheduleInvalidation?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorScheduleInvalidation;
+    scriptManagement?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorScriptManagement;
+    segmentedContentProtection?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContentProtection;
+    segmentedMediaOptimization?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaOptimization;
+    segmentedMediaStreamingPrefetch?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaStreamingPrefetch;
+    setVariable?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSetVariable;
+    simulateErrorCode?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSimulateErrorCode;
+    siteShield?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSiteShield;
+    standardTlsMigration?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigration;
+    standardTlsMigrationOverride?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationOverride;
+    strictHeaderParsing?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorStrictHeaderParsing;
+    subCustomer?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSubCustomer;
+    sureRoute?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSureRoute;
+    tcpOptimization?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorTcpOptimization;
+    teaLeaf?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorTeaLeaf;
+    tieredDistribution?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistribution;
+    tieredDistributionAdvanced?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionAdvanced;
+    tieredDistributionCustomization?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionCustomization;
+    timeout?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorTimeout;
+    uidConfiguration?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorUidConfiguration;
+    validateEntityTag?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorValidateEntityTag;
+    verifyJsonWebToken?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebToken;
+    verifyJsonWebTokenForDcp?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTokenForDcp;
+    verifyTokenAuthorization?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAuthorization;
+    virtualWaitingRoom?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoom;
+    virtualWaitingRoomWithEdgeWorkers?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoomWithEdgeWorkers;
+    visitorPrioritization?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritization;
+    visitorPrioritizationFifo?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifo;
+    visitorPrioritizationFifoStandalone?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoStandalone;
+    watermarking?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorWatermarking;
+    webApplicationFirewall?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewall;
+    webSockets?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebSockets;
+    webdav?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebdav;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAdScalerCircuitBreaker {
+    fallbackActionResponseCodeBased?: string;
+    locked?: boolean;
+    responseCodeBased?: boolean;
+    responseCodes?: string;
+    responseDelayBased?: boolean;
+    responseDelayThreshold?: string;
+    returnErrorResponseCodeBased?: string;
+    specifyYourOwnResponseCodeBased?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveAcceleration {
+    abLogic?: string;
+    abTesting?: string;
+    compression?: string;
+    cookieName?: string;
+    enableBrotliCompression?: boolean;
+    enableForNoncacheable?: boolean;
+    enablePreconnect?: boolean;
+    enablePush?: boolean;
+    enableRo?: boolean;
+    locked?: boolean;
+    preloadEnable?: boolean;
+    source?: string;
+    templateUuid?: string;
+    titleBrotli?: string;
+    titleHttp2ServerPush?: string;
+    titlePreconnect?: string;
+    titlePreload?: string;
+    titleRo?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAdaptiveImageCompression {
+    compressMobile?: boolean;
+    compressStandard?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    tier1MobileCompressionMethod?: string;
+    tier1MobileCompressionValue?: number;
+    tier1StandardCompressionMethod?: string;
+    tier1StandardCompressionValue?: number;
+    tier2MobileCompressionMethod?: string;
+    tier2MobileCompressionValue?: number;
+    tier2StandardCompressionMethod?: string;
+    tier2StandardCompressionValue?: number;
+    tier3MobileCompressionMethod?: string;
+    tier3MobileCompressionValue?: number;
+    tier3StandardCompressionMethod?: string;
+    tier3StandardCompressionValue?: number;
+    titleAicMobile?: string;
+    titleAicNonmobile?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAdvanced {
+    description?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    xml?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAggregatedReporting {
+    attribute1?: string;
+    attribute2?: string;
+    attribute3?: string;
+    attribute4?: string;
+    attributesCount?: number;
+    enabled?: boolean;
+    locked?: boolean;
+    reportName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAkamaizer {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAkamaizerTag {
+    includeTagsAttribute?: boolean;
+    locked?: boolean;
+    matchHostname?: string;
+    replaceAll?: boolean;
+    replacementHostname?: string;
+    scope?: string;
+    tagsAttribute?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAllHttpInCacheHierarchy {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAllowCloudletsOrigins {
+    enabled?: boolean;
+    honorBaseDirectory?: boolean;
+    locked?: boolean;
+    purgeOriginQueryParameter?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAllowDelete {
+    allowBody?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAllowHttpsCacheKeySharing {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAllowHttpsDowngrade {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAllowOptions {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAllowPatch {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAllowPost {
+    allowWithoutContentLength?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAllowPut {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAllowTransferEncoding {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAltSvcHeader {
+    locked?: boolean;
+    maxAge?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritization {
+    alternateResponseCacheTtl?: number;
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationCloudletPolicy;
+    cloudletSharedPolicy?: number;
+    enabled?: boolean;
+    isSharedPolicy?: boolean;
+    label?: string;
+    locked?: boolean;
+    netStorage?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationNetStorage;
+    netStoragePath?: string;
+    templateUuid?: string;
+    throttledCpCode?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpCode;
+    throttledStatusCode?: number;
+    useThrottledCpCode?: boolean;
+    useThrottledStatusCode?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpCode {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpCodeCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorApiPrioritizationThrottledCpCodeCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancer {
+    allDownNetStorage?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerAllDownNetStorage;
+    allDownNetStorageFile?: string;
+    allDownStatusCode?: string;
+    allDownTitle?: string;
+    allowCachePrefresh?: boolean;
+    cachedContentTitle?: string;
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerCloudletPolicy;
+    enabled?: boolean;
+    failoverAttemptsThreshold?: number;
+    failoverMode?: string;
+    failoverOriginMaps?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailoverOriginMap[];
+    failoverStatusCodes?: string[];
+    failoverTitle?: string;
+    label?: string;
+    locked?: boolean;
+    originCookieName?: string;
+    specifyStickinessCookieDomain?: boolean;
+    stickinessCookieAutomaticSalt?: boolean;
+    stickinessCookieDomain?: string;
+    stickinessCookieSalt?: string;
+    stickinessCookieSetHttpOnlyFlag?: boolean;
+    stickinessCookieType?: string;
+    stickinessDuration?: string;
+    stickinessExpirationDate?: string;
+    stickinessRefresh?: boolean;
+    stickinessTitle?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerAllDownNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorApplicationLoadBalancerFailoverOriginMap {
+    fromOriginId?: string;
+    toOriginIds?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentation {
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentationCloudletPolicy;
+    cloudletSharedPolicy?: number;
+    enabled?: boolean;
+    isSharedPolicy?: boolean;
+    label?: string;
+    locked?: boolean;
+    populationCookieAutomaticSalt?: boolean;
+    populationCookieDomain?: string;
+    populationCookieIncludeRuleName?: boolean;
+    populationCookieSalt?: string;
+    populationCookieType?: string;
+    populationDuration?: string;
+    populationRefresh?: boolean;
+    populationTitle?: string;
+    segmentTrackingCookieName?: string;
+    segmentTrackingCustomHeader?: string;
+    segmentTrackingMethod?: string;
+    segmentTrackingQueryParam?: string;
+    segmentTrackingTitle?: string;
+    specifyPopulationCookieDomain?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAudienceSegmentationCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorAutoDomainValidation {
+    autodv?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorBaseDirectory {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorBossBeaconing {
+    conditionalErrorPattern?: string;
+    conditionalHttpStatuses?: string[];
+    conditionalSamplingFrequency?: string;
+    cpcodes?: string;
+    enabled?: boolean;
+    forwardType?: string;
+    locked?: boolean;
+    requestType?: string;
+    samplingFrequency?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorBreadcrumbs {
+    enabled?: boolean;
+    locked?: boolean;
+    loggingEnabled?: boolean;
+    optMode?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorBreakConnection {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorBrotli {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCacheError {
+    enabled?: boolean;
+    locked?: boolean;
+    preserveStale?: boolean;
+    templateUuid?: string;
+    ttl?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCacheId {
+    elements?: string[];
+    includeValue?: boolean;
+    locked?: boolean;
+    optional?: boolean;
+    rule?: string;
+    templateUuid?: string;
+    uuid?: string;
+    variableName?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyIgnoreCase {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyQueryParams {
+    behavior?: string;
+    exactMatch?: boolean;
+    locked?: boolean;
+    parameters?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCacheKeyRewrite {
+    locked?: boolean;
+    purgeKey?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCachePost {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    useBody?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCacheRedirect {
+    enabled?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCacheTag {
+    locked?: boolean;
+    tag?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCacheTagVisible {
+    behavior?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCaching {
+    behavior?: string;
+    cacheControlDirectives?: string;
+    cacheabilitySettings?: string;
+    defaultTtl?: string;
+    enhancedRfcSupport?: boolean;
+    expirationSettings?: string;
+    honorMaxAge?: boolean;
+    honorMustRevalidate?: boolean;
+    honorNoCache?: boolean;
+    honorNoStore?: boolean;
+    honorPrivate?: boolean;
+    honorProxyRevalidate?: boolean;
+    honorSMaxage?: boolean;
+    locked?: boolean;
+    mustRevalidate?: boolean;
+    revalidationSettings?: string;
+    templateUuid?: string;
+    ttl?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCentralAuthorization {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorChaseRedirects {
+    enabled?: boolean;
+    limit?: string;
+    locked?: boolean;
+    serve404?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorClientCharacteristics {
+    country?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCloudInterconnects {
+    cloudLocations?: string[];
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCloudWrapper {
+    enabled?: boolean;
+    location?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCloudWrapperAdvanced {
+    customFailoverMap?: string;
+    enabled?: boolean;
+    failoverMap?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCommonMediaClientData {
+    enableCmcdSegmentPrefetch?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorConditionalOrigin {
+    locked?: boolean;
+    originId?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorConstructResponse {
+    body?: string;
+    enabled?: boolean;
+    forceEviction?: boolean;
+    ignorePurge?: boolean;
+    locked?: boolean;
+    responseCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristics {
+    catalogSize?: string;
+    contentType?: string;
+    locked?: boolean;
+    objectSize?: string;
+    popularityDistribution?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsAmd {
+    catalogSize?: string;
+    contentType?: string;
+    dash?: boolean;
+    hds?: boolean;
+    hls?: boolean;
+    locked?: boolean;
+    popularityDistribution?: string;
+    segmentDurationDash?: string;
+    segmentDurationDashCustom?: number;
+    segmentDurationHds?: string;
+    segmentDurationHdsCustom?: number;
+    segmentDurationHls?: string;
+    segmentDurationHlsCustom?: number;
+    segmentDurationSmooth?: string;
+    segmentDurationSmoothCustom?: number;
+    segmentSizeDash?: string;
+    segmentSizeHds?: string;
+    segmentSizeHls?: string;
+    segmentSizeSmooth?: string;
+    smooth?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsDd {
+    catalogSize?: string;
+    contentType?: string;
+    locked?: boolean;
+    objectSize?: string;
+    optimizeOption?: boolean;
+    popularityDistribution?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdLargeFile {
+    catalogSize?: string;
+    contentType?: string;
+    locked?: boolean;
+    objectSize?: string;
+    popularityDistribution?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdLive {
+    catalogSize?: string;
+    contentType?: string;
+    dash?: boolean;
+    hds?: boolean;
+    hls?: boolean;
+    locked?: boolean;
+    popularityDistribution?: string;
+    segmentDurationDash?: string;
+    segmentDurationHds?: string;
+    segmentDurationHls?: string;
+    segmentDurationSmooth?: string;
+    segmentSizeDash?: string;
+    segmentSizeHds?: string;
+    segmentSizeHls?: string;
+    segmentSizeSmooth?: string;
+    smooth?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorContentCharacteristicsWsdVod {
+    catalogSize?: string;
+    contentType?: string;
+    dash?: boolean;
+    hds?: boolean;
+    hls?: boolean;
+    locked?: boolean;
+    popularityDistribution?: string;
+    segmentDurationDash?: string;
+    segmentDurationHds?: string;
+    segmentDurationHls?: string;
+    segmentDurationSmooth?: string;
+    segmentSizeDash?: string;
+    segmentSizeHds?: string;
+    segmentSizeHls?: string;
+    segmentSizeSmooth?: string;
+    smooth?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorContentPrePosition {
+    enabled?: boolean;
+    firstLocation?: string;
+    locked?: boolean;
+    secondLocation?: string;
+    sourceType?: string;
+    targets?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorContentTargetingProtection {
+    countries?: string[];
+    dmas?: string[];
+    enableGeoProtection?: boolean;
+    enableGeoRedirectOnDeny?: boolean;
+    enableIpProtection?: boolean;
+    enableIpRedirectOnDeny?: boolean;
+    enableReferrerProtection?: boolean;
+    enableReferrerRedirectOnDeny?: boolean;
+    enabled?: boolean;
+    geoProtectionMode?: string;
+    geoProtectionTitle?: string;
+    geoRedirectUrl?: string;
+    ipAddresses?: string[];
+    ipProtectionMode?: string;
+    ipProtectionTitle?: string;
+    ipRedirectUrl?: string;
+    locked?: boolean;
+    overrideIpAddresses?: string[];
+    referrerDomains?: string[];
+    referrerProtectionMode?: string;
+    referrerProtectionTitle?: string;
+    referrerRedirectUrl?: string;
+    regions?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCorsSupport {
+    allowCredentials?: boolean;
+    allowHeaders?: string;
+    allowOrigins?: string;
+    enabled?: boolean;
+    exposeHeaders?: string[];
+    headers?: string[];
+    locked?: boolean;
+    methods?: string[];
+    origins?: string[];
+    preflightMaxAge?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCpCode {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeValue;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeValue {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeValueCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCpCodeValueCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorCustomBehavior {
+    behaviorId?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDatastream {
+    beaconStreamTitle?: string;
+    collectMidgressTraffic?: boolean;
+    datastreamIds?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    logEnabled?: boolean;
+    logStreamName?: string;
+    logStreamTitle?: string;
+    samplingPercentage?: number;
+    streamType?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDcp {
+    anonymous?: boolean;
+    enabled?: boolean;
+    gwenabled?: boolean;
+    locked?: boolean;
+    namespaceId?: string;
+    templateUuid?: string;
+    tlsenabled?: boolean;
+    uuid?: string;
+    wsenabled?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthHmacTransformation {
+    hashConversionAlgorithm?: string;
+    hashConversionKey?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthRegexTransformation {
+    locked?: boolean;
+    regexPattern?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthSubstringTransformation {
+    locked?: boolean;
+    substringEnd?: string;
+    substringStart?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDcpAuthVariableExtractor {
+    certificateField?: string;
+    dcpMutualAuthProcessingVariableId?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDcpDefaultAuthzGroups {
+    groupNames?: string[];
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDcpDevRelations {
+    customValues?: boolean;
+    enabled?: boolean;
+    hostname?: string;
+    locked?: boolean;
+    path?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDcpRealTimeAuth {
+    extractHostname?: boolean;
+    extractJurisdiction?: boolean;
+    extractNamespace?: boolean;
+    hostnameClaim?: string;
+    jurisdictionClaim?: string;
+    locked?: boolean;
+    namespaceClaim?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDeliveryReceipt {
+    enabled?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDenyAccess {
+    enabled?: boolean;
+    locked?: boolean;
+    reason?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDenyDirectFailoverAccess {
+    enabled?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDeviceCharacteristicCacheId {
+    elements?: string[];
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDeviceCharacteristicHeader {
+    elements?: string[];
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDnsAsyncRefresh {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDnsPrefresh {
+    delay?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDowngradeProtocol {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDownloadCompleteMarker {
+    enabled?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDownloadNotification {
+    enabled?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDownstreamCache {
+    allowBehavior?: string;
+    behavior?: string;
+    locked?: boolean;
+    sendHeaders?: string;
+    sendPrivate?: boolean;
+    templateUuid?: string;
+    ttl?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDynamicThroughtputOptimization {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDynamicThroughtputOptimizationOverride {
+    locked?: boolean;
+    templateUuid?: string;
+    throughput?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorDynamicWebContent {
+    imageCompression?: boolean;
+    locked?: boolean;
+    prefetch?: boolean;
+    realUserMonitoring?: boolean;
+    sureRoute?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEcmsBulkUpload {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEcmsDatabase {
+    database?: string;
+    extractLocation?: string;
+    headerName?: string;
+    locked?: boolean;
+    queryParameterName?: string;
+    regexPattern?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEcmsDataset {
+    dataset?: string;
+    extractLocation?: string;
+    headerName?: string;
+    locked?: boolean;
+    queryParameterName?: string;
+    regexPattern?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEcmsObjectKey {
+    locked?: boolean;
+    regex?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEdgeConnect {
+    aggregateLines?: string;
+    aggregateSize?: string;
+    aggregateTime?: string;
+    apiConnector?: string;
+    apiDataElements?: string[];
+    destinationHostname?: string;
+    destinationPath?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    overrideAggregateSettings?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingAdvanced {
+    description?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    xml?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenter {
+    cookieName?: string;
+    description?: string;
+    enableFailover?: boolean;
+    failoverRules?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenterFailoverRule[];
+    failoverTitle?: string;
+    hostname?: string;
+    ip?: string;
+    locked?: boolean;
+    originId?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingDataCenterFailoverRule {
+    absolutePath?: boolean;
+    contextRoot?: string;
+    failoverHostname?: string;
+    modifyRequest?: boolean;
+    overrideHostname?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEdgeLoadBalancingOrigin {
+    cookieName?: string;
+    description?: string;
+    enableSessionPersistence?: boolean;
+    hostname?: string;
+    id?: string;
+    locked?: boolean;
+    sessionPersistenceTitle?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEdgeOriginAuthorization {
+    cookieName?: string;
+    domain?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEdgeRedirector {
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorEdgeRedirectorCloudletPolicy;
+    cloudletSharedPolicy?: number;
+    enabled?: boolean;
+    isSharedPolicy?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEdgeRedirectorCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEdgeScape {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEdgeSideIncludes {
+    detectInjection?: boolean;
+    enableViaHttp?: boolean;
+    enabled?: boolean;
+    i18nCharsets?: string[];
+    i18nStatus?: boolean;
+    locked?: boolean;
+    passClientIp?: boolean;
+    passSetCookie?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEdgeWorker {
+    createEdgeWorker?: string;
+    edgeWorkerId?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    resourceTier?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEnhancedAkamaiProtocol {
+    display?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEnhancedProxyDetection {
+    anonymousVpn?: string;
+    bestPracticeAction?: string;
+    bestPracticeRedirecturl?: string;
+    detectAnonymousVpn?: boolean;
+    detectAnonymousVpnAction?: string;
+    detectAnonymousVpnRedirecturl?: string;
+    detectHostingProvider?: boolean;
+    detectHostingProviderAction?: string;
+    detectHostingProviderRedirecturl?: string;
+    detectPublicProxy?: boolean;
+    detectPublicProxyAction?: string;
+    detectPublicProxyRedirecturl?: string;
+    detectResidentialProxy?: boolean;
+    detectResidentialProxyAction?: string;
+    detectResidentialProxyRedirecturl?: string;
+    detectSmartDnsProxy?: boolean;
+    detectSmartDnsProxyAction?: string;
+    detectSmartDnsProxyRedirecturl?: string;
+    detectTorExitNode?: boolean;
+    detectTorExitNodeAction?: string;
+    detectTorExitNodeRedirecturl?: string;
+    detectVpnDataCenter?: boolean;
+    detectVpnDataCenterAction?: string;
+    detectVpnDataCenterRedirecturl?: string;
+    enableConfigurationMode?: string;
+    enabled?: boolean;
+    forwardHeaderEnrichment?: boolean;
+    hostingProvider?: string;
+    locked?: boolean;
+    publicProxy?: string;
+    residentialProxy?: string;
+    smartDnsProxy?: string;
+    templateUuid?: string;
+    torExitNode?: string;
+    uuid?: string;
+    vpnDataCenter?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorEpdForwardHeaderEnrichment {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorFailAction {
+    actionType?: string;
+    allowFcmParentOverride?: boolean;
+    cexCustomPath?: boolean;
+    cexHostname?: string;
+    cexPath?: string;
+    contentCustomPath?: boolean;
+    contentHostname?: string;
+    contentPath?: string;
+    cpCode?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorFailActionCpCode;
+    dynamicCustomPath?: boolean;
+    dynamicMethod?: string;
+    dynamicPath?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    modifyProtocol?: boolean;
+    netStorageHostname?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorFailActionNetStorageHostname;
+    netStoragePath?: string;
+    preserveQueryString?: boolean;
+    protocol?: string;
+    redirectCustomPath?: boolean;
+    redirectHostname?: string;
+    redirectHostnameType?: string;
+    redirectMethod?: number;
+    redirectPath?: string;
+    saasCnameEnabled?: boolean;
+    saasCnameLevel?: number;
+    saasCookie?: string;
+    saasQueryString?: string;
+    saasRegex?: string;
+    saasReplace?: string;
+    saasSuffix?: string;
+    saasType?: string;
+    statusCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorFailActionCpCode {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorFailActionCpCodeCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorFailActionCpCodeCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorFailActionNetStorageHostname {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorFailoverBotManagerFeatureCompatibility {
+    compatibility?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorFastInvalidate {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketing {
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingCloudletPolicy;
+    enabled?: boolean;
+    javaScriptInsertionRule?: string;
+    locked?: boolean;
+    mediaMathPrefix?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingPlus {
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingPlusCloudletPolicy;
+    enabled?: boolean;
+    javaScriptInsertionRule?: string;
+    locked?: boolean;
+    mediaMathPrefix?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorFirstPartyMarketingPlusCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorForwardRewrite {
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorForwardRewriteCloudletPolicy;
+    cloudletSharedPolicy?: number;
+    enabled?: boolean;
+    isSharedPolicy?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorForwardRewriteCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorG2oheader {
+    customSignStrings?: string[];
+    dataHeader?: string;
+    enabled?: boolean;
+    encodingVersion?: number;
+    locked?: boolean;
+    nonce?: string;
+    secretKey?: string;
+    signedHeader?: string;
+    templateUuid?: string;
+    useCustomSignString?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorGlobalRequestNumber {
+    headerName?: string;
+    locked?: boolean;
+    outputOption?: string;
+    templateUuid?: string;
+    uuid?: string;
+    variableName?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorGraphqlCaching {
+    advanced?: string;
+    cacheResponsesWithErrors?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    operationsJsonBodyParameterName?: string;
+    operationsUrlQueryParameterName?: string;
+    postRequestProcessingErrorHandling?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorGzipResponse {
+    behavior?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorHdDataAdvanced {
+    description?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    xml?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorHealthDetection {
+    locked?: boolean;
+    maximumReconnects?: number;
+    retryCount?: number;
+    retryInterval?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorHsafEipBinding {
+    customExtractedSerial?: boolean;
+    enabled?: boolean;
+    hashMaxValue?: number;
+    hashMinValue?: number;
+    locked?: boolean;
+    templateUuid?: string;
+    tier?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorHttp2 {
+    enabled?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorHttp3 {
+    enable?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorHttpStrictTransportSecurity {
+    enable?: boolean;
+    includeSubDomains?: boolean;
+    locked?: boolean;
+    maxAge?: string;
+    preload?: boolean;
+    redirect?: boolean;
+    redirectStatusCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorHttpToHttpsUpgrade {
+    locked?: boolean;
+    templateUuid?: string;
+    upgrade?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImOverride {
+    dpr?: number;
+    dprvar?: string;
+    excludeAllQueryParameters?: boolean;
+    excludedQueryParameters?: string[];
+    format?: string;
+    formatvar?: string;
+    locked?: boolean;
+    override?: string;
+    policy?: string;
+    policyvar?: string;
+    policyvarIMvar?: string;
+    policyvarName?: string;
+    templateUuid?: string;
+    typesel?: string;
+    uuid?: string;
+    width?: number;
+    widthvar?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManager {
+    applyBestFileType?: boolean;
+    cpCodeOriginal?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeOriginal;
+    cpCodeTransformed?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeTransformed;
+    enabled?: boolean;
+    imageSet?: string;
+    locked?: boolean;
+    policySetType?: string;
+    resize?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    videoSet?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeOriginal {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeOriginalCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeOriginalCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeTransformed {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeTransformedCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageAndVideoManagerCpCodeTransformedCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageManager {
+    advanced?: boolean;
+    apiReferenceTitle?: string;
+    applyBestFileType?: boolean;
+    cpCodeOriginal?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerCpCodeOriginal;
+    cpCodeTransformed?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerCpCodeTransformed;
+    enabled?: boolean;
+    locked?: boolean;
+    policySet?: string;
+    policyToken?: string;
+    policyTokenDefault?: string;
+    resize?: boolean;
+    settingsTitle?: string;
+    superCacheRegion?: string;
+    templateUuid?: string;
+    trafficTitle?: string;
+    useExistingPolicySet?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerCpCodeOriginal {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerCpCodeOriginalCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerCpCodeOriginalCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerCpCodeTransformed {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerCpCodeTransformedCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerCpCodeTransformedCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideo {
+    advanced?: boolean;
+    apiReferenceTitle?: string;
+    applyBestFileType?: boolean;
+    cpCodeOriginal?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeOriginal;
+    cpCodeTransformed?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeTransformed;
+    enabled?: boolean;
+    locked?: boolean;
+    policySet?: string;
+    policyToken?: string;
+    policyTokenDefault?: string;
+    resize?: boolean;
+    settingsTitle?: string;
+    superCacheRegion?: string;
+    templateUuid?: string;
+    trafficTitle?: string;
+    useExistingPolicySet?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeOriginal {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeOriginalCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeOriginalCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeTransformed {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeTransformedCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorImageManagerVideoCpCodeTransformedCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorInclude {
+    id?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorInstant {
+    customLinkRelations?: string[];
+    locked?: boolean;
+    prefetchCacheable?: boolean;
+    prefetchHtml?: boolean;
+    prefetchNoStore?: boolean;
+    prefetchNoStoreExtensions?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorInstantConfig {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimization {
+    enablePartialObjectCaching?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    maximumSize?: string;
+    minimumSize?: string;
+    templateUuid?: string;
+    useVersioning?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorLargeFileOptimizationAdvanced {
+    enabled?: boolean;
+    fragmentSize?: string;
+    locked?: boolean;
+    objectSize?: string;
+    prefetchAfterRequest?: number;
+    prefetchDuringRequest?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRate {
+    bitrateTables?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRateBitrateTable[];
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    thresholdTables?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRateThresholdTable[];
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRateBitrateTable {
+    bitrateUnit?: string;
+    bitrateValue?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorLimitBitRateThresholdTable {
+    thresholdUnit?: string;
+    thresholdValue?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorLogCustom {
+    customLogField?: string;
+    locked?: boolean;
+    logCustomLogField?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorMPulse {
+    apiKey?: string;
+    bufferSize?: string;
+    configOverride?: string;
+    enabled?: boolean;
+    loaderVersion?: string;
+    locked?: boolean;
+    requirePci?: boolean;
+    templateUuid?: string;
+    titleOptional?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorManifestPersonalization {
+    enabled?: boolean;
+    hlsEnableDebugHeaders?: boolean;
+    hlsEnabled?: boolean;
+    hlsFilterInBitrateRanges?: string;
+    hlsFilterInBitrates?: string;
+    hlsMode?: string;
+    hlsPreferredBitrate?: string;
+    hlsQueryParamEnabled?: boolean;
+    hlsQueryParamSecretKey?: string;
+    hlsQueryParamTransitionKey?: string;
+    hlsShowAdvanced?: boolean;
+    hlsTitle?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorManifestRerouting {
+    locked?: boolean;
+    partner?: string;
+    templateUuid?: string;
+    username?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorManualServerPush {
+    locked?: boolean;
+    serverpushlists?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorMediaAcceleration {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorMediaAccelerationQuicOptout {
+    locked?: boolean;
+    optout?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorMediaClient {
+    beaconId?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    useHybridHttpUdp?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorMediaFileRetrievalOptimization {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorMediaOriginFailover {
+    cacheErrorResponse?: boolean;
+    cacheWindow?: string;
+    clientResponseCode?: string;
+    detectObjectUnavailable?: boolean;
+    detectObjectUnavailableTitle?: string;
+    detectOriginUnavailable?: boolean;
+    detectOriginUnavailableTitle?: string;
+    detectOriginUnresponsive?: boolean;
+    detectOriginUnresponsiveTitle?: string;
+    locked?: boolean;
+    objectUnavailableAlternateHost?: string;
+    objectUnavailableBackupHost?: string;
+    objectUnavailableBlacklistOriginIp?: boolean;
+    objectUnavailableBlacklistWindow?: string;
+    objectUnavailableChangeProtocol?: boolean;
+    objectUnavailableDetectionLevel?: string;
+    objectUnavailableIncludeQueryString?: boolean;
+    objectUnavailableModifiedPath?: string;
+    objectUnavailableModifyRequestPath?: boolean;
+    objectUnavailableProtocol?: string;
+    objectUnavailableRecovery?: string;
+    objectUnavailableRedirectMethod?: number;
+    objectUnavailableResponseCodes?: string[];
+    objectUnavailableRetryLimit?: string;
+    originUnavailableAlternateHost?: string;
+    originUnavailableBackupHost?: string;
+    originUnavailableBlacklistOriginIp?: boolean;
+    originUnavailableBlacklistWindow?: string;
+    originUnavailableChangeProtocol?: boolean;
+    originUnavailableDetectionLevel?: string;
+    originUnavailableIncludeQueryString?: boolean;
+    originUnavailableModifiedPath?: string;
+    originUnavailableModifyRequestPath?: boolean;
+    originUnavailableProtocol?: string;
+    originUnavailableRecovery?: string;
+    originUnavailableRedirectMethod?: number;
+    originUnavailableResponseCodes?: string[];
+    originUnavailableRetryLimit?: string;
+    originUnresponsiveAlternateHost?: string;
+    originUnresponsiveBackupHost?: string;
+    originUnresponsiveBlacklistOriginIp?: boolean;
+    originUnresponsiveBlacklistWindow?: string;
+    originUnresponsiveChangeProtocol?: boolean;
+    originUnresponsiveDetectionLevel?: string;
+    originUnresponsiveIncludeQueryString?: boolean;
+    originUnresponsiveModifiedPath?: string;
+    originUnresponsiveModifyRequestPath?: boolean;
+    originUnresponsiveProtocol?: string;
+    originUnresponsiveRecovery?: string;
+    originUnresponsiveRedirectMethod?: number;
+    originUnresponsiveRetryLimit?: string;
+    otherOptions?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorMetadataCaching {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorMobileSdkPerformance {
+    enabled?: boolean;
+    locked?: boolean;
+    secondaryMultipathToOrigin?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingRequestHeader {
+    action?: string;
+    avoidDuplicateHeaders?: boolean;
+    customHeaderName?: string;
+    headerValue?: string;
+    locked?: boolean;
+    newHeaderValue?: string;
+    standardAddHeaderName?: string;
+    standardDeleteHeaderName?: string;
+    standardModifyHeaderName?: string;
+    standardPassHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyIncomingResponseHeader {
+    action?: string;
+    avoidDuplicateHeaders?: boolean;
+    customHeaderName?: string;
+    headerValue?: string;
+    locked?: boolean;
+    newHeaderValue?: string;
+    standardAddHeaderName?: string;
+    standardDeleteHeaderName?: string;
+    standardModifyHeaderName?: string;
+    standardPassHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingRequestHeader {
+    action?: string;
+    avoidDuplicateHeaders?: boolean;
+    customHeaderName?: string;
+    headerValue?: string;
+    locked?: boolean;
+    matchMultiple?: boolean;
+    newHeaderValue?: string;
+    regexHeaderMatch?: string;
+    regexHeaderReplace?: string;
+    standardAddHeaderName?: string;
+    standardDeleteHeaderName?: string;
+    standardModifyHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyOutgoingResponseHeader {
+    action?: string;
+    avoidDuplicateHeaders?: boolean;
+    customHeaderName?: string;
+    headerValue?: string;
+    locked?: boolean;
+    matchMultiple?: boolean;
+    newHeaderValue?: string;
+    regexHeaderMatch?: string;
+    regexHeaderReplace?: string;
+    standardAddHeaderName?: string;
+    standardDeleteHeaderName?: string;
+    standardModifyHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorModifyViaHeader {
+    enabled?: boolean;
+    locked?: boolean;
+    modificationOption?: string;
+    renameHeaderTo?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOrigin {
+    cacheKeyHostname?: string;
+    compress?: boolean;
+    customCertificateAuthorities?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthority[];
+    customCertificates?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificate[];
+    customForwardHostHeader?: string;
+    customValidCnValues?: string[];
+    enableTrueClientIp?: boolean;
+    forwardHostHeader?: string;
+    hostname?: string;
+    httpPort?: number;
+    httpsPort?: number;
+    ipVersion?: string;
+    locked?: boolean;
+    mslorigin?: string;
+    netStorage?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginNetStorage;
+    originCertificate?: string;
+    originCertsToHonor?: string;
+    originId?: string;
+    originSni?: boolean;
+    originType?: string;
+    ports?: string;
+    saasCnameEnabled?: boolean;
+    saasCnameLevel?: number;
+    saasCookie?: string;
+    saasQueryString?: string;
+    saasRegex?: string;
+    saasReplace?: string;
+    saasSuffix?: string;
+    saasType?: string;
+    secondHostname?: string;
+    secondHostnameEnabled?: boolean;
+    standardCertificateAuthorities?: string[];
+    templateUuid?: string;
+    trueClientIpClientSetting?: boolean;
+    trueClientIpHeader?: string;
+    useUniqueCacheKey?: boolean;
+    uuid?: string;
+    verificationMode?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristics {
+    accessKeyEncryptedStorage?: boolean;
+    adcTitle?: string;
+    authenticationMethod?: string;
+    authenticationMethodTitle?: string;
+    awsAccessKeyId?: string;
+    awsAccessKeyVersionGuid?: string;
+    awsArRegion?: string;
+    awsHost?: string;
+    awsRegion?: string;
+    awsSecretAccessKey?: string;
+    awsService?: string;
+    country?: string;
+    customSignStrings?: string[];
+    directConnectGeo?: string;
+    encodingVersion?: number;
+    endPointService?: string;
+    gcsAccessKeyVersionGuid?: string;
+    gcsHmacKeyAccessId?: string;
+    gcsHmacKeySecret?: string;
+    hostnameTag?: boolean;
+    locked?: boolean;
+    mslkey?: string;
+    mslname?: string;
+    nonce?: string;
+    originLocationTitle?: string;
+    propertyIdTag?: boolean;
+    roleArn?: string;
+    secretKey?: string;
+    templateUuid?: string;
+    useCustomSignString?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacteristicsWsd {
+    locked?: boolean;
+    origintype?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificate {
+    pemEncodedCert?: string;
+    sha1Fingerprint?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthority {
+    pemEncodedCert?: string;
+    sha1Fingerprint?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethod {
+    customStatusCode?: string;
+    locked?: boolean;
+    recoveryMethod?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryPolicy {
+    binaryEquivalentContent?: boolean;
+    enableIpAvoidance?: boolean;
+    enabled?: boolean;
+    ipAvoidanceErrorThreshold?: number;
+    ipAvoidanceRetryInterval?: number;
+    locked?: boolean;
+    monitorOriginResponsiveness?: boolean;
+    monitorResponseCodes1s?: string[];
+    monitorResponseCodes2s?: string[];
+    monitorResponseCodes3s?: string[];
+    monitorStatusCodes1?: boolean;
+    monitorStatusCodes1EnableRecovery?: boolean;
+    monitorStatusCodes1EnableRetry?: boolean;
+    monitorStatusCodes1RecoveryConfigName?: string;
+    monitorStatusCodes2?: boolean;
+    monitorStatusCodes2EnableRecovery?: boolean;
+    monitorStatusCodes2EnableRetry?: boolean;
+    monitorStatusCodes2RecoveryConfigName?: string;
+    monitorStatusCodes3?: boolean;
+    monitorStatusCodes3EnableRecovery?: boolean;
+    monitorStatusCodes3EnableRetry?: boolean;
+    monitorStatusCodes3RecoveryConfigName?: string;
+    originResponsivenessCustomTimeout?: number;
+    originResponsivenessEnableRecovery?: boolean;
+    originResponsivenessEnableRetry?: boolean;
+    originResponsivenessMonitoring?: string;
+    originResponsivenessRecoveryConfigName?: string;
+    originResponsivenessTimeout?: string;
+    statusCodeMonitoring1?: string;
+    statusCodeMonitoring2?: string;
+    statusCodeMonitoring3?: string;
+    templateUuid?: string;
+    tuningParameters?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginIpAcl {
+    enable?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorPersistentClientConnection {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorPersistentConnection {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorPersonallyIdentifiableInformation {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorPhasedRelease {
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorPhasedReleaseCloudletPolicy;
+    cloudletSharedPolicy?: number;
+    enabled?: boolean;
+    failoverDuration?: number;
+    failoverEnabled?: boolean;
+    failoverResponseCodes?: string[];
+    failoverTitle?: string;
+    isSharedPolicy?: boolean;
+    label?: string;
+    locked?: boolean;
+    populationCookieType?: string;
+    populationDuration?: string;
+    populationExpirationDate?: string;
+    populationRefresh?: boolean;
+    populationTitle?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorPhasedReleaseCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorPreconnect {
+    locked?: boolean;
+    preconnectlists?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorPredictiveContentDelivery {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorPredictivePrefetching {
+    accuracyTarget?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorPrefetch {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorPrefetchable {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorPrefreshCache {
+    enabled?: boolean;
+    locked?: boolean;
+    prefreshval?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorQuality {
+    audienceSettings?: string;
+    catalogSize?: string;
+    contentSettings?: string;
+    contentType?: string;
+    country?: string;
+    deliveryFormat?: string;
+    deliveryType?: string;
+    downloadType?: string;
+    endUserLocation?: string;
+    locked?: boolean;
+    maximumConcurrentUsers?: string;
+    objectSize?: string;
+    optimizeFor?: string;
+    originSettings?: string;
+    popularityDistribution?: string;
+    refreshRate?: string;
+    segmentDuration?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorQuicBeta {
+    enabled?: boolean;
+    locked?: boolean;
+    quicOfferPercentage?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRandomSeek {
+    flv?: boolean;
+    locked?: boolean;
+    maximumSize?: string;
+    mp4?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRapid {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorReadTimeout {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRealTimeReporting {
+    advanced?: boolean;
+    beaconSamplingPercentage?: number;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRealUserMonitoring {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRedirect {
+    destinationHostname?: string;
+    destinationHostnameOther?: string;
+    destinationHostnameSibling?: string;
+    destinationHostnameSubdomain?: string;
+    destinationPath?: string;
+    destinationPathOther?: string;
+    destinationPathPrefix?: string;
+    destinationPathSuffix?: string;
+    destinationPathSuffixStatus?: string;
+    destinationProtocol?: string;
+    locked?: boolean;
+    mobileDefaultChoice?: string;
+    queryString?: string;
+    responseCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRedirectplus {
+    destination?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    responseCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRefererChecking {
+    allowChildren?: boolean;
+    domains?: string[];
+    enabled?: boolean;
+    locked?: boolean;
+    strict?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRemoveQueryParameter {
+    locked?: boolean;
+    parameters?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRemoveVary {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorReport {
+    cookies?: string[];
+    customLogField?: string;
+    locked?: boolean;
+    logAcceptLanguage?: boolean;
+    logCookies?: string;
+    logCustomLogField?: boolean;
+    logEdgeIp?: boolean;
+    logHost?: boolean;
+    logReferer?: boolean;
+    logUserAgent?: boolean;
+    logXForwardedFor?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRequestControl {
+    branded403File?: string;
+    branded403StatusCode?: number;
+    branded403Url?: string;
+    brandedDenyCacheTtl?: number;
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlCloudletPolicy;
+    cloudletSharedPolicy?: number;
+    enableBranded403?: boolean;
+    enabled?: boolean;
+    isSharedPolicy?: boolean;
+    locked?: boolean;
+    netStorage?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlNetStorage;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRequestControlNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRequestTypeMarker {
+    locked?: boolean;
+    requestType?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizer {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorResourceOptimizerExtendedCompatibility {
+    enableAllFeatures?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorResponseCode {
+    locked?: boolean;
+    override206?: boolean;
+    statusCode?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorResponseCookie {
+    cookieName?: string;
+    defaultDomain?: boolean;
+    defaultPath?: boolean;
+    domain?: string;
+    duration?: string;
+    enabled?: boolean;
+    expirationDate?: string;
+    expires?: string;
+    format?: string;
+    httpOnly?: boolean;
+    locked?: boolean;
+    path?: string;
+    sameSite?: string;
+    secure?: boolean;
+    templateUuid?: string;
+    type?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRestrictObjectCaching {
+    locked?: boolean;
+    maximumSize?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorReturnCacheStatus {
+    locked?: boolean;
+    responseHeaderName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRewriteUrl {
+    behavior?: string;
+    keepQueryString?: boolean;
+    locked?: boolean;
+    match?: string;
+    matchMultiple?: boolean;
+    matchRegex?: string;
+    targetPath?: string;
+    targetPathPrepend?: string;
+    targetRegex?: string;
+    targetUrl?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorRumCustom {
+    locked?: boolean;
+    rumGroupName?: string;
+    rumSampleRate?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSaasDefinitions {
+    applicationAction?: string;
+    applicationCnameEnabled?: boolean;
+    applicationCnameLevel?: number;
+    applicationCookie?: string;
+    applicationQueryString?: string;
+    applicationRegex?: string;
+    applicationReplace?: string;
+    applicationTitle?: string;
+    customerAction?: string;
+    customerCnameEnabled?: boolean;
+    customerCnameLevel?: number;
+    customerCookie?: string;
+    customerQueryString?: string;
+    customerRegex?: string;
+    customerReplace?: string;
+    customerTitle?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    usersAction?: string;
+    usersCnameEnabled?: boolean;
+    usersCnameLevel?: number;
+    usersCookie?: string;
+    usersQueryString?: string;
+    usersRegex?: string;
+    usersReplace?: string;
+    usersTitle?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudClient {
+    allowOverrideOriginCacheKey?: boolean;
+    connectorId?: string;
+    enabled?: boolean;
+    locked?: boolean;
+    originHostHeader?: string;
+    originType?: string;
+    sf3cOriginHost?: string;
+    sf3cOriginHostHeader?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProvider {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSalesForceCommerceCloudProviderHostHeader {
+    hostHeaderSource?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSavePostDcaProcessing {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorScheduleInvalidation {
+    locked?: boolean;
+    refreshMethod?: string;
+    repeat?: boolean;
+    repeatInterval?: string;
+    start?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorScriptManagement {
+    enabled?: boolean;
+    locked?: boolean;
+    serviceworker?: string;
+    templateUuid?: string;
+    timestamp?: number;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedContentProtection {
+    acl?: boolean;
+    dashMediaEncryption?: boolean;
+    dataPayload?: boolean;
+    enableTokenInUri?: boolean;
+    enabled?: boolean;
+    fieldCarryOver?: string;
+    headerForSalts?: string[];
+    hlsMasterManifestFiles?: string[];
+    hlsMediaEncryption?: boolean;
+    ip?: boolean;
+    key?: string;
+    locked?: boolean;
+    mediaEncryptionTitle?: string;
+    revokedListId?: number;
+    salt?: string;
+    sessionId?: boolean;
+    templateUuid?: string;
+    tokenAuthHlsTitle?: string;
+    tokenAuthenticationTitle?: string;
+    tokenRevocationEnabled?: boolean;
+    tokenRevocationTitle?: string;
+    transitionKey?: string;
+    useAdvanced?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaOptimization {
+    behavior?: string;
+    dvrType?: string;
+    dvrWindow?: string;
+    enableUllStreaming?: boolean;
+    endTime?: string;
+    liveType?: string;
+    locked?: boolean;
+    showAdvanced?: boolean;
+    startTime?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSegmentedMediaStreamingPrefetch {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSetVariable {
+    algorithm?: string;
+    caseSensitive?: boolean;
+    certificateFieldName?: string;
+    cookieName?: string;
+    deviceProfile?: string;
+    encryptionKey?: string;
+    encryptionMode?: string;
+    endIndex?: string;
+    exceptChars?: string;
+    extractLocation?: string;
+    forceChars?: string;
+    formatString?: string;
+    generator?: string;
+    globalSubstitution?: boolean;
+    headerName?: string;
+    hmacAlgorithm?: string;
+    hmacKey?: string;
+    initializationVector?: string;
+    ipVersion?: string;
+    ipv4Prefix?: number;
+    ipv6Prefix?: number;
+    locationId?: string;
+    locked?: boolean;
+    max?: number;
+    maxRandomNumber?: string;
+    min?: number;
+    minRandomNumber?: string;
+    nonce?: string;
+    numberOfBytes?: number;
+    operandOne?: string;
+    paramName?: string;
+    pathComponentOffset?: string;
+    prependBytes?: boolean;
+    queryParameterName?: string;
+    regex?: string;
+    replacement?: string;
+    responseHeaderName?: string;
+    separator?: string;
+    setCookieName?: string;
+    startIndex?: string;
+    subString?: string;
+    templateUuid?: string;
+    transform?: string;
+    uuid?: string;
+    valueSource?: string;
+    variableName?: string;
+    variableValue?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSimulateErrorCode {
+    errorType?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    timeout?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSiteShield {
+    locked?: boolean;
+    nossmap?: string;
+    ssmap?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmap;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmap {
+    name?: string;
+    srmap?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigration {
+    allowHttpsDowngrade?: boolean;
+    allowHttpsUpgrade?: boolean;
+    cacheSharingDuration?: number;
+    cacheSharingStartTime?: string;
+    enabled?: boolean;
+    isCertificateSniOnly?: boolean;
+    isTieredDistributionUsed?: boolean;
+    locked?: boolean;
+    migrationDuration?: number;
+    migrationFrom?: string;
+    migrationStartTime?: string;
+    tdLocation?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorStandardTlsMigrationOverride {
+    info?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorStrictHeaderParsing {
+    locked?: boolean;
+    strictMode?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    validMode?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSubCustomer {
+    accessControl?: boolean;
+    cacheKey?: boolean;
+    caching?: boolean;
+    contentCompressor?: boolean;
+    dynamicWebContent?: boolean;
+    enabled?: boolean;
+    geoLocation?: boolean;
+    ip?: boolean;
+    largeFileDelivery?: boolean;
+    liveVideoDelivery?: boolean;
+    locked?: boolean;
+    modifyPath?: boolean;
+    onDemandVideoDelivery?: boolean;
+    origin?: boolean;
+    partnerDomainSuffix?: string;
+    referrer?: boolean;
+    refreshContent?: boolean;
+    siteFailover?: boolean;
+    templateUuid?: string;
+    tokenAuthorization?: boolean;
+    uuid?: string;
+    webApplicationFirewall?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorSureRoute {
+    allowFcmParentOverride?: boolean;
+    customMap?: string;
+    customStatKey?: string;
+    enableCustomKey?: boolean;
+    enabled?: boolean;
+    forceSslForward?: boolean;
+    locked?: boolean;
+    raceStatTtl?: string;
+    srDownloadLinkTitle?: string;
+    templateUuid?: string;
+    testObjectUrl?: string;
+    toHost?: string;
+    toHostStatus?: string;
+    type?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorTcpOptimization {
+    display?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorTeaLeaf {
+    enabled?: boolean;
+    ibmCustomerId?: number;
+    limitToDynamic?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistribution {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    tieredDistributionMap?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionAdvanced {
+    allowall?: boolean;
+    enabled?: boolean;
+    locked?: boolean;
+    method?: string;
+    policy?: string;
+    templateUuid?: string;
+    tieredDistributionMap?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorTieredDistributionCustomization {
+    cloudwrapperMapMigrationTitle?: string;
+    customMapEnabled?: boolean;
+    customMapName?: string;
+    hashAlgorithm?: string;
+    location?: string;
+    locked?: boolean;
+    mapMigrationEnabled?: boolean;
+    migrationEndDate?: string;
+    migrationStartDate?: string;
+    migrationWithinCwMapsEnabled?: boolean;
+    serialEnd?: string;
+    serialStart?: string;
+    templateUuid?: string;
+    tier1Title?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorTimeout {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorUidConfiguration {
+    enabled?: boolean;
+    extractLocation?: string;
+    headerName?: string;
+    legalText?: string;
+    locked?: boolean;
+    queryParameterName?: string;
+    templateUuid?: string;
+    uuid?: string;
+    variableName?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorValidateEntityTag {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebToken {
+    enableEs256?: boolean;
+    enableRs256?: boolean;
+    extractLocation?: string;
+    headerName?: string;
+    jwt?: string;
+    locked?: boolean;
+    queryParameterName?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorVerifyJsonWebTokenForDcp {
+    authorizations?: string;
+    clientId?: string;
+    customHeader?: boolean;
+    enableEs256?: boolean;
+    enableRs256?: boolean;
+    extractAuthorizations?: boolean;
+    extractClientId?: boolean;
+    extractLocation?: string;
+    extractUserName?: boolean;
+    headerName?: string;
+    jwt?: string;
+    locked?: boolean;
+    primaryLocation?: string;
+    queryParameterName?: string;
+    templateUuid?: string;
+    userName?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorVerifyTokenAuthorization {
+    algorithm?: string;
+    escapeHmacInputs?: boolean;
+    failureResponse?: boolean;
+    ignoreQueryString?: boolean;
+    key?: string;
+    location?: string;
+    locationId?: string;
+    locked?: boolean;
+    salt?: string;
+    templateUuid?: string;
+    transitionKey?: string;
+    useAdvanced?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoom {
+    accessTitle?: string;
+    cloudletSharedPolicy?: number;
+    customCookieDomain?: string;
+    domainConfig?: string;
+    locked?: boolean;
+    sessionAutoProlong?: boolean;
+    sessionDuration?: number;
+    templateUuid?: string;
+    uuid?: string;
+    waitingRoomAssetsPaths?: string[];
+    waitingRoomPath?: string;
+    waitingRoomTitle?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorVirtualWaitingRoomWithEdgeWorkers {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritization {
+    allowedUserCookieAdvanced?: boolean;
+    allowedUserCookieAutomaticSalt?: boolean;
+    allowedUserCookieDomain?: string;
+    allowedUserCookieDomainType?: string;
+    allowedUserCookieDuration?: number;
+    allowedUserCookieEnabled?: boolean;
+    allowedUserCookieHttpOnly?: boolean;
+    allowedUserCookieLabel?: string;
+    allowedUserCookieManagementTitle?: string;
+    allowedUserCookieRefresh?: boolean;
+    allowedUserCookieSalt?: string;
+    cloudletPolicy?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationCloudletPolicy;
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    userIdentificationByCookie?: boolean;
+    userIdentificationByHeaders?: boolean;
+    userIdentificationByIp?: boolean;
+    userIdentificationByParams?: boolean;
+    userIdentificationKeyCookie?: string;
+    userIdentificationKeyHeaders?: string[];
+    userIdentificationKeyParams?: string[];
+    userIdentificationTitle?: string;
+    uuid?: string;
+    waitingRoomCacheTtl?: number;
+    waitingRoomCookieAdvanced?: boolean;
+    waitingRoomCookieAutomaticSalt?: boolean;
+    waitingRoomCookieDomain?: string;
+    waitingRoomCookieDomainType?: string;
+    waitingRoomCookieDuration?: number;
+    waitingRoomCookieEnabled?: boolean;
+    waitingRoomCookieHttpOnly?: boolean;
+    waitingRoomCookieLabel?: string;
+    waitingRoomCookieManagementTitle?: string;
+    waitingRoomCookieSalt?: string;
+    waitingRoomCookieShareLabel?: boolean;
+    waitingRoomCpCode?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCode;
+    waitingRoomDirectory?: string;
+    waitingRoomManagementTitle?: string;
+    waitingRoomNetStorage?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomNetStorage;
+    waitingRoomStatusCode?: number;
+    waitingRoomUseCpCode?: boolean;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationCloudletPolicy {
+    id?: number;
+    name?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifo {
+    accessTitle?: string;
+    cloudletSharedPolicy?: number;
+    customCookieDomain?: string;
+    domainConfig?: string;
+    locked?: boolean;
+    sessionAutoProlong?: boolean;
+    sessionDuration?: number;
+    templateUuid?: string;
+    uuid?: string;
+    waitingRoomAssetsPaths?: string[];
+    waitingRoomPath?: string;
+    waitingRoomTitle?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationFifoStandalone {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCode {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomCpCodeCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorVisitorPrioritizationWaitingRoomNetStorage {
+    cpCode?: number;
+    downloadDomainName?: string;
+    g2oToken?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorWatermarking {
+    abVariantLocation?: string;
+    decryptionPassword1?: string;
+    decryptionPassword2?: string;
+    decryptionPasswordId1?: string;
+    decryptionPasswordId2?: string;
+    enable?: boolean;
+    locked?: boolean;
+    miscellaneousSettingsTitle?: string;
+    patternDecryptionEnable?: boolean;
+    patternEncryptionTitle?: string;
+    signatureVerificationEnable?: boolean;
+    templateUuid?: string;
+    tokenSigningTitle?: string;
+    useOriginalAsA?: boolean;
+    uuid?: string;
+    verificationKeyId1?: string;
+    verificationKeyId2?: string;
+    verificationPublicKey1?: string;
+    verificationPublicKey2?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewall {
+    firewallConfiguration?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewallFirewallConfiguration;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorWebApplicationFirewallFirewallConfiguration {
+    configId?: number;
+    fileName?: string;
+    productionStatus?: string;
+    productionVersion?: number;
+    stagingStatus?: string;
+    stagingVersion?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorWebSockets {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorWebdav {
+    enabled?: boolean;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530Criterion {
+    advancedImMatch?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionAdvancedImMatch;
+    bucket?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionBucket;
+    cacheability?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionCacheability;
+    chinaCdnRegion?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionChinaCdnRegion;
+    clientCertificate?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionClientCertificate;
+    clientIp?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionClientIp;
+    clientIpVersion?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionClientIpVersion;
+    cloudletsOrigin?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionCloudletsOrigin;
+    contentDeliveryNetwork?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionContentDeliveryNetwork;
+    contentType?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionContentType;
+    deviceCharacteristic?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristic;
+    ecmdAuthGroups?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionEcmdAuthGroups;
+    ecmdAuthScheme?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionEcmdAuthScheme;
+    ecmdIsAuthenticated?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionEcmdIsAuthenticated;
+    ecmdUsername?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionEcmdUsername;
+    edgeWorkersFailure?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionEdgeWorkersFailure;
+    fileExtension?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionFileExtension;
+    filename?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionFilename;
+    hostname?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionHostname;
+    matchAdvanced?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionMatchAdvanced;
+    matchCpCode?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCode;
+    matchResponseCode?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionMatchResponseCode;
+    matchVariable?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionMatchVariable;
+    metadataStage?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionMetadataStage;
+    originTimeout?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionOriginTimeout;
+    path?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionPath;
+    queryStringParameter?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionQueryStringParameter;
+    random?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionRandom;
+    recoveryConfig?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionRecoveryConfig;
+    regularExpression?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionRegularExpression;
+    requestCookie?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionRequestCookie;
+    requestHeader?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionRequestHeader;
+    requestMethod?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionRequestMethod;
+    requestProtocol?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionRequestProtocol;
+    requestType?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionRequestType;
+    responseHeader?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionResponseHeader;
+    serverLocation?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionServerLocation;
+    time?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionTime;
+    tokenAuthorization?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionTokenAuthorization;
+    userAgent?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionUserAgent;
+    userLocation?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionUserLocation;
+    userNetwork?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork;
+    variableError?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionVariableError;
+    virtualWaitingRoomRequest?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionVirtualWaitingRoomRequest;
+    visitorPrioritizationRequest?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionVisitorPrioritizationRequest;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionAdvancedImMatch {
+    locked?: boolean;
+    matchOn?: string;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionBucket {
+    locked?: boolean;
+    percentage?: number;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionCacheability {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionChinaCdnRegion {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionClientCertificate {
+    isCertificatePresent?: boolean;
+    isCertificateValid?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionClientIp {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    useHeaders?: boolean;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionClientIpVersion {
+    locked?: boolean;
+    templateUuid?: string;
+    useXForwardedFor?: boolean;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionCloudletsOrigin {
+    locked?: boolean;
+    originId?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionContentDeliveryNetwork {
+    locked?: boolean;
+    matchOperator?: string;
+    network?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionContentType {
+    locked?: boolean;
+    matchCaseSensitive?: boolean;
+    matchOperator?: string;
+    matchWildcard?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionDeviceCharacteristic {
+    booleanValue?: boolean;
+    characteristic?: string;
+    locked?: boolean;
+    matchCaseSensitive?: boolean;
+    matchWildcard?: boolean;
+    numericMatchOperator?: string;
+    numericValue?: number;
+    stringMatchOperator?: string;
+    stringValues?: string[];
+    templateUuid?: string;
+    uuid?: string;
+    versionMatchOperator?: string;
+    versionValue?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionEcmdAuthGroups {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionEcmdAuthScheme {
+    authScheme?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionEcmdIsAuthenticated {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionEcmdUsername {
+    length?: string;
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionEdgeWorkersFailure {
+    execStatus?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionFileExtension {
+    locked?: boolean;
+    matchCaseSensitive?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionFilename {
+    locked?: boolean;
+    matchCaseSensitive?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionHostname {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionMatchAdvanced {
+    closeXml?: string;
+    description?: string;
+    locked?: boolean;
+    openXml?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCode {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValue;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValue {
+    cpCodeLimits?: outputs.GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueCpCodeLimits;
+    createdDate?: number;
+    description?: string;
+    id?: number;
+    name?: string;
+    products?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionMatchCpCodeValueCpCodeLimits {
+    currentCapacity?: number;
+    limit?: number;
+    limitType?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionMatchResponseCode {
+    locked?: boolean;
+    lowerBound?: number;
+    matchOperator?: string;
+    templateUuid?: string;
+    upperBound?: number;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionMatchVariable {
+    locked?: boolean;
+    lowerBound?: string;
+    matchCaseSensitive?: boolean;
+    matchOperator?: string;
+    matchWildcard?: boolean;
+    templateUuid?: string;
+    upperBound?: string;
+    uuid?: string;
+    variableExpression?: string;
+    variableName?: string;
+    variableValues?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionMetadataStage {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionOriginTimeout {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionPath {
+    locked?: boolean;
+    matchCaseSensitive?: boolean;
+    matchOperator?: string;
+    normalize?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionQueryStringParameter {
+    escapeValue?: boolean;
+    locked?: boolean;
+    lowerBound?: number;
+    matchCaseSensitiveName?: boolean;
+    matchCaseSensitiveValue?: boolean;
+    matchOperator?: string;
+    matchWildcardName?: boolean;
+    matchWildcardValue?: boolean;
+    parameterName?: string;
+    templateUuid?: string;
+    upperBound?: number;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionRandom {
+    bucket?: number;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionRecoveryConfig {
+    configName?: string;
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionRegularExpression {
+    caseSensitive?: boolean;
+    locked?: boolean;
+    matchString?: string;
+    regex?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionRequestCookie {
+    cookieName?: string;
+    locked?: boolean;
+    lowerBound?: number;
+    matchCaseSensitiveName?: boolean;
+    matchCaseSensitiveValue?: boolean;
+    matchOperator?: string;
+    matchWildcardName?: boolean;
+    matchWildcardValue?: boolean;
+    templateUuid?: string;
+    upperBound?: number;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionRequestHeader {
+    headerName?: string;
+    locked?: boolean;
+    matchCaseSensitiveValue?: boolean;
+    matchOperator?: string;
+    matchWildcardName?: boolean;
+    matchWildcardValue?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionRequestMethod {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionRequestProtocol {
+    locked?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionRequestType {
+    locked?: boolean;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+    value?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionResponseHeader {
+    headerName?: string;
+    locked?: boolean;
+    lowerBound?: number;
+    matchCaseSensitiveValue?: boolean;
+    matchOperator?: string;
+    matchWildcardName?: boolean;
+    matchWildcardValue?: boolean;
+    templateUuid?: string;
+    upperBound?: number;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionServerLocation {
+    continents?: string[];
+    countries?: string[];
+    locationType?: string;
+    locked?: boolean;
+    matchOperator?: string;
+    regions?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionTime {
+    applyDaylightSavingsTime?: boolean;
+    beginDate?: string;
+    endDate?: string;
+    lastingDate?: string;
+    lastingDuration?: string;
+    locked?: boolean;
+    matchOperator?: string;
+    repeatBeginDate?: string;
+    repeatDuration?: string;
+    repeatInterval?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionTokenAuthorization {
+    locked?: boolean;
+    matchOperator?: string;
+    statusLists?: string[];
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionUserAgent {
+    locked?: boolean;
+    matchCaseSensitive?: boolean;
+    matchOperator?: string;
+    matchWildcard?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    values?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionUserLocation {
+    checkIps?: string;
+    continentValues?: string[];
+    countryValues?: string[];
+    field?: string;
+    locked?: boolean;
+    matchOperator?: string;
+    regionValues?: string[];
+    templateUuid?: string;
+    useOnlyFirstXForwardedForIp?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionUserNetwork {
+    bandwidthValues?: string[];
+    checkIps?: string;
+    field?: string;
+    locked?: boolean;
+    matchOperator?: string;
+    networkTypeValues?: string[];
+    networkValues?: string[];
+    templateUuid?: string;
+    useOnlyFirstXForwardedForIp?: boolean;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionVariableError {
+    locked?: boolean;
+    result?: boolean;
+    templateUuid?: string;
+    uuid?: string;
+    variableNames?: string[];
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionVirtualWaitingRoomRequest {
+    locked?: boolean;
+    matchOn?: string;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CriterionVisitorPrioritizationRequest {
+    locked?: boolean;
+    matchOn?: string;
+    matchOperator?: string;
+    templateUuid?: string;
+    uuid?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530CustomOverride {
+    name?: string;
+    overrideId?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530Variable {
+    description: string;
+    hidden: boolean;
+    name: string;
+    sensitive: boolean;
+    value: string;
+}
+
 export interface GetPropertyRulesTemplateTemplate {
     templateData: string;
     templateDir: string;
@@ -4756,7 +9150,7 @@ export interface GtmPropertyLivenessTest {
     sslClientCertificate?: string;
     sslClientPrivateKey?: string;
     testInterval: number;
-    testObject: string;
+    testObject?: string;
     testObjectPassword?: string;
     testObjectPort?: number;
     testObjectProtocol: string;
@@ -4833,16 +9227,6 @@ export interface PropertyActivationRuleError {
     type?: string;
 }
 
-export interface PropertyActivationRuleWarning {
-    behaviorName?: string;
-    detail?: string;
-    errorLocation?: string;
-    instance?: string;
-    statusCode?: number;
-    title?: string;
-    type?: string;
-}
-
 export interface PropertyHostname {
     certProvisioningType: string;
     certStatuses: outputs.PropertyHostnameCertStatus[];
@@ -4886,15 +9270,6 @@ export interface PropertyIncludeActivationComplianceRecordNoncomplianceReasonOth
     ticketId?: string;
 }
 
-export interface PropertyOrigin {
-    cacheKeyHostname?: string;
-    compress?: boolean;
-    enableTrueClientIp?: boolean;
-    forwardHostname?: string;
-    hostname?: string;
-    port?: number;
-}
-
 export interface PropertyRuleError {
     behaviorName?: string;
     detail?: string;
@@ -4905,68 +9280,13 @@ export interface PropertyRuleError {
     type?: string;
 }
 
-export interface PropertyRuleWarning {
-    behaviorName?: string;
-    detail?: string;
-    errorLocation?: string;
-    instance?: string;
-    statusCode?: number;
-    title?: string;
-    type?: string;
-}
-
 export namespace config {
-    export interface Appsecs {
-        accessToken?: string;
-        accountKey?: string;
-        clientSecret?: string;
-        clientToken?: string;
-        host?: string;
-        maxBody?: number;
-    }
-
     export interface Config {
-        accessToken?: string;
+        accessToken: string;
         accountKey?: string;
-        clientSecret?: string;
-        clientToken?: string;
-        host?: string;
-        maxBody?: number;
-    }
-
-    export interface Dns {
-        accessToken?: string;
-        accountKey?: string;
-        clientSecret?: string;
-        clientToken?: string;
-        host?: string;
-        maxBody?: number;
-    }
-
-    export interface Gtm {
-        accessToken?: string;
-        accountKey?: string;
-        clientSecret?: string;
-        clientToken?: string;
-        host?: string;
-        maxBody?: number;
-    }
-
-    export interface Networks {
-        accessToken?: string;
-        accountKey?: string;
-        clientSecret?: string;
-        clientToken?: string;
-        host?: string;
-        maxBody?: number;
-    }
-
-    export interface Property {
-        accessToken?: string;
-        accountKey?: string;
-        clientSecret?: string;
-        clientToken?: string;
-        host?: string;
+        clientSecret: string;
+        clientToken: string;
+        host: string;
         maxBody?: number;
     }
 

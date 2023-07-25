@@ -22,20 +22,20 @@ class GetDatastreamsResult:
     """
     A collection of values returned by getDatastreams.
     """
-    def __init__(__self__, group_id=None, id=None, streams=None):
-        if group_id and not isinstance(group_id, str):
-            raise TypeError("Expected argument 'group_id' to be a str")
+    def __init__(__self__, group_id=None, id=None, streams_details=None):
+        if group_id and not isinstance(group_id, int):
+            raise TypeError("Expected argument 'group_id' to be a int")
         pulumi.set(__self__, "group_id", group_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
-        if streams and not isinstance(streams, list):
-            raise TypeError("Expected argument 'streams' to be a list")
-        pulumi.set(__self__, "streams", streams)
+        if streams_details and not isinstance(streams_details, list):
+            raise TypeError("Expected argument 'streams_details' to be a list")
+        pulumi.set(__self__, "streams_details", streams_details)
 
     @property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[str]:
+    def group_id(self) -> Optional[int]:
         return pulumi.get(self, "group_id")
 
     @property
@@ -47,9 +47,9 @@ class GetDatastreamsResult:
         return pulumi.get(self, "id")
 
     @property
-    @pulumi.getter
-    def streams(self) -> Sequence['outputs.GetDatastreamsStreamResult']:
-        return pulumi.get(self, "streams")
+    @pulumi.getter(name="streamsDetails")
+    def streams_details(self) -> Sequence['outputs.GetDatastreamsStreamsDetailResult']:
+        return pulumi.get(self, "streams_details")
 
 
 class AwaitableGetDatastreamsResult(GetDatastreamsResult):
@@ -60,10 +60,10 @@ class AwaitableGetDatastreamsResult(GetDatastreamsResult):
         return GetDatastreamsResult(
             group_id=self.group_id,
             id=self.id,
-            streams=self.streams)
+            streams_details=self.streams_details)
 
 
-def get_datastreams(group_id: Optional[str] = None,
+def get_datastreams(group_id: Optional[int] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatastreamsResult:
     """
     Use this data source to access information about an existing resource.
@@ -76,11 +76,11 @@ def get_datastreams(group_id: Optional[str] = None,
     return AwaitableGetDatastreamsResult(
         group_id=pulumi.get(__ret__, 'group_id'),
         id=pulumi.get(__ret__, 'id'),
-        streams=pulumi.get(__ret__, 'streams'))
+        streams_details=pulumi.get(__ret__, 'streams_details'))
 
 
 @_utilities.lift_output_func(get_datastreams)
-def get_datastreams_output(group_id: Optional[pulumi.Input[Optional[str]]] = None,
+def get_datastreams_output(group_id: Optional[pulumi.Input[Optional[int]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatastreamsResult]:
     """
     Use this data source to access information about an existing resource.

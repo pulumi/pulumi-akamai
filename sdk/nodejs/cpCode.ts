@@ -32,21 +32,9 @@ export class CpCode extends pulumi.CustomResource {
         return obj['__pulumiType'] === CpCode.__pulumiType;
     }
 
-    /**
-     * @deprecated The setting "contract" has been deprecated.
-     */
-    public readonly contract!: pulumi.Output<string>;
     public readonly contractId!: pulumi.Output<string>;
-    /**
-     * @deprecated The setting "group" has been deprecated.
-     */
-    public readonly group!: pulumi.Output<string>;
     public readonly groupId!: pulumi.Output<string>;
     public readonly name!: pulumi.Output<string>;
-    /**
-     * @deprecated The setting "product" has been deprecated.
-     */
-    public readonly product!: pulumi.Output<string>;
     public readonly productId!: pulumi.Output<string>;
 
     /**
@@ -56,27 +44,27 @@ export class CpCode extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args?: CpCodeArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args: CpCodeArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CpCodeArgs | CpCodeState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CpCodeState | undefined;
-            resourceInputs["contract"] = state ? state.contract : undefined;
             resourceInputs["contractId"] = state ? state.contractId : undefined;
-            resourceInputs["group"] = state ? state.group : undefined;
             resourceInputs["groupId"] = state ? state.groupId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["product"] = state ? state.product : undefined;
             resourceInputs["productId"] = state ? state.productId : undefined;
         } else {
             const args = argsOrState as CpCodeArgs | undefined;
-            resourceInputs["contract"] = args ? args.contract : undefined;
+            if ((!args || args.contractId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'contractId'");
+            }
+            if ((!args || args.groupId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'groupId'");
+            }
             resourceInputs["contractId"] = args ? args.contractId : undefined;
-            resourceInputs["group"] = args ? args.group : undefined;
             resourceInputs["groupId"] = args ? args.groupId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["product"] = args ? args.product : undefined;
             resourceInputs["productId"] = args ? args.productId : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -90,21 +78,9 @@ export class CpCode extends pulumi.CustomResource {
  * Input properties used for looking up and filtering CpCode resources.
  */
 export interface CpCodeState {
-    /**
-     * @deprecated The setting "contract" has been deprecated.
-     */
-    contract?: pulumi.Input<string>;
     contractId?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "group" has been deprecated.
-     */
-    group?: pulumi.Input<string>;
     groupId?: pulumi.Input<string>;
     name?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "product" has been deprecated.
-     */
-    product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
 }
 
@@ -112,20 +88,8 @@ export interface CpCodeState {
  * The set of arguments for constructing a CpCode resource.
  */
 export interface CpCodeArgs {
-    /**
-     * @deprecated The setting "contract" has been deprecated.
-     */
-    contract?: pulumi.Input<string>;
-    contractId?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "group" has been deprecated.
-     */
-    group?: pulumi.Input<string>;
-    groupId?: pulumi.Input<string>;
+    contractId: pulumi.Input<string>;
+    groupId: pulumi.Input<string>;
     name?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "product" has been deprecated.
-     */
-    product?: pulumi.Input<string>;
     productId?: pulumi.Input<string>;
 }

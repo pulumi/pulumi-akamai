@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -32,10 +33,6 @@ type CpsDvEnrollment struct {
 	Csr CpsDvEnrollmentCsrOutput `pulumi:"csr"`
 	// DNS challenge information
 	DnsChallenges CpsDvEnrollmentDnsChallengeArrayOutput `pulumi:"dnsChallenges"`
-	// Enable Dual-Stacked certificate deployment for enrollment
-	//
-	// Deprecated: Deprecated, don't use; always false
-	EnableMultiStackedCertificates pulumi.BoolPtrOutput `pulumi:"enableMultiStackedCertificates"`
 	// HTTP challenge information
 	HttpChallenges CpsDvEnrollmentHttpChallengeArrayOutput `pulumi:"httpChallenges"`
 	// Settings containing network information and TLS Metadata used by CPS
@@ -95,6 +92,7 @@ func NewCpsDvEnrollment(ctx *pulumi.Context,
 	if args.TechContact == nil {
 		return nil, errors.New("invalid value for required argument 'TechContact'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CpsDvEnrollment
 	err := ctx.RegisterResource("akamai:index/cpsDvEnrollment:CpsDvEnrollment", name, args, &resource, opts...)
 	if err != nil {
@@ -135,10 +133,6 @@ type cpsDvEnrollmentState struct {
 	Csr *CpsDvEnrollmentCsr `pulumi:"csr"`
 	// DNS challenge information
 	DnsChallenges []CpsDvEnrollmentDnsChallenge `pulumi:"dnsChallenges"`
-	// Enable Dual-Stacked certificate deployment for enrollment
-	//
-	// Deprecated: Deprecated, don't use; always false
-	EnableMultiStackedCertificates *bool `pulumi:"enableMultiStackedCertificates"`
 	// HTTP challenge information
 	HttpChallenges []CpsDvEnrollmentHttpChallenge `pulumi:"httpChallenges"`
 	// Settings containing network information and TLS Metadata used by CPS
@@ -180,10 +174,6 @@ type CpsDvEnrollmentState struct {
 	Csr CpsDvEnrollmentCsrPtrInput
 	// DNS challenge information
 	DnsChallenges CpsDvEnrollmentDnsChallengeArrayInput
-	// Enable Dual-Stacked certificate deployment for enrollment
-	//
-	// Deprecated: Deprecated, don't use; always false
-	EnableMultiStackedCertificates pulumi.BoolPtrInput
 	// HTTP challenge information
 	HttpChallenges CpsDvEnrollmentHttpChallengeArrayInput
 	// Settings containing network information and TLS Metadata used by CPS
@@ -225,10 +215,6 @@ type cpsDvEnrollmentArgs struct {
 	ContractId string `pulumi:"contractId"`
 	// Certificate signing request generated during enrollment creation
 	Csr CpsDvEnrollmentCsr `pulumi:"csr"`
-	// Enable Dual-Stacked certificate deployment for enrollment
-	//
-	// Deprecated: Deprecated, don't use; always false
-	EnableMultiStackedCertificates *bool `pulumi:"enableMultiStackedCertificates"`
 	// Settings containing network information and TLS Metadata used by CPS
 	NetworkConfiguration CpsDvEnrollmentNetworkConfiguration `pulumi:"networkConfiguration"`
 	// Organization information
@@ -261,10 +247,6 @@ type CpsDvEnrollmentArgs struct {
 	ContractId pulumi.StringInput
 	// Certificate signing request generated during enrollment creation
 	Csr CpsDvEnrollmentCsrInput
-	// Enable Dual-Stacked certificate deployment for enrollment
-	//
-	// Deprecated: Deprecated, don't use; always false
-	EnableMultiStackedCertificates pulumi.BoolPtrInput
 	// Settings containing network information and TLS Metadata used by CPS
 	NetworkConfiguration CpsDvEnrollmentNetworkConfigurationInput
 	// Organization information
@@ -411,13 +393,6 @@ func (o CpsDvEnrollmentOutput) Csr() CpsDvEnrollmentCsrOutput {
 // DNS challenge information
 func (o CpsDvEnrollmentOutput) DnsChallenges() CpsDvEnrollmentDnsChallengeArrayOutput {
 	return o.ApplyT(func(v *CpsDvEnrollment) CpsDvEnrollmentDnsChallengeArrayOutput { return v.DnsChallenges }).(CpsDvEnrollmentDnsChallengeArrayOutput)
-}
-
-// Enable Dual-Stacked certificate deployment for enrollment
-//
-// Deprecated: Deprecated, don't use; always false
-func (o CpsDvEnrollmentOutput) EnableMultiStackedCertificates() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *CpsDvEnrollment) pulumi.BoolPtrOutput { return v.EnableMultiStackedCertificates }).(pulumi.BoolPtrOutput)
 }
 
 // HTTP challenge information

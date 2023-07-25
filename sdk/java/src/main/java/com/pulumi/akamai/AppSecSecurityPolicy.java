@@ -22,7 +22,7 @@ public class AppSecSecurityPolicy extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -36,7 +36,7 @@ public class AppSecSecurityPolicy extends com.pulumi.resources.CustomResource {
      * Unique identifier of the existing security policy being cloned
      * 
      */
-    @Export(name="createFromSecurityPolicyId", type=String.class, parameters={})
+    @Export(name="createFromSecurityPolicyId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> createFromSecurityPolicyId;
 
     /**
@@ -50,7 +50,7 @@ public class AppSecSecurityPolicy extends com.pulumi.resources.CustomResource {
      * Whether to assign default settings to the new security policy
      * 
      */
-    @Export(name="defaultSettings", type=Boolean.class, parameters={})
+    @Export(name="defaultSettings", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> defaultSettings;
 
     /**
@@ -64,7 +64,7 @@ public class AppSecSecurityPolicy extends com.pulumi.resources.CustomResource {
      * Unique identifier of the new security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**
@@ -78,7 +78,7 @@ public class AppSecSecurityPolicy extends com.pulumi.resources.CustomResource {
      * Name of the new security policy
      * 
      */
-    @Export(name="securityPolicyName", type=String.class, parameters={})
+    @Export(name="securityPolicyName", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyName;
 
     /**
@@ -92,7 +92,7 @@ public class AppSecSecurityPolicy extends com.pulumi.resources.CustomResource {
      * Four-character alphanumeric string prefix used in creating the security policy ID
      * 
      */
-    @Export(name="securityPolicyPrefix", type=String.class, parameters={})
+    @Export(name="securityPolicyPrefix", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyPrefix;
 
     /**

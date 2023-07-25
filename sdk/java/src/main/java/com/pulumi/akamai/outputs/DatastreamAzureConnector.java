@@ -5,7 +5,6 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,9 +15,8 @@ public final class DatastreamAzureConnector {
     private String accessKey;
     private String accountName;
     private @Nullable Boolean compressLogs;
-    private @Nullable Integer connectorId;
-    private String connectorName;
     private String containerName;
+    private String displayName;
     private String path;
 
     private DatastreamAzureConnector() {}
@@ -31,14 +29,11 @@ public final class DatastreamAzureConnector {
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
-    public Optional<Integer> connectorId() {
-        return Optional.ofNullable(this.connectorId);
-    }
-    public String connectorName() {
-        return this.connectorName;
-    }
     public String containerName() {
         return this.containerName;
+    }
+    public String displayName() {
+        return this.displayName;
     }
     public String path() {
         return this.path;
@@ -56,9 +51,8 @@ public final class DatastreamAzureConnector {
         private String accessKey;
         private String accountName;
         private @Nullable Boolean compressLogs;
-        private @Nullable Integer connectorId;
-        private String connectorName;
         private String containerName;
+        private String displayName;
         private String path;
         public Builder() {}
         public Builder(DatastreamAzureConnector defaults) {
@@ -66,9 +60,8 @@ public final class DatastreamAzureConnector {
     	      this.accessKey = defaults.accessKey;
     	      this.accountName = defaults.accountName;
     	      this.compressLogs = defaults.compressLogs;
-    	      this.connectorId = defaults.connectorId;
-    	      this.connectorName = defaults.connectorName;
     	      this.containerName = defaults.containerName;
+    	      this.displayName = defaults.displayName;
     	      this.path = defaults.path;
         }
 
@@ -88,18 +81,13 @@ public final class DatastreamAzureConnector {
             return this;
         }
         @CustomType.Setter
-        public Builder connectorId(@Nullable Integer connectorId) {
-            this.connectorId = connectorId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder connectorName(String connectorName) {
-            this.connectorName = Objects.requireNonNull(connectorName);
-            return this;
-        }
-        @CustomType.Setter
         public Builder containerName(String containerName) {
             this.containerName = Objects.requireNonNull(containerName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder displayName(String displayName) {
+            this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
         @CustomType.Setter
@@ -112,9 +100,8 @@ public final class DatastreamAzureConnector {
             o.accessKey = accessKey;
             o.accountName = accountName;
             o.compressLogs = compressLogs;
-            o.connectorId = connectorId;
-            o.connectorName = connectorName;
             o.containerName = containerName;
+            o.displayName = displayName;
             o.path = path;
             return o;
         }

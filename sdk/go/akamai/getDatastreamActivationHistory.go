@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetDatastreamActivationHistory(ctx *pulumi.Context, args *GetDatastreamActivationHistoryArgs, opts ...pulumi.InvokeOption) (*GetDatastreamActivationHistoryResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatastreamActivationHistoryResult
 	err := ctx.Invoke("akamai:index/getDatastreamActivationHistory:getDatastreamActivationHistory", args, &rv, opts...)
 	if err != nil {

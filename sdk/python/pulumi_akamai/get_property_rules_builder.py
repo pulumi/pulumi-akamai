@@ -23,7 +23,7 @@ class GetPropertyRulesBuilderResult:
     """
     A collection of values returned by getPropertyRulesBuilder.
     """
-    def __init__(__self__, id=None, json=None, rule_format=None, rules_v20230105=None):
+    def __init__(__self__, id=None, json=None, rule_format=None, rules_v20230105=None, rules_v20230530=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -36,6 +36,9 @@ class GetPropertyRulesBuilderResult:
         if rules_v20230105 and not isinstance(rules_v20230105, dict):
             raise TypeError("Expected argument 'rules_v20230105' to be a dict")
         pulumi.set(__self__, "rules_v20230105", rules_v20230105)
+        if rules_v20230530 and not isinstance(rules_v20230530, dict):
+            raise TypeError("Expected argument 'rules_v20230530' to be a dict")
+        pulumi.set(__self__, "rules_v20230530", rules_v20230530)
 
     @property
     @pulumi.getter
@@ -60,6 +63,11 @@ class GetPropertyRulesBuilderResult:
     def rules_v20230105(self) -> Optional['outputs.GetPropertyRulesBuilderRulesV20230105Result']:
         return pulumi.get(self, "rules_v20230105")
 
+    @property
+    @pulumi.getter(name="rulesV20230530")
+    def rules_v20230530(self) -> Optional['outputs.GetPropertyRulesBuilderRulesV20230530Result']:
+        return pulumi.get(self, "rules_v20230530")
+
 
 class AwaitableGetPropertyRulesBuilderResult(GetPropertyRulesBuilderResult):
     # pylint: disable=using-constant-test
@@ -70,16 +78,19 @@ class AwaitableGetPropertyRulesBuilderResult(GetPropertyRulesBuilderResult):
             id=self.id,
             json=self.json,
             rule_format=self.rule_format,
-            rules_v20230105=self.rules_v20230105)
+            rules_v20230105=self.rules_v20230105,
+            rules_v20230530=self.rules_v20230530)
 
 
 def get_property_rules_builder(rules_v20230105: Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20230105Args']] = None,
+                               rules_v20230530: Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20230530Args']] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertyRulesBuilderResult:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['rulesV20230105'] = rules_v20230105
+    __args__['rulesV20230530'] = rules_v20230530
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('akamai:index/getPropertyRulesBuilder:getPropertyRulesBuilder', __args__, opts=opts, typ=GetPropertyRulesBuilderResult).value
 
@@ -87,11 +98,13 @@ def get_property_rules_builder(rules_v20230105: Optional[pulumi.InputType['GetPr
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         rule_format=pulumi.get(__ret__, 'rule_format'),
-        rules_v20230105=pulumi.get(__ret__, 'rules_v20230105'))
+        rules_v20230105=pulumi.get(__ret__, 'rules_v20230105'),
+        rules_v20230530=pulumi.get(__ret__, 'rules_v20230530'))
 
 
 @_utilities.lift_output_func(get_property_rules_builder)
 def get_property_rules_builder_output(rules_v20230105: Optional[pulumi.Input[Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20230105Args']]]] = None,
+                                      rules_v20230530: Optional[pulumi.Input[Optional[pulumi.InputType['GetPropertyRulesBuilderRulesV20230530Args']]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPropertyRulesBuilderResult]:
     """
     Use this data source to access information about an existing resource.

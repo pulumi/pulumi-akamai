@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -48,6 +49,7 @@ func NewAppSecAdvancedSettingsPrefetch(ctx *pulumi.Context,
 	if args.Extensions == nil {
 		return nil, errors.New("invalid value for required argument 'Extensions'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecAdvancedSettingsPrefetch
 	err := ctx.RegisterResource("akamai:index/appSecAdvancedSettingsPrefetch:AppSecAdvancedSettingsPrefetch", name, args, &resource, opts...)
 	if err != nil {

@@ -6,7 +6,6 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -45,20 +44,6 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.compressLogs);
     }
 
-    @Import(name="connectorId")
-    private @Nullable Output<Integer> connectorId;
-
-    public Optional<Output<Integer>> connectorId() {
-        return Optional.ofNullable(this.connectorId);
-    }
-
-    @Import(name="connectorName", required=true)
-    private Output<String> connectorName;
-
-    public Output<String> connectorName() {
-        return this.connectorName;
-    }
-
     @Import(name="customHeaderName")
     private @Nullable Output<String> customHeaderName;
 
@@ -71,6 +56,20 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
 
     public Optional<Output<String>> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
+    }
+
+    @Import(name="displayName", required=true)
+    private Output<String> displayName;
+
+    public Output<String> displayName() {
+        return this.displayName;
+    }
+
+    @Import(name="endpoint", required=true)
+    private Output<String> endpoint;
+
+    public Output<String> endpoint() {
+        return this.endpoint;
     }
 
     @Import(name="eventCollectorToken", required=true)
@@ -94,13 +93,6 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.tlsHostname);
     }
 
-    @Import(name="url", required=true)
-    private Output<String> url;
-
-    public Output<String> url() {
-        return this.url;
-    }
-
     private DatastreamSplunkConnectorArgs() {}
 
     private DatastreamSplunkConnectorArgs(DatastreamSplunkConnectorArgs $) {
@@ -108,14 +100,13 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
         this.clientCert = $.clientCert;
         this.clientKey = $.clientKey;
         this.compressLogs = $.compressLogs;
-        this.connectorId = $.connectorId;
-        this.connectorName = $.connectorName;
         this.customHeaderName = $.customHeaderName;
         this.customHeaderValue = $.customHeaderValue;
+        this.displayName = $.displayName;
+        this.endpoint = $.endpoint;
         this.eventCollectorToken = $.eventCollectorToken;
         this.mTls = $.mTls;
         this.tlsHostname = $.tlsHostname;
-        this.url = $.url;
     }
 
     public static Builder builder() {
@@ -172,24 +163,6 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
             return compressLogs(Output.of(compressLogs));
         }
 
-        public Builder connectorId(@Nullable Output<Integer> connectorId) {
-            $.connectorId = connectorId;
-            return this;
-        }
-
-        public Builder connectorId(Integer connectorId) {
-            return connectorId(Output.of(connectorId));
-        }
-
-        public Builder connectorName(Output<String> connectorName) {
-            $.connectorName = connectorName;
-            return this;
-        }
-
-        public Builder connectorName(String connectorName) {
-            return connectorName(Output.of(connectorName));
-        }
-
         public Builder customHeaderName(@Nullable Output<String> customHeaderName) {
             $.customHeaderName = customHeaderName;
             return this;
@@ -206,6 +179,24 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
 
         public Builder customHeaderValue(String customHeaderValue) {
             return customHeaderValue(Output.of(customHeaderValue));
+        }
+
+        public Builder displayName(Output<String> displayName) {
+            $.displayName = displayName;
+            return this;
+        }
+
+        public Builder displayName(String displayName) {
+            return displayName(Output.of(displayName));
+        }
+
+        public Builder endpoint(Output<String> endpoint) {
+            $.endpoint = endpoint;
+            return this;
+        }
+
+        public Builder endpoint(String endpoint) {
+            return endpoint(Output.of(endpoint));
         }
 
         public Builder eventCollectorToken(Output<String> eventCollectorToken) {
@@ -235,19 +226,10 @@ public final class DatastreamSplunkConnectorArgs extends com.pulumi.resources.Re
             return tlsHostname(Output.of(tlsHostname));
         }
 
-        public Builder url(Output<String> url) {
-            $.url = url;
-            return this;
-        }
-
-        public Builder url(String url) {
-            return url(Output.of(url));
-        }
-
         public DatastreamSplunkConnectorArgs build() {
-            $.connectorName = Objects.requireNonNull($.connectorName, "expected parameter 'connectorName' to be non-null");
+            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            $.endpoint = Objects.requireNonNull($.endpoint, "expected parameter 'endpoint' to be non-null");
             $.eventCollectorToken = Objects.requireNonNull($.eventCollectorToken, "expected parameter 'eventCollectorToken' to be non-null");
-            $.url = Objects.requireNonNull($.url, "expected parameter 'url' to be non-null");
             return $;
         }
     }

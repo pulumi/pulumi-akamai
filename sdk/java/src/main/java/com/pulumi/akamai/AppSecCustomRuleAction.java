@@ -20,7 +20,7 @@ public class AppSecCustomRuleAction extends com.pulumi.resources.CustomResource 
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -34,7 +34,7 @@ public class AppSecCustomRuleAction extends com.pulumi.resources.CustomResource 
      * Action to be taken when the custom rule is invoked
      * 
      */
-    @Export(name="customRuleAction", type=String.class, parameters={})
+    @Export(name="customRuleAction", refs={String.class}, tree="[0]")
     private Output<String> customRuleAction;
 
     /**
@@ -48,7 +48,7 @@ public class AppSecCustomRuleAction extends com.pulumi.resources.CustomResource 
      * Unique identifier of the custom rule whose action is being modified
      * 
      */
-    @Export(name="customRuleId", type=Integer.class, parameters={})
+    @Export(name="customRuleId", refs={Integer.class}, tree="[0]")
     private Output<Integer> customRuleId;
 
     /**
@@ -62,7 +62,7 @@ public class AppSecCustomRuleAction extends com.pulumi.resources.CustomResource 
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**

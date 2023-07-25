@@ -16,19 +16,19 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot")
 public class BotmanCustomDefinedBot extends com.pulumi.resources.CustomResource {
-    @Export(name="botId", type=String.class, parameters={})
+    @Export(name="botId", refs={String.class}, tree="[0]")
     private Output<String> botId;
 
     public Output<String> botId() {
         return this.botId;
     }
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     public Output<Integer> configId() {
         return this.configId;
     }
-    @Export(name="customDefinedBot", type=String.class, parameters={})
+    @Export(name="customDefinedBot", refs={String.class}, tree="[0]")
     private Output<String> customDefinedBot;
 
     public Output<String> customDefinedBot() {

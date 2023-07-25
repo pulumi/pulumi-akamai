@@ -1,48 +1,31 @@
-From ad38d96b727c50c6c9907458af4eece008791864 Mon Sep 17 00:00:00 2001
+From db7525d74a5a15480743cf6bc1aa8c538367c2fd Mon Sep 17 00:00:00 2001
 From: Ian Wahbe <ian@wahbe.com>
 Date: Tue, 4 Apr 2023 09:19:57 -0700
 Subject: [PATCH] fork
 
 ---
- pkg/akamai/errors.go                               |  3 +--
- pkg/providers/property/resource_akamai_property.go | 10 ++++++----
- 2 files changed, 7 insertions(+), 6 deletions(-)
+ pkg/providers/property/resource_akamai_property.go | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
-diff --git a/pkg/akamai/errors.go b/pkg/akamai/errors.go
-index fb831b27..0b4485c7 100644
---- a/pkg/akamai/errors.go
-+++ b/pkg/akamai/errors.go
-@@ -32,8 +32,7 @@ var (
- 	// Terraform now supports section aliases
- 	// TODO: Add alias example to the examples directory
- 	NoticeDeprecatedUseAlias = func(n string) string {
--		return fmt.Sprintf(`The setting %q has been deprecated. See:
--	https://www.terraform.io/docs/configuration/providers.html#alias-multiple-provider-configurations`, n)
-+		return fmt.Sprintf(`The setting %q has been deprecated.`, n)
- 	}
- )
- 
 diff --git a/pkg/providers/property/resource_akamai_property.go b/pkg/providers/property/resource_akamai_property.go
-index a46df4d4..accf4893 100644
+index 25725b93..0193fd7e 100644
 --- a/pkg/providers/property/resource_akamai_property.go
 +++ b/pkg/providers/property/resource_akamai_property.go
-@@ -509,10 +509,11 @@ func resourcePropertyCreate(ctx context.Context, d *schema.ResourceData, m inter
+@@ -427,9 +427,10 @@ func resourcePropertyCreate(ctx context.Context, d *schema.ResourceData, m inter
  	// Save minimum state BEFORE moving on
  	d.SetId(propertyID)
  	attrs := map[string]interface{}{
 -		"group_id":    groupID,
 -		"contract_id": contractID,
 -		"product_id":  productID,
--		"product":     productID,
 +		"group_id":       groupID,
 +		"contract_id":    contractID,
 +		"product_id":     productID,
-+		"product":        productID,
 +		"latest_version": 1, // we are defaulting to 1 here in the create like we do below in the property creation
  	}
  	if err := rdSetAttrs(ctx, d, attrs); err != nil {
  		return diag.FromErr(err)
-@@ -737,6 +738,7 @@ func resourcePropertyUpdate(ctx context.Context, d *schema.ResourceData, m inter
+@@ -640,6 +641,7 @@ func resourcePropertyUpdate(ctx context.Context, d *schema.ResourceData, m inter
  
  	var propertyVersion int
  	if v, ok := d.GetOk("read_version"); ok && v.(int) != 0 {

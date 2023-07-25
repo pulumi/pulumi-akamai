@@ -20,7 +20,7 @@ public class AppSecReputationProfile extends com.pulumi.resources.CustomResource
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -34,7 +34,7 @@ public class AppSecReputationProfile extends com.pulumi.resources.CustomResource
      * JSON-formatted definition of the reputation profile
      * 
      */
-    @Export(name="reputationProfile", type=String.class, parameters={})
+    @Export(name="reputationProfile", refs={String.class}, tree="[0]")
     private Output<String> reputationProfile;
 
     /**
@@ -48,7 +48,7 @@ public class AppSecReputationProfile extends com.pulumi.resources.CustomResource
      * Unique identifier of the reputation profile
      * 
      */
-    @Export(name="reputationProfileId", type=Integer.class, parameters={})
+    @Export(name="reputationProfileId", refs={Integer.class}, tree="[0]")
     private Output<Integer> reputationProfileId;
 
     /**

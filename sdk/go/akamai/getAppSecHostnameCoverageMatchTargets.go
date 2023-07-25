@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAppSecHostnameCoverageMatchTargets(ctx *pulumi.Context, args *GetAppSecHostnameCoverageMatchTargetsArgs, opts ...pulumi.InvokeOption) (*GetAppSecHostnameCoverageMatchTargetsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppSecHostnameCoverageMatchTargetsResult
 	err := ctx.Invoke("akamai:index/getAppSecHostnameCoverageMatchTargets:getAppSecHostnameCoverageMatchTargets", args, &rv, opts...)
 	if err != nil {

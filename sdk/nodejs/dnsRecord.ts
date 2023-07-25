@@ -32,6 +32,9 @@ export class DnsRecord extends pulumi.CustomResource {
         return obj['__pulumiType'] === DnsRecord.__pulumiType;
     }
 
+    /**
+     * @deprecated Field 'active' has been deprecated. Setting it has no effect
+     */
     public readonly active!: pulumi.Output<boolean | undefined>;
     public readonly algorithm!: pulumi.Output<number | undefined>;
     public /*out*/ readonly answerType!: pulumi.Output<string>;
@@ -249,6 +252,9 @@ export class DnsRecord extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DnsRecord resources.
  */
 export interface DnsRecordState {
+    /**
+     * @deprecated Field 'active' has been deprecated. Setting it has no effect
+     */
     active?: pulumi.Input<boolean>;
     algorithm?: pulumi.Input<number>;
     answerType?: pulumi.Input<string>;
@@ -315,6 +321,9 @@ export interface DnsRecordState {
  * The set of arguments for constructing a DnsRecord resource.
  */
 export interface DnsRecordArgs {
+    /**
+     * @deprecated Field 'active' has been deprecated. Setting it has no effect
+     */
     active?: pulumi.Input<boolean>;
     algorithm?: pulumi.Input<number>;
     certificate?: pulumi.Input<string>;

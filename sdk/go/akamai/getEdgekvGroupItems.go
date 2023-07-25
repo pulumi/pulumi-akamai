@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupEdgekvGroupItems(ctx *pulumi.Context, args *LookupEdgekvGroupItemsArgs, opts ...pulumi.InvokeOption) (*LookupEdgekvGroupItemsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupEdgekvGroupItemsResult
 	err := ctx.Invoke("akamai:index/getEdgekvGroupItems:getEdgekvGroupItems", args, &rv, opts...)
 	if err != nil {

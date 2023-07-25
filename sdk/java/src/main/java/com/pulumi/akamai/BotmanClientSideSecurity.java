@@ -16,13 +16,13 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/botmanClientSideSecurity:BotmanClientSideSecurity")
 public class BotmanClientSideSecurity extends com.pulumi.resources.CustomResource {
-    @Export(name="clientSideSecurity", type=String.class, parameters={})
+    @Export(name="clientSideSecurity", refs={String.class}, tree="[0]")
     private Output<String> clientSideSecurity;
 
     public Output<String> clientSideSecurity() {
         return this.clientSideSecurity;
     }
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     public Output<Integer> configId() {

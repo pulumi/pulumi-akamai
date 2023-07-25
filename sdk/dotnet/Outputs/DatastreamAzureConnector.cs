@@ -16,9 +16,8 @@ namespace Pulumi.Akamai.Outputs
         public readonly string AccessKey;
         public readonly string AccountName;
         public readonly bool? CompressLogs;
-        public readonly int? ConnectorId;
-        public readonly string ConnectorName;
         public readonly string ContainerName;
+        public readonly string DisplayName;
         public readonly string Path;
 
         [OutputConstructor]
@@ -29,20 +28,17 @@ namespace Pulumi.Akamai.Outputs
 
             bool? compressLogs,
 
-            int? connectorId,
-
-            string connectorName,
-
             string containerName,
+
+            string displayName,
 
             string path)
         {
             AccessKey = accessKey;
             AccountName = accountName;
             CompressLogs = compressLogs;
-            ConnectorId = connectorId;
-            ConnectorName = connectorName;
             ContainerName = containerName;
+            DisplayName = displayName;
             Path = path;
         }
     }

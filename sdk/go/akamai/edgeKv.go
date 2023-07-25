@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -49,6 +50,7 @@ func NewEdgeKv(ctx *pulumi.Context,
 	if args.RetentionInSeconds == nil {
 		return nil, errors.New("invalid value for required argument 'RetentionInSeconds'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource EdgeKv
 	err := ctx.RegisterResource("akamai:index/edgeKv:EdgeKv", name, args, &resource, opts...)
 	if err != nil {

@@ -21,17 +21,11 @@ namespace Pulumi.Akamai
 
     public sealed class GetCpCodeArgs : global::Pulumi.InvokeArgs
     {
-        [Input("contract")]
-        public string? Contract { get; set; }
+        [Input("contractId", required: true)]
+        public string ContractId { get; set; } = null!;
 
-        [Input("contractId")]
-        public string? ContractId { get; set; }
-
-        [Input("group")]
-        public string? Group { get; set; }
-
-        [Input("groupId")]
-        public string? GroupId { get; set; }
+        [Input("groupId", required: true)]
+        public string GroupId { get; set; } = null!;
 
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -44,17 +38,11 @@ namespace Pulumi.Akamai
 
     public sealed class GetCpCodeInvokeArgs : global::Pulumi.InvokeArgs
     {
-        [Input("contract")]
-        public Input<string>? Contract { get; set; }
+        [Input("contractId", required: true)]
+        public Input<string> ContractId { get; set; } = null!;
 
-        [Input("contractId")]
-        public Input<string>? ContractId { get; set; }
-
-        [Input("group")]
-        public Input<string>? Group { get; set; }
-
-        [Input("groupId")]
-        public Input<string>? GroupId { get; set; }
+        [Input("groupId", required: true)]
+        public Input<string> GroupId { get; set; } = null!;
 
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -69,9 +57,7 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetCpCodeResult
     {
-        public readonly string Contract;
         public readonly string ContractId;
-        public readonly string Group;
         public readonly string GroupId;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -82,11 +68,7 @@ namespace Pulumi.Akamai
 
         [OutputConstructor]
         private GetCpCodeResult(
-            string contract,
-
             string contractId,
-
-            string group,
 
             string groupId,
 
@@ -96,9 +78,7 @@ namespace Pulumi.Akamai
 
             ImmutableArray<string> productIds)
         {
-            Contract = contract;
             ContractId = contractId;
-            Group = group;
             GroupId = groupId;
             Id = id;
             Name = name;

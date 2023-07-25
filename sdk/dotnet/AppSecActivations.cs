@@ -13,12 +13,6 @@ namespace Pulumi.Akamai
     public partial class AppSecActivations : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Whether to activate or deactivate the specified security configuration and version
-        /// </summary>
-        [Output("activate")]
-        public Output<bool?> Activate { get; private set; } = null!;
-
-        /// <summary>
         /// Unique identifier of the security configuration to be activated
         /// </summary>
         [Output("configId")]
@@ -35,12 +29,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Output("note")]
         public Output<string?> Note { get; private set; } = null!;
-
-        /// <summary>
-        /// Note describing the activation
-        /// </summary>
-        [Output("notes")]
-        public Output<string?> Notes { get; private set; } = null!;
 
         /// <summary>
         /// List of email addresses to be notified with the results of the activation
@@ -107,12 +95,6 @@ namespace Pulumi.Akamai
     public sealed class AppSecActivationsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether to activate or deactivate the specified security configuration and version
-        /// </summary>
-        [Input("activate")]
-        public Input<bool>? Activate { get; set; }
-
-        /// <summary>
         /// Unique identifier of the security configuration to be activated
         /// </summary>
         [Input("configId", required: true)]
@@ -129,12 +111,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("note")]
         public Input<string>? Note { get; set; }
-
-        /// <summary>
-        /// Note describing the activation
-        /// </summary>
-        [Input("notes")]
-        public Input<string>? Notes { get; set; }
 
         [Input("notificationEmails", required: true)]
         private InputList<string>? _notificationEmails;
@@ -163,12 +139,6 @@ namespace Pulumi.Akamai
     public sealed class AppSecActivationsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether to activate or deactivate the specified security configuration and version
-        /// </summary>
-        [Input("activate")]
-        public Input<bool>? Activate { get; set; }
-
-        /// <summary>
         /// Unique identifier of the security configuration to be activated
         /// </summary>
         [Input("configId")]
@@ -185,12 +155,6 @@ namespace Pulumi.Akamai
         /// </summary>
         [Input("note")]
         public Input<string>? Note { get; set; }
-
-        /// <summary>
-        /// Note describing the activation
-        /// </summary>
-        [Input("notes")]
-        public Input<string>? Notes { get; set; }
 
         [Input("notificationEmails")]
         private InputList<string>? _notificationEmails;

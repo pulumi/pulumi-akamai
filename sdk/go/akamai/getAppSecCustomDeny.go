@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupAppSecCustomDeny(ctx *pulumi.Context, args *LookupAppSecCustomDenyArgs, opts ...pulumi.InvokeOption) (*LookupAppSecCustomDenyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAppSecCustomDenyResult
 	err := ctx.Invoke("akamai:index/getAppSecCustomDeny:getAppSecCustomDeny", args, &rv, opts...)
 	if err != nil {

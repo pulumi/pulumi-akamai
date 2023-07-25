@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetEdgeWorkersResourceTier(ctx *pulumi.Context, args *GetEdgeWorkersResourceTierArgs, opts ...pulumi.InvokeOption) (*GetEdgeWorkersResourceTierResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEdgeWorkersResourceTierResult
 	err := ctx.Invoke("akamai:index/getEdgeWorkersResourceTier:getEdgeWorkersResourceTier", args, &rv, opts...)
 	if err != nil {

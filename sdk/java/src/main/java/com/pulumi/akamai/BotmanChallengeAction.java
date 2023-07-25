@@ -16,19 +16,19 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/botmanChallengeAction:BotmanChallengeAction")
 public class BotmanChallengeAction extends com.pulumi.resources.CustomResource {
-    @Export(name="actionId", type=String.class, parameters={})
+    @Export(name="actionId", refs={String.class}, tree="[0]")
     private Output<String> actionId;
 
     public Output<String> actionId() {
         return this.actionId;
     }
-    @Export(name="challengeAction", type=String.class, parameters={})
+    @Export(name="challengeAction", refs={String.class}, tree="[0]")
     private Output<String> challengeAction;
 
     public Output<String> challengeAction() {
         return this.challengeAction;
     }
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     public Output<Integer> configId() {

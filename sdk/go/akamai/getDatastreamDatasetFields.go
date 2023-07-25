@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetDatastreamDatasetFields(ctx *pulumi.Context, args *GetDatastreamDatasetFieldsArgs, opts ...pulumi.InvokeOption) (*GetDatastreamDatasetFieldsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatastreamDatasetFieldsResult
 	err := ctx.Invoke("akamai:index/getDatastreamDatasetFields:getDatastreamDatasetFields", args, &rv, opts...)
 	if err != nil {
@@ -21,15 +23,15 @@ func GetDatastreamDatasetFields(ctx *pulumi.Context, args *GetDatastreamDatasetF
 
 // A collection of arguments for invoking getDatastreamDatasetFields.
 type GetDatastreamDatasetFieldsArgs struct {
-	TemplateName *string `pulumi:"templateName"`
+	ProductId *string `pulumi:"productId"`
 }
 
 // A collection of values returned by getDatastreamDatasetFields.
 type GetDatastreamDatasetFieldsResult struct {
-	Fields []GetDatastreamDatasetFieldsField `pulumi:"fields"`
+	DatasetFields []GetDatastreamDatasetFieldsDatasetField `pulumi:"datasetFields"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string  `pulumi:"id"`
-	TemplateName *string `pulumi:"templateName"`
+	Id        string  `pulumi:"id"`
+	ProductId *string `pulumi:"productId"`
 }
 
 func GetDatastreamDatasetFieldsOutput(ctx *pulumi.Context, args GetDatastreamDatasetFieldsOutputArgs, opts ...pulumi.InvokeOption) GetDatastreamDatasetFieldsResultOutput {
@@ -47,7 +49,7 @@ func GetDatastreamDatasetFieldsOutput(ctx *pulumi.Context, args GetDatastreamDat
 
 // A collection of arguments for invoking getDatastreamDatasetFields.
 type GetDatastreamDatasetFieldsOutputArgs struct {
-	TemplateName pulumi.StringPtrInput `pulumi:"templateName"`
+	ProductId pulumi.StringPtrInput `pulumi:"productId"`
 }
 
 func (GetDatastreamDatasetFieldsOutputArgs) ElementType() reflect.Type {
@@ -69,8 +71,10 @@ func (o GetDatastreamDatasetFieldsResultOutput) ToGetDatastreamDatasetFieldsResu
 	return o
 }
 
-func (o GetDatastreamDatasetFieldsResultOutput) Fields() GetDatastreamDatasetFieldsFieldArrayOutput {
-	return o.ApplyT(func(v GetDatastreamDatasetFieldsResult) []GetDatastreamDatasetFieldsField { return v.Fields }).(GetDatastreamDatasetFieldsFieldArrayOutput)
+func (o GetDatastreamDatasetFieldsResultOutput) DatasetFields() GetDatastreamDatasetFieldsDatasetFieldArrayOutput {
+	return o.ApplyT(func(v GetDatastreamDatasetFieldsResult) []GetDatastreamDatasetFieldsDatasetField {
+		return v.DatasetFields
+	}).(GetDatastreamDatasetFieldsDatasetFieldArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
@@ -78,8 +82,8 @@ func (o GetDatastreamDatasetFieldsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatastreamDatasetFieldsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o GetDatastreamDatasetFieldsResultOutput) TemplateName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetDatastreamDatasetFieldsResult) *string { return v.TemplateName }).(pulumi.StringPtrOutput)
+func (o GetDatastreamDatasetFieldsResultOutput) ProductId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatastreamDatasetFieldsResult) *string { return v.ProductId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

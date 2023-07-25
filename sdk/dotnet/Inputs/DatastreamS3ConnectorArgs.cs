@@ -30,11 +30,8 @@ namespace Pulumi.Akamai.Inputs
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
-        [Input("connectorId")]
-        public Input<int>? ConnectorId { get; set; }
-
-        [Input("connectorName", required: true)]
-        public Input<string> ConnectorName { get; set; } = null!;
+        [Input("displayName", required: true)]
+        public Input<string> DisplayName { get; set; } = null!;
 
         [Input("path", required: true)]
         public Input<string> Path { get; set; } = null!;

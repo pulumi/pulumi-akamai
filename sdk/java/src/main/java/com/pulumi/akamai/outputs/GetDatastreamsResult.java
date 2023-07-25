@@ -3,8 +3,9 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetDatastreamsStream;
+import com.pulumi.akamai.outputs.GetDatastreamsStreamsDetail;
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -13,16 +14,16 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatastreamsResult {
-    private @Nullable String groupId;
+    private @Nullable Integer groupId;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
     private String id;
-    private List<GetDatastreamsStream> streams;
+    private List<GetDatastreamsStreamsDetail> streamsDetails;
 
     private GetDatastreamsResult() {}
-    public Optional<String> groupId() {
+    public Optional<Integer> groupId() {
         return Optional.ofNullable(this.groupId);
     }
     /**
@@ -32,8 +33,8 @@ public final class GetDatastreamsResult {
     public String id() {
         return this.id;
     }
-    public List<GetDatastreamsStream> streams() {
-        return this.streams;
+    public List<GetDatastreamsStreamsDetail> streamsDetails() {
+        return this.streamsDetails;
     }
 
     public static Builder builder() {
@@ -45,19 +46,19 @@ public final class GetDatastreamsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String groupId;
+        private @Nullable Integer groupId;
         private String id;
-        private List<GetDatastreamsStream> streams;
+        private List<GetDatastreamsStreamsDetail> streamsDetails;
         public Builder() {}
         public Builder(GetDatastreamsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.groupId = defaults.groupId;
     	      this.id = defaults.id;
-    	      this.streams = defaults.streams;
+    	      this.streamsDetails = defaults.streamsDetails;
         }
 
         @CustomType.Setter
-        public Builder groupId(@Nullable String groupId) {
+        public Builder groupId(@Nullable Integer groupId) {
             this.groupId = groupId;
             return this;
         }
@@ -67,18 +68,18 @@ public final class GetDatastreamsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder streams(List<GetDatastreamsStream> streams) {
-            this.streams = Objects.requireNonNull(streams);
+        public Builder streamsDetails(List<GetDatastreamsStreamsDetail> streamsDetails) {
+            this.streamsDetails = Objects.requireNonNull(streamsDetails);
             return this;
         }
-        public Builder streams(GetDatastreamsStream... streams) {
-            return streams(List.of(streams));
+        public Builder streamsDetails(GetDatastreamsStreamsDetail... streamsDetails) {
+            return streamsDetails(List.of(streamsDetails));
         }
         public GetDatastreamsResult build() {
             final var o = new GetDatastreamsResult();
             o.groupId = groupId;
             o.id = id;
-            o.streams = streams;
+            o.streamsDetails = streamsDetails;
             return o;
         }
     }

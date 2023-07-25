@@ -4,34 +4,33 @@
 package com.pulumi.akamai.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetDatastreamActivationHistoryActivation {
-    private String createdBy;
-    private String createdDate;
-    private Boolean isActive;
+    private String modifiedBy;
+    private String modifiedDate;
+    private String status;
     private Integer streamId;
-    private Integer streamVersionId;
+    private Integer streamVersion;
 
     private GetDatastreamActivationHistoryActivation() {}
-    public String createdBy() {
-        return this.createdBy;
+    public String modifiedBy() {
+        return this.modifiedBy;
     }
-    public String createdDate() {
-        return this.createdDate;
+    public String modifiedDate() {
+        return this.modifiedDate;
     }
-    public Boolean isActive() {
-        return this.isActive;
+    public String status() {
+        return this.status;
     }
     public Integer streamId() {
         return this.streamId;
     }
-    public Integer streamVersionId() {
-        return this.streamVersionId;
+    public Integer streamVersion() {
+        return this.streamVersion;
     }
 
     public static Builder builder() {
@@ -43,34 +42,34 @@ public final class GetDatastreamActivationHistoryActivation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String createdBy;
-        private String createdDate;
-        private Boolean isActive;
+        private String modifiedBy;
+        private String modifiedDate;
+        private String status;
         private Integer streamId;
-        private Integer streamVersionId;
+        private Integer streamVersion;
         public Builder() {}
         public Builder(GetDatastreamActivationHistoryActivation defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.createdBy = defaults.createdBy;
-    	      this.createdDate = defaults.createdDate;
-    	      this.isActive = defaults.isActive;
+    	      this.modifiedBy = defaults.modifiedBy;
+    	      this.modifiedDate = defaults.modifiedDate;
+    	      this.status = defaults.status;
     	      this.streamId = defaults.streamId;
-    	      this.streamVersionId = defaults.streamVersionId;
+    	      this.streamVersion = defaults.streamVersion;
         }
 
         @CustomType.Setter
-        public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+        public Builder modifiedBy(String modifiedBy) {
+            this.modifiedBy = Objects.requireNonNull(modifiedBy);
             return this;
         }
         @CustomType.Setter
-        public Builder createdDate(String createdDate) {
-            this.createdDate = Objects.requireNonNull(createdDate);
+        public Builder modifiedDate(String modifiedDate) {
+            this.modifiedDate = Objects.requireNonNull(modifiedDate);
             return this;
         }
         @CustomType.Setter
-        public Builder isActive(Boolean isActive) {
-            this.isActive = Objects.requireNonNull(isActive);
+        public Builder status(String status) {
+            this.status = Objects.requireNonNull(status);
             return this;
         }
         @CustomType.Setter
@@ -79,17 +78,17 @@ public final class GetDatastreamActivationHistoryActivation {
             return this;
         }
         @CustomType.Setter
-        public Builder streamVersionId(Integer streamVersionId) {
-            this.streamVersionId = Objects.requireNonNull(streamVersionId);
+        public Builder streamVersion(Integer streamVersion) {
+            this.streamVersion = Objects.requireNonNull(streamVersion);
             return this;
         }
         public GetDatastreamActivationHistoryActivation build() {
             final var o = new GetDatastreamActivationHistoryActivation();
-            o.createdBy = createdBy;
-            o.createdDate = createdDate;
-            o.isActive = isActive;
+            o.modifiedBy = modifiedBy;
+            o.modifiedDate = modifiedDate;
+            o.status = status;
             o.streamId = streamId;
-            o.streamVersionId = streamVersionId;
+            o.streamVersion = streamVersion;
             return o;
         }
     }

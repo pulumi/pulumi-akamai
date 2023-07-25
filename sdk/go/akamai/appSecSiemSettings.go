@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -50,6 +51,7 @@ func NewAppSecSiemSettings(ctx *pulumi.Context,
 	if args.SiemId == nil {
 		return nil, errors.New("invalid value for required argument 'SiemId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecSiemSettings
 	err := ctx.RegisterResource("akamai:index/appSecSiemSettings:AppSecSiemSettings", name, args, &resource, opts...)
 	if err != nil {

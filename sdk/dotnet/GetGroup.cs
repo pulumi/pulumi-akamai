@@ -11,27 +11,21 @@ namespace Pulumi.Akamai
 {
     public static class GetGroup
     {
-        public static Task<GetGroupResult> InvokeAsync(GetGroupArgs? args = null, InvokeOptions? options = null)
+        public static Task<GetGroupResult> InvokeAsync(GetGroupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetGroupResult>("akamai:index/getGroup:getGroup", args ?? new GetGroupArgs(), options.WithDefaults());
 
-        public static Output<GetGroupResult> Invoke(GetGroupInvokeArgs? args = null, InvokeOptions? options = null)
+        public static Output<GetGroupResult> Invoke(GetGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGroupResult>("akamai:index/getGroup:getGroup", args ?? new GetGroupInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetGroupArgs : global::Pulumi.InvokeArgs
     {
-        [Input("contract")]
-        public string? Contract { get; set; }
+        [Input("contractId", required: true)]
+        public string ContractId { get; set; } = null!;
 
-        [Input("contractId")]
-        public string? ContractId { get; set; }
-
-        [Input("groupName")]
-        public string? GroupName { get; set; }
-
-        [Input("name")]
-        public string? Name { get; set; }
+        [Input("groupName", required: true)]
+        public string GroupName { get; set; } = null!;
 
         public GetGroupArgs()
         {
@@ -41,17 +35,11 @@ namespace Pulumi.Akamai
 
     public sealed class GetGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
-        [Input("contract")]
-        public Input<string>? Contract { get; set; }
+        [Input("contractId", required: true)]
+        public Input<string> ContractId { get; set; } = null!;
 
-        [Input("contractId")]
-        public Input<string>? ContractId { get; set; }
-
-        [Input("groupName")]
-        public Input<string>? GroupName { get; set; }
-
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("groupName", required: true)]
+        public Input<string> GroupName { get; set; } = null!;
 
         public GetGroupInvokeArgs()
         {
@@ -63,32 +51,24 @@ namespace Pulumi.Akamai
     [OutputType]
     public sealed class GetGroupResult
     {
-        public readonly string Contract;
         public readonly string ContractId;
         public readonly string GroupName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        public readonly string Name;
 
         [OutputConstructor]
         private GetGroupResult(
-            string contract,
-
             string contractId,
 
             string groupName,
 
-            string id,
-
-            string name)
+            string id)
         {
-            Contract = contract;
             ContractId = contractId;
             GroupName = groupName;
             Id = id;
-            Name = name;
         }
     }
 }

@@ -21,7 +21,7 @@ public class AppSecAdvancedSettingsPragmaHeader extends com.pulumi.resources.Cus
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -35,7 +35,7 @@ public class AppSecAdvancedSettingsPragmaHeader extends com.pulumi.resources.Cus
      * JSON-formatted information describing the conditions to exclude from the default remove action
      * 
      */
-    @Export(name="pragmaHeader", type=String.class, parameters={})
+    @Export(name="pragmaHeader", refs={String.class}, tree="[0]")
     private Output<String> pragmaHeader;
 
     /**
@@ -49,7 +49,7 @@ public class AppSecAdvancedSettingsPragmaHeader extends com.pulumi.resources.Cus
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> securityPolicyId;
 
     /**

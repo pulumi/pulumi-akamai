@@ -13,29 +13,29 @@ namespace Pulumi.Akamai.Outputs
     [OutputType]
     public sealed class GetDatastreamActivationHistoryActivationResult
     {
-        public readonly string CreatedBy;
-        public readonly string CreatedDate;
-        public readonly bool IsActive;
+        public readonly string ModifiedBy;
+        public readonly string ModifiedDate;
+        public readonly string Status;
         public readonly int StreamId;
-        public readonly int StreamVersionId;
+        public readonly int StreamVersion;
 
         [OutputConstructor]
         private GetDatastreamActivationHistoryActivationResult(
-            string createdBy,
+            string modifiedBy,
 
-            string createdDate,
+            string modifiedDate,
 
-            bool isActive,
+            string status,
 
             int streamId,
 
-            int streamVersionId)
+            int streamVersion)
         {
-            CreatedBy = createdBy;
-            CreatedDate = createdDate;
-            IsActive = isActive;
+            ModifiedBy = modifiedBy;
+            ModifiedDate = modifiedDate;
+            Status = status;
             StreamId = streamId;
-            StreamVersionId = streamVersionId;
+            StreamVersion = streamVersion;
         }
     }
 }

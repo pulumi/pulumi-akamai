@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -43,6 +44,7 @@ func NewAppSecReputationProfileAction(ctx *pulumi.Context,
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecReputationProfileAction
 	err := ctx.RegisterResource("akamai:index/appSecReputationProfileAction:AppSecReputationProfileAction", name, args, &resource, opts...)
 	if err != nil {

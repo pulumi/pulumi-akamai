@@ -4,10 +4,12 @@
 package akamai
 
 import (
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetIamContactTypes(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamContactTypesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIamContactTypesResult
 	err := ctx.Invoke("akamai:index/getIamContactTypes:getIamContactTypes", nil, &rv, opts...)
 	if err != nil {

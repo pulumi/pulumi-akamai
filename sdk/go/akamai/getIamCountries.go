@@ -4,10 +4,12 @@
 package akamai
 
 import (
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetIamCountries(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamCountriesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIamCountriesResult
 	err := ctx.Invoke("akamai:index/getIamCountries:getIamCountries", nil, &rv, opts...)
 	if err != nil {

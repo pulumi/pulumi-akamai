@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -26,6 +27,8 @@ type AppSecIPGeo struct {
 	Mode pulumi.StringOutput `pulumi:"mode"`
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
+	// Action set for Ukraine geo control
+	UkraineGeoControlAction pulumi.StringPtrOutput `pulumi:"ukraineGeoControlAction"`
 }
 
 // NewAppSecIPGeo registers a new resource with the given unique name, arguments, and options.
@@ -44,6 +47,7 @@ func NewAppSecIPGeo(ctx *pulumi.Context,
 	if args.SecurityPolicyId == nil {
 		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecIPGeo
 	err := ctx.RegisterResource("akamai:index/appSecIPGeo:AppSecIPGeo", name, args, &resource, opts...)
 	if err != nil {
@@ -78,6 +82,8 @@ type appSecIPGeoState struct {
 	Mode *string `pulumi:"mode"`
 	// Unique identifier of the security policy
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
+	// Action set for Ukraine geo control
+	UkraineGeoControlAction *string `pulumi:"ukraineGeoControlAction"`
 }
 
 type AppSecIPGeoState struct {
@@ -93,6 +99,8 @@ type AppSecIPGeoState struct {
 	Mode pulumi.StringPtrInput
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringPtrInput
+	// Action set for Ukraine geo control
+	UkraineGeoControlAction pulumi.StringPtrInput
 }
 
 func (AppSecIPGeoState) ElementType() reflect.Type {
@@ -112,6 +120,8 @@ type appSecIPGeoArgs struct {
 	Mode string `pulumi:"mode"`
 	// Unique identifier of the security policy
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// Action set for Ukraine geo control
+	UkraineGeoControlAction *string `pulumi:"ukraineGeoControlAction"`
 }
 
 // The set of arguments for constructing a AppSecIPGeo resource.
@@ -128,6 +138,8 @@ type AppSecIPGeoArgs struct {
 	Mode pulumi.StringInput
 	// Unique identifier of the security policy
 	SecurityPolicyId pulumi.StringInput
+	// Action set for Ukraine geo control
+	UkraineGeoControlAction pulumi.StringPtrInput
 }
 
 func (AppSecIPGeoArgs) ElementType() reflect.Type {
@@ -245,6 +257,11 @@ func (o AppSecIPGeoOutput) Mode() pulumi.StringOutput {
 // Unique identifier of the security policy
 func (o AppSecIPGeoOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+// Action set for Ukraine geo control
+func (o AppSecIPGeoOutput) UkraineGeoControlAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AppSecIPGeo) pulumi.StringPtrOutput { return v.UkraineGeoControlAction }).(pulumi.StringPtrOutput)
 }
 
 type AppSecIPGeoArrayOutput struct{ *pulumi.OutputState }

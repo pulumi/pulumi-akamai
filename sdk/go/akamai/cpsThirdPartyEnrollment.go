@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -84,6 +85,7 @@ func NewCpsThirdPartyEnrollment(ctx *pulumi.Context,
 	if args.TechContact == nil {
 		return nil, errors.New("invalid value for required argument 'TechContact'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CpsThirdPartyEnrollment
 	err := ctx.RegisterResource("akamai:index/cpsThirdPartyEnrollment:CpsThirdPartyEnrollment", name, args, &resource, opts...)
 	if err != nil {

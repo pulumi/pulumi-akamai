@@ -14,14 +14,11 @@ __all__ = ['EdgeHostNameArgs', 'EdgeHostName']
 @pulumi.input_type
 class EdgeHostNameArgs:
     def __init__(__self__, *,
+                 contract_id: pulumi.Input[str],
                  edge_hostname: pulumi.Input[str],
+                 group_id: pulumi.Input[str],
                  ip_behavior: pulumi.Input[str],
                  certificate: Optional[pulumi.Input[int]] = None,
-                 contract: Optional[pulumi.Input[str]] = None,
-                 contract_id: Optional[pulumi.Input[str]] = None,
-                 group: Optional[pulumi.Input[str]] = None,
-                 group_id: Optional[pulumi.Input[str]] = None,
-                 product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None):
@@ -30,35 +27,27 @@ class EdgeHostNameArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] status_update_emails: Email address that should receive updates on the IP behavior update request. Required for update operation.
         :param pulumi.Input[str] use_cases: A JSON encoded list of use cases
         """
+        pulumi.set(__self__, "contract_id", contract_id)
         pulumi.set(__self__, "edge_hostname", edge_hostname)
+        pulumi.set(__self__, "group_id", group_id)
         pulumi.set(__self__, "ip_behavior", ip_behavior)
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
-        if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-        if contract is not None:
-            pulumi.set(__self__, "contract", contract)
-        if contract_id is not None:
-            pulumi.set(__self__, "contract_id", contract_id)
-        if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-        if group is not None:
-            pulumi.set(__self__, "group", group)
-        if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
-        if product is not None:
-            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-        if product is not None:
-            pulumi.set(__self__, "product", product)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
         if status_update_emails is not None:
             pulumi.set(__self__, "status_update_emails", status_update_emails)
         if use_cases is not None:
             pulumi.set(__self__, "use_cases", use_cases)
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contract_id", value)
 
     @property
     @pulumi.getter(name="edgeHostname")
@@ -68,6 +57,15 @@ class EdgeHostNameArgs:
     @edge_hostname.setter
     def edge_hostname(self, value: pulumi.Input[str]):
         pulumi.set(self, "edge_hostname", value)
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "group_id")
+
+    @group_id.setter
+    def group_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "group_id", value)
 
     @property
     @pulumi.getter(name="ipBehavior")
@@ -86,60 +84,6 @@ class EdgeHostNameArgs:
     @certificate.setter
     def certificate(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "certificate", value)
-
-    @property
-    @pulumi.getter
-    def contract(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-
-        return pulumi.get(self, "contract")
-
-    @contract.setter
-    def contract(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "contract", value)
-
-    @property
-    @pulumi.getter(name="contractId")
-    def contract_id(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "contract_id")
-
-    @contract_id.setter
-    def contract_id(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "contract_id", value)
-
-    @property
-    @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-
-        return pulumi.get(self, "group")
-
-    @group.setter
-    def group(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "group", value)
-
-    @property
-    @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "group_id")
-
-    @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "group_id", value)
-
-    @property
-    @pulumi.getter
-    def product(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-
-        return pulumi.get(self, "product")
-
-    @product.setter
-    def product(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "product", value)
 
     @property
     @pulumi.getter(name="productId")
@@ -179,13 +123,10 @@ class EdgeHostNameArgs:
 class _EdgeHostNameState:
     def __init__(__self__, *,
                  certificate: Optional[pulumi.Input[int]] = None,
-                 contract: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
                  edge_hostname: Optional[pulumi.Input[str]] = None,
-                 group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  ip_behavior: Optional[pulumi.Input[str]] = None,
-                 product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None):
@@ -196,29 +137,14 @@ class _EdgeHostNameState:
         """
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
-        if contract is not None:
-            warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-        if contract is not None:
-            pulumi.set(__self__, "contract", contract)
         if contract_id is not None:
             pulumi.set(__self__, "contract_id", contract_id)
         if edge_hostname is not None:
             pulumi.set(__self__, "edge_hostname", edge_hostname)
-        if group is not None:
-            warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-        if group is not None:
-            pulumi.set(__self__, "group", group)
         if group_id is not None:
             pulumi.set(__self__, "group_id", group_id)
         if ip_behavior is not None:
             pulumi.set(__self__, "ip_behavior", ip_behavior)
-        if product is not None:
-            warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-            pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-        if product is not None:
-            pulumi.set(__self__, "product", product)
         if product_id is not None:
             pulumi.set(__self__, "product_id", product_id)
         if status_update_emails is not None:
@@ -234,18 +160,6 @@ class _EdgeHostNameState:
     @certificate.setter
     def certificate(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "certificate", value)
-
-    @property
-    @pulumi.getter
-    def contract(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-
-        return pulumi.get(self, "contract")
-
-    @contract.setter
-    def contract(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "contract", value)
 
     @property
     @pulumi.getter(name="contractId")
@@ -266,18 +180,6 @@ class _EdgeHostNameState:
         pulumi.set(self, "edge_hostname", value)
 
     @property
-    @pulumi.getter
-    def group(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-
-        return pulumi.get(self, "group")
-
-    @group.setter
-    def group(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "group", value)
-
-    @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "group_id")
@@ -294,18 +196,6 @@ class _EdgeHostNameState:
     @ip_behavior.setter
     def ip_behavior(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip_behavior", value)
-
-    @property
-    @pulumi.getter
-    def product(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-
-        return pulumi.get(self, "product")
-
-    @product.setter
-    def product(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "product", value)
 
     @property
     @pulumi.getter(name="productId")
@@ -347,13 +237,10 @@ class EdgeHostName(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  certificate: Optional[pulumi.Input[int]] = None,
-                 contract: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
                  edge_hostname: Optional[pulumi.Input[str]] = None,
-                 group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  ip_behavior: Optional[pulumi.Input[str]] = None,
-                 product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None,
@@ -389,13 +276,10 @@ class EdgeHostName(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  certificate: Optional[pulumi.Input[int]] = None,
-                 contract: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
                  edge_hostname: Optional[pulumi.Input[str]] = None,
-                 group: Optional[pulumi.Input[str]] = None,
                  group_id: Optional[pulumi.Input[str]] = None,
                  ip_behavior: Optional[pulumi.Input[str]] = None,
-                 product: Optional[pulumi.Input[str]] = None,
                  product_id: Optional[pulumi.Input[str]] = None,
                  status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  use_cases: Optional[pulumi.Input[str]] = None,
@@ -409,26 +293,18 @@ class EdgeHostName(pulumi.CustomResource):
             __props__ = EdgeHostNameArgs.__new__(EdgeHostNameArgs)
 
             __props__.__dict__["certificate"] = certificate
-            if contract is not None and not opts.urn:
-                warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-            __props__.__dict__["contract"] = contract
+            if contract_id is None and not opts.urn:
+                raise TypeError("Missing required property 'contract_id'")
             __props__.__dict__["contract_id"] = contract_id
             if edge_hostname is None and not opts.urn:
                 raise TypeError("Missing required property 'edge_hostname'")
             __props__.__dict__["edge_hostname"] = edge_hostname
-            if group is not None and not opts.urn:
-                warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-            __props__.__dict__["group"] = group
+            if group_id is None and not opts.urn:
+                raise TypeError("Missing required property 'group_id'")
             __props__.__dict__["group_id"] = group_id
             if ip_behavior is None and not opts.urn:
                 raise TypeError("Missing required property 'ip_behavior'")
             __props__.__dict__["ip_behavior"] = ip_behavior
-            if product is not None and not opts.urn:
-                warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-                pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-            __props__.__dict__["product"] = product
             __props__.__dict__["product_id"] = product_id
             __props__.__dict__["status_update_emails"] = status_update_emails
             __props__.__dict__["use_cases"] = use_cases
@@ -445,13 +321,10 @@ class EdgeHostName(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             certificate: Optional[pulumi.Input[int]] = None,
-            contract: Optional[pulumi.Input[str]] = None,
             contract_id: Optional[pulumi.Input[str]] = None,
             edge_hostname: Optional[pulumi.Input[str]] = None,
-            group: Optional[pulumi.Input[str]] = None,
             group_id: Optional[pulumi.Input[str]] = None,
             ip_behavior: Optional[pulumi.Input[str]] = None,
-            product: Optional[pulumi.Input[str]] = None,
             product_id: Optional[pulumi.Input[str]] = None,
             status_update_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             use_cases: Optional[pulumi.Input[str]] = None) -> 'EdgeHostName':
@@ -470,13 +343,10 @@ class EdgeHostName(pulumi.CustomResource):
         __props__ = _EdgeHostNameState.__new__(_EdgeHostNameState)
 
         __props__.__dict__["certificate"] = certificate
-        __props__.__dict__["contract"] = contract
         __props__.__dict__["contract_id"] = contract_id
         __props__.__dict__["edge_hostname"] = edge_hostname
-        __props__.__dict__["group"] = group
         __props__.__dict__["group_id"] = group_id
         __props__.__dict__["ip_behavior"] = ip_behavior
-        __props__.__dict__["product"] = product
         __props__.__dict__["product_id"] = product_id
         __props__.__dict__["status_update_emails"] = status_update_emails
         __props__.__dict__["use_cases"] = use_cases
@@ -486,14 +356,6 @@ class EdgeHostName(pulumi.CustomResource):
     @pulumi.getter
     def certificate(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "certificate")
-
-    @property
-    @pulumi.getter
-    def contract(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"contract\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""contract is deprecated: The setting \"contract\" has been deprecated.""")
-
-        return pulumi.get(self, "contract")
 
     @property
     @pulumi.getter(name="contractId")
@@ -506,14 +368,6 @@ class EdgeHostName(pulumi.CustomResource):
         return pulumi.get(self, "edge_hostname")
 
     @property
-    @pulumi.getter
-    def group(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"group\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""group is deprecated: The setting \"group\" has been deprecated.""")
-
-        return pulumi.get(self, "group")
-
-    @property
     @pulumi.getter(name="groupId")
     def group_id(self) -> pulumi.Output[str]:
         return pulumi.get(self, "group_id")
@@ -522,14 +376,6 @@ class EdgeHostName(pulumi.CustomResource):
     @pulumi.getter(name="ipBehavior")
     def ip_behavior(self) -> pulumi.Output[str]:
         return pulumi.get(self, "ip_behavior")
-
-    @property
-    @pulumi.getter
-    def product(self) -> pulumi.Output[str]:
-        warnings.warn("""The setting \"product\" has been deprecated.""", DeprecationWarning)
-        pulumi.log.warn("""product is deprecated: The setting \"product\" has been deprecated.""")
-
-        return pulumi.get(self, "product")
 
     @property
     @pulumi.getter(name="productId")

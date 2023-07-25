@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupAppSecWapSelectedHostnames(ctx *pulumi.Context, args *LookupAppSecWapSelectedHostnamesArgs, opts ...pulumi.InvokeOption) (*LookupAppSecWapSelectedHostnamesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAppSecWapSelectedHostnamesResult
 	err := ctx.Invoke("akamai:index/getAppSecWapSelectedHostnames:getAppSecWapSelectedHostnames", args, &rv, opts...)
 	if err != nil {

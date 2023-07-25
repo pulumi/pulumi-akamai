@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -15,7 +16,7 @@ type PropertyActivation struct {
 	pulumi.CustomResourceState
 
 	ActivationId pulumi.StringOutput `pulumi:"activationId"`
-	// automatically acknowledge all rule warnings for activation to continue. default is true
+	// Automatically acknowledge all rule warnings for activation to continue. Default is false
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrOutput `pulumi:"autoAcknowledgeRuleWarnings"`
 	// Provides an audit record when activating on a production network
 	ComplianceRecord PropertyActivationComplianceRecordPtrOutput `pulumi:"complianceRecord"`
@@ -23,16 +24,12 @@ type PropertyActivation struct {
 	Errors           pulumi.StringOutput                         `pulumi:"errors"`
 	Network          pulumi.StringPtrOutput                      `pulumi:"network"`
 	// assigns a log message to the activation request
-	Note pulumi.StringPtrOutput `pulumi:"note"`
-	// Deprecated: The setting "property" has been deprecated.
-	Property   pulumi.StringOutput                    `pulumi:"property"`
+	Note       pulumi.StringPtrOutput                 `pulumi:"note"`
 	PropertyId pulumi.StringOutput                    `pulumi:"propertyId"`
 	RuleErrors PropertyActivationRuleErrorArrayOutput `pulumi:"ruleErrors"`
-	// Deprecated: Rule warnings will not be set in state anymore
-	RuleWarnings PropertyActivationRuleWarningArrayOutput `pulumi:"ruleWarnings"`
-	Status       pulumi.StringOutput                      `pulumi:"status"`
-	Version      pulumi.IntOutput                         `pulumi:"version"`
-	Warnings     pulumi.StringOutput                      `pulumi:"warnings"`
+	Status     pulumi.StringOutput                    `pulumi:"status"`
+	Version    pulumi.IntOutput                       `pulumi:"version"`
+	Warnings   pulumi.StringOutput                    `pulumi:"warnings"`
 }
 
 // NewPropertyActivation registers a new resource with the given unique name, arguments, and options.
@@ -45,6 +42,9 @@ func NewPropertyActivation(ctx *pulumi.Context,
 	if args.Contacts == nil {
 		return nil, errors.New("invalid value for required argument 'Contacts'")
 	}
+	if args.PropertyId == nil {
+		return nil, errors.New("invalid value for required argument 'PropertyId'")
+	}
 	if args.Version == nil {
 		return nil, errors.New("invalid value for required argument 'Version'")
 	}
@@ -54,6 +54,7 @@ func NewPropertyActivation(ctx *pulumi.Context,
 		},
 	})
 	opts = append(opts, aliases)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource PropertyActivation
 	err := ctx.RegisterResource("akamai:index/propertyActivation:PropertyActivation", name, args, &resource, opts...)
 	if err != nil {
@@ -77,7 +78,7 @@ func GetPropertyActivation(ctx *pulumi.Context,
 // Input properties used for looking up and filtering PropertyActivation resources.
 type propertyActivationState struct {
 	ActivationId *string `pulumi:"activationId"`
-	// automatically acknowledge all rule warnings for activation to continue. default is true
+	// Automatically acknowledge all rule warnings for activation to continue. Default is false
 	AutoAcknowledgeRuleWarnings *bool `pulumi:"autoAcknowledgeRuleWarnings"`
 	// Provides an audit record when activating on a production network
 	ComplianceRecord *PropertyActivationComplianceRecord `pulumi:"complianceRecord"`
@@ -85,21 +86,17 @@ type propertyActivationState struct {
 	Errors           *string                             `pulumi:"errors"`
 	Network          *string                             `pulumi:"network"`
 	// assigns a log message to the activation request
-	Note *string `pulumi:"note"`
-	// Deprecated: The setting "property" has been deprecated.
-	Property   *string                       `pulumi:"property"`
+	Note       *string                       `pulumi:"note"`
 	PropertyId *string                       `pulumi:"propertyId"`
 	RuleErrors []PropertyActivationRuleError `pulumi:"ruleErrors"`
-	// Deprecated: Rule warnings will not be set in state anymore
-	RuleWarnings []PropertyActivationRuleWarning `pulumi:"ruleWarnings"`
-	Status       *string                         `pulumi:"status"`
-	Version      *int                            `pulumi:"version"`
-	Warnings     *string                         `pulumi:"warnings"`
+	Status     *string                       `pulumi:"status"`
+	Version    *int                          `pulumi:"version"`
+	Warnings   *string                       `pulumi:"warnings"`
 }
 
 type PropertyActivationState struct {
 	ActivationId pulumi.StringPtrInput
-	// automatically acknowledge all rule warnings for activation to continue. default is true
+	// Automatically acknowledge all rule warnings for activation to continue. Default is false
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrInput
 	// Provides an audit record when activating on a production network
 	ComplianceRecord PropertyActivationComplianceRecordPtrInput
@@ -107,16 +104,12 @@ type PropertyActivationState struct {
 	Errors           pulumi.StringPtrInput
 	Network          pulumi.StringPtrInput
 	// assigns a log message to the activation request
-	Note pulumi.StringPtrInput
-	// Deprecated: The setting "property" has been deprecated.
-	Property   pulumi.StringPtrInput
+	Note       pulumi.StringPtrInput
 	PropertyId pulumi.StringPtrInput
 	RuleErrors PropertyActivationRuleErrorArrayInput
-	// Deprecated: Rule warnings will not be set in state anymore
-	RuleWarnings PropertyActivationRuleWarningArrayInput
-	Status       pulumi.StringPtrInput
-	Version      pulumi.IntPtrInput
-	Warnings     pulumi.StringPtrInput
+	Status     pulumi.StringPtrInput
+	Version    pulumi.IntPtrInput
+	Warnings   pulumi.StringPtrInput
 }
 
 func (PropertyActivationState) ElementType() reflect.Type {
@@ -125,41 +118,33 @@ func (PropertyActivationState) ElementType() reflect.Type {
 
 type propertyActivationArgs struct {
 	ActivationId *string `pulumi:"activationId"`
-	// automatically acknowledge all rule warnings for activation to continue. default is true
+	// Automatically acknowledge all rule warnings for activation to continue. Default is false
 	AutoAcknowledgeRuleWarnings *bool `pulumi:"autoAcknowledgeRuleWarnings"`
 	// Provides an audit record when activating on a production network
 	ComplianceRecord *PropertyActivationComplianceRecord `pulumi:"complianceRecord"`
 	Contacts         []string                            `pulumi:"contacts"`
 	Network          *string                             `pulumi:"network"`
 	// assigns a log message to the activation request
-	Note *string `pulumi:"note"`
-	// Deprecated: The setting "property" has been deprecated.
-	Property   *string                       `pulumi:"property"`
-	PropertyId *string                       `pulumi:"propertyId"`
+	Note       *string                       `pulumi:"note"`
+	PropertyId string                        `pulumi:"propertyId"`
 	RuleErrors []PropertyActivationRuleError `pulumi:"ruleErrors"`
-	// Deprecated: Rule warnings will not be set in state anymore
-	RuleWarnings []PropertyActivationRuleWarning `pulumi:"ruleWarnings"`
-	Version      int                             `pulumi:"version"`
+	Version    int                           `pulumi:"version"`
 }
 
 // The set of arguments for constructing a PropertyActivation resource.
 type PropertyActivationArgs struct {
 	ActivationId pulumi.StringPtrInput
-	// automatically acknowledge all rule warnings for activation to continue. default is true
+	// Automatically acknowledge all rule warnings for activation to continue. Default is false
 	AutoAcknowledgeRuleWarnings pulumi.BoolPtrInput
 	// Provides an audit record when activating on a production network
 	ComplianceRecord PropertyActivationComplianceRecordPtrInput
 	Contacts         pulumi.StringArrayInput
 	Network          pulumi.StringPtrInput
 	// assigns a log message to the activation request
-	Note pulumi.StringPtrInput
-	// Deprecated: The setting "property" has been deprecated.
-	Property   pulumi.StringPtrInput
-	PropertyId pulumi.StringPtrInput
+	Note       pulumi.StringPtrInput
+	PropertyId pulumi.StringInput
 	RuleErrors PropertyActivationRuleErrorArrayInput
-	// Deprecated: Rule warnings will not be set in state anymore
-	RuleWarnings PropertyActivationRuleWarningArrayInput
-	Version      pulumi.IntInput
+	Version    pulumi.IntInput
 }
 
 func (PropertyActivationArgs) ElementType() reflect.Type {
@@ -253,7 +238,7 @@ func (o PropertyActivationOutput) ActivationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.ActivationId }).(pulumi.StringOutput)
 }
 
-// automatically acknowledge all rule warnings for activation to continue. default is true
+// Automatically acknowledge all rule warnings for activation to continue. Default is false
 func (o PropertyActivationOutput) AutoAcknowledgeRuleWarnings() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.BoolPtrOutput { return v.AutoAcknowledgeRuleWarnings }).(pulumi.BoolPtrOutput)
 }
@@ -280,22 +265,12 @@ func (o PropertyActivationOutput) Note() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringPtrOutput { return v.Note }).(pulumi.StringPtrOutput)
 }
 
-// Deprecated: The setting "property" has been deprecated.
-func (o PropertyActivationOutput) Property() pulumi.StringOutput {
-	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.Property }).(pulumi.StringOutput)
-}
-
 func (o PropertyActivationOutput) PropertyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PropertyActivation) pulumi.StringOutput { return v.PropertyId }).(pulumi.StringOutput)
 }
 
 func (o PropertyActivationOutput) RuleErrors() PropertyActivationRuleErrorArrayOutput {
 	return o.ApplyT(func(v *PropertyActivation) PropertyActivationRuleErrorArrayOutput { return v.RuleErrors }).(PropertyActivationRuleErrorArrayOutput)
-}
-
-// Deprecated: Rule warnings will not be set in state anymore
-func (o PropertyActivationOutput) RuleWarnings() PropertyActivationRuleWarningArrayOutput {
-	return o.ApplyT(func(v *PropertyActivation) PropertyActivationRuleWarningArrayOutput { return v.RuleWarnings }).(PropertyActivationRuleWarningArrayOutput)
 }
 
 func (o PropertyActivationOutput) Status() pulumi.StringOutput {

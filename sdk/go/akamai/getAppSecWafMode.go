@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupAppSecWafMode(ctx *pulumi.Context, args *LookupAppSecWafModeArgs, opts ...pulumi.InvokeOption) (*LookupAppSecWafModeResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAppSecWafModeResult
 	err := ctx.Invoke("akamai:index/getAppSecWafMode:getAppSecWafMode", args, &rv, opts...)
 	if err != nil {

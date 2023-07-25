@@ -6,7 +6,6 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -31,20 +30,6 @@ public final class DatastreamSumologicConnectorArgs extends com.pulumi.resources
         return Optional.ofNullable(this.compressLogs);
     }
 
-    @Import(name="connectorId")
-    private @Nullable Output<Integer> connectorId;
-
-    public Optional<Output<Integer>> connectorId() {
-        return Optional.ofNullable(this.connectorId);
-    }
-
-    @Import(name="connectorName", required=true)
-    private Output<String> connectorName;
-
-    public Output<String> connectorName() {
-        return this.connectorName;
-    }
-
     @Import(name="contentType")
     private @Nullable Output<String> contentType;
 
@@ -66,6 +51,13 @@ public final class DatastreamSumologicConnectorArgs extends com.pulumi.resources
         return Optional.ofNullable(this.customHeaderValue);
     }
 
+    @Import(name="displayName", required=true)
+    private Output<String> displayName;
+
+    public Output<String> displayName() {
+        return this.displayName;
+    }
+
     @Import(name="endpoint", required=true)
     private Output<String> endpoint;
 
@@ -78,11 +70,10 @@ public final class DatastreamSumologicConnectorArgs extends com.pulumi.resources
     private DatastreamSumologicConnectorArgs(DatastreamSumologicConnectorArgs $) {
         this.collectorCode = $.collectorCode;
         this.compressLogs = $.compressLogs;
-        this.connectorId = $.connectorId;
-        this.connectorName = $.connectorName;
         this.contentType = $.contentType;
         this.customHeaderName = $.customHeaderName;
         this.customHeaderValue = $.customHeaderValue;
+        this.displayName = $.displayName;
         this.endpoint = $.endpoint;
     }
 
@@ -122,24 +113,6 @@ public final class DatastreamSumologicConnectorArgs extends com.pulumi.resources
             return compressLogs(Output.of(compressLogs));
         }
 
-        public Builder connectorId(@Nullable Output<Integer> connectorId) {
-            $.connectorId = connectorId;
-            return this;
-        }
-
-        public Builder connectorId(Integer connectorId) {
-            return connectorId(Output.of(connectorId));
-        }
-
-        public Builder connectorName(Output<String> connectorName) {
-            $.connectorName = connectorName;
-            return this;
-        }
-
-        public Builder connectorName(String connectorName) {
-            return connectorName(Output.of(connectorName));
-        }
-
         public Builder contentType(@Nullable Output<String> contentType) {
             $.contentType = contentType;
             return this;
@@ -167,6 +140,15 @@ public final class DatastreamSumologicConnectorArgs extends com.pulumi.resources
             return customHeaderValue(Output.of(customHeaderValue));
         }
 
+        public Builder displayName(Output<String> displayName) {
+            $.displayName = displayName;
+            return this;
+        }
+
+        public Builder displayName(String displayName) {
+            return displayName(Output.of(displayName));
+        }
+
         public Builder endpoint(Output<String> endpoint) {
             $.endpoint = endpoint;
             return this;
@@ -178,7 +160,7 @@ public final class DatastreamSumologicConnectorArgs extends com.pulumi.resources
 
         public DatastreamSumologicConnectorArgs build() {
             $.collectorCode = Objects.requireNonNull($.collectorCode, "expected parameter 'collectorCode' to be non-null");
-            $.connectorName = Objects.requireNonNull($.connectorName, "expected parameter 'connectorName' to be non-null");
+            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
             $.endpoint = Objects.requireNonNull($.endpoint, "expected parameter 'endpoint' to be non-null");
             return $;
         }

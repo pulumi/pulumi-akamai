@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAppSecContractsGroups(ctx *pulumi.Context, args *GetAppSecContractsGroupsArgs, opts ...pulumi.InvokeOption) (*GetAppSecContractsGroupsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppSecContractsGroupsResult
 	err := ctx.Invoke("akamai:index/getAppSecContractsGroups:getAppSecContractsGroups", args, &rv, opts...)
 	if err != nil {

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -32,6 +33,7 @@ func NewIamGroup(ctx *pulumi.Context,
 	if args.ParentGroupId == nil {
 		return nil, errors.New("invalid value for required argument 'ParentGroupId'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource IamGroup
 	err := ctx.RegisterResource("akamai:index/iamGroup:IamGroup", name, args, &resource, opts...)
 	if err != nil {

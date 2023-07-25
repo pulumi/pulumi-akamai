@@ -22,7 +22,7 @@ public class AppSecConfiguration extends com.pulumi.resources.CustomResource {
      * Unique identifier of the new security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -36,7 +36,7 @@ public class AppSecConfiguration extends com.pulumi.resources.CustomResource {
      * Unique identifier of the Akamai contract associated with the new configuration
      * 
      */
-    @Export(name="contractId", type=String.class, parameters={})
+    @Export(name="contractId", refs={String.class}, tree="[0]")
     private Output<String> contractId;
 
     /**
@@ -50,7 +50,7 @@ public class AppSecConfiguration extends com.pulumi.resources.CustomResource {
      * Unique identifier of the existing configuration being cloned to create the new configuration
      * 
      */
-    @Export(name="createFromConfigId", type=Integer.class, parameters={})
+    @Export(name="createFromConfigId", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> createFromConfigId;
 
     /**
@@ -64,7 +64,7 @@ public class AppSecConfiguration extends com.pulumi.resources.CustomResource {
      * Version number of the existing configuration being cloned to create the new configuration
      * 
      */
-    @Export(name="createFromVersion", type=Integer.class, parameters={})
+    @Export(name="createFromVersion", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> createFromVersion;
 
     /**
@@ -78,7 +78,7 @@ public class AppSecConfiguration extends com.pulumi.resources.CustomResource {
      * Brief description of the new configuration
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -92,7 +92,7 @@ public class AppSecConfiguration extends com.pulumi.resources.CustomResource {
      * Unique identifier of the contract group associated with the new configuration
      * 
      */
-    @Export(name="groupId", type=Integer.class, parameters={})
+    @Export(name="groupId", refs={Integer.class}, tree="[0]")
     private Output<Integer> groupId;
 
     /**
@@ -106,7 +106,7 @@ public class AppSecConfiguration extends com.pulumi.resources.CustomResource {
      * Hostnames to be protected by the new configuration
      * 
      */
-    @Export(name="hostNames", type=List.class, parameters={String.class})
+    @Export(name="hostNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> hostNames;
 
     /**
@@ -120,7 +120,7 @@ public class AppSecConfiguration extends com.pulumi.resources.CustomResource {
      * Name of the new configuration
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**

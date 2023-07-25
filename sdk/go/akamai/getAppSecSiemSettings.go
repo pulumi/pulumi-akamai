@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupAppSecSiemSettings(ctx *pulumi.Context, args *LookupAppSecSiemSettingsArgs, opts ...pulumi.InvokeOption) (*LookupAppSecSiemSettingsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAppSecSiemSettingsResult
 	err := ctx.Invoke("akamai:index/getAppSecSiemSettings:getAppSecSiemSettings", args, &rv, opts...)
 	if err != nil {

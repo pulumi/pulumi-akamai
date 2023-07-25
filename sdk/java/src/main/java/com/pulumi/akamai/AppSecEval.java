@@ -21,7 +21,7 @@ public class AppSecEval extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -35,7 +35,7 @@ public class AppSecEval extends com.pulumi.resources.CustomResource {
      * Versioning information for the Kona Rule Set currently in use in production
      * 
      */
-    @Export(name="currentRuleset", type=String.class, parameters={})
+    @Export(name="currentRuleset", refs={String.class}, tree="[0]")
     private Output<String> currentRuleset;
 
     /**
@@ -49,7 +49,7 @@ public class AppSecEval extends com.pulumi.resources.CustomResource {
      * Evaluation mode (ASE_AUTO or ASE_MANUAL)
      * 
      */
-    @Export(name="evalMode", type=String.class, parameters={})
+    @Export(name="evalMode", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> evalMode;
 
     /**
@@ -63,7 +63,7 @@ public class AppSecEval extends com.pulumi.resources.CustomResource {
      * Evaluation mode operation (START, STOP, RESTART, UPDATE or COMPLETE)
      * 
      */
-    @Export(name="evalOperation", type=String.class, parameters={})
+    @Export(name="evalOperation", refs={String.class}, tree="[0]")
     private Output<String> evalOperation;
 
     /**
@@ -77,7 +77,7 @@ public class AppSecEval extends com.pulumi.resources.CustomResource {
      * Whether an evaluation is currently in progress
      * 
      */
-    @Export(name="evalStatus", type=String.class, parameters={})
+    @Export(name="evalStatus", refs={String.class}, tree="[0]")
     private Output<String> evalStatus;
 
     /**
@@ -91,7 +91,7 @@ public class AppSecEval extends com.pulumi.resources.CustomResource {
      * Versioning information for the Kona Rule Set being evaluated
      * 
      */
-    @Export(name="evaluatingRuleset", type=String.class, parameters={})
+    @Export(name="evaluatingRuleset", refs={String.class}, tree="[0]")
     private Output<String> evaluatingRuleset;
 
     /**
@@ -105,7 +105,7 @@ public class AppSecEval extends com.pulumi.resources.CustomResource {
      * Date when the evaluation period ends
      * 
      */
-    @Export(name="expirationDate", type=String.class, parameters={})
+    @Export(name="expirationDate", refs={String.class}, tree="[0]")
     private Output<String> expirationDate;
 
     /**
@@ -119,7 +119,7 @@ public class AppSecEval extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**

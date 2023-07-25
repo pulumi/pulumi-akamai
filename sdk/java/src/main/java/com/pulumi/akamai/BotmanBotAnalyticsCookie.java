@@ -16,13 +16,13 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie")
 public class BotmanBotAnalyticsCookie extends com.pulumi.resources.CustomResource {
-    @Export(name="botAnalyticsCookie", type=String.class, parameters={})
+    @Export(name="botAnalyticsCookie", refs={String.class}, tree="[0]")
     private Output<String> botAnalyticsCookie;
 
     public Output<String> botAnalyticsCookie() {
         return this.botAnalyticsCookie;
     }
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     public Output<Integer> configId() {

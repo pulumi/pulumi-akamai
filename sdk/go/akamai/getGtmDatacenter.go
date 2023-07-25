@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupGtmDatacenter(ctx *pulumi.Context, args *LookupGtmDatacenterArgs, opts ...pulumi.InvokeOption) (*LookupGtmDatacenterResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupGtmDatacenterResult
 	err := ctx.Invoke("akamai:index/getGtmDatacenter:getGtmDatacenter", args, &rv, opts...)
 	if err != nil {

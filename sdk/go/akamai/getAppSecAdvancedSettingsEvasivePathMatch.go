@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupAppSecAdvancedSettingsEvasivePathMatch(ctx *pulumi.Context, args *LookupAppSecAdvancedSettingsEvasivePathMatchArgs, opts ...pulumi.InvokeOption) (*LookupAppSecAdvancedSettingsEvasivePathMatchResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAppSecAdvancedSettingsEvasivePathMatchResult
 	err := ctx.Invoke("akamai:index/getAppSecAdvancedSettingsEvasivePathMatch:getAppSecAdvancedSettingsEvasivePathMatch", args, &rv, opts...)
 	if err != nil {

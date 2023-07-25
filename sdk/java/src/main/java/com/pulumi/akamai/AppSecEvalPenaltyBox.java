@@ -21,7 +21,7 @@ public class AppSecEvalPenaltyBox extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -35,7 +35,7 @@ public class AppSecEvalPenaltyBox extends com.pulumi.resources.CustomResource {
      * Action applied to requests from clients in the penalty box
      * 
      */
-    @Export(name="penaltyBoxAction", type=String.class, parameters={})
+    @Export(name="penaltyBoxAction", refs={String.class}, tree="[0]")
     private Output<String> penaltyBoxAction;
 
     /**
@@ -49,7 +49,7 @@ public class AppSecEvalPenaltyBox extends com.pulumi.resources.CustomResource {
      * Whether to enable the penalty box for the specified security policy
      * 
      */
-    @Export(name="penaltyBoxProtection", type=Boolean.class, parameters={})
+    @Export(name="penaltyBoxProtection", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> penaltyBoxProtection;
 
     /**
@@ -63,7 +63,7 @@ public class AppSecEvalPenaltyBox extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**

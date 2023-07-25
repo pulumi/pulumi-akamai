@@ -62,6 +62,7 @@ namespace Pulumi.Akamai
         public readonly string Mode;
         public readonly string OutputText;
         public readonly string SecurityPolicyId;
+        public readonly string UkraineGeoControlAction;
 
         [OutputConstructor]
         private GetAppSecIPGeoResult(
@@ -79,7 +80,9 @@ namespace Pulumi.Akamai
 
             string outputText,
 
-            string securityPolicyId)
+            string securityPolicyId,
+
+            string ukraineGeoControlAction)
         {
             ConfigId = configId;
             ExceptionIpNetworkLists = exceptionIpNetworkLists;
@@ -89,6 +92,7 @@ namespace Pulumi.Akamai
             Mode = mode;
             OutputText = outputText;
             SecurityPolicyId = securityPolicyId;
+            UkraineGeoControlAction = ukraineGeoControlAction;
         }
     }
 }

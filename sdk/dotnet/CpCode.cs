@@ -12,23 +12,14 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("akamai:index/cpCode:CpCode")]
     public partial class CpCode : global::Pulumi.CustomResource
     {
-        [Output("contract")]
-        public Output<string> Contract { get; private set; } = null!;
-
         [Output("contractId")]
         public Output<string> ContractId { get; private set; } = null!;
-
-        [Output("group")]
-        public Output<string> Group { get; private set; } = null!;
 
         [Output("groupId")]
         public Output<string> GroupId { get; private set; } = null!;
 
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
-
-        [Output("product")]
-        public Output<string> Product { get; private set; } = null!;
 
         [Output("productId")]
         public Output<string> ProductId { get; private set; } = null!;
@@ -41,7 +32,7 @@ namespace Pulumi.Akamai
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public CpCode(string name, CpCodeArgs? args = null, CustomResourceOptions? options = null)
+        public CpCode(string name, CpCodeArgs args, CustomResourceOptions? options = null)
             : base("akamai:index/cpCode:CpCode", name, args ?? new CpCodeArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -83,23 +74,14 @@ namespace Pulumi.Akamai
 
     public sealed class CpCodeArgs : global::Pulumi.ResourceArgs
     {
-        [Input("contract")]
-        public Input<string>? Contract { get; set; }
+        [Input("contractId", required: true)]
+        public Input<string> ContractId { get; set; } = null!;
 
-        [Input("contractId")]
-        public Input<string>? ContractId { get; set; }
-
-        [Input("group")]
-        public Input<string>? Group { get; set; }
-
-        [Input("groupId")]
-        public Input<string>? GroupId { get; set; }
+        [Input("groupId", required: true)]
+        public Input<string> GroupId { get; set; } = null!;
 
         [Input("name")]
         public Input<string>? Name { get; set; }
-
-        [Input("product")]
-        public Input<string>? Product { get; set; }
 
         [Input("productId")]
         public Input<string>? ProductId { get; set; }
@@ -112,23 +94,14 @@ namespace Pulumi.Akamai
 
     public sealed class CpCodeState : global::Pulumi.ResourceArgs
     {
-        [Input("contract")]
-        public Input<string>? Contract { get; set; }
-
         [Input("contractId")]
         public Input<string>? ContractId { get; set; }
-
-        [Input("group")]
-        public Input<string>? Group { get; set; }
 
         [Input("groupId")]
         public Input<string>? GroupId { get; set; }
 
         [Input("name")]
         public Input<string>? Name { get; set; }
-
-        [Input("product")]
-        public Input<string>? Product { get; set; }
 
         [Input("productId")]
         public Input<string>? ProductId { get; set; }

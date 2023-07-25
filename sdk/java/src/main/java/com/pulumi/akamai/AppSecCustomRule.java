@@ -20,7 +20,7 @@ public class AppSecCustomRule extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -34,7 +34,7 @@ public class AppSecCustomRule extends com.pulumi.resources.CustomResource {
      * JSON-formatted definition of the custom rule
      * 
      */
-    @Export(name="customRule", type=String.class, parameters={})
+    @Export(name="customRule", refs={String.class}, tree="[0]")
     private Output<String> customRule;
 
     /**
@@ -44,7 +44,7 @@ public class AppSecCustomRule extends com.pulumi.resources.CustomResource {
     public Output<String> customRule() {
         return this.customRule;
     }
-    @Export(name="customRuleId", type=Integer.class, parameters={})
+    @Export(name="customRuleId", refs={Integer.class}, tree="[0]")
     private Output<Integer> customRuleId;
 
     public Output<Integer> customRuleId() {

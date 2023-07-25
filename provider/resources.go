@@ -16,30 +16,21 @@ package akamai
 
 import (
 	"fmt"
+
 	// embed is used to store bridge-metadata.json in the compiled binary
+	"context"
 	_ "embed"
 	"path/filepath"
 	"unicode"
 
-	"github.com/akamai/terraform-provider-akamai/v4/pkg/akamai"
+	"github.com/akamai/terraform-provider-akamai/v5/pkg/akamai"
+	"github.com/akamai/terraform-provider-akamai/v5/pkg/providers/registry"
 
-	// The list of akamai subproviders we are using. We load in each provider manually
-	// because it requires build flags to configure automatic loading.
-	appSecProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/appsec"
-	botmanProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/botman"
-	cloudletsProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/cloudlets"
-	cpsProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/cps"
-	datastreamProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/datastream"
-	dnsProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/dns"
-	edgeworksProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/edgeworkers"
-	gtmProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/gtm"
-	iamProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/iam"
-	// It looks like imaging has a recursive type, which we are omitting
-	// imagingProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/imaging"
-	networkListsProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/networklists"
-	propertyProvider "github.com/akamai/terraform-provider-akamai/v4/pkg/providers/property"
+	// Load the providers
+	_ "github.com/akamai/terraform-provider-akamai/v5/pkg/providers"
 
-	"github.com/pulumi/pulumi-akamai/provider/v5/pkg/version"
+	"github.com/pulumi/pulumi-akamai/provider/v6/pkg/version"
+	pf "github.com/pulumi/pulumi-terraform-bridge/pf/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/x"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
@@ -85,24 +76,13 @@ func makeResource(mod string, res string) tokens.Type {
 // Provider returns additional overlaid schema and metadata associated with the provider..
 func Provider() tfbridge.ProviderInfo {
 
-	providerFunc := akamai.Provider(
-		appSecProvider.Subprovider(),
-		cloudletsProvider.Subprovider(),
-		cpsProvider.Subprovider(),
-		datastreamProvider.Subprovider(),
-		dnsProvider.Subprovider(),
-		edgeworksProvider.Subprovider(),
-		gtmProvider.Subprovider(),
-		networkListsProvider.Subprovider(),
-		propertyProvider.Subprovider(),
-		iamProvider.Subprovider(),
-		botmanProvider.Subprovider(),
-		// This subprovider adds a recursive type (expanded out quite large).
-		// imagingProvider.Subprovider(),
+	p := pf.MuxShimWithPF(context.Background(),
+		shimv2.NewProvider(
+			akamai.NewPluginProvider(registry.PluginSubproviders()...)()),
+		akamai.NewFrameworkProvider(registry.FrameworkSubproviders()...)(),
 	)
 
 	// Instantiate the Terraform provider
-	p := shimv2.NewProvider(providerFunc())
 
 	// Create a Pulumi provider mapping
 	prov := tfbridge.ProviderInfo{
@@ -114,7 +94,7 @@ func Provider() tfbridge.ProviderInfo {
 		Homepage:                "https://pulumi.io",
 		Repository:              "https://github.com/pulumi/pulumi-akamai",
 		GitHubOrg:               "akamai",
-		TFProviderModuleVersion: "v4",
+		TFProviderModuleVersion: "v5",
 		Version:                 version.Version,
 		UpstreamRepoPath:        "./upstream",
 		Config: map[string]*tfbridge.SchemaInfo{

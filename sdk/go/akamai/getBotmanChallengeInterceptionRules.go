@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupBotmanChallengeInterceptionRules(ctx *pulumi.Context, args *LookupBotmanChallengeInterceptionRulesArgs, opts ...pulumi.InvokeOption) (*LookupBotmanChallengeInterceptionRulesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBotmanChallengeInterceptionRulesResult
 	err := ctx.Invoke("akamai:index/getBotmanChallengeInterceptionRules:getBotmanChallengeInterceptionRules", args, &rv, opts...)
 	if err != nil {

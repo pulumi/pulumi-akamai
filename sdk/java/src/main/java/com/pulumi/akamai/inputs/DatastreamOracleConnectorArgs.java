@@ -6,7 +6,6 @@ package com.pulumi.akamai.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -38,18 +37,11 @@ public final class DatastreamOracleConnectorArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.compressLogs);
     }
 
-    @Import(name="connectorId")
-    private @Nullable Output<Integer> connectorId;
+    @Import(name="displayName", required=true)
+    private Output<String> displayName;
 
-    public Optional<Output<Integer>> connectorId() {
-        return Optional.ofNullable(this.connectorId);
-    }
-
-    @Import(name="connectorName", required=true)
-    private Output<String> connectorName;
-
-    public Output<String> connectorName() {
-        return this.connectorName;
+    public Output<String> displayName() {
+        return this.displayName;
     }
 
     @Import(name="namespace", required=true)
@@ -86,8 +78,7 @@ public final class DatastreamOracleConnectorArgs extends com.pulumi.resources.Re
         this.accessKey = $.accessKey;
         this.bucket = $.bucket;
         this.compressLogs = $.compressLogs;
-        this.connectorId = $.connectorId;
-        this.connectorName = $.connectorName;
+        this.displayName = $.displayName;
         this.namespace = $.namespace;
         this.path = $.path;
         this.region = $.region;
@@ -139,22 +130,13 @@ public final class DatastreamOracleConnectorArgs extends com.pulumi.resources.Re
             return compressLogs(Output.of(compressLogs));
         }
 
-        public Builder connectorId(@Nullable Output<Integer> connectorId) {
-            $.connectorId = connectorId;
+        public Builder displayName(Output<String> displayName) {
+            $.displayName = displayName;
             return this;
         }
 
-        public Builder connectorId(Integer connectorId) {
-            return connectorId(Output.of(connectorId));
-        }
-
-        public Builder connectorName(Output<String> connectorName) {
-            $.connectorName = connectorName;
-            return this;
-        }
-
-        public Builder connectorName(String connectorName) {
-            return connectorName(Output.of(connectorName));
+        public Builder displayName(String displayName) {
+            return displayName(Output.of(displayName));
         }
 
         public Builder namespace(Output<String> namespace) {
@@ -196,7 +178,7 @@ public final class DatastreamOracleConnectorArgs extends com.pulumi.resources.Re
         public DatastreamOracleConnectorArgs build() {
             $.accessKey = Objects.requireNonNull($.accessKey, "expected parameter 'accessKey' to be non-null");
             $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
-            $.connectorName = Objects.requireNonNull($.connectorName, "expected parameter 'connectorName' to be non-null");
+            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
             $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
             $.path = Objects.requireNonNull($.path, "expected parameter 'path' to be non-null");
             $.region = Objects.requireNonNull($.region, "expected parameter 'region' to be non-null");

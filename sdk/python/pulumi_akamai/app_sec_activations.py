@@ -17,37 +17,23 @@ class AppSecActivationsArgs:
                  config_id: pulumi.Input[int],
                  notification_emails: pulumi.Input[Sequence[pulumi.Input[str]]],
                  version: pulumi.Input[int],
-                 activate: Optional[pulumi.Input[bool]] = None,
                  network: Optional[pulumi.Input[str]] = None,
-                 note: Optional[pulumi.Input[str]] = None,
-                 notes: Optional[pulumi.Input[str]] = None):
+                 note: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AppSecActivations resource.
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration to be activated
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: List of email addresses to be notified with the results of the activation
         :param pulumi.Input[int] version: Version of the security configuration to be activated
-        :param pulumi.Input[bool] activate: Whether to activate or deactivate the specified security configuration and version
         :param pulumi.Input[str] network: Network on which to activate the configuration version (STAGING or PRODUCTION)
         :param pulumi.Input[str] note: Note describing the activation. Will use timestamp if omitted.
-        :param pulumi.Input[str] notes: Note describing the activation
         """
         pulumi.set(__self__, "config_id", config_id)
         pulumi.set(__self__, "notification_emails", notification_emails)
         pulumi.set(__self__, "version", version)
-        if activate is not None:
-            warnings.warn("""The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""", DeprecationWarning)
-            pulumi.log.warn("""activate is deprecated: The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""")
-        if activate is not None:
-            pulumi.set(__self__, "activate", activate)
         if network is not None:
             pulumi.set(__self__, "network", network)
         if note is not None:
             pulumi.set(__self__, "note", note)
-        if notes is not None:
-            warnings.warn("""The setting notes has been deprecated. Use \"note\" instead.""", DeprecationWarning)
-            pulumi.log.warn("""notes is deprecated: The setting notes has been deprecated. Use \"note\" instead.""")
-        if notes is not None:
-            pulumi.set(__self__, "notes", notes)
 
     @property
     @pulumi.getter(name="configId")
@@ -87,21 +73,6 @@ class AppSecActivationsArgs:
 
     @property
     @pulumi.getter
-    def activate(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to activate or deactivate the specified security configuration and version
-        """
-        warnings.warn("""The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""", DeprecationWarning)
-        pulumi.log.warn("""activate is deprecated: The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""")
-
-        return pulumi.get(self, "activate")
-
-    @activate.setter
-    def activate(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "activate", value)
-
-    @property
-    @pulumi.getter
     def network(self) -> Optional[pulumi.Input[str]]:
         """
         Network on which to activate the configuration version (STAGING or PRODUCTION)
@@ -124,81 +95,37 @@ class AppSecActivationsArgs:
     def note(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "note", value)
 
-    @property
-    @pulumi.getter
-    def notes(self) -> Optional[pulumi.Input[str]]:
-        """
-        Note describing the activation
-        """
-        warnings.warn("""The setting notes has been deprecated. Use \"note\" instead.""", DeprecationWarning)
-        pulumi.log.warn("""notes is deprecated: The setting notes has been deprecated. Use \"note\" instead.""")
-
-        return pulumi.get(self, "notes")
-
-    @notes.setter
-    def notes(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "notes", value)
-
 
 @pulumi.input_type
 class _AppSecActivationsState:
     def __init__(__self__, *,
-                 activate: Optional[pulumi.Input[bool]] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
-                 notes: Optional[pulumi.Input[str]] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering AppSecActivations resources.
-        :param pulumi.Input[bool] activate: Whether to activate or deactivate the specified security configuration and version
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration to be activated
         :param pulumi.Input[str] network: Network on which to activate the configuration version (STAGING or PRODUCTION)
         :param pulumi.Input[str] note: Note describing the activation. Will use timestamp if omitted.
-        :param pulumi.Input[str] notes: Note describing the activation
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: List of email addresses to be notified with the results of the activation
         :param pulumi.Input[str] status: The results of the activation
         :param pulumi.Input[int] version: Version of the security configuration to be activated
         """
-        if activate is not None:
-            warnings.warn("""The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""", DeprecationWarning)
-            pulumi.log.warn("""activate is deprecated: The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""")
-        if activate is not None:
-            pulumi.set(__self__, "activate", activate)
         if config_id is not None:
             pulumi.set(__self__, "config_id", config_id)
         if network is not None:
             pulumi.set(__self__, "network", network)
         if note is not None:
             pulumi.set(__self__, "note", note)
-        if notes is not None:
-            warnings.warn("""The setting notes has been deprecated. Use \"note\" instead.""", DeprecationWarning)
-            pulumi.log.warn("""notes is deprecated: The setting notes has been deprecated. Use \"note\" instead.""")
-        if notes is not None:
-            pulumi.set(__self__, "notes", notes)
         if notification_emails is not None:
             pulumi.set(__self__, "notification_emails", notification_emails)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if version is not None:
             pulumi.set(__self__, "version", version)
-
-    @property
-    @pulumi.getter
-    def activate(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether to activate or deactivate the specified security configuration and version
-        """
-        warnings.warn("""The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""", DeprecationWarning)
-        pulumi.log.warn("""activate is deprecated: The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""")
-
-        return pulumi.get(self, "activate")
-
-    @activate.setter
-    def activate(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "activate", value)
 
     @property
     @pulumi.getter(name="configId")
@@ -235,21 +162,6 @@ class _AppSecActivationsState:
     @note.setter
     def note(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "note", value)
-
-    @property
-    @pulumi.getter
-    def notes(self) -> Optional[pulumi.Input[str]]:
-        """
-        Note describing the activation
-        """
-        warnings.warn("""The setting notes has been deprecated. Use \"note\" instead.""", DeprecationWarning)
-        pulumi.log.warn("""notes is deprecated: The setting notes has been deprecated. Use \"note\" instead.""")
-
-        return pulumi.get(self, "notes")
-
-    @notes.setter
-    def notes(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "notes", value)
 
     @property
     @pulumi.getter(name="notificationEmails")
@@ -293,11 +205,9 @@ class AppSecActivations(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activate: Optional[pulumi.Input[bool]] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
-                 notes: Optional[pulumi.Input[str]] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -305,11 +215,9 @@ class AppSecActivations(pulumi.CustomResource):
         Create a AppSecActivations resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] activate: Whether to activate or deactivate the specified security configuration and version
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration to be activated
         :param pulumi.Input[str] network: Network on which to activate the configuration version (STAGING or PRODUCTION)
         :param pulumi.Input[str] note: Note describing the activation. Will use timestamp if omitted.
-        :param pulumi.Input[str] notes: Note describing the activation
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: List of email addresses to be notified with the results of the activation
         :param pulumi.Input[int] version: Version of the security configuration to be activated
         """
@@ -336,11 +244,9 @@ class AppSecActivations(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activate: Optional[pulumi.Input[bool]] = None,
                  config_id: Optional[pulumi.Input[int]] = None,
                  network: Optional[pulumi.Input[str]] = None,
                  note: Optional[pulumi.Input[str]] = None,
-                 notes: Optional[pulumi.Input[str]] = None,
                  notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  version: Optional[pulumi.Input[int]] = None,
                  __props__=None):
@@ -352,19 +258,11 @@ class AppSecActivations(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AppSecActivationsArgs.__new__(AppSecActivationsArgs)
 
-            if activate is not None and not opts.urn:
-                warnings.warn("""The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""", DeprecationWarning)
-                pulumi.log.warn("""activate is deprecated: The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""")
-            __props__.__dict__["activate"] = activate
             if config_id is None and not opts.urn:
                 raise TypeError("Missing required property 'config_id'")
             __props__.__dict__["config_id"] = config_id
             __props__.__dict__["network"] = network
             __props__.__dict__["note"] = note
-            if notes is not None and not opts.urn:
-                warnings.warn("""The setting notes has been deprecated. Use \"note\" instead.""", DeprecationWarning)
-                pulumi.log.warn("""notes is deprecated: The setting notes has been deprecated. Use \"note\" instead.""")
-            __props__.__dict__["notes"] = notes
             if notification_emails is None and not opts.urn:
                 raise TypeError("Missing required property 'notification_emails'")
             __props__.__dict__["notification_emails"] = notification_emails
@@ -382,11 +280,9 @@ class AppSecActivations(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            activate: Optional[pulumi.Input[bool]] = None,
             config_id: Optional[pulumi.Input[int]] = None,
             network: Optional[pulumi.Input[str]] = None,
             note: Optional[pulumi.Input[str]] = None,
-            notes: Optional[pulumi.Input[str]] = None,
             notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             status: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[int]] = None) -> 'AppSecActivations':
@@ -397,11 +293,9 @@ class AppSecActivations(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] activate: Whether to activate or deactivate the specified security configuration and version
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration to be activated
         :param pulumi.Input[str] network: Network on which to activate the configuration version (STAGING or PRODUCTION)
         :param pulumi.Input[str] note: Note describing the activation. Will use timestamp if omitted.
-        :param pulumi.Input[str] notes: Note describing the activation
         :param pulumi.Input[Sequence[pulumi.Input[str]]] notification_emails: List of email addresses to be notified with the results of the activation
         :param pulumi.Input[str] status: The results of the activation
         :param pulumi.Input[int] version: Version of the security configuration to be activated
@@ -410,26 +304,13 @@ class AppSecActivations(pulumi.CustomResource):
 
         __props__ = _AppSecActivationsState.__new__(_AppSecActivationsState)
 
-        __props__.__dict__["activate"] = activate
         __props__.__dict__["config_id"] = config_id
         __props__.__dict__["network"] = network
         __props__.__dict__["note"] = note
-        __props__.__dict__["notes"] = notes
         __props__.__dict__["notification_emails"] = notification_emails
         __props__.__dict__["status"] = status
         __props__.__dict__["version"] = version
         return AppSecActivations(resource_name, opts=opts, __props__=__props__)
-
-    @property
-    @pulumi.getter
-    def activate(self) -> pulumi.Output[Optional[bool]]:
-        """
-        Whether to activate or deactivate the specified security configuration and version
-        """
-        warnings.warn("""The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""", DeprecationWarning)
-        pulumi.log.warn("""activate is deprecated: The setting activate has been deprecated; \"terraform apply\" will always perform activation. (Use \"terraform destroy\" for deactivation.)""")
-
-        return pulumi.get(self, "activate")
 
     @property
     @pulumi.getter(name="configId")
@@ -454,17 +335,6 @@ class AppSecActivations(pulumi.CustomResource):
         Note describing the activation. Will use timestamp if omitted.
         """
         return pulumi.get(self, "note")
-
-    @property
-    @pulumi.getter
-    def notes(self) -> pulumi.Output[Optional[str]]:
-        """
-        Note describing the activation
-        """
-        warnings.warn("""The setting notes has been deprecated. Use \"note\" instead.""", DeprecationWarning)
-        pulumi.log.warn("""notes is deprecated: The setting notes has been deprecated. Use \"note\" instead.""")
-
-        return pulumi.get(self, "notes")
 
     @property
     @pulumi.getter(name="notificationEmails")

@@ -12,9 +12,6 @@ namespace Pulumi.Akamai
     [AkamaiResourceType("akamai:index/networkListActivations:NetworkListActivations")]
     public partial class NetworkListActivations : global::Pulumi.CustomResource
     {
-        [Output("activate")]
-        public Output<bool?> Activate { get; private set; } = null!;
-
         /// <summary>
         /// The Akamai network on which the list is activated: STAGING or PRODUCTION
         /// </summary>
@@ -97,9 +94,6 @@ namespace Pulumi.Akamai
 
     public sealed class NetworkListActivationsArgs : global::Pulumi.ResourceArgs
     {
-        [Input("activate")]
-        public Input<bool>? Activate { get; set; }
-
         /// <summary>
         /// The Akamai network on which the list is activated: STAGING or PRODUCTION
         /// </summary>
@@ -144,9 +138,6 @@ namespace Pulumi.Akamai
 
     public sealed class NetworkListActivationsState : global::Pulumi.ResourceArgs
     {
-        [Input("activate")]
-        public Input<bool>? Activate { get; set; }
-
         /// <summary>
         /// The Akamai network on which the list is activated: STAGING or PRODUCTION
         /// </summary>

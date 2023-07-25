@@ -17,14 +17,6 @@ __config__ = pulumi.Config('akamai')
 
 class _ExportableConfig(types.ModuleType):
     @property
-    def appsec_section(self) -> Optional[str]:
-        return __config__.get('appsecSection')
-
-    @property
-    def appsecs(self) -> Optional[str]:
-        return __config__.get('appsecs')
-
-    @property
     def cache_enabled(self) -> Optional[bool]:
         return __config__.get_bool('cacheEnabled')
 
@@ -40,44 +32,8 @@ class _ExportableConfig(types.ModuleType):
         return __config__.get('configSection')
 
     @property
-    def dns(self) -> Optional[str]:
-        return __config__.get('dns')
-
-    @property
-    def dns_section(self) -> Optional[str]:
-        return __config__.get('dnsSection')
-
-    @property
     def edgerc(self) -> Optional[str]:
         return __config__.get('edgerc')
-
-    @property
-    def gtm(self) -> Optional[str]:
-        return __config__.get('gtm')
-
-    @property
-    def gtm_section(self) -> Optional[str]:
-        return __config__.get('gtmSection')
-
-    @property
-    def networklist_section(self) -> Optional[str]:
-        return __config__.get('networklistSection')
-
-    @property
-    def networks(self) -> Optional[str]:
-        return __config__.get('networks')
-
-    @property
-    def papi_section(self) -> Optional[str]:
-        return __config__.get('papiSection')
-
-    @property
-    def property(self) -> Optional[str]:
-        return __config__.get('property')
-
-    @property
-    def property_section(self) -> Optional[str]:
-        return __config__.get('propertySection')
 
     @property
     def request_limit(self) -> Optional[int]:

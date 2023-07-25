@@ -56,6 +56,10 @@ export class AppSecIPGeo extends pulumi.CustomResource {
      * Unique identifier of the security policy
      */
     public readonly securityPolicyId!: pulumi.Output<string>;
+    /**
+     * Action set for Ukraine geo control
+     */
+    public readonly ukraineGeoControlAction!: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppSecIPGeo resource with the given unique name, arguments, and options.
@@ -76,6 +80,7 @@ export class AppSecIPGeo extends pulumi.CustomResource {
             resourceInputs["ipNetworkLists"] = state ? state.ipNetworkLists : undefined;
             resourceInputs["mode"] = state ? state.mode : undefined;
             resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["ukraineGeoControlAction"] = state ? state.ukraineGeoControlAction : undefined;
         } else {
             const args = argsOrState as AppSecIPGeoArgs | undefined;
             if ((!args || args.configId === undefined) && !opts.urn) {
@@ -93,6 +98,7 @@ export class AppSecIPGeo extends pulumi.CustomResource {
             resourceInputs["ipNetworkLists"] = args ? args.ipNetworkLists : undefined;
             resourceInputs["mode"] = args ? args.mode : undefined;
             resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
+            resourceInputs["ukraineGeoControlAction"] = args ? args.ukraineGeoControlAction : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AppSecIPGeo.__pulumiType, name, resourceInputs, opts);
@@ -127,6 +133,10 @@ export interface AppSecIPGeoState {
      * Unique identifier of the security policy
      */
     securityPolicyId?: pulumi.Input<string>;
+    /**
+     * Action set for Ukraine geo control
+     */
+    ukraineGeoControlAction?: pulumi.Input<string>;
 }
 
 /**
@@ -157,4 +167,8 @@ export interface AppSecIPGeoArgs {
      * Unique identifier of the security policy
      */
     securityPolicyId: pulumi.Input<string>;
+    /**
+     * Action set for Ukraine geo control
+     */
+    ukraineGeoControlAction?: pulumi.Input<string>;
 }

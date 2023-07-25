@@ -24,205 +24,205 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/gtmProperty:GtmProperty")
 public class GtmProperty extends com.pulumi.resources.CustomResource {
-    @Export(name="backupCname", type=String.class, parameters={})
+    @Export(name="backupCname", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> backupCname;
 
     public Output<Optional<String>> backupCname() {
         return Codegen.optional(this.backupCname);
     }
-    @Export(name="backupIp", type=String.class, parameters={})
+    @Export(name="backupIp", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> backupIp;
 
     public Output<Optional<String>> backupIp() {
         return Codegen.optional(this.backupIp);
     }
-    @Export(name="balanceByDownloadScore", type=Boolean.class, parameters={})
+    @Export(name="balanceByDownloadScore", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> balanceByDownloadScore;
 
     public Output<Optional<Boolean>> balanceByDownloadScore() {
         return Codegen.optional(this.balanceByDownloadScore);
     }
-    @Export(name="cname", type=String.class, parameters={})
+    @Export(name="cname", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> cname;
 
     public Output<Optional<String>> cname() {
         return Codegen.optional(this.cname);
     }
-    @Export(name="comments", type=String.class, parameters={})
+    @Export(name="comments", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> comments;
 
     public Output<Optional<String>> comments() {
         return Codegen.optional(this.comments);
     }
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     public Output<String> domain() {
         return this.domain;
     }
-    @Export(name="dynamicTtl", type=Integer.class, parameters={})
+    @Export(name="dynamicTtl", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> dynamicTtl;
 
     public Output<Optional<Integer>> dynamicTtl() {
         return Codegen.optional(this.dynamicTtl);
     }
-    @Export(name="failbackDelay", type=Integer.class, parameters={})
+    @Export(name="failbackDelay", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> failbackDelay;
 
     public Output<Optional<Integer>> failbackDelay() {
         return Codegen.optional(this.failbackDelay);
     }
-    @Export(name="failoverDelay", type=Integer.class, parameters={})
+    @Export(name="failoverDelay", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> failoverDelay;
 
     public Output<Optional<Integer>> failoverDelay() {
         return Codegen.optional(this.failoverDelay);
     }
-    @Export(name="ghostDemandReporting", type=Boolean.class, parameters={})
+    @Export(name="ghostDemandReporting", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> ghostDemandReporting;
 
     public Output<Optional<Boolean>> ghostDemandReporting() {
         return Codegen.optional(this.ghostDemandReporting);
     }
-    @Export(name="handoutLimit", type=Integer.class, parameters={})
+    @Export(name="handoutLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> handoutLimit;
 
     public Output<Integer> handoutLimit() {
         return this.handoutLimit;
     }
-    @Export(name="handoutMode", type=String.class, parameters={})
+    @Export(name="handoutMode", refs={String.class}, tree="[0]")
     private Output<String> handoutMode;
 
     public Output<String> handoutMode() {
         return this.handoutMode;
     }
-    @Export(name="healthMax", type=Double.class, parameters={})
+    @Export(name="healthMax", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> healthMax;
 
     public Output<Optional<Double>> healthMax() {
         return Codegen.optional(this.healthMax);
     }
-    @Export(name="healthMultiplier", type=Double.class, parameters={})
+    @Export(name="healthMultiplier", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> healthMultiplier;
 
     public Output<Optional<Double>> healthMultiplier() {
         return Codegen.optional(this.healthMultiplier);
     }
-    @Export(name="healthThreshold", type=Double.class, parameters={})
+    @Export(name="healthThreshold", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> healthThreshold;
 
     public Output<Optional<Double>> healthThreshold() {
         return Codegen.optional(this.healthThreshold);
     }
-    @Export(name="ipv6", type=Boolean.class, parameters={})
+    @Export(name="ipv6", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> ipv6;
 
     public Output<Optional<Boolean>> ipv6() {
         return Codegen.optional(this.ipv6);
     }
-    @Export(name="livenessTests", type=List.class, parameters={GtmPropertyLivenessTest.class})
+    @Export(name="livenessTests", refs={List.class,GtmPropertyLivenessTest.class}, tree="[0,1]")
     private Output</* @Nullable */ List<GtmPropertyLivenessTest>> livenessTests;
 
     public Output<Optional<List<GtmPropertyLivenessTest>>> livenessTests() {
         return Codegen.optional(this.livenessTests);
     }
-    @Export(name="loadImbalancePercentage", type=Double.class, parameters={})
+    @Export(name="loadImbalancePercentage", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> loadImbalancePercentage;
 
     public Output<Optional<Double>> loadImbalancePercentage() {
         return Codegen.optional(this.loadImbalancePercentage);
     }
-    @Export(name="mapName", type=String.class, parameters={})
+    @Export(name="mapName", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> mapName;
 
     public Output<Optional<String>> mapName() {
         return Codegen.optional(this.mapName);
     }
-    @Export(name="maxUnreachablePenalty", type=Integer.class, parameters={})
+    @Export(name="maxUnreachablePenalty", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> maxUnreachablePenalty;
 
     public Output<Optional<Integer>> maxUnreachablePenalty() {
         return Codegen.optional(this.maxUnreachablePenalty);
     }
-    @Export(name="minLiveFraction", type=Double.class, parameters={})
+    @Export(name="minLiveFraction", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> minLiveFraction;
 
     public Output<Optional<Double>> minLiveFraction() {
         return Codegen.optional(this.minLiveFraction);
     }
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     public Output<String> name() {
         return this.name;
     }
-    @Export(name="scoreAggregationType", type=String.class, parameters={})
+    @Export(name="scoreAggregationType", refs={String.class}, tree="[0]")
     private Output<String> scoreAggregationType;
 
     public Output<String> scoreAggregationType() {
         return this.scoreAggregationType;
     }
-    @Export(name="staticRrSets", type=List.class, parameters={GtmPropertyStaticRrSet.class})
+    @Export(name="staticRrSets", refs={List.class,GtmPropertyStaticRrSet.class}, tree="[0,1]")
     private Output</* @Nullable */ List<GtmPropertyStaticRrSet>> staticRrSets;
 
     public Output<Optional<List<GtmPropertyStaticRrSet>>> staticRrSets() {
         return Codegen.optional(this.staticRrSets);
     }
-    @Export(name="staticTtl", type=Integer.class, parameters={})
+    @Export(name="staticTtl", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> staticTtl;
 
     public Output<Optional<Integer>> staticTtl() {
         return Codegen.optional(this.staticTtl);
     }
-    @Export(name="stickinessBonusConstant", type=Integer.class, parameters={})
+    @Export(name="stickinessBonusConstant", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> stickinessBonusConstant;
 
     public Output<Optional<Integer>> stickinessBonusConstant() {
         return Codegen.optional(this.stickinessBonusConstant);
     }
-    @Export(name="stickinessBonusPercentage", type=Integer.class, parameters={})
+    @Export(name="stickinessBonusPercentage", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> stickinessBonusPercentage;
 
     public Output<Optional<Integer>> stickinessBonusPercentage() {
         return Codegen.optional(this.stickinessBonusPercentage);
     }
-    @Export(name="trafficTargets", type=List.class, parameters={GtmPropertyTrafficTarget.class})
+    @Export(name="trafficTargets", refs={List.class,GtmPropertyTrafficTarget.class}, tree="[0,1]")
     private Output</* @Nullable */ List<GtmPropertyTrafficTarget>> trafficTargets;
 
     public Output<Optional<List<GtmPropertyTrafficTarget>>> trafficTargets() {
         return Codegen.optional(this.trafficTargets);
     }
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     public Output<String> type() {
         return this.type;
     }
-    @Export(name="unreachableThreshold", type=Double.class, parameters={})
+    @Export(name="unreachableThreshold", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> unreachableThreshold;
 
     public Output<Optional<Double>> unreachableThreshold() {
         return Codegen.optional(this.unreachableThreshold);
     }
-    @Export(name="useComputedTargets", type=Boolean.class, parameters={})
+    @Export(name="useComputedTargets", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> useComputedTargets;
 
     public Output<Optional<Boolean>> useComputedTargets() {
         return Codegen.optional(this.useComputedTargets);
     }
-    @Export(name="waitOnComplete", type=Boolean.class, parameters={})
+    @Export(name="waitOnComplete", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> waitOnComplete;
 
     public Output<Optional<Boolean>> waitOnComplete() {
         return Codegen.optional(this.waitOnComplete);
     }
-    @Export(name="weightedHashBitsForIpv4", type=Integer.class, parameters={})
+    @Export(name="weightedHashBitsForIpv4", refs={Integer.class}, tree="[0]")
     private Output<Integer> weightedHashBitsForIpv4;
 
     public Output<Integer> weightedHashBitsForIpv4() {
         return this.weightedHashBitsForIpv4;
     }
-    @Export(name="weightedHashBitsForIpv6", type=Integer.class, parameters={})
+    @Export(name="weightedHashBitsForIpv6", refs={Integer.class}, tree="[0]")
     private Output<Integer> weightedHashBitsForIpv6;
 
     public Output<Integer> weightedHashBitsForIpv6() {

@@ -29,7 +29,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Whether acknowledge warnings before certificate verification
      * 
      */
-    @Export(name="acknowledgePreVerificationWarnings", type=Boolean.class, parameters={})
+    @Export(name="acknowledgePreVerificationWarnings", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> acknowledgePreVerificationWarnings;
 
     /**
@@ -43,7 +43,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Contact information for the certificate administrator to use at organization
      * 
      */
-    @Export(name="adminContact", type=CpsDvEnrollmentAdminContact.class, parameters={})
+    @Export(name="adminContact", refs={CpsDvEnrollmentAdminContact.class}, tree="[0]")
     private Output<CpsDvEnrollmentAdminContact> adminContact;
 
     /**
@@ -57,7 +57,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Allow to duplicate common name
      * 
      */
-    @Export(name="allowDuplicateCommonName", type=Boolean.class, parameters={})
+    @Export(name="allowDuplicateCommonName", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> allowDuplicateCommonName;
 
     /**
@@ -71,7 +71,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Certificate trust chain type
      * 
      */
-    @Export(name="certificateChainType", type=String.class, parameters={})
+    @Export(name="certificateChainType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> certificateChainType;
 
     /**
@@ -85,7 +85,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Certificate type of enrollment
      * 
      */
-    @Export(name="certificateType", type=String.class, parameters={})
+    @Export(name="certificateType", refs={String.class}, tree="[0]")
     private Output<String> certificateType;
 
     /**
@@ -99,7 +99,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Common name used for enrollment
      * 
      */
-    @Export(name="commonName", type=String.class, parameters={})
+    @Export(name="commonName", refs={String.class}, tree="[0]")
     private Output<String> commonName;
 
     /**
@@ -113,7 +113,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Contract ID for which enrollment is retrieved
      * 
      */
-    @Export(name="contractId", type=String.class, parameters={})
+    @Export(name="contractId", refs={String.class}, tree="[0]")
     private Output<String> contractId;
 
     /**
@@ -127,7 +127,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Certificate signing request generated during enrollment creation
      * 
      */
-    @Export(name="csr", type=CpsDvEnrollmentCsr.class, parameters={})
+    @Export(name="csr", refs={CpsDvEnrollmentCsr.class}, tree="[0]")
     private Output<CpsDvEnrollmentCsr> csr;
 
     /**
@@ -141,7 +141,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * DNS challenge information
      * 
      */
-    @Export(name="dnsChallenges", type=List.class, parameters={CpsDvEnrollmentDnsChallenge.class})
+    @Export(name="dnsChallenges", refs={List.class,CpsDvEnrollmentDnsChallenge.class}, tree="[0,1]")
     private Output<List<CpsDvEnrollmentDnsChallenge>> dnsChallenges;
 
     /**
@@ -152,28 +152,10 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
         return this.dnsChallenges;
     }
     /**
-     * Enable Dual-Stacked certificate deployment for enrollment
-     * 
-     * @deprecated
-     * Deprecated, don&#39;t use; always false
-     * 
-     */
-    @Deprecated /* Deprecated, don't use; always false */
-    @Export(name="enableMultiStackedCertificates", type=Boolean.class, parameters={})
-    private Output</* @Nullable */ Boolean> enableMultiStackedCertificates;
-
-    /**
-     * @return Enable Dual-Stacked certificate deployment for enrollment
-     * 
-     */
-    public Output<Optional<Boolean>> enableMultiStackedCertificates() {
-        return Codegen.optional(this.enableMultiStackedCertificates);
-    }
-    /**
      * HTTP challenge information
      * 
      */
-    @Export(name="httpChallenges", type=List.class, parameters={CpsDvEnrollmentHttpChallenge.class})
+    @Export(name="httpChallenges", refs={List.class,CpsDvEnrollmentHttpChallenge.class}, tree="[0,1]")
     private Output<List<CpsDvEnrollmentHttpChallenge>> httpChallenges;
 
     /**
@@ -187,7 +169,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Settings containing network information and TLS Metadata used by CPS
      * 
      */
-    @Export(name="networkConfiguration", type=CpsDvEnrollmentNetworkConfiguration.class, parameters={})
+    @Export(name="networkConfiguration", refs={CpsDvEnrollmentNetworkConfiguration.class}, tree="[0]")
     private Output<CpsDvEnrollmentNetworkConfiguration> networkConfiguration;
 
     /**
@@ -201,7 +183,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Organization information
      * 
      */
-    @Export(name="organization", type=CpsDvEnrollmentOrganization.class, parameters={})
+    @Export(name="organization", refs={CpsDvEnrollmentOrganization.class}, tree="[0]")
     private Output<CpsDvEnrollmentOrganization> organization;
 
     /**
@@ -215,7 +197,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * The registration authority or certificate authority (CA) used to obtain a certificate
      * 
      */
-    @Export(name="registrationAuthority", type=String.class, parameters={})
+    @Export(name="registrationAuthority", refs={String.class}, tree="[0]")
     private Output<String> registrationAuthority;
 
     /**
@@ -229,7 +211,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * List of SANs
      * 
      */
-    @Export(name="sans", type=List.class, parameters={String.class})
+    @Export(name="sans", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> sans;
 
     /**
@@ -243,7 +225,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Type of TLS deployment network
      * 
      */
-    @Export(name="secureNetwork", type=String.class, parameters={})
+    @Export(name="secureNetwork", refs={String.class}, tree="[0]")
     private Output<String> secureNetwork;
 
     /**
@@ -257,7 +239,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * SHA algorithm type
      * 
      */
-    @Export(name="signatureAlgorithm", type=String.class, parameters={})
+    @Export(name="signatureAlgorithm", refs={String.class}, tree="[0]")
     private Output<String> signatureAlgorithm;
 
     /**
@@ -271,7 +253,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Whether Server Name Indication is used for enrollment
      * 
      */
-    @Export(name="sniOnly", type=Boolean.class, parameters={})
+    @Export(name="sniOnly", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> sniOnly;
 
     /**
@@ -285,7 +267,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Contact information for an administrator at Akamai
      * 
      */
-    @Export(name="techContact", type=CpsDvEnrollmentTechContact.class, parameters={})
+    @Export(name="techContact", refs={CpsDvEnrollmentTechContact.class}, tree="[0]")
     private Output<CpsDvEnrollmentTechContact> techContact;
 
     /**
@@ -299,7 +281,7 @@ public class CpsDvEnrollment extends com.pulumi.resources.CustomResource {
      * Enrolment validation type
      * 
      */
-    @Export(name="validationType", type=String.class, parameters={})
+    @Export(name="validationType", refs={String.class}, tree="[0]")
     private Output<String> validationType;
 
     /**

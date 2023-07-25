@@ -24,38 +24,14 @@ export class Provider extends pulumi.ProviderResource {
         if (obj === undefined || obj === null) {
             return false;
         }
-        return obj['__pulumiType'] === Provider.__pulumiType;
+        return obj['__pulumiType'] === "pulumi:providers:" + Provider.__pulumiType;
     }
 
-    /**
-     * @deprecated The setting "appsec_section" has been deprecated.
-     */
-    public readonly appsecSection!: pulumi.Output<string | undefined>;
     /**
      * The section of the edgerc file to use for configuration
      */
     public readonly configSection!: pulumi.Output<string | undefined>;
-    /**
-     * @deprecated The setting "dns_section" has been deprecated.
-     */
-    public readonly dnsSection!: pulumi.Output<string | undefined>;
     public readonly edgerc!: pulumi.Output<string | undefined>;
-    /**
-     * @deprecated The setting "gtm_section" has been deprecated.
-     */
-    public readonly gtmSection!: pulumi.Output<string | undefined>;
-    /**
-     * @deprecated The setting "networklist_section" has been deprecated.
-     */
-    public readonly networklistSection!: pulumi.Output<string | undefined>;
-    /**
-     * @deprecated The setting "papi_section" has been deprecated.
-     */
-    public readonly papiSection!: pulumi.Output<string | undefined>;
-    /**
-     * @deprecated The setting "property_section" has been deprecated.
-     */
-    public readonly propertySection!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -68,21 +44,10 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            resourceInputs["appsecSection"] = args ? args.appsecSection : undefined;
-            resourceInputs["appsecs"] = pulumi.output(args ? args.appsecs : undefined).apply(JSON.stringify);
             resourceInputs["cacheEnabled"] = pulumi.output(args ? args.cacheEnabled : undefined).apply(JSON.stringify);
             resourceInputs["config"] = pulumi.output(args ? args.config : undefined).apply(JSON.stringify);
             resourceInputs["configSection"] = args ? args.configSection : undefined;
-            resourceInputs["dns"] = pulumi.output(args ? args.dns : undefined).apply(JSON.stringify);
-            resourceInputs["dnsSection"] = args ? args.dnsSection : undefined;
             resourceInputs["edgerc"] = args ? args.edgerc : undefined;
-            resourceInputs["gtm"] = pulumi.output(args ? args.gtm : undefined).apply(JSON.stringify);
-            resourceInputs["gtmSection"] = args ? args.gtmSection : undefined;
-            resourceInputs["networklistSection"] = args ? args.networklistSection : undefined;
-            resourceInputs["networks"] = pulumi.output(args ? args.networks : undefined).apply(JSON.stringify);
-            resourceInputs["papiSection"] = args ? args.papiSection : undefined;
-            resourceInputs["property"] = pulumi.output(args ? args.property : undefined).apply(JSON.stringify);
-            resourceInputs["propertySection"] = args ? args.propertySection : undefined;
             resourceInputs["requestLimit"] = pulumi.output(args ? args.requestLimit : undefined).apply(JSON.stringify);
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -94,54 +59,13 @@ export class Provider extends pulumi.ProviderResource {
  * The set of arguments for constructing a Provider resource.
  */
 export interface ProviderArgs {
-    /**
-     * @deprecated The setting "appsec_section" has been deprecated.
-     */
-    appsecSection?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "appsec" has been deprecated.
-     */
-    appsecs?: pulumi.Input<pulumi.Input<inputs.ProviderAppsec>[]>;
     cacheEnabled?: pulumi.Input<boolean>;
     config?: pulumi.Input<inputs.ProviderConfig>;
     /**
      * The section of the edgerc file to use for configuration
      */
     configSection?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "dns" has been deprecated.
-     */
-    dns?: pulumi.Input<inputs.ProviderDns>;
-    /**
-     * @deprecated The setting "dns_section" has been deprecated.
-     */
-    dnsSection?: pulumi.Input<string>;
     edgerc?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "gtm" has been deprecated.
-     */
-    gtm?: pulumi.Input<inputs.ProviderGtm>;
-    /**
-     * @deprecated The setting "gtm_section" has been deprecated.
-     */
-    gtmSection?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "networklist_section" has been deprecated.
-     */
-    networklistSection?: pulumi.Input<string>;
-    networks?: pulumi.Input<pulumi.Input<inputs.ProviderNetwork>[]>;
-    /**
-     * @deprecated The setting "papi_section" has been deprecated.
-     */
-    papiSection?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "property" has been deprecated.
-     */
-    property?: pulumi.Input<inputs.ProviderProperty>;
-    /**
-     * @deprecated The setting "property_section" has been deprecated.
-     */
-    propertySection?: pulumi.Input<string>;
     /**
      * The maximum number of API requests to be made per second (0 for no limit)
      */

@@ -24,7 +24,7 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
      * The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
      * 
      */
-    @Export(name="balancingType", type=String.class, parameters={})
+    @Export(name="balancingType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> balancingType;
 
     /**
@@ -40,7 +40,7 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
      * application load balancer configuration.
      * 
      */
-    @Export(name="dataCenters", type=List.class, parameters={CloudletsApplicationLoadBalancerDataCenter.class})
+    @Export(name="dataCenters", refs={List.class,CloudletsApplicationLoadBalancerDataCenter.class}, tree="[0,1]")
     private Output<List<CloudletsApplicationLoadBalancerDataCenter>> dataCenters;
 
     /**
@@ -56,7 +56,7 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
      * The load balancer configuration description
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -66,7 +66,7 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
     public Output<Optional<String>> description() {
         return Codegen.optional(this.description);
     }
-    @Export(name="livenessSettings", type=CloudletsApplicationLoadBalancerLivenessSettings.class, parameters={})
+    @Export(name="livenessSettings", refs={CloudletsApplicationLoadBalancerLivenessSettings.class}, tree="[0]")
     private Output</* @Nullable */ CloudletsApplicationLoadBalancerLivenessSettings> livenessSettings;
 
     public Output<Optional<CloudletsApplicationLoadBalancerLivenessSettings>> livenessSettings() {
@@ -76,7 +76,7 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
      * The conditional origin’s unique identifier
      * 
      */
-    @Export(name="originId", type=String.class, parameters={})
+    @Export(name="originId", refs={String.class}, tree="[0]")
     private Output<String> originId;
 
     /**
@@ -90,7 +90,7 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
      * The load balancer configuration version
      * 
      */
-    @Export(name="version", type=Integer.class, parameters={})
+    @Export(name="version", refs={Integer.class}, tree="[0]")
     private Output<Integer> version;
 
     /**
@@ -104,7 +104,7 @@ public class CloudletsApplicationLoadBalancer extends com.pulumi.resources.Custo
      * Describes warnings during activation of load balancer configuration
      * 
      */
-    @Export(name="warnings", type=String.class, parameters={})
+    @Export(name="warnings", refs={String.class}, tree="[0]")
     private Output<String> warnings;
 
     /**

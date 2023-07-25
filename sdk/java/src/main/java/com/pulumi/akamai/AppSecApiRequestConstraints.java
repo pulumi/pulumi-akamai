@@ -21,7 +21,7 @@ public class AppSecApiRequestConstraints extends com.pulumi.resources.CustomReso
      * Action to be taken when the API request constraint is triggered
      * 
      */
-    @Export(name="action", type=String.class, parameters={})
+    @Export(name="action", refs={String.class}, tree="[0]")
     private Output<String> action;
 
     /**
@@ -35,7 +35,7 @@ public class AppSecApiRequestConstraints extends com.pulumi.resources.CustomReso
      * Unique identifier of the API endpoint to which the constraint will be assigned
      * 
      */
-    @Export(name="apiEndpointId", type=Integer.class, parameters={})
+    @Export(name="apiEndpointId", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> apiEndpointId;
 
     /**
@@ -49,7 +49,7 @@ public class AppSecApiRequestConstraints extends com.pulumi.resources.CustomReso
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -63,7 +63,7 @@ public class AppSecApiRequestConstraints extends com.pulumi.resources.CustomReso
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**

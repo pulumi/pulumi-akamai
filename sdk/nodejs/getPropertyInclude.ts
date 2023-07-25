@@ -29,9 +29,6 @@ export interface GetPropertyIncludeArgs {
 export interface GetPropertyIncludeResult {
     readonly contractId: string;
     readonly groupId: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
     readonly id: string;
     readonly includeId: string;
     readonly latestVersion: number;

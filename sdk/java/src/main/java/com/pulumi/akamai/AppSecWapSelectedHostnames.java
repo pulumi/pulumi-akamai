@@ -22,7 +22,7 @@ public class AppSecWapSelectedHostnames extends com.pulumi.resources.CustomResou
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -36,7 +36,7 @@ public class AppSecWapSelectedHostnames extends com.pulumi.resources.CustomResou
      * List of hostnames to be evaluated
      * 
      */
-    @Export(name="evaluatedHosts", type=List.class, parameters={String.class})
+    @Export(name="evaluatedHosts", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> evaluatedHosts;
 
     /**
@@ -50,7 +50,7 @@ public class AppSecWapSelectedHostnames extends com.pulumi.resources.CustomResou
      * List of hostnames to be protected
      * 
      */
-    @Export(name="protectedHosts", type=List.class, parameters={String.class})
+    @Export(name="protectedHosts", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> protectedHosts;
 
     /**
@@ -64,7 +64,7 @@ public class AppSecWapSelectedHostnames extends com.pulumi.resources.CustomResou
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**

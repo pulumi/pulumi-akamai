@@ -20,7 +20,7 @@ public class AppSecRatePolicyAction extends com.pulumi.resources.CustomResource 
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -34,7 +34,7 @@ public class AppSecRatePolicyAction extends com.pulumi.resources.CustomResource 
      * Action to be taken for requests coming from an IPv4 address
      * 
      */
-    @Export(name="ipv4Action", type=String.class, parameters={})
+    @Export(name="ipv4Action", refs={String.class}, tree="[0]")
     private Output<String> ipv4Action;
 
     /**
@@ -48,7 +48,7 @@ public class AppSecRatePolicyAction extends com.pulumi.resources.CustomResource 
      * Action to be taken for requests coming from an IPv6 address
      * 
      */
-    @Export(name="ipv6Action", type=String.class, parameters={})
+    @Export(name="ipv6Action", refs={String.class}, tree="[0]")
     private Output<String> ipv6Action;
 
     /**
@@ -62,7 +62,7 @@ public class AppSecRatePolicyAction extends com.pulumi.resources.CustomResource 
      * Unique identifier of the rate policy
      * 
      */
-    @Export(name="ratePolicyId", type=Integer.class, parameters={})
+    @Export(name="ratePolicyId", refs={Integer.class}, tree="[0]")
     private Output<Integer> ratePolicyId;
 
     /**
@@ -76,7 +76,7 @@ public class AppSecRatePolicyAction extends com.pulumi.resources.CustomResource 
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**

@@ -4,10 +4,12 @@
 package akamai
 
 import (
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetIamRoles(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamRolesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIamRolesResult
 	err := ctx.Invoke("akamai:index/getIamRoles:getIamRoles", nil, &rv, opts...)
 	if err != nil {

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -32,6 +33,7 @@ func NewBotmanCustomDenyAction(ctx *pulumi.Context,
 	if args.CustomDenyAction == nil {
 		return nil, errors.New("invalid value for required argument 'CustomDenyAction'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BotmanCustomDenyAction
 	err := ctx.RegisterResource("akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction", name, args, &resource, opts...)
 	if err != nil {

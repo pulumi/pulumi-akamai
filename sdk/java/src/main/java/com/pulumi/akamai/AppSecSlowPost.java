@@ -21,7 +21,7 @@ public class AppSecSlowPost extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -36,7 +36,7 @@ public class AppSecSlowPost extends com.pulumi.resources.CustomResource {
      * specified action
      * 
      */
-    @Export(name="durationThresholdTimeout", type=Integer.class, parameters={})
+    @Export(name="durationThresholdTimeout", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> durationThresholdTimeout;
 
     /**
@@ -51,7 +51,7 @@ public class AppSecSlowPost extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**
@@ -65,7 +65,7 @@ public class AppSecSlowPost extends com.pulumi.resources.CustomResource {
      * Action to be taken when slow POST protection is triggered
      * 
      */
-    @Export(name="slowRateAction", type=String.class, parameters={})
+    @Export(name="slowRateAction", refs={String.class}, tree="[0]")
     private Output<String> slowRateAction;
 
     /**
@@ -79,7 +79,7 @@ public class AppSecSlowPost extends com.pulumi.resources.CustomResource {
      * Amount of time (in seconds) that the server should allow a request before marking the request as being too slow
      * 
      */
-    @Export(name="slowRateThresholdPeriod", type=Integer.class, parameters={})
+    @Export(name="slowRateThresholdPeriod", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> slowRateThresholdPeriod;
 
     /**
@@ -93,7 +93,7 @@ public class AppSecSlowPost extends com.pulumi.resources.CustomResource {
      * Average rate (in bytes per second over the specified time period) allowed before the specified action is triggered
      * 
      */
-    @Export(name="slowRateThresholdRate", type=Integer.class, parameters={})
+    @Export(name="slowRateThresholdRate", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> slowRateThresholdRate;
 
     /**

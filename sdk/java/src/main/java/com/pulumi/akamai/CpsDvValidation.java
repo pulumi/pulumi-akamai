@@ -22,7 +22,7 @@ public class CpsDvValidation extends com.pulumi.resources.CustomResource {
      * The unique identifier of enrollment
      * 
      */
-    @Export(name="enrollmentId", type=Integer.class, parameters={})
+    @Export(name="enrollmentId", refs={Integer.class}, tree="[0]")
     private Output<Integer> enrollmentId;
 
     /**
@@ -36,7 +36,7 @@ public class CpsDvValidation extends com.pulumi.resources.CustomResource {
      * List of SANs
      * 
      */
-    @Export(name="sans", type=List.class, parameters={String.class})
+    @Export(name="sans", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> sans;
 
     /**
@@ -50,7 +50,7 @@ public class CpsDvValidation extends com.pulumi.resources.CustomResource {
      * Status of validation
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**

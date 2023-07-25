@@ -21,7 +21,7 @@ public class AppsecAdvancedSettingsAttackPayloadLogging extends com.pulumi.resou
      * Whether to enable, disable, or update attack payload logging settings
      * 
      */
-    @Export(name="attackPayloadLogging", type=String.class, parameters={})
+    @Export(name="attackPayloadLogging", refs={String.class}, tree="[0]")
     private Output<String> attackPayloadLogging;
 
     /**
@@ -35,7 +35,7 @@ public class AppsecAdvancedSettingsAttackPayloadLogging extends com.pulumi.resou
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -49,7 +49,7 @@ public class AppsecAdvancedSettingsAttackPayloadLogging extends com.pulumi.resou
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> securityPolicyId;
 
     /**

@@ -5,7 +5,6 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,11 +14,10 @@ import javax.annotation.Nullable;
 public final class DatastreamSumologicConnector {
     private String collectorCode;
     private @Nullable Boolean compressLogs;
-    private @Nullable Integer connectorId;
-    private String connectorName;
     private @Nullable String contentType;
     private @Nullable String customHeaderName;
     private @Nullable String customHeaderValue;
+    private String displayName;
     private String endpoint;
 
     private DatastreamSumologicConnector() {}
@@ -29,12 +27,6 @@ public final class DatastreamSumologicConnector {
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
-    public Optional<Integer> connectorId() {
-        return Optional.ofNullable(this.connectorId);
-    }
-    public String connectorName() {
-        return this.connectorName;
-    }
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
     }
@@ -43,6 +35,9 @@ public final class DatastreamSumologicConnector {
     }
     public Optional<String> customHeaderValue() {
         return Optional.ofNullable(this.customHeaderValue);
+    }
+    public String displayName() {
+        return this.displayName;
     }
     public String endpoint() {
         return this.endpoint;
@@ -59,22 +54,20 @@ public final class DatastreamSumologicConnector {
     public static final class Builder {
         private String collectorCode;
         private @Nullable Boolean compressLogs;
-        private @Nullable Integer connectorId;
-        private String connectorName;
         private @Nullable String contentType;
         private @Nullable String customHeaderName;
         private @Nullable String customHeaderValue;
+        private String displayName;
         private String endpoint;
         public Builder() {}
         public Builder(DatastreamSumologicConnector defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.collectorCode = defaults.collectorCode;
     	      this.compressLogs = defaults.compressLogs;
-    	      this.connectorId = defaults.connectorId;
-    	      this.connectorName = defaults.connectorName;
     	      this.contentType = defaults.contentType;
     	      this.customHeaderName = defaults.customHeaderName;
     	      this.customHeaderValue = defaults.customHeaderValue;
+    	      this.displayName = defaults.displayName;
     	      this.endpoint = defaults.endpoint;
         }
 
@@ -86,16 +79,6 @@ public final class DatastreamSumologicConnector {
         @CustomType.Setter
         public Builder compressLogs(@Nullable Boolean compressLogs) {
             this.compressLogs = compressLogs;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder connectorId(@Nullable Integer connectorId) {
-            this.connectorId = connectorId;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder connectorName(String connectorName) {
-            this.connectorName = Objects.requireNonNull(connectorName);
             return this;
         }
         @CustomType.Setter
@@ -114,6 +97,11 @@ public final class DatastreamSumologicConnector {
             return this;
         }
         @CustomType.Setter
+        public Builder displayName(String displayName) {
+            this.displayName = Objects.requireNonNull(displayName);
+            return this;
+        }
+        @CustomType.Setter
         public Builder endpoint(String endpoint) {
             this.endpoint = Objects.requireNonNull(endpoint);
             return this;
@@ -122,11 +110,10 @@ public final class DatastreamSumologicConnector {
             final var o = new DatastreamSumologicConnector();
             o.collectorCode = collectorCode;
             o.compressLogs = compressLogs;
-            o.connectorId = connectorId;
-            o.connectorName = connectorName;
             o.contentType = contentType;
             o.customHeaderName = customHeaderName;
             o.customHeaderValue = customHeaderValue;
+            o.displayName = displayName;
             o.endpoint = endpoint;
             return o;
         }

@@ -5,7 +5,6 @@ package com.pulumi.akamai.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,12 +14,11 @@ import javax.annotation.Nullable;
 public final class DatastreamDatadogConnector {
     private String authToken;
     private @Nullable Boolean compressLogs;
-    private @Nullable Integer connectorId;
-    private String connectorName;
+    private String displayName;
+    private String endpoint;
     private @Nullable String service;
     private @Nullable String source;
     private @Nullable String tags;
-    private String url;
 
     private DatastreamDatadogConnector() {}
     public String authToken() {
@@ -29,11 +27,11 @@ public final class DatastreamDatadogConnector {
     public Optional<Boolean> compressLogs() {
         return Optional.ofNullable(this.compressLogs);
     }
-    public Optional<Integer> connectorId() {
-        return Optional.ofNullable(this.connectorId);
+    public String displayName() {
+        return this.displayName;
     }
-    public String connectorName() {
-        return this.connectorName;
+    public String endpoint() {
+        return this.endpoint;
     }
     public Optional<String> service() {
         return Optional.ofNullable(this.service);
@@ -43,9 +41,6 @@ public final class DatastreamDatadogConnector {
     }
     public Optional<String> tags() {
         return Optional.ofNullable(this.tags);
-    }
-    public String url() {
-        return this.url;
     }
 
     public static Builder builder() {
@@ -59,23 +54,21 @@ public final class DatastreamDatadogConnector {
     public static final class Builder {
         private String authToken;
         private @Nullable Boolean compressLogs;
-        private @Nullable Integer connectorId;
-        private String connectorName;
+        private String displayName;
+        private String endpoint;
         private @Nullable String service;
         private @Nullable String source;
         private @Nullable String tags;
-        private String url;
         public Builder() {}
         public Builder(DatastreamDatadogConnector defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.authToken = defaults.authToken;
     	      this.compressLogs = defaults.compressLogs;
-    	      this.connectorId = defaults.connectorId;
-    	      this.connectorName = defaults.connectorName;
+    	      this.displayName = defaults.displayName;
+    	      this.endpoint = defaults.endpoint;
     	      this.service = defaults.service;
     	      this.source = defaults.source;
     	      this.tags = defaults.tags;
-    	      this.url = defaults.url;
         }
 
         @CustomType.Setter
@@ -89,13 +82,13 @@ public final class DatastreamDatadogConnector {
             return this;
         }
         @CustomType.Setter
-        public Builder connectorId(@Nullable Integer connectorId) {
-            this.connectorId = connectorId;
+        public Builder displayName(String displayName) {
+            this.displayName = Objects.requireNonNull(displayName);
             return this;
         }
         @CustomType.Setter
-        public Builder connectorName(String connectorName) {
-            this.connectorName = Objects.requireNonNull(connectorName);
+        public Builder endpoint(String endpoint) {
+            this.endpoint = Objects.requireNonNull(endpoint);
             return this;
         }
         @CustomType.Setter
@@ -113,21 +106,15 @@ public final class DatastreamDatadogConnector {
             this.tags = tags;
             return this;
         }
-        @CustomType.Setter
-        public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
-            return this;
-        }
         public DatastreamDatadogConnector build() {
             final var o = new DatastreamDatadogConnector();
             o.authToken = authToken;
             o.compressLogs = compressLogs;
-            o.connectorId = connectorId;
-            o.connectorName = connectorName;
+            o.displayName = displayName;
+            o.endpoint = endpoint;
             o.service = service;
             o.source = source;
             o.tags = tags;
-            o.url = url;
             return o;
         }
     }

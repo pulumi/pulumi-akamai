@@ -16,13 +16,13 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/botmanTransactionalEndpointProtection:BotmanTransactionalEndpointProtection")
 public class BotmanTransactionalEndpointProtection extends com.pulumi.resources.CustomResource {
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     public Output<Integer> configId() {
         return this.configId;
     }
-    @Export(name="transactionalEndpointProtection", type=String.class, parameters={})
+    @Export(name="transactionalEndpointProtection", refs={String.class}, tree="[0]")
     private Output<String> transactionalEndpointProtection;
 
     public Output<String> transactionalEndpointProtection() {

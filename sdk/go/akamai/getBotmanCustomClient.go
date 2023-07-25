@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupBotmanCustomClient(ctx *pulumi.Context, args *LookupBotmanCustomClientArgs, opts ...pulumi.InvokeOption) (*LookupBotmanCustomClientResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBotmanCustomClientResult
 	err := ctx.Invoke("akamai:index/getBotmanCustomClient:getBotmanCustomClient", args, &rv, opts...)
 	if err != nil {

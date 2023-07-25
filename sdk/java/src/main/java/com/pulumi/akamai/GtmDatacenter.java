@@ -22,127 +22,127 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/gtmDatacenter:GtmDatacenter")
 public class GtmDatacenter extends com.pulumi.resources.CustomResource {
-    @Export(name="city", type=String.class, parameters={})
+    @Export(name="city", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> city;
 
     public Output<Optional<String>> city() {
         return Codegen.optional(this.city);
     }
-    @Export(name="cloneOf", type=Integer.class, parameters={})
+    @Export(name="cloneOf", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> cloneOf;
 
     public Output<Optional<Integer>> cloneOf() {
         return Codegen.optional(this.cloneOf);
     }
-    @Export(name="cloudServerHostHeaderOverride", type=Boolean.class, parameters={})
+    @Export(name="cloudServerHostHeaderOverride", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> cloudServerHostHeaderOverride;
 
     public Output<Optional<Boolean>> cloudServerHostHeaderOverride() {
         return Codegen.optional(this.cloudServerHostHeaderOverride);
     }
-    @Export(name="cloudServerTargeting", type=Boolean.class, parameters={})
+    @Export(name="cloudServerTargeting", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> cloudServerTargeting;
 
     public Output<Optional<Boolean>> cloudServerTargeting() {
         return Codegen.optional(this.cloudServerTargeting);
     }
-    @Export(name="continent", type=String.class, parameters={})
+    @Export(name="continent", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> continent;
 
     public Output<Optional<String>> continent() {
         return Codegen.optional(this.continent);
     }
-    @Export(name="country", type=String.class, parameters={})
+    @Export(name="country", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> country;
 
     public Output<Optional<String>> country() {
         return Codegen.optional(this.country);
     }
-    @Export(name="datacenterId", type=Integer.class, parameters={})
+    @Export(name="datacenterId", refs={Integer.class}, tree="[0]")
     private Output<Integer> datacenterId;
 
     public Output<Integer> datacenterId() {
         return this.datacenterId;
     }
-    @Export(name="defaultLoadObject", type=GtmDatacenterDefaultLoadObject.class, parameters={})
+    @Export(name="defaultLoadObject", refs={GtmDatacenterDefaultLoadObject.class}, tree="[0]")
     private Output</* @Nullable */ GtmDatacenterDefaultLoadObject> defaultLoadObject;
 
     public Output<Optional<GtmDatacenterDefaultLoadObject>> defaultLoadObject() {
         return Codegen.optional(this.defaultLoadObject);
     }
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     public Output<String> domain() {
         return this.domain;
     }
-    @Export(name="latitude", type=Double.class, parameters={})
+    @Export(name="latitude", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> latitude;
 
     public Output<Optional<Double>> latitude() {
         return Codegen.optional(this.latitude);
     }
-    @Export(name="longitude", type=Double.class, parameters={})
+    @Export(name="longitude", refs={Double.class}, tree="[0]")
     private Output</* @Nullable */ Double> longitude;
 
     public Output<Optional<Double>> longitude() {
         return Codegen.optional(this.longitude);
     }
-    @Export(name="nickname", type=String.class, parameters={})
+    @Export(name="nickname", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> nickname;
 
     public Output<Optional<String>> nickname() {
         return Codegen.optional(this.nickname);
     }
-    @Export(name="pingInterval", type=Integer.class, parameters={})
+    @Export(name="pingInterval", refs={Integer.class}, tree="[0]")
     private Output<Integer> pingInterval;
 
     public Output<Integer> pingInterval() {
         return this.pingInterval;
     }
-    @Export(name="pingPacketSize", type=Integer.class, parameters={})
+    @Export(name="pingPacketSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> pingPacketSize;
 
     public Output<Integer> pingPacketSize() {
         return this.pingPacketSize;
     }
-    @Export(name="scorePenalty", type=Integer.class, parameters={})
+    @Export(name="scorePenalty", refs={Integer.class}, tree="[0]")
     private Output<Integer> scorePenalty;
 
     public Output<Integer> scorePenalty() {
         return this.scorePenalty;
     }
-    @Export(name="servermonitorLivenessCount", type=Integer.class, parameters={})
+    @Export(name="servermonitorLivenessCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> servermonitorLivenessCount;
 
     public Output<Integer> servermonitorLivenessCount() {
         return this.servermonitorLivenessCount;
     }
-    @Export(name="servermonitorLoadCount", type=Integer.class, parameters={})
+    @Export(name="servermonitorLoadCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> servermonitorLoadCount;
 
     public Output<Integer> servermonitorLoadCount() {
         return this.servermonitorLoadCount;
     }
-    @Export(name="servermonitorPool", type=String.class, parameters={})
+    @Export(name="servermonitorPool", refs={String.class}, tree="[0]")
     private Output<String> servermonitorPool;
 
     public Output<String> servermonitorPool() {
         return this.servermonitorPool;
     }
-    @Export(name="stateOrProvince", type=String.class, parameters={})
+    @Export(name="stateOrProvince", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> stateOrProvince;
 
     public Output<Optional<String>> stateOrProvince() {
         return Codegen.optional(this.stateOrProvince);
     }
-    @Export(name="virtual", type=Boolean.class, parameters={})
+    @Export(name="virtual", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> virtual;
 
     public Output<Boolean> virtual() {
         return this.virtual;
     }
-    @Export(name="waitOnComplete", type=Boolean.class, parameters={})
+    @Export(name="waitOnComplete", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> waitOnComplete;
 
     public Output<Optional<Boolean>> waitOnComplete() {

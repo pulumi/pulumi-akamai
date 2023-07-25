@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -45,6 +46,7 @@ func NewAppSecSlowPost(ctx *pulumi.Context,
 	if args.SlowRateAction == nil {
 		return nil, errors.New("invalid value for required argument 'SlowRateAction'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecSlowPost
 	err := ctx.RegisterResource("akamai:index/appSecSlowPost:AppSecSlowPost", name, args, &resource, opts...)
 	if err != nil {

@@ -40,9 +40,9 @@ export class Datastream extends pulumi.CustomResource {
     public readonly active!: pulumi.Output<boolean>;
     public readonly azureConnector!: pulumi.Output<outputs.DatastreamAzureConnector | undefined>;
     /**
-     * Provides information about the configuration related to logs (format, file names, delivery frequency)
+     * Identifies if stream needs to collect midgress data
      */
-    public readonly config!: pulumi.Output<outputs.DatastreamConfig>;
+    public readonly collectMidgress!: pulumi.Output<boolean | undefined>;
     /**
      * Identifies the contract that has access to the product
      */
@@ -60,22 +60,22 @@ export class Datastream extends pulumi.CustomResource {
      * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
      * identifiers define how the value for these fields appear in the log lines
      */
-    public readonly datasetFieldsIds!: pulumi.Output<number[]>;
-    public readonly elasticsearchConnector!: pulumi.Output<outputs.DatastreamElasticsearchConnector | undefined>;
+    public readonly datasetFields!: pulumi.Output<number[]>;
     /**
-     * List of email addresses where the system sends notifications about activations and deactivations of the stream
+     * Provides information about the configuration related to logs (format, file names, delivery frequency)
      */
-    public readonly emailIds!: pulumi.Output<string[] | undefined>;
+    public readonly deliveryConfiguration!: pulumi.Output<outputs.DatastreamDeliveryConfiguration>;
+    public readonly elasticsearchConnector!: pulumi.Output<outputs.DatastreamElasticsearchConnector | undefined>;
     public readonly gcsConnector!: pulumi.Output<outputs.DatastreamGcsConnector | undefined>;
     /**
      * Identifies the group that has access to the product and for which the stream configuration was created
      */
     public readonly groupId!: pulumi.Output<string>;
-    /**
-     * The name of the user group for which the stream was created
-     */
-    public /*out*/ readonly groupName!: pulumi.Output<string>;
     public readonly httpsConnector!: pulumi.Output<outputs.DatastreamHttpsConnector | undefined>;
+    /**
+     * Identifies the latest active configuration version of the stream
+     */
+    public /*out*/ readonly latestVersion!: pulumi.Output<number>;
     public readonly logglyConnector!: pulumi.Output<outputs.DatastreamLogglyConnector | undefined>;
     /**
      * The username who modified the stream
@@ -86,6 +86,10 @@ export class Datastream extends pulumi.CustomResource {
      */
     public /*out*/ readonly modifiedDate!: pulumi.Output<string>;
     public readonly newRelicConnector!: pulumi.Output<outputs.DatastreamNewRelicConnector | undefined>;
+    /**
+     * List of email addresses where the system sends notifications about activations and deactivations of the stream
+     */
+    public readonly notificationEmails!: pulumi.Output<string[] | undefined>;
     public readonly oracleConnector!: pulumi.Output<outputs.DatastreamOracleConnector | undefined>;
     /**
      * The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
@@ -96,13 +100,9 @@ export class Datastream extends pulumi.CustomResource {
      */
     public /*out*/ readonly productId!: pulumi.Output<string>;
     /**
-     * The name of the product for which the stream was created
-     */
-    public /*out*/ readonly productName!: pulumi.Output<string>;
-    /**
      * Identifies the properties monitored in the stream
      */
-    public readonly propertyIds!: pulumi.Output<string[]>;
+    public readonly properties!: pulumi.Output<string[]>;
     public readonly s3Connector!: pulumi.Output<outputs.DatastreamS3Connector | undefined>;
     public readonly splunkConnector!: pulumi.Output<outputs.DatastreamSplunkConnector | undefined>;
     /**
@@ -110,18 +110,10 @@ export class Datastream extends pulumi.CustomResource {
      */
     public readonly streamName!: pulumi.Output<string>;
     /**
-     * Specifies the type of the data stream
-     */
-    public readonly streamType!: pulumi.Output<string>;
-    /**
      * Identifies the configuration version of the stream
      */
-    public /*out*/ readonly streamVersionId!: pulumi.Output<number>;
+    public /*out*/ readonly streamVersion!: pulumi.Output<number>;
     public readonly sumologicConnector!: pulumi.Output<outputs.DatastreamSumologicConnector | undefined>;
-    /**
-     * The name of the template associated with the stream
-     */
-    public readonly templateName!: pulumi.Output<string>;
 
     /**
      * Create a Datastream resource with the given unique name, arguments, and options.
@@ -138,93 +130,83 @@ export class Datastream extends pulumi.CustomResource {
             const state = argsOrState as DatastreamState | undefined;
             resourceInputs["active"] = state ? state.active : undefined;
             resourceInputs["azureConnector"] = state ? state.azureConnector : undefined;
-            resourceInputs["config"] = state ? state.config : undefined;
+            resourceInputs["collectMidgress"] = state ? state.collectMidgress : undefined;
             resourceInputs["contractId"] = state ? state.contractId : undefined;
             resourceInputs["createdBy"] = state ? state.createdBy : undefined;
             resourceInputs["createdDate"] = state ? state.createdDate : undefined;
             resourceInputs["datadogConnector"] = state ? state.datadogConnector : undefined;
-            resourceInputs["datasetFieldsIds"] = state ? state.datasetFieldsIds : undefined;
+            resourceInputs["datasetFields"] = state ? state.datasetFields : undefined;
+            resourceInputs["deliveryConfiguration"] = state ? state.deliveryConfiguration : undefined;
             resourceInputs["elasticsearchConnector"] = state ? state.elasticsearchConnector : undefined;
-            resourceInputs["emailIds"] = state ? state.emailIds : undefined;
             resourceInputs["gcsConnector"] = state ? state.gcsConnector : undefined;
             resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["groupName"] = state ? state.groupName : undefined;
             resourceInputs["httpsConnector"] = state ? state.httpsConnector : undefined;
+            resourceInputs["latestVersion"] = state ? state.latestVersion : undefined;
             resourceInputs["logglyConnector"] = state ? state.logglyConnector : undefined;
             resourceInputs["modifiedBy"] = state ? state.modifiedBy : undefined;
             resourceInputs["modifiedDate"] = state ? state.modifiedDate : undefined;
             resourceInputs["newRelicConnector"] = state ? state.newRelicConnector : undefined;
+            resourceInputs["notificationEmails"] = state ? state.notificationEmails : undefined;
             resourceInputs["oracleConnector"] = state ? state.oracleConnector : undefined;
             resourceInputs["papiJson"] = state ? state.papiJson : undefined;
             resourceInputs["productId"] = state ? state.productId : undefined;
-            resourceInputs["productName"] = state ? state.productName : undefined;
-            resourceInputs["propertyIds"] = state ? state.propertyIds : undefined;
+            resourceInputs["properties"] = state ? state.properties : undefined;
             resourceInputs["s3Connector"] = state ? state.s3Connector : undefined;
             resourceInputs["splunkConnector"] = state ? state.splunkConnector : undefined;
             resourceInputs["streamName"] = state ? state.streamName : undefined;
-            resourceInputs["streamType"] = state ? state.streamType : undefined;
-            resourceInputs["streamVersionId"] = state ? state.streamVersionId : undefined;
+            resourceInputs["streamVersion"] = state ? state.streamVersion : undefined;
             resourceInputs["sumologicConnector"] = state ? state.sumologicConnector : undefined;
-            resourceInputs["templateName"] = state ? state.templateName : undefined;
         } else {
             const args = argsOrState as DatastreamArgs | undefined;
             if ((!args || args.active === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'active'");
             }
-            if ((!args || args.config === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'config'");
-            }
             if ((!args || args.contractId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'contractId'");
             }
-            if ((!args || args.datasetFieldsIds === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'datasetFieldsIds'");
+            if ((!args || args.datasetFields === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'datasetFields'");
+            }
+            if ((!args || args.deliveryConfiguration === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'deliveryConfiguration'");
             }
             if ((!args || args.groupId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            if ((!args || args.propertyIds === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'propertyIds'");
+            if ((!args || args.properties === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'properties'");
             }
             if ((!args || args.streamName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'streamName'");
             }
-            if ((!args || args.streamType === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'streamType'");
-            }
-            if ((!args || args.templateName === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'templateName'");
-            }
             resourceInputs["active"] = args ? args.active : undefined;
             resourceInputs["azureConnector"] = args ? args.azureConnector : undefined;
-            resourceInputs["config"] = args ? args.config : undefined;
+            resourceInputs["collectMidgress"] = args ? args.collectMidgress : undefined;
             resourceInputs["contractId"] = args ? args.contractId : undefined;
             resourceInputs["datadogConnector"] = args ? args.datadogConnector : undefined;
-            resourceInputs["datasetFieldsIds"] = args ? args.datasetFieldsIds : undefined;
+            resourceInputs["datasetFields"] = args ? args.datasetFields : undefined;
+            resourceInputs["deliveryConfiguration"] = args ? args.deliveryConfiguration : undefined;
             resourceInputs["elasticsearchConnector"] = args ? args.elasticsearchConnector : undefined;
-            resourceInputs["emailIds"] = args ? args.emailIds : undefined;
             resourceInputs["gcsConnector"] = args ? args.gcsConnector : undefined;
             resourceInputs["groupId"] = args ? args.groupId : undefined;
             resourceInputs["httpsConnector"] = args ? args.httpsConnector : undefined;
             resourceInputs["logglyConnector"] = args ? args.logglyConnector : undefined;
             resourceInputs["newRelicConnector"] = args ? args.newRelicConnector : undefined;
+            resourceInputs["notificationEmails"] = args ? args.notificationEmails : undefined;
             resourceInputs["oracleConnector"] = args ? args.oracleConnector : undefined;
-            resourceInputs["propertyIds"] = args ? args.propertyIds : undefined;
+            resourceInputs["properties"] = args ? args.properties : undefined;
             resourceInputs["s3Connector"] = args ? args.s3Connector : undefined;
             resourceInputs["splunkConnector"] = args ? args.splunkConnector : undefined;
             resourceInputs["streamName"] = args ? args.streamName : undefined;
-            resourceInputs["streamType"] = args ? args.streamType : undefined;
             resourceInputs["sumologicConnector"] = args ? args.sumologicConnector : undefined;
-            resourceInputs["templateName"] = args ? args.templateName : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["createdDate"] = undefined /*out*/;
-            resourceInputs["groupName"] = undefined /*out*/;
+            resourceInputs["latestVersion"] = undefined /*out*/;
             resourceInputs["modifiedBy"] = undefined /*out*/;
             resourceInputs["modifiedDate"] = undefined /*out*/;
             resourceInputs["papiJson"] = undefined /*out*/;
             resourceInputs["productId"] = undefined /*out*/;
-            resourceInputs["productName"] = undefined /*out*/;
-            resourceInputs["streamVersionId"] = undefined /*out*/;
+            resourceInputs["streamVersion"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Datastream.__pulumiType, name, resourceInputs, opts);
@@ -241,9 +223,9 @@ export interface DatastreamState {
     active?: pulumi.Input<boolean>;
     azureConnector?: pulumi.Input<inputs.DatastreamAzureConnector>;
     /**
-     * Provides information about the configuration related to logs (format, file names, delivery frequency)
+     * Identifies if stream needs to collect midgress data
      */
-    config?: pulumi.Input<inputs.DatastreamConfig>;
+    collectMidgress?: pulumi.Input<boolean>;
     /**
      * Identifies the contract that has access to the product
      */
@@ -261,22 +243,22 @@ export interface DatastreamState {
      * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
      * identifiers define how the value for these fields appear in the log lines
      */
-    datasetFieldsIds?: pulumi.Input<pulumi.Input<number>[]>;
-    elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector>;
+    datasetFields?: pulumi.Input<pulumi.Input<number>[]>;
     /**
-     * List of email addresses where the system sends notifications about activations and deactivations of the stream
+     * Provides information about the configuration related to logs (format, file names, delivery frequency)
      */
-    emailIds?: pulumi.Input<pulumi.Input<string>[]>;
+    deliveryConfiguration?: pulumi.Input<inputs.DatastreamDeliveryConfiguration>;
+    elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector>;
     gcsConnector?: pulumi.Input<inputs.DatastreamGcsConnector>;
     /**
      * Identifies the group that has access to the product and for which the stream configuration was created
      */
     groupId?: pulumi.Input<string>;
-    /**
-     * The name of the user group for which the stream was created
-     */
-    groupName?: pulumi.Input<string>;
     httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector>;
+    /**
+     * Identifies the latest active configuration version of the stream
+     */
+    latestVersion?: pulumi.Input<number>;
     logglyConnector?: pulumi.Input<inputs.DatastreamLogglyConnector>;
     /**
      * The username who modified the stream
@@ -287,6 +269,10 @@ export interface DatastreamState {
      */
     modifiedDate?: pulumi.Input<string>;
     newRelicConnector?: pulumi.Input<inputs.DatastreamNewRelicConnector>;
+    /**
+     * List of email addresses where the system sends notifications about activations and deactivations of the stream
+     */
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
     oracleConnector?: pulumi.Input<inputs.DatastreamOracleConnector>;
     /**
      * The configuration in JSON format that can be copy-pasted into PAPI configuration to enable datastream behavior
@@ -297,13 +283,9 @@ export interface DatastreamState {
      */
     productId?: pulumi.Input<string>;
     /**
-     * The name of the product for which the stream was created
-     */
-    productName?: pulumi.Input<string>;
-    /**
      * Identifies the properties monitored in the stream
      */
-    propertyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    properties?: pulumi.Input<pulumi.Input<string>[]>;
     s3Connector?: pulumi.Input<inputs.DatastreamS3Connector>;
     splunkConnector?: pulumi.Input<inputs.DatastreamSplunkConnector>;
     /**
@@ -311,18 +293,10 @@ export interface DatastreamState {
      */
     streamName?: pulumi.Input<string>;
     /**
-     * Specifies the type of the data stream
-     */
-    streamType?: pulumi.Input<string>;
-    /**
      * Identifies the configuration version of the stream
      */
-    streamVersionId?: pulumi.Input<number>;
+    streamVersion?: pulumi.Input<number>;
     sumologicConnector?: pulumi.Input<inputs.DatastreamSumologicConnector>;
-    /**
-     * The name of the template associated with the stream
-     */
-    templateName?: pulumi.Input<string>;
 }
 
 /**
@@ -335,9 +309,9 @@ export interface DatastreamArgs {
     active: pulumi.Input<boolean>;
     azureConnector?: pulumi.Input<inputs.DatastreamAzureConnector>;
     /**
-     * Provides information about the configuration related to logs (format, file names, delivery frequency)
+     * Identifies if stream needs to collect midgress data
      */
-    config: pulumi.Input<inputs.DatastreamConfig>;
+    collectMidgress?: pulumi.Input<boolean>;
     /**
      * Identifies the contract that has access to the product
      */
@@ -347,12 +321,12 @@ export interface DatastreamArgs {
      * A list of data set fields selected from the associated template that the stream monitors in logs. The order of the
      * identifiers define how the value for these fields appear in the log lines
      */
-    datasetFieldsIds: pulumi.Input<pulumi.Input<number>[]>;
-    elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector>;
+    datasetFields: pulumi.Input<pulumi.Input<number>[]>;
     /**
-     * List of email addresses where the system sends notifications about activations and deactivations of the stream
+     * Provides information about the configuration related to logs (format, file names, delivery frequency)
      */
-    emailIds?: pulumi.Input<pulumi.Input<string>[]>;
+    deliveryConfiguration: pulumi.Input<inputs.DatastreamDeliveryConfiguration>;
+    elasticsearchConnector?: pulumi.Input<inputs.DatastreamElasticsearchConnector>;
     gcsConnector?: pulumi.Input<inputs.DatastreamGcsConnector>;
     /**
      * Identifies the group that has access to the product and for which the stream configuration was created
@@ -361,24 +335,20 @@ export interface DatastreamArgs {
     httpsConnector?: pulumi.Input<inputs.DatastreamHttpsConnector>;
     logglyConnector?: pulumi.Input<inputs.DatastreamLogglyConnector>;
     newRelicConnector?: pulumi.Input<inputs.DatastreamNewRelicConnector>;
+    /**
+     * List of email addresses where the system sends notifications about activations and deactivations of the stream
+     */
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
     oracleConnector?: pulumi.Input<inputs.DatastreamOracleConnector>;
     /**
      * Identifies the properties monitored in the stream
      */
-    propertyIds: pulumi.Input<pulumi.Input<string>[]>;
+    properties: pulumi.Input<pulumi.Input<string>[]>;
     s3Connector?: pulumi.Input<inputs.DatastreamS3Connector>;
     splunkConnector?: pulumi.Input<inputs.DatastreamSplunkConnector>;
     /**
      * The name of the stream
      */
     streamName: pulumi.Input<string>;
-    /**
-     * Specifies the type of the data stream
-     */
-    streamType: pulumi.Input<string>;
     sumologicConnector?: pulumi.Input<inputs.DatastreamSumologicConnector>;
-    /**
-     * The name of the template associated with the stream
-     */
-    templateName: pulumi.Input<string>;
 }

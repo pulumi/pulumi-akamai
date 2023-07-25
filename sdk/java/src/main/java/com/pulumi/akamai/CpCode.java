@@ -17,61 +17,25 @@ import javax.annotation.Nullable;
 
 @ResourceType(type="akamai:index/cpCode:CpCode")
 public class CpCode extends com.pulumi.resources.CustomResource {
-    /**
-     * @deprecated
-     * The setting &#34;contract&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""contract"" has been deprecated. */
-    @Export(name="contract", type=String.class, parameters={})
-    private Output<String> contract;
-
-    public Output<String> contract() {
-        return this.contract;
-    }
-    @Export(name="contractId", type=String.class, parameters={})
+    @Export(name="contractId", refs={String.class}, tree="[0]")
     private Output<String> contractId;
 
     public Output<String> contractId() {
         return this.contractId;
     }
-    /**
-     * @deprecated
-     * The setting &#34;group&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""group"" has been deprecated. */
-    @Export(name="group", type=String.class, parameters={})
-    private Output<String> group;
-
-    public Output<String> group() {
-        return this.group;
-    }
-    @Export(name="groupId", type=String.class, parameters={})
+    @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     public Output<String> groupId() {
         return this.groupId;
     }
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     public Output<String> name() {
         return this.name;
     }
-    /**
-     * @deprecated
-     * The setting &#34;product&#34; has been deprecated.
-     * 
-     */
-    @Deprecated /* The setting ""product"" has been deprecated. */
-    @Export(name="product", type=String.class, parameters={})
-    private Output<String> product;
-
-    public Output<String> product() {
-        return this.product;
-    }
-    @Export(name="productId", type=String.class, parameters={})
+    @Export(name="productId", refs={String.class}, tree="[0]")
     private Output<String> productId;
 
     public Output<String> productId() {
@@ -90,7 +54,7 @@ public class CpCode extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CpCode(String name, @Nullable CpCodeArgs args) {
+    public CpCode(String name, CpCodeArgs args) {
         this(name, args, null);
     }
     /**
@@ -99,7 +63,7 @@ public class CpCode extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CpCode(String name, @Nullable CpCodeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public CpCode(String name, CpCodeArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("akamai:index/cpCode:CpCode", name, args == null ? CpCodeArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
     }
 

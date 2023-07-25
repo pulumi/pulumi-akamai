@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"errors"
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -51,6 +52,7 @@ func NewAppSecConfiguration(ctx *pulumi.Context,
 	if args.HostNames == nil {
 		return nil, errors.New("invalid value for required argument 'HostNames'")
 	}
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AppSecConfiguration
 	err := ctx.RegisterResource("akamai:index/appSecConfiguration:AppSecConfiguration", name, args, &resource, opts...)
 	if err != nil {

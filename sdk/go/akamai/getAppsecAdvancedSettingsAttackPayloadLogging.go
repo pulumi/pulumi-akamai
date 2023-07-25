@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func LookupAppsecAdvancedSettingsAttackPayloadLogging(ctx *pulumi.Context, args *LookupAppsecAdvancedSettingsAttackPayloadLoggingArgs, opts ...pulumi.InvokeOption) (*LookupAppsecAdvancedSettingsAttackPayloadLoggingResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAppsecAdvancedSettingsAttackPayloadLoggingResult
 	err := ctx.Invoke("akamai:index/getAppsecAdvancedSettingsAttackPayloadLogging:getAppsecAdvancedSettingsAttackPayloadLogging", args, &rv, opts...)
 	if err != nil {

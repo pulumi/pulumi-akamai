@@ -4,15 +4,12 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-export function getGroup(args?: GetGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetGroupResult> {
-    args = args || {};
+export function getGroup(args: GetGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetGroupResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("akamai:index/getGroup:getGroup", {
-        "contract": args.contract,
         "contractId": args.contractId,
         "groupName": args.groupName,
-        "name": args.name,
     }, opts);
 }
 
@@ -20,38 +17,22 @@ export function getGroup(args?: GetGroupArgs, opts?: pulumi.InvokeOptions): Prom
  * A collection of arguments for invoking getGroup.
  */
 export interface GetGroupArgs {
-    /**
-     * @deprecated The setting "contract" has been deprecated.
-     */
-    contract?: string;
-    contractId?: string;
-    groupName?: string;
-    /**
-     * @deprecated The setting "name" has been deprecated.
-     */
-    name?: string;
+    contractId: string;
+    groupName: string;
 }
 
 /**
  * A collection of values returned by getGroup.
  */
 export interface GetGroupResult {
-    /**
-     * @deprecated The setting "contract" has been deprecated.
-     */
-    readonly contract: string;
     readonly contractId: string;
     readonly groupName: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    /**
-     * @deprecated The setting "name" has been deprecated.
-     */
-    readonly name: string;
 }
-export function getGroupOutput(args?: GetGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGroupResult> {
+export function getGroupOutput(args: GetGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGroupResult> {
     return pulumi.output(args).apply((a: any) => getGroup(a, opts))
 }
 
@@ -59,14 +40,6 @@ export function getGroupOutput(args?: GetGroupOutputArgs, opts?: pulumi.InvokeOp
  * A collection of arguments for invoking getGroup.
  */
 export interface GetGroupOutputArgs {
-    /**
-     * @deprecated The setting "contract" has been deprecated.
-     */
-    contract?: pulumi.Input<string>;
-    contractId?: pulumi.Input<string>;
-    groupName?: pulumi.Input<string>;
-    /**
-     * @deprecated The setting "name" has been deprecated.
-     */
-    name?: pulumi.Input<string>;
+    contractId: pulumi.Input<string>;
+    groupName: pulumi.Input<string>;
 }

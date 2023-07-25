@@ -3,7 +3,7 @@
 
 package com.pulumi.akamai.outputs;
 
-import com.pulumi.akamai.outputs.GetDatastreamDatasetFieldsField;
+import com.pulumi.akamai.outputs.GetDatastreamDatasetFieldsDatasetField;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
@@ -13,17 +13,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDatastreamDatasetFieldsResult {
-    private List<GetDatastreamDatasetFieldsField> fields;
+    private List<GetDatastreamDatasetFieldsDatasetField> datasetFields;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
     private String id;
-    private @Nullable String templateName;
+    private @Nullable String productId;
 
     private GetDatastreamDatasetFieldsResult() {}
-    public List<GetDatastreamDatasetFieldsField> fields() {
-        return this.fields;
+    public List<GetDatastreamDatasetFieldsDatasetField> datasetFields() {
+        return this.datasetFields;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -32,8 +32,8 @@ public final class GetDatastreamDatasetFieldsResult {
     public String id() {
         return this.id;
     }
-    public Optional<String> templateName() {
-        return Optional.ofNullable(this.templateName);
+    public Optional<String> productId() {
+        return Optional.ofNullable(this.productId);
     }
 
     public static Builder builder() {
@@ -45,24 +45,24 @@ public final class GetDatastreamDatasetFieldsResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDatastreamDatasetFieldsField> fields;
+        private List<GetDatastreamDatasetFieldsDatasetField> datasetFields;
         private String id;
-        private @Nullable String templateName;
+        private @Nullable String productId;
         public Builder() {}
         public Builder(GetDatastreamDatasetFieldsResult defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.fields = defaults.fields;
+    	      this.datasetFields = defaults.datasetFields;
     	      this.id = defaults.id;
-    	      this.templateName = defaults.templateName;
+    	      this.productId = defaults.productId;
         }
 
         @CustomType.Setter
-        public Builder fields(List<GetDatastreamDatasetFieldsField> fields) {
-            this.fields = Objects.requireNonNull(fields);
+        public Builder datasetFields(List<GetDatastreamDatasetFieldsDatasetField> datasetFields) {
+            this.datasetFields = Objects.requireNonNull(datasetFields);
             return this;
         }
-        public Builder fields(GetDatastreamDatasetFieldsField... fields) {
-            return fields(List.of(fields));
+        public Builder datasetFields(GetDatastreamDatasetFieldsDatasetField... datasetFields) {
+            return datasetFields(List.of(datasetFields));
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -70,15 +70,15 @@ public final class GetDatastreamDatasetFieldsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder templateName(@Nullable String templateName) {
-            this.templateName = templateName;
+        public Builder productId(@Nullable String productId) {
+            this.productId = productId;
             return this;
         }
         public GetDatastreamDatasetFieldsResult build() {
             final var o = new GetDatastreamDatasetFieldsResult();
-            o.fields = fields;
+            o.datasetFields = datasetFields;
             o.id = id;
-            o.templateName = templateName;
+            o.productId = productId;
             return o;
         }
     }

@@ -20,7 +20,7 @@ public class AppSecWafMode extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -34,7 +34,7 @@ public class AppSecWafMode extends com.pulumi.resources.CustomResource {
      * Versioning information for the current Kona Rule Set
      * 
      */
-    @Export(name="currentRuleset", type=String.class, parameters={})
+    @Export(name="currentRuleset", refs={String.class}, tree="[0]")
     private Output<String> currentRuleset;
 
     /**
@@ -48,7 +48,7 @@ public class AppSecWafMode extends com.pulumi.resources.CustomResource {
      * Date on which the evaluation period ends, if applicable
      * 
      */
-    @Export(name="evalExpirationDate", type=String.class, parameters={})
+    @Export(name="evalExpirationDate", refs={String.class}, tree="[0]")
     private Output<String> evalExpirationDate;
 
     /**
@@ -62,7 +62,7 @@ public class AppSecWafMode extends com.pulumi.resources.CustomResource {
      * Versioning information for the Kona Rule Set being evaluated, if applicable
      * 
      */
-    @Export(name="evalRuleset", type=String.class, parameters={})
+    @Export(name="evalRuleset", refs={String.class}, tree="[0]")
     private Output<String> evalRuleset;
 
     /**
@@ -76,7 +76,7 @@ public class AppSecWafMode extends com.pulumi.resources.CustomResource {
      * Whether an evaluation is currently in progress
      * 
      */
-    @Export(name="evalStatus", type=String.class, parameters={})
+    @Export(name="evalStatus", refs={String.class}, tree="[0]")
     private Output<String> evalStatus;
 
     /**
@@ -90,7 +90,7 @@ public class AppSecWafMode extends com.pulumi.resources.CustomResource {
      * How Kona Rule Set rules should be upgraded (KRS, AAG, ASE_MANUAL or ASE_AUTO)
      * 
      */
-    @Export(name="mode", type=String.class, parameters={})
+    @Export(name="mode", refs={String.class}, tree="[0]")
     private Output<String> mode;
 
     /**
@@ -104,7 +104,7 @@ public class AppSecWafMode extends com.pulumi.resources.CustomResource {
      * Text representation
      * 
      */
-    @Export(name="outputText", type=String.class, parameters={})
+    @Export(name="outputText", refs={String.class}, tree="[0]")
     private Output<String> outputText;
 
     /**
@@ -118,7 +118,7 @@ public class AppSecWafMode extends com.pulumi.resources.CustomResource {
      * Unique identifier of the security policy
      * 
      */
-    @Export(name="securityPolicyId", type=String.class, parameters={})
+    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**

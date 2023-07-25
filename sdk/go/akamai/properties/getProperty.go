@@ -7,11 +7,13 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // Deprecated: akamai.properties/getproperty.getProperty has been deprecated in favor of akamai.index/getproperty.getProperty
 func GetProperty(ctx *pulumi.Context, args *GetPropertyArgs, opts ...pulumi.InvokeOption) (*GetPropertyResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPropertyResult
 	err := ctx.Invoke("akamai:properties/getProperty:getProperty", args, &rv, opts...)
 	if err != nil {

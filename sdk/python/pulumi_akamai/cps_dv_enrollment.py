@@ -29,7 +29,6 @@ class CpsDvEnrollmentArgs:
                  acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
                  allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
                  certificate_chain_type: Optional[pulumi.Input[str]] = None,
-                 enable_multi_stacked_certificates: Optional[pulumi.Input[bool]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a CpsDvEnrollment resource.
@@ -46,7 +45,6 @@ class CpsDvEnrollmentArgs:
         :param pulumi.Input[bool] acknowledge_pre_verification_warnings: Whether acknowledge warnings before certificate verification
         :param pulumi.Input[bool] allow_duplicate_common_name: Allow to duplicate common name
         :param pulumi.Input[str] certificate_chain_type: Certificate trust chain type
-        :param pulumi.Input[bool] enable_multi_stacked_certificates: Enable Dual-Stacked certificate deployment for enrollment
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         """
         pulumi.set(__self__, "admin_contact", admin_contact)
@@ -65,11 +63,6 @@ class CpsDvEnrollmentArgs:
             pulumi.set(__self__, "allow_duplicate_common_name", allow_duplicate_common_name)
         if certificate_chain_type is not None:
             pulumi.set(__self__, "certificate_chain_type", certificate_chain_type)
-        if enable_multi_stacked_certificates is not None:
-            warnings.warn("""Deprecated, don't use; always false""", DeprecationWarning)
-            pulumi.log.warn("""enable_multi_stacked_certificates is deprecated: Deprecated, don't use; always false""")
-        if enable_multi_stacked_certificates is not None:
-            pulumi.set(__self__, "enable_multi_stacked_certificates", enable_multi_stacked_certificates)
         if sans is not None:
             pulumi.set(__self__, "sans", sans)
 
@@ -230,21 +223,6 @@ class CpsDvEnrollmentArgs:
         pulumi.set(self, "certificate_chain_type", value)
 
     @property
-    @pulumi.getter(name="enableMultiStackedCertificates")
-    def enable_multi_stacked_certificates(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Enable Dual-Stacked certificate deployment for enrollment
-        """
-        warnings.warn("""Deprecated, don't use; always false""", DeprecationWarning)
-        pulumi.log.warn("""enable_multi_stacked_certificates is deprecated: Deprecated, don't use; always false""")
-
-        return pulumi.get(self, "enable_multi_stacked_certificates")
-
-    @enable_multi_stacked_certificates.setter
-    def enable_multi_stacked_certificates(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "enable_multi_stacked_certificates", value)
-
-    @property
     @pulumi.getter
     def sans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -269,7 +247,6 @@ class _CpsDvEnrollmentState:
                  contract_id: Optional[pulumi.Input[str]] = None,
                  csr: Optional[pulumi.Input['CpsDvEnrollmentCsrArgs']] = None,
                  dns_challenges: Optional[pulumi.Input[Sequence[pulumi.Input['CpsDvEnrollmentDnsChallengeArgs']]]] = None,
-                 enable_multi_stacked_certificates: Optional[pulumi.Input[bool]] = None,
                  http_challenges: Optional[pulumi.Input[Sequence[pulumi.Input['CpsDvEnrollmentHttpChallengeArgs']]]] = None,
                  network_configuration: Optional[pulumi.Input['CpsDvEnrollmentNetworkConfigurationArgs']] = None,
                  organization: Optional[pulumi.Input['CpsDvEnrollmentOrganizationArgs']] = None,
@@ -291,7 +268,6 @@ class _CpsDvEnrollmentState:
         :param pulumi.Input[str] contract_id: Contract ID for which enrollment is retrieved
         :param pulumi.Input['CpsDvEnrollmentCsrArgs'] csr: Certificate signing request generated during enrollment creation
         :param pulumi.Input[Sequence[pulumi.Input['CpsDvEnrollmentDnsChallengeArgs']]] dns_challenges: DNS challenge information
-        :param pulumi.Input[bool] enable_multi_stacked_certificates: Enable Dual-Stacked certificate deployment for enrollment
         :param pulumi.Input[Sequence[pulumi.Input['CpsDvEnrollmentHttpChallengeArgs']]] http_challenges: HTTP challenge information
         :param pulumi.Input['CpsDvEnrollmentNetworkConfigurationArgs'] network_configuration: Settings containing network information and TLS Metadata used by CPS
         :param pulumi.Input['CpsDvEnrollmentOrganizationArgs'] organization: Organization information
@@ -321,11 +297,6 @@ class _CpsDvEnrollmentState:
             pulumi.set(__self__, "csr", csr)
         if dns_challenges is not None:
             pulumi.set(__self__, "dns_challenges", dns_challenges)
-        if enable_multi_stacked_certificates is not None:
-            warnings.warn("""Deprecated, don't use; always false""", DeprecationWarning)
-            pulumi.log.warn("""enable_multi_stacked_certificates is deprecated: Deprecated, don't use; always false""")
-        if enable_multi_stacked_certificates is not None:
-            pulumi.set(__self__, "enable_multi_stacked_certificates", enable_multi_stacked_certificates)
         if http_challenges is not None:
             pulumi.set(__self__, "http_challenges", http_challenges)
         if network_configuration is not None:
@@ -454,21 +425,6 @@ class _CpsDvEnrollmentState:
     @dns_challenges.setter
     def dns_challenges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CpsDvEnrollmentDnsChallengeArgs']]]]):
         pulumi.set(self, "dns_challenges", value)
-
-    @property
-    @pulumi.getter(name="enableMultiStackedCertificates")
-    def enable_multi_stacked_certificates(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Enable Dual-Stacked certificate deployment for enrollment
-        """
-        warnings.warn("""Deprecated, don't use; always false""", DeprecationWarning)
-        pulumi.log.warn("""enable_multi_stacked_certificates is deprecated: Deprecated, don't use; always false""")
-
-        return pulumi.get(self, "enable_multi_stacked_certificates")
-
-    @enable_multi_stacked_certificates.setter
-    def enable_multi_stacked_certificates(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "enable_multi_stacked_certificates", value)
 
     @property
     @pulumi.getter(name="httpChallenges")
@@ -603,7 +559,6 @@ class CpsDvEnrollment(pulumi.CustomResource):
                  common_name: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
                  csr: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']]] = None,
-                 enable_multi_stacked_certificates: Optional[pulumi.Input[bool]] = None,
                  network_configuration: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentNetworkConfigurationArgs']]] = None,
                  organization: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentOrganizationArgs']]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -623,7 +578,6 @@ class CpsDvEnrollment(pulumi.CustomResource):
         :param pulumi.Input[str] common_name: Common name used for enrollment
         :param pulumi.Input[str] contract_id: Contract ID for which enrollment is retrieved
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']] csr: Certificate signing request generated during enrollment creation
-        :param pulumi.Input[bool] enable_multi_stacked_certificates: Enable Dual-Stacked certificate deployment for enrollment
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentNetworkConfigurationArgs']] network_configuration: Settings containing network information and TLS Metadata used by CPS
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentOrganizationArgs']] organization: Organization information
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
@@ -662,7 +616,6 @@ class CpsDvEnrollment(pulumi.CustomResource):
                  common_name: Optional[pulumi.Input[str]] = None,
                  contract_id: Optional[pulumi.Input[str]] = None,
                  csr: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']]] = None,
-                 enable_multi_stacked_certificates: Optional[pulumi.Input[bool]] = None,
                  network_configuration: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentNetworkConfigurationArgs']]] = None,
                  organization: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentOrganizationArgs']]] = None,
                  sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -694,10 +647,6 @@ class CpsDvEnrollment(pulumi.CustomResource):
             if csr is None and not opts.urn:
                 raise TypeError("Missing required property 'csr'")
             __props__.__dict__["csr"] = csr
-            if enable_multi_stacked_certificates is not None and not opts.urn:
-                warnings.warn("""Deprecated, don't use; always false""", DeprecationWarning)
-                pulumi.log.warn("""enable_multi_stacked_certificates is deprecated: Deprecated, don't use; always false""")
-            __props__.__dict__["enable_multi_stacked_certificates"] = enable_multi_stacked_certificates
             if network_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'network_configuration'")
             __props__.__dict__["network_configuration"] = network_configuration
@@ -741,7 +690,6 @@ class CpsDvEnrollment(pulumi.CustomResource):
             contract_id: Optional[pulumi.Input[str]] = None,
             csr: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']]] = None,
             dns_challenges: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CpsDvEnrollmentDnsChallengeArgs']]]]] = None,
-            enable_multi_stacked_certificates: Optional[pulumi.Input[bool]] = None,
             http_challenges: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CpsDvEnrollmentHttpChallengeArgs']]]]] = None,
             network_configuration: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentNetworkConfigurationArgs']]] = None,
             organization: Optional[pulumi.Input[pulumi.InputType['CpsDvEnrollmentOrganizationArgs']]] = None,
@@ -768,7 +716,6 @@ class CpsDvEnrollment(pulumi.CustomResource):
         :param pulumi.Input[str] contract_id: Contract ID for which enrollment is retrieved
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentCsrArgs']] csr: Certificate signing request generated during enrollment creation
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CpsDvEnrollmentDnsChallengeArgs']]]] dns_challenges: DNS challenge information
-        :param pulumi.Input[bool] enable_multi_stacked_certificates: Enable Dual-Stacked certificate deployment for enrollment
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CpsDvEnrollmentHttpChallengeArgs']]]] http_challenges: HTTP challenge information
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentNetworkConfigurationArgs']] network_configuration: Settings containing network information and TLS Metadata used by CPS
         :param pulumi.Input[pulumi.InputType['CpsDvEnrollmentOrganizationArgs']] organization: Organization information
@@ -793,7 +740,6 @@ class CpsDvEnrollment(pulumi.CustomResource):
         __props__.__dict__["contract_id"] = contract_id
         __props__.__dict__["csr"] = csr
         __props__.__dict__["dns_challenges"] = dns_challenges
-        __props__.__dict__["enable_multi_stacked_certificates"] = enable_multi_stacked_certificates
         __props__.__dict__["http_challenges"] = http_challenges
         __props__.__dict__["network_configuration"] = network_configuration
         __props__.__dict__["organization"] = organization
@@ -877,17 +823,6 @@ class CpsDvEnrollment(pulumi.CustomResource):
         DNS challenge information
         """
         return pulumi.get(self, "dns_challenges")
-
-    @property
-    @pulumi.getter(name="enableMultiStackedCertificates")
-    def enable_multi_stacked_certificates(self) -> pulumi.Output[Optional[bool]]:
-        """
-        Enable Dual-Stacked certificate deployment for enrollment
-        """
-        warnings.warn("""Deprecated, don't use; always false""", DeprecationWarning)
-        pulumi.log.warn("""enable_multi_stacked_certificates is deprecated: Deprecated, don't use; always false""")
-
-        return pulumi.get(self, "enable_multi_stacked_certificates")
 
     @property
     @pulumi.getter(name="httpChallenges")

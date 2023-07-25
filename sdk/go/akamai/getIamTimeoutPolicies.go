@@ -4,10 +4,12 @@
 package akamai
 
 import (
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetIamTimeoutPolicies(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIamTimeoutPoliciesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIamTimeoutPoliciesResult
 	err := ctx.Invoke("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", nil, &rv, opts...)
 	if err != nil {

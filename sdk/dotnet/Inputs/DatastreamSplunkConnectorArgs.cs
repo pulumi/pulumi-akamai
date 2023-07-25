@@ -51,17 +51,17 @@ namespace Pulumi.Akamai.Inputs
         [Input("compressLogs")]
         public Input<bool>? CompressLogs { get; set; }
 
-        [Input("connectorId")]
-        public Input<int>? ConnectorId { get; set; }
-
-        [Input("connectorName", required: true)]
-        public Input<string> ConnectorName { get; set; } = null!;
-
         [Input("customHeaderName")]
         public Input<string>? CustomHeaderName { get; set; }
 
         [Input("customHeaderValue")]
         public Input<string>? CustomHeaderValue { get; set; }
+
+        [Input("displayName", required: true)]
+        public Input<string> DisplayName { get; set; } = null!;
+
+        [Input("endpoint", required: true)]
+        public Input<string> Endpoint { get; set; } = null!;
 
         [Input("eventCollectorToken", required: true)]
         private Input<string>? _eventCollectorToken;
@@ -80,9 +80,6 @@ namespace Pulumi.Akamai.Inputs
 
         [Input("tlsHostname")]
         public Input<string>? TlsHostname { get; set; }
-
-        [Input("url", required: true)]
-        public Input<string> Url { get; set; } = null!;
 
         public DatastreamSplunkConnectorArgs()
         {

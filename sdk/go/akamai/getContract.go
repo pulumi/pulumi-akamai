@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetContract(ctx *pulumi.Context, args *GetContractArgs, opts ...pulumi.InvokeOption) (*GetContractResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetContractResult
 	err := ctx.Invoke("akamai:index/getContract:getContract", args, &rv, opts...)
 	if err != nil {
@@ -21,18 +23,14 @@ func GetContract(ctx *pulumi.Context, args *GetContractArgs, opts ...pulumi.Invo
 
 // A collection of arguments for invoking getContract.
 type GetContractArgs struct {
-	// Deprecated: The setting "group" has been deprecated.
-	Group     *string `pulumi:"group"`
 	GroupId   *string `pulumi:"groupId"`
 	GroupName *string `pulumi:"groupName"`
 }
 
 // A collection of values returned by getContract.
 type GetContractResult struct {
-	// Deprecated: The setting "group" has been deprecated.
-	Group     *string `pulumi:"group"`
-	GroupId   string  `pulumi:"groupId"`
-	GroupName string  `pulumi:"groupName"`
+	GroupId   string `pulumi:"groupId"`
+	GroupName string `pulumi:"groupName"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 }
@@ -52,8 +50,6 @@ func GetContractOutput(ctx *pulumi.Context, args GetContractOutputArgs, opts ...
 
 // A collection of arguments for invoking getContract.
 type GetContractOutputArgs struct {
-	// Deprecated: The setting "group" has been deprecated.
-	Group     pulumi.StringPtrInput `pulumi:"group"`
 	GroupId   pulumi.StringPtrInput `pulumi:"groupId"`
 	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
 }
@@ -75,11 +71,6 @@ func (o GetContractResultOutput) ToGetContractResultOutput() GetContractResultOu
 
 func (o GetContractResultOutput) ToGetContractResultOutputWithContext(ctx context.Context) GetContractResultOutput {
 	return o
-}
-
-// Deprecated: The setting "group" has been deprecated.
-func (o GetContractResultOutput) Group() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetContractResult) *string { return v.Group }).(pulumi.StringPtrOutput)
 }
 
 func (o GetContractResultOutput) GroupId() pulumi.StringOutput {

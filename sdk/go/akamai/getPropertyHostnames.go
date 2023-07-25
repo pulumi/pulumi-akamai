@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetPropertyHostnames(ctx *pulumi.Context, args *GetPropertyHostnamesArgs, opts ...pulumi.InvokeOption) (*GetPropertyHostnamesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPropertyHostnamesResult
 	err := ctx.Invoke("akamai:index/getPropertyHostnames:getPropertyHostnames", args, &rv, opts...)
 	if err != nil {

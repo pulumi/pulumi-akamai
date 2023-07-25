@@ -4,10 +4,12 @@
 package akamai
 
 import (
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetCpsWarnings(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetCpsWarningsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCpsWarningsResult
 	err := ctx.Invoke("akamai:index/getCpsWarnings:getCpsWarnings", nil, &rv, opts...)
 	if err != nil {

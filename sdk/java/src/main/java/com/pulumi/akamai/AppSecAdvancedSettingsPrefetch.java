@@ -22,7 +22,7 @@ public class AppSecAdvancedSettingsPrefetch extends com.pulumi.resources.CustomR
      * Whether to enable prefetch requests for all file extensions
      * 
      */
-    @Export(name="allExtensions", type=Boolean.class, parameters={})
+    @Export(name="allExtensions", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> allExtensions;
 
     /**
@@ -36,7 +36,7 @@ public class AppSecAdvancedSettingsPrefetch extends com.pulumi.resources.CustomR
      * Unique identifier of the security configuration
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -50,7 +50,7 @@ public class AppSecAdvancedSettingsPrefetch extends com.pulumi.resources.CustomR
      * Whether to enable or disable prefetch requests
      * 
      */
-    @Export(name="enableAppLayer", type=Boolean.class, parameters={})
+    @Export(name="enableAppLayer", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableAppLayer;
 
     /**
@@ -64,7 +64,7 @@ public class AppSecAdvancedSettingsPrefetch extends com.pulumi.resources.CustomR
      * Whether to enable prefetch requests for rate controls
      * 
      */
-    @Export(name="enableRateControls", type=Boolean.class, parameters={})
+    @Export(name="enableRateControls", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableRateControls;
 
     /**
@@ -78,7 +78,7 @@ public class AppSecAdvancedSettingsPrefetch extends com.pulumi.resources.CustomR
      * List of file extensions
      * 
      */
-    @Export(name="extensions", type=List.class, parameters={String.class})
+    @Export(name="extensions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> extensions;
 
     /**

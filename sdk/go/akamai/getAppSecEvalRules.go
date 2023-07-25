@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetAppSecEvalRules(ctx *pulumi.Context, args *GetAppSecEvalRulesArgs, opts ...pulumi.InvokeOption) (*GetAppSecEvalRulesResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppSecEvalRulesResult
 	err := ctx.Invoke("akamai:index/getAppSecEvalRules:getAppSecEvalRules", args, &rv, opts...)
 	if err != nil {

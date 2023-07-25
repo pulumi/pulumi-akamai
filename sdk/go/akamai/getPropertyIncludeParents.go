@@ -7,10 +7,12 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func GetPropertyIncludeParents(ctx *pulumi.Context, args *GetPropertyIncludeParentsArgs, opts ...pulumi.InvokeOption) (*GetPropertyIncludeParentsResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPropertyIncludeParentsResult
 	err := ctx.Invoke("akamai:index/getPropertyIncludeParents:getPropertyIncludeParents", args, &rv, opts...)
 	if err != nil {

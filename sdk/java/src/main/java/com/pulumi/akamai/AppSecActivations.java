@@ -10,7 +10,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
-import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -20,28 +19,10 @@ import javax.annotation.Nullable;
 @ResourceType(type="akamai:index/appSecActivations:AppSecActivations")
 public class AppSecActivations extends com.pulumi.resources.CustomResource {
     /**
-     * Whether to activate or deactivate the specified security configuration and version
-     * 
-     * @deprecated
-     * The setting activate has been deprecated; &#34;terraform apply&#34; will always perform activation. (Use &#34;terraform destroy&#34; for deactivation.)
-     * 
-     */
-    @Deprecated /* The setting activate has been deprecated; ""terraform apply"" will always perform activation. (Use ""terraform destroy"" for deactivation.) */
-    @Export(name="activate", type=Boolean.class, parameters={})
-    private Output</* @Nullable */ Boolean> activate;
-
-    /**
-     * @return Whether to activate or deactivate the specified security configuration and version
-     * 
-     */
-    public Output<Optional<Boolean>> activate() {
-        return Codegen.optional(this.activate);
-    }
-    /**
      * Unique identifier of the security configuration to be activated
      * 
      */
-    @Export(name="configId", type=Integer.class, parameters={})
+    @Export(name="configId", refs={Integer.class}, tree="[0]")
     private Output<Integer> configId;
 
     /**
@@ -55,7 +36,7 @@ public class AppSecActivations extends com.pulumi.resources.CustomResource {
      * Network on which to activate the configuration version (STAGING or PRODUCTION)
      * 
      */
-    @Export(name="network", type=String.class, parameters={})
+    @Export(name="network", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> network;
 
     /**
@@ -69,7 +50,7 @@ public class AppSecActivations extends com.pulumi.resources.CustomResource {
      * Note describing the activation. Will use timestamp if omitted.
      * 
      */
-    @Export(name="note", type=String.class, parameters={})
+    @Export(name="note", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> note;
 
     /**
@@ -80,28 +61,10 @@ public class AppSecActivations extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.note);
     }
     /**
-     * Note describing the activation
-     * 
-     * @deprecated
-     * The setting notes has been deprecated. Use &#34;note&#34; instead.
-     * 
-     */
-    @Deprecated /* The setting notes has been deprecated. Use ""note"" instead. */
-    @Export(name="notes", type=String.class, parameters={})
-    private Output</* @Nullable */ String> notes;
-
-    /**
-     * @return Note describing the activation
-     * 
-     */
-    public Output<Optional<String>> notes() {
-        return Codegen.optional(this.notes);
-    }
-    /**
      * List of email addresses to be notified with the results of the activation
      * 
      */
-    @Export(name="notificationEmails", type=List.class, parameters={String.class})
+    @Export(name="notificationEmails", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> notificationEmails;
 
     /**
@@ -115,7 +78,7 @@ public class AppSecActivations extends com.pulumi.resources.CustomResource {
      * The results of the activation
      * 
      */
-    @Export(name="status", type=String.class, parameters={})
+    @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
@@ -129,7 +92,7 @@ public class AppSecActivations extends com.pulumi.resources.CustomResource {
      * Version of the security configuration to be activated
      * 
      */
-    @Export(name="version", type=Integer.class, parameters={})
+    @Export(name="version", refs={Integer.class}, tree="[0]")
     private Output<Integer> version;
 
     /**
