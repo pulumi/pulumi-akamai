@@ -57,7 +57,7 @@ func TestRecursiveReplacement(t *testing.T) {
 		},
 	}
 
-	ReplaceImagePolicyImageRecursiveTypes(&actual, "root")
+	MakeTypeRecursive(&actual, "akamai:index/root:root")
 
 	expected := schema.PackageSpec{
 		Types: map[string]schema.ComplexTypeSpec{

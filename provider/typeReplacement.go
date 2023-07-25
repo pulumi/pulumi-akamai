@@ -8,10 +8,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
 )
 
-func ReplaceImagePolicyImageRecursiveTypes(spec *schema.PackageSpec, rootTypeName string) {
+func MakeTypeRecursive(spec *schema.PackageSpec, rootTypeToken string) {
 	removedTypes := []string{}
-	rootTypeTokenPrefix := "akamai:index/" + rootTypeName
-	rootTypeToken := rootTypeTokenPrefix + ":" + rootTypeName
+	rootTypeParts := strings.Split(rootTypeToken, ":")
+	contract.Assertf(len(rootTypeParts) == 3, "expected rootTypeToken to have 3 parts: %v", rootTypeToken)
+	// Note: we could avoid using the prefix check if we just recurse through
+	// all refs below the root type. This should be addressed if moved to the bridge.
+	rootTypeTokenPrefix := rootTypeParts[0] + ":" + rootTypeParts[1]
 	rootTypeRef := "#/types/" + rootTypeToken
 	rootTypeSpec, ok := spec.Types[rootTypeToken]
 	contract.Assertf(ok, "root type %s not found in spec.Types", rootTypeRef)
