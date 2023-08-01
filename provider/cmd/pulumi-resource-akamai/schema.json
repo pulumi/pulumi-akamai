@@ -14,21 +14,22 @@
     },
     "language": {
         "csharp": {
-            "compatibility": "tfbridge20",
+            "packageReferences": {
+                "Pulumi": "3.*"
+            },
             "namespaces": {
                 "akamai": "Akamai"
             },
-            "packageReferences": {
-                "Pulumi": "3.*"
-            }
+            "compatibility": "tfbridge20"
         },
         "go": {
-            "generateExtraInputTypes": true,
+            "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai",
             "generateResourceContainerTypes": true,
-            "importBasePath": "github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai"
+            "generateExtraInputTypes": true
         },
         "nodejs": {
-            "compatibility": "tfbridge20",
+            "packageDescription": "A Pulumi package for creating and managing akamai cloud resources.",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/akamai/terraform-provider-akamai)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-akamai` repo](https://github.com/pulumi/pulumi-akamai/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-akamai` repo](https://github.com/akamai/terraform-provider-akamai/issues).",
             "dependencies": {
                 "@pulumi/pulumi": "^3.0.0"
             },
@@ -36,20 +37,16 @@
                 "@types/mime": "^2.0.0",
                 "@types/node": "^10.0.0"
             },
-            "disableUnionOutputTypes": true,
-            "packageDescription": "A Pulumi package for creating and managing akamai cloud resources.",
-            "packageName": "",
-            "pluginName": "",
-            "pluginVersion": "",
-            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/akamai/terraform-provider-akamai)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-akamai` repo](https://github.com/pulumi/pulumi-akamai/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-akamai` repo](https://github.com/akamai/terraform-provider-akamai/issues).",
-            "typescriptVersion": ""
+            "compatibility": "tfbridge20",
+            "disableUnionOutputTypes": true
         },
         "python": {
-            "compatibility": "tfbridge20",
-            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/akamai/terraform-provider-akamai)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-akamai` repo](https://github.com/pulumi/pulumi-akamai/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-akamai` repo](https://github.com/akamai/terraform-provider-akamai/issues).",
             "requires": {
                 "pulumi": "\u003e=3.0.0,\u003c4.0.0"
-            }
+            },
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/akamai/terraform-provider-akamai)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-akamai` repo](https://github.com/pulumi/pulumi-akamai/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-akamai` repo](https://github.com/akamai/terraform-provider-akamai/issues).",
+            "compatibility": "tfbridge20",
+            "pyproject": {}
         }
     },
     "config": {
@@ -30347,6 +30344,73 @@
                 "type": "object"
             }
         },
+        "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections": {
+            "properties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the security configuration\n"
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "Unique identifier of the new security policy\n"
+                },
+                "securityPolicyName": {
+                    "type": "string",
+                    "description": "Name of the new security policy\n"
+                },
+                "securityPolicyPrefix": {
+                    "type": "string",
+                    "description": "Four-character alphanumeric string prefix used in creating the security policy ID\n"
+                }
+            },
+            "required": [
+                "configId",
+                "securityPolicyId",
+                "securityPolicyName",
+                "securityPolicyPrefix"
+            ],
+            "inputProperties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "Unique identifier of the security configuration\n"
+                },
+                "securityPolicyName": {
+                    "type": "string",
+                    "description": "Name of the new security policy\n"
+                },
+                "securityPolicyPrefix": {
+                    "type": "string",
+                    "description": "Four-character alphanumeric string prefix used in creating the security policy ID\n"
+                }
+            },
+            "requiredInputs": [
+                "configId",
+                "securityPolicyName",
+                "securityPolicyPrefix"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AppsecSecurityPolicyDefaultProtections resources.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer",
+                        "description": "Unique identifier of the security configuration\n"
+                    },
+                    "securityPolicyId": {
+                        "type": "string",
+                        "description": "Unique identifier of the new security policy\n"
+                    },
+                    "securityPolicyName": {
+                        "type": "string",
+                        "description": "Name of the new security policy\n"
+                    },
+                    "securityPolicyPrefix": {
+                        "type": "string",
+                        "description": "Four-character alphanumeric string prefix used in creating the security policy ID\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "akamai:index/botmanAkamaiBotCategoryAction:BotmanAkamaiBotCategoryAction": {
             "properties": {
                 "akamaiBotCategoryAction": {
@@ -30639,6 +30703,44 @@
                         "type": "string"
                     },
                     "challengeAction": {
+                        "type": "string"
+                    },
+                    "configId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/botmanChallengeInjectionRules:BotmanChallengeInjectionRules": {
+            "properties": {
+                "challengeInjectionRules": {
+                    "type": "string"
+                },
+                "configId": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "challengeInjectionRules",
+                "configId"
+            ],
+            "inputProperties": {
+                "challengeInjectionRules": {
+                    "type": "string"
+                },
+                "configId": {
+                    "type": "integer"
+                }
+            },
+            "requiredInputs": [
+                "challengeInjectionRules",
+                "configId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering BotmanChallengeInjectionRules resources.\n",
+                "properties": {
+                    "challengeInjectionRules": {
                         "type": "string"
                     },
                     "configId": {
@@ -40228,6 +40330,41 @@
                     "actionId": {
                         "type": "string"
                     },
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "json": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId",
+                    "json",
+                    "id"
+                ]
+            }
+        },
+        "akamai:index/getBotmanChallengeInjectionRules:getBotmanChallengeInjectionRules": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getBotmanChallengeInjectionRules.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getBotmanChallengeInjectionRules.\n",
+                "properties": {
                     "configId": {
                         "type": "integer"
                     },
