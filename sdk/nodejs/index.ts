@@ -255,6 +255,11 @@ export type AppsecAdvancedSettingsRequestBody = import("./appsecAdvancedSettings
 export const AppsecAdvancedSettingsRequestBody: typeof import("./appsecAdvancedSettingsRequestBody").AppsecAdvancedSettingsRequestBody = null as any;
 utilities.lazyLoad(exports, ["AppsecAdvancedSettingsRequestBody"], () => require("./appsecAdvancedSettingsRequestBody"));
 
+export { AppsecSecurityPolicyDefaultProtectionsArgs, AppsecSecurityPolicyDefaultProtectionsState } from "./appsecSecurityPolicyDefaultProtections";
+export type AppsecSecurityPolicyDefaultProtections = import("./appsecSecurityPolicyDefaultProtections").AppsecSecurityPolicyDefaultProtections;
+export const AppsecSecurityPolicyDefaultProtections: typeof import("./appsecSecurityPolicyDefaultProtections").AppsecSecurityPolicyDefaultProtections = null as any;
+utilities.lazyLoad(exports, ["AppsecSecurityPolicyDefaultProtections"], () => require("./appsecSecurityPolicyDefaultProtections"));
+
 export { BotmanAkamaiBotCategoryActionArgs, BotmanAkamaiBotCategoryActionState } from "./botmanAkamaiBotCategoryAction";
 export type BotmanAkamaiBotCategoryAction = import("./botmanAkamaiBotCategoryAction").BotmanAkamaiBotCategoryAction;
 export const BotmanAkamaiBotCategoryAction: typeof import("./botmanAkamaiBotCategoryAction").BotmanAkamaiBotCategoryAction = null as any;
@@ -284,6 +289,11 @@ export { BotmanChallengeActionArgs, BotmanChallengeActionState } from "./botmanC
 export type BotmanChallengeAction = import("./botmanChallengeAction").BotmanChallengeAction;
 export const BotmanChallengeAction: typeof import("./botmanChallengeAction").BotmanChallengeAction = null as any;
 utilities.lazyLoad(exports, ["BotmanChallengeAction"], () => require("./botmanChallengeAction"));
+
+export { BotmanChallengeInjectionRulesArgs, BotmanChallengeInjectionRulesState } from "./botmanChallengeInjectionRules";
+export type BotmanChallengeInjectionRules = import("./botmanChallengeInjectionRules").BotmanChallengeInjectionRules;
+export const BotmanChallengeInjectionRules: typeof import("./botmanChallengeInjectionRules").BotmanChallengeInjectionRules = null as any;
+utilities.lazyLoad(exports, ["BotmanChallengeInjectionRules"], () => require("./botmanChallengeInjectionRules"));
 
 export { BotmanChallengeInterceptionRulesArgs, BotmanChallengeInterceptionRulesState } from "./botmanChallengeInterceptionRules";
 export type BotmanChallengeInterceptionRules = import("./botmanChallengeInterceptionRules").BotmanChallengeInterceptionRules;
@@ -752,6 +762,11 @@ export { GetBotmanChallengeActionArgs, GetBotmanChallengeActionResult, GetBotman
 export const getBotmanChallengeAction: typeof import("./getBotmanChallengeAction").getBotmanChallengeAction = null as any;
 export const getBotmanChallengeActionOutput: typeof import("./getBotmanChallengeAction").getBotmanChallengeActionOutput = null as any;
 utilities.lazyLoad(exports, ["getBotmanChallengeAction","getBotmanChallengeActionOutput"], () => require("./getBotmanChallengeAction"));
+
+export { GetBotmanChallengeInjectionRulesArgs, GetBotmanChallengeInjectionRulesResult, GetBotmanChallengeInjectionRulesOutputArgs } from "./getBotmanChallengeInjectionRules";
+export const getBotmanChallengeInjectionRules: typeof import("./getBotmanChallengeInjectionRules").getBotmanChallengeInjectionRules = null as any;
+export const getBotmanChallengeInjectionRulesOutput: typeof import("./getBotmanChallengeInjectionRules").getBotmanChallengeInjectionRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanChallengeInjectionRules","getBotmanChallengeInjectionRulesOutput"], () => require("./getBotmanChallengeInjectionRules"));
 
 export { GetBotmanChallengeInterceptionRulesArgs, GetBotmanChallengeInterceptionRulesResult, GetBotmanChallengeInterceptionRulesOutputArgs } from "./getBotmanChallengeInterceptionRules";
 export const getBotmanChallengeInterceptionRules: typeof import("./getBotmanChallengeInterceptionRules").getBotmanChallengeInterceptionRules = null as any;
@@ -1347,6 +1362,8 @@ const _module = {
                 return new AppsecAdvancedSettingsPiiLearning(name, <any>undefined, { urn })
             case "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody":
                 return new AppsecAdvancedSettingsRequestBody(name, <any>undefined, { urn })
+            case "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections":
+                return new AppsecSecurityPolicyDefaultProtections(name, <any>undefined, { urn })
             case "akamai:index/botmanAkamaiBotCategoryAction:BotmanAkamaiBotCategoryAction":
                 return new BotmanAkamaiBotCategoryAction(name, <any>undefined, { urn })
             case "akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie":
@@ -1359,6 +1376,8 @@ const _module = {
                 return new BotmanBotManagementSettings(name, <any>undefined, { urn })
             case "akamai:index/botmanChallengeAction:BotmanChallengeAction":
                 return new BotmanChallengeAction(name, <any>undefined, { urn })
+            case "akamai:index/botmanChallengeInjectionRules:BotmanChallengeInjectionRules":
+                return new BotmanChallengeInjectionRules(name, <any>undefined, { urn })
             case "akamai:index/botmanChallengeInterceptionRules:BotmanChallengeInterceptionRules":
                 return new BotmanChallengeInterceptionRules(name, <any>undefined, { urn })
             case "akamai:index/botmanClientSideSecurity:BotmanClientSideSecurity":
@@ -1520,12 +1539,14 @@ pulumi.runtime.registerResourceModule("akamai", "index/appSecWapSelectedHostname
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsAttackPayloadLogging", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsPiiLearning", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/appsecAdvancedSettingsRequestBody", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/appsecSecurityPolicyDefaultProtections", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanAkamaiBotCategoryAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotAnalyticsCookie", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotCategoryException", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotDetectionAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanBotManagementSettings", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanChallengeAction", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanChallengeInjectionRules", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanChallengeInterceptionRules", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanClientSideSecurity", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanConditionalAction", _module)

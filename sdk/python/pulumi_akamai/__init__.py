@@ -55,12 +55,14 @@ from .app_sec_wap_selected_hostnames import *
 from .appsec_advanced_settings_attack_payload_logging import *
 from .appsec_advanced_settings_pii_learning import *
 from .appsec_advanced_settings_request_body import *
+from .appsec_security_policy_default_protections import *
 from .botman_akamai_bot_category_action import *
 from .botman_bot_analytics_cookie import *
 from .botman_bot_category_exception import *
 from .botman_bot_detection_action import *
 from .botman_bot_management_settings import *
 from .botman_challenge_action import *
+from .botman_challenge_injection_rules import *
 from .botman_challenge_interception_rules import *
 from .botman_client_side_security import *
 from .botman_conditional_action import *
@@ -155,6 +157,7 @@ from .get_botman_bot_detection_action import *
 from .get_botman_bot_endpoint_coverage_report import *
 from .get_botman_bot_management_settings import *
 from .get_botman_challenge_action import *
+from .get_botman_challenge_injection_rules import *
 from .get_botman_challenge_interception_rules import *
 from .get_botman_client_side_security import *
 from .get_botman_conditional_action import *
@@ -676,6 +679,14 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/appsecSecurityPolicyDefaultProtections",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections": "AppsecSecurityPolicyDefaultProtections"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/botmanAkamaiBotCategoryAction",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -720,6 +731,14 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/botmanChallengeAction:BotmanChallengeAction": "BotmanChallengeAction"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/botmanChallengeInjectionRules",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanChallengeInjectionRules:BotmanChallengeInjectionRules": "BotmanChallengeInjectionRules"
   }
  },
  {
