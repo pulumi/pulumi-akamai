@@ -126,6 +126,8 @@ import com.pulumi.akamai.inputs.GetBotmanBotManagementSettingsArgs;
 import com.pulumi.akamai.inputs.GetBotmanBotManagementSettingsPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanChallengeActionArgs;
 import com.pulumi.akamai.inputs.GetBotmanChallengeActionPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanChallengeInjectionRulesArgs;
+import com.pulumi.akamai.inputs.GetBotmanChallengeInjectionRulesPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanChallengeInterceptionRulesArgs;
 import com.pulumi.akamai.inputs.GetBotmanChallengeInterceptionRulesPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanClientSideSecurityArgs;
@@ -315,6 +317,7 @@ import com.pulumi.akamai.outputs.GetBotmanBotDetectionResult;
 import com.pulumi.akamai.outputs.GetBotmanBotEndpointCoverageReportResult;
 import com.pulumi.akamai.outputs.GetBotmanBotManagementSettingsResult;
 import com.pulumi.akamai.outputs.GetBotmanChallengeActionResult;
+import com.pulumi.akamai.outputs.GetBotmanChallengeInjectionRulesResult;
 import com.pulumi.akamai.outputs.GetBotmanChallengeInterceptionRulesResult;
 import com.pulumi.akamai.outputs.GetBotmanClientSideSecurityResult;
 import com.pulumi.akamai.outputs.GetBotmanConditionalActionResult;
@@ -1212,6 +1215,18 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetBotmanChallengeActionResult> getBotmanChallengeActionPlain(GetBotmanChallengeActionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getBotmanChallengeAction:getBotmanChallengeAction", TypeShape.of(GetBotmanChallengeActionResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetBotmanChallengeInjectionRulesResult> getBotmanChallengeInjectionRules(GetBotmanChallengeInjectionRulesArgs args) {
+        return getBotmanChallengeInjectionRules(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanChallengeInjectionRulesResult> getBotmanChallengeInjectionRulesPlain(GetBotmanChallengeInjectionRulesPlainArgs args) {
+        return getBotmanChallengeInjectionRulesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanChallengeInjectionRulesResult> getBotmanChallengeInjectionRules(GetBotmanChallengeInjectionRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanChallengeInjectionRules:getBotmanChallengeInjectionRules", TypeShape.of(GetBotmanChallengeInjectionRulesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanChallengeInjectionRulesResult> getBotmanChallengeInjectionRulesPlain(GetBotmanChallengeInjectionRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanChallengeInjectionRules:getBotmanChallengeInjectionRules", TypeShape.of(GetBotmanChallengeInjectionRulesResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetBotmanChallengeInterceptionRulesResult> getBotmanChallengeInterceptionRules(GetBotmanChallengeInterceptionRulesArgs args) {
         return getBotmanChallengeInterceptionRules(args, InvokeOptions.Empty);

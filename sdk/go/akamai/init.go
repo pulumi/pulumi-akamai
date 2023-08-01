@@ -121,6 +121,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AppsecAdvancedSettingsPiiLearning{}
 	case "akamai:index/appsecAdvancedSettingsRequestBody:AppsecAdvancedSettingsRequestBody":
 		r = &AppsecAdvancedSettingsRequestBody{}
+	case "akamai:index/appsecSecurityPolicyDefaultProtections:AppsecSecurityPolicyDefaultProtections":
+		r = &AppsecSecurityPolicyDefaultProtections{}
 	case "akamai:index/botmanAkamaiBotCategoryAction:BotmanAkamaiBotCategoryAction":
 		r = &BotmanAkamaiBotCategoryAction{}
 	case "akamai:index/botmanBotAnalyticsCookie:BotmanBotAnalyticsCookie":
@@ -133,6 +135,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BotmanBotManagementSettings{}
 	case "akamai:index/botmanChallengeAction:BotmanChallengeAction":
 		r = &BotmanChallengeAction{}
+	case "akamai:index/botmanChallengeInjectionRules:BotmanChallengeInjectionRules":
+		r = &BotmanChallengeInjectionRules{}
 	case "akamai:index/botmanChallengeInterceptionRules:BotmanChallengeInterceptionRules":
 		r = &BotmanChallengeInterceptionRules{}
 	case "akamai:index/botmanClientSideSecurity:BotmanClientSideSecurity":
@@ -522,6 +526,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/appsecSecurityPolicyDefaultProtections",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/botmanAkamaiBotCategoryAction",
 		&module{version},
 	)
@@ -548,6 +557,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/botmanChallengeAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/botmanChallengeInjectionRules",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
