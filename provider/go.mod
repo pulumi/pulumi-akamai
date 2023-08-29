@@ -12,7 +12,7 @@ replace (
 require (
 	github.com/akamai/terraform-provider-akamai/v5 v5.0.1
 	github.com/pulumi/pulumi-terraform-bridge/pf v0.15.2
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.56.2
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.57.0
 	github.com/pulumi/pulumi/pkg/v3 v3.76.1
 	github.com/pulumi/pulumi/sdk/v3 v3.76.1
 	github.com/stretchr/testify v1.8.3
@@ -54,7 +54,7 @@ require (
 	github.com/acomagu/bufpipe v1.0.4 // indirect
 	github.com/aead/chacha20 v0.0.0-20180709150244-8b13a72661da // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
-	github.com/akamai/AkamaiOPEN-edgegrid-golang/v7 v7.1.0 // indirect
+	github.com/akamai/AkamaiOPEN-edgegrid-golang/v7 v7.2.1 // indirect
 	github.com/allegro/bigcache/v2 v2.2.5 // indirect
 	github.com/andres-erbsen/clock v0.0.0-20160526145045-9e14626cd129 // indirect
 	github.com/apex/log v1.9.0 // indirect
@@ -142,10 +142,12 @@ require (
 	github.com/hashicorp/hcl/v2 v2.17.0 // indirect
 	github.com/hashicorp/hil v0.0.0-20190212132231-97b3a9cdfa93 // indirect
 	github.com/hashicorp/logutils v1.0.0 // indirect
-	github.com/hashicorp/terraform-plugin-framework v1.2.0 // indirect
-	github.com/hashicorp/terraform-plugin-go v0.16.0 // indirect
+	github.com/hashicorp/terraform-plugin-framework v1.3.3 // indirect
+	github.com/hashicorp/terraform-plugin-framework-timeouts v0.4.1 // indirect
+	github.com/hashicorp/terraform-plugin-framework-validators v0.11.0 // indirect
+	github.com/hashicorp/terraform-plugin-go v0.18.0 // indirect
 	github.com/hashicorp/terraform-plugin-log v0.9.0 // indirect
-	github.com/hashicorp/terraform-plugin-sdk/v2 v2.24.1 // indirect
+	github.com/hashicorp/terraform-plugin-sdk/v2 v2.27.0 // indirect
 	github.com/hashicorp/terraform-registry-address v0.2.1 // indirect
 	github.com/hashicorp/terraform-svchost v0.1.1 // indirect
 	github.com/hashicorp/vault/api v1.8.2 // indirect
@@ -231,22 +233,22 @@ require (
 	go.uber.org/ratelimit v0.2.0 // indirect
 	gocloud.dev v0.27.0 // indirect
 	gocloud.dev/secrets/hashivault v0.27.0 // indirect
-	golang.org/x/crypto v0.10.0 // indirect
+	golang.org/x/crypto v0.11.0 // indirect
 	golang.org/x/exp v0.0.0-20230522175609-2e198f4a06a1 // indirect
 	golang.org/x/mod v0.10.0 // indirect
 	golang.org/x/net v0.11.0 // indirect
 	golang.org/x/oauth2 v0.7.0 // indirect
 	golang.org/x/sync v0.2.0 // indirect
-	golang.org/x/sys v0.9.0 // indirect
-	golang.org/x/term v0.9.0 // indirect
-	golang.org/x/text v0.10.0 // indirect
+	golang.org/x/sys v0.10.0 // indirect
+	golang.org/x/term v0.10.0 // indirect
+	golang.org/x/text v0.11.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	google.golang.org/api v0.114.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20230410155749-daa745c078e1 // indirect
 	google.golang.org/grpc v1.56.1 // indirect
-	google.golang.org/protobuf v1.30.0 // indirect
+	google.golang.org/protobuf v1.31.0 // indirect
 	gopkg.in/ini.v1 v1.66.4 // indirect
 	gopkg.in/square/go-jose.v2 v2.6.0 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
