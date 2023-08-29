@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
+export interface ClientlistListItem {
+    description?: string;
+    expirationDate?: string;
+    tags?: string[];
+    value: string;
+}
+
 export interface CloudletsApplicationLoadBalancerDataCenter {
     city?: string;
     cloudServerHostHeaderOverride?: boolean;
@@ -34,6 +41,26 @@ export interface CloudletsApplicationLoadBalancerLivenessSettings {
     status4xxFailure?: boolean;
     status5xxFailure?: boolean;
     timeout?: number;
+}
+
+export interface CloudwrapperActivationTimeouts {
+    create?: string;
+    update?: string;
+}
+
+export interface CloudwrapperConfigurationLocation {
+    capacity?: outputs.CloudwrapperConfigurationLocationCapacity;
+    comments: string;
+    trafficTypeId: number;
+}
+
+export interface CloudwrapperConfigurationLocationCapacity {
+    unit: string;
+    value: number;
+}
+
+export interface CloudwrapperConfigurationTimeouts {
+    delete?: string;
 }
 
 export interface CpsDvEnrollmentAdminContact {
@@ -498,6 +525,26 @@ export interface GetCPSEnrollmentsEnrollmentTechContact {
     title?: string;
 }
 
+export interface GetClientlistListsList {
+    createDate: string;
+    createdBy: string;
+    deprecated: boolean;
+    itemsCount: number;
+    listId: string;
+    listType: string;
+    name?: string;
+    notes: string;
+    productionActivationStatus: string;
+    readOnly: boolean;
+    shared: boolean;
+    stagingActivationStatus: string;
+    tags: string[];
+    type?: string;
+    updateDate: string;
+    updatedBy: string;
+    version: number;
+}
+
 export interface GetCloudletsApiPrioritizationMatchRuleMatchRule {
     disabled?: boolean;
     end?: number;
@@ -876,6 +923,180 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectM
     valueEscaped?: boolean;
     valueHasWildcard?: boolean;
     values?: string[];
+}
+
+export interface GetCloudwrapperCapacitiesCapacity {
+    approved: outputs.GetCloudwrapperCapacitiesCapacityApproved;
+    assigned: outputs.GetCloudwrapperCapacitiesCapacityAssigned;
+    contractId: string;
+    locationId: number;
+    locationName: string;
+    type: string;
+    unassigned: outputs.GetCloudwrapperCapacitiesCapacityUnassigned;
+}
+
+export interface GetCloudwrapperCapacitiesCapacityApproved {
+    unit: string;
+    value: number;
+}
+
+export interface GetCloudwrapperCapacitiesCapacityAssigned {
+    unit: string;
+    value: number;
+}
+
+export interface GetCloudwrapperCapacitiesCapacityUnassigned {
+    unit: string;
+    value: number;
+}
+
+export interface GetCloudwrapperConfigurationLocation {
+    capacity: outputs.GetCloudwrapperConfigurationLocationCapacity;
+    comments: string;
+    mapName: string;
+    trafficTypeId: number;
+}
+
+export interface GetCloudwrapperConfigurationLocationCapacity {
+    unit: string;
+    value: number;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettings {
+    bocc?: outputs.GetCloudwrapperConfigurationMultiCdnSettingsBocc;
+    cdns?: outputs.GetCloudwrapperConfigurationMultiCdnSettingsCdn[];
+    dataStreams?: outputs.GetCloudwrapperConfigurationMultiCdnSettingsDataStreams;
+    enableSoftAlerts: boolean;
+    origins?: outputs.GetCloudwrapperConfigurationMultiCdnSettingsOrigin[];
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsBocc {
+    conditionalSamplingFrequency: string;
+    enabled: boolean;
+    forwardType: string;
+    requestType: string;
+    samplingFrequency: string;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsCdn {
+    cdnAuthKeys?: outputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey[];
+    cdnCode: string;
+    enabled: boolean;
+    httpsOnly: boolean;
+    ipAclCidrs: string[];
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey {
+    authKeyName: string;
+    expiryDate: string;
+    headerName: string;
+    secret: string;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsDataStreams {
+    dataStreamIds: number[];
+    enabled: boolean;
+    samplingRate: number;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsOrigin {
+    hostname: string;
+    originId: string;
+    propertyId: number;
+}
+
+export interface GetCloudwrapperConfigurationsConfiguration {
+    capacityAlertsThreshold: number;
+    comments: string;
+    configName: string;
+    contractId: string;
+    id: number;
+    lastActivatedBy: string;
+    lastActivatedDate: string;
+    lastUpdatedBy: string;
+    lastUpdatedDate: string;
+    locations?: outputs.GetCloudwrapperConfigurationsConfigurationLocation[];
+    multiCdnSettings?: outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettings;
+    notificationEmails: string[];
+    propertyIds: string[];
+    retainIdleObjects: boolean;
+    status: string;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationLocation {
+    capacity: outputs.GetCloudwrapperConfigurationsConfigurationLocationCapacity;
+    comments: string;
+    mapName: string;
+    trafficTypeId: number;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationLocationCapacity {
+    unit: string;
+    value: number;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettings {
+    bocc?: outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBocc;
+    cdns?: outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdn[];
+    dataStreams?: outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreams;
+    enableSoftAlerts: boolean;
+    origins?: outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin[];
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBocc {
+    conditionalSamplingFrequency: string;
+    enabled: boolean;
+    forwardType: string;
+    requestType: string;
+    samplingFrequency: string;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdn {
+    cdnAuthKeys?: outputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKey[];
+    cdnCode: string;
+    enabled: boolean;
+    httpsOnly: boolean;
+    ipAclCidrs: string[];
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKey {
+    authKeyName: string;
+    expiryDate: string;
+    headerName: string;
+    secret: string;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreams {
+    dataStreamIds: number[];
+    enabled: boolean;
+    samplingRate: number;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin {
+    hostname: string;
+    originId: string;
+    propertyId: number;
+}
+
+export interface GetCloudwrapperLocationsLocation {
+    locationId: number;
+    locationName: string;
+    multiCdnLocationId: string;
+    trafficTypes?: outputs.GetCloudwrapperLocationsLocationTrafficType[];
+}
+
+export interface GetCloudwrapperLocationsLocationTrafficType {
+    locationId: string;
+    trafficType: string;
+    trafficTypeId: number;
+}
+
+export interface GetCloudwrapperPropertiesProperty {
+    contractId: string;
+    groupId: number;
+    propertyId: number;
+    propertyName: string;
+    type: string;
 }
 
 export interface GetContractsContract {
@@ -6450,7 +6671,7 @@ export interface GetPropertyRulesBuilderRulesV20230530BehaviorDatastream {
     enabled?: boolean;
     locked?: boolean;
     logEnabled?: boolean;
-    logStreamName?: string;
+    logStreamNames?: string[];
     logStreamTitle?: string;
     samplingPercentage?: number;
     streamType?: string;

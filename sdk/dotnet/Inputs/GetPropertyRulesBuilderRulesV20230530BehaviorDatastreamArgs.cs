@@ -30,8 +30,13 @@ namespace Pulumi.Akamai.Inputs
         [Input("logEnabled")]
         public Input<bool>? LogEnabled { get; set; }
 
-        [Input("logStreamName")]
-        public Input<string>? LogStreamName { get; set; }
+        [Input("logStreamNames")]
+        private InputList<string>? _logStreamNames;
+        public InputList<string> LogStreamNames
+        {
+            get => _logStreamNames ?? (_logStreamNames = new InputList<string>());
+            set => _logStreamNames = value;
+        }
 
         [Input("logStreamTitle")]
         public Input<string>? LogStreamTitle { get; set; }

@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -59,11 +60,11 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDatastreamArgs e
         return Optional.ofNullable(this.logEnabled);
     }
 
-    @Import(name="logStreamName")
-    private @Nullable Output<String> logStreamName;
+    @Import(name="logStreamNames")
+    private @Nullable Output<List<String>> logStreamNames;
 
-    public Optional<Output<String>> logStreamName() {
-        return Optional.ofNullable(this.logStreamName);
+    public Optional<Output<List<String>>> logStreamNames() {
+        return Optional.ofNullable(this.logStreamNames);
     }
 
     @Import(name="logStreamTitle")
@@ -110,7 +111,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDatastreamArgs e
         this.enabled = $.enabled;
         this.locked = $.locked;
         this.logEnabled = $.logEnabled;
-        this.logStreamName = $.logStreamName;
+        this.logStreamNames = $.logStreamNames;
         this.logStreamTitle = $.logStreamTitle;
         this.samplingPercentage = $.samplingPercentage;
         this.streamType = $.streamType;
@@ -190,13 +191,17 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDatastreamArgs e
             return logEnabled(Output.of(logEnabled));
         }
 
-        public Builder logStreamName(@Nullable Output<String> logStreamName) {
-            $.logStreamName = logStreamName;
+        public Builder logStreamNames(@Nullable Output<List<String>> logStreamNames) {
+            $.logStreamNames = logStreamNames;
             return this;
         }
 
-        public Builder logStreamName(String logStreamName) {
-            return logStreamName(Output.of(logStreamName));
+        public Builder logStreamNames(List<String> logStreamNames) {
+            return logStreamNames(Output.of(logStreamNames));
+        }
+
+        public Builder logStreamNames(String... logStreamNames) {
+            return logStreamNames(List.of(logStreamNames));
         }
 
         public Builder logStreamTitle(@Nullable Output<String> logStreamTitle) {

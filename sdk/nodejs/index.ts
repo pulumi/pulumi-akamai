@@ -330,6 +330,11 @@ export type BotmanCustomClient = import("./botmanCustomClient").BotmanCustomClie
 export const BotmanCustomClient: typeof import("./botmanCustomClient").BotmanCustomClient = null as any;
 utilities.lazyLoad(exports, ["BotmanCustomClient"], () => require("./botmanCustomClient"));
 
+export { BotmanCustomClientSequenceArgs, BotmanCustomClientSequenceState } from "./botmanCustomClientSequence";
+export type BotmanCustomClientSequence = import("./botmanCustomClientSequence").BotmanCustomClientSequence;
+export const BotmanCustomClientSequence: typeof import("./botmanCustomClientSequence").BotmanCustomClientSequence = null as any;
+utilities.lazyLoad(exports, ["BotmanCustomClientSequence"], () => require("./botmanCustomClientSequence"));
+
 export { BotmanCustomDefinedBotArgs, BotmanCustomDefinedBotState } from "./botmanCustomDefinedBot";
 export type BotmanCustomDefinedBot = import("./botmanCustomDefinedBot").BotmanCustomDefinedBot;
 export const BotmanCustomDefinedBot: typeof import("./botmanCustomDefinedBot").BotmanCustomDefinedBot = null as any;
@@ -365,6 +370,16 @@ export type BotmanTransactionalEndpointProtection = import("./botmanTransactiona
 export const BotmanTransactionalEndpointProtection: typeof import("./botmanTransactionalEndpointProtection").BotmanTransactionalEndpointProtection = null as any;
 utilities.lazyLoad(exports, ["BotmanTransactionalEndpointProtection"], () => require("./botmanTransactionalEndpointProtection"));
 
+export { ClientlistActivationArgs, ClientlistActivationState } from "./clientlistActivation";
+export type ClientlistActivation = import("./clientlistActivation").ClientlistActivation;
+export const ClientlistActivation: typeof import("./clientlistActivation").ClientlistActivation = null as any;
+utilities.lazyLoad(exports, ["ClientlistActivation"], () => require("./clientlistActivation"));
+
+export { ClientlistListArgs, ClientlistListState } from "./clientlistList";
+export type ClientlistList = import("./clientlistList").ClientlistList;
+export const ClientlistList: typeof import("./clientlistList").ClientlistList = null as any;
+utilities.lazyLoad(exports, ["ClientlistList"], () => require("./clientlistList"));
+
 export { CloudletsApplicationLoadBalancerArgs, CloudletsApplicationLoadBalancerState } from "./cloudletsApplicationLoadBalancer";
 export type CloudletsApplicationLoadBalancer = import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer;
 export const CloudletsApplicationLoadBalancer: typeof import("./cloudletsApplicationLoadBalancer").CloudletsApplicationLoadBalancer = null as any;
@@ -384,6 +399,16 @@ export { CloudletsPolicyActivationArgs, CloudletsPolicyActivationState } from ".
 export type CloudletsPolicyActivation = import("./cloudletsPolicyActivation").CloudletsPolicyActivation;
 export const CloudletsPolicyActivation: typeof import("./cloudletsPolicyActivation").CloudletsPolicyActivation = null as any;
 utilities.lazyLoad(exports, ["CloudletsPolicyActivation"], () => require("./cloudletsPolicyActivation"));
+
+export { CloudwrapperActivationArgs, CloudwrapperActivationState } from "./cloudwrapperActivation";
+export type CloudwrapperActivation = import("./cloudwrapperActivation").CloudwrapperActivation;
+export const CloudwrapperActivation: typeof import("./cloudwrapperActivation").CloudwrapperActivation = null as any;
+utilities.lazyLoad(exports, ["CloudwrapperActivation"], () => require("./cloudwrapperActivation"));
+
+export { CloudwrapperConfigurationArgs, CloudwrapperConfigurationState } from "./cloudwrapperConfiguration";
+export type CloudwrapperConfiguration = import("./cloudwrapperConfiguration").CloudwrapperConfiguration;
+export const CloudwrapperConfiguration: typeof import("./cloudwrapperConfiguration").CloudwrapperConfiguration = null as any;
+utilities.lazyLoad(exports, ["CloudwrapperConfiguration"], () => require("./cloudwrapperConfiguration"));
 
 export { CpCodeArgs, CpCodeState } from "./cpCode";
 export type CpCode = import("./cpCode").CpCode;
@@ -803,6 +828,11 @@ export const getBotmanCustomClient: typeof import("./getBotmanCustomClient").get
 export const getBotmanCustomClientOutput: typeof import("./getBotmanCustomClient").getBotmanCustomClientOutput = null as any;
 utilities.lazyLoad(exports, ["getBotmanCustomClient","getBotmanCustomClientOutput"], () => require("./getBotmanCustomClient"));
 
+export { GetBotmanCustomClientSequenceArgs, GetBotmanCustomClientSequenceResult, GetBotmanCustomClientSequenceOutputArgs } from "./getBotmanCustomClientSequence";
+export const getBotmanCustomClientSequence: typeof import("./getBotmanCustomClientSequence").getBotmanCustomClientSequence = null as any;
+export const getBotmanCustomClientSequenceOutput: typeof import("./getBotmanCustomClientSequence").getBotmanCustomClientSequenceOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanCustomClientSequence","getBotmanCustomClientSequenceOutput"], () => require("./getBotmanCustomClientSequence"));
+
 export { GetBotmanCustomDefinedBotArgs, GetBotmanCustomDefinedBotResult, GetBotmanCustomDefinedBotOutputArgs } from "./getBotmanCustomDefinedBot";
 export const getBotmanCustomDefinedBot: typeof import("./getBotmanCustomDefinedBot").getBotmanCustomDefinedBot = null as any;
 export const getBotmanCustomDefinedBotOutput: typeof import("./getBotmanCustomDefinedBot").getBotmanCustomDefinedBotOutput = null as any;
@@ -853,6 +883,11 @@ export const getCPSEnrollments: typeof import("./getCPSEnrollments").getCPSEnrol
 export const getCPSEnrollmentsOutput: typeof import("./getCPSEnrollments").getCPSEnrollmentsOutput = null as any;
 utilities.lazyLoad(exports, ["getCPSEnrollments","getCPSEnrollmentsOutput"], () => require("./getCPSEnrollments"));
 
+export { GetClientlistListsArgs, GetClientlistListsResult, GetClientlistListsOutputArgs } from "./getClientlistLists";
+export const getClientlistLists: typeof import("./getClientlistLists").getClientlistLists = null as any;
+export const getClientlistListsOutput: typeof import("./getClientlistLists").getClientlistListsOutput = null as any;
+utilities.lazyLoad(exports, ["getClientlistLists","getClientlistListsOutput"], () => require("./getClientlistLists"));
+
 export { GetCloudletsApiPrioritizationMatchRuleArgs, GetCloudletsApiPrioritizationMatchRuleResult, GetCloudletsApiPrioritizationMatchRuleOutputArgs } from "./getCloudletsApiPrioritizationMatchRule";
 export const getCloudletsApiPrioritizationMatchRule: typeof import("./getCloudletsApiPrioritizationMatchRule").getCloudletsApiPrioritizationMatchRule = null as any;
 export const getCloudletsApiPrioritizationMatchRuleOutput: typeof import("./getCloudletsApiPrioritizationMatchRule").getCloudletsApiPrioritizationMatchRuleOutput = null as any;
@@ -902,6 +937,36 @@ export { GetCloudletsVisitorPrioritizationMatchRuleArgs, GetCloudletsVisitorPrio
 export const getCloudletsVisitorPrioritizationMatchRule: typeof import("./getCloudletsVisitorPrioritizationMatchRule").getCloudletsVisitorPrioritizationMatchRule = null as any;
 export const getCloudletsVisitorPrioritizationMatchRuleOutput: typeof import("./getCloudletsVisitorPrioritizationMatchRule").getCloudletsVisitorPrioritizationMatchRuleOutput = null as any;
 utilities.lazyLoad(exports, ["getCloudletsVisitorPrioritizationMatchRule","getCloudletsVisitorPrioritizationMatchRuleOutput"], () => require("./getCloudletsVisitorPrioritizationMatchRule"));
+
+export { GetCloudwrapperCapacitiesArgs, GetCloudwrapperCapacitiesResult, GetCloudwrapperCapacitiesOutputArgs } from "./getCloudwrapperCapacities";
+export const getCloudwrapperCapacities: typeof import("./getCloudwrapperCapacities").getCloudwrapperCapacities = null as any;
+export const getCloudwrapperCapacitiesOutput: typeof import("./getCloudwrapperCapacities").getCloudwrapperCapacitiesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudwrapperCapacities","getCloudwrapperCapacitiesOutput"], () => require("./getCloudwrapperCapacities"));
+
+export { GetCloudwrapperConfigurationArgs, GetCloudwrapperConfigurationResult, GetCloudwrapperConfigurationOutputArgs } from "./getCloudwrapperConfiguration";
+export const getCloudwrapperConfiguration: typeof import("./getCloudwrapperConfiguration").getCloudwrapperConfiguration = null as any;
+export const getCloudwrapperConfigurationOutput: typeof import("./getCloudwrapperConfiguration").getCloudwrapperConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudwrapperConfiguration","getCloudwrapperConfigurationOutput"], () => require("./getCloudwrapperConfiguration"));
+
+export { GetCloudwrapperConfigurationsArgs, GetCloudwrapperConfigurationsResult, GetCloudwrapperConfigurationsOutputArgs } from "./getCloudwrapperConfigurations";
+export const getCloudwrapperConfigurations: typeof import("./getCloudwrapperConfigurations").getCloudwrapperConfigurations = null as any;
+export const getCloudwrapperConfigurationsOutput: typeof import("./getCloudwrapperConfigurations").getCloudwrapperConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudwrapperConfigurations","getCloudwrapperConfigurationsOutput"], () => require("./getCloudwrapperConfigurations"));
+
+export { GetCloudwrapperLocationArgs, GetCloudwrapperLocationResult, GetCloudwrapperLocationOutputArgs } from "./getCloudwrapperLocation";
+export const getCloudwrapperLocation: typeof import("./getCloudwrapperLocation").getCloudwrapperLocation = null as any;
+export const getCloudwrapperLocationOutput: typeof import("./getCloudwrapperLocation").getCloudwrapperLocationOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudwrapperLocation","getCloudwrapperLocationOutput"], () => require("./getCloudwrapperLocation"));
+
+export { GetCloudwrapperLocationsArgs, GetCloudwrapperLocationsResult, GetCloudwrapperLocationsOutputArgs } from "./getCloudwrapperLocations";
+export const getCloudwrapperLocations: typeof import("./getCloudwrapperLocations").getCloudwrapperLocations = null as any;
+export const getCloudwrapperLocationsOutput: typeof import("./getCloudwrapperLocations").getCloudwrapperLocationsOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudwrapperLocations","getCloudwrapperLocationsOutput"], () => require("./getCloudwrapperLocations"));
+
+export { GetCloudwrapperPropertiesArgs, GetCloudwrapperPropertiesResult, GetCloudwrapperPropertiesOutputArgs } from "./getCloudwrapperProperties";
+export const getCloudwrapperProperties: typeof import("./getCloudwrapperProperties").getCloudwrapperProperties = null as any;
+export const getCloudwrapperPropertiesOutput: typeof import("./getCloudwrapperProperties").getCloudwrapperPropertiesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudwrapperProperties","getCloudwrapperPropertiesOutput"], () => require("./getCloudwrapperProperties"));
 
 export { GetContractArgs, GetContractResult, GetContractOutputArgs } from "./getContract";
 export const getContract: typeof import("./getContract").getContract = null as any;
@@ -1392,6 +1457,8 @@ const _module = {
                 return new BotmanCustomBotCategorySequence(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomClient:BotmanCustomClient":
                 return new BotmanCustomClient(name, <any>undefined, { urn })
+            case "akamai:index/botmanCustomClientSequence:BotmanCustomClientSequence":
+                return new BotmanCustomClientSequence(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot":
                 return new BotmanCustomDefinedBot(name, <any>undefined, { urn })
             case "akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction":
@@ -1406,6 +1473,10 @@ const _module = {
                 return new BotmanTransactionalEndpoint(name, <any>undefined, { urn })
             case "akamai:index/botmanTransactionalEndpointProtection:BotmanTransactionalEndpointProtection":
                 return new BotmanTransactionalEndpointProtection(name, <any>undefined, { urn })
+            case "akamai:index/clientlistActivation:ClientlistActivation":
+                return new ClientlistActivation(name, <any>undefined, { urn })
+            case "akamai:index/clientlistList:ClientlistList":
+                return new ClientlistList(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
                 return new CloudletsApplicationLoadBalancer(name, <any>undefined, { urn })
             case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -1414,6 +1485,10 @@ const _module = {
                 return new CloudletsPolicy(name, <any>undefined, { urn })
             case "akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation":
                 return new CloudletsPolicyActivation(name, <any>undefined, { urn })
+            case "akamai:index/cloudwrapperActivation:CloudwrapperActivation":
+                return new CloudwrapperActivation(name, <any>undefined, { urn })
+            case "akamai:index/cloudwrapperConfiguration:CloudwrapperConfiguration":
+                return new CloudwrapperConfiguration(name, <any>undefined, { urn })
             case "akamai:index/cpCode:CpCode":
                 return new CpCode(name, <any>undefined, { urn })
             case "akamai:index/cpsDvEnrollment:CpsDvEnrollment":
@@ -1554,6 +1629,7 @@ pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategory",
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategoryAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomBotCategorySequence", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomClient", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomClientSequence", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomDefinedBot", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanCustomDenyAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanJavascriptInjection", _module)
@@ -1561,10 +1637,14 @@ pulumi.runtime.registerResourceModule("akamai", "index/botmanRecategorizedAkamai
 pulumi.runtime.registerResourceModule("akamai", "index/botmanServeAlternateAction", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanTransactionalEndpoint", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/botmanTransactionalEndpointProtection", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/clientlistActivation", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/clientlistList", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancer", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsApplicationLoadBalancerActivation", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsPolicy", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cloudletsPolicyActivation", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cloudwrapperActivation", _module)
+pulumi.runtime.registerResourceModule("akamai", "index/cloudwrapperConfiguration", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cpCode", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cpsDvEnrollment", _module)
 pulumi.runtime.registerResourceModule("akamai", "index/cpsDvValidation", _module)

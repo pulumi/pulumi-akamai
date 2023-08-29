@@ -19,7 +19,7 @@ namespace Pulumi.Akamai.Outputs
         public readonly bool? Enabled;
         public readonly bool? Locked;
         public readonly bool? LogEnabled;
-        public readonly string? LogStreamName;
+        public readonly ImmutableArray<string> LogStreamNames;
         public readonly string? LogStreamTitle;
         public readonly int? SamplingPercentage;
         public readonly string? StreamType;
@@ -40,7 +40,7 @@ namespace Pulumi.Akamai.Outputs
 
             bool? logEnabled,
 
-            string? logStreamName,
+            ImmutableArray<string> logStreamNames,
 
             string? logStreamTitle,
 
@@ -58,7 +58,7 @@ namespace Pulumi.Akamai.Outputs
             Enabled = enabled;
             Locked = locked;
             LogEnabled = logEnabled;
-            LogStreamName = logStreamName;
+            LogStreamNames = logStreamNames;
             LogStreamTitle = logStreamTitle;
             SamplingPercentage = samplingPercentage;
             StreamType = streamType;

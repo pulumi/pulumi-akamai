@@ -151,6 +151,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BotmanCustomBotCategorySequence{}
 	case "akamai:index/botmanCustomClient:BotmanCustomClient":
 		r = &BotmanCustomClient{}
+	case "akamai:index/botmanCustomClientSequence:BotmanCustomClientSequence":
+		r = &BotmanCustomClientSequence{}
 	case "akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot":
 		r = &BotmanCustomDefinedBot{}
 	case "akamai:index/botmanCustomDenyAction:BotmanCustomDenyAction":
@@ -165,6 +167,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BotmanTransactionalEndpoint{}
 	case "akamai:index/botmanTransactionalEndpointProtection:BotmanTransactionalEndpointProtection":
 		r = &BotmanTransactionalEndpointProtection{}
+	case "akamai:index/clientlistActivation:ClientlistActivation":
+		r = &ClientlistActivation{}
+	case "akamai:index/clientlistList:ClientlistList":
+		r = &ClientlistList{}
 	case "akamai:index/cloudletsApplicationLoadBalancer:CloudletsApplicationLoadBalancer":
 		r = &CloudletsApplicationLoadBalancer{}
 	case "akamai:index/cloudletsApplicationLoadBalancerActivation:CloudletsApplicationLoadBalancerActivation":
@@ -173,6 +179,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CloudletsPolicy{}
 	case "akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation":
 		r = &CloudletsPolicyActivation{}
+	case "akamai:index/cloudwrapperActivation:CloudwrapperActivation":
+		r = &CloudwrapperActivation{}
+	case "akamai:index/cloudwrapperConfiguration:CloudwrapperConfiguration":
+		r = &CloudwrapperConfiguration{}
 	case "akamai:index/cpCode:CpCode":
 		r = &CpCode{}
 	case "akamai:index/cpsDvEnrollment:CpsDvEnrollment":
@@ -601,6 +611,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/botmanCustomClientSequence",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/botmanCustomDefinedBot",
 		&module{version},
 	)
@@ -636,6 +651,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"akamai",
+		"index/clientlistActivation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/clientlistList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
 		"index/cloudletsApplicationLoadBalancer",
 		&module{version},
 	)
@@ -652,6 +677,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"akamai",
 		"index/cloudletsPolicyActivation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/cloudwrapperActivation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"akamai",
+		"index/cloudwrapperConfiguration",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
