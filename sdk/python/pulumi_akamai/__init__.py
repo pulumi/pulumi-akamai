@@ -70,6 +70,7 @@ from .botman_custom_bot_category import *
 from .botman_custom_bot_category_action import *
 from .botman_custom_bot_category_sequence import *
 from .botman_custom_client import *
+from .botman_custom_client_sequence import *
 from .botman_custom_defined_bot import *
 from .botman_custom_deny_action import *
 from .botman_javascript_injection import *
@@ -77,10 +78,14 @@ from .botman_recategorized_akamai_defined_bot import *
 from .botman_serve_alternate_action import *
 from .botman_transactional_endpoint import *
 from .botman_transactional_endpoint_protection import *
+from .clientlist_activation import *
+from .clientlist_list import *
 from .cloudlets_application_load_balancer import *
 from .cloudlets_application_load_balancer_activation import *
 from .cloudlets_policy import *
 from .cloudlets_policy_activation import *
+from .cloudwrapper_activation import *
+from .cloudwrapper_configuration import *
 from .cp_code import *
 from .cps_dv_enrollment import *
 from .cps_dv_validation import *
@@ -165,6 +170,7 @@ from .get_botman_custom_bot_category import *
 from .get_botman_custom_bot_category_action import *
 from .get_botman_custom_bot_category_sequence import *
 from .get_botman_custom_client import *
+from .get_botman_custom_client_sequence import *
 from .get_botman_custom_defined_bot import *
 from .get_botman_custom_deny_action import *
 from .get_botman_javascript_injection import *
@@ -173,6 +179,7 @@ from .get_botman_response_action import *
 from .get_botman_serve_alternate_action import *
 from .get_botman_transactional_endpoint import *
 from .get_botman_transactional_endpoint_protection import *
+from .get_clientlist_lists import *
 from .get_cloudlets_api_prioritization_match_rule import *
 from .get_cloudlets_application_load_balancer import *
 from .get_cloudlets_application_load_balancer_match_rule import *
@@ -183,6 +190,12 @@ from .get_cloudlets_phased_release_match_rule import *
 from .get_cloudlets_policy import *
 from .get_cloudlets_request_control_match_rule import *
 from .get_cloudlets_visitor_prioritization_match_rule import *
+from .get_cloudwrapper_capacities import *
+from .get_cloudwrapper_configuration import *
+from .get_cloudwrapper_configurations import *
+from .get_cloudwrapper_location import *
+from .get_cloudwrapper_locations import *
+from .get_cloudwrapper_properties import *
 from .get_contract import *
 from .get_contracts import *
 from .get_cp_code import *
@@ -799,6 +812,14 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/botmanCustomClientSequence",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/botmanCustomClientSequence:BotmanCustomClientSequence": "BotmanCustomClientSequence"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/botmanCustomDefinedBot",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -855,6 +876,22 @@ _utilities.register(
  },
  {
   "pkg": "akamai",
+  "mod": "index/clientlistActivation",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/clientlistActivation:ClientlistActivation": "ClientlistActivation"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/clientlistList",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/clientlistList:ClientlistList": "ClientlistList"
+  }
+ },
+ {
+  "pkg": "akamai",
   "mod": "index/cloudletsApplicationLoadBalancer",
   "fqn": "pulumi_akamai",
   "classes": {
@@ -883,6 +920,22 @@ _utilities.register(
   "fqn": "pulumi_akamai",
   "classes": {
    "akamai:index/cloudletsPolicyActivation:CloudletsPolicyActivation": "CloudletsPolicyActivation"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/cloudwrapperActivation",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cloudwrapperActivation:CloudwrapperActivation": "CloudwrapperActivation"
+  }
+ },
+ {
+  "pkg": "akamai",
+  "mod": "index/cloudwrapperConfiguration",
+  "fqn": "pulumi_akamai",
+  "classes": {
+   "akamai:index/cloudwrapperConfiguration:CloudwrapperConfiguration": "CloudwrapperConfiguration"
   }
  },
  {

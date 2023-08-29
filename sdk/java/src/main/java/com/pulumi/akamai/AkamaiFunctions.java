@@ -142,6 +142,8 @@ import com.pulumi.akamai.inputs.GetBotmanCustomBotCategorySequenceArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomBotCategorySequencePlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomClientArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomClientPlainArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomClientSequenceArgs;
+import com.pulumi.akamai.inputs.GetBotmanCustomClientSequencePlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomDefinedBotArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomDefinedBotPlainArgs;
 import com.pulumi.akamai.inputs.GetBotmanCustomDenyActionArgs;
@@ -162,6 +164,8 @@ import com.pulumi.akamai.inputs.GetCPSEnrollmentArgs;
 import com.pulumi.akamai.inputs.GetCPSEnrollmentPlainArgs;
 import com.pulumi.akamai.inputs.GetCPSEnrollmentsArgs;
 import com.pulumi.akamai.inputs.GetCPSEnrollmentsPlainArgs;
+import com.pulumi.akamai.inputs.GetClientlistListsArgs;
+import com.pulumi.akamai.inputs.GetClientlistListsPlainArgs;
 import com.pulumi.akamai.inputs.GetCloudletsApiPrioritizationMatchRuleArgs;
 import com.pulumi.akamai.inputs.GetCloudletsApiPrioritizationMatchRulePlainArgs;
 import com.pulumi.akamai.inputs.GetCloudletsApplicationLoadBalancerArgs;
@@ -182,6 +186,18 @@ import com.pulumi.akamai.inputs.GetCloudletsRequestControlMatchRuleArgs;
 import com.pulumi.akamai.inputs.GetCloudletsRequestControlMatchRulePlainArgs;
 import com.pulumi.akamai.inputs.GetCloudletsVisitorPrioritizationMatchRuleArgs;
 import com.pulumi.akamai.inputs.GetCloudletsVisitorPrioritizationMatchRulePlainArgs;
+import com.pulumi.akamai.inputs.GetCloudwrapperCapacitiesArgs;
+import com.pulumi.akamai.inputs.GetCloudwrapperCapacitiesPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudwrapperConfigurationArgs;
+import com.pulumi.akamai.inputs.GetCloudwrapperConfigurationPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudwrapperConfigurationsArgs;
+import com.pulumi.akamai.inputs.GetCloudwrapperConfigurationsPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudwrapperLocationArgs;
+import com.pulumi.akamai.inputs.GetCloudwrapperLocationPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudwrapperLocationsArgs;
+import com.pulumi.akamai.inputs.GetCloudwrapperLocationsPlainArgs;
+import com.pulumi.akamai.inputs.GetCloudwrapperPropertiesArgs;
+import com.pulumi.akamai.inputs.GetCloudwrapperPropertiesPlainArgs;
 import com.pulumi.akamai.inputs.GetContractArgs;
 import com.pulumi.akamai.inputs.GetContractPlainArgs;
 import com.pulumi.akamai.inputs.GetCpCodeArgs;
@@ -325,6 +341,7 @@ import com.pulumi.akamai.outputs.GetBotmanCustomBotCategoryActionResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomBotCategoryResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomBotCategorySequenceResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomClientResult;
+import com.pulumi.akamai.outputs.GetBotmanCustomClientSequenceResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomDefinedBotResult;
 import com.pulumi.akamai.outputs.GetBotmanCustomDenyActionResult;
 import com.pulumi.akamai.outputs.GetBotmanJavascriptInjectionResult;
@@ -335,6 +352,7 @@ import com.pulumi.akamai.outputs.GetBotmanTransactionalEndpointProtectionResult;
 import com.pulumi.akamai.outputs.GetBotmanTransactionalEndpointResult;
 import com.pulumi.akamai.outputs.GetCPSEnrollmentResult;
 import com.pulumi.akamai.outputs.GetCPSEnrollmentsResult;
+import com.pulumi.akamai.outputs.GetClientlistListsResult;
 import com.pulumi.akamai.outputs.GetCloudletsApiPrioritizationMatchRuleResult;
 import com.pulumi.akamai.outputs.GetCloudletsApplicationLoadBalancerMatchRuleResult;
 import com.pulumi.akamai.outputs.GetCloudletsApplicationLoadBalancerResult;
@@ -345,6 +363,12 @@ import com.pulumi.akamai.outputs.GetCloudletsPhasedReleaseMatchRuleResult;
 import com.pulumi.akamai.outputs.GetCloudletsPolicyResult;
 import com.pulumi.akamai.outputs.GetCloudletsRequestControlMatchRuleResult;
 import com.pulumi.akamai.outputs.GetCloudletsVisitorPrioritizationMatchRuleResult;
+import com.pulumi.akamai.outputs.GetCloudwrapperCapacitiesResult;
+import com.pulumi.akamai.outputs.GetCloudwrapperConfigurationResult;
+import com.pulumi.akamai.outputs.GetCloudwrapperConfigurationsResult;
+import com.pulumi.akamai.outputs.GetCloudwrapperLocationResult;
+import com.pulumi.akamai.outputs.GetCloudwrapperLocationsResult;
+import com.pulumi.akamai.outputs.GetCloudwrapperPropertiesResult;
 import com.pulumi.akamai.outputs.GetContractResult;
 import com.pulumi.akamai.outputs.GetContractsResult;
 import com.pulumi.akamai.outputs.GetCpCodeResult;
@@ -1312,6 +1336,18 @@ public final class AkamaiFunctions {
     public static CompletableFuture<GetBotmanCustomClientResult> getBotmanCustomClientPlain(GetBotmanCustomClientPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getBotmanCustomClient:getBotmanCustomClient", TypeShape.of(GetBotmanCustomClientResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetBotmanCustomClientSequenceResult> getBotmanCustomClientSequence(GetBotmanCustomClientSequenceArgs args) {
+        return getBotmanCustomClientSequence(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetBotmanCustomClientSequenceResult> getBotmanCustomClientSequencePlain(GetBotmanCustomClientSequencePlainArgs args) {
+        return getBotmanCustomClientSequencePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetBotmanCustomClientSequenceResult> getBotmanCustomClientSequence(GetBotmanCustomClientSequenceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getBotmanCustomClientSequence:getBotmanCustomClientSequence", TypeShape.of(GetBotmanCustomClientSequenceResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetBotmanCustomClientSequenceResult> getBotmanCustomClientSequencePlain(GetBotmanCustomClientSequencePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getBotmanCustomClientSequence:getBotmanCustomClientSequence", TypeShape.of(GetBotmanCustomClientSequenceResult.class), args, Utilities.withVersion(options));
+    }
     public static Output<GetBotmanCustomDefinedBotResult> getBotmanCustomDefinedBot(GetBotmanCustomDefinedBotArgs args) {
         return getBotmanCustomDefinedBot(args, InvokeOptions.Empty);
     }
@@ -1431,6 +1467,24 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetCPSEnrollmentsResult> getCPSEnrollmentsPlain(GetCPSEnrollmentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getCPSEnrollments:getCPSEnrollments", TypeShape.of(GetCPSEnrollmentsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetClientlistListsResult> getClientlistLists() {
+        return getClientlistLists(GetClientlistListsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetClientlistListsResult> getClientlistListsPlain() {
+        return getClientlistListsPlain(GetClientlistListsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetClientlistListsResult> getClientlistLists(GetClientlistListsArgs args) {
+        return getClientlistLists(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetClientlistListsResult> getClientlistListsPlain(GetClientlistListsPlainArgs args) {
+        return getClientlistListsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetClientlistListsResult> getClientlistLists(GetClientlistListsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getClientlistLists:getClientlistLists", TypeShape.of(GetClientlistListsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetClientlistListsResult> getClientlistListsPlain(GetClientlistListsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getClientlistLists:getClientlistLists", TypeShape.of(GetClientlistListsResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetCloudletsApiPrioritizationMatchRuleResult> getCloudletsApiPrioritizationMatchRule() {
         return getCloudletsApiPrioritizationMatchRule(GetCloudletsApiPrioritizationMatchRuleArgs.Empty, InvokeOptions.Empty);
@@ -1599,6 +1653,102 @@ public final class AkamaiFunctions {
     }
     public static CompletableFuture<GetCloudletsVisitorPrioritizationMatchRuleResult> getCloudletsVisitorPrioritizationMatchRulePlain(GetCloudletsVisitorPrioritizationMatchRulePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("akamai:index/getCloudletsVisitorPrioritizationMatchRule:getCloudletsVisitorPrioritizationMatchRule", TypeShape.of(GetCloudletsVisitorPrioritizationMatchRuleResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudwrapperCapacitiesResult> getCloudwrapperCapacities() {
+        return getCloudwrapperCapacities(GetCloudwrapperCapacitiesArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudwrapperCapacitiesResult> getCloudwrapperCapacitiesPlain() {
+        return getCloudwrapperCapacitiesPlain(GetCloudwrapperCapacitiesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudwrapperCapacitiesResult> getCloudwrapperCapacities(GetCloudwrapperCapacitiesArgs args) {
+        return getCloudwrapperCapacities(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudwrapperCapacitiesResult> getCloudwrapperCapacitiesPlain(GetCloudwrapperCapacitiesPlainArgs args) {
+        return getCloudwrapperCapacitiesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudwrapperCapacitiesResult> getCloudwrapperCapacities(GetCloudwrapperCapacitiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudwrapperCapacities:getCloudwrapperCapacities", TypeShape.of(GetCloudwrapperCapacitiesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudwrapperCapacitiesResult> getCloudwrapperCapacitiesPlain(GetCloudwrapperCapacitiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudwrapperCapacities:getCloudwrapperCapacities", TypeShape.of(GetCloudwrapperCapacitiesResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudwrapperConfigurationResult> getCloudwrapperConfiguration(GetCloudwrapperConfigurationArgs args) {
+        return getCloudwrapperConfiguration(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudwrapperConfigurationResult> getCloudwrapperConfigurationPlain(GetCloudwrapperConfigurationPlainArgs args) {
+        return getCloudwrapperConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudwrapperConfigurationResult> getCloudwrapperConfiguration(GetCloudwrapperConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudwrapperConfiguration:getCloudwrapperConfiguration", TypeShape.of(GetCloudwrapperConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudwrapperConfigurationResult> getCloudwrapperConfigurationPlain(GetCloudwrapperConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudwrapperConfiguration:getCloudwrapperConfiguration", TypeShape.of(GetCloudwrapperConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudwrapperConfigurationsResult> getCloudwrapperConfigurations() {
+        return getCloudwrapperConfigurations(GetCloudwrapperConfigurationsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudwrapperConfigurationsResult> getCloudwrapperConfigurationsPlain() {
+        return getCloudwrapperConfigurationsPlain(GetCloudwrapperConfigurationsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudwrapperConfigurationsResult> getCloudwrapperConfigurations(GetCloudwrapperConfigurationsArgs args) {
+        return getCloudwrapperConfigurations(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudwrapperConfigurationsResult> getCloudwrapperConfigurationsPlain(GetCloudwrapperConfigurationsPlainArgs args) {
+        return getCloudwrapperConfigurationsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudwrapperConfigurationsResult> getCloudwrapperConfigurations(GetCloudwrapperConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudwrapperConfigurations:getCloudwrapperConfigurations", TypeShape.of(GetCloudwrapperConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudwrapperConfigurationsResult> getCloudwrapperConfigurationsPlain(GetCloudwrapperConfigurationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudwrapperConfigurations:getCloudwrapperConfigurations", TypeShape.of(GetCloudwrapperConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudwrapperLocationResult> getCloudwrapperLocation(GetCloudwrapperLocationArgs args) {
+        return getCloudwrapperLocation(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudwrapperLocationResult> getCloudwrapperLocationPlain(GetCloudwrapperLocationPlainArgs args) {
+        return getCloudwrapperLocationPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudwrapperLocationResult> getCloudwrapperLocation(GetCloudwrapperLocationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudwrapperLocation:getCloudwrapperLocation", TypeShape.of(GetCloudwrapperLocationResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudwrapperLocationResult> getCloudwrapperLocationPlain(GetCloudwrapperLocationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudwrapperLocation:getCloudwrapperLocation", TypeShape.of(GetCloudwrapperLocationResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudwrapperLocationsResult> getCloudwrapperLocations() {
+        return getCloudwrapperLocations(GetCloudwrapperLocationsArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudwrapperLocationsResult> getCloudwrapperLocationsPlain() {
+        return getCloudwrapperLocationsPlain(GetCloudwrapperLocationsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudwrapperLocationsResult> getCloudwrapperLocations(GetCloudwrapperLocationsArgs args) {
+        return getCloudwrapperLocations(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudwrapperLocationsResult> getCloudwrapperLocationsPlain(GetCloudwrapperLocationsPlainArgs args) {
+        return getCloudwrapperLocationsPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudwrapperLocationsResult> getCloudwrapperLocations(GetCloudwrapperLocationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudwrapperLocations:getCloudwrapperLocations", TypeShape.of(GetCloudwrapperLocationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudwrapperLocationsResult> getCloudwrapperLocationsPlain(GetCloudwrapperLocationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudwrapperLocations:getCloudwrapperLocations", TypeShape.of(GetCloudwrapperLocationsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetCloudwrapperPropertiesResult> getCloudwrapperProperties() {
+        return getCloudwrapperProperties(GetCloudwrapperPropertiesArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudwrapperPropertiesResult> getCloudwrapperPropertiesPlain() {
+        return getCloudwrapperPropertiesPlain(GetCloudwrapperPropertiesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudwrapperPropertiesResult> getCloudwrapperProperties(GetCloudwrapperPropertiesArgs args) {
+        return getCloudwrapperProperties(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCloudwrapperPropertiesResult> getCloudwrapperPropertiesPlain(GetCloudwrapperPropertiesPlainArgs args) {
+        return getCloudwrapperPropertiesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCloudwrapperPropertiesResult> getCloudwrapperProperties(GetCloudwrapperPropertiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("akamai:index/getCloudwrapperProperties:getCloudwrapperProperties", TypeShape.of(GetCloudwrapperPropertiesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCloudwrapperPropertiesResult> getCloudwrapperPropertiesPlain(GetCloudwrapperPropertiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("akamai:index/getCloudwrapperProperties:getCloudwrapperProperties", TypeShape.of(GetCloudwrapperPropertiesResult.class), args, Utilities.withVersion(options));
     }
     public static Output<GetContractResult> getContract() {
         return getContract(GetContractArgs.Empty, InvokeOptions.Empty);

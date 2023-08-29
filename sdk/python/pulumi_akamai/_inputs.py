@@ -10,8 +10,13 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
+    'ClientlistListItemArgs',
     'CloudletsApplicationLoadBalancerDataCenterArgs',
     'CloudletsApplicationLoadBalancerLivenessSettingsArgs',
+    'CloudwrapperActivationTimeoutsArgs',
+    'CloudwrapperConfigurationLocationArgs',
+    'CloudwrapperConfigurationLocationCapacityArgs',
+    'CloudwrapperConfigurationTimeoutsArgs',
     'CpsDvEnrollmentAdminContactArgs',
     'CpsDvEnrollmentCsrArgs',
     'CpsDvEnrollmentDnsChallengeArgs',
@@ -104,6 +109,30 @@ __all__ = [
     'GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchArgs',
     'GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueArgs',
     'GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOptionsArgs',
+    'GetCloudwrapperCapacitiesCapacityArgs',
+    'GetCloudwrapperCapacitiesCapacityApprovedArgs',
+    'GetCloudwrapperCapacitiesCapacityAssignedArgs',
+    'GetCloudwrapperCapacitiesCapacityUnassignedArgs',
+    'GetCloudwrapperConfigurationLocationArgs',
+    'GetCloudwrapperConfigurationLocationCapacityArgs',
+    'GetCloudwrapperConfigurationMultiCdnSettingsArgs',
+    'GetCloudwrapperConfigurationMultiCdnSettingsBoccArgs',
+    'GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs',
+    'GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs',
+    'GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgs',
+    'GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs',
+    'GetCloudwrapperConfigurationsConfigurationArgs',
+    'GetCloudwrapperConfigurationsConfigurationLocationArgs',
+    'GetCloudwrapperConfigurationsConfigurationLocationCapacityArgs',
+    'GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs',
+    'GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs',
+    'GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs',
+    'GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs',
+    'GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs',
+    'GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs',
+    'GetCloudwrapperLocationsLocationArgs',
+    'GetCloudwrapperLocationsLocationTrafficTypeArgs',
+    'GetCloudwrapperPropertiesPropertyArgs',
     'GetImagingPolicyImagePolicyArgs',
     'GetImagingPolicyImagePolicyBreakpointsArgs',
     'GetImagingPolicyImagePolicyOutputArgs',
@@ -835,6 +864,58 @@ __all__ = [
 ]
 
 @pulumi.input_type
+class ClientlistListItemArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str],
+                 description: Optional[pulumi.Input[str]] = None,
+                 expiration_date: Optional[pulumi.Input[str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        pulumi.set(__self__, "value", value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if expiration_date is not None:
+            pulumi.set(__self__, "expiration_date", expiration_date)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="expirationDate")
+    def expiration_date(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "expiration_date")
+
+    @expiration_date.setter
+    def expiration_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "expiration_date", value)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tags", value)
+
+
+@pulumi.input_type
 class CloudletsApplicationLoadBalancerDataCenterArgs:
     def __init__(__self__, *,
                  continent: pulumi.Input[str],
@@ -1133,6 +1214,118 @@ class CloudletsApplicationLoadBalancerLivenessSettingsArgs:
     @timeout.setter
     def timeout(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "timeout", value)
+
+
+@pulumi.input_type
+class CloudwrapperActivationTimeoutsArgs:
+    def __init__(__self__, *,
+                 create: Optional[pulumi.Input[str]] = None,
+                 update: Optional[pulumi.Input[str]] = None):
+        if create is not None:
+            pulumi.set(__self__, "create", create)
+        if update is not None:
+            pulumi.set(__self__, "update", update)
+
+    @property
+    @pulumi.getter
+    def create(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "create")
+
+    @create.setter
+    def create(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "create", value)
+
+    @property
+    @pulumi.getter
+    def update(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "update")
+
+    @update.setter
+    def update(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "update", value)
+
+
+@pulumi.input_type
+class CloudwrapperConfigurationLocationArgs:
+    def __init__(__self__, *,
+                 comments: pulumi.Input[str],
+                 traffic_type_id: pulumi.Input[int],
+                 capacity: Optional[pulumi.Input['CloudwrapperConfigurationLocationCapacityArgs']] = None):
+        pulumi.set(__self__, "comments", comments)
+        pulumi.set(__self__, "traffic_type_id", traffic_type_id)
+        if capacity is not None:
+            pulumi.set(__self__, "capacity", capacity)
+
+    @property
+    @pulumi.getter
+    def comments(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "comments")
+
+    @comments.setter
+    def comments(self, value: pulumi.Input[str]):
+        pulumi.set(self, "comments", value)
+
+    @property
+    @pulumi.getter(name="trafficTypeId")
+    def traffic_type_id(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "traffic_type_id")
+
+    @traffic_type_id.setter
+    def traffic_type_id(self, value: pulumi.Input[int]):
+        pulumi.set(self, "traffic_type_id", value)
+
+    @property
+    @pulumi.getter
+    def capacity(self) -> Optional[pulumi.Input['CloudwrapperConfigurationLocationCapacityArgs']]:
+        return pulumi.get(self, "capacity")
+
+    @capacity.setter
+    def capacity(self, value: Optional[pulumi.Input['CloudwrapperConfigurationLocationCapacityArgs']]):
+        pulumi.set(self, "capacity", value)
+
+
+@pulumi.input_type
+class CloudwrapperConfigurationLocationCapacityArgs:
+    def __init__(__self__, *,
+                 unit: pulumi.Input[str],
+                 value: pulumi.Input[int]):
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[str]):
+        pulumi.set(self, "unit", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[int]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class CloudwrapperConfigurationTimeoutsArgs:
+    def __init__(__self__, *,
+                 delete: Optional[pulumi.Input[str]] = None):
+        if delete is not None:
+            pulumi.set(__self__, "delete", delete)
+
+    @property
+    @pulumi.getter
+    def delete(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "delete")
+
+    @delete.setter
+    def delete(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "delete", value)
 
 
 @pulumi.input_type
@@ -7861,6 +8054,1261 @@ class GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectMatchValueOp
     @values.setter
     def values(self, value: Optional[Sequence[str]]):
         pulumi.set(self, "values", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperCapacitiesCapacityArgs:
+    def __init__(__self__, *,
+                 approved: 'GetCloudwrapperCapacitiesCapacityApprovedArgs',
+                 assigned: 'GetCloudwrapperCapacitiesCapacityAssignedArgs',
+                 contract_id: str,
+                 location_id: int,
+                 location_name: str,
+                 type: str,
+                 unassigned: 'GetCloudwrapperCapacitiesCapacityUnassignedArgs'):
+        pulumi.set(__self__, "approved", approved)
+        pulumi.set(__self__, "assigned", assigned)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "location_id", location_id)
+        pulumi.set(__self__, "location_name", location_name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "unassigned", unassigned)
+
+    @property
+    @pulumi.getter
+    def approved(self) -> 'GetCloudwrapperCapacitiesCapacityApprovedArgs':
+        return pulumi.get(self, "approved")
+
+    @approved.setter
+    def approved(self, value: 'GetCloudwrapperCapacitiesCapacityApprovedArgs'):
+        pulumi.set(self, "approved", value)
+
+    @property
+    @pulumi.getter
+    def assigned(self) -> 'GetCloudwrapperCapacitiesCapacityAssignedArgs':
+        return pulumi.get(self, "assigned")
+
+    @assigned.setter
+    def assigned(self, value: 'GetCloudwrapperCapacitiesCapacityAssignedArgs'):
+        pulumi.set(self, "assigned", value)
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> str:
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: str):
+        pulumi.set(self, "contract_id", value)
+
+    @property
+    @pulumi.getter(name="locationId")
+    def location_id(self) -> int:
+        return pulumi.get(self, "location_id")
+
+    @location_id.setter
+    def location_id(self, value: int):
+        pulumi.set(self, "location_id", value)
+
+    @property
+    @pulumi.getter(name="locationName")
+    def location_name(self) -> str:
+        return pulumi.get(self, "location_name")
+
+    @location_name.setter
+    def location_name(self, value: str):
+        pulumi.set(self, "location_name", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: str):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def unassigned(self) -> 'GetCloudwrapperCapacitiesCapacityUnassignedArgs':
+        return pulumi.get(self, "unassigned")
+
+    @unassigned.setter
+    def unassigned(self, value: 'GetCloudwrapperCapacitiesCapacityUnassignedArgs'):
+        pulumi.set(self, "unassigned", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperCapacitiesCapacityApprovedArgs:
+    def __init__(__self__, *,
+                 unit: str,
+                 value: int):
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: str):
+        pulumi.set(self, "unit", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> int:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: int):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperCapacitiesCapacityAssignedArgs:
+    def __init__(__self__, *,
+                 unit: str,
+                 value: int):
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: str):
+        pulumi.set(self, "unit", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> int:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: int):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperCapacitiesCapacityUnassignedArgs:
+    def __init__(__self__, *,
+                 unit: str,
+                 value: int):
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: str):
+        pulumi.set(self, "unit", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> int:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: int):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationLocationArgs:
+    def __init__(__self__, *,
+                 capacity: 'GetCloudwrapperConfigurationLocationCapacityArgs',
+                 comments: str,
+                 map_name: str,
+                 traffic_type_id: int):
+        pulumi.set(__self__, "capacity", capacity)
+        pulumi.set(__self__, "comments", comments)
+        pulumi.set(__self__, "map_name", map_name)
+        pulumi.set(__self__, "traffic_type_id", traffic_type_id)
+
+    @property
+    @pulumi.getter
+    def capacity(self) -> 'GetCloudwrapperConfigurationLocationCapacityArgs':
+        return pulumi.get(self, "capacity")
+
+    @capacity.setter
+    def capacity(self, value: 'GetCloudwrapperConfigurationLocationCapacityArgs'):
+        pulumi.set(self, "capacity", value)
+
+    @property
+    @pulumi.getter
+    def comments(self) -> str:
+        return pulumi.get(self, "comments")
+
+    @comments.setter
+    def comments(self, value: str):
+        pulumi.set(self, "comments", value)
+
+    @property
+    @pulumi.getter(name="mapName")
+    def map_name(self) -> str:
+        return pulumi.get(self, "map_name")
+
+    @map_name.setter
+    def map_name(self, value: str):
+        pulumi.set(self, "map_name", value)
+
+    @property
+    @pulumi.getter(name="trafficTypeId")
+    def traffic_type_id(self) -> int:
+        return pulumi.get(self, "traffic_type_id")
+
+    @traffic_type_id.setter
+    def traffic_type_id(self, value: int):
+        pulumi.set(self, "traffic_type_id", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationLocationCapacityArgs:
+    def __init__(__self__, *,
+                 unit: str,
+                 value: int):
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: str):
+        pulumi.set(self, "unit", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> int:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: int):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationMultiCdnSettingsArgs:
+    def __init__(__self__, *,
+                 enable_soft_alerts: bool,
+                 bocc: Optional['GetCloudwrapperConfigurationMultiCdnSettingsBoccArgs'] = None,
+                 cdns: Optional[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs']] = None,
+                 data_streams: Optional['GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgs'] = None,
+                 origins: Optional[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs']] = None):
+        pulumi.set(__self__, "enable_soft_alerts", enable_soft_alerts)
+        if bocc is not None:
+            pulumi.set(__self__, "bocc", bocc)
+        if cdns is not None:
+            pulumi.set(__self__, "cdns", cdns)
+        if data_streams is not None:
+            pulumi.set(__self__, "data_streams", data_streams)
+        if origins is not None:
+            pulumi.set(__self__, "origins", origins)
+
+    @property
+    @pulumi.getter(name="enableSoftAlerts")
+    def enable_soft_alerts(self) -> bool:
+        return pulumi.get(self, "enable_soft_alerts")
+
+    @enable_soft_alerts.setter
+    def enable_soft_alerts(self, value: bool):
+        pulumi.set(self, "enable_soft_alerts", value)
+
+    @property
+    @pulumi.getter
+    def bocc(self) -> Optional['GetCloudwrapperConfigurationMultiCdnSettingsBoccArgs']:
+        return pulumi.get(self, "bocc")
+
+    @bocc.setter
+    def bocc(self, value: Optional['GetCloudwrapperConfigurationMultiCdnSettingsBoccArgs']):
+        pulumi.set(self, "bocc", value)
+
+    @property
+    @pulumi.getter
+    def cdns(self) -> Optional[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs']]:
+        return pulumi.get(self, "cdns")
+
+    @cdns.setter
+    def cdns(self, value: Optional[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs']]):
+        pulumi.set(self, "cdns", value)
+
+    @property
+    @pulumi.getter(name="dataStreams")
+    def data_streams(self) -> Optional['GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgs']:
+        return pulumi.get(self, "data_streams")
+
+    @data_streams.setter
+    def data_streams(self, value: Optional['GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgs']):
+        pulumi.set(self, "data_streams", value)
+
+    @property
+    @pulumi.getter
+    def origins(self) -> Optional[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs']]:
+        return pulumi.get(self, "origins")
+
+    @origins.setter
+    def origins(self, value: Optional[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs']]):
+        pulumi.set(self, "origins", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationMultiCdnSettingsBoccArgs:
+    def __init__(__self__, *,
+                 conditional_sampling_frequency: str,
+                 enabled: bool,
+                 forward_type: str,
+                 request_type: str,
+                 sampling_frequency: str):
+        pulumi.set(__self__, "conditional_sampling_frequency", conditional_sampling_frequency)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "forward_type", forward_type)
+        pulumi.set(__self__, "request_type", request_type)
+        pulumi.set(__self__, "sampling_frequency", sampling_frequency)
+
+    @property
+    @pulumi.getter(name="conditionalSamplingFrequency")
+    def conditional_sampling_frequency(self) -> str:
+        return pulumi.get(self, "conditional_sampling_frequency")
+
+    @conditional_sampling_frequency.setter
+    def conditional_sampling_frequency(self, value: str):
+        pulumi.set(self, "conditional_sampling_frequency", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: bool):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="forwardType")
+    def forward_type(self) -> str:
+        return pulumi.get(self, "forward_type")
+
+    @forward_type.setter
+    def forward_type(self, value: str):
+        pulumi.set(self, "forward_type", value)
+
+    @property
+    @pulumi.getter(name="requestType")
+    def request_type(self) -> str:
+        return pulumi.get(self, "request_type")
+
+    @request_type.setter
+    def request_type(self, value: str):
+        pulumi.set(self, "request_type", value)
+
+    @property
+    @pulumi.getter(name="samplingFrequency")
+    def sampling_frequency(self) -> str:
+        return pulumi.get(self, "sampling_frequency")
+
+    @sampling_frequency.setter
+    def sampling_frequency(self, value: str):
+        pulumi.set(self, "sampling_frequency", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs:
+    def __init__(__self__, *,
+                 cdn_code: str,
+                 enabled: bool,
+                 https_only: bool,
+                 ip_acl_cidrs: Sequence[str],
+                 cdn_auth_keys: Optional[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs']] = None):
+        pulumi.set(__self__, "cdn_code", cdn_code)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "https_only", https_only)
+        pulumi.set(__self__, "ip_acl_cidrs", ip_acl_cidrs)
+        if cdn_auth_keys is not None:
+            pulumi.set(__self__, "cdn_auth_keys", cdn_auth_keys)
+
+    @property
+    @pulumi.getter(name="cdnCode")
+    def cdn_code(self) -> str:
+        return pulumi.get(self, "cdn_code")
+
+    @cdn_code.setter
+    def cdn_code(self, value: str):
+        pulumi.set(self, "cdn_code", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: bool):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="httpsOnly")
+    def https_only(self) -> bool:
+        return pulumi.get(self, "https_only")
+
+    @https_only.setter
+    def https_only(self, value: bool):
+        pulumi.set(self, "https_only", value)
+
+    @property
+    @pulumi.getter(name="ipAclCidrs")
+    def ip_acl_cidrs(self) -> Sequence[str]:
+        return pulumi.get(self, "ip_acl_cidrs")
+
+    @ip_acl_cidrs.setter
+    def ip_acl_cidrs(self, value: Sequence[str]):
+        pulumi.set(self, "ip_acl_cidrs", value)
+
+    @property
+    @pulumi.getter(name="cdnAuthKeys")
+    def cdn_auth_keys(self) -> Optional[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs']]:
+        return pulumi.get(self, "cdn_auth_keys")
+
+    @cdn_auth_keys.setter
+    def cdn_auth_keys(self, value: Optional[Sequence['GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs']]):
+        pulumi.set(self, "cdn_auth_keys", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs:
+    def __init__(__self__, *,
+                 auth_key_name: str,
+                 expiry_date: str,
+                 header_name: str,
+                 secret: str):
+        pulumi.set(__self__, "auth_key_name", auth_key_name)
+        pulumi.set(__self__, "expiry_date", expiry_date)
+        pulumi.set(__self__, "header_name", header_name)
+        pulumi.set(__self__, "secret", secret)
+
+    @property
+    @pulumi.getter(name="authKeyName")
+    def auth_key_name(self) -> str:
+        return pulumi.get(self, "auth_key_name")
+
+    @auth_key_name.setter
+    def auth_key_name(self, value: str):
+        pulumi.set(self, "auth_key_name", value)
+
+    @property
+    @pulumi.getter(name="expiryDate")
+    def expiry_date(self) -> str:
+        return pulumi.get(self, "expiry_date")
+
+    @expiry_date.setter
+    def expiry_date(self, value: str):
+        pulumi.set(self, "expiry_date", value)
+
+    @property
+    @pulumi.getter(name="headerName")
+    def header_name(self) -> str:
+        return pulumi.get(self, "header_name")
+
+    @header_name.setter
+    def header_name(self, value: str):
+        pulumi.set(self, "header_name", value)
+
+    @property
+    @pulumi.getter
+    def secret(self) -> str:
+        return pulumi.get(self, "secret")
+
+    @secret.setter
+    def secret(self, value: str):
+        pulumi.set(self, "secret", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgs:
+    def __init__(__self__, *,
+                 data_stream_ids: Sequence[int],
+                 enabled: bool,
+                 sampling_rate: int):
+        pulumi.set(__self__, "data_stream_ids", data_stream_ids)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "sampling_rate", sampling_rate)
+
+    @property
+    @pulumi.getter(name="dataStreamIds")
+    def data_stream_ids(self) -> Sequence[int]:
+        return pulumi.get(self, "data_stream_ids")
+
+    @data_stream_ids.setter
+    def data_stream_ids(self, value: Sequence[int]):
+        pulumi.set(self, "data_stream_ids", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: bool):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="samplingRate")
+    def sampling_rate(self) -> int:
+        return pulumi.get(self, "sampling_rate")
+
+    @sampling_rate.setter
+    def sampling_rate(self, value: int):
+        pulumi.set(self, "sampling_rate", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs:
+    def __init__(__self__, *,
+                 hostname: str,
+                 origin_id: str,
+                 property_id: int):
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "origin_id", origin_id)
+        pulumi.set(__self__, "property_id", property_id)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> str:
+        return pulumi.get(self, "hostname")
+
+    @hostname.setter
+    def hostname(self, value: str):
+        pulumi.set(self, "hostname", value)
+
+    @property
+    @pulumi.getter(name="originId")
+    def origin_id(self) -> str:
+        return pulumi.get(self, "origin_id")
+
+    @origin_id.setter
+    def origin_id(self, value: str):
+        pulumi.set(self, "origin_id", value)
+
+    @property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> int:
+        return pulumi.get(self, "property_id")
+
+    @property_id.setter
+    def property_id(self, value: int):
+        pulumi.set(self, "property_id", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationsConfigurationArgs:
+    def __init__(__self__, *,
+                 capacity_alerts_threshold: int,
+                 comments: str,
+                 config_name: str,
+                 contract_id: str,
+                 id: int,
+                 last_activated_by: str,
+                 last_activated_date: str,
+                 last_updated_by: str,
+                 last_updated_date: str,
+                 notification_emails: Sequence[str],
+                 property_ids: Sequence[str],
+                 retain_idle_objects: bool,
+                 status: str,
+                 locations: Optional[Sequence['GetCloudwrapperConfigurationsConfigurationLocationArgs']] = None,
+                 multi_cdn_settings: Optional['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs'] = None):
+        pulumi.set(__self__, "capacity_alerts_threshold", capacity_alerts_threshold)
+        pulumi.set(__self__, "comments", comments)
+        pulumi.set(__self__, "config_name", config_name)
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_activated_by", last_activated_by)
+        pulumi.set(__self__, "last_activated_date", last_activated_date)
+        pulumi.set(__self__, "last_updated_by", last_updated_by)
+        pulumi.set(__self__, "last_updated_date", last_updated_date)
+        pulumi.set(__self__, "notification_emails", notification_emails)
+        pulumi.set(__self__, "property_ids", property_ids)
+        pulumi.set(__self__, "retain_idle_objects", retain_idle_objects)
+        pulumi.set(__self__, "status", status)
+        if locations is not None:
+            pulumi.set(__self__, "locations", locations)
+        if multi_cdn_settings is not None:
+            pulumi.set(__self__, "multi_cdn_settings", multi_cdn_settings)
+
+    @property
+    @pulumi.getter(name="capacityAlertsThreshold")
+    def capacity_alerts_threshold(self) -> int:
+        return pulumi.get(self, "capacity_alerts_threshold")
+
+    @capacity_alerts_threshold.setter
+    def capacity_alerts_threshold(self, value: int):
+        pulumi.set(self, "capacity_alerts_threshold", value)
+
+    @property
+    @pulumi.getter
+    def comments(self) -> str:
+        return pulumi.get(self, "comments")
+
+    @comments.setter
+    def comments(self, value: str):
+        pulumi.set(self, "comments", value)
+
+    @property
+    @pulumi.getter(name="configName")
+    def config_name(self) -> str:
+        return pulumi.get(self, "config_name")
+
+    @config_name.setter
+    def config_name(self, value: str):
+        pulumi.set(self, "config_name", value)
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> str:
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: str):
+        pulumi.set(self, "contract_id", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> int:
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: int):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="lastActivatedBy")
+    def last_activated_by(self) -> str:
+        return pulumi.get(self, "last_activated_by")
+
+    @last_activated_by.setter
+    def last_activated_by(self, value: str):
+        pulumi.set(self, "last_activated_by", value)
+
+    @property
+    @pulumi.getter(name="lastActivatedDate")
+    def last_activated_date(self) -> str:
+        return pulumi.get(self, "last_activated_date")
+
+    @last_activated_date.setter
+    def last_activated_date(self, value: str):
+        pulumi.set(self, "last_activated_date", value)
+
+    @property
+    @pulumi.getter(name="lastUpdatedBy")
+    def last_updated_by(self) -> str:
+        return pulumi.get(self, "last_updated_by")
+
+    @last_updated_by.setter
+    def last_updated_by(self, value: str):
+        pulumi.set(self, "last_updated_by", value)
+
+    @property
+    @pulumi.getter(name="lastUpdatedDate")
+    def last_updated_date(self) -> str:
+        return pulumi.get(self, "last_updated_date")
+
+    @last_updated_date.setter
+    def last_updated_date(self, value: str):
+        pulumi.set(self, "last_updated_date", value)
+
+    @property
+    @pulumi.getter(name="notificationEmails")
+    def notification_emails(self) -> Sequence[str]:
+        return pulumi.get(self, "notification_emails")
+
+    @notification_emails.setter
+    def notification_emails(self, value: Sequence[str]):
+        pulumi.set(self, "notification_emails", value)
+
+    @property
+    @pulumi.getter(name="propertyIds")
+    def property_ids(self) -> Sequence[str]:
+        return pulumi.get(self, "property_ids")
+
+    @property_ids.setter
+    def property_ids(self, value: Sequence[str]):
+        pulumi.set(self, "property_ids", value)
+
+    @property
+    @pulumi.getter(name="retainIdleObjects")
+    def retain_idle_objects(self) -> bool:
+        return pulumi.get(self, "retain_idle_objects")
+
+    @retain_idle_objects.setter
+    def retain_idle_objects(self, value: bool):
+        pulumi.set(self, "retain_idle_objects", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: str):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter
+    def locations(self) -> Optional[Sequence['GetCloudwrapperConfigurationsConfigurationLocationArgs']]:
+        return pulumi.get(self, "locations")
+
+    @locations.setter
+    def locations(self, value: Optional[Sequence['GetCloudwrapperConfigurationsConfigurationLocationArgs']]):
+        pulumi.set(self, "locations", value)
+
+    @property
+    @pulumi.getter(name="multiCdnSettings")
+    def multi_cdn_settings(self) -> Optional['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs']:
+        return pulumi.get(self, "multi_cdn_settings")
+
+    @multi_cdn_settings.setter
+    def multi_cdn_settings(self, value: Optional['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs']):
+        pulumi.set(self, "multi_cdn_settings", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationsConfigurationLocationArgs:
+    def __init__(__self__, *,
+                 capacity: 'GetCloudwrapperConfigurationsConfigurationLocationCapacityArgs',
+                 comments: str,
+                 map_name: str,
+                 traffic_type_id: int):
+        pulumi.set(__self__, "capacity", capacity)
+        pulumi.set(__self__, "comments", comments)
+        pulumi.set(__self__, "map_name", map_name)
+        pulumi.set(__self__, "traffic_type_id", traffic_type_id)
+
+    @property
+    @pulumi.getter
+    def capacity(self) -> 'GetCloudwrapperConfigurationsConfigurationLocationCapacityArgs':
+        return pulumi.get(self, "capacity")
+
+    @capacity.setter
+    def capacity(self, value: 'GetCloudwrapperConfigurationsConfigurationLocationCapacityArgs'):
+        pulumi.set(self, "capacity", value)
+
+    @property
+    @pulumi.getter
+    def comments(self) -> str:
+        return pulumi.get(self, "comments")
+
+    @comments.setter
+    def comments(self, value: str):
+        pulumi.set(self, "comments", value)
+
+    @property
+    @pulumi.getter(name="mapName")
+    def map_name(self) -> str:
+        return pulumi.get(self, "map_name")
+
+    @map_name.setter
+    def map_name(self, value: str):
+        pulumi.set(self, "map_name", value)
+
+    @property
+    @pulumi.getter(name="trafficTypeId")
+    def traffic_type_id(self) -> int:
+        return pulumi.get(self, "traffic_type_id")
+
+    @traffic_type_id.setter
+    def traffic_type_id(self, value: int):
+        pulumi.set(self, "traffic_type_id", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationsConfigurationLocationCapacityArgs:
+    def __init__(__self__, *,
+                 unit: str,
+                 value: int):
+        pulumi.set(__self__, "unit", unit)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def unit(self) -> str:
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: str):
+        pulumi.set(self, "unit", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> int:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: int):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs:
+    def __init__(__self__, *,
+                 enable_soft_alerts: bool,
+                 bocc: Optional['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs'] = None,
+                 cdns: Optional[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs']] = None,
+                 data_streams: Optional['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs'] = None,
+                 origins: Optional[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs']] = None):
+        pulumi.set(__self__, "enable_soft_alerts", enable_soft_alerts)
+        if bocc is not None:
+            pulumi.set(__self__, "bocc", bocc)
+        if cdns is not None:
+            pulumi.set(__self__, "cdns", cdns)
+        if data_streams is not None:
+            pulumi.set(__self__, "data_streams", data_streams)
+        if origins is not None:
+            pulumi.set(__self__, "origins", origins)
+
+    @property
+    @pulumi.getter(name="enableSoftAlerts")
+    def enable_soft_alerts(self) -> bool:
+        return pulumi.get(self, "enable_soft_alerts")
+
+    @enable_soft_alerts.setter
+    def enable_soft_alerts(self, value: bool):
+        pulumi.set(self, "enable_soft_alerts", value)
+
+    @property
+    @pulumi.getter
+    def bocc(self) -> Optional['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs']:
+        return pulumi.get(self, "bocc")
+
+    @bocc.setter
+    def bocc(self, value: Optional['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs']):
+        pulumi.set(self, "bocc", value)
+
+    @property
+    @pulumi.getter
+    def cdns(self) -> Optional[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs']]:
+        return pulumi.get(self, "cdns")
+
+    @cdns.setter
+    def cdns(self, value: Optional[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs']]):
+        pulumi.set(self, "cdns", value)
+
+    @property
+    @pulumi.getter(name="dataStreams")
+    def data_streams(self) -> Optional['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs']:
+        return pulumi.get(self, "data_streams")
+
+    @data_streams.setter
+    def data_streams(self, value: Optional['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs']):
+        pulumi.set(self, "data_streams", value)
+
+    @property
+    @pulumi.getter
+    def origins(self) -> Optional[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs']]:
+        return pulumi.get(self, "origins")
+
+    @origins.setter
+    def origins(self, value: Optional[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs']]):
+        pulumi.set(self, "origins", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs:
+    def __init__(__self__, *,
+                 conditional_sampling_frequency: str,
+                 enabled: bool,
+                 forward_type: str,
+                 request_type: str,
+                 sampling_frequency: str):
+        pulumi.set(__self__, "conditional_sampling_frequency", conditional_sampling_frequency)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "forward_type", forward_type)
+        pulumi.set(__self__, "request_type", request_type)
+        pulumi.set(__self__, "sampling_frequency", sampling_frequency)
+
+    @property
+    @pulumi.getter(name="conditionalSamplingFrequency")
+    def conditional_sampling_frequency(self) -> str:
+        return pulumi.get(self, "conditional_sampling_frequency")
+
+    @conditional_sampling_frequency.setter
+    def conditional_sampling_frequency(self, value: str):
+        pulumi.set(self, "conditional_sampling_frequency", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: bool):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="forwardType")
+    def forward_type(self) -> str:
+        return pulumi.get(self, "forward_type")
+
+    @forward_type.setter
+    def forward_type(self, value: str):
+        pulumi.set(self, "forward_type", value)
+
+    @property
+    @pulumi.getter(name="requestType")
+    def request_type(self) -> str:
+        return pulumi.get(self, "request_type")
+
+    @request_type.setter
+    def request_type(self, value: str):
+        pulumi.set(self, "request_type", value)
+
+    @property
+    @pulumi.getter(name="samplingFrequency")
+    def sampling_frequency(self) -> str:
+        return pulumi.get(self, "sampling_frequency")
+
+    @sampling_frequency.setter
+    def sampling_frequency(self, value: str):
+        pulumi.set(self, "sampling_frequency", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs:
+    def __init__(__self__, *,
+                 cdn_code: str,
+                 enabled: bool,
+                 https_only: bool,
+                 ip_acl_cidrs: Sequence[str],
+                 cdn_auth_keys: Optional[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs']] = None):
+        pulumi.set(__self__, "cdn_code", cdn_code)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "https_only", https_only)
+        pulumi.set(__self__, "ip_acl_cidrs", ip_acl_cidrs)
+        if cdn_auth_keys is not None:
+            pulumi.set(__self__, "cdn_auth_keys", cdn_auth_keys)
+
+    @property
+    @pulumi.getter(name="cdnCode")
+    def cdn_code(self) -> str:
+        return pulumi.get(self, "cdn_code")
+
+    @cdn_code.setter
+    def cdn_code(self, value: str):
+        pulumi.set(self, "cdn_code", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: bool):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="httpsOnly")
+    def https_only(self) -> bool:
+        return pulumi.get(self, "https_only")
+
+    @https_only.setter
+    def https_only(self, value: bool):
+        pulumi.set(self, "https_only", value)
+
+    @property
+    @pulumi.getter(name="ipAclCidrs")
+    def ip_acl_cidrs(self) -> Sequence[str]:
+        return pulumi.get(self, "ip_acl_cidrs")
+
+    @ip_acl_cidrs.setter
+    def ip_acl_cidrs(self, value: Sequence[str]):
+        pulumi.set(self, "ip_acl_cidrs", value)
+
+    @property
+    @pulumi.getter(name="cdnAuthKeys")
+    def cdn_auth_keys(self) -> Optional[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs']]:
+        return pulumi.get(self, "cdn_auth_keys")
+
+    @cdn_auth_keys.setter
+    def cdn_auth_keys(self, value: Optional[Sequence['GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs']]):
+        pulumi.set(self, "cdn_auth_keys", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs:
+    def __init__(__self__, *,
+                 auth_key_name: str,
+                 expiry_date: str,
+                 header_name: str,
+                 secret: str):
+        pulumi.set(__self__, "auth_key_name", auth_key_name)
+        pulumi.set(__self__, "expiry_date", expiry_date)
+        pulumi.set(__self__, "header_name", header_name)
+        pulumi.set(__self__, "secret", secret)
+
+    @property
+    @pulumi.getter(name="authKeyName")
+    def auth_key_name(self) -> str:
+        return pulumi.get(self, "auth_key_name")
+
+    @auth_key_name.setter
+    def auth_key_name(self, value: str):
+        pulumi.set(self, "auth_key_name", value)
+
+    @property
+    @pulumi.getter(name="expiryDate")
+    def expiry_date(self) -> str:
+        return pulumi.get(self, "expiry_date")
+
+    @expiry_date.setter
+    def expiry_date(self, value: str):
+        pulumi.set(self, "expiry_date", value)
+
+    @property
+    @pulumi.getter(name="headerName")
+    def header_name(self) -> str:
+        return pulumi.get(self, "header_name")
+
+    @header_name.setter
+    def header_name(self, value: str):
+        pulumi.set(self, "header_name", value)
+
+    @property
+    @pulumi.getter
+    def secret(self) -> str:
+        return pulumi.get(self, "secret")
+
+    @secret.setter
+    def secret(self, value: str):
+        pulumi.set(self, "secret", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs:
+    def __init__(__self__, *,
+                 data_stream_ids: Sequence[int],
+                 enabled: bool,
+                 sampling_rate: int):
+        pulumi.set(__self__, "data_stream_ids", data_stream_ids)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "sampling_rate", sampling_rate)
+
+    @property
+    @pulumi.getter(name="dataStreamIds")
+    def data_stream_ids(self) -> Sequence[int]:
+        return pulumi.get(self, "data_stream_ids")
+
+    @data_stream_ids.setter
+    def data_stream_ids(self, value: Sequence[int]):
+        pulumi.set(self, "data_stream_ids", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: bool):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="samplingRate")
+    def sampling_rate(self) -> int:
+        return pulumi.get(self, "sampling_rate")
+
+    @sampling_rate.setter
+    def sampling_rate(self, value: int):
+        pulumi.set(self, "sampling_rate", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs:
+    def __init__(__self__, *,
+                 hostname: str,
+                 origin_id: str,
+                 property_id: int):
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "origin_id", origin_id)
+        pulumi.set(__self__, "property_id", property_id)
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> str:
+        return pulumi.get(self, "hostname")
+
+    @hostname.setter
+    def hostname(self, value: str):
+        pulumi.set(self, "hostname", value)
+
+    @property
+    @pulumi.getter(name="originId")
+    def origin_id(self) -> str:
+        return pulumi.get(self, "origin_id")
+
+    @origin_id.setter
+    def origin_id(self, value: str):
+        pulumi.set(self, "origin_id", value)
+
+    @property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> int:
+        return pulumi.get(self, "property_id")
+
+    @property_id.setter
+    def property_id(self, value: int):
+        pulumi.set(self, "property_id", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperLocationsLocationArgs:
+    def __init__(__self__, *,
+                 location_id: int,
+                 location_name: str,
+                 multi_cdn_location_id: str,
+                 traffic_types: Optional[Sequence['GetCloudwrapperLocationsLocationTrafficTypeArgs']] = None):
+        pulumi.set(__self__, "location_id", location_id)
+        pulumi.set(__self__, "location_name", location_name)
+        pulumi.set(__self__, "multi_cdn_location_id", multi_cdn_location_id)
+        if traffic_types is not None:
+            pulumi.set(__self__, "traffic_types", traffic_types)
+
+    @property
+    @pulumi.getter(name="locationId")
+    def location_id(self) -> int:
+        return pulumi.get(self, "location_id")
+
+    @location_id.setter
+    def location_id(self, value: int):
+        pulumi.set(self, "location_id", value)
+
+    @property
+    @pulumi.getter(name="locationName")
+    def location_name(self) -> str:
+        return pulumi.get(self, "location_name")
+
+    @location_name.setter
+    def location_name(self, value: str):
+        pulumi.set(self, "location_name", value)
+
+    @property
+    @pulumi.getter(name="multiCdnLocationId")
+    def multi_cdn_location_id(self) -> str:
+        return pulumi.get(self, "multi_cdn_location_id")
+
+    @multi_cdn_location_id.setter
+    def multi_cdn_location_id(self, value: str):
+        pulumi.set(self, "multi_cdn_location_id", value)
+
+    @property
+    @pulumi.getter(name="trafficTypes")
+    def traffic_types(self) -> Optional[Sequence['GetCloudwrapperLocationsLocationTrafficTypeArgs']]:
+        return pulumi.get(self, "traffic_types")
+
+    @traffic_types.setter
+    def traffic_types(self, value: Optional[Sequence['GetCloudwrapperLocationsLocationTrafficTypeArgs']]):
+        pulumi.set(self, "traffic_types", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperLocationsLocationTrafficTypeArgs:
+    def __init__(__self__, *,
+                 location_id: str,
+                 traffic_type: str,
+                 traffic_type_id: int):
+        pulumi.set(__self__, "location_id", location_id)
+        pulumi.set(__self__, "traffic_type", traffic_type)
+        pulumi.set(__self__, "traffic_type_id", traffic_type_id)
+
+    @property
+    @pulumi.getter(name="locationId")
+    def location_id(self) -> str:
+        return pulumi.get(self, "location_id")
+
+    @location_id.setter
+    def location_id(self, value: str):
+        pulumi.set(self, "location_id", value)
+
+    @property
+    @pulumi.getter(name="trafficType")
+    def traffic_type(self) -> str:
+        return pulumi.get(self, "traffic_type")
+
+    @traffic_type.setter
+    def traffic_type(self, value: str):
+        pulumi.set(self, "traffic_type", value)
+
+    @property
+    @pulumi.getter(name="trafficTypeId")
+    def traffic_type_id(self) -> int:
+        return pulumi.get(self, "traffic_type_id")
+
+    @traffic_type_id.setter
+    def traffic_type_id(self, value: int):
+        pulumi.set(self, "traffic_type_id", value)
+
+
+@pulumi.input_type
+class GetCloudwrapperPropertiesPropertyArgs:
+    def __init__(__self__, *,
+                 contract_id: str,
+                 group_id: int,
+                 property_id: int,
+                 property_name: str,
+                 type: str):
+        pulumi.set(__self__, "contract_id", contract_id)
+        pulumi.set(__self__, "group_id", group_id)
+        pulumi.set(__self__, "property_id", property_id)
+        pulumi.set(__self__, "property_name", property_name)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="contractId")
+    def contract_id(self) -> str:
+        return pulumi.get(self, "contract_id")
+
+    @contract_id.setter
+    def contract_id(self, value: str):
+        pulumi.set(self, "contract_id", value)
+
+    @property
+    @pulumi.getter(name="groupId")
+    def group_id(self) -> int:
+        return pulumi.get(self, "group_id")
+
+    @group_id.setter
+    def group_id(self, value: int):
+        pulumi.set(self, "group_id", value)
+
+    @property
+    @pulumi.getter(name="propertyId")
+    def property_id(self) -> int:
+        return pulumi.get(self, "property_id")
+
+    @property_id.setter
+    def property_id(self, value: int):
+        pulumi.set(self, "property_id", value)
+
+    @property
+    @pulumi.getter(name="propertyName")
+    def property_name(self) -> str:
+        return pulumi.get(self, "property_name")
+
+    @property_name.setter
+    def property_name(self, value: str):
+        pulumi.set(self, "property_name", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: str):
+        pulumi.set(self, "type", value)
 
 
 @pulumi.input_type
@@ -57494,7 +58942,7 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDatastreamArgs:
                  enabled: Optional[bool] = None,
                  locked: Optional[bool] = None,
                  log_enabled: Optional[bool] = None,
-                 log_stream_name: Optional[str] = None,
+                 log_stream_names: Optional[Sequence[str]] = None,
                  log_stream_title: Optional[str] = None,
                  sampling_percentage: Optional[int] = None,
                  stream_type: Optional[str] = None,
@@ -57512,8 +58960,8 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDatastreamArgs:
             pulumi.set(__self__, "locked", locked)
         if log_enabled is not None:
             pulumi.set(__self__, "log_enabled", log_enabled)
-        if log_stream_name is not None:
-            pulumi.set(__self__, "log_stream_name", log_stream_name)
+        if log_stream_names is not None:
+            pulumi.set(__self__, "log_stream_names", log_stream_names)
         if log_stream_title is not None:
             pulumi.set(__self__, "log_stream_title", log_stream_title)
         if sampling_percentage is not None:
@@ -57580,13 +59028,13 @@ class GetPropertyRulesBuilderRulesV20230530BehaviorDatastreamArgs:
         pulumi.set(self, "log_enabled", value)
 
     @property
-    @pulumi.getter(name="logStreamName")
-    def log_stream_name(self) -> Optional[str]:
-        return pulumi.get(self, "log_stream_name")
+    @pulumi.getter(name="logStreamNames")
+    def log_stream_names(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "log_stream_names")
 
-    @log_stream_name.setter
-    def log_stream_name(self, value: Optional[str]):
-        pulumi.set(self, "log_stream_name", value)
+    @log_stream_names.setter
+    def log_stream_names(self, value: Optional[Sequence[str]]):
+        pulumi.set(self, "log_stream_names", value)
 
     @property
     @pulumi.getter(name="logStreamTitle")

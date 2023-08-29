@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
+export interface ClientlistListItem {
+    description?: pulumi.Input<string>;
+    expirationDate?: pulumi.Input<string>;
+    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    value: pulumi.Input<string>;
+}
+
 export interface CloudletsApplicationLoadBalancerDataCenter {
     city?: pulumi.Input<string>;
     cloudServerHostHeaderOverride?: pulumi.Input<boolean>;
@@ -34,6 +41,26 @@ export interface CloudletsApplicationLoadBalancerLivenessSettings {
     status4xxFailure?: pulumi.Input<boolean>;
     status5xxFailure?: pulumi.Input<boolean>;
     timeout?: pulumi.Input<number>;
+}
+
+export interface CloudwrapperActivationTimeouts {
+    create?: pulumi.Input<string>;
+    update?: pulumi.Input<string>;
+}
+
+export interface CloudwrapperConfigurationLocation {
+    capacity?: pulumi.Input<inputs.CloudwrapperConfigurationLocationCapacity>;
+    comments: pulumi.Input<string>;
+    trafficTypeId: pulumi.Input<number>;
+}
+
+export interface CloudwrapperConfigurationLocationCapacity {
+    unit: pulumi.Input<string>;
+    value: pulumi.Input<number>;
+}
+
+export interface CloudwrapperConfigurationTimeouts {
+    delete?: pulumi.Input<string>;
 }
 
 export interface CpsDvEnrollmentAdminContact {
@@ -976,6 +1003,354 @@ export interface GetCloudletsVisitorPrioritizationMatchRuleMatchRuleMatchObjectM
     valueEscaped?: pulumi.Input<boolean>;
     valueHasWildcard?: pulumi.Input<boolean>;
     values?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface GetCloudwrapperCapacitiesCapacity {
+    approved?: inputs.GetCloudwrapperCapacitiesCapacityApproved;
+    assigned?: inputs.GetCloudwrapperCapacitiesCapacityAssigned;
+    contractId?: string;
+    locationId?: number;
+    locationName?: string;
+    type?: string;
+    unassigned?: inputs.GetCloudwrapperCapacitiesCapacityUnassigned;
+}
+
+export interface GetCloudwrapperCapacitiesCapacityArgs {
+    approved?: pulumi.Input<inputs.GetCloudwrapperCapacitiesCapacityApprovedArgs>;
+    assigned?: pulumi.Input<inputs.GetCloudwrapperCapacitiesCapacityAssignedArgs>;
+    contractId?: pulumi.Input<string>;
+    locationId?: pulumi.Input<number>;
+    locationName?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+    unassigned?: pulumi.Input<inputs.GetCloudwrapperCapacitiesCapacityUnassignedArgs>;
+}
+
+export interface GetCloudwrapperCapacitiesCapacityApproved {
+    unit: string;
+    value: number;
+}
+
+export interface GetCloudwrapperCapacitiesCapacityApprovedArgs {
+    unit: pulumi.Input<string>;
+    value: pulumi.Input<number>;
+}
+
+export interface GetCloudwrapperCapacitiesCapacityAssigned {
+    unit: string;
+    value: number;
+}
+
+export interface GetCloudwrapperCapacitiesCapacityAssignedArgs {
+    unit: pulumi.Input<string>;
+    value: pulumi.Input<number>;
+}
+
+export interface GetCloudwrapperCapacitiesCapacityUnassigned {
+    unit: string;
+    value: number;
+}
+
+export interface GetCloudwrapperCapacitiesCapacityUnassignedArgs {
+    unit: pulumi.Input<string>;
+    value: pulumi.Input<number>;
+}
+
+export interface GetCloudwrapperConfigurationLocation {
+    capacity?: inputs.GetCloudwrapperConfigurationLocationCapacity;
+    comments?: string;
+    mapName?: string;
+    trafficTypeId?: number;
+}
+
+export interface GetCloudwrapperConfigurationLocationArgs {
+    capacity?: pulumi.Input<inputs.GetCloudwrapperConfigurationLocationCapacityArgs>;
+    comments?: pulumi.Input<string>;
+    mapName?: pulumi.Input<string>;
+    trafficTypeId?: pulumi.Input<number>;
+}
+
+export interface GetCloudwrapperConfigurationLocationCapacity {
+    unit: string;
+    value: number;
+}
+
+export interface GetCloudwrapperConfigurationLocationCapacityArgs {
+    unit: pulumi.Input<string>;
+    value: pulumi.Input<number>;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettings {
+    bocc?: inputs.GetCloudwrapperConfigurationMultiCdnSettingsBocc;
+    cdns?: inputs.GetCloudwrapperConfigurationMultiCdnSettingsCdn[];
+    dataStreams?: inputs.GetCloudwrapperConfigurationMultiCdnSettingsDataStreams;
+    enableSoftAlerts?: boolean;
+    origins?: inputs.GetCloudwrapperConfigurationMultiCdnSettingsOrigin[];
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsArgs {
+    bocc?: pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsBoccArgs>;
+    cdns?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs>[]>;
+    dataStreams?: pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgs>;
+    enableSoftAlerts?: pulumi.Input<boolean>;
+    origins?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs>[]>;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsBocc {
+    conditionalSamplingFrequency?: string;
+    enabled?: boolean;
+    forwardType?: string;
+    requestType?: string;
+    samplingFrequency?: string;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsBoccArgs {
+    conditionalSamplingFrequency?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+    forwardType?: pulumi.Input<string>;
+    requestType?: pulumi.Input<string>;
+    samplingFrequency?: pulumi.Input<string>;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsCdn {
+    cdnAuthKeys?: inputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey[];
+    cdnCode?: string;
+    enabled?: boolean;
+    httpsOnly?: boolean;
+    ipAclCidrs?: string[];
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsCdnArgs {
+    cdnAuthKeys?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs>[]>;
+    cdnCode?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+    httpsOnly?: pulumi.Input<boolean>;
+    ipAclCidrs?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey {
+    authKeyName?: string;
+    expiryDate?: string;
+    headerName?: string;
+    secret?: string;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs {
+    authKeyName?: pulumi.Input<string>;
+    expiryDate?: pulumi.Input<string>;
+    headerName?: pulumi.Input<string>;
+    secret?: pulumi.Input<string>;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsDataStreams {
+    dataStreamIds?: number[];
+    enabled?: boolean;
+    samplingRate?: number;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsDataStreamsArgs {
+    dataStreamIds?: pulumi.Input<pulumi.Input<number>[]>;
+    enabled?: pulumi.Input<boolean>;
+    samplingRate?: pulumi.Input<number>;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsOrigin {
+    hostname?: string;
+    originId?: string;
+    propertyId?: number;
+}
+
+export interface GetCloudwrapperConfigurationMultiCdnSettingsOriginArgs {
+    hostname?: pulumi.Input<string>;
+    originId?: pulumi.Input<string>;
+    propertyId?: pulumi.Input<number>;
+}
+
+export interface GetCloudwrapperConfigurationsConfiguration {
+    capacityAlertsThreshold?: number;
+    comments?: string;
+    configName?: string;
+    contractId?: string;
+    id?: number;
+    lastActivatedBy?: string;
+    lastActivatedDate?: string;
+    lastUpdatedBy?: string;
+    lastUpdatedDate?: string;
+    locations?: inputs.GetCloudwrapperConfigurationsConfigurationLocation[];
+    multiCdnSettings?: inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettings;
+    notificationEmails?: string[];
+    propertyIds?: string[];
+    retainIdleObjects?: boolean;
+    status?: string;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationArgs {
+    capacityAlertsThreshold?: pulumi.Input<number>;
+    comments?: pulumi.Input<string>;
+    configName?: pulumi.Input<string>;
+    contractId?: pulumi.Input<string>;
+    id?: pulumi.Input<number>;
+    lastActivatedBy?: pulumi.Input<string>;
+    lastActivatedDate?: pulumi.Input<string>;
+    lastUpdatedBy?: pulumi.Input<string>;
+    lastUpdatedDate?: pulumi.Input<string>;
+    locations?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationLocationArgs>[]>;
+    multiCdnSettings?: pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs>;
+    notificationEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    propertyIds?: pulumi.Input<pulumi.Input<string>[]>;
+    retainIdleObjects?: pulumi.Input<boolean>;
+    status?: pulumi.Input<string>;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationLocation {
+    capacity?: inputs.GetCloudwrapperConfigurationsConfigurationLocationCapacity;
+    comments?: string;
+    mapName?: string;
+    trafficTypeId?: number;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationLocationArgs {
+    capacity?: pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationLocationCapacityArgs>;
+    comments?: pulumi.Input<string>;
+    mapName?: pulumi.Input<string>;
+    trafficTypeId?: pulumi.Input<number>;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationLocationCapacity {
+    unit: string;
+    value: number;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationLocationCapacityArgs {
+    unit: pulumi.Input<string>;
+    value: pulumi.Input<number>;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettings {
+    bocc?: inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBocc;
+    cdns?: inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdn[];
+    dataStreams?: inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreams;
+    enableSoftAlerts?: boolean;
+    origins?: inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin[];
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsArgs {
+    bocc?: pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs>;
+    cdns?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs>[]>;
+    dataStreams?: pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs>;
+    enableSoftAlerts?: pulumi.Input<boolean>;
+    origins?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs>[]>;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBocc {
+    conditionalSamplingFrequency?: string;
+    enabled?: boolean;
+    forwardType?: string;
+    requestType?: string;
+    samplingFrequency?: string;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsBoccArgs {
+    conditionalSamplingFrequency?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+    forwardType?: pulumi.Input<string>;
+    requestType?: pulumi.Input<string>;
+    samplingFrequency?: pulumi.Input<string>;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdn {
+    cdnAuthKeys?: inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKey[];
+    cdnCode?: string;
+    enabled?: boolean;
+    httpsOnly?: boolean;
+    ipAclCidrs?: string[];
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnArgs {
+    cdnAuthKeys?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs>[]>;
+    cdnCode?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+    httpsOnly?: pulumi.Input<boolean>;
+    ipAclCidrs?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKey {
+    authKeyName?: string;
+    expiryDate?: string;
+    headerName?: string;
+    secret?: string;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKeyArgs {
+    authKeyName?: pulumi.Input<string>;
+    expiryDate?: pulumi.Input<string>;
+    headerName?: pulumi.Input<string>;
+    secret?: pulumi.Input<string>;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreams {
+    dataStreamIds?: number[];
+    enabled?: boolean;
+    samplingRate?: number;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreamsArgs {
+    dataStreamIds?: pulumi.Input<pulumi.Input<number>[]>;
+    enabled?: pulumi.Input<boolean>;
+    samplingRate?: pulumi.Input<number>;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin {
+    hostname?: string;
+    originId?: string;
+    propertyId?: number;
+}
+
+export interface GetCloudwrapperConfigurationsConfigurationMultiCdnSettingsOriginArgs {
+    hostname?: pulumi.Input<string>;
+    originId?: pulumi.Input<string>;
+    propertyId?: pulumi.Input<number>;
+}
+
+export interface GetCloudwrapperLocationsLocation {
+    locationId?: number;
+    locationName?: string;
+    multiCdnLocationId?: string;
+    trafficTypes?: inputs.GetCloudwrapperLocationsLocationTrafficType[];
+}
+
+export interface GetCloudwrapperLocationsLocationArgs {
+    locationId?: pulumi.Input<number>;
+    locationName?: pulumi.Input<string>;
+    multiCdnLocationId?: pulumi.Input<string>;
+    trafficTypes?: pulumi.Input<pulumi.Input<inputs.GetCloudwrapperLocationsLocationTrafficTypeArgs>[]>;
+}
+
+export interface GetCloudwrapperLocationsLocationTrafficType {
+    locationId?: string;
+    trafficType?: string;
+    trafficTypeId?: number;
+}
+
+export interface GetCloudwrapperLocationsLocationTrafficTypeArgs {
+    locationId?: pulumi.Input<string>;
+    trafficType?: pulumi.Input<string>;
+    trafficTypeId?: pulumi.Input<number>;
+}
+
+export interface GetCloudwrapperPropertiesProperty {
+    contractId?: string;
+    groupId?: number;
+    propertyId?: number;
+    propertyName?: string;
+    type?: string;
+}
+
+export interface GetCloudwrapperPropertiesPropertyArgs {
+    contractId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<number>;
+    propertyId?: pulumi.Input<number>;
+    propertyName?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
 }
 
 export interface GetImagingPolicyImagePolicy {
@@ -11751,7 +12126,7 @@ export interface GetPropertyRulesBuilderRulesV20230530BehaviorDatastream {
     enabled?: boolean;
     locked?: boolean;
     logEnabled?: boolean;
-    logStreamName?: string;
+    logStreamNames?: string[];
     logStreamTitle?: string;
     samplingPercentage?: number;
     streamType?: string;
@@ -11766,7 +12141,7 @@ export interface GetPropertyRulesBuilderRulesV20230530BehaviorDatastreamArgs {
     enabled?: pulumi.Input<boolean>;
     locked?: pulumi.Input<boolean>;
     logEnabled?: pulumi.Input<boolean>;
-    logStreamName?: pulumi.Input<string>;
+    logStreamNames?: pulumi.Input<pulumi.Input<string>[]>;
     logStreamTitle?: pulumi.Input<string>;
     samplingPercentage?: pulumi.Input<number>;
     streamType?: pulumi.Input<string>;

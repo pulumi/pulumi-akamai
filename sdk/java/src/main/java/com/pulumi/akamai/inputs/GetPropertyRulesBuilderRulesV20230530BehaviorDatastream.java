@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -58,11 +59,11 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDatastream exten
         return Optional.ofNullable(this.logEnabled);
     }
 
-    @Import(name="logStreamName")
-    private @Nullable String logStreamName;
+    @Import(name="logStreamNames")
+    private @Nullable List<String> logStreamNames;
 
-    public Optional<String> logStreamName() {
-        return Optional.ofNullable(this.logStreamName);
+    public Optional<List<String>> logStreamNames() {
+        return Optional.ofNullable(this.logStreamNames);
     }
 
     @Import(name="logStreamTitle")
@@ -109,7 +110,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDatastream exten
         this.enabled = $.enabled;
         this.locked = $.locked;
         this.logEnabled = $.logEnabled;
-        this.logStreamName = $.logStreamName;
+        this.logStreamNames = $.logStreamNames;
         this.logStreamTitle = $.logStreamTitle;
         this.samplingPercentage = $.samplingPercentage;
         this.streamType = $.streamType;
@@ -165,9 +166,13 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDatastream exten
             return this;
         }
 
-        public Builder logStreamName(@Nullable String logStreamName) {
-            $.logStreamName = logStreamName;
+        public Builder logStreamNames(@Nullable List<String> logStreamNames) {
+            $.logStreamNames = logStreamNames;
             return this;
+        }
+
+        public Builder logStreamNames(String... logStreamNames) {
+            return logStreamNames(List.of(logStreamNames));
         }
 
         public Builder logStreamTitle(@Nullable String logStreamTitle) {

@@ -110,6 +110,29 @@
                 }
             }
         },
+        "akamai:index/ClientlistListItem:ClientlistListItem": {
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "expirationDate": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "value"
+            ]
+        },
         "akamai:index/CloudletsApplicationLoadBalancerDataCenter:CloudletsApplicationLoadBalancerDataCenter": {
             "properties": {
                 "city": {
@@ -213,6 +236,58 @@
                 "port",
                 "protocol"
             ]
+        },
+        "akamai:index/CloudwrapperActivationTimeouts:CloudwrapperActivationTimeouts": {
+            "properties": {
+                "create": {
+                    "type": "string"
+                },
+                "update": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "akamai:index/CloudwrapperConfigurationLocation:CloudwrapperConfigurationLocation": {
+            "properties": {
+                "capacity": {
+                    "$ref": "#/types/akamai:index/CloudwrapperConfigurationLocationCapacity:CloudwrapperConfigurationLocationCapacity"
+                },
+                "comments": {
+                    "type": "string"
+                },
+                "trafficTypeId": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "comments",
+                "trafficTypeId"
+            ]
+        },
+        "akamai:index/CloudwrapperConfigurationLocationCapacity:CloudwrapperConfigurationLocationCapacity": {
+            "properties": {
+                "unit": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "unit",
+                "value"
+            ]
+        },
+        "akamai:index/CloudwrapperConfigurationTimeouts:CloudwrapperConfigurationTimeouts": {
+            "properties": {
+                "delete": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
         },
         "akamai:index/CpsDvEnrollmentAdminContact:CpsDvEnrollmentAdminContact": {
             "properties": {
@@ -2542,6 +2617,87 @@
                 }
             }
         },
+        "akamai:index/getClientlistListsList:getClientlistListsList": {
+            "properties": {
+                "createDate": {
+                    "type": "string"
+                },
+                "createdBy": {
+                    "type": "string"
+                },
+                "deprecated": {
+                    "type": "boolean"
+                },
+                "itemsCount": {
+                    "type": "integer"
+                },
+                "listId": {
+                    "type": "string"
+                },
+                "listType": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "notes": {
+                    "type": "string"
+                },
+                "productionActivationStatus": {
+                    "type": "string"
+                },
+                "readOnly": {
+                    "type": "boolean"
+                },
+                "shared": {
+                    "type": "boolean"
+                },
+                "stagingActivationStatus": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "type": {
+                    "type": "string"
+                },
+                "updateDate": {
+                    "type": "string"
+                },
+                "updatedBy": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "createDate",
+                "createdBy",
+                "deprecated",
+                "itemsCount",
+                "listId",
+                "listType",
+                "notes",
+                "productionActivationStatus",
+                "readOnly",
+                "shared",
+                "stagingActivationStatus",
+                "tags",
+                "updateDate",
+                "updatedBy",
+                "version"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "akamai:index/getCloudletsApiPrioritizationMatchRuleMatchRule:getCloudletsApiPrioritizationMatchRuleMatchRule": {
             "properties": {
                 "disabled": {
@@ -3826,6 +3982,706 @@
                 }
             },
             "type": "object"
+        },
+        "akamai:index/getCloudwrapperCapacitiesCapacity:getCloudwrapperCapacitiesCapacity": {
+            "properties": {
+                "approved": {
+                    "$ref": "#/types/akamai:index/getCloudwrapperCapacitiesCapacityApproved:getCloudwrapperCapacitiesCapacityApproved"
+                },
+                "assigned": {
+                    "$ref": "#/types/akamai:index/getCloudwrapperCapacitiesCapacityAssigned:getCloudwrapperCapacitiesCapacityAssigned"
+                },
+                "contractId": {
+                    "type": "string"
+                },
+                "locationId": {
+                    "type": "integer"
+                },
+                "locationName": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "unassigned": {
+                    "$ref": "#/types/akamai:index/getCloudwrapperCapacitiesCapacityUnassigned:getCloudwrapperCapacitiesCapacityUnassigned"
+                }
+            },
+            "type": "object",
+            "required": [
+                "approved",
+                "assigned",
+                "contractId",
+                "locationId",
+                "locationName",
+                "type",
+                "unassigned"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperCapacitiesCapacityApproved:getCloudwrapperCapacitiesCapacityApproved": {
+            "properties": {
+                "unit": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "unit",
+                "value"
+            ]
+        },
+        "akamai:index/getCloudwrapperCapacitiesCapacityAssigned:getCloudwrapperCapacitiesCapacityAssigned": {
+            "properties": {
+                "unit": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "unit",
+                "value"
+            ]
+        },
+        "akamai:index/getCloudwrapperCapacitiesCapacityUnassigned:getCloudwrapperCapacitiesCapacityUnassigned": {
+            "properties": {
+                "unit": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "unit",
+                "value"
+            ]
+        },
+        "akamai:index/getCloudwrapperConfigurationLocation:getCloudwrapperConfigurationLocation": {
+            "properties": {
+                "capacity": {
+                    "$ref": "#/types/akamai:index/getCloudwrapperConfigurationLocationCapacity:getCloudwrapperConfigurationLocationCapacity"
+                },
+                "comments": {
+                    "type": "string"
+                },
+                "mapName": {
+                    "type": "string"
+                },
+                "trafficTypeId": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "capacity",
+                "comments",
+                "mapName",
+                "trafficTypeId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationLocationCapacity:getCloudwrapperConfigurationLocationCapacity": {
+            "properties": {
+                "unit": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "unit",
+                "value"
+            ]
+        },
+        "akamai:index/getCloudwrapperConfigurationMultiCdnSettings:getCloudwrapperConfigurationMultiCdnSettings": {
+            "properties": {
+                "bocc": {
+                    "$ref": "#/types/akamai:index/getCloudwrapperConfigurationMultiCdnSettingsBocc:getCloudwrapperConfigurationMultiCdnSettingsBocc"
+                },
+                "cdns": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getCloudwrapperConfigurationMultiCdnSettingsCdn:getCloudwrapperConfigurationMultiCdnSettingsCdn"
+                    }
+                },
+                "dataStreams": {
+                    "$ref": "#/types/akamai:index/getCloudwrapperConfigurationMultiCdnSettingsDataStreams:getCloudwrapperConfigurationMultiCdnSettingsDataStreams"
+                },
+                "enableSoftAlerts": {
+                    "type": "boolean"
+                },
+                "origins": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getCloudwrapperConfigurationMultiCdnSettingsOrigin:getCloudwrapperConfigurationMultiCdnSettingsOrigin"
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "enableSoftAlerts"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationMultiCdnSettingsBocc:getCloudwrapperConfigurationMultiCdnSettingsBocc": {
+            "properties": {
+                "conditionalSamplingFrequency": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "forwardType": {
+                    "type": "string"
+                },
+                "requestType": {
+                    "type": "string"
+                },
+                "samplingFrequency": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "conditionalSamplingFrequency",
+                "enabled",
+                "forwardType",
+                "requestType",
+                "samplingFrequency"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationMultiCdnSettingsCdn:getCloudwrapperConfigurationMultiCdnSettingsCdn": {
+            "properties": {
+                "cdnAuthKeys": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey:getCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey"
+                    }
+                },
+                "cdnCode": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "httpsOnly": {
+                    "type": "boolean"
+                },
+                "ipAclCidrs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "cdnCode",
+                "enabled",
+                "httpsOnly",
+                "ipAclCidrs"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey:getCloudwrapperConfigurationMultiCdnSettingsCdnCdnAuthKey": {
+            "properties": {
+                "authKeyName": {
+                    "type": "string"
+                },
+                "expiryDate": {
+                    "type": "string"
+                },
+                "headerName": {
+                    "type": "string"
+                },
+                "secret": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "authKeyName",
+                "expiryDate",
+                "headerName",
+                "secret"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationMultiCdnSettingsDataStreams:getCloudwrapperConfigurationMultiCdnSettingsDataStreams": {
+            "properties": {
+                "dataStreamIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "samplingRate": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dataStreamIds",
+                "enabled",
+                "samplingRate"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationMultiCdnSettingsOrigin:getCloudwrapperConfigurationMultiCdnSettingsOrigin": {
+            "properties": {
+                "hostname": {
+                    "type": "string"
+                },
+                "originId": {
+                    "type": "string"
+                },
+                "propertyId": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "hostname",
+                "originId",
+                "propertyId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationsConfiguration:getCloudwrapperConfigurationsConfiguration": {
+            "properties": {
+                "capacityAlertsThreshold": {
+                    "type": "integer"
+                },
+                "comments": {
+                    "type": "string"
+                },
+                "configName": {
+                    "type": "string"
+                },
+                "contractId": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "lastActivatedBy": {
+                    "type": "string"
+                },
+                "lastActivatedDate": {
+                    "type": "string"
+                },
+                "lastUpdatedBy": {
+                    "type": "string"
+                },
+                "lastUpdatedDate": {
+                    "type": "string"
+                },
+                "locations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getCloudwrapperConfigurationsConfigurationLocation:getCloudwrapperConfigurationsConfigurationLocation"
+                    }
+                },
+                "multiCdnSettings": {
+                    "$ref": "#/types/akamai:index/getCloudwrapperConfigurationsConfigurationMultiCdnSettings:getCloudwrapperConfigurationsConfigurationMultiCdnSettings"
+                },
+                "notificationEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "propertyIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "retainIdleObjects": {
+                    "type": "boolean"
+                },
+                "status": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "capacityAlertsThreshold",
+                "comments",
+                "configName",
+                "contractId",
+                "id",
+                "lastActivatedBy",
+                "lastActivatedDate",
+                "lastUpdatedBy",
+                "lastUpdatedDate",
+                "notificationEmails",
+                "propertyIds",
+                "retainIdleObjects",
+                "status"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationsConfigurationLocation:getCloudwrapperConfigurationsConfigurationLocation": {
+            "properties": {
+                "capacity": {
+                    "$ref": "#/types/akamai:index/getCloudwrapperConfigurationsConfigurationLocationCapacity:getCloudwrapperConfigurationsConfigurationLocationCapacity"
+                },
+                "comments": {
+                    "type": "string"
+                },
+                "mapName": {
+                    "type": "string"
+                },
+                "trafficTypeId": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "capacity",
+                "comments",
+                "mapName",
+                "trafficTypeId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationsConfigurationLocationCapacity:getCloudwrapperConfigurationsConfigurationLocationCapacity": {
+            "properties": {
+                "unit": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "unit",
+                "value"
+            ]
+        },
+        "akamai:index/getCloudwrapperConfigurationsConfigurationMultiCdnSettings:getCloudwrapperConfigurationsConfigurationMultiCdnSettings": {
+            "properties": {
+                "bocc": {
+                    "$ref": "#/types/akamai:index/getCloudwrapperConfigurationsConfigurationMultiCdnSettingsBocc:getCloudwrapperConfigurationsConfigurationMultiCdnSettingsBocc"
+                },
+                "cdns": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdn:getCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdn"
+                    }
+                },
+                "dataStreams": {
+                    "$ref": "#/types/akamai:index/getCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreams:getCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreams"
+                },
+                "enableSoftAlerts": {
+                    "type": "boolean"
+                },
+                "origins": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin:getCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin"
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "enableSoftAlerts"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationsConfigurationMultiCdnSettingsBocc:getCloudwrapperConfigurationsConfigurationMultiCdnSettingsBocc": {
+            "properties": {
+                "conditionalSamplingFrequency": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "forwardType": {
+                    "type": "string"
+                },
+                "requestType": {
+                    "type": "string"
+                },
+                "samplingFrequency": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "conditionalSamplingFrequency",
+                "enabled",
+                "forwardType",
+                "requestType",
+                "samplingFrequency"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdn:getCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdn": {
+            "properties": {
+                "cdnAuthKeys": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKey:getCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKey"
+                    }
+                },
+                "cdnCode": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "httpsOnly": {
+                    "type": "boolean"
+                },
+                "ipAclCidrs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "cdnCode",
+                "enabled",
+                "httpsOnly",
+                "ipAclCidrs"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKey:getCloudwrapperConfigurationsConfigurationMultiCdnSettingsCdnCdnAuthKey": {
+            "properties": {
+                "authKeyName": {
+                    "type": "string"
+                },
+                "expiryDate": {
+                    "type": "string"
+                },
+                "headerName": {
+                    "type": "string"
+                },
+                "secret": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "authKeyName",
+                "expiryDate",
+                "headerName",
+                "secret"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreams:getCloudwrapperConfigurationsConfigurationMultiCdnSettingsDataStreams": {
+            "properties": {
+                "dataStreamIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "samplingRate": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dataStreamIds",
+                "enabled",
+                "samplingRate"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin:getCloudwrapperConfigurationsConfigurationMultiCdnSettingsOrigin": {
+            "properties": {
+                "hostname": {
+                    "type": "string"
+                },
+                "originId": {
+                    "type": "string"
+                },
+                "propertyId": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "hostname",
+                "originId",
+                "propertyId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperLocationsLocation:getCloudwrapperLocationsLocation": {
+            "properties": {
+                "locationId": {
+                    "type": "integer"
+                },
+                "locationName": {
+                    "type": "string"
+                },
+                "multiCdnLocationId": {
+                    "type": "string"
+                },
+                "trafficTypes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/getCloudwrapperLocationsLocationTrafficType:getCloudwrapperLocationsLocationTrafficType"
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "locationId",
+                "locationName",
+                "multiCdnLocationId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperLocationsLocationTrafficType:getCloudwrapperLocationsLocationTrafficType": {
+            "properties": {
+                "locationId": {
+                    "type": "string"
+                },
+                "trafficType": {
+                    "type": "string"
+                },
+                "trafficTypeId": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "locationId",
+                "trafficType",
+                "trafficTypeId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "akamai:index/getCloudwrapperPropertiesProperty:getCloudwrapperPropertiesProperty": {
+            "properties": {
+                "contractId": {
+                    "type": "string"
+                },
+                "groupId": {
+                    "type": "integer"
+                },
+                "propertyId": {
+                    "type": "integer"
+                },
+                "propertyName": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "contractId",
+                "groupId",
+                "propertyId",
+                "propertyName",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
         },
         "akamai:index/getContractsContract:getContractsContract": {
             "properties": {
@@ -19499,8 +20355,11 @@
                 "logEnabled": {
                     "type": "boolean"
                 },
-                "logStreamName": {
-                    "type": "string"
+                "logStreamNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "logStreamTitle": {
                     "type": "string"
@@ -31068,6 +31927,53 @@
                 "type": "object"
             }
         },
+        "akamai:index/botmanCustomClientSequence:BotmanCustomClientSequence": {
+            "properties": {
+                "configId": {
+                    "type": "integer"
+                },
+                "customClientIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "configId",
+                "customClientIds"
+            ],
+            "inputProperties": {
+                "configId": {
+                    "type": "integer"
+                },
+                "customClientIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "requiredInputs": [
+                "configId",
+                "customClientIds"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering BotmanCustomClientSequence resources.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "customClientIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type": "object"
+            }
+        },
         "akamai:index/botmanCustomDefinedBot:BotmanCustomDefinedBot": {
             "properties": {
                 "botId": {
@@ -31394,6 +32300,276 @@
                     },
                     "transactionalEndpointProtection": {
                         "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/clientlistActivation:ClientlistActivation": {
+            "properties": {
+                "comments": {
+                    "type": "string",
+                    "description": "A brief description for the activation.\n"
+                },
+                "listId": {
+                    "type": "string",
+                    "description": "The client list unique identifier.\n"
+                },
+                "network": {
+                    "type": "string",
+                    "description": "The network environment where you activate your client list: either STAGING or PRODUCTION.\n"
+                },
+                "notificationRecipients": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Users to notify via email.\n"
+                },
+                "siebelTicketId": {
+                    "type": "string",
+                    "description": "Identifies the Siebel ticket, if the activation is linked to one.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The current activation status, either ACTIVE, INACTIVE, MODIFIED, PENDING_ACTIVATION, PENDING_DEACTIVATION, or FAILED.\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The client list version.\n"
+                }
+            },
+            "required": [
+                "listId",
+                "network",
+                "status",
+                "version"
+            ],
+            "inputProperties": {
+                "comments": {
+                    "type": "string",
+                    "description": "A brief description for the activation.\n"
+                },
+                "listId": {
+                    "type": "string",
+                    "description": "The client list unique identifier.\n"
+                },
+                "network": {
+                    "type": "string",
+                    "description": "The network environment where you activate your client list: either STAGING or PRODUCTION.\n"
+                },
+                "notificationRecipients": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Users to notify via email.\n"
+                },
+                "siebelTicketId": {
+                    "type": "string",
+                    "description": "Identifies the Siebel ticket, if the activation is linked to one.\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The client list version.\n"
+                }
+            },
+            "requiredInputs": [
+                "listId",
+                "network",
+                "version"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ClientlistActivation resources.\n",
+                "properties": {
+                    "comments": {
+                        "type": "string",
+                        "description": "A brief description for the activation.\n"
+                    },
+                    "listId": {
+                        "type": "string",
+                        "description": "The client list unique identifier.\n"
+                    },
+                    "network": {
+                        "type": "string",
+                        "description": "The network environment where you activate your client list: either STAGING or PRODUCTION.\n"
+                    },
+                    "notificationRecipients": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Users to notify via email.\n"
+                    },
+                    "siebelTicketId": {
+                        "type": "string",
+                        "description": "Identifies the Siebel ticket, if the activation is linked to one.\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "The current activation status, either ACTIVE, INACTIVE, MODIFIED, PENDING_ACTIVATION, PENDING_DEACTIVATION, or FAILED.\n"
+                    },
+                    "version": {
+                        "type": "integer",
+                        "description": "The client list version.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/clientlistList:ClientlistList": {
+            "properties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "Contract ID for which client list is assigned.\n"
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "Group ID for which client list is assigned.\n"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/ClientlistListItem:ClientlistListItem"
+                    },
+                    "description": "Set of items containing item information.\n"
+                },
+                "itemsCount": {
+                    "type": "integer",
+                    "description": "The number of items that a client list contains.\n"
+                },
+                "listId": {
+                    "type": "string",
+                    "description": "The ID of the client list.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the client list.\n"
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "The client list notes.\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The client list tags.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]\n"
+                },
+                "version": {
+                    "type": "integer",
+                    "description": "The current version of the client list.\n"
+                }
+            },
+            "required": [
+                "contractId",
+                "groupId",
+                "itemsCount",
+                "listId",
+                "name",
+                "type",
+                "version"
+            ],
+            "inputProperties": {
+                "contractId": {
+                    "type": "string",
+                    "description": "Contract ID for which client list is assigned.\n",
+                    "willReplaceOnChanges": true
+                },
+                "groupId": {
+                    "type": "integer",
+                    "description": "Group ID for which client list is assigned.\n",
+                    "willReplaceOnChanges": true
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/ClientlistListItem:ClientlistListItem"
+                    },
+                    "description": "Set of items containing item information.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the client list.\n"
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "The client list notes.\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The client list tags.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]\n",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "contractId",
+                "groupId",
+                "type"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ClientlistList resources.\n",
+                "properties": {
+                    "contractId": {
+                        "type": "string",
+                        "description": "Contract ID for which client list is assigned.\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "groupId": {
+                        "type": "integer",
+                        "description": "Group ID for which client list is assigned.\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/ClientlistListItem:ClientlistListItem"
+                        },
+                        "description": "Set of items containing item information.\n"
+                    },
+                    "itemsCount": {
+                        "type": "integer",
+                        "description": "The number of items that a client list contains.\n"
+                    },
+                    "listId": {
+                        "type": "string",
+                        "description": "The ID of the client list.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the client list.\n"
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "The client list notes.\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The client list tags.\n"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The type of the client list. Valid types: [IP GEO ASN TLS_FINGERPRINT FILE_HASH]\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "version": {
+                        "type": "integer",
+                        "description": "The current version of the client list.\n"
                     }
                 },
                 "type": "object"
@@ -31781,6 +32957,226 @@
                     "version": {
                         "type": "integer",
                         "description": "Cloudlets policy version you want to activate\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/cloudwrapperActivation:CloudwrapperActivation": {
+            "properties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "The configuration you want to activate.\n"
+                },
+                "revision": {
+                    "type": "string",
+                    "description": "Unique hash value of the configuration.\n"
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/CloudwrapperActivationTimeouts:CloudwrapperActivationTimeouts"
+                }
+            },
+            "required": [
+                "configId",
+                "revision"
+            ],
+            "inputProperties": {
+                "configId": {
+                    "type": "integer",
+                    "description": "The configuration you want to activate.\n"
+                },
+                "revision": {
+                    "type": "string",
+                    "description": "Unique hash value of the configuration.\n"
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/CloudwrapperActivationTimeouts:CloudwrapperActivationTimeouts"
+                }
+            },
+            "requiredInputs": [
+                "configId",
+                "revision"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering CloudwrapperActivation resources.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer",
+                        "description": "The configuration you want to activate.\n"
+                    },
+                    "revision": {
+                        "type": "string",
+                        "description": "Unique hash value of the configuration.\n"
+                    },
+                    "timeouts": {
+                        "$ref": "#/types/akamai:index/CloudwrapperActivationTimeouts:CloudwrapperActivationTimeouts"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "akamai:index/cloudwrapperConfiguration:CloudwrapperConfiguration": {
+            "properties": {
+                "capacityAlertsThreshold": {
+                    "type": "integer",
+                    "description": "Capacity Alerts enablement information for the configuration. The Alert Threshold should be between 50 and 100.\n"
+                },
+                "comments": {
+                    "type": "string",
+                    "description": "Additional information you provide to differentiate or track changes of the configuration.\n"
+                },
+                "configName": {
+                    "type": "string",
+                    "description": "Name of the configuration.\n"
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "Contract ID having Cloud Wrapper entitlement.\n"
+                },
+                "locations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/CloudwrapperConfigurationLocation:CloudwrapperConfigurationLocation"
+                    },
+                    "description": "List of locations to use with the configuration.\n"
+                },
+                "notificationEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Email addresses to use for notifications.\n"
+                },
+                "propertyIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of properties belonging to eligible products.\n"
+                },
+                "retainIdleObjects": {
+                    "type": "boolean",
+                    "description": "Retain idle objects beyond their max idle lifetime.\n"
+                },
+                "revision": {
+                    "type": "string",
+                    "description": "Unique hash value of the configuration.\n"
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/CloudwrapperConfigurationTimeouts:CloudwrapperConfigurationTimeouts"
+                }
+            },
+            "required": [
+                "comments",
+                "configName",
+                "contractId",
+                "notificationEmails",
+                "propertyIds",
+                "retainIdleObjects",
+                "revision"
+            ],
+            "inputProperties": {
+                "capacityAlertsThreshold": {
+                    "type": "integer",
+                    "description": "Capacity Alerts enablement information for the configuration. The Alert Threshold should be between 50 and 100.\n"
+                },
+                "comments": {
+                    "type": "string",
+                    "description": "Additional information you provide to differentiate or track changes of the configuration.\n"
+                },
+                "configName": {
+                    "type": "string",
+                    "description": "Name of the configuration.\n"
+                },
+                "contractId": {
+                    "type": "string",
+                    "description": "Contract ID having Cloud Wrapper entitlement.\n"
+                },
+                "locations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/akamai:index/CloudwrapperConfigurationLocation:CloudwrapperConfigurationLocation"
+                    },
+                    "description": "List of locations to use with the configuration.\n"
+                },
+                "notificationEmails": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Email addresses to use for notifications.\n"
+                },
+                "propertyIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of properties belonging to eligible products.\n"
+                },
+                "retainIdleObjects": {
+                    "type": "boolean",
+                    "description": "Retain idle objects beyond their max idle lifetime.\n"
+                },
+                "timeouts": {
+                    "$ref": "#/types/akamai:index/CloudwrapperConfigurationTimeouts:CloudwrapperConfigurationTimeouts"
+                }
+            },
+            "requiredInputs": [
+                "comments",
+                "configName",
+                "contractId",
+                "propertyIds"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering CloudwrapperConfiguration resources.\n",
+                "properties": {
+                    "capacityAlertsThreshold": {
+                        "type": "integer",
+                        "description": "Capacity Alerts enablement information for the configuration. The Alert Threshold should be between 50 and 100.\n"
+                    },
+                    "comments": {
+                        "type": "string",
+                        "description": "Additional information you provide to differentiate or track changes of the configuration.\n"
+                    },
+                    "configName": {
+                        "type": "string",
+                        "description": "Name of the configuration.\n"
+                    },
+                    "contractId": {
+                        "type": "string",
+                        "description": "Contract ID having Cloud Wrapper entitlement.\n"
+                    },
+                    "locations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/CloudwrapperConfigurationLocation:CloudwrapperConfigurationLocation"
+                        },
+                        "description": "List of locations to use with the configuration.\n"
+                    },
+                    "notificationEmails": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Email addresses to use for notifications.\n"
+                    },
+                    "propertyIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of properties belonging to eligible products.\n"
+                    },
+                    "retainIdleObjects": {
+                        "type": "boolean",
+                        "description": "Retain idle objects beyond their max idle lifetime.\n"
+                    },
+                    "revision": {
+                        "type": "string",
+                        "description": "Unique hash value of the configuration.\n"
+                    },
+                    "timeouts": {
+                        "$ref": "#/types/akamai:index/CloudwrapperConfigurationTimeouts:CloudwrapperConfigurationTimeouts"
                     }
                 },
                 "type": "object"
@@ -40664,6 +42060,44 @@
                 ]
             }
         },
+        "akamai:index/getBotmanCustomClientSequence:getBotmanCustomClientSequence": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getBotmanCustomClientSequence.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getBotmanCustomClientSequence.\n",
+                "properties": {
+                    "configId": {
+                        "type": "integer"
+                    },
+                    "customClientIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "configId",
+                    "customClientIds",
+                    "id"
+                ]
+            }
+        },
         "akamai:index/getBotmanCustomDefinedBot:getBotmanCustomDefinedBot": {
             "inputs": {
                 "description": "A collection of arguments for invoking getBotmanCustomDefinedBot.\n",
@@ -41161,6 +42595,67 @@
                 ]
             }
         },
+        "akamai:index/getClientlistLists:getClientlistLists": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getClientlistLists.\n",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "types": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getClientlistLists.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "json": {
+                        "type": "string"
+                    },
+                    "listIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "lists": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getClientlistListsList:getClientlistListsList"
+                        }
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "outputText": {
+                        "type": "string"
+                    },
+                    "types": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "json",
+                    "listIds",
+                    "lists",
+                    "outputText",
+                    "id"
+                ]
+            }
+        },
         "akamai:index/getCloudletsApiPrioritizationMatchRule:getCloudletsApiPrioritizationMatchRule": {
             "inputs": {
                 "description": "A collection of arguments for invoking getCloudletsApiPrioritizationMatchRule.\n",
@@ -41636,6 +43131,313 @@
                 "type": "object",
                 "required": [
                     "json",
+                    "id"
+                ]
+            }
+        },
+        "akamai:index/getCloudwrapperCapacities:getCloudwrapperCapacities": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getCloudwrapperCapacities.\n",
+                "properties": {
+                    "capacities": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudwrapperCapacitiesCapacity:getCloudwrapperCapacitiesCapacity"
+                        }
+                    },
+                    "contractIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCloudwrapperCapacities.\n",
+                "properties": {
+                    "capacities": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudwrapperCapacitiesCapacity:getCloudwrapperCapacitiesCapacity"
+                        }
+                    },
+                    "contractIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "id": {
+                        "type": "string",
+                        "deprecationMessage": "Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_capacities`."
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            }
+        },
+        "akamai:index/getCloudwrapperConfiguration:getCloudwrapperConfiguration": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getCloudwrapperConfiguration.\n",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "locations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudwrapperConfigurationLocation:getCloudwrapperConfigurationLocation"
+                        }
+                    },
+                    "multiCdnSettings": {
+                        "$ref": "#/types/akamai:index/getCloudwrapperConfigurationMultiCdnSettings:getCloudwrapperConfigurationMultiCdnSettings"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCloudwrapperConfiguration.\n",
+                "properties": {
+                    "capacityAlertsThreshold": {
+                        "type": "integer"
+                    },
+                    "comments": {
+                        "type": "string"
+                    },
+                    "configName": {
+                        "type": "string"
+                    },
+                    "contractId": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "lastActivatedBy": {
+                        "type": "string"
+                    },
+                    "lastActivatedDate": {
+                        "type": "string"
+                    },
+                    "lastUpdatedBy": {
+                        "type": "string"
+                    },
+                    "lastUpdatedDate": {
+                        "type": "string"
+                    },
+                    "locations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudwrapperConfigurationLocation:getCloudwrapperConfigurationLocation"
+                        }
+                    },
+                    "multiCdnSettings": {
+                        "$ref": "#/types/akamai:index/getCloudwrapperConfigurationMultiCdnSettings:getCloudwrapperConfigurationMultiCdnSettings"
+                    },
+                    "notificationEmails": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "propertyIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "retainIdleObjects": {
+                        "type": "boolean"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "capacityAlertsThreshold",
+                    "comments",
+                    "configName",
+                    "contractId",
+                    "id",
+                    "lastActivatedBy",
+                    "lastActivatedDate",
+                    "lastUpdatedBy",
+                    "lastUpdatedDate",
+                    "notificationEmails",
+                    "propertyIds",
+                    "retainIdleObjects",
+                    "status"
+                ]
+            }
+        },
+        "akamai:index/getCloudwrapperConfigurations:getCloudwrapperConfigurations": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getCloudwrapperConfigurations.\n",
+                "properties": {
+                    "configurations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudwrapperConfigurationsConfiguration:getCloudwrapperConfigurationsConfiguration"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCloudwrapperConfigurations.\n",
+                "properties": {
+                    "configurations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudwrapperConfigurationsConfiguration:getCloudwrapperConfigurationsConfiguration"
+                        }
+                    },
+                    "id": {
+                        "type": "string",
+                        "deprecationMessage": "Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_configurations`."
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            }
+        },
+        "akamai:index/getCloudwrapperLocation:getCloudwrapperLocation": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getCloudwrapperLocation.\n",
+                "properties": {
+                    "locationName": {
+                        "type": "string"
+                    },
+                    "trafficType": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "locationName",
+                    "trafficType"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCloudwrapperLocation.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "deprecationMessage": "Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_location`"
+                    },
+                    "locationId": {
+                        "type": "string"
+                    },
+                    "locationName": {
+                        "type": "string"
+                    },
+                    "trafficType": {
+                        "type": "string"
+                    },
+                    "trafficTypeId": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id",
+                    "locationId",
+                    "locationName",
+                    "trafficType",
+                    "trafficTypeId"
+                ]
+            }
+        },
+        "akamai:index/getCloudwrapperLocations:getCloudwrapperLocations": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getCloudwrapperLocations.\n",
+                "properties": {
+                    "locations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudwrapperLocationsLocation:getCloudwrapperLocationsLocation"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCloudwrapperLocations.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "deprecationMessage": "Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_locations`"
+                    },
+                    "locations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudwrapperLocationsLocation:getCloudwrapperLocationsLocation"
+                        }
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            }
+        },
+        "akamai:index/getCloudwrapperProperties:getCloudwrapperProperties": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getCloudwrapperProperties.\n",
+                "properties": {
+                    "contractIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudwrapperPropertiesProperty:getCloudwrapperPropertiesProperty"
+                        }
+                    },
+                    "unused": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCloudwrapperProperties.\n",
+                "properties": {
+                    "contractIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "id": {
+                        "type": "string",
+                        "deprecationMessage": "Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_properties`"
+                    },
+                    "properties": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/akamai:index/getCloudwrapperPropertiesProperty:getCloudwrapperPropertiesProperty"
+                        }
+                    },
+                    "unused": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object",
+                "required": [
                     "id"
                 ]
             }

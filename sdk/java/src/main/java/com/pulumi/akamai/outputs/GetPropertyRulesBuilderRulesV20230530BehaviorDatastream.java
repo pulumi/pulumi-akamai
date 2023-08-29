@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -19,7 +20,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDatastream {
     private @Nullable Boolean enabled;
     private @Nullable Boolean locked;
     private @Nullable Boolean logEnabled;
-    private @Nullable String logStreamName;
+    private @Nullable List<String> logStreamNames;
     private @Nullable String logStreamTitle;
     private @Nullable Integer samplingPercentage;
     private @Nullable String streamType;
@@ -45,8 +46,8 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDatastream {
     public Optional<Boolean> logEnabled() {
         return Optional.ofNullable(this.logEnabled);
     }
-    public Optional<String> logStreamName() {
-        return Optional.ofNullable(this.logStreamName);
+    public List<String> logStreamNames() {
+        return this.logStreamNames == null ? List.of() : this.logStreamNames;
     }
     public Optional<String> logStreamTitle() {
         return Optional.ofNullable(this.logStreamTitle);
@@ -79,7 +80,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDatastream {
         private @Nullable Boolean enabled;
         private @Nullable Boolean locked;
         private @Nullable Boolean logEnabled;
-        private @Nullable String logStreamName;
+        private @Nullable List<String> logStreamNames;
         private @Nullable String logStreamTitle;
         private @Nullable Integer samplingPercentage;
         private @Nullable String streamType;
@@ -94,7 +95,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDatastream {
     	      this.enabled = defaults.enabled;
     	      this.locked = defaults.locked;
     	      this.logEnabled = defaults.logEnabled;
-    	      this.logStreamName = defaults.logStreamName;
+    	      this.logStreamNames = defaults.logStreamNames;
     	      this.logStreamTitle = defaults.logStreamTitle;
     	      this.samplingPercentage = defaults.samplingPercentage;
     	      this.streamType = defaults.streamType;
@@ -133,9 +134,12 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDatastream {
             return this;
         }
         @CustomType.Setter
-        public Builder logStreamName(@Nullable String logStreamName) {
-            this.logStreamName = logStreamName;
+        public Builder logStreamNames(@Nullable List<String> logStreamNames) {
+            this.logStreamNames = logStreamNames;
             return this;
+        }
+        public Builder logStreamNames(String... logStreamNames) {
+            return logStreamNames(List.of(logStreamNames));
         }
         @CustomType.Setter
         public Builder logStreamTitle(@Nullable String logStreamTitle) {
@@ -170,7 +174,7 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorDatastream {
             o.enabled = enabled;
             o.locked = locked;
             o.logEnabled = logEnabled;
-            o.logStreamName = logStreamName;
+            o.logStreamNames = logStreamNames;
             o.logStreamTitle = logStreamTitle;
             o.samplingPercentage = samplingPercentage;
             o.streamType = streamType;
