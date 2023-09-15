@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetDatastreamDatasetFields(ctx *pulumi.Context, args *GetDatastreamDatasetFieldsArgs, opts ...pulumi.InvokeOption) (*GetDatastreamDatasetFieldsResult, error) {
@@ -69,6 +70,12 @@ func (o GetDatastreamDatasetFieldsResultOutput) ToGetDatastreamDatasetFieldsResu
 
 func (o GetDatastreamDatasetFieldsResultOutput) ToGetDatastreamDatasetFieldsResultOutputWithContext(ctx context.Context) GetDatastreamDatasetFieldsResultOutput {
 	return o
+}
+
+func (o GetDatastreamDatasetFieldsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatastreamDatasetFieldsResult] {
+	return pulumix.Output[GetDatastreamDatasetFieldsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDatastreamDatasetFieldsResultOutput) DatasetFields() GetDatastreamDatasetFieldsDatasetFieldArrayOutput {

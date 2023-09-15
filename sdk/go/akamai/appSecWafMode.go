@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecWafMode struct {
@@ -155,6 +156,12 @@ func (i *AppSecWafMode) ToAppSecWafModeOutputWithContext(ctx context.Context) Ap
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecWafModeOutput)
 }
 
+func (i *AppSecWafMode) ToOutput(ctx context.Context) pulumix.Output[*AppSecWafMode] {
+	return pulumix.Output[*AppSecWafMode]{
+		OutputState: i.ToAppSecWafModeOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecWafModeArrayInput is an input type that accepts AppSecWafModeArray and AppSecWafModeArrayOutput values.
 // You can construct a concrete instance of `AppSecWafModeArrayInput` via:
 //
@@ -178,6 +185,12 @@ func (i AppSecWafModeArray) ToAppSecWafModeArrayOutput() AppSecWafModeArrayOutpu
 
 func (i AppSecWafModeArray) ToAppSecWafModeArrayOutputWithContext(ctx context.Context) AppSecWafModeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecWafModeArrayOutput)
+}
+
+func (i AppSecWafModeArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecWafMode] {
+	return pulumix.Output[[]*AppSecWafMode]{
+		OutputState: i.ToAppSecWafModeArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecWafModeMapInput is an input type that accepts AppSecWafModeMap and AppSecWafModeMapOutput values.
@@ -205,6 +218,12 @@ func (i AppSecWafModeMap) ToAppSecWafModeMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecWafModeMapOutput)
 }
 
+func (i AppSecWafModeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecWafMode] {
+	return pulumix.Output[map[string]*AppSecWafMode]{
+		OutputState: i.ToAppSecWafModeMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecWafModeOutput struct{ *pulumi.OutputState }
 
 func (AppSecWafModeOutput) ElementType() reflect.Type {
@@ -217,6 +236,12 @@ func (o AppSecWafModeOutput) ToAppSecWafModeOutput() AppSecWafModeOutput {
 
 func (o AppSecWafModeOutput) ToAppSecWafModeOutputWithContext(ctx context.Context) AppSecWafModeOutput {
 	return o
+}
+
+func (o AppSecWafModeOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecWafMode] {
+	return pulumix.Output[*AppSecWafMode]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration
@@ -273,6 +298,12 @@ func (o AppSecWafModeArrayOutput) ToAppSecWafModeArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o AppSecWafModeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecWafMode] {
+	return pulumix.Output[[]*AppSecWafMode]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecWafModeArrayOutput) Index(i pulumi.IntInput) AppSecWafModeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecWafMode {
 		return vs[0].([]*AppSecWafMode)[vs[1].(int)]
@@ -291,6 +322,12 @@ func (o AppSecWafModeMapOutput) ToAppSecWafModeMapOutput() AppSecWafModeMapOutpu
 
 func (o AppSecWafModeMapOutput) ToAppSecWafModeMapOutputWithContext(ctx context.Context) AppSecWafModeMapOutput {
 	return o
+}
+
+func (o AppSecWafModeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecWafMode] {
+	return pulumix.Output[map[string]*AppSecWafMode]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecWafModeMapOutput) MapIndex(k pulumi.StringInput) AppSecWafModeOutput {

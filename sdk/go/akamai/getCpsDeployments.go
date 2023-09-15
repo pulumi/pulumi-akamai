@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCpsDeployments(ctx *pulumi.Context, args *GetCpsDeploymentsArgs, opts ...pulumi.InvokeOption) (*GetCpsDeploymentsResult, error) {
@@ -74,6 +75,12 @@ func (o GetCpsDeploymentsResultOutput) ToGetCpsDeploymentsResultOutput() GetCpsD
 
 func (o GetCpsDeploymentsResultOutput) ToGetCpsDeploymentsResultOutputWithContext(ctx context.Context) GetCpsDeploymentsResultOutput {
 	return o
+}
+
+func (o GetCpsDeploymentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCpsDeploymentsResult] {
+	return pulumix.Output[GetCpsDeploymentsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCpsDeploymentsResultOutput) AutoRenewalStartTime() pulumi.StringOutput {

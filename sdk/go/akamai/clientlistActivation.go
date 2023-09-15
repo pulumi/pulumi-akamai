@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type ClientlistActivation struct {
@@ -161,6 +162,12 @@ func (i *ClientlistActivation) ToClientlistActivationOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ClientlistActivationOutput)
 }
 
+func (i *ClientlistActivation) ToOutput(ctx context.Context) pulumix.Output[*ClientlistActivation] {
+	return pulumix.Output[*ClientlistActivation]{
+		OutputState: i.ToClientlistActivationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ClientlistActivationArrayInput is an input type that accepts ClientlistActivationArray and ClientlistActivationArrayOutput values.
 // You can construct a concrete instance of `ClientlistActivationArrayInput` via:
 //
@@ -184,6 +191,12 @@ func (i ClientlistActivationArray) ToClientlistActivationArrayOutput() Clientlis
 
 func (i ClientlistActivationArray) ToClientlistActivationArrayOutputWithContext(ctx context.Context) ClientlistActivationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ClientlistActivationArrayOutput)
+}
+
+func (i ClientlistActivationArray) ToOutput(ctx context.Context) pulumix.Output[[]*ClientlistActivation] {
+	return pulumix.Output[[]*ClientlistActivation]{
+		OutputState: i.ToClientlistActivationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // ClientlistActivationMapInput is an input type that accepts ClientlistActivationMap and ClientlistActivationMapOutput values.
@@ -211,6 +224,12 @@ func (i ClientlistActivationMap) ToClientlistActivationMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ClientlistActivationMapOutput)
 }
 
+func (i ClientlistActivationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClientlistActivation] {
+	return pulumix.Output[map[string]*ClientlistActivation]{
+		OutputState: i.ToClientlistActivationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ClientlistActivationOutput struct{ *pulumi.OutputState }
 
 func (ClientlistActivationOutput) ElementType() reflect.Type {
@@ -223,6 +242,12 @@ func (o ClientlistActivationOutput) ToClientlistActivationOutput() ClientlistAct
 
 func (o ClientlistActivationOutput) ToClientlistActivationOutputWithContext(ctx context.Context) ClientlistActivationOutput {
 	return o
+}
+
+func (o ClientlistActivationOutput) ToOutput(ctx context.Context) pulumix.Output[*ClientlistActivation] {
+	return pulumix.Output[*ClientlistActivation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A brief description for the activation.
@@ -274,6 +299,12 @@ func (o ClientlistActivationArrayOutput) ToClientlistActivationArrayOutputWithCo
 	return o
 }
 
+func (o ClientlistActivationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ClientlistActivation] {
+	return pulumix.Output[[]*ClientlistActivation]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ClientlistActivationArrayOutput) Index(i pulumi.IntInput) ClientlistActivationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ClientlistActivation {
 		return vs[0].([]*ClientlistActivation)[vs[1].(int)]
@@ -292,6 +323,12 @@ func (o ClientlistActivationMapOutput) ToClientlistActivationMapOutput() Clientl
 
 func (o ClientlistActivationMapOutput) ToClientlistActivationMapOutputWithContext(ctx context.Context) ClientlistActivationMapOutput {
 	return o
+}
+
+func (o ClientlistActivationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ClientlistActivation] {
+	return pulumix.Output[map[string]*ClientlistActivation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ClientlistActivationMapOutput) MapIndex(k pulumi.StringInput) ClientlistActivationOutput {

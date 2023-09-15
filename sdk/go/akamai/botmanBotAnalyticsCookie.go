@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanBotAnalyticsCookie struct {
@@ -102,6 +103,12 @@ func (i *BotmanBotAnalyticsCookie) ToBotmanBotAnalyticsCookieOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanBotAnalyticsCookieOutput)
 }
 
+func (i *BotmanBotAnalyticsCookie) ToOutput(ctx context.Context) pulumix.Output[*BotmanBotAnalyticsCookie] {
+	return pulumix.Output[*BotmanBotAnalyticsCookie]{
+		OutputState: i.ToBotmanBotAnalyticsCookieOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BotmanBotAnalyticsCookieArrayInput is an input type that accepts BotmanBotAnalyticsCookieArray and BotmanBotAnalyticsCookieArrayOutput values.
 // You can construct a concrete instance of `BotmanBotAnalyticsCookieArrayInput` via:
 //
@@ -125,6 +132,12 @@ func (i BotmanBotAnalyticsCookieArray) ToBotmanBotAnalyticsCookieArrayOutput() B
 
 func (i BotmanBotAnalyticsCookieArray) ToBotmanBotAnalyticsCookieArrayOutputWithContext(ctx context.Context) BotmanBotAnalyticsCookieArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanBotAnalyticsCookieArrayOutput)
+}
+
+func (i BotmanBotAnalyticsCookieArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanBotAnalyticsCookie] {
+	return pulumix.Output[[]*BotmanBotAnalyticsCookie]{
+		OutputState: i.ToBotmanBotAnalyticsCookieArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BotmanBotAnalyticsCookieMapInput is an input type that accepts BotmanBotAnalyticsCookieMap and BotmanBotAnalyticsCookieMapOutput values.
@@ -152,6 +165,12 @@ func (i BotmanBotAnalyticsCookieMap) ToBotmanBotAnalyticsCookieMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanBotAnalyticsCookieMapOutput)
 }
 
+func (i BotmanBotAnalyticsCookieMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanBotAnalyticsCookie] {
+	return pulumix.Output[map[string]*BotmanBotAnalyticsCookie]{
+		OutputState: i.ToBotmanBotAnalyticsCookieMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BotmanBotAnalyticsCookieOutput struct{ *pulumi.OutputState }
 
 func (BotmanBotAnalyticsCookieOutput) ElementType() reflect.Type {
@@ -164,6 +183,12 @@ func (o BotmanBotAnalyticsCookieOutput) ToBotmanBotAnalyticsCookieOutput() Botma
 
 func (o BotmanBotAnalyticsCookieOutput) ToBotmanBotAnalyticsCookieOutputWithContext(ctx context.Context) BotmanBotAnalyticsCookieOutput {
 	return o
+}
+
+func (o BotmanBotAnalyticsCookieOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanBotAnalyticsCookie] {
+	return pulumix.Output[*BotmanBotAnalyticsCookie]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanBotAnalyticsCookieOutput) BotAnalyticsCookie() pulumi.StringOutput {
@@ -188,6 +213,12 @@ func (o BotmanBotAnalyticsCookieArrayOutput) ToBotmanBotAnalyticsCookieArrayOutp
 	return o
 }
 
+func (o BotmanBotAnalyticsCookieArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanBotAnalyticsCookie] {
+	return pulumix.Output[[]*BotmanBotAnalyticsCookie]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BotmanBotAnalyticsCookieArrayOutput) Index(i pulumi.IntInput) BotmanBotAnalyticsCookieOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanBotAnalyticsCookie {
 		return vs[0].([]*BotmanBotAnalyticsCookie)[vs[1].(int)]
@@ -206,6 +237,12 @@ func (o BotmanBotAnalyticsCookieMapOutput) ToBotmanBotAnalyticsCookieMapOutput()
 
 func (o BotmanBotAnalyticsCookieMapOutput) ToBotmanBotAnalyticsCookieMapOutputWithContext(ctx context.Context) BotmanBotAnalyticsCookieMapOutput {
 	return o
+}
+
+func (o BotmanBotAnalyticsCookieMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanBotAnalyticsCookie] {
+	return pulumix.Output[map[string]*BotmanBotAnalyticsCookie]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanBotAnalyticsCookieMapOutput) MapIndex(k pulumi.StringInput) BotmanBotAnalyticsCookieOutput {

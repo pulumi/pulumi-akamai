@@ -22,3 +22,6 @@ export interface GetAppSecHostnameCoverageResult {
     readonly json: string;
     readonly outputText: string;
 }
+export function getAppSecHostnameCoverageOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetAppSecHostnameCoverageResult> {
+    return pulumi.output(getAppSecHostnameCoverage(opts))
+}

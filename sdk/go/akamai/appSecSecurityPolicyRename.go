@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecSecurityPolicyRename struct {
@@ -125,6 +126,12 @@ func (i *AppSecSecurityPolicyRename) ToAppSecSecurityPolicyRenameOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSecurityPolicyRenameOutput)
 }
 
+func (i *AppSecSecurityPolicyRename) ToOutput(ctx context.Context) pulumix.Output[*AppSecSecurityPolicyRename] {
+	return pulumix.Output[*AppSecSecurityPolicyRename]{
+		OutputState: i.ToAppSecSecurityPolicyRenameOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecSecurityPolicyRenameArrayInput is an input type that accepts AppSecSecurityPolicyRenameArray and AppSecSecurityPolicyRenameArrayOutput values.
 // You can construct a concrete instance of `AppSecSecurityPolicyRenameArrayInput` via:
 //
@@ -148,6 +155,12 @@ func (i AppSecSecurityPolicyRenameArray) ToAppSecSecurityPolicyRenameArrayOutput
 
 func (i AppSecSecurityPolicyRenameArray) ToAppSecSecurityPolicyRenameArrayOutputWithContext(ctx context.Context) AppSecSecurityPolicyRenameArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSecurityPolicyRenameArrayOutput)
+}
+
+func (i AppSecSecurityPolicyRenameArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecSecurityPolicyRename] {
+	return pulumix.Output[[]*AppSecSecurityPolicyRename]{
+		OutputState: i.ToAppSecSecurityPolicyRenameArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecSecurityPolicyRenameMapInput is an input type that accepts AppSecSecurityPolicyRenameMap and AppSecSecurityPolicyRenameMapOutput values.
@@ -175,6 +188,12 @@ func (i AppSecSecurityPolicyRenameMap) ToAppSecSecurityPolicyRenameMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecSecurityPolicyRenameMapOutput)
 }
 
+func (i AppSecSecurityPolicyRenameMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecSecurityPolicyRename] {
+	return pulumix.Output[map[string]*AppSecSecurityPolicyRename]{
+		OutputState: i.ToAppSecSecurityPolicyRenameMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecSecurityPolicyRenameOutput struct{ *pulumi.OutputState }
 
 func (AppSecSecurityPolicyRenameOutput) ElementType() reflect.Type {
@@ -187,6 +206,12 @@ func (o AppSecSecurityPolicyRenameOutput) ToAppSecSecurityPolicyRenameOutput() A
 
 func (o AppSecSecurityPolicyRenameOutput) ToAppSecSecurityPolicyRenameOutputWithContext(ctx context.Context) AppSecSecurityPolicyRenameOutput {
 	return o
+}
+
+func (o AppSecSecurityPolicyRenameOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecSecurityPolicyRename] {
+	return pulumix.Output[*AppSecSecurityPolicyRename]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration
@@ -218,6 +243,12 @@ func (o AppSecSecurityPolicyRenameArrayOutput) ToAppSecSecurityPolicyRenameArray
 	return o
 }
 
+func (o AppSecSecurityPolicyRenameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecSecurityPolicyRename] {
+	return pulumix.Output[[]*AppSecSecurityPolicyRename]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecSecurityPolicyRenameArrayOutput) Index(i pulumi.IntInput) AppSecSecurityPolicyRenameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecSecurityPolicyRename {
 		return vs[0].([]*AppSecSecurityPolicyRename)[vs[1].(int)]
@@ -236,6 +267,12 @@ func (o AppSecSecurityPolicyRenameMapOutput) ToAppSecSecurityPolicyRenameMapOutp
 
 func (o AppSecSecurityPolicyRenameMapOutput) ToAppSecSecurityPolicyRenameMapOutputWithContext(ctx context.Context) AppSecSecurityPolicyRenameMapOutput {
 	return o
+}
+
+func (o AppSecSecurityPolicyRenameMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecSecurityPolicyRename] {
+	return pulumix.Output[map[string]*AppSecSecurityPolicyRename]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecSecurityPolicyRenameMapOutput) MapIndex(k pulumi.StringInput) AppSecSecurityPolicyRenameOutput {

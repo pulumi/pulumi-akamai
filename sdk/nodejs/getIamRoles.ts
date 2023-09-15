@@ -23,3 +23,6 @@ export interface GetIamRolesResult {
     readonly id: string;
     readonly roles: outputs.GetIamRolesRole[];
 }
+export function getIamRolesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamRolesResult> {
+    return pulumi.output(getIamRoles(opts))
+}

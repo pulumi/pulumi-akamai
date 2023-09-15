@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type EdgeWorkersActivation struct {
@@ -131,6 +132,12 @@ func (i *EdgeWorkersActivation) ToEdgeWorkersActivationOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeWorkersActivationOutput)
 }
 
+func (i *EdgeWorkersActivation) ToOutput(ctx context.Context) pulumix.Output[*EdgeWorkersActivation] {
+	return pulumix.Output[*EdgeWorkersActivation]{
+		OutputState: i.ToEdgeWorkersActivationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // EdgeWorkersActivationArrayInput is an input type that accepts EdgeWorkersActivationArray and EdgeWorkersActivationArrayOutput values.
 // You can construct a concrete instance of `EdgeWorkersActivationArrayInput` via:
 //
@@ -154,6 +161,12 @@ func (i EdgeWorkersActivationArray) ToEdgeWorkersActivationArrayOutput() EdgeWor
 
 func (i EdgeWorkersActivationArray) ToEdgeWorkersActivationArrayOutputWithContext(ctx context.Context) EdgeWorkersActivationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeWorkersActivationArrayOutput)
+}
+
+func (i EdgeWorkersActivationArray) ToOutput(ctx context.Context) pulumix.Output[[]*EdgeWorkersActivation] {
+	return pulumix.Output[[]*EdgeWorkersActivation]{
+		OutputState: i.ToEdgeWorkersActivationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // EdgeWorkersActivationMapInput is an input type that accepts EdgeWorkersActivationMap and EdgeWorkersActivationMapOutput values.
@@ -181,6 +194,12 @@ func (i EdgeWorkersActivationMap) ToEdgeWorkersActivationMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeWorkersActivationMapOutput)
 }
 
+func (i EdgeWorkersActivationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EdgeWorkersActivation] {
+	return pulumix.Output[map[string]*EdgeWorkersActivation]{
+		OutputState: i.ToEdgeWorkersActivationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type EdgeWorkersActivationOutput struct{ *pulumi.OutputState }
 
 func (EdgeWorkersActivationOutput) ElementType() reflect.Type {
@@ -193,6 +212,12 @@ func (o EdgeWorkersActivationOutput) ToEdgeWorkersActivationOutput() EdgeWorkers
 
 func (o EdgeWorkersActivationOutput) ToEdgeWorkersActivationOutputWithContext(ctx context.Context) EdgeWorkersActivationOutput {
 	return o
+}
+
+func (o EdgeWorkersActivationOutput) ToOutput(ctx context.Context) pulumix.Output[*EdgeWorkersActivation] {
+	return pulumix.Output[*EdgeWorkersActivation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // A unique identifier of the activation
@@ -229,6 +254,12 @@ func (o EdgeWorkersActivationArrayOutput) ToEdgeWorkersActivationArrayOutputWith
 	return o
 }
 
+func (o EdgeWorkersActivationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EdgeWorkersActivation] {
+	return pulumix.Output[[]*EdgeWorkersActivation]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o EdgeWorkersActivationArrayOutput) Index(i pulumi.IntInput) EdgeWorkersActivationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EdgeWorkersActivation {
 		return vs[0].([]*EdgeWorkersActivation)[vs[1].(int)]
@@ -247,6 +278,12 @@ func (o EdgeWorkersActivationMapOutput) ToEdgeWorkersActivationMapOutput() EdgeW
 
 func (o EdgeWorkersActivationMapOutput) ToEdgeWorkersActivationMapOutputWithContext(ctx context.Context) EdgeWorkersActivationMapOutput {
 	return o
+}
+
+func (o EdgeWorkersActivationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EdgeWorkersActivation] {
+	return pulumix.Output[map[string]*EdgeWorkersActivation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o EdgeWorkersActivationMapOutput) MapIndex(k pulumi.StringInput) EdgeWorkersActivationOutput {

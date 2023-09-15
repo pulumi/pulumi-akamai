@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecApiRequestConstraints struct {
@@ -135,6 +136,12 @@ func (i *AppSecApiRequestConstraints) ToAppSecApiRequestConstraintsOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecApiRequestConstraintsOutput)
 }
 
+func (i *AppSecApiRequestConstraints) ToOutput(ctx context.Context) pulumix.Output[*AppSecApiRequestConstraints] {
+	return pulumix.Output[*AppSecApiRequestConstraints]{
+		OutputState: i.ToAppSecApiRequestConstraintsOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecApiRequestConstraintsArrayInput is an input type that accepts AppSecApiRequestConstraintsArray and AppSecApiRequestConstraintsArrayOutput values.
 // You can construct a concrete instance of `AppSecApiRequestConstraintsArrayInput` via:
 //
@@ -158,6 +165,12 @@ func (i AppSecApiRequestConstraintsArray) ToAppSecApiRequestConstraintsArrayOutp
 
 func (i AppSecApiRequestConstraintsArray) ToAppSecApiRequestConstraintsArrayOutputWithContext(ctx context.Context) AppSecApiRequestConstraintsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecApiRequestConstraintsArrayOutput)
+}
+
+func (i AppSecApiRequestConstraintsArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecApiRequestConstraints] {
+	return pulumix.Output[[]*AppSecApiRequestConstraints]{
+		OutputState: i.ToAppSecApiRequestConstraintsArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecApiRequestConstraintsMapInput is an input type that accepts AppSecApiRequestConstraintsMap and AppSecApiRequestConstraintsMapOutput values.
@@ -185,6 +198,12 @@ func (i AppSecApiRequestConstraintsMap) ToAppSecApiRequestConstraintsMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecApiRequestConstraintsMapOutput)
 }
 
+func (i AppSecApiRequestConstraintsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecApiRequestConstraints] {
+	return pulumix.Output[map[string]*AppSecApiRequestConstraints]{
+		OutputState: i.ToAppSecApiRequestConstraintsMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecApiRequestConstraintsOutput struct{ *pulumi.OutputState }
 
 func (AppSecApiRequestConstraintsOutput) ElementType() reflect.Type {
@@ -197,6 +216,12 @@ func (o AppSecApiRequestConstraintsOutput) ToAppSecApiRequestConstraintsOutput()
 
 func (o AppSecApiRequestConstraintsOutput) ToAppSecApiRequestConstraintsOutputWithContext(ctx context.Context) AppSecApiRequestConstraintsOutput {
 	return o
+}
+
+func (o AppSecApiRequestConstraintsOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecApiRequestConstraints] {
+	return pulumix.Output[*AppSecApiRequestConstraints]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Action to be taken when the API request constraint is triggered
@@ -233,6 +258,12 @@ func (o AppSecApiRequestConstraintsArrayOutput) ToAppSecApiRequestConstraintsArr
 	return o
 }
 
+func (o AppSecApiRequestConstraintsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecApiRequestConstraints] {
+	return pulumix.Output[[]*AppSecApiRequestConstraints]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecApiRequestConstraintsArrayOutput) Index(i pulumi.IntInput) AppSecApiRequestConstraintsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecApiRequestConstraints {
 		return vs[0].([]*AppSecApiRequestConstraints)[vs[1].(int)]
@@ -251,6 +282,12 @@ func (o AppSecApiRequestConstraintsMapOutput) ToAppSecApiRequestConstraintsMapOu
 
 func (o AppSecApiRequestConstraintsMapOutput) ToAppSecApiRequestConstraintsMapOutputWithContext(ctx context.Context) AppSecApiRequestConstraintsMapOutput {
 	return o
+}
+
+func (o AppSecApiRequestConstraintsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecApiRequestConstraints] {
+	return pulumix.Output[map[string]*AppSecApiRequestConstraints]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecApiRequestConstraintsMapOutput) MapIndex(k pulumi.StringInput) AppSecApiRequestConstraintsOutput {

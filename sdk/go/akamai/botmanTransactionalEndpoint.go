@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanTransactionalEndpoint struct {
@@ -118,6 +119,12 @@ func (i *BotmanTransactionalEndpoint) ToBotmanTransactionalEndpointOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanTransactionalEndpointOutput)
 }
 
+func (i *BotmanTransactionalEndpoint) ToOutput(ctx context.Context) pulumix.Output[*BotmanTransactionalEndpoint] {
+	return pulumix.Output[*BotmanTransactionalEndpoint]{
+		OutputState: i.ToBotmanTransactionalEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BotmanTransactionalEndpointArrayInput is an input type that accepts BotmanTransactionalEndpointArray and BotmanTransactionalEndpointArrayOutput values.
 // You can construct a concrete instance of `BotmanTransactionalEndpointArrayInput` via:
 //
@@ -141,6 +148,12 @@ func (i BotmanTransactionalEndpointArray) ToBotmanTransactionalEndpointArrayOutp
 
 func (i BotmanTransactionalEndpointArray) ToBotmanTransactionalEndpointArrayOutputWithContext(ctx context.Context) BotmanTransactionalEndpointArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanTransactionalEndpointArrayOutput)
+}
+
+func (i BotmanTransactionalEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanTransactionalEndpoint] {
+	return pulumix.Output[[]*BotmanTransactionalEndpoint]{
+		OutputState: i.ToBotmanTransactionalEndpointArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BotmanTransactionalEndpointMapInput is an input type that accepts BotmanTransactionalEndpointMap and BotmanTransactionalEndpointMapOutput values.
@@ -168,6 +181,12 @@ func (i BotmanTransactionalEndpointMap) ToBotmanTransactionalEndpointMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanTransactionalEndpointMapOutput)
 }
 
+func (i BotmanTransactionalEndpointMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanTransactionalEndpoint] {
+	return pulumix.Output[map[string]*BotmanTransactionalEndpoint]{
+		OutputState: i.ToBotmanTransactionalEndpointMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BotmanTransactionalEndpointOutput struct{ *pulumi.OutputState }
 
 func (BotmanTransactionalEndpointOutput) ElementType() reflect.Type {
@@ -180,6 +199,12 @@ func (o BotmanTransactionalEndpointOutput) ToBotmanTransactionalEndpointOutput()
 
 func (o BotmanTransactionalEndpointOutput) ToBotmanTransactionalEndpointOutputWithContext(ctx context.Context) BotmanTransactionalEndpointOutput {
 	return o
+}
+
+func (o BotmanTransactionalEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanTransactionalEndpoint] {
+	return pulumix.Output[*BotmanTransactionalEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanTransactionalEndpointOutput) ConfigId() pulumi.IntOutput {
@@ -212,6 +237,12 @@ func (o BotmanTransactionalEndpointArrayOutput) ToBotmanTransactionalEndpointArr
 	return o
 }
 
+func (o BotmanTransactionalEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanTransactionalEndpoint] {
+	return pulumix.Output[[]*BotmanTransactionalEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BotmanTransactionalEndpointArrayOutput) Index(i pulumi.IntInput) BotmanTransactionalEndpointOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanTransactionalEndpoint {
 		return vs[0].([]*BotmanTransactionalEndpoint)[vs[1].(int)]
@@ -230,6 +261,12 @@ func (o BotmanTransactionalEndpointMapOutput) ToBotmanTransactionalEndpointMapOu
 
 func (o BotmanTransactionalEndpointMapOutput) ToBotmanTransactionalEndpointMapOutputWithContext(ctx context.Context) BotmanTransactionalEndpointMapOutput {
 	return o
+}
+
+func (o BotmanTransactionalEndpointMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanTransactionalEndpoint] {
+	return pulumix.Output[map[string]*BotmanTransactionalEndpoint]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanTransactionalEndpointMapOutput) MapIndex(k pulumi.StringInput) BotmanTransactionalEndpointOutput {

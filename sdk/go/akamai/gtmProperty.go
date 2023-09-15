@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type GtmProperty struct {
@@ -273,6 +274,12 @@ func (i *GtmProperty) ToGtmPropertyOutputWithContext(ctx context.Context) GtmPro
 	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyOutput)
 }
 
+func (i *GtmProperty) ToOutput(ctx context.Context) pulumix.Output[*GtmProperty] {
+	return pulumix.Output[*GtmProperty]{
+		OutputState: i.ToGtmPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GtmPropertyArrayInput is an input type that accepts GtmPropertyArray and GtmPropertyArrayOutput values.
 // You can construct a concrete instance of `GtmPropertyArrayInput` via:
 //
@@ -296,6 +303,12 @@ func (i GtmPropertyArray) ToGtmPropertyArrayOutput() GtmPropertyArrayOutput {
 
 func (i GtmPropertyArray) ToGtmPropertyArrayOutputWithContext(ctx context.Context) GtmPropertyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyArrayOutput)
+}
+
+func (i GtmPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]*GtmProperty] {
+	return pulumix.Output[[]*GtmProperty]{
+		OutputState: i.ToGtmPropertyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // GtmPropertyMapInput is an input type that accepts GtmPropertyMap and GtmPropertyMapOutput values.
@@ -323,6 +336,12 @@ func (i GtmPropertyMap) ToGtmPropertyMapOutputWithContext(ctx context.Context) G
 	return pulumi.ToOutputWithContext(ctx, i).(GtmPropertyMapOutput)
 }
 
+func (i GtmPropertyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmProperty] {
+	return pulumix.Output[map[string]*GtmProperty]{
+		OutputState: i.ToGtmPropertyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GtmPropertyOutput struct{ *pulumi.OutputState }
 
 func (GtmPropertyOutput) ElementType() reflect.Type {
@@ -335,6 +354,12 @@ func (o GtmPropertyOutput) ToGtmPropertyOutput() GtmPropertyOutput {
 
 func (o GtmPropertyOutput) ToGtmPropertyOutputWithContext(ctx context.Context) GtmPropertyOutput {
 	return o
+}
+
+func (o GtmPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[*GtmProperty] {
+	return pulumix.Output[*GtmProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GtmPropertyOutput) BackupCname() pulumi.StringPtrOutput {
@@ -487,6 +512,12 @@ func (o GtmPropertyArrayOutput) ToGtmPropertyArrayOutputWithContext(ctx context.
 	return o
 }
 
+func (o GtmPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GtmProperty] {
+	return pulumix.Output[[]*GtmProperty]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GtmPropertyArrayOutput) Index(i pulumi.IntInput) GtmPropertyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GtmProperty {
 		return vs[0].([]*GtmProperty)[vs[1].(int)]
@@ -505,6 +536,12 @@ func (o GtmPropertyMapOutput) ToGtmPropertyMapOutput() GtmPropertyMapOutput {
 
 func (o GtmPropertyMapOutput) ToGtmPropertyMapOutputWithContext(ctx context.Context) GtmPropertyMapOutput {
 	return o
+}
+
+func (o GtmPropertyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmProperty] {
+	return pulumix.Output[map[string]*GtmProperty]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GtmPropertyMapOutput) MapIndex(k pulumi.StringInput) GtmPropertyOutput {

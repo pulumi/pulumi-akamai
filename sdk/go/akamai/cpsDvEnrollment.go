@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type CpsDvEnrollment struct {
@@ -286,6 +287,12 @@ func (i *CpsDvEnrollment) ToCpsDvEnrollmentOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentOutput)
 }
 
+func (i *CpsDvEnrollment) ToOutput(ctx context.Context) pulumix.Output[*CpsDvEnrollment] {
+	return pulumix.Output[*CpsDvEnrollment]{
+		OutputState: i.ToCpsDvEnrollmentOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CpsDvEnrollmentArrayInput is an input type that accepts CpsDvEnrollmentArray and CpsDvEnrollmentArrayOutput values.
 // You can construct a concrete instance of `CpsDvEnrollmentArrayInput` via:
 //
@@ -309,6 +316,12 @@ func (i CpsDvEnrollmentArray) ToCpsDvEnrollmentArrayOutput() CpsDvEnrollmentArra
 
 func (i CpsDvEnrollmentArray) ToCpsDvEnrollmentArrayOutputWithContext(ctx context.Context) CpsDvEnrollmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentArrayOutput)
+}
+
+func (i CpsDvEnrollmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*CpsDvEnrollment] {
+	return pulumix.Output[[]*CpsDvEnrollment]{
+		OutputState: i.ToCpsDvEnrollmentArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CpsDvEnrollmentMapInput is an input type that accepts CpsDvEnrollmentMap and CpsDvEnrollmentMapOutput values.
@@ -336,6 +349,12 @@ func (i CpsDvEnrollmentMap) ToCpsDvEnrollmentMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(CpsDvEnrollmentMapOutput)
 }
 
+func (i CpsDvEnrollmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CpsDvEnrollment] {
+	return pulumix.Output[map[string]*CpsDvEnrollment]{
+		OutputState: i.ToCpsDvEnrollmentMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CpsDvEnrollmentOutput struct{ *pulumi.OutputState }
 
 func (CpsDvEnrollmentOutput) ElementType() reflect.Type {
@@ -348,6 +367,12 @@ func (o CpsDvEnrollmentOutput) ToCpsDvEnrollmentOutput() CpsDvEnrollmentOutput {
 
 func (o CpsDvEnrollmentOutput) ToCpsDvEnrollmentOutputWithContext(ctx context.Context) CpsDvEnrollmentOutput {
 	return o
+}
+
+func (o CpsDvEnrollmentOutput) ToOutput(ctx context.Context) pulumix.Output[*CpsDvEnrollment] {
+	return pulumix.Output[*CpsDvEnrollment]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether acknowledge warnings before certificate verification
@@ -459,6 +484,12 @@ func (o CpsDvEnrollmentArrayOutput) ToCpsDvEnrollmentArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o CpsDvEnrollmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CpsDvEnrollment] {
+	return pulumix.Output[[]*CpsDvEnrollment]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CpsDvEnrollmentArrayOutput) Index(i pulumi.IntInput) CpsDvEnrollmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CpsDvEnrollment {
 		return vs[0].([]*CpsDvEnrollment)[vs[1].(int)]
@@ -477,6 +508,12 @@ func (o CpsDvEnrollmentMapOutput) ToCpsDvEnrollmentMapOutput() CpsDvEnrollmentMa
 
 func (o CpsDvEnrollmentMapOutput) ToCpsDvEnrollmentMapOutputWithContext(ctx context.Context) CpsDvEnrollmentMapOutput {
 	return o
+}
+
+func (o CpsDvEnrollmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CpsDvEnrollment] {
+	return pulumix.Output[map[string]*CpsDvEnrollment]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CpsDvEnrollmentMapOutput) MapIndex(k pulumi.StringInput) CpsDvEnrollmentOutput {

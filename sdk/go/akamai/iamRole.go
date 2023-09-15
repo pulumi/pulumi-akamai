@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type IamRole struct {
@@ -132,6 +133,12 @@ func (i *IamRole) ToIamRoleOutputWithContext(ctx context.Context) IamRoleOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(IamRoleOutput)
 }
 
+func (i *IamRole) ToOutput(ctx context.Context) pulumix.Output[*IamRole] {
+	return pulumix.Output[*IamRole]{
+		OutputState: i.ToIamRoleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // IamRoleArrayInput is an input type that accepts IamRoleArray and IamRoleArrayOutput values.
 // You can construct a concrete instance of `IamRoleArrayInput` via:
 //
@@ -155,6 +162,12 @@ func (i IamRoleArray) ToIamRoleArrayOutput() IamRoleArrayOutput {
 
 func (i IamRoleArray) ToIamRoleArrayOutputWithContext(ctx context.Context) IamRoleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IamRoleArrayOutput)
+}
+
+func (i IamRoleArray) ToOutput(ctx context.Context) pulumix.Output[[]*IamRole] {
+	return pulumix.Output[[]*IamRole]{
+		OutputState: i.ToIamRoleArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // IamRoleMapInput is an input type that accepts IamRoleMap and IamRoleMapOutput values.
@@ -182,6 +195,12 @@ func (i IamRoleMap) ToIamRoleMapOutputWithContext(ctx context.Context) IamRoleMa
 	return pulumi.ToOutputWithContext(ctx, i).(IamRoleMapOutput)
 }
 
+func (i IamRoleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IamRole] {
+	return pulumix.Output[map[string]*IamRole]{
+		OutputState: i.ToIamRoleMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type IamRoleOutput struct{ *pulumi.OutputState }
 
 func (IamRoleOutput) ElementType() reflect.Type {
@@ -194,6 +213,12 @@ func (o IamRoleOutput) ToIamRoleOutput() IamRoleOutput {
 
 func (o IamRoleOutput) ToIamRoleOutputWithContext(ctx context.Context) IamRoleOutput {
 	return o
+}
+
+func (o IamRoleOutput) ToOutput(ctx context.Context) pulumix.Output[*IamRole] {
+	return pulumix.Output[*IamRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The description for a role
@@ -230,6 +255,12 @@ func (o IamRoleArrayOutput) ToIamRoleArrayOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o IamRoleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IamRole] {
+	return pulumix.Output[[]*IamRole]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o IamRoleArrayOutput) Index(i pulumi.IntInput) IamRoleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamRole {
 		return vs[0].([]*IamRole)[vs[1].(int)]
@@ -248,6 +279,12 @@ func (o IamRoleMapOutput) ToIamRoleMapOutput() IamRoleMapOutput {
 
 func (o IamRoleMapOutput) ToIamRoleMapOutputWithContext(ctx context.Context) IamRoleMapOutput {
 	return o
+}
+
+func (o IamRoleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IamRole] {
+	return pulumix.Output[map[string]*IamRole]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o IamRoleMapOutput) MapIndex(k pulumi.StringInput) IamRoleOutput {

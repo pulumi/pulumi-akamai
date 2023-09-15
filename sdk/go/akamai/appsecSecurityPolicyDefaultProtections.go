@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppsecSecurityPolicyDefaultProtections struct {
@@ -131,6 +132,12 @@ func (i *AppsecSecurityPolicyDefaultProtections) ToAppsecSecurityPolicyDefaultPr
 	return pulumi.ToOutputWithContext(ctx, i).(AppsecSecurityPolicyDefaultProtectionsOutput)
 }
 
+func (i *AppsecSecurityPolicyDefaultProtections) ToOutput(ctx context.Context) pulumix.Output[*AppsecSecurityPolicyDefaultProtections] {
+	return pulumix.Output[*AppsecSecurityPolicyDefaultProtections]{
+		OutputState: i.ToAppsecSecurityPolicyDefaultProtectionsOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppsecSecurityPolicyDefaultProtectionsArrayInput is an input type that accepts AppsecSecurityPolicyDefaultProtectionsArray and AppsecSecurityPolicyDefaultProtectionsArrayOutput values.
 // You can construct a concrete instance of `AppsecSecurityPolicyDefaultProtectionsArrayInput` via:
 //
@@ -154,6 +161,12 @@ func (i AppsecSecurityPolicyDefaultProtectionsArray) ToAppsecSecurityPolicyDefau
 
 func (i AppsecSecurityPolicyDefaultProtectionsArray) ToAppsecSecurityPolicyDefaultProtectionsArrayOutputWithContext(ctx context.Context) AppsecSecurityPolicyDefaultProtectionsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppsecSecurityPolicyDefaultProtectionsArrayOutput)
+}
+
+func (i AppsecSecurityPolicyDefaultProtectionsArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppsecSecurityPolicyDefaultProtections] {
+	return pulumix.Output[[]*AppsecSecurityPolicyDefaultProtections]{
+		OutputState: i.ToAppsecSecurityPolicyDefaultProtectionsArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppsecSecurityPolicyDefaultProtectionsMapInput is an input type that accepts AppsecSecurityPolicyDefaultProtectionsMap and AppsecSecurityPolicyDefaultProtectionsMapOutput values.
@@ -181,6 +194,12 @@ func (i AppsecSecurityPolicyDefaultProtectionsMap) ToAppsecSecurityPolicyDefault
 	return pulumi.ToOutputWithContext(ctx, i).(AppsecSecurityPolicyDefaultProtectionsMapOutput)
 }
 
+func (i AppsecSecurityPolicyDefaultProtectionsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppsecSecurityPolicyDefaultProtections] {
+	return pulumix.Output[map[string]*AppsecSecurityPolicyDefaultProtections]{
+		OutputState: i.ToAppsecSecurityPolicyDefaultProtectionsMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppsecSecurityPolicyDefaultProtectionsOutput struct{ *pulumi.OutputState }
 
 func (AppsecSecurityPolicyDefaultProtectionsOutput) ElementType() reflect.Type {
@@ -193,6 +212,12 @@ func (o AppsecSecurityPolicyDefaultProtectionsOutput) ToAppsecSecurityPolicyDefa
 
 func (o AppsecSecurityPolicyDefaultProtectionsOutput) ToAppsecSecurityPolicyDefaultProtectionsOutputWithContext(ctx context.Context) AppsecSecurityPolicyDefaultProtectionsOutput {
 	return o
+}
+
+func (o AppsecSecurityPolicyDefaultProtectionsOutput) ToOutput(ctx context.Context) pulumix.Output[*AppsecSecurityPolicyDefaultProtections] {
+	return pulumix.Output[*AppsecSecurityPolicyDefaultProtections]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration
@@ -229,6 +254,12 @@ func (o AppsecSecurityPolicyDefaultProtectionsArrayOutput) ToAppsecSecurityPolic
 	return o
 }
 
+func (o AppsecSecurityPolicyDefaultProtectionsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppsecSecurityPolicyDefaultProtections] {
+	return pulumix.Output[[]*AppsecSecurityPolicyDefaultProtections]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppsecSecurityPolicyDefaultProtectionsArrayOutput) Index(i pulumi.IntInput) AppsecSecurityPolicyDefaultProtectionsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppsecSecurityPolicyDefaultProtections {
 		return vs[0].([]*AppsecSecurityPolicyDefaultProtections)[vs[1].(int)]
@@ -247,6 +278,12 @@ func (o AppsecSecurityPolicyDefaultProtectionsMapOutput) ToAppsecSecurityPolicyD
 
 func (o AppsecSecurityPolicyDefaultProtectionsMapOutput) ToAppsecSecurityPolicyDefaultProtectionsMapOutputWithContext(ctx context.Context) AppsecSecurityPolicyDefaultProtectionsMapOutput {
 	return o
+}
+
+func (o AppsecSecurityPolicyDefaultProtectionsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppsecSecurityPolicyDefaultProtections] {
+	return pulumix.Output[map[string]*AppsecSecurityPolicyDefaultProtections]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppsecSecurityPolicyDefaultProtectionsMapOutput) MapIndex(k pulumi.StringInput) AppsecSecurityPolicyDefaultProtectionsOutput {

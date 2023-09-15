@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type CloudletsPolicyActivation struct {
@@ -144,6 +145,12 @@ func (i *CloudletsPolicyActivation) ToCloudletsPolicyActivationOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(CloudletsPolicyActivationOutput)
 }
 
+func (i *CloudletsPolicyActivation) ToOutput(ctx context.Context) pulumix.Output[*CloudletsPolicyActivation] {
+	return pulumix.Output[*CloudletsPolicyActivation]{
+		OutputState: i.ToCloudletsPolicyActivationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CloudletsPolicyActivationArrayInput is an input type that accepts CloudletsPolicyActivationArray and CloudletsPolicyActivationArrayOutput values.
 // You can construct a concrete instance of `CloudletsPolicyActivationArrayInput` via:
 //
@@ -167,6 +174,12 @@ func (i CloudletsPolicyActivationArray) ToCloudletsPolicyActivationArrayOutput()
 
 func (i CloudletsPolicyActivationArray) ToCloudletsPolicyActivationArrayOutputWithContext(ctx context.Context) CloudletsPolicyActivationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudletsPolicyActivationArrayOutput)
+}
+
+func (i CloudletsPolicyActivationArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudletsPolicyActivation] {
+	return pulumix.Output[[]*CloudletsPolicyActivation]{
+		OutputState: i.ToCloudletsPolicyActivationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CloudletsPolicyActivationMapInput is an input type that accepts CloudletsPolicyActivationMap and CloudletsPolicyActivationMapOutput values.
@@ -194,6 +207,12 @@ func (i CloudletsPolicyActivationMap) ToCloudletsPolicyActivationMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(CloudletsPolicyActivationMapOutput)
 }
 
+func (i CloudletsPolicyActivationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudletsPolicyActivation] {
+	return pulumix.Output[map[string]*CloudletsPolicyActivation]{
+		OutputState: i.ToCloudletsPolicyActivationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CloudletsPolicyActivationOutput struct{ *pulumi.OutputState }
 
 func (CloudletsPolicyActivationOutput) ElementType() reflect.Type {
@@ -206,6 +225,12 @@ func (o CloudletsPolicyActivationOutput) ToCloudletsPolicyActivationOutput() Clo
 
 func (o CloudletsPolicyActivationOutput) ToCloudletsPolicyActivationOutputWithContext(ctx context.Context) CloudletsPolicyActivationOutput {
 	return o
+}
+
+func (o CloudletsPolicyActivationOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudletsPolicyActivation] {
+	return pulumix.Output[*CloudletsPolicyActivation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Set of property IDs to link to this Cloudlets policy
@@ -247,6 +272,12 @@ func (o CloudletsPolicyActivationArrayOutput) ToCloudletsPolicyActivationArrayOu
 	return o
 }
 
+func (o CloudletsPolicyActivationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudletsPolicyActivation] {
+	return pulumix.Output[[]*CloudletsPolicyActivation]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CloudletsPolicyActivationArrayOutput) Index(i pulumi.IntInput) CloudletsPolicyActivationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudletsPolicyActivation {
 		return vs[0].([]*CloudletsPolicyActivation)[vs[1].(int)]
@@ -265,6 +296,12 @@ func (o CloudletsPolicyActivationMapOutput) ToCloudletsPolicyActivationMapOutput
 
 func (o CloudletsPolicyActivationMapOutput) ToCloudletsPolicyActivationMapOutputWithContext(ctx context.Context) CloudletsPolicyActivationMapOutput {
 	return o
+}
+
+func (o CloudletsPolicyActivationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudletsPolicyActivation] {
+	return pulumix.Output[map[string]*CloudletsPolicyActivation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CloudletsPolicyActivationMapOutput) MapIndex(k pulumi.StringInput) CloudletsPolicyActivationOutput {

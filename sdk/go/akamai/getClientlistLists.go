@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetClientlistLists(ctx *pulumi.Context, args *GetClientlistListsArgs, opts ...pulumi.InvokeOption) (*GetClientlistListsResult, error) {
@@ -75,6 +76,12 @@ func (o GetClientlistListsResultOutput) ToGetClientlistListsResultOutput() GetCl
 
 func (o GetClientlistListsResultOutput) ToGetClientlistListsResultOutputWithContext(ctx context.Context) GetClientlistListsResultOutput {
 	return o
+}
+
+func (o GetClientlistListsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetClientlistListsResult] {
+	return pulumix.Output[GetClientlistListsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

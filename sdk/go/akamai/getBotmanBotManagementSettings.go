@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupBotmanBotManagementSettings(ctx *pulumi.Context, args *LookupBotmanBotManagementSettingsArgs, opts ...pulumi.InvokeOption) (*LookupBotmanBotManagementSettingsResult, error) {
@@ -72,6 +73,12 @@ func (o LookupBotmanBotManagementSettingsResultOutput) ToLookupBotmanBotManageme
 
 func (o LookupBotmanBotManagementSettingsResultOutput) ToLookupBotmanBotManagementSettingsResultOutputWithContext(ctx context.Context) LookupBotmanBotManagementSettingsResultOutput {
 	return o
+}
+
+func (o LookupBotmanBotManagementSettingsResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBotmanBotManagementSettingsResult] {
+	return pulumix.Output[LookupBotmanBotManagementSettingsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupBotmanBotManagementSettingsResultOutput) ConfigId() pulumi.IntOutput {

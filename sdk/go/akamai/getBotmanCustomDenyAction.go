@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupBotmanCustomDenyAction(ctx *pulumi.Context, args *LookupBotmanCustomDenyActionArgs, opts ...pulumi.InvokeOption) (*LookupBotmanCustomDenyActionResult, error) {
@@ -72,6 +73,12 @@ func (o LookupBotmanCustomDenyActionResultOutput) ToLookupBotmanCustomDenyAction
 
 func (o LookupBotmanCustomDenyActionResultOutput) ToLookupBotmanCustomDenyActionResultOutputWithContext(ctx context.Context) LookupBotmanCustomDenyActionResultOutput {
 	return o
+}
+
+func (o LookupBotmanCustomDenyActionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBotmanCustomDenyActionResult] {
+	return pulumix.Output[LookupBotmanCustomDenyActionResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupBotmanCustomDenyActionResultOutput) ActionId() pulumi.StringPtrOutput {

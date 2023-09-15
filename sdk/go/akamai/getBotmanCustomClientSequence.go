@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupBotmanCustomClientSequence(ctx *pulumi.Context, args *LookupBotmanCustomClientSequenceArgs, opts ...pulumi.InvokeOption) (*LookupBotmanCustomClientSequenceResult, error) {
@@ -69,6 +70,12 @@ func (o LookupBotmanCustomClientSequenceResultOutput) ToLookupBotmanCustomClient
 
 func (o LookupBotmanCustomClientSequenceResultOutput) ToLookupBotmanCustomClientSequenceResultOutputWithContext(ctx context.Context) LookupBotmanCustomClientSequenceResultOutput {
 	return o
+}
+
+func (o LookupBotmanCustomClientSequenceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBotmanCustomClientSequenceResult] {
+	return pulumix.Output[LookupBotmanCustomClientSequenceResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupBotmanCustomClientSequenceResultOutput) ConfigId() pulumi.IntOutput {

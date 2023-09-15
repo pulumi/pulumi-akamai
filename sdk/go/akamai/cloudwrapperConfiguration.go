@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type CloudwrapperConfiguration struct {
@@ -189,6 +190,12 @@ func (i *CloudwrapperConfiguration) ToCloudwrapperConfigurationOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(CloudwrapperConfigurationOutput)
 }
 
+func (i *CloudwrapperConfiguration) ToOutput(ctx context.Context) pulumix.Output[*CloudwrapperConfiguration] {
+	return pulumix.Output[*CloudwrapperConfiguration]{
+		OutputState: i.ToCloudwrapperConfigurationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CloudwrapperConfigurationArrayInput is an input type that accepts CloudwrapperConfigurationArray and CloudwrapperConfigurationArrayOutput values.
 // You can construct a concrete instance of `CloudwrapperConfigurationArrayInput` via:
 //
@@ -212,6 +219,12 @@ func (i CloudwrapperConfigurationArray) ToCloudwrapperConfigurationArrayOutput()
 
 func (i CloudwrapperConfigurationArray) ToCloudwrapperConfigurationArrayOutputWithContext(ctx context.Context) CloudwrapperConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudwrapperConfigurationArrayOutput)
+}
+
+func (i CloudwrapperConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudwrapperConfiguration] {
+	return pulumix.Output[[]*CloudwrapperConfiguration]{
+		OutputState: i.ToCloudwrapperConfigurationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CloudwrapperConfigurationMapInput is an input type that accepts CloudwrapperConfigurationMap and CloudwrapperConfigurationMapOutput values.
@@ -239,6 +252,12 @@ func (i CloudwrapperConfigurationMap) ToCloudwrapperConfigurationMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(CloudwrapperConfigurationMapOutput)
 }
 
+func (i CloudwrapperConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudwrapperConfiguration] {
+	return pulumix.Output[map[string]*CloudwrapperConfiguration]{
+		OutputState: i.ToCloudwrapperConfigurationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CloudwrapperConfigurationOutput struct{ *pulumi.OutputState }
 
 func (CloudwrapperConfigurationOutput) ElementType() reflect.Type {
@@ -251,6 +270,12 @@ func (o CloudwrapperConfigurationOutput) ToCloudwrapperConfigurationOutput() Clo
 
 func (o CloudwrapperConfigurationOutput) ToCloudwrapperConfigurationOutputWithContext(ctx context.Context) CloudwrapperConfigurationOutput {
 	return o
+}
+
+func (o CloudwrapperConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudwrapperConfiguration] {
+	return pulumix.Output[*CloudwrapperConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Capacity Alerts enablement information for the configuration. The Alert Threshold should be between 50 and 100.
@@ -316,6 +341,12 @@ func (o CloudwrapperConfigurationArrayOutput) ToCloudwrapperConfigurationArrayOu
 	return o
 }
 
+func (o CloudwrapperConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudwrapperConfiguration] {
+	return pulumix.Output[[]*CloudwrapperConfiguration]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CloudwrapperConfigurationArrayOutput) Index(i pulumi.IntInput) CloudwrapperConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudwrapperConfiguration {
 		return vs[0].([]*CloudwrapperConfiguration)[vs[1].(int)]
@@ -334,6 +365,12 @@ func (o CloudwrapperConfigurationMapOutput) ToCloudwrapperConfigurationMapOutput
 
 func (o CloudwrapperConfigurationMapOutput) ToCloudwrapperConfigurationMapOutputWithContext(ctx context.Context) CloudwrapperConfigurationMapOutput {
 	return o
+}
+
+func (o CloudwrapperConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudwrapperConfiguration] {
+	return pulumix.Output[map[string]*CloudwrapperConfiguration]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CloudwrapperConfigurationMapOutput) MapIndex(k pulumi.StringInput) CloudwrapperConfigurationOutput {

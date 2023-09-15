@@ -13,6 +13,9 @@ namespace Pulumi.Akamai
     {
         public static Task<GetIamTimezonesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamTimezonesResult>("akamai:index/getIamTimezones:getIamTimezones", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetIamTimezonesResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamTimezonesResult>("akamai:index/getIamTimezones:getIamTimezones", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

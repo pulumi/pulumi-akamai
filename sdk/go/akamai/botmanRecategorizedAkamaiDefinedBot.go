@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanRecategorizedAkamaiDefinedBot struct {
@@ -110,6 +111,12 @@ func (i *BotmanRecategorizedAkamaiDefinedBot) ToBotmanRecategorizedAkamaiDefined
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanRecategorizedAkamaiDefinedBotOutput)
 }
 
+func (i *BotmanRecategorizedAkamaiDefinedBot) ToOutput(ctx context.Context) pulumix.Output[*BotmanRecategorizedAkamaiDefinedBot] {
+	return pulumix.Output[*BotmanRecategorizedAkamaiDefinedBot]{
+		OutputState: i.ToBotmanRecategorizedAkamaiDefinedBotOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BotmanRecategorizedAkamaiDefinedBotArrayInput is an input type that accepts BotmanRecategorizedAkamaiDefinedBotArray and BotmanRecategorizedAkamaiDefinedBotArrayOutput values.
 // You can construct a concrete instance of `BotmanRecategorizedAkamaiDefinedBotArrayInput` via:
 //
@@ -133,6 +140,12 @@ func (i BotmanRecategorizedAkamaiDefinedBotArray) ToBotmanRecategorizedAkamaiDef
 
 func (i BotmanRecategorizedAkamaiDefinedBotArray) ToBotmanRecategorizedAkamaiDefinedBotArrayOutputWithContext(ctx context.Context) BotmanRecategorizedAkamaiDefinedBotArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanRecategorizedAkamaiDefinedBotArrayOutput)
+}
+
+func (i BotmanRecategorizedAkamaiDefinedBotArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanRecategorizedAkamaiDefinedBot] {
+	return pulumix.Output[[]*BotmanRecategorizedAkamaiDefinedBot]{
+		OutputState: i.ToBotmanRecategorizedAkamaiDefinedBotArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BotmanRecategorizedAkamaiDefinedBotMapInput is an input type that accepts BotmanRecategorizedAkamaiDefinedBotMap and BotmanRecategorizedAkamaiDefinedBotMapOutput values.
@@ -160,6 +173,12 @@ func (i BotmanRecategorizedAkamaiDefinedBotMap) ToBotmanRecategorizedAkamaiDefin
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanRecategorizedAkamaiDefinedBotMapOutput)
 }
 
+func (i BotmanRecategorizedAkamaiDefinedBotMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanRecategorizedAkamaiDefinedBot] {
+	return pulumix.Output[map[string]*BotmanRecategorizedAkamaiDefinedBot]{
+		OutputState: i.ToBotmanRecategorizedAkamaiDefinedBotMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BotmanRecategorizedAkamaiDefinedBotOutput struct{ *pulumi.OutputState }
 
 func (BotmanRecategorizedAkamaiDefinedBotOutput) ElementType() reflect.Type {
@@ -172,6 +191,12 @@ func (o BotmanRecategorizedAkamaiDefinedBotOutput) ToBotmanRecategorizedAkamaiDe
 
 func (o BotmanRecategorizedAkamaiDefinedBotOutput) ToBotmanRecategorizedAkamaiDefinedBotOutputWithContext(ctx context.Context) BotmanRecategorizedAkamaiDefinedBotOutput {
 	return o
+}
+
+func (o BotmanRecategorizedAkamaiDefinedBotOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanRecategorizedAkamaiDefinedBot] {
+	return pulumix.Output[*BotmanRecategorizedAkamaiDefinedBot]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanRecategorizedAkamaiDefinedBotOutput) BotId() pulumi.StringOutput {
@@ -200,6 +225,12 @@ func (o BotmanRecategorizedAkamaiDefinedBotArrayOutput) ToBotmanRecategorizedAka
 	return o
 }
 
+func (o BotmanRecategorizedAkamaiDefinedBotArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanRecategorizedAkamaiDefinedBot] {
+	return pulumix.Output[[]*BotmanRecategorizedAkamaiDefinedBot]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BotmanRecategorizedAkamaiDefinedBotArrayOutput) Index(i pulumi.IntInput) BotmanRecategorizedAkamaiDefinedBotOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanRecategorizedAkamaiDefinedBot {
 		return vs[0].([]*BotmanRecategorizedAkamaiDefinedBot)[vs[1].(int)]
@@ -218,6 +249,12 @@ func (o BotmanRecategorizedAkamaiDefinedBotMapOutput) ToBotmanRecategorizedAkama
 
 func (o BotmanRecategorizedAkamaiDefinedBotMapOutput) ToBotmanRecategorizedAkamaiDefinedBotMapOutputWithContext(ctx context.Context) BotmanRecategorizedAkamaiDefinedBotMapOutput {
 	return o
+}
+
+func (o BotmanRecategorizedAkamaiDefinedBotMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanRecategorizedAkamaiDefinedBot] {
+	return pulumix.Output[map[string]*BotmanRecategorizedAkamaiDefinedBot]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanRecategorizedAkamaiDefinedBotMapOutput) MapIndex(k pulumi.StringInput) BotmanRecategorizedAkamaiDefinedBotOutput {

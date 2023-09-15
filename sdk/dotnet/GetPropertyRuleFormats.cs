@@ -13,6 +13,9 @@ namespace Pulumi.Akamai
     {
         public static Task<GetPropertyRuleFormatsResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPropertyRuleFormatsResult>("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetPropertyRuleFormatsResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPropertyRuleFormatsResult>("akamai:index/getPropertyRuleFormats:getPropertyRuleFormats", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type Property struct {
@@ -193,6 +194,12 @@ func (i *Property) ToPropertyOutputWithContext(ctx context.Context) PropertyOutp
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyOutput)
 }
 
+func (i *Property) ToOutput(ctx context.Context) pulumix.Output[*Property] {
+	return pulumix.Output[*Property]{
+		OutputState: i.ToPropertyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PropertyArrayInput is an input type that accepts PropertyArray and PropertyArrayOutput values.
 // You can construct a concrete instance of `PropertyArrayInput` via:
 //
@@ -216,6 +223,12 @@ func (i PropertyArray) ToPropertyArrayOutput() PropertyArrayOutput {
 
 func (i PropertyArray) ToPropertyArrayOutputWithContext(ctx context.Context) PropertyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyArrayOutput)
+}
+
+func (i PropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]*Property] {
+	return pulumix.Output[[]*Property]{
+		OutputState: i.ToPropertyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // PropertyMapInput is an input type that accepts PropertyMap and PropertyMapOutput values.
@@ -243,6 +256,12 @@ func (i PropertyMap) ToPropertyMapOutputWithContext(ctx context.Context) Propert
 	return pulumi.ToOutputWithContext(ctx, i).(PropertyMapOutput)
 }
 
+func (i PropertyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Property] {
+	return pulumix.Output[map[string]*Property]{
+		OutputState: i.ToPropertyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PropertyOutput struct{ *pulumi.OutputState }
 
 func (PropertyOutput) ElementType() reflect.Type {
@@ -255,6 +274,12 @@ func (o PropertyOutput) ToPropertyOutput() PropertyOutput {
 
 func (o PropertyOutput) ToPropertyOutputWithContext(ctx context.Context) PropertyOutput {
 	return o
+}
+
+func (o PropertyOutput) ToOutput(ctx context.Context) pulumix.Output[*Property] {
+	return pulumix.Output[*Property]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Contract ID to be assigned to the Property
@@ -329,6 +354,12 @@ func (o PropertyArrayOutput) ToPropertyArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o PropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Property] {
+	return pulumix.Output[[]*Property]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o PropertyArrayOutput) Index(i pulumi.IntInput) PropertyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Property {
 		return vs[0].([]*Property)[vs[1].(int)]
@@ -347,6 +378,12 @@ func (o PropertyMapOutput) ToPropertyMapOutput() PropertyMapOutput {
 
 func (o PropertyMapOutput) ToPropertyMapOutputWithContext(ctx context.Context) PropertyMapOutput {
 	return o
+}
+
+func (o PropertyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Property] {
+	return pulumix.Output[map[string]*Property]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PropertyMapOutput) MapIndex(k pulumi.StringInput) PropertyOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecByPassNetworkList struct {
@@ -125,6 +126,12 @@ func (i *AppSecByPassNetworkList) ToAppSecByPassNetworkListOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecByPassNetworkListOutput)
 }
 
+func (i *AppSecByPassNetworkList) ToOutput(ctx context.Context) pulumix.Output[*AppSecByPassNetworkList] {
+	return pulumix.Output[*AppSecByPassNetworkList]{
+		OutputState: i.ToAppSecByPassNetworkListOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecByPassNetworkListArrayInput is an input type that accepts AppSecByPassNetworkListArray and AppSecByPassNetworkListArrayOutput values.
 // You can construct a concrete instance of `AppSecByPassNetworkListArrayInput` via:
 //
@@ -148,6 +155,12 @@ func (i AppSecByPassNetworkListArray) ToAppSecByPassNetworkListArrayOutput() App
 
 func (i AppSecByPassNetworkListArray) ToAppSecByPassNetworkListArrayOutputWithContext(ctx context.Context) AppSecByPassNetworkListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecByPassNetworkListArrayOutput)
+}
+
+func (i AppSecByPassNetworkListArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecByPassNetworkList] {
+	return pulumix.Output[[]*AppSecByPassNetworkList]{
+		OutputState: i.ToAppSecByPassNetworkListArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecByPassNetworkListMapInput is an input type that accepts AppSecByPassNetworkListMap and AppSecByPassNetworkListMapOutput values.
@@ -175,6 +188,12 @@ func (i AppSecByPassNetworkListMap) ToAppSecByPassNetworkListMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecByPassNetworkListMapOutput)
 }
 
+func (i AppSecByPassNetworkListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecByPassNetworkList] {
+	return pulumix.Output[map[string]*AppSecByPassNetworkList]{
+		OutputState: i.ToAppSecByPassNetworkListMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecByPassNetworkListOutput struct{ *pulumi.OutputState }
 
 func (AppSecByPassNetworkListOutput) ElementType() reflect.Type {
@@ -187,6 +206,12 @@ func (o AppSecByPassNetworkListOutput) ToAppSecByPassNetworkListOutput() AppSecB
 
 func (o AppSecByPassNetworkListOutput) ToAppSecByPassNetworkListOutputWithContext(ctx context.Context) AppSecByPassNetworkListOutput {
 	return o
+}
+
+func (o AppSecByPassNetworkListOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecByPassNetworkList] {
+	return pulumix.Output[*AppSecByPassNetworkList]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of network list IDs that compose the bypass list
@@ -218,6 +243,12 @@ func (o AppSecByPassNetworkListArrayOutput) ToAppSecByPassNetworkListArrayOutput
 	return o
 }
 
+func (o AppSecByPassNetworkListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecByPassNetworkList] {
+	return pulumix.Output[[]*AppSecByPassNetworkList]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecByPassNetworkListArrayOutput) Index(i pulumi.IntInput) AppSecByPassNetworkListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecByPassNetworkList {
 		return vs[0].([]*AppSecByPassNetworkList)[vs[1].(int)]
@@ -236,6 +267,12 @@ func (o AppSecByPassNetworkListMapOutput) ToAppSecByPassNetworkListMapOutput() A
 
 func (o AppSecByPassNetworkListMapOutput) ToAppSecByPassNetworkListMapOutputWithContext(ctx context.Context) AppSecByPassNetworkListMapOutput {
 	return o
+}
+
+func (o AppSecByPassNetworkListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecByPassNetworkList] {
+	return pulumix.Output[map[string]*AppSecByPassNetworkList]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecByPassNetworkListMapOutput) MapIndex(k pulumi.StringInput) AppSecByPassNetworkListOutput {

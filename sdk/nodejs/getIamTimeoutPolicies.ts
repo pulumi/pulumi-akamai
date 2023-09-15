@@ -21,3 +21,6 @@ export interface GetIamTimeoutPoliciesResult {
     readonly id: string;
     readonly policies: {[key: string]: number};
 }
+export function getIamTimeoutPoliciesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamTimeoutPoliciesResult> {
+    return pulumi.output(getIamTimeoutPolicies(opts))
+}

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanBotManagementSettings struct {
@@ -110,6 +111,12 @@ func (i *BotmanBotManagementSettings) ToBotmanBotManagementSettingsOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanBotManagementSettingsOutput)
 }
 
+func (i *BotmanBotManagementSettings) ToOutput(ctx context.Context) pulumix.Output[*BotmanBotManagementSettings] {
+	return pulumix.Output[*BotmanBotManagementSettings]{
+		OutputState: i.ToBotmanBotManagementSettingsOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BotmanBotManagementSettingsArrayInput is an input type that accepts BotmanBotManagementSettingsArray and BotmanBotManagementSettingsArrayOutput values.
 // You can construct a concrete instance of `BotmanBotManagementSettingsArrayInput` via:
 //
@@ -133,6 +140,12 @@ func (i BotmanBotManagementSettingsArray) ToBotmanBotManagementSettingsArrayOutp
 
 func (i BotmanBotManagementSettingsArray) ToBotmanBotManagementSettingsArrayOutputWithContext(ctx context.Context) BotmanBotManagementSettingsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanBotManagementSettingsArrayOutput)
+}
+
+func (i BotmanBotManagementSettingsArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanBotManagementSettings] {
+	return pulumix.Output[[]*BotmanBotManagementSettings]{
+		OutputState: i.ToBotmanBotManagementSettingsArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BotmanBotManagementSettingsMapInput is an input type that accepts BotmanBotManagementSettingsMap and BotmanBotManagementSettingsMapOutput values.
@@ -160,6 +173,12 @@ func (i BotmanBotManagementSettingsMap) ToBotmanBotManagementSettingsMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanBotManagementSettingsMapOutput)
 }
 
+func (i BotmanBotManagementSettingsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanBotManagementSettings] {
+	return pulumix.Output[map[string]*BotmanBotManagementSettings]{
+		OutputState: i.ToBotmanBotManagementSettingsMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BotmanBotManagementSettingsOutput struct{ *pulumi.OutputState }
 
 func (BotmanBotManagementSettingsOutput) ElementType() reflect.Type {
@@ -172,6 +191,12 @@ func (o BotmanBotManagementSettingsOutput) ToBotmanBotManagementSettingsOutput()
 
 func (o BotmanBotManagementSettingsOutput) ToBotmanBotManagementSettingsOutputWithContext(ctx context.Context) BotmanBotManagementSettingsOutput {
 	return o
+}
+
+func (o BotmanBotManagementSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanBotManagementSettings] {
+	return pulumix.Output[*BotmanBotManagementSettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanBotManagementSettingsOutput) BotManagementSettings() pulumi.StringOutput {
@@ -200,6 +225,12 @@ func (o BotmanBotManagementSettingsArrayOutput) ToBotmanBotManagementSettingsArr
 	return o
 }
 
+func (o BotmanBotManagementSettingsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanBotManagementSettings] {
+	return pulumix.Output[[]*BotmanBotManagementSettings]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BotmanBotManagementSettingsArrayOutput) Index(i pulumi.IntInput) BotmanBotManagementSettingsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanBotManagementSettings {
 		return vs[0].([]*BotmanBotManagementSettings)[vs[1].(int)]
@@ -218,6 +249,12 @@ func (o BotmanBotManagementSettingsMapOutput) ToBotmanBotManagementSettingsMapOu
 
 func (o BotmanBotManagementSettingsMapOutput) ToBotmanBotManagementSettingsMapOutputWithContext(ctx context.Context) BotmanBotManagementSettingsMapOutput {
 	return o
+}
+
+func (o BotmanBotManagementSettingsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanBotManagementSettings] {
+	return pulumix.Output[map[string]*BotmanBotManagementSettings]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanBotManagementSettingsMapOutput) MapIndex(k pulumi.StringInput) BotmanBotManagementSettingsOutput {

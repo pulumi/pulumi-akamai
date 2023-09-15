@@ -21,3 +21,6 @@ export interface GetBotmanBotAnalyticsCookieValuesResult {
     readonly id: string;
     readonly json: string;
 }
+export function getBotmanBotAnalyticsCookieValuesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetBotmanBotAnalyticsCookieValuesResult> {
+    return pulumi.output(getBotmanBotAnalyticsCookieValues(opts))
+}

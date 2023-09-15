@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanCustomDenyAction struct {
@@ -105,6 +106,12 @@ func (i *BotmanCustomDenyAction) ToBotmanCustomDenyActionOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomDenyActionOutput)
 }
 
+func (i *BotmanCustomDenyAction) ToOutput(ctx context.Context) pulumix.Output[*BotmanCustomDenyAction] {
+	return pulumix.Output[*BotmanCustomDenyAction]{
+		OutputState: i.ToBotmanCustomDenyActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BotmanCustomDenyActionArrayInput is an input type that accepts BotmanCustomDenyActionArray and BotmanCustomDenyActionArrayOutput values.
 // You can construct a concrete instance of `BotmanCustomDenyActionArrayInput` via:
 //
@@ -128,6 +135,12 @@ func (i BotmanCustomDenyActionArray) ToBotmanCustomDenyActionArrayOutput() Botma
 
 func (i BotmanCustomDenyActionArray) ToBotmanCustomDenyActionArrayOutputWithContext(ctx context.Context) BotmanCustomDenyActionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomDenyActionArrayOutput)
+}
+
+func (i BotmanCustomDenyActionArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanCustomDenyAction] {
+	return pulumix.Output[[]*BotmanCustomDenyAction]{
+		OutputState: i.ToBotmanCustomDenyActionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BotmanCustomDenyActionMapInput is an input type that accepts BotmanCustomDenyActionMap and BotmanCustomDenyActionMapOutput values.
@@ -155,6 +168,12 @@ func (i BotmanCustomDenyActionMap) ToBotmanCustomDenyActionMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomDenyActionMapOutput)
 }
 
+func (i BotmanCustomDenyActionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanCustomDenyAction] {
+	return pulumix.Output[map[string]*BotmanCustomDenyAction]{
+		OutputState: i.ToBotmanCustomDenyActionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BotmanCustomDenyActionOutput struct{ *pulumi.OutputState }
 
 func (BotmanCustomDenyActionOutput) ElementType() reflect.Type {
@@ -167,6 +186,12 @@ func (o BotmanCustomDenyActionOutput) ToBotmanCustomDenyActionOutput() BotmanCus
 
 func (o BotmanCustomDenyActionOutput) ToBotmanCustomDenyActionOutputWithContext(ctx context.Context) BotmanCustomDenyActionOutput {
 	return o
+}
+
+func (o BotmanCustomDenyActionOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanCustomDenyAction] {
+	return pulumix.Output[*BotmanCustomDenyAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanCustomDenyActionOutput) ActionId() pulumi.StringOutput {
@@ -195,6 +220,12 @@ func (o BotmanCustomDenyActionArrayOutput) ToBotmanCustomDenyActionArrayOutputWi
 	return o
 }
 
+func (o BotmanCustomDenyActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanCustomDenyAction] {
+	return pulumix.Output[[]*BotmanCustomDenyAction]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BotmanCustomDenyActionArrayOutput) Index(i pulumi.IntInput) BotmanCustomDenyActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanCustomDenyAction {
 		return vs[0].([]*BotmanCustomDenyAction)[vs[1].(int)]
@@ -213,6 +244,12 @@ func (o BotmanCustomDenyActionMapOutput) ToBotmanCustomDenyActionMapOutput() Bot
 
 func (o BotmanCustomDenyActionMapOutput) ToBotmanCustomDenyActionMapOutputWithContext(ctx context.Context) BotmanCustomDenyActionMapOutput {
 	return o
+}
+
+func (o BotmanCustomDenyActionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanCustomDenyAction] {
+	return pulumix.Output[map[string]*BotmanCustomDenyAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanCustomDenyActionMapOutput) MapIndex(k pulumi.StringInput) BotmanCustomDenyActionOutput {

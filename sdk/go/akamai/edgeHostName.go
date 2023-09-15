@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type EdgeHostName struct {
@@ -154,6 +155,12 @@ func (i *EdgeHostName) ToEdgeHostNameOutputWithContext(ctx context.Context) Edge
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNameOutput)
 }
 
+func (i *EdgeHostName) ToOutput(ctx context.Context) pulumix.Output[*EdgeHostName] {
+	return pulumix.Output[*EdgeHostName]{
+		OutputState: i.ToEdgeHostNameOutputWithContext(ctx).OutputState,
+	}
+}
+
 // EdgeHostNameArrayInput is an input type that accepts EdgeHostNameArray and EdgeHostNameArrayOutput values.
 // You can construct a concrete instance of `EdgeHostNameArrayInput` via:
 //
@@ -177,6 +184,12 @@ func (i EdgeHostNameArray) ToEdgeHostNameArrayOutput() EdgeHostNameArrayOutput {
 
 func (i EdgeHostNameArray) ToEdgeHostNameArrayOutputWithContext(ctx context.Context) EdgeHostNameArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNameArrayOutput)
+}
+
+func (i EdgeHostNameArray) ToOutput(ctx context.Context) pulumix.Output[[]*EdgeHostName] {
+	return pulumix.Output[[]*EdgeHostName]{
+		OutputState: i.ToEdgeHostNameArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // EdgeHostNameMapInput is an input type that accepts EdgeHostNameMap and EdgeHostNameMapOutput values.
@@ -204,6 +217,12 @@ func (i EdgeHostNameMap) ToEdgeHostNameMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeHostNameMapOutput)
 }
 
+func (i EdgeHostNameMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EdgeHostName] {
+	return pulumix.Output[map[string]*EdgeHostName]{
+		OutputState: i.ToEdgeHostNameMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type EdgeHostNameOutput struct{ *pulumi.OutputState }
 
 func (EdgeHostNameOutput) ElementType() reflect.Type {
@@ -216,6 +235,12 @@ func (o EdgeHostNameOutput) ToEdgeHostNameOutput() EdgeHostNameOutput {
 
 func (o EdgeHostNameOutput) ToEdgeHostNameOutputWithContext(ctx context.Context) EdgeHostNameOutput {
 	return o
+}
+
+func (o EdgeHostNameOutput) ToOutput(ctx context.Context) pulumix.Output[*EdgeHostName] {
+	return pulumix.Output[*EdgeHostName]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o EdgeHostNameOutput) Certificate() pulumi.IntPtrOutput {
@@ -266,6 +291,12 @@ func (o EdgeHostNameArrayOutput) ToEdgeHostNameArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o EdgeHostNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EdgeHostName] {
+	return pulumix.Output[[]*EdgeHostName]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o EdgeHostNameArrayOutput) Index(i pulumi.IntInput) EdgeHostNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EdgeHostName {
 		return vs[0].([]*EdgeHostName)[vs[1].(int)]
@@ -284,6 +315,12 @@ func (o EdgeHostNameMapOutput) ToEdgeHostNameMapOutput() EdgeHostNameMapOutput {
 
 func (o EdgeHostNameMapOutput) ToEdgeHostNameMapOutputWithContext(ctx context.Context) EdgeHostNameMapOutput {
 	return o
+}
+
+func (o EdgeHostNameMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EdgeHostName] {
+	return pulumix.Output[map[string]*EdgeHostName]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o EdgeHostNameMapOutput) MapIndex(k pulumi.StringInput) EdgeHostNameOutput {

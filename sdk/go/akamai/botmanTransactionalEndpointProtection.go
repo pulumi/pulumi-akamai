@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanTransactionalEndpointProtection struct {
@@ -102,6 +103,12 @@ func (i *BotmanTransactionalEndpointProtection) ToBotmanTransactionalEndpointPro
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanTransactionalEndpointProtectionOutput)
 }
 
+func (i *BotmanTransactionalEndpointProtection) ToOutput(ctx context.Context) pulumix.Output[*BotmanTransactionalEndpointProtection] {
+	return pulumix.Output[*BotmanTransactionalEndpointProtection]{
+		OutputState: i.ToBotmanTransactionalEndpointProtectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BotmanTransactionalEndpointProtectionArrayInput is an input type that accepts BotmanTransactionalEndpointProtectionArray and BotmanTransactionalEndpointProtectionArrayOutput values.
 // You can construct a concrete instance of `BotmanTransactionalEndpointProtectionArrayInput` via:
 //
@@ -125,6 +132,12 @@ func (i BotmanTransactionalEndpointProtectionArray) ToBotmanTransactionalEndpoin
 
 func (i BotmanTransactionalEndpointProtectionArray) ToBotmanTransactionalEndpointProtectionArrayOutputWithContext(ctx context.Context) BotmanTransactionalEndpointProtectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanTransactionalEndpointProtectionArrayOutput)
+}
+
+func (i BotmanTransactionalEndpointProtectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanTransactionalEndpointProtection] {
+	return pulumix.Output[[]*BotmanTransactionalEndpointProtection]{
+		OutputState: i.ToBotmanTransactionalEndpointProtectionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BotmanTransactionalEndpointProtectionMapInput is an input type that accepts BotmanTransactionalEndpointProtectionMap and BotmanTransactionalEndpointProtectionMapOutput values.
@@ -152,6 +165,12 @@ func (i BotmanTransactionalEndpointProtectionMap) ToBotmanTransactionalEndpointP
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanTransactionalEndpointProtectionMapOutput)
 }
 
+func (i BotmanTransactionalEndpointProtectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanTransactionalEndpointProtection] {
+	return pulumix.Output[map[string]*BotmanTransactionalEndpointProtection]{
+		OutputState: i.ToBotmanTransactionalEndpointProtectionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BotmanTransactionalEndpointProtectionOutput struct{ *pulumi.OutputState }
 
 func (BotmanTransactionalEndpointProtectionOutput) ElementType() reflect.Type {
@@ -164,6 +183,12 @@ func (o BotmanTransactionalEndpointProtectionOutput) ToBotmanTransactionalEndpoi
 
 func (o BotmanTransactionalEndpointProtectionOutput) ToBotmanTransactionalEndpointProtectionOutputWithContext(ctx context.Context) BotmanTransactionalEndpointProtectionOutput {
 	return o
+}
+
+func (o BotmanTransactionalEndpointProtectionOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanTransactionalEndpointProtection] {
+	return pulumix.Output[*BotmanTransactionalEndpointProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanTransactionalEndpointProtectionOutput) ConfigId() pulumi.IntOutput {
@@ -190,6 +215,12 @@ func (o BotmanTransactionalEndpointProtectionArrayOutput) ToBotmanTransactionalE
 	return o
 }
 
+func (o BotmanTransactionalEndpointProtectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanTransactionalEndpointProtection] {
+	return pulumix.Output[[]*BotmanTransactionalEndpointProtection]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BotmanTransactionalEndpointProtectionArrayOutput) Index(i pulumi.IntInput) BotmanTransactionalEndpointProtectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanTransactionalEndpointProtection {
 		return vs[0].([]*BotmanTransactionalEndpointProtection)[vs[1].(int)]
@@ -208,6 +239,12 @@ func (o BotmanTransactionalEndpointProtectionMapOutput) ToBotmanTransactionalEnd
 
 func (o BotmanTransactionalEndpointProtectionMapOutput) ToBotmanTransactionalEndpointProtectionMapOutputWithContext(ctx context.Context) BotmanTransactionalEndpointProtectionMapOutput {
 	return o
+}
+
+func (o BotmanTransactionalEndpointProtectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanTransactionalEndpointProtection] {
+	return pulumix.Output[map[string]*BotmanTransactionalEndpointProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanTransactionalEndpointProtectionMapOutput) MapIndex(k pulumi.StringInput) BotmanTransactionalEndpointProtectionOutput {

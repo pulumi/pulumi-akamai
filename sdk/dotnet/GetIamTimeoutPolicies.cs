@@ -13,6 +13,9 @@ namespace Pulumi.Akamai
     {
         public static Task<GetIamTimeoutPoliciesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamTimeoutPoliciesResult>("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetIamTimeoutPoliciesResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamTimeoutPoliciesResult>("akamai:index/getIamTimeoutPolicies:getIamTimeoutPolicies", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

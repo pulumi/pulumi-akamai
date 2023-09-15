@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecCustomRuleAction struct {
@@ -138,6 +139,12 @@ func (i *AppSecCustomRuleAction) ToAppSecCustomRuleActionOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRuleActionOutput)
 }
 
+func (i *AppSecCustomRuleAction) ToOutput(ctx context.Context) pulumix.Output[*AppSecCustomRuleAction] {
+	return pulumix.Output[*AppSecCustomRuleAction]{
+		OutputState: i.ToAppSecCustomRuleActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecCustomRuleActionArrayInput is an input type that accepts AppSecCustomRuleActionArray and AppSecCustomRuleActionArrayOutput values.
 // You can construct a concrete instance of `AppSecCustomRuleActionArrayInput` via:
 //
@@ -161,6 +168,12 @@ func (i AppSecCustomRuleActionArray) ToAppSecCustomRuleActionArrayOutput() AppSe
 
 func (i AppSecCustomRuleActionArray) ToAppSecCustomRuleActionArrayOutputWithContext(ctx context.Context) AppSecCustomRuleActionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRuleActionArrayOutput)
+}
+
+func (i AppSecCustomRuleActionArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecCustomRuleAction] {
+	return pulumix.Output[[]*AppSecCustomRuleAction]{
+		OutputState: i.ToAppSecCustomRuleActionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecCustomRuleActionMapInput is an input type that accepts AppSecCustomRuleActionMap and AppSecCustomRuleActionMapOutput values.
@@ -188,6 +201,12 @@ func (i AppSecCustomRuleActionMap) ToAppSecCustomRuleActionMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomRuleActionMapOutput)
 }
 
+func (i AppSecCustomRuleActionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecCustomRuleAction] {
+	return pulumix.Output[map[string]*AppSecCustomRuleAction]{
+		OutputState: i.ToAppSecCustomRuleActionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecCustomRuleActionOutput struct{ *pulumi.OutputState }
 
 func (AppSecCustomRuleActionOutput) ElementType() reflect.Type {
@@ -200,6 +219,12 @@ func (o AppSecCustomRuleActionOutput) ToAppSecCustomRuleActionOutput() AppSecCus
 
 func (o AppSecCustomRuleActionOutput) ToAppSecCustomRuleActionOutputWithContext(ctx context.Context) AppSecCustomRuleActionOutput {
 	return o
+}
+
+func (o AppSecCustomRuleActionOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecCustomRuleAction] {
+	return pulumix.Output[*AppSecCustomRuleAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration
@@ -236,6 +261,12 @@ func (o AppSecCustomRuleActionArrayOutput) ToAppSecCustomRuleActionArrayOutputWi
 	return o
 }
 
+func (o AppSecCustomRuleActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecCustomRuleAction] {
+	return pulumix.Output[[]*AppSecCustomRuleAction]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecCustomRuleActionArrayOutput) Index(i pulumi.IntInput) AppSecCustomRuleActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecCustomRuleAction {
 		return vs[0].([]*AppSecCustomRuleAction)[vs[1].(int)]
@@ -254,6 +285,12 @@ func (o AppSecCustomRuleActionMapOutput) ToAppSecCustomRuleActionMapOutput() App
 
 func (o AppSecCustomRuleActionMapOutput) ToAppSecCustomRuleActionMapOutputWithContext(ctx context.Context) AppSecCustomRuleActionMapOutput {
 	return o
+}
+
+func (o AppSecCustomRuleActionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecCustomRuleAction] {
+	return pulumix.Output[map[string]*AppSecCustomRuleAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecCustomRuleActionMapOutput) MapIndex(k pulumi.StringInput) AppSecCustomRuleActionOutput {

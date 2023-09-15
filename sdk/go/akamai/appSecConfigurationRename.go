@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecConfigurationRename struct {
@@ -122,6 +123,12 @@ func (i *AppSecConfigurationRename) ToAppSecConfigurationRenameOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationRenameOutput)
 }
 
+func (i *AppSecConfigurationRename) ToOutput(ctx context.Context) pulumix.Output[*AppSecConfigurationRename] {
+	return pulumix.Output[*AppSecConfigurationRename]{
+		OutputState: i.ToAppSecConfigurationRenameOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecConfigurationRenameArrayInput is an input type that accepts AppSecConfigurationRenameArray and AppSecConfigurationRenameArrayOutput values.
 // You can construct a concrete instance of `AppSecConfigurationRenameArrayInput` via:
 //
@@ -145,6 +152,12 @@ func (i AppSecConfigurationRenameArray) ToAppSecConfigurationRenameArrayOutput()
 
 func (i AppSecConfigurationRenameArray) ToAppSecConfigurationRenameArrayOutputWithContext(ctx context.Context) AppSecConfigurationRenameArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationRenameArrayOutput)
+}
+
+func (i AppSecConfigurationRenameArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecConfigurationRename] {
+	return pulumix.Output[[]*AppSecConfigurationRename]{
+		OutputState: i.ToAppSecConfigurationRenameArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecConfigurationRenameMapInput is an input type that accepts AppSecConfigurationRenameMap and AppSecConfigurationRenameMapOutput values.
@@ -172,6 +185,12 @@ func (i AppSecConfigurationRenameMap) ToAppSecConfigurationRenameMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecConfigurationRenameMapOutput)
 }
 
+func (i AppSecConfigurationRenameMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecConfigurationRename] {
+	return pulumix.Output[map[string]*AppSecConfigurationRename]{
+		OutputState: i.ToAppSecConfigurationRenameMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecConfigurationRenameOutput struct{ *pulumi.OutputState }
 
 func (AppSecConfigurationRenameOutput) ElementType() reflect.Type {
@@ -184,6 +203,12 @@ func (o AppSecConfigurationRenameOutput) ToAppSecConfigurationRenameOutput() App
 
 func (o AppSecConfigurationRenameOutput) ToAppSecConfigurationRenameOutputWithContext(ctx context.Context) AppSecConfigurationRenameOutput {
 	return o
+}
+
+func (o AppSecConfigurationRenameOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecConfigurationRename] {
+	return pulumix.Output[*AppSecConfigurationRename]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration
@@ -215,6 +240,12 @@ func (o AppSecConfigurationRenameArrayOutput) ToAppSecConfigurationRenameArrayOu
 	return o
 }
 
+func (o AppSecConfigurationRenameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecConfigurationRename] {
+	return pulumix.Output[[]*AppSecConfigurationRename]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecConfigurationRenameArrayOutput) Index(i pulumi.IntInput) AppSecConfigurationRenameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecConfigurationRename {
 		return vs[0].([]*AppSecConfigurationRename)[vs[1].(int)]
@@ -233,6 +264,12 @@ func (o AppSecConfigurationRenameMapOutput) ToAppSecConfigurationRenameMapOutput
 
 func (o AppSecConfigurationRenameMapOutput) ToAppSecConfigurationRenameMapOutputWithContext(ctx context.Context) AppSecConfigurationRenameMapOutput {
 	return o
+}
+
+func (o AppSecConfigurationRenameMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecConfigurationRename] {
+	return pulumix.Output[map[string]*AppSecConfigurationRename]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecConfigurationRenameMapOutput) MapIndex(k pulumi.StringInput) AppSecConfigurationRenameOutput {

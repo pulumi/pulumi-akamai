@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecEvalRules(ctx *pulumi.Context, args *GetAppSecEvalRulesArgs, opts ...pulumi.InvokeOption) (*GetAppSecEvalRulesResult, error) {
@@ -78,6 +79,12 @@ func (o GetAppSecEvalRulesResultOutput) ToGetAppSecEvalRulesResultOutput() GetAp
 
 func (o GetAppSecEvalRulesResultOutput) ToGetAppSecEvalRulesResultOutputWithContext(ctx context.Context) GetAppSecEvalRulesResultOutput {
 	return o
+}
+
+func (o GetAppSecEvalRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecEvalRulesResult] {
+	return pulumix.Output[GetAppSecEvalRulesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAppSecEvalRulesResultOutput) ConditionException() pulumi.StringOutput {

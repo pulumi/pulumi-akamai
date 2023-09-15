@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetPropertyHostnames(ctx *pulumi.Context, args *GetPropertyHostnamesArgs, opts ...pulumi.InvokeOption) (*GetPropertyHostnamesResult, error) {
@@ -76,6 +77,12 @@ func (o GetPropertyHostnamesResultOutput) ToGetPropertyHostnamesResultOutput() G
 
 func (o GetPropertyHostnamesResultOutput) ToGetPropertyHostnamesResultOutputWithContext(ctx context.Context) GetPropertyHostnamesResultOutput {
 	return o
+}
+
+func (o GetPropertyHostnamesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPropertyHostnamesResult] {
+	return pulumix.Output[GetPropertyHostnamesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPropertyHostnamesResultOutput) ContractId() pulumi.StringOutput {

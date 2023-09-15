@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecCustomDeny struct {
@@ -118,6 +119,12 @@ func (i *AppSecCustomDeny) ToAppSecCustomDenyOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomDenyOutput)
 }
 
+func (i *AppSecCustomDeny) ToOutput(ctx context.Context) pulumix.Output[*AppSecCustomDeny] {
+	return pulumix.Output[*AppSecCustomDeny]{
+		OutputState: i.ToAppSecCustomDenyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecCustomDenyArrayInput is an input type that accepts AppSecCustomDenyArray and AppSecCustomDenyArrayOutput values.
 // You can construct a concrete instance of `AppSecCustomDenyArrayInput` via:
 //
@@ -141,6 +148,12 @@ func (i AppSecCustomDenyArray) ToAppSecCustomDenyArrayOutput() AppSecCustomDenyA
 
 func (i AppSecCustomDenyArray) ToAppSecCustomDenyArrayOutputWithContext(ctx context.Context) AppSecCustomDenyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomDenyArrayOutput)
+}
+
+func (i AppSecCustomDenyArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecCustomDeny] {
+	return pulumix.Output[[]*AppSecCustomDeny]{
+		OutputState: i.ToAppSecCustomDenyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecCustomDenyMapInput is an input type that accepts AppSecCustomDenyMap and AppSecCustomDenyMapOutput values.
@@ -168,6 +181,12 @@ func (i AppSecCustomDenyMap) ToAppSecCustomDenyMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecCustomDenyMapOutput)
 }
 
+func (i AppSecCustomDenyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecCustomDeny] {
+	return pulumix.Output[map[string]*AppSecCustomDeny]{
+		OutputState: i.ToAppSecCustomDenyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecCustomDenyOutput struct{ *pulumi.OutputState }
 
 func (AppSecCustomDenyOutput) ElementType() reflect.Type {
@@ -180,6 +199,12 @@ func (o AppSecCustomDenyOutput) ToAppSecCustomDenyOutput() AppSecCustomDenyOutpu
 
 func (o AppSecCustomDenyOutput) ToAppSecCustomDenyOutputWithContext(ctx context.Context) AppSecCustomDenyOutput {
 	return o
+}
+
+func (o AppSecCustomDenyOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecCustomDeny] {
+	return pulumix.Output[*AppSecCustomDeny]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration
@@ -211,6 +236,12 @@ func (o AppSecCustomDenyArrayOutput) ToAppSecCustomDenyArrayOutputWithContext(ct
 	return o
 }
 
+func (o AppSecCustomDenyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecCustomDeny] {
+	return pulumix.Output[[]*AppSecCustomDeny]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecCustomDenyArrayOutput) Index(i pulumi.IntInput) AppSecCustomDenyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecCustomDeny {
 		return vs[0].([]*AppSecCustomDeny)[vs[1].(int)]
@@ -229,6 +260,12 @@ func (o AppSecCustomDenyMapOutput) ToAppSecCustomDenyMapOutput() AppSecCustomDen
 
 func (o AppSecCustomDenyMapOutput) ToAppSecCustomDenyMapOutputWithContext(ctx context.Context) AppSecCustomDenyMapOutput {
 	return o
+}
+
+func (o AppSecCustomDenyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecCustomDeny] {
+	return pulumix.Output[map[string]*AppSecCustomDeny]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecCustomDenyMapOutput) MapIndex(k pulumi.StringInput) AppSecCustomDenyOutput {

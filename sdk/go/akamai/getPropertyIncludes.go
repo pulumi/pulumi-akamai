@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetPropertyIncludes(ctx *pulumi.Context, args *GetPropertyIncludesArgs, opts ...pulumi.InvokeOption) (*GetPropertyIncludesResult, error) {
@@ -78,6 +79,12 @@ func (o GetPropertyIncludesResultOutput) ToGetPropertyIncludesResultOutput() Get
 
 func (o GetPropertyIncludesResultOutput) ToGetPropertyIncludesResultOutputWithContext(ctx context.Context) GetPropertyIncludesResultOutput {
 	return o
+}
+
+func (o GetPropertyIncludesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPropertyIncludesResult] {
+	return pulumix.Output[GetPropertyIncludesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPropertyIncludesResultOutput) ContractId() pulumi.StringOutput {

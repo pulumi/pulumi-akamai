@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCloudwrapperProperties(ctx *pulumi.Context, args *GetCloudwrapperPropertiesArgs, opts ...pulumi.InvokeOption) (*GetCloudwrapperPropertiesResult, error) {
@@ -74,6 +75,12 @@ func (o GetCloudwrapperPropertiesResultOutput) ToGetCloudwrapperPropertiesResult
 
 func (o GetCloudwrapperPropertiesResultOutput) ToGetCloudwrapperPropertiesResultOutputWithContext(ctx context.Context) GetCloudwrapperPropertiesResultOutput {
 	return o
+}
+
+func (o GetCloudwrapperPropertiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudwrapperPropertiesResult] {
+	return pulumix.Output[GetCloudwrapperPropertiesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCloudwrapperPropertiesResultOutput) ContractIds() pulumi.StringArrayOutput {

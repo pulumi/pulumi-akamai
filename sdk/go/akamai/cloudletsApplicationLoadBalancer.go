@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type CloudletsApplicationLoadBalancer struct {
@@ -159,6 +160,12 @@ func (i *CloudletsApplicationLoadBalancer) ToCloudletsApplicationLoadBalancerOut
 	return pulumi.ToOutputWithContext(ctx, i).(CloudletsApplicationLoadBalancerOutput)
 }
 
+func (i *CloudletsApplicationLoadBalancer) ToOutput(ctx context.Context) pulumix.Output[*CloudletsApplicationLoadBalancer] {
+	return pulumix.Output[*CloudletsApplicationLoadBalancer]{
+		OutputState: i.ToCloudletsApplicationLoadBalancerOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CloudletsApplicationLoadBalancerArrayInput is an input type that accepts CloudletsApplicationLoadBalancerArray and CloudletsApplicationLoadBalancerArrayOutput values.
 // You can construct a concrete instance of `CloudletsApplicationLoadBalancerArrayInput` via:
 //
@@ -182,6 +189,12 @@ func (i CloudletsApplicationLoadBalancerArray) ToCloudletsApplicationLoadBalance
 
 func (i CloudletsApplicationLoadBalancerArray) ToCloudletsApplicationLoadBalancerArrayOutputWithContext(ctx context.Context) CloudletsApplicationLoadBalancerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudletsApplicationLoadBalancerArrayOutput)
+}
+
+func (i CloudletsApplicationLoadBalancerArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudletsApplicationLoadBalancer] {
+	return pulumix.Output[[]*CloudletsApplicationLoadBalancer]{
+		OutputState: i.ToCloudletsApplicationLoadBalancerArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CloudletsApplicationLoadBalancerMapInput is an input type that accepts CloudletsApplicationLoadBalancerMap and CloudletsApplicationLoadBalancerMapOutput values.
@@ -209,6 +222,12 @@ func (i CloudletsApplicationLoadBalancerMap) ToCloudletsApplicationLoadBalancerM
 	return pulumi.ToOutputWithContext(ctx, i).(CloudletsApplicationLoadBalancerMapOutput)
 }
 
+func (i CloudletsApplicationLoadBalancerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudletsApplicationLoadBalancer] {
+	return pulumix.Output[map[string]*CloudletsApplicationLoadBalancer]{
+		OutputState: i.ToCloudletsApplicationLoadBalancerMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CloudletsApplicationLoadBalancerOutput struct{ *pulumi.OutputState }
 
 func (CloudletsApplicationLoadBalancerOutput) ElementType() reflect.Type {
@@ -221,6 +240,12 @@ func (o CloudletsApplicationLoadBalancerOutput) ToCloudletsApplicationLoadBalanc
 
 func (o CloudletsApplicationLoadBalancerOutput) ToCloudletsApplicationLoadBalancerOutputWithContext(ctx context.Context) CloudletsApplicationLoadBalancerOutput {
 	return o
+}
+
+func (o CloudletsApplicationLoadBalancerOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudletsApplicationLoadBalancer] {
+	return pulumix.Output[*CloudletsApplicationLoadBalancer]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The type of load balancing being performed. Options include WEIGHTED and PERFORMANCE
@@ -277,6 +302,12 @@ func (o CloudletsApplicationLoadBalancerArrayOutput) ToCloudletsApplicationLoadB
 	return o
 }
 
+func (o CloudletsApplicationLoadBalancerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudletsApplicationLoadBalancer] {
+	return pulumix.Output[[]*CloudletsApplicationLoadBalancer]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CloudletsApplicationLoadBalancerArrayOutput) Index(i pulumi.IntInput) CloudletsApplicationLoadBalancerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudletsApplicationLoadBalancer {
 		return vs[0].([]*CloudletsApplicationLoadBalancer)[vs[1].(int)]
@@ -295,6 +326,12 @@ func (o CloudletsApplicationLoadBalancerMapOutput) ToCloudletsApplicationLoadBal
 
 func (o CloudletsApplicationLoadBalancerMapOutput) ToCloudletsApplicationLoadBalancerMapOutputWithContext(ctx context.Context) CloudletsApplicationLoadBalancerMapOutput {
 	return o
+}
+
+func (o CloudletsApplicationLoadBalancerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudletsApplicationLoadBalancer] {
+	return pulumix.Output[map[string]*CloudletsApplicationLoadBalancer]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CloudletsApplicationLoadBalancerMapOutput) MapIndex(k pulumi.StringInput) CloudletsApplicationLoadBalancerOutput {

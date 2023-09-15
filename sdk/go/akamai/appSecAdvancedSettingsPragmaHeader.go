@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecAdvancedSettingsPragmaHeader struct {
@@ -122,6 +123,12 @@ func (i *AppSecAdvancedSettingsPragmaHeader) ToAppSecAdvancedSettingsPragmaHeade
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPragmaHeaderOutput)
 }
 
+func (i *AppSecAdvancedSettingsPragmaHeader) ToOutput(ctx context.Context) pulumix.Output[*AppSecAdvancedSettingsPragmaHeader] {
+	return pulumix.Output[*AppSecAdvancedSettingsPragmaHeader]{
+		OutputState: i.ToAppSecAdvancedSettingsPragmaHeaderOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecAdvancedSettingsPragmaHeaderArrayInput is an input type that accepts AppSecAdvancedSettingsPragmaHeaderArray and AppSecAdvancedSettingsPragmaHeaderArrayOutput values.
 // You can construct a concrete instance of `AppSecAdvancedSettingsPragmaHeaderArrayInput` via:
 //
@@ -145,6 +152,12 @@ func (i AppSecAdvancedSettingsPragmaHeaderArray) ToAppSecAdvancedSettingsPragmaH
 
 func (i AppSecAdvancedSettingsPragmaHeaderArray) ToAppSecAdvancedSettingsPragmaHeaderArrayOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPragmaHeaderArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPragmaHeaderArrayOutput)
+}
+
+func (i AppSecAdvancedSettingsPragmaHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecAdvancedSettingsPragmaHeader] {
+	return pulumix.Output[[]*AppSecAdvancedSettingsPragmaHeader]{
+		OutputState: i.ToAppSecAdvancedSettingsPragmaHeaderArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecAdvancedSettingsPragmaHeaderMapInput is an input type that accepts AppSecAdvancedSettingsPragmaHeaderMap and AppSecAdvancedSettingsPragmaHeaderMapOutput values.
@@ -172,6 +185,12 @@ func (i AppSecAdvancedSettingsPragmaHeaderMap) ToAppSecAdvancedSettingsPragmaHea
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPragmaHeaderMapOutput)
 }
 
+func (i AppSecAdvancedSettingsPragmaHeaderMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecAdvancedSettingsPragmaHeader] {
+	return pulumix.Output[map[string]*AppSecAdvancedSettingsPragmaHeader]{
+		OutputState: i.ToAppSecAdvancedSettingsPragmaHeaderMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecAdvancedSettingsPragmaHeaderOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsPragmaHeaderOutput) ElementType() reflect.Type {
@@ -184,6 +203,12 @@ func (o AppSecAdvancedSettingsPragmaHeaderOutput) ToAppSecAdvancedSettingsPragma
 
 func (o AppSecAdvancedSettingsPragmaHeaderOutput) ToAppSecAdvancedSettingsPragmaHeaderOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPragmaHeaderOutput {
 	return o
+}
+
+func (o AppSecAdvancedSettingsPragmaHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecAdvancedSettingsPragmaHeader] {
+	return pulumix.Output[*AppSecAdvancedSettingsPragmaHeader]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration
@@ -215,6 +240,12 @@ func (o AppSecAdvancedSettingsPragmaHeaderArrayOutput) ToAppSecAdvancedSettingsP
 	return o
 }
 
+func (o AppSecAdvancedSettingsPragmaHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecAdvancedSettingsPragmaHeader] {
+	return pulumix.Output[[]*AppSecAdvancedSettingsPragmaHeader]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecAdvancedSettingsPragmaHeaderArrayOutput) Index(i pulumi.IntInput) AppSecAdvancedSettingsPragmaHeaderOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecAdvancedSettingsPragmaHeader {
 		return vs[0].([]*AppSecAdvancedSettingsPragmaHeader)[vs[1].(int)]
@@ -233,6 +264,12 @@ func (o AppSecAdvancedSettingsPragmaHeaderMapOutput) ToAppSecAdvancedSettingsPra
 
 func (o AppSecAdvancedSettingsPragmaHeaderMapOutput) ToAppSecAdvancedSettingsPragmaHeaderMapOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPragmaHeaderMapOutput {
 	return o
+}
+
+func (o AppSecAdvancedSettingsPragmaHeaderMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecAdvancedSettingsPragmaHeader] {
+	return pulumix.Output[map[string]*AppSecAdvancedSettingsPragmaHeader]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecAdvancedSettingsPragmaHeaderMapOutput) MapIndex(k pulumi.StringInput) AppSecAdvancedSettingsPragmaHeaderOutput {

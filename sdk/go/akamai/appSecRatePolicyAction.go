@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecRatePolicyAction struct {
@@ -151,6 +152,12 @@ func (i *AppSecRatePolicyAction) ToAppSecRatePolicyActionOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRatePolicyActionOutput)
 }
 
+func (i *AppSecRatePolicyAction) ToOutput(ctx context.Context) pulumix.Output[*AppSecRatePolicyAction] {
+	return pulumix.Output[*AppSecRatePolicyAction]{
+		OutputState: i.ToAppSecRatePolicyActionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecRatePolicyActionArrayInput is an input type that accepts AppSecRatePolicyActionArray and AppSecRatePolicyActionArrayOutput values.
 // You can construct a concrete instance of `AppSecRatePolicyActionArrayInput` via:
 //
@@ -174,6 +181,12 @@ func (i AppSecRatePolicyActionArray) ToAppSecRatePolicyActionArrayOutput() AppSe
 
 func (i AppSecRatePolicyActionArray) ToAppSecRatePolicyActionArrayOutputWithContext(ctx context.Context) AppSecRatePolicyActionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRatePolicyActionArrayOutput)
+}
+
+func (i AppSecRatePolicyActionArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecRatePolicyAction] {
+	return pulumix.Output[[]*AppSecRatePolicyAction]{
+		OutputState: i.ToAppSecRatePolicyActionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecRatePolicyActionMapInput is an input type that accepts AppSecRatePolicyActionMap and AppSecRatePolicyActionMapOutput values.
@@ -201,6 +214,12 @@ func (i AppSecRatePolicyActionMap) ToAppSecRatePolicyActionMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecRatePolicyActionMapOutput)
 }
 
+func (i AppSecRatePolicyActionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecRatePolicyAction] {
+	return pulumix.Output[map[string]*AppSecRatePolicyAction]{
+		OutputState: i.ToAppSecRatePolicyActionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecRatePolicyActionOutput struct{ *pulumi.OutputState }
 
 func (AppSecRatePolicyActionOutput) ElementType() reflect.Type {
@@ -213,6 +232,12 @@ func (o AppSecRatePolicyActionOutput) ToAppSecRatePolicyActionOutput() AppSecRat
 
 func (o AppSecRatePolicyActionOutput) ToAppSecRatePolicyActionOutputWithContext(ctx context.Context) AppSecRatePolicyActionOutput {
 	return o
+}
+
+func (o AppSecRatePolicyActionOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecRatePolicyAction] {
+	return pulumix.Output[*AppSecRatePolicyAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration
@@ -254,6 +279,12 @@ func (o AppSecRatePolicyActionArrayOutput) ToAppSecRatePolicyActionArrayOutputWi
 	return o
 }
 
+func (o AppSecRatePolicyActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecRatePolicyAction] {
+	return pulumix.Output[[]*AppSecRatePolicyAction]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecRatePolicyActionArrayOutput) Index(i pulumi.IntInput) AppSecRatePolicyActionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecRatePolicyAction {
 		return vs[0].([]*AppSecRatePolicyAction)[vs[1].(int)]
@@ -272,6 +303,12 @@ func (o AppSecRatePolicyActionMapOutput) ToAppSecRatePolicyActionMapOutput() App
 
 func (o AppSecRatePolicyActionMapOutput) ToAppSecRatePolicyActionMapOutputWithContext(ctx context.Context) AppSecRatePolicyActionMapOutput {
 	return o
+}
+
+func (o AppSecRatePolicyActionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecRatePolicyAction] {
+	return pulumix.Output[map[string]*AppSecRatePolicyAction]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecRatePolicyActionMapOutput) MapIndex(k pulumi.StringInput) AppSecRatePolicyActionOutput {

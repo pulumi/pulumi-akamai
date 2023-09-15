@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupAppSecSelectedHostnames(ctx *pulumi.Context, args *LookupAppSecSelectedHostnamesArgs, opts ...pulumi.InvokeOption) (*LookupAppSecSelectedHostnamesResult, error) {
@@ -71,6 +72,12 @@ func (o LookupAppSecSelectedHostnamesResultOutput) ToLookupAppSecSelectedHostnam
 
 func (o LookupAppSecSelectedHostnamesResultOutput) ToLookupAppSecSelectedHostnamesResultOutputWithContext(ctx context.Context) LookupAppSecSelectedHostnamesResultOutput {
 	return o
+}
+
+func (o LookupAppSecSelectedHostnamesResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppSecSelectedHostnamesResult] {
+	return pulumix.Output[LookupAppSecSelectedHostnamesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupAppSecSelectedHostnamesResultOutput) ConfigId() pulumi.IntOutput {

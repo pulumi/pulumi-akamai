@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type GtmCidrmap struct {
@@ -123,6 +124,12 @@ func (i *GtmCidrmap) ToGtmCidrmapOutputWithContext(ctx context.Context) GtmCidrm
 	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapOutput)
 }
 
+func (i *GtmCidrmap) ToOutput(ctx context.Context) pulumix.Output[*GtmCidrmap] {
+	return pulumix.Output[*GtmCidrmap]{
+		OutputState: i.ToGtmCidrmapOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GtmCidrmapArrayInput is an input type that accepts GtmCidrmapArray and GtmCidrmapArrayOutput values.
 // You can construct a concrete instance of `GtmCidrmapArrayInput` via:
 //
@@ -146,6 +153,12 @@ func (i GtmCidrmapArray) ToGtmCidrmapArrayOutput() GtmCidrmapArrayOutput {
 
 func (i GtmCidrmapArray) ToGtmCidrmapArrayOutputWithContext(ctx context.Context) GtmCidrmapArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapArrayOutput)
+}
+
+func (i GtmCidrmapArray) ToOutput(ctx context.Context) pulumix.Output[[]*GtmCidrmap] {
+	return pulumix.Output[[]*GtmCidrmap]{
+		OutputState: i.ToGtmCidrmapArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // GtmCidrmapMapInput is an input type that accepts GtmCidrmapMap and GtmCidrmapMapOutput values.
@@ -173,6 +186,12 @@ func (i GtmCidrmapMap) ToGtmCidrmapMapOutputWithContext(ctx context.Context) Gtm
 	return pulumi.ToOutputWithContext(ctx, i).(GtmCidrmapMapOutput)
 }
 
+func (i GtmCidrmapMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmCidrmap] {
+	return pulumix.Output[map[string]*GtmCidrmap]{
+		OutputState: i.ToGtmCidrmapMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GtmCidrmapOutput struct{ *pulumi.OutputState }
 
 func (GtmCidrmapOutput) ElementType() reflect.Type {
@@ -185,6 +204,12 @@ func (o GtmCidrmapOutput) ToGtmCidrmapOutput() GtmCidrmapOutput {
 
 func (o GtmCidrmapOutput) ToGtmCidrmapOutputWithContext(ctx context.Context) GtmCidrmapOutput {
 	return o
+}
+
+func (o GtmCidrmapOutput) ToOutput(ctx context.Context) pulumix.Output[*GtmCidrmap] {
+	return pulumix.Output[*GtmCidrmap]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GtmCidrmapOutput) Assignments() GtmCidrmapAssignmentArrayOutput {
@@ -221,6 +246,12 @@ func (o GtmCidrmapArrayOutput) ToGtmCidrmapArrayOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o GtmCidrmapArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GtmCidrmap] {
+	return pulumix.Output[[]*GtmCidrmap]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GtmCidrmapArrayOutput) Index(i pulumi.IntInput) GtmCidrmapOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GtmCidrmap {
 		return vs[0].([]*GtmCidrmap)[vs[1].(int)]
@@ -239,6 +270,12 @@ func (o GtmCidrmapMapOutput) ToGtmCidrmapMapOutput() GtmCidrmapMapOutput {
 
 func (o GtmCidrmapMapOutput) ToGtmCidrmapMapOutputWithContext(ctx context.Context) GtmCidrmapMapOutput {
 	return o
+}
+
+func (o GtmCidrmapMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmCidrmap] {
+	return pulumix.Output[map[string]*GtmCidrmap]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GtmCidrmapMapOutput) MapIndex(k pulumi.StringInput) GtmCidrmapOutput {

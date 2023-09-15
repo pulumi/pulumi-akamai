@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type CloudwrapperActivation struct {
@@ -117,6 +118,12 @@ func (i *CloudwrapperActivation) ToCloudwrapperActivationOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(CloudwrapperActivationOutput)
 }
 
+func (i *CloudwrapperActivation) ToOutput(ctx context.Context) pulumix.Output[*CloudwrapperActivation] {
+	return pulumix.Output[*CloudwrapperActivation]{
+		OutputState: i.ToCloudwrapperActivationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CloudwrapperActivationArrayInput is an input type that accepts CloudwrapperActivationArray and CloudwrapperActivationArrayOutput values.
 // You can construct a concrete instance of `CloudwrapperActivationArrayInput` via:
 //
@@ -140,6 +147,12 @@ func (i CloudwrapperActivationArray) ToCloudwrapperActivationArrayOutput() Cloud
 
 func (i CloudwrapperActivationArray) ToCloudwrapperActivationArrayOutputWithContext(ctx context.Context) CloudwrapperActivationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudwrapperActivationArrayOutput)
+}
+
+func (i CloudwrapperActivationArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudwrapperActivation] {
+	return pulumix.Output[[]*CloudwrapperActivation]{
+		OutputState: i.ToCloudwrapperActivationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CloudwrapperActivationMapInput is an input type that accepts CloudwrapperActivationMap and CloudwrapperActivationMapOutput values.
@@ -167,6 +180,12 @@ func (i CloudwrapperActivationMap) ToCloudwrapperActivationMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(CloudwrapperActivationMapOutput)
 }
 
+func (i CloudwrapperActivationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudwrapperActivation] {
+	return pulumix.Output[map[string]*CloudwrapperActivation]{
+		OutputState: i.ToCloudwrapperActivationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CloudwrapperActivationOutput struct{ *pulumi.OutputState }
 
 func (CloudwrapperActivationOutput) ElementType() reflect.Type {
@@ -179,6 +198,12 @@ func (o CloudwrapperActivationOutput) ToCloudwrapperActivationOutput() Cloudwrap
 
 func (o CloudwrapperActivationOutput) ToCloudwrapperActivationOutputWithContext(ctx context.Context) CloudwrapperActivationOutput {
 	return o
+}
+
+func (o CloudwrapperActivationOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudwrapperActivation] {
+	return pulumix.Output[*CloudwrapperActivation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The configuration you want to activate.
@@ -209,6 +234,12 @@ func (o CloudwrapperActivationArrayOutput) ToCloudwrapperActivationArrayOutputWi
 	return o
 }
 
+func (o CloudwrapperActivationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudwrapperActivation] {
+	return pulumix.Output[[]*CloudwrapperActivation]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CloudwrapperActivationArrayOutput) Index(i pulumi.IntInput) CloudwrapperActivationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudwrapperActivation {
 		return vs[0].([]*CloudwrapperActivation)[vs[1].(int)]
@@ -227,6 +258,12 @@ func (o CloudwrapperActivationMapOutput) ToCloudwrapperActivationMapOutput() Clo
 
 func (o CloudwrapperActivationMapOutput) ToCloudwrapperActivationMapOutputWithContext(ctx context.Context) CloudwrapperActivationMapOutput {
 	return o
+}
+
+func (o CloudwrapperActivationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudwrapperActivation] {
+	return pulumix.Output[map[string]*CloudwrapperActivation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CloudwrapperActivationMapOutput) MapIndex(k pulumi.StringInput) CloudwrapperActivationOutput {

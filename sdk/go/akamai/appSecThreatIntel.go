@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecThreatIntel struct {
@@ -125,6 +126,12 @@ func (i *AppSecThreatIntel) ToAppSecThreatIntelOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecThreatIntelOutput)
 }
 
+func (i *AppSecThreatIntel) ToOutput(ctx context.Context) pulumix.Output[*AppSecThreatIntel] {
+	return pulumix.Output[*AppSecThreatIntel]{
+		OutputState: i.ToAppSecThreatIntelOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecThreatIntelArrayInput is an input type that accepts AppSecThreatIntelArray and AppSecThreatIntelArrayOutput values.
 // You can construct a concrete instance of `AppSecThreatIntelArrayInput` via:
 //
@@ -148,6 +155,12 @@ func (i AppSecThreatIntelArray) ToAppSecThreatIntelArrayOutput() AppSecThreatInt
 
 func (i AppSecThreatIntelArray) ToAppSecThreatIntelArrayOutputWithContext(ctx context.Context) AppSecThreatIntelArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecThreatIntelArrayOutput)
+}
+
+func (i AppSecThreatIntelArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecThreatIntel] {
+	return pulumix.Output[[]*AppSecThreatIntel]{
+		OutputState: i.ToAppSecThreatIntelArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecThreatIntelMapInput is an input type that accepts AppSecThreatIntelMap and AppSecThreatIntelMapOutput values.
@@ -175,6 +188,12 @@ func (i AppSecThreatIntelMap) ToAppSecThreatIntelMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecThreatIntelMapOutput)
 }
 
+func (i AppSecThreatIntelMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecThreatIntel] {
+	return pulumix.Output[map[string]*AppSecThreatIntel]{
+		OutputState: i.ToAppSecThreatIntelMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecThreatIntelOutput struct{ *pulumi.OutputState }
 
 func (AppSecThreatIntelOutput) ElementType() reflect.Type {
@@ -187,6 +206,12 @@ func (o AppSecThreatIntelOutput) ToAppSecThreatIntelOutput() AppSecThreatIntelOu
 
 func (o AppSecThreatIntelOutput) ToAppSecThreatIntelOutputWithContext(ctx context.Context) AppSecThreatIntelOutput {
 	return o
+}
+
+func (o AppSecThreatIntelOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecThreatIntel] {
+	return pulumix.Output[*AppSecThreatIntel]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration
@@ -218,6 +243,12 @@ func (o AppSecThreatIntelArrayOutput) ToAppSecThreatIntelArrayOutputWithContext(
 	return o
 }
 
+func (o AppSecThreatIntelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecThreatIntel] {
+	return pulumix.Output[[]*AppSecThreatIntel]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecThreatIntelArrayOutput) Index(i pulumi.IntInput) AppSecThreatIntelOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecThreatIntel {
 		return vs[0].([]*AppSecThreatIntel)[vs[1].(int)]
@@ -236,6 +267,12 @@ func (o AppSecThreatIntelMapOutput) ToAppSecThreatIntelMapOutput() AppSecThreatI
 
 func (o AppSecThreatIntelMapOutput) ToAppSecThreatIntelMapOutputWithContext(ctx context.Context) AppSecThreatIntelMapOutput {
 	return o
+}
+
+func (o AppSecThreatIntelMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecThreatIntel] {
+	return pulumix.Output[map[string]*AppSecThreatIntel]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecThreatIntelMapOutput) MapIndex(k pulumi.StringInput) AppSecThreatIntelOutput {

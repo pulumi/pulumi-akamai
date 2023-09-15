@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupAppSecReputationProfileAnalysis(ctx *pulumi.Context, args *LookupAppSecReputationProfileAnalysisArgs, opts ...pulumi.InvokeOption) (*LookupAppSecReputationProfileAnalysisResult, error) {
@@ -73,6 +74,12 @@ func (o LookupAppSecReputationProfileAnalysisResultOutput) ToLookupAppSecReputat
 
 func (o LookupAppSecReputationProfileAnalysisResultOutput) ToLookupAppSecReputationProfileAnalysisResultOutputWithContext(ctx context.Context) LookupAppSecReputationProfileAnalysisResultOutput {
 	return o
+}
+
+func (o LookupAppSecReputationProfileAnalysisResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppSecReputationProfileAnalysisResult] {
+	return pulumix.Output[LookupAppSecReputationProfileAnalysisResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupAppSecReputationProfileAnalysisResultOutput) ConfigId() pulumi.IntOutput {

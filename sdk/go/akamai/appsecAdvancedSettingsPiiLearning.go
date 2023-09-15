@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppsecAdvancedSettingsPiiLearning struct {
@@ -112,6 +113,12 @@ func (i *AppsecAdvancedSettingsPiiLearning) ToAppsecAdvancedSettingsPiiLearningO
 	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsPiiLearningOutput)
 }
 
+func (i *AppsecAdvancedSettingsPiiLearning) ToOutput(ctx context.Context) pulumix.Output[*AppsecAdvancedSettingsPiiLearning] {
+	return pulumix.Output[*AppsecAdvancedSettingsPiiLearning]{
+		OutputState: i.ToAppsecAdvancedSettingsPiiLearningOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppsecAdvancedSettingsPiiLearningArrayInput is an input type that accepts AppsecAdvancedSettingsPiiLearningArray and AppsecAdvancedSettingsPiiLearningArrayOutput values.
 // You can construct a concrete instance of `AppsecAdvancedSettingsPiiLearningArrayInput` via:
 //
@@ -135,6 +142,12 @@ func (i AppsecAdvancedSettingsPiiLearningArray) ToAppsecAdvancedSettingsPiiLearn
 
 func (i AppsecAdvancedSettingsPiiLearningArray) ToAppsecAdvancedSettingsPiiLearningArrayOutputWithContext(ctx context.Context) AppsecAdvancedSettingsPiiLearningArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsPiiLearningArrayOutput)
+}
+
+func (i AppsecAdvancedSettingsPiiLearningArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppsecAdvancedSettingsPiiLearning] {
+	return pulumix.Output[[]*AppsecAdvancedSettingsPiiLearning]{
+		OutputState: i.ToAppsecAdvancedSettingsPiiLearningArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppsecAdvancedSettingsPiiLearningMapInput is an input type that accepts AppsecAdvancedSettingsPiiLearningMap and AppsecAdvancedSettingsPiiLearningMapOutput values.
@@ -162,6 +175,12 @@ func (i AppsecAdvancedSettingsPiiLearningMap) ToAppsecAdvancedSettingsPiiLearnin
 	return pulumi.ToOutputWithContext(ctx, i).(AppsecAdvancedSettingsPiiLearningMapOutput)
 }
 
+func (i AppsecAdvancedSettingsPiiLearningMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppsecAdvancedSettingsPiiLearning] {
+	return pulumix.Output[map[string]*AppsecAdvancedSettingsPiiLearning]{
+		OutputState: i.ToAppsecAdvancedSettingsPiiLearningMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppsecAdvancedSettingsPiiLearningOutput struct{ *pulumi.OutputState }
 
 func (AppsecAdvancedSettingsPiiLearningOutput) ElementType() reflect.Type {
@@ -174,6 +193,12 @@ func (o AppsecAdvancedSettingsPiiLearningOutput) ToAppsecAdvancedSettingsPiiLear
 
 func (o AppsecAdvancedSettingsPiiLearningOutput) ToAppsecAdvancedSettingsPiiLearningOutputWithContext(ctx context.Context) AppsecAdvancedSettingsPiiLearningOutput {
 	return o
+}
+
+func (o AppsecAdvancedSettingsPiiLearningOutput) ToOutput(ctx context.Context) pulumix.Output[*AppsecAdvancedSettingsPiiLearning] {
+	return pulumix.Output[*AppsecAdvancedSettingsPiiLearning]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration
@@ -200,6 +225,12 @@ func (o AppsecAdvancedSettingsPiiLearningArrayOutput) ToAppsecAdvancedSettingsPi
 	return o
 }
 
+func (o AppsecAdvancedSettingsPiiLearningArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppsecAdvancedSettingsPiiLearning] {
+	return pulumix.Output[[]*AppsecAdvancedSettingsPiiLearning]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppsecAdvancedSettingsPiiLearningArrayOutput) Index(i pulumi.IntInput) AppsecAdvancedSettingsPiiLearningOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppsecAdvancedSettingsPiiLearning {
 		return vs[0].([]*AppsecAdvancedSettingsPiiLearning)[vs[1].(int)]
@@ -218,6 +249,12 @@ func (o AppsecAdvancedSettingsPiiLearningMapOutput) ToAppsecAdvancedSettingsPiiL
 
 func (o AppsecAdvancedSettingsPiiLearningMapOutput) ToAppsecAdvancedSettingsPiiLearningMapOutputWithContext(ctx context.Context) AppsecAdvancedSettingsPiiLearningMapOutput {
 	return o
+}
+
+func (o AppsecAdvancedSettingsPiiLearningMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppsecAdvancedSettingsPiiLearning] {
+	return pulumix.Output[map[string]*AppsecAdvancedSettingsPiiLearning]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppsecAdvancedSettingsPiiLearningMapOutput) MapIndex(k pulumi.StringInput) AppsecAdvancedSettingsPiiLearningOutput {

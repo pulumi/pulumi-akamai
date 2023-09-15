@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanCustomBotCategorySequence struct {
@@ -102,6 +103,12 @@ func (i *BotmanCustomBotCategorySequence) ToBotmanCustomBotCategorySequenceOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomBotCategorySequenceOutput)
 }
 
+func (i *BotmanCustomBotCategorySequence) ToOutput(ctx context.Context) pulumix.Output[*BotmanCustomBotCategorySequence] {
+	return pulumix.Output[*BotmanCustomBotCategorySequence]{
+		OutputState: i.ToBotmanCustomBotCategorySequenceOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BotmanCustomBotCategorySequenceArrayInput is an input type that accepts BotmanCustomBotCategorySequenceArray and BotmanCustomBotCategorySequenceArrayOutput values.
 // You can construct a concrete instance of `BotmanCustomBotCategorySequenceArrayInput` via:
 //
@@ -125,6 +132,12 @@ func (i BotmanCustomBotCategorySequenceArray) ToBotmanCustomBotCategorySequenceA
 
 func (i BotmanCustomBotCategorySequenceArray) ToBotmanCustomBotCategorySequenceArrayOutputWithContext(ctx context.Context) BotmanCustomBotCategorySequenceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomBotCategorySequenceArrayOutput)
+}
+
+func (i BotmanCustomBotCategorySequenceArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanCustomBotCategorySequence] {
+	return pulumix.Output[[]*BotmanCustomBotCategorySequence]{
+		OutputState: i.ToBotmanCustomBotCategorySequenceArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BotmanCustomBotCategorySequenceMapInput is an input type that accepts BotmanCustomBotCategorySequenceMap and BotmanCustomBotCategorySequenceMapOutput values.
@@ -152,6 +165,12 @@ func (i BotmanCustomBotCategorySequenceMap) ToBotmanCustomBotCategorySequenceMap
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomBotCategorySequenceMapOutput)
 }
 
+func (i BotmanCustomBotCategorySequenceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanCustomBotCategorySequence] {
+	return pulumix.Output[map[string]*BotmanCustomBotCategorySequence]{
+		OutputState: i.ToBotmanCustomBotCategorySequenceMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BotmanCustomBotCategorySequenceOutput struct{ *pulumi.OutputState }
 
 func (BotmanCustomBotCategorySequenceOutput) ElementType() reflect.Type {
@@ -164,6 +183,12 @@ func (o BotmanCustomBotCategorySequenceOutput) ToBotmanCustomBotCategorySequence
 
 func (o BotmanCustomBotCategorySequenceOutput) ToBotmanCustomBotCategorySequenceOutputWithContext(ctx context.Context) BotmanCustomBotCategorySequenceOutput {
 	return o
+}
+
+func (o BotmanCustomBotCategorySequenceOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanCustomBotCategorySequence] {
+	return pulumix.Output[*BotmanCustomBotCategorySequence]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanCustomBotCategorySequenceOutput) CategoryIds() pulumi.StringArrayOutput {
@@ -188,6 +213,12 @@ func (o BotmanCustomBotCategorySequenceArrayOutput) ToBotmanCustomBotCategorySeq
 	return o
 }
 
+func (o BotmanCustomBotCategorySequenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanCustomBotCategorySequence] {
+	return pulumix.Output[[]*BotmanCustomBotCategorySequence]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BotmanCustomBotCategorySequenceArrayOutput) Index(i pulumi.IntInput) BotmanCustomBotCategorySequenceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanCustomBotCategorySequence {
 		return vs[0].([]*BotmanCustomBotCategorySequence)[vs[1].(int)]
@@ -206,6 +237,12 @@ func (o BotmanCustomBotCategorySequenceMapOutput) ToBotmanCustomBotCategorySeque
 
 func (o BotmanCustomBotCategorySequenceMapOutput) ToBotmanCustomBotCategorySequenceMapOutputWithContext(ctx context.Context) BotmanCustomBotCategorySequenceMapOutput {
 	return o
+}
+
+func (o BotmanCustomBotCategorySequenceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanCustomBotCategorySequence] {
+	return pulumix.Output[map[string]*BotmanCustomBotCategorySequence]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanCustomBotCategorySequenceMapOutput) MapIndex(k pulumi.StringInput) BotmanCustomBotCategorySequenceOutput {

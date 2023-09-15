@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -54,6 +55,12 @@ func (i ConfigArgs) ToConfigOutputWithContext(ctx context.Context) ConfigOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(ConfigOutput)
 }
 
+func (i ConfigArgs) ToOutput(ctx context.Context) pulumix.Output[Config] {
+	return pulumix.Output[Config]{
+		OutputState: i.ToConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ConfigOutput struct{ *pulumi.OutputState }
 
 func (ConfigOutput) ElementType() reflect.Type {
@@ -66,6 +73,12 @@ func (o ConfigOutput) ToConfigOutput() ConfigOutput {
 
 func (o ConfigOutput) ToConfigOutputWithContext(ctx context.Context) ConfigOutput {
 	return o
+}
+
+func (o ConfigOutput) ToOutput(ctx context.Context) pulumix.Output[Config] {
+	return pulumix.Output[Config]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ConfigOutput) AccessToken() pulumi.StringOutput {

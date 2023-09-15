@@ -21,3 +21,6 @@ export interface GetIamCountriesResult {
      */
     readonly id: string;
 }
+export function getIamCountriesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamCountriesResult> {
+    return pulumi.output(getIamCountries(opts))
+}

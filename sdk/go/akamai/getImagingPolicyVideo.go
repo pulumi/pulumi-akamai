@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupImagingPolicyVideo(ctx *pulumi.Context, args *LookupImagingPolicyVideoArgs, opts ...pulumi.InvokeOption) (*LookupImagingPolicyVideoResult, error) {
@@ -69,6 +70,12 @@ func (o LookupImagingPolicyVideoResultOutput) ToLookupImagingPolicyVideoResultOu
 
 func (o LookupImagingPolicyVideoResultOutput) ToLookupImagingPolicyVideoResultOutputWithContext(ctx context.Context) LookupImagingPolicyVideoResultOutput {
 	return o
+}
+
+func (o LookupImagingPolicyVideoResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupImagingPolicyVideoResult] {
+	return pulumix.Output[LookupImagingPolicyVideoResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.
