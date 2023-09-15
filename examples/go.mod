@@ -2,7 +2,7 @@ module github.com/pulumi/pulumi-akamai/examples/v5
 
 go 1.21
 
-require github.com/pulumi/pulumi/pkg/v3 v3.74.0
+require github.com/pulumi/pulumi/pkg/v3 v3.81.0
 
 require (
 	cloud.google.com/go v0.110.0 // indirect
