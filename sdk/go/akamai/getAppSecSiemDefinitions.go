@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecSiemDefinitions(ctx *pulumi.Context, args *GetAppSecSiemDefinitionsArgs, opts ...pulumi.InvokeOption) (*GetAppSecSiemDefinitionsResult, error) {
@@ -70,6 +71,12 @@ func (o GetAppSecSiemDefinitionsResultOutput) ToGetAppSecSiemDefinitionsResultOu
 
 func (o GetAppSecSiemDefinitionsResultOutput) ToGetAppSecSiemDefinitionsResultOutputWithContext(ctx context.Context) GetAppSecSiemDefinitionsResultOutput {
 	return o
+}
+
+func (o GetAppSecSiemDefinitionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecSiemDefinitionsResult] {
+	return pulumix.Output[GetAppSecSiemDefinitionsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

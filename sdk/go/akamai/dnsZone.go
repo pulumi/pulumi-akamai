@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type DnsZone struct {
@@ -165,6 +166,12 @@ func (i *DnsZone) ToDnsZoneOutputWithContext(ctx context.Context) DnsZoneOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneOutput)
 }
 
+func (i *DnsZone) ToOutput(ctx context.Context) pulumix.Output[*DnsZone] {
+	return pulumix.Output[*DnsZone]{
+		OutputState: i.ToDnsZoneOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DnsZoneArrayInput is an input type that accepts DnsZoneArray and DnsZoneArrayOutput values.
 // You can construct a concrete instance of `DnsZoneArrayInput` via:
 //
@@ -188,6 +195,12 @@ func (i DnsZoneArray) ToDnsZoneArrayOutput() DnsZoneArrayOutput {
 
 func (i DnsZoneArray) ToDnsZoneArrayOutputWithContext(ctx context.Context) DnsZoneArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneArrayOutput)
+}
+
+func (i DnsZoneArray) ToOutput(ctx context.Context) pulumix.Output[[]*DnsZone] {
+	return pulumix.Output[[]*DnsZone]{
+		OutputState: i.ToDnsZoneArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DnsZoneMapInput is an input type that accepts DnsZoneMap and DnsZoneMapOutput values.
@@ -215,6 +228,12 @@ func (i DnsZoneMap) ToDnsZoneMapOutputWithContext(ctx context.Context) DnsZoneMa
 	return pulumi.ToOutputWithContext(ctx, i).(DnsZoneMapOutput)
 }
 
+func (i DnsZoneMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DnsZone] {
+	return pulumix.Output[map[string]*DnsZone]{
+		OutputState: i.ToDnsZoneMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DnsZoneOutput struct{ *pulumi.OutputState }
 
 func (DnsZoneOutput) ElementType() reflect.Type {
@@ -227,6 +246,12 @@ func (o DnsZoneOutput) ToDnsZoneOutput() DnsZoneOutput {
 
 func (o DnsZoneOutput) ToDnsZoneOutputWithContext(ctx context.Context) DnsZoneOutput {
 	return o
+}
+
+func (o DnsZoneOutput) ToOutput(ctx context.Context) pulumix.Output[*DnsZone] {
+	return pulumix.Output[*DnsZone]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DnsZoneOutput) ActivationState() pulumi.StringOutput {
@@ -299,6 +324,12 @@ func (o DnsZoneArrayOutput) ToDnsZoneArrayOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o DnsZoneArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DnsZone] {
+	return pulumix.Output[[]*DnsZone]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DnsZoneArrayOutput) Index(i pulumi.IntInput) DnsZoneOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DnsZone {
 		return vs[0].([]*DnsZone)[vs[1].(int)]
@@ -317,6 +348,12 @@ func (o DnsZoneMapOutput) ToDnsZoneMapOutput() DnsZoneMapOutput {
 
 func (o DnsZoneMapOutput) ToDnsZoneMapOutputWithContext(ctx context.Context) DnsZoneMapOutput {
 	return o
+}
+
+func (o DnsZoneMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DnsZone] {
+	return pulumix.Output[map[string]*DnsZone]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DnsZoneMapOutput) MapIndex(k pulumi.StringInput) DnsZoneOutput {

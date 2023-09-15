@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetBotmanAkamaiDefinedBot(ctx *pulumi.Context, args *GetBotmanAkamaiDefinedBotArgs, opts ...pulumi.InvokeOption) (*GetBotmanAkamaiDefinedBotResult, error) {
@@ -69,6 +70,12 @@ func (o GetBotmanAkamaiDefinedBotResultOutput) ToGetBotmanAkamaiDefinedBotResult
 
 func (o GetBotmanAkamaiDefinedBotResultOutput) ToGetBotmanAkamaiDefinedBotResultOutputWithContext(ctx context.Context) GetBotmanAkamaiDefinedBotResultOutput {
 	return o
+}
+
+func (o GetBotmanAkamaiDefinedBotResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBotmanAkamaiDefinedBotResult] {
+	return pulumix.Output[GetBotmanAkamaiDefinedBotResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBotmanAkamaiDefinedBotResultOutput) BotName() pulumi.StringPtrOutput {

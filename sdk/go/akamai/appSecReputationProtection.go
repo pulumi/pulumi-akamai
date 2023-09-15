@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecReputationProtection struct {
@@ -131,6 +132,12 @@ func (i *AppSecReputationProtection) ToAppSecReputationProtectionOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProtectionOutput)
 }
 
+func (i *AppSecReputationProtection) ToOutput(ctx context.Context) pulumix.Output[*AppSecReputationProtection] {
+	return pulumix.Output[*AppSecReputationProtection]{
+		OutputState: i.ToAppSecReputationProtectionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecReputationProtectionArrayInput is an input type that accepts AppSecReputationProtectionArray and AppSecReputationProtectionArrayOutput values.
 // You can construct a concrete instance of `AppSecReputationProtectionArrayInput` via:
 //
@@ -154,6 +161,12 @@ func (i AppSecReputationProtectionArray) ToAppSecReputationProtectionArrayOutput
 
 func (i AppSecReputationProtectionArray) ToAppSecReputationProtectionArrayOutputWithContext(ctx context.Context) AppSecReputationProtectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProtectionArrayOutput)
+}
+
+func (i AppSecReputationProtectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecReputationProtection] {
+	return pulumix.Output[[]*AppSecReputationProtection]{
+		OutputState: i.ToAppSecReputationProtectionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecReputationProtectionMapInput is an input type that accepts AppSecReputationProtectionMap and AppSecReputationProtectionMapOutput values.
@@ -181,6 +194,12 @@ func (i AppSecReputationProtectionMap) ToAppSecReputationProtectionMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecReputationProtectionMapOutput)
 }
 
+func (i AppSecReputationProtectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecReputationProtection] {
+	return pulumix.Output[map[string]*AppSecReputationProtection]{
+		OutputState: i.ToAppSecReputationProtectionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecReputationProtectionOutput struct{ *pulumi.OutputState }
 
 func (AppSecReputationProtectionOutput) ElementType() reflect.Type {
@@ -193,6 +212,12 @@ func (o AppSecReputationProtectionOutput) ToAppSecReputationProtectionOutput() A
 
 func (o AppSecReputationProtectionOutput) ToAppSecReputationProtectionOutputWithContext(ctx context.Context) AppSecReputationProtectionOutput {
 	return o
+}
+
+func (o AppSecReputationProtectionOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecReputationProtection] {
+	return pulumix.Output[*AppSecReputationProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration
@@ -229,6 +254,12 @@ func (o AppSecReputationProtectionArrayOutput) ToAppSecReputationProtectionArray
 	return o
 }
 
+func (o AppSecReputationProtectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecReputationProtection] {
+	return pulumix.Output[[]*AppSecReputationProtection]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecReputationProtectionArrayOutput) Index(i pulumi.IntInput) AppSecReputationProtectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecReputationProtection {
 		return vs[0].([]*AppSecReputationProtection)[vs[1].(int)]
@@ -247,6 +278,12 @@ func (o AppSecReputationProtectionMapOutput) ToAppSecReputationProtectionMapOutp
 
 func (o AppSecReputationProtectionMapOutput) ToAppSecReputationProtectionMapOutputWithContext(ctx context.Context) AppSecReputationProtectionMapOutput {
 	return o
+}
+
+func (o AppSecReputationProtectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecReputationProtection] {
+	return pulumix.Output[map[string]*AppSecReputationProtection]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecReputationProtectionMapOutput) MapIndex(k pulumi.StringInput) AppSecReputationProtectionOutput {

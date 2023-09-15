@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupBotmanCustomBotCategorySequence(ctx *pulumi.Context, args *LookupBotmanCustomBotCategorySequenceArgs, opts ...pulumi.InvokeOption) (*LookupBotmanCustomBotCategorySequenceResult, error) {
@@ -69,6 +70,12 @@ func (o LookupBotmanCustomBotCategorySequenceResultOutput) ToLookupBotmanCustomB
 
 func (o LookupBotmanCustomBotCategorySequenceResultOutput) ToLookupBotmanCustomBotCategorySequenceResultOutputWithContext(ctx context.Context) LookupBotmanCustomBotCategorySequenceResultOutput {
 	return o
+}
+
+func (o LookupBotmanCustomBotCategorySequenceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBotmanCustomBotCategorySequenceResult] {
+	return pulumix.Output[LookupBotmanCustomBotCategorySequenceResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupBotmanCustomBotCategorySequenceResultOutput) CategoryIds() pulumi.StringArrayOutput {

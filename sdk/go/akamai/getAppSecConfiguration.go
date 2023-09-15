@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupAppSecConfiguration(ctx *pulumi.Context, args *LookupAppSecConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupAppSecConfigurationResult, error) {
@@ -73,6 +74,12 @@ func (o LookupAppSecConfigurationResultOutput) ToLookupAppSecConfigurationResult
 
 func (o LookupAppSecConfigurationResultOutput) ToLookupAppSecConfigurationResultOutputWithContext(ctx context.Context) LookupAppSecConfigurationResultOutput {
 	return o
+}
+
+func (o LookupAppSecConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppSecConfigurationResult] {
+	return pulumix.Output[LookupAppSecConfigurationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupAppSecConfigurationResultOutput) ConfigId() pulumi.IntOutput {

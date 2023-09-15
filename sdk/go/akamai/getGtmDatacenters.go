@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetGtmDatacenters(ctx *pulumi.Context, args *GetGtmDatacentersArgs, opts ...pulumi.InvokeOption) (*GetGtmDatacentersResult, error) {
@@ -69,6 +70,12 @@ func (o GetGtmDatacentersResultOutput) ToGetGtmDatacentersResultOutput() GetGtmD
 
 func (o GetGtmDatacentersResultOutput) ToGetGtmDatacentersResultOutputWithContext(ctx context.Context) GetGtmDatacentersResultOutput {
 	return o
+}
+
+func (o GetGtmDatacentersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGtmDatacentersResult] {
+	return pulumix.Output[GetGtmDatacentersResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetGtmDatacentersResultOutput) Datacenters() GetGtmDatacentersDatacenterArrayOutput {

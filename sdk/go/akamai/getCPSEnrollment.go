@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCPSEnrollment(ctx *pulumi.Context, args *GetCPSEnrollmentArgs, opts ...pulumi.InvokeOption) (*GetCPSEnrollmentResult, error) {
@@ -86,6 +87,12 @@ func (o GetCPSEnrollmentResultOutput) ToGetCPSEnrollmentResultOutput() GetCPSEnr
 
 func (o GetCPSEnrollmentResultOutput) ToGetCPSEnrollmentResultOutputWithContext(ctx context.Context) GetCPSEnrollmentResultOutput {
 	return o
+}
+
+func (o GetCPSEnrollmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCPSEnrollmentResult] {
+	return pulumix.Output[GetCPSEnrollmentResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCPSEnrollmentResultOutput) AdminContacts() GetCPSEnrollmentAdminContactArrayOutput {

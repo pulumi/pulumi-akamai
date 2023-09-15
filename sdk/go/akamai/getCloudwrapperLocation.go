@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCloudwrapperLocation(ctx *pulumi.Context, args *GetCloudwrapperLocationArgs, opts ...pulumi.InvokeOption) (*GetCloudwrapperLocationResult, error) {
@@ -73,6 +74,12 @@ func (o GetCloudwrapperLocationResultOutput) ToGetCloudwrapperLocationResultOutp
 
 func (o GetCloudwrapperLocationResultOutput) ToGetCloudwrapperLocationResultOutputWithContext(ctx context.Context) GetCloudwrapperLocationResultOutput {
 	return o
+}
+
+func (o GetCloudwrapperLocationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudwrapperLocationResult] {
+	return pulumix.Output[GetCloudwrapperLocationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Deprecated: Required by the terraform plugin testing framework, always set to `akamai_cloudwrapper_location`

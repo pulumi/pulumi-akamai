@@ -21,3 +21,6 @@ export interface GetPropertyRuleFormatsResult {
     readonly id: string;
     readonly ruleFormats: string[];
 }
+export function getPropertyRuleFormatsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetPropertyRuleFormatsResult> {
+    return pulumi.output(getPropertyRuleFormats(opts))
+}

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCPSEnrollments(ctx *pulumi.Context, args *GetCPSEnrollmentsArgs, opts ...pulumi.InvokeOption) (*GetCPSEnrollmentsResult, error) {
@@ -69,6 +70,12 @@ func (o GetCPSEnrollmentsResultOutput) ToGetCPSEnrollmentsResultOutput() GetCPSE
 
 func (o GetCPSEnrollmentsResultOutput) ToGetCPSEnrollmentsResultOutputWithContext(ctx context.Context) GetCPSEnrollmentsResultOutput {
 	return o
+}
+
+func (o GetCPSEnrollmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCPSEnrollmentsResult] {
+	return pulumix.Output[GetCPSEnrollmentsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCPSEnrollmentsResultOutput) ContractId() pulumi.StringOutput {

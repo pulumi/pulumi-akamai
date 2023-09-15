@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Deprecated: akamai.properties/getactivation.getActivation has been deprecated in favor of akamai.index/getpropertyactivation.getPropertyActivation
@@ -81,6 +82,12 @@ func (o GetActivationResultOutput) ToGetActivationResultOutput() GetActivationRe
 
 func (o GetActivationResultOutput) ToGetActivationResultOutputWithContext(ctx context.Context) GetActivationResultOutput {
 	return o
+}
+
+func (o GetActivationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetActivationResult] {
+	return pulumix.Output[GetActivationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetActivationResultOutput) ActivationId() pulumi.StringOutput {

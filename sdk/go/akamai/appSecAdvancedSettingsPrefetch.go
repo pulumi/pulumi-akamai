@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecAdvancedSettingsPrefetch struct {
@@ -151,6 +152,12 @@ func (i *AppSecAdvancedSettingsPrefetch) ToAppSecAdvancedSettingsPrefetchOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPrefetchOutput)
 }
 
+func (i *AppSecAdvancedSettingsPrefetch) ToOutput(ctx context.Context) pulumix.Output[*AppSecAdvancedSettingsPrefetch] {
+	return pulumix.Output[*AppSecAdvancedSettingsPrefetch]{
+		OutputState: i.ToAppSecAdvancedSettingsPrefetchOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecAdvancedSettingsPrefetchArrayInput is an input type that accepts AppSecAdvancedSettingsPrefetchArray and AppSecAdvancedSettingsPrefetchArrayOutput values.
 // You can construct a concrete instance of `AppSecAdvancedSettingsPrefetchArrayInput` via:
 //
@@ -174,6 +181,12 @@ func (i AppSecAdvancedSettingsPrefetchArray) ToAppSecAdvancedSettingsPrefetchArr
 
 func (i AppSecAdvancedSettingsPrefetchArray) ToAppSecAdvancedSettingsPrefetchArrayOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPrefetchArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPrefetchArrayOutput)
+}
+
+func (i AppSecAdvancedSettingsPrefetchArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecAdvancedSettingsPrefetch] {
+	return pulumix.Output[[]*AppSecAdvancedSettingsPrefetch]{
+		OutputState: i.ToAppSecAdvancedSettingsPrefetchArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecAdvancedSettingsPrefetchMapInput is an input type that accepts AppSecAdvancedSettingsPrefetchMap and AppSecAdvancedSettingsPrefetchMapOutput values.
@@ -201,6 +214,12 @@ func (i AppSecAdvancedSettingsPrefetchMap) ToAppSecAdvancedSettingsPrefetchMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsPrefetchMapOutput)
 }
 
+func (i AppSecAdvancedSettingsPrefetchMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecAdvancedSettingsPrefetch] {
+	return pulumix.Output[map[string]*AppSecAdvancedSettingsPrefetch]{
+		OutputState: i.ToAppSecAdvancedSettingsPrefetchMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecAdvancedSettingsPrefetchOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsPrefetchOutput) ElementType() reflect.Type {
@@ -213,6 +232,12 @@ func (o AppSecAdvancedSettingsPrefetchOutput) ToAppSecAdvancedSettingsPrefetchOu
 
 func (o AppSecAdvancedSettingsPrefetchOutput) ToAppSecAdvancedSettingsPrefetchOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPrefetchOutput {
 	return o
+}
+
+func (o AppSecAdvancedSettingsPrefetchOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecAdvancedSettingsPrefetch] {
+	return pulumix.Output[*AppSecAdvancedSettingsPrefetch]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Whether to enable prefetch requests for all file extensions
@@ -254,6 +279,12 @@ func (o AppSecAdvancedSettingsPrefetchArrayOutput) ToAppSecAdvancedSettingsPrefe
 	return o
 }
 
+func (o AppSecAdvancedSettingsPrefetchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecAdvancedSettingsPrefetch] {
+	return pulumix.Output[[]*AppSecAdvancedSettingsPrefetch]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecAdvancedSettingsPrefetchArrayOutput) Index(i pulumi.IntInput) AppSecAdvancedSettingsPrefetchOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecAdvancedSettingsPrefetch {
 		return vs[0].([]*AppSecAdvancedSettingsPrefetch)[vs[1].(int)]
@@ -272,6 +303,12 @@ func (o AppSecAdvancedSettingsPrefetchMapOutput) ToAppSecAdvancedSettingsPrefetc
 
 func (o AppSecAdvancedSettingsPrefetchMapOutput) ToAppSecAdvancedSettingsPrefetchMapOutputWithContext(ctx context.Context) AppSecAdvancedSettingsPrefetchMapOutput {
 	return o
+}
+
+func (o AppSecAdvancedSettingsPrefetchMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecAdvancedSettingsPrefetch] {
+	return pulumix.Output[map[string]*AppSecAdvancedSettingsPrefetch]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecAdvancedSettingsPrefetchMapOutput) MapIndex(k pulumi.StringInput) AppSecAdvancedSettingsPrefetchOutput {

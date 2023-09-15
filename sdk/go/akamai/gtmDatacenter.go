@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type GtmDatacenter struct {
@@ -184,6 +185,12 @@ func (i *GtmDatacenter) ToGtmDatacenterOutputWithContext(ctx context.Context) Gt
 	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterOutput)
 }
 
+func (i *GtmDatacenter) ToOutput(ctx context.Context) pulumix.Output[*GtmDatacenter] {
+	return pulumix.Output[*GtmDatacenter]{
+		OutputState: i.ToGtmDatacenterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // GtmDatacenterArrayInput is an input type that accepts GtmDatacenterArray and GtmDatacenterArrayOutput values.
 // You can construct a concrete instance of `GtmDatacenterArrayInput` via:
 //
@@ -207,6 +214,12 @@ func (i GtmDatacenterArray) ToGtmDatacenterArrayOutput() GtmDatacenterArrayOutpu
 
 func (i GtmDatacenterArray) ToGtmDatacenterArrayOutputWithContext(ctx context.Context) GtmDatacenterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterArrayOutput)
+}
+
+func (i GtmDatacenterArray) ToOutput(ctx context.Context) pulumix.Output[[]*GtmDatacenter] {
+	return pulumix.Output[[]*GtmDatacenter]{
+		OutputState: i.ToGtmDatacenterArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // GtmDatacenterMapInput is an input type that accepts GtmDatacenterMap and GtmDatacenterMapOutput values.
@@ -234,6 +247,12 @@ func (i GtmDatacenterMap) ToGtmDatacenterMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(GtmDatacenterMapOutput)
 }
 
+func (i GtmDatacenterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmDatacenter] {
+	return pulumix.Output[map[string]*GtmDatacenter]{
+		OutputState: i.ToGtmDatacenterMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type GtmDatacenterOutput struct{ *pulumi.OutputState }
 
 func (GtmDatacenterOutput) ElementType() reflect.Type {
@@ -246,6 +265,12 @@ func (o GtmDatacenterOutput) ToGtmDatacenterOutput() GtmDatacenterOutput {
 
 func (o GtmDatacenterOutput) ToGtmDatacenterOutputWithContext(ctx context.Context) GtmDatacenterOutput {
 	return o
+}
+
+func (o GtmDatacenterOutput) ToOutput(ctx context.Context) pulumix.Output[*GtmDatacenter] {
+	return pulumix.Output[*GtmDatacenter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GtmDatacenterOutput) City() pulumi.StringPtrOutput {
@@ -346,6 +371,12 @@ func (o GtmDatacenterArrayOutput) ToGtmDatacenterArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o GtmDatacenterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*GtmDatacenter] {
+	return pulumix.Output[[]*GtmDatacenter]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GtmDatacenterArrayOutput) Index(i pulumi.IntInput) GtmDatacenterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *GtmDatacenter {
 		return vs[0].([]*GtmDatacenter)[vs[1].(int)]
@@ -364,6 +395,12 @@ func (o GtmDatacenterMapOutput) ToGtmDatacenterMapOutput() GtmDatacenterMapOutpu
 
 func (o GtmDatacenterMapOutput) ToGtmDatacenterMapOutputWithContext(ctx context.Context) GtmDatacenterMapOutput {
 	return o
+}
+
+func (o GtmDatacenterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*GtmDatacenter] {
+	return pulumix.Output[map[string]*GtmDatacenter]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GtmDatacenterMapOutput) MapIndex(k pulumi.StringInput) GtmDatacenterOutput {

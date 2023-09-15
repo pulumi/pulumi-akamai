@@ -23,3 +23,6 @@ export interface GetIamGrantableRolesResult {
      */
     readonly id: string;
 }
+export function getIamGrantableRolesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamGrantableRolesResult> {
+    return pulumi.output(getIamGrantableRoles(opts))
+}

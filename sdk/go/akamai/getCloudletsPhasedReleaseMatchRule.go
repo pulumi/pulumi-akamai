@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCloudletsPhasedReleaseMatchRule(ctx *pulumi.Context, args *GetCloudletsPhasedReleaseMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsPhasedReleaseMatchRuleResult, error) {
@@ -69,6 +70,12 @@ func (o GetCloudletsPhasedReleaseMatchRuleResultOutput) ToGetCloudletsPhasedRele
 
 func (o GetCloudletsPhasedReleaseMatchRuleResultOutput) ToGetCloudletsPhasedReleaseMatchRuleResultOutputWithContext(ctx context.Context) GetCloudletsPhasedReleaseMatchRuleResultOutput {
 	return o
+}
+
+func (o GetCloudletsPhasedReleaseMatchRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudletsPhasedReleaseMatchRuleResult] {
+	return pulumix.Output[GetCloudletsPhasedReleaseMatchRuleResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

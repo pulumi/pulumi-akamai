@@ -13,6 +13,9 @@ namespace Pulumi.Akamai
     {
         public static Task<GetContractsResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetContractsResult>("akamai:index/getContracts:getContracts", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetContractsResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetContractsResult>("akamai:index/getContracts:getContracts", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

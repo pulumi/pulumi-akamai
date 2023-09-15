@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetDnsRecordSet(ctx *pulumi.Context, args *GetDnsRecordSetArgs, opts ...pulumi.InvokeOption) (*GetDnsRecordSetResult, error) {
@@ -75,6 +76,12 @@ func (o GetDnsRecordSetResultOutput) ToGetDnsRecordSetResultOutput() GetDnsRecor
 
 func (o GetDnsRecordSetResultOutput) ToGetDnsRecordSetResultOutputWithContext(ctx context.Context) GetDnsRecordSetResultOutput {
 	return o
+}
+
+func (o GetDnsRecordSetResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDnsRecordSetResult] {
+	return pulumix.Output[GetDnsRecordSetResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetDnsRecordSetResultOutput) Host() pulumi.StringOutput {

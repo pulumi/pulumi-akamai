@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecActivations struct {
@@ -151,6 +152,12 @@ func (i *AppSecActivations) ToAppSecActivationsOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsOutput)
 }
 
+func (i *AppSecActivations) ToOutput(ctx context.Context) pulumix.Output[*AppSecActivations] {
+	return pulumix.Output[*AppSecActivations]{
+		OutputState: i.ToAppSecActivationsOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecActivationsArrayInput is an input type that accepts AppSecActivationsArray and AppSecActivationsArrayOutput values.
 // You can construct a concrete instance of `AppSecActivationsArrayInput` via:
 //
@@ -174,6 +181,12 @@ func (i AppSecActivationsArray) ToAppSecActivationsArrayOutput() AppSecActivatio
 
 func (i AppSecActivationsArray) ToAppSecActivationsArrayOutputWithContext(ctx context.Context) AppSecActivationsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsArrayOutput)
+}
+
+func (i AppSecActivationsArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecActivations] {
+	return pulumix.Output[[]*AppSecActivations]{
+		OutputState: i.ToAppSecActivationsArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecActivationsMapInput is an input type that accepts AppSecActivationsMap and AppSecActivationsMapOutput values.
@@ -201,6 +214,12 @@ func (i AppSecActivationsMap) ToAppSecActivationsMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecActivationsMapOutput)
 }
 
+func (i AppSecActivationsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecActivations] {
+	return pulumix.Output[map[string]*AppSecActivations]{
+		OutputState: i.ToAppSecActivationsMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecActivationsOutput struct{ *pulumi.OutputState }
 
 func (AppSecActivationsOutput) ElementType() reflect.Type {
@@ -213,6 +232,12 @@ func (o AppSecActivationsOutput) ToAppSecActivationsOutput() AppSecActivationsOu
 
 func (o AppSecActivationsOutput) ToAppSecActivationsOutputWithContext(ctx context.Context) AppSecActivationsOutput {
 	return o
+}
+
+func (o AppSecActivationsOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecActivations] {
+	return pulumix.Output[*AppSecActivations]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration to be activated
@@ -259,6 +284,12 @@ func (o AppSecActivationsArrayOutput) ToAppSecActivationsArrayOutputWithContext(
 	return o
 }
 
+func (o AppSecActivationsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecActivations] {
+	return pulumix.Output[[]*AppSecActivations]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecActivationsArrayOutput) Index(i pulumi.IntInput) AppSecActivationsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecActivations {
 		return vs[0].([]*AppSecActivations)[vs[1].(int)]
@@ -277,6 +308,12 @@ func (o AppSecActivationsMapOutput) ToAppSecActivationsMapOutput() AppSecActivat
 
 func (o AppSecActivationsMapOutput) ToAppSecActivationsMapOutputWithContext(ctx context.Context) AppSecActivationsMapOutput {
 	return o
+}
+
+func (o AppSecActivationsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecActivations] {
+	return pulumix.Output[map[string]*AppSecActivations]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecActivationsMapOutput) MapIndex(k pulumi.StringInput) AppSecActivationsOutput {

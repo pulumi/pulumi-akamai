@@ -21,3 +21,6 @@ export interface GetIamContactTypesResult {
      */
     readonly id: string;
 }
+export function getIamContactTypesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamContactTypesResult> {
+    return pulumi.output(getIamContactTypes(opts))
+}

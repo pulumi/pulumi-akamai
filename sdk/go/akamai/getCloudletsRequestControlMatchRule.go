@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCloudletsRequestControlMatchRule(ctx *pulumi.Context, args *GetCloudletsRequestControlMatchRuleArgs, opts ...pulumi.InvokeOption) (*GetCloudletsRequestControlMatchRuleResult, error) {
@@ -69,6 +70,12 @@ func (o GetCloudletsRequestControlMatchRuleResultOutput) ToGetCloudletsRequestCo
 
 func (o GetCloudletsRequestControlMatchRuleResultOutput) ToGetCloudletsRequestControlMatchRuleResultOutputWithContext(ctx context.Context) GetCloudletsRequestControlMatchRuleResultOutput {
 	return o
+}
+
+func (o GetCloudletsRequestControlMatchRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudletsRequestControlMatchRuleResult] {
+	return pulumix.Output[GetCloudletsRequestControlMatchRuleResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

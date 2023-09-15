@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type EdgekvGroupItems struct {
@@ -138,6 +139,12 @@ func (i *EdgekvGroupItems) ToEdgekvGroupItemsOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(EdgekvGroupItemsOutput)
 }
 
+func (i *EdgekvGroupItems) ToOutput(ctx context.Context) pulumix.Output[*EdgekvGroupItems] {
+	return pulumix.Output[*EdgekvGroupItems]{
+		OutputState: i.ToEdgekvGroupItemsOutputWithContext(ctx).OutputState,
+	}
+}
+
 // EdgekvGroupItemsArrayInput is an input type that accepts EdgekvGroupItemsArray and EdgekvGroupItemsArrayOutput values.
 // You can construct a concrete instance of `EdgekvGroupItemsArrayInput` via:
 //
@@ -161,6 +168,12 @@ func (i EdgekvGroupItemsArray) ToEdgekvGroupItemsArrayOutput() EdgekvGroupItemsA
 
 func (i EdgekvGroupItemsArray) ToEdgekvGroupItemsArrayOutputWithContext(ctx context.Context) EdgekvGroupItemsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EdgekvGroupItemsArrayOutput)
+}
+
+func (i EdgekvGroupItemsArray) ToOutput(ctx context.Context) pulumix.Output[[]*EdgekvGroupItems] {
+	return pulumix.Output[[]*EdgekvGroupItems]{
+		OutputState: i.ToEdgekvGroupItemsArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // EdgekvGroupItemsMapInput is an input type that accepts EdgekvGroupItemsMap and EdgekvGroupItemsMapOutput values.
@@ -188,6 +201,12 @@ func (i EdgekvGroupItemsMap) ToEdgekvGroupItemsMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(EdgekvGroupItemsMapOutput)
 }
 
+func (i EdgekvGroupItemsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EdgekvGroupItems] {
+	return pulumix.Output[map[string]*EdgekvGroupItems]{
+		OutputState: i.ToEdgekvGroupItemsMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type EdgekvGroupItemsOutput struct{ *pulumi.OutputState }
 
 func (EdgekvGroupItemsOutput) ElementType() reflect.Type {
@@ -200,6 +219,12 @@ func (o EdgekvGroupItemsOutput) ToEdgekvGroupItemsOutput() EdgekvGroupItemsOutpu
 
 func (o EdgekvGroupItemsOutput) ToEdgekvGroupItemsOutputWithContext(ctx context.Context) EdgekvGroupItemsOutput {
 	return o
+}
+
+func (o EdgekvGroupItemsOutput) ToOutput(ctx context.Context) pulumix.Output[*EdgekvGroupItems] {
+	return pulumix.Output[*EdgekvGroupItems]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The name of the EdgeKV group.
@@ -236,6 +261,12 @@ func (o EdgekvGroupItemsArrayOutput) ToEdgekvGroupItemsArrayOutputWithContext(ct
 	return o
 }
 
+func (o EdgekvGroupItemsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EdgekvGroupItems] {
+	return pulumix.Output[[]*EdgekvGroupItems]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o EdgekvGroupItemsArrayOutput) Index(i pulumi.IntInput) EdgekvGroupItemsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EdgekvGroupItems {
 		return vs[0].([]*EdgekvGroupItems)[vs[1].(int)]
@@ -254,6 +285,12 @@ func (o EdgekvGroupItemsMapOutput) ToEdgekvGroupItemsMapOutput() EdgekvGroupItem
 
 func (o EdgekvGroupItemsMapOutput) ToEdgekvGroupItemsMapOutputWithContext(ctx context.Context) EdgekvGroupItemsMapOutput {
 	return o
+}
+
+func (o EdgekvGroupItemsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EdgekvGroupItems] {
+	return pulumix.Output[map[string]*EdgekvGroupItems]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o EdgekvGroupItemsMapOutput) MapIndex(k pulumi.StringInput) EdgekvGroupItemsOutput {

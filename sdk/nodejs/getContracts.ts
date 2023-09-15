@@ -23,3 +23,6 @@ export interface GetContractsResult {
      */
     readonly id: string;
 }
+export function getContractsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetContractsResult> {
+    return pulumi.output(getContracts(opts))
+}

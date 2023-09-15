@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type IamUser struct {
@@ -327,6 +328,12 @@ func (i *IamUser) ToIamUserOutputWithContext(ctx context.Context) IamUserOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(IamUserOutput)
 }
 
+func (i *IamUser) ToOutput(ctx context.Context) pulumix.Output[*IamUser] {
+	return pulumix.Output[*IamUser]{
+		OutputState: i.ToIamUserOutputWithContext(ctx).OutputState,
+	}
+}
+
 // IamUserArrayInput is an input type that accepts IamUserArray and IamUserArrayOutput values.
 // You can construct a concrete instance of `IamUserArrayInput` via:
 //
@@ -350,6 +357,12 @@ func (i IamUserArray) ToIamUserArrayOutput() IamUserArrayOutput {
 
 func (i IamUserArray) ToIamUserArrayOutputWithContext(ctx context.Context) IamUserArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IamUserArrayOutput)
+}
+
+func (i IamUserArray) ToOutput(ctx context.Context) pulumix.Output[[]*IamUser] {
+	return pulumix.Output[[]*IamUser]{
+		OutputState: i.ToIamUserArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // IamUserMapInput is an input type that accepts IamUserMap and IamUserMapOutput values.
@@ -377,6 +390,12 @@ func (i IamUserMap) ToIamUserMapOutputWithContext(ctx context.Context) IamUserMa
 	return pulumi.ToOutputWithContext(ctx, i).(IamUserMapOutput)
 }
 
+func (i IamUserMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IamUser] {
+	return pulumix.Output[map[string]*IamUser]{
+		OutputState: i.ToIamUserMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type IamUserOutput struct{ *pulumi.OutputState }
 
 func (IamUserOutput) ElementType() reflect.Type {
@@ -389,6 +408,12 @@ func (o IamUserOutput) ToIamUserOutput() IamUserOutput {
 
 func (o IamUserOutput) ToIamUserOutputWithContext(ctx context.Context) IamUserOutput {
 	return o
+}
+
+func (o IamUserOutput) ToOutput(ctx context.Context) pulumix.Output[*IamUser] {
+	return pulumix.Output[*IamUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The user's street address
@@ -525,6 +550,12 @@ func (o IamUserArrayOutput) ToIamUserArrayOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o IamUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IamUser] {
+	return pulumix.Output[[]*IamUser]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o IamUserArrayOutput) Index(i pulumi.IntInput) IamUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamUser {
 		return vs[0].([]*IamUser)[vs[1].(int)]
@@ -543,6 +574,12 @@ func (o IamUserMapOutput) ToIamUserMapOutput() IamUserMapOutput {
 
 func (o IamUserMapOutput) ToIamUserMapOutputWithContext(ctx context.Context) IamUserMapOutput {
 	return o
+}
+
+func (o IamUserMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IamUser] {
+	return pulumix.Output[map[string]*IamUser]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o IamUserMapOutput) MapIndex(k pulumi.StringInput) IamUserOutput {

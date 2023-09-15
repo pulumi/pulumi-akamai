@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetPropertyRulesBuilder(ctx *pulumi.Context, args *GetPropertyRulesBuilderArgs, opts ...pulumi.InvokeOption) (*GetPropertyRulesBuilderResult, error) {
@@ -73,6 +74,12 @@ func (o GetPropertyRulesBuilderResultOutput) ToGetPropertyRulesBuilderResultOutp
 
 func (o GetPropertyRulesBuilderResultOutput) ToGetPropertyRulesBuilderResultOutputWithContext(ctx context.Context) GetPropertyRulesBuilderResultOutput {
 	return o
+}
+
+func (o GetPropertyRulesBuilderResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPropertyRulesBuilderResult] {
+	return pulumix.Output[GetPropertyRulesBuilderResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The provider-assigned unique ID for this managed resource.

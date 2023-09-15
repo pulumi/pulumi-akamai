@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetBotmanResponseAction(ctx *pulumi.Context, args *GetBotmanResponseActionArgs, opts ...pulumi.InvokeOption) (*GetBotmanResponseActionResult, error) {
@@ -72,6 +73,12 @@ func (o GetBotmanResponseActionResultOutput) ToGetBotmanResponseActionResultOutp
 
 func (o GetBotmanResponseActionResultOutput) ToGetBotmanResponseActionResultOutputWithContext(ctx context.Context) GetBotmanResponseActionResultOutput {
 	return o
+}
+
+func (o GetBotmanResponseActionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBotmanResponseActionResult] {
+	return pulumix.Output[GetBotmanResponseActionResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetBotmanResponseActionResultOutput) ActionId() pulumi.StringPtrOutput {

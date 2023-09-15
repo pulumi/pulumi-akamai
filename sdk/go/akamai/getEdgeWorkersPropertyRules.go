@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetEdgeWorkersPropertyRules(ctx *pulumi.Context, args *GetEdgeWorkersPropertyRulesArgs, opts ...pulumi.InvokeOption) (*GetEdgeWorkersPropertyRulesResult, error) {
@@ -69,6 +70,12 @@ func (o GetEdgeWorkersPropertyRulesResultOutput) ToGetEdgeWorkersPropertyRulesRe
 
 func (o GetEdgeWorkersPropertyRulesResultOutput) ToGetEdgeWorkersPropertyRulesResultOutputWithContext(ctx context.Context) GetEdgeWorkersPropertyRulesResultOutput {
 	return o
+}
+
+func (o GetEdgeWorkersPropertyRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEdgeWorkersPropertyRulesResult] {
+	return pulumix.Output[GetEdgeWorkersPropertyRulesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEdgeWorkersPropertyRulesResultOutput) EdgeworkerId() pulumi.IntOutput {

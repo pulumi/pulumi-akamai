@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetCloudwrapperConfigurations(ctx *pulumi.Context, args *GetCloudwrapperConfigurationsArgs, opts ...pulumi.InvokeOption) (*GetCloudwrapperConfigurationsResult, error) {
@@ -68,6 +69,12 @@ func (o GetCloudwrapperConfigurationsResultOutput) ToGetCloudwrapperConfiguratio
 
 func (o GetCloudwrapperConfigurationsResultOutput) ToGetCloudwrapperConfigurationsResultOutputWithContext(ctx context.Context) GetCloudwrapperConfigurationsResultOutput {
 	return o
+}
+
+func (o GetCloudwrapperConfigurationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudwrapperConfigurationsResult] {
+	return pulumix.Output[GetCloudwrapperConfigurationsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetCloudwrapperConfigurationsResultOutput) Configurations() GetCloudwrapperConfigurationsConfigurationArrayOutput {

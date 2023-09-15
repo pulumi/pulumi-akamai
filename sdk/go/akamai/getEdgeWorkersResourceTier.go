@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetEdgeWorkersResourceTier(ctx *pulumi.Context, args *GetEdgeWorkersResourceTierArgs, opts ...pulumi.InvokeOption) (*GetEdgeWorkersResourceTierResult, error) {
@@ -72,6 +73,12 @@ func (o GetEdgeWorkersResourceTierResultOutput) ToGetEdgeWorkersResourceTierResu
 
 func (o GetEdgeWorkersResourceTierResultOutput) ToGetEdgeWorkersResourceTierResultOutputWithContext(ctx context.Context) GetEdgeWorkersResourceTierResultOutput {
 	return o
+}
+
+func (o GetEdgeWorkersResourceTierResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEdgeWorkersResourceTierResult] {
+	return pulumix.Output[GetEdgeWorkersResourceTierResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEdgeWorkersResourceTierResultOutput) ContractId() pulumi.StringOutput {

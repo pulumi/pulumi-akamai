@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type CloudletsPolicy struct {
@@ -170,6 +171,12 @@ func (i *CloudletsPolicy) ToCloudletsPolicyOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(CloudletsPolicyOutput)
 }
 
+func (i *CloudletsPolicy) ToOutput(ctx context.Context) pulumix.Output[*CloudletsPolicy] {
+	return pulumix.Output[*CloudletsPolicy]{
+		OutputState: i.ToCloudletsPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CloudletsPolicyArrayInput is an input type that accepts CloudletsPolicyArray and CloudletsPolicyArrayOutput values.
 // You can construct a concrete instance of `CloudletsPolicyArrayInput` via:
 //
@@ -193,6 +200,12 @@ func (i CloudletsPolicyArray) ToCloudletsPolicyArrayOutput() CloudletsPolicyArra
 
 func (i CloudletsPolicyArray) ToCloudletsPolicyArrayOutputWithContext(ctx context.Context) CloudletsPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudletsPolicyArrayOutput)
+}
+
+func (i CloudletsPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudletsPolicy] {
+	return pulumix.Output[[]*CloudletsPolicy]{
+		OutputState: i.ToCloudletsPolicyArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CloudletsPolicyMapInput is an input type that accepts CloudletsPolicyMap and CloudletsPolicyMapOutput values.
@@ -220,6 +233,12 @@ func (i CloudletsPolicyMap) ToCloudletsPolicyMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(CloudletsPolicyMapOutput)
 }
 
+func (i CloudletsPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudletsPolicy] {
+	return pulumix.Output[map[string]*CloudletsPolicy]{
+		OutputState: i.ToCloudletsPolicyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CloudletsPolicyOutput struct{ *pulumi.OutputState }
 
 func (CloudletsPolicyOutput) ElementType() reflect.Type {
@@ -232,6 +251,12 @@ func (o CloudletsPolicyOutput) ToCloudletsPolicyOutput() CloudletsPolicyOutput {
 
 func (o CloudletsPolicyOutput) ToCloudletsPolicyOutputWithContext(ctx context.Context) CloudletsPolicyOutput {
 	return o
+}
+
+func (o CloudletsPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudletsPolicy] {
+	return pulumix.Output[*CloudletsPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Code for the type of Cloudlet (ALB, AP, AS, CD, ER, FR, IG, or VP)
@@ -293,6 +318,12 @@ func (o CloudletsPolicyArrayOutput) ToCloudletsPolicyArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o CloudletsPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudletsPolicy] {
+	return pulumix.Output[[]*CloudletsPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CloudletsPolicyArrayOutput) Index(i pulumi.IntInput) CloudletsPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudletsPolicy {
 		return vs[0].([]*CloudletsPolicy)[vs[1].(int)]
@@ -311,6 +342,12 @@ func (o CloudletsPolicyMapOutput) ToCloudletsPolicyMapOutput() CloudletsPolicyMa
 
 func (o CloudletsPolicyMapOutput) ToCloudletsPolicyMapOutputWithContext(ctx context.Context) CloudletsPolicyMapOutput {
 	return o
+}
+
+func (o CloudletsPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudletsPolicy] {
+	return pulumix.Output[map[string]*CloudletsPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CloudletsPolicyMapOutput) MapIndex(k pulumi.StringInput) CloudletsPolicyOutput {

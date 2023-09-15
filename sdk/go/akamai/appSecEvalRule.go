@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecEvalRule struct {
@@ -148,6 +149,12 @@ func (i *AppSecEvalRule) ToAppSecEvalRuleOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalRuleOutput)
 }
 
+func (i *AppSecEvalRule) ToOutput(ctx context.Context) pulumix.Output[*AppSecEvalRule] {
+	return pulumix.Output[*AppSecEvalRule]{
+		OutputState: i.ToAppSecEvalRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecEvalRuleArrayInput is an input type that accepts AppSecEvalRuleArray and AppSecEvalRuleArrayOutput values.
 // You can construct a concrete instance of `AppSecEvalRuleArrayInput` via:
 //
@@ -171,6 +178,12 @@ func (i AppSecEvalRuleArray) ToAppSecEvalRuleArrayOutput() AppSecEvalRuleArrayOu
 
 func (i AppSecEvalRuleArray) ToAppSecEvalRuleArrayOutputWithContext(ctx context.Context) AppSecEvalRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalRuleArrayOutput)
+}
+
+func (i AppSecEvalRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecEvalRule] {
+	return pulumix.Output[[]*AppSecEvalRule]{
+		OutputState: i.ToAppSecEvalRuleArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecEvalRuleMapInput is an input type that accepts AppSecEvalRuleMap and AppSecEvalRuleMapOutput values.
@@ -198,6 +211,12 @@ func (i AppSecEvalRuleMap) ToAppSecEvalRuleMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecEvalRuleMapOutput)
 }
 
+func (i AppSecEvalRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecEvalRule] {
+	return pulumix.Output[map[string]*AppSecEvalRule]{
+		OutputState: i.ToAppSecEvalRuleMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecEvalRuleOutput struct{ *pulumi.OutputState }
 
 func (AppSecEvalRuleOutput) ElementType() reflect.Type {
@@ -210,6 +229,12 @@ func (o AppSecEvalRuleOutput) ToAppSecEvalRuleOutput() AppSecEvalRuleOutput {
 
 func (o AppSecEvalRuleOutput) ToAppSecEvalRuleOutputWithContext(ctx context.Context) AppSecEvalRuleOutput {
 	return o
+}
+
+func (o AppSecEvalRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecEvalRule] {
+	return pulumix.Output[*AppSecEvalRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 // JSON-formatted condition and exception information for the evaluation rule
@@ -251,6 +276,12 @@ func (o AppSecEvalRuleArrayOutput) ToAppSecEvalRuleArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o AppSecEvalRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecEvalRule] {
+	return pulumix.Output[[]*AppSecEvalRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecEvalRuleArrayOutput) Index(i pulumi.IntInput) AppSecEvalRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecEvalRule {
 		return vs[0].([]*AppSecEvalRule)[vs[1].(int)]
@@ -269,6 +300,12 @@ func (o AppSecEvalRuleMapOutput) ToAppSecEvalRuleMapOutput() AppSecEvalRuleMapOu
 
 func (o AppSecEvalRuleMapOutput) ToAppSecEvalRuleMapOutputWithContext(ctx context.Context) AppSecEvalRuleMapOutput {
 	return o
+}
+
+func (o AppSecEvalRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecEvalRule] {
+	return pulumix.Output[map[string]*AppSecEvalRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecEvalRuleMapOutput) MapIndex(k pulumi.StringInput) AppSecEvalRuleOutput {

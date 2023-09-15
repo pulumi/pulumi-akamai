@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type AppSecAdvancedSettingsEvasivePathMatch struct {
@@ -122,6 +123,12 @@ func (i *AppSecAdvancedSettingsEvasivePathMatch) ToAppSecAdvancedSettingsEvasive
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsEvasivePathMatchOutput)
 }
 
+func (i *AppSecAdvancedSettingsEvasivePathMatch) ToOutput(ctx context.Context) pulumix.Output[*AppSecAdvancedSettingsEvasivePathMatch] {
+	return pulumix.Output[*AppSecAdvancedSettingsEvasivePathMatch]{
+		OutputState: i.ToAppSecAdvancedSettingsEvasivePathMatchOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AppSecAdvancedSettingsEvasivePathMatchArrayInput is an input type that accepts AppSecAdvancedSettingsEvasivePathMatchArray and AppSecAdvancedSettingsEvasivePathMatchArrayOutput values.
 // You can construct a concrete instance of `AppSecAdvancedSettingsEvasivePathMatchArrayInput` via:
 //
@@ -145,6 +152,12 @@ func (i AppSecAdvancedSettingsEvasivePathMatchArray) ToAppSecAdvancedSettingsEva
 
 func (i AppSecAdvancedSettingsEvasivePathMatchArray) ToAppSecAdvancedSettingsEvasivePathMatchArrayOutputWithContext(ctx context.Context) AppSecAdvancedSettingsEvasivePathMatchArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsEvasivePathMatchArrayOutput)
+}
+
+func (i AppSecAdvancedSettingsEvasivePathMatchArray) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecAdvancedSettingsEvasivePathMatch] {
+	return pulumix.Output[[]*AppSecAdvancedSettingsEvasivePathMatch]{
+		OutputState: i.ToAppSecAdvancedSettingsEvasivePathMatchArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // AppSecAdvancedSettingsEvasivePathMatchMapInput is an input type that accepts AppSecAdvancedSettingsEvasivePathMatchMap and AppSecAdvancedSettingsEvasivePathMatchMapOutput values.
@@ -172,6 +185,12 @@ func (i AppSecAdvancedSettingsEvasivePathMatchMap) ToAppSecAdvancedSettingsEvasi
 	return pulumi.ToOutputWithContext(ctx, i).(AppSecAdvancedSettingsEvasivePathMatchMapOutput)
 }
 
+func (i AppSecAdvancedSettingsEvasivePathMatchMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecAdvancedSettingsEvasivePathMatch] {
+	return pulumix.Output[map[string]*AppSecAdvancedSettingsEvasivePathMatch]{
+		OutputState: i.ToAppSecAdvancedSettingsEvasivePathMatchMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AppSecAdvancedSettingsEvasivePathMatchOutput struct{ *pulumi.OutputState }
 
 func (AppSecAdvancedSettingsEvasivePathMatchOutput) ElementType() reflect.Type {
@@ -184,6 +203,12 @@ func (o AppSecAdvancedSettingsEvasivePathMatchOutput) ToAppSecAdvancedSettingsEv
 
 func (o AppSecAdvancedSettingsEvasivePathMatchOutput) ToAppSecAdvancedSettingsEvasivePathMatchOutputWithContext(ctx context.Context) AppSecAdvancedSettingsEvasivePathMatchOutput {
 	return o
+}
+
+func (o AppSecAdvancedSettingsEvasivePathMatchOutput) ToOutput(ctx context.Context) pulumix.Output[*AppSecAdvancedSettingsEvasivePathMatch] {
+	return pulumix.Output[*AppSecAdvancedSettingsEvasivePathMatch]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Unique identifier of the security configuration
@@ -215,6 +240,12 @@ func (o AppSecAdvancedSettingsEvasivePathMatchArrayOutput) ToAppSecAdvancedSetti
 	return o
 }
 
+func (o AppSecAdvancedSettingsEvasivePathMatchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AppSecAdvancedSettingsEvasivePathMatch] {
+	return pulumix.Output[[]*AppSecAdvancedSettingsEvasivePathMatch]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AppSecAdvancedSettingsEvasivePathMatchArrayOutput) Index(i pulumi.IntInput) AppSecAdvancedSettingsEvasivePathMatchOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AppSecAdvancedSettingsEvasivePathMatch {
 		return vs[0].([]*AppSecAdvancedSettingsEvasivePathMatch)[vs[1].(int)]
@@ -233,6 +264,12 @@ func (o AppSecAdvancedSettingsEvasivePathMatchMapOutput) ToAppSecAdvancedSetting
 
 func (o AppSecAdvancedSettingsEvasivePathMatchMapOutput) ToAppSecAdvancedSettingsEvasivePathMatchMapOutputWithContext(ctx context.Context) AppSecAdvancedSettingsEvasivePathMatchMapOutput {
 	return o
+}
+
+func (o AppSecAdvancedSettingsEvasivePathMatchMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AppSecAdvancedSettingsEvasivePathMatch] {
+	return pulumix.Output[map[string]*AppSecAdvancedSettingsEvasivePathMatch]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AppSecAdvancedSettingsEvasivePathMatchMapOutput) MapIndex(k pulumi.StringInput) AppSecAdvancedSettingsEvasivePathMatchOutput {

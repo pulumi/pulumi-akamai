@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecHostnameCoverageOverlapping(ctx *pulumi.Context, args *GetAppSecHostnameCoverageOverlappingArgs, opts ...pulumi.InvokeOption) (*GetAppSecHostnameCoverageOverlappingResult, error) {
@@ -73,6 +74,12 @@ func (o GetAppSecHostnameCoverageOverlappingResultOutput) ToGetAppSecHostnameCov
 
 func (o GetAppSecHostnameCoverageOverlappingResultOutput) ToGetAppSecHostnameCoverageOverlappingResultOutputWithContext(ctx context.Context) GetAppSecHostnameCoverageOverlappingResultOutput {
 	return o
+}
+
+func (o GetAppSecHostnameCoverageOverlappingResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecHostnameCoverageOverlappingResult] {
+	return pulumix.Output[GetAppSecHostnameCoverageOverlappingResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAppSecHostnameCoverageOverlappingResultOutput) ConfigId() pulumi.IntOutput {

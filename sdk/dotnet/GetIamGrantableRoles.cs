@@ -13,6 +13,9 @@ namespace Pulumi.Akamai
     {
         public static Task<GetIamGrantableRolesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamGrantableRolesResult>("akamai:index/getIamGrantableRoles:getIamGrantableRoles", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetIamGrantableRolesResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamGrantableRolesResult>("akamai:index/getIamGrantableRoles:getIamGrantableRoles", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

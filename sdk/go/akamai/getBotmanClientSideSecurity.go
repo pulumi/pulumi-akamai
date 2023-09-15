@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupBotmanClientSideSecurity(ctx *pulumi.Context, args *LookupBotmanClientSideSecurityArgs, opts ...pulumi.InvokeOption) (*LookupBotmanClientSideSecurityResult, error) {
@@ -69,6 +70,12 @@ func (o LookupBotmanClientSideSecurityResultOutput) ToLookupBotmanClientSideSecu
 
 func (o LookupBotmanClientSideSecurityResultOutput) ToLookupBotmanClientSideSecurityResultOutputWithContext(ctx context.Context) LookupBotmanClientSideSecurityResultOutput {
 	return o
+}
+
+func (o LookupBotmanClientSideSecurityResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBotmanClientSideSecurityResult] {
+	return pulumix.Output[LookupBotmanClientSideSecurityResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupBotmanClientSideSecurityResultOutput) ConfigId() pulumi.IntOutput {

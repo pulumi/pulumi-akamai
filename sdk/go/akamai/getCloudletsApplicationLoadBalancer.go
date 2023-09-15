@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupCloudletsApplicationLoadBalancer(ctx *pulumi.Context, args *LookupCloudletsApplicationLoadBalancerArgs, opts ...pulumi.InvokeOption) (*LookupCloudletsApplicationLoadBalancerResult, error) {
@@ -83,6 +84,12 @@ func (o LookupCloudletsApplicationLoadBalancerResultOutput) ToLookupCloudletsApp
 
 func (o LookupCloudletsApplicationLoadBalancerResultOutput) ToLookupCloudletsApplicationLoadBalancerResultOutputWithContext(ctx context.Context) LookupCloudletsApplicationLoadBalancerResultOutput {
 	return o
+}
+
+func (o LookupCloudletsApplicationLoadBalancerResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCloudletsApplicationLoadBalancerResult] {
+	return pulumix.Output[LookupCloudletsApplicationLoadBalancerResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupCloudletsApplicationLoadBalancerResultOutput) BalancingType() pulumi.StringOutput {

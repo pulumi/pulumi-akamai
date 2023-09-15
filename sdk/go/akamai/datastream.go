@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type Datastream struct {
@@ -305,6 +306,12 @@ func (i *Datastream) ToDatastreamOutputWithContext(ctx context.Context) Datastre
 	return pulumi.ToOutputWithContext(ctx, i).(DatastreamOutput)
 }
 
+func (i *Datastream) ToOutput(ctx context.Context) pulumix.Output[*Datastream] {
+	return pulumix.Output[*Datastream]{
+		OutputState: i.ToDatastreamOutputWithContext(ctx).OutputState,
+	}
+}
+
 // DatastreamArrayInput is an input type that accepts DatastreamArray and DatastreamArrayOutput values.
 // You can construct a concrete instance of `DatastreamArrayInput` via:
 //
@@ -328,6 +335,12 @@ func (i DatastreamArray) ToDatastreamArrayOutput() DatastreamArrayOutput {
 
 func (i DatastreamArray) ToDatastreamArrayOutputWithContext(ctx context.Context) DatastreamArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatastreamArrayOutput)
+}
+
+func (i DatastreamArray) ToOutput(ctx context.Context) pulumix.Output[[]*Datastream] {
+	return pulumix.Output[[]*Datastream]{
+		OutputState: i.ToDatastreamArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // DatastreamMapInput is an input type that accepts DatastreamMap and DatastreamMapOutput values.
@@ -355,6 +368,12 @@ func (i DatastreamMap) ToDatastreamMapOutputWithContext(ctx context.Context) Dat
 	return pulumi.ToOutputWithContext(ctx, i).(DatastreamMapOutput)
 }
 
+func (i DatastreamMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Datastream] {
+	return pulumix.Output[map[string]*Datastream]{
+		OutputState: i.ToDatastreamMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type DatastreamOutput struct{ *pulumi.OutputState }
 
 func (DatastreamOutput) ElementType() reflect.Type {
@@ -367,6 +386,12 @@ func (o DatastreamOutput) ToDatastreamOutput() DatastreamOutput {
 
 func (o DatastreamOutput) ToDatastreamOutputWithContext(ctx context.Context) DatastreamOutput {
 	return o
+}
+
+func (o DatastreamOutput) ToOutput(ctx context.Context) pulumix.Output[*Datastream] {
+	return pulumix.Output[*Datastream]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Defining if stream should be active or not
@@ -513,6 +538,12 @@ func (o DatastreamArrayOutput) ToDatastreamArrayOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o DatastreamArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Datastream] {
+	return pulumix.Output[[]*Datastream]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o DatastreamArrayOutput) Index(i pulumi.IntInput) DatastreamOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Datastream {
 		return vs[0].([]*Datastream)[vs[1].(int)]
@@ -531,6 +562,12 @@ func (o DatastreamMapOutput) ToDatastreamMapOutput() DatastreamMapOutput {
 
 func (o DatastreamMapOutput) ToDatastreamMapOutputWithContext(ctx context.Context) DatastreamMapOutput {
 	return o
+}
+
+func (o DatastreamMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Datastream] {
+	return pulumix.Output[map[string]*Datastream]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o DatastreamMapOutput) MapIndex(k pulumi.StringInput) DatastreamOutput {

@@ -23,3 +23,6 @@ export interface GetIamTimezonesResult {
     readonly id: string;
     readonly timezones: outputs.GetIamTimezonesTimezone[];
 }
+export function getIamTimezonesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamTimezonesResult> {
+    return pulumi.output(getIamTimezones(opts))
+}

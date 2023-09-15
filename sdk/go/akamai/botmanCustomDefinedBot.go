@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanCustomDefinedBot struct {
@@ -105,6 +106,12 @@ func (i *BotmanCustomDefinedBot) ToBotmanCustomDefinedBotOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomDefinedBotOutput)
 }
 
+func (i *BotmanCustomDefinedBot) ToOutput(ctx context.Context) pulumix.Output[*BotmanCustomDefinedBot] {
+	return pulumix.Output[*BotmanCustomDefinedBot]{
+		OutputState: i.ToBotmanCustomDefinedBotOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BotmanCustomDefinedBotArrayInput is an input type that accepts BotmanCustomDefinedBotArray and BotmanCustomDefinedBotArrayOutput values.
 // You can construct a concrete instance of `BotmanCustomDefinedBotArrayInput` via:
 //
@@ -128,6 +135,12 @@ func (i BotmanCustomDefinedBotArray) ToBotmanCustomDefinedBotArrayOutput() Botma
 
 func (i BotmanCustomDefinedBotArray) ToBotmanCustomDefinedBotArrayOutputWithContext(ctx context.Context) BotmanCustomDefinedBotArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomDefinedBotArrayOutput)
+}
+
+func (i BotmanCustomDefinedBotArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanCustomDefinedBot] {
+	return pulumix.Output[[]*BotmanCustomDefinedBot]{
+		OutputState: i.ToBotmanCustomDefinedBotArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BotmanCustomDefinedBotMapInput is an input type that accepts BotmanCustomDefinedBotMap and BotmanCustomDefinedBotMapOutput values.
@@ -155,6 +168,12 @@ func (i BotmanCustomDefinedBotMap) ToBotmanCustomDefinedBotMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanCustomDefinedBotMapOutput)
 }
 
+func (i BotmanCustomDefinedBotMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanCustomDefinedBot] {
+	return pulumix.Output[map[string]*BotmanCustomDefinedBot]{
+		OutputState: i.ToBotmanCustomDefinedBotMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BotmanCustomDefinedBotOutput struct{ *pulumi.OutputState }
 
 func (BotmanCustomDefinedBotOutput) ElementType() reflect.Type {
@@ -167,6 +186,12 @@ func (o BotmanCustomDefinedBotOutput) ToBotmanCustomDefinedBotOutput() BotmanCus
 
 func (o BotmanCustomDefinedBotOutput) ToBotmanCustomDefinedBotOutputWithContext(ctx context.Context) BotmanCustomDefinedBotOutput {
 	return o
+}
+
+func (o BotmanCustomDefinedBotOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanCustomDefinedBot] {
+	return pulumix.Output[*BotmanCustomDefinedBot]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanCustomDefinedBotOutput) BotId() pulumi.StringOutput {
@@ -195,6 +220,12 @@ func (o BotmanCustomDefinedBotArrayOutput) ToBotmanCustomDefinedBotArrayOutputWi
 	return o
 }
 
+func (o BotmanCustomDefinedBotArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanCustomDefinedBot] {
+	return pulumix.Output[[]*BotmanCustomDefinedBot]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BotmanCustomDefinedBotArrayOutput) Index(i pulumi.IntInput) BotmanCustomDefinedBotOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanCustomDefinedBot {
 		return vs[0].([]*BotmanCustomDefinedBot)[vs[1].(int)]
@@ -213,6 +244,12 @@ func (o BotmanCustomDefinedBotMapOutput) ToBotmanCustomDefinedBotMapOutput() Bot
 
 func (o BotmanCustomDefinedBotMapOutput) ToBotmanCustomDefinedBotMapOutputWithContext(ctx context.Context) BotmanCustomDefinedBotMapOutput {
 	return o
+}
+
+func (o BotmanCustomDefinedBotMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanCustomDefinedBot] {
+	return pulumix.Output[map[string]*BotmanCustomDefinedBot]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanCustomDefinedBotMapOutput) MapIndex(k pulumi.StringInput) BotmanCustomDefinedBotOutput {

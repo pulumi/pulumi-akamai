@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type EdgeWorker struct {
@@ -156,6 +157,12 @@ func (i *EdgeWorker) ToEdgeWorkerOutputWithContext(ctx context.Context) EdgeWork
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeWorkerOutput)
 }
 
+func (i *EdgeWorker) ToOutput(ctx context.Context) pulumix.Output[*EdgeWorker] {
+	return pulumix.Output[*EdgeWorker]{
+		OutputState: i.ToEdgeWorkerOutputWithContext(ctx).OutputState,
+	}
+}
+
 // EdgeWorkerArrayInput is an input type that accepts EdgeWorkerArray and EdgeWorkerArrayOutput values.
 // You can construct a concrete instance of `EdgeWorkerArrayInput` via:
 //
@@ -179,6 +186,12 @@ func (i EdgeWorkerArray) ToEdgeWorkerArrayOutput() EdgeWorkerArrayOutput {
 
 func (i EdgeWorkerArray) ToEdgeWorkerArrayOutputWithContext(ctx context.Context) EdgeWorkerArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeWorkerArrayOutput)
+}
+
+func (i EdgeWorkerArray) ToOutput(ctx context.Context) pulumix.Output[[]*EdgeWorker] {
+	return pulumix.Output[[]*EdgeWorker]{
+		OutputState: i.ToEdgeWorkerArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // EdgeWorkerMapInput is an input type that accepts EdgeWorkerMap and EdgeWorkerMapOutput values.
@@ -206,6 +219,12 @@ func (i EdgeWorkerMap) ToEdgeWorkerMapOutputWithContext(ctx context.Context) Edg
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeWorkerMapOutput)
 }
 
+func (i EdgeWorkerMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EdgeWorker] {
+	return pulumix.Output[map[string]*EdgeWorker]{
+		OutputState: i.ToEdgeWorkerMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type EdgeWorkerOutput struct{ *pulumi.OutputState }
 
 func (EdgeWorkerOutput) ElementType() reflect.Type {
@@ -218,6 +237,12 @@ func (o EdgeWorkerOutput) ToEdgeWorkerOutput() EdgeWorkerOutput {
 
 func (o EdgeWorkerOutput) ToEdgeWorkerOutputWithContext(ctx context.Context) EdgeWorkerOutput {
 	return o
+}
+
+func (o EdgeWorkerOutput) ToOutput(ctx context.Context) pulumix.Output[*EdgeWorker] {
+	return pulumix.Output[*EdgeWorker]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The unique identifier of the EdgeWorker
@@ -274,6 +299,12 @@ func (o EdgeWorkerArrayOutput) ToEdgeWorkerArrayOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o EdgeWorkerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EdgeWorker] {
+	return pulumix.Output[[]*EdgeWorker]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o EdgeWorkerArrayOutput) Index(i pulumi.IntInput) EdgeWorkerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EdgeWorker {
 		return vs[0].([]*EdgeWorker)[vs[1].(int)]
@@ -292,6 +323,12 @@ func (o EdgeWorkerMapOutput) ToEdgeWorkerMapOutput() EdgeWorkerMapOutput {
 
 func (o EdgeWorkerMapOutput) ToEdgeWorkerMapOutputWithContext(ctx context.Context) EdgeWorkerMapOutput {
 	return o
+}
+
+func (o EdgeWorkerMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EdgeWorker] {
+	return pulumix.Output[map[string]*EdgeWorker]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o EdgeWorkerMapOutput) MapIndex(k pulumi.StringInput) EdgeWorkerOutput {

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type EdgeKv struct {
@@ -168,6 +169,12 @@ func (i *EdgeKv) ToEdgeKvOutputWithContext(ctx context.Context) EdgeKvOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeKvOutput)
 }
 
+func (i *EdgeKv) ToOutput(ctx context.Context) pulumix.Output[*EdgeKv] {
+	return pulumix.Output[*EdgeKv]{
+		OutputState: i.ToEdgeKvOutputWithContext(ctx).OutputState,
+	}
+}
+
 // EdgeKvArrayInput is an input type that accepts EdgeKvArray and EdgeKvArrayOutput values.
 // You can construct a concrete instance of `EdgeKvArrayInput` via:
 //
@@ -191,6 +198,12 @@ func (i EdgeKvArray) ToEdgeKvArrayOutput() EdgeKvArrayOutput {
 
 func (i EdgeKvArray) ToEdgeKvArrayOutputWithContext(ctx context.Context) EdgeKvArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeKvArrayOutput)
+}
+
+func (i EdgeKvArray) ToOutput(ctx context.Context) pulumix.Output[[]*EdgeKv] {
+	return pulumix.Output[[]*EdgeKv]{
+		OutputState: i.ToEdgeKvArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // EdgeKvMapInput is an input type that accepts EdgeKvMap and EdgeKvMapOutput values.
@@ -218,6 +231,12 @@ func (i EdgeKvMap) ToEdgeKvMapOutputWithContext(ctx context.Context) EdgeKvMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(EdgeKvMapOutput)
 }
 
+func (i EdgeKvMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EdgeKv] {
+	return pulumix.Output[map[string]*EdgeKv]{
+		OutputState: i.ToEdgeKvMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type EdgeKvOutput struct{ *pulumi.OutputState }
 
 func (EdgeKvOutput) ElementType() reflect.Type {
@@ -230,6 +249,12 @@ func (o EdgeKvOutput) ToEdgeKvOutput() EdgeKvOutput {
 
 func (o EdgeKvOutput) ToEdgeKvOutputWithContext(ctx context.Context) EdgeKvOutput {
 	return o
+}
+
+func (o EdgeKvOutput) ToOutput(ctx context.Context) pulumix.Output[*EdgeKv] {
+	return pulumix.Output[*EdgeKv]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Storage location for data
@@ -278,6 +303,12 @@ func (o EdgeKvArrayOutput) ToEdgeKvArrayOutputWithContext(ctx context.Context) E
 	return o
 }
 
+func (o EdgeKvArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EdgeKv] {
+	return pulumix.Output[[]*EdgeKv]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o EdgeKvArrayOutput) Index(i pulumi.IntInput) EdgeKvOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EdgeKv {
 		return vs[0].([]*EdgeKv)[vs[1].(int)]
@@ -296,6 +327,12 @@ func (o EdgeKvMapOutput) ToEdgeKvMapOutput() EdgeKvMapOutput {
 
 func (o EdgeKvMapOutput) ToEdgeKvMapOutputWithContext(ctx context.Context) EdgeKvMapOutput {
 	return o
+}
+
+func (o EdgeKvMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EdgeKv] {
+	return pulumix.Output[map[string]*EdgeKv]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o EdgeKvMapOutput) MapIndex(k pulumi.StringInput) EdgeKvOutput {

@@ -21,3 +21,6 @@ export interface GetIamSupportedLangsResult {
     readonly id: string;
     readonly languages: string[];
 }
+export function getIamSupportedLangsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIamSupportedLangsResult> {
+    return pulumi.output(getIamSupportedLangs(opts))
+}

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupAppSecCustomDeny(ctx *pulumi.Context, args *LookupAppSecCustomDenyArgs, opts ...pulumi.InvokeOption) (*LookupAppSecCustomDenyResult, error) {
@@ -73,6 +74,12 @@ func (o LookupAppSecCustomDenyResultOutput) ToLookupAppSecCustomDenyResultOutput
 
 func (o LookupAppSecCustomDenyResultOutput) ToLookupAppSecCustomDenyResultOutputWithContext(ctx context.Context) LookupAppSecCustomDenyResultOutput {
 	return o
+}
+
+func (o LookupAppSecCustomDenyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppSecCustomDenyResult] {
+	return pulumix.Output[LookupAppSecCustomDenyResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupAppSecCustomDenyResultOutput) ConfigId() pulumi.IntOutput {

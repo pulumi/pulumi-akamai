@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAppSecVersionNotes(ctx *pulumi.Context, args *GetAppSecVersionNotesArgs, opts ...pulumi.InvokeOption) (*GetAppSecVersionNotesResult, error) {
@@ -70,6 +71,12 @@ func (o GetAppSecVersionNotesResultOutput) ToGetAppSecVersionNotesResultOutput()
 
 func (o GetAppSecVersionNotesResultOutput) ToGetAppSecVersionNotesResultOutputWithContext(ctx context.Context) GetAppSecVersionNotesResultOutput {
 	return o
+}
+
+func (o GetAppSecVersionNotesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAppSecVersionNotesResult] {
+	return pulumix.Output[GetAppSecVersionNotesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAppSecVersionNotesResultOutput) ConfigId() pulumi.IntOutput {

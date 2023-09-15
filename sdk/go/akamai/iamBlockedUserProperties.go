@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type IamBlockedUserProperties struct {
@@ -125,6 +126,12 @@ func (i *IamBlockedUserProperties) ToIamBlockedUserPropertiesOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(IamBlockedUserPropertiesOutput)
 }
 
+func (i *IamBlockedUserProperties) ToOutput(ctx context.Context) pulumix.Output[*IamBlockedUserProperties] {
+	return pulumix.Output[*IamBlockedUserProperties]{
+		OutputState: i.ToIamBlockedUserPropertiesOutputWithContext(ctx).OutputState,
+	}
+}
+
 // IamBlockedUserPropertiesArrayInput is an input type that accepts IamBlockedUserPropertiesArray and IamBlockedUserPropertiesArrayOutput values.
 // You can construct a concrete instance of `IamBlockedUserPropertiesArrayInput` via:
 //
@@ -148,6 +155,12 @@ func (i IamBlockedUserPropertiesArray) ToIamBlockedUserPropertiesArrayOutput() I
 
 func (i IamBlockedUserPropertiesArray) ToIamBlockedUserPropertiesArrayOutputWithContext(ctx context.Context) IamBlockedUserPropertiesArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IamBlockedUserPropertiesArrayOutput)
+}
+
+func (i IamBlockedUserPropertiesArray) ToOutput(ctx context.Context) pulumix.Output[[]*IamBlockedUserProperties] {
+	return pulumix.Output[[]*IamBlockedUserProperties]{
+		OutputState: i.ToIamBlockedUserPropertiesArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // IamBlockedUserPropertiesMapInput is an input type that accepts IamBlockedUserPropertiesMap and IamBlockedUserPropertiesMapOutput values.
@@ -175,6 +188,12 @@ func (i IamBlockedUserPropertiesMap) ToIamBlockedUserPropertiesMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(IamBlockedUserPropertiesMapOutput)
 }
 
+func (i IamBlockedUserPropertiesMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IamBlockedUserProperties] {
+	return pulumix.Output[map[string]*IamBlockedUserProperties]{
+		OutputState: i.ToIamBlockedUserPropertiesMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type IamBlockedUserPropertiesOutput struct{ *pulumi.OutputState }
 
 func (IamBlockedUserPropertiesOutput) ElementType() reflect.Type {
@@ -187,6 +206,12 @@ func (o IamBlockedUserPropertiesOutput) ToIamBlockedUserPropertiesOutput() IamBl
 
 func (o IamBlockedUserPropertiesOutput) ToIamBlockedUserPropertiesOutputWithContext(ctx context.Context) IamBlockedUserPropertiesOutput {
 	return o
+}
+
+func (o IamBlockedUserPropertiesOutput) ToOutput(ctx context.Context) pulumix.Output[*IamBlockedUserProperties] {
+	return pulumix.Output[*IamBlockedUserProperties]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of properties to block for a user
@@ -218,6 +243,12 @@ func (o IamBlockedUserPropertiesArrayOutput) ToIamBlockedUserPropertiesArrayOutp
 	return o
 }
 
+func (o IamBlockedUserPropertiesArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IamBlockedUserProperties] {
+	return pulumix.Output[[]*IamBlockedUserProperties]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o IamBlockedUserPropertiesArrayOutput) Index(i pulumi.IntInput) IamBlockedUserPropertiesOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IamBlockedUserProperties {
 		return vs[0].([]*IamBlockedUserProperties)[vs[1].(int)]
@@ -236,6 +267,12 @@ func (o IamBlockedUserPropertiesMapOutput) ToIamBlockedUserPropertiesMapOutput()
 
 func (o IamBlockedUserPropertiesMapOutput) ToIamBlockedUserPropertiesMapOutputWithContext(ctx context.Context) IamBlockedUserPropertiesMapOutput {
 	return o
+}
+
+func (o IamBlockedUserPropertiesMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IamBlockedUserProperties] {
+	return pulumix.Output[map[string]*IamBlockedUserProperties]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o IamBlockedUserPropertiesMapOutput) MapIndex(k pulumi.StringInput) IamBlockedUserPropertiesOutput {

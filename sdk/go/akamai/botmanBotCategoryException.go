@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type BotmanBotCategoryException struct {
@@ -110,6 +111,12 @@ func (i *BotmanBotCategoryException) ToBotmanBotCategoryExceptionOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanBotCategoryExceptionOutput)
 }
 
+func (i *BotmanBotCategoryException) ToOutput(ctx context.Context) pulumix.Output[*BotmanBotCategoryException] {
+	return pulumix.Output[*BotmanBotCategoryException]{
+		OutputState: i.ToBotmanBotCategoryExceptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // BotmanBotCategoryExceptionArrayInput is an input type that accepts BotmanBotCategoryExceptionArray and BotmanBotCategoryExceptionArrayOutput values.
 // You can construct a concrete instance of `BotmanBotCategoryExceptionArrayInput` via:
 //
@@ -133,6 +140,12 @@ func (i BotmanBotCategoryExceptionArray) ToBotmanBotCategoryExceptionArrayOutput
 
 func (i BotmanBotCategoryExceptionArray) ToBotmanBotCategoryExceptionArrayOutputWithContext(ctx context.Context) BotmanBotCategoryExceptionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanBotCategoryExceptionArrayOutput)
+}
+
+func (i BotmanBotCategoryExceptionArray) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanBotCategoryException] {
+	return pulumix.Output[[]*BotmanBotCategoryException]{
+		OutputState: i.ToBotmanBotCategoryExceptionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // BotmanBotCategoryExceptionMapInput is an input type that accepts BotmanBotCategoryExceptionMap and BotmanBotCategoryExceptionMapOutput values.
@@ -160,6 +173,12 @@ func (i BotmanBotCategoryExceptionMap) ToBotmanBotCategoryExceptionMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(BotmanBotCategoryExceptionMapOutput)
 }
 
+func (i BotmanBotCategoryExceptionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanBotCategoryException] {
+	return pulumix.Output[map[string]*BotmanBotCategoryException]{
+		OutputState: i.ToBotmanBotCategoryExceptionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type BotmanBotCategoryExceptionOutput struct{ *pulumi.OutputState }
 
 func (BotmanBotCategoryExceptionOutput) ElementType() reflect.Type {
@@ -172,6 +191,12 @@ func (o BotmanBotCategoryExceptionOutput) ToBotmanBotCategoryExceptionOutput() B
 
 func (o BotmanBotCategoryExceptionOutput) ToBotmanBotCategoryExceptionOutputWithContext(ctx context.Context) BotmanBotCategoryExceptionOutput {
 	return o
+}
+
+func (o BotmanBotCategoryExceptionOutput) ToOutput(ctx context.Context) pulumix.Output[*BotmanBotCategoryException] {
+	return pulumix.Output[*BotmanBotCategoryException]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanBotCategoryExceptionOutput) BotCategoryException() pulumi.StringOutput {
@@ -200,6 +225,12 @@ func (o BotmanBotCategoryExceptionArrayOutput) ToBotmanBotCategoryExceptionArray
 	return o
 }
 
+func (o BotmanBotCategoryExceptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BotmanBotCategoryException] {
+	return pulumix.Output[[]*BotmanBotCategoryException]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o BotmanBotCategoryExceptionArrayOutput) Index(i pulumi.IntInput) BotmanBotCategoryExceptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BotmanBotCategoryException {
 		return vs[0].([]*BotmanBotCategoryException)[vs[1].(int)]
@@ -218,6 +249,12 @@ func (o BotmanBotCategoryExceptionMapOutput) ToBotmanBotCategoryExceptionMapOutp
 
 func (o BotmanBotCategoryExceptionMapOutput) ToBotmanBotCategoryExceptionMapOutputWithContext(ctx context.Context) BotmanBotCategoryExceptionMapOutput {
 	return o
+}
+
+func (o BotmanBotCategoryExceptionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BotmanBotCategoryException] {
+	return pulumix.Output[map[string]*BotmanBotCategoryException]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o BotmanBotCategoryExceptionMapOutput) MapIndex(k pulumi.StringInput) BotmanBotCategoryExceptionOutput {

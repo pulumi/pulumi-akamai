@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetEdgeWorkerActivation(ctx *pulumi.Context, args *GetEdgeWorkerActivationArgs, opts ...pulumi.InvokeOption) (*GetEdgeWorkerActivationResult, error) {
@@ -73,6 +74,12 @@ func (o GetEdgeWorkerActivationResultOutput) ToGetEdgeWorkerActivationResultOutp
 
 func (o GetEdgeWorkerActivationResultOutput) ToGetEdgeWorkerActivationResultOutputWithContext(ctx context.Context) GetEdgeWorkerActivationResultOutput {
 	return o
+}
+
+func (o GetEdgeWorkerActivationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetEdgeWorkerActivationResult] {
+	return pulumix.Output[GetEdgeWorkerActivationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetEdgeWorkerActivationResultOutput) ActivationId() pulumi.IntOutput {

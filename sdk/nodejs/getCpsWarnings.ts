@@ -21,3 +21,6 @@ export interface GetCpsWarningsResult {
     readonly id: string;
     readonly warnings: {[key: string]: string};
 }
+export function getCpsWarningsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetCpsWarningsResult> {
+    return pulumi.output(getCpsWarnings(opts))
+}

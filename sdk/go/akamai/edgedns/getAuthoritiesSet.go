@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Deprecated: akamai.edgedns/getauthoritiesset.getAuthoritiesSet has been deprecated in favor of akamai.index/getauthoritiesset.getAuthoritiesSet
@@ -70,6 +71,12 @@ func (o GetAuthoritiesSetResultOutput) ToGetAuthoritiesSetResultOutput() GetAuth
 
 func (o GetAuthoritiesSetResultOutput) ToGetAuthoritiesSetResultOutputWithContext(ctx context.Context) GetAuthoritiesSetResultOutput {
 	return o
+}
+
+func (o GetAuthoritiesSetResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuthoritiesSetResult] {
+	return pulumix.Output[GetAuthoritiesSetResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetAuthoritiesSetResultOutput) Authorities() pulumi.StringArrayOutput {

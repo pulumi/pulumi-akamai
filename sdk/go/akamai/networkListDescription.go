@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type NetworkListDescription struct {
@@ -107,6 +108,12 @@ func (i *NetworkListDescription) ToNetworkListDescriptionOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkListDescriptionOutput)
 }
 
+func (i *NetworkListDescription) ToOutput(ctx context.Context) pulumix.Output[*NetworkListDescription] {
+	return pulumix.Output[*NetworkListDescription]{
+		OutputState: i.ToNetworkListDescriptionOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkListDescriptionArrayInput is an input type that accepts NetworkListDescriptionArray and NetworkListDescriptionArrayOutput values.
 // You can construct a concrete instance of `NetworkListDescriptionArrayInput` via:
 //
@@ -130,6 +137,12 @@ func (i NetworkListDescriptionArray) ToNetworkListDescriptionArrayOutput() Netwo
 
 func (i NetworkListDescriptionArray) ToNetworkListDescriptionArrayOutputWithContext(ctx context.Context) NetworkListDescriptionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkListDescriptionArrayOutput)
+}
+
+func (i NetworkListDescriptionArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkListDescription] {
+	return pulumix.Output[[]*NetworkListDescription]{
+		OutputState: i.ToNetworkListDescriptionArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // NetworkListDescriptionMapInput is an input type that accepts NetworkListDescriptionMap and NetworkListDescriptionMapOutput values.
@@ -157,6 +170,12 @@ func (i NetworkListDescriptionMap) ToNetworkListDescriptionMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkListDescriptionMapOutput)
 }
 
+func (i NetworkListDescriptionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkListDescription] {
+	return pulumix.Output[map[string]*NetworkListDescription]{
+		OutputState: i.ToNetworkListDescriptionMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkListDescriptionOutput struct{ *pulumi.OutputState }
 
 func (NetworkListDescriptionOutput) ElementType() reflect.Type {
@@ -169,6 +188,12 @@ func (o NetworkListDescriptionOutput) ToNetworkListDescriptionOutput() NetworkLi
 
 func (o NetworkListDescriptionOutput) ToNetworkListDescriptionOutputWithContext(ctx context.Context) NetworkListDescriptionOutput {
 	return o
+}
+
+func (o NetworkListDescriptionOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkListDescription] {
+	return pulumix.Output[*NetworkListDescription]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkListDescriptionOutput) Description() pulumi.StringOutput {
@@ -197,6 +222,12 @@ func (o NetworkListDescriptionArrayOutput) ToNetworkListDescriptionArrayOutputWi
 	return o
 }
 
+func (o NetworkListDescriptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkListDescription] {
+	return pulumix.Output[[]*NetworkListDescription]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o NetworkListDescriptionArrayOutput) Index(i pulumi.IntInput) NetworkListDescriptionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkListDescription {
 		return vs[0].([]*NetworkListDescription)[vs[1].(int)]
@@ -215,6 +246,12 @@ func (o NetworkListDescriptionMapOutput) ToNetworkListDescriptionMapOutput() Net
 
 func (o NetworkListDescriptionMapOutput) ToNetworkListDescriptionMapOutputWithContext(ctx context.Context) NetworkListDescriptionMapOutput {
 	return o
+}
+
+func (o NetworkListDescriptionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkListDescription] {
+	return pulumix.Output[map[string]*NetworkListDescription]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkListDescriptionMapOutput) MapIndex(k pulumi.StringInput) NetworkListDescriptionOutput {

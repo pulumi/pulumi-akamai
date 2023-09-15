@@ -577,7 +577,8 @@ utilities.lazyLoad(exports, ["getAppSecFailoverHostnames","getAppSecFailoverHost
 
 export { GetAppSecHostnameCoverageResult } from "./getAppSecHostnameCoverage";
 export const getAppSecHostnameCoverage: typeof import("./getAppSecHostnameCoverage").getAppSecHostnameCoverage = null as any;
-utilities.lazyLoad(exports, ["getAppSecHostnameCoverage"], () => require("./getAppSecHostnameCoverage"));
+export const getAppSecHostnameCoverageOutput: typeof import("./getAppSecHostnameCoverage").getAppSecHostnameCoverageOutput = null as any;
+utilities.lazyLoad(exports, ["getAppSecHostnameCoverage","getAppSecHostnameCoverageOutput"], () => require("./getAppSecHostnameCoverage"));
 
 export { GetAppSecHostnameCoverageMatchTargetsArgs, GetAppSecHostnameCoverageMatchTargetsResult, GetAppSecHostnameCoverageMatchTargetsOutputArgs } from "./getAppSecHostnameCoverageMatchTargets";
 export const getAppSecHostnameCoverageMatchTargets: typeof import("./getAppSecHostnameCoverageMatchTargets").getAppSecHostnameCoverageMatchTargets = null as any;
@@ -756,7 +757,8 @@ utilities.lazyLoad(exports, ["getBotmanBotAnalyticsCookie","getBotmanBotAnalytic
 
 export { GetBotmanBotAnalyticsCookieValuesResult } from "./getBotmanBotAnalyticsCookieValues";
 export const getBotmanBotAnalyticsCookieValues: typeof import("./getBotmanBotAnalyticsCookieValues").getBotmanBotAnalyticsCookieValues = null as any;
-utilities.lazyLoad(exports, ["getBotmanBotAnalyticsCookieValues"], () => require("./getBotmanBotAnalyticsCookieValues"));
+export const getBotmanBotAnalyticsCookieValuesOutput: typeof import("./getBotmanBotAnalyticsCookieValues").getBotmanBotAnalyticsCookieValuesOutput = null as any;
+utilities.lazyLoad(exports, ["getBotmanBotAnalyticsCookieValues","getBotmanBotAnalyticsCookieValuesOutput"], () => require("./getBotmanBotAnalyticsCookieValues"));
 
 export { GetBotmanBotCategoryExceptionArgs, GetBotmanBotCategoryExceptionResult, GetBotmanBotCategoryExceptionOutputArgs } from "./getBotmanBotCategoryException";
 export const getBotmanBotCategoryException: typeof import("./getBotmanBotCategoryException").getBotmanBotCategoryException = null as any;
@@ -975,7 +977,8 @@ utilities.lazyLoad(exports, ["getContract","getContractOutput"], () => require("
 
 export { GetContractsResult } from "./getContracts";
 export const getContracts: typeof import("./getContracts").getContracts = null as any;
-utilities.lazyLoad(exports, ["getContracts"], () => require("./getContracts"));
+export const getContractsOutput: typeof import("./getContracts").getContractsOutput = null as any;
+utilities.lazyLoad(exports, ["getContracts","getContractsOutput"], () => require("./getContracts"));
 
 export { GetCpCodeArgs, GetCpCodeResult, GetCpCodeOutputArgs } from "./getCpCode";
 export const getCpCode: typeof import("./getCpCode").getCpCode = null as any;
@@ -994,7 +997,8 @@ utilities.lazyLoad(exports, ["getCpsDeployments","getCpsDeploymentsOutput"], () 
 
 export { GetCpsWarningsResult } from "./getCpsWarnings";
 export const getCpsWarnings: typeof import("./getCpsWarnings").getCpsWarnings = null as any;
-utilities.lazyLoad(exports, ["getCpsWarnings"], () => require("./getCpsWarnings"));
+export const getCpsWarningsOutput: typeof import("./getCpsWarnings").getCpsWarningsOutput = null as any;
+utilities.lazyLoad(exports, ["getCpsWarnings","getCpsWarningsOutput"], () => require("./getCpsWarnings"));
 
 export { GetDatastreamActivationHistoryArgs, GetDatastreamActivationHistoryResult, GetDatastreamActivationHistoryOutputArgs } from "./getDatastreamActivationHistory";
 export const getDatastreamActivationHistory: typeof import("./getDatastreamActivationHistory").getDatastreamActivationHistory = null as any;
@@ -1053,7 +1057,8 @@ utilities.lazyLoad(exports, ["getGroup","getGroupOutput"], () => require("./getG
 
 export { GetGroupsResult } from "./getGroups";
 export const getGroups: typeof import("./getGroups").getGroups = null as any;
-utilities.lazyLoad(exports, ["getGroups"], () => require("./getGroups"));
+export const getGroupsOutput: typeof import("./getGroups").getGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getGroups","getGroupsOutput"], () => require("./getGroups"));
 
 export { GetGtmDatacenterArgs, GetGtmDatacenterResult, GetGtmDatacenterOutputArgs } from "./getGtmDatacenter";
 export const getGtmDatacenter: typeof import("./getGtmDatacenter").getGtmDatacenter = null as any;
@@ -1072,19 +1077,23 @@ utilities.lazyLoad(exports, ["getGtmDefaultDatacenter","getGtmDefaultDatacenterO
 
 export { GetIamContactTypesResult } from "./getIamContactTypes";
 export const getIamContactTypes: typeof import("./getIamContactTypes").getIamContactTypes = null as any;
-utilities.lazyLoad(exports, ["getIamContactTypes"], () => require("./getIamContactTypes"));
+export const getIamContactTypesOutput: typeof import("./getIamContactTypes").getIamContactTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getIamContactTypes","getIamContactTypesOutput"], () => require("./getIamContactTypes"));
 
 export { GetIamCountriesResult } from "./getIamCountries";
 export const getIamCountries: typeof import("./getIamCountries").getIamCountries = null as any;
-utilities.lazyLoad(exports, ["getIamCountries"], () => require("./getIamCountries"));
+export const getIamCountriesOutput: typeof import("./getIamCountries").getIamCountriesOutput = null as any;
+utilities.lazyLoad(exports, ["getIamCountries","getIamCountriesOutput"], () => require("./getIamCountries"));
 
 export { GetIamGrantableRolesResult } from "./getIamGrantableRoles";
 export const getIamGrantableRoles: typeof import("./getIamGrantableRoles").getIamGrantableRoles = null as any;
-utilities.lazyLoad(exports, ["getIamGrantableRoles"], () => require("./getIamGrantableRoles"));
+export const getIamGrantableRolesOutput: typeof import("./getIamGrantableRoles").getIamGrantableRolesOutput = null as any;
+utilities.lazyLoad(exports, ["getIamGrantableRoles","getIamGrantableRolesOutput"], () => require("./getIamGrantableRoles"));
 
 export { GetIamRolesResult } from "./getIamRoles";
 export const getIamRoles: typeof import("./getIamRoles").getIamRoles = null as any;
-utilities.lazyLoad(exports, ["getIamRoles"], () => require("./getIamRoles"));
+export const getIamRolesOutput: typeof import("./getIamRoles").getIamRolesOutput = null as any;
+utilities.lazyLoad(exports, ["getIamRoles","getIamRolesOutput"], () => require("./getIamRoles"));
 
 export { GetIamStatesArgs, GetIamStatesResult, GetIamStatesOutputArgs } from "./getIamStates";
 export const getIamStates: typeof import("./getIamStates").getIamStates = null as any;
@@ -1093,15 +1102,18 @@ utilities.lazyLoad(exports, ["getIamStates","getIamStatesOutput"], () => require
 
 export { GetIamSupportedLangsResult } from "./getIamSupportedLangs";
 export const getIamSupportedLangs: typeof import("./getIamSupportedLangs").getIamSupportedLangs = null as any;
-utilities.lazyLoad(exports, ["getIamSupportedLangs"], () => require("./getIamSupportedLangs"));
+export const getIamSupportedLangsOutput: typeof import("./getIamSupportedLangs").getIamSupportedLangsOutput = null as any;
+utilities.lazyLoad(exports, ["getIamSupportedLangs","getIamSupportedLangsOutput"], () => require("./getIamSupportedLangs"));
 
 export { GetIamTimeoutPoliciesResult } from "./getIamTimeoutPolicies";
 export const getIamTimeoutPolicies: typeof import("./getIamTimeoutPolicies").getIamTimeoutPolicies = null as any;
-utilities.lazyLoad(exports, ["getIamTimeoutPolicies"], () => require("./getIamTimeoutPolicies"));
+export const getIamTimeoutPoliciesOutput: typeof import("./getIamTimeoutPolicies").getIamTimeoutPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getIamTimeoutPolicies","getIamTimeoutPoliciesOutput"], () => require("./getIamTimeoutPolicies"));
 
 export { GetIamTimezonesResult } from "./getIamTimezones";
 export const getIamTimezones: typeof import("./getIamTimezones").getIamTimezones = null as any;
-utilities.lazyLoad(exports, ["getIamTimezones"], () => require("./getIamTimezones"));
+export const getIamTimezonesOutput: typeof import("./getIamTimezones").getIamTimezonesOutput = null as any;
+utilities.lazyLoad(exports, ["getIamTimezones","getIamTimezonesOutput"], () => require("./getIamTimezones"));
 
 export { GetImagingPolicyImageArgs, GetImagingPolicyImageResult, GetImagingPolicyImageOutputArgs } from "./getImagingPolicyImage";
 export const getImagingPolicyImage: typeof import("./getImagingPolicyImage").getImagingPolicyImage = null as any;
@@ -1175,7 +1187,8 @@ utilities.lazyLoad(exports, ["getPropertyProducts","getPropertyProductsOutput"],
 
 export { GetPropertyRuleFormatsResult } from "./getPropertyRuleFormats";
 export const getPropertyRuleFormats: typeof import("./getPropertyRuleFormats").getPropertyRuleFormats = null as any;
-utilities.lazyLoad(exports, ["getPropertyRuleFormats"], () => require("./getPropertyRuleFormats"));
+export const getPropertyRuleFormatsOutput: typeof import("./getPropertyRuleFormats").getPropertyRuleFormatsOutput = null as any;
+utilities.lazyLoad(exports, ["getPropertyRuleFormats","getPropertyRuleFormatsOutput"], () => require("./getPropertyRuleFormats"));
 
 export { GetPropertyRulesArgs, GetPropertyRulesResult, GetPropertyRulesOutputArgs } from "./getPropertyRules";
 export const getPropertyRules: typeof import("./getPropertyRules").getPropertyRules = null as any;

@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupAppSecIPGeo(ctx *pulumi.Context, args *LookupAppSecIPGeoArgs, opts ...pulumi.InvokeOption) (*LookupAppSecIPGeoResult, error) {
@@ -77,6 +78,12 @@ func (o LookupAppSecIPGeoResultOutput) ToLookupAppSecIPGeoResultOutput() LookupA
 
 func (o LookupAppSecIPGeoResultOutput) ToLookupAppSecIPGeoResultOutputWithContext(ctx context.Context) LookupAppSecIPGeoResultOutput {
 	return o
+}
+
+func (o LookupAppSecIPGeoResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAppSecIPGeoResult] {
+	return pulumix.Output[LookupAppSecIPGeoResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupAppSecIPGeoResultOutput) ConfigId() pulumi.IntOutput {

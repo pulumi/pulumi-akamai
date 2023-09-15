@@ -9,6 +9,7 @@ import (
 
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetPropertyRules(ctx *pulumi.Context, args *GetPropertyRulesArgs, opts ...pulumi.InvokeOption) (*GetPropertyRulesResult, error) {
@@ -82,6 +83,12 @@ func (o GetPropertyRulesResultOutput) ToGetPropertyRulesResultOutput() GetProper
 
 func (o GetPropertyRulesResultOutput) ToGetPropertyRulesResultOutputWithContext(ctx context.Context) GetPropertyRulesResultOutput {
 	return o
+}
+
+func (o GetPropertyRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPropertyRulesResult] {
+	return pulumix.Output[GetPropertyRulesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetPropertyRulesResultOutput) ContractId() pulumi.StringOutput {

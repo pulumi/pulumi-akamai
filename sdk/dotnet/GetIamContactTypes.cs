@@ -13,6 +13,9 @@ namespace Pulumi.Akamai
     {
         public static Task<GetIamContactTypesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamContactTypesResult>("akamai:index/getIamContactTypes:getIamContactTypes", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetIamContactTypesResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamContactTypesResult>("akamai:index/getIamContactTypes:getIamContactTypes", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

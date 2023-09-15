@@ -13,6 +13,9 @@ namespace Pulumi.Akamai
     {
         public static Task<GetIamCountriesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamCountriesResult>("akamai:index/getIamCountries:getIamCountries", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetIamCountriesResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamCountriesResult>("akamai:index/getIamCountries:getIamCountries", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

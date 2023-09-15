@@ -10,6 +10,7 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-akamai/sdk/v6/go/akamai/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type CpsDvValidation struct {
@@ -115,6 +116,12 @@ func (i *CpsDvValidation) ToCpsDvValidationOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(CpsDvValidationOutput)
 }
 
+func (i *CpsDvValidation) ToOutput(ctx context.Context) pulumix.Output[*CpsDvValidation] {
+	return pulumix.Output[*CpsDvValidation]{
+		OutputState: i.ToCpsDvValidationOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CpsDvValidationArrayInput is an input type that accepts CpsDvValidationArray and CpsDvValidationArrayOutput values.
 // You can construct a concrete instance of `CpsDvValidationArrayInput` via:
 //
@@ -138,6 +145,12 @@ func (i CpsDvValidationArray) ToCpsDvValidationArrayOutput() CpsDvValidationArra
 
 func (i CpsDvValidationArray) ToCpsDvValidationArrayOutputWithContext(ctx context.Context) CpsDvValidationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CpsDvValidationArrayOutput)
+}
+
+func (i CpsDvValidationArray) ToOutput(ctx context.Context) pulumix.Output[[]*CpsDvValidation] {
+	return pulumix.Output[[]*CpsDvValidation]{
+		OutputState: i.ToCpsDvValidationArrayOutputWithContext(ctx).OutputState,
+	}
 }
 
 // CpsDvValidationMapInput is an input type that accepts CpsDvValidationMap and CpsDvValidationMapOutput values.
@@ -165,6 +178,12 @@ func (i CpsDvValidationMap) ToCpsDvValidationMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(CpsDvValidationMapOutput)
 }
 
+func (i CpsDvValidationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CpsDvValidation] {
+	return pulumix.Output[map[string]*CpsDvValidation]{
+		OutputState: i.ToCpsDvValidationMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CpsDvValidationOutput struct{ *pulumi.OutputState }
 
 func (CpsDvValidationOutput) ElementType() reflect.Type {
@@ -177,6 +196,12 @@ func (o CpsDvValidationOutput) ToCpsDvValidationOutput() CpsDvValidationOutput {
 
 func (o CpsDvValidationOutput) ToCpsDvValidationOutputWithContext(ctx context.Context) CpsDvValidationOutput {
 	return o
+}
+
+func (o CpsDvValidationOutput) ToOutput(ctx context.Context) pulumix.Output[*CpsDvValidation] {
+	return pulumix.Output[*CpsDvValidation]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The unique identifier of enrollment
@@ -208,6 +233,12 @@ func (o CpsDvValidationArrayOutput) ToCpsDvValidationArrayOutputWithContext(ctx 
 	return o
 }
 
+func (o CpsDvValidationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CpsDvValidation] {
+	return pulumix.Output[[]*CpsDvValidation]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o CpsDvValidationArrayOutput) Index(i pulumi.IntInput) CpsDvValidationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CpsDvValidation {
 		return vs[0].([]*CpsDvValidation)[vs[1].(int)]
@@ -226,6 +257,12 @@ func (o CpsDvValidationMapOutput) ToCpsDvValidationMapOutput() CpsDvValidationMa
 
 func (o CpsDvValidationMapOutput) ToCpsDvValidationMapOutputWithContext(ctx context.Context) CpsDvValidationMapOutput {
 	return o
+}
+
+func (o CpsDvValidationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CpsDvValidation] {
+	return pulumix.Output[map[string]*CpsDvValidation]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CpsDvValidationMapOutput) MapIndex(k pulumi.StringInput) CpsDvValidationOutput {
