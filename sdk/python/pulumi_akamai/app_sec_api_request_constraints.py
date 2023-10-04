@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecApiRequestConstraintsArgs', 'AppSecApiRequestConstraints']
@@ -25,11 +25,26 @@ class AppSecApiRequestConstraintsArgs:
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[int] api_endpoint_id: Unique identifier of the API endpoint to which the constraint will be assigned
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        AppSecApiRequestConstraintsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            config_id=config_id,
+            security_policy_id=security_policy_id,
+            api_endpoint_id=api_endpoint_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: pulumi.Input[str],
+             config_id: pulumi.Input[int],
+             security_policy_id: pulumi.Input[str],
+             api_endpoint_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("config_id", config_id)
+        _setter("security_policy_id", security_policy_id)
         if api_endpoint_id is not None:
-            pulumi.set(__self__, "api_endpoint_id", api_endpoint_id)
+            _setter("api_endpoint_id", api_endpoint_id)
 
     @property
     @pulumi.getter
@@ -94,14 +109,29 @@ class _AppSecApiRequestConstraintsState:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
+        _AppSecApiRequestConstraintsState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            api_endpoint_id=api_endpoint_id,
+            config_id=config_id,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: Optional[pulumi.Input[str]] = None,
+             api_endpoint_id: Optional[pulumi.Input[int]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if action is not None:
-            pulumi.set(__self__, "action", action)
+            _setter("action", action)
         if api_endpoint_id is not None:
-            pulumi.set(__self__, "api_endpoint_id", api_endpoint_id)
+            _setter("api_endpoint_id", api_endpoint_id)
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter
@@ -189,6 +219,10 @@ class AppSecApiRequestConstraints(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecApiRequestConstraintsArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

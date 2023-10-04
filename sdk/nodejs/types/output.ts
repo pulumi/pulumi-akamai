@@ -4259,13 +4259,71 @@ export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCharacterist
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificate {
+    canBeCa?: boolean;
+    canBeLeaf?: boolean;
+    issuerRdns?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdns;
+    notAfter?: number;
+    notBefore?: number;
     pemEncodedCert?: string;
+    publicKey?: string;
+    publicKeyAlgorithm?: string;
+    publicKeyFormat?: string;
+    selfSigned?: boolean;
+    serialNumber?: string;
     sha1Fingerprint?: string;
+    sigAlgName?: string;
+    subjectAlternativeNames?: string[];
+    subjectCn?: string;
+    subjectRdns?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdns;
+    version?: number;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthority {
+    canBeCa?: boolean;
+    canBeLeaf?: boolean;
+    issuerRdns?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdns;
+    notAfter?: number;
+    notBefore?: number;
     pemEncodedCert?: string;
+    publicKey?: string;
+    publicKeyAlgorithm?: string;
+    publicKeyFormat?: string;
+    selfSigned?: boolean;
+    serialNumber?: string;
     sha1Fingerprint?: string;
+    sigAlgName?: string;
+    subjectAlternativeNames?: string[];
+    subjectCn?: string;
+    subjectRdns?: outputs.GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdns;
+    version?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthorityIssuerRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateAuthoritySubjectRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateIssuerRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginCustomCertificateSubjectRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorOriginFailureRecoveryMethod {
@@ -4871,7 +4929,10 @@ export interface GetPropertyRulesBuilderRulesV20230105BehaviorSiteShield {
 }
 
 export interface GetPropertyRulesBuilderRulesV20230105BehaviorSiteShieldSsmap {
+    chinaCdnMap?: string;
+    hasMixedHosts?: boolean;
     name?: string;
+    src?: string;
     srmap?: string;
     value?: string;
 }
@@ -7824,13 +7885,71 @@ export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCharacterist
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificate {
+    canBeCa?: boolean;
+    canBeLeaf?: boolean;
+    issuerRdns?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdns;
+    notAfter?: number;
+    notBefore?: number;
     pemEncodedCert?: string;
+    publicKey?: string;
+    publicKeyAlgorithm?: string;
+    publicKeyFormat?: string;
+    selfSigned?: boolean;
+    serialNumber?: string;
     sha1Fingerprint?: string;
+    sigAlgName?: string;
+    subjectAlternativeNames?: string[];
+    subjectCn?: string;
+    subjectRdns?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdns;
+    version?: number;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthority {
+    canBeCa?: boolean;
+    canBeLeaf?: boolean;
+    issuerRdns?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdns;
+    notAfter?: number;
+    notBefore?: number;
     pemEncodedCert?: string;
+    publicKey?: string;
+    publicKeyAlgorithm?: string;
+    publicKeyFormat?: string;
+    selfSigned?: boolean;
+    serialNumber?: string;
     sha1Fingerprint?: string;
+    sigAlgName?: string;
+    subjectAlternativeNames?: string[];
+    subjectCn?: string;
+    subjectRdns?: outputs.GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdns;
+    version?: number;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthorityIssuerRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateAuthoritySubjectRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateIssuerRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
+}
+
+export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginCustomCertificateSubjectRdns {
+    c?: string;
+    cn?: string;
+    o?: string;
+    ou?: string;
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorOriginFailureRecoveryMethod {
@@ -8433,7 +8552,10 @@ export interface GetPropertyRulesBuilderRulesV20230530BehaviorSiteShield {
 }
 
 export interface GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmap {
+    chinaCdnMap?: string;
+    hasMixedHosts?: boolean;
     name?: string;
+    src?: string;
     srmap?: string;
     value?: string;
 }

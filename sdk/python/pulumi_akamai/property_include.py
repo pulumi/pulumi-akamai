@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['PropertyIncludeArgs', 'PropertyInclude']
@@ -31,16 +31,37 @@ class PropertyIncludeArgs:
         :param pulumi.Input[str] product_id: The product assigned to the include
         :param pulumi.Input[str] rules: Property Rules as JSON
         """
-        pulumi.set(__self__, "contract_id", contract_id)
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "rule_format", rule_format)
-        pulumi.set(__self__, "type", type)
+        PropertyIncludeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            group_id=group_id,
+            rule_format=rule_format,
+            type=type,
+            name=name,
+            product_id=product_id,
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: pulumi.Input[str],
+             group_id: pulumi.Input[str],
+             rule_format: pulumi.Input[str],
+             type: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
+             product_id: Optional[pulumi.Input[str]] = None,
+             rules: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("contract_id", contract_id)
+        _setter("group_id", group_id)
+        _setter("rule_format", rule_format)
+        _setter("type", type)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if product_id is not None:
-            pulumi.set(__self__, "product_id", product_id)
+            _setter("product_id", product_id)
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
 
     @property
     @pulumi.getter(name="contractId")
@@ -157,30 +178,61 @@ class _PropertyIncludeState:
         :param pulumi.Input[str] staging_version: The most recent version to be activated to the staging network
         :param pulumi.Input[str] type: Specifies the type of the include, either 'MICROSERVICES' or 'COMMON_SETTINGS'
         """
+        _PropertyIncludeState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            group_id=group_id,
+            latest_version=latest_version,
+            name=name,
+            product_id=product_id,
+            production_version=production_version,
+            rule_errors=rule_errors,
+            rule_format=rule_format,
+            rule_warnings=rule_warnings,
+            rules=rules,
+            staging_version=staging_version,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             group_id: Optional[pulumi.Input[str]] = None,
+             latest_version: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             product_id: Optional[pulumi.Input[str]] = None,
+             production_version: Optional[pulumi.Input[str]] = None,
+             rule_errors: Optional[pulumi.Input[str]] = None,
+             rule_format: Optional[pulumi.Input[str]] = None,
+             rule_warnings: Optional[pulumi.Input[str]] = None,
+             rules: Optional[pulumi.Input[str]] = None,
+             staging_version: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if contract_id is not None:
-            pulumi.set(__self__, "contract_id", contract_id)
+            _setter("contract_id", contract_id)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if latest_version is not None:
-            pulumi.set(__self__, "latest_version", latest_version)
+            _setter("latest_version", latest_version)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if product_id is not None:
-            pulumi.set(__self__, "product_id", product_id)
+            _setter("product_id", product_id)
         if production_version is not None:
-            pulumi.set(__self__, "production_version", production_version)
+            _setter("production_version", production_version)
         if rule_errors is not None:
-            pulumi.set(__self__, "rule_errors", rule_errors)
+            _setter("rule_errors", rule_errors)
         if rule_format is not None:
-            pulumi.set(__self__, "rule_format", rule_format)
+            _setter("rule_format", rule_format)
         if rule_warnings is not None:
-            pulumi.set(__self__, "rule_warnings", rule_warnings)
+            _setter("rule_warnings", rule_warnings)
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
         if staging_version is not None:
-            pulumi.set(__self__, "staging_version", staging_version)
+            _setter("staging_version", staging_version)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="contractId")
@@ -370,6 +422,10 @@ class PropertyInclude(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PropertyIncludeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

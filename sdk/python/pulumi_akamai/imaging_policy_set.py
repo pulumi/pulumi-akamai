@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['ImagingPolicySetArgs', 'ImagingPolicySet']
@@ -25,11 +25,26 @@ class ImagingPolicySetArgs:
         :param pulumi.Input[str] type: The type of media this Policy Set manages
         :param pulumi.Input[str] name: A friendly name for the Policy Set
         """
-        pulumi.set(__self__, "contract_id", contract_id)
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "type", type)
+        ImagingPolicySetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            region=region,
+            type=type,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: pulumi.Input[str],
+             region: pulumi.Input[str],
+             type: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("contract_id", contract_id)
+        _setter("region", region)
+        _setter("type", type)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="contractId")
@@ -94,14 +109,29 @@ class _ImagingPolicySetState:
         :param pulumi.Input[str] region: The geographic region which media using this Policy Set is optimized for
         :param pulumi.Input[str] type: The type of media this Policy Set manages
         """
+        _ImagingPolicySetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            name=name,
+            region=region,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if contract_id is not None:
-            pulumi.set(__self__, "contract_id", contract_id)
+            _setter("contract_id", contract_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="contractId")
@@ -189,6 +219,10 @@ class ImagingPolicySet(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ImagingPolicySetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

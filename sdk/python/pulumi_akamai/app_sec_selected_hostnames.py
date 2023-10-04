@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecSelectedHostnamesArgs', 'AppSecSelectedHostnames']
@@ -23,9 +23,22 @@ class AppSecSelectedHostnamesArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: List of hostnames to be added or removed from the protected hosts list
         :param pulumi.Input[str] mode: How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "hostnames", hostnames)
-        pulumi.set(__self__, "mode", mode)
+        AppSecSelectedHostnamesArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            hostnames=hostnames,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             hostnames: pulumi.Input[Sequence[pulumi.Input[str]]],
+             mode: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("hostnames", hostnames)
+        _setter("mode", mode)
 
     @property
     @pulumi.getter(name="configId")
@@ -76,12 +89,25 @@ class _AppSecSelectedHostnamesState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] hostnames: List of hostnames to be added or removed from the protected hosts list
         :param pulumi.Input[str] mode: How the hostnames are to be applied (APPEND, REMOVE or REPLACE)
         """
+        _AppSecSelectedHostnamesState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            hostnames=hostnames,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             hostnames: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             mode: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if hostnames is not None:
-            pulumi.set(__self__, "hostnames", hostnames)
+            _setter("hostnames", hostnames)
         if mode is not None:
-            pulumi.set(__self__, "mode", mode)
+            _setter("mode", mode)
 
     @property
     @pulumi.getter(name="configId")
@@ -155,6 +181,10 @@ class AppSecSelectedHostnames(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecSelectedHostnamesArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

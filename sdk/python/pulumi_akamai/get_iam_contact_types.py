@@ -6,13 +6,14 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
     'GetIamContactTypesResult',
     'AwaitableGetIamContactTypesResult',
     'get_iam_contact_types',
+    'get_iam_contact_types_output',
 ]
 
 @pulumi.output_type
@@ -63,3 +64,11 @@ def get_iam_contact_types(opts: Optional[pulumi.InvokeOptions] = None) -> Awaita
     return AwaitableGetIamContactTypesResult(
         contact_types=pulumi.get(__ret__, 'contact_types'),
         id=pulumi.get(__ret__, 'id'))
+
+
+@_utilities.lift_output_func(get_iam_contact_types)
+def get_iam_contact_types_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamContactTypesResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

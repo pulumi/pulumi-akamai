@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecPenaltyBoxArgs', 'AppSecPenaltyBox']
@@ -25,10 +25,25 @@ class AppSecPenaltyBoxArgs:
         :param pulumi.Input[bool] penalty_box_protection: Whether to enable the penalty box for the specified security policy
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "penalty_box_action", penalty_box_action)
-        pulumi.set(__self__, "penalty_box_protection", penalty_box_protection)
-        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        AppSecPenaltyBoxArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            penalty_box_action=penalty_box_action,
+            penalty_box_protection=penalty_box_protection,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             penalty_box_action: pulumi.Input[str],
+             penalty_box_protection: pulumi.Input[bool],
+             security_policy_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("penalty_box_action", penalty_box_action)
+        _setter("penalty_box_protection", penalty_box_protection)
+        _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -93,14 +108,29 @@ class _AppSecPenaltyBoxState:
         :param pulumi.Input[bool] penalty_box_protection: Whether to enable the penalty box for the specified security policy
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
+        _AppSecPenaltyBoxState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            penalty_box_action=penalty_box_action,
+            penalty_box_protection=penalty_box_protection,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             penalty_box_action: Optional[pulumi.Input[str]] = None,
+             penalty_box_protection: Optional[pulumi.Input[bool]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if penalty_box_action is not None:
-            pulumi.set(__self__, "penalty_box_action", penalty_box_action)
+            _setter("penalty_box_action", penalty_box_action)
         if penalty_box_protection is not None:
-            pulumi.set(__self__, "penalty_box_protection", penalty_box_protection)
+            _setter("penalty_box_protection", penalty_box_protection)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -188,6 +218,10 @@ class AppSecPenaltyBox(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecPenaltyBoxArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

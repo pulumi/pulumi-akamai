@@ -5,6 +5,7 @@ package com.pulumi.akamai.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,11 +16,32 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapA
 
     public static final GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapArgs Empty = new GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapArgs();
 
+    @Import(name="chinaCdnMap")
+    private @Nullable Output<String> chinaCdnMap;
+
+    public Optional<Output<String>> chinaCdnMap() {
+        return Optional.ofNullable(this.chinaCdnMap);
+    }
+
+    @Import(name="hasMixedHosts")
+    private @Nullable Output<Boolean> hasMixedHosts;
+
+    public Optional<Output<Boolean>> hasMixedHosts() {
+        return Optional.ofNullable(this.hasMixedHosts);
+    }
+
     @Import(name="name")
     private @Nullable Output<String> name;
 
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
+    }
+
+    @Import(name="src")
+    private @Nullable Output<String> src;
+
+    public Optional<Output<String>> src() {
+        return Optional.ofNullable(this.src);
     }
 
     @Import(name="srmap")
@@ -39,7 +61,10 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapA
     private GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapArgs() {}
 
     private GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapArgs(GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapArgs $) {
+        this.chinaCdnMap = $.chinaCdnMap;
+        this.hasMixedHosts = $.hasMixedHosts;
         this.name = $.name;
+        this.src = $.src;
         this.srmap = $.srmap;
         this.value = $.value;
     }
@@ -62,6 +87,24 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapA
             $ = new GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapArgs(Objects.requireNonNull(defaults));
         }
 
+        public Builder chinaCdnMap(@Nullable Output<String> chinaCdnMap) {
+            $.chinaCdnMap = chinaCdnMap;
+            return this;
+        }
+
+        public Builder chinaCdnMap(String chinaCdnMap) {
+            return chinaCdnMap(Output.of(chinaCdnMap));
+        }
+
+        public Builder hasMixedHosts(@Nullable Output<Boolean> hasMixedHosts) {
+            $.hasMixedHosts = hasMixedHosts;
+            return this;
+        }
+
+        public Builder hasMixedHosts(Boolean hasMixedHosts) {
+            return hasMixedHosts(Output.of(hasMixedHosts));
+        }
+
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
@@ -69,6 +112,15 @@ public final class GetPropertyRulesBuilderRulesV20230530BehaviorSiteShieldSsmapA
 
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        public Builder src(@Nullable Output<String> src) {
+            $.src = src;
+            return this;
+        }
+
+        public Builder src(String src) {
+            return src(Output.of(src));
         }
 
         public Builder srmap(@Nullable Output<String> srmap) {

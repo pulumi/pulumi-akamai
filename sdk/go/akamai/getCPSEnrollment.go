@@ -43,6 +43,7 @@ type GetCPSEnrollmentResult struct {
 	Id                    string                                 `pulumi:"id"`
 	NetworkConfigurations []GetCPSEnrollmentNetworkConfiguration `pulumi:"networkConfigurations"`
 	Organizations         []GetCPSEnrollmentOrganization         `pulumi:"organizations"`
+	PendingChanges        bool                                   `pulumi:"pendingChanges"`
 	RegistrationAuthority string                                 `pulumi:"registrationAuthority"`
 	Sans                  []string                               `pulumi:"sans"`
 	SecureNetwork         string                                 `pulumi:"secureNetwork"`
@@ -146,6 +147,10 @@ func (o GetCPSEnrollmentResultOutput) NetworkConfigurations() GetCPSEnrollmentNe
 
 func (o GetCPSEnrollmentResultOutput) Organizations() GetCPSEnrollmentOrganizationArrayOutput {
 	return o.ApplyT(func(v GetCPSEnrollmentResult) []GetCPSEnrollmentOrganization { return v.Organizations }).(GetCPSEnrollmentOrganizationArrayOutput)
+}
+
+func (o GetCPSEnrollmentResultOutput) PendingChanges() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCPSEnrollmentResult) bool { return v.PendingChanges }).(pulumi.BoolOutput)
 }
 
 func (o GetCPSEnrollmentResultOutput) RegistrationAuthority() pulumi.StringOutput {

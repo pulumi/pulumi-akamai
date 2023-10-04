@@ -6,13 +6,14 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
     'GetAppSecHostnameCoverageResult',
     'AwaitableGetAppSecHostnameCoverageResult',
     'get_app_sec_hostname_coverage',
+    'get_app_sec_hostname_coverage_output',
 ]
 
 @pulumi.output_type
@@ -73,3 +74,11 @@ def get_app_sec_hostname_coverage(opts: Optional[pulumi.InvokeOptions] = None) -
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'),
         output_text=pulumi.get(__ret__, 'output_text'))
+
+
+@_utilities.lift_output_func(get_app_sec_hostname_coverage)
+def get_app_sec_hostname_coverage_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppSecHostnameCoverageResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

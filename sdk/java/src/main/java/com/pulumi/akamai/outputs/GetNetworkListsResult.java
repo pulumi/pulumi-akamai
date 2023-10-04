@@ -25,6 +25,7 @@ public final class GetNetworkListsResult {
     private @Nullable String name;
     private String networkListId;
     private String outputText;
+    private Integer syncPoint;
     private @Nullable String type;
 
     private GetNetworkListsResult() {}
@@ -56,6 +57,9 @@ public final class GetNetworkListsResult {
     public String outputText() {
         return this.outputText;
     }
+    public Integer syncPoint() {
+        return this.syncPoint;
+    }
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
@@ -77,6 +81,7 @@ public final class GetNetworkListsResult {
         private @Nullable String name;
         private String networkListId;
         private String outputText;
+        private Integer syncPoint;
         private @Nullable String type;
         public Builder() {}
         public Builder(GetNetworkListsResult defaults) {
@@ -89,6 +94,7 @@ public final class GetNetworkListsResult {
     	      this.name = defaults.name;
     	      this.networkListId = defaults.networkListId;
     	      this.outputText = defaults.outputText;
+    	      this.syncPoint = defaults.syncPoint;
     	      this.type = defaults.type;
         }
 
@@ -136,6 +142,11 @@ public final class GetNetworkListsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder syncPoint(Integer syncPoint) {
+            this.syncPoint = Objects.requireNonNull(syncPoint);
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
             this.type = type;
             return this;
@@ -150,6 +161,7 @@ public final class GetNetworkListsResult {
             o.name = name;
             o.networkListId = networkListId;
             o.outputText = outputText;
+            o.syncPoint = syncPoint;
             o.type = type;
             return o;
         }

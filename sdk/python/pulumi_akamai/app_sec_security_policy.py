@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecSecurityPolicyArgs', 'AppSecSecurityPolicy']
@@ -27,13 +27,30 @@ class AppSecSecurityPolicyArgs:
         :param pulumi.Input[str] create_from_security_policy_id: Unique identifier of the existing security policy being cloned
         :param pulumi.Input[bool] default_settings: Whether to assign default settings to the new security policy
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "security_policy_name", security_policy_name)
-        pulumi.set(__self__, "security_policy_prefix", security_policy_prefix)
+        AppSecSecurityPolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            security_policy_name=security_policy_name,
+            security_policy_prefix=security_policy_prefix,
+            create_from_security_policy_id=create_from_security_policy_id,
+            default_settings=default_settings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             security_policy_name: pulumi.Input[str],
+             security_policy_prefix: pulumi.Input[str],
+             create_from_security_policy_id: Optional[pulumi.Input[str]] = None,
+             default_settings: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("security_policy_name", security_policy_name)
+        _setter("security_policy_prefix", security_policy_prefix)
         if create_from_security_policy_id is not None:
-            pulumi.set(__self__, "create_from_security_policy_id", create_from_security_policy_id)
+            _setter("create_from_security_policy_id", create_from_security_policy_id)
         if default_settings is not None:
-            pulumi.set(__self__, "default_settings", default_settings)
+            _setter("default_settings", default_settings)
 
     @property
     @pulumi.getter(name="configId")
@@ -114,18 +131,37 @@ class _AppSecSecurityPolicyState:
         :param pulumi.Input[str] security_policy_name: Name of the new security policy
         :param pulumi.Input[str] security_policy_prefix: Four-character alphanumeric string prefix used in creating the security policy ID
         """
+        _AppSecSecurityPolicyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            create_from_security_policy_id=create_from_security_policy_id,
+            default_settings=default_settings,
+            security_policy_id=security_policy_id,
+            security_policy_name=security_policy_name,
+            security_policy_prefix=security_policy_prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             create_from_security_policy_id: Optional[pulumi.Input[str]] = None,
+             default_settings: Optional[pulumi.Input[bool]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             security_policy_name: Optional[pulumi.Input[str]] = None,
+             security_policy_prefix: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if create_from_security_policy_id is not None:
-            pulumi.set(__self__, "create_from_security_policy_id", create_from_security_policy_id)
+            _setter("create_from_security_policy_id", create_from_security_policy_id)
         if default_settings is not None:
-            pulumi.set(__self__, "default_settings", default_settings)
+            _setter("default_settings", default_settings)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
         if security_policy_name is not None:
-            pulumi.set(__self__, "security_policy_name", security_policy_name)
+            _setter("security_policy_name", security_policy_name)
         if security_policy_prefix is not None:
-            pulumi.set(__self__, "security_policy_prefix", security_policy_prefix)
+            _setter("security_policy_prefix", security_policy_prefix)
 
     @property
     @pulumi.getter(name="configId")
@@ -239,6 +275,10 @@ class AppSecSecurityPolicy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecSecurityPolicyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

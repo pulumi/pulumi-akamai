@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['IamRoleArgs', 'IamRole']
@@ -25,12 +25,27 @@ class IamRoleArgs:
         :param pulumi.Input[str] name: The name you supply for a role
         :param pulumi.Input[str] type: The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "granted_roles", granted_roles)
+        IamRoleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            granted_roles=granted_roles,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: pulumi.Input[str],
+             granted_roles: pulumi.Input[Sequence[pulumi.Input[int]]],
+             name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("granted_roles", granted_roles)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -95,14 +110,29 @@ class _IamRoleState:
         :param pulumi.Input[str] name: The name you supply for a role
         :param pulumi.Input[str] type: The role type which indicates whether it's a standard role provided by Akamai or a custom role for the account
         """
+        _IamRoleState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            granted_roles=granted_roles,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[pulumi.Input[str]] = None,
+             granted_roles: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if granted_roles is not None:
-            pulumi.set(__self__, "granted_roles", granted_roles)
+            _setter("granted_roles", granted_roles)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -190,6 +220,10 @@ class IamRole(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            IamRoleArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

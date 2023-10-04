@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -53,31 +53,72 @@ class CpsThirdPartyEnrollmentArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sans: List of SANs
         :param pulumi.Input[str] signature_algorithm: The SHA function. Changing this value may require running terraform destroy, terraform apply
         """
-        pulumi.set(__self__, "admin_contact", admin_contact)
-        pulumi.set(__self__, "common_name", common_name)
-        pulumi.set(__self__, "contract_id", contract_id)
-        pulumi.set(__self__, "csr", csr)
-        pulumi.set(__self__, "network_configuration", network_configuration)
-        pulumi.set(__self__, "organization", organization)
-        pulumi.set(__self__, "secure_network", secure_network)
-        pulumi.set(__self__, "sni_only", sni_only)
-        pulumi.set(__self__, "tech_contact", tech_contact)
+        CpsThirdPartyEnrollmentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_contact=admin_contact,
+            common_name=common_name,
+            contract_id=contract_id,
+            csr=csr,
+            network_configuration=network_configuration,
+            organization=organization,
+            secure_network=secure_network,
+            sni_only=sni_only,
+            tech_contact=tech_contact,
+            acknowledge_pre_verification_warnings=acknowledge_pre_verification_warnings,
+            allow_duplicate_common_name=allow_duplicate_common_name,
+            auto_approve_warnings=auto_approve_warnings,
+            certificate_chain_type=certificate_chain_type,
+            change_management=change_management,
+            exclude_sans=exclude_sans,
+            sans=sans,
+            signature_algorithm=signature_algorithm,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_contact: pulumi.Input['CpsThirdPartyEnrollmentAdminContactArgs'],
+             common_name: pulumi.Input[str],
+             contract_id: pulumi.Input[str],
+             csr: pulumi.Input['CpsThirdPartyEnrollmentCsrArgs'],
+             network_configuration: pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationArgs'],
+             organization: pulumi.Input['CpsThirdPartyEnrollmentOrganizationArgs'],
+             secure_network: pulumi.Input[str],
+             sni_only: pulumi.Input[bool],
+             tech_contact: pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs'],
+             acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
+             allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
+             auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             certificate_chain_type: Optional[pulumi.Input[str]] = None,
+             change_management: Optional[pulumi.Input[bool]] = None,
+             exclude_sans: Optional[pulumi.Input[bool]] = None,
+             sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             signature_algorithm: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("admin_contact", admin_contact)
+        _setter("common_name", common_name)
+        _setter("contract_id", contract_id)
+        _setter("csr", csr)
+        _setter("network_configuration", network_configuration)
+        _setter("organization", organization)
+        _setter("secure_network", secure_network)
+        _setter("sni_only", sni_only)
+        _setter("tech_contact", tech_contact)
         if acknowledge_pre_verification_warnings is not None:
-            pulumi.set(__self__, "acknowledge_pre_verification_warnings", acknowledge_pre_verification_warnings)
+            _setter("acknowledge_pre_verification_warnings", acknowledge_pre_verification_warnings)
         if allow_duplicate_common_name is not None:
-            pulumi.set(__self__, "allow_duplicate_common_name", allow_duplicate_common_name)
+            _setter("allow_duplicate_common_name", allow_duplicate_common_name)
         if auto_approve_warnings is not None:
-            pulumi.set(__self__, "auto_approve_warnings", auto_approve_warnings)
+            _setter("auto_approve_warnings", auto_approve_warnings)
         if certificate_chain_type is not None:
-            pulumi.set(__self__, "certificate_chain_type", certificate_chain_type)
+            _setter("certificate_chain_type", certificate_chain_type)
         if change_management is not None:
-            pulumi.set(__self__, "change_management", change_management)
+            _setter("change_management", change_management)
         if exclude_sans is not None:
-            pulumi.set(__self__, "exclude_sans", exclude_sans)
+            _setter("exclude_sans", exclude_sans)
         if sans is not None:
-            pulumi.set(__self__, "sans", sans)
+            _setter("sans", sans)
         if signature_algorithm is not None:
-            pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+            _setter("signature_algorithm", signature_algorithm)
 
     @property
     @pulumi.getter(name="adminContact")
@@ -324,40 +365,81 @@ class _CpsThirdPartyEnrollmentState:
         :param pulumi.Input[bool] sni_only: Whether Server Name Indication is used for enrollment
         :param pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs'] tech_contact: Contact information for an administrator at Akamai
         """
+        _CpsThirdPartyEnrollmentState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acknowledge_pre_verification_warnings=acknowledge_pre_verification_warnings,
+            admin_contact=admin_contact,
+            allow_duplicate_common_name=allow_duplicate_common_name,
+            auto_approve_warnings=auto_approve_warnings,
+            certificate_chain_type=certificate_chain_type,
+            change_management=change_management,
+            common_name=common_name,
+            contract_id=contract_id,
+            csr=csr,
+            exclude_sans=exclude_sans,
+            network_configuration=network_configuration,
+            organization=organization,
+            sans=sans,
+            secure_network=secure_network,
+            signature_algorithm=signature_algorithm,
+            sni_only=sni_only,
+            tech_contact=tech_contact,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acknowledge_pre_verification_warnings: Optional[pulumi.Input[bool]] = None,
+             admin_contact: Optional[pulumi.Input['CpsThirdPartyEnrollmentAdminContactArgs']] = None,
+             allow_duplicate_common_name: Optional[pulumi.Input[bool]] = None,
+             auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             certificate_chain_type: Optional[pulumi.Input[str]] = None,
+             change_management: Optional[pulumi.Input[bool]] = None,
+             common_name: Optional[pulumi.Input[str]] = None,
+             contract_id: Optional[pulumi.Input[str]] = None,
+             csr: Optional[pulumi.Input['CpsThirdPartyEnrollmentCsrArgs']] = None,
+             exclude_sans: Optional[pulumi.Input[bool]] = None,
+             network_configuration: Optional[pulumi.Input['CpsThirdPartyEnrollmentNetworkConfigurationArgs']] = None,
+             organization: Optional[pulumi.Input['CpsThirdPartyEnrollmentOrganizationArgs']] = None,
+             sans: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             secure_network: Optional[pulumi.Input[str]] = None,
+             signature_algorithm: Optional[pulumi.Input[str]] = None,
+             sni_only: Optional[pulumi.Input[bool]] = None,
+             tech_contact: Optional[pulumi.Input['CpsThirdPartyEnrollmentTechContactArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if acknowledge_pre_verification_warnings is not None:
-            pulumi.set(__self__, "acknowledge_pre_verification_warnings", acknowledge_pre_verification_warnings)
+            _setter("acknowledge_pre_verification_warnings", acknowledge_pre_verification_warnings)
         if admin_contact is not None:
-            pulumi.set(__self__, "admin_contact", admin_contact)
+            _setter("admin_contact", admin_contact)
         if allow_duplicate_common_name is not None:
-            pulumi.set(__self__, "allow_duplicate_common_name", allow_duplicate_common_name)
+            _setter("allow_duplicate_common_name", allow_duplicate_common_name)
         if auto_approve_warnings is not None:
-            pulumi.set(__self__, "auto_approve_warnings", auto_approve_warnings)
+            _setter("auto_approve_warnings", auto_approve_warnings)
         if certificate_chain_type is not None:
-            pulumi.set(__self__, "certificate_chain_type", certificate_chain_type)
+            _setter("certificate_chain_type", certificate_chain_type)
         if change_management is not None:
-            pulumi.set(__self__, "change_management", change_management)
+            _setter("change_management", change_management)
         if common_name is not None:
-            pulumi.set(__self__, "common_name", common_name)
+            _setter("common_name", common_name)
         if contract_id is not None:
-            pulumi.set(__self__, "contract_id", contract_id)
+            _setter("contract_id", contract_id)
         if csr is not None:
-            pulumi.set(__self__, "csr", csr)
+            _setter("csr", csr)
         if exclude_sans is not None:
-            pulumi.set(__self__, "exclude_sans", exclude_sans)
+            _setter("exclude_sans", exclude_sans)
         if network_configuration is not None:
-            pulumi.set(__self__, "network_configuration", network_configuration)
+            _setter("network_configuration", network_configuration)
         if organization is not None:
-            pulumi.set(__self__, "organization", organization)
+            _setter("organization", organization)
         if sans is not None:
-            pulumi.set(__self__, "sans", sans)
+            _setter("sans", sans)
         if secure_network is not None:
-            pulumi.set(__self__, "secure_network", secure_network)
+            _setter("secure_network", secure_network)
         if signature_algorithm is not None:
-            pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+            _setter("signature_algorithm", signature_algorithm)
         if sni_only is not None:
-            pulumi.set(__self__, "sni_only", sni_only)
+            _setter("sni_only", sni_only)
         if tech_contact is not None:
-            pulumi.set(__self__, "tech_contact", tech_contact)
+            _setter("tech_contact", tech_contact)
 
     @property
     @pulumi.getter(name="acknowledgePreVerificationWarnings")
@@ -627,6 +709,10 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CpsThirdPartyEnrollmentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -659,6 +745,11 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
             __props__ = CpsThirdPartyEnrollmentArgs.__new__(CpsThirdPartyEnrollmentArgs)
 
             __props__.__dict__["acknowledge_pre_verification_warnings"] = acknowledge_pre_verification_warnings
+            if admin_contact is not None and not isinstance(admin_contact, CpsThirdPartyEnrollmentAdminContactArgs):
+                admin_contact = admin_contact or {}
+                def _setter(key, value):
+                    admin_contact[key] = value
+                CpsThirdPartyEnrollmentAdminContactArgs._configure(_setter, **admin_contact)
             if admin_contact is None and not opts.urn:
                 raise TypeError("Missing required property 'admin_contact'")
             __props__.__dict__["admin_contact"] = admin_contact
@@ -672,13 +763,28 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
             if contract_id is None and not opts.urn:
                 raise TypeError("Missing required property 'contract_id'")
             __props__.__dict__["contract_id"] = contract_id
+            if csr is not None and not isinstance(csr, CpsThirdPartyEnrollmentCsrArgs):
+                csr = csr or {}
+                def _setter(key, value):
+                    csr[key] = value
+                CpsThirdPartyEnrollmentCsrArgs._configure(_setter, **csr)
             if csr is None and not opts.urn:
                 raise TypeError("Missing required property 'csr'")
             __props__.__dict__["csr"] = csr
             __props__.__dict__["exclude_sans"] = exclude_sans
+            if network_configuration is not None and not isinstance(network_configuration, CpsThirdPartyEnrollmentNetworkConfigurationArgs):
+                network_configuration = network_configuration or {}
+                def _setter(key, value):
+                    network_configuration[key] = value
+                CpsThirdPartyEnrollmentNetworkConfigurationArgs._configure(_setter, **network_configuration)
             if network_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'network_configuration'")
             __props__.__dict__["network_configuration"] = network_configuration
+            if organization is not None and not isinstance(organization, CpsThirdPartyEnrollmentOrganizationArgs):
+                organization = organization or {}
+                def _setter(key, value):
+                    organization[key] = value
+                CpsThirdPartyEnrollmentOrganizationArgs._configure(_setter, **organization)
             if organization is None and not opts.urn:
                 raise TypeError("Missing required property 'organization'")
             __props__.__dict__["organization"] = organization
@@ -690,6 +796,11 @@ class CpsThirdPartyEnrollment(pulumi.CustomResource):
             if sni_only is None and not opts.urn:
                 raise TypeError("Missing required property 'sni_only'")
             __props__.__dict__["sni_only"] = sni_only
+            if tech_contact is not None and not isinstance(tech_contact, CpsThirdPartyEnrollmentTechContactArgs):
+                tech_contact = tech_contact or {}
+                def _setter(key, value):
+                    tech_contact[key] = value
+                CpsThirdPartyEnrollmentTechContactArgs._configure(_setter, **tech_contact)
             if tech_contact is None and not opts.urn:
                 raise TypeError("Missing required property 'tech_contact'")
             __props__.__dict__["tech_contact"] = tech_contact

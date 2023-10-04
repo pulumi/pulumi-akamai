@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanCustomBotCategoryArgs', 'BotmanCustomBotCategory']
@@ -19,8 +19,19 @@ class BotmanCustomBotCategoryArgs:
         """
         The set of arguments for constructing a BotmanCustomBotCategory resource.
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "custom_bot_category", custom_bot_category)
+        BotmanCustomBotCategoryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            custom_bot_category=custom_bot_category,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             custom_bot_category: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("custom_bot_category", custom_bot_category)
 
     @property
     @pulumi.getter(name="configId")
@@ -50,12 +61,25 @@ class _BotmanCustomBotCategoryState:
         """
         Input properties used for looking up and filtering BotmanCustomBotCategory resources.
         """
+        _BotmanCustomBotCategoryState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category_id=category_id,
+            config_id=config_id,
+            custom_bot_category=custom_bot_category,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category_id: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             custom_bot_category: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if category_id is not None:
-            pulumi.set(__self__, "category_id", category_id)
+            _setter("category_id", category_id)
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if custom_bot_category is not None:
-            pulumi.set(__self__, "custom_bot_category", custom_bot_category)
+            _setter("custom_bot_category", custom_bot_category)
 
     @property
     @pulumi.getter(name="categoryId")
@@ -116,6 +140,10 @@ class BotmanCustomBotCategory(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BotmanCustomBotCategoryArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

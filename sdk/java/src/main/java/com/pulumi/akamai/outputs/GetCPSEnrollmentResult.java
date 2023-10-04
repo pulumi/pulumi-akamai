@@ -36,6 +36,7 @@ public final class GetCPSEnrollmentResult {
     private String id;
     private List<GetCPSEnrollmentNetworkConfiguration> networkConfigurations;
     private List<GetCPSEnrollmentOrganization> organizations;
+    private Boolean pendingChanges;
     private String registrationAuthority;
     private List<String> sans;
     private String secureNetwork;
@@ -88,6 +89,9 @@ public final class GetCPSEnrollmentResult {
     public List<GetCPSEnrollmentOrganization> organizations() {
         return this.organizations;
     }
+    public Boolean pendingChanges() {
+        return this.pendingChanges;
+    }
     public String registrationAuthority() {
         return this.registrationAuthority;
     }
@@ -132,6 +136,7 @@ public final class GetCPSEnrollmentResult {
         private String id;
         private List<GetCPSEnrollmentNetworkConfiguration> networkConfigurations;
         private List<GetCPSEnrollmentOrganization> organizations;
+        private Boolean pendingChanges;
         private String registrationAuthority;
         private List<String> sans;
         private String secureNetwork;
@@ -155,6 +160,7 @@ public final class GetCPSEnrollmentResult {
     	      this.id = defaults.id;
     	      this.networkConfigurations = defaults.networkConfigurations;
     	      this.organizations = defaults.organizations;
+    	      this.pendingChanges = defaults.pendingChanges;
     	      this.registrationAuthority = defaults.registrationAuthority;
     	      this.sans = defaults.sans;
     	      this.secureNetwork = defaults.secureNetwork;
@@ -248,6 +254,11 @@ public final class GetCPSEnrollmentResult {
             return organizations(List.of(organizations));
         }
         @CustomType.Setter
+        public Builder pendingChanges(Boolean pendingChanges) {
+            this.pendingChanges = Objects.requireNonNull(pendingChanges);
+            return this;
+        }
+        @CustomType.Setter
         public Builder registrationAuthority(String registrationAuthority) {
             this.registrationAuthority = Objects.requireNonNull(registrationAuthority);
             return this;
@@ -303,6 +314,7 @@ public final class GetCPSEnrollmentResult {
             o.id = id;
             o.networkConfigurations = networkConfigurations;
             o.organizations = organizations;
+            o.pendingChanges = pendingChanges;
             o.registrationAuthority = registrationAuthority;
             o.sans = sans;
             o.secureNetwork = secureNetwork;

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanTransactionalEndpointArgs', 'BotmanTransactionalEndpoint']
@@ -21,10 +21,25 @@ class BotmanTransactionalEndpointArgs:
         """
         The set of arguments for constructing a BotmanTransactionalEndpoint resource.
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "operation_id", operation_id)
-        pulumi.set(__self__, "security_policy_id", security_policy_id)
-        pulumi.set(__self__, "transactional_endpoint", transactional_endpoint)
+        BotmanTransactionalEndpointArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            operation_id=operation_id,
+            security_policy_id=security_policy_id,
+            transactional_endpoint=transactional_endpoint,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             operation_id: pulumi.Input[str],
+             security_policy_id: pulumi.Input[str],
+             transactional_endpoint: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("operation_id", operation_id)
+        _setter("security_policy_id", security_policy_id)
+        _setter("transactional_endpoint", transactional_endpoint)
 
     @property
     @pulumi.getter(name="configId")
@@ -73,14 +88,29 @@ class _BotmanTransactionalEndpointState:
         """
         Input properties used for looking up and filtering BotmanTransactionalEndpoint resources.
         """
+        _BotmanTransactionalEndpointState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            operation_id=operation_id,
+            security_policy_id=security_policy_id,
+            transactional_endpoint=transactional_endpoint,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             operation_id: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             transactional_endpoint: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if operation_id is not None:
-            pulumi.set(__self__, "operation_id", operation_id)
+            _setter("operation_id", operation_id)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
         if transactional_endpoint is not None:
-            pulumi.set(__self__, "transactional_endpoint", transactional_endpoint)
+            _setter("transactional_endpoint", transactional_endpoint)
 
     @property
     @pulumi.getter(name="configId")
@@ -152,6 +182,10 @@ class BotmanTransactionalEndpoint(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BotmanTransactionalEndpointArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

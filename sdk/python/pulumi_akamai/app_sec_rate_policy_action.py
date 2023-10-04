@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecRatePolicyActionArgs', 'AppSecRatePolicyAction']
@@ -27,11 +27,28 @@ class AppSecRatePolicyActionArgs:
         :param pulumi.Input[int] rate_policy_id: Unique identifier of the rate policy
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "ipv4_action", ipv4_action)
-        pulumi.set(__self__, "ipv6_action", ipv6_action)
-        pulumi.set(__self__, "rate_policy_id", rate_policy_id)
-        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        AppSecRatePolicyActionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            ipv4_action=ipv4_action,
+            ipv6_action=ipv6_action,
+            rate_policy_id=rate_policy_id,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             ipv4_action: pulumi.Input[str],
+             ipv6_action: pulumi.Input[str],
+             rate_policy_id: pulumi.Input[int],
+             security_policy_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("ipv4_action", ipv4_action)
+        _setter("ipv6_action", ipv6_action)
+        _setter("rate_policy_id", rate_policy_id)
+        _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -110,16 +127,33 @@ class _AppSecRatePolicyActionState:
         :param pulumi.Input[int] rate_policy_id: Unique identifier of the rate policy
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
+        _AppSecRatePolicyActionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            ipv4_action=ipv4_action,
+            ipv6_action=ipv6_action,
+            rate_policy_id=rate_policy_id,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             ipv4_action: Optional[pulumi.Input[str]] = None,
+             ipv6_action: Optional[pulumi.Input[str]] = None,
+             rate_policy_id: Optional[pulumi.Input[int]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if ipv4_action is not None:
-            pulumi.set(__self__, "ipv4_action", ipv4_action)
+            _setter("ipv4_action", ipv4_action)
         if ipv6_action is not None:
-            pulumi.set(__self__, "ipv6_action", ipv6_action)
+            _setter("ipv6_action", ipv6_action)
         if rate_policy_id is not None:
-            pulumi.set(__self__, "rate_policy_id", rate_policy_id)
+            _setter("rate_policy_id", rate_policy_id)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -221,6 +255,10 @@ class AppSecRatePolicyAction(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecRatePolicyActionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

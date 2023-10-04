@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['CloudletsPolicyActivationArgs', 'CloudletsPolicyActivation']
@@ -25,10 +25,25 @@ class CloudletsPolicyActivationArgs:
         :param pulumi.Input[int] policy_id: ID of the Cloudlets policy you want to activate
         :param pulumi.Input[int] version: Cloudlets policy version you want to activate
         """
-        pulumi.set(__self__, "associated_properties", associated_properties)
-        pulumi.set(__self__, "network", network)
-        pulumi.set(__self__, "policy_id", policy_id)
-        pulumi.set(__self__, "version", version)
+        CloudletsPolicyActivationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            associated_properties=associated_properties,
+            network=network,
+            policy_id=policy_id,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             associated_properties: pulumi.Input[Sequence[pulumi.Input[str]]],
+             network: pulumi.Input[str],
+             policy_id: pulumi.Input[int],
+             version: pulumi.Input[int],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("associated_properties", associated_properties)
+        _setter("network", network)
+        _setter("policy_id", policy_id)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="associatedProperties")
@@ -95,16 +110,33 @@ class _CloudletsPolicyActivationState:
         :param pulumi.Input[str] status: Activation status for this Cloudlets policy
         :param pulumi.Input[int] version: Cloudlets policy version you want to activate
         """
+        _CloudletsPolicyActivationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            associated_properties=associated_properties,
+            network=network,
+            policy_id=policy_id,
+            status=status,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             associated_properties: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             network: Optional[pulumi.Input[str]] = None,
+             policy_id: Optional[pulumi.Input[int]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if associated_properties is not None:
-            pulumi.set(__self__, "associated_properties", associated_properties)
+            _setter("associated_properties", associated_properties)
         if network is not None:
-            pulumi.set(__self__, "network", network)
+            _setter("network", network)
         if policy_id is not None:
-            pulumi.set(__self__, "policy_id", policy_id)
+            _setter("policy_id", policy_id)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="associatedProperties")
@@ -204,6 +236,10 @@ class CloudletsPolicyActivation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudletsPolicyActivationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

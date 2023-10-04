@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
@@ -21,7 +21,7 @@ class GetNetworkListsResult:
     """
     A collection of values returned by getNetworkLists.
     """
-    def __init__(__self__, contract_id=None, group_id=None, id=None, json=None, lists=None, name=None, network_list_id=None, output_text=None, type=None):
+    def __init__(__self__, contract_id=None, group_id=None, id=None, json=None, lists=None, name=None, network_list_id=None, output_text=None, sync_point=None, type=None):
         if contract_id and not isinstance(contract_id, str):
             raise TypeError("Expected argument 'contract_id' to be a str")
         pulumi.set(__self__, "contract_id", contract_id)
@@ -46,6 +46,9 @@ class GetNetworkListsResult:
         if output_text and not isinstance(output_text, str):
             raise TypeError("Expected argument 'output_text' to be a str")
         pulumi.set(__self__, "output_text", output_text)
+        if sync_point and not isinstance(sync_point, int):
+            raise TypeError("Expected argument 'sync_point' to be a int")
+        pulumi.set(__self__, "sync_point", sync_point)
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
@@ -94,6 +97,11 @@ class GetNetworkListsResult:
         return pulumi.get(self, "output_text")
 
     @property
+    @pulumi.getter(name="syncPoint")
+    def sync_point(self) -> int:
+        return pulumi.get(self, "sync_point")
+
+    @property
     @pulumi.getter
     def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
@@ -113,6 +121,7 @@ class AwaitableGetNetworkListsResult(GetNetworkListsResult):
             name=self.name,
             network_list_id=self.network_list_id,
             output_text=self.output_text,
+            sync_point=self.sync_point,
             type=self.type)
 
 
@@ -139,6 +148,7 @@ def get_network_lists(name: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         network_list_id=pulumi.get(__ret__, 'network_list_id'),
         output_text=pulumi.get(__ret__, 'output_text'),
+        sync_point=pulumi.get(__ret__, 'sync_point'),
         type=pulumi.get(__ret__, 'type'))
 
 
