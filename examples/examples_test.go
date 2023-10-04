@@ -8,6 +8,7 @@ import (
 )
 
 func getBaseOptions(t *testing.T) integration.ProgramTestOptions {
+	t.Skip("Our auth token has expired")
 	return integration.ProgramTestOptions{
 		ExpectRefreshChanges: true,
 	}
