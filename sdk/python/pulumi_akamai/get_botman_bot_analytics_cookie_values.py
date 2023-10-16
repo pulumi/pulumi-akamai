@@ -6,13 +6,14 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
     'GetBotmanBotAnalyticsCookieValuesResult',
     'AwaitableGetBotmanBotAnalyticsCookieValuesResult',
     'get_botman_bot_analytics_cookie_values',
+    'get_botman_bot_analytics_cookie_values_output',
 ]
 
 @pulumi.output_type
@@ -63,3 +64,11 @@ def get_botman_bot_analytics_cookie_values(opts: Optional[pulumi.InvokeOptions] 
     return AwaitableGetBotmanBotAnalyticsCookieValuesResult(
         id=pulumi.get(__ret__, 'id'),
         json=pulumi.get(__ret__, 'json'))
+
+
+@_utilities.lift_output_func(get_botman_bot_analytics_cookie_values)
+def get_botman_bot_analytics_cookie_values_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBotmanBotAnalyticsCookieValuesResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

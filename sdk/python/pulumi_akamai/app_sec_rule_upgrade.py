@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecRuleUpgradeArgs', 'AppSecRuleUpgrade']
@@ -23,10 +23,23 @@ class AppSecRuleUpgradeArgs:
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[str] upgrade_mode: Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        AppSecRuleUpgradeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            security_policy_id=security_policy_id,
+            upgrade_mode=upgrade_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             security_policy_id: pulumi.Input[str],
+             upgrade_mode: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("security_policy_id", security_policy_id)
         if upgrade_mode is not None:
-            pulumi.set(__self__, "upgrade_mode", upgrade_mode)
+            _setter("upgrade_mode", upgrade_mode)
 
     @property
     @pulumi.getter(name="configId")
@@ -83,18 +96,37 @@ class _AppSecRuleUpgradeState:
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         :param pulumi.Input[str] upgrade_mode: Modifies the upgrade type for organizations running the ASE beta (ASE_AUTO or ASE_MANUAL)
         """
+        _AppSecRuleUpgradeState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            current_ruleset=current_ruleset,
+            eval_status=eval_status,
+            mode=mode,
+            security_policy_id=security_policy_id,
+            upgrade_mode=upgrade_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             current_ruleset: Optional[pulumi.Input[str]] = None,
+             eval_status: Optional[pulumi.Input[str]] = None,
+             mode: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             upgrade_mode: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if current_ruleset is not None:
-            pulumi.set(__self__, "current_ruleset", current_ruleset)
+            _setter("current_ruleset", current_ruleset)
         if eval_status is not None:
-            pulumi.set(__self__, "eval_status", eval_status)
+            _setter("eval_status", eval_status)
         if mode is not None:
-            pulumi.set(__self__, "mode", mode)
+            _setter("mode", mode)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
         if upgrade_mode is not None:
-            pulumi.set(__self__, "upgrade_mode", upgrade_mode)
+            _setter("upgrade_mode", upgrade_mode)
 
     @property
     @pulumi.getter(name="configId")
@@ -204,6 +236,10 @@ class AppSecRuleUpgrade(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecRuleUpgradeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['ImagingPolicyVideoArgs', 'ImagingPolicyVideo']
@@ -29,12 +29,29 @@ class ImagingPolicyVideoArgs:
                to production. With this flag set to true, the policy will be saved on the production network. It is possible to change
                it back to false only when there are any changes to the policy qualifying it for the new version.
         """
-        pulumi.set(__self__, "contract_id", contract_id)
-        pulumi.set(__self__, "json", json)
-        pulumi.set(__self__, "policy_id", policy_id)
-        pulumi.set(__self__, "policyset_id", policyset_id)
+        ImagingPolicyVideoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contract_id=contract_id,
+            json=json,
+            policy_id=policy_id,
+            policyset_id=policyset_id,
+            activate_on_production=activate_on_production,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contract_id: pulumi.Input[str],
+             json: pulumi.Input[str],
+             policy_id: pulumi.Input[str],
+             policyset_id: pulumi.Input[str],
+             activate_on_production: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("contract_id", contract_id)
+        _setter("json", json)
+        _setter("policy_id", policy_id)
+        _setter("policyset_id", policyset_id)
         if activate_on_production is not None:
-            pulumi.set(__self__, "activate_on_production", activate_on_production)
+            _setter("activate_on_production", activate_on_production)
 
     @property
     @pulumi.getter(name="contractId")
@@ -119,18 +136,37 @@ class _ImagingPolicyVideoState:
         :param pulumi.Input[str] policyset_id: Unique identifier for the Image & Video Manager Policy Set.
         :param pulumi.Input[int] version: The version number of this policy version
         """
+        _ImagingPolicyVideoState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            activate_on_production=activate_on_production,
+            contract_id=contract_id,
+            json=json,
+            policy_id=policy_id,
+            policyset_id=policyset_id,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             activate_on_production: Optional[pulumi.Input[bool]] = None,
+             contract_id: Optional[pulumi.Input[str]] = None,
+             json: Optional[pulumi.Input[str]] = None,
+             policy_id: Optional[pulumi.Input[str]] = None,
+             policyset_id: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if activate_on_production is not None:
-            pulumi.set(__self__, "activate_on_production", activate_on_production)
+            _setter("activate_on_production", activate_on_production)
         if contract_id is not None:
-            pulumi.set(__self__, "contract_id", contract_id)
+            _setter("contract_id", contract_id)
         if json is not None:
-            pulumi.set(__self__, "json", json)
+            _setter("json", json)
         if policy_id is not None:
-            pulumi.set(__self__, "policy_id", policy_id)
+            _setter("policy_id", policy_id)
         if policyset_id is not None:
-            pulumi.set(__self__, "policyset_id", policyset_id)
+            _setter("policyset_id", policyset_id)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="activateOnProduction")
@@ -248,6 +284,10 @@ class ImagingPolicyVideo(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ImagingPolicyVideoArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
 
@@ -14,6 +14,7 @@ __all__ = [
     'GetIamTimezonesResult',
     'AwaitableGetIamTimezonesResult',
     'get_iam_timezones',
+    'get_iam_timezones_output',
 ]
 
 @pulumi.output_type
@@ -64,3 +65,11 @@ def get_iam_timezones(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableG
     return AwaitableGetIamTimezonesResult(
         id=pulumi.get(__ret__, 'id'),
         timezones=pulumi.get(__ret__, 'timezones'))
+
+
+@_utilities.lift_output_func(get_iam_timezones)
+def get_iam_timezones_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamTimezonesResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanCustomDefinedBotArgs', 'BotmanCustomDefinedBot']
@@ -19,8 +19,19 @@ class BotmanCustomDefinedBotArgs:
         """
         The set of arguments for constructing a BotmanCustomDefinedBot resource.
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "custom_defined_bot", custom_defined_bot)
+        BotmanCustomDefinedBotArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            custom_defined_bot=custom_defined_bot,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             custom_defined_bot: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("custom_defined_bot", custom_defined_bot)
 
     @property
     @pulumi.getter(name="configId")
@@ -50,12 +61,25 @@ class _BotmanCustomDefinedBotState:
         """
         Input properties used for looking up and filtering BotmanCustomDefinedBot resources.
         """
+        _BotmanCustomDefinedBotState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bot_id=bot_id,
+            config_id=config_id,
+            custom_defined_bot=custom_defined_bot,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bot_id: Optional[pulumi.Input[str]] = None,
+             config_id: Optional[pulumi.Input[int]] = None,
+             custom_defined_bot: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bot_id is not None:
-            pulumi.set(__self__, "bot_id", bot_id)
+            _setter("bot_id", bot_id)
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if custom_defined_bot is not None:
-            pulumi.set(__self__, "custom_defined_bot", custom_defined_bot)
+            _setter("custom_defined_bot", custom_defined_bot)
 
     @property
     @pulumi.getter(name="botId")
@@ -116,6 +140,10 @@ class BotmanCustomDefinedBot(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BotmanCustomDefinedBotArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

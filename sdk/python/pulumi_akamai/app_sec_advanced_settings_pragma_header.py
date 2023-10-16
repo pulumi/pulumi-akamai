@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecAdvancedSettingsPragmaHeaderArgs', 'AppSecAdvancedSettingsPragmaHeader']
@@ -23,10 +23,23 @@ class AppSecAdvancedSettingsPragmaHeaderArgs:
         :param pulumi.Input[str] pragma_header: JSON-formatted information describing the conditions to exclude from the default remove action
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "pragma_header", pragma_header)
+        AppSecAdvancedSettingsPragmaHeaderArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            pragma_header=pragma_header,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             pragma_header: pulumi.Input[str],
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("pragma_header", pragma_header)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -77,12 +90,25 @@ class _AppSecAdvancedSettingsPragmaHeaderState:
         :param pulumi.Input[str] pragma_header: JSON-formatted information describing the conditions to exclude from the default remove action
         :param pulumi.Input[str] security_policy_id: Unique identifier of the security policy
         """
+        _AppSecAdvancedSettingsPragmaHeaderState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            pragma_header=pragma_header,
+            security_policy_id=security_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             pragma_header: Optional[pulumi.Input[str]] = None,
+             security_policy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if pragma_header is not None:
-            pulumi.set(__self__, "pragma_header", pragma_header)
+            _setter("pragma_header", pragma_header)
         if security_policy_id is not None:
-            pulumi.set(__self__, "security_policy_id", security_policy_id)
+            _setter("security_policy_id", security_policy_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -156,6 +182,10 @@ class AppSecAdvancedSettingsPragmaHeader(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecAdvancedSettingsPragmaHeaderArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

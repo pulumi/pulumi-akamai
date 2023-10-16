@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['BotmanCustomClientArgs', 'BotmanCustomClient']
@@ -19,8 +19,19 @@ class BotmanCustomClientArgs:
         """
         The set of arguments for constructing a BotmanCustomClient resource.
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "custom_client", custom_client)
+        BotmanCustomClientArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            custom_client=custom_client,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             custom_client: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("custom_client", custom_client)
 
     @property
     @pulumi.getter(name="configId")
@@ -50,12 +61,25 @@ class _BotmanCustomClientState:
         """
         Input properties used for looking up and filtering BotmanCustomClient resources.
         """
+        _BotmanCustomClientState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            custom_client=custom_client,
+            custom_client_id=custom_client_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             custom_client: Optional[pulumi.Input[str]] = None,
+             custom_client_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if custom_client is not None:
-            pulumi.set(__self__, "custom_client", custom_client)
+            _setter("custom_client", custom_client)
         if custom_client_id is not None:
-            pulumi.set(__self__, "custom_client_id", custom_client_id)
+            _setter("custom_client_id", custom_client_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -116,6 +140,10 @@ class BotmanCustomClient(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BotmanCustomClientArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

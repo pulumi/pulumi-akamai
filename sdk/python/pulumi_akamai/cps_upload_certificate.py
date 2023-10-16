@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['CpsUploadCertificateArgs', 'CpsUploadCertificate']
@@ -35,23 +35,48 @@ class CpsUploadCertificateArgs:
         :param pulumi.Input[str] trust_chain_rsa_pem: Trust chain in pem format for provided RSA certificate
         :param pulumi.Input[bool] wait_for_deployment: Whether to wait for certificate to be deployed
         """
-        pulumi.set(__self__, "enrollment_id", enrollment_id)
+        CpsUploadCertificateArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enrollment_id=enrollment_id,
+            acknowledge_change_management=acknowledge_change_management,
+            acknowledge_post_verification_warnings=acknowledge_post_verification_warnings,
+            auto_approve_warnings=auto_approve_warnings,
+            certificate_ecdsa_pem=certificate_ecdsa_pem,
+            certificate_rsa_pem=certificate_rsa_pem,
+            trust_chain_ecdsa_pem=trust_chain_ecdsa_pem,
+            trust_chain_rsa_pem=trust_chain_rsa_pem,
+            wait_for_deployment=wait_for_deployment,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enrollment_id: pulumi.Input[int],
+             acknowledge_change_management: Optional[pulumi.Input[bool]] = None,
+             acknowledge_post_verification_warnings: Optional[pulumi.Input[bool]] = None,
+             auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             certificate_ecdsa_pem: Optional[pulumi.Input[str]] = None,
+             certificate_rsa_pem: Optional[pulumi.Input[str]] = None,
+             trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
+             trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
+             wait_for_deployment: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enrollment_id", enrollment_id)
         if acknowledge_change_management is not None:
-            pulumi.set(__self__, "acknowledge_change_management", acknowledge_change_management)
+            _setter("acknowledge_change_management", acknowledge_change_management)
         if acknowledge_post_verification_warnings is not None:
-            pulumi.set(__self__, "acknowledge_post_verification_warnings", acknowledge_post_verification_warnings)
+            _setter("acknowledge_post_verification_warnings", acknowledge_post_verification_warnings)
         if auto_approve_warnings is not None:
-            pulumi.set(__self__, "auto_approve_warnings", auto_approve_warnings)
+            _setter("auto_approve_warnings", auto_approve_warnings)
         if certificate_ecdsa_pem is not None:
-            pulumi.set(__self__, "certificate_ecdsa_pem", certificate_ecdsa_pem)
+            _setter("certificate_ecdsa_pem", certificate_ecdsa_pem)
         if certificate_rsa_pem is not None:
-            pulumi.set(__self__, "certificate_rsa_pem", certificate_rsa_pem)
+            _setter("certificate_rsa_pem", certificate_rsa_pem)
         if trust_chain_ecdsa_pem is not None:
-            pulumi.set(__self__, "trust_chain_ecdsa_pem", trust_chain_ecdsa_pem)
+            _setter("trust_chain_ecdsa_pem", trust_chain_ecdsa_pem)
         if trust_chain_rsa_pem is not None:
-            pulumi.set(__self__, "trust_chain_rsa_pem", trust_chain_rsa_pem)
+            _setter("trust_chain_rsa_pem", trust_chain_rsa_pem)
         if wait_for_deployment is not None:
-            pulumi.set(__self__, "wait_for_deployment", wait_for_deployment)
+            _setter("wait_for_deployment", wait_for_deployment)
 
     @property
     @pulumi.getter(name="enrollmentId")
@@ -188,26 +213,53 @@ class _CpsUploadCertificateState:
         :param pulumi.Input[bool] unacknowledged_warnings: Used to distinguish whether there are unacknowledged warnings for a certificate
         :param pulumi.Input[bool] wait_for_deployment: Whether to wait for certificate to be deployed
         """
+        _CpsUploadCertificateState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acknowledge_change_management=acknowledge_change_management,
+            acknowledge_post_verification_warnings=acknowledge_post_verification_warnings,
+            auto_approve_warnings=auto_approve_warnings,
+            certificate_ecdsa_pem=certificate_ecdsa_pem,
+            certificate_rsa_pem=certificate_rsa_pem,
+            enrollment_id=enrollment_id,
+            trust_chain_ecdsa_pem=trust_chain_ecdsa_pem,
+            trust_chain_rsa_pem=trust_chain_rsa_pem,
+            unacknowledged_warnings=unacknowledged_warnings,
+            wait_for_deployment=wait_for_deployment,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acknowledge_change_management: Optional[pulumi.Input[bool]] = None,
+             acknowledge_post_verification_warnings: Optional[pulumi.Input[bool]] = None,
+             auto_approve_warnings: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             certificate_ecdsa_pem: Optional[pulumi.Input[str]] = None,
+             certificate_rsa_pem: Optional[pulumi.Input[str]] = None,
+             enrollment_id: Optional[pulumi.Input[int]] = None,
+             trust_chain_ecdsa_pem: Optional[pulumi.Input[str]] = None,
+             trust_chain_rsa_pem: Optional[pulumi.Input[str]] = None,
+             unacknowledged_warnings: Optional[pulumi.Input[bool]] = None,
+             wait_for_deployment: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if acknowledge_change_management is not None:
-            pulumi.set(__self__, "acknowledge_change_management", acknowledge_change_management)
+            _setter("acknowledge_change_management", acknowledge_change_management)
         if acknowledge_post_verification_warnings is not None:
-            pulumi.set(__self__, "acknowledge_post_verification_warnings", acknowledge_post_verification_warnings)
+            _setter("acknowledge_post_verification_warnings", acknowledge_post_verification_warnings)
         if auto_approve_warnings is not None:
-            pulumi.set(__self__, "auto_approve_warnings", auto_approve_warnings)
+            _setter("auto_approve_warnings", auto_approve_warnings)
         if certificate_ecdsa_pem is not None:
-            pulumi.set(__self__, "certificate_ecdsa_pem", certificate_ecdsa_pem)
+            _setter("certificate_ecdsa_pem", certificate_ecdsa_pem)
         if certificate_rsa_pem is not None:
-            pulumi.set(__self__, "certificate_rsa_pem", certificate_rsa_pem)
+            _setter("certificate_rsa_pem", certificate_rsa_pem)
         if enrollment_id is not None:
-            pulumi.set(__self__, "enrollment_id", enrollment_id)
+            _setter("enrollment_id", enrollment_id)
         if trust_chain_ecdsa_pem is not None:
-            pulumi.set(__self__, "trust_chain_ecdsa_pem", trust_chain_ecdsa_pem)
+            _setter("trust_chain_ecdsa_pem", trust_chain_ecdsa_pem)
         if trust_chain_rsa_pem is not None:
-            pulumi.set(__self__, "trust_chain_rsa_pem", trust_chain_rsa_pem)
+            _setter("trust_chain_rsa_pem", trust_chain_rsa_pem)
         if unacknowledged_warnings is not None:
-            pulumi.set(__self__, "unacknowledged_warnings", unacknowledged_warnings)
+            _setter("unacknowledged_warnings", unacknowledged_warnings)
         if wait_for_deployment is not None:
-            pulumi.set(__self__, "wait_for_deployment", wait_for_deployment)
+            _setter("wait_for_deployment", wait_for_deployment)
 
     @property
     @pulumi.getter(name="acknowledgeChangeManagement")
@@ -377,6 +429,10 @@ class CpsUploadCertificate(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CpsUploadCertificateArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

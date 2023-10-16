@@ -6,13 +6,14 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
     'GetCpsWarningsResult',
     'AwaitableGetCpsWarningsResult',
     'get_cps_warnings',
+    'get_cps_warnings_output',
 ]
 
 @pulumi.output_type
@@ -63,3 +64,11 @@ def get_cps_warnings(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
     return AwaitableGetCpsWarningsResult(
         id=pulumi.get(__ret__, 'id'),
         warnings=pulumi.get(__ret__, 'warnings'))
+
+
+@_utilities.lift_output_func(get_cps_warnings)
+def get_cps_warnings_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCpsWarningsResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['NetworkListActivationsArgs', 'NetworkListActivations']
@@ -27,13 +27,30 @@ class NetworkListActivationsArgs:
         :param pulumi.Input[str] network: The Akamai network on which the list is activated: STAGING or PRODUCTION
         :param pulumi.Input[str] notes: Descriptive text to accompany the activation
         """
-        pulumi.set(__self__, "network_list_id", network_list_id)
-        pulumi.set(__self__, "notification_emails", notification_emails)
-        pulumi.set(__self__, "sync_point", sync_point)
+        NetworkListActivationsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_list_id=network_list_id,
+            notification_emails=notification_emails,
+            sync_point=sync_point,
+            network=network,
+            notes=notes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_list_id: pulumi.Input[str],
+             notification_emails: pulumi.Input[Sequence[pulumi.Input[str]]],
+             sync_point: pulumi.Input[int],
+             network: Optional[pulumi.Input[str]] = None,
+             notes: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("network_list_id", network_list_id)
+        _setter("notification_emails", notification_emails)
+        _setter("sync_point", sync_point)
         if network is not None:
-            pulumi.set(__self__, "network", network)
+            _setter("network", network)
         if notes is not None:
-            pulumi.set(__self__, "notes", notes)
+            _setter("notes", notes)
 
     @property
     @pulumi.getter(name="networkListId")
@@ -114,18 +131,37 @@ class _NetworkListActivationsState:
         :param pulumi.Input[str] status: This network list's current activation status in the environment specified by the "network" attribute
         :param pulumi.Input[int] sync_point: Identifies the sync point of the network list to be activated
         """
+        _NetworkListActivationsState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network=network,
+            network_list_id=network_list_id,
+            notes=notes,
+            notification_emails=notification_emails,
+            status=status,
+            sync_point=sync_point,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network: Optional[pulumi.Input[str]] = None,
+             network_list_id: Optional[pulumi.Input[str]] = None,
+             notes: Optional[pulumi.Input[str]] = None,
+             notification_emails: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             sync_point: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if network is not None:
-            pulumi.set(__self__, "network", network)
+            _setter("network", network)
         if network_list_id is not None:
-            pulumi.set(__self__, "network_list_id", network_list_id)
+            _setter("network_list_id", network_list_id)
         if notes is not None:
-            pulumi.set(__self__, "notes", notes)
+            _setter("notes", notes)
         if notification_emails is not None:
-            pulumi.set(__self__, "notification_emails", notification_emails)
+            _setter("notification_emails", notification_emails)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if sync_point is not None:
-            pulumi.set(__self__, "sync_point", sync_point)
+            _setter("sync_point", sync_point)
 
     @property
     @pulumi.getter
@@ -239,6 +275,10 @@ class NetworkListActivations(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NetworkListActivationsArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

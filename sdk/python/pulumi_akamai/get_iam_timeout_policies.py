@@ -6,13 +6,14 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
     'GetIamTimeoutPoliciesResult',
     'AwaitableGetIamTimeoutPoliciesResult',
     'get_iam_timeout_policies',
+    'get_iam_timeout_policies_output',
 ]
 
 @pulumi.output_type
@@ -63,3 +64,11 @@ def get_iam_timeout_policies(opts: Optional[pulumi.InvokeOptions] = None) -> Awa
     return AwaitableGetIamTimeoutPoliciesResult(
         id=pulumi.get(__ret__, 'id'),
         policies=pulumi.get(__ret__, 'policies'))
+
+
+@_utilities.lift_output_func(get_iam_timeout_policies)
+def get_iam_timeout_policies_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamTimeoutPoliciesResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

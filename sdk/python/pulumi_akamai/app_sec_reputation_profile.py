@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['AppSecReputationProfileArgs', 'AppSecReputationProfile']
@@ -21,8 +21,19 @@ class AppSecReputationProfileArgs:
         :param pulumi.Input[int] config_id: Unique identifier of the security configuration
         :param pulumi.Input[str] reputation_profile: JSON-formatted definition of the reputation profile
         """
-        pulumi.set(__self__, "config_id", config_id)
-        pulumi.set(__self__, "reputation_profile", reputation_profile)
+        AppSecReputationProfileArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            reputation_profile=reputation_profile,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: pulumi.Input[int],
+             reputation_profile: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_id", config_id)
+        _setter("reputation_profile", reputation_profile)
 
     @property
     @pulumi.getter(name="configId")
@@ -61,12 +72,25 @@ class _AppSecReputationProfileState:
         :param pulumi.Input[str] reputation_profile: JSON-formatted definition of the reputation profile
         :param pulumi.Input[int] reputation_profile_id: Unique identifier of the reputation profile
         """
+        _AppSecReputationProfileState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_id=config_id,
+            reputation_profile=reputation_profile,
+            reputation_profile_id=reputation_profile_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_id: Optional[pulumi.Input[int]] = None,
+             reputation_profile: Optional[pulumi.Input[str]] = None,
+             reputation_profile_id: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_id is not None:
-            pulumi.set(__self__, "config_id", config_id)
+            _setter("config_id", config_id)
         if reputation_profile is not None:
-            pulumi.set(__self__, "reputation_profile", reputation_profile)
+            _setter("reputation_profile", reputation_profile)
         if reputation_profile_id is not None:
-            pulumi.set(__self__, "reputation_profile_id", reputation_profile_id)
+            _setter("reputation_profile_id", reputation_profile_id)
 
     @property
     @pulumi.getter(name="configId")
@@ -138,6 +162,10 @@ class AppSecReputationProfile(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppSecReputationProfileArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
